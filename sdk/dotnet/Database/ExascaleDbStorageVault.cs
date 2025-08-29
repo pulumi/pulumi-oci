@@ -67,6 +67,12 @@ namespace Pulumi.Oci.Database
         public Output<int> AdditionalFlashCacheInPercent { get; private set; } = null!;
 
         /// <summary>
+        /// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        /// </summary>
+        [Output("attachedShapeAttributes")]
+        public Output<ImmutableArray<string>> AttachedShapeAttributes { get; private set; } = null!;
+
+        /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
         /// </summary>
         [Output("availabilityDomain")]
@@ -319,6 +325,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("additionalFlashCacheInPercent")]
         public Input<int>? AdditionalFlashCacheInPercent { get; set; }
+
+        [Input("attachedShapeAttributes")]
+        private InputList<string>? _attachedShapeAttributes;
+
+        /// <summary>
+        /// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+        /// </summary>
+        public InputList<string> AttachedShapeAttributes
+        {
+            get => _attachedShapeAttributes ?? (_attachedShapeAttributes = new InputList<string>());
+            set => _attachedShapeAttributes = value;
+        }
 
         /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.

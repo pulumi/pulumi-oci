@@ -94,18 +94,14 @@ public final class AgentKnowledgeBaseArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      * 
      */
     @Import(name="indexConfig", required=true)
     private Output<AgentKnowledgeBaseIndexConfigArgs> indexConfig;
 
     /**
-     * @return (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * @return (Updatable) The index configuration of Knowledge bases.
      * 
      */
     public Output<AgentKnowledgeBaseIndexConfigArgs> indexConfig() {
@@ -247,9 +243,7 @@ public final class AgentKnowledgeBaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param indexConfig (Updatable) **IndexConfig**
-         * 
-         * The index configuration of Knowledge bases.
+         * @param indexConfig (Updatable) The index configuration of Knowledge bases.
          * 
          * @return builder
          * 
@@ -260,9 +254,7 @@ public final class AgentKnowledgeBaseArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param indexConfig (Updatable) **IndexConfig**
-         * 
-         * The index configuration of Knowledge bases.
+         * @param indexConfig (Updatable) The index configuration of Knowledge bases.
          * 
          * @return builder
          * 

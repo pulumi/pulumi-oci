@@ -26,7 +26,7 @@ class GetAuditTrailResult:
     """
     A collection of values returned by getAuditTrail.
     """
-    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, peer_target_database_key=None, purge_job_details=None, purge_job_status=None, purge_job_time=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_last_collected=None, time_updated=None, trail_location=None, trail_source=None, work_request_id=None):
+    def __init__(__self__, audit_collection_start_time=None, audit_profile_id=None, audit_trail_id=None, can_update_last_archive_time_on_target=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_auto_purge_enabled=None, lifecycle_details=None, peer_target_database_key=None, purge_job_details=None, purge_job_status=None, purge_job_time=None, resume_trigger=None, state=None, status=None, system_tags=None, target_id=None, time_created=None, time_last_collected=None, time_updated=None, trail_location=None, trail_source=None, work_request_id=None):
         if audit_collection_start_time and not isinstance(audit_collection_start_time, str):
             raise TypeError("Expected argument 'audit_collection_start_time' to be a str")
         pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
@@ -36,6 +36,9 @@ class GetAuditTrailResult:
         if audit_trail_id and not isinstance(audit_trail_id, str):
             raise TypeError("Expected argument 'audit_trail_id' to be a str")
         pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        if can_update_last_archive_time_on_target and not isinstance(can_update_last_archive_time_on_target, bool):
+            raise TypeError("Expected argument 'can_update_last_archive_time_on_target' to be a bool")
+        pulumi.set(__self__, "can_update_last_archive_time_on_target", can_update_last_archive_time_on_target)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -126,6 +129,14 @@ class GetAuditTrailResult:
     @pulumi.getter(name="auditTrailId")
     def audit_trail_id(self) -> _builtins.str:
         return pulumi.get(self, "audit_trail_id")
+
+    @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> _builtins.bool:
+        """
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -318,6 +329,7 @@ class AwaitableGetAuditTrailResult(GetAuditTrailResult):
             audit_collection_start_time=self.audit_collection_start_time,
             audit_profile_id=self.audit_profile_id,
             audit_trail_id=self.audit_trail_id,
+            can_update_last_archive_time_on_target=self.can_update_last_archive_time_on_target,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             description=self.description,
@@ -371,6 +383,7 @@ def get_audit_trail(audit_trail_id: Optional[_builtins.str] = None,
         audit_collection_start_time=pulumi.get(__ret__, 'audit_collection_start_time'),
         audit_profile_id=pulumi.get(__ret__, 'audit_profile_id'),
         audit_trail_id=pulumi.get(__ret__, 'audit_trail_id'),
+        can_update_last_archive_time_on_target=pulumi.get(__ret__, 'can_update_last_archive_time_on_target'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
@@ -421,6 +434,7 @@ def get_audit_trail_output(audit_trail_id: Optional[pulumi.Input[_builtins.str]]
         audit_collection_start_time=pulumi.get(__response__, 'audit_collection_start_time'),
         audit_profile_id=pulumi.get(__response__, 'audit_profile_id'),
         audit_trail_id=pulumi.get(__response__, 'audit_trail_id'),
+        can_update_last_archive_time_on_target=pulumi.get(__response__, 'can_update_last_archive_time_on_target'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),

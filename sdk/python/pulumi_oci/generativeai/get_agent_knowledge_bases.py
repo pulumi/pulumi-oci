@@ -116,8 +116,6 @@ def get_agent_knowledge_bases(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-    **ListKnowledgeBases**
-
     Gets a list of knowledge bases.
 
     ## Example Usage
@@ -158,8 +156,6 @@ def get_agent_knowledge_bases_output(compartment_id: Optional[pulumi.Input[Optio
                                      opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAgentKnowledgeBasesResult]:
     """
     This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-    **ListKnowledgeBases**
 
     Gets a list of knowledge bases.
 

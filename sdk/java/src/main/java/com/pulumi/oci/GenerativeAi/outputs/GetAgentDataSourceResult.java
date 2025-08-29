@@ -19,7 +19,7 @@ public final class GetAgentDataSourceResult {
      */
     private String compartmentId;
     /**
-     * @return **DataSourceConfig**
+     * @return The details of data source.
      * 
      */
     private List<GetAgentDataSourceDataSourceConfig> dataSourceConfigs;
@@ -94,7 +94,7 @@ public final class GetAgentDataSourceResult {
         return this.compartmentId;
     }
     /**
-     * @return **DataSourceConfig**
+     * @return The details of data source.
      * 
      */
     public List<GetAgentDataSourceDataSourceConfig> dataSourceConfigs() {

@@ -171,6 +171,10 @@ export interface GetDatabaseResult {
      */
     readonly state: string;
     /**
+     * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     */
+    readonly storageSizeDetails: outputs.Database.GetDatabaseStorageSizeDetail[];
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     readonly systemTags: {[key: string]: string};

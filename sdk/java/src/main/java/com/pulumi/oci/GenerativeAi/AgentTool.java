@@ -23,6 +23,117 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.GenerativeAi.AgentTool;
+ * import com.pulumi.oci.GenerativeAi.AgentToolArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigApiSchemaArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseConnectionArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigDatabaseSchemaArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigFunctionArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigGenerationLlmCustomizationArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigIclExamplesArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentToolToolConfigTableAndColumnDescriptionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testTool = new AgentTool("testTool", AgentToolArgs.builder()
+ *             .agentId(testAgent.id())
+ *             .compartmentId(compartmentId)
+ *             .description(toolDescription)
+ *             .toolConfig(AgentToolToolConfigArgs.builder()
+ *                 .toolConfigType(toolToolConfigToolConfigType)
+ *                 .agentEndpointId(testAgentEndpoint.id())
+ *                 .apiSchema(AgentToolToolConfigApiSchemaArgs.builder()
+ *                     .apiSchemaInputLocationType(toolToolConfigApiSchemaApiSchemaInputLocationType)
+ *                     .bucket(toolToolConfigApiSchemaBucket)
+ *                     .content(toolToolConfigApiSchemaContent)
+ *                     .namespace(toolToolConfigApiSchemaNamespace)
+ *                     .object(toolToolConfigApiSchemaObject)
+ *                     .build())
+ *                 .databaseConnection(AgentToolToolConfigDatabaseConnectionArgs.builder()
+ *                     .connectionId(testConnection.id())
+ *                     .connectionType(toolToolConfigDatabaseConnectionConnectionType)
+ *                     .build())
+ *                 .databaseSchema(AgentToolToolConfigDatabaseSchemaArgs.builder()
+ *                     .inputLocationType(toolToolConfigDatabaseSchemaInputLocationType)
+ *                     .bucket(toolToolConfigDatabaseSchemaBucket)
+ *                     .content(toolToolConfigDatabaseSchemaContent)
+ *                     .namespace(toolToolConfigDatabaseSchemaNamespace)
+ *                     .prefix(toolToolConfigDatabaseSchemaPrefix)
+ *                     .build())
+ *                 .dialect(toolToolConfigDialect)
+ *                 .function(AgentToolToolConfigFunctionArgs.builder()
+ *                     .description(toolToolConfigFunctionDescription)
+ *                     .name(toolToolConfigFunctionName)
+ *                     .parameters(toolToolConfigFunctionParameters)
+ *                     .build())
+ *                 .generationLlmCustomization(AgentToolToolConfigGenerationLlmCustomizationArgs.builder()
+ *                     .instruction(toolToolConfigGenerationLlmCustomizationInstruction)
+ *                     .build())
+ *                 .httpEndpointAuthConfig(AgentToolToolConfigHttpEndpointAuthConfigArgs.builder()
+ *                     .httpEndpointAuthSources(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs.builder()
+ *                         .httpEndpointAuthScope(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScope)
+ *                         .httpEndpointAuthScopeConfig(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs.builder()
+ *                             .httpEndpointAuthScopeConfigType(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigHttpEndpointAuthScopeConfigType)
+ *                             .clientId(testClient.id())
+ *                             .idcsUrl(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigIdcsUrl)
+ *                             .keyLocation(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigKeyLocation)
+ *                             .keyName(testKey.name())
+ *                             .scopeUrl(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigScopeUrl)
+ *                             .vaultSecretId(testSecret.id())
+ *                             .build())
+ *                         .build())
+ *                     .build())
+ *                 .iclExamples(AgentToolToolConfigIclExamplesArgs.builder()
+ *                     .inputLocationType(toolToolConfigIclExamplesInputLocationType)
+ *                     .bucket(toolToolConfigIclExamplesBucket)
+ *                     .content(toolToolConfigIclExamplesContent)
+ *                     .namespace(toolToolConfigIclExamplesNamespace)
+ *                     .prefix(toolToolConfigIclExamplesPrefix)
+ *                     .build())
+ *                 .knowledgeBaseConfigs(AgentToolToolConfigKnowledgeBaseConfigArgs.builder()
+ *                     .knowledgeBaseId(testKnowledgeBase.id())
+ *                     .build())
+ *                 .modelSize(toolToolConfigModelSize)
+ *                 .shouldEnableSelfCorrection(toolToolConfigShouldEnableSelfCorrection)
+ *                 .shouldEnableSqlExecution(toolToolConfigShouldEnableSqlExecution)
+ *                 .subnetId(testSubnet.id())
+ *                 .tableAndColumnDescription(AgentToolToolConfigTableAndColumnDescriptionArgs.builder()
+ *                     .inputLocationType(toolToolConfigTableAndColumnDescriptionInputLocationType)
+ *                     .bucket(toolToolConfigTableAndColumnDescriptionBucket)
+ *                     .content(toolToolConfigTableAndColumnDescriptionContent)
+ *                     .namespace(toolToolConfigTableAndColumnDescriptionNamespace)
+ *                     .prefix(toolToolConfigTableAndColumnDescriptionPrefix)
+ *                     .build())
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(toolDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .metadata(toolMetadata)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

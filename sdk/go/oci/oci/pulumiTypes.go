@@ -845,6 +845,590 @@ func (o DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput) Index(i pulum
 	}).(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput)
 }
 
+type ManagedKafkaKafkaClusterAccessSubnet struct {
+	// (Updatable) Subnets OCIDs
+	Subnets []string `pulumi:"subnets"`
+}
+
+// ManagedKafkaKafkaClusterAccessSubnetInput is an input type that accepts ManagedKafkaKafkaClusterAccessSubnetArgs and ManagedKafkaKafkaClusterAccessSubnetOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterAccessSubnetInput` via:
+//
+//	ManagedKafkaKafkaClusterAccessSubnetArgs{...}
+type ManagedKafkaKafkaClusterAccessSubnetInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterAccessSubnetOutput() ManagedKafkaKafkaClusterAccessSubnetOutput
+	ToManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Context) ManagedKafkaKafkaClusterAccessSubnetOutput
+}
+
+type ManagedKafkaKafkaClusterAccessSubnetArgs struct {
+	// (Updatable) Subnets OCIDs
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
+}
+
+func (ManagedKafkaKafkaClusterAccessSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterAccessSubnetArgs) ToManagedKafkaKafkaClusterAccessSubnetOutput() ManagedKafkaKafkaClusterAccessSubnetOutput {
+	return i.ToManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterAccessSubnetArgs) ToManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+// ManagedKafkaKafkaClusterAccessSubnetArrayInput is an input type that accepts ManagedKafkaKafkaClusterAccessSubnetArray and ManagedKafkaKafkaClusterAccessSubnetArrayOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterAccessSubnetArrayInput` via:
+//
+//	ManagedKafkaKafkaClusterAccessSubnetArray{ ManagedKafkaKafkaClusterAccessSubnetArgs{...} }
+type ManagedKafkaKafkaClusterAccessSubnetArrayInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterAccessSubnetArrayOutput() ManagedKafkaKafkaClusterAccessSubnetArrayOutput
+	ToManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Context) ManagedKafkaKafkaClusterAccessSubnetArrayOutput
+}
+
+type ManagedKafkaKafkaClusterAccessSubnetArray []ManagedKafkaKafkaClusterAccessSubnetInput
+
+func (ManagedKafkaKafkaClusterAccessSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterAccessSubnetArray) ToManagedKafkaKafkaClusterAccessSubnetArrayOutput() ManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return i.ToManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterAccessSubnetArray) ToManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterAccessSubnetArrayOutput)
+}
+
+type ManagedKafkaKafkaClusterAccessSubnetOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterAccessSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterAccessSubnetOutput) ToManagedKafkaKafkaClusterAccessSubnetOutput() ManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterAccessSubnetOutput) ToManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+// (Updatable) Subnets OCIDs
+func (o ManagedKafkaKafkaClusterAccessSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterAccessSubnet) []string { return v.Subnets }).(pulumi.StringArrayOutput)
+}
+
+type ManagedKafkaKafkaClusterAccessSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterAccessSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToManagedKafkaKafkaClusterAccessSubnetArrayOutput() ManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterAccessSubnetArrayOutput) Index(i pulumi.IntInput) ManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedKafkaKafkaClusterAccessSubnet {
+		return vs[0].([]ManagedKafkaKafkaClusterAccessSubnet)[vs[1].(int)]
+	}).(ManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+type ManagedKafkaKafkaClusterBrokerShape struct {
+	// (Updatable) Number of Kafka broker nodes
+	NodeCount int `pulumi:"nodeCount"`
+	// (Updatable) Number of OCPUs per nodes
+	OcpuCount int `pulumi:"ocpuCount"`
+	// (Updatable) Size of the storage per nodes.
+	StorageSizeInGbs *int `pulumi:"storageSizeInGbs"`
+}
+
+// ManagedKafkaKafkaClusterBrokerShapeInput is an input type that accepts ManagedKafkaKafkaClusterBrokerShapeArgs and ManagedKafkaKafkaClusterBrokerShapeOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterBrokerShapeInput` via:
+//
+//	ManagedKafkaKafkaClusterBrokerShapeArgs{...}
+type ManagedKafkaKafkaClusterBrokerShapeInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterBrokerShapeOutput() ManagedKafkaKafkaClusterBrokerShapeOutput
+	ToManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Context) ManagedKafkaKafkaClusterBrokerShapeOutput
+}
+
+type ManagedKafkaKafkaClusterBrokerShapeArgs struct {
+	// (Updatable) Number of Kafka broker nodes
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// (Updatable) Number of OCPUs per nodes
+	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
+	// (Updatable) Size of the storage per nodes.
+	StorageSizeInGbs pulumi.IntPtrInput `pulumi:"storageSizeInGbs"`
+}
+
+func (ManagedKafkaKafkaClusterBrokerShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterBrokerShapeArgs) ToManagedKafkaKafkaClusterBrokerShapeOutput() ManagedKafkaKafkaClusterBrokerShapeOutput {
+	return i.ToManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterBrokerShapeArgs) ToManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+func (i ManagedKafkaKafkaClusterBrokerShapeArgs) ToManagedKafkaKafkaClusterBrokerShapePtrOutput() ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return i.ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterBrokerShapeArgs) ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterBrokerShapeOutput).ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(ctx)
+}
+
+// ManagedKafkaKafkaClusterBrokerShapePtrInput is an input type that accepts ManagedKafkaKafkaClusterBrokerShapeArgs, ManagedKafkaKafkaClusterBrokerShapePtr and ManagedKafkaKafkaClusterBrokerShapePtrOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterBrokerShapePtrInput` via:
+//
+//	        ManagedKafkaKafkaClusterBrokerShapeArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedKafkaKafkaClusterBrokerShapePtrInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterBrokerShapePtrOutput() ManagedKafkaKafkaClusterBrokerShapePtrOutput
+	ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(context.Context) ManagedKafkaKafkaClusterBrokerShapePtrOutput
+}
+
+type managedKafkaKafkaClusterBrokerShapePtrType ManagedKafkaKafkaClusterBrokerShapeArgs
+
+func ManagedKafkaKafkaClusterBrokerShapePtr(v *ManagedKafkaKafkaClusterBrokerShapeArgs) ManagedKafkaKafkaClusterBrokerShapePtrInput {
+	return (*managedKafkaKafkaClusterBrokerShapePtrType)(v)
+}
+
+func (*managedKafkaKafkaClusterBrokerShapePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i *managedKafkaKafkaClusterBrokerShapePtrType) ToManagedKafkaKafkaClusterBrokerShapePtrOutput() ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return i.ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(context.Background())
+}
+
+func (i *managedKafkaKafkaClusterBrokerShapePtrType) ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterBrokerShapePtrOutput)
+}
+
+type ManagedKafkaKafkaClusterBrokerShapeOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterBrokerShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) ToManagedKafkaKafkaClusterBrokerShapeOutput() ManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) ToManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) ToManagedKafkaKafkaClusterBrokerShapePtrOutput() ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return o.ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(context.Background())
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedKafkaKafkaClusterBrokerShape) *ManagedKafkaKafkaClusterBrokerShape {
+		return &v
+	}).(ManagedKafkaKafkaClusterBrokerShapePtrOutput)
+}
+
+// (Updatable) Number of Kafka broker nodes
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) Number of OCPUs per nodes
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) Size of the storage per nodes.
+func (o ManagedKafkaKafkaClusterBrokerShapeOutput) StorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterBrokerShape) *int { return v.StorageSizeInGbs }).(pulumi.IntPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterBrokerShapePtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterBrokerShapePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) ToManagedKafkaKafkaClusterBrokerShapePtrOutput() ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) ToManagedKafkaKafkaClusterBrokerShapePtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterBrokerShapePtrOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) Elem() ManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterBrokerShape) ManagedKafkaKafkaClusterBrokerShape {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedKafkaKafkaClusterBrokerShape
+		return ret
+	}).(ManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+// (Updatable) Number of Kafka broker nodes
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) NodeCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterBrokerShape) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.NodeCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Number of OCPUs per nodes
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) OcpuCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterBrokerShape) *int {
+		if v == nil {
+			return nil
+		}
+		return &v.OcpuCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Size of the storage per nodes.
+func (o ManagedKafkaKafkaClusterBrokerShapePtrOutput) StorageSizeInGbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterBrokerShape) *int {
+		if v == nil {
+			return nil
+		}
+		return v.StorageSizeInGbs
+	}).(pulumi.IntPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterConfigLatestConfig struct {
+	// (Updatable) ID cluster configuration
+	ConfigId *string `pulumi:"configId"`
+	// (Updatable) Cluster configuration key-value pairs
+	Properties map[string]string `pulumi:"properties"`
+	// (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// (Updatable) Version of the cluster configuration
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	VersionNumber *int `pulumi:"versionNumber"`
+}
+
+// ManagedKafkaKafkaClusterConfigLatestConfigInput is an input type that accepts ManagedKafkaKafkaClusterConfigLatestConfigArgs and ManagedKafkaKafkaClusterConfigLatestConfigOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterConfigLatestConfigInput` via:
+//
+//	ManagedKafkaKafkaClusterConfigLatestConfigArgs{...}
+type ManagedKafkaKafkaClusterConfigLatestConfigInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterConfigLatestConfigOutput() ManagedKafkaKafkaClusterConfigLatestConfigOutput
+	ToManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Context) ManagedKafkaKafkaClusterConfigLatestConfigOutput
+}
+
+type ManagedKafkaKafkaClusterConfigLatestConfigArgs struct {
+	// (Updatable) ID cluster configuration
+	ConfigId pulumi.StringPtrInput `pulumi:"configId"`
+	// (Updatable) Cluster configuration key-value pairs
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// (Updatable) Version of the cluster configuration
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	VersionNumber pulumi.IntPtrInput `pulumi:"versionNumber"`
+}
+
+func (ManagedKafkaKafkaClusterConfigLatestConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterConfigLatestConfigArgs) ToManagedKafkaKafkaClusterConfigLatestConfigOutput() ManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return i.ToManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterConfigLatestConfigArgs) ToManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+func (i ManagedKafkaKafkaClusterConfigLatestConfigArgs) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutput() ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return i.ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterConfigLatestConfigArgs) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterConfigLatestConfigOutput).ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(ctx)
+}
+
+// ManagedKafkaKafkaClusterConfigLatestConfigPtrInput is an input type that accepts ManagedKafkaKafkaClusterConfigLatestConfigArgs, ManagedKafkaKafkaClusterConfigLatestConfigPtr and ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterConfigLatestConfigPtrInput` via:
+//
+//	        ManagedKafkaKafkaClusterConfigLatestConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ManagedKafkaKafkaClusterConfigLatestConfigPtrInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutput() ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput
+	ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(context.Context) ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput
+}
+
+type managedKafkaKafkaClusterConfigLatestConfigPtrType ManagedKafkaKafkaClusterConfigLatestConfigArgs
+
+func ManagedKafkaKafkaClusterConfigLatestConfigPtr(v *ManagedKafkaKafkaClusterConfigLatestConfigArgs) ManagedKafkaKafkaClusterConfigLatestConfigPtrInput {
+	return (*managedKafkaKafkaClusterConfigLatestConfigPtrType)(v)
+}
+
+func (*managedKafkaKafkaClusterConfigLatestConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i *managedKafkaKafkaClusterConfigLatestConfigPtrType) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutput() ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return i.ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *managedKafkaKafkaClusterConfigLatestConfigPtrType) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterConfigLatestConfigOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterConfigLatestConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) ToManagedKafkaKafkaClusterConfigLatestConfigOutput() ManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) ToManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutput() ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return o.ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ManagedKafkaKafkaClusterConfigLatestConfig) *ManagedKafkaKafkaClusterConfigLatestConfig {
+		return &v
+	}).(ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput)
+}
+
+// (Updatable) ID cluster configuration
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) ConfigId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterConfigLatestConfig) *string { return v.ConfigId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Cluster configuration key-value pairs
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterConfigLatestConfig) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterConfigLatestConfig) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Version of the cluster configuration
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedKafkaKafkaClusterConfigLatestConfigOutput) VersionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterConfigLatestConfig) *int { return v.VersionNumber }).(pulumi.IntPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutput() ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) ToManagedKafkaKafkaClusterConfigLatestConfigPtrOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) Elem() ManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterConfigLatestConfig) ManagedKafkaKafkaClusterConfigLatestConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ManagedKafkaKafkaClusterConfigLatestConfig
+		return ret
+	}).(ManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+// (Updatable) ID cluster configuration
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) ConfigId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterConfigLatestConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConfigId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Cluster configuration key-value pairs
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterConfigLatestConfig) map[string]string {
+		if v == nil {
+			return nil
+		}
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterConfigLatestConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Version of the cluster configuration
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput) VersionNumber() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ManagedKafkaKafkaClusterConfigLatestConfig) *int {
+		if v == nil {
+			return nil
+		}
+		return v.VersionNumber
+	}).(pulumi.IntPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterKafkaBootstrapUrl struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name *string `pulumi:"name"`
+	// Bootstrap URL
+	Url *string `pulumi:"url"`
+}
+
+// ManagedKafkaKafkaClusterKafkaBootstrapUrlInput is an input type that accepts ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs and ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterKafkaBootstrapUrlInput` via:
+//
+//	ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...}
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+	ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+}
+
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Bootstrap URL
+	Url pulumi.StringPtrInput `pulumi:"url"`
+}
+
+func (ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return i.ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+// ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput is an input type that accepts ManagedKafkaKafkaClusterKafkaBootstrapUrlArray and ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput values.
+// You can construct a concrete instance of `ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput` via:
+//
+//	ManagedKafkaKafkaClusterKafkaBootstrapUrlArray{ ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...} }
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput interface {
+	pulumi.Input
+
+	ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+	ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+}
+
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlArray []ManagedKafkaKafkaClusterKafkaBootstrapUrlInput
+
+func (ManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i ManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return i.ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Background())
+}
+
+func (i ManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput)
+}
+
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterKafkaBootstrapUrl) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Bootstrap URL
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ManagedKafkaKafkaClusterKafkaBootstrapUrl) *string { return v.Url }).(pulumi.StringPtrOutput)
+}
+
+type ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput struct{ *pulumi.OutputState }
+
+func (ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) Index(i pulumi.IntInput) ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ManagedKafkaKafkaClusterKafkaBootstrapUrl {
+		return vs[0].([]ManagedKafkaKafkaClusterKafkaBootstrapUrl)[vs[1].(int)]
+	}).(ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
 type GetApiPlatformApiPlatformInstanceIdcsApp struct {
 	// IDCS URL of the app
 	Url string `pulumi:"url"`
@@ -8276,6 +8860,2113 @@ func (o GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionIte
 	}).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput)
 }
 
+type GetManagedKafkaKafkaClusterAccessSubnet struct {
+	// Subnets OCIDs
+	Subnets []string `pulumi:"subnets"`
+}
+
+// GetManagedKafkaKafkaClusterAccessSubnetInput is an input type that accepts GetManagedKafkaKafkaClusterAccessSubnetArgs and GetManagedKafkaKafkaClusterAccessSubnetOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAccessSubnetInput` via:
+//
+//	GetManagedKafkaKafkaClusterAccessSubnetArgs{...}
+type GetManagedKafkaKafkaClusterAccessSubnetInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput
+	ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArgs struct {
+	// Subnets OCIDs
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
+}
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArgs) ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return i.ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArgs) ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+// GetManagedKafkaKafkaClusterAccessSubnetArrayInput is an input type that accepts GetManagedKafkaKafkaClusterAccessSubnetArray and GetManagedKafkaKafkaClusterAccessSubnetArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterAccessSubnetArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterAccessSubnetArray{ GetManagedKafkaKafkaClusterAccessSubnetArgs{...} }
+type GetManagedKafkaKafkaClusterAccessSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput
+	ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArray []GetManagedKafkaKafkaClusterAccessSubnetInput
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArray) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterAccessSubnetArray) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterAccessSubnetArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAccessSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) ToGetManagedKafkaKafkaClusterAccessSubnetOutput() GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) ToGetManagedKafkaKafkaClusterAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return o
+}
+
+// Subnets OCIDs
+func (o GetManagedKafkaKafkaClusterAccessSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterAccessSubnet) []string { return v.Subnets }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterAccessSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutput() GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClusterAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterAccessSubnetArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterAccessSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterAccessSubnet {
+		return vs[0].([]GetManagedKafkaKafkaClusterAccessSubnet)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterAccessSubnetOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShape struct {
+	// Number of Kafka broker nodes
+	NodeCount int `pulumi:"nodeCount"`
+	// Number of OCPUs per nodes
+	OcpuCount int `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
+}
+
+// GetManagedKafkaKafkaClusterBrokerShapeInput is an input type that accepts GetManagedKafkaKafkaClusterBrokerShapeArgs and GetManagedKafkaKafkaClusterBrokerShapeOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterBrokerShapeInput` via:
+//
+//	GetManagedKafkaKafkaClusterBrokerShapeArgs{...}
+type GetManagedKafkaKafkaClusterBrokerShapeInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput
+	ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArgs struct {
+	// Number of Kafka broker nodes
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Number of OCPUs per nodes
+	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs pulumi.IntInput `pulumi:"storageSizeInGbs"`
+}
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArgs) ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return i.ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArgs) ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+// GetManagedKafkaKafkaClusterBrokerShapeArrayInput is an input type that accepts GetManagedKafkaKafkaClusterBrokerShapeArray and GetManagedKafkaKafkaClusterBrokerShapeArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterBrokerShapeArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterBrokerShapeArray{ GetManagedKafkaKafkaClusterBrokerShapeArgs{...} }
+type GetManagedKafkaKafkaClusterBrokerShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput
+	ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArray []GetManagedKafkaKafkaClusterBrokerShapeInput
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArray) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterBrokerShapeArray) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterBrokerShapeArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterBrokerShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) ToGetManagedKafkaKafkaClusterBrokerShapeOutput() GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) ToGetManagedKafkaKafkaClusterBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return o
+}
+
+// Number of Kafka broker nodes
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Number of OCPUs per nodes
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+// Size of the storage per nodes.
+func (o GetManagedKafkaKafkaClusterBrokerShapeOutput) StorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterBrokerShape) int { return v.StorageSizeInGbs }).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterBrokerShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutput() GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClusterBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterBrokerShapeArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterBrokerShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterBrokerShape {
+		return vs[0].([]GetManagedKafkaKafkaClusterBrokerShape)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterBrokerShapeOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfig struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties map[string]string `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigLatestConfigInput is an input type that accepts GetManagedKafkaKafkaClusterConfigLatestConfigArgs and GetManagedKafkaKafkaClusterConfigLatestConfigOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigLatestConfigInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigLatestConfigArgs{...}
+type GetManagedKafkaKafkaClusterConfigLatestConfigInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigLatestConfigArray and GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigLatestConfigArray{ GetManagedKafkaKafkaClusterConfigLatestConfigArgs{...} }
+type GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArray []GetManagedKafkaKafkaClusterConfigLatestConfigInput
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutput() GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) string { return v.ConfigId }).(pulumi.StringOutput)
+}
+
+// Cluster configuration key-value pairs
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigLatestConfig) int { return v.VersionNumber }).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigLatestConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigLatestConfig {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigLatestConfig)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigLatestConfigOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsFilterInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsFilterArgs and GetManagedKafkaKafkaClusterConfigVersionsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsFilterInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArgs) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsFilterArray and GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsFilterArray{ GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArray []GetManagedKafkaKafkaClusterConfigVersionsFilterInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsFilterArray) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsFilter {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection struct {
+	Items []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs struct {
+	Items GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray{ GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput) Items() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection) []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{...}
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray and GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray{ GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray []GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) string {
+		return v.ConfigId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem) int {
+		return v.VersionNumber
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsFilterInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsFilterArgs and GetManagedKafkaKafkaClusterConfigsFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsFilterInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsFilterArgs{...}
+type GetManagedKafkaKafkaClusterConfigsFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput
+	ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArgs) ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArgs) ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsFilterOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsFilterArray and GetManagedKafkaKafkaClusterConfigsFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsFilterArray{ GetManagedKafkaKafkaClusterConfigsFilterArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArray []GetManagedKafkaKafkaClusterConfigsFilterInput
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArray) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsFilterArray) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) ToGetManagedKafkaKafkaClusterConfigsFilterOutput() GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) ToGetManagedKafkaKafkaClusterConfigsFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutput() GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) ToGetManagedKafkaKafkaClusterConfigsFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsFilter {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsFilterOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection struct {
+	Items []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs struct {
+	Items GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput) Items() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection) []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+	Id string `pulumi:"id"`
+	// A shared configuration object used by 0 or more kafka clusters.
+	LatestConfigs []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig `pulumi:"latestConfigs"`
+	// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A shared configuration object used by 0 or more kafka clusters.
+	LatestConfigs GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput `pulumi:"latestConfigs"`
+	// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A shared configuration object used by 0 or more kafka clusters.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) LatestConfigs() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig {
+		return v.LatestConfigs
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput)
+}
+
+// A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig struct {
+	// ID cluster configuration
+	ConfigId string `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties map[string]string `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber int `pulumi:"versionNumber"`
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{...}
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs struct {
+	// ID cluster configuration
+	ConfigId pulumi.StringInput `pulumi:"configId"`
+	// Cluster configuration key-value pairs
+	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Version of the cluster configuration
+	VersionNumber pulumi.IntInput `pulumi:"versionNumber"`
+}
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput)
+}
+
+// GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput is an input type that accepts GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray and GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray{ GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{...} }
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput
+	ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray []GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return o
+}
+
+// ID cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) ConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) string {
+		return v.ConfigId
+	}).(pulumi.StringOutput)
+}
+
+// Cluster configuration key-value pairs
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) Properties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) map[string]string {
+		return v.Properties
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Version of the cluster configuration
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput) VersionNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig) int {
+		return v.VersionNumber
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput() GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) ToGetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig {
+		return vs[0].([]GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfig)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrl struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name string `pulumi:"name"`
+	// Bootstrap URL
+	Url string `pulumi:"url"`
+}
+
+// GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput is an input type that accepts GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs and GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput` via:
+//
+//	GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...}
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name pulumi.StringInput `pulumi:"name"`
+	// Bootstrap URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return i.ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+// GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput is an input type that accepts GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray and GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput` via:
+//
+//	GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray{ GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{...} }
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+	ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray []GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return i.ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterKafkaBootstrapUrl) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClusterKafkaBootstrapUrl) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClusterKafkaBootstrapUrl {
+		return vs[0].([]GetManagedKafkaKafkaClusterKafkaBootstrapUrl)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilter struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetManagedKafkaKafkaClustersFilterInput is an input type that accepts GetManagedKafkaKafkaClustersFilterArgs and GetManagedKafkaKafkaClustersFilterOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersFilterInput` via:
+//
+//	GetManagedKafkaKafkaClustersFilterArgs{...}
+type GetManagedKafkaKafkaClustersFilterInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput
+	ToGetManagedKafkaKafkaClustersFilterOutputWithContext(context.Context) GetManagedKafkaKafkaClustersFilterOutput
+}
+
+type GetManagedKafkaKafkaClustersFilterArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetManagedKafkaKafkaClustersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArgs) ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput {
+	return i.ToGetManagedKafkaKafkaClustersFilterOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArgs) ToGetManagedKafkaKafkaClustersFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersFilterOutput)
+}
+
+// GetManagedKafkaKafkaClustersFilterArrayInput is an input type that accepts GetManagedKafkaKafkaClustersFilterArray and GetManagedKafkaKafkaClustersFilterArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersFilterArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersFilterArray{ GetManagedKafkaKafkaClustersFilterArgs{...} }
+type GetManagedKafkaKafkaClustersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput
+	ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersFilterArray []GetManagedKafkaKafkaClustersFilterInput
+
+func (GetManagedKafkaKafkaClustersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArray) ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersFilterArray) ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersFilterArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) ToGetManagedKafkaKafkaClustersFilterOutput() GetManagedKafkaKafkaClustersFilterOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) ToGetManagedKafkaKafkaClustersFilterOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClustersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetManagedKafkaKafkaClustersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersFilter)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) ToGetManagedKafkaKafkaClustersFilterArrayOutput() GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) ToGetManagedKafkaKafkaClustersFilterArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersFilterArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersFilterArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersFilter {
+		return vs[0].([]GetManagedKafkaKafkaClustersFilter)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersFilterOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollection struct {
+	Items []GetManagedKafkaKafkaClustersKafkaClusterCollectionItem `pulumi:"items"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs struct {
+	Items GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput) Items() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollection) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItem {
+		return v.Items
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollection)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollection {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollection)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItem struct {
+	// Subnets where broker/coordinator VNICs will be created.
+	AccessSubnets []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet `pulumi:"accessSubnets"`
+	// Configuration of the broker node.
+	BrokerShapes []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape `pulumi:"brokerShapes"`
+	// CA certificate bundle for mTLS broker authentication.
+	ClientCertificateBundle string `pulumi:"clientCertificateBundle"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+	ClusterConfigId string `pulumi:"clusterConfigId"`
+	// The version of configuration object
+	ClusterConfigVersion int `pulumi:"clusterConfigVersion"`
+	// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+	ClusterType string `pulumi:"clusterType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Kafka coordination type. Set of available types depends on Kafka version
+	CoordinationType string `pulumi:"coordinationType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	Id string `pulumi:"id"`
+	// Bootstrap URL that can be used to connect to Kafka
+	KafkaBootstrapUrls []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl `pulumi:"kafkaBootstrapUrls"`
+	// Version of Kafka to use to spin up the cluster
+	KafkaVersion string `pulumi:"kafkaVersion"`
+	// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+	SecretId string `pulumi:"secretId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs struct {
+	// Subnets where broker/coordinator VNICs will be created.
+	AccessSubnets GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput `pulumi:"accessSubnets"`
+	// Configuration of the broker node.
+	BrokerShapes GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput `pulumi:"brokerShapes"`
+	// CA certificate bundle for mTLS broker authentication.
+	ClientCertificateBundle pulumi.StringInput `pulumi:"clientCertificateBundle"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+	ClusterConfigId pulumi.StringInput `pulumi:"clusterConfigId"`
+	// The version of configuration object
+	ClusterConfigVersion pulumi.IntInput `pulumi:"clusterConfigVersion"`
+	// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+	ClusterType pulumi.StringInput `pulumi:"clusterType"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Kafka coordination type. Set of available types depends on Kafka version
+	CoordinationType pulumi.StringInput `pulumi:"coordinationType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Bootstrap URL that can be used to connect to Kafka
+	KafkaBootstrapUrls GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput `pulumi:"kafkaBootstrapUrls"`
+	// Version of Kafka to use to spin up the cluster
+	KafkaVersion pulumi.StringInput `pulumi:"kafkaVersion"`
+	// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return o
+}
+
+// Subnets where broker/coordinator VNICs will be created.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) AccessSubnets() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet {
+		return v.AccessSubnets
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput)
+}
+
+// Configuration of the broker node.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) BrokerShapes() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape {
+		return v.BrokerShapes
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput)
+}
+
+// CA certificate bundle for mTLS broker authentication.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClientCertificateBundle() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string {
+		return v.ClientCertificateBundle
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterConfigId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.ClusterConfigId }).(pulumi.StringOutput)
+}
+
+// The version of configuration object
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterConfigVersion() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) int { return v.ClusterConfigVersion }).(pulumi.IntOutput)
+}
+
+// Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) ClusterType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.ClusterType }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Kafka coordination type. Set of available types depends on Kafka version
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) CoordinationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.CoordinationType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL that can be used to connect to Kafka
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) KafkaBootstrapUrls() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
+		return v.KafkaBootstrapUrls
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput)
+}
+
+// Version of Kafka to use to spin up the cluster
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) KafkaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.KafkaVersion }).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItem {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItem)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet struct {
+	// Subnets OCIDs
+	Subnets []string `pulumi:"subnets"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs struct {
+	// Subnets OCIDs
+	Subnets pulumi.StringArrayInput `pulumi:"subnets"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return o
+}
+
+// Subnets OCIDs
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput) Subnets() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet) []string { return v.Subnets }).(pulumi.StringArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnet)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape struct {
+	// Number of Kafka broker nodes
+	NodeCount int `pulumi:"nodeCount"`
+	// Number of OCPUs per nodes
+	OcpuCount int `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs struct {
+	// Number of Kafka broker nodes
+	NodeCount pulumi.IntInput `pulumi:"nodeCount"`
+	// Number of OCPUs per nodes
+	OcpuCount pulumi.IntInput `pulumi:"ocpuCount"`
+	// Size of the storage per nodes.
+	StorageSizeInGbs pulumi.IntInput `pulumi:"storageSizeInGbs"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return o
+}
+
+// Number of Kafka broker nodes
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) NodeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int { return v.NodeCount }).(pulumi.IntOutput)
+}
+
+// Number of OCPUs per nodes
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) OcpuCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int { return v.OcpuCount }).(pulumi.IntOutput)
+}
+
+// Size of the storage per nodes.
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput) StorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape) int {
+		return v.StorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShape)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name string `pulumi:"name"`
+	// Bootstrap URL
+	Url string `pulumi:"url"`
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{...}
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs struct {
+	// Name of the Kafka listener providing this bootstrap URL
+	Name pulumi.StringInput `pulumi:"name"`
+	// Bootstrap URL
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
+// GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput is an input type that accepts GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray and GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput values.
+// You can construct a concrete instance of `GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput` via:
+//
+//	GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{ GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{...} }
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput interface {
+	pulumi.Input
+
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput
+	ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray []GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return i.ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(context.Background())
+}
+
+func (i GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return o
+}
+
+// Name of the Kafka listener providing this bootstrap URL
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Bootstrap URL
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput struct{ *pulumi.OutputState }
+
+func (GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)(nil)).Elem()
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput() GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) ToGetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutputWithContext(ctx context.Context) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput {
+	return o
+}
+
+func (o GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput) Index(i pulumi.IntInput) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl {
+		return vs[0].([]GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrl)[vs[1].(int)]
+	}).(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput)
+}
+
 type GetWlmsManagedInstanceConfiguration struct {
 	// Frequency of domain discovery to be run on the managed instance. The unit is in hours.
 	DiscoveryInterval int `pulumi:"discoveryInterval"`
@@ -13237,6 +15928,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput)(nil)).Elem(), DbmulticloudMultiCloudResourceDiscoveryResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAzureConnectorArcAgentNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnetInput)(nil)).Elem(), ManagedKafkaKafkaClusterAccessSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterAccessSubnetArrayInput)(nil)).Elem(), ManagedKafkaKafkaClusterAccessSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterBrokerShapeInput)(nil)).Elem(), ManagedKafkaKafkaClusterBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterBrokerShapePtrInput)(nil)).Elem(), ManagedKafkaKafkaClusterBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterConfigLatestConfigInput)(nil)).Elem(), ManagedKafkaKafkaClusterConfigLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterConfigLatestConfigPtrInput)(nil)).Elem(), ManagedKafkaKafkaClusterConfigLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrlInput)(nil)).Elem(), ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput)(nil)).Elem(), ManagedKafkaKafkaClusterKafkaBootstrapUrlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceIdcsAppArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApiPlatformApiPlatformInstanceUriInput)(nil)).Elem(), GetApiPlatformApiPlatformInstanceUriArgs{})
@@ -13339,6 +16038,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterAccessSubnetArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterAccessSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShapeInput)(nil)).Elem(), GetManagedKafkaKafkaClusterBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterBrokerShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfigInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigLatestConfigArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigLatestConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClusterKafkaBootstrapUrlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClusterKafkaBootstrapUrlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersFilterInput)(nil)).Elem(), GetManagedKafkaKafkaClustersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersFilterArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayInput)(nil)).Elem(), GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceConfigurationArrayInput)(nil)).Elem(), GetWlmsManagedInstanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWlmsManagedInstanceScanResultsFilterInput)(nil)).Elem(), GetWlmsManagedInstanceScanResultsFilterArgs{})
@@ -13431,6 +16164,14 @@ func init() {
 	pulumi.RegisterOutputType(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAzureConnectorArcAgentNodeArrayOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterAccessSubnetOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterAccessSubnetArrayOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterBrokerShapeOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterBrokerShapePtrOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterConfigLatestConfigOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterConfigLatestConfigPtrOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterKafkaBootstrapUrlOutput{})
+	pulumi.RegisterOutputType(ManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
 	pulumi.RegisterOutputType(GetApiPlatformApiPlatformInstanceUriOutput{})
@@ -13533,6 +16274,40 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterAccessSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterBrokerShapeOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterBrokerShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigLatestConfigOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigLatestConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterKafkaBootstrapUrlOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClusterKafkaBootstrapUrlArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersFilterOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArrayOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlOutput{})
+	pulumi.RegisterOutputType(GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetWlmsManagedInstanceScanResultsFilterOutput{})

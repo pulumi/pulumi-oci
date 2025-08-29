@@ -49,6 +49,7 @@ import javax.annotation.Nullable;
  *         var testAuditTrailManagement = new AuditTrailManagement("testAuditTrailManagement", AuditTrailManagementArgs.builder()
  *             .compartmentId(compartmentId)
  *             .targetId(testTargetDatabase.id())
+ *             .canUpdateLastArchiveTimeOnTarget(auditTrailManagementCanUpdateLastArchiveTimeOnTarget)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(auditTrailManagementDescription)
  *             .displayName(auditTrailManagementDisplayName)
@@ -102,6 +103,20 @@ public class AuditTrailManagement extends com.pulumi.resources.CustomResource {
      */
     public Output<String> auditProfileId() {
         return this.auditProfileId;
+    }
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    @Export(name="canUpdateLastArchiveTimeOnTarget", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * @return (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Output<Boolean> canUpdateLastArchiveTimeOnTarget() {
+        return this.canUpdateLastArchiveTimeOnTarget;
     }
     /**
      * The OCID of the compartment that contains the target.

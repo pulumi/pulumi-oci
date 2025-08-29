@@ -9,6 +9,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseConnectionStringArgs;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseDbBackupConfigArgs;
 import com.pulumi.oci.Database.inputs.DbHomeDatabaseEncryptionKeyLocationDetailsArgs;
+import com.pulumi.oci.Database.inputs.DbHomeDatabaseStorageSizeDetailsArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -389,6 +390,21 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    @Import(name="storageSizeDetails")
+    private @Nullable Output<DbHomeDatabaseStorageSizeDetailsArgs> storageSizeDetails;
+
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Optional<Output<DbHomeDatabaseStorageSizeDetailsArgs>> storageSizeDetails() {
+        return Optional.ofNullable(this.storageSizeDetails);
+    }
+
+    /**
      * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -476,6 +492,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         this.pluggableDatabases = $.pluggableDatabases;
         this.sidPrefix = $.sidPrefix;
         this.state = $.state;
+        this.storageSizeDetails = $.storageSizeDetails;
         this.tdeWalletPassword = $.tdeWalletPassword;
         this.timeCreated = $.timeCreated;
         this.timeStampForPointInTimeRecovery = $.timeStampForPointInTimeRecovery;
@@ -1031,6 +1048,27 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(@Nullable Output<DbHomeDatabaseStorageSizeDetailsArgs> storageSizeDetails) {
+            $.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+
+        /**
+         * @param storageSizeDetails The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageSizeDetails(DbHomeDatabaseStorageSizeDetailsArgs storageSizeDetails) {
+            return storageSizeDetails(Output.of(storageSizeDetails));
         }
 
         /**

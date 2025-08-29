@@ -14,15 +14,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetAuditProfilesAuditProfileCollectionItemResult
     {
         /// <summary>
-        /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        /// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         /// </summary>
         public readonly string AuditCollectedVolume;
         /// <summary>
-        /// A optional filter to return only resources that match the specified id.
-        /// </summary>
-        public readonly string AuditProfileId;
-        /// <summary>
-        /// Indicates the list of available audit trails on the target.
+        /// Contains the list of available audit trails on the target database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult> AuditTrails;
         public readonly int ChangeRetentionTrigger;
@@ -51,6 +47,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        /// </summary>
+        public readonly bool IsOverrideGlobalPaidUsage;
+        /// <summary>
         /// A optional filter to return only resources that match the specified retention configured value.
         /// </summary>
         public readonly bool IsOverrideGlobalRetentionSetting;
@@ -63,13 +63,25 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        /// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         /// </summary>
         public readonly int OfflineMonths;
         /// <summary>
-        /// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        /// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string OfflineMonthsSource;
+        /// <summary>
+        /// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
         /// </summary>
         public readonly int OnlineMonths;
+        /// <summary>
+        /// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string OnlineMonthsSource;
+        /// <summary>
+        /// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string PaidUsageSource;
         /// <summary>
         /// A optional filter to return only resources that match the specified lifecycle state.
         /// </summary>
@@ -83,6 +95,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TargetId;
         /// <summary>
+        /// A optional filter to return only resources that belong to the specified audit profile type.
+        /// </summary>
+        public readonly string TargetType;
+        /// <summary>
         /// The date and time the audit profile was created, in the format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
@@ -94,8 +110,6 @@ namespace Pulumi.Oci.DataSafe.Outputs
         [OutputConstructor]
         private GetAuditProfilesAuditProfileCollectionItemResult(
             string auditCollectedVolume,
-
-            string auditProfileId,
 
             ImmutableArray<Outputs.GetAuditProfilesAuditProfileCollectionItemAuditTrailResult> auditTrails,
 
@@ -113,6 +127,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string id,
 
+            bool isOverrideGlobalPaidUsage,
+
             bool isOverrideGlobalRetentionSetting,
 
             bool isPaidUsageEnabled,
@@ -121,7 +137,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             int offlineMonths,
 
+            string offlineMonthsSource,
+
             int onlineMonths,
+
+            string onlineMonthsSource,
+
+            string paidUsageSource,
 
             string state,
 
@@ -129,12 +151,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string targetId,
 
+            string targetType,
+
             string timeCreated,
 
             string timeUpdated)
         {
             AuditCollectedVolume = auditCollectedVolume;
-            AuditProfileId = auditProfileId;
             AuditTrails = auditTrails;
             ChangeRetentionTrigger = changeRetentionTrigger;
             CompartmentId = compartmentId;
@@ -143,14 +166,19 @@ namespace Pulumi.Oci.DataSafe.Outputs
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
             IsOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             IsPaidUsageEnabled = isPaidUsageEnabled;
             LifecycleDetails = lifecycleDetails;
             OfflineMonths = offlineMonths;
+            OfflineMonthsSource = offlineMonthsSource;
             OnlineMonths = onlineMonths;
+            OnlineMonthsSource = onlineMonthsSource;
+            PaidUsageSource = paidUsageSource;
             State = state;
             SystemTags = systemTags;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

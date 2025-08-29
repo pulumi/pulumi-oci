@@ -22,7 +22,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
      */
     private String clusterId;
     /**
-     * @return **DatabaseConnection**
+     * @return The connection type for Databases.
      * 
      */
     private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection> databaseConnections;
@@ -32,10 +32,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
      */
     private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction> databaseFunctions;
     /**
-     * @return The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * @return The type of index.
      * 
      */
     private String indexConfigType;
@@ -45,7 +42,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
      */
     private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex> indexes;
     /**
-     * @return **SecretDetail**
+     * @return The details of configured security configuration on OpenSearch.
      * 
      */
     private List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail> secretDetails;
@@ -64,7 +61,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
         return this.clusterId;
     }
     /**
-     * @return **DatabaseConnection**
+     * @return The connection type for Databases.
      * 
      */
     public List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection> databaseConnections() {
@@ -78,10 +75,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
         return this.databaseFunctions;
     }
     /**
-     * @return The type of index. The allowed values are:
-     * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-     * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-     * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+     * @return The type of index.
      * 
      */
     public String indexConfigType() {
@@ -95,7 +89,7 @@ public final class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig 
         return this.indexes;
     }
     /**
-     * @return **SecretDetail**
+     * @return The details of configured security configuration on OpenSearch.
      * 
      */
     public List<GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail> secretDetails() {

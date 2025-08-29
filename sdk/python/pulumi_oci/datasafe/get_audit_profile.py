@@ -27,7 +27,7 @@ class GetAuditProfileResult:
     """
     A collection of values returned by getAuditProfile.
     """
-    def __init__(__self__, audit_collected_volume=None, audit_profile_id=None, audit_trails=None, change_retention_trigger=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_override_global_retention_setting=None, is_paid_usage_enabled=None, lifecycle_details=None, offline_months=None, online_months=None, state=None, system_tags=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, audit_collected_volume=None, audit_profile_id=None, audit_trails=None, change_retention_trigger=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_override_global_paid_usage=None, is_override_global_retention_setting=None, is_paid_usage_enabled=None, lifecycle_details=None, offline_months=None, offline_months_source=None, online_months=None, online_months_source=None, paid_usage_source=None, state=None, system_tags=None, target_id=None, target_type=None, time_created=None, time_updated=None):
         if audit_collected_volume and not isinstance(audit_collected_volume, str):
             raise TypeError("Expected argument 'audit_collected_volume' to be a str")
         pulumi.set(__self__, "audit_collected_volume", audit_collected_volume)
@@ -58,6 +58,9 @@ class GetAuditProfileResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_override_global_paid_usage and not isinstance(is_override_global_paid_usage, bool):
+            raise TypeError("Expected argument 'is_override_global_paid_usage' to be a bool")
+        pulumi.set(__self__, "is_override_global_paid_usage", is_override_global_paid_usage)
         if is_override_global_retention_setting and not isinstance(is_override_global_retention_setting, bool):
             raise TypeError("Expected argument 'is_override_global_retention_setting' to be a bool")
         pulumi.set(__self__, "is_override_global_retention_setting", is_override_global_retention_setting)
@@ -70,9 +73,18 @@ class GetAuditProfileResult:
         if offline_months and not isinstance(offline_months, int):
             raise TypeError("Expected argument 'offline_months' to be a int")
         pulumi.set(__self__, "offline_months", offline_months)
+        if offline_months_source and not isinstance(offline_months_source, str):
+            raise TypeError("Expected argument 'offline_months_source' to be a str")
+        pulumi.set(__self__, "offline_months_source", offline_months_source)
         if online_months and not isinstance(online_months, int):
             raise TypeError("Expected argument 'online_months' to be a int")
         pulumi.set(__self__, "online_months", online_months)
+        if online_months_source and not isinstance(online_months_source, str):
+            raise TypeError("Expected argument 'online_months_source' to be a str")
+        pulumi.set(__self__, "online_months_source", online_months_source)
+        if paid_usage_source and not isinstance(paid_usage_source, str):
+            raise TypeError("Expected argument 'paid_usage_source' to be a str")
+        pulumi.set(__self__, "paid_usage_source", paid_usage_source)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -82,6 +94,9 @@ class GetAuditProfileResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -93,7 +108,7 @@ class GetAuditProfileResult:
     @pulumi.getter(name="auditCollectedVolume")
     def audit_collected_volume(self) -> _builtins.str:
         """
-        Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         """
         return pulumi.get(self, "audit_collected_volume")
 
@@ -109,7 +124,7 @@ class GetAuditProfileResult:
     @pulumi.getter(name="auditTrails")
     def audit_trails(self) -> Sequence['outputs.GetAuditProfileAuditTrailResult']:
         """
-        Indicates the list of available audit trails on the target.
+        Contains the list of available audit trails on the target database.
         """
         return pulumi.get(self, "audit_trails")
 
@@ -122,7 +137,7 @@ class GetAuditProfileResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID of the compartment that contains the audit.
+        The OCID of the compartment that contains the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -167,10 +182,18 @@ class GetAuditProfileResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isOverrideGlobalPaidUsage")
+    def is_override_global_paid_usage(self) -> _builtins.bool:
+        """
+        Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        """
+        return pulumi.get(self, "is_override_global_paid_usage")
+
+    @_builtins.property
     @pulumi.getter(name="isOverrideGlobalRetentionSetting")
     def is_override_global_retention_setting(self) -> _builtins.bool:
         """
-        Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         """
         return pulumi.get(self, "is_override_global_retention_setting")
 
@@ -194,17 +217,41 @@ class GetAuditProfileResult:
     @pulumi.getter(name="offlineMonths")
     def offline_months(self) -> _builtins.int:
         """
-        Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         """
         return pulumi.get(self, "offline_months")
+
+    @_builtins.property
+    @pulumi.getter(name="offlineMonthsSource")
+    def offline_months_source(self) -> _builtins.str:
+        """
+        The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "offline_months_source")
 
     @_builtins.property
     @pulumi.getter(name="onlineMonths")
     def online_months(self) -> _builtins.int:
         """
-        Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
         """
         return pulumi.get(self, "online_months")
+
+    @_builtins.property
+    @pulumi.getter(name="onlineMonthsSource")
+    def online_months_source(self) -> _builtins.str:
+        """
+        The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "online_months_source")
+
+    @_builtins.property
+    @pulumi.getter(name="paidUsageSource")
+    def paid_usage_source(self) -> _builtins.str:
+        """
+        The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        """
+        return pulumi.get(self, "paid_usage_source")
 
     @_builtins.property
     @pulumi.getter
@@ -226,9 +273,17 @@ class GetAuditProfileResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        The resource type that is represented by the audit profile.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -263,14 +318,19 @@ class AwaitableGetAuditProfileResult(GetAuditProfileResult):
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_override_global_paid_usage=self.is_override_global_paid_usage,
             is_override_global_retention_setting=self.is_override_global_retention_setting,
             is_paid_usage_enabled=self.is_paid_usage_enabled,
             lifecycle_details=self.lifecycle_details,
             offline_months=self.offline_months,
+            offline_months_source=self.offline_months_source,
             online_months=self.online_months,
+            online_months_source=self.online_months_source,
+            paid_usage_source=self.paid_usage_source,
             state=self.state,
             system_tags=self.system_tags,
             target_id=self.target_id,
+            target_type=self.target_type,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -310,14 +370,19 @@ def get_audit_profile(audit_profile_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_override_global_paid_usage=pulumi.get(__ret__, 'is_override_global_paid_usage'),
         is_override_global_retention_setting=pulumi.get(__ret__, 'is_override_global_retention_setting'),
         is_paid_usage_enabled=pulumi.get(__ret__, 'is_paid_usage_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         offline_months=pulumi.get(__ret__, 'offline_months'),
+        offline_months_source=pulumi.get(__ret__, 'offline_months_source'),
         online_months=pulumi.get(__ret__, 'online_months'),
+        online_months_source=pulumi.get(__ret__, 'online_months_source'),
+        paid_usage_source=pulumi.get(__ret__, 'paid_usage_source'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -354,13 +419,18 @@ def get_audit_profile_output(audit_profile_id: Optional[pulumi.Input[_builtins.s
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        is_override_global_paid_usage=pulumi.get(__response__, 'is_override_global_paid_usage'),
         is_override_global_retention_setting=pulumi.get(__response__, 'is_override_global_retention_setting'),
         is_paid_usage_enabled=pulumi.get(__response__, 'is_paid_usage_enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         offline_months=pulumi.get(__response__, 'offline_months'),
+        offline_months_source=pulumi.get(__response__, 'offline_months_source'),
         online_months=pulumi.get(__response__, 'online_months'),
+        online_months_source=pulumi.get(__response__, 'online_months_source'),
+        paid_usage_source=pulumi.get(__response__, 'paid_usage_source'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_updated=pulumi.get(__response__, 'time_updated')))

@@ -40,7 +40,10 @@ import * as utilities from "../utilities";
  *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: securityAssessmentTargetType,
+ *     templateAssessmentId: testTemplateAssessment.id,
  *     timeCreatedGreaterThanOrEqualTo: securityAssessmentTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: securityAssessmentTimeCreatedLessThan,
  *     triggeredBy: securityAssessmentTriggeredBy,
@@ -60,7 +63,10 @@ export function getSecurityAssessments(args: GetSecurityAssessmentsArgs, opts?: 
         "isScheduleAssessment": args.isScheduleAssessment,
         "scheduleAssessmentId": args.scheduleAssessmentId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
+        "templateAssessmentId": args.templateAssessmentId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
         "triggeredBy": args.triggeredBy,
@@ -106,9 +112,21 @@ export interface GetSecurityAssessmentsArgs {
      */
     state?: string;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    targetType?: string;
+    /**
+     * The OCID of the security assessment of type TEMPLATE.
+     */
+    templateAssessmentId?: string;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *
@@ -164,7 +182,19 @@ export interface GetSecurityAssessmentsResult {
      * The current state of the security assessment.
      */
     readonly state?: string;
+    /**
+     * The OCID of the target database group that the group assessment is created for.
+     */
+    readonly targetDatabaseGroupId?: string;
     readonly targetId?: string;
+    /**
+     * Indicates whether the security assessment is for a target database or a target database group.
+     */
+    readonly targetType?: string;
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+     */
+    readonly templateAssessmentId?: string;
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
     /**
@@ -172,7 +202,7 @@ export interface GetSecurityAssessmentsResult {
      */
     readonly triggeredBy?: string;
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment. Possible values are:
      */
     readonly type?: string;
 }
@@ -210,7 +240,10 @@ export interface GetSecurityAssessmentsResult {
  *     isScheduleAssessment: securityAssessmentIsScheduleAssessment,
  *     scheduleAssessmentId: testScheduleAssessment.id,
  *     state: securityAssessmentState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: securityAssessmentTargetType,
+ *     templateAssessmentId: testTemplateAssessment.id,
  *     timeCreatedGreaterThanOrEqualTo: securityAssessmentTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: securityAssessmentTimeCreatedLessThan,
  *     triggeredBy: securityAssessmentTriggeredBy,
@@ -230,7 +263,10 @@ export function getSecurityAssessmentsOutput(args: GetSecurityAssessmentsOutputA
         "isScheduleAssessment": args.isScheduleAssessment,
         "scheduleAssessmentId": args.scheduleAssessmentId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
+        "templateAssessmentId": args.templateAssessmentId,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
         "triggeredBy": args.triggeredBy,
@@ -276,9 +312,21 @@ export interface GetSecurityAssessmentsOutputArgs {
      */
     state?: pulumi.Input<string>;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    targetType?: pulumi.Input<string>;
+    /**
+     * The OCID of the security assessment of type TEMPLATE.
+     */
+    templateAssessmentId?: pulumi.Input<string>;
     /**
      * A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
      *

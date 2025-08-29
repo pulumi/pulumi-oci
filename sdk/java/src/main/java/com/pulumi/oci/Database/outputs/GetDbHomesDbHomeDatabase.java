@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetDbHomesDbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.GetDbHomesDbHomeDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail;
+import com.pulumi.oci.Database.outputs.GetDbHomesDbHomeDatabaseStorageSizeDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +77,7 @@ public final class GetDbHomesDbHomeDatabase {
      * 
      */
     private String state;
+    private List<GetDbHomesDbHomeDatabaseStorageSizeDetail> storageSizeDetails;
     private String tdeWalletPassword;
     /**
      * @return The date and time the Database Home was created.
@@ -197,6 +199,9 @@ public final class GetDbHomesDbHomeDatabase {
     public String state() {
         return this.state;
     }
+    public List<GetDbHomesDbHomeDatabaseStorageSizeDetail> storageSizeDetails() {
+        return this.storageSizeDetails;
+    }
     public String tdeWalletPassword() {
         return this.tdeWalletPassword;
     }
@@ -248,6 +253,7 @@ public final class GetDbHomesDbHomeDatabase {
         private List<String> pluggableDatabases;
         private String sidPrefix;
         private String state;
+        private List<GetDbHomesDbHomeDatabaseStorageSizeDetail> storageSizeDetails;
         private String tdeWalletPassword;
         private String timeCreated;
         private String timeStampForPointInTimeRecovery;
@@ -280,6 +286,7 @@ public final class GetDbHomesDbHomeDatabase {
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
+    	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
@@ -502,6 +509,17 @@ public final class GetDbHomesDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSizeDetails(List<GetDbHomesDbHomeDatabaseStorageSizeDetail> storageSizeDetails) {
+            if (storageSizeDetails == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "storageSizeDetails");
+            }
+            this.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+        public Builder storageSizeDetails(GetDbHomesDbHomeDatabaseStorageSizeDetail... storageSizeDetails) {
+            return storageSizeDetails(List.of(storageSizeDetails));
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(String tdeWalletPassword) {
             if (tdeWalletPassword == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "tdeWalletPassword");
@@ -560,6 +578,7 @@ public final class GetDbHomesDbHomeDatabase {
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
+            _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;

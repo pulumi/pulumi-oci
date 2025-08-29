@@ -35,6 +35,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
         ///         DisplayName = auditArchiveRetrievalDisplayName,
         ///         State = auditArchiveRetrievalState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
         ///     });
@@ -69,6 +70,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
         ///         DisplayName = auditArchiveRetrievalDisplayName,
         ///         State = auditArchiveRetrievalState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
         ///     });
@@ -103,6 +105,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = auditArchiveRetrievalCompartmentIdInSubtree,
         ///         DisplayName = auditArchiveRetrievalDisplayName,
         ///         State = auditArchiveRetrievalState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///         TimeOfExpiry = auditArchiveRetrievalTimeOfExpiry,
         ///     });
@@ -160,6 +163,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
@@ -226,6 +235,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// The OCID of the target associated with the archive retrieval.
         /// </summary>
         [Input("targetId")]
@@ -271,6 +286,7 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the archive retrieval.
         /// </summary>
         public readonly string? State;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target associated with the archive retrieval.
         /// </summary>
@@ -300,6 +316,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId,
 
             string? timeOfExpiry)
@@ -313,6 +331,7 @@ namespace Pulumi.Oci.DataSafe
             Filters = filters;
             Id = id;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TimeOfExpiry = timeOfExpiry;
         }

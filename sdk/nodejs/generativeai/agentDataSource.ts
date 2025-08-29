@@ -9,38 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **CreateDataSource**
- *
  * Creates a data source.
- *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDataSource = new oci.generativeai.AgentDataSource("test_data_source", {
- *     compartmentId: compartmentId,
- *     dataSourceConfig: {
- *         dataSourceConfigType: dataSourceDataSourceConfigDataSourceConfigType,
- *         objectStoragePrefixes: [{
- *             bucket: dataSourceDataSourceConfigObjectStoragePrefixesBucket,
- *             namespace: dataSourceDataSourceConfigObjectStoragePrefixesNamespace,
- *             prefix: dataSourceDataSourceConfigObjectStoragePrefixesPrefix,
- *         }],
- *     },
- *     knowledgeBaseId: testKnowledgeBase.id,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: dataSourceDescription,
- *     displayName: dataSourceDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     metadata: dataSourceMetadata,
- * });
- * ```
  *
  * ## Import
  *
@@ -83,9 +52,7 @@ export class AgentDataSource extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) **DataSourceConfig**
-     *
-     * The details of data source.
+     * (Updatable) The details of data source.
      */
     public readonly dataSourceConfig!: pulumi.Output<outputs.GenerativeAi.AgentDataSourceDataSourceConfig>;
     /**
@@ -202,9 +169,7 @@ export interface AgentDataSourceState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) **DataSourceConfig**
-     *
-     * The details of data source.
+     * (Updatable) The details of data source.
      */
     dataSourceConfig?: pulumi.Input<inputs.GenerativeAi.AgentDataSourceDataSourceConfig>;
     /**
@@ -266,9 +231,7 @@ export interface AgentDataSourceArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) **DataSourceConfig**
-     *
-     * The details of data source.
+     * (Updatable) The details of data source.
      */
     dataSourceConfig: pulumi.Input<inputs.GenerativeAi.AgentDataSourceDataSourceConfig>;
     /**

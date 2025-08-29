@@ -28,6 +28,11 @@ public final class GetDeploymentsResult {
      */
     private List<GetDeploymentsDeploymentCollection> deploymentCollections;
     /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    private @Nullable String deploymentType;
+    /**
      * @return An object&#39;s Display Name.
      * 
      */
@@ -75,6 +80,13 @@ public final class GetDeploymentsResult {
      */
     public List<GetDeploymentsDeploymentCollection> deploymentCollections() {
         return this.deploymentCollections;
+    }
+    /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
     }
     /**
      * @return An object&#39;s Display Name.
@@ -131,6 +143,7 @@ public final class GetDeploymentsResult {
         private @Nullable String assignedConnectionId;
         private String compartmentId;
         private List<GetDeploymentsDeploymentCollection> deploymentCollections;
+        private @Nullable String deploymentType;
         private @Nullable String displayName;
         private @Nullable List<GetDeploymentsFilter> filters;
         private @Nullable String fqdn;
@@ -145,6 +158,7 @@ public final class GetDeploymentsResult {
     	      this.assignedConnectionId = defaults.assignedConnectionId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.deploymentCollections = defaults.deploymentCollections;
+    	      this.deploymentType = defaults.deploymentType;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.fqdn = defaults.fqdn;
@@ -184,6 +198,12 @@ public final class GetDeploymentsResult {
         }
         public Builder deploymentCollections(GetDeploymentsDeploymentCollection... deploymentCollections) {
             return deploymentCollections(List.of(deploymentCollections));
+        }
+        @CustomType.Setter
+        public Builder deploymentType(@Nullable String deploymentType) {
+
+            this.deploymentType = deploymentType;
+            return this;
         }
         @CustomType.Setter
         public Builder displayName(@Nullable String displayName) {
@@ -238,6 +258,7 @@ public final class GetDeploymentsResult {
             _resultValue.assignedConnectionId = assignedConnectionId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.deploymentCollections = deploymentCollections;
+            _resultValue.deploymentType = deploymentType;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.fqdn = fqdn;

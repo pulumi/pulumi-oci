@@ -47,6 +47,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = securityPolicyCompartmentIdInSubtree,
         ///         DisplayName = securityPolicyDisplayName,
         ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         SecurityPolicyType = securityPolicySecurityPolicyType,
         ///         State = securityPolicyState,
         ///     });
         /// 
@@ -92,6 +93,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = securityPolicyCompartmentIdInSubtree,
         ///         DisplayName = securityPolicyDisplayName,
         ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         SecurityPolicyType = securityPolicySecurityPolicyType,
         ///         State = securityPolicyState,
         ///     });
         /// 
@@ -137,6 +139,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = securityPolicyCompartmentIdInSubtree,
         ///         DisplayName = securityPolicyDisplayName,
         ///         SecurityPolicyId = testSecurityPolicy.Id,
+        ///         SecurityPolicyType = securityPolicySecurityPolicyType,
         ///         State = securityPolicyState,
         ///     });
         /// 
@@ -187,6 +190,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("securityPolicyId")]
         public string? SecurityPolicyId { get; set; }
+
+        /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        [Input("securityPolicyType")]
+        public string? SecurityPolicyType { get; set; }
 
         /// <summary>
         /// The current state of the security policy.
@@ -241,6 +250,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? SecurityPolicyId { get; set; }
 
         /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        [Input("securityPolicyType")]
+        public Input<string>? SecurityPolicyType { get; set; }
+
+        /// <summary>
         /// The current state of the security policy.
         /// </summary>
         [Input("state")]
@@ -277,6 +292,10 @@ namespace Pulumi.Oci.DataSafe
         public readonly ImmutableArray<Outputs.GetSecurityPoliciesSecurityPolicyCollectionResult> SecurityPolicyCollections;
         public readonly string? SecurityPolicyId;
         /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        public readonly string? SecurityPolicyType;
+        /// <summary>
         /// The current state of the security policy.
         /// </summary>
         public readonly string? State;
@@ -299,6 +318,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? securityPolicyId,
 
+            string? securityPolicyType,
+
             string? state)
         {
             AccessLevel = accessLevel;
@@ -309,6 +330,7 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             SecurityPolicyCollections = securityPolicyCollections;
             SecurityPolicyId = securityPolicyId;
+            SecurityPolicyType = securityPolicyType;
             State = state;
         }
     }

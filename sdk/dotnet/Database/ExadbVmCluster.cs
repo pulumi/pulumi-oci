@@ -73,6 +73,7 @@ namespace Pulumi.Oci.Database
     ///         ScanListenerPortTcp = exadbVmClusterScanListenerPortTcp,
     ///         ScanListenerPortTcpSsl = exadbVmClusterScanListenerPortTcpSsl,
     ///         SecurityAttributes = exadbVmClusterSecurityAttributes,
+    ///         ShapeAttribute = exadbVmClusterShapeAttribute,
     ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = exadbVmClusterSystemVersion,
     ///         TimeZone = exadbVmClusterTimeZone,
@@ -290,6 +291,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        /// </summary>
+        [Output("shapeAttribute")]
+        public Output<string> ShapeAttribute { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
@@ -575,6 +582,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
+
+        /// <summary>
+        /// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        /// </summary>
+        [Input("shapeAttribute")]
+        public Input<string>? ShapeAttribute { get; set; }
 
         [Input("sshPublicKeys", required: true)]
         private InputList<string>? _sshPublicKeys;
@@ -870,6 +883,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
+
+        /// <summary>
+        /// The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        /// </summary>
+        [Input("shapeAttribute")]
+        public Input<string>? ShapeAttribute { get; set; }
 
         [Input("sshPublicKeys")]
         private InputList<string>? _sshPublicKeys;

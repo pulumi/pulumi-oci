@@ -31,6 +31,8 @@ __all__ = [
     'AuditPolicyManagementAuditSpecificationArgsDict',
     'AuditProfileAuditTrailArgs',
     'AuditProfileAuditTrailArgsDict',
+    'AuditProfileManagementAuditTrailArgs',
+    'AuditProfileManagementAuditTrailArgsDict',
     'CalculateAuditVolumeAvailableAvailableAuditVolumeArgs',
     'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict',
     'CalculateAuditVolumeCollectedCollectedAuditVolumeArgs',
@@ -61,6 +63,16 @@ __all__ = [
     'ReportDefinitionColumnSortingArgsDict',
     'ReportDefinitionSummaryArgs',
     'ReportDefinitionSummaryArgsDict',
+    'SecurityAssessmentCheckArgs',
+    'SecurityAssessmentCheckArgsDict',
+    'SecurityAssessmentCheckPatchOperationArgs',
+    'SecurityAssessmentCheckPatchOperationArgsDict',
+    'SecurityAssessmentCheckReferenceArgs',
+    'SecurityAssessmentCheckReferenceArgsDict',
+    'SecurityAssessmentFindingPatchOperationArgs',
+    'SecurityAssessmentFindingPatchOperationArgsDict',
+    'SecurityAssessmentFindingReferenceArgs',
+    'SecurityAssessmentFindingReferenceArgsDict',
     'SecurityAssessmentStatisticArgs',
     'SecurityAssessmentStatisticArgsDict',
     'SecurityAssessmentStatisticAdvisoryArgs',
@@ -77,6 +89,10 @@ __all__ = [
     'SecurityAssessmentStatisticMediumRiskArgsDict',
     'SecurityAssessmentStatisticPassArgs',
     'SecurityAssessmentStatisticPassArgsDict',
+    'SecurityPolicyConfigFirewallConfigArgs',
+    'SecurityPolicyConfigFirewallConfigArgsDict',
+    'SecurityPolicyConfigUnifiedAuditPolicyConfigArgs',
+    'SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict',
     'SensitiveDataModelReferentialRelationChildArgs',
     'SensitiveDataModelReferentialRelationChildArgsDict',
     'SensitiveDataModelReferentialRelationParentArgs',
@@ -93,6 +109,14 @@ __all__ = [
     'TargetDatabaseCredentialsArgsDict',
     'TargetDatabaseDatabaseDetailsArgs',
     'TargetDatabaseDatabaseDetailsArgsDict',
+    'TargetDatabaseGroupMatchingCriteriaArgs',
+    'TargetDatabaseGroupMatchingCriteriaArgsDict',
+    'TargetDatabaseGroupMatchingCriteriaExcludeArgs',
+    'TargetDatabaseGroupMatchingCriteriaExcludeArgsDict',
+    'TargetDatabaseGroupMatchingCriteriaIncludeArgs',
+    'TargetDatabaseGroupMatchingCriteriaIncludeArgsDict',
+    'TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs',
+    'TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict',
     'TargetDatabasePeerTargetDatabaseArgs',
     'TargetDatabasePeerTargetDatabaseArgsDict',
     'TargetDatabasePeerTargetDatabaseDatabaseDetailArgs',
@@ -109,6 +133,8 @@ __all__ = [
     'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict',
     'TargetDatabaseTlsConfigArgs',
     'TargetDatabaseTlsConfigArgsDict',
+    'UnifiedAuditPolicyConditionArgs',
+    'UnifiedAuditPolicyConditionArgsDict',
     'UserAssessmentIgnoredTargetArgs',
     'UserAssessmentIgnoredTargetArgsDict',
     'GetAlertPoliciesFilterArgs',
@@ -117,6 +143,10 @@ __all__ = [
     'GetAlertPolicyRulesFilterArgsDict',
     'GetAlertsFilterArgs',
     'GetAlertsFilterArgsDict',
+    'GetAttributeSetAssociatedResourcesFilterArgs',
+    'GetAttributeSetAssociatedResourcesFilterArgsDict',
+    'GetAttributeSetsFilterArgs',
+    'GetAttributeSetsFilterArgsDict',
     'GetAuditArchiveRetrievalsFilterArgs',
     'GetAuditArchiveRetrievalsFilterArgsDict',
     'GetAuditEventsFilterArgs',
@@ -127,6 +157,8 @@ __all__ = [
     'GetAuditProfileAvailableAuditVolumesFilterArgsDict',
     'GetAuditProfileCollectedAuditVolumesFilterArgs',
     'GetAuditProfileCollectedAuditVolumesFilterArgsDict',
+    'GetAuditProfileTargetOverridesFilterArgs',
+    'GetAuditProfileTargetOverridesFilterArgsDict',
     'GetAuditProfilesFilterArgs',
     'GetAuditProfilesFilterArgsDict',
     'GetAuditTrailsFilterArgs',
@@ -175,6 +207,8 @@ __all__ = [
     'GetSdmMaskingPolicyDifferenceDifferenceColumnsFilterArgsDict',
     'GetSdmMaskingPolicyDifferencesFilterArgs',
     'GetSdmMaskingPolicyDifferencesFilterArgsDict',
+    'GetSecurityAssessmentChecksFilterArgs',
+    'GetSecurityAssessmentChecksFilterArgsDict',
     'GetSecurityAssessmentFindingAnalyticsFilterArgs',
     'GetSecurityAssessmentFindingAnalyticsFilterArgsDict',
     'GetSecurityAssessmentFindingFilterArgs',
@@ -187,10 +221,16 @@ __all__ = [
     'GetSecurityAssessmentSecurityFeatureAnalyticsFilterArgsDict',
     'GetSecurityAssessmentSecurityFeaturesFilterArgs',
     'GetSecurityAssessmentSecurityFeaturesFilterArgsDict',
+    'GetSecurityAssessmentTemplateAnalyticsFilterArgs',
+    'GetSecurityAssessmentTemplateAnalyticsFilterArgsDict',
+    'GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs',
+    'GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict',
     'GetSecurityAssessmentsFilterArgs',
     'GetSecurityAssessmentsFilterArgsDict',
     'GetSecurityPoliciesFilterArgs',
     'GetSecurityPoliciesFilterArgsDict',
+    'GetSecurityPolicyConfigsFilterArgs',
+    'GetSecurityPolicyConfigsFilterArgsDict',
     'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgs',
     'GetSecurityPolicyDeploymentSecurityPolicyEntryStatesFilterArgsDict',
     'GetSecurityPolicyDeploymentsFilterArgs',
@@ -245,6 +285,8 @@ __all__ = [
     'GetSqlFirewallViolationsFilterArgsDict',
     'GetTargetAlertPolicyAssociationsFilterArgs',
     'GetTargetAlertPolicyAssociationsFilterArgsDict',
+    'GetTargetDatabaseGroupsFilterArgs',
+    'GetTargetDatabaseGroupsFilterArgsDict',
     'GetTargetDatabasePeerTargetDatabasesFilterArgs',
     'GetTargetDatabasePeerTargetDatabasesFilterArgsDict',
     'GetTargetDatabaseRoleFilterArgs',
@@ -259,6 +301,10 @@ __all__ = [
     'GetTargetDatabasesSchemasFilterArgsDict',
     'GetTargetDatabasesTablesFilterArgs',
     'GetTargetDatabasesTablesFilterArgsDict',
+    'GetUnifiedAuditPoliciesFilterArgs',
+    'GetUnifiedAuditPoliciesFilterArgsDict',
+    'GetUnifiedAuditPolicyDefinitionsFilterArgs',
+    'GetUnifiedAuditPolicyDefinitionsFilterArgsDict',
     'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgs',
     'GetUserAssessmentPasswordExpiryDateAnalyticsFilterArgsDict',
     'GetUserAssessmentProfileAnalyticsFilterArgs',
@@ -1220,11 +1266,15 @@ if not MYPY:
         """
         audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the audit.
+        The OCID of the  parent audit.
+        """
+        can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         """
         compartment_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        (Updatable) The OCID of the compartment that contains the audit.
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
         """
@@ -1284,7 +1334,7 @@ if not MYPY:
         """
         target_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         time_created: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1318,6 +1368,7 @@ class AuditProfileAuditTrailArgs:
     def __init__(__self__, *,
                  audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
                  audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1342,8 +1393,9 @@ class AuditProfileAuditTrailArgs:
                  work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
-        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the audit.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the audit.
+        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
@@ -1358,7 +1410,7 @@ class AuditProfileAuditTrailArgs:
         :param pulumi.Input[_builtins.str] state: The current state of the audit profile.
         :param pulumi.Input[_builtins.str] status: The current sub-state of the audit trail.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the Data Safe target for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
         :param pulumi.Input[_builtins.str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
@@ -1370,6 +1422,8 @@ class AuditProfileAuditTrailArgs:
             pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
         if audit_profile_id is not None:
             pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        if can_update_last_archive_time_on_target is not None:
+            pulumi.set(__self__, "can_update_last_archive_time_on_target", can_update_last_archive_time_on_target)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -1431,7 +1485,7 @@ class AuditProfileAuditTrailArgs:
     @pulumi.getter(name="auditProfileId")
     def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the audit.
+        The OCID of the  parent audit.
         """
         return pulumi.get(self, "audit_profile_id")
 
@@ -1440,10 +1494,22 @@ class AuditProfileAuditTrailArgs:
         pulumi.set(self, "audit_profile_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "can_update_last_archive_time_on_target", value)
+
+    @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment that contains the audit.
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1623,7 +1689,519 @@ class AuditProfileAuditTrailArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the Data Safe target for which the audit profile is created.
+        The OCID of the target database or target database group for which the audit profile is created.
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the audit profile was created, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastCollected")
+    def time_last_collected(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_last_collected")
+
+    @time_last_collected.setter
+    def time_last_collected(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_last_collected", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the audit profile was updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trailLocation")
+    def trail_location(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        """
+        return pulumi.get(self, "trail_location")
+
+    @trail_location.setter
+    def trail_location(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "trail_location", value)
+
+    @_builtins.property
+    @pulumi.getter(name="trailSource")
+    def trail_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The underlying source of unified audit trail.
+        """
+        return pulumi.get(self, "trail_source")
+
+    @trail_source.setter
+    def trail_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "trail_source", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the workrequest for audit trail which collects audit records.
+        """
+        return pulumi.get(self, "work_request_id")
+
+    @work_request_id.setter
+    def work_request_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "work_request_id", value)
+
+
+if not MYPY:
+    class AuditProfileManagementAuditTrailArgsDict(TypedDict):
+        audit_collection_start_time: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+        """
+        audit_profile_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the  parent audit.
+        """
+        can_update_last_archive_time_on_target: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        compartment_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        description: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The description of the audit profile.
+        """
+        display_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the audit profile.
+        """
+        is_auto_purge_enabled: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+        """
+        lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Details about the current state of the audit profile in Data Safe.
+        """
+        peer_target_database_key: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        purge_job_details: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        purge_job_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The current status of the audit trail purge job.
+        """
+        purge_job_time: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        state: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The current state of the audit profile.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The current sub-state of the audit trail.
+        """
+        system_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        target_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the target database or target database group for which the audit profile is created.
+        """
+        time_created: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time the audit profile was created, in the format defined by RFC3339.
+        """
+        time_last_collected: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+        """
+        time_updated: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time the audit profile was updated, in the format defined by RFC3339.
+        """
+        trail_location: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        """
+        trail_source: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The underlying source of unified audit trail.
+        """
+        work_request_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the workrequest for audit trail which collects audit records.
+        """
+elif False:
+    AuditProfileManagementAuditTrailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class AuditProfileManagementAuditTrailArgs:
+    def __init__(__self__, *,
+                 audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
+                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 description: Optional[pulumi.Input[_builtins.str]] = None,
+                 display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 id: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_auto_purge_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
+                 lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 peer_target_database_key: Optional[pulumi.Input[_builtins.int]] = None,
+                 purge_job_details: Optional[pulumi.Input[_builtins.str]] = None,
+                 purge_job_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 purge_job_time: Optional[pulumi.Input[_builtins.str]] = None,
+                 state: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_last_collected: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 trail_location: Optional[pulumi.Input[_builtins.str]] = None,
+                 trail_source: Optional[pulumi.Input[_builtins.str]] = None,
+                 work_request_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment where you want to create the audit profile.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit profile.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.str] id: The OCID of the audit profile.
+        :param pulumi.Input[_builtins.bool] is_auto_purge_enabled: Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+        :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the audit profile in Data Safe.
+        :param pulumi.Input[_builtins.int] peer_target_database_key: The secondary id assigned for the peer database registered with Data Safe.
+        :param pulumi.Input[_builtins.str] purge_job_details: The details of the audit trail purge job that ran on the "purgeJobTime".
+        :param pulumi.Input[_builtins.str] purge_job_status: The current status of the audit trail purge job.
+        :param pulumi.Input[_builtins.str] purge_job_time: The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] state: The current state of the audit profile.
+        :param pulumi.Input[_builtins.str] status: The current sub-state of the audit trail.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group for which the audit profile is created.
+        :param pulumi.Input[_builtins.str] time_created: The date and time the audit profile was created, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] time_last_collected: The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] time_updated: The date and time the audit profile was updated, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] trail_location: An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+        :param pulumi.Input[_builtins.str] trail_source: The underlying source of unified audit trail.
+        :param pulumi.Input[_builtins.str] work_request_id: The OCID of the workrequest for audit trail which collects audit records.
+        """
+        if audit_collection_start_time is not None:
+            pulumi.set(__self__, "audit_collection_start_time", audit_collection_start_time)
+        if audit_profile_id is not None:
+            pulumi.set(__self__, "audit_profile_id", audit_profile_id)
+        if can_update_last_archive_time_on_target is not None:
+            pulumi.set(__self__, "can_update_last_archive_time_on_target", can_update_last_archive_time_on_target)
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if is_auto_purge_enabled is not None:
+            pulumi.set(__self__, "is_auto_purge_enabled", is_auto_purge_enabled)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if peer_target_database_key is not None:
+            pulumi.set(__self__, "peer_target_database_key", peer_target_database_key)
+        if purge_job_details is not None:
+            pulumi.set(__self__, "purge_job_details", purge_job_details)
+        if purge_job_status is not None:
+            pulumi.set(__self__, "purge_job_status", purge_job_status)
+        if purge_job_time is not None:
+            pulumi.set(__self__, "purge_job_time", purge_job_time)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
+        if target_id is not None:
+            pulumi.set(__self__, "target_id", target_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_last_collected is not None:
+            pulumi.set(__self__, "time_last_collected", time_last_collected)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+        if trail_location is not None:
+            pulumi.set(__self__, "trail_location", trail_location)
+        if trail_source is not None:
+            pulumi.set(__self__, "trail_source", trail_source)
+        if work_request_id is not None:
+            pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @_builtins.property
+    @pulumi.getter(name="auditCollectionStartTime")
+    def audit_collection_start_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "audit_collection_start_time")
+
+    @audit_collection_start_time.setter
+    def audit_collection_start_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "audit_collection_start_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="auditProfileId")
+    def audit_profile_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the  parent audit.
+        """
+        return pulumi.get(self, "audit_profile_id")
+
+    @audit_profile_id.setter
+    def audit_profile_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "audit_profile_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "can_update_last_archive_time_on_target", value)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the compartment where you want to create the audit profile.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The description of the audit profile.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the audit profile.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoPurgeEnabled")
+    def is_auto_purge_enabled(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+        """
+        return pulumi.get(self, "is_auto_purge_enabled")
+
+    @is_auto_purge_enabled.setter
+    def is_auto_purge_enabled(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_auto_purge_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Details about the current state of the audit profile in Data Safe.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="peerTargetDatabaseKey")
+    def peer_target_database_key(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The secondary id assigned for the peer database registered with Data Safe.
+        """
+        return pulumi.get(self, "peer_target_database_key")
+
+    @peer_target_database_key.setter
+    def peer_target_database_key(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "peer_target_database_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="purgeJobDetails")
+    def purge_job_details(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The details of the audit trail purge job that ran on the "purgeJobTime".
+        """
+        return pulumi.get(self, "purge_job_details")
+
+    @purge_job_details.setter
+    def purge_job_details(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "purge_job_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="purgeJobStatus")
+    def purge_job_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current status of the audit trail purge job.
+        """
+        return pulumi.get(self, "purge_job_status")
+
+    @purge_job_status.setter
+    def purge_job_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "purge_job_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="purgeJobTime")
+    def purge_job_time(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+        """
+        return pulumi.get(self, "purge_job_time")
+
+    @purge_job_time.setter
+    def purge_job_time(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "purge_job_time", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current state of the audit profile.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current sub-state of the audit trail.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the target database or target database group for which the audit profile is created.
         """
         return pulumi.get(self, "target_id")
 
@@ -3490,9 +4068,17 @@ if not MYPY:
         """
         (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
         """
+        applicable_operators: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) An array of operators that can be supported by column fieldName.
+        """
         data_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) Specifies the data type of the column.
+        """
+        is_virtual: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Specifies if column is virtual and can only be used as column filter.
         """
 elif False:
     ReportDefinitionColumnInfoArgsDict: TypeAlias = Mapping[str, Any]
@@ -3504,20 +4090,28 @@ class ReportDefinitionColumnInfoArgs:
                  display_order: pulumi.Input[_builtins.int],
                  field_name: pulumi.Input[_builtins.str],
                  is_hidden: pulumi.Input[_builtins.bool],
-                 data_type: Optional[pulumi.Input[_builtins.str]] = None):
+                 applicable_operators: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 data_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 is_virtual: Optional[pulumi.Input[_builtins.bool]] = None):
         """
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Name of the column displayed on UI.
         :param pulumi.Input[_builtins.int] display_order: (Updatable) Specifies the display order of the column.
         :param pulumi.Input[_builtins.str] field_name: (Updatable) Specifies the corresponding field name in the data source.
         :param pulumi.Input[_builtins.bool] is_hidden: (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applicable_operators: (Updatable) An array of operators that can be supported by column fieldName.
         :param pulumi.Input[_builtins.str] data_type: (Updatable) Specifies the data type of the column.
+        :param pulumi.Input[_builtins.bool] is_virtual: (Updatable) Specifies if column is virtual and can only be used as column filter.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "display_order", display_order)
         pulumi.set(__self__, "field_name", field_name)
         pulumi.set(__self__, "is_hidden", is_hidden)
+        if applicable_operators is not None:
+            pulumi.set(__self__, "applicable_operators", applicable_operators)
         if data_type is not None:
             pulumi.set(__self__, "data_type", data_type)
+        if is_virtual is not None:
+            pulumi.set(__self__, "is_virtual", is_virtual)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -3568,6 +4162,18 @@ class ReportDefinitionColumnInfoArgs:
         pulumi.set(self, "is_hidden", value)
 
     @_builtins.property
+    @pulumi.getter(name="applicableOperators")
+    def applicable_operators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) An array of operators that can be supported by column fieldName.
+        """
+        return pulumi.get(self, "applicable_operators")
+
+    @applicable_operators.setter
+    def applicable_operators(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "applicable_operators", value)
+
+    @_builtins.property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -3578,6 +4184,18 @@ class ReportDefinitionColumnInfoArgs:
     @data_type.setter
     def data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "data_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isVirtual")
+    def is_virtual(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Specifies if column is virtual and can only be used as column filter.
+        """
+        return pulumi.get(self, "is_virtual")
+
+    @is_virtual.setter
+    def is_virtual(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_virtual", value)
 
 
 if not MYPY:
@@ -3789,6 +4407,480 @@ class ReportDefinitionSummaryArgs:
     @scim_filter.setter
     def scim_filter(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "scim_filter", value)
+
+
+if not MYPY:
+    class SecurityAssessmentCheckArgsDict(TypedDict):
+        category: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The category to which the check belongs to.
+        """
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        A unique identifier for the check.
+        """
+        oneline: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Provides a recommended approach to take to remediate the check reported.
+        """
+        references: NotRequired[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgsDict']]]]
+        """
+        Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+        """
+        remarks: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+        """
+        suggested_severity: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
+        """
+        title: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The short title for the check.
+        """
+elif False:
+    SecurityAssessmentCheckArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityAssessmentCheckArgs:
+    def __init__(__self__, *,
+                 category: Optional[pulumi.Input[_builtins.str]] = None,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 oneline: Optional[pulumi.Input[_builtins.str]] = None,
+                 references: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]] = None,
+                 remarks: Optional[pulumi.Input[_builtins.str]] = None,
+                 suggested_severity: Optional[pulumi.Input[_builtins.str]] = None,
+                 title: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] category: The category to which the check belongs to.
+        :param pulumi.Input[_builtins.str] key: A unique identifier for the check.
+        :param pulumi.Input[_builtins.str] oneline: Provides a recommended approach to take to remediate the check reported.
+        :param pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]] references: Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+        :param pulumi.Input[_builtins.str] remarks: The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+        :param pulumi.Input[_builtins.str] suggested_severity: The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
+        :param pulumi.Input[_builtins.str] title: The short title for the check.
+        """
+        if category is not None:
+            pulumi.set(__self__, "category", category)
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if oneline is not None:
+            pulumi.set(__self__, "oneline", oneline)
+        if references is not None:
+            pulumi.set(__self__, "references", references)
+        if remarks is not None:
+            pulumi.set(__self__, "remarks", remarks)
+        if suggested_severity is not None:
+            pulumi.set(__self__, "suggested_severity", suggested_severity)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @_builtins.property
+    @pulumi.getter
+    def category(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The category to which the check belongs to.
+        """
+        return pulumi.get(self, "category")
+
+    @category.setter
+    def category(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "category", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        A unique identifier for the check.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def oneline(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Provides a recommended approach to take to remediate the check reported.
+        """
+        return pulumi.get(self, "oneline")
+
+    @oneline.setter
+    def oneline(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "oneline", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def references(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]:
+        """
+        Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+        """
+        return pulumi.get(self, "references")
+
+    @references.setter
+    def references(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SecurityAssessmentCheckReferenceArgs']]]]):
+        pulumi.set(self, "references", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def remarks(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+        """
+        return pulumi.get(self, "remarks")
+
+    @remarks.setter
+    def remarks(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "remarks", value)
+
+    @_builtins.property
+    @pulumi.getter(name="suggestedSeverity")
+    def suggested_severity(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
+        """
+        return pulumi.get(self, "suggested_severity")
+
+    @suggested_severity.setter
+    def suggested_severity(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "suggested_severity", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The short title for the check.
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+
+if not MYPY:
+    class SecurityAssessmentCheckPatchOperationArgsDict(TypedDict):
+        operation: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        selection: pulumi.Input[_builtins.str]
+        """
+        (Updatable)
+        """
+        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable)
+        """
+elif False:
+    SecurityAssessmentCheckPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityAssessmentCheckPatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[_builtins.str],
+                 selection: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param pulumi.Input[_builtins.str] selection: (Updatable)
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "selection", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SecurityAssessmentCheckReferenceArgsDict(TypedDict):
+        cis: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from CIS.
+        """
+        gdpr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from GDPR.
+        """
+        obp: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from OBP.
+        """
+        stig: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from STIG.
+        """
+elif False:
+    SecurityAssessmentCheckReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityAssessmentCheckReferenceArgs:
+    def __init__(__self__, *,
+                 cis: Optional[pulumi.Input[_builtins.str]] = None,
+                 gdpr: Optional[pulumi.Input[_builtins.str]] = None,
+                 obp: Optional[pulumi.Input[_builtins.str]] = None,
+                 stig: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cis: Relevant section from CIS.
+        :param pulumi.Input[_builtins.str] gdpr: Relevant section from GDPR.
+        :param pulumi.Input[_builtins.str] obp: Relevant section from OBP.
+        :param pulumi.Input[_builtins.str] stig: Relevant section from STIG.
+        """
+        if cis is not None:
+            pulumi.set(__self__, "cis", cis)
+        if gdpr is not None:
+            pulumi.set(__self__, "gdpr", gdpr)
+        if obp is not None:
+            pulumi.set(__self__, "obp", obp)
+        if stig is not None:
+            pulumi.set(__self__, "stig", stig)
+
+    @_builtins.property
+    @pulumi.getter
+    def cis(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from CIS.
+        """
+        return pulumi.get(self, "cis")
+
+    @cis.setter
+    def cis(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cis", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gdpr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from GDPR.
+        """
+        return pulumi.get(self, "gdpr")
+
+    @gdpr.setter
+    def gdpr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "gdpr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def obp(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
+
+    @obp.setter
+    def obp(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "obp", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def stig(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from STIG.
+        """
+        return pulumi.get(self, "stig")
+
+    @stig.setter
+    def stig(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "stig", value)
+
+
+if not MYPY:
+    class SecurityAssessmentFindingPatchOperationArgsDict(TypedDict):
+        operation: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        selection: pulumi.Input[_builtins.str]
+        """
+        (Updatable)
+        """
+        value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]
+        """
+        (Updatable)
+        """
+elif False:
+    SecurityAssessmentFindingPatchOperationArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityAssessmentFindingPatchOperationArgs:
+    def __init__(__self__, *,
+                 operation: pulumi.Input[_builtins.str],
+                 selection: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[_builtins.str] operation: (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        :param pulumi.Input[_builtins.str] selection: (Updatable)
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] value: (Updatable)
+        """
+        pulumi.set(__self__, "operation", operation)
+        pulumi.set(__self__, "selection", selection)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def operation(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+        """
+        return pulumi.get(self, "operation")
+
+    @operation.setter
+    def operation(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "operation", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def selection(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "selection")
+
+    @selection.setter
+    def selection(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "selection", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable)
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class SecurityAssessmentFindingReferenceArgsDict(TypedDict):
+        cis: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from CIS.
+        """
+        gdpr: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from GDPR.
+        """
+        obp: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from OBP.
+        """
+        stig: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Relevant section from STIG.
+        """
+elif False:
+    SecurityAssessmentFindingReferenceArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityAssessmentFindingReferenceArgs:
+    def __init__(__self__, *,
+                 cis: Optional[pulumi.Input[_builtins.str]] = None,
+                 gdpr: Optional[pulumi.Input[_builtins.str]] = None,
+                 obp: Optional[pulumi.Input[_builtins.str]] = None,
+                 stig: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cis: Relevant section from CIS.
+        :param pulumi.Input[_builtins.str] gdpr: Relevant section from GDPR.
+        :param pulumi.Input[_builtins.str] obp: Relevant section from OBP.
+        :param pulumi.Input[_builtins.str] stig: Relevant section from STIG.
+        """
+        if cis is not None:
+            pulumi.set(__self__, "cis", cis)
+        if gdpr is not None:
+            pulumi.set(__self__, "gdpr", gdpr)
+        if obp is not None:
+            pulumi.set(__self__, "obp", obp)
+        if stig is not None:
+            pulumi.set(__self__, "stig", stig)
+
+    @_builtins.property
+    @pulumi.getter
+    def cis(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from CIS.
+        """
+        return pulumi.get(self, "cis")
+
+    @cis.setter
+    def cis(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cis", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def gdpr(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from GDPR.
+        """
+        return pulumi.get(self, "gdpr")
+
+    @gdpr.setter
+    def gdpr(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "gdpr", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def obp(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
+
+    @obp.setter
+    def obp(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "obp", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def stig(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Relevant section from STIG.
+        """
+        return pulumi.get(self, "stig")
+
+    @stig.setter
+    def stig(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "stig", value)
 
 
 if not MYPY:
@@ -5168,6 +6260,142 @@ class SecurityAssessmentStatisticPassArgs:
 
 
 if not MYPY:
+    class SecurityPolicyConfigFirewallConfigArgsDict(TypedDict):
+        exclude_job: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether the firewall is enabled or disabled.
+        """
+        time_status_updated: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time the firewall configuration was last updated, in the format defined by RFC3339.
+        """
+        violation_log_auto_purge: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
+        """
+elif False:
+    SecurityPolicyConfigFirewallConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityPolicyConfigFirewallConfigArgs:
+    def __init__(__self__, *,
+                 exclude_job: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_status_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 violation_log_auto_purge: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] exclude_job: (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        :param pulumi.Input[_builtins.str] status: (Updatable) Specifies whether the firewall is enabled or disabled.
+        :param pulumi.Input[_builtins.str] time_status_updated: The date and time the firewall configuration was last updated, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] violation_log_auto_purge: (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
+        """
+        if exclude_job is not None:
+            pulumi.set(__self__, "exclude_job", exclude_job)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_status_updated is not None:
+            pulumi.set(__self__, "time_status_updated", time_status_updated)
+        if violation_log_auto_purge is not None:
+            pulumi.set(__self__, "violation_log_auto_purge", violation_log_auto_purge)
+
+    @_builtins.property
+    @pulumi.getter(name="excludeJob")
+    def exclude_job(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+        """
+        return pulumi.get(self, "exclude_job")
+
+    @exclude_job.setter
+    def exclude_job(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "exclude_job", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether the firewall is enabled or disabled.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeStatusUpdated")
+    def time_status_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the firewall configuration was last updated, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_status_updated")
+
+    @time_status_updated.setter
+    def time_status_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_status_updated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="violationLogAutoPurge")
+    def violation_log_auto_purge(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
+        """
+        return pulumi.get(self, "violation_log_auto_purge")
+
+    @violation_log_auto_purge.setter
+    def violation_log_auto_purge(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "violation_log_auto_purge", value)
+
+
+if not MYPY:
+    class SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict(TypedDict):
+        exclude_datasafe_user: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    SecurityPolicyConfigUnifiedAuditPolicyConfigArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SecurityPolicyConfigUnifiedAuditPolicyConfigArgs:
+    def __init__(__self__, *,
+                 exclude_datasafe_user: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] exclude_datasafe_user: (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if exclude_datasafe_user is not None:
+            pulumi.set(__self__, "exclude_datasafe_user", exclude_datasafe_user)
+
+    @_builtins.property
+    @pulumi.getter(name="excludeDatasafeUser")
+    def exclude_datasafe_user(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "exclude_datasafe_user")
+
+    @exclude_datasafe_user.setter
+    def exclude_datasafe_user(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "exclude_datasafe_user", value)
+
+
+if not MYPY:
     class SensitiveDataModelReferentialRelationChildArgsDict(TypedDict):
         app_name: pulumi.Input[_builtins.str]
         """
@@ -5730,6 +6958,10 @@ if not MYPY:
         """
         (Updatable) The port number of the database listener.
         """
+        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
         service_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The service name of the database registered as target database.
@@ -5751,6 +6983,7 @@ class TargetDatabaseDatabaseDetailsArgs:
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -5761,6 +6994,7 @@ class TargetDatabaseDatabaseDetailsArgs:
         :param pulumi.Input[_builtins.str] instance_id: (Updatable) The OCID of the compute instance on which the database is running.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param pulumi.Input[_builtins.int] listener_port: (Updatable) The port number of the database listener.
+        :param pulumi.Input[_builtins.str] pluggable_database_id: (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         :param pulumi.Input[_builtins.str] service_name: (Updatable) The service name of the database registered as target database.
         :param pulumi.Input[_builtins.str] vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
@@ -5776,6 +7010,8 @@ class TargetDatabaseDatabaseDetailsArgs:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if pluggable_database_id is not None:
+            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
         if vm_cluster_id is not None:
@@ -5866,6 +7102,18 @@ class TargetDatabaseDatabaseDetailsArgs:
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="pluggableDatabaseId")
+    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "pluggable_database_id")
+
+    @pluggable_database_id.setter
+    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pluggable_database_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -5888,6 +7136,243 @@ class TargetDatabaseDatabaseDetailsArgs:
     @vm_cluster_id.setter
     def vm_cluster_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vm_cluster_id", value)
+
+
+if not MYPY:
+    class TargetDatabaseGroupMatchingCriteriaArgsDict(TypedDict):
+        include: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgsDict']
+        """
+        (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        """
+        exclude: NotRequired[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgsDict']]
+        """
+        (Updatable) Criteria to exclude certain target databases from the target database group.
+        """
+elif False:
+    TargetDatabaseGroupMatchingCriteriaArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetDatabaseGroupMatchingCriteriaArgs:
+    def __init__(__self__, *,
+                 include: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs'],
+                 exclude: Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']] = None):
+        """
+        :param pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs'] include: (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        :param pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs'] exclude: (Updatable) Criteria to exclude certain target databases from the target database group.
+        """
+        pulumi.set(__self__, "include", include)
+        if exclude is not None:
+            pulumi.set(__self__, "exclude", exclude)
+
+    @_builtins.property
+    @pulumi.getter
+    def include(self) -> pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs']:
+        """
+        (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+        """
+        return pulumi.get(self, "include")
+
+    @include.setter
+    def include(self, value: pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeArgs']):
+        pulumi.set(self, "include", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def exclude(self) -> Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]:
+        """
+        (Updatable) Criteria to exclude certain target databases from the target database group.
+        """
+        return pulumi.get(self, "exclude")
+
+    @exclude.setter
+    def exclude(self, value: Optional[pulumi.Input['TargetDatabaseGroupMatchingCriteriaExcludeArgs']]):
+        pulumi.set(self, "exclude", value)
+
+
+if not MYPY:
+    class TargetDatabaseGroupMatchingCriteriaExcludeArgsDict(TypedDict):
+        target_database_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+        """
+        (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
+        """
+elif False:
+    TargetDatabaseGroupMatchingCriteriaExcludeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetDatabaseGroupMatchingCriteriaExcludeArgs:
+    def __init__(__self__, *,
+                 target_database_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_database_ids: (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
+        """
+        pulumi.set(__self__, "target_database_ids", target_database_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseIds")
+    def target_database_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
+        """
+        return pulumi.get(self, "target_database_ids")
+
+    @target_database_ids.setter
+    def target_database_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "target_database_ids", value)
+
+
+if not MYPY:
+    class TargetDatabaseGroupMatchingCriteriaIncludeArgsDict(TypedDict):
+        compartments: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict']]]]
+        """
+        (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+        """
+        defined_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        freeform_tags: NotRequired[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        target_database_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) The list of target database OCIDs to be included in the target database group.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+elif False:
+    TargetDatabaseGroupMatchingCriteriaIncludeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetDatabaseGroupMatchingCriteriaIncludeArgs:
+    def __init__(__self__, *,
+                 compartments: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]] compartments: (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_database_ids: (Updatable) The list of target database OCIDs to be included in the target database group.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if compartments is not None:
+            pulumi.set(__self__, "compartments", compartments)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if target_database_ids is not None:
+            pulumi.set(__self__, "target_database_ids", target_database_ids)
+
+    @_builtins.property
+    @pulumi.getter
+    def compartments(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]:
+        """
+        (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+        """
+        return pulumi.get(self, "compartments")
+
+    @compartments.setter
+    def compartments(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs']]]]):
+        pulumi.set(self, "compartments", value)
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseIds")
+    def target_database_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of target database OCIDs to be included in the target database group.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_database_ids")
+
+    @target_database_ids.setter
+    def target_database_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "target_database_ids", value)
+
+
+if not MYPY:
+    class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict(TypedDict):
+        id: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+        """
+        is_include_subtree: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+        """
+elif False:
+    TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetDatabaseGroupMatchingCriteriaIncludeCompartmentArgs:
+    def __init__(__self__, *,
+                 id: pulumi.Input[_builtins.str],
+                 is_include_subtree: Optional[pulumi.Input[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] id: (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+        :param pulumi.Input[_builtins.bool] is_include_subtree: (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+        """
+        pulumi.set(__self__, "id", id)
+        if is_include_subtree is not None:
+            pulumi.set(__self__, "is_include_subtree", is_include_subtree)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isIncludeSubtree")
+    def is_include_subtree(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+        """
+        return pulumi.get(self, "is_include_subtree")
+
+    @is_include_subtree.setter
+    def is_include_subtree(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_include_subtree", value)
 
 
 if not MYPY:
@@ -6152,6 +7637,10 @@ if not MYPY:
         """
         (Updatable) The port number of the database listener.
         """
+        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
         service_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The service name of the database registered as target database.
@@ -6173,6 +7662,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -6183,6 +7673,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
         :param pulumi.Input[_builtins.str] instance_id: (Updatable) The OCID of the compute instance on which the database is running.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param pulumi.Input[_builtins.int] listener_port: (Updatable) The port number of the database listener.
+        :param pulumi.Input[_builtins.str] pluggable_database_id: (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         :param pulumi.Input[_builtins.str] service_name: (Updatable) The service name of the database registered as target database.
         :param pulumi.Input[_builtins.str] vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
@@ -6200,6 +7691,8 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if pluggable_database_id is not None:
+            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
         if vm_cluster_id is not None:
@@ -6290,6 +7783,18 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailArgs:
         pulumi.set(self, "listener_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="pluggableDatabaseId")
+    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "pluggable_database_id")
+
+    @pluggable_database_id.setter
+    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pluggable_database_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="serviceName")
     def service_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -6344,6 +7849,10 @@ if not MYPY:
         """
         (Updatable) The port number of the database listener.
         """
+        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
         service_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) The service name of the database registered as target database.
@@ -6365,6 +7874,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -6375,6 +7885,7 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
         :param pulumi.Input[_builtins.str] instance_id: (Updatable) The OCID of the compute instance on which the database is running.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param pulumi.Input[_builtins.int] listener_port: (Updatable) The port number of the database listener.
+        :param pulumi.Input[_builtins.str] pluggable_database_id: (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
         :param pulumi.Input[_builtins.str] service_name: (Updatable) The service name of the database registered as target database.
         :param pulumi.Input[_builtins.str] vm_cluster_id: (Updatable) The OCID of the VM cluster in which the database is running.
         """
@@ -6390,6 +7901,8 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if pluggable_database_id is not None:
+            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
         if vm_cluster_id is not None:
@@ -6478,6 +7991,18 @@ class TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs:
     @listener_port.setter
     def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabaseId")
+    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "pluggable_database_id")
+
+    @pluggable_database_id.setter
+    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
@@ -6645,6 +8170,10 @@ if not MYPY:
         """
         The port number of the database listener.
         """
+        pluggable_database_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The OCID of the pluggable database registered as a target database in Data Safe.
+        """
         service_name: NotRequired[pulumi.Input[_builtins.str]]
         """
         The service name of the database registered as target database.
@@ -6666,6 +8195,7 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
                  instance_id: Optional[pulumi.Input[_builtins.str]] = None,
                  ip_addresses: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  listener_port: Optional[pulumi.Input[_builtins.int]] = None,
+                 pluggable_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  service_name: Optional[pulumi.Input[_builtins.str]] = None,
                  vm_cluster_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
@@ -6676,6 +8206,7 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
         :param pulumi.Input[_builtins.str] instance_id: The OCID of the compute instance on which the database is running.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ip_addresses: The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
         :param pulumi.Input[_builtins.int] listener_port: The port number of the database listener.
+        :param pulumi.Input[_builtins.str] pluggable_database_id: The OCID of the pluggable database registered as a target database in Data Safe.
         :param pulumi.Input[_builtins.str] service_name: The service name of the database registered as target database.
         :param pulumi.Input[_builtins.str] vm_cluster_id: The OCID of the VM cluster in which the database is running.
         """
@@ -6691,6 +8222,8 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
             pulumi.set(__self__, "ip_addresses", ip_addresses)
         if listener_port is not None:
             pulumi.set(__self__, "listener_port", listener_port)
+        if pluggable_database_id is not None:
+            pulumi.set(__self__, "pluggable_database_id", pluggable_database_id)
         if service_name is not None:
             pulumi.set(__self__, "service_name", service_name)
         if vm_cluster_id is not None:
@@ -6779,6 +8312,18 @@ class TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsArgs:
     @listener_port.setter
     def listener_port(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "listener_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pluggableDatabaseId")
+    def pluggable_database_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of the pluggable database registered as a target database in Data Safe.
+        """
+        return pulumi.get(self, "pluggable_database_id")
+
+    @pluggable_database_id.setter
+    def pluggable_database_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "pluggable_database_id", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceName")
@@ -7163,15 +8708,140 @@ class TargetDatabaseTlsConfigArgs:
 
 
 if not MYPY:
+    class UnifiedAuditPolicyConditionArgsDict(TypedDict):
+        entity_selection: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Specifies whether to include or exclude the specified users or roles.
+        """
+        entity_type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The type of users or roles that the unified audit policy is applied to.
+        """
+        operation_status: pulumi.Input[_builtins.str]
+        """
+        (Updatable) The operation status that the policy must be enabled for.
+        """
+        attribute_set_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the attribute set.
+        """
+        role_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) List of roles that the policy must be enabled for.
+        """
+        user_names: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) The list of users that the unified audit policy is enabled for.
+        """
+elif False:
+    UnifiedAuditPolicyConditionArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class UnifiedAuditPolicyConditionArgs:
+    def __init__(__self__, *,
+                 entity_selection: pulumi.Input[_builtins.str],
+                 entity_type: pulumi.Input[_builtins.str],
+                 operation_status: pulumi.Input[_builtins.str],
+                 attribute_set_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 role_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 user_names: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] entity_selection: (Updatable) Specifies whether to include or exclude the specified users or roles.
+        :param pulumi.Input[_builtins.str] entity_type: (Updatable) The type of users or roles that the unified audit policy is applied to.
+        :param pulumi.Input[_builtins.str] operation_status: (Updatable) The operation status that the policy must be enabled for.
+        :param pulumi.Input[_builtins.str] attribute_set_id: (Updatable) The OCID of the attribute set.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] role_names: (Updatable) List of roles that the policy must be enabled for.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] user_names: (Updatable) The list of users that the unified audit policy is enabled for.
+        """
+        pulumi.set(__self__, "entity_selection", entity_selection)
+        pulumi.set(__self__, "entity_type", entity_type)
+        pulumi.set(__self__, "operation_status", operation_status)
+        if attribute_set_id is not None:
+            pulumi.set(__self__, "attribute_set_id", attribute_set_id)
+        if role_names is not None:
+            pulumi.set(__self__, "role_names", role_names)
+        if user_names is not None:
+            pulumi.set(__self__, "user_names", user_names)
+
+    @_builtins.property
+    @pulumi.getter(name="entitySelection")
+    def entity_selection(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Specifies whether to include or exclude the specified users or roles.
+        """
+        return pulumi.get(self, "entity_selection")
+
+    @entity_selection.setter
+    def entity_selection(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "entity_selection", value)
+
+    @_builtins.property
+    @pulumi.getter(name="entityType")
+    def entity_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The type of users or roles that the unified audit policy is applied to.
+        """
+        return pulumi.get(self, "entity_type")
+
+    @entity_type.setter
+    def entity_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "entity_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="operationStatus")
+    def operation_status(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The operation status that the policy must be enabled for.
+        """
+        return pulumi.get(self, "operation_status")
+
+    @operation_status.setter
+    def operation_status(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "operation_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="attributeSetId")
+    def attribute_set_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the attribute set.
+        """
+        return pulumi.get(self, "attribute_set_id")
+
+    @attribute_set_id.setter
+    def attribute_set_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "attribute_set_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="roleNames")
+    def role_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) List of roles that the policy must be enabled for.
+        """
+        return pulumi.get(self, "role_names")
+
+    @role_names.setter
+    def role_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "role_names", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userNames")
+    def user_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of users that the unified audit policy is enabled for.
+        """
+        return pulumi.get(self, "user_names")
+
+    @user_names.setter
+    def user_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "user_names", value)
+
+
+if not MYPY:
     class UserAssessmentIgnoredTargetArgsDict(TypedDict):
         lifecycle_state: NotRequired[pulumi.Input[_builtins.str]]
         target_id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which user assessment is to be run.
         """
         user_assessment_id: NotRequired[pulumi.Input[_builtins.str]]
 elif False:
@@ -7184,11 +8854,7 @@ class UserAssessmentIgnoredTargetArgs:
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  user_assessment_id: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which the user assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
         """
         if lifecycle_state is not None:
             pulumi.set(__self__, "lifecycle_state", lifecycle_state)
@@ -7210,11 +8876,7 @@ class UserAssessmentIgnoredTargetArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which user assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -7336,6 +8998,100 @@ elif False:
 
 @pulumi.input_type
 class GetAlertsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetAttributeSetAssociatedResourcesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAttributeSetAssociatedResourcesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAttributeSetAssociatedResourcesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetAttributeSetsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAttributeSetsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAttributeSetsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -7571,6 +9327,53 @@ elif False:
 
 @pulumi.input_type
 class GetAuditProfileCollectedAuditVolumesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetAuditProfileTargetOverridesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetAuditProfileTargetOverridesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetAuditProfileTargetOverridesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -8746,6 +10549,53 @@ class GetSdmMaskingPolicyDifferencesFilterArgs:
 
 
 if not MYPY:
+    class GetSecurityAssessmentChecksFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetSecurityAssessmentChecksFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSecurityAssessmentChecksFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetSecurityAssessmentFindingAnalyticsFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -9028,6 +10878,100 @@ class GetSecurityAssessmentSecurityFeaturesFilterArgs:
 
 
 if not MYPY:
+    class GetSecurityAssessmentTemplateAnalyticsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetSecurityAssessmentTemplateAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSecurityAssessmentTemplateAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetSecurityAssessmentsFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -9084,6 +11028,53 @@ elif False:
 
 @pulumi.input_type
 class GetSecurityPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetSecurityPolicyConfigsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetSecurityPolicyConfigsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetSecurityPolicyConfigsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -10391,6 +12382,53 @@ class GetTargetAlertPolicyAssociationsFilterArgs:
 
 
 if not MYPY:
+    class GetTargetDatabaseGroupsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetTargetDatabaseGroupsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetTargetDatabaseGroupsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetTargetDatabasePeerTargetDatabasesFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -10682,6 +12720,100 @@ elif False:
 
 @pulumi.input_type
 class GetTargetDatabasesTablesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetUnifiedAuditPoliciesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetUnifiedAuditPoliciesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetUnifiedAuditPoliciesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetUnifiedAuditPolicyDefinitionsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetUnifiedAuditPolicyDefinitionsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetUnifiedAuditPolicyDefinitionsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

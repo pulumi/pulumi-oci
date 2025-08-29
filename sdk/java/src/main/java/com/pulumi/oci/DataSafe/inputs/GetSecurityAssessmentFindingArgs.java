@@ -26,11 +26,32 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.accessLevel);
     }
 
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
     @Import(name="compartmentIdInSubtree")
     private @Nullable Output<Boolean> compartmentIdInSubtree;
 
     public Optional<Output<Boolean>> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    @Import(name="containsReferences")
+    private @Nullable Output<List<String>> containsReferences;
+
+    public Optional<Output<List<String>>> containsReferences() {
+        return Optional.ofNullable(this.containsReferences);
+    }
+
+    @Import(name="containsSeverities")
+    private @Nullable Output<List<String>> containsSeverities;
+
+    public Optional<Output<List<String>>> containsSeverities() {
+        return Optional.ofNullable(this.containsSeverities);
     }
 
     @Import(name="fields")
@@ -103,11 +124,21 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         return Optional.ofNullable(this.targetId);
     }
 
+    @Import(name="targetIds")
+    private @Nullable Output<List<String>> targetIds;
+
+    public Optional<Output<List<String>>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
+    }
+
     private GetSecurityAssessmentFindingArgs() {}
 
     private GetSecurityAssessmentFindingArgs(GetSecurityAssessmentFindingArgs $) {
         this.accessLevel = $.accessLevel;
+        this.category = $.category;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsReferences = $.containsReferences;
+        this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
@@ -118,6 +149,7 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
         this.severity = $.severity;
         this.state = $.state;
         this.targetId = $.targetId;
+        this.targetIds = $.targetIds;
     }
 
     public static Builder builder() {
@@ -147,6 +179,15 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
             return accessLevel(Output.of(accessLevel));
         }
 
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        public Builder category(String category) {
+            return category(Output.of(category));
+        }
+
         public Builder compartmentIdInSubtree(@Nullable Output<Boolean> compartmentIdInSubtree) {
             $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
@@ -154,6 +195,32 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        public Builder containsReferences(@Nullable Output<List<String>> containsReferences) {
+            $.containsReferences = containsReferences;
+            return this;
+        }
+
+        public Builder containsReferences(List<String> containsReferences) {
+            return containsReferences(Output.of(containsReferences));
+        }
+
+        public Builder containsReferences(String... containsReferences) {
+            return containsReferences(List.of(containsReferences));
+        }
+
+        public Builder containsSeverities(@Nullable Output<List<String>> containsSeverities) {
+            $.containsSeverities = containsSeverities;
+            return this;
+        }
+
+        public Builder containsSeverities(List<String> containsSeverities) {
+            return containsSeverities(Output.of(containsSeverities));
+        }
+
+        public Builder containsSeverities(String... containsSeverities) {
+            return containsSeverities(List.of(containsSeverities));
         }
 
         public Builder fields(@Nullable Output<List<String>> fields) {
@@ -252,6 +319,19 @@ public final class GetSecurityAssessmentFindingArgs extends com.pulumi.resources
 
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        public Builder targetIds(@Nullable Output<List<String>> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        public Builder targetIds(List<String> targetIds) {
+            return targetIds(Output.of(targetIds));
+        }
+
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         public GetSecurityAssessmentFindingArgs build() {

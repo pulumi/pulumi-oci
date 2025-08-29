@@ -146,6 +146,21 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -158,6 +173,36 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable String targetType;
+
+    /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
+    /**
+     * The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    @Import(name="templateAssessmentId")
+    private @Nullable String templateAssessmentId;
+
+    /**
+     * @return The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    public Optional<String> templateAssessmentId() {
+        return Optional.ofNullable(this.templateAssessmentId);
     }
 
     /**
@@ -240,7 +285,10 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
         this.isScheduleAssessment = $.isScheduleAssessment;
         this.scheduleAssessmentId = $.scheduleAssessmentId;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
+        this.templateAssessmentId = $.templateAssessmentId;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
         this.triggeredBy = $.triggeredBy;
@@ -363,6 +411,17 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
         }
 
         /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
          * @param targetId A filter to return only items related to a specific target OCID.
          * 
          * @return builder
@@ -370,6 +429,28 @@ public final class GetSecurityAssessmentsPlainArgs extends com.pulumi.resources.
          */
         public Builder targetId(@Nullable String targetId) {
             $.targetId = targetId;
+            return this;
+        }
+
+        /**
+         * @param targetType A filter to return only only target database resources or target database group resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable String targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param templateAssessmentId The OCID of the security assessment of type TEMPLATE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateAssessmentId(@Nullable String templateAssessmentId) {
+            $.templateAssessmentId = templateAssessmentId;
             return this;
         }
 

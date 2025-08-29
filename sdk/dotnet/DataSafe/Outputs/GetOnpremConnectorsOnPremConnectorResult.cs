@@ -50,7 +50,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The current state of the on-premises connector.
+        /// A filter to return only on-premises connector resources that match the specified lifecycle state.
         /// </summary>
         public readonly string State;
         /// <summary>

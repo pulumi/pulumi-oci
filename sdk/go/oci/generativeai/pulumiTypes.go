@@ -1710,6 +1710,8 @@ type AgentDataIngestionJobDataIngestionJobStatistic struct {
 	DurationInSeconds *int `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles *int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles *int `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles *int `pulumi:"numberOfIngestedFiles"`
 }
@@ -1730,6 +1732,8 @@ type AgentDataIngestionJobDataIngestionJobStatisticArgs struct {
 	DurationInSeconds pulumi.IntPtrInput `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles pulumi.IntPtrInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles pulumi.IntPtrInput `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles pulumi.IntPtrInput `pulumi:"numberOfIngestedFiles"`
 }
@@ -1795,6 +1799,11 @@ func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfFailedFile
 	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.NumberOfFailedFiles }).(pulumi.IntPtrOutput)
 }
 
+// The number of files that have been ignored during the ingestion.
+func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIgnoredFiles() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.NumberOfIgnoredFiles }).(pulumi.IntPtrOutput)
+}
+
 // The number of files that have been successfully ingested during the ingestion.
 func (o AgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobStatistic) *int { return v.NumberOfIngestedFiles }).(pulumi.IntPtrOutput)
@@ -1820,9 +1829,105 @@ func (o AgentDataIngestionJobDataIngestionJobStatisticArrayOutput) Index(i pulum
 	}).(AgentDataIngestionJobDataIngestionJobStatisticOutput)
 }
 
+type AgentDataIngestionJobDataIngestionJobType struct {
+	// Type of ingestionJob.
+	Type *string `pulumi:"type"`
+}
+
+// AgentDataIngestionJobDataIngestionJobTypeInput is an input type that accepts AgentDataIngestionJobDataIngestionJobTypeArgs and AgentDataIngestionJobDataIngestionJobTypeOutput values.
+// You can construct a concrete instance of `AgentDataIngestionJobDataIngestionJobTypeInput` via:
+//
+//	AgentDataIngestionJobDataIngestionJobTypeArgs{...}
+type AgentDataIngestionJobDataIngestionJobTypeInput interface {
+	pulumi.Input
+
+	ToAgentDataIngestionJobDataIngestionJobTypeOutput() AgentDataIngestionJobDataIngestionJobTypeOutput
+	ToAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(context.Context) AgentDataIngestionJobDataIngestionJobTypeOutput
+}
+
+type AgentDataIngestionJobDataIngestionJobTypeArgs struct {
+	// Type of ingestionJob.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (AgentDataIngestionJobDataIngestionJobTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (i AgentDataIngestionJobDataIngestionJobTypeArgs) ToAgentDataIngestionJobDataIngestionJobTypeOutput() AgentDataIngestionJobDataIngestionJobTypeOutput {
+	return i.ToAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(context.Background())
+}
+
+func (i AgentDataIngestionJobDataIngestionJobTypeArgs) ToAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataIngestionJobDataIngestionJobTypeOutput)
+}
+
+// AgentDataIngestionJobDataIngestionJobTypeArrayInput is an input type that accepts AgentDataIngestionJobDataIngestionJobTypeArray and AgentDataIngestionJobDataIngestionJobTypeArrayOutput values.
+// You can construct a concrete instance of `AgentDataIngestionJobDataIngestionJobTypeArrayInput` via:
+//
+//	AgentDataIngestionJobDataIngestionJobTypeArray{ AgentDataIngestionJobDataIngestionJobTypeArgs{...} }
+type AgentDataIngestionJobDataIngestionJobTypeArrayInput interface {
+	pulumi.Input
+
+	ToAgentDataIngestionJobDataIngestionJobTypeArrayOutput() AgentDataIngestionJobDataIngestionJobTypeArrayOutput
+	ToAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(context.Context) AgentDataIngestionJobDataIngestionJobTypeArrayOutput
+}
+
+type AgentDataIngestionJobDataIngestionJobTypeArray []AgentDataIngestionJobDataIngestionJobTypeInput
+
+func (AgentDataIngestionJobDataIngestionJobTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (i AgentDataIngestionJobDataIngestionJobTypeArray) ToAgentDataIngestionJobDataIngestionJobTypeArrayOutput() AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return i.ToAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(context.Background())
+}
+
+func (i AgentDataIngestionJobDataIngestionJobTypeArray) ToAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentDataIngestionJobDataIngestionJobTypeArrayOutput)
+}
+
+type AgentDataIngestionJobDataIngestionJobTypeOutput struct{ *pulumi.OutputState }
+
+func (AgentDataIngestionJobDataIngestionJobTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (o AgentDataIngestionJobDataIngestionJobTypeOutput) ToAgentDataIngestionJobDataIngestionJobTypeOutput() AgentDataIngestionJobDataIngestionJobTypeOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobTypeOutput) ToAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobTypeOutput {
+	return o
+}
+
+// Type of ingestionJob.
+func (o AgentDataIngestionJobDataIngestionJobTypeOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentDataIngestionJobDataIngestionJobType) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type AgentDataIngestionJobDataIngestionJobTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentDataIngestionJobDataIngestionJobTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (o AgentDataIngestionJobDataIngestionJobTypeArrayOutput) ToAgentDataIngestionJobDataIngestionJobTypeArrayOutput() AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobTypeArrayOutput) ToAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o AgentDataIngestionJobDataIngestionJobTypeArrayOutput) Index(i pulumi.IntInput) AgentDataIngestionJobDataIngestionJobTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentDataIngestionJobDataIngestionJobType {
+		return vs[0].([]AgentDataIngestionJobDataIngestionJobType)[vs[1].(int)]
+	}).(AgentDataIngestionJobDataIngestionJobTypeOutput)
+}
+
 type AgentDataSourceDataSourceConfig struct {
-	// (Updatable) The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// (Updatable) The type of the tool.
 	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
 	// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes []AgentDataSourceDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
@@ -1840,8 +1945,7 @@ type AgentDataSourceDataSourceConfigInput interface {
 }
 
 type AgentDataSourceDataSourceConfigArgs struct {
-	// (Updatable) The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// (Updatable) The type of the tool.
 	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
 	// (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes AgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
@@ -1924,8 +2028,7 @@ func (o AgentDataSourceDataSourceConfigOutput) ToAgentDataSourceDataSourceConfig
 	}).(AgentDataSourceDataSourceConfigPtrOutput)
 }
 
-// (Updatable) The type of the tool. The allowed values are:
-// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+// (Updatable) The type of the tool.
 func (o AgentDataSourceDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v AgentDataSourceDataSourceConfig) string { return v.DataSourceConfigType }).(pulumi.StringOutput)
 }
@@ -1961,8 +2064,7 @@ func (o AgentDataSourceDataSourceConfigPtrOutput) Elem() AgentDataSourceDataSour
 	}).(AgentDataSourceDataSourceConfigOutput)
 }
 
-// (Updatable) The type of the tool. The allowed values are:
-// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+// (Updatable) The type of the tool.
 func (o AgentDataSourceDataSourceConfigPtrOutput) DataSourceConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AgentDataSourceDataSourceConfig) *string {
 		if v == nil {
@@ -1987,7 +2089,7 @@ type AgentDataSourceDataSourceConfigObjectStoragePrefix struct {
 	Bucket string `pulumi:"bucket"`
 	// (Updatable) The namespace name of an object.
 	Namespace string `pulumi:"namespace"`
-	// (Updatable) The name of the object (file) or prefix (folder).
+	// (Updatable) The prefix of file object(s) or folder prefix.
 	Prefix *string `pulumi:"prefix"`
 }
 
@@ -2007,7 +2109,7 @@ type AgentDataSourceDataSourceConfigObjectStoragePrefixArgs struct {
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// (Updatable) The namespace name of an object.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// (Updatable) The name of the object (file) or prefix (folder).
+	// (Updatable) The prefix of file object(s) or folder prefix.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
 }
 
@@ -2072,7 +2174,7 @@ func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Namespace() pu
 	return o.ApplyT(func(v AgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// (Updatable) The name of the object (file) or prefix (folder).
+// (Updatable) The prefix of file object(s) or folder prefix.
 func (o AgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AgentDataSourceDataSourceConfigObjectStoragePrefix) *string { return v.Prefix }).(pulumi.StringPtrOutput)
 }
@@ -2100,22 +2202,15 @@ func (o AgentDataSourceDataSourceConfigObjectStoragePrefixArrayOutput) Index(i p
 type AgentKnowledgeBaseIndexConfig struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId *string `pulumi:"clusterId"`
-	// (Updatable) **DatabaseConnection**
-	//
-	// The connection type for Databases.
+	// (Updatable) The connection type for Databases.
 	DatabaseConnection *AgentKnowledgeBaseIndexConfigDatabaseConnection `pulumi:"databaseConnection"`
 	// (Updatable) Array of Database functions to be used.
 	DatabaseFunctions []AgentKnowledgeBaseIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
-	// (Updatable) The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// (Updatable) The type of index.
 	IndexConfigType string `pulumi:"indexConfigType"`
 	// (Updatable) Index configuration for open search.
 	Indexes []AgentKnowledgeBaseIndexConfigIndex `pulumi:"indexes"`
-	// (Updatable) **SecretDetail**
-	//
-	// The details of configured security configuration on OpenSearch.
+	// (Updatable) The details of configured security configuration on OpenSearch.
 	SecretDetail *AgentKnowledgeBaseIndexConfigSecretDetail `pulumi:"secretDetail"`
 	// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 	//
@@ -2138,22 +2233,15 @@ type AgentKnowledgeBaseIndexConfigInput interface {
 type AgentKnowledgeBaseIndexConfigArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId pulumi.StringPtrInput `pulumi:"clusterId"`
-	// (Updatable) **DatabaseConnection**
-	//
-	// The connection type for Databases.
+	// (Updatable) The connection type for Databases.
 	DatabaseConnection AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrInput `pulumi:"databaseConnection"`
 	// (Updatable) Array of Database functions to be used.
 	DatabaseFunctions AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
-	// (Updatable) The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// (Updatable) The type of index.
 	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
 	// (Updatable) Index configuration for open search.
 	Indexes AgentKnowledgeBaseIndexConfigIndexArrayInput `pulumi:"indexes"`
-	// (Updatable) **SecretDetail**
-	//
-	// The details of configured security configuration on OpenSearch.
+	// (Updatable) The details of configured security configuration on OpenSearch.
 	SecretDetail AgentKnowledgeBaseIndexConfigSecretDetailPtrInput `pulumi:"secretDetail"`
 	// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
 	//
@@ -2244,9 +2332,7 @@ func (o AgentKnowledgeBaseIndexConfigOutput) ClusterId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *string { return v.ClusterId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) **DatabaseConnection**
-//
-// The connection type for Databases.
+// (Updatable) The connection type for Databases.
 func (o AgentKnowledgeBaseIndexConfigOutput) DatabaseConnection() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigDatabaseConnection {
 		return v.DatabaseConnection
@@ -2260,10 +2346,7 @@ func (o AgentKnowledgeBaseIndexConfigOutput) DatabaseFunctions() AgentKnowledgeB
 	}).(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
 }
 
-// (Updatable) The type of index. The allowed values are:
-// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+// (Updatable) The type of index.
 func (o AgentKnowledgeBaseIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
 }
@@ -2273,9 +2356,7 @@ func (o AgentKnowledgeBaseIndexConfigOutput) Indexes() AgentKnowledgeBaseIndexCo
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) []AgentKnowledgeBaseIndexConfigIndex { return v.Indexes }).(AgentKnowledgeBaseIndexConfigIndexArrayOutput)
 }
 
-// (Updatable) **SecretDetail**
-//
-// The details of configured security configuration on OpenSearch.
+// (Updatable) The details of configured security configuration on OpenSearch.
 func (o AgentKnowledgeBaseIndexConfigOutput) SecretDetail() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigSecretDetail {
 		return v.SecretDetail
@@ -2324,9 +2405,7 @@ func (o AgentKnowledgeBaseIndexConfigPtrOutput) ClusterId() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) **DatabaseConnection**
-//
-// The connection type for Databases.
+// (Updatable) The connection type for Databases.
 func (o AgentKnowledgeBaseIndexConfigPtrOutput) DatabaseConnection() AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigDatabaseConnection {
 		if v == nil {
@@ -2346,10 +2425,7 @@ func (o AgentKnowledgeBaseIndexConfigPtrOutput) DatabaseFunctions() AgentKnowled
 	}).(AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
 }
 
-// (Updatable) The type of index. The allowed values are:
-// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+// (Updatable) The type of index.
 func (o AgentKnowledgeBaseIndexConfigPtrOutput) IndexConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *string {
 		if v == nil {
@@ -2369,9 +2445,7 @@ func (o AgentKnowledgeBaseIndexConfigPtrOutput) Indexes() AgentKnowledgeBaseInde
 	}).(AgentKnowledgeBaseIndexConfigIndexArrayOutput)
 }
 
-// (Updatable) **SecretDetail**
-//
-// The details of configured security configuration on OpenSearch.
+// (Updatable) The details of configured security configuration on OpenSearch.
 func (o AgentKnowledgeBaseIndexConfigPtrOutput) SecretDetail() AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfig) *AgentKnowledgeBaseIndexConfigSecretDetail {
 		if v == nil {
@@ -2397,8 +2471,7 @@ func (o AgentKnowledgeBaseIndexConfigPtrOutput) ShouldEnableHybridSearch() pulum
 type AgentKnowledgeBaseIndexConfigDatabaseConnection struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId string `pulumi:"connectionId"`
-	// (Updatable) The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// (Updatable) The type of Database connection.
 	ConnectionType string `pulumi:"connectionType"`
 }
 
@@ -2416,8 +2489,7 @@ type AgentKnowledgeBaseIndexConfigDatabaseConnectionInput interface {
 type AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
-	// (Updatable) The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// (Updatable) The type of Database connection.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 }
 
@@ -2503,8 +2575,7 @@ func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionId() pu
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The type of Database connection. The allowed values are:
-// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+// (Updatable) The type of Database connection.
 func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
@@ -2543,8 +2614,7 @@ func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ConnectionId()
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of Database connection. The allowed values are:
-// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+// (Updatable) The type of Database connection.
 func (o AgentKnowledgeBaseIndexConfigDatabaseConnectionPtrOutput) ConnectionType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigDatabaseConnection) *string {
 		if v == nil {
@@ -2654,9 +2724,7 @@ func (o AgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) Index(i pulumi
 type AgentKnowledgeBaseIndexConfigIndex struct {
 	// (Updatable) The index name in opensearch.
 	Name *string `pulumi:"name"`
-	// (Updatable) **IndexSchema**
-	//
-	// The index schema details.
+	// (Updatable) The index schema details.
 	Schema *AgentKnowledgeBaseIndexConfigIndexSchema `pulumi:"schema"`
 }
 
@@ -2674,9 +2742,7 @@ type AgentKnowledgeBaseIndexConfigIndexInput interface {
 type AgentKnowledgeBaseIndexConfigIndexArgs struct {
 	// (Updatable) The index name in opensearch.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) **IndexSchema**
-	//
-	// The index schema details.
+	// (Updatable) The index schema details.
 	Schema AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput `pulumi:"schema"`
 }
 
@@ -2736,9 +2802,7 @@ func (o AgentKnowledgeBaseIndexConfigIndexOutput) Name() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndex) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) **IndexSchema**
-//
-// The index schema details.
+// (Updatable) The index schema details.
 func (o AgentKnowledgeBaseIndexConfigIndexOutput) Schema() AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigIndex) *AgentKnowledgeBaseIndexConfigIndexSchema { return v.Schema }).(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput)
 }
@@ -2964,9 +3028,7 @@ type AgentKnowledgeBaseIndexConfigSecretDetail struct {
 	IdcsUrl *string `pulumi:"idcsUrl"`
 	// (Updatable) Fully qualified scope url
 	ScopeUrl *string `pulumi:"scopeUrl"`
-	// (Updatable) The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// (Updatable) The type of OpenID.
 	Type string `pulumi:"type"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -2990,9 +3052,7 @@ type AgentKnowledgeBaseIndexConfigSecretDetailArgs struct {
 	IdcsUrl pulumi.StringPtrInput `pulumi:"idcsUrl"`
 	// (Updatable) Fully qualified scope url
 	ScopeUrl pulumi.StringPtrInput `pulumi:"scopeUrl"`
-	// (Updatable) The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// (Updatable) The type of OpenID.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -3090,9 +3150,7 @@ func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) ScopeUrl() pulumi.Strin
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) *string { return v.ScopeUrl }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of OpenID. The allowed values are:
-// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+// (Updatable) The type of OpenID.
 func (o AgentKnowledgeBaseIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AgentKnowledgeBaseIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -3156,9 +3214,7 @@ func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) ScopeUrl() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type of OpenID. The allowed values are:
-// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+// (Updatable) The type of OpenID.
 func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AgentKnowledgeBaseIndexConfigSecretDetail) *string {
 		if v == nil {
@@ -3178,7 +3234,117 @@ func (o AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput) VaultSecretId() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
+type AgentKnowledgeBaseKnowledgeBaseStatistic struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes *string `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles *string `pulumi:"totalIngestedFiles"`
+}
+
+// AgentKnowledgeBaseKnowledgeBaseStatisticInput is an input type that accepts AgentKnowledgeBaseKnowledgeBaseStatisticArgs and AgentKnowledgeBaseKnowledgeBaseStatisticOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseKnowledgeBaseStatisticInput` via:
+//
+//	AgentKnowledgeBaseKnowledgeBaseStatisticArgs{...}
+type AgentKnowledgeBaseKnowledgeBaseStatisticInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseKnowledgeBaseStatisticOutput() AgentKnowledgeBaseKnowledgeBaseStatisticOutput
+	ToAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticOutput
+}
+
+type AgentKnowledgeBaseKnowledgeBaseStatisticArgs struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes pulumi.StringPtrInput `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles pulumi.StringPtrInput `pulumi:"totalIngestedFiles"`
+}
+
+func (AgentKnowledgeBaseKnowledgeBaseStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseKnowledgeBaseStatisticArgs) ToAgentKnowledgeBaseKnowledgeBaseStatisticOutput() AgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return i.ToAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseKnowledgeBaseStatisticArgs) ToAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(ctx context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseKnowledgeBaseStatisticOutput)
+}
+
+// AgentKnowledgeBaseKnowledgeBaseStatisticArrayInput is an input type that accepts AgentKnowledgeBaseKnowledgeBaseStatisticArray and AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput values.
+// You can construct a concrete instance of `AgentKnowledgeBaseKnowledgeBaseStatisticArrayInput` via:
+//
+//	AgentKnowledgeBaseKnowledgeBaseStatisticArray{ AgentKnowledgeBaseKnowledgeBaseStatisticArgs{...} }
+type AgentKnowledgeBaseKnowledgeBaseStatisticArrayInput interface {
+	pulumi.Input
+
+	ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput
+	ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput
+}
+
+type AgentKnowledgeBaseKnowledgeBaseStatisticArray []AgentKnowledgeBaseKnowledgeBaseStatisticInput
+
+func (AgentKnowledgeBaseKnowledgeBaseStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i AgentKnowledgeBaseKnowledgeBaseStatisticArray) ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return i.ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i AgentKnowledgeBaseKnowledgeBaseStatisticArray) ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput)
+}
+
+type AgentKnowledgeBaseKnowledgeBaseStatisticOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseKnowledgeBaseStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticOutput) ToAgentKnowledgeBaseKnowledgeBaseStatisticOutput() AgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticOutput) ToAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(ctx context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return o
+}
+
+// Knowledge Base size in bytes.
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticOutput) SizeInBytes() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseKnowledgeBaseStatistic) *string { return v.SizeInBytes }).(pulumi.StringPtrOutput)
+}
+
+// Total number of ingested files in Knowledge Base.
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticOutput) TotalIngestedFiles() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentKnowledgeBaseKnowledgeBaseStatistic) *string { return v.TotalIngestedFiles }).(pulumi.StringPtrOutput)
+}
+
+type AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ToAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) Index(i pulumi.IntInput) AgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentKnowledgeBaseKnowledgeBaseStatistic {
+		return vs[0].([]AgentKnowledgeBaseKnowledgeBaseStatistic)[vs[1].(int)]
+	}).(AgentKnowledgeBaseKnowledgeBaseStatisticOutput)
+}
+
 type AgentToolToolConfig struct {
+	// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId *string `pulumi:"agentEndpointId"`
+	// (Updatable) The input location definition for Api schema.
+	ApiSchema *AgentToolToolConfigApiSchema `pulumi:"apiSchema"`
 	// (Updatable) The connection type for Databases.
 	DatabaseConnection *AgentToolToolConfigDatabaseConnection `pulumi:"databaseConnection"`
 	// (Updatable) The input location definition.
@@ -3189,6 +3355,8 @@ type AgentToolToolConfig struct {
 	Function *AgentToolToolConfigFunction `pulumi:"function"`
 	// (Updatable) Configuration to customize LLM.
 	GenerationLlmCustomization *AgentToolToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomization"`
+	// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfig *AgentToolToolConfigHttpEndpointAuthConfig `pulumi:"httpEndpointAuthConfig"`
 	// (Updatable) The input location definition.
 	IclExamples *AgentToolToolConfigIclExamples `pulumi:"iclExamples"`
 	// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
@@ -3199,6 +3367,8 @@ type AgentToolToolConfig struct {
 	ShouldEnableSelfCorrection *bool `pulumi:"shouldEnableSelfCorrection"`
 	// (Updatable) To enable/disable SQL execution.
 	ShouldEnableSqlExecution *bool `pulumi:"shouldEnableSqlExecution"`
+	// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId *string `pulumi:"subnetId"`
 	// (Updatable) The input location definition.
 	TableAndColumnDescription *AgentToolToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescription"`
 	// (Updatable) The type of the Tool config. The allowed values are:
@@ -3223,6 +3393,10 @@ type AgentToolToolConfigInput interface {
 }
 
 type AgentToolToolConfigArgs struct {
+	// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId pulumi.StringPtrInput `pulumi:"agentEndpointId"`
+	// (Updatable) The input location definition for Api schema.
+	ApiSchema AgentToolToolConfigApiSchemaPtrInput `pulumi:"apiSchema"`
 	// (Updatable) The connection type for Databases.
 	DatabaseConnection AgentToolToolConfigDatabaseConnectionPtrInput `pulumi:"databaseConnection"`
 	// (Updatable) The input location definition.
@@ -3233,6 +3407,8 @@ type AgentToolToolConfigArgs struct {
 	Function AgentToolToolConfigFunctionPtrInput `pulumi:"function"`
 	// (Updatable) Configuration to customize LLM.
 	GenerationLlmCustomization AgentToolToolConfigGenerationLlmCustomizationPtrInput `pulumi:"generationLlmCustomization"`
+	// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfig AgentToolToolConfigHttpEndpointAuthConfigPtrInput `pulumi:"httpEndpointAuthConfig"`
 	// (Updatable) The input location definition.
 	IclExamples AgentToolToolConfigIclExamplesPtrInput `pulumi:"iclExamples"`
 	// (Updatable) The KnowledgeBase configurations that this RAG Tool uses
@@ -3243,6 +3419,8 @@ type AgentToolToolConfigArgs struct {
 	ShouldEnableSelfCorrection pulumi.BoolPtrInput `pulumi:"shouldEnableSelfCorrection"`
 	// (Updatable) To enable/disable SQL execution.
 	ShouldEnableSqlExecution pulumi.BoolPtrInput `pulumi:"shouldEnableSqlExecution"`
+	// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 	// (Updatable) The input location definition.
 	TableAndColumnDescription AgentToolToolConfigTableAndColumnDescriptionPtrInput `pulumi:"tableAndColumnDescription"`
 	// (Updatable) The type of the Tool config. The allowed values are:
@@ -3332,6 +3510,16 @@ func (o AgentToolToolConfigOutput) ToAgentToolToolConfigPtrOutputWithContext(ctx
 	}).(AgentToolToolConfigPtrOutput)
 }
 
+// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+func (o AgentToolToolConfigOutput) AgentEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *string { return v.AgentEndpointId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The input location definition for Api schema.
+func (o AgentToolToolConfigOutput) ApiSchema() AgentToolToolConfigApiSchemaPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigApiSchema { return v.ApiSchema }).(AgentToolToolConfigApiSchemaPtrOutput)
+}
+
 // (Updatable) The connection type for Databases.
 func (o AgentToolToolConfigOutput) DatabaseConnection() AgentToolToolConfigDatabaseConnectionPtrOutput {
 	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigDatabaseConnection { return v.DatabaseConnection }).(AgentToolToolConfigDatabaseConnectionPtrOutput)
@@ -3359,6 +3547,13 @@ func (o AgentToolToolConfigOutput) GenerationLlmCustomization() AgentToolToolCon
 	}).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
 }
 
+// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+func (o AgentToolToolConfigOutput) HttpEndpointAuthConfig() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigHttpEndpointAuthConfig {
+		return v.HttpEndpointAuthConfig
+	}).(AgentToolToolConfigHttpEndpointAuthConfigPtrOutput)
+}
+
 // (Updatable) The input location definition.
 func (o AgentToolToolConfigOutput) IclExamples() AgentToolToolConfigIclExamplesPtrOutput {
 	return o.ApplyT(func(v AgentToolToolConfig) *AgentToolToolConfigIclExamples { return v.IclExamples }).(AgentToolToolConfigIclExamplesPtrOutput)
@@ -3382,6 +3577,11 @@ func (o AgentToolToolConfigOutput) ShouldEnableSelfCorrection() pulumi.BoolPtrOu
 // (Updatable) To enable/disable SQL execution.
 func (o AgentToolToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v AgentToolToolConfig) *bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+func (o AgentToolToolConfigOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfig) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The input location definition.
@@ -3424,6 +3624,26 @@ func (o AgentToolToolConfigPtrOutput) Elem() AgentToolToolConfigOutput {
 		var ret AgentToolToolConfig
 		return ret
 	}).(AgentToolToolConfigOutput)
+}
+
+// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+func (o AgentToolToolConfigPtrOutput) AgentEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AgentEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The input location definition for Api schema.
+func (o AgentToolToolConfigPtrOutput) ApiSchema() AgentToolToolConfigApiSchemaPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigApiSchema {
+		if v == nil {
+			return nil
+		}
+		return v.ApiSchema
+	}).(AgentToolToolConfigApiSchemaPtrOutput)
 }
 
 // (Updatable) The connection type for Databases.
@@ -3476,6 +3696,16 @@ func (o AgentToolToolConfigPtrOutput) GenerationLlmCustomization() AgentToolTool
 	}).(AgentToolToolConfigGenerationLlmCustomizationPtrOutput)
 }
 
+// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+func (o AgentToolToolConfigPtrOutput) HttpEndpointAuthConfig() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigHttpEndpointAuthConfig {
+		if v == nil {
+			return nil
+		}
+		return v.HttpEndpointAuthConfig
+	}).(AgentToolToolConfigHttpEndpointAuthConfigPtrOutput)
+}
+
 // (Updatable) The input location definition.
 func (o AgentToolToolConfigPtrOutput) IclExamples() AgentToolToolConfigIclExamplesPtrOutput {
 	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigIclExamples {
@@ -3526,6 +3756,16 @@ func (o AgentToolToolConfigPtrOutput) ShouldEnableSqlExecution() pulumi.BoolPtrO
 	}).(pulumi.BoolPtrOutput)
 }
 
+// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+func (o AgentToolToolConfigPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) The input location definition.
 func (o AgentToolToolConfigPtrOutput) TableAndColumnDescription() AgentToolToolConfigTableAndColumnDescriptionPtrOutput {
 	return o.ApplyT(func(v *AgentToolToolConfig) *AgentToolToolConfigTableAndColumnDescription {
@@ -3549,6 +3789,227 @@ func (o AgentToolToolConfigPtrOutput) ToolConfigType() pulumi.StringPtrOutput {
 			return nil
 		}
 		return &v.ToolConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigApiSchema struct {
+	// (Updatable) Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType string `pulumi:"apiSchemaInputLocationType"`
+	// (Updatable) The bucket name of an object.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content *string `pulumi:"content"`
+	// (Updatable) The namespace name of an object.
+	Namespace *string `pulumi:"namespace"`
+	// (Updatable) The location/name of object.
+	Object *string `pulumi:"object"`
+}
+
+// AgentToolToolConfigApiSchemaInput is an input type that accepts AgentToolToolConfigApiSchemaArgs and AgentToolToolConfigApiSchemaOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigApiSchemaInput` via:
+//
+//	AgentToolToolConfigApiSchemaArgs{...}
+type AgentToolToolConfigApiSchemaInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigApiSchemaOutput() AgentToolToolConfigApiSchemaOutput
+	ToAgentToolToolConfigApiSchemaOutputWithContext(context.Context) AgentToolToolConfigApiSchemaOutput
+}
+
+type AgentToolToolConfigApiSchemaArgs struct {
+	// (Updatable) Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType pulumi.StringInput `pulumi:"apiSchemaInputLocationType"`
+	// (Updatable) The bucket name of an object.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Inline content as input.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// (Updatable) The namespace name of an object.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+	// (Updatable) The location/name of object.
+	Object pulumi.StringPtrInput `pulumi:"object"`
+}
+
+func (AgentToolToolConfigApiSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigApiSchemaArgs) ToAgentToolToolConfigApiSchemaOutput() AgentToolToolConfigApiSchemaOutput {
+	return i.ToAgentToolToolConfigApiSchemaOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigApiSchemaArgs) ToAgentToolToolConfigApiSchemaOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigApiSchemaOutput)
+}
+
+func (i AgentToolToolConfigApiSchemaArgs) ToAgentToolToolConfigApiSchemaPtrOutput() AgentToolToolConfigApiSchemaPtrOutput {
+	return i.ToAgentToolToolConfigApiSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigApiSchemaArgs) ToAgentToolToolConfigApiSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigApiSchemaOutput).ToAgentToolToolConfigApiSchemaPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigApiSchemaPtrInput is an input type that accepts AgentToolToolConfigApiSchemaArgs, AgentToolToolConfigApiSchemaPtr and AgentToolToolConfigApiSchemaPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigApiSchemaPtrInput` via:
+//
+//	        AgentToolToolConfigApiSchemaArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigApiSchemaPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigApiSchemaPtrOutput() AgentToolToolConfigApiSchemaPtrOutput
+	ToAgentToolToolConfigApiSchemaPtrOutputWithContext(context.Context) AgentToolToolConfigApiSchemaPtrOutput
+}
+
+type agentToolToolConfigApiSchemaPtrType AgentToolToolConfigApiSchemaArgs
+
+func AgentToolToolConfigApiSchemaPtr(v *AgentToolToolConfigApiSchemaArgs) AgentToolToolConfigApiSchemaPtrInput {
+	return (*agentToolToolConfigApiSchemaPtrType)(v)
+}
+
+func (*agentToolToolConfigApiSchemaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigApiSchemaPtrType) ToAgentToolToolConfigApiSchemaPtrOutput() AgentToolToolConfigApiSchemaPtrOutput {
+	return i.ToAgentToolToolConfigApiSchemaPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigApiSchemaPtrType) ToAgentToolToolConfigApiSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigApiSchemaPtrOutput)
+}
+
+type AgentToolToolConfigApiSchemaOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigApiSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigApiSchemaOutput) ToAgentToolToolConfigApiSchemaOutput() AgentToolToolConfigApiSchemaOutput {
+	return o
+}
+
+func (o AgentToolToolConfigApiSchemaOutput) ToAgentToolToolConfigApiSchemaOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaOutput {
+	return o
+}
+
+func (o AgentToolToolConfigApiSchemaOutput) ToAgentToolToolConfigApiSchemaPtrOutput() AgentToolToolConfigApiSchemaPtrOutput {
+	return o.ToAgentToolToolConfigApiSchemaPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigApiSchemaOutput) ToAgentToolToolConfigApiSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigApiSchema) *AgentToolToolConfigApiSchema {
+		return &v
+	}).(AgentToolToolConfigApiSchemaPtrOutput)
+}
+
+// (Updatable) Type of Api Schema InputLocation. The allowed values are:
+// * `INLINE`: The Api schema input location is inline.
+// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+func (o AgentToolToolConfigApiSchemaOutput) ApiSchemaInputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigApiSchema) string { return v.ApiSchemaInputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigApiSchemaOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigApiSchema) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigApiSchemaOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigApiSchema) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigApiSchemaOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigApiSchema) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location/name of object.
+func (o AgentToolToolConfigApiSchemaOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigApiSchema) *string { return v.Object }).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigApiSchemaPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigApiSchemaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigApiSchemaPtrOutput) ToAgentToolToolConfigApiSchemaPtrOutput() AgentToolToolConfigApiSchemaPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigApiSchemaPtrOutput) ToAgentToolToolConfigApiSchemaPtrOutputWithContext(ctx context.Context) AgentToolToolConfigApiSchemaPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigApiSchemaPtrOutput) Elem() AgentToolToolConfigApiSchemaOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) AgentToolToolConfigApiSchema {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigApiSchema
+		return ret
+	}).(AgentToolToolConfigApiSchemaOutput)
+}
+
+// (Updatable) Type of Api Schema InputLocation. The allowed values are:
+// * `INLINE`: The Api schema input location is inline.
+// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+func (o AgentToolToolConfigApiSchemaPtrOutput) ApiSchemaInputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ApiSchemaInputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The bucket name of an object.
+func (o AgentToolToolConfigApiSchemaPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Inline content as input.
+func (o AgentToolToolConfigApiSchemaPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The namespace name of an object.
+func (o AgentToolToolConfigApiSchemaPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location/name of object.
+func (o AgentToolToolConfigApiSchemaPtrOutput) Object() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigApiSchema) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Object
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -4242,6 +4703,520 @@ func (o AgentToolToolConfigGenerationLlmCustomizationPtrOutput) Instruction() pu
 			return nil
 		}
 		return v.Instruction
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfig struct {
+	// (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources []AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource `pulumi:"httpEndpointAuthSources"`
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigArgs and AgentToolToolConfigHttpEndpointAuthConfigOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigInput` via:
+//
+//	AgentToolToolConfigHttpEndpointAuthConfigArgs{...}
+type AgentToolToolConfigHttpEndpointAuthConfigInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigOutput
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigArgs struct {
+	// (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput `pulumi:"httpEndpointAuthSources"`
+}
+
+func (AgentToolToolConfigHttpEndpointAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigOutput)
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigOutput).ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigPtrInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigArgs, AgentToolToolConfigHttpEndpointAuthConfigPtr and AgentToolToolConfigHttpEndpointAuthConfigPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigPtrInput` via:
+//
+//	        AgentToolToolConfigHttpEndpointAuthConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigHttpEndpointAuthConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigPtrOutput
+}
+
+type agentToolToolConfigHttpEndpointAuthConfigPtrType AgentToolToolConfigHttpEndpointAuthConfigArgs
+
+func AgentToolToolConfigHttpEndpointAuthConfigPtr(v *AgentToolToolConfigHttpEndpointAuthConfigArgs) AgentToolToolConfigHttpEndpointAuthConfigPtrInput {
+	return (*agentToolToolConfigHttpEndpointAuthConfigPtrType)(v)
+}
+
+func (*agentToolToolConfigHttpEndpointAuthConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigHttpEndpointAuthConfigPtrType) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigHttpEndpointAuthConfigPtrType) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigPtrOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o.ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigHttpEndpointAuthConfig) *AgentToolToolConfigHttpEndpointAuthConfig {
+		return &v
+	}).(AgentToolToolConfigHttpEndpointAuthConfigPtrOutput)
+}
+
+// (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+func (o AgentToolToolConfigHttpEndpointAuthConfigOutput) HttpEndpointAuthSources() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfig) []AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return v.HttpEndpointAuthSources
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigPtrOutput) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigPtrOutput) ToAgentToolToolConfigHttpEndpointAuthConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigPtrOutput) Elem() AgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfig) AgentToolToolConfigHttpEndpointAuthConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigHttpEndpointAuthConfig
+		return ret
+	}).(AgentToolToolConfigHttpEndpointAuthConfigOutput)
+}
+
+// (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+func (o AgentToolToolConfigHttpEndpointAuthConfigPtrOutput) HttpEndpointAuthSources() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfig) []AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		if v == nil {
+			return nil
+		}
+		return v.HttpEndpointAuthSources
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource struct {
+	// (Updatable) Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope *string `pulumi:"httpEndpointAuthScope"`
+	// (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfig *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig `pulumi:"httpEndpointAuthScopeConfig"`
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs and AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput` via:
+//
+//	AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...}
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs struct {
+	// (Updatable) Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope pulumi.StringPtrInput `pulumi:"httpEndpointAuthScope"`
+	// (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfig AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput `pulumi:"httpEndpointAuthScopeConfig"`
+}
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray and AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput` via:
+//
+//	AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{ AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...} }
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray []AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+// (Updatable) Specifies the level from which credentials should be resolved.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScope() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) *string {
+		return v.HttpEndpointAuthScope
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScopeConfig() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return v.HttpEndpointAuthScopeConfig
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) Index(i pulumi.IntInput) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return vs[0].([]AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)[vs[1].(int)]
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig struct {
+	// (Updatable) IDCS client ID.
+	ClientId *string `pulumi:"clientId"`
+	// (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType string `pulumi:"httpEndpointAuthScopeConfigType"`
+	// (Updatable) IDCS OpenID discovery endpoint.
+	IdcsUrl *string `pulumi:"idcsUrl"`
+	// (Updatable) The location of the API key in the request.
+	KeyLocation *string `pulumi:"keyLocation"`
+	// (Updatable) The name of the key parameter in the location.
+	KeyName *string `pulumi:"keyName"`
+	// (Updatable) OAuth2 scopes for token generation.
+	ScopeUrl *string `pulumi:"scopeUrl"`
+	// (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId *string `pulumi:"vaultSecretId"`
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs and AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput` via:
+//
+//	AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...}
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs struct {
+	// (Updatable) IDCS client ID.
+	ClientId pulumi.StringPtrInput `pulumi:"clientId"`
+	// (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType pulumi.StringInput `pulumi:"httpEndpointAuthScopeConfigType"`
+	// (Updatable) IDCS OpenID discovery endpoint.
+	IdcsUrl pulumi.StringPtrInput `pulumi:"idcsUrl"`
+	// (Updatable) The location of the API key in the request.
+	KeyLocation pulumi.StringPtrInput `pulumi:"keyLocation"`
+	// (Updatable) The name of the key parameter in the location.
+	KeyName pulumi.StringPtrInput `pulumi:"keyName"`
+	// (Updatable) OAuth2 scopes for token generation.
+	ScopeUrl pulumi.StringPtrInput `pulumi:"scopeUrl"`
+	// (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
+}
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput).ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(ctx)
+}
+
+// AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput is an input type that accepts AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs, AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtr and AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput values.
+// You can construct a concrete instance of `AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput` via:
+//
+//	        AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput interface {
+	pulumi.Input
+
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput
+	ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput
+}
+
+type agentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrType AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs
+
+func AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtr(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput {
+	return (*agentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrType)(v)
+}
+
+func (*agentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i *agentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrType) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return i.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *agentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrType) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return o.ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return &v
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput)
+}
+
+// (Updatable) IDCS client ID.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) HttpEndpointAuthScopeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.HttpEndpointAuthScopeConfigType
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) IDCS OpenID discovery endpoint.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) IdcsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.IdcsUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the API key in the request.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.KeyLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the key parameter in the location.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.KeyName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OAuth2 scopes for token generation.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ScopeUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.ScopeUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		return v.VaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) ToAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutputWithContext(ctx context.Context) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput {
+	return o
+}
+
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) Elem() AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig
+		return ret
+	}).(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
+}
+
+// (Updatable) IDCS client ID.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) ClientId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ClientId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) HttpEndpointAuthScopeConfigType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.HttpEndpointAuthScopeConfigType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) IDCS OpenID discovery endpoint.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) IdcsUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdcsUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The location of the API key in the request.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) KeyLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The name of the key parameter in the location.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) KeyName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OAuth2 scopes for token generation.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) ScopeUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ScopeUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+func (o AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9134,6 +10109,8 @@ type GetAgentDataIngestionJobDataIngestionJobStatistic struct {
 	DurationInSeconds int `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles int `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles int `pulumi:"numberOfIngestedFiles"`
 }
@@ -9154,6 +10131,8 @@ type GetAgentDataIngestionJobDataIngestionJobStatisticArgs struct {
 	DurationInSeconds pulumi.IntInput `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles pulumi.IntInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles pulumi.IntInput `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles pulumi.IntInput `pulumi:"numberOfIngestedFiles"`
 }
@@ -9219,6 +10198,11 @@ func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfFailedF
 	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.NumberOfFailedFiles }).(pulumi.IntOutput)
 }
 
+// The number of files that have been ignored during the ingestion.
+func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIgnoredFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.NumberOfIgnoredFiles }).(pulumi.IntOutput)
+}
+
 // The number of files that have been successfully ingested during the ingestion.
 func (o GetAgentDataIngestionJobDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobStatistic) int { return v.NumberOfIngestedFiles }).(pulumi.IntOutput)
@@ -9242,6 +10226,103 @@ func (o GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput) Index(i pu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobDataIngestionJobStatistic {
 		return vs[0].([]GetAgentDataIngestionJobDataIngestionJobStatistic)[vs[1].(int)]
 	}).(GetAgentDataIngestionJobDataIngestionJobStatisticOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobType struct {
+	// Type of ingestionJob.
+	Type string `pulumi:"type"`
+}
+
+// GetAgentDataIngestionJobDataIngestionJobTypeInput is an input type that accepts GetAgentDataIngestionJobDataIngestionJobTypeArgs and GetAgentDataIngestionJobDataIngestionJobTypeOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobDataIngestionJobTypeInput` via:
+//
+//	GetAgentDataIngestionJobDataIngestionJobTypeArgs{...}
+type GetAgentDataIngestionJobDataIngestionJobTypeInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobDataIngestionJobTypeOutput() GetAgentDataIngestionJobDataIngestionJobTypeOutput
+	ToGetAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(context.Context) GetAgentDataIngestionJobDataIngestionJobTypeOutput
+}
+
+type GetAgentDataIngestionJobDataIngestionJobTypeArgs struct {
+	// Type of ingestionJob.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAgentDataIngestionJobDataIngestionJobTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobTypeArgs) ToGetAgentDataIngestionJobDataIngestionJobTypeOutput() GetAgentDataIngestionJobDataIngestionJobTypeOutput {
+	return i.ToGetAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobTypeArgs) ToGetAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobDataIngestionJobTypeOutput)
+}
+
+// GetAgentDataIngestionJobDataIngestionJobTypeArrayInput is an input type that accepts GetAgentDataIngestionJobDataIngestionJobTypeArray and GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobDataIngestionJobTypeArrayInput` via:
+//
+//	GetAgentDataIngestionJobDataIngestionJobTypeArray{ GetAgentDataIngestionJobDataIngestionJobTypeArgs{...} }
+type GetAgentDataIngestionJobDataIngestionJobTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput
+	ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(context.Context) GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput
+}
+
+type GetAgentDataIngestionJobDataIngestionJobTypeArray []GetAgentDataIngestionJobDataIngestionJobTypeInput
+
+func (GetAgentDataIngestionJobDataIngestionJobTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobTypeArray) ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return i.ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobDataIngestionJobTypeArray) ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobTypeOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobDataIngestionJobTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobTypeOutput) ToGetAgentDataIngestionJobDataIngestionJobTypeOutput() GetAgentDataIngestionJobDataIngestionJobTypeOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobTypeOutput) ToGetAgentDataIngestionJobDataIngestionJobTypeOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobTypeOutput {
+	return o
+}
+
+// Type of ingestionJob.
+func (o GetAgentDataIngestionJobDataIngestionJobTypeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobDataIngestionJobType) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobDataIngestionJobType)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput) ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput) ToGetAgentDataIngestionJobDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobDataIngestionJobTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobDataIngestionJobType {
+		return vs[0].([]GetAgentDataIngestionJobDataIngestionJobType)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobDataIngestionJobTypeOutput)
 }
 
 type GetAgentDataIngestionJobsDataIngestionJobCollection struct {
@@ -9345,6 +10426,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic `pulumi:"dataIngestionJobStatistics"`
+	// DataIngestionJob type.
+	DataIngestionJobTypes []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType `pulumi:"dataIngestionJobTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
 	DataSourceId string `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -9356,7 +10439,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItem struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
-	Id string `pulumi:"id"`
+	Id              string `pulumi:"id"`
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -9385,6 +10469,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput `pulumi:"dataIngestionJobStatistics"`
+	// DataIngestionJob type.
+	DataIngestionJobTypes GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayInput `pulumi:"dataIngestionJobTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
 	DataSourceId pulumi.StringInput `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -9396,7 +10482,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id              pulumi.StringInput `pulumi:"id"`
+	KnowledgeBaseId pulumi.StringInput `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -9472,6 +10559,13 @@ func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DataInges
 	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput)
 }
 
+// DataIngestionJob type.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DataIngestionJobTypes() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType {
+		return v.DataIngestionJobTypes
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
 func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) DataSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.DataSourceId }).(pulumi.StringOutput)
@@ -9504,6 +10598,10 @@ func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) FreeformT
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
 func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItem) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
 // A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -9556,6 +10654,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStat
 	DurationInSeconds int `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles int `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles int `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles int `pulumi:"numberOfIngestedFiles"`
 }
@@ -9576,6 +10676,8 @@ type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStat
 	DurationInSeconds pulumi.IntInput `pulumi:"durationInSeconds"`
 	// The number of files that have failed during the ingestion.
 	NumberOfFailedFiles pulumi.IntInput `pulumi:"numberOfFailedFiles"`
+	// The number of files that have been ignored during the ingestion.
+	NumberOfIgnoredFiles pulumi.IntInput `pulumi:"numberOfIgnoredFiles"`
 	// The number of files that have been successfully ingested during the ingestion.
 	NumberOfIngestedFiles pulumi.IntInput `pulumi:"numberOfIngestedFiles"`
 }
@@ -9645,6 +10747,13 @@ func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobS
 	}).(pulumi.IntOutput)
 }
 
+// The number of files that have been ignored during the ingestion.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) NumberOfIgnoredFiles() pulumi.IntOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic) int {
+		return v.NumberOfIgnoredFiles
+	}).(pulumi.IntOutput)
+}
+
 // The number of files that have been successfully ingested during the ingestion.
 func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput) NumberOfIngestedFiles() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic) int {
@@ -9670,6 +10779,105 @@ func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobS
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic {
 		return vs[0].([]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic)[vs[1].(int)]
 	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType struct {
+	// Type of ingestionJob.
+	Type string `pulumi:"type"`
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs and GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs{...}
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs struct {
+	// Type of ingestionJob.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput)
+}
+
+// GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayInput is an input type that accepts GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray and GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput values.
+// You can construct a concrete instance of `GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayInput` via:
+//
+//	GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray{ GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs{...} }
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput
+	ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutputWithContext(context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray []GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeInput
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType)(nil)).Elem()
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput {
+	return i.ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput {
+	return o
+}
+
+// Type of ingestionJob.
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType) string {
+		return v.Type
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType)(nil)).Elem()
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput() GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput) ToGetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutputWithContext(ctx context.Context) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput {
+	return o
+}
+
+func (o GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput) Index(i pulumi.IntInput) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType {
+		return vs[0].([]GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType)[vs[1].(int)]
+	}).(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput)
 }
 
 type GetAgentDataIngestionJobsFilter struct {
@@ -9779,8 +10987,7 @@ func (o GetAgentDataIngestionJobsFilterArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetAgentDataSourceDataSourceConfig struct {
-	// The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// The type of the tool.
 	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
 	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes []GetAgentDataSourceDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
@@ -9798,8 +11005,7 @@ type GetAgentDataSourceDataSourceConfigInput interface {
 }
 
 type GetAgentDataSourceDataSourceConfigArgs struct {
-	// The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// The type of the tool.
 	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
 	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes GetAgentDataSourceDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
@@ -9856,8 +11062,7 @@ func (o GetAgentDataSourceDataSourceConfigOutput) ToGetAgentDataSourceDataSource
 	return o
 }
 
-// The type of the tool. The allowed values are:
-// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+// The type of the tool.
 func (o GetAgentDataSourceDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfig) string { return v.DataSourceConfigType }).(pulumi.StringOutput)
 }
@@ -9894,7 +11099,7 @@ type GetAgentDataSourceDataSourceConfigObjectStoragePrefix struct {
 	Bucket string `pulumi:"bucket"`
 	// The namespace name of an object.
 	Namespace string `pulumi:"namespace"`
-	// The name of the object (file) or prefix (folder).
+	// The prefix of file object(s) or folder prefix.
 	Prefix string `pulumi:"prefix"`
 }
 
@@ -9914,7 +11119,7 @@ type GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs struct {
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace name of an object.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The name of the object (file) or prefix (folder).
+	// The prefix of file object(s) or folder prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
 }
 
@@ -9979,7 +11184,7 @@ func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Namespace()
 	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// The name of the object (file) or prefix (folder).
+// The prefix of file object(s) or folder prefix.
 func (o GetAgentDataSourceDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataSourceDataSourceConfigObjectStoragePrefix) string { return v.Prefix }).(pulumi.StringOutput)
 }
@@ -10103,7 +11308,7 @@ func (o GetAgentDataSourcesDataSourceCollectionArrayOutput) Index(i pulumi.IntIn
 type GetAgentDataSourcesDataSourceCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// **DataSourceConfig**
+	// The details of data source.
 	DataSourceConfigs []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig `pulumi:"dataSourceConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -10145,7 +11350,7 @@ type GetAgentDataSourcesDataSourceCollectionItemInput interface {
 type GetAgentDataSourcesDataSourceCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// **DataSourceConfig**
+	// The details of data source.
 	DataSourceConfigs GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayInput `pulumi:"dataSourceConfigs"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
@@ -10229,7 +11434,7 @@ func (o GetAgentDataSourcesDataSourceCollectionItemOutput) CompartmentId() pulum
 	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// **DataSourceConfig**
+// The details of data source.
 func (o GetAgentDataSourcesDataSourceCollectionItemOutput) DataSourceConfigs() GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArrayOutput {
 	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItem) []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig {
 		return v.DataSourceConfigs
@@ -10317,8 +11522,7 @@ func (o GetAgentDataSourcesDataSourceCollectionItemArrayOutput) Index(i pulumi.I
 }
 
 type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig struct {
-	// The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// The type of the tool.
 	DataSourceConfigType string `pulumi:"dataSourceConfigType"`
 	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes []GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix `pulumi:"objectStoragePrefixes"`
@@ -10336,8 +11540,7 @@ type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigInput interface 
 }
 
 type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs struct {
-	// The type of the tool. The allowed values are:
-	// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+	// The type of the tool.
 	DataSourceConfigType pulumi.StringInput `pulumi:"dataSourceConfigType"`
 	// The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
 	ObjectStoragePrefixes GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArrayInput `pulumi:"objectStoragePrefixes"`
@@ -10394,8 +11597,7 @@ func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) ToGet
 	return o
 }
 
-// The type of the tool. The allowed values are:
-// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+// The type of the tool.
 func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigOutput) DataSourceConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfig) string {
 		return v.DataSourceConfigType
@@ -10434,7 +11636,7 @@ type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePre
 	Bucket string `pulumi:"bucket"`
 	// The namespace name of an object.
 	Namespace string `pulumi:"namespace"`
-	// The name of the object (file) or prefix (folder).
+	// The prefix of file object(s) or folder prefix.
 	Prefix string `pulumi:"prefix"`
 }
 
@@ -10454,7 +11656,7 @@ type GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePre
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace name of an object.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// The name of the object (file) or prefix (folder).
+	// The prefix of file object(s) or folder prefix.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
 }
 
@@ -10523,7 +11725,7 @@ func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStorage
 	}).(pulumi.StringOutput)
 }
 
-// The name of the object (file) or prefix (folder).
+// The prefix of file object(s) or folder prefix.
 func (o GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefix) string {
 		return v.Prefix
@@ -10659,18 +11861,15 @@ func (o GetAgentDataSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetAgentD
 type GetAgentKnowledgeBaseIndexConfig struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// **DatabaseConnection**
+	// The connection type for Databases.
 	DatabaseConnections []GetAgentKnowledgeBaseIndexConfigDatabaseConnection `pulumi:"databaseConnections"`
 	// Array of Database functions to be used.
 	DatabaseFunctions []GetAgentKnowledgeBaseIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
-	// The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// The type of index.
 	IndexConfigType string `pulumi:"indexConfigType"`
 	// Index configuration for open search.
 	Indexes []GetAgentKnowledgeBaseIndexConfigIndex `pulumi:"indexes"`
-	// **SecretDetail**
+	// The details of configured security configuration on OpenSearch.
 	SecretDetails []GetAgentKnowledgeBaseIndexConfigSecretDetail `pulumi:"secretDetails"`
 	// Whether to enable Hybrid search in service managed OpenSearch.
 	ShouldEnableHybridSearch bool `pulumi:"shouldEnableHybridSearch"`
@@ -10690,18 +11889,15 @@ type GetAgentKnowledgeBaseIndexConfigInput interface {
 type GetAgentKnowledgeBaseIndexConfigArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
-	// **DatabaseConnection**
+	// The connection type for Databases.
 	DatabaseConnections GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
 	// Array of Database functions to be used.
 	DatabaseFunctions GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
-	// The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// The type of index.
 	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
 	// Index configuration for open search.
 	Indexes GetAgentKnowledgeBaseIndexConfigIndexArrayInput `pulumi:"indexes"`
-	// **SecretDetail**
+	// The details of configured security configuration on OpenSearch.
 	SecretDetails GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput `pulumi:"secretDetails"`
 	// Whether to enable Hybrid search in service managed OpenSearch.
 	ShouldEnableHybridSearch pulumi.BoolInput `pulumi:"shouldEnableHybridSearch"`
@@ -10763,7 +11959,7 @@ func (o GetAgentKnowledgeBaseIndexConfigOutput) ClusterId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// **DatabaseConnection**
+// The connection type for Databases.
 func (o GetAgentKnowledgeBaseIndexConfigOutput) DatabaseConnections() GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigDatabaseConnection {
 		return v.DatabaseConnections
@@ -10777,10 +11973,7 @@ func (o GetAgentKnowledgeBaseIndexConfigOutput) DatabaseFunctions() GetAgentKnow
 	}).(GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput)
 }
 
-// The type of index. The allowed values are:
-// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+// The type of index.
 func (o GetAgentKnowledgeBaseIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
 }
@@ -10790,7 +11983,7 @@ func (o GetAgentKnowledgeBaseIndexConfigOutput) Indexes() GetAgentKnowledgeBaseI
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigIndex { return v.Indexes }).(GetAgentKnowledgeBaseIndexConfigIndexArrayOutput)
 }
 
-// **SecretDetail**
+// The details of configured security configuration on OpenSearch.
 func (o GetAgentKnowledgeBaseIndexConfigOutput) SecretDetails() GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfig) []GetAgentKnowledgeBaseIndexConfigSecretDetail {
 		return v.SecretDetails
@@ -10825,8 +12018,7 @@ func (o GetAgentKnowledgeBaseIndexConfigArrayOutput) Index(i pulumi.IntInput) Ge
 type GetAgentKnowledgeBaseIndexConfigDatabaseConnection struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId string `pulumi:"connectionId"`
-	// The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// The type of Database connection.
 	ConnectionType string `pulumi:"connectionType"`
 }
 
@@ -10844,8 +12036,7 @@ type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionInput interface {
 type GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
-	// The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// The type of Database connection.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 }
 
@@ -10905,8 +12096,7 @@ func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionId()
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionId }).(pulumi.StringOutput)
 }
 
-// The type of Database connection. The allowed values are:
-// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+// The type of Database connection.
 func (o GetAgentKnowledgeBaseIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigDatabaseConnection) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
@@ -11031,7 +12221,7 @@ func (o GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArrayOutput) Index(i pul
 type GetAgentKnowledgeBaseIndexConfigIndex struct {
 	// The index name in opensearch.
 	Name string `pulumi:"name"`
-	// **IndexSchema**
+	// The index schema details.
 	Schemas []GetAgentKnowledgeBaseIndexConfigIndexSchema `pulumi:"schemas"`
 }
 
@@ -11049,7 +12239,7 @@ type GetAgentKnowledgeBaseIndexConfigIndexInput interface {
 type GetAgentKnowledgeBaseIndexConfigIndexArgs struct {
 	// The index name in opensearch.
 	Name pulumi.StringInput `pulumi:"name"`
-	// **IndexSchema**
+	// The index schema details.
 	Schemas GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput `pulumi:"schemas"`
 }
 
@@ -11109,7 +12299,7 @@ func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) Name() pulumi.StringOutput 
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndex) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// **IndexSchema**
+// The index schema details.
 func (o GetAgentKnowledgeBaseIndexConfigIndexOutput) Schemas() GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigIndex) []GetAgentKnowledgeBaseIndexConfigIndexSchema {
 		return v.Schemas
@@ -11267,9 +12457,7 @@ type GetAgentKnowledgeBaseIndexConfigSecretDetail struct {
 	IdcsUrl string `pulumi:"idcsUrl"`
 	// Fully qualified scope url
 	ScopeUrl string `pulumi:"scopeUrl"`
-	// The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// The type of OpenID.
 	Type string `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -11293,9 +12481,7 @@ type GetAgentKnowledgeBaseIndexConfigSecretDetailArgs struct {
 	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
 	// Fully qualified scope url
 	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
-	// The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// The type of OpenID.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -11367,9 +12553,7 @@ func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) ScopeUrl() pulumi.St
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.ScopeUrl }).(pulumi.StringOutput)
 }
 
-// The type of OpenID. The allowed values are:
-// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+// The type of OpenID.
 func (o GetAgentKnowledgeBaseIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBaseIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -11397,6 +12581,112 @@ func (o GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseIndexConfigSecretDetail {
 		return vs[0].([]GetAgentKnowledgeBaseIndexConfigSecretDetail)[vs[1].(int)]
 	}).(GetAgentKnowledgeBaseIndexConfigSecretDetailOutput)
+}
+
+type GetAgentKnowledgeBaseKnowledgeBaseStatistic struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes string `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles string `pulumi:"totalIngestedFiles"`
+}
+
+// GetAgentKnowledgeBaseKnowledgeBaseStatisticInput is an input type that accepts GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs and GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseKnowledgeBaseStatisticInput` via:
+//
+//	GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs{...}
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput
+	ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput
+}
+
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles pulumi.StringInput `pulumi:"totalIngestedFiles"`
+}
+
+func (GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return i.ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput)
+}
+
+// GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayInput is an input type that accepts GetAgentKnowledgeBaseKnowledgeBaseStatisticArray and GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayInput` via:
+//
+//	GetAgentKnowledgeBaseKnowledgeBaseStatisticArray{ GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs{...} }
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput
+	ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput
+}
+
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticArray []GetAgentKnowledgeBaseKnowledgeBaseStatisticInput
+
+func (GetAgentKnowledgeBaseKnowledgeBaseStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBaseKnowledgeBaseStatisticArray) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return i.ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBaseKnowledgeBaseStatisticArray) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput)
+}
+
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return o
+}
+
+// Knowledge Base size in bytes.
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput) SizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseKnowledgeBaseStatistic) string { return v.SizeInBytes }).(pulumi.StringOutput)
+}
+
+// Total number of ingested files in Knowledge Base.
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput) TotalIngestedFiles() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBaseKnowledgeBaseStatistic) string { return v.TotalIngestedFiles }).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBaseKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) ToGetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBaseKnowledgeBaseStatistic {
+		return vs[0].([]GetAgentKnowledgeBaseKnowledgeBaseStatistic)[vs[1].(int)]
+	}).(GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput)
 }
 
 type GetAgentKnowledgeBasesFilter struct {
@@ -11617,8 +12907,10 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItem struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
 	Id string `pulumi:"id"`
-	// **IndexConfig**
+	// The index configuration of Knowledge bases.
 	IndexConfigs []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig `pulumi:"indexConfigs"`
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic `pulumi:"knowledgeBaseStatistics"`
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -11655,8 +12947,10 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
 	Id pulumi.StringInput `pulumi:"id"`
-	// **IndexConfig**
+	// The index configuration of Knowledge bases.
 	IndexConfigs GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayInput `pulumi:"indexConfigs"`
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayInput `pulumi:"knowledgeBaseStatistics"`
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -11750,11 +13044,18 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) Id() pulumi.Str
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// **IndexConfig**
+// The index configuration of Knowledge bases.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) IndexConfigs() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig {
 		return v.IndexConfigs
 	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput)
+}
+
+// Statistics for Default Knowledge Base.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemOutput) KnowledgeBaseStatistics() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItem) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic {
+		return v.KnowledgeBaseStatistics
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput)
 }
 
 // A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -11805,18 +13106,15 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemArrayOutput) Index(i pu
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId string `pulumi:"clusterId"`
-	// **DatabaseConnection**
+	// The connection type for Databases.
 	DatabaseConnections []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection `pulumi:"databaseConnections"`
 	// Array of Database functions to be used.
 	DatabaseFunctions []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunction `pulumi:"databaseFunctions"`
-	// The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// The type of index.
 	IndexConfigType string `pulumi:"indexConfigType"`
 	// Index configuration for open search.
 	Indexes []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex `pulumi:"indexes"`
-	// **SecretDetail**
+	// The details of configured security configuration on OpenSearch.
 	SecretDetails []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail `pulumi:"secretDetails"`
 	// Whether to enable Hybrid search in service managed OpenSearch.
 	ShouldEnableHybridSearch bool `pulumi:"shouldEnableHybridSearch"`
@@ -11836,18 +13134,15 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigInput interface
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
 	ClusterId pulumi.StringInput `pulumi:"clusterId"`
-	// **DatabaseConnection**
+	// The connection type for Databases.
 	DatabaseConnections GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
 	// Array of Database functions to be used.
 	DatabaseFunctions GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayInput `pulumi:"databaseFunctions"`
-	// The type of index. The allowed values are:
-	// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-	// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-	// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+	// The type of index.
 	IndexConfigType pulumi.StringInput `pulumi:"indexConfigType"`
 	// Index configuration for open search.
 	Indexes GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayInput `pulumi:"indexes"`
-	// **SecretDetail**
+	// The details of configured security configuration on OpenSearch.
 	SecretDetails GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput `pulumi:"secretDetails"`
 	// Whether to enable Hybrid search in service managed OpenSearch.
 	ShouldEnableHybridSearch pulumi.BoolInput `pulumi:"shouldEnableHybridSearch"`
@@ -11909,7 +13204,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) Clus
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) string { return v.ClusterId }).(pulumi.StringOutput)
 }
 
-// **DatabaseConnection**
+// The connection type for Databases.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) DatabaseConnections() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection {
 		return v.DatabaseConnections
@@ -11923,10 +13218,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) Data
 	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArrayOutput)
 }
 
-// The type of index. The allowed values are:
-// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+// The type of index.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) IndexConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) string { return v.IndexConfigType }).(pulumi.StringOutput)
 }
@@ -11938,7 +13230,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) Inde
 	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArrayOutput)
 }
 
-// **SecretDetail**
+// The details of configured security configuration on OpenSearch.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigOutput) SecretDetails() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfig) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail {
 		return v.SecretDetails
@@ -11975,8 +13267,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArrayOutput)
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId string `pulumi:"connectionId"`
-	// The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// The type of Database connection.
 	ConnectionType string `pulumi:"connectionType"`
 }
 
@@ -11994,8 +13285,7 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnect
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
 	ConnectionId pulumi.StringInput `pulumi:"connectionId"`
-	// The type of Database connection. The allowed values are:
-	// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+	// The type of Database connection.
 	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
 }
 
@@ -12057,8 +13347,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConn
 	}).(pulumi.StringOutput)
 }
 
-// The type of Database connection. The allowed values are:
-// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+// The type of Database connection.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionOutput) ConnectionType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnection) string {
 		return v.ConnectionType
@@ -12187,7 +13476,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunc
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex struct {
 	// The index name in opensearch.
 	Name string `pulumi:"name"`
-	// **IndexSchema**
+	// The index schema details.
 	Schemas []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema `pulumi:"schemas"`
 }
 
@@ -12205,7 +13494,7 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexInput inte
 type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs struct {
 	// The index name in opensearch.
 	Name pulumi.StringInput `pulumi:"name"`
-	// **IndexSchema**
+	// The index schema details.
 	Schemas GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput `pulumi:"schemas"`
 }
 
@@ -12265,7 +13554,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput)
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// **IndexSchema**
+// The index schema details.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexOutput) Schemas() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndex) []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchema {
 		return v.Schemas
@@ -12431,9 +13720,7 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail st
 	IdcsUrl string `pulumi:"idcsUrl"`
 	// Fully qualified scope url
 	ScopeUrl string `pulumi:"scopeUrl"`
-	// The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// The type of OpenID.
 	Type string `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -12457,9 +13744,7 @@ type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArg
 	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
 	// Fully qualified scope url
 	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
-	// The type of OpenID. The allowed values are:
-	// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-	// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+	// The type of OpenID.
 	Type pulumi.StringInput `pulumi:"type"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
 	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
@@ -12537,9 +13822,7 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail
 	}).(pulumi.StringOutput)
 }
 
-// The type of OpenID. The allowed values are:
-// * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-// * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+// The type of OpenID.
 func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -12571,7 +13854,121 @@ func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetail
 	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput)
 }
 
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes string `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles string `pulumi:"totalIngestedFiles"`
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs{...}
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs struct {
+	// Knowledge Base size in bytes.
+	SizeInBytes pulumi.StringInput `pulumi:"sizeInBytes"`
+	// Total number of ingested files in Knowledge Base.
+	TotalIngestedFiles pulumi.StringInput `pulumi:"totalIngestedFiles"`
+}
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput)
+}
+
+// GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayInput is an input type that accepts GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray and GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput values.
+// You can construct a concrete instance of `GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayInput` via:
+//
+//	GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray{ GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs{...} }
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput
+	ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutputWithContext(context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray []GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticInput
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput {
+	return i.ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput {
+	return o
+}
+
+// Knowledge Base size in bytes.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput) SizeInBytes() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic) string {
+		return v.SizeInBytes
+	}).(pulumi.StringOutput)
+}
+
+// Total number of ingested files in Knowledge Base.
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput) TotalIngestedFiles() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic) string {
+		return v.TotalIngestedFiles
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic)(nil)).Elem()
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput() GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput) ToGetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutputWithContext(ctx context.Context) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput {
+	return o
+}
+
+func (o GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput) Index(i pulumi.IntInput) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic {
+		return vs[0].([]GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatistic)[vs[1].(int)]
+	}).(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput)
+}
+
 type GetAgentToolToolConfig struct {
+	// The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId string `pulumi:"agentEndpointId"`
+	// The input location definition for Api schema.
+	ApiSchemas []GetAgentToolToolConfigApiSchema `pulumi:"apiSchemas"`
 	// The connection type for Databases.
 	DatabaseConnections []GetAgentToolToolConfigDatabaseConnection `pulumi:"databaseConnections"`
 	// The input location definition.
@@ -12582,6 +13979,8 @@ type GetAgentToolToolConfig struct {
 	Functions []GetAgentToolToolConfigFunction `pulumi:"functions"`
 	// Configuration to customize LLM.
 	GenerationLlmCustomizations []GetAgentToolToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomizations"`
+	// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfigs []GetAgentToolToolConfigHttpEndpointAuthConfig `pulumi:"httpEndpointAuthConfigs"`
 	// The input location definition.
 	IclExamples []GetAgentToolToolConfigIclExample `pulumi:"iclExamples"`
 	// The KnowledgeBase configurations that this RAG Tool uses
@@ -12592,6 +13991,8 @@ type GetAgentToolToolConfig struct {
 	ShouldEnableSelfCorrection bool `pulumi:"shouldEnableSelfCorrection"`
 	// To enable/disable SQL execution.
 	ShouldEnableSqlExecution bool `pulumi:"shouldEnableSqlExecution"`
+	// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId string `pulumi:"subnetId"`
 	// The input location definition.
 	TableAndColumnDescriptions []GetAgentToolToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescriptions"`
 	// The type of the Tool config. The allowed values are:
@@ -12613,6 +14014,10 @@ type GetAgentToolToolConfigInput interface {
 }
 
 type GetAgentToolToolConfigArgs struct {
+	// The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId pulumi.StringInput `pulumi:"agentEndpointId"`
+	// The input location definition for Api schema.
+	ApiSchemas GetAgentToolToolConfigApiSchemaArrayInput `pulumi:"apiSchemas"`
 	// The connection type for Databases.
 	DatabaseConnections GetAgentToolToolConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
 	// The input location definition.
@@ -12623,6 +14028,8 @@ type GetAgentToolToolConfigArgs struct {
 	Functions GetAgentToolToolConfigFunctionArrayInput `pulumi:"functions"`
 	// Configuration to customize LLM.
 	GenerationLlmCustomizations GetAgentToolToolConfigGenerationLlmCustomizationArrayInput `pulumi:"generationLlmCustomizations"`
+	// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfigs GetAgentToolToolConfigHttpEndpointAuthConfigArrayInput `pulumi:"httpEndpointAuthConfigs"`
 	// The input location definition.
 	IclExamples GetAgentToolToolConfigIclExampleArrayInput `pulumi:"iclExamples"`
 	// The KnowledgeBase configurations that this RAG Tool uses
@@ -12633,6 +14040,8 @@ type GetAgentToolToolConfigArgs struct {
 	ShouldEnableSelfCorrection pulumi.BoolInput `pulumi:"shouldEnableSelfCorrection"`
 	// To enable/disable SQL execution.
 	ShouldEnableSqlExecution pulumi.BoolInput `pulumi:"shouldEnableSqlExecution"`
+	// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The input location definition.
 	TableAndColumnDescriptions GetAgentToolToolConfigTableAndColumnDescriptionArrayInput `pulumi:"tableAndColumnDescriptions"`
 	// The type of the Tool config. The allowed values are:
@@ -12693,6 +14102,16 @@ func (o GetAgentToolToolConfigOutput) ToGetAgentToolToolConfigOutputWithContext(
 	return o
 }
 
+// The AgentEndpoint OCID to be used as a tool in this agent.
+func (o GetAgentToolToolConfigOutput) AgentEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) string { return v.AgentEndpointId }).(pulumi.StringOutput)
+}
+
+// The input location definition for Api schema.
+func (o GetAgentToolToolConfigOutput) ApiSchemas() GetAgentToolToolConfigApiSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigApiSchema { return v.ApiSchemas }).(GetAgentToolToolConfigApiSchemaArrayOutput)
+}
+
 // The connection type for Databases.
 func (o GetAgentToolToolConfigOutput) DatabaseConnections() GetAgentToolToolConfigDatabaseConnectionArrayOutput {
 	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigDatabaseConnection {
@@ -12722,6 +14141,13 @@ func (o GetAgentToolToolConfigOutput) GenerationLlmCustomizations() GetAgentTool
 	}).(GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput)
 }
 
+// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+func (o GetAgentToolToolConfigOutput) HttpEndpointAuthConfigs() GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigHttpEndpointAuthConfig {
+		return v.HttpEndpointAuthConfigs
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput)
+}
+
 // The input location definition.
 func (o GetAgentToolToolConfigOutput) IclExamples() GetAgentToolToolConfigIclExampleArrayOutput {
 	return o.ApplyT(func(v GetAgentToolToolConfig) []GetAgentToolToolConfigIclExample { return v.IclExamples }).(GetAgentToolToolConfigIclExampleArrayOutput)
@@ -12747,6 +14173,11 @@ func (o GetAgentToolToolConfigOutput) ShouldEnableSelfCorrection() pulumi.BoolOu
 // To enable/disable SQL execution.
 func (o GetAgentToolToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAgentToolToolConfig) bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolOutput)
+}
+
+// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+func (o GetAgentToolToolConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 // The input location definition.
@@ -12782,6 +14213,145 @@ func (o GetAgentToolToolConfigArrayOutput) Index(i pulumi.IntInput) GetAgentTool
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfig {
 		return vs[0].([]GetAgentToolToolConfig)[vs[1].(int)]
 	}).(GetAgentToolToolConfigOutput)
+}
+
+type GetAgentToolToolConfigApiSchema struct {
+	// Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType string `pulumi:"apiSchemaInputLocationType"`
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The location/name of object.
+	Object string `pulumi:"object"`
+}
+
+// GetAgentToolToolConfigApiSchemaInput is an input type that accepts GetAgentToolToolConfigApiSchemaArgs and GetAgentToolToolConfigApiSchemaOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigApiSchemaInput` via:
+//
+//	GetAgentToolToolConfigApiSchemaArgs{...}
+type GetAgentToolToolConfigApiSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigApiSchemaOutput() GetAgentToolToolConfigApiSchemaOutput
+	ToGetAgentToolToolConfigApiSchemaOutputWithContext(context.Context) GetAgentToolToolConfigApiSchemaOutput
+}
+
+type GetAgentToolToolConfigApiSchemaArgs struct {
+	// Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType pulumi.StringInput `pulumi:"apiSchemaInputLocationType"`
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The location/name of object.
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetAgentToolToolConfigApiSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigApiSchemaArgs) ToGetAgentToolToolConfigApiSchemaOutput() GetAgentToolToolConfigApiSchemaOutput {
+	return i.ToGetAgentToolToolConfigApiSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigApiSchemaArgs) ToGetAgentToolToolConfigApiSchemaOutputWithContext(ctx context.Context) GetAgentToolToolConfigApiSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigApiSchemaOutput)
+}
+
+// GetAgentToolToolConfigApiSchemaArrayInput is an input type that accepts GetAgentToolToolConfigApiSchemaArray and GetAgentToolToolConfigApiSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigApiSchemaArrayInput` via:
+//
+//	GetAgentToolToolConfigApiSchemaArray{ GetAgentToolToolConfigApiSchemaArgs{...} }
+type GetAgentToolToolConfigApiSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigApiSchemaArrayOutput() GetAgentToolToolConfigApiSchemaArrayOutput
+	ToGetAgentToolToolConfigApiSchemaArrayOutputWithContext(context.Context) GetAgentToolToolConfigApiSchemaArrayOutput
+}
+
+type GetAgentToolToolConfigApiSchemaArray []GetAgentToolToolConfigApiSchemaInput
+
+func (GetAgentToolToolConfigApiSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigApiSchemaArray) ToGetAgentToolToolConfigApiSchemaArrayOutput() GetAgentToolToolConfigApiSchemaArrayOutput {
+	return i.ToGetAgentToolToolConfigApiSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigApiSchemaArray) ToGetAgentToolToolConfigApiSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigApiSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigApiSchemaArrayOutput)
+}
+
+type GetAgentToolToolConfigApiSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigApiSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigApiSchemaOutput) ToGetAgentToolToolConfigApiSchemaOutput() GetAgentToolToolConfigApiSchemaOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigApiSchemaOutput) ToGetAgentToolToolConfigApiSchemaOutputWithContext(ctx context.Context) GetAgentToolToolConfigApiSchemaOutput {
+	return o
+}
+
+// Type of Api Schema InputLocation. The allowed values are:
+// * `INLINE`: The Api schema input location is inline.
+// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+func (o GetAgentToolToolConfigApiSchemaOutput) ApiSchemaInputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigApiSchema) string { return v.ApiSchemaInputLocationType }).(pulumi.StringOutput)
+}
+
+// The bucket name of an object.
+func (o GetAgentToolToolConfigApiSchemaOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigApiSchema) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolToolConfigApiSchemaOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigApiSchema) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolToolConfigApiSchemaOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigApiSchema) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The location/name of object.
+func (o GetAgentToolToolConfigApiSchemaOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigApiSchema) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigApiSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigApiSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigApiSchemaArrayOutput) ToGetAgentToolToolConfigApiSchemaArrayOutput() GetAgentToolToolConfigApiSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigApiSchemaArrayOutput) ToGetAgentToolToolConfigApiSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigApiSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigApiSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigApiSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigApiSchema {
+		return vs[0].([]GetAgentToolToolConfigApiSchema)[vs[1].(int)]
+	}).(GetAgentToolToolConfigApiSchemaOutput)
 }
 
 type GetAgentToolToolConfigDatabaseConnection struct {
@@ -13242,6 +14812,380 @@ func (o GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigGenerationLlmCustomization {
 		return vs[0].([]GetAgentToolToolConfigGenerationLlmCustomization)[vs[1].(int)]
 	}).(GetAgentToolToolConfigGenerationLlmCustomizationOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfig struct {
+	// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource `pulumi:"httpEndpointAuthSources"`
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigArgs and GetAgentToolToolConfigHttpEndpointAuthConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigArgs{...}
+type GetAgentToolToolConfigHttpEndpointAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigArgs struct {
+	// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput `pulumi:"httpEndpointAuthSources"`
+}
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigOutput)
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigArrayInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigArray and GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigArrayInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigArray{ GetAgentToolToolConfigHttpEndpointAuthConfigArgs{...} }
+type GetAgentToolToolConfigHttpEndpointAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigArray []GetAgentToolToolConfigHttpEndpointAuthConfigInput
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigOutput) HttpEndpointAuthSources() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfig) []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return v.HttpEndpointAuthSources
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigHttpEndpointAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigHttpEndpointAuthConfig {
+		return vs[0].([]GetAgentToolToolConfigHttpEndpointAuthConfig)[vs[1].(int)]
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource struct {
+	// Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope string `pulumi:"httpEndpointAuthScope"`
+	// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfigs []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig `pulumi:"httpEndpointAuthScopeConfigs"`
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs and GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...}
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs struct {
+	// Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope pulumi.StringInput `pulumi:"httpEndpointAuthScope"`
+	// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfigs GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput `pulumi:"httpEndpointAuthScopeConfigs"`
+}
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray and GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{ GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...} }
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+// Specifies the level from which credentials should be resolved.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) string {
+		return v.HttpEndpointAuthScope
+	}).(pulumi.StringOutput)
+}
+
+// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScopeConfigs() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return v.HttpEndpointAuthScopeConfigs
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return vs[0].([]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)[vs[1].(int)]
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig struct {
+	// IDCS client ID.
+	ClientId string `pulumi:"clientId"`
+	// The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType string `pulumi:"httpEndpointAuthScopeConfigType"`
+	// IDCS OpenID discovery endpoint.
+	IdcsUrl string `pulumi:"idcsUrl"`
+	// The location of the API key in the request.
+	KeyLocation string `pulumi:"keyLocation"`
+	// The name of the key parameter in the location.
+	KeyName string `pulumi:"keyName"`
+	// OAuth2 scopes for token generation.
+	ScopeUrl string `pulumi:"scopeUrl"`
+	// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs and GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...}
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs struct {
+	// IDCS client ID.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType pulumi.StringInput `pulumi:"httpEndpointAuthScopeConfigType"`
+	// IDCS OpenID discovery endpoint.
+	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
+	// The location of the API key in the request.
+	KeyLocation pulumi.StringInput `pulumi:"keyLocation"`
+	// The name of the key parameter in the location.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// OAuth2 scopes for token generation.
+	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
+	// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
+}
+
+// GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput is an input type that accepts GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray and GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput` via:
+//
+//	GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray{ GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...} }
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput
+	ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray []GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return i.ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+// IDCS client ID.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.ClientId
+	}).(pulumi.StringOutput)
+}
+
+// The type of authentication to be applied for this HTTP Endpoint.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) HttpEndpointAuthScopeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.HttpEndpointAuthScopeConfigType
+	}).(pulumi.StringOutput)
+}
+
+// IDCS OpenID discovery endpoint.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) IdcsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.IdcsUrl
+	}).(pulumi.StringOutput)
+}
+
+// The location of the API key in the request.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.KeyLocation
+	}).(pulumi.StringOutput)
+}
+
+// The name of the key parameter in the location.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// OAuth2 scopes for token generation.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ScopeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.ScopeUrl
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ToGetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(ctx context.Context) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return vs[0].([]GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)[vs[1].(int)]
+	}).(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
 }
 
 type GetAgentToolToolConfigIclExample struct {
@@ -14030,6 +15974,10 @@ func (o GetAgentToolsToolCollectionItemArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetAgentToolsToolCollectionItemToolConfig struct {
+	// The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId string `pulumi:"agentEndpointId"`
+	// The input location definition for Api schema.
+	ApiSchemas []GetAgentToolsToolCollectionItemToolConfigApiSchema `pulumi:"apiSchemas"`
 	// The connection type for Databases.
 	DatabaseConnections []GetAgentToolsToolCollectionItemToolConfigDatabaseConnection `pulumi:"databaseConnections"`
 	// The input location definition.
@@ -14040,6 +15988,8 @@ type GetAgentToolsToolCollectionItemToolConfig struct {
 	Functions []GetAgentToolsToolCollectionItemToolConfigFunction `pulumi:"functions"`
 	// Configuration to customize LLM.
 	GenerationLlmCustomizations []GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization `pulumi:"generationLlmCustomizations"`
+	// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfigs []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig `pulumi:"httpEndpointAuthConfigs"`
 	// The input location definition.
 	IclExamples []GetAgentToolsToolCollectionItemToolConfigIclExample `pulumi:"iclExamples"`
 	// The KnowledgeBase configurations that this RAG Tool uses
@@ -14050,6 +16000,8 @@ type GetAgentToolsToolCollectionItemToolConfig struct {
 	ShouldEnableSelfCorrection bool `pulumi:"shouldEnableSelfCorrection"`
 	// To enable/disable SQL execution.
 	ShouldEnableSqlExecution bool `pulumi:"shouldEnableSqlExecution"`
+	// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId string `pulumi:"subnetId"`
 	// The input location definition.
 	TableAndColumnDescriptions []GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescription `pulumi:"tableAndColumnDescriptions"`
 	// The type of the Tool config. The allowed values are:
@@ -14071,6 +16023,10 @@ type GetAgentToolsToolCollectionItemToolConfigInput interface {
 }
 
 type GetAgentToolsToolCollectionItemToolConfigArgs struct {
+	// The AgentEndpoint OCID to be used as a tool in this agent.
+	AgentEndpointId pulumi.StringInput `pulumi:"agentEndpointId"`
+	// The input location definition for Api schema.
+	ApiSchemas GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayInput `pulumi:"apiSchemas"`
 	// The connection type for Databases.
 	DatabaseConnections GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput `pulumi:"databaseConnections"`
 	// The input location definition.
@@ -14081,6 +16037,8 @@ type GetAgentToolsToolCollectionItemToolConfigArgs struct {
 	Functions GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput `pulumi:"functions"`
 	// Configuration to customize LLM.
 	GenerationLlmCustomizations GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput `pulumi:"generationLlmCustomizations"`
+	// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+	HttpEndpointAuthConfigs GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayInput `pulumi:"httpEndpointAuthConfigs"`
 	// The input location definition.
 	IclExamples GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput `pulumi:"iclExamples"`
 	// The KnowledgeBase configurations that this RAG Tool uses
@@ -14091,6 +16049,8 @@ type GetAgentToolsToolCollectionItemToolConfigArgs struct {
 	ShouldEnableSelfCorrection pulumi.BoolInput `pulumi:"shouldEnableSelfCorrection"`
 	// To enable/disable SQL execution.
 	ShouldEnableSqlExecution pulumi.BoolInput `pulumi:"shouldEnableSqlExecution"`
+	// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The input location definition.
 	TableAndColumnDescriptions GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArrayInput `pulumi:"tableAndColumnDescriptions"`
 	// The type of the Tool config. The allowed values are:
@@ -14151,6 +16111,18 @@ func (o GetAgentToolsToolCollectionItemToolConfigOutput) ToGetAgentToolsToolColl
 	return o
 }
 
+// The AgentEndpoint OCID to be used as a tool in this agent.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) AgentEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) string { return v.AgentEndpointId }).(pulumi.StringOutput)
+}
+
+// The input location definition for Api schema.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) ApiSchemas() GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigApiSchema {
+		return v.ApiSchemas
+	}).(GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput)
+}
+
 // The connection type for Databases.
 func (o GetAgentToolsToolCollectionItemToolConfigOutput) DatabaseConnections() GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput {
 	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigDatabaseConnection {
@@ -14184,6 +16156,13 @@ func (o GetAgentToolsToolCollectionItemToolConfigOutput) GenerationLlmCustomizat
 	}).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput)
 }
 
+// Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) HttpEndpointAuthConfigs() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig {
+		return v.HttpEndpointAuthConfigs
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput)
+}
+
 // The input location definition.
 func (o GetAgentToolsToolCollectionItemToolConfigOutput) IclExamples() GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput {
 	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) []GetAgentToolsToolCollectionItemToolConfigIclExample {
@@ -14211,6 +16190,11 @@ func (o GetAgentToolsToolCollectionItemToolConfigOutput) ShouldEnableSelfCorrect
 // To enable/disable SQL execution.
 func (o GetAgentToolsToolCollectionItemToolConfigOutput) ShouldEnableSqlExecution() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) bool { return v.ShouldEnableSqlExecution }).(pulumi.BoolOutput)
+}
+
+// The subnet ID from agent developer tenancy through which the egress is going to be routed.
+func (o GetAgentToolsToolCollectionItemToolConfigOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfig) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 // The input location definition.
@@ -14246,6 +16230,145 @@ func (o GetAgentToolsToolCollectionItemToolConfigArrayOutput) Index(i pulumi.Int
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfig {
 		return vs[0].([]GetAgentToolsToolCollectionItemToolConfig)[vs[1].(int)]
 	}).(GetAgentToolsToolCollectionItemToolConfigOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigApiSchema struct {
+	// Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType string `pulumi:"apiSchemaInputLocationType"`
+	// The bucket name of an object.
+	Bucket string `pulumi:"bucket"`
+	// Inline content as input.
+	Content string `pulumi:"content"`
+	// The namespace name of an object.
+	Namespace string `pulumi:"namespace"`
+	// The location/name of object.
+	Object string `pulumi:"object"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigApiSchemaInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs and GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigApiSchemaInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput
+	ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs struct {
+	// Type of Api Schema InputLocation. The allowed values are:
+	// * `INLINE`: The Api schema input location is inline.
+	// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+	ApiSchemaInputLocationType pulumi.StringInput `pulumi:"apiSchemaInputLocationType"`
+	// The bucket name of an object.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Inline content as input.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The namespace name of an object.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The location/name of object.
+	Object pulumi.StringInput `pulumi:"object"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigApiSchemaArray and GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigApiSchemaArray{ GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaArray []GetAgentToolsToolCollectionItemToolConfigApiSchemaInput
+
+func (GetAgentToolsToolCollectionItemToolConfigApiSchemaArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigApiSchema)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigApiSchemaArray) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigApiSchemaArray) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput {
+	return o
+}
+
+// Type of Api Schema InputLocation. The allowed values are:
+// * `INLINE`: The Api schema input location is inline.
+// * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) ApiSchemaInputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigApiSchema) string { return v.ApiSchemaInputLocationType }).(pulumi.StringOutput)
+}
+
+// The bucket name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigApiSchema) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Inline content as input.
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigApiSchema) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The namespace name of an object.
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigApiSchema) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The location/name of object.
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigApiSchema) string { return v.Object }).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigApiSchema)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput() GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigApiSchema {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigApiSchema)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput)
 }
 
 type GetAgentToolsToolCollectionItemToolConfigDatabaseConnection struct {
@@ -14708,6 +16831,380 @@ func (o GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization {
 		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomization)[vs[1].(int)]
 	}).(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig struct {
+	// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource `pulumi:"httpEndpointAuthSources"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs struct {
+	// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+	HttpEndpointAuthSources GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput `pulumi:"httpEndpointAuthSources"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray{ GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigInput
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput {
+	return o
+}
+
+// A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput) HttpEndpointAuthSources() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig) []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return v.HttpEndpointAuthSources
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfig)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource struct {
+	// Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope string `pulumi:"httpEndpointAuthScope"`
+	// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfigs []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig `pulumi:"httpEndpointAuthScopeConfigs"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs struct {
+	// Specifies the level from which credentials should be resolved.
+	HttpEndpointAuthScope pulumi.StringInput `pulumi:"httpEndpointAuthScope"`
+	// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+	HttpEndpointAuthScopeConfigs GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput `pulumi:"httpEndpointAuthScopeConfigs"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{ GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return o
+}
+
+// Specifies the level from which credentials should be resolved.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScope() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) string {
+		return v.HttpEndpointAuthScope
+	}).(pulumi.StringOutput)
+}
+
+// Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput) HttpEndpointAuthScopeConfigs() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource) []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return v.HttpEndpointAuthScopeConfigs
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig struct {
+	// IDCS client ID.
+	ClientId string `pulumi:"clientId"`
+	// The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType string `pulumi:"httpEndpointAuthScopeConfigType"`
+	// IDCS OpenID discovery endpoint.
+	IdcsUrl string `pulumi:"idcsUrl"`
+	// The location of the API key in the request.
+	KeyLocation string `pulumi:"keyLocation"`
+	// The name of the key parameter in the location.
+	KeyName string `pulumi:"keyName"`
+	// OAuth2 scopes for token generation.
+	ScopeUrl string `pulumi:"scopeUrl"`
+	// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...}
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs struct {
+	// IDCS client ID.
+	ClientId pulumi.StringInput `pulumi:"clientId"`
+	// The type of authentication to be applied for this HTTP Endpoint.
+	HttpEndpointAuthScopeConfigType pulumi.StringInput `pulumi:"httpEndpointAuthScopeConfigType"`
+	// IDCS OpenID discovery endpoint.
+	IdcsUrl pulumi.StringInput `pulumi:"idcsUrl"`
+	// The location of the API key in the request.
+	KeyLocation pulumi.StringInput `pulumi:"keyLocation"`
+	// The name of the key parameter in the location.
+	KeyName pulumi.StringInput `pulumi:"keyName"`
+	// OAuth2 scopes for token generation.
+	ScopeUrl pulumi.StringInput `pulumi:"scopeUrl"`
+	// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
+}
+
+// GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput is an input type that accepts GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray and GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput values.
+// You can construct a concrete instance of `GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput` via:
+//
+//	GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray{ GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{...} }
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput
+	ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray []GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return i.ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return o
+}
+
+// IDCS client ID.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.ClientId
+	}).(pulumi.StringOutput)
+}
+
+// The type of authentication to be applied for this HTTP Endpoint.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) HttpEndpointAuthScopeConfigType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.HttpEndpointAuthScopeConfigType
+	}).(pulumi.StringOutput)
+}
+
+// IDCS OpenID discovery endpoint.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) IdcsUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.IdcsUrl
+	}).(pulumi.StringOutput)
+}
+
+// The location of the API key in the request.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.KeyLocation
+	}).(pulumi.StringOutput)
+}
+
+// The name of the key parameter in the location.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) KeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.KeyName
+	}).(pulumi.StringOutput)
+}
+
+// OAuth2 scopes for token generation.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) ScopeUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.ScopeUrl
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)(nil)).Elem()
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput() GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) ToGetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutputWithContext(ctx context.Context) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput {
+	return o
+}
+
+func (o GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput) Index(i pulumi.IntInput) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+		return vs[0].([]GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig)[vs[1].(int)]
+	}).(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput)
 }
 
 type GetAgentToolsToolCollectionItemToolConfigIclExample struct {
@@ -17864,6 +20361,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentAgentLlmConfigRoutingLlmCustomizationPtrInput)(nil)).Elem(), AgentAgentLlmConfigRoutingLlmCustomizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobStatisticArrayInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobTypeInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataIngestionJobDataIngestionJobTypeArrayInput)(nil)).Elem(), AgentDataIngestionJobDataIngestionJobTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigInput)(nil)).Elem(), AgentDataSourceDataSourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigPtrInput)(nil)).Elem(), AgentDataSourceDataSourceConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentDataSourceDataSourceConfigObjectStoragePrefixInput)(nil)).Elem(), AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{})
@@ -17880,8 +20379,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigIndexSchemaPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigIndexSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseIndexConfigSecretDetailPtrInput)(nil)).Elem(), AgentKnowledgeBaseIndexConfigSecretDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseKnowledgeBaseStatisticInput)(nil)).Elem(), AgentKnowledgeBaseKnowledgeBaseStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentKnowledgeBaseKnowledgeBaseStatisticArrayInput)(nil)).Elem(), AgentKnowledgeBaseKnowledgeBaseStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigInput)(nil)).Elem(), AgentToolToolConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigPtrInput)(nil)).Elem(), AgentToolToolConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigApiSchemaInput)(nil)).Elem(), AgentToolToolConfigApiSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigApiSchemaPtrInput)(nil)).Elem(), AgentToolToolConfigApiSchemaArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseConnectionInput)(nil)).Elem(), AgentToolToolConfigDatabaseConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseConnectionPtrInput)(nil)).Elem(), AgentToolToolConfigDatabaseConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigDatabaseSchemaInput)(nil)).Elem(), AgentToolToolConfigDatabaseSchemaArgs{})
@@ -17890,6 +20393,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigFunctionPtrInput)(nil)).Elem(), AgentToolToolConfigFunctionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), AgentToolToolConfigGenerationLlmCustomizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigGenerationLlmCustomizationPtrInput)(nil)).Elem(), AgentToolToolConfigGenerationLlmCustomizationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigPtrInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrInput)(nil)).Elem(), AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigIclExamplesInput)(nil)).Elem(), AgentToolToolConfigIclExamplesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigIclExamplesPtrInput)(nil)).Elem(), AgentToolToolConfigIclExamplesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AgentToolToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), AgentToolToolConfigKnowledgeBaseConfigArgs{})
@@ -17966,12 +20475,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentAgentsFilterArrayInput)(nil)).Elem(), GetAgentAgentsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatisticInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobStatisticArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobStatisticArrayInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobTypeInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobDataIngestionJobTypeArrayInput)(nil)).Elem(), GetAgentDataIngestionJobDataIngestionJobTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsFilterInput)(nil)).Elem(), GetAgentDataIngestionJobsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataIngestionJobsFilterArrayInput)(nil)).Elem(), GetAgentDataIngestionJobsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentDataSourceDataSourceConfigInput)(nil)).Elem(), GetAgentDataSourceDataSourceConfigArgs{})
@@ -18000,6 +20513,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigIndexSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetailInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseIndexConfigSecretDetailArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseIndexConfigSecretDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseKnowledgeBaseStatisticInput)(nil)).Elem(), GetAgentKnowledgeBaseKnowledgeBaseStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayInput)(nil)).Elem(), GetAgentKnowledgeBaseKnowledgeBaseStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesFilterInput)(nil)).Elem(), GetAgentKnowledgeBasesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesFilterArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionArgs{})
@@ -18018,8 +20533,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayInput)(nil)).Elem(), GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigInput)(nil)).Elem(), GetAgentToolToolConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigArrayInput)(nil)).Elem(), GetAgentToolToolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigApiSchemaInput)(nil)).Elem(), GetAgentToolToolConfigApiSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigApiSchemaArrayInput)(nil)).Elem(), GetAgentToolToolConfigApiSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigDatabaseSchemaInput)(nil)).Elem(), GetAgentToolToolConfigDatabaseSchemaArgs{})
@@ -18028,6 +20547,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigFunctionArrayInput)(nil)).Elem(), GetAgentToolToolConfigFunctionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), GetAgentToolToolConfigGenerationLlmCustomizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigGenerationLlmCustomizationArrayInput)(nil)).Elem(), GetAgentToolToolConfigGenerationLlmCustomizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigArrayInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput)(nil)).Elem(), GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigIclExampleInput)(nil)).Elem(), GetAgentToolToolConfigIclExampleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigIclExampleArrayInput)(nil)).Elem(), GetAgentToolToolConfigIclExampleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), GetAgentToolToolConfigKnowledgeBaseConfigArgs{})
@@ -18042,6 +20567,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigApiSchemaInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigApiSchemaArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs{})
@@ -18050,6 +20577,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigFunctionArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigFunctionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExampleInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigIclExampleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigIclExampleArrayInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigIclExampleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigInput)(nil)).Elem(), GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs{})
@@ -18122,6 +20655,8 @@ func init() {
 	pulumi.RegisterOutputType(AgentAgentLlmConfigRoutingLlmCustomizationPtrOutput{})
 	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticOutput{})
 	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobTypeOutput{})
+	pulumi.RegisterOutputType(AgentDataIngestionJobDataIngestionJobTypeArrayOutput{})
 	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigOutput{})
 	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigPtrOutput{})
 	pulumi.RegisterOutputType(AgentDataSourceDataSourceConfigObjectStoragePrefixOutput{})
@@ -18138,8 +20673,12 @@ func init() {
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigIndexSchemaPtrOutput{})
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailOutput{})
 	pulumi.RegisterOutputType(AgentKnowledgeBaseIndexConfigSecretDetailPtrOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseKnowledgeBaseStatisticOutput{})
+	pulumi.RegisterOutputType(AgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigApiSchemaOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigApiSchemaPtrOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseConnectionOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseConnectionPtrOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigDatabaseSchemaOutput{})
@@ -18148,6 +20687,12 @@ func init() {
 	pulumi.RegisterOutputType(AgentToolToolConfigFunctionPtrOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigGenerationLlmCustomizationOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigGenerationLlmCustomizationPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigPtrOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput{})
+	pulumi.RegisterOutputType(AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigPtrOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigIclExamplesOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigIclExamplesPtrOutput{})
 	pulumi.RegisterOutputType(AgentToolToolConfigKnowledgeBaseConfigOutput{})
@@ -18224,12 +20769,16 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentAgentsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobStatisticOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobTypeOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeOutput{})
+	pulumi.RegisterOutputType(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsFilterOutput{})
 	pulumi.RegisterOutputType(GetAgentDataIngestionJobsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentDataSourceDataSourceConfigOutput{})
@@ -18258,6 +20807,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigIndexSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigSecretDetailOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBaseIndexConfigSecretDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseKnowledgeBaseStatisticOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesFilterOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionOutput{})
@@ -18276,8 +20827,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailOutput{})
 	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticOutput{})
+	pulumi.RegisterOutputType(GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigApiSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigApiSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseConnectionOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigDatabaseSchemaOutput{})
@@ -18286,6 +20841,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentToolToolConfigFunctionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigGenerationLlmCustomizationOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigGenerationLlmCustomizationArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigIclExampleOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigIclExampleArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolToolConfigKnowledgeBaseConfigOutput{})
@@ -18300,6 +20861,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigApiSchemaOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigApiSchemaArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaOutput{})
@@ -18308,6 +20871,12 @@ func init() {
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigFunctionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigOutput{})
+	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigIclExampleOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigIclExampleArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigOutput{})

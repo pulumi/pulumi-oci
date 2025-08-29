@@ -17,6 +17,11 @@ public final class GetComputeGpuMemoryFabricResult {
      */
     private Map<String,String> additionalData;
     /**
+     * @return The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    private String availableHostCount;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      * 
      */
@@ -95,6 +100,13 @@ public final class GetComputeGpuMemoryFabricResult {
      */
     public Map<String,String> additionalData() {
         return this.additionalData;
+    }
+    /**
+     * @return The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    public String availableHostCount() {
+        return this.availableHostCount;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
@@ -208,6 +220,7 @@ public final class GetComputeGpuMemoryFabricResult {
     @CustomType.Builder
     public static final class Builder {
         private Map<String,String> additionalData;
+        private String availableHostCount;
         private String compartmentId;
         private String computeGpuMemoryFabricId;
         private String computeHpcIslandId;
@@ -227,6 +240,7 @@ public final class GetComputeGpuMemoryFabricResult {
         public Builder(GetComputeGpuMemoryFabricResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalData = defaults.additionalData;
+    	      this.availableHostCount = defaults.availableHostCount;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeGpuMemoryFabricId = defaults.computeGpuMemoryFabricId;
     	      this.computeHpcIslandId = defaults.computeHpcIslandId;
@@ -250,6 +264,14 @@ public final class GetComputeGpuMemoryFabricResult {
               throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "additionalData");
             }
             this.additionalData = additionalData;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder availableHostCount(String availableHostCount) {
+            if (availableHostCount == null) {
+              throw new MissingRequiredPropertyException("GetComputeGpuMemoryFabricResult", "availableHostCount");
+            }
+            this.availableHostCount = availableHostCount;
             return this;
         }
         @CustomType.Setter
@@ -375,6 +397,7 @@ public final class GetComputeGpuMemoryFabricResult {
         public GetComputeGpuMemoryFabricResult build() {
             final var _resultValue = new GetComputeGpuMemoryFabricResult();
             _resultValue.additionalData = additionalData;
+            _resultValue.availableHostCount = availableHostCount;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeGpuMemoryFabricId = computeGpuMemoryFabricId;
             _resultValue.computeHpcIslandId = computeHpcIslandId;

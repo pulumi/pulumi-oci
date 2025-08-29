@@ -33,6 +33,11 @@ public final class GetDeploymentResult {
      */
     private List<GetDeploymentBackupSchedule> backupSchedules;
     /**
+     * @return The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    private Integer byolCpuCoreCountLimit;
+    /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -123,6 +128,11 @@ public final class GetDeploymentResult {
      * 
      */
     private Boolean isAutoScalingEnabled;
+    /**
+     * @return Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    private Boolean isByolCpuCoreCountLimitEnabled;
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
@@ -301,6 +311,13 @@ public final class GetDeploymentResult {
         return this.backupSchedules;
     }
     /**
+     * @return The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    public Integer byolCpuCoreCountLimit() {
+        return this.byolCpuCoreCountLimit;
+    }
+    /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -428,6 +445,13 @@ public final class GetDeploymentResult {
      */
     public Boolean isAutoScalingEnabled() {
         return this.isAutoScalingEnabled;
+    }
+    /**
+     * @return Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    public Boolean isByolCpuCoreCountLimitEnabled() {
+        return this.isByolCpuCoreCountLimitEnabled;
     }
     /**
      * @return True if all of the aggregate resources are working correctly.
@@ -668,6 +692,7 @@ public final class GetDeploymentResult {
     public static final class Builder {
         private String availabilityDomain;
         private List<GetDeploymentBackupSchedule> backupSchedules;
+        private Integer byolCpuCoreCountLimit;
         private String category;
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -687,6 +712,7 @@ public final class GetDeploymentResult {
         private String id;
         private List<GetDeploymentIngressIp> ingressIps;
         private Boolean isAutoScalingEnabled;
+        private Boolean isByolCpuCoreCountLimitEnabled;
         private Boolean isHealthy;
         private Boolean isLatestVersion;
         private Boolean isLockOverride;
@@ -725,6 +751,7 @@ public final class GetDeploymentResult {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupSchedules = defaults.backupSchedules;
+    	      this.byolCpuCoreCountLimit = defaults.byolCpuCoreCountLimit;
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -744,6 +771,7 @@ public final class GetDeploymentResult {
     	      this.id = defaults.id;
     	      this.ingressIps = defaults.ingressIps;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
+    	      this.isByolCpuCoreCountLimitEnabled = defaults.isByolCpuCoreCountLimitEnabled;
     	      this.isHealthy = defaults.isHealthy;
     	      this.isLatestVersion = defaults.isLatestVersion;
     	      this.isLockOverride = defaults.isLockOverride;
@@ -797,6 +825,14 @@ public final class GetDeploymentResult {
         }
         public Builder backupSchedules(GetDeploymentBackupSchedule... backupSchedules) {
             return backupSchedules(List.of(backupSchedules));
+        }
+        @CustomType.Setter
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            if (byolCpuCoreCountLimit == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "byolCpuCoreCountLimit");
+            }
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            return this;
         }
         @CustomType.Setter
         public Builder category(String category) {
@@ -954,6 +990,14 @@ public final class GetDeploymentResult {
               throw new MissingRequiredPropertyException("GetDeploymentResult", "isAutoScalingEnabled");
             }
             this.isAutoScalingEnabled = isAutoScalingEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            if (isByolCpuCoreCountLimitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentResult", "isByolCpuCoreCountLimitEnabled");
+            }
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -1242,6 +1286,7 @@ public final class GetDeploymentResult {
             final var _resultValue = new GetDeploymentResult();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupSchedules = backupSchedules;
+            _resultValue.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -1261,6 +1306,7 @@ public final class GetDeploymentResult {
             _resultValue.id = id;
             _resultValue.ingressIps = ingressIps;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
+            _resultValue.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
             _resultValue.isHealthy = isHealthy;
             _resultValue.isLatestVersion = isLatestVersion;
             _resultValue.isLockOverride = isLockOverride;

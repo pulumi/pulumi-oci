@@ -10605,6 +10605,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItem struct {
 	State string `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated string `pulumi:"timeCreated"`
+	// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastSynced string `pulumi:"timeLastSynced"`
 	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeRoleChanged string `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10641,6 +10643,8 @@ type GetDeploymentPeersDeploymentPeerCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeLastSynced pulumi.StringInput `pulumi:"timeLastSynced"`
 	// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeRoleChanged pulumi.StringInput `pulumi:"timeRoleChanged"`
 	// The time the resource was last updated. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -10741,6 +10745,11 @@ func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) State() pulumi.Str
 // The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentPeersDeploymentPeerCollectionItemOutput) TimeLastSynced() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentPeersDeploymentPeerCollectionItem) string { return v.TimeLastSynced }).(pulumi.StringOutput)
 }
 
 // The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -12515,6 +12524,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules []GetDeploymentsDeploymentCollectionItemBackupSchedule `pulumi:"backupSchedules"`
+	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+	ByolCpuCoreCountLimit int `pulumi:"byolCpuCoreCountLimit"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category string `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -12529,7 +12540,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	DeploymentDiagnosticDatas []GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData `pulumi:"deploymentDiagnosticDatas"`
 	// The type of the deployment role.
 	DeploymentRole string `pulumi:"deploymentRole"`
-	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	// A filter that returns only the resources matching the specified 'deploymentType'.
 	DeploymentType string `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl string `pulumi:"deploymentUrl"`
@@ -12551,6 +12562,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	IngressIps []GetDeploymentsDeploymentCollectionItemIngressIp `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled bool `pulumi:"isAutoScalingEnabled"`
+	// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+	IsByolCpuCoreCountLimitEnabled bool `pulumi:"isByolCpuCoreCountLimitEnabled"`
 	// True if all of the aggregate resources are working correctly.
 	IsHealthy bool `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
@@ -12634,6 +12647,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// Defines the schedule of the deployment backup.
 	BackupSchedules GetDeploymentsDeploymentCollectionItemBackupScheduleArrayInput `pulumi:"backupSchedules"`
+	// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+	ByolCpuCoreCountLimit pulumi.IntInput `pulumi:"byolCpuCoreCountLimit"`
 	// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 	Category pulumi.StringInput `pulumi:"category"`
 	// The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
@@ -12648,7 +12663,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	DeploymentDiagnosticDatas GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput `pulumi:"deploymentDiagnosticDatas"`
 	// The type of the deployment role.
 	DeploymentRole pulumi.StringInput `pulumi:"deploymentRole"`
-	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	// A filter that returns only the resources matching the specified 'deploymentType'.
 	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// The URL of a resource.
 	DeploymentUrl pulumi.StringInput `pulumi:"deploymentUrl"`
@@ -12670,6 +12685,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	IngressIps GetDeploymentsDeploymentCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
 	// Indicates if auto scaling is enabled for the Deployment's CPU core count.
 	IsAutoScalingEnabled pulumi.BoolInput `pulumi:"isAutoScalingEnabled"`
+	// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+	IsByolCpuCoreCountLimitEnabled pulumi.BoolInput `pulumi:"isByolCpuCoreCountLimitEnabled"`
 	// True if all of the aggregate resources are working correctly.
 	IsHealthy pulumi.BoolInput `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
@@ -12800,6 +12817,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) BackupSchedules() GetDeplo
 	}).(GetDeploymentsDeploymentCollectionItemBackupScheduleArrayOutput)
 }
 
+// The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+func (o GetDeploymentsDeploymentCollectionItemOutput) ByolCpuCoreCountLimit() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) int { return v.ByolCpuCoreCountLimit }).(pulumi.IntOutput)
+}
+
 // The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
 func (o GetDeploymentsDeploymentCollectionItemOutput) Category() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.Category }).(pulumi.StringOutput)
@@ -12837,7 +12859,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentRole() pulumi.St
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentRole }).(pulumi.StringOutput)
 }
 
-// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+// A filter that returns only the resources matching the specified 'deploymentType'.
 func (o GetDeploymentsDeploymentCollectionItemOutput) DeploymentType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
 }
@@ -12892,6 +12914,11 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) IngressIps() GetDeployment
 // Indicates if auto scaling is enabled for the Deployment's CPU core count.
 func (o GetDeploymentsDeploymentCollectionItemOutput) IsAutoScalingEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsAutoScalingEnabled }).(pulumi.BoolOutput)
+}
+
+// Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+func (o GetDeploymentsDeploymentCollectionItemOutput) IsByolCpuCoreCountLimitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsByolCpuCoreCountLimitEnabled }).(pulumi.BoolOutput)
 }
 
 // True if all of the aggregate resources are working correctly.

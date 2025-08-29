@@ -46,6 +46,21 @@ public final class AgentDataIngestionJobDataIngestionJobStatisticArgs extends co
     }
 
     /**
+     * The number of files that have been ignored during the ingestion.
+     * 
+     */
+    @Import(name="numberOfIgnoredFiles")
+    private @Nullable Output<Integer> numberOfIgnoredFiles;
+
+    /**
+     * @return The number of files that have been ignored during the ingestion.
+     * 
+     */
+    public Optional<Output<Integer>> numberOfIgnoredFiles() {
+        return Optional.ofNullable(this.numberOfIgnoredFiles);
+    }
+
+    /**
      * The number of files that have been successfully ingested during the ingestion.
      * 
      */
@@ -65,6 +80,7 @@ public final class AgentDataIngestionJobDataIngestionJobStatisticArgs extends co
     private AgentDataIngestionJobDataIngestionJobStatisticArgs(AgentDataIngestionJobDataIngestionJobStatisticArgs $) {
         this.durationInSeconds = $.durationInSeconds;
         this.numberOfFailedFiles = $.numberOfFailedFiles;
+        this.numberOfIgnoredFiles = $.numberOfIgnoredFiles;
         this.numberOfIngestedFiles = $.numberOfIngestedFiles;
     }
 
@@ -126,6 +142,27 @@ public final class AgentDataIngestionJobDataIngestionJobStatisticArgs extends co
          */
         public Builder numberOfFailedFiles(Integer numberOfFailedFiles) {
             return numberOfFailedFiles(Output.of(numberOfFailedFiles));
+        }
+
+        /**
+         * @param numberOfIgnoredFiles The number of files that have been ignored during the ingestion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfIgnoredFiles(@Nullable Output<Integer> numberOfIgnoredFiles) {
+            $.numberOfIgnoredFiles = numberOfIgnoredFiles;
+            return this;
+        }
+
+        /**
+         * @param numberOfIgnoredFiles The number of files that have been ignored during the ingestion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder numberOfIgnoredFiles(Integer numberOfIgnoredFiles) {
+            return numberOfIgnoredFiles(Output.of(numberOfIgnoredFiles));
         }
 
         /**

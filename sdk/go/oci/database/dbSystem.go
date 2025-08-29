@@ -78,6 +78,10 @@ type DbSystem struct {
 	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// (Updatable) The number of compute servers for the DB system.
+	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
+	// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringOutput `pulumi:"computeModel"`
 	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -96,7 +100,7 @@ type DbSystem struct {
 	DataCollectionOptions DbSystemDataCollectionOptionsOutput `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntOutput `pulumi:"dataStoragePercentage"`
-	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
 	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringOutput `pulumi:"databaseEdition"`
@@ -156,7 +160,7 @@ type DbSystem struct {
 	MemorySizeInGbs pulumi.IntOutput `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringOutput `pulumi:"nextMaintenanceRunId"`
-	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntOutput `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -289,6 +293,10 @@ type dbSystemState struct {
 	ClusterName *string `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The number of compute servers for the DB system.
+	ComputeCount *int `pulumi:"computeCount"`
+	// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -307,7 +315,7 @@ type dbSystemState struct {
 	DataCollectionOptions *DbSystemDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
-	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition *string `pulumi:"databaseEdition"`
@@ -367,7 +375,7 @@ type dbSystemState struct {
 	MemorySizeInGbs *int `pulumi:"memorySizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId *string `pulumi:"nextMaintenanceRunId"`
-	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -450,6 +458,10 @@ type DbSystemState struct {
 	ClusterName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringPtrInput
+	// (Updatable) The number of compute servers for the DB system.
+	ComputeCount pulumi.IntPtrInput
+	// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -468,7 +480,7 @@ type DbSystemState struct {
 	DataCollectionOptions DbSystemDataCollectionOptionsPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
-	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringPtrInput
@@ -528,7 +540,7 @@ type DbSystemState struct {
 	MemorySizeInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the next maintenance run.
 	NextMaintenanceRunId pulumi.StringPtrInput
-	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -615,6 +627,10 @@ type dbSystemArgs struct {
 	ClusterName *string `pulumi:"clusterName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) The number of compute servers for the DB system.
+	ComputeCount *int `pulumi:"computeCount"`
+	// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel *string `pulumi:"computeModel"`
 	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -633,7 +649,7 @@ type dbSystemArgs struct {
 	DataCollectionOptions *DbSystemDataCollectionOptions `pulumi:"dataCollectionOptions"`
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage *int `pulumi:"dataStoragePercentage"`
-	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition *string `pulumi:"databaseEdition"`
@@ -677,7 +693,7 @@ type dbSystemArgs struct {
 	LicenseModel *string `pulumi:"licenseModel"`
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails *DbSystemMaintenanceWindowDetails `pulumi:"maintenanceWindowDetails"`
-	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount *int `pulumi:"nodeCount"`
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -735,6 +751,10 @@ type DbSystemArgs struct {
 	ClusterName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringInput
+	// (Updatable) The number of compute servers for the DB system.
+	ComputeCount pulumi.IntPtrInput
+	// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+	ComputeModel pulumi.StringPtrInput
 	// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 	// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 	// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -753,7 +773,7 @@ type DbSystemArgs struct {
 	DataCollectionOptions DbSystemDataCollectionOptionsPtrInput
 	// The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Specify 80 or 40. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
 	DataStoragePercentage pulumi.IntPtrInput
-	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+	// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// The Oracle Database Edition that applies to all the databases on the DB system. Exadata DB systems and 2-node RAC DB systems require ENTERPRISE_EDITION_EXTREME_PERFORMANCE.
 	DatabaseEdition pulumi.StringPtrInput
@@ -797,7 +817,7 @@ type DbSystemArgs struct {
 	LicenseModel pulumi.StringPtrInput
 	// (Updatable) The scheduling details for the quarterly maintenance window. Patching and system updates take place during the maintenance window.
 	MaintenanceWindowDetails DbSystemMaintenanceWindowDetailsPtrInput
-	// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+	// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 	NodeCount pulumi.IntPtrInput
 	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
 	// * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
@@ -955,6 +975,16 @@ func (o DbSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// (Updatable) The number of compute servers for the DB system.
+func (o DbSystemOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.ComputeCount }).(pulumi.IntOutput)
+}
+
+// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+func (o DbSystemOutput) ComputeModel() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.ComputeModel }).(pulumi.StringOutput)
+}
+
 // (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
 // * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
 // * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -982,7 +1012,7 @@ func (o DbSystemOutput) DataStoragePercentage() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.DataStoragePercentage }).(pulumi.IntOutput)
 }
 
-// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
 func (o DbSystemOutput) DataStorageSizeInGb() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
 }
@@ -1111,7 +1141,7 @@ func (o DbSystemOutput) NextMaintenanceRunId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.NextMaintenanceRunId }).(pulumi.StringOutput)
 }
 
-// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
 func (o DbSystemOutput) NodeCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.IntOutput { return v.NodeCount }).(pulumi.IntOutput)
 }

@@ -367,6 +367,21 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    @Import(name="shapeAttribute")
+    private @Nullable Output<String> shapeAttribute;
+
+    /**
+     * @return The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    public Optional<Output<String>> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
+
+    /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -472,6 +487,7 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.scanListenerPortTcpSsl = $.scanListenerPortTcpSsl;
         this.securityAttributes = $.securityAttributes;
         this.shape = $.shape;
+        this.shapeAttribute = $.shapeAttribute;
         this.sshPublicKeys = $.sshPublicKeys;
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
@@ -1002,6 +1018,27 @@ public final class ExadbVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
+        }
+
+        /**
+         * @param shapeAttribute The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(@Nullable Output<String> shapeAttribute) {
+            $.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
+         * @param shapeAttribute The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            return shapeAttribute(Output.of(shapeAttribute));
         }
 
         /**

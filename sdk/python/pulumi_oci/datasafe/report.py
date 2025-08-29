@@ -99,6 +99,7 @@ class ReportArgs:
 class _ReportState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 data_source: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -109,11 +110,14 @@ class _ReportState:
                  report_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_generated: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Report resources.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the report.
+        :param pulumi.Input[_builtins.str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: Specifies a description of the report.
         :param pulumi.Input[_builtins.str] display_name: Name of the report.
@@ -128,11 +132,15 @@ class _ReportState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the audit report.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] time_created: Specifies the time at which the report was created.
         :param pulumi.Input[_builtins.str] time_generated: Specifies the date and time the report was generated.
+        :param pulumi.Input[_builtins.str] time_updated: The date and time of the report update in Data Safe.
         :param pulumi.Input[_builtins.str] type: The type of the audit report.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_source is not None:
+            pulumi.set(__self__, "data_source", data_source)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -153,8 +161,12 @@ class _ReportState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
         if time_generated is not None:
             pulumi.set(__self__, "time_generated", time_generated)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
         if type is not None:
             pulumi.set(__self__, "type", type)
 
@@ -169,6 +181,18 @@ class _ReportState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+        """
+        return pulumi.get(self, "data_source")
+
+    @data_source.setter
+    def data_source(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "data_source", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -295,6 +319,18 @@ class _ReportState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the time at which the report was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeGenerated")
     def time_generated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -305,6 +341,18 @@ class _ReportState:
     @time_generated.setter
     def time_generated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_generated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time of the report update in Data Safe.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
 
     @_builtins.property
     @pulumi.getter
@@ -407,6 +455,7 @@ class Report(pulumi.CustomResource):
             if report_id is None and not opts.urn:
                 raise TypeError("Missing required property 'report_id'")
             __props__.__dict__["report_id"] = report_id
+            __props__.__dict__["data_source"] = None
             __props__.__dict__["description"] = None
             __props__.__dict__["display_name"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -414,7 +463,9 @@ class Report(pulumi.CustomResource):
             __props__.__dict__["report_definition_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["time_created"] = None
             __props__.__dict__["time_generated"] = None
+            __props__.__dict__["time_updated"] = None
             __props__.__dict__["type"] = None
         super(Report, __self__).__init__(
             'oci:DataSafe/report:Report',
@@ -427,6 +478,7 @@ class Report(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            data_source: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -437,7 +489,9 @@ class Report(pulumi.CustomResource):
             report_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_generated: Optional[pulumi.Input[_builtins.str]] = None,
+            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
             type: Optional[pulumi.Input[_builtins.str]] = None) -> 'Report':
         """
         Get an existing Report resource's state with the given name, id, and optional extra
@@ -447,6 +501,7 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the report.
+        :param pulumi.Input[_builtins.str] data_source: Specifies the name of a resource that provides data for the report. For example alerts, events.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: Specifies a description of the report.
         :param pulumi.Input[_builtins.str] display_name: Name of the report.
@@ -461,7 +516,9 @@ class Report(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] state: The current state of the audit report.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[_builtins.str] time_created: Specifies the time at which the report was created.
         :param pulumi.Input[_builtins.str] time_generated: Specifies the date and time the report was generated.
+        :param pulumi.Input[_builtins.str] time_updated: The date and time of the report update in Data Safe.
         :param pulumi.Input[_builtins.str] type: The type of the audit report.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -469,6 +526,7 @@ class Report(pulumi.CustomResource):
         __props__ = _ReportState.__new__(_ReportState)
 
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["data_source"] = data_source
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
@@ -479,7 +537,9 @@ class Report(pulumi.CustomResource):
         __props__.__dict__["report_id"] = report_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_generated"] = time_generated
+        __props__.__dict__["time_updated"] = time_updated
         __props__.__dict__["type"] = type
         return Report(resource_name, opts=opts, __props__=__props__)
 
@@ -490,6 +550,14 @@ class Report(pulumi.CustomResource):
         (Updatable) The OCID of the compartment containing the report.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+        """
+        return pulumi.get(self, "data_source")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -576,12 +644,28 @@ class Report(pulumi.CustomResource):
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the time at which the report was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
     @pulumi.getter(name="timeGenerated")
     def time_generated(self) -> pulumi.Output[_builtins.str]:
         """
         Specifies the date and time the report was generated.
         """
         return pulumi.get(self, "time_generated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> pulumi.Output[_builtins.str]:
+        """
+        The date and time of the report update in Data Safe.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter

@@ -26,6 +26,8 @@ func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStorag
 
 // A collection of arguments for invoking getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesArgs struct {
+	// Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Optional. Filters the performance results by database edition. Valid values are:
 	// * STANDARD_EDITION
 	// * ENTERPRISE_EDITION
@@ -44,6 +46,7 @@ type GetDbSystemStoragePerformancesArgs struct {
 
 // A collection of values returned by getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesResult struct {
+	CompartmentId   *string `pulumi:"compartmentId"`
 	DatabaseEdition *string `pulumi:"databaseEdition"`
 	// The list of db_system_storage_performances.
 	DbSystemStoragePerformances []GetDbSystemStoragePerformancesDbSystemStoragePerformance `pulumi:"dbSystemStoragePerformances"`
@@ -66,6 +69,8 @@ func GetDbSystemStoragePerformancesOutput(ctx *pulumi.Context, args GetDbSystemS
 
 // A collection of arguments for invoking getDbSystemStoragePerformances.
 type GetDbSystemStoragePerformancesOutputArgs struct {
+	// Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Optional. Filters the performance results by database edition. Valid values are:
 	// * STANDARD_EDITION
 	// * ENTERPRISE_EDITION
@@ -99,6 +104,10 @@ func (o GetDbSystemStoragePerformancesResultOutput) ToGetDbSystemStoragePerforma
 
 func (o GetDbSystemStoragePerformancesResultOutput) ToGetDbSystemStoragePerformancesResultOutputWithContext(ctx context.Context) GetDbSystemStoragePerformancesResultOutput {
 	return o
+}
+
+func (o GetDbSystemStoragePerformancesResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbSystemStoragePerformancesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetDbSystemStoragePerformancesResultOutput) DatabaseEdition() pulumi.StringPtrOutput {

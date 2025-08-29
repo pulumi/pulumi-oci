@@ -67,6 +67,8 @@ type AgentDataIngestionJob struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics AgentDataIngestionJobDataIngestionJobStatisticArrayOutput `pulumi:"dataIngestionJobStatistics"`
+	// DataIngestionJob type.
+	DataIngestionJobTypes AgentDataIngestionJobDataIngestionJobTypeArrayOutput `pulumi:"dataIngestionJobTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 	DataSourceId pulumi.StringOutput `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -79,7 +81,8 @@ type AgentDataIngestionJob struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	FreeformTags    pulumi.StringMapOutput `pulumi:"freeformTags"`
+	KnowledgeBaseId pulumi.StringOutput    `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The current state of the data ingestion job.
@@ -132,6 +135,8 @@ type agentDataIngestionJobState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics []AgentDataIngestionJobDataIngestionJobStatistic `pulumi:"dataIngestionJobStatistics"`
+	// DataIngestionJob type.
+	DataIngestionJobTypes []AgentDataIngestionJobDataIngestionJobType `pulumi:"dataIngestionJobTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 	DataSourceId *string `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -144,7 +149,8 @@ type agentDataIngestionJobState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags map[string]string `pulumi:"freeformTags"`
+	FreeformTags    map[string]string `pulumi:"freeformTags"`
+	KnowledgeBaseId *string           `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The current state of the data ingestion job.
@@ -162,6 +168,8 @@ type AgentDataIngestionJobState struct {
 	CompartmentId pulumi.StringPtrInput
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics AgentDataIngestionJobDataIngestionJobStatisticArrayInput
+	// DataIngestionJob type.
+	DataIngestionJobTypes AgentDataIngestionJobDataIngestionJobTypeArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 	DataSourceId pulumi.StringPtrInput
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -174,7 +182,8 @@ type AgentDataIngestionJobState struct {
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	FreeformTags pulumi.StringMapInput
+	FreeformTags    pulumi.StringMapInput
+	KnowledgeBaseId pulumi.StringPtrInput
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The current state of the data ingestion job.
@@ -327,6 +336,13 @@ func (o AgentDataIngestionJobOutput) DataIngestionJobStatistics() AgentDataInges
 	}).(AgentDataIngestionJobDataIngestionJobStatisticArrayOutput)
 }
 
+// DataIngestionJob type.
+func (o AgentDataIngestionJobOutput) DataIngestionJobTypes() AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o.ApplyT(func(v *AgentDataIngestionJob) AgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+		return v.DataIngestionJobTypes
+	}).(AgentDataIngestionJobDataIngestionJobTypeArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 func (o AgentDataIngestionJobOutput) DataSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentDataIngestionJob) pulumi.StringOutput { return v.DataSourceId }).(pulumi.StringOutput)
@@ -353,6 +369,10 @@ func (o AgentDataIngestionJobOutput) DisplayName() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AgentDataIngestionJobOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AgentDataIngestionJob) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+func (o AgentDataIngestionJobOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AgentDataIngestionJob) pulumi.StringOutput { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
 // A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

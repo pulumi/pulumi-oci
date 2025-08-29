@@ -11,6 +11,8 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBackupL
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeAttachAndMountOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberBlockVolumeOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberCommonDestinationKey;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDbSystemAdminUserDetail;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDbSystemReplicationUserDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDestinationEncryptionKey;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperation;
@@ -22,6 +24,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVaultMa
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVirtualNodePoolConfig;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberVnicMapping;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -73,6 +76,16 @@ public final class GetDrProtectionGroupMember {
      * 
      */
     private String connectionStringType;
+    /**
+     * @return The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberDbSystemAdminUserDetail> dbSystemAdminUserDetails;
+    /**
+     * @return The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberDbSystemReplicationUserDetail> dbSystemReplicationUserDetails;
     /**
      * @return The availability domain of the destination mount target. Example: `BBTh:region-AD`
      * 
@@ -128,6 +141,16 @@ public final class GetDrProtectionGroupMember {
      * 
      */
     private List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
+    /**
+     * @return The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+     * 
+     */
+    private Integer gtidReconciliationTimeout;
+    /**
+     * @return A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+     * 
+     */
+    private Boolean isContinueOnGtidReconciliationTimeout;
     /**
      * @return A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
      * 
@@ -188,6 +211,11 @@ public final class GetDrProtectionGroupMember {
      * 
      */
     private String peerClusterId;
+    /**
+     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * 
+     */
+    private String peerDbSystemId;
     /**
      * @return A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
@@ -279,6 +307,20 @@ public final class GetDrProtectionGroupMember {
         return this.connectionStringType;
     }
     /**
+     * @return The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberDbSystemAdminUserDetail> dbSystemAdminUserDetails() {
+        return this.dbSystemAdminUserDetails;
+    }
+    /**
+     * @return The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberDbSystemReplicationUserDetail> dbSystemReplicationUserDetails() {
+        return this.dbSystemReplicationUserDetails;
+    }
+    /**
      * @return The availability domain of the destination mount target. Example: `BBTh:region-AD`
      * 
      */
@@ -354,6 +396,20 @@ public final class GetDrProtectionGroupMember {
      */
     public List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations() {
         return this.fileSystemOperations;
+    }
+    /**
+     * @return The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+     * 
+     */
+    public Integer gtidReconciliationTimeout() {
+        return this.gtidReconciliationTimeout;
+    }
+    /**
+     * @return A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+     * 
+     */
+    public Boolean isContinueOnGtidReconciliationTimeout() {
+        return this.isContinueOnGtidReconciliationTimeout;
     }
     /**
      * @return A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -440,6 +496,13 @@ public final class GetDrProtectionGroupMember {
         return this.peerClusterId;
     }
     /**
+     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * 
+     */
+    public String peerDbSystemId() {
+        return this.peerDbSystemId;
+    }
+    /**
      * @return A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
      */
@@ -493,6 +556,8 @@ public final class GetDrProtectionGroupMember {
         private String bucket;
         private List<GetDrProtectionGroupMemberCommonDestinationKey> commonDestinationKeys;
         private String connectionStringType;
+        private List<GetDrProtectionGroupMemberDbSystemAdminUserDetail> dbSystemAdminUserDetails;
+        private List<GetDrProtectionGroupMemberDbSystemReplicationUserDetail> dbSystemReplicationUserDetails;
         private String destinationAvailabilityDomain;
         private String destinationBackupPolicyId;
         private String destinationCapacityReservationId;
@@ -504,6 +569,8 @@ public final class GetDrProtectionGroupMember {
         private String destinationSnapshotPolicyId;
         private List<GetDrProtectionGroupMemberExportMapping> exportMappings;
         private List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
+        private Integer gtidReconciliationTimeout;
+        private Boolean isContinueOnGtidReconciliationTimeout;
         private Boolean isMovable;
         private Boolean isRetainFaultDomain;
         private Boolean isStartStopEnabled;
@@ -516,6 +583,7 @@ public final class GetDrProtectionGroupMember {
         private List<GetDrProtectionGroupMemberNetworkLoadBalancerMapping> networkLoadBalancerMappings;
         private String passwordVaultSecretId;
         private String peerClusterId;
+        private String peerDbSystemId;
         private List<GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings;
         private List<GetDrProtectionGroupMemberVaultMapping> vaultMappings;
         private List<GetDrProtectionGroupMemberVirtualNodePoolConfig> virtualNodePoolConfigs;
@@ -533,6 +601,8 @@ public final class GetDrProtectionGroupMember {
     	      this.bucket = defaults.bucket;
     	      this.commonDestinationKeys = defaults.commonDestinationKeys;
     	      this.connectionStringType = defaults.connectionStringType;
+    	      this.dbSystemAdminUserDetails = defaults.dbSystemAdminUserDetails;
+    	      this.dbSystemReplicationUserDetails = defaults.dbSystemReplicationUserDetails;
     	      this.destinationAvailabilityDomain = defaults.destinationAvailabilityDomain;
     	      this.destinationBackupPolicyId = defaults.destinationBackupPolicyId;
     	      this.destinationCapacityReservationId = defaults.destinationCapacityReservationId;
@@ -544,6 +614,8 @@ public final class GetDrProtectionGroupMember {
     	      this.destinationSnapshotPolicyId = defaults.destinationSnapshotPolicyId;
     	      this.exportMappings = defaults.exportMappings;
     	      this.fileSystemOperations = defaults.fileSystemOperations;
+    	      this.gtidReconciliationTimeout = defaults.gtidReconciliationTimeout;
+    	      this.isContinueOnGtidReconciliationTimeout = defaults.isContinueOnGtidReconciliationTimeout;
     	      this.isMovable = defaults.isMovable;
     	      this.isRetainFaultDomain = defaults.isRetainFaultDomain;
     	      this.isStartStopEnabled = defaults.isStartStopEnabled;
@@ -556,6 +628,7 @@ public final class GetDrProtectionGroupMember {
     	      this.networkLoadBalancerMappings = defaults.networkLoadBalancerMappings;
     	      this.passwordVaultSecretId = defaults.passwordVaultSecretId;
     	      this.peerClusterId = defaults.peerClusterId;
+    	      this.peerDbSystemId = defaults.peerDbSystemId;
     	      this.sourceVolumeToDestinationEncryptionKeyMappings = defaults.sourceVolumeToDestinationEncryptionKeyMappings;
     	      this.vaultMappings = defaults.vaultMappings;
     	      this.virtualNodePoolConfigs = defaults.virtualNodePoolConfigs;
@@ -654,6 +727,28 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder dbSystemAdminUserDetails(List<GetDrProtectionGroupMemberDbSystemAdminUserDetail> dbSystemAdminUserDetails) {
+            if (dbSystemAdminUserDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "dbSystemAdminUserDetails");
+            }
+            this.dbSystemAdminUserDetails = dbSystemAdminUserDetails;
+            return this;
+        }
+        public Builder dbSystemAdminUserDetails(GetDrProtectionGroupMemberDbSystemAdminUserDetail... dbSystemAdminUserDetails) {
+            return dbSystemAdminUserDetails(List.of(dbSystemAdminUserDetails));
+        }
+        @CustomType.Setter
+        public Builder dbSystemReplicationUserDetails(List<GetDrProtectionGroupMemberDbSystemReplicationUserDetail> dbSystemReplicationUserDetails) {
+            if (dbSystemReplicationUserDetails == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "dbSystemReplicationUserDetails");
+            }
+            this.dbSystemReplicationUserDetails = dbSystemReplicationUserDetails;
+            return this;
+        }
+        public Builder dbSystemReplicationUserDetails(GetDrProtectionGroupMemberDbSystemReplicationUserDetail... dbSystemReplicationUserDetails) {
+            return dbSystemReplicationUserDetails(List.of(dbSystemReplicationUserDetails));
+        }
+        @CustomType.Setter
         public Builder destinationAvailabilityDomain(String destinationAvailabilityDomain) {
             if (destinationAvailabilityDomain == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "destinationAvailabilityDomain");
@@ -749,6 +844,22 @@ public final class GetDrProtectionGroupMember {
         }
         public Builder fileSystemOperations(GetDrProtectionGroupMemberFileSystemOperation... fileSystemOperations) {
             return fileSystemOperations(List.of(fileSystemOperations));
+        }
+        @CustomType.Setter
+        public Builder gtidReconciliationTimeout(Integer gtidReconciliationTimeout) {
+            if (gtidReconciliationTimeout == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "gtidReconciliationTimeout");
+            }
+            this.gtidReconciliationTimeout = gtidReconciliationTimeout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isContinueOnGtidReconciliationTimeout(Boolean isContinueOnGtidReconciliationTimeout) {
+            if (isContinueOnGtidReconciliationTimeout == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "isContinueOnGtidReconciliationTimeout");
+            }
+            this.isContinueOnGtidReconciliationTimeout = isContinueOnGtidReconciliationTimeout;
+            return this;
         }
         @CustomType.Setter
         public Builder isMovable(Boolean isMovable) {
@@ -856,6 +967,14 @@ public final class GetDrProtectionGroupMember {
             return this;
         }
         @CustomType.Setter
+        public Builder peerDbSystemId(String peerDbSystemId) {
+            if (peerDbSystemId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "peerDbSystemId");
+            }
+            this.peerDbSystemId = peerDbSystemId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceVolumeToDestinationEncryptionKeyMappings(List<GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping> sourceVolumeToDestinationEncryptionKeyMappings) {
             if (sourceVolumeToDestinationEncryptionKeyMappings == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "sourceVolumeToDestinationEncryptionKeyMappings");
@@ -921,6 +1040,8 @@ public final class GetDrProtectionGroupMember {
             _resultValue.bucket = bucket;
             _resultValue.commonDestinationKeys = commonDestinationKeys;
             _resultValue.connectionStringType = connectionStringType;
+            _resultValue.dbSystemAdminUserDetails = dbSystemAdminUserDetails;
+            _resultValue.dbSystemReplicationUserDetails = dbSystemReplicationUserDetails;
             _resultValue.destinationAvailabilityDomain = destinationAvailabilityDomain;
             _resultValue.destinationBackupPolicyId = destinationBackupPolicyId;
             _resultValue.destinationCapacityReservationId = destinationCapacityReservationId;
@@ -932,6 +1053,8 @@ public final class GetDrProtectionGroupMember {
             _resultValue.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
             _resultValue.exportMappings = exportMappings;
             _resultValue.fileSystemOperations = fileSystemOperations;
+            _resultValue.gtidReconciliationTimeout = gtidReconciliationTimeout;
+            _resultValue.isContinueOnGtidReconciliationTimeout = isContinueOnGtidReconciliationTimeout;
             _resultValue.isMovable = isMovable;
             _resultValue.isRetainFaultDomain = isRetainFaultDomain;
             _resultValue.isStartStopEnabled = isStartStopEnabled;
@@ -944,6 +1067,7 @@ public final class GetDrProtectionGroupMember {
             _resultValue.networkLoadBalancerMappings = networkLoadBalancerMappings;
             _resultValue.passwordVaultSecretId = passwordVaultSecretId;
             _resultValue.peerClusterId = peerClusterId;
+            _resultValue.peerDbSystemId = peerDbSystemId;
             _resultValue.sourceVolumeToDestinationEncryptionKeyMappings = sourceVolumeToDestinationEncryptionKeyMappings;
             _resultValue.vaultMappings = vaultMappings;
             _resultValue.virtualNodePoolConfigs = virtualNodePoolConfigs;

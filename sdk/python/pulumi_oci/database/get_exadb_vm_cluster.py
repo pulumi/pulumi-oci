@@ -27,7 +27,7 @@ class GetExadbVmClusterResult:
     """
     A collection of values returned by getExadbVmCluster.
     """
-    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
+    def __init__(__self__, availability_domain=None, backup_network_nsg_ids=None, backup_subnet_id=None, cluster_name=None, cluster_placement_group_id=None, compartment_id=None, data_collection_options=None, defined_tags=None, display_name=None, domain=None, exadb_vm_cluster_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, gi_version=None, grid_image_id=None, grid_image_type=None, hostname=None, id=None, iorm_config_caches=None, last_update_history_entry_id=None, license_model=None, lifecycle_details=None, listener_port=None, node_configs=None, node_resources=None, nsg_ids=None, private_zone_id=None, scan_dns_name=None, scan_dns_record_id=None, scan_ip_ids=None, scan_listener_port_tcp=None, scan_listener_port_tcp_ssl=None, security_attributes=None, shape=None, shape_attribute=None, ssh_public_keys=None, state=None, subnet_id=None, subscription_id=None, system_tags=None, system_version=None, time_created=None, time_zone=None, vip_ids=None, zone_id=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -130,6 +130,9 @@ class GetExadbVmClusterResult:
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
+        if shape_attribute and not isinstance(shape_attribute, str):
+            raise TypeError("Expected argument 'shape_attribute' to be a str")
+        pulumi.set(__self__, "shape_attribute", shape_attribute)
         if ssh_public_keys and not isinstance(ssh_public_keys, list):
             raise TypeError("Expected argument 'ssh_public_keys' to be a list")
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
@@ -432,6 +435,14 @@ class GetExadbVmClusterResult:
         return pulumi.get(self, "shape")
 
     @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> _builtins.str:
+        """
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        """
+        return pulumi.get(self, "shape_attribute")
+
+    @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
     def ssh_public_keys(self) -> Sequence[_builtins.str]:
         """
@@ -552,6 +563,7 @@ class AwaitableGetExadbVmClusterResult(GetExadbVmClusterResult):
             scan_listener_port_tcp_ssl=self.scan_listener_port_tcp_ssl,
             security_attributes=self.security_attributes,
             shape=self.shape,
+            shape_attribute=self.shape_attribute,
             ssh_public_keys=self.ssh_public_keys,
             state=self.state,
             subnet_id=self.subnet_id,
@@ -623,6 +635,7 @@ def get_exadb_vm_cluster(exadb_vm_cluster_id: Optional[_builtins.str] = None,
         scan_listener_port_tcp_ssl=pulumi.get(__ret__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
         shape=pulumi.get(__ret__, 'shape'),
+        shape_attribute=pulumi.get(__ret__, 'shape_attribute'),
         ssh_public_keys=pulumi.get(__ret__, 'ssh_public_keys'),
         state=pulumi.get(__ret__, 'state'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
@@ -691,6 +704,7 @@ def get_exadb_vm_cluster_output(exadb_vm_cluster_id: Optional[pulumi.Input[_buil
         scan_listener_port_tcp_ssl=pulumi.get(__response__, 'scan_listener_port_tcp_ssl'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
         shape=pulumi.get(__response__, 'shape'),
+        shape_attribute=pulumi.get(__response__, 'shape_attribute'),
         ssh_public_keys=pulumi.get(__response__, 'ssh_public_keys'),
         state=pulumi.get(__response__, 'state'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),

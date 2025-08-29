@@ -55,6 +55,18 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsPl
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterPlainArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersPlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstancePlainArgs;
 import com.pulumi.oci.oci.inputs.GetWlmsManagedInstanceScanResultsArgs;
@@ -112,6 +124,12 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationRe
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultsResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionsResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigsResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterResult;
+import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClustersResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceScanResultsResult;
 import com.pulumi.oci.oci.outputs.GetWlmsManagedInstanceServerInstalledPatchesResult;
@@ -5922,6 +5940,1549 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaultsPlain(GetDbmulticloudOracleDbAzureVaultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", TypeShape.of(GetDbmulticloudOracleDbAzureVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaCluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs args) {
+        return getManagedKafkaKafkaCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaCluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaClusterPlain(GetManagedKafkaKafkaClusterPlainArgs args) {
+        return getManagedKafkaKafkaClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaCluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaCluster:getManagedKafkaKafkaCluster", TypeShape.of(GetManagedKafkaKafkaClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaCluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaCluster:getManagedKafkaKafkaCluster", TypeShape.of(GetManagedKafkaKafkaClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaCluster.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterResult> getManagedKafkaKafkaClusterPlain(GetManagedKafkaKafkaClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaCluster:getManagedKafkaKafkaCluster", TypeShape.of(GetManagedKafkaKafkaClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigResult> getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs args) {
+        return getManagedKafkaKafkaClusterConfig(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigResult> getManagedKafkaKafkaClusterConfigPlain(GetManagedKafkaKafkaClusterConfigPlainArgs args) {
+        return getManagedKafkaKafkaClusterConfigPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigResult> getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfig:getManagedKafkaKafkaClusterConfig", TypeShape.of(GetManagedKafkaKafkaClusterConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigResult> getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfig:getManagedKafkaKafkaClusterConfig", TypeShape.of(GetManagedKafkaKafkaClusterConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigResult> getManagedKafkaKafkaClusterConfigPlain(GetManagedKafkaKafkaClusterConfigPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterConfig:getManagedKafkaKafkaClusterConfig", TypeShape.of(GetManagedKafkaKafkaClusterConfigResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionResult> getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs args) {
+        return getManagedKafkaKafkaClusterConfigVersion(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigVersionResult> getManagedKafkaKafkaClusterConfigVersionPlain(GetManagedKafkaKafkaClusterConfigVersionPlainArgs args) {
+        return getManagedKafkaKafkaClusterConfigVersionPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionResult> getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigVersion:getManagedKafkaKafkaClusterConfigVersion", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionResult> getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigVersion:getManagedKafkaKafkaClusterConfigVersion", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Kafka Cluster Config Version resource in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets information about a KafkaClusterConfig version.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigVersionResult> getManagedKafkaKafkaClusterConfigVersionPlain(GetManagedKafkaKafkaClusterConfigVersionPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterConfigVersion:getManagedKafkaKafkaClusterConfigVersion", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfig Versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionsResult> getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs args) {
+        return getManagedKafkaKafkaClusterConfigVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfig Versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigVersionsResult> getManagedKafkaKafkaClusterConfigVersionsPlain(GetManagedKafkaKafkaClusterConfigVersionsPlainArgs args) {
+        return getManagedKafkaKafkaClusterConfigVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfig Versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionsResult> getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigVersions:getManagedKafkaKafkaClusterConfigVersions", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfig Versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigVersionsResult> getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigVersions:getManagedKafkaKafkaClusterConfigVersions", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Config Versions in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfig Versions.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigVersionsResult> getManagedKafkaKafkaClusterConfigVersionsPlain(GetManagedKafkaKafkaClusterConfigVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterConfigVersions:getManagedKafkaKafkaClusterConfigVersions", TypeShape.of(GetManagedKafkaKafkaClusterConfigVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigs() {
+        return getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigsPlain() {
+        return getManagedKafkaKafkaClusterConfigsPlain(GetManagedKafkaKafkaClusterConfigsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs args) {
+        return getManagedKafkaKafkaClusterConfigs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigsPlain(GetManagedKafkaKafkaClusterConfigsPlainArgs args) {
+        return getManagedKafkaKafkaClusterConfigsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigs:getManagedKafkaKafkaClusterConfigs", TypeShape.of(GetManagedKafkaKafkaClusterConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterConfigs:getManagedKafkaKafkaClusterConfigs", TypeShape.of(GetManagedKafkaKafkaClusterConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusterConfigs.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterConfigs = OciFunctions.getManagedKafkaKafkaClusterConfigs(GetManagedKafkaKafkaClusterConfigsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterConfigDisplayName)
+     *             .id(kafkaClusterConfigId)
+     *             .state(kafkaClusterConfigState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClusterConfigsResult> getManagedKafkaKafkaClusterConfigsPlain(GetManagedKafkaKafkaClusterConfigsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusterConfigs:getManagedKafkaKafkaClusterConfigs", TypeShape.of(GetManagedKafkaKafkaClusterConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClusters() {
+        return getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClustersPlain() {
+        return getManagedKafkaKafkaClustersPlain(GetManagedKafkaKafkaClustersPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs args) {
+        return getManagedKafkaKafkaClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClustersPlain(GetManagedKafkaKafkaClustersPlainArgs args) {
+        return getManagedKafkaKafkaClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", TypeShape.of(GetManagedKafkaKafkaClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", TypeShape.of(GetManagedKafkaKafkaClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Kafka Clusters in Oracle Cloud Infrastructure Managed Kafka service.
+     * 
+     * Gets a list of KafkaClusters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusters = OciFunctions.getManagedKafkaKafkaClusters(GetManagedKafkaKafkaClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(kafkaClusterDisplayName)
+     *             .id(kafkaClusterId)
+     *             .state(kafkaClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetManagedKafkaKafkaClustersResult> getManagedKafkaKafkaClustersPlain(GetManagedKafkaKafkaClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getManagedKafkaKafkaClusters:getManagedKafkaKafkaClusters", TypeShape.of(GetManagedKafkaKafkaClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Managed Instance resource in Oracle Cloud Infrastructure Wlms service.

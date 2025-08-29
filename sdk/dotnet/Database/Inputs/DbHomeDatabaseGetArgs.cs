@@ -209,6 +209,12 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        /// </summary>
+        [Input("storageSizeDetails")]
+        public Input<Inputs.DbHomeDatabaseStorageSizeDetailsGetArgs>? StorageSizeDetails { get; set; }
+
         [Input("tdeWalletPassword")]
         private Input<string>? _tdeWalletPassword;
 

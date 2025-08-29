@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified compartment.
+        /// Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
         /// </summary>
         public static Task<GetSecurityAssessmentFindingsResult> InvokeAsync(GetSecurityAssessmentFindingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsArgs(), options.WithDefaults());
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified compartment.
+        /// Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// List all the findings from all the targets in the specified compartment.
+        /// Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
         /// </summary>
         public static Output<GetSecurityAssessmentFindingsResult> Invoke(GetSecurityAssessmentFindingsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSecurityAssessmentFindingsResult>("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", args ?? new GetSecurityAssessmentFindingsInvokeArgs(), options.WithDefaults());
@@ -46,10 +46,32 @@ namespace Pulumi.Oci.DataSafe
         public string? AccessLevel { get; set; }
 
         /// <summary>
+        /// The category of the finding.
+        /// </summary>
+        [Input("category")]
+        public string? Category { get; set; }
+
+        /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
+
+        [Input("containsReferences")]
+        private List<string>? _containsReferences;
+        public List<string> ContainsReferences
+        {
+            get => _containsReferences ?? (_containsReferences = new List<string>());
+            set => _containsReferences = value;
+        }
+
+        [Input("containsSeverities")]
+        private List<string>? _containsSeverities;
+        public List<string> ContainsSeverities
+        {
+            get => _containsSeverities ?? (_containsSeverities = new List<string>());
+            set => _containsSeverities = value;
+        }
 
         [Input("fields")]
         private List<string>? _fields;
@@ -122,6 +144,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public string? TargetId { get; set; }
 
+        [Input("targetIds")]
+        private List<string>? _targetIds;
+
+        /// <summary>
+        /// An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+        /// </summary>
+        public List<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new List<string>());
+            set => _targetIds = value;
+        }
+
         public GetSecurityAssessmentFindingsArgs()
         {
         }
@@ -137,10 +171,32 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
+        /// The category of the finding.
+        /// </summary>
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
+        /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
+
+        [Input("containsReferences")]
+        private InputList<string>? _containsReferences;
+        public InputList<string> ContainsReferences
+        {
+            get => _containsReferences ?? (_containsReferences = new InputList<string>());
+            set => _containsReferences = value;
+        }
+
+        [Input("containsSeverities")]
+        private InputList<string>? _containsSeverities;
+        public InputList<string> ContainsSeverities
+        {
+            get => _containsSeverities ?? (_containsSeverities = new InputList<string>());
+            set => _containsSeverities = value;
+        }
 
         [Input("fields")]
         private InputList<string>? _fields;
@@ -213,6 +269,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+        /// </summary>
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
+
         public GetSecurityAssessmentFindingsInvokeArgs()
         {
         }
@@ -224,7 +292,13 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSecurityAssessmentFindingsResult
     {
         public readonly string? AccessLevel;
+        /// <summary>
+        /// The category to which the finding belongs to.
+        /// </summary>
+        public readonly string? Category;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> ContainsReferences;
+        public readonly ImmutableArray<string> ContainsSeverities;
         public readonly ImmutableArray<string> Fields;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingsFilterResult> Filters;
         public readonly string? FindingKey;
@@ -258,12 +332,19 @@ namespace Pulumi.Oci.DataSafe
         /// The OCID of the target database.
         /// </summary>
         public readonly string? TargetId;
+        public readonly ImmutableArray<string> TargetIds;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingsResult(
             string? accessLevel,
 
+            string? category,
+
             bool? compartmentIdInSubtree,
+
+            ImmutableArray<string> containsReferences,
+
+            ImmutableArray<string> containsSeverities,
 
             ImmutableArray<string> fields,
 
@@ -287,10 +368,15 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
-            string? targetId)
+            string? targetId,
+
+            ImmutableArray<string> targetIds)
         {
             AccessLevel = accessLevel;
+            Category = category;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            ContainsReferences = containsReferences;
+            ContainsSeverities = containsSeverities;
             Fields = fields;
             Filters = filters;
             FindingKey = findingKey;
@@ -303,6 +389,7 @@ namespace Pulumi.Oci.DataSafe
             Severity = severity;
             State = state;
             TargetId = targetId;
+            TargetIds = targetIds;
         }
     }
 }

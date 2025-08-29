@@ -58,6 +58,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAssessmentScheduled(userAssessmentIsAssessmentScheduled)
  *             .schedule(userAssessmentSchedule)
+ *             .targetType(userAssessmentTargetType)
  *             .build());
  * 
  *     }
@@ -320,20 +321,28 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The OCID of the target database on which the user assessment is to be run.
+     * The OCID of target database group.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="targetDatabaseGroupId", refs={String.class}, tree="[0]")
+    private Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return The OCID of target database group.
+     * 
+     */
+    public Output<String> targetDatabaseGroupId() {
+        return this.targetDatabaseGroupId;
+    }
+    /**
+     * The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     public Output<String> targetId() {
@@ -352,6 +361,26 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      */
     public Output<List<String>> targetIds() {
         return this.targetIds;
+    }
+    /**
+     * The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="targetType", refs={String.class}, tree="[0]")
+    private Output<String> targetType;
+
+    /**
+     * @return The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> targetType() {
+        return this.targetType;
     }
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

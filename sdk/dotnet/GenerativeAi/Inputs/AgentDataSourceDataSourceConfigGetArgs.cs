@@ -13,8 +13,7 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
     public sealed class AgentDataSourceDataSourceConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type of the tool. The allowed values are:
-        /// * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        /// (Updatable) The type of the tool.
         /// </summary>
         [Input("dataSourceConfigType", required: true)]
         public Input<string> DataSourceConfigType { get; set; } = null!;

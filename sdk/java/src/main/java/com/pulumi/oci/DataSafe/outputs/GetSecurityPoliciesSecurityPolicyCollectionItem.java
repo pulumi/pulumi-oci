@@ -47,10 +47,10 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
+     * @return The type of the security policy.
      * 
      */
-    private String securityPolicyId;
+    private String securityPolicyType;
     /**
      * @return The current state of the security policy.
      * 
@@ -123,11 +123,11 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
+     * @return The type of the security policy.
      * 
      */
-    public String securityPolicyId() {
-        return this.securityPolicyId;
+    public String securityPolicyType() {
+        return this.securityPolicyType;
     }
     /**
      * @return The current state of the security policy.
@@ -174,7 +174,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
-        private String securityPolicyId;
+        private String securityPolicyType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -189,7 +189,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
-    	      this.securityPolicyId = defaults.securityPolicyId;
+    	      this.securityPolicyType = defaults.securityPolicyType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -253,11 +253,11 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyId(String securityPolicyId) {
-            if (securityPolicyId == null) {
-              throw new MissingRequiredPropertyException("GetSecurityPoliciesSecurityPolicyCollectionItem", "securityPolicyId");
+        public Builder securityPolicyType(String securityPolicyType) {
+            if (securityPolicyType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPoliciesSecurityPolicyCollectionItem", "securityPolicyType");
             }
-            this.securityPolicyId = securityPolicyId;
+            this.securityPolicyType = securityPolicyType;
             return this;
         }
         @CustomType.Setter
@@ -301,7 +301,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
-            _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.securityPolicyType = securityPolicyType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

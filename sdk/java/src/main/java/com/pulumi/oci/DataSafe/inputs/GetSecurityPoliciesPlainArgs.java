@@ -101,6 +101,21 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * The type of the security policy.
+     * 
+     */
+    @Import(name="securityPolicyType")
+    private @Nullable String securityPolicyType;
+
+    /**
+     * @return The type of the security policy.
+     * 
+     */
+    public Optional<String> securityPolicyType() {
+        return Optional.ofNullable(this.securityPolicyType);
+    }
+
+    /**
      * The current state of the security policy.
      * 
      */
@@ -124,6 +139,7 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.securityPolicyId = $.securityPolicyId;
+        this.securityPolicyType = $.securityPolicyType;
         this.state = $.state;
     }
 
@@ -206,6 +222,17 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
          */
         public Builder securityPolicyId(@Nullable String securityPolicyId) {
             $.securityPolicyId = securityPolicyId;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyType The type of the security policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyType(@Nullable String securityPolicyType) {
+            $.securityPolicyType = securityPolicyType;
             return this;
         }
 

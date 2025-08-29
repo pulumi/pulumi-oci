@@ -80,7 +80,7 @@ type GetSqlFirewallAllowedSqlAnalyticsArgs struct {
 	GroupBies []string `pulumi:"groupBies"`
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
 	//
-	// **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+	// **Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
 	ScimQuery *string `pulumi:"scimQuery"`
 }
 
@@ -120,7 +120,7 @@ type GetSqlFirewallAllowedSqlAnalyticsOutputArgs struct {
 	GroupBies pulumi.StringArrayInput `pulumi:"groupBies"`
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
 	//
-	// **Example:** query=(currentUser eq 'SCOTT') and (topLevel eq 'YES')
+	// **Example:** query=(currentUser eq "SCOTT") and (topLevel eq "YES")
 	ScimQuery pulumi.StringPtrInput `pulumi:"scimQuery"`
 }
 

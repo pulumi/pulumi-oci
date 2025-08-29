@@ -24,6 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeOfExpiry: auditArchiveRetrievalTimeOfExpiry,
  * });
@@ -39,6 +40,7 @@ export function getAuditArchiveRetrievals(args: GetAuditArchiveRetrievalsArgs, o
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeOfExpiry": args.timeOfExpiry,
     }, opts);
@@ -73,6 +75,10 @@ export interface GetAuditArchiveRetrievalsArgs {
      * A filter to return only resources that matches the specified lifecycle state.
      */
     state?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * The OCID of the target associated with the archive retrieval.
      */
@@ -111,6 +117,7 @@ export interface GetAuditArchiveRetrievalsResult {
      * The current state of the archive retrieval.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target associated with the archive retrieval.
      */
@@ -138,6 +145,7 @@ export interface GetAuditArchiveRetrievalsResult {
  *     compartmentIdInSubtree: auditArchiveRetrievalCompartmentIdInSubtree,
  *     displayName: auditArchiveRetrievalDisplayName,
  *     state: auditArchiveRetrievalState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     timeOfExpiry: auditArchiveRetrievalTimeOfExpiry,
  * });
@@ -153,6 +161,7 @@ export function getAuditArchiveRetrievalsOutput(args: GetAuditArchiveRetrievalsO
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
         "timeOfExpiry": args.timeOfExpiry,
     }, opts);
@@ -187,6 +196,10 @@ export interface GetAuditArchiveRetrievalsOutputArgs {
      * A filter to return only resources that matches the specified lifecycle state.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * The OCID of the target associated with the archive retrieval.
      */

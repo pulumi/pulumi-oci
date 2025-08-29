@@ -6,7 +6,9 @@ package com.pulumi.oci.GenerativeAi.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GenerativeAi.inputs.AgentKnowledgeBaseIndexConfigArgs;
+import com.pulumi.oci.GenerativeAi.inputs.AgentKnowledgeBaseKnowledgeBaseStatisticArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -93,22 +95,33 @@ public final class AgentKnowledgeBaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      * 
      */
     @Import(name="indexConfig")
     private @Nullable Output<AgentKnowledgeBaseIndexConfigArgs> indexConfig;
 
     /**
-     * @return (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * @return (Updatable) The index configuration of Knowledge bases.
      * 
      */
     public Optional<Output<AgentKnowledgeBaseIndexConfigArgs>> indexConfig() {
         return Optional.ofNullable(this.indexConfig);
+    }
+
+    /**
+     * Statistics for Default Knowledge Base.
+     * 
+     */
+    @Import(name="knowledgeBaseStatistics")
+    private @Nullable Output<List<AgentKnowledgeBaseKnowledgeBaseStatisticArgs>> knowledgeBaseStatistics;
+
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    public Optional<Output<List<AgentKnowledgeBaseKnowledgeBaseStatisticArgs>>> knowledgeBaseStatistics() {
+        return Optional.ofNullable(this.knowledgeBaseStatistics);
     }
 
     /**
@@ -195,6 +208,7 @@ public final class AgentKnowledgeBaseState extends com.pulumi.resources.Resource
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.indexConfig = $.indexConfig;
+        this.knowledgeBaseStatistics = $.knowledgeBaseStatistics;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -326,9 +340,7 @@ public final class AgentKnowledgeBaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param indexConfig (Updatable) **IndexConfig**
-         * 
-         * The index configuration of Knowledge bases.
+         * @param indexConfig (Updatable) The index configuration of Knowledge bases.
          * 
          * @return builder
          * 
@@ -339,15 +351,44 @@ public final class AgentKnowledgeBaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param indexConfig (Updatable) **IndexConfig**
-         * 
-         * The index configuration of Knowledge bases.
+         * @param indexConfig (Updatable) The index configuration of Knowledge bases.
          * 
          * @return builder
          * 
          */
         public Builder indexConfig(AgentKnowledgeBaseIndexConfigArgs indexConfig) {
             return indexConfig(Output.of(indexConfig));
+        }
+
+        /**
+         * @param knowledgeBaseStatistics Statistics for Default Knowledge Base.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder knowledgeBaseStatistics(@Nullable Output<List<AgentKnowledgeBaseKnowledgeBaseStatisticArgs>> knowledgeBaseStatistics) {
+            $.knowledgeBaseStatistics = knowledgeBaseStatistics;
+            return this;
+        }
+
+        /**
+         * @param knowledgeBaseStatistics Statistics for Default Knowledge Base.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder knowledgeBaseStatistics(List<AgentKnowledgeBaseKnowledgeBaseStatisticArgs> knowledgeBaseStatistics) {
+            return knowledgeBaseStatistics(Output.of(knowledgeBaseStatistics));
+        }
+
+        /**
+         * @param knowledgeBaseStatistics Statistics for Default Knowledge Base.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder knowledgeBaseStatistics(AgentKnowledgeBaseKnowledgeBaseStatisticArgs... knowledgeBaseStatistics) {
+            return knowledgeBaseStatistics(List.of(knowledgeBaseStatistics));
         }
 
         /**

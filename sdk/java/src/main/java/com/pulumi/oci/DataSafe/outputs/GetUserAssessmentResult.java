@@ -104,12 +104,22 @@ public final class GetUserAssessmentResult {
      * 
      */
     private Map<String,String> systemTags;
+    /**
+     * @return The OCID of target database group.
+     * 
+     */
+    private String targetDatabaseGroupId;
     private String targetId;
     /**
      * @return Array of database target OCIDs.
      * 
      */
     private List<String> targetIds;
+    /**
+     * @return Indicates whether the user assessment is for a target database or a target database group.
+     * 
+     */
+    private String targetType;
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      * 
@@ -264,6 +274,13 @@ public final class GetUserAssessmentResult {
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
+    /**
+     * @return The OCID of target database group.
+     * 
+     */
+    public String targetDatabaseGroupId() {
+        return this.targetDatabaseGroupId;
+    }
     public String targetId() {
         return this.targetId;
     }
@@ -273,6 +290,13 @@ public final class GetUserAssessmentResult {
      */
     public List<String> targetIds() {
         return this.targetIds;
+    }
+    /**
+     * @return Indicates whether the user assessment is for a target database or a target database group.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
     }
     /**
      * @return The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -340,8 +364,10 @@ public final class GetUserAssessmentResult {
         private String state;
         private String statistics;
         private Map<String,String> systemTags;
+        private String targetDatabaseGroupId;
         private String targetId;
         private List<String> targetIds;
+        private String targetType;
         private String timeCreated;
         private String timeLastAssessed;
         private String timeUpdated;
@@ -369,8 +395,10 @@ public final class GetUserAssessmentResult {
     	      this.state = defaults.state;
     	      this.statistics = defaults.statistics;
     	      this.systemTags = defaults.systemTags;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.targetIds = defaults.targetIds;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastAssessed = defaults.timeLastAssessed;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -530,6 +558,14 @@ public final class GetUserAssessmentResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            if (targetDatabaseGroupId == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "targetDatabaseGroupId");
+            }
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetUserAssessmentResult", "targetId");
@@ -547,6 +583,14 @@ public final class GetUserAssessmentResult {
         }
         public Builder targetIds(String... targetIds) {
             return targetIds(List.of(targetIds));
+        }
+        @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentResult", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
         }
         @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
@@ -616,8 +660,10 @@ public final class GetUserAssessmentResult {
             _resultValue.state = state;
             _resultValue.statistics = statistics;
             _resultValue.systemTags = systemTags;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.targetIds = targetIds;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastAssessed = timeLastAssessed;
             _resultValue.timeUpdated = timeUpdated;

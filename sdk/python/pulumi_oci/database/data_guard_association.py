@@ -29,6 +29,8 @@ class DataGuardAssociationArgs:
                  transport_type: pulumi.Input[_builtins.str],
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  create_async: Optional[pulumi.Input[_builtins.bool]] = None,
                  data_collection_options: Optional[pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs']] = None,
@@ -84,6 +86,8 @@ class DataGuardAssociationArgs:
                **IMPORTANT** - The only transport type currently supported by the Database service is ASYNC.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] database_defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -141,6 +145,10 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
@@ -309,6 +317,30 @@ class DataGuardAssociationArgs:
     @backup_network_nsg_ids.setter
     def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -681,6 +713,8 @@ class _DataGuardAssociationState:
                  apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  create_async: Optional[pulumi.Input[_builtins.bool]] = None,
                  creation_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -729,6 +763,8 @@ class _DataGuardAssociationState:
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input['DataGuardAssociationDataCollectionOptionsArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -813,6 +849,10 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if compute_count is not None:
+            pulumi.set(__self__, "compute_count", compute_count)
+        if compute_model is not None:
+            pulumi.set(__self__, "compute_model", compute_model)
         if cpu_core_count is not None:
             pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         if create_async is not None:
@@ -945,6 +985,30 @@ class _DataGuardAssociationState:
     @backup_network_nsg_ids.setter
     def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @compute_count.setter
+    def compute_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "compute_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
+
+    @compute_model.setter
+    def compute_model(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "compute_model", value)
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -1488,6 +1552,8 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  create_async: Optional[pulumi.Input[_builtins.bool]] = None,
                  creation_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1551,6 +1617,8 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=data_guard_association_transport_type,
             availability_domain=data_guard_association_availability_domain,
             backup_network_nsg_ids=data_guard_association_backup_network_nsg_ids,
+            compute_count=data_guard_association_compute_count,
+            compute_model=data_guard_association_compute_model,
             cpu_core_count=data_guard_association_cpu_core_count,
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
@@ -1592,6 +1660,8 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -1694,6 +1764,8 @@ class DataGuardAssociation(pulumi.CustomResource):
             transport_type=data_guard_association_transport_type,
             availability_domain=data_guard_association_availability_domain,
             backup_network_nsg_ids=data_guard_association_backup_network_nsg_ids,
+            compute_count=data_guard_association_compute_count,
+            compute_model=data_guard_association_compute_model,
             cpu_core_count=data_guard_association_cpu_core_count,
             database_defined_tags=data_guard_association_database_defined_tags,
             database_freeform_tags=data_guard_association_database_freeform_tags,
@@ -1748,6 +1820,8 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
                  create_async: Optional[pulumi.Input[_builtins.bool]] = None,
                  creation_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1794,6 +1868,8 @@ class DataGuardAssociation(pulumi.CustomResource):
 
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+            __props__.__dict__["compute_count"] = compute_count
+            __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count"] = cpu_core_count
             __props__.__dict__["create_async"] = create_async
             if creation_type is None and not opts.urn:
@@ -1866,6 +1942,8 @@ class DataGuardAssociation(pulumi.CustomResource):
             apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compute_count: Optional[pulumi.Input[_builtins.int]] = None,
+            compute_model: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
             create_async: Optional[pulumi.Input[_builtins.bool]] = None,
             creation_type: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1919,6 +1997,8 @@ class DataGuardAssociation(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] apply_rate: The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param pulumi.Input[_builtins.int] compute_count: The number of compute servers for the DB system.
+        :param pulumi.Input[_builtins.str] compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param pulumi.Input[_builtins.int] cpu_core_count: The number of CPU cores available for AMD-based virtual machine DB systems.
         :param pulumi.Input[_builtins.str] creation_type: Specifies whether to create the peer database in an existing DB system or in a new DB system.
         :param pulumi.Input[Union['DataGuardAssociationDataCollectionOptionsArgs', 'DataGuardAssociationDataCollectionOptionsArgsDict']] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
@@ -2003,6 +2083,8 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["apply_rate"] = apply_rate
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+        __props__.__dict__["compute_count"] = compute_count
+        __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
         __props__.__dict__["create_async"] = create_async
         __props__.__dict__["creation_type"] = creation_type
@@ -2078,6 +2160,22 @@ class DataGuardAssociation(pulumi.CustomResource):
         A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> pulumi.Output[_builtins.str]:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")

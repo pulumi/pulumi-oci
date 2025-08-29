@@ -44,6 +44,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupLocationArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberCommonDestinationKeyArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
  * import java.util.List;
  * import java.util.ArrayList;
@@ -86,6 +88,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .backupConfig(DrProtectionGroupMemberBackupConfigArgs.builder()
  *                     .backupSchedule(drProtectionGroupMembersBackupConfigBackupSchedule)
+ *                     .excludeNamespaces(drProtectionGroupMembersBackupConfigExcludeNamespaces)
  *                     .imageReplicationVaultSecretId(testSecret.id())
  *                     .maxNumberOfBackupsRetained(drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained)
  *                     .namespaces(drProtectionGroupMembersBackupConfigNamespaces)
@@ -119,6 +122,14 @@ import javax.annotation.Nullable;
  *                     .vaultId(testVault.id())
  *                     .build())
  *                 .connectionStringType(drProtectionGroupMembersConnectionStringType)
+ *                 .dbSystemAdminUserDetails(DrProtectionGroupMemberDbSystemAdminUserDetailsArgs.builder()
+ *                     .passwordVaultSecretId(testSecret.id())
+ *                     .username(drProtectionGroupMembersDbSystemAdminUserDetailsUsername)
+ *                     .build())
+ *                 .dbSystemReplicationUserDetails(DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs.builder()
+ *                     .passwordVaultSecretId(testSecret.id())
+ *                     .username(drProtectionGroupMembersDbSystemReplicationUserDetailsUsername)
+ *                     .build())
  *                 .destinationAvailabilityDomain(drProtectionGroupMembersDestinationAvailabilityDomain)
  *                 .destinationBackupPolicyId(testPolicy.id())
  *                 .destinationCapacityReservationId(destinationCapacityReservationId)
@@ -146,6 +157,8 @@ import javax.annotation.Nullable;
  *                         .mountTargetId(testMountTarget.id())
  *                         .build())
  *                     .build())
+ *                 .gtidReconciliationTimeout(drProtectionGroupMembersGtidReconciliationTimeout)
+ *                 .isContinueOnGtidReconciliationTimeout(drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout)
  *                 .isMovable(drProtectionGroupMembersIsMovable)
  *                 .isRetainFaultDomain(drProtectionGroupMembersIsRetainFaultDomain)
  *                 .isStartStopEnabled(drProtectionGroupMembersIsStartStopEnabled)
@@ -166,6 +179,7 @@ import javax.annotation.Nullable;
  *                     .sourceNetworkLoadBalancerId(testNetworkLoadBalancer.id())
  *                     .build())
  *                 .peerClusterId(testCluster.id())
+ *                 .peerDbSystemId(testDbSystem.id())
  *                 .sourceVolumeToDestinationEncryptionKeyMappings(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs.builder()
  *                     .destinationEncryptionKey(DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs.builder()
  *                         .encryptionKeyId(testKey.id())

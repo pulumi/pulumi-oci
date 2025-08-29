@@ -16,6 +16,11 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
      */
     private String policyId;
     /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    private String sensitiveTypeId;
+    /**
      * @return A filter to return only items related to a specific target OCID.
      * 
      */
@@ -28,6 +33,13 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
      */
     public String policyId() {
         return this.policyId;
+    }
+    /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    public String sensitiveTypeId() {
+        return this.sensitiveTypeId;
     }
     /**
      * @return A filter to return only items related to a specific target OCID.
@@ -47,11 +59,13 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
     @CustomType.Builder
     public static final class Builder {
         private String policyId;
+        private String sensitiveTypeId;
         private String targetId;
         public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.policyId = defaults.policyId;
+    	      this.sensitiveTypeId = defaults.sensitiveTypeId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -61,6 +75,14 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
               throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension", "policyId");
             }
             this.policyId = policyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            if (sensitiveTypeId == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension", "sensitiveTypeId");
+            }
+            this.sensitiveTypeId = sensitiveTypeId;
             return this;
         }
         @CustomType.Setter
@@ -74,6 +96,7 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension {
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension build() {
             final var _resultValue = new GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension();
             _resultValue.policyId = policyId;
+            _resultValue.sensitiveTypeId = sensitiveTypeId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

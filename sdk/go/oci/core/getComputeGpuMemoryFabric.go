@@ -60,6 +60,8 @@ type LookupComputeGpuMemoryFabricArgs struct {
 type LookupComputeGpuMemoryFabricResult struct {
 	// Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
 	AdditionalData map[string]string `pulumi:"additionalData"`
+	// The total number of available bare metal hosts located in this compute GPU memory fabric.
+	AvailableHostCount string `pulumi:"availableHostCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId            string `pulumi:"compartmentId"`
 	ComputeGpuMemoryFabricId string `pulumi:"computeGpuMemoryFabricId"`
@@ -128,6 +130,11 @@ func (o LookupComputeGpuMemoryFabricResultOutput) ToLookupComputeGpuMemoryFabric
 // Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
 func (o LookupComputeGpuMemoryFabricResultOutput) AdditionalData() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupComputeGpuMemoryFabricResult) map[string]string { return v.AdditionalData }).(pulumi.StringMapOutput)
+}
+
+// The total number of available bare metal hosts located in this compute GPU memory fabric.
+func (o LookupComputeGpuMemoryFabricResultOutput) AvailableHostCount() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupComputeGpuMemoryFabricResult) string { return v.AvailableHostCount }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.

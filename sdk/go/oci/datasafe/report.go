@@ -28,6 +28,8 @@ type Report struct {
 
 	// (Updatable) The OCID of the compartment containing the report.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	// Specifies the name of a resource that provides data for the report. For example alerts, events.
+	DataSource pulumi.StringOutput `pulumi:"dataSource"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// Specifies a description of the report.
@@ -51,8 +53,12 @@ type Report struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
+	// Specifies the time at which the report was created.
+	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated pulumi.StringOutput `pulumi:"timeGenerated"`
+	// The date and time of the report update in Data Safe.
+	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 	// The type of the audit report.
 	Type pulumi.StringOutput `pulumi:"type"`
 }
@@ -92,6 +98,8 @@ func GetReport(ctx *pulumi.Context,
 type reportState struct {
 	// (Updatable) The OCID of the compartment containing the report.
 	CompartmentId *string `pulumi:"compartmentId"`
+	// Specifies the name of a resource that provides data for the report. For example alerts, events.
+	DataSource *string `pulumi:"dataSource"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
@@ -115,8 +123,12 @@ type reportState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Specifies the time at which the report was created.
+	TimeCreated *string `pulumi:"timeCreated"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated *string `pulumi:"timeGenerated"`
+	// The date and time of the report update in Data Safe.
+	TimeUpdated *string `pulumi:"timeUpdated"`
 	// The type of the audit report.
 	Type *string `pulumi:"type"`
 }
@@ -124,6 +136,8 @@ type reportState struct {
 type ReportState struct {
 	// (Updatable) The OCID of the compartment containing the report.
 	CompartmentId pulumi.StringPtrInput
+	// Specifies the name of a resource that provides data for the report. For example alerts, events.
+	DataSource pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
 	// Specifies a description of the report.
@@ -147,8 +161,12 @@ type ReportState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
+	// Specifies the time at which the report was created.
+	TimeCreated pulumi.StringPtrInput
 	// Specifies the date and time the report was generated.
 	TimeGenerated pulumi.StringPtrInput
+	// The date and time of the report update in Data Safe.
+	TimeUpdated pulumi.StringPtrInput
 	// The type of the audit report.
 	Type pulumi.StringPtrInput
 }
@@ -278,6 +296,11 @@ func (o ReportOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
+// Specifies the name of a resource that provides data for the report. For example alerts, events.
+func (o ReportOutput) DataSource() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.DataSource }).(pulumi.StringOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 func (o ReportOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
@@ -331,9 +354,19 @@ func (o ReportOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// Specifies the time at which the report was created.
+func (o ReportOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
 // Specifies the date and time the report was generated.
 func (o ReportOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// The date and time of the report update in Data Safe.
+func (o ReportOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The type of the audit report.

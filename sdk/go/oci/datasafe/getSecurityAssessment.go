@@ -58,6 +58,13 @@ type LookupSecurityAssessmentArgs struct {
 
 // A collection of values returned by getSecurityAssessment.
 type LookupSecurityAssessmentResult struct {
+	ApplyTemplateTrigger     int    `pulumi:"applyTemplateTrigger"`
+	BaseSecurityAssessmentId string `pulumi:"baseSecurityAssessmentId"`
+	// The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+	BaselineAssessmentId string `pulumi:"baselineAssessmentId"`
+	// The security checks to be evaluated for type template.
+	Checks                           []GetSecurityAssessmentCheckType `pulumi:"checks"`
+	CompareToTemplateBaselineTrigger int                              `pulumi:"compareToTemplateBaselineTrigger"`
 	// The OCID of the compartment that contains the security assessment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -85,7 +92,8 @@ type LookupSecurityAssessmentResult struct {
 	// Details about the current state of the security assessment.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The summary of findings for the security assessment.
-	Link string `pulumi:"link"`
+	Link                  string `pulumi:"link"`
+	RemoveTemplateTrigger int    `pulumi:"removeTemplateTrigger"`
 	// Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
 	Schedule string `pulumi:"schedule"`
 	// The OCID of the security assessment that is responsible for creating this scheduled save assessment.
@@ -97,11 +105,17 @@ type LookupSecurityAssessmentResult struct {
 	Statistics []GetSecurityAssessmentStatistic `pulumi:"statistics"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	TargetId   string            `pulumi:"targetId"`
+	// The OCID of the target database group that the group assessment is created for.
+	TargetDatabaseGroupId string `pulumi:"targetDatabaseGroupId"`
+	TargetId              string `pulumi:"targetId"`
 	// Array of database target OCIDs.
 	TargetIds []string `pulumi:"targetIds"`
+	// Indicates whether the security assessment is for a target database or a target database group.
+	TargetType string `pulumi:"targetType"`
 	// The version of the target database.
 	TargetVersion string `pulumi:"targetVersion"`
+	// The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+	TemplateAssessmentId string `pulumi:"templateAssessmentId"`
 	// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time the security assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -110,7 +124,7 @@ type LookupSecurityAssessmentResult struct {
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Indicates whether the security assessment was created by system or by a user.
 	TriggeredBy string `pulumi:"triggeredBy"`
-	// The type of this security assessment. The possible types are:
+	// The type of the security assessment. Possible values are:
 	Type string `pulumi:"type"`
 }
 
@@ -146,6 +160,28 @@ func (o LookupSecurityAssessmentResultOutput) ToLookupSecurityAssessmentResultOu
 
 func (o LookupSecurityAssessmentResultOutput) ToLookupSecurityAssessmentResultOutputWithContext(ctx context.Context) LookupSecurityAssessmentResultOutput {
 	return o
+}
+
+func (o LookupSecurityAssessmentResultOutput) ApplyTemplateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) int { return v.ApplyTemplateTrigger }).(pulumi.IntOutput)
+}
+
+func (o LookupSecurityAssessmentResultOutput) BaseSecurityAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.BaseSecurityAssessmentId }).(pulumi.StringOutput)
+}
+
+// The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+func (o LookupSecurityAssessmentResultOutput) BaselineAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.BaselineAssessmentId }).(pulumi.StringOutput)
+}
+
+// The security checks to be evaluated for type template.
+func (o LookupSecurityAssessmentResultOutput) Checks() GetSecurityAssessmentCheckTypeArrayOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) []GetSecurityAssessmentCheckType { return v.Checks }).(GetSecurityAssessmentCheckTypeArrayOutput)
+}
+
+func (o LookupSecurityAssessmentResultOutput) CompareToTemplateBaselineTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) int { return v.CompareToTemplateBaselineTrigger }).(pulumi.IntOutput)
 }
 
 // The OCID of the compartment that contains the security assessment.
@@ -218,6 +254,10 @@ func (o LookupSecurityAssessmentResultOutput) Link() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Link }).(pulumi.StringOutput)
 }
 
+func (o LookupSecurityAssessmentResultOutput) RemoveTemplateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) int { return v.RemoveTemplateTrigger }).(pulumi.IntOutput)
+}
+
 // Schedule of the assessment that runs periodically in the specified format: - <version-string>;<version-specific-schedule>
 func (o LookupSecurityAssessmentResultOutput) Schedule() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Schedule }).(pulumi.StringOutput)
@@ -247,6 +287,11 @@ func (o LookupSecurityAssessmentResultOutput) SystemTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// The OCID of the target database group that the group assessment is created for.
+func (o LookupSecurityAssessmentResultOutput) TargetDatabaseGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetDatabaseGroupId }).(pulumi.StringOutput)
+}
+
 func (o LookupSecurityAssessmentResultOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetId }).(pulumi.StringOutput)
 }
@@ -256,9 +301,19 @@ func (o LookupSecurityAssessmentResultOutput) TargetIds() pulumi.StringArrayOutp
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) []string { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
+// Indicates whether the security assessment is for a target database or a target database group.
+func (o LookupSecurityAssessmentResultOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
 // The version of the target database.
 func (o LookupSecurityAssessmentResultOutput) TargetVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TargetVersion }).(pulumi.StringOutput)
+}
+
+// The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+func (o LookupSecurityAssessmentResultOutput) TemplateAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TemplateAssessmentId }).(pulumi.StringOutput)
 }
 
 // The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -281,7 +336,7 @@ func (o LookupSecurityAssessmentResultOutput) TriggeredBy() pulumi.StringOutput 
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.TriggeredBy }).(pulumi.StringOutput)
 }
 
-// The type of this security assessment. The possible types are:
+// The type of the security assessment. Possible values are:
 func (o LookupSecurityAssessmentResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentResult) string { return v.Type }).(pulumi.StringOutput)
 }

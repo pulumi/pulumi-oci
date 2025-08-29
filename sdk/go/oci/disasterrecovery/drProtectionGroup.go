@@ -69,6 +69,7 @@ import (
 //						},
 //						BackupConfig: &disasterrecovery.DrProtectionGroupMemberBackupConfigArgs{
 //							BackupSchedule:                pulumi.Any(drProtectionGroupMembersBackupConfigBackupSchedule),
+//							ExcludeNamespaces:             pulumi.Any(drProtectionGroupMembersBackupConfigExcludeNamespaces),
 //							ImageReplicationVaultSecretId: pulumi.Any(testSecret.Id),
 //							MaxNumberOfBackupsRetained:    pulumi.Any(drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained),
 //							Namespaces:                    pulumi.Any(drProtectionGroupMembersBackupConfigNamespaces),
@@ -107,7 +108,15 @@ import (
 //							EncryptionKeyId: pulumi.Any(testKey.Id),
 //							VaultId:         pulumi.Any(testVault.Id),
 //						},
-//						ConnectionStringType:             pulumi.Any(drProtectionGroupMembersConnectionStringType),
+//						ConnectionStringType: pulumi.Any(drProtectionGroupMembersConnectionStringType),
+//						DbSystemAdminUserDetails: &disasterrecovery.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs{
+//							PasswordVaultSecretId: pulumi.Any(testSecret.Id),
+//							Username:              pulumi.Any(drProtectionGroupMembersDbSystemAdminUserDetailsUsername),
+//						},
+//						DbSystemReplicationUserDetails: &disasterrecovery.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{
+//							PasswordVaultSecretId: pulumi.Any(testSecret.Id),
+//							Username:              pulumi.Any(drProtectionGroupMembersDbSystemReplicationUserDetailsUsername),
+//						},
 //						DestinationAvailabilityDomain:    pulumi.Any(drProtectionGroupMembersDestinationAvailabilityDomain),
 //						DestinationBackupPolicyId:        pulumi.Any(testPolicy.Id),
 //						DestinationCapacityReservationId: pulumi.Any(destinationCapacityReservationId),
@@ -139,10 +148,12 @@ import (
 //								},
 //							},
 //						},
-//						IsMovable:           pulumi.Any(drProtectionGroupMembersIsMovable),
-//						IsRetainFaultDomain: pulumi.Any(drProtectionGroupMembersIsRetainFaultDomain),
-//						IsStartStopEnabled:  pulumi.Any(drProtectionGroupMembersIsStartStopEnabled),
-//						JumpHostId:          pulumi.Any(testJumpHost.Id),
+//						GtidReconciliationTimeout:             pulumi.Any(drProtectionGroupMembersGtidReconciliationTimeout),
+//						IsContinueOnGtidReconciliationTimeout: pulumi.Any(drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout),
+//						IsMovable:                             pulumi.Any(drProtectionGroupMembersIsMovable),
+//						IsRetainFaultDomain:                   pulumi.Any(drProtectionGroupMembersIsRetainFaultDomain),
+//						IsStartStopEnabled:                    pulumi.Any(drProtectionGroupMembersIsStartStopEnabled),
+//						JumpHostId:                            pulumi.Any(testJumpHost.Id),
 //						LoadBalancerMappings: disasterrecovery.DrProtectionGroupMemberLoadBalancerMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberLoadBalancerMappingArgs{
 //								DestinationLoadBalancerId: pulumi.Any(testLoadBalancer.Id),
@@ -164,7 +175,8 @@ import (
 //								SourceNetworkLoadBalancerId:      pulumi.Any(testNetworkLoadBalancer.Id),
 //							},
 //						},
-//						PeerClusterId: pulumi.Any(testCluster.Id),
+//						PeerClusterId:  pulumi.Any(testCluster.Id),
+//						PeerDbSystemId: pulumi.Any(testDbSystem.Id),
 //						SourceVolumeToDestinationEncryptionKeyMappings: disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs{
 //								DestinationEncryptionKey: &disasterrecovery.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingDestinationEncryptionKeyArgs{

@@ -28,7 +28,7 @@ class GetMaskingAnalyticsResult:
     """
     A collection of values returned by getMaskingAnalytics.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_by=None, id=None, masking_analytics_collections=None, masking_policy_id=None, target_id=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, filters=None, group_by=None, id=None, masking_analytics_collections=None, masking_policy_id=None, sensitive_type_id=None, target_database_group_id=None, target_id=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,6 +50,12 @@ class GetMaskingAnalyticsResult:
         if masking_policy_id and not isinstance(masking_policy_id, str):
             raise TypeError("Expected argument 'masking_policy_id' to be a str")
         pulumi.set(__self__, "masking_policy_id", masking_policy_id)
+        if sensitive_type_id and not isinstance(sensitive_type_id, str):
+            raise TypeError("Expected argument 'sensitive_type_id' to be a str")
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -96,6 +102,19 @@ class GetMaskingAnalyticsResult:
         return pulumi.get(self, "masking_policy_id")
 
     @_builtins.property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the sensitive type masked.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -117,6 +136,8 @@ class AwaitableGetMaskingAnalyticsResult(GetMaskingAnalyticsResult):
             id=self.id,
             masking_analytics_collections=self.masking_analytics_collections,
             masking_policy_id=self.masking_policy_id,
+            sensitive_type_id=self.sensitive_type_id,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id)
 
 
@@ -125,6 +146,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
                           filters: Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]] = None,
                           group_by: Optional[_builtins.str] = None,
                           masking_policy_id: Optional[_builtins.str] = None,
+                          sensitive_type_id: Optional[_builtins.str] = None,
+                          target_database_group_id: Optional[_builtins.str] = None,
                           target_id: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingAnalyticsResult:
     """
@@ -144,6 +167,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
         compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
+        sensitive_type_id=test_sensitive_type["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -152,6 +177,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str group_by: Attribute by which the masking analytics data should be grouped.
     :param _builtins.str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+    :param _builtins.str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -160,6 +187,8 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['groupBy'] = group_by
     __args__['maskingPolicyId'] = masking_policy_id
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics', __args__, opts=opts, typ=GetMaskingAnalyticsResult).value
@@ -172,12 +201,16 @@ def get_masking_analytics(compartment_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         masking_analytics_collections=pulumi.get(__ret__, 'masking_analytics_collections'),
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
+        sensitive_type_id=pulumi.get(__ret__, 'sensitive_type_id'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                  compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingAnalyticsFilterArgs', 'GetMaskingAnalyticsFilterArgsDict']]]]] = None,
                                  group_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                 sensitive_type_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                 target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingAnalyticsResult]:
     """
@@ -197,6 +230,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
         compartment_id_in_subtree=masking_analytic_compartment_id_in_subtree,
         group_by=masking_analytic_group_by,
         masking_policy_id=test_masking_policy["id"],
+        sensitive_type_id=test_sensitive_type["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -205,6 +240,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str group_by: Attribute by which the masking analytics data should be grouped.
     :param _builtins.str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+    :param _builtins.str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -213,6 +250,8 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
     __args__['filters'] = filters
     __args__['groupBy'] = group_by
     __args__['maskingPolicyId'] = masking_policy_id
+    __args__['sensitiveTypeId'] = sensitive_type_id
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingAnalytics:getMaskingAnalytics', __args__, opts=opts, typ=GetMaskingAnalyticsResult)
@@ -224,4 +263,6 @@ def get_masking_analytics_output(compartment_id: Optional[pulumi.Input[_builtins
         id=pulumi.get(__response__, 'id'),
         masking_analytics_collections=pulumi.get(__response__, 'masking_analytics_collections'),
         masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
+        sensitive_type_id=pulumi.get(__response__, 'sensitive_type_id'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id')))

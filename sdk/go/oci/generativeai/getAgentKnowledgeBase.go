@@ -13,8 +13,6 @@ import (
 
 // This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **GetKnowledgeBase**
-//
 // Gets information about a knowledge base.
 //
 // ## Example Usage
@@ -72,9 +70,11 @@ type LookupAgentKnowledgeBaseResult struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
 	Id string `pulumi:"id"`
-	// **IndexConfig**
+	// The index configuration of Knowledge bases.
 	IndexConfigs    []GetAgentKnowledgeBaseIndexConfig `pulumi:"indexConfigs"`
 	KnowledgeBaseId string                             `pulumi:"knowledgeBaseId"`
+	// Statistics for Default Knowledge Base.
+	KnowledgeBaseStatistics []GetAgentKnowledgeBaseKnowledgeBaseStatistic `pulumi:"knowledgeBaseStatistics"`
 	// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current state of the knowledge base.
@@ -151,13 +151,20 @@ func (o LookupAgentKnowledgeBaseResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentKnowledgeBaseResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// **IndexConfig**
+// The index configuration of Knowledge bases.
 func (o LookupAgentKnowledgeBaseResultOutput) IndexConfigs() GetAgentKnowledgeBaseIndexConfigArrayOutput {
 	return o.ApplyT(func(v LookupAgentKnowledgeBaseResult) []GetAgentKnowledgeBaseIndexConfig { return v.IndexConfigs }).(GetAgentKnowledgeBaseIndexConfigArrayOutput)
 }
 
 func (o LookupAgentKnowledgeBaseResultOutput) KnowledgeBaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentKnowledgeBaseResult) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
+}
+
+// Statistics for Default Knowledge Base.
+func (o LookupAgentKnowledgeBaseResultOutput) KnowledgeBaseStatistics() GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput {
+	return o.ApplyT(func(v LookupAgentKnowledgeBaseResult) []GetAgentKnowledgeBaseKnowledgeBaseStatistic {
+		return v.KnowledgeBaseStatistics
+	}).(GetAgentKnowledgeBaseKnowledgeBaseStatisticArrayOutput)
 }
 
 // A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

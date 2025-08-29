@@ -25,7 +25,7 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the object (file) or prefix (folder).
+        /// (Updatable) The prefix of file object(s) or folder prefix.
         /// </summary>
         [Input("prefix")]
         public Input<string>? Prefix { get; set; }

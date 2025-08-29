@@ -63,6 +63,21 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+     * 
+     */
+    @Import(name="deploymentType")
+    private @Nullable String deploymentType;
+
+    /**
+     * @return A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+     * 
+     */
+    public Optional<String> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
+    }
+
+    /**
      * A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
@@ -150,6 +165,7 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
         this.assignableConnectionId = $.assignableConnectionId;
         this.assignedConnectionId = $.assignedConnectionId;
         this.compartmentId = $.compartmentId;
+        this.deploymentType = $.deploymentType;
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.fqdn = $.fqdn;
@@ -206,6 +222,17 @@ public final class GetDeploymentsPlainArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder compartmentId(String compartmentId) {
             $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param deploymentType A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(@Nullable String deploymentType) {
+            $.deploymentType = deploymentType;
             return this;
         }
 

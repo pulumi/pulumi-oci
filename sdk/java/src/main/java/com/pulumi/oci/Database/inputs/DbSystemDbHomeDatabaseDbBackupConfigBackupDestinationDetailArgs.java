@@ -47,14 +47,14 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
     }
 
     /**
-     * Indicates whether the backup destination is cross-region or local region.
+     * Indicates whether the backup destination is cross-region or local.
      * 
      */
     @Import(name="isRemote")
     private @Nullable Output<Boolean> isRemote;
 
     /**
-     * @return Indicates whether the backup destination is cross-region or local region.
+     * @return Indicates whether the backup destination is cross-region or local.
      * 
      */
     public Optional<Output<Boolean>> isRemote() {
@@ -62,18 +62,14 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
     }
 
     /**
-     * The name of the remote region where the remote automatic incremental backups will be stored.
-     * 
-     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     @Import(name="remoteRegion")
     private @Nullable Output<String> remoteRegion;
 
     /**
-     * @return The name of the remote region where the remote automatic incremental backups will be stored.
-     * 
-     * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * @return The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * 
      */
     public Optional<Output<String>> remoteRegion() {
@@ -166,7 +162,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * @param isRemote Indicates whether the backup destination is cross-region or local.
          * 
          * @return builder
          * 
@@ -177,7 +173,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param isRemote Indicates whether the backup destination is cross-region or local region.
+         * @param isRemote Indicates whether the backup destination is cross-region or local.
          * 
          * @return builder
          * 
@@ -187,9 +183,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
-         * 
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * 
          * @return builder
          * 
@@ -200,9 +194,7 @@ public final class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailAr
         }
 
         /**
-         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.
-         * 
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * @param remoteRegion The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          * 
          * @return builder
          * 

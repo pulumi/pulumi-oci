@@ -18,7 +18,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// **DataSourceConfig**
+        /// The details of data source.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult> DataSourceConfigs;
         /// <summary>

@@ -17,7 +17,46 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Updates the security policy.
+ * Creates a Data Safe security policy.
+ * 
+ * ## Example Usage
+ * 
+ * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataSafe.SecurityPolicy;
+ * import com.pulumi.oci.DataSafe.SecurityPolicyArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSecurityPolicy = new SecurityPolicy("testSecurityPolicy", SecurityPolicyArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(securityPolicyDescription)
+ *             .displayName(securityPolicyDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -31,14 +70,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/securityPolicy:SecurityPolicy")
 public class SecurityPolicy extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy.
+     * @return (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
     public Output<String> compartmentId() {
@@ -89,12 +128,18 @@ public class SecurityPolicy extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Map<String,String>> freeformTags() {
@@ -115,24 +160,18 @@ public class SecurityPolicy extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * The OCID of the security policy resource.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The type of the security policy.
      * 
      */
-    @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
-    private Output<String> securityPolicyId;
+    @Export(name="securityPolicyType", refs={String.class}, tree="[0]")
+    private Output<String> securityPolicyType;
 
     /**
-     * @return The OCID of the security policy resource.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The type of the security policy.
      * 
      */
-    public Output<String> securityPolicyId() {
-        return this.securityPolicyId;
+    public Output<String> securityPolicyType() {
+        return this.securityPolicyType;
     }
     /**
      * The current state of the security policy.

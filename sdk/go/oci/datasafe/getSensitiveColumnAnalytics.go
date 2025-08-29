@@ -49,6 +49,7 @@ import (
 //				SensitiveDataModelId:   pulumi.StringRef(testSensitiveDataModel.Id),
 //				SensitiveTypeGroupId:   pulumi.StringRef(testSensitiveTypeGroup.Id),
 //				SensitiveTypeIds:       testSensitiveType.Id,
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -92,6 +93,8 @@ type GetSensitiveColumnAnalyticsArgs struct {
 	SensitiveTypeGroupId *string `pulumi:"sensitiveTypeGroupId"`
 	// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
 	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -117,7 +120,8 @@ type GetSensitiveColumnAnalyticsResult struct {
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	SensitiveTypeGroupId *string `pulumi:"sensitiveTypeGroupId"`
 	// The OCID of the sensitive type associated with the sensitive column.
-	SensitiveTypeIds []string `pulumi:"sensitiveTypeIds"`
+	SensitiveTypeIds      []string `pulumi:"sensitiveTypeIds"`
+	TargetDatabaseGroupId *string  `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target database associated with the sensitive column.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -154,6 +158,8 @@ type GetSensitiveColumnAnalyticsOutputArgs struct {
 	SensitiveTypeGroupId pulumi.StringPtrInput `pulumi:"sensitiveTypeGroupId"`
 	// A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
 	SensitiveTypeIds pulumi.StringArrayInput `pulumi:"sensitiveTypeIds"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -236,6 +242,10 @@ func (o GetSensitiveColumnAnalyticsResultOutput) SensitiveTypeGroupId() pulumi.S
 // The OCID of the sensitive type associated with the sensitive column.
 func (o GetSensitiveColumnAnalyticsResultOutput) SensitiveTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSensitiveColumnAnalyticsResult) []string { return v.SensitiveTypeIds }).(pulumi.StringArrayOutput)
+}
+
+func (o GetSensitiveColumnAnalyticsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveColumnAnalyticsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database associated with the sensitive column.

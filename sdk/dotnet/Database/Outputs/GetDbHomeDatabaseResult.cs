@@ -62,6 +62,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The current state of the Database Home.
         /// </summary>
         public readonly string State;
+        public readonly ImmutableArray<Outputs.GetDbHomeDatabaseStorageSizeDetailResult> StorageSizeDetails;
         public readonly string TdeWalletPassword;
         /// <summary>
         /// The date and time the Database Home was created.
@@ -122,6 +123,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string state,
 
+            ImmutableArray<Outputs.GetDbHomeDatabaseStorageSizeDetailResult> storageSizeDetails,
+
             string tdeWalletPassword,
 
             string timeCreated,
@@ -155,6 +158,7 @@ namespace Pulumi.Oci.Database.Outputs
             PluggableDatabases = pluggableDatabases;
             SidPrefix = sidPrefix;
             State = state;
+            StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;
             TimeCreated = timeCreated;
             TimeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;

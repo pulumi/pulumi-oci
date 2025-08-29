@@ -55,6 +55,10 @@ export interface GetAgentDataIngestionJobResult {
      */
     readonly dataIngestionJobStatistics: outputs.GenerativeAi.GetAgentDataIngestionJobDataIngestionJobStatistic[];
     /**
+     * DataIngestionJob type.
+     */
+    readonly dataIngestionJobTypes: outputs.GenerativeAi.GetAgentDataIngestionJobDataIngestionJobType[];
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      */
     readonly dataSourceId: string;
@@ -78,6 +82,7 @@ export interface GetAgentDataIngestionJobResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
      */
     readonly id: string;
+    readonly knowledgeBaseId: string;
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */

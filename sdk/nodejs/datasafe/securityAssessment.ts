@@ -13,28 +13,6 @@ import * as utilities from "../utilities";
  * it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
  * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testSecurityAssessment = new oci.datasafe.SecurityAssessment("test_security_assessment", {
- *     compartmentId: compartmentId,
- *     definedTags: {
- *         "Operations.CostCenter": "42",
- *     },
- *     description: securityAssessmentDescription,
- *     displayName: securityAssessmentDisplayName,
- *     freeformTags: {
- *         Department: "Finance",
- *     },
- *     isAssessmentScheduled: securityAssessmentIsAssessmentScheduled,
- *     schedule: securityAssessmentSchedule,
- *     targetId: testTarget.id,
- * });
- * ```
- *
  * ## Import
  *
  * SecurityAssessments can be imported using the `id`, e.g.
@@ -71,6 +49,26 @@ export class SecurityAssessment extends pulumi.CustomResource {
         return obj['__pulumiType'] === SecurityAssessment.__pulumiType;
     }
 
+    /**
+     * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     */
+    public readonly applyTemplateTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     */
+    public readonly baseSecurityAssessmentId!: pulumi.Output<string>;
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     */
+    public /*out*/ readonly baselineAssessmentId!: pulumi.Output<string>;
+    /**
+     * The security checks to be evaluated for type template.
+     */
+    public /*out*/ readonly checks!: pulumi.Output<outputs.DataSafe.SecurityAssessmentCheck[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     */
+    public readonly compareToTemplateBaselineTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      */
@@ -124,6 +122,14 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly link!: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly removeTemplateTrigger!: pulumi.Output<number | undefined>;
+    /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -146,11 +152,11 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * The OCID of the target database on which security assessment is to be run.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target database group that the group assessment is created for.
+     */
+    public /*out*/ readonly targetDatabaseGroupId!: pulumi.Output<string>;
+    /**
+     * The OCID of the target database or target database group on which security assessment is to be run.
      */
     public readonly targetId!: pulumi.Output<string>;
     /**
@@ -158,9 +164,17 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
     /**
+     * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     */
+    public readonly targetType!: pulumi.Output<string>;
+    /**
      * The version of the target database.
      */
     public /*out*/ readonly targetVersion!: pulumi.Output<string>;
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     */
+    public readonly templateAssessmentId!: pulumi.Output<string>;
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
@@ -178,9 +192,9 @@ export class SecurityAssessment extends pulumi.CustomResource {
      */
     public /*out*/ readonly triggeredBy!: pulumi.Output<string>;
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment
      */
-    public /*out*/ readonly type!: pulumi.Output<string>;
+    public readonly type!: pulumi.Output<string>;
 
     /**
      * Create a SecurityAssessment resource with the given unique name, arguments, and options.
@@ -195,6 +209,11 @@ export class SecurityAssessment extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as SecurityAssessmentState | undefined;
+            resourceInputs["applyTemplateTrigger"] = state ? state.applyTemplateTrigger : undefined;
+            resourceInputs["baseSecurityAssessmentId"] = state ? state.baseSecurityAssessmentId : undefined;
+            resourceInputs["baselineAssessmentId"] = state ? state.baselineAssessmentId : undefined;
+            resourceInputs["checks"] = state ? state.checks : undefined;
+            resourceInputs["compareToTemplateBaselineTrigger"] = state ? state.compareToTemplateBaselineTrigger : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -208,14 +227,18 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["lastComparedBaselineId"] = state ? state.lastComparedBaselineId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["link"] = state ? state.link : undefined;
+            resourceInputs["removeTemplateTrigger"] = state ? state.removeTemplateTrigger : undefined;
             resourceInputs["schedule"] = state ? state.schedule : undefined;
             resourceInputs["scheduleSecurityAssessmentId"] = state ? state.scheduleSecurityAssessmentId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["statistics"] = state ? state.statistics : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["targetDatabaseGroupId"] = state ? state.targetDatabaseGroupId : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["targetIds"] = state ? state.targetIds : undefined;
+            resourceInputs["targetType"] = state ? state.targetType : undefined;
             resourceInputs["targetVersion"] = state ? state.targetVersion : undefined;
+            resourceInputs["templateAssessmentId"] = state ? state.templateAssessmentId : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeLastAssessed"] = state ? state.timeLastAssessed : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -226,14 +249,23 @@ export class SecurityAssessment extends pulumi.CustomResource {
             if ((!args || args.compartmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'compartmentId'");
             }
+            resourceInputs["applyTemplateTrigger"] = args ? args.applyTemplateTrigger : undefined;
+            resourceInputs["baseSecurityAssessmentId"] = args ? args.baseSecurityAssessmentId : undefined;
+            resourceInputs["compareToTemplateBaselineTrigger"] = args ? args.compareToTemplateBaselineTrigger : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAssessmentScheduled"] = args ? args.isAssessmentScheduled : undefined;
+            resourceInputs["removeTemplateTrigger"] = args ? args.removeTemplateTrigger : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["targetType"] = args ? args.targetType : undefined;
+            resourceInputs["templateAssessmentId"] = args ? args.templateAssessmentId : undefined;
+            resourceInputs["type"] = args ? args.type : undefined;
+            resourceInputs["baselineAssessmentId"] = undefined /*out*/;
+            resourceInputs["checks"] = undefined /*out*/;
             resourceInputs["ignoredAssessmentIds"] = undefined /*out*/;
             resourceInputs["ignoredTargets"] = undefined /*out*/;
             resourceInputs["isBaseline"] = undefined /*out*/;
@@ -245,13 +277,13 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["statistics"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
+            resourceInputs["targetDatabaseGroupId"] = undefined /*out*/;
             resourceInputs["targetIds"] = undefined /*out*/;
             resourceInputs["targetVersion"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeLastAssessed"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
             resourceInputs["triggeredBy"] = undefined /*out*/;
-            resourceInputs["type"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(SecurityAssessment.__pulumiType, name, resourceInputs, opts);
@@ -262,6 +294,26 @@ export class SecurityAssessment extends pulumi.CustomResource {
  * Input properties used for looking up and filtering SecurityAssessment resources.
  */
 export interface SecurityAssessmentState {
+    /**
+     * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     */
+    applyTemplateTrigger?: pulumi.Input<number>;
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     */
+    baseSecurityAssessmentId?: pulumi.Input<string>;
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     */
+    baselineAssessmentId?: pulumi.Input<string>;
+    /**
+     * The security checks to be evaluated for type template.
+     */
+    checks?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheck>[]>;
+    /**
+     * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     */
+    compareToTemplateBaselineTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      */
@@ -315,6 +367,14 @@ export interface SecurityAssessmentState {
      */
     link?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    removeTemplateTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -337,11 +397,11 @@ export interface SecurityAssessmentState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The OCID of the target database on which security assessment is to be run.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target database group that the group assessment is created for.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
+    /**
+     * The OCID of the target database or target database group on which security assessment is to be run.
      */
     targetId?: pulumi.Input<string>;
     /**
@@ -349,9 +409,17 @@ export interface SecurityAssessmentState {
      */
     targetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
+     * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     */
+    targetType?: pulumi.Input<string>;
+    /**
      * The version of the target database.
      */
     targetVersion?: pulumi.Input<string>;
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     */
+    templateAssessmentId?: pulumi.Input<string>;
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */
@@ -369,7 +437,7 @@ export interface SecurityAssessmentState {
      */
     triggeredBy?: pulumi.Input<string>;
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment
      */
     type?: pulumi.Input<string>;
 }
@@ -378,6 +446,18 @@ export interface SecurityAssessmentState {
  * The set of arguments for constructing a SecurityAssessment resource.
  */
 export interface SecurityAssessmentArgs {
+    /**
+     * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     */
+    applyTemplateTrigger?: pulumi.Input<number>;
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     */
+    baseSecurityAssessmentId?: pulumi.Input<string>;
+    /**
+     * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     */
+    compareToTemplateBaselineTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      */
@@ -403,17 +483,33 @@ export interface SecurityAssessmentArgs {
      */
     isAssessmentScheduled?: pulumi.Input<boolean>;
     /**
+     * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    removeTemplateTrigger?: pulumi.Input<number>;
+    /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *
      * Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
      */
     schedule?: pulumi.Input<string>;
     /**
-     * The OCID of the target database on which security assessment is to be run.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target database or target database group on which security assessment is to be run.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     */
+    targetType?: pulumi.Input<string>;
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     */
+    templateAssessmentId?: pulumi.Input<string>;
+    /**
+     * The type of the security assessment
+     */
+    type?: pulumi.Input<string>;
 }

@@ -73,6 +73,8 @@ type LookupSecurityPolicyResult struct {
 	// Details about the current state of the security policy in Data Safe.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The type of the security policy.
+	SecurityPolicyType string `pulumi:"securityPolicyType"`
 	// The current state of the security policy.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -154,6 +156,11 @@ func (o LookupSecurityPolicyResultOutput) LifecycleDetails() pulumi.StringOutput
 
 func (o LookupSecurityPolicyResultOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// The type of the security policy.
+func (o LookupSecurityPolicyResultOutput) SecurityPolicyType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSecurityPolicyResult) string { return v.SecurityPolicyType }).(pulumi.StringOutput)
 }
 
 // The current state of the security policy.

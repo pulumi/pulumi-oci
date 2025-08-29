@@ -12,52 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     /// <summary>
     /// This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
     /// 
-    /// **CreateDataSource**
-    /// 
     /// Creates a data source.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDataSource = new Oci.GenerativeAi.AgentDataSource("test_data_source", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DataSourceConfig = new Oci.GenerativeAi.Inputs.AgentDataSourceDataSourceConfigArgs
-    ///         {
-    ///             DataSourceConfigType = dataSourceDataSourceConfigDataSourceConfigType,
-    ///             ObjectStoragePrefixes = new[]
-    ///             {
-    ///                 new Oci.GenerativeAi.Inputs.AgentDataSourceDataSourceConfigObjectStoragePrefixArgs
-    ///                 {
-    ///                     Bucket = dataSourceDataSourceConfigObjectStoragePrefixesBucket,
-    ///                     Namespace = dataSourceDataSourceConfigObjectStoragePrefixesNamespace,
-    ///                     Prefix = dataSourceDataSourceConfigObjectStoragePrefixesPrefix,
-    ///                 },
-    ///             },
-    ///         },
-    ///         KnowledgeBaseId = testKnowledgeBase.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = dataSourceDescription,
-    ///         DisplayName = dataSourceDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         Metadata = dataSourceMetadata,
-    ///     });
-    /// 
-    /// });
-    /// ```
     /// 
     /// ## Import
     /// 
@@ -77,9 +32,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) **DataSourceConfig**
-        /// 
-        /// The details of data source.
+        /// (Updatable) The details of data source.
         /// </summary>
         [Output("dataSourceConfig")]
         public Output<Outputs.AgentDataSourceDataSourceConfig> DataSourceConfig { get; private set; } = null!;
@@ -207,9 +160,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) **DataSourceConfig**
-        /// 
-        /// The details of data source.
+        /// (Updatable) The details of data source.
         /// </summary>
         [Input("dataSourceConfig", required: true)]
         public Input<Inputs.AgentDataSourceDataSourceConfigArgs> DataSourceConfig { get; set; } = null!;
@@ -287,9 +238,7 @@ namespace Pulumi.Oci.GenerativeAi
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) **DataSourceConfig**
-        /// 
-        /// The details of data source.
+        /// (Updatable) The details of data source.
         /// </summary>
         [Input("dataSourceConfig")]
         public Input<Inputs.AgentDataSourceDataSourceConfigGetArgs>? DataSourceConfig { get; set; }

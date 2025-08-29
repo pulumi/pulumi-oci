@@ -22,6 +22,10 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly int NumberOfFailedFiles;
         /// <summary>
+        /// The number of files that have been ignored during the ingestion.
+        /// </summary>
+        public readonly int NumberOfIgnoredFiles;
+        /// <summary>
         /// The number of files that have been successfully ingested during the ingestion.
         /// </summary>
         public readonly int NumberOfIngestedFiles;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             int numberOfFailedFiles,
 
+            int numberOfIgnoredFiles,
+
             int numberOfIngestedFiles)
         {
             DurationInSeconds = durationInSeconds;
             NumberOfFailedFiles = numberOfFailedFiles;
+            NumberOfIgnoredFiles = numberOfIgnoredFiles;
             NumberOfIngestedFiles = numberOfIngestedFiles;
         }
     }

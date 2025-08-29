@@ -26,10 +26,13 @@ class GetComputeGpuMemoryFabricResult:
     """
     A collection of values returned by getComputeGpuMemoryFabric.
     """
-    def __init__(__self__, additional_data=None, compartment_id=None, compute_gpu_memory_fabric_id=None, compute_hpc_island_id=None, compute_local_block_id=None, compute_network_block_id=None, defined_tags=None, display_name=None, fabric_health=None, freeform_tags=None, healthy_host_count=None, id=None, state=None, system_tags=None, time_created=None, total_host_count=None):
+    def __init__(__self__, additional_data=None, available_host_count=None, compartment_id=None, compute_gpu_memory_fabric_id=None, compute_hpc_island_id=None, compute_local_block_id=None, compute_network_block_id=None, defined_tags=None, display_name=None, fabric_health=None, freeform_tags=None, healthy_host_count=None, id=None, state=None, system_tags=None, time_created=None, total_host_count=None):
         if additional_data and not isinstance(additional_data, dict):
             raise TypeError("Expected argument 'additional_data' to be a dict")
         pulumi.set(__self__, "additional_data", additional_data)
+        if available_host_count and not isinstance(available_host_count, str):
+            raise TypeError("Expected argument 'available_host_count' to be a str")
+        pulumi.set(__self__, "available_host_count", available_host_count)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -83,6 +86,14 @@ class GetComputeGpuMemoryFabricResult:
         Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         """
         return pulumi.get(self, "additional_data")
+
+    @_builtins.property
+    @pulumi.getter(name="availableHostCount")
+    def available_host_count(self) -> _builtins.str:
+        """
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "available_host_count")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -209,6 +220,7 @@ class AwaitableGetComputeGpuMemoryFabricResult(GetComputeGpuMemoryFabricResult):
             yield self
         return GetComputeGpuMemoryFabricResult(
             additional_data=self.additional_data,
+            available_host_count=self.available_host_count,
             compartment_id=self.compartment_id,
             compute_gpu_memory_fabric_id=self.compute_gpu_memory_fabric_id,
             compute_hpc_island_id=self.compute_hpc_island_id,
@@ -252,6 +264,7 @@ def get_compute_gpu_memory_fabric(compute_gpu_memory_fabric_id: Optional[_builti
 
     return AwaitableGetComputeGpuMemoryFabricResult(
         additional_data=pulumi.get(__ret__, 'additional_data'),
+        available_host_count=pulumi.get(__ret__, 'available_host_count'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compute_gpu_memory_fabric_id=pulumi.get(__ret__, 'compute_gpu_memory_fabric_id'),
         compute_hpc_island_id=pulumi.get(__ret__, 'compute_hpc_island_id'),
@@ -292,6 +305,7 @@ def get_compute_gpu_memory_fabric_output(compute_gpu_memory_fabric_id: Optional[
     __ret__ = pulumi.runtime.invoke_output('oci:Core/getComputeGpuMemoryFabric:getComputeGpuMemoryFabric', __args__, opts=opts, typ=GetComputeGpuMemoryFabricResult)
     return __ret__.apply(lambda __response__: GetComputeGpuMemoryFabricResult(
         additional_data=pulumi.get(__response__, 'additional_data'),
+        available_host_count=pulumi.get(__response__, 'available_host_count'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compute_gpu_memory_fabric_id=pulumi.get(__response__, 'compute_gpu_memory_fabric_id'),
         compute_hpc_island_id=pulumi.get(__response__, 'compute_hpc_island_id'),

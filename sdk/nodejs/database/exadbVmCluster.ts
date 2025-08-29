@@ -59,6 +59,7 @@ import * as utilities from "../utilities";
  *     scanListenerPortTcp: exadbVmClusterScanListenerPortTcp,
  *     scanListenerPortTcpSsl: exadbVmClusterScanListenerPortTcpSsl,
  *     securityAttributes: exadbVmClusterSecurityAttributes,
+ *     shapeAttribute: exadbVmClusterShapeAttribute,
  *     subscriptionId: tenantSubscriptionId,
  *     systemVersion: exadbVmClusterSystemVersion,
  *     timeZone: exadbVmClusterTimeZone,
@@ -237,6 +238,10 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     public readonly shape!: pulumi.Output<string>;
     /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     */
+    public readonly shapeAttribute!: pulumi.Output<string>;
+    /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      */
     public readonly sshPublicKeys!: pulumi.Output<string[]>;
@@ -326,6 +331,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortTcpSsl"] = state ? state.scanListenerPortTcpSsl : undefined;
             resourceInputs["securityAttributes"] = state ? state.securityAttributes : undefined;
             resourceInputs["shape"] = state ? state.shape : undefined;
+            resourceInputs["shapeAttribute"] = state ? state.shapeAttribute : undefined;
             resourceInputs["sshPublicKeys"] = state ? state.sshPublicKeys : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -393,6 +399,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
             resourceInputs["scanListenerPortTcpSsl"] = args ? args.scanListenerPortTcpSsl : undefined;
             resourceInputs["securityAttributes"] = args ? args.securityAttributes : undefined;
             resourceInputs["shape"] = args ? args.shape : undefined;
+            resourceInputs["shapeAttribute"] = args ? args.shapeAttribute : undefined;
             resourceInputs["sshPublicKeys"] = args ? args.sshPublicKeys : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
@@ -559,6 +566,10 @@ export interface ExadbVmClusterState {
      */
     shape?: pulumi.Input<string>;
     /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     */
+    shapeAttribute?: pulumi.Input<string>;
+    /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      */
     sshPublicKeys?: pulumi.Input<pulumi.Input<string>[]>;
@@ -703,6 +714,10 @@ export interface ExadbVmClusterArgs {
      * The shape of the Exadata VM cluster on Exascale Infrastructure resource
      */
     shape: pulumi.Input<string>;
+    /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     */
+    shapeAttribute?: pulumi.Input<string>;
     /**
      * (Updatable) The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      */

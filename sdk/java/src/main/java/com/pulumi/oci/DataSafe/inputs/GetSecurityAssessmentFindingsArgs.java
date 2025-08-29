@@ -35,6 +35,21 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     }
 
     /**
+     * The category of the finding.
+     * 
+     */
+    @Import(name="category")
+    private @Nullable Output<String> category;
+
+    /**
+     * @return The category of the finding.
+     * 
+     */
+    public Optional<Output<String>> category() {
+        return Optional.ofNullable(this.category);
+    }
+
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
      * 
      */
@@ -47,6 +62,20 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
      */
     public Optional<Output<Boolean>> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    @Import(name="containsReferences")
+    private @Nullable Output<List<String>> containsReferences;
+
+    public Optional<Output<List<String>>> containsReferences() {
+        return Optional.ofNullable(this.containsReferences);
+    }
+
+    @Import(name="containsSeverities")
+    private @Nullable Output<List<String>> containsSeverities;
+
+    public Optional<Output<List<String>>> containsSeverities() {
+        return Optional.ofNullable(this.containsSeverities);
     }
 
     /**
@@ -197,11 +226,29 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         return Optional.ofNullable(this.targetId);
     }
 
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+     * 
+     */
+    @Import(name="targetIds")
+    private @Nullable Output<List<String>> targetIds;
+
+    /**
+     * @return An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+     * 
+     */
+    public Optional<Output<List<String>>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
+    }
+
     private GetSecurityAssessmentFindingsArgs() {}
 
     private GetSecurityAssessmentFindingsArgs(GetSecurityAssessmentFindingsArgs $) {
         this.accessLevel = $.accessLevel;
+        this.category = $.category;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsReferences = $.containsReferences;
+        this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
@@ -212,6 +259,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         this.severity = $.severity;
         this.state = $.state;
         this.targetId = $.targetId;
+        this.targetIds = $.targetIds;
     }
 
     public static Builder builder() {
@@ -254,6 +302,27 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
+         * @param category The category of the finding.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(@Nullable Output<String> category) {
+            $.category = category;
+            return this;
+        }
+
+        /**
+         * @param category The category of the finding.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder category(String category) {
+            return category(Output.of(category));
+        }
+
+        /**
          * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
          * 
          * @return builder
@@ -272,6 +341,32 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          */
         public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
+        }
+
+        public Builder containsReferences(@Nullable Output<List<String>> containsReferences) {
+            $.containsReferences = containsReferences;
+            return this;
+        }
+
+        public Builder containsReferences(List<String> containsReferences) {
+            return containsReferences(Output.of(containsReferences));
+        }
+
+        public Builder containsReferences(String... containsReferences) {
+            return containsReferences(List.of(containsReferences));
+        }
+
+        public Builder containsSeverities(@Nullable Output<List<String>> containsSeverities) {
+            $.containsSeverities = containsSeverities;
+            return this;
+        }
+
+        public Builder containsSeverities(List<String> containsSeverities) {
+            return containsSeverities(Output.of(containsSeverities));
+        }
+
+        public Builder containsSeverities(String... containsSeverities) {
+            return containsSeverities(List.of(containsSeverities));
         }
 
         /**
@@ -490,6 +585,37 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetIds An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(@Nullable Output<List<String>> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * @param targetIds An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(List<String> targetIds) {
+            return targetIds(Output.of(targetIds));
+        }
+
+        /**
+         * @param targetIds An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         public GetSecurityAssessmentFindingsArgs build() {

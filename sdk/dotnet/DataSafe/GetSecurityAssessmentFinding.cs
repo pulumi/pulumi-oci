@@ -27,8 +27,27 @@ namespace Pulumi.Oci.DataSafe
         [Input("accessLevel")]
         public string? AccessLevel { get; set; }
 
+        [Input("category")]
+        public string? Category { get; set; }
+
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
+
+        [Input("containsReferences")]
+        private List<string>? _containsReferences;
+        public List<string> ContainsReferences
+        {
+            get => _containsReferences ?? (_containsReferences = new List<string>());
+            set => _containsReferences = value;
+        }
+
+        [Input("containsSeverities")]
+        private List<string>? _containsSeverities;
+        public List<string> ContainsSeverities
+        {
+            get => _containsSeverities ?? (_containsSeverities = new List<string>());
+            set => _containsSeverities = value;
+        }
 
         [Input("fields")]
         private List<string>? _fields;
@@ -70,6 +89,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public string? TargetId { get; set; }
 
+        [Input("targetIds")]
+        private List<string>? _targetIds;
+        public List<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new List<string>());
+            set => _targetIds = value;
+        }
+
         public GetSecurityAssessmentFindingArgs()
         {
         }
@@ -81,8 +108,27 @@ namespace Pulumi.Oci.DataSafe
         [Input("accessLevel")]
         public Input<string>? AccessLevel { get; set; }
 
+        [Input("category")]
+        public Input<string>? Category { get; set; }
+
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
+
+        [Input("containsReferences")]
+        private InputList<string>? _containsReferences;
+        public InputList<string> ContainsReferences
+        {
+            get => _containsReferences ?? (_containsReferences = new InputList<string>());
+            set => _containsReferences = value;
+        }
+
+        [Input("containsSeverities")]
+        private InputList<string>? _containsSeverities;
+        public InputList<string> ContainsSeverities
+        {
+            get => _containsSeverities ?? (_containsSeverities = new InputList<string>());
+            set => _containsSeverities = value;
+        }
 
         [Input("fields")]
         private InputList<string>? _fields;
@@ -124,6 +170,14 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
+
         public GetSecurityAssessmentFindingInvokeArgs()
         {
         }
@@ -135,7 +189,10 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSecurityAssessmentFindingResult
     {
         public readonly string? AccessLevel;
+        public readonly string? Category;
         public readonly bool? CompartmentIdInSubtree;
+        public readonly ImmutableArray<string> ContainsReferences;
+        public readonly ImmutableArray<string> ContainsSeverities;
         public readonly ImmutableArray<string> Fields;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFilterResult> Filters;
         public readonly string? FindingKey;
@@ -151,12 +208,19 @@ namespace Pulumi.Oci.DataSafe
         public readonly string? Severity;
         public readonly string? State;
         public readonly string? TargetId;
+        public readonly ImmutableArray<string> TargetIds;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingResult(
             string? accessLevel,
 
+            string? category,
+
             bool? compartmentIdInSubtree,
+
+            ImmutableArray<string> containsReferences,
+
+            ImmutableArray<string> containsSeverities,
 
             ImmutableArray<string> fields,
 
@@ -180,10 +244,15 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
-            string? targetId)
+            string? targetId,
+
+            ImmutableArray<string> targetIds)
         {
             AccessLevel = accessLevel;
+            Category = category;
             CompartmentIdInSubtree = compartmentIdInSubtree;
+            ContainsReferences = containsReferences;
+            ContainsSeverities = containsSeverities;
             Fields = fields;
             Filters = filters;
             FindingKey = findingKey;
@@ -196,6 +265,7 @@ namespace Pulumi.Oci.DataSafe
             Severity = severity;
             State = state;
             TargetId = targetId;
+            TargetIds = targetIds;
         }
     }
 }

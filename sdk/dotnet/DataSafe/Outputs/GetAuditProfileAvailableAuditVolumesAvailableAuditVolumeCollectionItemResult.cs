@@ -14,14 +14,50 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult
     {
         /// <summary>
-        /// Array of available audit volume summary.
+        /// The OCID of the audit.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult> Items;
+        public readonly string AuditProfileId;
+        /// <summary>
+        /// The OCID of the audit trail.
+        /// </summary>
+        public readonly string AuditTrailId;
+        /// <summary>
+        /// Unique name of the database associated to the peer target database.
+        /// </summary>
+        public readonly string DatabaseUniqueName;
+        /// <summary>
+        /// Represents the month under consideration for which aggregated audit data volume available at the target is computed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+        /// </summary>
+        public readonly string MonthInConsideration;
+        /// <summary>
+        /// The audit trail location.
+        /// </summary>
+        public readonly string TrailLocation;
+        /// <summary>
+        /// Represents the aggregated audit data volume available in the audit trails on the target database which is yet to be collected by Data Safe for the specified month.
+        /// </summary>
+        public readonly string Volume;
 
         [OutputConstructor]
-        private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult(ImmutableArray<Outputs.GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemItemResult> items)
+        private GetAuditProfileAvailableAuditVolumesAvailableAuditVolumeCollectionItemResult(
+            string auditProfileId,
+
+            string auditTrailId,
+
+            string databaseUniqueName,
+
+            string monthInConsideration,
+
+            string trailLocation,
+
+            string volume)
         {
-            Items = items;
+            AuditProfileId = auditProfileId;
+            AuditTrailId = auditTrailId;
+            DatabaseUniqueName = databaseUniqueName;
+            MonthInConsideration = monthInConsideration;
+            TrailLocation = trailLocation;
+            Volume = volume;
         }
     }
 }

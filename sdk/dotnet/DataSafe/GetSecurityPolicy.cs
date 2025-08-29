@@ -153,6 +153,10 @@ namespace Pulumi.Oci.DataSafe
         public readonly string LifecycleDetails;
         public readonly string SecurityPolicyId;
         /// <summary>
+        /// The type of the security policy.
+        /// </summary>
+        public readonly string SecurityPolicyType;
+        /// <summary>
         /// The current state of the security policy.
         /// </summary>
         public readonly string State;
@@ -187,6 +191,8 @@ namespace Pulumi.Oci.DataSafe
 
             string securityPolicyId,
 
+            string securityPolicyType,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -203,6 +209,7 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             LifecycleDetails = lifecycleDetails;
             SecurityPolicyId = securityPolicyId;
+            SecurityPolicyType = securityPolicyType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

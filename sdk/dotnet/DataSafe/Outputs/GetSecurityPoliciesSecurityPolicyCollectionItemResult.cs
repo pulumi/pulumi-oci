@@ -42,9 +42,9 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// An optional filter to return only resources that match the specified OCID of the security policy resource.
+        /// The type of the security policy.
         /// </summary>
-        public readonly string SecurityPolicyId;
+        public readonly string SecurityPolicyType;
         /// <summary>
         /// The current state of the security policy.
         /// </summary>
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string lifecycleDetails,
 
-            string securityPolicyId,
+            string securityPolicyType,
 
             string state,
 
@@ -95,7 +95,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
-            SecurityPolicyId = securityPolicyId;
+            SecurityPolicyType = securityPolicyType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

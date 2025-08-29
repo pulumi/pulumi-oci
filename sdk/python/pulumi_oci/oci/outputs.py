@@ -23,6 +23,10 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
+    'ManagedKafkaKafkaClusterAccessSubnet',
+    'ManagedKafkaKafkaClusterBrokerShape',
+    'ManagedKafkaKafkaClusterConfigLatestConfig',
+    'ManagedKafkaKafkaClusterKafkaBootstrapUrl',
     'GetApiPlatformApiPlatformInstanceIdcsAppResult',
     'GetApiPlatformApiPlatformInstanceUriResult',
     'GetApiPlatformApiPlatformInstancesApiPlatformInstanceCollectionResult',
@@ -74,6 +78,23 @@ __all__ = [
     'GetDbmulticloudOracleDbAzureVaultsFilterResult',
     'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionResult',
     'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult',
+    'GetManagedKafkaKafkaClusterAccessSubnetResult',
+    'GetManagedKafkaKafkaClusterBrokerShapeResult',
+    'GetManagedKafkaKafkaClusterConfigLatestConfigResult',
+    'GetManagedKafkaKafkaClusterConfigVersionsFilterResult',
+    'GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionResult',
+    'GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemResult',
+    'GetManagedKafkaKafkaClusterConfigsFilterResult',
+    'GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionResult',
+    'GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemResult',
+    'GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigResult',
+    'GetManagedKafkaKafkaClusterKafkaBootstrapUrlResult',
+    'GetManagedKafkaKafkaClustersFilterResult',
+    'GetManagedKafkaKafkaClustersKafkaClusterCollectionResult',
+    'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemResult',
+    'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetResult',
+    'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult',
+    'GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlResult',
     'GetWlmsManagedInstanceConfigurationResult',
     'GetWlmsManagedInstanceScanResultsFilterResult',
     'GetWlmsManagedInstanceScanResultsScanResultCollectionResult',
@@ -572,6 +593,200 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
         time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class ManagedKafkaKafkaClusterAccessSubnet(dict):
+    def __init__(__self__, *,
+                 subnets: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] subnets: (Updatable) Subnets OCIDs
+        """
+        pulumi.set(__self__, "subnets", subnets)
+
+    @_builtins.property
+    @pulumi.getter
+    def subnets(self) -> Sequence[_builtins.str]:
+        """
+        (Updatable) Subnets OCIDs
+        """
+        return pulumi.get(self, "subnets")
+
+
+@pulumi.output_type
+class ManagedKafkaKafkaClusterBrokerShape(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeCount":
+            suggest = "node_count"
+        elif key == "ocpuCount":
+            suggest = "ocpu_count"
+        elif key == "storageSizeInGbs":
+            suggest = "storage_size_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedKafkaKafkaClusterBrokerShape. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedKafkaKafkaClusterBrokerShape.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedKafkaKafkaClusterBrokerShape.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_count: _builtins.int,
+                 ocpu_count: _builtins.int,
+                 storage_size_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int node_count: (Updatable) Number of Kafka broker nodes
+        :param _builtins.int ocpu_count: (Updatable) Number of OCPUs per nodes
+        :param _builtins.int storage_size_in_gbs: (Updatable) Size of the storage per nodes.
+        """
+        pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "ocpu_count", ocpu_count)
+        if storage_size_in_gbs is not None:
+            pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> _builtins.int:
+        """
+        (Updatable) Number of Kafka broker nodes
+        """
+        return pulumi.get(self, "node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ocpuCount")
+    def ocpu_count(self) -> _builtins.int:
+        """
+        (Updatable) Number of OCPUs per nodes
+        """
+        return pulumi.get(self, "ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeInGbs")
+    def storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Size of the storage per nodes.
+        """
+        return pulumi.get(self, "storage_size_in_gbs")
+
+
+@pulumi.output_type
+class ManagedKafkaKafkaClusterConfigLatestConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "configId":
+            suggest = "config_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "versionNumber":
+            suggest = "version_number"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ManagedKafkaKafkaClusterConfigLatestConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ManagedKafkaKafkaClusterConfigLatestConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ManagedKafkaKafkaClusterConfigLatestConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 properties: Mapping[str, _builtins.str],
+                 config_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 version_number: Optional[_builtins.int] = None):
+        """
+        :param Mapping[str, _builtins.str] properties: (Updatable) Cluster configuration key-value pairs
+        :param _builtins.str config_id: (Updatable) ID cluster configuration
+        :param _builtins.str time_created: (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.int version_number: (Updatable) Version of the cluster configuration
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "properties", properties)
+        if config_id is not None:
+            pulumi.set(__self__, "config_id", config_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if version_number is not None:
+            pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, _builtins.str]:
+        """
+        (Updatable) Cluster configuration key-value pairs
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) ID cluster configuration
+        """
+        return pulumi.get(self, "config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Version of the cluster configuration
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class ManagedKafkaKafkaClusterKafkaBootstrapUrl(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None,
+                 url: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: Name of the Kafka listener providing this bootstrap URL
+        :param _builtins.str url: Bootstrap URL
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if url is not None:
+            pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> Optional[_builtins.str]:
+        """
+        Bootstrap URL
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type
@@ -3953,6 +4168,800 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
         Vault Resource Type.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterAccessSubnetResult(dict):
+    def __init__(__self__, *,
+                 subnets: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] subnets: Subnets OCIDs
+        """
+        pulumi.set(__self__, "subnets", subnets)
+
+    @_builtins.property
+    @pulumi.getter
+    def subnets(self) -> Sequence[_builtins.str]:
+        """
+        Subnets OCIDs
+        """
+        return pulumi.get(self, "subnets")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterBrokerShapeResult(dict):
+    def __init__(__self__, *,
+                 node_count: _builtins.int,
+                 ocpu_count: _builtins.int,
+                 storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int node_count: Number of Kafka broker nodes
+        :param _builtins.int ocpu_count: Number of OCPUs per nodes
+        :param _builtins.int storage_size_in_gbs: Size of the storage per nodes.
+        """
+        pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> _builtins.int:
+        """
+        Number of Kafka broker nodes
+        """
+        return pulumi.get(self, "node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ocpuCount")
+    def ocpu_count(self) -> _builtins.int:
+        """
+        Number of OCPUs per nodes
+        """
+        return pulumi.get(self, "ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeInGbs")
+    def storage_size_in_gbs(self) -> _builtins.int:
+        """
+        Size of the storage per nodes.
+        """
+        return pulumi.get(self, "storage_size_in_gbs")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigLatestConfigResult(dict):
+    def __init__(__self__, *,
+                 config_id: _builtins.str,
+                 properties: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 version_number: _builtins.int):
+        """
+        :param _builtins.str config_id: ID cluster configuration
+        :param Mapping[str, _builtins.str] properties: Cluster configuration key-value pairs
+        :param _builtins.str time_created: The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.int version_number: Version of the cluster configuration
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> _builtins.str:
+        """
+        ID cluster configuration
+        """
+        return pulumi.get(self, "config_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Cluster configuration key-value pairs
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> _builtins.int:
+        """
+        Version of the cluster configuration
+        """
+        return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigVersionsKafkaClusterConfigVersionCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 config_id: _builtins.str,
+                 time_created: _builtins.str,
+                 version_number: _builtins.int):
+        """
+        :param _builtins.str config_id: ID cluster configuration
+        :param _builtins.str time_created: The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.int version_number: Version of the cluster configuration
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> _builtins.str:
+        """
+        ID cluster configuration
+        """
+        return pulumi.get(self, "config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> _builtins.int:
+        """
+        Version of the cluster configuration
+        """
+        return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 latest_configs: Sequence['outputs.GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigResult'],
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+        :param Sequence['GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigArgs'] latest_configs: A shared configuration object used by 0 or more kafka clusters.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "latest_configs", latest_configs)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaClusterConfig.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="latestConfigs")
+    def latest_configs(self) -> Sequence['outputs.GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigResult']:
+        """
+        A shared configuration object used by 0 or more kafka clusters.
+        """
+        return pulumi.get(self, "latest_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the KafkaClusterConfig in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the KafkaClusterConfig was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterConfigsKafkaClusterConfigCollectionItemLatestConfigResult(dict):
+    def __init__(__self__, *,
+                 config_id: _builtins.str,
+                 properties: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 version_number: _builtins.int):
+        """
+        :param _builtins.str config_id: ID cluster configuration
+        :param Mapping[str, _builtins.str] properties: Cluster configuration key-value pairs
+        :param _builtins.str time_created: The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.int version_number: Version of the cluster configuration
+        """
+        pulumi.set(__self__, "config_id", config_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "version_number", version_number)
+
+    @_builtins.property
+    @pulumi.getter(name="configId")
+    def config_id(self) -> _builtins.str:
+        """
+        ID cluster configuration
+        """
+        return pulumi.get(self, "config_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Cluster configuration key-value pairs
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the KafkaClusterConfig was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="versionNumber")
+    def version_number(self) -> _builtins.int:
+        """
+        Version of the cluster configuration
+        """
+        return pulumi.get(self, "version_number")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClusterKafkaBootstrapUrlResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 url: _builtins.str):
+        """
+        :param _builtins.str name: Name of the Kafka listener providing this bootstrap URL
+        :param _builtins.str url: Bootstrap URL
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        Bootstrap URL
+        """
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: Name of the Kafka listener providing this bootstrap URL
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersKafkaClusterCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersKafkaClusterCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 access_subnets: Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetResult'],
+                 broker_shapes: Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult'],
+                 client_certificate_bundle: _builtins.str,
+                 cluster_config_id: _builtins.str,
+                 cluster_config_version: _builtins.int,
+                 cluster_type: _builtins.str,
+                 compartment_id: _builtins.str,
+                 coordination_type: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 kafka_bootstrap_urls: Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlResult'],
+                 kafka_version: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 secret_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param Sequence['GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetArgs'] access_subnets: Subnets where broker/coordinator VNICs will be created.
+        :param Sequence['GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeArgs'] broker_shapes: Configuration of the broker node.
+        :param _builtins.str client_certificate_bundle: CA certificate bundle for mTLS broker authentication.
+        :param _builtins.str cluster_config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+        :param _builtins.int cluster_config_version: The version of configuration object
+        :param _builtins.str cluster_type: Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param _builtins.str coordination_type: Kafka coordination type. Set of available types depends on Kafka version
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+        :param Sequence['GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlArgs'] kafka_bootstrap_urls: Bootstrap URL that can be used to connect to Kafka
+        :param _builtins.str kafka_version: Version of Kafka to use to spin up the cluster
+        :param _builtins.str lifecycle_details: A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        pulumi.set(__self__, "access_subnets", access_subnets)
+        pulumi.set(__self__, "broker_shapes", broker_shapes)
+        pulumi.set(__self__, "client_certificate_bundle", client_certificate_bundle)
+        pulumi.set(__self__, "cluster_config_id", cluster_config_id)
+        pulumi.set(__self__, "cluster_config_version", cluster_config_version)
+        pulumi.set(__self__, "cluster_type", cluster_type)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "coordination_type", coordination_type)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "kafka_bootstrap_urls", kafka_bootstrap_urls)
+        pulumi.set(__self__, "kafka_version", kafka_version)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="accessSubnets")
+    def access_subnets(self) -> Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetResult']:
+        """
+        Subnets where broker/coordinator VNICs will be created.
+        """
+        return pulumi.get(self, "access_subnets")
+
+    @_builtins.property
+    @pulumi.getter(name="brokerShapes")
+    def broker_shapes(self) -> Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult']:
+        """
+        Configuration of the broker node.
+        """
+        return pulumi.get(self, "broker_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="clientCertificateBundle")
+    def client_certificate_bundle(self) -> _builtins.str:
+        """
+        CA certificate bundle for mTLS broker authentication.
+        """
+        return pulumi.get(self, "client_certificate_bundle")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterConfigId")
+    def cluster_config_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Kafka Cluster configuration object
+        """
+        return pulumi.get(self, "cluster_config_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterConfigVersion")
+    def cluster_config_version(self) -> _builtins.int:
+        """
+        The version of configuration object
+        """
+        return pulumi.get(self, "cluster_config_version")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterType")
+    def cluster_type(self) -> _builtins.str:
+        """
+        Type of the cluster to spin up.  DEVELOPMENT - setting that allows to sacrifice HA and spin up cluster on a single node PRODUCTION - Minimum allowed broker count is 3
+        """
+        return pulumi.get(self, "cluster_type")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="coordinationType")
+    def coordination_type(self) -> _builtins.str:
+        """
+        Kafka coordination type. Set of available types depends on Kafka version
+        """
+        return pulumi.get(self, "coordination_type")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="kafkaBootstrapUrls")
+    def kafka_bootstrap_urls(self) -> Sequence['outputs.GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlResult']:
+        """
+        Bootstrap URL that can be used to connect to Kafka
+        """
+        return pulumi.get(self, "kafka_bootstrap_urls")
+
+    @_builtins.property
+    @pulumi.getter(name="kafkaVersion")
+    def kafka_version(self) -> _builtins.str:
+        """
+        Version of Kafka to use to spin up the cluster
+        """
+        return pulumi.get(self, "kafka_version")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the KafkaCluster in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret that contains superuser password.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the KafkaCluster was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the KafkaCluster was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersKafkaClusterCollectionItemAccessSubnetResult(dict):
+    def __init__(__self__, *,
+                 subnets: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] subnets: Subnets OCIDs
+        """
+        pulumi.set(__self__, "subnets", subnets)
+
+    @_builtins.property
+    @pulumi.getter
+    def subnets(self) -> Sequence[_builtins.str]:
+        """
+        Subnets OCIDs
+        """
+        return pulumi.get(self, "subnets")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersKafkaClusterCollectionItemBrokerShapeResult(dict):
+    def __init__(__self__, *,
+                 node_count: _builtins.int,
+                 ocpu_count: _builtins.int,
+                 storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int node_count: Number of Kafka broker nodes
+        :param _builtins.int ocpu_count: Number of OCPUs per nodes
+        :param _builtins.int storage_size_in_gbs: Size of the storage per nodes.
+        """
+        pulumi.set(__self__, "node_count", node_count)
+        pulumi.set(__self__, "ocpu_count", ocpu_count)
+        pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="nodeCount")
+    def node_count(self) -> _builtins.int:
+        """
+        Number of Kafka broker nodes
+        """
+        return pulumi.get(self, "node_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ocpuCount")
+    def ocpu_count(self) -> _builtins.int:
+        """
+        Number of OCPUs per nodes
+        """
+        return pulumi.get(self, "ocpu_count")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeInGbs")
+    def storage_size_in_gbs(self) -> _builtins.int:
+        """
+        Size of the storage per nodes.
+        """
+        return pulumi.get(self, "storage_size_in_gbs")
+
+
+@pulumi.output_type
+class GetManagedKafkaKafkaClustersKafkaClusterCollectionItemKafkaBootstrapUrlResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 url: _builtins.str):
+        """
+        :param _builtins.str name: Name of the Kafka listener providing this bootstrap URL
+        :param _builtins.str url: Bootstrap URL
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Name of the Kafka listener providing this bootstrap URL
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        """
+        Bootstrap URL
+        """
+        return pulumi.get(self, "url")
 
 
 @pulumi.output_type

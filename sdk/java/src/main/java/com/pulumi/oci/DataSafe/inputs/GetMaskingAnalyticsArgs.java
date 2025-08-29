@@ -87,6 +87,36 @@ public final class GetMaskingAnalyticsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    @Import(name="sensitiveTypeId")
+    private @Nullable Output<String> sensitiveTypeId;
+
+    /**
+     * @return A filter to return only items related to a specific sensitive type OCID.
+     * 
+     */
+    public Optional<Output<String>> sensitiveTypeId() {
+        return Optional.ofNullable(this.sensitiveTypeId);
+    }
+
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -109,6 +139,8 @@ public final class GetMaskingAnalyticsArgs extends com.pulumi.resources.InvokeAr
         this.filters = $.filters;
         this.groupBy = $.groupBy;
         this.maskingPolicyId = $.maskingPolicyId;
+        this.sensitiveTypeId = $.sensitiveTypeId;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -225,6 +257,48 @@ public final class GetMaskingAnalyticsArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder maskingPolicyId(String maskingPolicyId) {
             return maskingPolicyId(Output.of(maskingPolicyId));
+        }
+
+        /**
+         * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeId(@Nullable Output<String> sensitiveTypeId) {
+            $.sensitiveTypeId = sensitiveTypeId;
+            return this;
+        }
+
+        /**
+         * @param sensitiveTypeId A filter to return only items related to a specific sensitive type OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sensitiveTypeId(String sensitiveTypeId) {
+            return sensitiveTypeId(Output.of(sensitiveTypeId));
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
         }
 
         /**

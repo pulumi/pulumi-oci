@@ -38,6 +38,16 @@ public final class GetDbNodeResult {
      */
     private String backupVnicId;
     /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    private Integer computeCount;
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores enabled on the Db node.
      * 
      */
@@ -189,6 +199,20 @@ public final class GetDbNodeResult {
      */
     public String backupVnicId() {
         return this.backupVnicId;
+    }
+    /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    public Integer computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores enabled on the Db node.
@@ -369,6 +393,8 @@ public final class GetDbNodeResult {
         private String backupIpv6id;
         private String backupVnic2id;
         private String backupVnicId;
+        private Integer computeCount;
+        private String computeModel;
         private Integer cpuCoreCount;
         private String dbNodeId;
         private Integer dbNodeStorageSizeInGbs;
@@ -401,6 +427,8 @@ public final class GetDbNodeResult {
     	      this.backupIpv6id = defaults.backupIpv6id;
     	      this.backupVnic2id = defaults.backupVnic2id;
     	      this.backupVnicId = defaults.backupVnicId;
+    	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.dbNodeId = defaults.dbNodeId;
     	      this.dbNodeStorageSizeInGbs = defaults.dbNodeStorageSizeInGbs;
@@ -465,6 +493,22 @@ public final class GetDbNodeResult {
               throw new MissingRequiredPropertyException("GetDbNodeResult", "backupVnicId");
             }
             this.backupVnicId = backupVnicId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeCount(Integer computeCount) {
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeResult", "computeCount");
+            }
+            this.computeCount = computeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeResult", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -666,6 +710,8 @@ public final class GetDbNodeResult {
             _resultValue.backupIpv6id = backupIpv6id;
             _resultValue.backupVnic2id = backupVnic2id;
             _resultValue.backupVnicId = backupVnicId;
+            _resultValue.computeCount = computeCount;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.dbNodeId = dbNodeId;
             _resultValue.dbNodeStorageSizeInGbs = dbNodeStorageSizeInGbs;

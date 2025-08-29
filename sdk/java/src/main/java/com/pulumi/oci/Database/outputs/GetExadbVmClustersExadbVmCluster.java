@@ -184,6 +184,11 @@ public final class GetExadbVmClustersExadbVmCluster {
      */
     private String shape;
     /**
+     * @return The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    private String shapeAttribute;
+    /**
      * @return The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -468,6 +473,13 @@ public final class GetExadbVmClustersExadbVmCluster {
         return this.shape;
     }
     /**
+     * @return The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     * 
+     */
+    public String shapeAttribute() {
+        return this.shapeAttribute;
+    }
+    /**
      * @return The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
@@ -580,6 +592,7 @@ public final class GetExadbVmClustersExadbVmCluster {
         private Integer scanListenerPortTcpSsl;
         private Map<String,String> securityAttributes;
         private String shape;
+        private String shapeAttribute;
         private List<String> sshPublicKeys;
         private String state;
         private String subnetId;
@@ -626,6 +639,7 @@ public final class GetExadbVmClustersExadbVmCluster {
     	      this.scanListenerPortTcpSsl = defaults.scanListenerPortTcpSsl;
     	      this.securityAttributes = defaults.securityAttributes;
     	      this.shape = defaults.shape;
+    	      this.shapeAttribute = defaults.shapeAttribute;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
@@ -924,6 +938,14 @@ public final class GetExadbVmClustersExadbVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder shapeAttribute(String shapeAttribute) {
+            if (shapeAttribute == null) {
+              throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "shapeAttribute");
+            }
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sshPublicKeys(List<String> sshPublicKeys) {
             if (sshPublicKeys == null) {
               throw new MissingRequiredPropertyException("GetExadbVmClustersExadbVmCluster", "sshPublicKeys");
@@ -1044,6 +1066,7 @@ public final class GetExadbVmClustersExadbVmCluster {
             _resultValue.scanListenerPortTcpSsl = scanListenerPortTcpSsl;
             _resultValue.securityAttributes = securityAttributes;
             _resultValue.shape = shape;
+            _resultValue.shapeAttribute = shapeAttribute;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;

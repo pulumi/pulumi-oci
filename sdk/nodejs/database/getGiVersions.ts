@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,
  *     shape: giVersionShape,
+ *     shapeAttribute: giVersionShapeAttribute,
  * });
  * ```
  */
@@ -33,6 +34,7 @@ export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptio
         "filters": args.filters,
         "resourceId": args.resourceId,
         "shape": args.shape,
+        "shapeAttribute": args.shapeAttribute,
     }, opts);
 }
 
@@ -57,6 +59,10 @@ export interface GetGiVersionsArgs {
      * If provided, filters the results for the given shape.
      */
     shape?: string;
+    /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     */
+    shapeAttribute?: string;
 }
 
 /**
@@ -76,6 +82,7 @@ export interface GetGiVersionsResult {
     readonly id: string;
     readonly resourceId?: string;
     readonly shape?: string;
+    readonly shapeAttribute?: string;
 }
 /**
  * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
@@ -93,6 +100,7 @@ export interface GetGiVersionsResult {
  *     availabilityDomain: giVersionAvailabilityDomain,
  *     resourceId: testResource.id,
  *     shape: giVersionShape,
+ *     shapeAttribute: giVersionShapeAttribute,
  * });
  * ```
  */
@@ -104,6 +112,7 @@ export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi
         "filters": args.filters,
         "resourceId": args.resourceId,
         "shape": args.shape,
+        "shapeAttribute": args.shapeAttribute,
     }, opts);
 }
 
@@ -128,4 +137,8 @@ export interface GetGiVersionsOutputArgs {
      * If provided, filters the results for the given shape.
      */
     shape?: pulumi.Input<string>;
+    /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     */
+    shapeAttribute?: pulumi.Input<string>;
 }

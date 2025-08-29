@@ -19,8 +19,7 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<string> ConnectionId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of Database connection. The allowed values are:
-        /// * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        /// (Updatable) The type of Database connection.
         /// </summary>
         [Input("connectionType", required: true)]
         public Input<string> ConnectionType { get; set; } = null!;

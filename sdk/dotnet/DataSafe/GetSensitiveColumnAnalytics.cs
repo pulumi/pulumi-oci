@@ -48,6 +48,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
         ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeIds = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -94,6 +95,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
         ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeIds = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -140,6 +142,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
         ///         SensitiveTypeGroupId = testSensitiveTypeGroup.Id,
         ///         SensitiveTypeIds = testSensitiveType.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -250,6 +253,12 @@ namespace Pulumi.Oci.DataSafe
             get => _sensitiveTypeIds ?? (_sensitiveTypeIds = new List<string>());
             set => _sensitiveTypeIds = value;
         }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -364,6 +373,12 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -413,6 +428,7 @@ namespace Pulumi.Oci.DataSafe
         /// The OCID of the sensitive type associated with the sensitive column.
         /// </summary>
         public readonly ImmutableArray<string> SensitiveTypeIds;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target database associated with the sensitive column.
         /// </summary>
@@ -446,6 +462,8 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> sensitiveTypeIds,
 
+            string? targetDatabaseGroupId,
+
             string? targetId)
         {
             AccessLevel = accessLevel;
@@ -461,6 +479,7 @@ namespace Pulumi.Oci.DataSafe
             SensitiveDataModelId = sensitiveDataModelId;
             SensitiveTypeGroupId = sensitiveTypeGroupId;
             SensitiveTypeIds = sensitiveTypeIds;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
         }
     }

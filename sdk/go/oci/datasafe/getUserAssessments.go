@@ -52,7 +52,9 @@ import (
 //				IsScheduleAssessment:            pulumi.BoolRef(userAssessmentIsScheduleAssessment),
 //				ScheduleUserAssessmentId:        pulumi.StringRef(testUserAssessment.Id),
 //				State:                           pulumi.StringRef(userAssessmentState),
+//				TargetDatabaseGroupId:           pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                        pulumi.StringRef(testTarget.Id),
+//				TargetType:                      pulumi.StringRef(userAssessmentTargetType),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(userAssessmentTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(userAssessmentTimeCreatedLessThan),
 //				TriggeredBy:                     pulumi.StringRef(userAssessmentTriggeredBy),
@@ -95,8 +97,12 @@ type GetUserAssessmentsArgs struct {
 	ScheduleUserAssessmentId *string `pulumi:"scheduleUserAssessmentId"`
 	// The current state of the user assessment.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
+	// A filter to return only only target database resources or target database group resources.
+	TargetType *string `pulumi:"targetType"`
 	// A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -129,8 +135,12 @@ type GetUserAssessmentsResult struct {
 	IsScheduleAssessment     *bool   `pulumi:"isScheduleAssessment"`
 	ScheduleUserAssessmentId *string `pulumi:"scheduleUserAssessmentId"`
 	// The current state of the user assessment.
-	State                           *string `pulumi:"state"`
-	TargetId                        *string `pulumi:"targetId"`
+	State *string `pulumi:"state"`
+	// The OCID of target database group.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
+	TargetId              *string `pulumi:"targetId"`
+	// Indicates whether the user assessment is for a target database or a target database group.
+	TargetType                      *string `pulumi:"targetType"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
 	// Indicates whether the user assessment was created by the system or the user.
@@ -169,8 +179,12 @@ type GetUserAssessmentsOutputArgs struct {
 	ScheduleUserAssessmentId pulumi.StringPtrInput `pulumi:"scheduleUserAssessmentId"`
 	// The current state of the user assessment.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
+	// A filter to return only only target database resources or target database group resources.
+	TargetType pulumi.StringPtrInput `pulumi:"targetType"`
 	// A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
 	//
 	// **Example:** 2016-12-19T16:39:57.600Z
@@ -254,8 +268,18 @@ func (o GetUserAssessmentsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
+// The OCID of target database group.
+func (o GetUserAssessmentsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
+}
+
 func (o GetUserAssessmentsResultOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the user assessment is for a target database or a target database group.
+func (o GetUserAssessmentsResultOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetUserAssessmentsResult) *string { return v.TargetType }).(pulumi.StringPtrOutput)
 }
 
 func (o GetUserAssessmentsResultOutput) TimeCreatedGreaterThanOrEqualTo() pulumi.StringPtrOutput {

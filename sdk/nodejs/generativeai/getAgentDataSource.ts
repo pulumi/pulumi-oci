@@ -9,8 +9,6 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **GetDataSource**
- *
  * Gets information about a data source.
  *
  * ## Example Usage
@@ -50,7 +48,7 @@ export interface GetAgentDataSourceResult {
      */
     readonly compartmentId: string;
     /**
-     * **DataSourceConfig**
+     * The details of data source.
      */
     readonly dataSourceConfigs: outputs.GenerativeAi.GetAgentDataSourceDataSourceConfig[];
     readonly dataSourceId: string;
@@ -105,8 +103,6 @@ export interface GetAgentDataSourceResult {
 }
 /**
  * This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **GetDataSource**
  *
  * Gets information about a data source.
  *

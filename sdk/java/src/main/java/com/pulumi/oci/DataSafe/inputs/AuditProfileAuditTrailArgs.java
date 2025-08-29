@@ -34,14 +34,14 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the audit.
+     * The OCID of the  parent audit.
      * 
      */
     @Import(name="auditProfileId")
     private @Nullable Output<String> auditProfileId;
 
     /**
-     * @return The OCID of the audit.
+     * @return The OCID of the  parent audit.
      * 
      */
     public Optional<Output<String>> auditProfileId() {
@@ -49,14 +49,29 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The OCID of the compartment that contains the audit.
+     * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    @Import(name="canUpdateLastArchiveTimeOnTarget")
+    private @Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget;
+
+    /**
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Optional<Output<Boolean>> canUpdateLastArchiveTimeOnTarget() {
+        return Optional.ofNullable(this.canUpdateLastArchiveTimeOnTarget);
+    }
+
+    /**
+     * (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains the audit.
+     * @return (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -274,14 +289,14 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -383,6 +398,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
     private AuditProfileAuditTrailArgs(AuditProfileAuditTrailArgs $) {
         this.auditCollectionStartTime = $.auditCollectionStartTime;
         this.auditProfileId = $.auditProfileId;
+        this.canUpdateLastArchiveTimeOnTarget = $.canUpdateLastArchiveTimeOnTarget;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -447,7 +463,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param auditProfileId The OCID of the audit.
+         * @param auditProfileId The OCID of the  parent audit.
          * 
          * @return builder
          * 
@@ -458,7 +474,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param auditProfileId The OCID of the audit.
+         * @param auditProfileId The OCID of the  parent audit.
          * 
          * @return builder
          * 
@@ -468,7 +484,28 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the audit.
+         * @param canUpdateLastArchiveTimeOnTarget Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(@Nullable Output<Boolean> canUpdateLastArchiveTimeOnTarget) {
+            $.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
+            return this;
+        }
+
+        /**
+         * @param canUpdateLastArchiveTimeOnTarget Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            return canUpdateLastArchiveTimeOnTarget(Output.of(canUpdateLastArchiveTimeOnTarget));
+        }
+
+        /**
+         * @param compartmentId (Updatable) The OCID of the compartment where you want to create the audit profile.
          * 
          * @return builder
          * 
@@ -479,7 +516,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains the audit.
+         * @param compartmentId (Updatable) The OCID of the compartment where you want to create the audit profile.
          * 
          * @return builder
          * 
@@ -783,7 +820,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId The OCID of the Data Safe target for which the audit profile is created.
+         * @param targetId The OCID of the target database or target database group for which the audit profile is created.
          * 
          * @return builder
          * 
@@ -794,7 +831,7 @@ public final class AuditProfileAuditTrailArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId The OCID of the Data Safe target for which the audit profile is created.
+         * @param targetId The OCID of the target database or target database group for which the audit profile is created.
          * 
          * @return builder
          * 

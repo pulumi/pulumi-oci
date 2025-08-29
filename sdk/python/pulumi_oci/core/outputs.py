@@ -24090,6 +24090,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionResult(dict):
 class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict):
     def __init__(__self__, *,
                  additional_data: Mapping[str, _builtins.str],
+                 available_host_count: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_gpu_memory_fabric_id: _builtins.str,
                  compute_hpc_island_id: _builtins.str,
@@ -24107,6 +24108,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
                  total_host_count: _builtins.str):
         """
         :param Mapping[str, _builtins.str] additional_data: Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
+        :param _builtins.str available_host_count: The total number of available bare metal hosts located in this compute GPU memory fabric.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param _builtins.str compute_gpu_memory_fabric_id: A filter to return only the listings that matches the given GPU memory fabric id.
         :param _builtins.str compute_hpc_island_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute HPC island.
@@ -24124,6 +24126,7 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         :param _builtins.str total_host_count: The total number of bare metal hosts located in this compute GPU memory fabric.
         """
         pulumi.set(__self__, "additional_data", additional_data)
+        pulumi.set(__self__, "available_host_count", available_host_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_gpu_memory_fabric_id", compute_gpu_memory_fabric_id)
         pulumi.set(__self__, "compute_hpc_island_id", compute_hpc_island_id)
@@ -24147,6 +24150,14 @@ class GetComputeGpuMemoryFabricsComputeGpuMemoryFabricCollectionItemResult(dict)
         Additional data that can be exposed to the customer. Right now it will include the switch tray ids.
         """
         return pulumi.get(self, "additional_data")
+
+    @_builtins.property
+    @pulumi.getter(name="availableHostCount")
+    def available_host_count(self) -> _builtins.str:
+        """
+        The total number of available bare metal hosts located in this compute GPU memory fabric.
+        """
+        return pulumi.get(self, "available_host_count")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

@@ -46,6 +46,10 @@ export interface GetReportResult {
      */
     readonly compartmentId: string;
     /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     */
+    readonly dataSource: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: string};
@@ -87,9 +91,17 @@ export interface GetReportResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
+     * Specifies the time at which the report was created.
+     */
+    readonly timeCreated: string;
+    /**
      * Specifies the date and time the report was generated.
      */
     readonly timeGenerated: string;
+    /**
+     * The date and time of the report update in Data Safe.
+     */
+    readonly timeUpdated: string;
     /**
      * The type of the audit report.
      */

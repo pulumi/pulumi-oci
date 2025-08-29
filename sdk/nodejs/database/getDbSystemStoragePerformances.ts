@@ -14,6 +14,7 @@ import * as utilities from "../utilities";
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
+        "compartmentId": args.compartmentId,
         "databaseEdition": args.databaseEdition,
         "filters": args.filters,
         "shapeType": args.shapeType,
@@ -25,6 +26,10 @@ export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerforman
  * A collection of arguments for invoking getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesArgs {
+    /**
+     * Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    compartmentId?: string;
     /**
      * Optional. Filters the performance results by database edition. Valid values are:
      * * STANDARD_EDITION
@@ -51,6 +56,7 @@ export interface GetDbSystemStoragePerformancesArgs {
  * A collection of values returned by getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesResult {
+    readonly compartmentId?: string;
     readonly databaseEdition?: string;
     /**
      * The list of db_system_storage_performances.
@@ -75,6 +81,7 @@ export interface GetDbSystemStoragePerformancesResult {
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", {
+        "compartmentId": args.compartmentId,
         "databaseEdition": args.databaseEdition,
         "filters": args.filters,
         "shapeType": args.shapeType,
@@ -86,6 +93,10 @@ export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePer
  * A collection of arguments for invoking getDbSystemStoragePerformances.
  */
 export interface GetDbSystemStoragePerformancesOutputArgs {
+    /**
+     * Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     */
+    compartmentId?: pulumi.Input<string>;
     /**
      * Optional. Filters the performance results by database edition. Valid values are:
      * * STANDARD_EDITION

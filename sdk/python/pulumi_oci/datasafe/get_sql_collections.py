@@ -28,7 +28,7 @@ class GetSqlCollectionsResult:
     """
     A collection of values returned by getSqlCollections.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, db_user_name=None, display_name=None, filters=None, id=None, sql_collection_collections=None, sql_collection_id=None, state=None, target_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, db_user_name=None, display_name=None, filters=None, id=None, sql_collection_collections=None, sql_collection_id=None, state=None, target_database_group_id=None, target_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -59,6 +59,9 @@ class GetSqlCollectionsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -138,6 +141,11 @@ class GetSqlCollectionsResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -172,6 +180,7 @@ class AwaitableGetSqlCollectionsResult(GetSqlCollectionsResult):
             sql_collection_collections=self.sql_collection_collections,
             sql_collection_id=self.sql_collection_id,
             state=self.state,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
             time_created_greater_than_or_equal_to=self.time_created_greater_than_or_equal_to,
             time_created_less_than=self.time_created_less_than)
@@ -185,6 +194,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
                         filters: Optional[Sequence[Union['GetSqlCollectionsFilterArgs', 'GetSqlCollectionsFilterArgsDict']]] = None,
                         sql_collection_id: Optional[_builtins.str] = None,
                         state: Optional[_builtins.str] = None,
+                        target_database_group_id: Optional[_builtins.str] = None,
                         target_id: Optional[_builtins.str] = None,
                         time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
                         time_created_less_than: Optional[_builtins.str] = None,
@@ -220,6 +230,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],
         state=sql_collection_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         time_created_greater_than_or_equal_to=sql_collection_time_created_greater_than_or_equal_to,
         time_created_less_than=sql_collection_time_created_less_than)
@@ -233,6 +244,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str sql_collection_id: An optional filter to return only resources that match the specified OCID of the SQL collection resource.
     :param _builtins.str state: The current state of the SQL collection.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
@@ -250,6 +262,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
     __args__['filters'] = filters
     __args__['sqlCollectionId'] = sql_collection_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
@@ -267,6 +280,7 @@ def get_sql_collections(access_level: Optional[_builtins.str] = None,
         sql_collection_collections=pulumi.get(__ret__, 'sql_collection_collections'),
         sql_collection_id=pulumi.get(__ret__, 'sql_collection_id'),
         state=pulumi.get(__ret__, 'state'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'))
@@ -278,6 +292,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSqlCollectionsFilterArgs', 'GetSqlCollectionsFilterArgsDict']]]]] = None,
                                sql_collection_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                               target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -313,6 +328,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
         display_name=sql_collection_display_name,
         sql_collection_id=test_sql_collection["id"],
         state=sql_collection_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
         time_created_greater_than_or_equal_to=sql_collection_time_created_greater_than_or_equal_to,
         time_created_less_than=sql_collection_time_created_less_than)
@@ -326,6 +342,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str sql_collection_id: An optional filter to return only resources that match the specified OCID of the SQL collection resource.
     :param _builtins.str state: The current state of the SQL collection.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
@@ -343,6 +360,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
     __args__['filters'] = filters
     __args__['sqlCollectionId'] = sql_collection_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
@@ -359,6 +377,7 @@ def get_sql_collections_output(access_level: Optional[pulumi.Input[Optional[_bui
         sql_collection_collections=pulumi.get(__response__, 'sql_collection_collections'),
         sql_collection_id=pulumi.get(__response__, 'sql_collection_id'),
         state=pulumi.get(__response__, 'state'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__response__, 'time_created_less_than')))

@@ -69,6 +69,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                 BackupConfig = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberBackupConfigArgs
     ///                 {
     ///                     BackupSchedule = drProtectionGroupMembersBackupConfigBackupSchedule,
+    ///                     ExcludeNamespaces = drProtectionGroupMembersBackupConfigExcludeNamespaces,
     ///                     ImageReplicationVaultSecretId = testSecret.Id,
     ///                     MaxNumberOfBackupsRetained = drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
     ///                     Namespaces = drProtectionGroupMembersBackupConfigNamespaces,
@@ -119,6 +120,16 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                     VaultId = testVault.Id,
     ///                 },
     ///                 ConnectionStringType = drProtectionGroupMembersConnectionStringType,
+    ///                 DbSystemAdminUserDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs
+    ///                 {
+    ///                     PasswordVaultSecretId = testSecret.Id,
+    ///                     Username = drProtectionGroupMembersDbSystemAdminUserDetailsUsername,
+    ///                 },
+    ///                 DbSystemReplicationUserDetails = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs
+    ///                 {
+    ///                     PasswordVaultSecretId = testSecret.Id,
+    ///                     Username = drProtectionGroupMembersDbSystemReplicationUserDetailsUsername,
+    ///                 },
     ///                 DestinationAvailabilityDomain = drProtectionGroupMembersDestinationAvailabilityDomain,
     ///                 DestinationBackupPolicyId = testPolicy.Id,
     ///                 DestinationCapacityReservationId = destinationCapacityReservationId,
@@ -157,6 +168,8 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                         },
     ///                     },
     ///                 },
+    ///                 GtidReconciliationTimeout = drProtectionGroupMembersGtidReconciliationTimeout,
+    ///                 IsContinueOnGtidReconciliationTimeout = drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout,
     ///                 IsMovable = drProtectionGroupMembersIsMovable,
     ///                 IsRetainFaultDomain = drProtectionGroupMembersIsRetainFaultDomain,
     ///                 IsStartStopEnabled = drProtectionGroupMembersIsStartStopEnabled,
@@ -189,6 +202,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                     },
     ///                 },
     ///                 PeerClusterId = testCluster.Id,
+    ///                 PeerDbSystemId = testDbSystem.Id,
     ///                 SourceVolumeToDestinationEncryptionKeyMappings = new[]
     ///                 {
     ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs

@@ -14,55 +14,7 @@ import (
 
 // This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **CreateDataSource**
-//
 // Creates a data source.
-//
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/generativeai"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := generativeai.NewAgentDataSource(ctx, "test_data_source", &generativeai.AgentDataSourceArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				DataSourceConfig: &generativeai.AgentDataSourceDataSourceConfigArgs{
-//					DataSourceConfigType: pulumi.Any(dataSourceDataSourceConfigDataSourceConfigType),
-//					ObjectStoragePrefixes: generativeai.AgentDataSourceDataSourceConfigObjectStoragePrefixArray{
-//						&generativeai.AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{
-//							Bucket:    pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesBucket),
-//							Namespace: pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesNamespace),
-//							Prefix:    pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesPrefix),
-//						},
-//					},
-//				},
-//				KnowledgeBaseId: pulumi.Any(testKnowledgeBase.Id),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(dataSourceDescription),
-//				DisplayName: pulumi.Any(dataSourceDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//				Metadata: pulumi.Any(dataSourceMetadata),
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
 //
 // ## Import
 //
@@ -76,9 +28,7 @@ type AgentDataSource struct {
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) **DataSourceConfig**
-	//
-	// The details of data source.
+	// (Updatable) The details of data source.
 	DataSourceConfig AgentDataSourceDataSourceConfigOutput `pulumi:"dataSourceConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -148,9 +98,7 @@ func GetAgentDataSource(ctx *pulumi.Context,
 type agentDataSourceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) **DataSourceConfig**
-	//
-	// The details of data source.
+	// (Updatable) The details of data source.
 	DataSourceConfig *AgentDataSourceDataSourceConfig `pulumi:"dataSourceConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -182,9 +130,7 @@ type agentDataSourceState struct {
 type AgentDataSourceState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) **DataSourceConfig**
-	//
-	// The details of data source.
+	// (Updatable) The details of data source.
 	DataSourceConfig AgentDataSourceDataSourceConfigPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -220,9 +166,7 @@ func (AgentDataSourceState) ElementType() reflect.Type {
 type agentDataSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) **DataSourceConfig**
-	//
-	// The details of data source.
+	// (Updatable) The details of data source.
 	DataSourceConfig AgentDataSourceDataSourceConfig `pulumi:"dataSourceConfig"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -245,9 +189,7 @@ type agentDataSourceArgs struct {
 type AgentDataSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId pulumi.StringInput
-	// (Updatable) **DataSourceConfig**
-	//
-	// The details of data source.
+	// (Updatable) The details of data source.
 	DataSourceConfig AgentDataSourceDataSourceConfigInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
@@ -358,9 +300,7 @@ func (o AgentDataSourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *AgentDataSource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) **DataSourceConfig**
-//
-// The details of data source.
+// (Updatable) The details of data source.
 func (o AgentDataSourceOutput) DataSourceConfig() AgentDataSourceDataSourceConfigOutput {
 	return o.ApplyT(func(v *AgentDataSource) AgentDataSourceDataSourceConfigOutput { return v.DataSourceConfig }).(AgentDataSourceDataSourceConfigOutput)
 }

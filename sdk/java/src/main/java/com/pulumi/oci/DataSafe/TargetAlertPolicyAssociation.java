@@ -23,43 +23,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociation;
- * import com.pulumi.oci.DataSafe.TargetAlertPolicyAssociationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testTargetAlertPolicyAssociation = new TargetAlertPolicyAssociation("testTargetAlertPolicyAssociation", TargetAlertPolicyAssociationArgs.builder()
- *             .compartmentId(compartmentId)
- *             .isEnabled(targetAlertPolicyAssociationIsEnabled)
- *             .policyId(testPolicy.id())
- *             .targetId(testTarget.id())
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(targetAlertPolicyAssociationDescription)
- *             .displayName(targetAlertPolicyAssociationDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -214,20 +177,14 @@ public class TargetAlertPolicyAssociation extends com.pulumi.resources.CustomRes
         return this.systemTags;
     }
     /**
-     * The OCID of the target.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target or target database group.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return The OCID of the target.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target or target database group.
      * 
      */
     public Output<String> targetId() {

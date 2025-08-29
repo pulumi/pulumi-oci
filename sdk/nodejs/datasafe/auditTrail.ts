@@ -58,6 +58,10 @@ export class AuditTrail extends pulumi.CustomResource {
      */
     public readonly auditTrailId!: pulumi.Output<string>;
     /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    public readonly canUpdateLastArchiveTimeOnTarget!: pulumi.Output<boolean>;
+    /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
     public /*out*/ readonly compartmentId!: pulumi.Output<string>;
@@ -166,6 +170,7 @@ export class AuditTrail extends pulumi.CustomResource {
             resourceInputs["auditCollectionStartTime"] = state ? state.auditCollectionStartTime : undefined;
             resourceInputs["auditProfileId"] = state ? state.auditProfileId : undefined;
             resourceInputs["auditTrailId"] = state ? state.auditTrailId : undefined;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = state ? state.canUpdateLastArchiveTimeOnTarget : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
@@ -194,6 +199,7 @@ export class AuditTrail extends pulumi.CustomResource {
                 throw new Error("Missing required property 'auditTrailId'");
             }
             resourceInputs["auditTrailId"] = args ? args.auditTrailId : undefined;
+            resourceInputs["canUpdateLastArchiveTimeOnTarget"] = args ? args.canUpdateLastArchiveTimeOnTarget : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
@@ -240,6 +246,10 @@ export interface AuditTrailState {
      * The OCID of the audit trail.
      */
     auditTrailId?: pulumi.Input<string>;
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
     /**
      * The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      */
@@ -342,6 +352,10 @@ export interface AuditTrailArgs {
      * The OCID of the audit trail.
      */
     auditTrailId: pulumi.Input<string>;
+    /**
+     * (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     */
+    canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */

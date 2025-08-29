@@ -16,6 +16,112 @@ import (
 //
 // Creates a tool.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/generativeai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := generativeai.NewAgentTool(ctx, "test_tool", &generativeai.AgentToolArgs{
+//				AgentId:       pulumi.Any(testAgent.Id),
+//				CompartmentId: pulumi.Any(compartmentId),
+//				Description:   pulumi.Any(toolDescription),
+//				ToolConfig: &generativeai.AgentToolToolConfigArgs{
+//					ToolConfigType:  pulumi.Any(toolToolConfigToolConfigType),
+//					AgentEndpointId: pulumi.Any(testAgentEndpoint.Id),
+//					ApiSchema: &generativeai.AgentToolToolConfigApiSchemaArgs{
+//						ApiSchemaInputLocationType: pulumi.Any(toolToolConfigApiSchemaApiSchemaInputLocationType),
+//						Bucket:                     pulumi.Any(toolToolConfigApiSchemaBucket),
+//						Content:                    pulumi.Any(toolToolConfigApiSchemaContent),
+//						Namespace:                  pulumi.Any(toolToolConfigApiSchemaNamespace),
+//						Object:                     pulumi.Any(toolToolConfigApiSchemaObject),
+//					},
+//					DatabaseConnection: &generativeai.AgentToolToolConfigDatabaseConnectionArgs{
+//						ConnectionId:   pulumi.Any(testConnection.Id),
+//						ConnectionType: pulumi.Any(toolToolConfigDatabaseConnectionConnectionType),
+//					},
+//					DatabaseSchema: &generativeai.AgentToolToolConfigDatabaseSchemaArgs{
+//						InputLocationType: pulumi.Any(toolToolConfigDatabaseSchemaInputLocationType),
+//						Bucket:            pulumi.Any(toolToolConfigDatabaseSchemaBucket),
+//						Content:           pulumi.Any(toolToolConfigDatabaseSchemaContent),
+//						Namespace:         pulumi.Any(toolToolConfigDatabaseSchemaNamespace),
+//						Prefix:            pulumi.Any(toolToolConfigDatabaseSchemaPrefix),
+//					},
+//					Dialect: pulumi.Any(toolToolConfigDialect),
+//					Function: &generativeai.AgentToolToolConfigFunctionArgs{
+//						Description: pulumi.Any(toolToolConfigFunctionDescription),
+//						Name:        pulumi.Any(toolToolConfigFunctionName),
+//						Parameters:  pulumi.Any(toolToolConfigFunctionParameters),
+//					},
+//					GenerationLlmCustomization: &generativeai.AgentToolToolConfigGenerationLlmCustomizationArgs{
+//						Instruction: pulumi.Any(toolToolConfigGenerationLlmCustomizationInstruction),
+//					},
+//					HttpEndpointAuthConfig: &generativeai.AgentToolToolConfigHttpEndpointAuthConfigArgs{
+//						HttpEndpointAuthSources: generativeai.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArray{
+//							&generativeai.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs{
+//								HttpEndpointAuthScope: pulumi.Any(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScope),
+//								HttpEndpointAuthScopeConfig: &generativeai.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs{
+//									HttpEndpointAuthScopeConfigType: pulumi.Any(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigHttpEndpointAuthScopeConfigType),
+//									ClientId:                        pulumi.Any(testClient.Id),
+//									IdcsUrl:                         pulumi.Any(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigIdcsUrl),
+//									KeyLocation:                     pulumi.Any(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigKeyLocation),
+//									KeyName:                         pulumi.Any(testKey.Name),
+//									ScopeUrl:                        pulumi.Any(toolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourcesHttpEndpointAuthScopeConfigScopeUrl),
+//									VaultSecretId:                   pulumi.Any(testSecret.Id),
+//								},
+//							},
+//						},
+//					},
+//					IclExamples: &generativeai.AgentToolToolConfigIclExamplesArgs{
+//						InputLocationType: pulumi.Any(toolToolConfigIclExamplesInputLocationType),
+//						Bucket:            pulumi.Any(toolToolConfigIclExamplesBucket),
+//						Content:           pulumi.Any(toolToolConfigIclExamplesContent),
+//						Namespace:         pulumi.Any(toolToolConfigIclExamplesNamespace),
+//						Prefix:            pulumi.Any(toolToolConfigIclExamplesPrefix),
+//					},
+//					KnowledgeBaseConfigs: generativeai.AgentToolToolConfigKnowledgeBaseConfigArray{
+//						&generativeai.AgentToolToolConfigKnowledgeBaseConfigArgs{
+//							KnowledgeBaseId: pulumi.Any(testKnowledgeBase.Id),
+//						},
+//					},
+//					ModelSize:                  pulumi.Any(toolToolConfigModelSize),
+//					ShouldEnableSelfCorrection: pulumi.Any(toolToolConfigShouldEnableSelfCorrection),
+//					ShouldEnableSqlExecution:   pulumi.Any(toolToolConfigShouldEnableSqlExecution),
+//					SubnetId:                   pulumi.Any(testSubnet.Id),
+//					TableAndColumnDescription: &generativeai.AgentToolToolConfigTableAndColumnDescriptionArgs{
+//						InputLocationType: pulumi.Any(toolToolConfigTableAndColumnDescriptionInputLocationType),
+//						Bucket:            pulumi.Any(toolToolConfigTableAndColumnDescriptionBucket),
+//						Content:           pulumi.Any(toolToolConfigTableAndColumnDescriptionContent),
+//						Namespace:         pulumi.Any(toolToolConfigTableAndColumnDescriptionNamespace),
+//						Prefix:            pulumi.Any(toolToolConfigTableAndColumnDescriptionPrefix),
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(toolDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				Metadata: pulumi.Any(toolMetadata),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Tools can be imported using the `id`, e.g.

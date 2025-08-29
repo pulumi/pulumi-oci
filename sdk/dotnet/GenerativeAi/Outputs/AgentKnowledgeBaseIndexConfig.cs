@@ -18,9 +18,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string? ClusterId;
         /// <summary>
-        /// (Updatable) **DatabaseConnection**
-        /// 
-        /// The connection type for Databases.
+        /// (Updatable) The connection type for Databases.
         /// </summary>
         public readonly Outputs.AgentKnowledgeBaseIndexConfigDatabaseConnection? DatabaseConnection;
         /// <summary>
@@ -28,10 +26,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.AgentKnowledgeBaseIndexConfigDatabaseFunction> DatabaseFunctions;
         /// <summary>
-        /// (Updatable) The type of index. The allowed values are:
-        /// * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-        /// * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-        /// * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        /// (Updatable) The type of index.
         /// </summary>
         public readonly string IndexConfigType;
         /// <summary>
@@ -39,9 +34,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.AgentKnowledgeBaseIndexConfigIndex> Indexes;
         /// <summary>
-        /// (Updatable) **SecretDetail**
-        /// 
-        /// The details of configured security configuration on OpenSearch.
+        /// (Updatable) The details of configured security configuration on OpenSearch.
         /// </summary>
         public readonly Outputs.AgentKnowledgeBaseIndexConfigSecretDetail? SecretDetail;
         /// <summary>

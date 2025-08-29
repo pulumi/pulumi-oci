@@ -60,6 +60,8 @@ type LookupReportArgs struct {
 type LookupReportResult struct {
 	// The OCID of the compartment containing the report.
 	CompartmentId string `pulumi:"compartmentId"`
+	// Specifies the name of a resource that provides data for the report. For example alerts, events.
+	DataSource string `pulumi:"dataSource"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Specifies a description of the report.
@@ -81,8 +83,12 @@ type LookupReportResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
+	// Specifies the time at which the report was created.
+	TimeCreated string `pulumi:"timeCreated"`
 	// Specifies the date and time the report was generated.
 	TimeGenerated string `pulumi:"timeGenerated"`
+	// The date and time of the report update in Data Safe.
+	TimeUpdated string `pulumi:"timeUpdated"`
 	// The type of the audit report.
 	Type string `pulumi:"type"`
 }
@@ -124,6 +130,11 @@ func (o LookupReportResultOutput) ToLookupReportResultOutputWithContext(ctx cont
 // The OCID of the compartment containing the report.
 func (o LookupReportResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Specifies the name of a resource that provides data for the report. For example alerts, events.
+func (o LookupReportResultOutput) DataSource() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.DataSource }).(pulumi.StringOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
@@ -180,9 +191,19 @@ func (o LookupReportResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupReportResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
+// Specifies the time at which the report was created.
+func (o LookupReportResultOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
 // Specifies the date and time the report was generated.
 func (o LookupReportResultOutput) TimeGenerated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.TimeGenerated }).(pulumi.StringOutput)
+}
+
+// The date and time of the report update in Data Safe.
+func (o LookupReportResultOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupReportResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
 // The type of the audit report.

@@ -28,7 +28,7 @@ class GetSecurityPolicyDeploymentsResult:
     """
     A collection of values returned by getSecurityPolicyDeployments.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, security_policy_deployment_collections=None, security_policy_deployment_id=None, security_policy_id=None, state=None, target_id=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, security_policy_deployment_collections=None, security_policy_deployment_id=None, security_policy_id=None, state=None, target_id=None, target_type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -62,6 +62,9 @@ class GetSecurityPolicyDeploymentsResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
 
     @_builtins.property
     @pulumi.getter(name="accessLevel")
@@ -135,9 +138,17 @@ class GetSecurityPolicyDeploymentsResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[_builtins.str]:
+        """
+        Indicates whether the security policy deployment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
 
 
 class AwaitableGetSecurityPolicyDeploymentsResult(GetSecurityPolicyDeploymentsResult):
@@ -156,7 +167,8 @@ class AwaitableGetSecurityPolicyDeploymentsResult(GetSecurityPolicyDeploymentsRe
             security_policy_deployment_id=self.security_policy_deployment_id,
             security_policy_id=self.security_policy_id,
             state=self.state,
-            target_id=self.target_id)
+            target_id=self.target_id,
+            target_type=self.target_type)
 
 
 def get_security_policy_deployments(access_level: Optional[_builtins.str] = None,
@@ -168,6 +180,7 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
                                     security_policy_id: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
                                     target_id: Optional[_builtins.str] = None,
+                                    target_type: Optional[_builtins.str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPolicyDeploymentsResult:
     """
     This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
@@ -200,7 +213,8 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
         security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_id=test_security_policy["id"],
         state=security_policy_deployment_state,
-        target_id=test_target["id"])
+        target_id=test_target["id"],
+        target_type=security_policy_deployment_target_type)
     ```
 
 
@@ -212,6 +226,7 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
     :param _builtins.str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
     :param _builtins.str state: The current state of the security policy deployment.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified target type.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -223,6 +238,7 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
     __args__['securityPolicyId'] = security_policy_id
     __args__['state'] = state
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments', __args__, opts=opts, typ=GetSecurityPolicyDeploymentsResult).value
 
@@ -237,7 +253,8 @@ def get_security_policy_deployments(access_level: Optional[_builtins.str] = None
         security_policy_deployment_id=pulumi.get(__ret__, 'security_policy_deployment_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         state=pulumi.get(__ret__, 'state'),
-        target_id=pulumi.get(__ret__, 'target_id'))
+        target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'))
 def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
@@ -247,6 +264,7 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
                                            security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                           target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentsResult]:
     """
     This data source provides the list of Security Policy Deployments in Oracle Cloud Infrastructure Data Safe service.
@@ -279,7 +297,8 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
         security_policy_deployment_id=test_security_policy_deployment["id"],
         security_policy_id=test_security_policy["id"],
         state=security_policy_deployment_state,
-        target_id=test_target["id"])
+        target_id=test_target["id"],
+        target_type=security_policy_deployment_target_type)
     ```
 
 
@@ -291,6 +310,7 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
     :param _builtins.str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
     :param _builtins.str state: The current state of the security policy deployment.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A optional filter to return only resources that belong to the specified target type.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -302,6 +322,7 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
     __args__['securityPolicyId'] = security_policy_id
     __args__['state'] = state
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicyDeployments:getSecurityPolicyDeployments', __args__, opts=opts, typ=GetSecurityPolicyDeploymentsResult)
     return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentsResult(
@@ -315,4 +336,5 @@ def get_security_policy_deployments_output(access_level: Optional[pulumi.Input[O
         security_policy_deployment_id=pulumi.get(__response__, 'security_policy_deployment_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
         state=pulumi.get(__response__, 'state'),
-        target_id=pulumi.get(__response__, 'target_id')))
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type')))

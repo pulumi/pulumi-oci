@@ -19,64 +19,97 @@ __all__ = ['SecurityPolicyDeploymentArgs', 'SecurityPolicyDeployment']
 @pulumi.input_type
 class SecurityPolicyDeploymentArgs:
     def __init__(__self__, *,
-                 security_policy_deployment_id: pulumi.Input[_builtins.str],
-                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 compartment_id: pulumi.Input[_builtins.str],
+                 security_policy_id: pulumi.Input[_builtins.str],
+                 target_id: pulumi.Input[_builtins.str],
+                 target_type: pulumi.Input[_builtins.str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a SecurityPolicyDeployment resource.
-        :param pulumi.Input[_builtins.str] security_policy_deployment_id: The OCID of the security policy deployment resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
+        :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the security policy deployment.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target where the security policy is deployed.
+        :param pulumi.Input[_builtins.str] target_type: Indicates whether the security policy deployment is for a target database or a target database group.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[_builtins.int] deploy_trigger: (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy deployment.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy deployment.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         """
-        pulumi.set(__self__, "security_policy_deployment_id", security_policy_deployment_id)
-        if compartment_id is not None:
-            pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "security_policy_id", security_policy_id)
+        pulumi.set(__self__, "target_id", target_id)
+        pulumi.set(__self__, "target_type", target_type)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if deploy_trigger is not None:
+            pulumi.set(__self__, "deploy_trigger", deploy_trigger)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
-
-    @_builtins.property
-    @pulumi.getter(name="securityPolicyDeploymentId")
-    def security_policy_deployment_id(self) -> pulumi.Input[_builtins.str]:
-        """
-        The OCID of the security policy deployment resource.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        """
-        return pulumi.get(self, "security_policy_deployment_id")
-
-    @security_policy_deployment_id.setter
-    def security_policy_deployment_id(self, value: pulumi.Input[_builtins.str]):
-        pulumi.set(self, "security_policy_deployment_id", value)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment containing the security policy deployment.
+        (Updatable) The OCID of the compartment in which to create the unified audit policy.
         """
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
-    def compartment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+    def compartment_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "compartment_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityPolicyId")
+    def security_policy_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the security policy corresponding to the security policy deployment.
+        """
+        return pulumi.get(self, "security_policy_id")
+
+    @security_policy_id.setter
+    def security_policy_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "security_policy_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The OCID of the target where the security policy is deployed.
+        """
+        return pulumi.get(self, "target_id")
+
+    @target_id.setter
+    def target_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Indicates whether the security policy deployment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -91,10 +124,22 @@ class SecurityPolicyDeploymentArgs:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="deployTrigger")
+    def deploy_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        """
+        return pulumi.get(self, "deploy_trigger")
+
+    @deploy_trigger.setter
+    def deploy_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "deploy_trigger", value)
+
+    @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The description of the security policy deployment.
+        (Updatable) The description of the security policy.
         """
         return pulumi.get(self, "description")
 
@@ -126,32 +171,52 @@ class SecurityPolicyDeploymentArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "refresh_trigger")
+
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "refresh_trigger", value)
+
 
 @pulumi.input_type
 class _SecurityPolicyDeploymentState:
     def __init__(__self__, *,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-                 security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_deployed: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering SecurityPolicyDeployment resources.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy deployment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy deployment.
+        :param pulumi.Input[_builtins.int] deploy_trigger: (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security policy deployment in Data Safe.
-        :param pulumi.Input[_builtins.str] security_policy_deployment_id: The OCID of the security policy deployment resource.
+        :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -160,13 +225,17 @@ class _SecurityPolicyDeploymentState:
         :param pulumi.Input[_builtins.str] state: The current state of the security policy deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target where the security policy is deployed.
+        :param pulumi.Input[_builtins.str] target_type: Indicates whether the security policy deployment is for a target database or a target database group.
         :param pulumi.Input[_builtins.str] time_created: The time that the security policy deployment was created, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] time_deployed: The last date and time the security policy was deployed, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the security policy deployment was updated, in the format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if deploy_trigger is not None:
+            pulumi.set(__self__, "deploy_trigger", deploy_trigger)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if display_name is not None:
@@ -175,8 +244,8 @@ class _SecurityPolicyDeploymentState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
-        if security_policy_deployment_id is not None:
-            pulumi.set(__self__, "security_policy_deployment_id", security_policy_deployment_id)
+        if refresh_trigger is not None:
+            pulumi.set(__self__, "refresh_trigger", refresh_trigger)
         if security_policy_id is not None:
             pulumi.set(__self__, "security_policy_id", security_policy_id)
         if state is not None:
@@ -185,8 +254,12 @@ class _SecurityPolicyDeploymentState:
             pulumi.set(__self__, "system_tags", system_tags)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
+        if time_deployed is not None:
+            pulumi.set(__self__, "time_deployed", time_deployed)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
 
@@ -194,7 +267,7 @@ class _SecurityPolicyDeploymentState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment containing the security policy deployment.
+        (Updatable) The OCID of the compartment in which to create the unified audit policy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -215,10 +288,22 @@ class _SecurityPolicyDeploymentState:
         pulumi.set(self, "defined_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="deployTrigger")
+    def deploy_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        """
+        return pulumi.get(self, "deploy_trigger")
+
+    @deploy_trigger.setter
+    def deploy_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "deploy_trigger", value)
+
+    @_builtins.property
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The description of the security policy deployment.
+        (Updatable) The description of the security policy.
         """
         return pulumi.get(self, "description")
 
@@ -263,20 +348,20 @@ class _SecurityPolicyDeploymentState:
         pulumi.set(self, "lifecycle_details", value)
 
     @_builtins.property
-    @pulumi.getter(name="securityPolicyDeploymentId")
-    def security_policy_deployment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        The OCID of the security policy deployment resource.
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "security_policy_deployment_id")
+        return pulumi.get(self, "refresh_trigger")
 
-    @security_policy_deployment_id.setter
-    def security_policy_deployment_id(self, value: Optional[pulumi.Input[_builtins.str]]):
-        pulumi.set(self, "security_policy_deployment_id", value)
+    @refresh_trigger.setter
+    def refresh_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "refresh_trigger", value)
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
@@ -327,6 +412,18 @@ class _SecurityPolicyDeploymentState:
         pulumi.set(self, "target_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Indicates whether the security policy deployment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -337,6 +434,18 @@ class _SecurityPolicyDeploymentState:
     @time_created.setter
     def time_created(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeployed")
+    def time_deployed(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_deployed")
+
+    @time_deployed.setter
+    def time_deployed(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_deployed", value)
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -359,15 +468,40 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Updates the security policy deployment.
+        Creates a Data Safe security policy deployment in the Data Safe Console.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_policy_deployment = oci.datasafe.SecurityPolicyDeployment("test_security_policy_deployment",
+            compartment_id=compartment_id,
+            security_policy_id=test_security_policy["id"],
+            target_id=test_target["id"],
+            target_type=security_policy_deployment_target_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=security_policy_deployment_description,
+            display_name=security_policy_deployment_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
 
         ## Import
 
@@ -379,16 +513,20 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy deployment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy deployment.
+        :param pulumi.Input[_builtins.int] deploy_trigger: (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] security_policy_deployment_id: The OCID of the security policy deployment resource.
+        :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] security_policy_id: The OCID of the security policy corresponding to the security policy deployment.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target where the security policy is deployed.
+        :param pulumi.Input[_builtins.str] target_type: Indicates whether the security policy deployment is for a target database or a target database group.
         """
         ...
     @overload
@@ -399,7 +537,28 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         """
         This resource provides the Security Policy Deployment resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Updates the security policy deployment.
+        Creates a Data Safe security policy deployment in the Data Safe Console.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_security_policy_deployment = oci.datasafe.SecurityPolicyDeployment("test_security_policy_deployment",
+            compartment_id=compartment_id,
+            security_policy_id=test_security_policy["id"],
+            target_id=test_target["id"],
+            target_type=security_policy_deployment_target_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=security_policy_deployment_description,
+            display_name=security_policy_deployment_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            })
+        ```
 
         ## Import
 
@@ -426,10 +585,14 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 deploy_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
-                 security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
+                 security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -439,20 +602,29 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = SecurityPolicyDeploymentArgs.__new__(SecurityPolicyDeploymentArgs)
 
+            if compartment_id is None and not opts.urn:
+                raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
             __props__.__dict__["defined_tags"] = defined_tags
+            __props__.__dict__["deploy_trigger"] = deploy_trigger
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
-            if security_policy_deployment_id is None and not opts.urn:
-                raise TypeError("Missing required property 'security_policy_deployment_id'")
-            __props__.__dict__["security_policy_deployment_id"] = security_policy_deployment_id
+            __props__.__dict__["refresh_trigger"] = refresh_trigger
+            if security_policy_id is None and not opts.urn:
+                raise TypeError("Missing required property 'security_policy_id'")
+            __props__.__dict__["security_policy_id"] = security_policy_id
+            if target_id is None and not opts.urn:
+                raise TypeError("Missing required property 'target_id'")
+            __props__.__dict__["target_id"] = target_id
+            if target_type is None and not opts.urn:
+                raise TypeError("Missing required property 'target_type'")
+            __props__.__dict__["target_type"] = target_type
             __props__.__dict__["lifecycle_details"] = None
-            __props__.__dict__["security_policy_id"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
-            __props__.__dict__["target_id"] = None
             __props__.__dict__["time_created"] = None
+            __props__.__dict__["time_deployed"] = None
             __props__.__dict__["time_updated"] = None
         super(SecurityPolicyDeployment, __self__).__init__(
             'oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment',
@@ -466,16 +638,19 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
-            security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
+            refresh_trigger: Optional[pulumi.Input[_builtins.int]] = None,
             security_policy_id: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             target_id: Optional[pulumi.Input[_builtins.str]] = None,
+            target_type: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
+            time_deployed: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'SecurityPolicyDeployment':
         """
         Get an existing SecurityPolicyDeployment resource's state with the given name, id, and optional extra
@@ -484,13 +659,14 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment containing the security policy deployment.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to create the unified audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy deployment.
+        :param pulumi.Input[_builtins.int] deploy_trigger: (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        :param pulumi.Input[_builtins.str] description: (Updatable) The description of the security policy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: Details about the current state of the security policy deployment in Data Safe.
-        :param pulumi.Input[_builtins.str] security_policy_deployment_id: The OCID of the security policy deployment resource.
+        :param pulumi.Input[_builtins.int] refresh_trigger: (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
                
                
                ** IMPORTANT **
@@ -499,7 +675,9 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the security policy deployment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] target_id: The OCID of the target where the security policy is deployed.
+        :param pulumi.Input[_builtins.str] target_type: Indicates whether the security policy deployment is for a target database or a target database group.
         :param pulumi.Input[_builtins.str] time_created: The time that the security policy deployment was created, in the format defined by RFC3339.
+        :param pulumi.Input[_builtins.str] time_deployed: The last date and time the security policy was deployed, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_updated: The last date and time the security policy deployment was updated, in the format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -508,16 +686,19 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
 
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["deploy_trigger"] = deploy_trigger
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
-        __props__.__dict__["security_policy_deployment_id"] = security_policy_deployment_id
+        __props__.__dict__["refresh_trigger"] = refresh_trigger
         __props__.__dict__["security_policy_id"] = security_policy_id
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["target_id"] = target_id
+        __props__.__dict__["target_type"] = target_type
         __props__.__dict__["time_created"] = time_created
+        __props__.__dict__["time_deployed"] = time_deployed
         __props__.__dict__["time_updated"] = time_updated
         return SecurityPolicyDeployment(resource_name, opts=opts, __props__=__props__)
 
@@ -525,7 +706,7 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment containing the security policy deployment.
+        (Updatable) The OCID of the compartment in which to create the unified audit policy.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -538,10 +719,18 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         return pulumi.get(self, "defined_tags")
 
     @_builtins.property
+    @pulumi.getter(name="deployTrigger")
+    def deploy_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+        """
+        return pulumi.get(self, "deploy_trigger")
+
+    @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The description of the security policy deployment.
+        (Updatable) The description of the security policy.
         """
         return pulumi.get(self, "description")
 
@@ -570,16 +759,16 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
-    @pulumi.getter(name="securityPolicyDeploymentId")
-    def security_policy_deployment_id(self) -> pulumi.Output[_builtins.str]:
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
         """
-        The OCID of the security policy deployment resource.
+        (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "security_policy_deployment_id")
+        return pulumi.get(self, "refresh_trigger")
 
     @_builtins.property
     @pulumi.getter(name="securityPolicyId")
@@ -614,12 +803,28 @@ class SecurityPolicyDeployment(pulumi.CustomResource):
         return pulumi.get(self, "target_id")
 
     @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Indicates whether the security policy deployment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
         The time that the security policy deployment was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeployed")
+    def time_deployed(self) -> pulumi.Output[_builtins.str]:
+        """
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_deployed")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")

@@ -168,20 +168,14 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
     }
 
     /**
-     * The OCID of the target.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCID of the target or target database group.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the target.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target or target database group.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -465,10 +459,7 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
         }
 
         /**
-         * @param targetId The OCID of the target.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target or target database group.
          * 
          * @return builder
          * 
@@ -479,10 +470,7 @@ public final class TargetAlertPolicyAssociationState extends com.pulumi.resource
         }
 
         /**
-         * @param targetId The OCID of the target.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target or target database group.
          * 
          * @return builder
          * 

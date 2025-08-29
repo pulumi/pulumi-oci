@@ -13,10 +13,7 @@ import javax.annotation.Nullable;
 public final class UserAssessmentIgnoredTarget {
     private @Nullable String lifecycleState;
     /**
-     * @return The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     private @Nullable String targetId;
@@ -27,10 +24,7 @@ public final class UserAssessmentIgnoredTarget {
         return Optional.ofNullable(this.lifecycleState);
     }
     /**
-     * @return The OCID of the target database on which the user assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which user assessment is to be run.
      * 
      */
     public Optional<String> targetId() {

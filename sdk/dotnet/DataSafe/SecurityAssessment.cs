@@ -16,37 +16,6 @@ namespace Pulumi.Oci.DataSafe
     /// it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
     /// at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testSecurityAssessment = new Oci.DataSafe.SecurityAssessment("test_security_assessment", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = securityAssessmentDescription,
-    ///         DisplayName = securityAssessmentDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///         IsAssessmentScheduled = securityAssessmentIsAssessmentScheduled,
-    ///         Schedule = securityAssessmentSchedule,
-    ///         TargetId = testTarget.Id,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// SecurityAssessments can be imported using the `id`, e.g.
@@ -58,6 +27,36 @@ namespace Pulumi.Oci.DataSafe
     [OciResourceType("oci:DataSafe/securityAssessment:SecurityAssessment")]
     public partial class SecurityAssessment : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        /// </summary>
+        [Output("applyTemplateTrigger")]
+        public Output<int?> ApplyTemplateTrigger { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        /// </summary>
+        [Output("baseSecurityAssessmentId")]
+        public Output<string> BaseSecurityAssessmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        /// </summary>
+        [Output("baselineAssessmentId")]
+        public Output<string> BaselineAssessmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The security checks to be evaluated for type template.
+        /// </summary>
+        [Output("checks")]
+        public Output<ImmutableArray<Outputs.SecurityAssessmentCheck>> Checks { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        /// </summary>
+        [Output("compareToTemplateBaselineTrigger")]
+        public Output<int?> CompareToTemplateBaselineTrigger { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
         /// </summary>
@@ -137,6 +136,16 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> Link { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("removeTemplateTrigger")]
+        public Output<int?> RemoveTemplateTrigger { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// 
         /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -169,11 +178,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the target database on which security assessment is to be run.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target database group that the group assessment is created for.
+        /// </summary>
+        [Output("targetDatabaseGroupId")]
+        public Output<string> TargetDatabaseGroupId { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the target database or target database group on which security assessment is to be run.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -185,10 +196,22 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
 
         /// <summary>
+        /// The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        /// </summary>
+        [Output("targetType")]
+        public Output<string> TargetType { get; private set; } = null!;
+
+        /// <summary>
         /// The version of the target database.
         /// </summary>
         [Output("targetVersion")]
         public Output<string> TargetVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        /// </summary>
+        [Output("templateAssessmentId")]
+        public Output<string> TemplateAssessmentId { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -215,7 +238,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> TriggeredBy { get; private set; } = null!;
 
         /// <summary>
-        /// The type of this security assessment. The possible types are:
+        /// The type of the security assessment
         /// </summary>
         [Output("type")]
         public Output<string> Type { get; private set; } = null!;
@@ -267,6 +290,24 @@ namespace Pulumi.Oci.DataSafe
     public sealed class SecurityAssessmentArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        /// </summary>
+        [Input("applyTemplateTrigger")]
+        public Input<int>? ApplyTemplateTrigger { get; set; }
+
+        /// <summary>
+        /// The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        /// </summary>
+        [Input("baseSecurityAssessmentId")]
+        public Input<string>? BaseSecurityAssessmentId { get; set; }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        /// </summary>
+        [Input("compareToTemplateBaselineTrigger")]
+        public Input<int>? CompareToTemplateBaselineTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -315,6 +356,16 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? IsAssessmentScheduled { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("removeTemplateTrigger")]
+        public Input<int>? RemoveTemplateTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// 
         /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -323,14 +374,28 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? Schedule { get; set; }
 
         /// <summary>
-        /// The OCID of the target database on which security assessment is to be run.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target database or target database group on which security assessment is to be run.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
+        /// <summary>
+        /// The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        /// </summary>
+        [Input("templateAssessmentId")]
+        public Input<string>? TemplateAssessmentId { get; set; }
+
+        /// <summary>
+        /// The type of the security assessment
+        /// </summary>
+        [Input("type")]
+        public Input<string>? Type { get; set; }
 
         public SecurityAssessmentArgs()
         {
@@ -340,6 +405,42 @@ namespace Pulumi.Oci.DataSafe
 
     public sealed class SecurityAssessmentState : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+        /// </summary>
+        [Input("applyTemplateTrigger")]
+        public Input<int>? ApplyTemplateTrigger { get; set; }
+
+        /// <summary>
+        /// The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+        /// </summary>
+        [Input("baseSecurityAssessmentId")]
+        public Input<string>? BaseSecurityAssessmentId { get; set; }
+
+        /// <summary>
+        /// The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        /// </summary>
+        [Input("baselineAssessmentId")]
+        public Input<string>? BaselineAssessmentId { get; set; }
+
+        [Input("checks")]
+        private InputList<Inputs.SecurityAssessmentCheckGetArgs>? _checks;
+
+        /// <summary>
+        /// The security checks to be evaluated for type template.
+        /// </summary>
+        public InputList<Inputs.SecurityAssessmentCheckGetArgs> Checks
+        {
+            get => _checks ?? (_checks = new InputList<Inputs.SecurityAssessmentCheckGetArgs>());
+            set => _checks = value;
+        }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+        /// </summary>
+        [Input("compareToTemplateBaselineTrigger")]
+        public Input<int>? CompareToTemplateBaselineTrigger { get; set; }
+
         /// <summary>
         /// (Updatable) The OCID of the compartment that contains the security assessment.
         /// </summary>
@@ -443,6 +544,16 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? Link { get; set; }
 
         /// <summary>
+        /// (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("removeTemplateTrigger")]
+        public Input<int>? RemoveTemplateTrigger { get; set; }
+
+        /// <summary>
         /// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// 
         /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -487,11 +598,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the target database on which security assessment is to be run.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target database group that the group assessment is created for.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
+        /// The OCID of the target database or target database group on which security assessment is to be run.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -509,10 +622,22 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
+        /// <summary>
         /// The version of the target database.
         /// </summary>
         [Input("targetVersion")]
         public Input<string>? TargetVersion { get; set; }
+
+        /// <summary>
+        /// The OCID of the template assessment. It will be required while creating the template baseline assessment.
+        /// </summary>
+        [Input("templateAssessmentId")]
+        public Input<string>? TemplateAssessmentId { get; set; }
 
         /// <summary>
         /// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -539,7 +664,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? TriggeredBy { get; set; }
 
         /// <summary>
-        /// The type of this security assessment. The possible types are:
+        /// The type of the security assessment
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

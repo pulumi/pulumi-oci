@@ -24,7 +24,12 @@ public final class GetAuditProfileAuditTrail {
      */
     private String auditProfileId;
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    private Boolean canUpdateLastArchiveTimeOnTarget;
+    /**
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     private String compartmentId;
@@ -99,7 +104,7 @@ public final class GetAuditProfileAuditTrail {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     private String targetId;
@@ -150,7 +155,14 @@ public final class GetAuditProfileAuditTrail {
         return this.auditProfileId;
     }
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Boolean canUpdateLastArchiveTimeOnTarget() {
+        return this.canUpdateLastArchiveTimeOnTarget;
+    }
+    /**
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     public String compartmentId() {
@@ -255,7 +267,7 @@ public final class GetAuditProfileAuditTrail {
         return this.systemTags;
     }
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public String targetId() {
@@ -315,6 +327,7 @@ public final class GetAuditProfileAuditTrail {
     public static final class Builder {
         private String auditCollectionStartTime;
         private String auditProfileId;
+        private Boolean canUpdateLastArchiveTimeOnTarget;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -342,6 +355,7 @@ public final class GetAuditProfileAuditTrail {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectionStartTime = defaults.auditCollectionStartTime;
     	      this.auditProfileId = defaults.auditProfileId;
+    	      this.canUpdateLastArchiveTimeOnTarget = defaults.canUpdateLastArchiveTimeOnTarget;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -380,6 +394,14 @@ public final class GetAuditProfileAuditTrail {
               throw new MissingRequiredPropertyException("GetAuditProfileAuditTrail", "auditProfileId");
             }
             this.auditProfileId = auditProfileId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            if (canUpdateLastArchiveTimeOnTarget == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileAuditTrail", "canUpdateLastArchiveTimeOnTarget");
+            }
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             return this;
         }
         @CustomType.Setter
@@ -562,6 +584,7 @@ public final class GetAuditProfileAuditTrail {
             final var _resultValue = new GetAuditProfileAuditTrail();
             _resultValue.auditCollectionStartTime = auditCollectionStartTime;
             _resultValue.auditProfileId = auditProfileId;
+            _resultValue.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

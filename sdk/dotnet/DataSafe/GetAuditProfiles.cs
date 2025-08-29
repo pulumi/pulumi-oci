@@ -52,7 +52,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
         ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
         ///         State = auditProfileState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = auditProfileTargetType,
         ///     });
         /// 
         /// });
@@ -102,7 +104,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
         ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
         ///         State = auditProfileState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = auditProfileTargetType,
         ///     });
         /// 
         /// });
@@ -152,7 +156,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsOverrideGlobalRetentionSetting = auditProfileIsOverrideGlobalRetentionSetting,
         ///         IsPaidUsageEnabled = auditProfileIsPaidUsageEnabled,
         ///         State = auditProfileState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = auditProfileTargetType,
         ///     });
         /// 
         /// });
@@ -228,10 +234,22 @@ namespace Pulumi.Oci.DataSafe
         public string? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public string? TargetId { get; set; }
+
+        /// <summary>
+        /// A optional filter to return only resources that belong to the specified audit profile type.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
 
         public GetAuditProfilesArgs()
         {
@@ -304,10 +322,22 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// A optional filter to return only resources that belong to the specified audit profile type.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         public GetAuditProfilesInvokeArgs()
         {
@@ -330,7 +360,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? AuditProfileId;
         /// <summary>
-        /// The OCID of the compartment that contains the audit.
+        /// The OCID of the compartment that contains the audit profile.
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
@@ -344,7 +374,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        /// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         /// </summary>
         public readonly bool? IsOverrideGlobalRetentionSetting;
         /// <summary>
@@ -355,10 +385,15 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the audit profile.
         /// </summary>
         public readonly string? State;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         public readonly string? TargetId;
+        /// <summary>
+        /// The resource type that is represented by the audit profile.
+        /// </summary>
+        public readonly string? TargetType;
 
         [OutputConstructor]
         private GetAuditProfilesResult(
@@ -386,7 +421,11 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
-            string? targetId)
+            string? targetDatabaseGroupId,
+
+            string? targetId,
+
+            string? targetType)
         {
             AccessLevel = accessLevel;
             AuditCollectedVolumeGreaterThanOrEqualTo = auditCollectedVolumeGreaterThanOrEqualTo;
@@ -400,7 +439,9 @@ namespace Pulumi.Oci.DataSafe
             IsOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             IsPaidUsageEnabled = isPaidUsageEnabled;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
+            TargetType = targetType;
         }
     }
 }

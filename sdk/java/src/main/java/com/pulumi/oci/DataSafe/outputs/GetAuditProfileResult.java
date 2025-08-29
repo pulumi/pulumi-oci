@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAuditProfileResult {
     /**
-     * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * @return Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     private String auditCollectedVolume;
@@ -26,13 +26,13 @@ public final class GetAuditProfileResult {
      */
     private String auditProfileId;
     /**
-     * @return Indicates the list of available audit trails on the target.
+     * @return Contains the list of available audit trails on the target database.
      * 
      */
     private List<GetAuditProfileAuditTrail> auditTrails;
     private Integer changeRetentionTrigger;
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     private String compartmentId;
@@ -62,7 +62,12 @@ public final class GetAuditProfileResult {
      */
     private String id;
     /**
-     * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * @return Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    private Boolean isOverrideGlobalPaidUsage;
+    /**
+     * @return Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     private Boolean isOverrideGlobalRetentionSetting;
@@ -77,15 +82,30 @@ public final class GetAuditProfileResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * @return Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     private Integer offlineMonths;
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * @return The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String offlineMonthsSource;
+    /**
+     * @return Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     private Integer onlineMonths;
+    /**
+     * @return The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String onlineMonthsSource;
+    /**
+     * @return The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    private String paidUsageSource;
     /**
      * @return The current state of the audit profile.
      * 
@@ -97,10 +117,15 @@ public final class GetAuditProfileResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     private String targetId;
+    /**
+     * @return The resource type that is represented by the audit profile.
+     * 
+     */
+    private String targetType;
     /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
      * 
@@ -114,7 +139,7 @@ public final class GetAuditProfileResult {
 
     private GetAuditProfileResult() {}
     /**
-     * @return Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * @return Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      * 
      */
     public String auditCollectedVolume() {
@@ -128,7 +153,7 @@ public final class GetAuditProfileResult {
         return this.auditProfileId;
     }
     /**
-     * @return Indicates the list of available audit trails on the target.
+     * @return Contains the list of available audit trails on the target database.
      * 
      */
     public List<GetAuditProfileAuditTrail> auditTrails() {
@@ -138,7 +163,7 @@ public final class GetAuditProfileResult {
         return this.changeRetentionTrigger;
     }
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     public String compartmentId() {
@@ -180,7 +205,14 @@ public final class GetAuditProfileResult {
         return this.id;
     }
     /**
-     * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * @return Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     * 
+     */
+    public Boolean isOverrideGlobalPaidUsage() {
+        return this.isOverrideGlobalPaidUsage;
+    }
+    /**
+     * @return Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     public Boolean isOverrideGlobalRetentionSetting() {
@@ -201,18 +233,39 @@ public final class GetAuditProfileResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * @return Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      * 
      */
     public Integer offlineMonths() {
         return this.offlineMonths;
     }
     /**
-     * @return Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * @return The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String offlineMonthsSource() {
+        return this.offlineMonthsSource;
+    }
+    /**
+     * @return Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      * 
      */
     public Integer onlineMonths() {
         return this.onlineMonths;
+    }
+    /**
+     * @return The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String onlineMonthsSource() {
+        return this.onlineMonthsSource;
+    }
+    /**
+     * @return The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     * 
+     */
+    public String paidUsageSource() {
+        return this.paidUsageSource;
     }
     /**
      * @return The current state of the audit profile.
@@ -229,11 +282,18 @@ public final class GetAuditProfileResult {
         return this.systemTags;
     }
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public String targetId() {
         return this.targetId;
+    }
+    /**
+     * @return The resource type that is represented by the audit profile.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
     }
     /**
      * @return The date and time the audit profile was created, in the format defined by RFC3339.
@@ -269,14 +329,19 @@ public final class GetAuditProfileResult {
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Boolean isOverrideGlobalPaidUsage;
         private Boolean isOverrideGlobalRetentionSetting;
         private Boolean isPaidUsageEnabled;
         private String lifecycleDetails;
         private Integer offlineMonths;
+        private String offlineMonthsSource;
         private Integer onlineMonths;
+        private String onlineMonthsSource;
+        private String paidUsageSource;
         private String state;
         private Map<String,String> systemTags;
         private String targetId;
+        private String targetType;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -292,14 +357,19 @@ public final class GetAuditProfileResult {
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isOverrideGlobalPaidUsage = defaults.isOverrideGlobalPaidUsage;
     	      this.isOverrideGlobalRetentionSetting = defaults.isOverrideGlobalRetentionSetting;
     	      this.isPaidUsageEnabled = defaults.isPaidUsageEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.offlineMonths = defaults.offlineMonths;
+    	      this.offlineMonthsSource = defaults.offlineMonthsSource;
     	      this.onlineMonths = defaults.onlineMonths;
+    	      this.onlineMonthsSource = defaults.onlineMonthsSource;
+    	      this.paidUsageSource = defaults.paidUsageSource;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -388,6 +458,14 @@ public final class GetAuditProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isOverrideGlobalPaidUsage(Boolean isOverrideGlobalPaidUsage) {
+            if (isOverrideGlobalPaidUsage == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "isOverrideGlobalPaidUsage");
+            }
+            this.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isOverrideGlobalRetentionSetting(Boolean isOverrideGlobalRetentionSetting) {
             if (isOverrideGlobalRetentionSetting == null) {
               throw new MissingRequiredPropertyException("GetAuditProfileResult", "isOverrideGlobalRetentionSetting");
@@ -420,11 +498,35 @@ public final class GetAuditProfileResult {
             return this;
         }
         @CustomType.Setter
+        public Builder offlineMonthsSource(String offlineMonthsSource) {
+            if (offlineMonthsSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "offlineMonthsSource");
+            }
+            this.offlineMonthsSource = offlineMonthsSource;
+            return this;
+        }
+        @CustomType.Setter
         public Builder onlineMonths(Integer onlineMonths) {
             if (onlineMonths == null) {
               throw new MissingRequiredPropertyException("GetAuditProfileResult", "onlineMonths");
             }
             this.onlineMonths = onlineMonths;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onlineMonthsSource(String onlineMonthsSource) {
+            if (onlineMonthsSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "onlineMonthsSource");
+            }
+            this.onlineMonthsSource = onlineMonthsSource;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder paidUsageSource(String paidUsageSource) {
+            if (paidUsageSource == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "paidUsageSource");
+            }
+            this.paidUsageSource = paidUsageSource;
             return this;
         }
         @CustomType.Setter
@@ -449,6 +551,14 @@ public final class GetAuditProfileResult {
               throw new MissingRequiredPropertyException("GetAuditProfileResult", "targetId");
             }
             this.targetId = targetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileResult", "targetType");
+            }
+            this.targetType = targetType;
             return this;
         }
         @CustomType.Setter
@@ -479,14 +589,19 @@ public final class GetAuditProfileResult {
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
             _resultValue.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.offlineMonths = offlineMonths;
+            _resultValue.offlineMonthsSource = offlineMonthsSource;
             _resultValue.onlineMonths = onlineMonths;
+            _resultValue.onlineMonthsSource = onlineMonthsSource;
+            _resultValue.paidUsageSource = paidUsageSource;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

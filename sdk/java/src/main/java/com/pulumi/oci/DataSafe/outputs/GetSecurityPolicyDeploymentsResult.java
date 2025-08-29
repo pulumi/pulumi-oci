@@ -51,10 +51,15 @@ public final class GetSecurityPolicyDeploymentsResult {
      */
     private @Nullable String state;
     /**
-     * @return The OCID of the target where the security policy is deployed.
+     * @return The OCID of the target/target group where the security policy is deployed.
      * 
      */
     private @Nullable String targetId;
+    /**
+     * @return Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    private @Nullable String targetType;
 
     private GetSecurityPolicyDeploymentsResult() {}
     public Optional<String> accessLevel() {
@@ -112,11 +117,18 @@ public final class GetSecurityPolicyDeploymentsResult {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The OCID of the target where the security policy is deployed.
+     * @return The OCID of the target/target group where the security policy is deployed.
      * 
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+    /**
+     * @return Indicates whether the security policy deployment is for a target database or a target database group.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     public static Builder builder() {
@@ -139,6 +151,7 @@ public final class GetSecurityPolicyDeploymentsResult {
         private @Nullable String securityPolicyId;
         private @Nullable String state;
         private @Nullable String targetId;
+        private @Nullable String targetType;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -153,6 +166,7 @@ public final class GetSecurityPolicyDeploymentsResult {
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.state = defaults.state;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
         }
 
         @CustomType.Setter
@@ -233,6 +247,12 @@ public final class GetSecurityPolicyDeploymentsResult {
             this.targetId = targetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
+            return this;
+        }
         public GetSecurityPolicyDeploymentsResult build() {
             final var _resultValue = new GetSecurityPolicyDeploymentsResult();
             _resultValue.accessLevel = accessLevel;
@@ -246,6 +266,7 @@ public final class GetSecurityPolicyDeploymentsResult {
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.state = state;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             return _resultValue;
         }
     }

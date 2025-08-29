@@ -28,9 +28,7 @@ public final class AgentKnowledgeBaseIndexConfigSecretDetail {
      */
     private @Nullable String scopeUrl;
     /**
-     * @return (Updatable) The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * @return (Updatable) The type of OpenID.
      * 
      */
     private String type;
@@ -63,9 +61,7 @@ public final class AgentKnowledgeBaseIndexConfigSecretDetail {
         return Optional.ofNullable(this.scopeUrl);
     }
     /**
-     * @return (Updatable) The type of OpenID. The allowed values are:
-     * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-     * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+     * @return (Updatable) The type of OpenID.
      * 
      */
     public String type() {

@@ -143,9 +143,20 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string DeploymentStatus;
         /// <summary>
+        /// Details about the current deployment status.
+        /// </summary>
+        public readonly string DeploymentStatusDetails;
+        /// <summary>
         /// Details specific to the security policy entry.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult> EntryDetails;
+        /// <summary>
+        /// The security policy entry type. Allowed values:
+        /// * FIREWALL_POLICY - The SQL Firewall policy entry type.
+        /// * AUDIT_POLICY - The audit policy entry type.
+        /// * CONFIG - Config changes deployment.
+        /// </summary>
+        public readonly string EntryType;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
@@ -159,12 +170,20 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string SecurityPolicyEntryId;
         public readonly string SecurityPolicyEntryStateId;
+        /// <summary>
+        /// The OCID of the target on which the security policy is deployed.
+        /// </summary>
+        public readonly string TargetId;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentSecurityPolicyEntryStateResult(
             string deploymentStatus,
 
+            string deploymentStatusDetails,
+
             ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetailResult> entryDetails,
+
+            string entryType,
 
             string id,
 
@@ -172,14 +191,19 @@ namespace Pulumi.Oci.DataSafe
 
             string securityPolicyEntryId,
 
-            string securityPolicyEntryStateId)
+            string securityPolicyEntryStateId,
+
+            string targetId)
         {
             DeploymentStatus = deploymentStatus;
+            DeploymentStatusDetails = deploymentStatusDetails;
             EntryDetails = entryDetails;
+            EntryType = entryType;
             Id = id;
             SecurityPolicyDeploymentId = securityPolicyDeploymentId;
             SecurityPolicyEntryId = securityPolicyEntryId;
             SecurityPolicyEntryStateId = securityPolicyEntryStateId;
+            TargetId = targetId;
         }
     }
 }

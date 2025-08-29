@@ -21358,11 +21358,15 @@ export namespace DataSafe {
          */
         auditCollectionStartTime?: pulumi.Input<string>;
         /**
-         * The OCID of the audit.
+         * The OCID of the  parent audit.
          */
         auditProfileId?: pulumi.Input<string>;
         /**
-         * (Updatable) The OCID of the compartment that contains the audit.
+         * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         */
+        canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the compartment where you want to create the audit profile.
          */
         compartmentId?: pulumi.Input<string>;
         /**
@@ -21422,7 +21426,110 @@ export namespace DataSafe {
          */
         systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
         /**
-         * The OCID of the Data Safe target for which the audit profile is created.
+         * The OCID of the target database or target database group for which the audit profile is created.
+         */
+        targetId?: pulumi.Input<string>;
+        /**
+         * The date and time the audit profile was created, in the format defined by RFC3339.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The date and time until when the audit events were collected from the target database by the Data Safe audit trail  collection process, in the format defined by RFC3339.
+         */
+        timeLastCollected?: pulumi.Input<string>;
+        /**
+         * The date and time the audit profile was updated, in the format defined by RFC3339.
+         */
+        timeUpdated?: pulumi.Input<string>;
+        /**
+         * An audit trail location represents the source of audit records that provides documentary evidence of the sequence of activities in the target database.
+         */
+        trailLocation?: pulumi.Input<string>;
+        /**
+         * The underlying source of unified audit trail.
+         */
+        trailSource?: pulumi.Input<string>;
+        /**
+         * The OCID of the workrequest for audit trail which collects audit records.
+         */
+        workRequestId?: pulumi.Input<string>;
+    }
+
+    export interface AuditProfileManagementAuditTrail {
+        /**
+         * The date from which the audit trail must start collecting data, in the format defined by RFC3339.
+         */
+        auditCollectionStartTime?: pulumi.Input<string>;
+        /**
+         * The OCID of the  parent audit.
+         */
+        auditProfileId?: pulumi.Input<string>;
+        /**
+         * Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+         */
+        canUpdateLastArchiveTimeOnTarget?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The OCID of the compartment where you want to create the audit profile.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The description of the audit profile.
+         */
+        description?: pulumi.Input<string>;
+        /**
+         * (Updatable) The display name of the audit profile. The name does not have to be unique, and it's updatable.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The OCID of the audit profile.
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * Indicates if auto purge is enabled on the target database, which helps delete audit data in the target database every seven days so that the database's audit trail does not become too large.
+         */
+        isAutoPurgeEnabled?: pulumi.Input<boolean>;
+        /**
+         * Details about the current state of the audit profile in Data Safe.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The secondary id assigned for the peer database registered with Data Safe.
+         */
+        peerTargetDatabaseKey?: pulumi.Input<number>;
+        /**
+         * The details of the audit trail purge job that ran on the "purgeJobTime".
+         */
+        purgeJobDetails?: pulumi.Input<string>;
+        /**
+         * The current status of the audit trail purge job.
+         */
+        purgeJobStatus?: pulumi.Input<string>;
+        /**
+         * The date and time of the last purge job, which deletes audit data in the target database every seven days so that the database's audit trail does not become too large. In the format defined by RFC3339.
+         */
+        purgeJobTime?: pulumi.Input<string>;
+        /**
+         * The current state of the audit profile.
+         */
+        state?: pulumi.Input<string>;
+        /**
+         * The current sub-state of the audit trail.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * The OCID of the target database or target database group for which the audit profile is created.
          */
         targetId?: pulumi.Input<string>;
         /**
@@ -21586,6 +21693,30 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetAttributeSetAssociatedResourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAttributeSetAssociatedResourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAttributeSetsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAttributeSetsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetAuditArchiveRetrievalsFilter {
         name: string;
         regex?: boolean;
@@ -21641,6 +21772,18 @@ export namespace DataSafe {
     }
 
     export interface GetAuditProfileCollectedAuditVolumesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAuditProfileTargetOverridesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAuditProfileTargetOverridesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -21940,6 +22083,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSecurityAssessmentChecksFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityAssessmentChecksFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSecurityAssessmentFindingAnalyticsFilter {
         name: string;
         regex?: boolean;
@@ -22012,6 +22167,30 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetSecurityAssessmentTemplateAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityAssessmentTemplateAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityAssessmentTemplateAssociationAnalyticsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityAssessmentTemplateAssociationAnalyticsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetSecurityAssessmentsFilter {
         name: string;
         regex?: boolean;
@@ -22031,6 +22210,18 @@ export namespace DataSafe {
     }
 
     export interface GetSecurityPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSecurityPolicyConfigsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSecurityPolicyConfigsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -22360,6 +22551,18 @@ export namespace DataSafe {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetTargetDatabaseGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetTargetDatabaseGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetTargetDatabasePeerTargetDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -22439,6 +22642,30 @@ export namespace DataSafe {
     }
 
     export interface GetTargetDatabasesTablesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUnifiedAuditPoliciesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUnifiedAuditPoliciesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUnifiedAuditPolicyDefinitionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUnifiedAuditPolicyDefinitionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -22789,6 +23016,10 @@ export namespace DataSafe {
 
     export interface ReportDefinitionColumnInfo {
         /**
+         * (Updatable) An array of operators that can be supported by column fieldName.
+         */
+        applicableOperators?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * (Updatable) Specifies the data type of the column.
          */
         dataType?: pulumi.Input<string>;
@@ -22808,6 +23039,10 @@ export namespace DataSafe {
          * (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
          */
         isHidden: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Specifies if column is virtual and can only be used as column filter.
+         */
+        isVirtual?: pulumi.Input<boolean>;
     }
 
     export interface ReportDefinitionColumnSorting {
@@ -22854,6 +23089,105 @@ export namespace DataSafe {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         scimFilter?: pulumi.Input<string>;
+    }
+
+    export interface SecurityAssessmentCheck {
+        /**
+         * The category to which the check belongs to.
+         */
+        category?: pulumi.Input<string>;
+        /**
+         * A unique identifier for the check.
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Provides a recommended approach to take to remediate the check reported.
+         */
+        oneline?: pulumi.Input<string>;
+        /**
+         * Provides information on whether the check is related to a CIS Oracle Database Benchmark recommendation, STIG rule, GDPR Article/Recital or related to the Oracle Best Practice.
+         */
+        references?: pulumi.Input<pulumi.Input<inputs.DataSafe.SecurityAssessmentCheckReference>[]>;
+        /**
+         * The explanation of the issue in this check. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
+         */
+        remarks?: pulumi.Input<string>;
+        /**
+         * The severity of the check as suggested by Data Safe security assessment. This will be the default severity in the template baseline security assessment.
+         */
+        suggestedSeverity?: pulumi.Input<string>;
+        /**
+         * The short title for the check.
+         */
+        title?: pulumi.Input<string>;
+    }
+
+    export interface SecurityAssessmentCheckPatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface SecurityAssessmentCheckReference {
+        /**
+         * Relevant section from CIS.
+         */
+        cis?: pulumi.Input<string>;
+        /**
+         * Relevant section from GDPR.
+         */
+        gdpr?: pulumi.Input<string>;
+        /**
+         * Relevant section from OBP.
+         */
+        obp?: pulumi.Input<string>;
+        /**
+         * Relevant section from STIG.
+         */
+        stig?: pulumi.Input<string>;
+    }
+
+    export interface SecurityAssessmentFindingPatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    }
+
+    export interface SecurityAssessmentFindingReference {
+        /**
+         * Relevant section from CIS.
+         */
+        cis?: pulumi.Input<string>;
+        /**
+         * Relevant section from GDPR.
+         */
+        gdpr?: pulumi.Input<string>;
+        /**
+         * Relevant section from OBP.
+         */
+        obp?: pulumi.Input<string>;
+        /**
+         * Relevant section from STIG.
+         */
+        stig?: pulumi.Input<string>;
     }
 
     export interface SecurityAssessmentStatistic {
@@ -23136,6 +23470,36 @@ export namespace DataSafe {
         userAccountsFindingsCount?: pulumi.Input<number>;
     }
 
+    export interface SecurityPolicyConfigFirewallConfig {
+        /**
+         * (Updatable) Specifies whether the firewall should include or exclude the database internal job activities.
+         */
+        excludeJob?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether the firewall is enabled or disabled.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * The date and time the firewall configuration was last updated, in the format defined by RFC3339.
+         */
+        timeStatusUpdated?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting them in Data Safe.
+         */
+        violationLogAutoPurge?: pulumi.Input<string>;
+    }
+
+    export interface SecurityPolicyConfigUnifiedAuditPolicyConfig {
+        /**
+         * (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        excludeDatasafeUser?: pulumi.Input<string>;
+    }
+
     export interface SensitiveDataModelReferentialRelationChild {
         /**
          * The application name.
@@ -23281,6 +23645,10 @@ export namespace DataSafe {
          */
         listenerPort?: pulumi.Input<number>;
         /**
+         * (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+         */
+        pluggableDatabaseId?: pulumi.Input<string>;
+        /**
          * (Updatable) The service name of the database registered as target database.
          */
         serviceName?: pulumi.Input<string>;
@@ -23288,6 +23656,58 @@ export namespace DataSafe {
          * (Updatable) The OCID of the VM cluster in which the database is running.
          */
         vmClusterId?: pulumi.Input<string>;
+    }
+
+    export interface TargetDatabaseGroupMatchingCriteria {
+        /**
+         * (Updatable) Criteria to exclude certain target databases from the target database group.
+         */
+        exclude?: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteriaExclude>;
+        /**
+         * (Updatable) Criteria to determine whether a target database should be included in the target database group. If the database satisfies any of compartments, targetDatabaseIds, freeformTags, or definedTags criteria, it qualifies for inclusion in the target database group
+         */
+        include: pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteriaInclude>;
+    }
+
+    export interface TargetDatabaseGroupMatchingCriteriaExclude {
+        /**
+         * (Updatable) The list of target database OCIDS, that should be excluded from the target database group (even if they match some of the other criteria).
+         */
+        targetDatabaseIds: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface TargetDatabaseGroupMatchingCriteriaInclude {
+        /**
+         * (Updatable) List of compartment objects, each containing the OCID of the compartment and a boolean value that indicates whether the target databases in the compartments and sub-compartments should also be included in the target database group.
+         */
+        compartments?: pulumi.Input<pulumi.Input<inputs.DataSafe.TargetDatabaseGroupMatchingCriteriaIncludeCompartment>[]>;
+        /**
+         * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+         */
+        freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The list of target database OCIDs to be included in the target database group.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        targetDatabaseIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface TargetDatabaseGroupMatchingCriteriaIncludeCompartment {
+        /**
+         * (Updatable) The OCID of the compartment for including target databases to the target database group. All target databases in the compartment will be members of the target database group.
+         */
+        id: pulumi.Input<string>;
+        /**
+         * (Updatable) This indicates whether the target databases of sub-compartments should also be included in the target database group. By default, this parameter is set to false.
+         */
+        isIncludeSubtree?: pulumi.Input<boolean>;
     }
 
     export interface TargetDatabasePeerTargetDatabase {
@@ -23367,6 +23787,10 @@ export namespace DataSafe {
          */
         listenerPort?: pulumi.Input<number>;
         /**
+         * (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+         */
+        pluggableDatabaseId?: pulumi.Input<string>;
+        /**
          * (Updatable) The service name of the database registered as target database.
          */
         serviceName?: pulumi.Input<string>;
@@ -23405,6 +23829,10 @@ export namespace DataSafe {
          * (Updatable) The port number of the database listener.
          */
         listenerPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+         */
+        pluggableDatabaseId?: pulumi.Input<string>;
         /**
          * (Updatable) The service name of the database registered as target database.
          */
@@ -23467,6 +23895,10 @@ export namespace DataSafe {
          * The port number of the database listener.
          */
         listenerPort?: pulumi.Input<number>;
+        /**
+         * The OCID of the pluggable database registered as a target database in Data Safe.
+         */
+        pluggableDatabaseId?: pulumi.Input<string>;
         /**
          * The service name of the database registered as target database.
          */
@@ -23554,14 +23986,37 @@ export namespace DataSafe {
         trustStoreContent?: pulumi.Input<string>;
     }
 
+    export interface UnifiedAuditPolicyCondition {
+        /**
+         * (Updatable) The OCID of the attribute set.
+         */
+        attributeSetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies whether to include or exclude the specified users or roles.
+         */
+        entitySelection: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of users or roles that the unified audit policy is applied to.
+         */
+        entityType: pulumi.Input<string>;
+        /**
+         * (Updatable) The operation status that the policy must be enabled for.
+         */
+        operationStatus: pulumi.Input<string>;
+        /**
+         * (Updatable) List of roles that the policy must be enabled for.
+         */
+        roleNames?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The list of users that the unified audit policy is enabled for.
+         */
+        userNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface UserAssessmentIgnoredTarget {
         lifecycleState?: pulumi.Input<string>;
         /**
-         * The OCID of the target database on which the user assessment is to be run.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * The OCID of the target database or target database group on which user assessment is to be run.
          */
         targetId?: pulumi.Input<string>;
         userAssessmentId?: pulumi.Input<string>;
@@ -28870,6 +29325,10 @@ export namespace Database {
          */
         sourceTdeWalletPassword?: pulumi.Input<string>;
         /**
+         * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         */
+        storageSizeDetails?: pulumi.Input<inputs.Database.DatabaseDatabaseStorageSizeDetails>;
+        /**
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
          */
         tdeWalletPassword?: pulumi.Input<string>;
@@ -28995,6 +29454,21 @@ export namespace Database {
         providerType: pulumi.Input<string>;
     }
 
+    export interface DatabaseDatabaseStorageSizeDetails {
+        /**
+         * (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+         */
+        dataStorageSizeInGb: pulumi.Input<number>;
+        /**
+         * (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+         */
+        recoStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * The REDO Log storage size, in gigabytes, that is applicable for the database.
+         */
+        redoLogStorageSizeInGbs?: pulumi.Input<number>;
+    }
+
     export interface DatabaseDbBackupConfig {
         /**
          * If set to true, configures automatic backups. If you previously used RMAN or dbcli to configure backups and then you switch to using the Console or the API for backups, a new backup configuration is created and associated with your database. This means that you can no longer rely on your previously configured unmanaged backups to work.
@@ -29059,6 +29533,21 @@ export namespace Database {
          * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          */
         vpcUser?: pulumi.Input<string>;
+    }
+
+    export interface DatabaseStorageSizeDetail {
+        /**
+         * The DATA storage size, in gigabytes, that is applicable for the database.
+         */
+        dataStorageSizeInGb?: pulumi.Input<number>;
+        /**
+         * The RECO storage size, in gigabytes, that is applicable for the database.
+         */
+        recoStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * The REDO Log storage size, in gigabytes, that is applicable for the database.
+         */
+        redoLogStorageSizeInGbs?: pulumi.Input<number>;
     }
 
     export interface DatabaseUpgradeConnectionString {
@@ -29326,6 +29815,10 @@ export namespace Database {
          */
         state?: pulumi.Input<string>;
         /**
+         * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+         */
+        storageSizeDetails?: pulumi.Input<inputs.Database.DbHomeDatabaseStorageSizeDetails>;
+        /**
          * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
          */
         tdeWalletPassword?: pulumi.Input<string>;
@@ -29424,6 +29917,18 @@ export namespace Database {
          * Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
          */
         providerType: pulumi.Input<string>;
+    }
+
+    export interface DbHomeDatabaseStorageSizeDetails {
+        /**
+         * The DATA storage size, in gigabytes, that is applicable for the database.
+         */
+        dataStorageSizeInGb: pulumi.Input<number>;
+        /**
+         * The RECO storage size, in gigabytes, that is applicable for the database.
+         */
+        recoStorageSizeInGbs: pulumi.Input<number>;
+        redoLogStorageSizeInGbs?: pulumi.Input<number>;
     }
 
     export interface DbSystemDataCollectionOptions {
@@ -29657,13 +30162,11 @@ export namespace Database {
          */
         id?: pulumi.Input<string>;
         /**
-         * Indicates whether the backup destination is cross-region or local region.
+         * Indicates whether the backup destination is cross-region or local.
          */
         isRemote?: pulumi.Input<boolean>;
         /**
-         * The name of the remote region where the remote automatic incremental backups will be stored.
-         *
-         * For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+         * The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
          */
         remoteRegion?: pulumi.Input<string>;
         /**
@@ -39936,6 +40439,14 @@ export namespace DisasterRecovery {
          */
         connectionStringType?: pulumi.Input<string>;
         /**
+         * (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+         */
+        dbSystemAdminUserDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberDbSystemAdminUserDetails>;
+        /**
+         * (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+         */
+        dbSystemReplicationUserDetails?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberDbSystemReplicationUserDetails>;
+        /**
          * (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
          */
         destinationAvailabilityDomain?: pulumi.Input<string>;
@@ -39979,6 +40490,14 @@ export namespace DisasterRecovery {
          * (Updatable) A list of operations performed on file systems used by the compute instance.
          */
         fileSystemOperations?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberFileSystemOperation>[]>;
+        /**
+         * (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+         */
+        gtidReconciliationTimeout?: pulumi.Input<number>;
+        /**
+         * (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+         */
+        isContinueOnGtidReconciliationTimeout?: pulumi.Input<boolean>;
         /**
          * (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
          */
@@ -40027,6 +40546,10 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
          */
         peerClusterId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         */
+        peerDbSystemId?: pulumi.Input<string>;
         /**
          * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
          *
@@ -40088,6 +40611,10 @@ export namespace DisasterRecovery {
          */
         backupSchedule?: pulumi.Input<string>;
         /**
+         * (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+         */
+        excludeNamespaces?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
          * (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
          */
         imageReplicationVaultSecretId?: pulumi.Input<string>;
@@ -40096,7 +40623,7 @@ export namespace DisasterRecovery {
          */
         maxNumberOfBackupsRetained?: pulumi.Input<number>;
         /**
-         * (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+         * (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
          */
         namespaces?: pulumi.Input<pulumi.Input<string>[]>;
         /**
@@ -40187,6 +40714,28 @@ export namespace DisasterRecovery {
          * (Updatable) The OCID of the destination region vault for the customer-managed encryption key.  Example: `ocid1.vault.oc1..uniqueID`
          */
         vaultId?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberDbSystemAdminUserDetails {
+        /**
+         * (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+         */
+        passwordVaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface DrProtectionGroupMemberDbSystemReplicationUserDetails {
+        /**
+         * (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+         */
+        passwordVaultSecretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+         */
+        username?: pulumi.Input<string>;
     }
 
     export interface DrProtectionGroupMemberDestinationEncryptionKey {
@@ -44806,15 +45355,25 @@ export namespace GenerativeAi {
          */
         numberOfFailedFiles?: pulumi.Input<number>;
         /**
+         * The number of files that have been ignored during the ingestion.
+         */
+        numberOfIgnoredFiles?: pulumi.Input<number>;
+        /**
          * The number of files that have been successfully ingested during the ingestion.
          */
         numberOfIngestedFiles?: pulumi.Input<number>;
     }
 
+    export interface AgentDataIngestionJobDataIngestionJobType {
+        /**
+         * Type of ingestionJob.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface AgentDataSourceDataSourceConfig {
         /**
-         * (Updatable) The type of the tool. The allowed values are:
-         * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+         * (Updatable) The type of the tool.
          */
         dataSourceConfigType: pulumi.Input<string>;
         /**
@@ -44833,7 +45392,7 @@ export namespace GenerativeAi {
          */
         namespace: pulumi.Input<string>;
         /**
-         * (Updatable) The name of the object (file) or prefix (folder).
+         * (Updatable) The prefix of file object(s) or folder prefix.
          */
         prefix?: pulumi.Input<string>;
     }
@@ -44844,9 +45403,7 @@ export namespace GenerativeAi {
          */
         clusterId?: pulumi.Input<string>;
         /**
-         * (Updatable) **DatabaseConnection**
-         *
-         * The connection type for Databases.
+         * (Updatable) The connection type for Databases.
          */
         databaseConnection?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigDatabaseConnection>;
         /**
@@ -44854,10 +45411,7 @@ export namespace GenerativeAi {
          */
         databaseFunctions?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigDatabaseFunction>[]>;
         /**
-         * (Updatable) The type of index. The allowed values are:
-         * * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-         * * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-         * * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+         * (Updatable) The type of index.
          */
         indexConfigType: pulumi.Input<string>;
         /**
@@ -44865,9 +45419,7 @@ export namespace GenerativeAi {
          */
         indexes?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigIndex>[]>;
         /**
-         * (Updatable) **SecretDetail**
-         *
-         * The details of configured security configuration on OpenSearch.
+         * (Updatable) The details of configured security configuration on OpenSearch.
          */
         secretDetail?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigSecretDetail>;
         /**
@@ -44886,8 +45438,7 @@ export namespace GenerativeAi {
          */
         connectionId: pulumi.Input<string>;
         /**
-         * (Updatable) The type of Database connection. The allowed values are:
-         * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+         * (Updatable) The type of Database connection.
          */
         connectionType: pulumi.Input<string>;
     }
@@ -44905,9 +45456,7 @@ export namespace GenerativeAi {
          */
         name?: pulumi.Input<string>;
         /**
-         * (Updatable) **IndexSchema**
-         *
-         * The index schema details.
+         * (Updatable) The index schema details.
          */
         schema?: pulumi.Input<inputs.GenerativeAi.AgentKnowledgeBaseIndexConfigIndexSchema>;
     }
@@ -44945,9 +45494,7 @@ export namespace GenerativeAi {
          */
         scopeUrl?: pulumi.Input<string>;
         /**
-         * (Updatable) The type of OpenID. The allowed values are:
-         * * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-         * * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+         * (Updatable) The type of OpenID.
          */
         type: pulumi.Input<string>;
         /**
@@ -44956,7 +45503,26 @@ export namespace GenerativeAi {
         vaultSecretId: pulumi.Input<string>;
     }
 
+    export interface AgentKnowledgeBaseKnowledgeBaseStatistic {
+        /**
+         * Knowledge Base size in bytes.
+         */
+        sizeInBytes?: pulumi.Input<string>;
+        /**
+         * Total number of ingested files in Knowledge Base.
+         */
+        totalIngestedFiles?: pulumi.Input<string>;
+    }
+
     export interface AgentToolToolConfig {
+        /**
+         * (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+         */
+        agentEndpointId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The input location definition for Api schema.
+         */
+        apiSchema?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigApiSchema>;
         /**
          * (Updatable) The connection type for Databases.
          */
@@ -44978,6 +45544,10 @@ export namespace GenerativeAi {
          */
         generationLlmCustomization?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigGenerationLlmCustomization>;
         /**
+         * (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+         */
+        httpEndpointAuthConfig?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigHttpEndpointAuthConfig>;
+        /**
          * (Updatable) The input location definition.
          */
         iclExamples?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigIclExamples>;
@@ -44998,6 +45568,10 @@ export namespace GenerativeAi {
          */
         shouldEnableSqlExecution?: pulumi.Input<boolean>;
         /**
+         * (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+         */
+        subnetId?: pulumi.Input<string>;
+        /**
          * (Updatable) The input location definition.
          */
         tableAndColumnDescription?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigTableAndColumnDescription>;
@@ -45012,6 +45586,31 @@ export namespace GenerativeAi {
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         toolConfigType: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigApiSchema {
+        /**
+         * (Updatable) Type of Api Schema InputLocation. The allowed values are:
+         * * `INLINE`: The Api schema input location is inline.
+         * * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+         */
+        apiSchemaInputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The bucket name of an object.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Inline content as input.
+         */
+        content?: pulumi.Input<string>;
+        /**
+         * (Updatable) The namespace name of an object.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) The location/name of object.
+         */
+        object?: pulumi.Input<string>;
     }
 
     export interface AgentToolToolConfigDatabaseConnection {
@@ -45071,6 +45670,55 @@ export namespace GenerativeAi {
          * (Updatable) If specified, the default instruction is replaced with provided instruction.
          */
         instruction?: pulumi.Input<string>;
+    }
+
+    export interface AgentToolToolConfigHttpEndpointAuthConfig {
+        /**
+         * (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+         */
+        httpEndpointAuthSources?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource>[]>;
+    }
+
+    export interface AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource {
+        /**
+         * (Updatable) Specifies the level from which credentials should be resolved.
+         */
+        httpEndpointAuthScope?: pulumi.Input<string>;
+        /**
+         * (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+         */
+        httpEndpointAuthScopeConfig?: pulumi.Input<inputs.GenerativeAi.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig>;
+    }
+
+    export interface AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig {
+        /**
+         * (Updatable) IDCS client ID.
+         */
+        clientId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+         */
+        httpEndpointAuthScopeConfigType: pulumi.Input<string>;
+        /**
+         * (Updatable) IDCS OpenID discovery endpoint.
+         */
+        idcsUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The location of the API key in the request.
+         */
+        keyLocation?: pulumi.Input<string>;
+        /**
+         * (Updatable) The name of the key parameter in the location.
+         */
+        keyName?: pulumi.Input<string>;
+        /**
+         * (Updatable) OAuth2 scopes for token generation.
+         */
+        scopeUrl?: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+         */
+        vaultSecretId?: pulumi.Input<string>;
     }
 
     export interface AgentToolToolConfigIclExamples {
@@ -93076,6 +93724,48 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetManagedKafkaKafkaClusterConfigVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedKafkaKafkaClusterConfigVersionsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedKafkaKafkaClusterConfigsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedKafkaKafkaClusterConfigsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetManagedKafkaKafkaClustersFilter {
+        /**
+         * Name of the Kafka listener providing this bootstrap URL
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetManagedKafkaKafkaClustersFilterArgs {
+        /**
+         * Name of the Kafka listener providing this bootstrap URL
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetWlmsManagedInstanceScanResultsFilter {
         name: string;
         regex?: boolean;
@@ -93220,4 +93910,59 @@ export namespace oci {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface ManagedKafkaKafkaClusterAccessSubnet {
+        /**
+         * (Updatable) Subnets OCIDs
+         */
+        subnets: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ManagedKafkaKafkaClusterBrokerShape {
+        /**
+         * (Updatable) Number of Kafka broker nodes
+         */
+        nodeCount: pulumi.Input<number>;
+        /**
+         * (Updatable) Number of OCPUs per nodes
+         */
+        ocpuCount: pulumi.Input<number>;
+        /**
+         * (Updatable) Size of the storage per nodes.
+         */
+        storageSizeInGbs?: pulumi.Input<number>;
+    }
+
+    export interface ManagedKafkaKafkaClusterConfigLatestConfig {
+        /**
+         * (Updatable) ID cluster configuration
+         */
+        configId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Cluster configuration key-value pairs
+         */
+        properties: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+        /**
+         * (Updatable) The date and time the KafkaClusterConfigVersion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * (Updatable) Version of the cluster configuration
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        versionNumber?: pulumi.Input<number>;
+    }
+
+    export interface ManagedKafkaKafkaClusterKafkaBootstrapUrl {
+        /**
+         * Name of the Kafka listener providing this bootstrap URL
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Bootstrap URL
+         */
+        url?: pulumi.Input<string>;
+    }
 }

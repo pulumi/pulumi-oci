@@ -18,6 +18,21 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
     public static final GetDbSystemStoragePerformancesPlainArgs Empty = new GetDbSystemStoragePerformancesPlainArgs();
 
     /**
+     * Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    /**
+     * @return Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Optional. Filters the performance results by database edition. Valid values are:
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
@@ -86,6 +101,7 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
     private GetDbSystemStoragePerformancesPlainArgs() {}
 
     private GetDbSystemStoragePerformancesPlainArgs(GetDbSystemStoragePerformancesPlainArgs $) {
+        this.compartmentId = $.compartmentId;
         this.databaseEdition = $.databaseEdition;
         this.filters = $.filters;
         this.shapeType = $.shapeType;
@@ -108,6 +124,17 @@ public final class GetDbSystemStoragePerformancesPlainArgs extends com.pulumi.re
 
         public Builder(GetDbSystemStoragePerformancesPlainArgs defaults) {
             $ = new GetDbSystemStoragePerformancesPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
         }
 
         /**

@@ -10,15 +10,15 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GenerativeAi.AgentKnowledgeBaseArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentKnowledgeBaseState;
 import com.pulumi.oci.GenerativeAi.outputs.AgentKnowledgeBaseIndexConfig;
+import com.pulumi.oci.GenerativeAi.outputs.AgentKnowledgeBaseKnowledgeBaseStatistic;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- * 
- * **CreateKnowledgeBase**
  * 
  * Creates a knowledge base.
  * 
@@ -174,22 +174,32 @@ public class AgentKnowledgeBase extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * (Updatable) The index configuration of Knowledge bases.
      * 
      */
     @Export(name="indexConfig", refs={AgentKnowledgeBaseIndexConfig.class}, tree="[0]")
     private Output<AgentKnowledgeBaseIndexConfig> indexConfig;
 
     /**
-     * @return (Updatable) **IndexConfig**
-     * 
-     * The index configuration of Knowledge bases.
+     * @return (Updatable) The index configuration of Knowledge bases.
      * 
      */
     public Output<AgentKnowledgeBaseIndexConfig> indexConfig() {
         return this.indexConfig;
+    }
+    /**
+     * Statistics for Default Knowledge Base.
+     * 
+     */
+    @Export(name="knowledgeBaseStatistics", refs={List.class,AgentKnowledgeBaseKnowledgeBaseStatistic.class}, tree="[0,1]")
+    private Output<List<AgentKnowledgeBaseKnowledgeBaseStatistic>> knowledgeBaseStatistics;
+
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    public Output<List<AgentKnowledgeBaseKnowledgeBaseStatistic>> knowledgeBaseStatistics() {
+        return this.knowledgeBaseStatistics;
     }
     /**
      * A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

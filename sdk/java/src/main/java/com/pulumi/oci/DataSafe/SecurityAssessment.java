@@ -9,12 +9,15 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SecurityAssessmentArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentState;
+import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentCheck;
 import com.pulumi.oci.DataSafe.outputs.SecurityAssessmentStatistic;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -23,48 +26,6 @@ import javax.annotation.Nullable;
  * Creates a new saved security assessment for one or multiple targets in a compartment. When this operation is performed,
  * it will save the latest assessments in the specified compartment. If a schedule is passed, it will persist the latest assessments,
  * at the defined date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
- * 
- * ## Example Usage
- * 
- * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataSafe.SecurityAssessment;
- * import com.pulumi.oci.DataSafe.SecurityAssessmentArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testSecurityAssessment = new SecurityAssessment("testSecurityAssessment", SecurityAssessmentArgs.builder()
- *             .compartmentId(compartmentId)
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .description(securityAssessmentDescription)
- *             .displayName(securityAssessmentDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .isAssessmentScheduled(securityAssessmentIsAssessmentScheduled)
- *             .schedule(securityAssessmentSchedule)
- *             .targetId(testTarget.id())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
- * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
  * 
@@ -77,6 +38,76 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataSafe/securityAssessment:SecurityAssessment")
 public class SecurityAssessment extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     * 
+     */
+    @Export(name="applyTemplateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> applyTemplateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> applyTemplateTrigger() {
+        return Codegen.optional(this.applyTemplateTrigger);
+    }
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     * 
+     */
+    @Export(name="baseSecurityAssessmentId", refs={String.class}, tree="[0]")
+    private Output<String> baseSecurityAssessmentId;
+
+    /**
+     * @return The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     * 
+     */
+    public Output<String> baseSecurityAssessmentId() {
+        return this.baseSecurityAssessmentId;
+    }
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    @Export(name="baselineAssessmentId", refs={String.class}, tree="[0]")
+    private Output<String> baselineAssessmentId;
+
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    public Output<String> baselineAssessmentId() {
+        return this.baselineAssessmentId;
+    }
+    /**
+     * The security checks to be evaluated for type template.
+     * 
+     */
+    @Export(name="checks", refs={List.class,SecurityAssessmentCheck.class}, tree="[0,1]")
+    private Output<List<SecurityAssessmentCheck>> checks;
+
+    /**
+     * @return The security checks to be evaluated for type template.
+     * 
+     */
+    public Output<List<SecurityAssessmentCheck>> checks() {
+        return this.checks;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     * 
+     */
+    @Export(name="compareToTemplateBaselineTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> compareToTemplateBaselineTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> compareToTemplateBaselineTrigger() {
+        return Codegen.optional(this.compareToTemplateBaselineTrigger);
+    }
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
      * 
@@ -260,6 +291,26 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return this.link;
     }
     /**
+     * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="removeTemplateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> removeTemplateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> removeTemplateTrigger() {
+        return Codegen.optional(this.removeTemplateTrigger);
+    }
+    /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
@@ -334,20 +385,28 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The OCID of the target database on which security assessment is to be run.
+     * The OCID of the target database group that the group assessment is created for.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="targetDatabaseGroupId", refs={String.class}, tree="[0]")
+    private Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return The OCID of the target database group that the group assessment is created for.
+     * 
+     */
+    public Output<String> targetDatabaseGroupId() {
+        return this.targetDatabaseGroupId;
+    }
+    /**
+     * The OCID of the target database or target database group on which security assessment is to be run.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
-     * @return The OCID of the target database on which security assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which security assessment is to be run.
      * 
      */
     public Output<String> targetId() {
@@ -368,6 +427,20 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return this.targetIds;
     }
     /**
+     * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     */
+    @Export(name="targetType", refs={String.class}, tree="[0]")
+    private Output<String> targetType;
+
+    /**
+     * @return The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     */
+    public Output<String> targetType() {
+        return this.targetType;
+    }
+    /**
      * The version of the target database.
      * 
      */
@@ -380,6 +453,20 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> targetVersion() {
         return this.targetVersion;
+    }
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     * 
+     */
+    @Export(name="templateAssessmentId", refs={String.class}, tree="[0]")
+    private Output<String> templateAssessmentId;
+
+    /**
+     * @return The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     * 
+     */
+    public Output<String> templateAssessmentId() {
+        return this.templateAssessmentId;
     }
     /**
      * The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -438,14 +525,14 @@ public class SecurityAssessment extends com.pulumi.resources.CustomResource {
         return this.triggeredBy;
     }
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return The type of this security assessment. The possible types are:
+     * @return The type of the security assessment
      * 
      */
     public Output<String> type() {

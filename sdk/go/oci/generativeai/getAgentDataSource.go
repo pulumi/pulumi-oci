@@ -13,8 +13,6 @@ import (
 
 // This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 //
-// **GetDataSource**
-//
 // Gets information about a data source.
 //
 // ## Example Usage
@@ -62,7 +60,7 @@ type LookupAgentDataSourceArgs struct {
 type LookupAgentDataSourceResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// **DataSourceConfig**
+	// The details of data source.
 	DataSourceConfigs []GetAgentDataSourceDataSourceConfig `pulumi:"dataSourceConfigs"`
 	DataSourceId      string                               `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -130,7 +128,7 @@ func (o LookupAgentDataSourceResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentDataSourceResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// **DataSourceConfig**
+// The details of data source.
 func (o LookupAgentDataSourceResultOutput) DataSourceConfigs() GetAgentDataSourceDataSourceConfigArrayOutput {
 	return o.ApplyT(func(v LookupAgentDataSourceResult) []GetAgentDataSourceDataSourceConfig { return v.DataSourceConfigs }).(GetAgentDataSourceDataSourceConfigArrayOutput)
 }

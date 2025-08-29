@@ -5,25 +5,60 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.DataSafe.outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem;
-import java.util.List;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
 public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem {
     /**
-     * @return Array of collected audit volume summary.
+     * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
      */
-    private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
+    private String archivedVolume;
+    /**
+     * @return The OCID of the audit.
+     * 
+     */
+    private String auditProfileId;
+    /**
+     * @return Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     * 
+     */
+    private String monthInConsideration;
+    /**
+     * @return The audit data volume collected by Data Safe and is available online in repository.
+     * 
+     */
+    private String onlineVolume;
 
     private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem() {}
     /**
-     * @return Array of collected audit volume summary.
+     * @return The audit data volume collected by Data Safe and is available in archive storage.
      * 
      */
-    public List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items() {
-        return this.items;
+    public String archivedVolume() {
+        return this.archivedVolume;
+    }
+    /**
+     * @return The OCID of the audit.
+     * 
+     */
+    public String auditProfileId() {
+        return this.auditProfileId;
+    }
+    /**
+     * @return Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+     * 
+     */
+    public String monthInConsideration() {
+        return this.monthInConsideration;
+    }
+    /**
+     * @return The audit data volume collected by Data Safe and is available online in repository.
+     * 
+     */
+    public String onlineVolume() {
+        return this.onlineVolume;
     }
 
     public static Builder builder() {
@@ -35,27 +70,57 @@ public final class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeColle
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items;
+        private String archivedVolume;
+        private String auditProfileId;
+        private String monthInConsideration;
+        private String onlineVolume;
         public Builder() {}
         public Builder(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.items = defaults.items;
+    	      this.archivedVolume = defaults.archivedVolume;
+    	      this.auditProfileId = defaults.auditProfileId;
+    	      this.monthInConsideration = defaults.monthInConsideration;
+    	      this.onlineVolume = defaults.onlineVolume;
         }
 
         @CustomType.Setter
-        public Builder items(List<GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem> items) {
-            if (items == null) {
-              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem", "items");
+        public Builder archivedVolume(String archivedVolume) {
+            if (archivedVolume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem", "archivedVolume");
             }
-            this.items = items;
+            this.archivedVolume = archivedVolume;
             return this;
         }
-        public Builder items(GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItem... items) {
-            return items(List.of(items));
+        @CustomType.Setter
+        public Builder auditProfileId(String auditProfileId) {
+            if (auditProfileId == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem", "auditProfileId");
+            }
+            this.auditProfileId = auditProfileId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder monthInConsideration(String monthInConsideration) {
+            if (monthInConsideration == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem", "monthInConsideration");
+            }
+            this.monthInConsideration = monthInConsideration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder onlineVolume(String onlineVolume) {
+            if (onlineVolume == null) {
+              throw new MissingRequiredPropertyException("GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem", "onlineVolume");
+            }
+            this.onlineVolume = onlineVolume;
+            return this;
         }
         public GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem build() {
             final var _resultValue = new GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItem();
-            _resultValue.items = items;
+            _resultValue.archivedVolume = archivedVolume;
+            _resultValue.auditProfileId = auditProfileId;
+            _resultValue.monthInConsideration = monthInConsideration;
+            _resultValue.onlineVolume = onlineVolume;
             return _resultValue;
         }
     }

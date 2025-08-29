@@ -58,6 +58,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    @Import(name="byolCpuCoreCountLimit")
+    private @Nullable Output<Integer> byolCpuCoreCountLimit;
+
+    /**
+     * @return (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    public Optional<Output<Integer>> byolCpuCoreCountLimit() {
+        return Optional.ofNullable(this.byolCpuCoreCountLimit);
+    }
+
+    /**
      * The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -310,6 +325,21 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isAutoScalingEnabled() {
         return Optional.ofNullable(this.isAutoScalingEnabled);
+    }
+
+    /**
+     * (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    @Import(name="isByolCpuCoreCountLimitEnabled")
+    private @Nullable Output<Boolean> isByolCpuCoreCountLimitEnabled;
+
+    /**
+     * @return (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    public Optional<Output<Boolean>> isByolCpuCoreCountLimitEnabled() {
+        return Optional.ofNullable(this.isByolCpuCoreCountLimitEnabled);
     }
 
     /**
@@ -796,6 +826,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
     private DeploymentState(DeploymentState $) {
         this.availabilityDomain = $.availabilityDomain;
         this.backupSchedule = $.backupSchedule;
+        this.byolCpuCoreCountLimit = $.byolCpuCoreCountLimit;
         this.category = $.category;
         this.compartmentId = $.compartmentId;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -813,6 +844,7 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.ingressIps = $.ingressIps;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
+        this.isByolCpuCoreCountLimitEnabled = $.isByolCpuCoreCountLimitEnabled;
         this.isHealthy = $.isHealthy;
         this.isLatestVersion = $.isLatestVersion;
         this.isLockOverride = $.isLockOverride;
@@ -906,6 +938,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder backupSchedule(DeploymentBackupScheduleArgs backupSchedule) {
             return backupSchedule(Output.of(backupSchedule));
+        }
+
+        /**
+         * @param byolCpuCoreCountLimit (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder byolCpuCoreCountLimit(@Nullable Output<Integer> byolCpuCoreCountLimit) {
+            $.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            return this;
+        }
+
+        /**
+         * @param byolCpuCoreCountLimit (Updatable) The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            return byolCpuCoreCountLimit(Output.of(byolCpuCoreCountLimit));
         }
 
         /**
@@ -1283,6 +1336,27 @@ public final class DeploymentState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isAutoScalingEnabled(Boolean isAutoScalingEnabled) {
             return isAutoScalingEnabled(Output.of(isAutoScalingEnabled));
+        }
+
+        /**
+         * @param isByolCpuCoreCountLimitEnabled (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isByolCpuCoreCountLimitEnabled(@Nullable Output<Boolean> isByolCpuCoreCountLimitEnabled) {
+            $.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
+            return this;
+        }
+
+        /**
+         * @param isByolCpuCoreCountLimitEnabled (Updatable) Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            return isByolCpuCoreCountLimitEnabled(Output.of(isByolCpuCoreCountLimitEnabled));
         }
 
         /**

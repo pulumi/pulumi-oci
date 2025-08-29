@@ -25,6 +25,11 @@ public final class GetAuditTrailResult {
     private String auditProfileId;
     private String auditTrailId;
     /**
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    private Boolean canUpdateLastArchiveTimeOnTarget;
+    /**
      * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
      * 
      */
@@ -153,6 +158,13 @@ public final class GetAuditTrailResult {
     }
     public String auditTrailId() {
         return this.auditTrailId;
+    }
+    /**
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Boolean canUpdateLastArchiveTimeOnTarget() {
+        return this.canUpdateLastArchiveTimeOnTarget;
     }
     /**
      * @return The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
@@ -324,6 +336,7 @@ public final class GetAuditTrailResult {
         private String auditCollectionStartTime;
         private String auditProfileId;
         private String auditTrailId;
+        private Boolean canUpdateLastArchiveTimeOnTarget;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -353,6 +366,7 @@ public final class GetAuditTrailResult {
     	      this.auditCollectionStartTime = defaults.auditCollectionStartTime;
     	      this.auditProfileId = defaults.auditProfileId;
     	      this.auditTrailId = defaults.auditTrailId;
+    	      this.canUpdateLastArchiveTimeOnTarget = defaults.canUpdateLastArchiveTimeOnTarget;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -400,6 +414,14 @@ public final class GetAuditTrailResult {
               throw new MissingRequiredPropertyException("GetAuditTrailResult", "auditTrailId");
             }
             this.auditTrailId = auditTrailId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUpdateLastArchiveTimeOnTarget(Boolean canUpdateLastArchiveTimeOnTarget) {
+            if (canUpdateLastArchiveTimeOnTarget == null) {
+              throw new MissingRequiredPropertyException("GetAuditTrailResult", "canUpdateLastArchiveTimeOnTarget");
+            }
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             return this;
         }
         @CustomType.Setter
@@ -591,6 +613,7 @@ public final class GetAuditTrailResult {
             _resultValue.auditCollectionStartTime = auditCollectionStartTime;
             _resultValue.auditProfileId = auditProfileId;
             _resultValue.auditTrailId = auditTrailId;
+            _resultValue.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

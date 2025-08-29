@@ -1762,6 +1762,10 @@ type DrProtectionGroupMember struct {
 	CommonDestinationKey *DrProtectionGroupMemberCommonDestinationKey `pulumi:"commonDestinationKey"`
 	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType *string `pulumi:"connectionStringType"`
+	// (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+	DbSystemAdminUserDetails *DrProtectionGroupMemberDbSystemAdminUserDetails `pulumi:"dbSystemAdminUserDetails"`
+	// (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+	DbSystemReplicationUserDetails *DrProtectionGroupMemberDbSystemReplicationUserDetails `pulumi:"dbSystemReplicationUserDetails"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain *string `pulumi:"destinationAvailabilityDomain"`
 	// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -1784,6 +1788,10 @@ type DrProtectionGroupMember struct {
 	ExportMappings []DrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
 	FileSystemOperations []DrProtectionGroupMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout *int `pulumi:"gtidReconciliationTimeout"`
+	// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout *bool `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable *bool `pulumi:"isMovable"`
 	// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -1808,6 +1816,8 @@ type DrProtectionGroupMember struct {
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId *string `pulumi:"peerClusterId"`
+	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId *string `pulumi:"peerDbSystemId"`
 	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	//
 	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -1854,6 +1864,10 @@ type DrProtectionGroupMemberArgs struct {
 	CommonDestinationKey DrProtectionGroupMemberCommonDestinationKeyPtrInput `pulumi:"commonDestinationKey"`
 	// (Updatable) The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringPtrInput `pulumi:"connectionStringType"`
+	// (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+	DbSystemAdminUserDetails DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput `pulumi:"dbSystemAdminUserDetails"`
+	// (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+	DbSystemReplicationUserDetails DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput `pulumi:"dbSystemReplicationUserDetails"`
 	// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringPtrInput `pulumi:"destinationAvailabilityDomain"`
 	// (Updatable) The OCID of the backup policy to use in the destination region. This policy will be used to create backups  for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -1876,6 +1890,10 @@ type DrProtectionGroupMemberArgs struct {
 	ExportMappings DrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
 	FileSystemOperations DrProtectionGroupMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout pulumi.IntPtrInput `pulumi:"gtidReconciliationTimeout"`
+	// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout pulumi.BoolPtrInput `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolPtrInput `pulumi:"isMovable"`
 	// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -1900,6 +1918,8 @@ type DrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId pulumi.StringPtrInput `pulumi:"peerClusterId"`
+	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId pulumi.StringPtrInput `pulumi:"peerDbSystemId"`
 	// (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	//
 	// If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  'commonDestinationKey' for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using 'commonDestinationKey', you cannot specify vaults and encryption keys individually  for each volume using 'sourceVolumeToDestinationEncryptionKeyMappings'.
@@ -2020,6 +2040,20 @@ func (o DrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringPtrOu
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.ConnectionStringType }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+func (o DrProtectionGroupMemberOutput) DbSystemAdminUserDetails() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberDbSystemAdminUserDetails {
+		return v.DbSystemAdminUserDetails
+	}).(DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput)
+}
+
+// (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+func (o DrProtectionGroupMemberOutput) DbSystemReplicationUserDetails() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberDbSystemReplicationUserDetails {
+		return v.DbSystemReplicationUserDetails
+	}).(DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput)
+}
+
 // (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
 func (o DrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationAvailabilityDomain }).(pulumi.StringPtrOutput)
@@ -2077,6 +2111,16 @@ func (o DrProtectionGroupMemberOutput) FileSystemOperations() DrProtectionGroupM
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberFileSystemOperation {
 		return v.FileSystemOperations
 	}).(DrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+// (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+func (o DrProtectionGroupMemberOutput) GtidReconciliationTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *int { return v.GtidReconciliationTimeout }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+func (o DrProtectionGroupMemberOutput) IsContinueOnGtidReconciliationTimeout() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *bool { return v.IsContinueOnGtidReconciliationTimeout }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -2143,6 +2187,11 @@ func (o DrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringPtrO
 // (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerClusterId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+func (o DrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerDbSystemId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -2330,11 +2379,13 @@ type DrProtectionGroupMemberBackupConfig struct {
 	//
 	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 	BackupSchedule *string `pulumi:"backupSchedule"`
+	// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces []string `pulumi:"excludeNamespaces"`
 	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId *string `pulumi:"imageReplicationVaultSecretId"`
 	// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained *int `pulumi:"maxNumberOfBackupsRetained"`
-	// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces []string `pulumi:"namespaces"`
 	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
 	ReplicateImages *string `pulumi:"replicateImages"`
@@ -2368,11 +2419,13 @@ type DrProtectionGroupMemberBackupConfigArgs struct {
 	//
 	// FREQ=HOURLY;INTERVAL=25 > Invalid configuration (Cannot specify an interval of 25). FREQ=HOURLY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=HOURLY;INTERVAL=24 > Run a backup every 24 hours. FREQ=HOURLY;INTERVAL=1 > Run a backup every hour. FREQ=HOURLY;BYMINUTE=30;INTERVAL=15 > Run a backup every 15 hours at the 30th minute. FREQ=DAILY;INTERVAL=31 > Invalid configuration (Cannot specify an interval of 31). FREQ=DAILY;INTERVAL=0 > Invalid configuration (Cannot specify an interval of 0). FREQ=DAILY;INTERVAL=30 > Run a backup every 30 days at 12:00 midnight.  FREQ=DAILY;BYHOUR=17;BYMINUTE=10;INTERVAL=1 > Run a backup daily at 05:10 PM.
 	BackupSchedule pulumi.StringPtrInput `pulumi:"backupSchedule"`
+	// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces pulumi.StringArrayInput `pulumi:"excludeNamespaces"`
 	// (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId pulumi.StringPtrInput `pulumi:"imageReplicationVaultSecretId"`
 	// (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained pulumi.IntPtrInput `pulumi:"maxNumberOfBackupsRetained"`
-	// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
 	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
 	ReplicateImages pulumi.StringPtrInput `pulumi:"replicateImages"`
@@ -2474,6 +2527,11 @@ func (o DrProtectionGroupMemberBackupConfigOutput) BackupSchedule() pulumi.Strin
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.BackupSchedule }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+func (o DrProtectionGroupMemberBackupConfigOutput) ExcludeNamespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) []string { return v.ExcludeNamespaces }).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 func (o DrProtectionGroupMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.ImageReplicationVaultSecretId }).(pulumi.StringPtrOutput)
@@ -2484,7 +2542,7 @@ func (o DrProtectionGroupMemberBackupConfigOutput) MaxNumberOfBackupsRetained() 
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *int { return v.MaxNumberOfBackupsRetained }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 func (o DrProtectionGroupMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) []string { return v.Namespaces }).(pulumi.StringArrayOutput)
 }
@@ -2542,6 +2600,16 @@ func (o DrProtectionGroupMemberBackupConfigPtrOutput) BackupSchedule() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+func (o DrProtectionGroupMemberBackupConfigPtrOutput) ExcludeNamespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeNamespaces
+	}).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 func (o DrProtectionGroupMemberBackupConfigPtrOutput) ImageReplicationVaultSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
@@ -2562,7 +2630,7 @@ func (o DrProtectionGroupMemberBackupConfigPtrOutput) MaxNumberOfBackupsRetained
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 func (o DrProtectionGroupMemberBackupConfigPtrOutput) Namespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) []string {
 		if v == nil {
@@ -3672,6 +3740,318 @@ func (o DrProtectionGroupMemberCommonDestinationKeyPtrOutput) VaultId() pulumi.S
 			return nil
 		}
 		return v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemAdminUserDetails struct {
+	// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username *string `pulumi:"username"`
+}
+
+// DrProtectionGroupMemberDbSystemAdminUserDetailsInput is an input type that accepts DrProtectionGroupMemberDbSystemAdminUserDetailsArgs and DrProtectionGroupMemberDbSystemAdminUserDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDbSystemAdminUserDetailsInput` via:
+//
+//	DrProtectionGroupMemberDbSystemAdminUserDetailsArgs{...}
+type DrProtectionGroupMemberDbSystemAdminUserDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsOutput
+	ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutputWithContext(context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsOutput
+}
+
+type DrProtectionGroupMemberDbSystemAdminUserDetailsArgs struct {
+	// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDbSystemAdminUserDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsOutput {
+	return i.ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemAdminUserDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemAdminUserDetailsOutput).ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput is an input type that accepts DrProtectionGroupMemberDbSystemAdminUserDetailsArgs, DrProtectionGroupMemberDbSystemAdminUserDetailsPtr and DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberDbSystemAdminUserDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput
+	ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput
+}
+
+type drProtectionGroupMemberDbSystemAdminUserDetailsPtrType DrProtectionGroupMemberDbSystemAdminUserDetailsArgs
+
+func DrProtectionGroupMemberDbSystemAdminUserDetailsPtr(v *DrProtectionGroupMemberDbSystemAdminUserDetailsArgs) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput {
+	return (*drProtectionGroupMemberDbSystemAdminUserDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberDbSystemAdminUserDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDbSystemAdminUserDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberDbSystemAdminUserDetailsPtrType) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberDbSystemAdminUserDetailsPtrType) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemAdminUserDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDbSystemAdminUserDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberDbSystemAdminUserDetails) *DrProtectionGroupMemberDbSystemAdminUserDetails {
+		return &v
+	}).(DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDbSystemAdminUserDetails) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDbSystemAdminUserDetails) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDbSystemAdminUserDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) ToDrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) Elem() DrProtectionGroupMemberDbSystemAdminUserDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemAdminUserDetails) DrProtectionGroupMemberDbSystemAdminUserDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberDbSystemAdminUserDetails
+		return ret
+	}).(DrProtectionGroupMemberDbSystemAdminUserDetailsOutput)
+}
+
+// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemAdminUserDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordVaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemAdminUserDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemReplicationUserDetails struct {
+	// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username *string `pulumi:"username"`
+}
+
+// DrProtectionGroupMemberDbSystemReplicationUserDetailsInput is an input type that accepts DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs and DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDbSystemReplicationUserDetailsInput` via:
+//
+//	DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{...}
+type DrProtectionGroupMemberDbSystemReplicationUserDetailsInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput
+	ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutputWithContext(context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput
+}
+
+type DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs struct {
+	// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
+	// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDbSystemReplicationUserDetails)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput {
+	return i.ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput)
+}
+
+func (i DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput).ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput is an input type that accepts DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs, DrProtectionGroupMemberDbSystemReplicationUserDetailsPtr and DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput` via:
+//
+//	        DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput
+	ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput
+}
+
+type drProtectionGroupMemberDbSystemReplicationUserDetailsPtrType DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs
+
+func DrProtectionGroupMemberDbSystemReplicationUserDetailsPtr(v *DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput {
+	return (*drProtectionGroupMemberDbSystemReplicationUserDetailsPtrType)(v)
+}
+
+func (*drProtectionGroupMemberDbSystemReplicationUserDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDbSystemReplicationUserDetails)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberDbSystemReplicationUserDetailsPtrType) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return i.ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberDbSystemReplicationUserDetailsPtrType) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDbSystemReplicationUserDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return o.ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberDbSystemReplicationUserDetails) *DrProtectionGroupMemberDbSystemReplicationUserDetails {
+		return &v
+	}).(DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput)
+}
+
+// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDbSystemReplicationUserDetails) *string { return v.PasswordVaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDbSystemReplicationUserDetails) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDbSystemReplicationUserDetails)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput() DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) ToDrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) Elem() DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemReplicationUserDetails) DrProtectionGroupMemberDbSystemReplicationUserDetails {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberDbSystemReplicationUserDetails
+		return ret
+	}).(DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput)
+}
+
+// (Updatable) The OCID of the vault secret where the HeatWave MySQL DB System password is stored.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) PasswordVaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemReplicationUserDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordVaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDbSystemReplicationUserDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -9185,6 +9565,10 @@ type GetDrProtectionGroupMember struct {
 	CommonDestinationKeys []GetDrProtectionGroupMemberCommonDestinationKey `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
+	// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemAdminUserDetails []GetDrProtectionGroupMemberDbSystemAdminUserDetail `pulumi:"dbSystemAdminUserDetails"`
+	// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemReplicationUserDetails []GetDrProtectionGroupMemberDbSystemReplicationUserDetail `pulumi:"dbSystemReplicationUserDetails"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -9207,6 +9591,10 @@ type GetDrProtectionGroupMember struct {
 	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations []GetDrProtectionGroupMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout int `pulumi:"gtidReconciliationTimeout"`
+	// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout bool `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -9231,6 +9619,8 @@ type GetDrProtectionGroupMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
+	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId string `pulumi:"peerDbSystemId"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -9273,6 +9663,10 @@ type GetDrProtectionGroupMemberArgs struct {
 	CommonDestinationKeys GetDrProtectionGroupMemberCommonDestinationKeyArrayInput `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
+	// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemAdminUserDetails GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayInput `pulumi:"dbSystemAdminUserDetails"`
+	// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemReplicationUserDetails GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput `pulumi:"dbSystemReplicationUserDetails"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -9295,6 +9689,10 @@ type GetDrProtectionGroupMemberArgs struct {
 	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations GetDrProtectionGroupMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout pulumi.IntInput `pulumi:"gtidReconciliationTimeout"`
+	// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout pulumi.BoolInput `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -9319,6 +9717,8 @@ type GetDrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -9437,6 +9837,20 @@ func (o GetDrProtectionGroupMemberOutput) ConnectionStringType() pulumi.StringOu
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.ConnectionStringType }).(pulumi.StringOutput)
 }
 
+// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+func (o GetDrProtectionGroupMemberOutput) DbSystemAdminUserDetails() GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberDbSystemAdminUserDetail {
+		return v.DbSystemAdminUserDetails
+	}).(GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput)
+}
+
+// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+func (o GetDrProtectionGroupMemberOutput) DbSystemReplicationUserDetails() GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberDbSystemReplicationUserDetail {
+		return v.DbSystemReplicationUserDetails
+	}).(GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput)
+}
+
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
 func (o GetDrProtectionGroupMemberOutput) DestinationAvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationAvailabilityDomain }).(pulumi.StringOutput)
@@ -9494,6 +9908,16 @@ func (o GetDrProtectionGroupMemberOutput) FileSystemOperations() GetDrProtection
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberFileSystemOperation {
 		return v.FileSystemOperations
 	}).(GetDrProtectionGroupMemberFileSystemOperationArrayOutput)
+}
+
+// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+func (o GetDrProtectionGroupMemberOutput) GtidReconciliationTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) int { return v.GtidReconciliationTimeout }).(pulumi.IntOutput)
+}
+
+// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+func (o GetDrProtectionGroupMemberOutput) IsContinueOnGtidReconciliationTimeout() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) bool { return v.IsContinueOnGtidReconciliationTimeout }).(pulumi.BoolOutput)
 }
 
 // A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -9560,6 +9984,11 @@ func (o GetDrProtectionGroupMemberOutput) PasswordVaultSecretId() pulumi.StringO
 // The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
 }
 
 // A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -9729,11 +10158,13 @@ func (o GetDrProtectionGroupMemberBackendSetMappingArrayOutput) Index(i pulumi.I
 type GetDrProtectionGroupMemberBackupConfig struct {
 	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
 	BackupSchedule string `pulumi:"backupSchedule"`
+	// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces []string `pulumi:"excludeNamespaces"`
 	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId string `pulumi:"imageReplicationVaultSecretId"`
 	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained int `pulumi:"maxNumberOfBackupsRetained"`
-	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces []string `pulumi:"namespaces"`
 	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
 	ReplicateImages string `pulumi:"replicateImages"`
@@ -9753,11 +10184,13 @@ type GetDrProtectionGroupMemberBackupConfigInput interface {
 type GetDrProtectionGroupMemberBackupConfigArgs struct {
 	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
 	BackupSchedule pulumi.StringInput `pulumi:"backupSchedule"`
+	// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces pulumi.StringArrayInput `pulumi:"excludeNamespaces"`
 	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId pulumi.StringInput `pulumi:"imageReplicationVaultSecretId"`
 	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained pulumi.IntInput `pulumi:"maxNumberOfBackupsRetained"`
-	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
 	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
 	ReplicateImages pulumi.StringInput `pulumi:"replicateImages"`
@@ -9819,6 +10252,11 @@ func (o GetDrProtectionGroupMemberBackupConfigOutput) BackupSchedule() pulumi.St
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) string { return v.BackupSchedule }).(pulumi.StringOutput)
 }
 
+// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+func (o GetDrProtectionGroupMemberBackupConfigOutput) ExcludeNamespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) []string { return v.ExcludeNamespaces }).(pulumi.StringArrayOutput)
+}
+
 // The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 func (o GetDrProtectionGroupMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) string { return v.ImageReplicationVaultSecretId }).(pulumi.StringOutput)
@@ -9829,7 +10267,7 @@ func (o GetDrProtectionGroupMemberBackupConfigOutput) MaxNumberOfBackupsRetained
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) int { return v.MaxNumberOfBackupsRetained }).(pulumi.IntOutput)
 }
 
-// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 func (o GetDrProtectionGroupMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupConfig) []string { return v.Namespaces }).(pulumi.StringArrayOutput)
 }
@@ -10710,6 +11148,218 @@ func (o GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberCommonDestinationKey {
 		return vs[0].([]GetDrProtectionGroupMemberCommonDestinationKey)[vs[1].(int)]
 	}).(GetDrProtectionGroupMemberCommonDestinationKeyOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemAdminUserDetail struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username string `pulumi:"username"`
+}
+
+// GetDrProtectionGroupMemberDbSystemAdminUserDetailInput is an input type that accepts GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs and GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDbSystemAdminUserDetailInput` via:
+//
+//	GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs{...}
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput
+	ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput
+}
+
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput {
+	return i.ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput)
+}
+
+// GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberDbSystemAdminUserDetailArray and GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberDbSystemAdminUserDetailArray{ GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs{...} }
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput
+	ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailArray []GetDrProtectionGroupMemberDbSystemAdminUserDetailInput
+
+func (GetDrProtectionGroupMemberDbSystemAdminUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDbSystemAdminUserDetailArray) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDbSystemAdminUserDetailArray) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput {
+	return o
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput) PasswordVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDbSystemAdminUserDetail) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
+}
+
+// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDbSystemAdminUserDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput) ToGetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberDbSystemAdminUserDetail {
+		return vs[0].([]GetDrProtectionGroupMemberDbSystemAdminUserDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetail struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username string `pulumi:"username"`
+}
+
+// GetDrProtectionGroupMemberDbSystemReplicationUserDetailInput is an input type that accepts GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs and GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDbSystemReplicationUserDetailInput` via:
+//
+//	GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs{...}
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput
+	ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutputWithContext(context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput
+}
+
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput {
+	return i.ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput)
+}
+
+// GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput is an input type that accepts GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray and GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput` via:
+//
+//	GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray{ GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs{...} }
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput
+	ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput
+}
+
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray []GetDrProtectionGroupMemberDbSystemReplicationUserDetailInput
+
+func (GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput {
+	return i.ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput {
+	return o
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput) PasswordVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDbSystemReplicationUserDetail) string { return v.PasswordVaultSecretId }).(pulumi.StringOutput)
+}
+
+// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDbSystemReplicationUserDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput) ToGetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberDbSystemReplicationUserDetail {
+		return vs[0].([]GetDrProtectionGroupMemberDbSystemReplicationUserDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput)
 }
 
 type GetDrProtectionGroupMemberDestinationEncryptionKey struct {
@@ -12633,7 +13283,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
@@ -12653,7 +13303,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -12712,7 +13362,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) T
 	return o
 }
 
-// The bucket name inside the object storage namespace.  Example: `bucketName`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -12760,11 +13410,15 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	BlockVolumeAttachAndMountOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperation `pulumi:"blockVolumeAttachAndMountOperations"`
 	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation `pulumi:"blockVolumeOperations"`
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket                string                                                                           `pulumi:"bucket"`
 	CommonDestinationKeys []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType string `pulumi:"connectionStringType"`
+	// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemAdminUserDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail `pulumi:"dbSystemAdminUserDetails"`
+	// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemReplicationUserDetails []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail `pulumi:"dbSystemReplicationUserDetails"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain string `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -12787,6 +13441,10 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation `pulumi:"fileSystemOperations"`
+	// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout int `pulumi:"gtidReconciliationTimeout"`
+	// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout bool `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable bool `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -12811,6 +13469,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
+	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId string `pulumi:"peerDbSystemId"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMapping `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -12847,11 +13507,15 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	BlockVolumeAttachAndMountOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeAttachAndMountOperationArrayInput `pulumi:"blockVolumeAttachAndMountOperations"`
 	// Deprecated. Use the 'blockVolumeAttachAndMountOperations' attribute instead of this. Operations performed on a list of block volumes used on the non-movable compute instance.
 	BlockVolumeOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayInput `pulumi:"blockVolumeOperations"`
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket                pulumi.StringInput                                                                       `pulumi:"bucket"`
 	CommonDestinationKeys GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput `pulumi:"commonDestinationKeys"`
 	// The type of connection strings used to connect to an Autonomous Container Database snapshot standby created during a DR Drill operation. See https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/adbcl/index.html for information about these service types.
 	ConnectionStringType pulumi.StringInput `pulumi:"connectionStringType"`
+	// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemAdminUserDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayInput `pulumi:"dbSystemAdminUserDetails"`
+	// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+	DbSystemReplicationUserDetails GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput `pulumi:"dbSystemReplicationUserDetails"`
 	// The availability domain of the destination mount target. Example: `BBTh:region-AD`
 	DestinationAvailabilityDomain pulumi.StringInput `pulumi:"destinationAvailabilityDomain"`
 	// The OCID of the backup policy to use in the destination region. This policy will be used to create backups for this volume group after it moves the destination region.  Example: `ocid1.volumebackuppolicy.oc1..uniqueID`
@@ -12874,6 +13538,10 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
 	FileSystemOperations GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayInput `pulumi:"fileSystemOperations"`
+	// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+	GtidReconciliationTimeout pulumi.IntInput `pulumi:"gtidReconciliationTimeout"`
+	// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+	IsContinueOnGtidReconciliationTimeout pulumi.BoolInput `pulumi:"isContinueOnGtidReconciliationTimeout"`
 	// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 	IsMovable pulumi.BoolInput `pulumi:"isMovable"`
 	// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
@@ -12898,6 +13566,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
+	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
 	// A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
 	SourceVolumeToDestinationEncryptionKeyMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberSourceVolumeToDestinationEncryptionKeyMappingArrayInput `pulumi:"sourceVolumeToDestinationEncryptionKeyMappings"`
 	// The list of source-to-destination vault mappings required for DR operations. This property applies to the OKE cluster member in primary region.
@@ -13003,7 +13673,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) BlockV
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationArrayOutput)
 }
 
-// The bucket name inside the object storage namespace.  Example: `bucketName`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -13019,6 +13689,20 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Connec
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string {
 		return v.ConnectionStringType
 	}).(pulumi.StringOutput)
+}
+
+// The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the vault secret that stores the password.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DbSystemAdminUserDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail {
+		return v.DbSystemAdminUserDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput)
+}
+
+// The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the vault secret that stores the password.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DbSystemReplicationUserDetails() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail {
+		return v.DbSystemReplicationUserDetails
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput)
 }
 
 // The availability domain of the destination mount target. Example: `BBTh:region-AD`
@@ -13098,6 +13782,20 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) FileSy
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArrayOutput)
 }
 
+// The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) GtidReconciliationTimeout() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) int {
+		return v.GtidReconciliationTimeout
+	}).(pulumi.IntOutput)
+}
+
+// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsContinueOnGtidReconciliationTimeout() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool {
+		return v.IsContinueOnGtidReconciliationTimeout
+	}).(pulumi.BoolOutput)
+}
+
 // A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) IsMovable() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) bool { return v.IsMovable }).(pulumi.BoolOutput)
@@ -13164,6 +13862,11 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Passwo
 // The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
+}
+
+// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerDbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
 }
 
 // A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
@@ -13345,11 +14048,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackendSetMapp
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig struct {
 	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
 	BackupSchedule string `pulumi:"backupSchedule"`
+	// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces []string `pulumi:"excludeNamespaces"`
 	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId string `pulumi:"imageReplicationVaultSecretId"`
 	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained int `pulumi:"maxNumberOfBackupsRetained"`
-	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces []string `pulumi:"namespaces"`
 	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
 	ReplicateImages string `pulumi:"replicateImages"`
@@ -13369,11 +14074,13 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigInput
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigArgs struct {
 	// The schedule for backing up namespaces to the destination region. If a backup schedule is not specified, only a single backup will be created. This format of the string specifying the backup schedule must conform with RFC-5545. This schedule will use the UTC timezone. This property applies to the OKE cluster member in primary region.  Example: FREQ=WEEKLY;BYDAY=MO,TU,WE,TH;BYHOUR=10;INTERVAL=1
 	BackupSchedule pulumi.StringInput `pulumi:"backupSchedule"`
+	// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+	ExcludeNamespaces pulumi.StringArrayInput `pulumi:"excludeNamespaces"`
 	// The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 	ImageReplicationVaultSecretId pulumi.StringInput `pulumi:"imageReplicationVaultSecretId"`
 	// The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
 	MaxNumberOfBackupsRetained pulumi.IntInput `pulumi:"maxNumberOfBackupsRetained"`
-	// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+	// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
 	// Controls the behaviour of image replication across regions. This property applies to the OKE cluster member in primary region.
 	ReplicateImages pulumi.StringInput `pulumi:"replicateImages"`
@@ -13437,6 +14144,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOu
 	}).(pulumi.StringOutput)
 }
 
+// A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespaceString3", "namespaceString4"]
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ExcludeNamespaces() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) []string {
+		return v.ExcludeNamespaces
+	}).(pulumi.StringArrayOutput)
+}
+
 // The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) ImageReplicationVaultSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) string {
@@ -13451,7 +14165,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOu
 	}).(pulumi.IntOutput)
 }
 
-// A list of namespaces that need to be backed up.  The default value is null. If a list of namespaces is not provided, all namespaces will be backed up. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+// A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigOutput) Namespaces() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfig) []string {
 		return v.Namespaces
@@ -13486,7 +14200,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigAr
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation struct {
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace string `pulumi:"namespace"`
@@ -13506,7 +14220,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInp
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs struct {
-	// The bucket name inside the object storage namespace.  Example: `bucketName`
+	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
@@ -13565,7 +14279,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation
 	return o
 }
 
-// The bucket name inside the object storage namespace.  Example: `bucketName`
+// The bucket name inside the object storage namespace.  Example: `operationLogs`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
 		return v.Bucket
@@ -14352,6 +15066,226 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinat
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey {
 		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKey)[vs[1].(int)]
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username string `pulumi:"username"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput {
+	return o
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput) PasswordVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail) string {
+		return v.PasswordVaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username string `pulumi:"username"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs struct {
+	// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
+	// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput {
+	return o
+}
+
+// The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput) PasswordVaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail) string {
+		return v.PasswordVaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput)
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey struct {
@@ -16012,6 +16946,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKeyInput)(nil)).Elem(), DrProtectionGroupMemberCommonDestinationKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberCommonDestinationKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberCommonDestinationKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDbSystemAdminUserDetailsInput)(nil)).Elem(), DrProtectionGroupMemberDbSystemAdminUserDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDbSystemAdminUserDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberDbSystemAdminUserDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDbSystemReplicationUserDetailsInput)(nil)).Elem(), DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArgs{})
@@ -16112,6 +17050,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberCommonDestinationKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberCommonDestinationKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberCommonDestinationKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemAdminUserDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberDbSystemAdminUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDbSystemAdminUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemReplicationUserDetailInput)(nil)).Elem(), GetDrProtectionGroupMemberDbSystemReplicationUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArgs{})
@@ -16168,6 +17110,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{})
@@ -16240,6 +17186,10 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberBlockVolumeOperationMountDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberCommonDestinationKeyOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberCommonDestinationKeyPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDbSystemAdminUserDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDbSystemAdminUserDetailsPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDbSystemReplicationUserDetailsOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingOutput{})
@@ -16340,6 +17290,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberBlockVolumeOperationMountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberCommonDestinationKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberCommonDestinationKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDbSystemAdminUserDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDbSystemAdminUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDbSystemReplicationUserDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingOutput{})
@@ -16396,6 +17350,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperationMountDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberCommonDestinationKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput{})

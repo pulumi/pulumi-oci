@@ -205,10 +205,14 @@ __all__ = [
     'DatabaseDatabaseManagementConfigArgsDict',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgsDict',
+    'DatabaseDatabaseStorageSizeDetailsArgs',
+    'DatabaseDatabaseStorageSizeDetailsArgsDict',
     'DatabaseDbBackupConfigArgs',
     'DatabaseDbBackupConfigArgsDict',
     'DatabaseDbBackupConfigBackupDestinationDetailArgs',
     'DatabaseDbBackupConfigBackupDestinationDetailArgsDict',
+    'DatabaseStorageSizeDetailArgs',
+    'DatabaseStorageSizeDetailArgsDict',
     'DatabaseUpgradeConnectionStringArgs',
     'DatabaseUpgradeConnectionStringArgsDict',
     'DatabaseUpgradeDataGuardGroupArgs',
@@ -231,6 +235,8 @@ __all__ = [
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetailArgsDict',
     'DbHomeDatabaseEncryptionKeyLocationDetailsArgs',
     'DbHomeDatabaseEncryptionKeyLocationDetailsArgsDict',
+    'DbHomeDatabaseStorageSizeDetailsArgs',
+    'DbHomeDatabaseStorageSizeDetailsArgsDict',
     'DbSystemDataCollectionOptionsArgs',
     'DbSystemDataCollectionOptionsArgsDict',
     'DbSystemDbHomeArgs',
@@ -10540,6 +10546,10 @@ if not MYPY:
         """
         The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         """
+        storage_size_details: NotRequired[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgsDict']]
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
         tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
         """
         The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
@@ -10589,6 +10599,7 @@ class DatabaseDatabaseArgs:
                  source_database_id: Optional[pulumi.Input[_builtins.str]] = None,
                  source_encryption_key_location_details: Optional[pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs']] = None,
                  source_tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_size_details: Optional[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgs']] = None,
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None,
                  vault_id: Optional[pulumi.Input[_builtins.str]] = None):
@@ -10623,6 +10634,7 @@ class DatabaseDatabaseArgs:
         :param pulumi.Input[_builtins.str] source_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
         :param pulumi.Input['DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs'] source_encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param pulumi.Input[_builtins.str] source_tde_wallet_password: The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        :param pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[_builtins.str] transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -10682,6 +10694,8 @@ class DatabaseDatabaseArgs:
             pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
         if source_tde_wallet_password is not None:
             pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
+        if storage_size_details is not None:
+            pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         if transport_type is not None:
@@ -10982,6 +10996,18 @@ class DatabaseDatabaseArgs:
     @source_tde_wallet_password.setter
     def source_tde_wallet_password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "source_tde_wallet_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Optional[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgs']]:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
+
+    @storage_size_details.setter
+    def storage_size_details(self, value: Optional[pulumi.Input['DatabaseDatabaseStorageSizeDetailsArgs']]):
+        pulumi.set(self, "storage_size_details", value)
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -11531,6 +11557,76 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs:
 
 
 if not MYPY:
+    class DatabaseDatabaseStorageSizeDetailsArgsDict(TypedDict):
+        data_storage_size_in_gb: pulumi.Input[_builtins.int]
+        """
+        (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
+        """
+        (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+elif False:
+    DatabaseDatabaseStorageSizeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseDatabaseStorageSizeDetailsArgs:
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: pulumi.Input[_builtins.int],
+                 reco_storage_size_in_gbs: pulumi.Input[_builtins.int],
+                 redo_log_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        :param pulumi.Input[_builtins.int] reco_storage_size_in_gbs: (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        :param pulumi.Input[_builtins.int] redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> pulumi.Input[_builtins.int]:
+        """
+        (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @reco_storage_size_in_gbs.setter
+    def reco_storage_size_in_gbs(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "reco_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+    @redo_log_storage_size_in_gbs.setter
+    def redo_log_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "redo_log_storage_size_in_gbs", value)
+
+
+if not MYPY:
     class DatabaseDbBackupConfigArgsDict(TypedDict):
         auto_backup_enabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
@@ -11852,6 +11948,78 @@ class DatabaseDbBackupConfigBackupDestinationDetailArgs:
     @vpc_user.setter
     def vpc_user(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "vpc_user", value)
+
+
+if not MYPY:
+    class DatabaseStorageSizeDetailArgsDict(TypedDict):
+        data_storage_size_in_gb: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        reco_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+elif False:
+    DatabaseStorageSizeDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DatabaseStorageSizeDetailArgs:
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
+                 reco_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
+                 redo_log_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param pulumi.Input[_builtins.int] reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param pulumi.Input[_builtins.int] redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if reco_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @reco_storage_size_in_gbs.setter
+    def reco_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "reco_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+    @redo_log_storage_size_in_gbs.setter
+    def redo_log_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "redo_log_storage_size_in_gbs", value)
 
 
 if not MYPY:
@@ -12739,6 +12907,10 @@ if not MYPY:
         """
         The current state of the Database Home.
         """
+        storage_size_details: NotRequired[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgsDict']]
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
         tde_wallet_password: NotRequired[pulumi.Input[_builtins.str]]
         """
         The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
@@ -12786,6 +12958,7 @@ class DbHomeDatabaseArgs:
                  pluggable_databases: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  sid_prefix: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_size_details: Optional[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgs']] = None,
                  tde_wallet_password: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_stamp_for_point_in_time_recovery: Optional[pulumi.Input[_builtins.str]] = None,
@@ -12818,6 +12991,7 @@ class DbHomeDatabaseArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param pulumi.Input[_builtins.str] sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param pulumi.Input[_builtins.str] state: The current state of the Database Home.
+        :param pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param pulumi.Input[_builtins.str] tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param pulumi.Input[_builtins.str] time_created: The date and time the Database Home was created.
         :param pulumi.Input[_builtins.str] time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
@@ -12872,6 +13046,8 @@ class DbHomeDatabaseArgs:
             pulumi.set(__self__, "sid_prefix", sid_prefix)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_size_details is not None:
+            pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         if time_created is not None:
@@ -13178,6 +13354,18 @@ class DbHomeDatabaseArgs:
     @state.setter
     def state(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Optional[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgs']]:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
+
+    @storage_size_details.setter
+    def storage_size_details(self, value: Optional[pulumi.Input['DbHomeDatabaseStorageSizeDetailsArgs']]):
+        pulumi.set(self, "storage_size_details", value)
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -13662,6 +13850,69 @@ class DbHomeDatabaseEncryptionKeyLocationDetailsArgs:
     @hsm_password.setter
     def hsm_password(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "hsm_password", value)
+
+
+if not MYPY:
+    class DbHomeDatabaseStorageSizeDetailsArgsDict(TypedDict):
+        data_storage_size_in_gb: pulumi.Input[_builtins.int]
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        reco_storage_size_in_gbs: pulumi.Input[_builtins.int]
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        redo_log_storage_size_in_gbs: NotRequired[pulumi.Input[_builtins.int]]
+elif False:
+    DbHomeDatabaseStorageSizeDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbHomeDatabaseStorageSizeDetailsArgs:
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: pulumi.Input[_builtins.int],
+                 reco_storage_size_in_gbs: pulumi.Input[_builtins.int],
+                 redo_log_storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param pulumi.Input[_builtins.int] reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> pulumi.Input[_builtins.int]:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @data_storage_size_in_gb.setter
+    def data_storage_size_in_gb(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "data_storage_size_in_gb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> pulumi.Input[_builtins.int]:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @reco_storage_size_in_gbs.setter
+    def reco_storage_size_in_gbs(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "reco_storage_size_in_gbs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+    @redo_log_storage_size_in_gbs.setter
+    def redo_log_storage_size_in_gbs(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "redo_log_storage_size_in_gbs", value)
 
 
 if not MYPY:
@@ -14794,13 +15045,11 @@ if not MYPY:
         """
         is_remote: NotRequired[pulumi.Input[_builtins.bool]]
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         remote_region: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -14820,10 +15069,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
         """
         :param pulumi.Input[_builtins.str] dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param pulumi.Input[_builtins.bool] is_remote: Indicates whether the backup destination is cross-region or local.
+        :param pulumi.Input[_builtins.str] remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[_builtins.str] type: Type of the database backup destination.
         """
         if dbrs_policy_id is not None:
@@ -14865,7 +15112,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -14877,9 +15124,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetailArgs:
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 

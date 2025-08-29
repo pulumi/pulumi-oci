@@ -41,6 +41,11 @@ public final class GetSecurityPoliciesResult {
     private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
     private @Nullable String securityPolicyId;
     /**
+     * @return The type of the security policy.
+     * 
+     */
+    private @Nullable String securityPolicyType;
+    /**
      * @return The current state of the security policy.
      * 
      */
@@ -88,6 +93,13 @@ public final class GetSecurityPoliciesResult {
         return Optional.ofNullable(this.securityPolicyId);
     }
     /**
+     * @return The type of the security policy.
+     * 
+     */
+    public Optional<String> securityPolicyType() {
+        return Optional.ofNullable(this.securityPolicyType);
+    }
+    /**
      * @return The current state of the security policy.
      * 
      */
@@ -112,6 +124,7 @@ public final class GetSecurityPoliciesResult {
         private String id;
         private List<GetSecurityPoliciesSecurityPolicyCollection> securityPolicyCollections;
         private @Nullable String securityPolicyId;
+        private @Nullable String securityPolicyType;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetSecurityPoliciesResult defaults) {
@@ -124,6 +137,7 @@ public final class GetSecurityPoliciesResult {
     	      this.id = defaults.id;
     	      this.securityPolicyCollections = defaults.securityPolicyCollections;
     	      this.securityPolicyId = defaults.securityPolicyId;
+    	      this.securityPolicyType = defaults.securityPolicyType;
     	      this.state = defaults.state;
         }
 
@@ -188,6 +202,12 @@ public final class GetSecurityPoliciesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder securityPolicyType(@Nullable String securityPolicyType) {
+
+            this.securityPolicyType = securityPolicyType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -203,6 +223,7 @@ public final class GetSecurityPoliciesResult {
             _resultValue.id = id;
             _resultValue.securityPolicyCollections = securityPolicyCollections;
             _resultValue.securityPolicyId = securityPolicyId;
+            _resultValue.securityPolicyType = securityPolicyType;
             _resultValue.state = state;
             return _resultValue;
         }

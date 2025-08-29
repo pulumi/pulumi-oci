@@ -20,6 +20,11 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
      */
     private Integer additionalFlashCacheInPercent;
     /**
+     * @return A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     * 
+     */
+    private List<String> attachedShapeAttributes;
+    /**
      * @return The name of the availability domain in which the Exadata Database Storage Vault is located.
      * 
      */
@@ -117,6 +122,13 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
      */
     public Integer additionalFlashCacheInPercent() {
         return this.additionalFlashCacheInPercent;
+    }
+    /**
+     * @return A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+     * 
+     */
+    public List<String> attachedShapeAttributes() {
+        return this.attachedShapeAttributes;
     }
     /**
      * @return The name of the availability domain in which the Exadata Database Storage Vault is located.
@@ -255,6 +267,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
     @CustomType.Builder
     public static final class Builder {
         private Integer additionalFlashCacheInPercent;
+        private List<String> attachedShapeAttributes;
         private String availabilityDomain;
         private String clusterPlacementGroupId;
         private String compartmentId;
@@ -277,6 +290,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
         public Builder(GetExascaleDbStorageVaultsExascaleDbStorageVault defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalFlashCacheInPercent = defaults.additionalFlashCacheInPercent;
+    	      this.attachedShapeAttributes = defaults.attachedShapeAttributes;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
@@ -304,6 +318,17 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
             }
             this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
             return this;
+        }
+        @CustomType.Setter
+        public Builder attachedShapeAttributes(List<String> attachedShapeAttributes) {
+            if (attachedShapeAttributes == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultsExascaleDbStorageVault", "attachedShapeAttributes");
+            }
+            this.attachedShapeAttributes = attachedShapeAttributes;
+            return this;
+        }
+        public Builder attachedShapeAttributes(String... attachedShapeAttributes) {
+            return attachedShapeAttributes(List.of(attachedShapeAttributes));
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
@@ -458,6 +483,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
         public GetExascaleDbStorageVaultsExascaleDbStorageVault build() {
             final var _resultValue = new GetExascaleDbStorageVaultsExascaleDbStorageVault();
             _resultValue.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
+            _resultValue.attachedShapeAttributes = attachedShapeAttributes;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;

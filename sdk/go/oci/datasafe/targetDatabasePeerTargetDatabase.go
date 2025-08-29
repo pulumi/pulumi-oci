@@ -39,6 +39,7 @@ import (
 //					InstanceId:           pulumi.Any(testInstance.Id),
 //					IpAddresses:          pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses),
 //					ListenerPort:         pulumi.Any(targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort),
+//					PluggableDatabaseId:  pulumi.Any(testPluggableDatabase.Id),
 //					ServiceName:          pulumi.Any(testService.Name),
 //					VmClusterId:          pulumi.Any(testVmCluster.Id),
 //				},

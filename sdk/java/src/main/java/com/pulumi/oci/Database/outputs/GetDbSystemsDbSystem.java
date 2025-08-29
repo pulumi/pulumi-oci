@@ -46,6 +46,16 @@ public final class GetDbSystemsDbSystem {
      */
     private String compartmentId;
     /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    private Integer computeCount;
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    private String computeModel;
+    /**
      * @return The number of CPU cores enabled on the DB system.
      * 
      */
@@ -326,6 +336,20 @@ public final class GetDbSystemsDbSystem {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    public Integer computeCount() {
+        return this.computeCount;
+    }
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public String computeModel() {
+        return this.computeModel;
     }
     /**
      * @return The number of CPU cores enabled on the DB system.
@@ -695,6 +719,8 @@ public final class GetDbSystemsDbSystem {
         private String backupSubnetId;
         private String clusterName;
         private String compartmentId;
+        private Integer computeCount;
+        private String computeModel;
         private Integer cpuCoreCount;
         private List<GetDbSystemsDbSystemDataCollectionOption> dataCollectionOptions;
         private Integer dataStoragePercentage;
@@ -757,6 +783,8 @@ public final class GetDbSystemsDbSystem {
     	      this.backupSubnetId = defaults.backupSubnetId;
     	      this.clusterName = defaults.clusterName;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.dataCollectionOptions = defaults.dataCollectionOptions;
     	      this.dataStoragePercentage = defaults.dataStoragePercentage;
@@ -854,6 +882,22 @@ public final class GetDbSystemsDbSystem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeCount(Integer computeCount) {
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "computeCount");
+            }
+            this.computeCount = computeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "computeModel");
+            }
+            this.computeModel = computeModel;
             return this;
         }
         @CustomType.Setter
@@ -1334,6 +1378,8 @@ public final class GetDbSystemsDbSystem {
             _resultValue.backupSubnetId = backupSubnetId;
             _resultValue.clusterName = clusterName;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.computeCount = computeCount;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.dataCollectionOptions = dataCollectionOptions;
             _resultValue.dataStoragePercentage = dataStoragePercentage;

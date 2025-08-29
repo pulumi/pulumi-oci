@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobDataIngestionJobStatistic;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobDataIngestionJobType;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,11 @@ public final class GetAgentDataIngestionJobResult {
      * 
      */
     private List<GetAgentDataIngestionJobDataIngestionJobStatistic> dataIngestionJobStatistics;
+    /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    private List<GetAgentDataIngestionJobDataIngestionJobType> dataIngestionJobTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      * 
@@ -54,6 +60,7 @@ public final class GetAgentDataIngestionJobResult {
      * 
      */
     private String id;
+    private String knowledgeBaseId;
     /**
      * @return A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -99,6 +106,13 @@ public final class GetAgentDataIngestionJobResult {
         return this.dataIngestionJobStatistics;
     }
     /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    public List<GetAgentDataIngestionJobDataIngestionJobType> dataIngestionJobTypes() {
+        return this.dataIngestionJobTypes;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      * 
      */
@@ -139,6 +153,9 @@ public final class GetAgentDataIngestionJobResult {
      */
     public String id() {
         return this.id;
+    }
+    public String knowledgeBaseId() {
+        return this.knowledgeBaseId;
     }
     /**
      * @return A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -188,12 +205,14 @@ public final class GetAgentDataIngestionJobResult {
         private String compartmentId;
         private String dataIngestionJobId;
         private List<GetAgentDataIngestionJobDataIngestionJobStatistic> dataIngestionJobStatistics;
+        private List<GetAgentDataIngestionJobDataIngestionJobType> dataIngestionJobTypes;
         private String dataSourceId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String knowledgeBaseId;
         private String lifecycleDetails;
         private String state;
         private Map<String,String> systemTags;
@@ -205,12 +224,14 @@ public final class GetAgentDataIngestionJobResult {
     	      this.compartmentId = defaults.compartmentId;
     	      this.dataIngestionJobId = defaults.dataIngestionJobId;
     	      this.dataIngestionJobStatistics = defaults.dataIngestionJobStatistics;
+    	      this.dataIngestionJobTypes = defaults.dataIngestionJobTypes;
     	      this.dataSourceId = defaults.dataSourceId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.knowledgeBaseId = defaults.knowledgeBaseId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -244,6 +265,17 @@ public final class GetAgentDataIngestionJobResult {
         }
         public Builder dataIngestionJobStatistics(GetAgentDataIngestionJobDataIngestionJobStatistic... dataIngestionJobStatistics) {
             return dataIngestionJobStatistics(List.of(dataIngestionJobStatistics));
+        }
+        @CustomType.Setter
+        public Builder dataIngestionJobTypes(List<GetAgentDataIngestionJobDataIngestionJobType> dataIngestionJobTypes) {
+            if (dataIngestionJobTypes == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataIngestionJobResult", "dataIngestionJobTypes");
+            }
+            this.dataIngestionJobTypes = dataIngestionJobTypes;
+            return this;
+        }
+        public Builder dataIngestionJobTypes(GetAgentDataIngestionJobDataIngestionJobType... dataIngestionJobTypes) {
+            return dataIngestionJobTypes(List.of(dataIngestionJobTypes));
         }
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
@@ -294,6 +326,14 @@ public final class GetAgentDataIngestionJobResult {
             return this;
         }
         @CustomType.Setter
+        public Builder knowledgeBaseId(String knowledgeBaseId) {
+            if (knowledgeBaseId == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataIngestionJobResult", "knowledgeBaseId");
+            }
+            this.knowledgeBaseId = knowledgeBaseId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAgentDataIngestionJobResult", "lifecycleDetails");
@@ -338,12 +378,14 @@ public final class GetAgentDataIngestionJobResult {
             _resultValue.compartmentId = compartmentId;
             _resultValue.dataIngestionJobId = dataIngestionJobId;
             _resultValue.dataIngestionJobStatistics = dataIngestionJobStatistics;
+            _resultValue.dataIngestionJobTypes = dataIngestionJobTypes;
             _resultValue.dataSourceId = dataSourceId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.knowledgeBaseId = knowledgeBaseId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

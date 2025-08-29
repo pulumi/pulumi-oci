@@ -18,9 +18,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) **IndexSchema**
-        /// 
-        /// The index schema details.
+        /// (Updatable) The index schema details.
         /// </summary>
         public readonly Outputs.AgentKnowledgeBaseIndexConfigIndexSchema? Schema;
 

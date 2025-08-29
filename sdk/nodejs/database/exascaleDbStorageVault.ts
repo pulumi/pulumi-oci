@@ -78,6 +78,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     public readonly additionalFlashCacheInPercent!: pulumi.Output<number>;
     /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     */
+    public /*out*/ readonly attachedShapeAttributes!: pulumi.Output<string[]>;
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
@@ -164,6 +168,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as ExascaleDbStorageVaultState | undefined;
             resourceInputs["additionalFlashCacheInPercent"] = state ? state.additionalFlashCacheInPercent : undefined;
+            resourceInputs["attachedShapeAttributes"] = state ? state.attachedShapeAttributes : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["clusterPlacementGroupId"] = state ? state.clusterPlacementGroupId : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -207,6 +212,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             resourceInputs["highCapacityDatabaseStorage"] = args ? args.highCapacityDatabaseStorage : undefined;
             resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["timeZone"] = args ? args.timeZone : undefined;
+            resourceInputs["attachedShapeAttributes"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -227,6 +233,10 @@ export interface ExascaleDbStorageVaultState {
      * (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
      */
     additionalFlashCacheInPercent?: pulumi.Input<number>;
+    /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     */
+    attachedShapeAttributes?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */

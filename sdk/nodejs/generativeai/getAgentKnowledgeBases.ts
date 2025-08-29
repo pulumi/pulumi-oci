@@ -9,8 +9,6 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **ListKnowledgeBases**
- *
  * Gets a list of knowledge bases.
  *
  * ## Example Usage
@@ -84,8 +82,6 @@ export interface GetAgentKnowledgeBasesResult {
 }
 /**
  * This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **ListKnowledgeBases**
  *
  * Gets a list of knowledge bases.
  *

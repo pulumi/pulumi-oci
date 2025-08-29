@@ -105,6 +105,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ExtendedEventAttributes;
         /// <summary>
+        /// The user ID of the external user of the audit event.
+        /// </summary>
+        public readonly string ExternalUserId;
+        /// <summary>
         /// Fine-grained auditing (FGA) policy name that generated this audit record.
         /// </summary>
         public readonly string FgaPolicyName;
@@ -165,6 +169,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string TargetName;
         /// <summary>
+        /// The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+        /// </summary>
+        public readonly string TargetUser;
+        /// <summary>
         /// The timestamp when this audit event was collected from the target database by Data Safe.
         /// </summary>
         public readonly string TimeCollected;
@@ -219,6 +227,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string extendedEventAttributes,
 
+            string externalUserId,
+
             string fgaPolicyName,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -249,6 +259,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string targetName,
 
+            string targetUser,
+
             string timeCollected,
 
             string trailSource)
@@ -275,6 +287,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             ErrorMessage = errorMessage;
             EventName = eventName;
             ExtendedEventAttributes = extendedEventAttributes;
+            ExternalUserId = externalUserId;
             FgaPolicyName = fgaPolicyName;
             FreeformTags = freeformTags;
             Id = id;
@@ -290,6 +303,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             TargetClass = targetClass;
             TargetId = targetId;
             TargetName = targetName;
+            TargetUser = targetUser;
             TimeCollected = timeCollected;
             TrailSource = trailSource;
         }

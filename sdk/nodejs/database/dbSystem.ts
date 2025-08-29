@@ -110,6 +110,14 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
+     * (Updatable) The number of compute servers for the DB system.
+     */
+    public readonly computeCount!: pulumi.Output<number>;
+    /**
+     * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    public readonly computeModel!: pulumi.Output<string>;
+    /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -134,7 +142,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly dataStoragePercentage!: pulumi.Output<number>;
     /**
-     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
     public readonly dataStorageSizeInGb!: pulumi.Output<number>;
     /**
@@ -240,7 +248,7 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly nextMaintenanceRunId!: pulumi.Output<string>;
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
     public readonly nodeCount!: pulumi.Output<number>;
     /**
@@ -381,6 +389,8 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["backupSubnetId"] = state ? state.backupSubnetId : undefined;
             resourceInputs["clusterName"] = state ? state.clusterName : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
+            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["dataCollectionOptions"] = state ? state.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = state ? state.dataStoragePercentage : undefined;
@@ -462,6 +472,8 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["backupSubnetId"] = args ? args.backupSubnetId : undefined;
             resourceInputs["clusterName"] = args ? args.clusterName : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
+            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["dataCollectionOptions"] = args ? args.dataCollectionOptions : undefined;
             resourceInputs["dataStoragePercentage"] = args ? args.dataStoragePercentage : undefined;
@@ -548,6 +560,14 @@ export interface DbSystemState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
+     * (Updatable) The number of compute servers for the DB system.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -572,7 +592,7 @@ export interface DbSystemState {
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
-     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
@@ -678,7 +698,7 @@ export interface DbSystemState {
      */
     nextMaintenanceRunId?: pulumi.Input<string>;
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
     nodeCount?: pulumi.Input<number>;
     /**
@@ -829,6 +849,14 @@ export interface DbSystemArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * (Updatable) The number of compute servers for the DB system.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
+    /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -853,7 +881,7 @@ export interface DbSystemArgs {
      */
     dataStoragePercentage?: pulumi.Input<number>;
     /**
-     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      */
     dataStorageSizeInGb?: pulumi.Input<number>;
     /**
@@ -927,7 +955,7 @@ export interface DbSystemArgs {
      */
     maintenanceWindowDetails?: pulumi.Input<inputs.Database.DbSystemMaintenanceWindowDetails>;
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      */
     nodeCount?: pulumi.Input<number>;
     /**

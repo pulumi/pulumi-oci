@@ -50,6 +50,10 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
+        /// The time of the last data synchronization from the primary to the standby peer. [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
+        public readonly string TimeLastSynced;
+        /// <summary>
         /// The time of the last role change. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeRoleChanged;
@@ -78,6 +82,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string timeCreated,
 
+            string timeLastSynced,
+
             string timeRoleChanged,
 
             string timeUpdated)
@@ -91,6 +97,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             Region = region;
             State = state;
             TimeCreated = timeCreated;
+            TimeLastSynced = timeLastSynced;
             TimeRoleChanged = timeRoleChanged;
             TimeUpdated = timeUpdated;
         }

@@ -102,6 +102,21 @@ public final class GetDbVersionsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    @Import(name="shapeAttribute")
+    private @Nullable Output<String> shapeAttribute;
+
+    /**
+     * @return If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    public Optional<Output<String>> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
+
+    /**
      * The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
      * * ASM specifies Oracle Automatic Storage Management
      * * LVM specifies logical volume manager, sometimes called logical disk manager.
@@ -129,6 +144,7 @@ public final class GetDbVersionsArgs extends com.pulumi.resources.InvokeArgs {
         this.filters = $.filters;
         this.isDatabaseSoftwareImageSupported = $.isDatabaseSoftwareImageSupported;
         this.isUpgradeSupported = $.isUpgradeSupported;
+        this.shapeAttribute = $.shapeAttribute;
         this.storageManagement = $.storageManagement;
     }
 
@@ -266,6 +282,27 @@ public final class GetDbVersionsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder isUpgradeSupported(Boolean isUpgradeSupported) {
             return isUpgradeSupported(Output.of(isUpgradeSupported));
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return the results based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(@Nullable Output<String> shapeAttribute) {
+            $.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return the results based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            return shapeAttribute(Output.of(shapeAttribute));
         }
 
         /**

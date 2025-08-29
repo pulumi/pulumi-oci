@@ -5,10 +5,12 @@ package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigApiSchema;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigDatabaseConnection;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigDatabaseSchema;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigFunction;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigGenerationLlmCustomization;
+import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigHttpEndpointAuthConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigIclExamples;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigKnowledgeBaseConfig;
 import com.pulumi.oci.GenerativeAi.outputs.AgentToolToolConfigTableAndColumnDescription;
@@ -21,6 +23,16 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class AgentToolToolConfig {
+    /**
+     * @return (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    private @Nullable String agentEndpointId;
+    /**
+     * @return (Updatable) The input location definition for Api schema.
+     * 
+     */
+    private @Nullable AgentToolToolConfigApiSchema apiSchema;
     /**
      * @return (Updatable) The connection type for Databases.
      * 
@@ -47,6 +59,11 @@ public final class AgentToolToolConfig {
      */
     private @Nullable AgentToolToolConfigGenerationLlmCustomization generationLlmCustomization;
     /**
+     * @return (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    private @Nullable AgentToolToolConfigHttpEndpointAuthConfig httpEndpointAuthConfig;
+    /**
      * @return (Updatable) The input location definition.
      * 
      */
@@ -72,6 +89,11 @@ public final class AgentToolToolConfig {
      */
     private @Nullable Boolean shouldEnableSqlExecution;
     /**
+     * @return (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    private @Nullable String subnetId;
+    /**
      * @return (Updatable) The input location definition.
      * 
      */
@@ -89,6 +111,20 @@ public final class AgentToolToolConfig {
     private String toolConfigType;
 
     private AgentToolToolConfig() {}
+    /**
+     * @return (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    public Optional<String> agentEndpointId() {
+        return Optional.ofNullable(this.agentEndpointId);
+    }
+    /**
+     * @return (Updatable) The input location definition for Api schema.
+     * 
+     */
+    public Optional<AgentToolToolConfigApiSchema> apiSchema() {
+        return Optional.ofNullable(this.apiSchema);
+    }
     /**
      * @return (Updatable) The connection type for Databases.
      * 
@@ -123,6 +159,13 @@ public final class AgentToolToolConfig {
      */
     public Optional<AgentToolToolConfigGenerationLlmCustomization> generationLlmCustomization() {
         return Optional.ofNullable(this.generationLlmCustomization);
+    }
+    /**
+     * @return (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    public Optional<AgentToolToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfig() {
+        return Optional.ofNullable(this.httpEndpointAuthConfig);
     }
     /**
      * @return (Updatable) The input location definition.
@@ -160,6 +203,13 @@ public final class AgentToolToolConfig {
         return Optional.ofNullable(this.shouldEnableSqlExecution);
     }
     /**
+     * @return (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
+    }
+    /**
      * @return (Updatable) The input location definition.
      * 
      */
@@ -189,35 +239,55 @@ public final class AgentToolToolConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String agentEndpointId;
+        private @Nullable AgentToolToolConfigApiSchema apiSchema;
         private @Nullable AgentToolToolConfigDatabaseConnection databaseConnection;
         private @Nullable AgentToolToolConfigDatabaseSchema databaseSchema;
         private @Nullable String dialect;
         private @Nullable AgentToolToolConfigFunction function;
         private @Nullable AgentToolToolConfigGenerationLlmCustomization generationLlmCustomization;
+        private @Nullable AgentToolToolConfigHttpEndpointAuthConfig httpEndpointAuthConfig;
         private @Nullable AgentToolToolConfigIclExamples iclExamples;
         private @Nullable List<AgentToolToolConfigKnowledgeBaseConfig> knowledgeBaseConfigs;
         private @Nullable String modelSize;
         private @Nullable Boolean shouldEnableSelfCorrection;
         private @Nullable Boolean shouldEnableSqlExecution;
+        private @Nullable String subnetId;
         private @Nullable AgentToolToolConfigTableAndColumnDescription tableAndColumnDescription;
         private String toolConfigType;
         public Builder() {}
         public Builder(AgentToolToolConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentEndpointId = defaults.agentEndpointId;
+    	      this.apiSchema = defaults.apiSchema;
     	      this.databaseConnection = defaults.databaseConnection;
     	      this.databaseSchema = defaults.databaseSchema;
     	      this.dialect = defaults.dialect;
     	      this.function = defaults.function;
     	      this.generationLlmCustomization = defaults.generationLlmCustomization;
+    	      this.httpEndpointAuthConfig = defaults.httpEndpointAuthConfig;
     	      this.iclExamples = defaults.iclExamples;
     	      this.knowledgeBaseConfigs = defaults.knowledgeBaseConfigs;
     	      this.modelSize = defaults.modelSize;
     	      this.shouldEnableSelfCorrection = defaults.shouldEnableSelfCorrection;
     	      this.shouldEnableSqlExecution = defaults.shouldEnableSqlExecution;
+    	      this.subnetId = defaults.subnetId;
     	      this.tableAndColumnDescription = defaults.tableAndColumnDescription;
     	      this.toolConfigType = defaults.toolConfigType;
         }
 
+        @CustomType.Setter
+        public Builder agentEndpointId(@Nullable String agentEndpointId) {
+
+            this.agentEndpointId = agentEndpointId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder apiSchema(@Nullable AgentToolToolConfigApiSchema apiSchema) {
+
+            this.apiSchema = apiSchema;
+            return this;
+        }
         @CustomType.Setter
         public Builder databaseConnection(@Nullable AgentToolToolConfigDatabaseConnection databaseConnection) {
 
@@ -246,6 +316,12 @@ public final class AgentToolToolConfig {
         public Builder generationLlmCustomization(@Nullable AgentToolToolConfigGenerationLlmCustomization generationLlmCustomization) {
 
             this.generationLlmCustomization = generationLlmCustomization;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder httpEndpointAuthConfig(@Nullable AgentToolToolConfigHttpEndpointAuthConfig httpEndpointAuthConfig) {
+
+            this.httpEndpointAuthConfig = httpEndpointAuthConfig;
             return this;
         }
         @CustomType.Setter
@@ -282,6 +358,12 @@ public final class AgentToolToolConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetId(@Nullable String subnetId) {
+
+            this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tableAndColumnDescription(@Nullable AgentToolToolConfigTableAndColumnDescription tableAndColumnDescription) {
 
             this.tableAndColumnDescription = tableAndColumnDescription;
@@ -297,16 +379,20 @@ public final class AgentToolToolConfig {
         }
         public AgentToolToolConfig build() {
             final var _resultValue = new AgentToolToolConfig();
+            _resultValue.agentEndpointId = agentEndpointId;
+            _resultValue.apiSchema = apiSchema;
             _resultValue.databaseConnection = databaseConnection;
             _resultValue.databaseSchema = databaseSchema;
             _resultValue.dialect = dialect;
             _resultValue.function = function;
             _resultValue.generationLlmCustomization = generationLlmCustomization;
+            _resultValue.httpEndpointAuthConfig = httpEndpointAuthConfig;
             _resultValue.iclExamples = iclExamples;
             _resultValue.knowledgeBaseConfigs = knowledgeBaseConfigs;
             _resultValue.modelSize = modelSize;
             _resultValue.shouldEnableSelfCorrection = shouldEnableSelfCorrection;
             _resultValue.shouldEnableSqlExecution = shouldEnableSqlExecution;
+            _resultValue.subnetId = subnetId;
             _resultValue.tableAndColumnDescription = tableAndColumnDescription;
             _resultValue.toolConfigType = toolConfigType;
             return _resultValue;

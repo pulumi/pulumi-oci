@@ -30,9 +30,7 @@ class AgentKnowledgeBaseArgs:
         """
         The set of arguments for constructing a AgentKnowledgeBase resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the knowledge base in.
-        :param pulumi.Input['AgentKnowledgeBaseIndexConfigArgs'] index_config: (Updatable) **IndexConfig**
-               
-               The index configuration of Knowledge bases.
+        :param pulumi.Input['AgentKnowledgeBaseIndexConfigArgs'] index_config: (Updatable) The index configuration of Knowledge bases.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description of the knowledge base.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -65,9 +63,7 @@ class AgentKnowledgeBaseArgs:
     @pulumi.getter(name="indexConfig")
     def index_config(self) -> pulumi.Input['AgentKnowledgeBaseIndexConfigArgs']:
         """
-        (Updatable) **IndexConfig**
-
-        The index configuration of Knowledge bases.
+        (Updatable) The index configuration of Knowledge bases.
         """
         return pulumi.get(self, "index_config")
 
@@ -133,6 +129,7 @@ class _AgentKnowledgeBaseState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  index_config: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigArgs']] = None,
+                 knowledge_base_statistics: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseKnowledgeBaseStatisticArgs']]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -145,9 +142,8 @@ class _AgentKnowledgeBaseState:
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description of the knowledge base.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input['AgentKnowledgeBaseIndexConfigArgs'] index_config: (Updatable) **IndexConfig**
-               
-               The index configuration of Knowledge bases.
+        :param pulumi.Input['AgentKnowledgeBaseIndexConfigArgs'] index_config: (Updatable) The index configuration of Knowledge bases.
+        :param pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseKnowledgeBaseStatisticArgs']]] knowledge_base_statistics: Statistics for Default Knowledge Base.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] state: The current state of the knowledge base.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -166,6 +162,8 @@ class _AgentKnowledgeBaseState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if index_config is not None:
             pulumi.set(__self__, "index_config", index_config)
+        if knowledge_base_statistics is not None:
+            pulumi.set(__self__, "knowledge_base_statistics", knowledge_base_statistics)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if state is not None:
@@ -241,15 +239,25 @@ class _AgentKnowledgeBaseState:
     @pulumi.getter(name="indexConfig")
     def index_config(self) -> Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigArgs']]:
         """
-        (Updatable) **IndexConfig**
-
-        The index configuration of Knowledge bases.
+        (Updatable) The index configuration of Knowledge bases.
         """
         return pulumi.get(self, "index_config")
 
     @index_config.setter
     def index_config(self, value: Optional[pulumi.Input['AgentKnowledgeBaseIndexConfigArgs']]):
         pulumi.set(self, "index_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseStatistics")
+    def knowledge_base_statistics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseKnowledgeBaseStatisticArgs']]]]:
+        """
+        Statistics for Default Knowledge Base.
+        """
+        return pulumi.get(self, "knowledge_base_statistics")
+
+    @knowledge_base_statistics.setter
+    def knowledge_base_statistics(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AgentKnowledgeBaseKnowledgeBaseStatisticArgs']]]]):
+        pulumi.set(self, "knowledge_base_statistics", value)
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -328,8 +336,6 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         """
         This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
-        **CreateKnowledgeBase**
-
         Creates a knowledge base.
 
         ## Example Usage
@@ -393,9 +399,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description of the knowledge base.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']] index_config: (Updatable) **IndexConfig**
-               
-               The index configuration of Knowledge bases.
+        :param pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']] index_config: (Updatable) The index configuration of Knowledge bases.
         """
         ...
     @overload
@@ -405,8 +409,6 @@ class AgentKnowledgeBase(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         This resource provides the Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-
-        **CreateKnowledgeBase**
 
         Creates a knowledge base.
 
@@ -504,6 +506,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
             if index_config is None and not opts.urn:
                 raise TypeError("Missing required property 'index_config'")
             __props__.__dict__["index_config"] = index_config
+            __props__.__dict__["knowledge_base_statistics"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -525,6 +528,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             index_config: Optional[pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']]] = None,
+            knowledge_base_statistics: Optional[pulumi.Input[Sequence[pulumi.Input[Union['AgentKnowledgeBaseKnowledgeBaseStatisticArgs', 'AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict']]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -542,9 +546,8 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-friendly description of the knowledge base.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']] index_config: (Updatable) **IndexConfig**
-               
-               The index configuration of Knowledge bases.
+        :param pulumi.Input[Union['AgentKnowledgeBaseIndexConfigArgs', 'AgentKnowledgeBaseIndexConfigArgsDict']] index_config: (Updatable) The index configuration of Knowledge bases.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['AgentKnowledgeBaseKnowledgeBaseStatisticArgs', 'AgentKnowledgeBaseKnowledgeBaseStatisticArgsDict']]]] knowledge_base_statistics: Statistics for Default Knowledge Base.
         :param pulumi.Input[_builtins.str] lifecycle_details: A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param pulumi.Input[_builtins.str] state: The current state of the knowledge base.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -561,6 +564,7 @@ class AgentKnowledgeBase(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["index_config"] = index_config
+        __props__.__dict__["knowledge_base_statistics"] = knowledge_base_statistics
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -612,11 +616,17 @@ class AgentKnowledgeBase(pulumi.CustomResource):
     @pulumi.getter(name="indexConfig")
     def index_config(self) -> pulumi.Output['outputs.AgentKnowledgeBaseIndexConfig']:
         """
-        (Updatable) **IndexConfig**
-
-        The index configuration of Knowledge bases.
+        (Updatable) The index configuration of Knowledge bases.
         """
         return pulumi.get(self, "index_config")
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseStatistics")
+    def knowledge_base_statistics(self) -> pulumi.Output[Sequence['outputs.AgentKnowledgeBaseKnowledgeBaseStatistic']]:
+        """
+        Statistics for Default Knowledge Base.
+        """
+        return pulumi.get(self, "knowledge_base_statistics")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

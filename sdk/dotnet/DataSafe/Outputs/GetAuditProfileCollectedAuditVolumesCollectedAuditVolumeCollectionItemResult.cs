@@ -14,14 +14,36 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult
     {
         /// <summary>
-        /// Array of collected audit volume summary.
+        /// The audit data volume collected by Data Safe and is available in archive storage.
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult> Items;
+        public readonly string ArchivedVolume;
+        /// <summary>
+        /// The OCID of the audit.
+        /// </summary>
+        public readonly string AuditProfileId;
+        /// <summary>
+        /// Represents the month under consideration in which the aggregated audit data volume collected by Data Safe is displayed. This field will be the UTC start of the day of the first day of the month for which the aggregate count corresponds to, in the format defined by RFC3339.. For instance, the value of 01-01-2021T00:00:00Z represents Jan 2021.
+        /// </summary>
+        public readonly string MonthInConsideration;
+        /// <summary>
+        /// The audit data volume collected by Data Safe and is available online in repository.
+        /// </summary>
+        public readonly string OnlineVolume;
 
         [OutputConstructor]
-        private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult(ImmutableArray<Outputs.GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemItemResult> items)
+        private GetAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemResult(
+            string archivedVolume,
+
+            string auditProfileId,
+
+            string monthInConsideration,
+
+            string onlineVolume)
         {
-            Items = items;
+            ArchivedVolume = archivedVolume;
+            AuditProfileId = auditProfileId;
+            MonthInConsideration = monthInConsideration;
+            OnlineVolume = onlineVolume;
         }
     }
 }

@@ -28,7 +28,7 @@ class GetSecurityPoliciesResult:
     """
     A collection of values returned by getSecurityPolicies.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, security_policy_collections=None, security_policy_id=None, state=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, security_policy_collections=None, security_policy_id=None, security_policy_type=None, state=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -53,6 +53,9 @@ class GetSecurityPoliciesResult:
         if security_policy_id and not isinstance(security_policy_id, str):
             raise TypeError("Expected argument 'security_policy_id' to be a str")
         pulumi.set(__self__, "security_policy_id", security_policy_id)
+        if security_policy_type and not isinstance(security_policy_type, str):
+            raise TypeError("Expected argument 'security_policy_type' to be a str")
+        pulumi.set(__self__, "security_policy_type", security_policy_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -110,6 +113,14 @@ class GetSecurityPoliciesResult:
         return pulumi.get(self, "security_policy_id")
 
     @_builtins.property
+    @pulumi.getter(name="securityPolicyType")
+    def security_policy_type(self) -> Optional[_builtins.str]:
+        """
+        The type of the security policy.
+        """
+        return pulumi.get(self, "security_policy_type")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -132,6 +143,7 @@ class AwaitableGetSecurityPoliciesResult(GetSecurityPoliciesResult):
             id=self.id,
             security_policy_collections=self.security_policy_collections,
             security_policy_id=self.security_policy_id,
+            security_policy_type=self.security_policy_type,
             state=self.state)
 
 
@@ -141,6 +153,7 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
                           display_name: Optional[_builtins.str] = None,
                           filters: Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]] = None,
                           security_policy_id: Optional[_builtins.str] = None,
+                          security_policy_type: Optional[_builtins.str] = None,
                           state: Optional[_builtins.str] = None,
                           opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityPoliciesResult:
     """
@@ -172,6 +185,7 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
         compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
+        security_policy_type=security_policy_security_policy_type,
         state=security_policy_state)
     ```
 
@@ -181,6 +195,7 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
+    :param _builtins.str security_policy_type: The type of the security policy.
     :param _builtins.str state: The current state of the security policy.
     """
     __args__ = dict()
@@ -190,6 +205,7 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['securityPolicyId'] = security_policy_id
+    __args__['securityPolicyType'] = security_policy_type
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityPolicies:getSecurityPolicies', __args__, opts=opts, typ=GetSecurityPoliciesResult).value
@@ -203,6 +219,7 @@ def get_security_policies(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         security_policy_collections=pulumi.get(__ret__, 'security_policy_collections'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
+        security_policy_type=pulumi.get(__ret__, 'security_policy_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -210,6 +227,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
                                  display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityPoliciesFilterArgs', 'GetSecurityPoliciesFilterArgsDict']]]]] = None,
                                  security_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                 security_policy_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                  opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPoliciesResult]:
     """
@@ -241,6 +259,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
         compartment_id_in_subtree=security_policy_compartment_id_in_subtree,
         display_name=security_policy_display_name,
         security_policy_id=test_security_policy["id"],
+        security_policy_type=security_policy_security_policy_type,
         state=security_policy_state)
     ```
 
@@ -250,6 +269,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str display_name: A filter to return only resources that match the specified display name.
     :param _builtins.str security_policy_id: An optional filter to return only resources that match the specified OCID of the security policy resource.
+    :param _builtins.str security_policy_type: The type of the security policy.
     :param _builtins.str state: The current state of the security policy.
     """
     __args__ = dict()
@@ -259,6 +279,7 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['securityPolicyId'] = security_policy_id
+    __args__['securityPolicyType'] = security_policy_type
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityPolicies:getSecurityPolicies', __args__, opts=opts, typ=GetSecurityPoliciesResult)
@@ -271,4 +292,5 @@ def get_security_policies_output(access_level: Optional[pulumi.Input[Optional[_b
         id=pulumi.get(__response__, 'id'),
         security_policy_collections=pulumi.get(__response__, 'security_policy_collections'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
+        security_policy_type=pulumi.get(__response__, 'security_policy_type'),
         state=pulumi.get(__response__, 'state')))

@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -23,6 +24,11 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
      * 
      */
     private List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic> dataIngestionJobStatistics;
+    /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    private List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType> dataIngestionJobTypes;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
      * 
@@ -53,6 +59,7 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
      * 
      */
     private String id;
+    private String knowledgeBaseId;
     /**
      * @return A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -95,6 +102,13 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
         return this.dataIngestionJobStatistics;
     }
     /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    public List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType> dataIngestionJobTypes() {
+        return this.dataIngestionJobTypes;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
      * 
      */
@@ -135,6 +149,9 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
      */
     public String id() {
         return this.id;
+    }
+    public String knowledgeBaseId() {
+        return this.knowledgeBaseId;
     }
     /**
      * @return A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -183,12 +200,14 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
     public static final class Builder {
         private String compartmentId;
         private List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic> dataIngestionJobStatistics;
+        private List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType> dataIngestionJobTypes;
         private String dataSourceId;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private String knowledgeBaseId;
         private String lifecycleDetails;
         private String state;
         private Map<String,String> systemTags;
@@ -199,12 +218,14 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.dataIngestionJobStatistics = defaults.dataIngestionJobStatistics;
+    	      this.dataIngestionJobTypes = defaults.dataIngestionJobTypes;
     	      this.dataSourceId = defaults.dataSourceId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.knowledgeBaseId = defaults.knowledgeBaseId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -230,6 +251,17 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
         }
         public Builder dataIngestionJobStatistics(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatistic... dataIngestionJobStatistics) {
             return dataIngestionJobStatistics(List.of(dataIngestionJobStatistics));
+        }
+        @CustomType.Setter
+        public Builder dataIngestionJobTypes(List<GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType> dataIngestionJobTypes) {
+            if (dataIngestionJobTypes == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataIngestionJobsDataIngestionJobCollectionItem", "dataIngestionJobTypes");
+            }
+            this.dataIngestionJobTypes = dataIngestionJobTypes;
+            return this;
+        }
+        public Builder dataIngestionJobTypes(GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobType... dataIngestionJobTypes) {
+            return dataIngestionJobTypes(List.of(dataIngestionJobTypes));
         }
         @CustomType.Setter
         public Builder dataSourceId(String dataSourceId) {
@@ -280,6 +312,14 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder knowledgeBaseId(String knowledgeBaseId) {
+            if (knowledgeBaseId == null) {
+              throw new MissingRequiredPropertyException("GetAgentDataIngestionJobsDataIngestionJobCollectionItem", "knowledgeBaseId");
+            }
+            this.knowledgeBaseId = knowledgeBaseId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAgentDataIngestionJobsDataIngestionJobCollectionItem", "lifecycleDetails");
@@ -323,12 +363,14 @@ public final class GetAgentDataIngestionJobsDataIngestionJobCollectionItem {
             final var _resultValue = new GetAgentDataIngestionJobsDataIngestionJobCollectionItem();
             _resultValue.compartmentId = compartmentId;
             _resultValue.dataIngestionJobStatistics = dataIngestionJobStatistics;
+            _resultValue.dataIngestionJobTypes = dataIngestionJobTypes;
             _resultValue.dataSourceId = dataSourceId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.knowledgeBaseId = knowledgeBaseId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

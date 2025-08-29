@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The name of the aggregation metric.
         /// </summary>
         public readonly string MetricName;
+        /// <summary>
+        /// The date and time the target database was last masked using a masking policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+        /// </summary>
+        public readonly string TimeLastMasked;
 
         [OutputConstructor]
         private GetMaskingAnalyticsMaskingAnalyticsCollectionItemResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableArray<Outputs.GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimensionResult> dimensions,
 
-            string metricName)
+            string metricName,
+
+            string timeLastMasked)
         {
             Count = count;
             Dimensions = dimensions;
             MetricName = metricName;
+            TimeLastMasked = timeLastMasked;
         }
     }
 }

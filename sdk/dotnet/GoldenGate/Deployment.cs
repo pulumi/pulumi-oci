@@ -38,6 +38,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<Outputs.DeploymentBackupSchedule> BackupSchedule { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        /// </summary>
+        [Output("byolCpuCoreCountLimit")]
+        public Output<int> ByolCpuCoreCountLimit { get; private set; } = null!;
+
+        /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
         /// </summary>
         [Output("category")]
@@ -138,6 +144,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("isAutoScalingEnabled")]
         public Output<bool> IsAutoScalingEnabled { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        /// </summary>
+        [Output("isByolCpuCoreCountLimitEnabled")]
+        public Output<bool> IsByolCpuCoreCountLimitEnabled { get; private set; } = null!;
 
         /// <summary>
         /// True if all of the aggregate resources are working correctly.
@@ -390,6 +402,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<Inputs.DeploymentBackupScheduleArgs>? BackupSchedule { get; set; }
 
         /// <summary>
+        /// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        /// </summary>
+        [Input("byolCpuCoreCountLimit")]
+        public Input<int>? ByolCpuCoreCountLimit { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -472,6 +490,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("isAutoScalingEnabled")]
         public Input<bool>? IsAutoScalingEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        /// </summary>
+        [Input("isByolCpuCoreCountLimitEnabled")]
+        public Input<bool>? IsByolCpuCoreCountLimitEnabled { get; set; }
 
         [Input("isLockOverride")]
         public Input<bool>? IsLockOverride { get; set; }
@@ -582,6 +606,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("backupSchedule")]
         public Input<Inputs.DeploymentBackupScheduleGetArgs>? BackupSchedule { get; set; }
+
+        /// <summary>
+        /// (Updatable) The maximum number of CPUs allowed with a 'Bring Your Own License' (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+        /// </summary>
+        [Input("byolCpuCoreCountLimit")]
+        public Input<int>? ByolCpuCoreCountLimit { get; set; }
 
         /// <summary>
         /// The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and 'DATA_TRANSFORMS'.
@@ -708,6 +738,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("isAutoScalingEnabled")]
         public Input<bool>? IsAutoScalingEnabled { get; set; }
+
+        /// <summary>
+        /// (Updatable) Flag to allow to configure the 'Bring Your Own License' (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+        /// </summary>
+        [Input("isByolCpuCoreCountLimitEnabled")]
+        public Input<bool>? IsByolCpuCoreCountLimitEnabled { get; set; }
 
         /// <summary>
         /// True if all of the aggregate resources are working correctly.

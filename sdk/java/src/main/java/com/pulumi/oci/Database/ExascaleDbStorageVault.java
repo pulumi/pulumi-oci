@@ -97,6 +97,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
         return this.additionalFlashCacheInPercent;
     }
     /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    @Export(name="attachedShapeAttributes", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> attachedShapeAttributes;
+
+    /**
+     * @return The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    public Output<List<String>> attachedShapeAttributes() {
+        return this.attachedShapeAttributes;
+    }
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      * 
      */

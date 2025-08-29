@@ -124,7 +124,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetAuditProfileResult
     {
         /// <summary>
-        /// Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+        /// Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
         /// </summary>
         public readonly string AuditCollectedVolume;
         /// <summary>
@@ -132,12 +132,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string AuditProfileId;
         /// <summary>
-        /// Indicates the list of available audit trails on the target.
+        /// Contains the list of available audit trails on the target database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAuditProfileAuditTrailResult> AuditTrails;
         public readonly int ChangeRetentionTrigger;
         /// <summary>
-        /// The OCID of the compartment that contains the audit.
+        /// The OCID of the compartment that contains the audit profile.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -161,7 +161,11 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+        /// Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+        /// </summary>
+        public readonly bool IsOverrideGlobalPaidUsage;
+        /// <summary>
+        /// Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
         /// </summary>
         public readonly bool IsOverrideGlobalRetentionSetting;
         /// <summary>
@@ -173,13 +177,25 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+        /// Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
         /// </summary>
         public readonly int OfflineMonths;
         /// <summary>
-        /// Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+        /// The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string OfflineMonthsSource;
+        /// <summary>
+        /// Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
         /// </summary>
         public readonly int OnlineMonths;
+        /// <summary>
+        /// The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string OnlineMonthsSource;
+        /// <summary>
+        /// The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+        /// </summary>
+        public readonly string PaidUsageSource;
         /// <summary>
         /// The current state of the audit profile.
         /// </summary>
@@ -189,9 +205,13 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         public readonly string TargetId;
+        /// <summary>
+        /// The resource type that is represented by the audit profile.
+        /// </summary>
+        public readonly string TargetType;
         /// <summary>
         /// The date and time the audit profile was created, in the format defined by RFC3339.
         /// </summary>
@@ -223,6 +243,8 @@ namespace Pulumi.Oci.DataSafe
 
             string id,
 
+            bool isOverrideGlobalPaidUsage,
+
             bool isOverrideGlobalRetentionSetting,
 
             bool isPaidUsageEnabled,
@@ -231,13 +253,21 @@ namespace Pulumi.Oci.DataSafe
 
             int offlineMonths,
 
+            string offlineMonthsSource,
+
             int onlineMonths,
+
+            string onlineMonthsSource,
+
+            string paidUsageSource,
 
             string state,
 
             ImmutableDictionary<string, string> systemTags,
 
             string targetId,
+
+            string targetType,
 
             string timeCreated,
 
@@ -253,14 +283,19 @@ namespace Pulumi.Oci.DataSafe
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsOverrideGlobalPaidUsage = isOverrideGlobalPaidUsage;
             IsOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             IsPaidUsageEnabled = isPaidUsageEnabled;
             LifecycleDetails = lifecycleDetails;
             OfflineMonths = offlineMonths;
+            OfflineMonthsSource = offlineMonthsSource;
             OnlineMonths = onlineMonths;
+            OnlineMonthsSource = onlineMonthsSource;
+            PaidUsageSource = paidUsageSource;
             State = state;
             SystemTags = systemTags;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

@@ -33,6 +33,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
     /**
+     * @return The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    private Integer byolCpuCoreCountLimit;
+    /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -68,7 +73,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String deploymentRole;
     /**
-     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * @return A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
      * 
      */
     private String deploymentType;
@@ -122,6 +127,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private Boolean isAutoScalingEnabled;
+    /**
+     * @return Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    private Boolean isByolCpuCoreCountLimitEnabled;
     /**
      * @return True if all of the aggregate resources are working correctly.
      * 
@@ -300,6 +310,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.backupSchedules;
     }
     /**
+     * @return The maximum number of CPUs allowed with a &#39;Bring Your Own License&#39; (BYOL) license type. Any CPU usage above this limit is considered as License Included and billed.
+     * 
+     */
+    public Integer byolCpuCoreCountLimit() {
+        return this.byolCpuCoreCountLimit;
+    }
+    /**
      * @return The deployment category defines the broad separation of the deployment type into three categories. Currently the separation is &#39;DATA_REPLICATION&#39;, &#39;STREAM_ANALYTICS&#39; and &#39;DATA_TRANSFORMS&#39;.
      * 
      */
@@ -349,7 +366,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.deploymentRole;
     }
     /**
-     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * @return A filter that returns only the resources matching the specified &#39;deploymentType&#39;.
      * 
      */
     public String deploymentType() {
@@ -424,6 +441,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public Boolean isAutoScalingEnabled() {
         return this.isAutoScalingEnabled;
+    }
+    /**
+     * @return Flag to allow to configure the &#39;Bring Your Own License&#39; (BYOL) license type CPU limit. If enabled, the exact number of CPUs must be provided via byolCpuCoreCountLimit.
+     * 
+     */
+    public Boolean isByolCpuCoreCountLimitEnabled() {
+        return this.isByolCpuCoreCountLimitEnabled;
     }
     /**
      * @return True if all of the aggregate resources are working correctly.
@@ -664,6 +688,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     public static final class Builder {
         private String availabilityDomain;
         private List<GetDeploymentsDeploymentCollectionItemBackupSchedule> backupSchedules;
+        private Integer byolCpuCoreCountLimit;
         private String category;
         private String compartmentId;
         private Integer cpuCoreCount;
@@ -682,6 +707,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String id;
         private List<GetDeploymentsDeploymentCollectionItemIngressIp> ingressIps;
         private Boolean isAutoScalingEnabled;
+        private Boolean isByolCpuCoreCountLimitEnabled;
         private Boolean isHealthy;
         private Boolean isLatestVersion;
         private Boolean isLockOverride;
@@ -720,6 +746,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupSchedules = defaults.backupSchedules;
+    	      this.byolCpuCoreCountLimit = defaults.byolCpuCoreCountLimit;
     	      this.category = defaults.category;
     	      this.compartmentId = defaults.compartmentId;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -738,6 +765,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.id = defaults.id;
     	      this.ingressIps = defaults.ingressIps;
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
+    	      this.isByolCpuCoreCountLimitEnabled = defaults.isByolCpuCoreCountLimitEnabled;
     	      this.isHealthy = defaults.isHealthy;
     	      this.isLatestVersion = defaults.isLatestVersion;
     	      this.isLockOverride = defaults.isLockOverride;
@@ -791,6 +819,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
         }
         public Builder backupSchedules(GetDeploymentsDeploymentCollectionItemBackupSchedule... backupSchedules) {
             return backupSchedules(List.of(backupSchedules));
+        }
+        @CustomType.Setter
+        public Builder byolCpuCoreCountLimit(Integer byolCpuCoreCountLimit) {
+            if (byolCpuCoreCountLimit == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "byolCpuCoreCountLimit");
+            }
+            this.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
+            return this;
         }
         @CustomType.Setter
         public Builder category(String category) {
@@ -940,6 +976,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "isAutoScalingEnabled");
             }
             this.isAutoScalingEnabled = isAutoScalingEnabled;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isByolCpuCoreCountLimitEnabled(Boolean isByolCpuCoreCountLimitEnabled) {
+            if (isByolCpuCoreCountLimitEnabled == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "isByolCpuCoreCountLimitEnabled");
+            }
+            this.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
             return this;
         }
         @CustomType.Setter
@@ -1228,6 +1272,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             final var _resultValue = new GetDeploymentsDeploymentCollectionItem();
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupSchedules = backupSchedules;
+            _resultValue.byolCpuCoreCountLimit = byolCpuCoreCountLimit;
             _resultValue.category = category;
             _resultValue.compartmentId = compartmentId;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -1246,6 +1291,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.id = id;
             _resultValue.ingressIps = ingressIps;
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
+            _resultValue.isByolCpuCoreCountLimitEnabled = isByolCpuCoreCountLimitEnabled;
             _resultValue.isHealthy = isHealthy;
             _resultValue.isLatestVersion = isLatestVersion;
             _resultValue.isLockOverride = isLockOverride;

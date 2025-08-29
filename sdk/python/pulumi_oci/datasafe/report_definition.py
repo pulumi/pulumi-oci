@@ -660,7 +660,9 @@ class ReportDefinition(pulumi.CustomResource):
                 "display_order": report_definition_column_info_display_order,
                 "field_name": report_definition_column_info_field_name,
                 "is_hidden": report_definition_column_info_is_hidden,
+                "applicable_operators": report_definition_column_info_applicable_operators,
                 "data_type": report_definition_column_info_data_type,
+                "is_virtual": report_definition_column_info_is_virtual,
             }],
             column_sortings=[{
                 "field_name": report_definition_column_sortings_field_name,
@@ -738,7 +740,9 @@ class ReportDefinition(pulumi.CustomResource):
                 "display_order": report_definition_column_info_display_order,
                 "field_name": report_definition_column_info_field_name,
                 "is_hidden": report_definition_column_info_is_hidden,
+                "applicable_operators": report_definition_column_info_applicable_operators,
                 "data_type": report_definition_column_info_data_type,
+                "is_virtual": report_definition_column_info_is_virtual,
             }],
             column_sortings=[{
                 "field_name": report_definition_column_sortings_field_name,

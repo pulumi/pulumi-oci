@@ -105,6 +105,36 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The number of compute servers for the DB system.
+     * 
+     */
+    @Import(name="computeCount")
+    private @Nullable Output<Integer> computeCount;
+
+    /**
+     * @return (Updatable) The number of compute servers for the DB system.
+     * 
+     */
+    public Optional<Output<Integer>> computeCount() {
+        return Optional.ofNullable(this.computeCount);
+    }
+
+    /**
+     * (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
      * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
      * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -174,14 +204,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      * 
      */
     @Import(name="dataStorageSizeInGb")
     private @Nullable Output<Integer> dataStorageSizeInGb;
 
     /**
-     * @return (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+     * @return (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
      * 
      */
     public Optional<Output<Integer>> dataStorageSizeInGb() {
@@ -547,14 +577,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      * 
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
-     * @return The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+     * @return The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
      * 
      */
     public Optional<Output<Integer>> nodeCount() {
@@ -987,6 +1017,8 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         this.backupSubnetId = $.backupSubnetId;
         this.clusterName = $.clusterName;
         this.compartmentId = $.compartmentId;
+        this.computeCount = $.computeCount;
+        this.computeModel = $.computeModel;
         this.cpuCoreCount = $.cpuCoreCount;
         this.dataCollectionOptions = $.dataCollectionOptions;
         this.dataStoragePercentage = $.dataStoragePercentage;
@@ -1180,6 +1212,48 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param computeCount (Updatable) The number of compute servers for the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(@Nullable Output<Integer> computeCount) {
+            $.computeCount = computeCount;
+            return this;
+        }
+
+        /**
+         * @param computeCount (Updatable) The number of compute servers for the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(Integer computeCount) {
+            return computeCount(Output.of(computeCount));
+        }
+
+        /**
+         * @param computeModel (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
+        }
+
+        /**
          * @param cpuCoreCount (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
          * * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
          * * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -1267,7 +1341,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+         * @param dataStorageSizeInGb (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
          * 
          * @return builder
          * 
@@ -1278,7 +1352,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataStorageSizeInGb (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+         * @param dataStorageSizeInGb (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
          * 
          * @return builder
          * 
@@ -1816,7 +1890,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+         * @param nodeCount The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
          * 
          * @return builder
          * 
@@ -1827,7 +1901,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param nodeCount The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+         * @param nodeCount The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
          * 
          * @return builder
          * 

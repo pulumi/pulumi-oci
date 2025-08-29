@@ -29,7 +29,7 @@ public final class GetAuditProfilesResult {
      */
     private @Nullable String auditProfileId;
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     private String compartmentId;
@@ -46,7 +46,7 @@ public final class GetAuditProfilesResult {
      */
     private String id;
     /**
-     * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * @return Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     private @Nullable Boolean isOverrideGlobalRetentionSetting;
@@ -60,11 +60,17 @@ public final class GetAuditProfilesResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String targetDatabaseGroupId;
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     private @Nullable String targetId;
+    /**
+     * @return The resource type that is represented by the audit profile.
+     * 
+     */
+    private @Nullable String targetType;
 
     private GetAuditProfilesResult() {}
     public Optional<String> accessLevel() {
@@ -88,7 +94,7 @@ public final class GetAuditProfilesResult {
         return Optional.ofNullable(this.auditProfileId);
     }
     /**
-     * @return The OCID of the compartment that contains the audit.
+     * @return The OCID of the compartment that contains the audit profile.
      * 
      */
     public String compartmentId() {
@@ -115,7 +121,7 @@ public final class GetAuditProfilesResult {
         return this.id;
     }
     /**
-     * @return Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * @return Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      * 
      */
     public Optional<Boolean> isOverrideGlobalRetentionSetting() {
@@ -135,12 +141,22 @@ public final class GetAuditProfilesResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public Optional<String> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+    /**
+     * @return The resource type that is represented by the audit profile.
+     * 
+     */
+    public Optional<String> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     public static Builder builder() {
@@ -164,7 +180,9 @@ public final class GetAuditProfilesResult {
         private @Nullable Boolean isOverrideGlobalRetentionSetting;
         private @Nullable Boolean isPaidUsageEnabled;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
+        private @Nullable String targetType;
         public Builder() {}
         public Builder(GetAuditProfilesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -180,7 +198,9 @@ public final class GetAuditProfilesResult {
     	      this.isOverrideGlobalRetentionSetting = defaults.isOverrideGlobalRetentionSetting;
     	      this.isPaidUsageEnabled = defaults.isPaidUsageEnabled;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
         }
 
         @CustomType.Setter
@@ -268,9 +288,21 @@ public final class GetAuditProfilesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetType(@Nullable String targetType) {
+
+            this.targetType = targetType;
             return this;
         }
         public GetAuditProfilesResult build() {
@@ -287,7 +319,9 @@ public final class GetAuditProfilesResult {
             _resultValue.isOverrideGlobalRetentionSetting = isOverrideGlobalRetentionSetting;
             _resultValue.isPaidUsageEnabled = isPaidUsageEnabled;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             return _resultValue;
         }
     }

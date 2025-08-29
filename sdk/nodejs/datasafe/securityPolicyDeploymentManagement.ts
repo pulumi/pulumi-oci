@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Updates the security policy deployment.
+ * Creates a Data Safe security policy deployment in the Data Safe Console.
  *
  * ## Example Usage
  *
@@ -17,7 +17,9 @@ import * as utilities from "../utilities";
  *
  * const testSecurityPolicyDeploymentManagement = new oci.datasafe.SecurityPolicyDeploymentManagement("test_security_policy_deployment_management", {
  *     compartmentId: compartmentId,
- *     targetId: testTargetDatabase.id,
+ *     securityPolicyId: testSecurityPolicy.id,
+ *     targetId: testTarget.id,
+ *     targetType: securityPolicyDeploymentManagementTargetType,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -62,7 +64,7 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -70,7 +72,11 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     */
+    public readonly deployTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * (Updatable) The description of the security policy.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -86,9 +92,17 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly refreshTrigger!: pulumi.Output<number | undefined>;
+    /**
      * The OCID of the security policy corresponding to the security policy deployment.
      */
-    public /*out*/ readonly securityPolicyId!: pulumi.Output<string>;
+    public readonly securityPolicyId!: pulumi.Output<string>;
     /**
      * The current state of the security policy deployment.
      */
@@ -98,13 +112,21 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: string}>;
     /**
-     * Unique target identifier.
+     * The OCID of the target where the security policy is deployed.
      */
     public readonly targetId!: pulumi.Output<string>;
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     */
+    public readonly targetType!: pulumi.Output<string>;
     /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     */
+    public /*out*/ readonly timeDeployed!: pulumi.Output<string>;
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      */
@@ -117,7 +139,7 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args?: SecurityPolicyDeploymentManagementArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args: SecurityPolicyDeploymentManagementArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: SecurityPolicyDeploymentManagementArgs | SecurityPolicyDeploymentManagementState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -125,29 +147,49 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
             const state = argsOrState as SecurityPolicyDeploymentManagementState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["deployTrigger"] = state ? state.deployTrigger : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["refreshTrigger"] = state ? state.refreshTrigger : undefined;
             resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
+            resourceInputs["targetType"] = state ? state.targetType : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
+            resourceInputs["timeDeployed"] = state ? state.timeDeployed : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as SecurityPolicyDeploymentManagementArgs | undefined;
+            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'compartmentId'");
+            }
+            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'securityPolicyId'");
+            }
+            if ((!args || args.targetId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'targetId'");
+            }
+            if ((!args || args.targetType === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'targetType'");
+            }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["deployTrigger"] = args ? args.deployTrigger : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["refreshTrigger"] = args ? args.refreshTrigger : undefined;
+            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
+            resourceInputs["targetType"] = args ? args.targetType : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
-            resourceInputs["securityPolicyId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
+            resourceInputs["timeDeployed"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -160,7 +202,7 @@ export class SecurityPolicyDeploymentManagement extends pulumi.CustomResource {
  */
 export interface SecurityPolicyDeploymentManagementState {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -168,7 +210,11 @@ export interface SecurityPolicyDeploymentManagementState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     */
+    deployTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) The description of the security policy.
      */
     description?: pulumi.Input<string>;
     /**
@@ -184,6 +230,14 @@ export interface SecurityPolicyDeploymentManagementState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    refreshTrigger?: pulumi.Input<number>;
+    /**
      * The OCID of the security policy corresponding to the security policy deployment.
      */
     securityPolicyId?: pulumi.Input<string>;
@@ -196,13 +250,21 @@ export interface SecurityPolicyDeploymentManagementState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Unique target identifier.
+     * The OCID of the target where the security policy is deployed.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     */
+    targetType?: pulumi.Input<string>;
     /**
      * The time that the security policy deployment was created, in the format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
+    /**
+     * The last date and time the security policy was deployed, in the format defined by RFC3339.
+     */
+    timeDeployed?: pulumi.Input<string>;
     /**
      * The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      */
@@ -214,15 +276,19 @@ export interface SecurityPolicyDeploymentManagementState {
  */
 export interface SecurityPolicyDeploymentManagementArgs {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy deployment.
+     * (Updatable) The OCID of the compartment in which to create the unified audit policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The description of the security policy deployment.
+     * (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+     */
+    deployTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) The description of the security policy.
      */
     description?: pulumi.Input<string>;
     /**
@@ -234,7 +300,23 @@ export interface SecurityPolicyDeploymentManagementArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Unique target identifier.
+     * (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    targetId?: pulumi.Input<string>;
+    refreshTrigger?: pulumi.Input<number>;
+    /**
+     * The OCID of the security policy corresponding to the security policy deployment.
+     */
+    securityPolicyId: pulumi.Input<string>;
+    /**
+     * The OCID of the target where the security policy is deployed.
+     */
+    targetId: pulumi.Input<string>;
+    /**
+     * Indicates whether the security policy deployment is for a target database or a target database group.
+     */
+    targetType: pulumi.Input<string>;
 }

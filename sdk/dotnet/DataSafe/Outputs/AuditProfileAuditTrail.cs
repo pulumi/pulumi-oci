@@ -18,11 +18,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? AuditCollectionStartTime;
         /// <summary>
-        /// The OCID of the audit.
+        /// The OCID of the  parent audit.
         /// </summary>
         public readonly string? AuditProfileId;
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains the audit.
+        /// Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        /// </summary>
+        public readonly bool? CanUpdateLastArchiveTimeOnTarget;
+        /// <summary>
+        /// (Updatable) The OCID of the compartment where you want to create the audit profile.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -82,7 +86,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string>? SystemTags;
         /// <summary>
-        /// The OCID of the Data Safe target for which the audit profile is created.
+        /// The OCID of the target database or target database group for which the audit profile is created.
         /// </summary>
         public readonly string? TargetId;
         /// <summary>
@@ -115,6 +119,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string? auditCollectionStartTime,
 
             string? auditProfileId,
+
+            bool? canUpdateLastArchiveTimeOnTarget,
 
             string? compartmentId,
 
@@ -162,6 +168,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         {
             AuditCollectionStartTime = auditCollectionStartTime;
             AuditProfileId = auditProfileId;
+            CanUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

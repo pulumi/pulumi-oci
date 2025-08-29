@@ -33,6 +33,8 @@ import * as utilities from "../utilities";
  *     transportType: dataGuardAssociationTransportType,
  *     availabilityDomain: dataGuardAssociationAvailabilityDomain,
  *     backupNetworkNsgIds: dataGuardAssociationBackupNetworkNsgIds,
+ *     computeCount: dataGuardAssociationComputeCount,
+ *     computeModel: dataGuardAssociationComputeModel,
  *     cpuCoreCount: dataGuardAssociationCpuCoreCount,
  *     databaseDefinedTags: dataGuardAssociationDatabaseDefinedTags,
  *     databaseFreeformTags: dataGuardAssociationDatabaseFreeformTags,
@@ -115,6 +117,14 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     public readonly backupNetworkNsgIds!: pulumi.Output<string[] | undefined>;
+    /**
+     * The number of compute servers for the DB system.
+     */
+    public readonly computeCount!: pulumi.Output<number>;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    public readonly computeModel!: pulumi.Output<string>;
     /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
@@ -330,6 +340,8 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["applyRate"] = state ? state.applyRate : undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
             resourceInputs["backupNetworkNsgIds"] = state ? state.backupNetworkNsgIds : undefined;
+            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = state ? state.createAsync : undefined;
             resourceInputs["creationType"] = state ? state.creationType : undefined;
@@ -394,6 +406,8 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
             resourceInputs["backupNetworkNsgIds"] = args ? args.backupNetworkNsgIds : undefined;
+            resourceInputs["computeCount"] = args ? args.computeCount : undefined;
+            resourceInputs["computeModel"] = args ? args.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = args ? args.cpuCoreCount : undefined;
             resourceInputs["createAsync"] = args ? args.createAsync : undefined;
             resourceInputs["creationType"] = args ? args.creationType : undefined;
@@ -466,6 +480,14 @@ export interface DataGuardAssociationState {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The number of compute servers for the DB system.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.
      */
@@ -677,6 +699,14 @@ export interface DataGuardAssociationArgs {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The number of compute servers for the DB system.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.
      */

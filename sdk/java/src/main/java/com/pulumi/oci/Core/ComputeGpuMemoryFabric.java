@@ -45,6 +45,20 @@ public class ComputeGpuMemoryFabric extends com.pulumi.resources.CustomResource 
         return this.additionalData;
     }
     /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    @Export(name="availableHostCount", refs={String.class}, tree="[0]")
+    private Output<String> availableHostCount;
+
+    /**
+     * @return The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    public Output<String> availableHostCount() {
+        return this.availableHostCount;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      * 
      */

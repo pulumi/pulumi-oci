@@ -37,7 +37,9 @@ import (
 //				GroupBy:                pulumi.StringRef(discoveryAnalyticGroupBy),
 //				IsCommon:               pulumi.BoolRef(discoveryAnalyticIsCommon),
 //				SensitiveDataModelId:   pulumi.StringRef(testSensitiveDataModel.Id),
+//				SensitiveTypeGroupId:   pulumi.StringRef(testSensitiveTypeGroup.Id),
 //				SensitiveTypeId:        pulumi.StringRef(testSensitiveType.Id),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -71,8 +73,12 @@ type GetDiscoveryAnalyticsArgs struct {
 	IsCommon *bool `pulumi:"isCommon"`
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
+	// An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+	SensitiveTypeGroupId *string `pulumi:"sensitiveTypeGroupId"`
 	// A filter to return only items related to a specific sensitive type OCID.
 	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -90,8 +96,10 @@ type GetDiscoveryAnalyticsResult struct {
 	IsCommon *bool  `pulumi:"isCommon"`
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
+	SensitiveTypeGroupId *string `pulumi:"sensitiveTypeGroupId"`
 	// The OCID of the sensitive type.
-	SensitiveTypeId *string `pulumi:"sensitiveTypeId"`
+	SensitiveTypeId       *string `pulumi:"sensitiveTypeId"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target database.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -118,8 +126,12 @@ type GetDiscoveryAnalyticsOutputArgs struct {
 	IsCommon pulumi.BoolPtrInput `pulumi:"isCommon"`
 	// A filter to return only the resources that match the specified sensitive data model OCID.
 	SensitiveDataModelId pulumi.StringPtrInput `pulumi:"sensitiveDataModelId"`
+	// An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+	SensitiveTypeGroupId pulumi.StringPtrInput `pulumi:"sensitiveTypeGroupId"`
 	// A filter to return only items related to a specific sensitive type OCID.
 	SensitiveTypeId pulumi.StringPtrInput `pulumi:"sensitiveTypeId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -180,9 +192,17 @@ func (o GetDiscoveryAnalyticsResultOutput) SensitiveDataModelId() pulumi.StringP
 	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.SensitiveDataModelId }).(pulumi.StringPtrOutput)
 }
 
+func (o GetDiscoveryAnalyticsResultOutput) SensitiveTypeGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.SensitiveTypeGroupId }).(pulumi.StringPtrOutput)
+}
+
 // The OCID of the sensitive type.
 func (o GetDiscoveryAnalyticsResultOutput) SensitiveTypeId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.SensitiveTypeId }).(pulumi.StringPtrOutput)
+}
+
+func (o GetDiscoveryAnalyticsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDiscoveryAnalyticsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database.

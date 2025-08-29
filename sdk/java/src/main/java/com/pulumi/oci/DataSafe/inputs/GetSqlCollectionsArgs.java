@@ -132,6 +132,21 @@ public final class GetSqlCollectionsArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -195,6 +210,7 @@ public final class GetSqlCollectionsArgs extends com.pulumi.resources.InvokeArgs
         this.filters = $.filters;
         this.sqlCollectionId = $.sqlCollectionId;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
@@ -376,6 +392,27 @@ public final class GetSqlCollectionsArgs extends com.pulumi.resources.InvokeArgs
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
         }
 
         /**

@@ -14,37 +14,6 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// Creates a new target-alert policy association to track a alert policy applied on target.
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         IsEnabled = targetAlertPolicyAssociationIsEnabled,
-    ///         PolicyId = testPolicy.Id,
-    ///         TargetId = testTarget.Id,
-    ///         DefinedTags = 
-    ///         {
-    ///             { "Operations.CostCenter", "42" },
-    ///         },
-    ///         Description = targetAlertPolicyAssociationDescription,
-    ///         DisplayName = targetAlertPolicyAssociationDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "Department", "Finance" },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -117,11 +86,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the target.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target or target database group.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -239,11 +204,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string> PolicyId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the target.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target or target database group.
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -335,11 +296,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the target.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the target or target database group.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

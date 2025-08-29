@@ -50,6 +50,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(auditPolicyCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(auditPolicyDisplayName),
 //				State:                  pulumi.StringRef(auditPolicyState),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -85,6 +86,8 @@ type GetAuditPoliciesArgs struct {
 	Filters     []GetAuditPoliciesFilter `pulumi:"filters"`
 	// The current state of the audit policy.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -104,7 +107,8 @@ type GetAuditPoliciesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The current state of the audit policy.
-	State *string `pulumi:"state"`
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target for which the audit policy is created.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -133,6 +137,8 @@ type GetAuditPoliciesOutputArgs struct {
 	Filters     GetAuditPoliciesFilterArrayInput `pulumi:"filters"`
 	// The current state of the audit policy.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -197,6 +203,10 @@ func (o GetAuditPoliciesResultOutput) Id() pulumi.StringOutput {
 // The current state of the audit policy.
 func (o GetAuditPoliciesResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditPoliciesResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAuditPoliciesResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditPoliciesResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target for which the audit policy is created.

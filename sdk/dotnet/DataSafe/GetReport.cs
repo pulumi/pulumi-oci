@@ -128,6 +128,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
+        /// Specifies the name of a resource that provides data for the report. For example alerts, events.
+        /// </summary>
+        public readonly string DataSource;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
@@ -169,9 +173,17 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// Specifies the time at which the report was created.
+        /// </summary>
+        public readonly string TimeCreated;
+        /// <summary>
         /// Specifies the date and time the report was generated.
         /// </summary>
         public readonly string TimeGenerated;
+        /// <summary>
+        /// The date and time of the report update in Data Safe.
+        /// </summary>
+        public readonly string TimeUpdated;
         /// <summary>
         /// The type of the audit report.
         /// </summary>
@@ -180,6 +192,8 @@ namespace Pulumi.Oci.DataSafe
         [OutputConstructor]
         private GetReportResult(
             string compartmentId,
+
+            string dataSource,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -203,11 +217,16 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableDictionary<string, string> systemTags,
 
+            string timeCreated,
+
             string timeGenerated,
+
+            string timeUpdated,
 
             string type)
         {
             CompartmentId = compartmentId;
+            DataSource = dataSource;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
@@ -219,7 +238,9 @@ namespace Pulumi.Oci.DataSafe
             ReportId = reportId;
             State = state;
             SystemTags = systemTags;
+            TimeCreated = timeCreated;
             TimeGenerated = timeGenerated;
+            TimeUpdated = timeUpdated;
             Type = type;
         }
     }

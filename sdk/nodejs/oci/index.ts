@@ -165,6 +165,36 @@ export const getDbmulticloudOracleDbAzureVaults: typeof import("./getDbmulticlou
 export const getDbmulticloudOracleDbAzureVaultsOutput: typeof import("./getDbmulticloudOracleDbAzureVaults").getDbmulticloudOracleDbAzureVaultsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVaults","getDbmulticloudOracleDbAzureVaultsOutput"], () => require("./getDbmulticloudOracleDbAzureVaults"));
 
+export { GetManagedKafkaKafkaClusterArgs, GetManagedKafkaKafkaClusterResult, GetManagedKafkaKafkaClusterOutputArgs } from "./getManagedKafkaKafkaCluster";
+export const getManagedKafkaKafkaCluster: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaCluster = null as any;
+export const getManagedKafkaKafkaClusterOutput: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaCluster","getManagedKafkaKafkaClusterOutput"], () => require("./getManagedKafkaKafkaCluster"));
+
+export { GetManagedKafkaKafkaClusterConfigArgs, GetManagedKafkaKafkaClusterConfigResult, GetManagedKafkaKafkaClusterConfigOutputArgs } from "./getManagedKafkaKafkaClusterConfig";
+export const getManagedKafkaKafkaClusterConfig: typeof import("./getManagedKafkaKafkaClusterConfig").getManagedKafkaKafkaClusterConfig = null as any;
+export const getManagedKafkaKafkaClusterConfigOutput: typeof import("./getManagedKafkaKafkaClusterConfig").getManagedKafkaKafkaClusterConfigOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterConfig","getManagedKafkaKafkaClusterConfigOutput"], () => require("./getManagedKafkaKafkaClusterConfig"));
+
+export { GetManagedKafkaKafkaClusterConfigVersionArgs, GetManagedKafkaKafkaClusterConfigVersionResult, GetManagedKafkaKafkaClusterConfigVersionOutputArgs } from "./getManagedKafkaKafkaClusterConfigVersion";
+export const getManagedKafkaKafkaClusterConfigVersion: typeof import("./getManagedKafkaKafkaClusterConfigVersion").getManagedKafkaKafkaClusterConfigVersion = null as any;
+export const getManagedKafkaKafkaClusterConfigVersionOutput: typeof import("./getManagedKafkaKafkaClusterConfigVersion").getManagedKafkaKafkaClusterConfigVersionOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterConfigVersion","getManagedKafkaKafkaClusterConfigVersionOutput"], () => require("./getManagedKafkaKafkaClusterConfigVersion"));
+
+export { GetManagedKafkaKafkaClusterConfigVersionsArgs, GetManagedKafkaKafkaClusterConfigVersionsResult, GetManagedKafkaKafkaClusterConfigVersionsOutputArgs } from "./getManagedKafkaKafkaClusterConfigVersions";
+export const getManagedKafkaKafkaClusterConfigVersions: typeof import("./getManagedKafkaKafkaClusterConfigVersions").getManagedKafkaKafkaClusterConfigVersions = null as any;
+export const getManagedKafkaKafkaClusterConfigVersionsOutput: typeof import("./getManagedKafkaKafkaClusterConfigVersions").getManagedKafkaKafkaClusterConfigVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterConfigVersions","getManagedKafkaKafkaClusterConfigVersionsOutput"], () => require("./getManagedKafkaKafkaClusterConfigVersions"));
+
+export { GetManagedKafkaKafkaClusterConfigsArgs, GetManagedKafkaKafkaClusterConfigsResult, GetManagedKafkaKafkaClusterConfigsOutputArgs } from "./getManagedKafkaKafkaClusterConfigs";
+export const getManagedKafkaKafkaClusterConfigs: typeof import("./getManagedKafkaKafkaClusterConfigs").getManagedKafkaKafkaClusterConfigs = null as any;
+export const getManagedKafkaKafkaClusterConfigsOutput: typeof import("./getManagedKafkaKafkaClusterConfigs").getManagedKafkaKafkaClusterConfigsOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusterConfigs","getManagedKafkaKafkaClusterConfigsOutput"], () => require("./getManagedKafkaKafkaClusterConfigs"));
+
+export { GetManagedKafkaKafkaClustersArgs, GetManagedKafkaKafkaClustersResult, GetManagedKafkaKafkaClustersOutputArgs } from "./getManagedKafkaKafkaClusters";
+export const getManagedKafkaKafkaClusters: typeof import("./getManagedKafkaKafkaClusters").getManagedKafkaKafkaClusters = null as any;
+export const getManagedKafkaKafkaClustersOutput: typeof import("./getManagedKafkaKafkaClusters").getManagedKafkaKafkaClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getManagedKafkaKafkaClusters","getManagedKafkaKafkaClustersOutput"], () => require("./getManagedKafkaKafkaClusters"));
+
 export { GetWlmsManagedInstanceArgs, GetWlmsManagedInstanceResult, GetWlmsManagedInstanceOutputArgs } from "./getWlmsManagedInstance";
 export const getWlmsManagedInstance: typeof import("./getWlmsManagedInstance").getWlmsManagedInstance = null as any;
 export const getWlmsManagedInstanceOutput: typeof import("./getWlmsManagedInstance").getWlmsManagedInstanceOutput = null as any;
@@ -250,6 +280,21 @@ export const getWlmsWlsDomains: typeof import("./getWlmsWlsDomains").getWlmsWlsD
 export const getWlmsWlsDomainsOutput: typeof import("./getWlmsWlsDomains").getWlmsWlsDomainsOutput = null as any;
 utilities.lazyLoad(exports, ["getWlmsWlsDomains","getWlmsWlsDomainsOutput"], () => require("./getWlmsWlsDomains"));
 
+export { ManagedKafkaKafkaClusterArgs, ManagedKafkaKafkaClusterState } from "./managedKafkaKafkaCluster";
+export type ManagedKafkaKafkaCluster = import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster;
+export const ManagedKafkaKafkaCluster: typeof import("./managedKafkaKafkaCluster").ManagedKafkaKafkaCluster = null as any;
+utilities.lazyLoad(exports, ["ManagedKafkaKafkaCluster"], () => require("./managedKafkaKafkaCluster"));
+
+export { ManagedKafkaKafkaClusterConfigArgs, ManagedKafkaKafkaClusterConfigState } from "./managedKafkaKafkaClusterConfig";
+export type ManagedKafkaKafkaClusterConfig = import("./managedKafkaKafkaClusterConfig").ManagedKafkaKafkaClusterConfig;
+export const ManagedKafkaKafkaClusterConfig: typeof import("./managedKafkaKafkaClusterConfig").ManagedKafkaKafkaClusterConfig = null as any;
+utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterConfig"], () => require("./managedKafkaKafkaClusterConfig"));
+
+export { ManagedKafkaKafkaClusterSuperusersManagementArgs, ManagedKafkaKafkaClusterSuperusersManagementState } from "./managedKafkaKafkaClusterSuperusersManagement";
+export type ManagedKafkaKafkaClusterSuperusersManagement = import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement;
+export const ManagedKafkaKafkaClusterSuperusersManagement: typeof import("./managedKafkaKafkaClusterSuperusersManagement").ManagedKafkaKafkaClusterSuperusersManagement = null as any;
+utilities.lazyLoad(exports, ["ManagedKafkaKafkaClusterSuperusersManagement"], () => require("./managedKafkaKafkaClusterSuperusersManagement"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -273,6 +318,12 @@ const _module = {
                 return new DbmulticloudOracleDbAzureVault(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
                 return new DbmulticloudOracleDbAzureVaultAssociation(name, <any>undefined, { urn })
+            case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
+                return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
+            case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
+                return new ManagedKafkaKafkaClusterConfig(name, <any>undefined, { urn })
+            case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
+                return new ManagedKafkaKafkaClusterSuperusersManagement(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -287,3 +338,6 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobM
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVaultAssociation", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)

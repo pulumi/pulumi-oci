@@ -30,16 +30,14 @@ public final class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs extends c
     }
 
     /**
-     * (Updatable) The type of Database connection. The allowed values are:
-     * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+     * (Updatable) The type of Database connection.
      * 
      */
     @Import(name="connectionType", required=true)
     private Output<String> connectionType;
 
     /**
-     * @return (Updatable) The type of Database connection. The allowed values are:
-     * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+     * @return (Updatable) The type of Database connection.
      * 
      */
     public Output<String> connectionType() {
@@ -93,8 +91,7 @@ public final class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs extends c
         }
 
         /**
-         * @param connectionType (Updatable) The type of Database connection. The allowed values are:
-         * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+         * @param connectionType (Updatable) The type of Database connection.
          * 
          * @return builder
          * 
@@ -105,8 +102,7 @@ public final class AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs extends c
         }
 
         /**
-         * @param connectionType (Updatable) The type of Database connection. The allowed values are:
-         * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+         * @param connectionType (Updatable) The type of Database connection.
          * 
          * @return builder
          * 

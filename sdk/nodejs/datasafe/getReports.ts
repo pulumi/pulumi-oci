@@ -21,6 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
  *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,
  *     reportDefinitionId: testReportDefinition.id,
@@ -37,6 +38,7 @@ export function getReports(args: GetReportsArgs, opts?: pulumi.InvokeOptions): P
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSource": args.dataSource,
         "displayName": args.displayName,
         "filters": args.filters,
         "mimeType": args.mimeType,
@@ -64,6 +66,10 @@ export interface GetReportsArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: boolean;
+    /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     */
+    dataSource?: string;
     /**
      * The name of the report definition to query.
      */
@@ -109,6 +115,10 @@ export interface GetReportsResult {
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
+    /**
+     * Specifies the name of a resource that provides data for the report. For example alerts, events.
+     */
+    readonly dataSource?: string;
     /**
      * Name of the report.
      */
@@ -156,6 +166,7 @@ export interface GetReportsResult {
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
  *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
+ *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,
  *     reportDefinitionId: testReportDefinition.id,
@@ -172,6 +183,7 @@ export function getReportsOutput(args: GetReportsOutputArgs, opts?: pulumi.Invok
         "accessLevel": args.accessLevel,
         "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "dataSource": args.dataSource,
         "displayName": args.displayName,
         "filters": args.filters,
         "mimeType": args.mimeType,
@@ -199,6 +211,10 @@ export interface GetReportsOutputArgs {
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    /**
+     * Specifies the name of a resource that provides data for the report. For example  alerts, events.
+     */
+    dataSource?: pulumi.Input<string>;
     /**
      * The name of the report definition to query.
      */

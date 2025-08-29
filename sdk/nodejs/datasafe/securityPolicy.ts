@@ -7,7 +7,26 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Security Policy resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Updates the security policy.
+ * Creates a Data Safe security policy.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSecurityPolicy = new oci.datasafe.SecurityPolicy("test_security_policy", {
+ *     compartmentId: compartmentId,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: securityPolicyDescription,
+ *     displayName: securityPolicyDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ * });
+ * ```
  *
  * ## Import
  *
@@ -46,7 +65,7 @@ export class SecurityPolicy extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -62,7 +81,11 @@ export class SecurityPolicy extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
     /**
@@ -70,13 +93,9 @@ export class SecurityPolicy extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * The OCID of the security policy resource.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The type of the security policy.
      */
-    public readonly securityPolicyId!: pulumi.Output<string>;
+    public /*out*/ readonly securityPolicyType!: pulumi.Output<string>;
     /**
      * The current state of the security policy.
      */
@@ -113,23 +132,23 @@ export class SecurityPolicy extends pulumi.CustomResource {
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
-            resourceInputs["securityPolicyId"] = state ? state.securityPolicyId : undefined;
+            resourceInputs["securityPolicyType"] = state ? state.securityPolicyType : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as SecurityPolicyArgs | undefined;
-            if ((!args || args.securityPolicyId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'securityPolicyId'");
+            if ((!args || args.compartmentId === undefined) && !opts.urn) {
+                throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["securityPolicyId"] = args ? args.securityPolicyId : undefined;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["securityPolicyType"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -145,7 +164,7 @@ export class SecurityPolicy extends pulumi.CustomResource {
  */
 export interface SecurityPolicyState {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -161,7 +180,11 @@ export interface SecurityPolicyState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
@@ -169,13 +192,9 @@ export interface SecurityPolicyState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The OCID of the security policy resource.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The type of the security policy.
      */
-    securityPolicyId?: pulumi.Input<string>;
+    securityPolicyType?: pulumi.Input<string>;
     /**
      * The current state of the security policy.
      */
@@ -199,9 +218,9 @@ export interface SecurityPolicyState {
  */
 export interface SecurityPolicyArgs {
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      */
-    compartmentId?: pulumi.Input<string>;
+    compartmentId: pulumi.Input<string>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
      */
@@ -215,15 +234,11 @@ export interface SecurityPolicyArgs {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-     */
-    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
-    /**
-     * The OCID of the security policy resource.
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityPolicyId: pulumi.Input<string>;
+    freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

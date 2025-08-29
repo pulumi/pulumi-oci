@@ -131,6 +131,10 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly ImmutableDictionary<string, string> AdditionalData;
         /// <summary>
+        /// The total number of available bare metal hosts located in this compute GPU memory fabric.
+        /// </summary>
+        public readonly string AvailableHostCount;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -192,6 +196,8 @@ namespace Pulumi.Oci.Core
         private GetComputeGpuMemoryFabricResult(
             ImmutableDictionary<string, string> additionalData,
 
+            string availableHostCount,
+
             string compartmentId,
 
             string computeGpuMemoryFabricId,
@@ -223,6 +229,7 @@ namespace Pulumi.Oci.Core
             string totalHostCount)
         {
             AdditionalData = additionalData;
+            AvailableHostCount = availableHostCount;
             CompartmentId = compartmentId;
             ComputeGpuMemoryFabricId = computeGpuMemoryFabricId;
             ComputeHpcIslandId = computeHpcIslandId;

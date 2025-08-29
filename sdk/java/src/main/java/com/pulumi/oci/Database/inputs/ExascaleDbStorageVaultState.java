@@ -35,6 +35,21 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
     }
 
     /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    @Import(name="attachedShapeAttributes")
+    private @Nullable Output<List<String>> attachedShapeAttributes;
+
+    /**
+     * @return The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<Output<List<String>>> attachedShapeAttributes() {
+        return Optional.ofNullable(this.attachedShapeAttributes);
+    }
+
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      * 
      */
@@ -299,6 +314,7 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
 
     private ExascaleDbStorageVaultState(ExascaleDbStorageVaultState $) {
         this.additionalFlashCacheInPercent = $.additionalFlashCacheInPercent;
+        this.attachedShapeAttributes = $.attachedShapeAttributes;
         this.availabilityDomain = $.availabilityDomain;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
@@ -355,6 +371,37 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
          */
         public Builder additionalFlashCacheInPercent(Integer additionalFlashCacheInPercent) {
             return additionalFlashCacheInPercent(Output.of(additionalFlashCacheInPercent));
+        }
+
+        /**
+         * @param attachedShapeAttributes The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributes(@Nullable Output<List<String>> attachedShapeAttributes) {
+            $.attachedShapeAttributes = attachedShapeAttributes;
+            return this;
+        }
+
+        /**
+         * @param attachedShapeAttributes The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributes(List<String> attachedShapeAttributes) {
+            return attachedShapeAttributes(Output.of(attachedShapeAttributes));
+        }
+
+        /**
+         * @param attachedShapeAttributes The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attachedShapeAttributes(String... attachedShapeAttributes) {
+            return attachedShapeAttributes(List.of(attachedShapeAttributes));
         }
 
         /**

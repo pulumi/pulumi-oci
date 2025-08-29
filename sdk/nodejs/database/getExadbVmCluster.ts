@@ -178,6 +178,10 @@ export interface GetExadbVmClusterResult {
      */
     readonly shape: string;
     /**
+     * The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+     */
+    readonly shapeAttribute: string;
+    /**
      * The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
      */
     readonly sshPublicKeys: string[];

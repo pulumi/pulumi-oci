@@ -9,8 +9,6 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
  *
- * **GetKnowledgeBase**
- *
  * Gets information about a knowledge base.
  *
  * ## Example Usage
@@ -70,10 +68,14 @@ export interface GetAgentKnowledgeBaseResult {
      */
     readonly id: string;
     /**
-     * **IndexConfig**
+     * The index configuration of Knowledge bases.
      */
     readonly indexConfigs: outputs.GenerativeAi.GetAgentKnowledgeBaseIndexConfig[];
     readonly knowledgeBaseId: string;
+    /**
+     * Statistics for Default Knowledge Base.
+     */
+    readonly knowledgeBaseStatistics: outputs.GenerativeAi.GetAgentKnowledgeBaseKnowledgeBaseStatistic[];
     /**
      * A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
@@ -97,8 +99,6 @@ export interface GetAgentKnowledgeBaseResult {
 }
 /**
  * This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
- *
- * **GetKnowledgeBase**
  *
  * Gets information about a knowledge base.
  *

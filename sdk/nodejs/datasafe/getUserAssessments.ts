@@ -40,7 +40,9 @@ import * as utilities from "../utilities";
  *     isScheduleAssessment: userAssessmentIsScheduleAssessment,
  *     scheduleUserAssessmentId: testUserAssessment.id,
  *     state: userAssessmentState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: userAssessmentTargetType,
  *     timeCreatedGreaterThanOrEqualTo: userAssessmentTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: userAssessmentTimeCreatedLessThan,
  *     triggeredBy: userAssessmentTriggeredBy,
@@ -60,7 +62,9 @@ export function getUserAssessments(args: GetUserAssessmentsArgs, opts?: pulumi.I
         "isScheduleAssessment": args.isScheduleAssessment,
         "scheduleUserAssessmentId": args.scheduleUserAssessmentId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
         "triggeredBy": args.triggeredBy,
@@ -106,9 +110,17 @@ export interface GetUserAssessmentsArgs {
      */
     state?: string;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    targetType?: string;
     /**
      * A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
      *
@@ -164,7 +176,15 @@ export interface GetUserAssessmentsResult {
      * The current state of the user assessment.
      */
     readonly state?: string;
+    /**
+     * The OCID of target database group.
+     */
+    readonly targetDatabaseGroupId?: string;
     readonly targetId?: string;
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     */
+    readonly targetType?: string;
     readonly timeCreatedGreaterThanOrEqualTo?: string;
     readonly timeCreatedLessThan?: string;
     /**
@@ -214,7 +234,9 @@ export interface GetUserAssessmentsResult {
  *     isScheduleAssessment: userAssessmentIsScheduleAssessment,
  *     scheduleUserAssessmentId: testUserAssessment.id,
  *     state: userAssessmentState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: userAssessmentTargetType,
  *     timeCreatedGreaterThanOrEqualTo: userAssessmentTimeCreatedGreaterThanOrEqualTo,
  *     timeCreatedLessThan: userAssessmentTimeCreatedLessThan,
  *     triggeredBy: userAssessmentTriggeredBy,
@@ -234,7 +256,9 @@ export function getUserAssessmentsOutput(args: GetUserAssessmentsOutputArgs, opt
         "isScheduleAssessment": args.isScheduleAssessment,
         "scheduleUserAssessmentId": args.scheduleUserAssessmentId,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
         "timeCreatedGreaterThanOrEqualTo": args.timeCreatedGreaterThanOrEqualTo,
         "timeCreatedLessThan": args.timeCreatedLessThan,
         "triggeredBy": args.triggeredBy,
@@ -280,9 +304,17 @@ export interface GetUserAssessmentsOutputArgs {
      */
     state?: pulumi.Input<string>;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     */
+    targetType?: pulumi.Input<string>;
     /**
      * A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
      *

@@ -115,11 +115,19 @@ export interface GetUserAssessmentResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: string};
+    /**
+     * The OCID of target database group.
+     */
+    readonly targetDatabaseGroupId: string;
     readonly targetId: string;
     /**
      * Array of database target OCIDs.
      */
     readonly targetIds: string[];
+    /**
+     * Indicates whether the user assessment is for a target database or a target database group.
+     */
+    readonly targetType: string;
     /**
      * The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
      */

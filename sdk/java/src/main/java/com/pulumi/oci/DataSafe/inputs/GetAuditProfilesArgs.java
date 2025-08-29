@@ -162,6 +162,21 @@ public final class GetAuditProfilesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -174,6 +189,21 @@ public final class GetAuditProfilesArgs extends com.pulumi.resources.InvokeArgs 
      */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return A optional filter to return only resources that belong to the specified audit profile type.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
     }
 
     private GetAuditProfilesArgs() {}
@@ -189,7 +219,9 @@ public final class GetAuditProfilesArgs extends com.pulumi.resources.InvokeArgs 
         this.isOverrideGlobalRetentionSetting = $.isOverrideGlobalRetentionSetting;
         this.isPaidUsageEnabled = $.isPaidUsageEnabled;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
     }
 
     public static Builder builder() {
@@ -413,6 +445,27 @@ public final class GetAuditProfilesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
+        }
+
+        /**
          * @param targetId A filter to return only items related to a specific target OCID.
          * 
          * @return builder
@@ -431,6 +484,27 @@ public final class GetAuditProfilesArgs extends com.pulumi.resources.InvokeArgs 
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified audit profile type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType A optional filter to return only resources that belong to the specified audit profile type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
         }
 
         public GetAuditProfilesArgs build() {

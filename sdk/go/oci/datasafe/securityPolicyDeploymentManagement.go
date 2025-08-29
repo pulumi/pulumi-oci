@@ -7,13 +7,14 @@ import (
 	"context"
 	"reflect"
 
+	"errors"
 	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 // This resource provides the Security Policy Deployment Management resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Updates the security policy deployment.
+// Creates a Data Safe security policy deployment in the Data Safe Console.
 //
 // ## Example Usage
 //
@@ -30,8 +31,10 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.NewSecurityPolicyDeploymentManagement(ctx, "test_security_policy_deployment_management", &datasafe.SecurityPolicyDeploymentManagementArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				TargetId:      pulumi.Any(testTargetDatabase.Id),
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				SecurityPolicyId: pulumi.Any(testSecurityPolicy.Id),
+//				TargetId:         pulumi.Any(testTarget.Id),
+//				TargetType:       pulumi.Any(securityPolicyDeploymentManagementTargetType),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -56,11 +59,13 @@ import (
 type SecurityPolicyDeploymentManagement struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment containing the security policy deployment.
+	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) The description of the security policy deployment.
+	// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+	DeployTrigger pulumi.IntPtrOutput `pulumi:"deployTrigger"`
+	// (Updatable) The description of the security policy.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
@@ -68,16 +73,25 @@ type SecurityPolicyDeploymentManagement struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Details about the current state of the security policy deployment in Data Safe.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	RefreshTrigger pulumi.IntPtrOutput `pulumi:"refreshTrigger"`
 	// The OCID of the security policy corresponding to the security policy deployment.
 	SecurityPolicyId pulumi.StringOutput `pulumi:"securityPolicyId"`
 	// The current state of the security policy deployment.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Unique target identifier.
+	// The OCID of the target where the security policy is deployed.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType pulumi.StringOutput `pulumi:"targetType"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
+	// The last date and time the security policy was deployed, in the format defined by RFC3339.
+	TimeDeployed pulumi.StringOutput `pulumi:"timeDeployed"`
 	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
@@ -86,9 +100,21 @@ type SecurityPolicyDeploymentManagement struct {
 func NewSecurityPolicyDeploymentManagement(ctx *pulumi.Context,
 	name string, args *SecurityPolicyDeploymentManagementArgs, opts ...pulumi.ResourceOption) (*SecurityPolicyDeploymentManagement, error) {
 	if args == nil {
-		args = &SecurityPolicyDeploymentManagementArgs{}
+		return nil, errors.New("missing one or more required arguments")
 	}
 
+	if args.CompartmentId == nil {
+		return nil, errors.New("invalid value for required argument 'CompartmentId'")
+	}
+	if args.SecurityPolicyId == nil {
+		return nil, errors.New("invalid value for required argument 'SecurityPolicyId'")
+	}
+	if args.TargetId == nil {
+		return nil, errors.New("invalid value for required argument 'TargetId'")
+	}
+	if args.TargetType == nil {
+		return nil, errors.New("invalid value for required argument 'TargetType'")
+	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource SecurityPolicyDeploymentManagement
 	err := ctx.RegisterResource("oci:DataSafe/securityPolicyDeploymentManagement:SecurityPolicyDeploymentManagement", name, args, &resource, opts...)
@@ -112,11 +138,13 @@ func GetSecurityPolicyDeploymentManagement(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SecurityPolicyDeploymentManagement resources.
 type securityPolicyDeploymentManagementState struct {
-	// (Updatable) The OCID of the compartment containing the security policy deployment.
+	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) The description of the security policy deployment.
+	// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+	DeployTrigger *int `pulumi:"deployTrigger"`
+	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
@@ -124,26 +152,37 @@ type securityPolicyDeploymentManagementState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Details about the current state of the security policy deployment in Data Safe.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	RefreshTrigger *int `pulumi:"refreshTrigger"`
 	// The OCID of the security policy corresponding to the security policy deployment.
 	SecurityPolicyId *string `pulumi:"securityPolicyId"`
 	// The current state of the security policy deployment.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Unique target identifier.
+	// The OCID of the target where the security policy is deployed.
 	TargetId *string `pulumi:"targetId"`
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType *string `pulumi:"targetType"`
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
+	// The last date and time the security policy was deployed, in the format defined by RFC3339.
+	TimeDeployed *string `pulumi:"timeDeployed"`
 	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type SecurityPolicyDeploymentManagementState struct {
-	// (Updatable) The OCID of the compartment containing the security policy deployment.
+	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) The description of the security policy deployment.
+	// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+	DeployTrigger pulumi.IntPtrInput
+	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
@@ -151,16 +190,25 @@ type SecurityPolicyDeploymentManagementState struct {
 	FreeformTags pulumi.StringMapInput
 	// Details about the current state of the security policy deployment in Data Safe.
 	LifecycleDetails pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	RefreshTrigger pulumi.IntPtrInput
 	// The OCID of the security policy corresponding to the security policy deployment.
 	SecurityPolicyId pulumi.StringPtrInput
 	// The current state of the security policy deployment.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// Unique target identifier.
+	// The OCID of the target where the security policy is deployed.
 	TargetId pulumi.StringPtrInput
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType pulumi.StringPtrInput
 	// The time that the security policy deployment was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
+	// The last date and time the security policy was deployed, in the format defined by RFC3339.
+	TimeDeployed pulumi.StringPtrInput
 	// The last date and time the security policy deployment was updated, in the format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
@@ -170,34 +218,56 @@ func (SecurityPolicyDeploymentManagementState) ElementType() reflect.Type {
 }
 
 type securityPolicyDeploymentManagementArgs struct {
-	// (Updatable) The OCID of the compartment containing the security policy deployment.
-	CompartmentId *string `pulumi:"compartmentId"`
+	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
+	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) The description of the security policy deployment.
+	// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+	DeployTrigger *int `pulumi:"deployTrigger"`
+	// (Updatable) The description of the security policy.
 	Description *string `pulumi:"description"`
 	// (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique target identifier.
-	TargetId *string `pulumi:"targetId"`
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	RefreshTrigger *int `pulumi:"refreshTrigger"`
+	// The OCID of the security policy corresponding to the security policy deployment.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The OCID of the target where the security policy is deployed.
+	TargetId string `pulumi:"targetId"`
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType string `pulumi:"targetType"`
 }
 
 // The set of arguments for constructing a SecurityPolicyDeploymentManagement resource.
 type SecurityPolicyDeploymentManagementArgs struct {
-	// (Updatable) The OCID of the compartment containing the security policy deployment.
-	CompartmentId pulumi.StringPtrInput
+	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
+	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) The description of the security policy deployment.
+	// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+	DeployTrigger pulumi.IntPtrInput
+	// (Updatable) The description of the security policy.
 	Description pulumi.StringPtrInput
 	// (Updatable) The display name of the security policy deployment. The name does not have to be unique, and it is changeable.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Unique target identifier.
-	TargetId pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	RefreshTrigger pulumi.IntPtrInput
+	// The OCID of the security policy corresponding to the security policy deployment.
+	SecurityPolicyId pulumi.StringInput
+	// The OCID of the target where the security policy is deployed.
+	TargetId pulumi.StringInput
+	// Indicates whether the security policy deployment is for a target database or a target database group.
+	TargetType pulumi.StringInput
 }
 
 func (SecurityPolicyDeploymentManagementArgs) ElementType() reflect.Type {
@@ -287,7 +357,7 @@ func (o SecurityPolicyDeploymentManagementOutput) ToSecurityPolicyDeploymentMana
 	return o
 }
 
-// (Updatable) The OCID of the compartment containing the security policy deployment.
+// (Updatable) The OCID of the compartment in which to create the unified audit policy.
 func (o SecurityPolicyDeploymentManagementOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -297,7 +367,12 @@ func (o SecurityPolicyDeploymentManagementOutput) DefinedTags() pulumi.StringMap
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) The description of the security policy deployment.
+// (Updatable) An optional property when incremented triggers Deploy. Could be set to any integer value.
+func (o SecurityPolicyDeploymentManagementOutput) DeployTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.IntPtrOutput { return v.DeployTrigger }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The description of the security policy.
 func (o SecurityPolicyDeploymentManagementOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
@@ -317,6 +392,14 @@ func (o SecurityPolicyDeploymentManagementOutput) LifecycleDetails() pulumi.Stri
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// (Updatable) An optional property when incremented triggers Refresh. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o SecurityPolicyDeploymentManagementOutput) RefreshTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.IntPtrOutput { return v.RefreshTrigger }).(pulumi.IntPtrOutput)
+}
+
 // The OCID of the security policy corresponding to the security policy deployment.
 func (o SecurityPolicyDeploymentManagementOutput) SecurityPolicyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.SecurityPolicyId }).(pulumi.StringOutput)
@@ -332,14 +415,24 @@ func (o SecurityPolicyDeploymentManagementOutput) SystemTags() pulumi.StringMapO
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Unique target identifier.
+// The OCID of the target where the security policy is deployed.
 func (o SecurityPolicyDeploymentManagementOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
+}
+
+// Indicates whether the security policy deployment is for a target database or a target database group.
+func (o SecurityPolicyDeploymentManagementOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TargetType }).(pulumi.StringOutput)
 }
 
 // The time that the security policy deployment was created, in the format defined by RFC3339.
 func (o SecurityPolicyDeploymentManagementOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the security policy was deployed, in the format defined by RFC3339.
+func (o SecurityPolicyDeploymentManagementOutput) TimeDeployed() pulumi.StringOutput {
+	return o.ApplyT(func(v *SecurityPolicyDeploymentManagement) pulumi.StringOutput { return v.TimeDeployed }).(pulumi.StringOutput)
 }
 
 // The last date and time the security policy deployment was updated, in the format defined by RFC3339.

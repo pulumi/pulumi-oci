@@ -50,6 +50,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyId = testSecurityPolicy.Id,
         ///         State = securityPolicyDeploymentState,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityPolicyDeploymentTargetType,
         ///     });
         /// 
         /// });
@@ -97,6 +98,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyId = testSecurityPolicy.Id,
         ///         State = securityPolicyDeploymentState,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityPolicyDeploymentTargetType,
         ///     });
         /// 
         /// });
@@ -144,6 +146,7 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyId = testSecurityPolicy.Id,
         ///         State = securityPolicyDeploymentState,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = securityPolicyDeploymentTargetType,
         ///     });
         /// 
         /// });
@@ -212,6 +215,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public string? TargetId { get; set; }
 
+        /// <summary>
+        /// A optional filter to return only resources that belong to the specified target type.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
+
         public GetSecurityPolicyDeploymentsArgs()
         {
         }
@@ -276,6 +285,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
 
+        /// <summary>
+        /// A optional filter to return only resources that belong to the specified target type.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
+
         public GetSecurityPolicyDeploymentsInvokeArgs()
         {
         }
@@ -315,9 +330,13 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The OCID of the target where the security policy is deployed.
+        /// The OCID of the target/target group where the security policy is deployed.
         /// </summary>
         public readonly string? TargetId;
+        /// <summary>
+        /// Indicates whether the security policy deployment is for a target database or a target database group.
+        /// </summary>
+        public readonly string? TargetType;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentsResult(
@@ -341,7 +360,9 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
-            string? targetId)
+            string? targetId,
+
+            string? targetType)
         {
             AccessLevel = accessLevel;
             CompartmentId = compartmentId;
@@ -354,6 +375,7 @@ namespace Pulumi.Oci.DataSafe
             SecurityPolicyId = securityPolicyId;
             State = state;
             TargetId = targetId;
+            TargetType = targetType;
         }
     }
 }

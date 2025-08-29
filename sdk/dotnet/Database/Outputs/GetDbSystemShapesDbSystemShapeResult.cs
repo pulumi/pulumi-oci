@@ -106,6 +106,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Shape;
         /// <summary>
+        /// The shapeAttributes of the DB system shape.
+        /// </summary>
+        public readonly ImmutableArray<string> ShapeAttributes;
+        /// <summary>
         /// The family of the shape used for the DB system.
         /// </summary>
         public readonly string ShapeFamily;
@@ -162,6 +166,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string shape,
 
+            ImmutableArray<string> shapeAttributes,
+
             string shapeFamily,
 
             string shapeType)
@@ -189,6 +195,7 @@ namespace Pulumi.Oci.Database.Outputs
             MinimumNodeCount = minimumNodeCount;
             Name = name;
             Shape = shape;
+            ShapeAttributes = shapeAttributes;
             ShapeFamily = shapeFamily;
             ShapeType = shapeType;
         }

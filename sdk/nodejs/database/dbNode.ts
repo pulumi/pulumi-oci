@@ -66,6 +66,14 @@ export class DbNode extends pulumi.CustomResource {
      */
     public /*out*/ readonly backupVnicId!: pulumi.Output<string>;
     /**
+     * The number of compute servers for the DB system.
+     */
+    public /*out*/ readonly computeCount!: pulumi.Output<number>;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    public /*out*/ readonly computeModel!: pulumi.Output<string>;
+    /**
      * The number of CPU cores enabled on the Db node.
      */
     public /*out*/ readonly cpuCoreCount!: pulumi.Output<number>;
@@ -180,6 +188,8 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["backupIpv6id"] = state ? state.backupIpv6id : undefined;
             resourceInputs["backupVnic2id"] = state ? state.backupVnic2id : undefined;
             resourceInputs["backupVnicId"] = state ? state.backupVnicId : undefined;
+            resourceInputs["computeCount"] = state ? state.computeCount : undefined;
+            resourceInputs["computeModel"] = state ? state.computeModel : undefined;
             resourceInputs["cpuCoreCount"] = state ? state.cpuCoreCount : undefined;
             resourceInputs["dbNodeId"] = state ? state.dbNodeId : undefined;
             resourceInputs["dbNodeStorageSizeInGbs"] = state ? state.dbNodeStorageSizeInGbs : undefined;
@@ -216,6 +226,8 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["backupIpv6id"] = undefined /*out*/;
             resourceInputs["backupVnic2id"] = undefined /*out*/;
             resourceInputs["backupVnicId"] = undefined /*out*/;
+            resourceInputs["computeCount"] = undefined /*out*/;
+            resourceInputs["computeModel"] = undefined /*out*/;
             resourceInputs["cpuCoreCount"] = undefined /*out*/;
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerId"] = undefined /*out*/;
@@ -266,6 +278,14 @@ export interface DbNodeState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
      */
     backupVnicId?: pulumi.Input<string>;
+    /**
+     * The number of compute servers for the DB system.
+     */
+    computeCount?: pulumi.Input<number>;
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     */
+    computeModel?: pulumi.Input<string>;
     /**
      * The number of CPU cores enabled on the Db node.
      */

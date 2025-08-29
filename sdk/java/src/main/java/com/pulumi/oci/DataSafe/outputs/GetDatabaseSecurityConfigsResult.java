@@ -45,6 +45,7 @@ public final class GetDatabaseSecurityConfigsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The target OCID corresponding to the database security config.
      * 
@@ -101,6 +102,9 @@ public final class GetDatabaseSecurityConfigsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The target OCID corresponding to the database security config.
      * 
@@ -133,6 +137,7 @@ public final class GetDatabaseSecurityConfigsResult {
         private @Nullable List<GetDatabaseSecurityConfigsFilter> filters;
         private String id;
         private @Nullable String state;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         private @Nullable String timeCreatedGreaterThanOrEqualTo;
         private @Nullable String timeCreatedLessThan;
@@ -148,6 +153,7 @@ public final class GetDatabaseSecurityConfigsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.state = defaults.state;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
     	      this.timeCreatedGreaterThanOrEqualTo = defaults.timeCreatedGreaterThanOrEqualTo;
     	      this.timeCreatedLessThan = defaults.timeCreatedLessThan;
@@ -220,6 +226,12 @@ public final class GetDatabaseSecurityConfigsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -248,6 +260,7 @@ public final class GetDatabaseSecurityConfigsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.state = state;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             _resultValue.timeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             _resultValue.timeCreatedLessThan = timeCreatedLessThan;

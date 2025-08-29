@@ -28,7 +28,7 @@ class GetReportsResult:
     """
     A collection of values returned by getReports.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, mime_type=None, report_collections=None, report_definition_id=None, state=None, time_generated_greater_than_or_equal_to=None, time_generated_less_than=None, type=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, data_source=None, display_name=None, filters=None, id=None, mime_type=None, report_collections=None, report_definition_id=None, state=None, time_generated_greater_than_or_equal_to=None, time_generated_less_than=None, type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -38,6 +38,9 @@ class GetReportsResult:
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if data_source and not isinstance(data_source, str):
+            raise TypeError("Expected argument 'data_source' to be a str")
+        pulumi.set(__self__, "data_source", data_source)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -86,6 +89,14 @@ class GetReportsResult:
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
+
+    @_builtins.property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> Optional[_builtins.str]:
+        """
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+        """
+        return pulumi.get(self, "data_source")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -168,6 +179,7 @@ class AwaitableGetReportsResult(GetReportsResult):
             access_level=self.access_level,
             compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
+            data_source=self.data_source,
             display_name=self.display_name,
             filters=self.filters,
             id=self.id,
@@ -183,6 +195,7 @@ class AwaitableGetReportsResult(GetReportsResult):
 def get_reports(access_level: Optional[_builtins.str] = None,
                 compartment_id: Optional[_builtins.str] = None,
                 compartment_id_in_subtree: Optional[_builtins.bool] = None,
+                data_source: Optional[_builtins.str] = None,
                 display_name: Optional[_builtins.str] = None,
                 filters: Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]] = None,
                 mime_type: Optional[_builtins.str] = None,
@@ -206,6 +219,7 @@ def get_reports(access_level: Optional[_builtins.str] = None,
     test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
         compartment_id_in_subtree=report_compartment_id_in_subtree,
+        data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,
         report_definition_id=test_report_definition["id"],
@@ -219,6 +233,7 @@ def get_reports(access_level: Optional[_builtins.str] = None,
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param _builtins.str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
     :param _builtins.str display_name: The name of the report definition to query.
     :param _builtins.str mime_type: An optional filter to return only resources that match the specified mime type.
     :param _builtins.str report_definition_id: The ID of the report definition to filter the list of reports
@@ -235,6 +250,7 @@ def get_reports(access_level: Optional[_builtins.str] = None,
     __args__['accessLevel'] = access_level
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSource'] = data_source
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['mimeType'] = mime_type
@@ -250,6 +266,7 @@ def get_reports(access_level: Optional[_builtins.str] = None,
         access_level=pulumi.get(__ret__, 'access_level'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        data_source=pulumi.get(__ret__, 'data_source'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -263,6 +280,7 @@ def get_reports(access_level: Optional[_builtins.str] = None,
 def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                        compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                       data_source: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetReportsFilterArgs', 'GetReportsFilterArgsDict']]]]] = None,
                        mime_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -286,6 +304,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
     test_reports = oci.DataSafe.get_reports(compartment_id=compartment_id,
         access_level=report_access_level,
         compartment_id_in_subtree=report_compartment_id_in_subtree,
+        data_source=report_data_source,
         display_name=report_display_name,
         mime_type=report_mime_type,
         report_definition_id=test_report_definition["id"],
@@ -299,6 +318,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param _builtins.str data_source: Specifies the name of a resource that provides data for the report. For example  alerts, events.
     :param _builtins.str display_name: The name of the report definition to query.
     :param _builtins.str mime_type: An optional filter to return only resources that match the specified mime type.
     :param _builtins.str report_definition_id: The ID of the report definition to filter the list of reports
@@ -315,6 +335,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
     __args__['accessLevel'] = access_level
     __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['dataSource'] = data_source
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['mimeType'] = mime_type
@@ -329,6 +350,7 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.st
         access_level=pulumi.get(__response__, 'access_level'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        data_source=pulumi.get(__response__, 'data_source'),
         display_name=pulumi.get(__response__, 'display_name'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

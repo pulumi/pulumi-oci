@@ -16,43 +16,6 @@ import (
 //
 // Creates a new target-alert policy association to track a alert policy applied on target.
 //
-// ## Example Usage
-//
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datasafe"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := datasafe.NewTargetAlertPolicyAssociation(ctx, "test_target_alert_policy_association", &datasafe.TargetAlertPolicyAssociationArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				IsEnabled:     pulumi.Any(targetAlertPolicyAssociationIsEnabled),
-//				PolicyId:      pulumi.Any(testPolicy.Id),
-//				TargetId:      pulumi.Any(testTarget.Id),
-//				DefinedTags: pulumi.StringMap{
-//					"Operations.CostCenter": pulumi.String("42"),
-//				},
-//				Description: pulumi.Any(targetAlertPolicyAssociationDescription),
-//				DisplayName: pulumi.Any(targetAlertPolicyAssociationDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"Department": pulumi.String("Finance"),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-//
 // ## Import
 //
 // TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -83,10 +46,7 @@ type TargetAlertPolicyAssociation struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The OCID of the target.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the target or target database group.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -156,10 +116,7 @@ type targetAlertPolicyAssociationState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The OCID of the target.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the target or target database group.
 	TargetId *string `pulumi:"targetId"`
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -188,10 +145,7 @@ type TargetAlertPolicyAssociationState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The OCID of the target.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the target or target database group.
 	TargetId pulumi.StringPtrInput
 	// Creation date and time of the alert policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
 	TimeCreated pulumi.StringPtrInput
@@ -218,10 +172,7 @@ type targetAlertPolicyAssociationArgs struct {
 	IsEnabled bool `pulumi:"isEnabled"`
 	// The OCID of the alert policy.
 	PolicyId string `pulumi:"policyId"`
-	// The OCID of the target.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the target or target database group.
 	TargetId string `pulumi:"targetId"`
 }
 
@@ -241,10 +192,7 @@ type TargetAlertPolicyAssociationArgs struct {
 	IsEnabled pulumi.BoolInput
 	// The OCID of the alert policy.
 	PolicyId pulumi.StringInput
-	// The OCID of the target.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The OCID of the target or target database group.
 	TargetId pulumi.StringInput
 }
 
@@ -385,10 +333,7 @@ func (o TargetAlertPolicyAssociationOutput) SystemTags() pulumi.StringMapOutput 
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the target.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The OCID of the target or target database group.
 func (o TargetAlertPolicyAssociationOutput) TargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAlertPolicyAssociation) pulumi.StringOutput { return v.TargetId }).(pulumi.StringOutput)
 }

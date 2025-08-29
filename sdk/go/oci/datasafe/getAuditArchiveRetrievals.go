@@ -36,6 +36,7 @@ import (
 //				CompartmentIdInSubtree:  pulumi.BoolRef(auditArchiveRetrievalCompartmentIdInSubtree),
 //				DisplayName:             pulumi.StringRef(auditArchiveRetrievalDisplayName),
 //				State:                   pulumi.StringRef(auditArchiveRetrievalState),
+//				TargetDatabaseGroupId:   pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                pulumi.StringRef(testTarget.Id),
 //				TimeOfExpiry:            pulumi.StringRef(auditArchiveRetrievalTimeOfExpiry),
 //			}, nil)
@@ -72,6 +73,8 @@ type GetAuditArchiveRetrievalsArgs struct {
 	Filters     []GetAuditArchiveRetrievalsFilter `pulumi:"filters"`
 	// A filter to return only resources that matches the specified lifecycle state.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId *string `pulumi:"targetId"`
 	// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
@@ -93,7 +96,8 @@ type GetAuditArchiveRetrievalsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The current state of the archive retrieval.
-	State *string `pulumi:"state"`
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId *string `pulumi:"targetId"`
 	// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
@@ -124,6 +128,8 @@ type GetAuditArchiveRetrievalsOutputArgs struct {
 	Filters     GetAuditArchiveRetrievalsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only resources that matches the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target associated with the archive retrieval.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// The date time when retrieved archive data will be deleted from Data Safe and unloaded back into archival.
@@ -190,6 +196,10 @@ func (o GetAuditArchiveRetrievalsResultOutput) Id() pulumi.StringOutput {
 // The current state of the archive retrieval.
 func (o GetAuditArchiveRetrievalsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAuditArchiveRetrievalsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetAuditArchiveRetrievalsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetAuditArchiveRetrievalsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target associated with the archive retrieval.

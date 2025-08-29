@@ -56,6 +56,18 @@ namespace Pulumi.Oci.Database
         public Output<string> BackupVnicId { get; private set; } = null!;
 
         /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        [Output("computeCount")]
+        public Output<int> ComputeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
         /// The number of CPU cores enabled on the Db node.
         /// </summary>
         [Output("cpuCoreCount")]
@@ -314,6 +326,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("backupVnicId")]
         public Input<string>? BackupVnicId { get; set; }
+
+        /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
         /// The number of CPU cores enabled on the Db node.

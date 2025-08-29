@@ -102,6 +102,21 @@ public final class GetSecurityPoliciesArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
+     * The type of the security policy.
+     * 
+     */
+    @Import(name="securityPolicyType")
+    private @Nullable Output<String> securityPolicyType;
+
+    /**
+     * @return The type of the security policy.
+     * 
+     */
+    public Optional<Output<String>> securityPolicyType() {
+        return Optional.ofNullable(this.securityPolicyType);
+    }
+
+    /**
      * The current state of the security policy.
      * 
      */
@@ -125,6 +140,7 @@ public final class GetSecurityPoliciesArgs extends com.pulumi.resources.InvokeAr
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.securityPolicyId = $.securityPolicyId;
+        this.securityPolicyType = $.securityPolicyType;
         this.state = $.state;
     }
 
@@ -262,6 +278,27 @@ public final class GetSecurityPoliciesArgs extends com.pulumi.resources.InvokeAr
          */
         public Builder securityPolicyId(String securityPolicyId) {
             return securityPolicyId(Output.of(securityPolicyId));
+        }
+
+        /**
+         * @param securityPolicyType The type of the security policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyType(@Nullable Output<String> securityPolicyType) {
+            $.securityPolicyType = securityPolicyType;
+            return this;
+        }
+
+        /**
+         * @param securityPolicyType The type of the security policy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityPolicyType(String securityPolicyType) {
+            return securityPolicyType(Output.of(securityPolicyType));
         }
 
         /**

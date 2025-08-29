@@ -34,6 +34,8 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
         ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
         ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
+        ///         SecurityPolicyEntryType = securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -65,6 +67,8 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
         ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
         ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
+        ///         SecurityPolicyEntryType = securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -96,6 +100,8 @@ namespace Pulumi.Oci.DataSafe
         ///         SecurityPolicyDeploymentId = testSecurityPolicyDeployment.Id,
         ///         DeploymentStatus = securityPolicyDeploymentSecurityPolicyEntryStateDeploymentStatus,
         ///         SecurityPolicyEntryId = testSecurityPolicyEntry.Id,
+        ///         SecurityPolicyEntryType = securityPolicyDeploymentSecurityPolicyEntryStateSecurityPolicyEntryType,
+        ///         TargetId = testTarget.Id,
         ///     });
         /// 
         /// });
@@ -134,6 +140,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("securityPolicyEntryId")]
         public string? SecurityPolicyEntryId { get; set; }
 
+        /// <summary>
+        /// The type of the security policy deployment.
+        /// </summary>
+        [Input("securityPolicyEntryType")]
+        public string? SecurityPolicyEntryType { get; set; }
+
+        /// <summary>
+        /// An optional filter to return only resources that match the specified target id.
+        /// </summary>
+        [Input("targetId")]
+        public string? TargetId { get; set; }
+
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesArgs()
         {
         }
@@ -168,6 +186,18 @@ namespace Pulumi.Oci.DataSafe
         [Input("securityPolicyEntryId")]
         public Input<string>? SecurityPolicyEntryId { get; set; }
 
+        /// <summary>
+        /// The type of the security policy deployment.
+        /// </summary>
+        [Input("securityPolicyEntryType")]
+        public Input<string>? SecurityPolicyEntryType { get; set; }
+
+        /// <summary>
+        /// An optional filter to return only resources that match the specified target id.
+        /// </summary>
+        [Input("targetId")]
+        public Input<string>? TargetId { get; set; }
+
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesInvokeArgs()
         {
         }
@@ -199,6 +229,11 @@ namespace Pulumi.Oci.DataSafe
         /// The list of security_policy_entry_state_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult> SecurityPolicyEntryStateCollections;
+        public readonly string? SecurityPolicyEntryType;
+        /// <summary>
+        /// The OCID of the target on which the security policy is deployed.
+        /// </summary>
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult(
@@ -212,7 +247,11 @@ namespace Pulumi.Oci.DataSafe
 
             string? securityPolicyEntryId,
 
-            ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult> securityPolicyEntryStateCollections)
+            ImmutableArray<Outputs.GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollectionResult> securityPolicyEntryStateCollections,
+
+            string? securityPolicyEntryType,
+
+            string? targetId)
         {
             DeploymentStatus = deploymentStatus;
             Filters = filters;
@@ -220,6 +259,8 @@ namespace Pulumi.Oci.DataSafe
             SecurityPolicyDeploymentId = securityPolicyDeploymentId;
             SecurityPolicyEntryId = securityPolicyEntryId;
             SecurityPolicyEntryStateCollections = securityPolicyEntryStateCollections;
+            SecurityPolicyEntryType = securityPolicyEntryType;
+            TargetId = targetId;
         }
     }
 }

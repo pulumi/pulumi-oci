@@ -20,6 +20,7 @@ __all__ = ['AuditTrailArgs', 'AuditTrail']
 class AuditTrailArgs:
     def __init__(__self__, *,
                  audit_trail_id: pulumi.Input[_builtins.str],
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -30,6 +31,7 @@ class AuditTrailArgs:
         """
         The set of arguments for constructing a AuditTrail resource.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit trail.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
@@ -43,6 +45,8 @@ class AuditTrailArgs:
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Audit Trail. Could be set to `ACTIVE` or `INACTIVE`.
         """
         pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        if can_update_last_archive_time_on_target is not None:
+            pulumi.set(__self__, "can_update_last_archive_time_on_target", can_update_last_archive_time_on_target)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -69,6 +73,18 @@ class AuditTrailArgs:
     @audit_trail_id.setter
     def audit_trail_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "audit_trail_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -165,6 +181,7 @@ class _AuditTrailState:
                  audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
                  audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
                  audit_trail_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -192,6 +209,7 @@ class _AuditTrailState:
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit trail.
@@ -225,6 +243,8 @@ class _AuditTrailState:
             pulumi.set(__self__, "audit_profile_id", audit_profile_id)
         if audit_trail_id is not None:
             pulumi.set(__self__, "audit_trail_id", audit_trail_id)
+        if can_update_last_archive_time_on_target is not None:
+            pulumi.set(__self__, "can_update_last_archive_time_on_target", can_update_last_archive_time_on_target)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -305,6 +325,18 @@ class _AuditTrailState:
     @audit_trail_id.setter
     def audit_trail_id(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "audit_trail_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
+
+    @can_update_last_archive_time_on_target.setter
+    def can_update_last_archive_time_on_target(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "can_update_last_archive_time_on_target", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -582,6 +614,7 @@ class AuditTrail(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  audit_trail_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -606,6 +639,7 @@ class AuditTrail(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit trail.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the audit trail. The name does not have to be unique, and it's updatable.
@@ -653,6 +687,7 @@ class AuditTrail(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  audit_trail_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
@@ -672,6 +707,7 @@ class AuditTrail(pulumi.CustomResource):
             if audit_trail_id is None and not opts.urn:
                 raise TypeError("Missing required property 'audit_trail_id'")
             __props__.__dict__["audit_trail_id"] = audit_trail_id
+            __props__.__dict__["can_update_last_archive_time_on_target"] = can_update_last_archive_time_on_target
             __props__.__dict__["defined_tags"] = defined_tags
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
@@ -709,6 +745,7 @@ class AuditTrail(pulumi.CustomResource):
             audit_collection_start_time: Optional[pulumi.Input[_builtins.str]] = None,
             audit_profile_id: Optional[pulumi.Input[_builtins.str]] = None,
             audit_trail_id: Optional[pulumi.Input[_builtins.str]] = None,
+            can_update_last_archive_time_on_target: Optional[pulumi.Input[_builtins.bool]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: Optional[pulumi.Input[_builtins.str]] = None,
@@ -741,6 +778,7 @@ class AuditTrail(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] audit_collection_start_time: The date from which the audit trail must start collecting data, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] audit_profile_id: The OCID of the  parent audit.
         :param pulumi.Input[_builtins.str] audit_trail_id: The OCID of the audit trail.
+        :param pulumi.Input[_builtins.bool] can_update_last_archive_time_on_target: (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
         :param pulumi.Input[_builtins.str] compartment_id: The OCID of the compartment that contains the audit trail and is the same as the compartment of the audit profile resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the audit trail.
@@ -775,6 +813,7 @@ class AuditTrail(pulumi.CustomResource):
         __props__.__dict__["audit_collection_start_time"] = audit_collection_start_time
         __props__.__dict__["audit_profile_id"] = audit_profile_id
         __props__.__dict__["audit_trail_id"] = audit_trail_id
+        __props__.__dict__["can_update_last_archive_time_on_target"] = can_update_last_archive_time_on_target
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -822,6 +861,14 @@ class AuditTrail(pulumi.CustomResource):
         The OCID of the audit trail.
         """
         return pulumi.get(self, "audit_trail_id")
+
+    @_builtins.property
+    @pulumi.getter(name="canUpdateLastArchiveTimeOnTarget")
+    def can_update_last_archive_time_on_target(self) -> pulumi.Output[_builtins.bool]:
+        """
+        (Updatable) Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+        """
+        return pulumi.get(self, "can_update_last_archive_time_on_target")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

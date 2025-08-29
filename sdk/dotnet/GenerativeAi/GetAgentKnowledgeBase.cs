@@ -14,8 +14,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **GetKnowledgeBase**
-        /// 
         /// Gets information about a knowledge base.
         /// 
         /// 
@@ -43,8 +41,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **GetKnowledgeBase**
-        /// 
         /// Gets information about a knowledge base.
         /// 
         /// 
@@ -71,8 +67,6 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// This data source provides details about a specific Knowledge Base resource in Oracle Cloud Infrastructure Generative Ai Agent service.
-        /// 
-        /// **GetKnowledgeBase**
         /// 
         /// Gets information about a knowledge base.
         /// 
@@ -157,10 +151,14 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// **IndexConfig**
+        /// The index configuration of Knowledge bases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAgentKnowledgeBaseIndexConfigResult> IndexConfigs;
         public readonly string KnowledgeBaseId;
+        /// <summary>
+        /// Statistics for Default Knowledge Base.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAgentKnowledgeBaseKnowledgeBaseStatisticResult> KnowledgeBaseStatistics;
         /// <summary>
         /// A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         /// </summary>
@@ -200,6 +198,8 @@ namespace Pulumi.Oci.GenerativeAi
 
             string knowledgeBaseId,
 
+            ImmutableArray<Outputs.GetAgentKnowledgeBaseKnowledgeBaseStatisticResult> knowledgeBaseStatistics,
+
             string lifecycleDetails,
 
             string state,
@@ -218,6 +218,7 @@ namespace Pulumi.Oci.GenerativeAi
             Id = id;
             IndexConfigs = indexConfigs;
             KnowledgeBaseId = knowledgeBaseId;
+            KnowledgeBaseStatistics = knowledgeBaseStatistics;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SystemTags = systemTags;

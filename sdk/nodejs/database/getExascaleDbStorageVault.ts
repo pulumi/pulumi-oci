@@ -48,6 +48,10 @@ export interface GetExascaleDbStorageVaultResult {
      */
     readonly additionalFlashCacheInPercent: number;
     /**
+     * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
+     */
+    readonly attachedShapeAttributes: string[];
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
     readonly availabilityDomain: string;

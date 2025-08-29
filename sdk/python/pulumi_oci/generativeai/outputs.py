@@ -28,6 +28,7 @@ __all__ = [
     'AgentAgentLlmConfig',
     'AgentAgentLlmConfigRoutingLlmCustomization',
     'AgentDataIngestionJobDataIngestionJobStatistic',
+    'AgentDataIngestionJobDataIngestionJobType',
     'AgentDataSourceDataSourceConfig',
     'AgentDataSourceDataSourceConfigObjectStoragePrefix',
     'AgentKnowledgeBaseIndexConfig',
@@ -36,11 +37,16 @@ __all__ = [
     'AgentKnowledgeBaseIndexConfigIndex',
     'AgentKnowledgeBaseIndexConfigIndexSchema',
     'AgentKnowledgeBaseIndexConfigSecretDetail',
+    'AgentKnowledgeBaseKnowledgeBaseStatistic',
     'AgentToolToolConfig',
+    'AgentToolToolConfigApiSchema',
     'AgentToolToolConfigDatabaseConnection',
     'AgentToolToolConfigDatabaseSchema',
     'AgentToolToolConfigFunction',
     'AgentToolToolConfigGenerationLlmCustomization',
+    'AgentToolToolConfigHttpEndpointAuthConfig',
+    'AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource',
+    'AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig',
     'AgentToolToolConfigIclExamples',
     'AgentToolToolConfigKnowledgeBaseConfig',
     'AgentToolToolConfigTableAndColumnDescription',
@@ -79,9 +85,11 @@ __all__ = [
     'GetAgentAgentsAgentCollectionItemLlmConfigRoutingLlmCustomizationResult',
     'GetAgentAgentsFilterResult',
     'GetAgentDataIngestionJobDataIngestionJobStatisticResult',
+    'GetAgentDataIngestionJobDataIngestionJobTypeResult',
     'GetAgentDataIngestionJobsDataIngestionJobCollectionResult',
     'GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult',
     'GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult',
+    'GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult',
     'GetAgentDataIngestionJobsFilterResult',
     'GetAgentDataSourceDataSourceConfigResult',
     'GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult',
@@ -96,6 +104,7 @@ __all__ = [
     'GetAgentKnowledgeBaseIndexConfigIndexResult',
     'GetAgentKnowledgeBaseIndexConfigIndexSchemaResult',
     'GetAgentKnowledgeBaseIndexConfigSecretDetailResult',
+    'GetAgentKnowledgeBaseKnowledgeBaseStatisticResult',
     'GetAgentKnowledgeBasesFilterResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult',
@@ -105,11 +114,16 @@ __all__ = [
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult',
     'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult',
+    'GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult',
     'GetAgentToolToolConfigResult',
+    'GetAgentToolToolConfigApiSchemaResult',
     'GetAgentToolToolConfigDatabaseConnectionResult',
     'GetAgentToolToolConfigDatabaseSchemaResult',
     'GetAgentToolToolConfigFunctionResult',
     'GetAgentToolToolConfigGenerationLlmCustomizationResult',
+    'GetAgentToolToolConfigHttpEndpointAuthConfigResult',
+    'GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult',
+    'GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult',
     'GetAgentToolToolConfigIclExampleResult',
     'GetAgentToolToolConfigKnowledgeBaseConfigResult',
     'GetAgentToolToolConfigTableAndColumnDescriptionResult',
@@ -117,10 +131,14 @@ __all__ = [
     'GetAgentToolsToolCollectionResult',
     'GetAgentToolsToolCollectionItemResult',
     'GetAgentToolsToolCollectionItemToolConfigResult',
+    'GetAgentToolsToolCollectionItemToolConfigApiSchemaResult',
     'GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult',
     'GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult',
     'GetAgentToolsToolCollectionItemToolConfigFunctionResult',
     'GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult',
+    'GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult',
+    'GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult',
+    'GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult',
     'GetAgentToolsToolCollectionItemToolConfigIclExampleResult',
     'GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult',
     'GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult',
@@ -650,6 +668,8 @@ class AgentDataIngestionJobDataIngestionJobStatistic(dict):
             suggest = "duration_in_seconds"
         elif key == "numberOfFailedFiles":
             suggest = "number_of_failed_files"
+        elif key == "numberOfIgnoredFiles":
+            suggest = "number_of_ignored_files"
         elif key == "numberOfIngestedFiles":
             suggest = "number_of_ingested_files"
 
@@ -667,16 +687,20 @@ class AgentDataIngestionJobDataIngestionJobStatistic(dict):
     def __init__(__self__, *,
                  duration_in_seconds: Optional[_builtins.int] = None,
                  number_of_failed_files: Optional[_builtins.int] = None,
+                 number_of_ignored_files: Optional[_builtins.int] = None,
                  number_of_ingested_files: Optional[_builtins.int] = None):
         """
         :param _builtins.int duration_in_seconds: The duration of this ingestion job.
         :param _builtins.int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param _builtins.int number_of_ignored_files: The number of files that have been ignored during the ingestion.
         :param _builtins.int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
         """
         if duration_in_seconds is not None:
             pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
         if number_of_failed_files is not None:
             pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        if number_of_ignored_files is not None:
+            pulumi.set(__self__, "number_of_ignored_files", number_of_ignored_files)
         if number_of_ingested_files is not None:
             pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
 
@@ -697,12 +721,39 @@ class AgentDataIngestionJobDataIngestionJobStatistic(dict):
         return pulumi.get(self, "number_of_failed_files")
 
     @_builtins.property
+    @pulumi.getter(name="numberOfIgnoredFiles")
+    def number_of_ignored_files(self) -> Optional[_builtins.int]:
+        """
+        The number of files that have been ignored during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ignored_files")
+
+    @_builtins.property
     @pulumi.getter(name="numberOfIngestedFiles")
     def number_of_ingested_files(self) -> Optional[_builtins.int]:
         """
         The number of files that have been successfully ingested during the ingestion.
         """
         return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class AgentDataIngestionJobDataIngestionJobType(dict):
+    def __init__(__self__, *,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str type: Type of ingestionJob.
+        """
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Type of ingestionJob.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -730,8 +781,7 @@ class AgentDataSourceDataSourceConfig(dict):
                  data_source_config_type: _builtins.str,
                  object_storage_prefixes: Sequence['outputs.AgentDataSourceDataSourceConfigObjectStoragePrefix']):
         """
-        :param _builtins.str data_source_config_type: (Updatable) The type of the tool. The allowed values are:
-               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param _builtins.str data_source_config_type: (Updatable) The type of the tool.
         :param Sequence['AgentDataSourceDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: (Updatable) The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
         """
         pulumi.set(__self__, "data_source_config_type", data_source_config_type)
@@ -741,8 +791,7 @@ class AgentDataSourceDataSourceConfig(dict):
     @pulumi.getter(name="dataSourceConfigType")
     def data_source_config_type(self) -> _builtins.str:
         """
-        (Updatable) The type of the tool. The allowed values are:
-        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        (Updatable) The type of the tool.
         """
         return pulumi.get(self, "data_source_config_type")
 
@@ -764,7 +813,7 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefix(dict):
         """
         :param _builtins.str bucket: (Updatable) The bucket name of an object.
         :param _builtins.str namespace: (Updatable) The namespace name of an object.
-        :param _builtins.str prefix: (Updatable) The name of the object (file) or prefix (folder).
+        :param _builtins.str prefix: (Updatable) The prefix of file object(s) or folder prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -791,7 +840,7 @@ class AgentDataSourceDataSourceConfigObjectStoragePrefix(dict):
     @pulumi.getter
     def prefix(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The name of the object (file) or prefix (folder).
+        (Updatable) The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -834,19 +883,12 @@ class AgentKnowledgeBaseIndexConfig(dict):
                  secret_detail: Optional['outputs.AgentKnowledgeBaseIndexConfigSecretDetail'] = None,
                  should_enable_hybrid_search: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str index_config_type: (Updatable) The type of index. The allowed values are:
-               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param _builtins.str index_config_type: (Updatable) The type of index.
         :param _builtins.str cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
-        :param 'AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs' database_connection: (Updatable) **DatabaseConnection**
-               
-               The connection type for Databases.
+        :param 'AgentKnowledgeBaseIndexConfigDatabaseConnectionArgs' database_connection: (Updatable) The connection type for Databases.
         :param Sequence['AgentKnowledgeBaseIndexConfigDatabaseFunctionArgs'] database_functions: (Updatable) Array of Database functions to be used.
         :param Sequence['AgentKnowledgeBaseIndexConfigIndexArgs'] indexes: (Updatable) Index configuration for open search.
-        :param 'AgentKnowledgeBaseIndexConfigSecretDetailArgs' secret_detail: (Updatable) **SecretDetail**
-               
-               The details of configured security configuration on OpenSearch.
+        :param 'AgentKnowledgeBaseIndexConfigSecretDetailArgs' secret_detail: (Updatable) The details of configured security configuration on OpenSearch.
         :param _builtins.bool should_enable_hybrid_search: (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
                
                
@@ -871,10 +913,7 @@ class AgentKnowledgeBaseIndexConfig(dict):
     @pulumi.getter(name="indexConfigType")
     def index_config_type(self) -> _builtins.str:
         """
-        (Updatable) The type of index. The allowed values are:
-        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        (Updatable) The type of index.
         """
         return pulumi.get(self, "index_config_type")
 
@@ -890,9 +929,7 @@ class AgentKnowledgeBaseIndexConfig(dict):
     @pulumi.getter(name="databaseConnection")
     def database_connection(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigDatabaseConnection']:
         """
-        (Updatable) **DatabaseConnection**
-
-        The connection type for Databases.
+        (Updatable) The connection type for Databases.
         """
         return pulumi.get(self, "database_connection")
 
@@ -916,9 +953,7 @@ class AgentKnowledgeBaseIndexConfig(dict):
     @pulumi.getter(name="secretDetail")
     def secret_detail(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigSecretDetail']:
         """
-        (Updatable) **SecretDetail**
-
-        The details of configured security configuration on OpenSearch.
+        (Updatable) The details of configured security configuration on OpenSearch.
         """
         return pulumi.get(self, "secret_detail")
 
@@ -961,8 +996,7 @@ class AgentKnowledgeBaseIndexConfigDatabaseConnection(dict):
                  connection_type: _builtins.str):
         """
         :param _builtins.str connection_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
-        :param _builtins.str connection_type: (Updatable) The type of Database connection. The allowed values are:
-               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        :param _builtins.str connection_type: (Updatable) The type of Database connection.
         """
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "connection_type", connection_type)
@@ -979,8 +1013,7 @@ class AgentKnowledgeBaseIndexConfigDatabaseConnection(dict):
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> _builtins.str:
         """
-        (Updatable) The type of Database connection. The allowed values are:
-        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        (Updatable) The type of Database connection.
         """
         return pulumi.get(self, "connection_type")
 
@@ -1011,9 +1044,7 @@ class AgentKnowledgeBaseIndexConfigIndex(dict):
                  schema: Optional['outputs.AgentKnowledgeBaseIndexConfigIndexSchema'] = None):
         """
         :param _builtins.str name: (Updatable) The index name in opensearch.
-        :param 'AgentKnowledgeBaseIndexConfigIndexSchemaArgs' schema: (Updatable) **IndexSchema**
-               
-               The index schema details.
+        :param 'AgentKnowledgeBaseIndexConfigIndexSchemaArgs' schema: (Updatable) The index schema details.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1032,9 +1063,7 @@ class AgentKnowledgeBaseIndexConfigIndex(dict):
     @pulumi.getter
     def schema(self) -> Optional['outputs.AgentKnowledgeBaseIndexConfigIndexSchema']:
         """
-        (Updatable) **IndexSchema**
-
-        The index schema details.
+        (Updatable) The index schema details.
         """
         return pulumi.get(self, "schema")
 
@@ -1149,9 +1178,7 @@ class AgentKnowledgeBaseIndexConfigSecretDetail(dict):
                  idcs_url: Optional[_builtins.str] = None,
                  scope_url: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: (Updatable) The type of OpenID. The allowed values are:
-               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param _builtins.str type: (Updatable) The type of OpenID.
         :param _builtins.str vault_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
         :param _builtins.str client_id: (Updatable) The IDCS Connect clientId.
         :param _builtins.str idcs_url: (Updatable) The URL represent authentication url of the IDCS.
@@ -1170,9 +1197,7 @@ class AgentKnowledgeBaseIndexConfigSecretDetail(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        (Updatable) The type of OpenID. The allowed values are:
-        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        (Updatable) The type of OpenID.
         """
         return pulumi.get(self, "type")
 
@@ -1210,18 +1235,74 @@ class AgentKnowledgeBaseIndexConfigSecretDetail(dict):
 
 
 @pulumi.output_type
+class AgentKnowledgeBaseKnowledgeBaseStatistic(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sizeInBytes":
+            suggest = "size_in_bytes"
+        elif key == "totalIngestedFiles":
+            suggest = "total_ingested_files"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentKnowledgeBaseKnowledgeBaseStatistic. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentKnowledgeBaseKnowledgeBaseStatistic.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentKnowledgeBaseKnowledgeBaseStatistic.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 size_in_bytes: Optional[_builtins.str] = None,
+                 total_ingested_files: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str size_in_bytes: Knowledge Base size in bytes.
+        :param _builtins.str total_ingested_files: Total number of ingested files in Knowledge Base.
+        """
+        if size_in_bytes is not None:
+            pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        if total_ingested_files is not None:
+            pulumi.set(__self__, "total_ingested_files", total_ingested_files)
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> Optional[_builtins.str]:
+        """
+        Knowledge Base size in bytes.
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalIngestedFiles")
+    def total_ingested_files(self) -> Optional[_builtins.str]:
+        """
+        Total number of ingested files in Knowledge Base.
+        """
+        return pulumi.get(self, "total_ingested_files")
+
+
+@pulumi.output_type
 class AgentToolToolConfig(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
         if key == "toolConfigType":
             suggest = "tool_config_type"
+        elif key == "agentEndpointId":
+            suggest = "agent_endpoint_id"
+        elif key == "apiSchema":
+            suggest = "api_schema"
         elif key == "databaseConnection":
             suggest = "database_connection"
         elif key == "databaseSchema":
             suggest = "database_schema"
         elif key == "generationLlmCustomization":
             suggest = "generation_llm_customization"
+        elif key == "httpEndpointAuthConfig":
+            suggest = "http_endpoint_auth_config"
         elif key == "iclExamples":
             suggest = "icl_examples"
         elif key == "knowledgeBaseConfigs":
@@ -1232,6 +1313,8 @@ class AgentToolToolConfig(dict):
             suggest = "should_enable_self_correction"
         elif key == "shouldEnableSqlExecution":
             suggest = "should_enable_sql_execution"
+        elif key == "subnetId":
+            suggest = "subnet_id"
         elif key == "tableAndColumnDescription":
             suggest = "table_and_column_description"
 
@@ -1248,16 +1331,20 @@ class AgentToolToolConfig(dict):
 
     def __init__(__self__, *,
                  tool_config_type: _builtins.str,
+                 agent_endpoint_id: Optional[_builtins.str] = None,
+                 api_schema: Optional['outputs.AgentToolToolConfigApiSchema'] = None,
                  database_connection: Optional['outputs.AgentToolToolConfigDatabaseConnection'] = None,
                  database_schema: Optional['outputs.AgentToolToolConfigDatabaseSchema'] = None,
                  dialect: Optional[_builtins.str] = None,
                  function: Optional['outputs.AgentToolToolConfigFunction'] = None,
                  generation_llm_customization: Optional['outputs.AgentToolToolConfigGenerationLlmCustomization'] = None,
+                 http_endpoint_auth_config: Optional['outputs.AgentToolToolConfigHttpEndpointAuthConfig'] = None,
                  icl_examples: Optional['outputs.AgentToolToolConfigIclExamples'] = None,
                  knowledge_base_configs: Optional[Sequence['outputs.AgentToolToolConfigKnowledgeBaseConfig']] = None,
                  model_size: Optional[_builtins.str] = None,
                  should_enable_self_correction: Optional[_builtins.bool] = None,
                  should_enable_sql_execution: Optional[_builtins.bool] = None,
+                 subnet_id: Optional[_builtins.str] = None,
                  table_and_column_description: Optional['outputs.AgentToolToolConfigTableAndColumnDescription'] = None):
         """
         :param _builtins.str tool_config_type: (Updatable) The type of the Tool config. The allowed values are:
@@ -1268,19 +1355,27 @@ class AgentToolToolConfig(dict):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param _builtins.str agent_endpoint_id: (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+        :param 'AgentToolToolConfigApiSchemaArgs' api_schema: (Updatable) The input location definition for Api schema.
         :param 'AgentToolToolConfigDatabaseConnectionArgs' database_connection: (Updatable) The connection type for Databases.
         :param 'AgentToolToolConfigDatabaseSchemaArgs' database_schema: (Updatable) The input location definition.
         :param _builtins.str dialect: (Updatable) Dialect to be used for SQL generation.
         :param 'AgentToolToolConfigFunctionArgs' function: (Updatable) Details of Function for Function calling tool.
         :param 'AgentToolToolConfigGenerationLlmCustomizationArgs' generation_llm_customization: (Updatable) Configuration to customize LLM.
+        :param 'AgentToolToolConfigHttpEndpointAuthConfigArgs' http_endpoint_auth_config: (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
         :param 'AgentToolToolConfigIclExamplesArgs' icl_examples: (Updatable) The input location definition.
         :param Sequence['AgentToolToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: (Updatable) The KnowledgeBase configurations that this RAG Tool uses
         :param _builtins.str model_size: (Updatable) Size of the model.
         :param _builtins.bool should_enable_self_correction: (Updatable) To enable/disable self correction.
         :param _builtins.bool should_enable_sql_execution: (Updatable) To enable/disable SQL execution.
+        :param _builtins.str subnet_id: (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
         :param 'AgentToolToolConfigTableAndColumnDescriptionArgs' table_and_column_description: (Updatable) The input location definition.
         """
         pulumi.set(__self__, "tool_config_type", tool_config_type)
+        if agent_endpoint_id is not None:
+            pulumi.set(__self__, "agent_endpoint_id", agent_endpoint_id)
+        if api_schema is not None:
+            pulumi.set(__self__, "api_schema", api_schema)
         if database_connection is not None:
             pulumi.set(__self__, "database_connection", database_connection)
         if database_schema is not None:
@@ -1291,6 +1386,8 @@ class AgentToolToolConfig(dict):
             pulumi.set(__self__, "function", function)
         if generation_llm_customization is not None:
             pulumi.set(__self__, "generation_llm_customization", generation_llm_customization)
+        if http_endpoint_auth_config is not None:
+            pulumi.set(__self__, "http_endpoint_auth_config", http_endpoint_auth_config)
         if icl_examples is not None:
             pulumi.set(__self__, "icl_examples", icl_examples)
         if knowledge_base_configs is not None:
@@ -1301,6 +1398,8 @@ class AgentToolToolConfig(dict):
             pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
         if should_enable_sql_execution is not None:
             pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
         if table_and_column_description is not None:
             pulumi.set(__self__, "table_and_column_description", table_and_column_description)
 
@@ -1318,6 +1417,22 @@ class AgentToolToolConfig(dict):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "tool_config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="agentEndpointId")
+    def agent_endpoint_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+        """
+        return pulumi.get(self, "agent_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchema")
+    def api_schema(self) -> Optional['outputs.AgentToolToolConfigApiSchema']:
+        """
+        (Updatable) The input location definition for Api schema.
+        """
+        return pulumi.get(self, "api_schema")
 
     @_builtins.property
     @pulumi.getter(name="databaseConnection")
@@ -1360,6 +1475,14 @@ class AgentToolToolConfig(dict):
         return pulumi.get(self, "generation_llm_customization")
 
     @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthConfig")
+    def http_endpoint_auth_config(self) -> Optional['outputs.AgentToolToolConfigHttpEndpointAuthConfig']:
+        """
+        (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        """
+        return pulumi.get(self, "http_endpoint_auth_config")
+
+    @_builtins.property
     @pulumi.getter(name="iclExamples")
     def icl_examples(self) -> Optional['outputs.AgentToolToolConfigIclExamples']:
         """
@@ -1400,12 +1523,107 @@ class AgentToolToolConfig(dict):
         return pulumi.get(self, "should_enable_sql_execution")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter(name="tableAndColumnDescription")
     def table_and_column_description(self) -> Optional['outputs.AgentToolToolConfigTableAndColumnDescription']:
         """
         (Updatable) The input location definition.
         """
         return pulumi.get(self, "table_and_column_description")
+
+
+@pulumi.output_type
+class AgentToolToolConfigApiSchema(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiSchemaInputLocationType":
+            suggest = "api_schema_input_location_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigApiSchema. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigApiSchema.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigApiSchema.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_schema_input_location_type: _builtins.str,
+                 bucket: Optional[_builtins.str] = None,
+                 content: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 object: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str api_schema_input_location_type: (Updatable) Type of Api Schema InputLocation. The allowed values are:
+               * `INLINE`: The Api schema input location is inline.
+               * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        :param _builtins.str bucket: (Updatable) The bucket name of an object.
+        :param _builtins.str content: (Updatable) Inline content as input.
+        :param _builtins.str namespace: (Updatable) The namespace name of an object.
+        :param _builtins.str object: (Updatable) The location/name of object.
+        """
+        pulumi.set(__self__, "api_schema_input_location_type", api_schema_input_location_type)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if object is not None:
+            pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchemaInputLocationType")
+    def api_schema_input_location_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of Api Schema InputLocation. The allowed values are:
+        * `INLINE`: The Api schema input location is inline.
+        * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        """
+        return pulumi.get(self, "api_schema_input_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The location/name of object.
+        """
+        return pulumi.get(self, "object")
 
 
 @pulumi.output_type
@@ -1605,6 +1823,211 @@ class AgentToolToolConfigGenerationLlmCustomization(dict):
         (Updatable) If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class AgentToolToolConfigHttpEndpointAuthConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpEndpointAuthSources":
+            suggest = "http_endpoint_auth_sources"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigHttpEndpointAuthConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_endpoint_auth_sources: Optional[Sequence['outputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource']] = None):
+        """
+        :param Sequence['AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs'] http_endpoint_auth_sources: (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        if http_endpoint_auth_sources is not None:
+            pulumi.set(__self__, "http_endpoint_auth_sources", http_endpoint_auth_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthSources")
+    def http_endpoint_auth_sources(self) -> Optional[Sequence['outputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource']]:
+        """
+        (Updatable) A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_sources")
+
+
+@pulumi.output_type
+class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpEndpointAuthScope":
+            suggest = "http_endpoint_auth_scope"
+        elif key == "httpEndpointAuthScopeConfig":
+            suggest = "http_endpoint_auth_scope_config"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_endpoint_auth_scope: Optional[_builtins.str] = None,
+                 http_endpoint_auth_scope_config: Optional['outputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig'] = None):
+        """
+        :param _builtins.str http_endpoint_auth_scope: (Updatable) Specifies the level from which credentials should be resolved.
+        :param 'AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs' http_endpoint_auth_scope_config: (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        if http_endpoint_auth_scope is not None:
+            pulumi.set(__self__, "http_endpoint_auth_scope", http_endpoint_auth_scope)
+        if http_endpoint_auth_scope_config is not None:
+            pulumi.set(__self__, "http_endpoint_auth_scope_config", http_endpoint_auth_scope_config)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScope")
+    def http_endpoint_auth_scope(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Specifies the level from which credentials should be resolved.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfig")
+    def http_endpoint_auth_scope_config(self) -> Optional['outputs.AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig']:
+        """
+        (Updatable) Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_config")
+
+
+@pulumi.output_type
+class AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpEndpointAuthScopeConfigType":
+            suggest = "http_endpoint_auth_scope_config_type"
+        elif key == "clientId":
+            suggest = "client_id"
+        elif key == "idcsUrl":
+            suggest = "idcs_url"
+        elif key == "keyLocation":
+            suggest = "key_location"
+        elif key == "keyName":
+            suggest = "key_name"
+        elif key == "scopeUrl":
+            suggest = "scope_url"
+        elif key == "vaultSecretId":
+            suggest = "vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_endpoint_auth_scope_config_type: _builtins.str,
+                 client_id: Optional[_builtins.str] = None,
+                 idcs_url: Optional[_builtins.str] = None,
+                 key_location: Optional[_builtins.str] = None,
+                 key_name: Optional[_builtins.str] = None,
+                 scope_url: Optional[_builtins.str] = None,
+                 vault_secret_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str http_endpoint_auth_scope_config_type: (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+        :param _builtins.str client_id: (Updatable) IDCS client ID.
+        :param _builtins.str idcs_url: (Updatable) IDCS OpenID discovery endpoint.
+        :param _builtins.str key_location: (Updatable) The location of the API key in the request.
+        :param _builtins.str key_name: (Updatable) The name of the key parameter in the location.
+        :param _builtins.str scope_url: (Updatable) OAuth2 scopes for token generation.
+        :param _builtins.str vault_secret_id: (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        pulumi.set(__self__, "http_endpoint_auth_scope_config_type", http_endpoint_auth_scope_config_type)
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if idcs_url is not None:
+            pulumi.set(__self__, "idcs_url", idcs_url)
+        if key_location is not None:
+            pulumi.set(__self__, "key_location", key_location)
+        if key_name is not None:
+            pulumi.set(__self__, "key_name", key_name)
+        if scope_url is not None:
+            pulumi.set(__self__, "scope_url", scope_url)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfigType")
+    def http_endpoint_auth_scope_config_type(self) -> _builtins.str:
+        """
+        (Updatable) The type of authentication to be applied for this HTTP Endpoint.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) IDCS client ID.
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) IDCS OpenID discovery endpoint.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @_builtins.property
+    @pulumi.getter(name="keyLocation")
+    def key_location(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The location of the API key in the request.
+        """
+        return pulumi.get(self, "key_location")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the key parameter in the location.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OAuth2 scopes for token generation.
+        """
+        return pulumi.get(self, "scope_url")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -3380,14 +3803,17 @@ class GetAgentDataIngestionJobDataIngestionJobStatisticResult(dict):
     def __init__(__self__, *,
                  duration_in_seconds: _builtins.int,
                  number_of_failed_files: _builtins.int,
+                 number_of_ignored_files: _builtins.int,
                  number_of_ingested_files: _builtins.int):
         """
         :param _builtins.int duration_in_seconds: The duration of this ingestion job.
         :param _builtins.int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param _builtins.int number_of_ignored_files: The number of files that have been ignored during the ingestion.
         :param _builtins.int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
         """
         pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
         pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        pulumi.set(__self__, "number_of_ignored_files", number_of_ignored_files)
         pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
 
     @_builtins.property
@@ -3407,12 +3833,38 @@ class GetAgentDataIngestionJobDataIngestionJobStatisticResult(dict):
         return pulumi.get(self, "number_of_failed_files")
 
     @_builtins.property
+    @pulumi.getter(name="numberOfIgnoredFiles")
+    def number_of_ignored_files(self) -> _builtins.int:
+        """
+        The number of files that have been ignored during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ignored_files")
+
+    @_builtins.property
     @pulumi.getter(name="numberOfIngestedFiles")
     def number_of_ingested_files(self) -> _builtins.int:
         """
         The number of files that have been successfully ingested during the ingestion.
         """
         return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobDataIngestionJobTypeResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str):
+        """
+        :param _builtins.str type: Type of ingestionJob.
+        """
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of ingestionJob.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -3432,12 +3884,14 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
                  data_ingestion_job_statistics: Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticResult'],
+                 data_ingestion_job_types: Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult'],
                  data_source_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 knowledge_base_id: _builtins.str,
                  lifecycle_details: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -3446,6 +3900,7 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Sequence['GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobStatisticArgs'] data_ingestion_job_statistics: **DataIngestionJobStatistics**
+        :param Sequence['GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeArgs'] data_ingestion_job_types: DataIngestionJob type.
         :param _builtins.str data_source_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the data source.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: A user-friendly name. Does not have to be unique, and it's changeable.
@@ -3460,12 +3915,14 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_ingestion_job_statistics", data_ingestion_job_statistics)
+        pulumi.set(__self__, "data_ingestion_job_types", data_ingestion_job_types)
         pulumi.set(__self__, "data_source_id", data_source_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "knowledge_base_id", knowledge_base_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -3487,6 +3944,14 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
         **DataIngestionJobStatistics**
         """
         return pulumi.get(self, "data_ingestion_job_statistics")
+
+    @_builtins.property
+    @pulumi.getter(name="dataIngestionJobTypes")
+    def data_ingestion_job_types(self) -> Sequence['outputs.GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult']:
+        """
+        DataIngestionJob type.
+        """
+        return pulumi.get(self, "data_ingestion_job_types")
 
     @_builtins.property
     @pulumi.getter(name="dataSourceId")
@@ -3537,6 +4002,11 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="knowledgeBaseId")
+    def knowledge_base_id(self) -> _builtins.str:
+        return pulumi.get(self, "knowledge_base_id")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -3582,14 +4052,17 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobSta
     def __init__(__self__, *,
                  duration_in_seconds: _builtins.int,
                  number_of_failed_files: _builtins.int,
+                 number_of_ignored_files: _builtins.int,
                  number_of_ingested_files: _builtins.int):
         """
         :param _builtins.int duration_in_seconds: The duration of this ingestion job.
         :param _builtins.int number_of_failed_files: The number of files that have failed during the ingestion.
+        :param _builtins.int number_of_ignored_files: The number of files that have been ignored during the ingestion.
         :param _builtins.int number_of_ingested_files: The number of files that have been successfully ingested during the ingestion.
         """
         pulumi.set(__self__, "duration_in_seconds", duration_in_seconds)
         pulumi.set(__self__, "number_of_failed_files", number_of_failed_files)
+        pulumi.set(__self__, "number_of_ignored_files", number_of_ignored_files)
         pulumi.set(__self__, "number_of_ingested_files", number_of_ingested_files)
 
     @_builtins.property
@@ -3609,12 +4082,38 @@ class GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobSta
         return pulumi.get(self, "number_of_failed_files")
 
     @_builtins.property
+    @pulumi.getter(name="numberOfIgnoredFiles")
+    def number_of_ignored_files(self) -> _builtins.int:
+        """
+        The number of files that have been ignored during the ingestion.
+        """
+        return pulumi.get(self, "number_of_ignored_files")
+
+    @_builtins.property
     @pulumi.getter(name="numberOfIngestedFiles")
     def number_of_ingested_files(self) -> _builtins.int:
         """
         The number of files that have been successfully ingested during the ingestion.
         """
         return pulumi.get(self, "number_of_ingested_files")
+
+
+@pulumi.output_type
+class GetAgentDataIngestionJobsDataIngestionJobCollectionItemDataIngestionJobTypeResult(dict):
+    def __init__(__self__, *,
+                 type: _builtins.str):
+        """
+        :param _builtins.str type: Type of ingestionJob.
+        """
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Type of ingestionJob.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -3650,8 +4149,7 @@ class GetAgentDataSourceDataSourceConfigResult(dict):
                  data_source_config_type: _builtins.str,
                  object_storage_prefixes: Sequence['outputs.GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult']):
         """
-        :param _builtins.str data_source_config_type: The type of the tool. The allowed values are:
-               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param _builtins.str data_source_config_type: The type of the tool.
         :param Sequence['GetAgentDataSourceDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
         """
         pulumi.set(__self__, "data_source_config_type", data_source_config_type)
@@ -3661,8 +4159,7 @@ class GetAgentDataSourceDataSourceConfigResult(dict):
     @pulumi.getter(name="dataSourceConfigType")
     def data_source_config_type(self) -> _builtins.str:
         """
-        The type of the tool. The allowed values are:
-        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        The type of the tool.
         """
         return pulumi.get(self, "data_source_config_type")
 
@@ -3684,7 +4181,7 @@ class GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult(dict):
         """
         :param _builtins.str bucket: The bucket name of an object.
         :param _builtins.str namespace: The namespace name of an object.
-        :param _builtins.str prefix: The name of the object (file) or prefix (folder).
+        :param _builtins.str prefix: The prefix of file object(s) or folder prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -3710,7 +4207,7 @@ class GetAgentDataSourceDataSourceConfigObjectStoragePrefixResult(dict):
     @pulumi.getter
     def prefix(self) -> _builtins.str:
         """
-        The name of the object (file) or prefix (folder).
+        The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -3746,7 +4243,7 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-        :param Sequence['GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs'] data_source_configs: **DataSourceConfig**
+        :param Sequence['GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigArgs'] data_source_configs: The details of data source.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: A description of the data source.
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
@@ -3787,7 +4284,7 @@ class GetAgentDataSourcesDataSourceCollectionItemResult(dict):
     @pulumi.getter(name="dataSourceConfigs")
     def data_source_configs(self) -> Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult']:
         """
-        **DataSourceConfig**
+        The details of data source.
         """
         return pulumi.get(self, "data_source_configs")
 
@@ -3894,8 +4391,7 @@ class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult(dict):
                  data_source_config_type: _builtins.str,
                  object_storage_prefixes: Sequence['outputs.GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixResult']):
         """
-        :param _builtins.str data_source_config_type: The type of the tool. The allowed values are:
-               * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        :param _builtins.str data_source_config_type: The type of the tool.
         :param Sequence['GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePrefixArgs'] object_storage_prefixes: The locations of data items in Object Storage, can either be an object (File) or a prefix (folder).
         """
         pulumi.set(__self__, "data_source_config_type", data_source_config_type)
@@ -3905,8 +4401,7 @@ class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigResult(dict):
     @pulumi.getter(name="dataSourceConfigType")
     def data_source_config_type(self) -> _builtins.str:
         """
-        The type of the tool. The allowed values are:
-        * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+        The type of the tool.
         """
         return pulumi.get(self, "data_source_config_type")
 
@@ -3928,7 +4423,7 @@ class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePr
         """
         :param _builtins.str bucket: The bucket name of an object.
         :param _builtins.str namespace: The namespace name of an object.
-        :param _builtins.str prefix: The name of the object (file) or prefix (folder).
+        :param _builtins.str prefix: The prefix of file object(s) or folder prefix.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "namespace", namespace)
@@ -3954,7 +4449,7 @@ class GetAgentDataSourcesDataSourceCollectionItemDataSourceConfigObjectStoragePr
     @pulumi.getter
     def prefix(self) -> _builtins.str:
         """
-        The name of the object (file) or prefix (folder).
+        The prefix of file object(s) or folder prefix.
         """
         return pulumi.get(self, "prefix")
 
@@ -3998,14 +4493,11 @@ class GetAgentKnowledgeBaseIndexConfigResult(dict):
                  should_enable_hybrid_search: _builtins.bool):
         """
         :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
-        :param Sequence['GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs'] database_connections: **DatabaseConnection**
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
         :param Sequence['GetAgentKnowledgeBaseIndexConfigDatabaseFunctionArgs'] database_functions: Array of Database functions to be used.
-        :param _builtins.str index_config_type: The type of index. The allowed values are:
-               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param _builtins.str index_config_type: The type of index.
         :param Sequence['GetAgentKnowledgeBaseIndexConfigIndexArgs'] indexes: Index configuration for open search.
-        :param Sequence['GetAgentKnowledgeBaseIndexConfigSecretDetailArgs'] secret_details: **SecretDetail**
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigSecretDetailArgs'] secret_details: The details of configured security configuration on OpenSearch.
         :param _builtins.bool should_enable_hybrid_search: Whether to enable Hybrid search in service managed OpenSearch.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -4028,7 +4520,7 @@ class GetAgentKnowledgeBaseIndexConfigResult(dict):
     @pulumi.getter(name="databaseConnections")
     def database_connections(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult']:
         """
-        **DatabaseConnection**
+        The connection type for Databases.
         """
         return pulumi.get(self, "database_connections")
 
@@ -4044,10 +4536,7 @@ class GetAgentKnowledgeBaseIndexConfigResult(dict):
     @pulumi.getter(name="indexConfigType")
     def index_config_type(self) -> _builtins.str:
         """
-        The type of index. The allowed values are:
-        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        The type of index.
         """
         return pulumi.get(self, "index_config_type")
 
@@ -4063,7 +4552,7 @@ class GetAgentKnowledgeBaseIndexConfigResult(dict):
     @pulumi.getter(name="secretDetails")
     def secret_details(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigSecretDetailResult']:
         """
-        **SecretDetail**
+        The details of configured security configuration on OpenSearch.
         """
         return pulumi.get(self, "secret_details")
 
@@ -4083,8 +4572,7 @@ class GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult(dict):
                  connection_type: _builtins.str):
         """
         :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
-        :param _builtins.str connection_type: The type of Database connection. The allowed values are:
-               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        :param _builtins.str connection_type: The type of Database connection.
         """
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "connection_type", connection_type)
@@ -4101,8 +4589,7 @@ class GetAgentKnowledgeBaseIndexConfigDatabaseConnectionResult(dict):
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> _builtins.str:
         """
-        The type of Database connection. The allowed values are:
-        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        The type of Database connection.
         """
         return pulumi.get(self, "connection_type")
 
@@ -4132,7 +4619,7 @@ class GetAgentKnowledgeBaseIndexConfigIndexResult(dict):
                  schemas: Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexSchemaResult']):
         """
         :param _builtins.str name: The index name in opensearch.
-        :param Sequence['GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs'] schemas: **IndexSchema**
+        :param Sequence['GetAgentKnowledgeBaseIndexConfigIndexSchemaArgs'] schemas: The index schema details.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "schemas", schemas)
@@ -4149,7 +4636,7 @@ class GetAgentKnowledgeBaseIndexConfigIndexResult(dict):
     @pulumi.getter
     def schemas(self) -> Sequence['outputs.GetAgentKnowledgeBaseIndexConfigIndexSchemaResult']:
         """
-        **IndexSchema**
+        The index schema details.
         """
         return pulumi.get(self, "schemas")
 
@@ -4217,9 +4704,7 @@ class GetAgentKnowledgeBaseIndexConfigSecretDetailResult(dict):
         :param _builtins.str client_id: The IDCS Connect clientId.
         :param _builtins.str idcs_url: The URL represent authentication url of the IDCS.
         :param _builtins.str scope_url: Fully qualified scope url
-        :param _builtins.str type: The type of OpenID. The allowed values are:
-               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param _builtins.str type: The type of OpenID.
         :param _builtins.str vault_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
         """
         pulumi.set(__self__, "client_id", client_id)
@@ -4256,9 +4741,7 @@ class GetAgentKnowledgeBaseIndexConfigSecretDetailResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of OpenID. The allowed values are:
-        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        The type of OpenID.
         """
         return pulumi.get(self, "type")
 
@@ -4269,6 +4752,35 @@ class GetAgentKnowledgeBaseIndexConfigSecretDetailResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
         """
         return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class GetAgentKnowledgeBaseKnowledgeBaseStatisticResult(dict):
+    def __init__(__self__, *,
+                 size_in_bytes: _builtins.str,
+                 total_ingested_files: _builtins.str):
+        """
+        :param _builtins.str size_in_bytes: Knowledge Base size in bytes.
+        :param _builtins.str total_ingested_files: Total number of ingested files in Knowledge Base.
+        """
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "total_ingested_files", total_ingested_files)
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> _builtins.str:
+        """
+        Knowledge Base size in bytes.
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalIngestedFiles")
+    def total_ingested_files(self) -> _builtins.str:
+        """
+        Total number of ingested files in Knowledge Base.
+        """
+        return pulumi.get(self, "total_ingested_files")
 
 
 @pulumi.output_type
@@ -4326,6 +4838,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  index_configs: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult'],
+                 knowledge_base_statistics: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult'],
                  lifecycle_details: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -4338,7 +4851,8 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the knowledge base.
-        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs'] index_configs: **IndexConfig**
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigArgs'] index_configs: The index configuration of Knowledge bases.
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticArgs'] knowledge_base_statistics: Statistics for Default Knowledge Base.
         :param _builtins.str lifecycle_details: A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -4352,6 +4866,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "index_configs", index_configs)
+        pulumi.set(__self__, "knowledge_base_statistics", knowledge_base_statistics)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -4410,9 +4925,17 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemResult(dict):
     @pulumi.getter(name="indexConfigs")
     def index_configs(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult']:
         """
-        **IndexConfig**
+        The index configuration of Knowledge bases.
         """
         return pulumi.get(self, "index_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="knowledgeBaseStatistics")
+    def knowledge_base_statistics(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult']:
+        """
+        Statistics for Default Knowledge Base.
+        """
+        return pulumi.get(self, "knowledge_base_statistics")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -4467,14 +4990,11 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult(dict):
                  should_enable_hybrid_search: _builtins.bool):
         """
         :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OpenSearch Cluster.
-        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs'] database_connections: **DatabaseConnection**
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
         :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseFunctionArgs'] database_functions: Array of Database functions to be used.
-        :param _builtins.str index_config_type: The type of index. The allowed values are:
-               * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-               * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-               * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        :param _builtins.str index_config_type: The type of index.
         :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexArgs'] indexes: Index configuration for open search.
-        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs'] secret_details: **SecretDetail**
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailArgs'] secret_details: The details of configured security configuration on OpenSearch.
         :param _builtins.bool should_enable_hybrid_search: Whether to enable Hybrid search in service managed OpenSearch.
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -4497,7 +5017,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult(dict):
     @pulumi.getter(name="databaseConnections")
     def database_connections(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnectionResult']:
         """
-        **DatabaseConnection**
+        The connection type for Databases.
         """
         return pulumi.get(self, "database_connections")
 
@@ -4513,10 +5033,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult(dict):
     @pulumi.getter(name="indexConfigType")
     def index_config_type(self) -> _builtins.str:
         """
-        The type of index. The allowed values are:
-        * `DEFAULT_INDEX_CONFIG`: DefaultIndexConfig allows the service to create and manage vector store on behalf of the customer.
-        * `OCI_OPEN_SEARCH_INDEX_CONFIG`: OciOpenSearchIndexConfig allows customer to configure their OpenSearch cluster.
-        * `OCI_DATABASE_CONFIG`: OciDatabaseConfig allows customer to configure their Database.
+        The type of index.
         """
         return pulumi.get(self, "index_config_type")
 
@@ -4532,7 +5049,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigResult(dict):
     @pulumi.getter(name="secretDetails")
     def secret_details(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailResult']:
         """
-        **SecretDetail**
+        The details of configured security configuration on OpenSearch.
         """
         return pulumi.get(self, "secret_details")
 
@@ -4552,8 +5069,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnec
                  connection_type: _builtins.str):
         """
         :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Tools Connection.
-        :param _builtins.str connection_type: The type of Database connection. The allowed values are:
-               * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        :param _builtins.str connection_type: The type of Database connection.
         """
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "connection_type", connection_type)
@@ -4570,8 +5086,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigDatabaseConnec
     @pulumi.getter(name="connectionType")
     def connection_type(self) -> _builtins.str:
         """
-        The type of Database connection. The allowed values are:
-        * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+        The type of Database connection.
         """
         return pulumi.get(self, "connection_type")
 
@@ -4601,7 +5116,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult(di
                  schemas: Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult']):
         """
         :param _builtins.str name: The index name in opensearch.
-        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs'] schemas: **IndexSchema**
+        :param Sequence['GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaArgs'] schemas: The index schema details.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "schemas", schemas)
@@ -4618,7 +5133,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexResult(di
     @pulumi.getter
     def schemas(self) -> Sequence['outputs.GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigIndexSchemaResult']:
         """
-        **IndexSchema**
+        The index schema details.
         """
         return pulumi.get(self, "schemas")
 
@@ -4686,9 +5201,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailRe
         :param _builtins.str client_id: The IDCS Connect clientId.
         :param _builtins.str idcs_url: The URL represent authentication url of the IDCS.
         :param _builtins.str scope_url: Fully qualified scope url
-        :param _builtins.str type: The type of OpenID. The allowed values are:
-               * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-               * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        :param _builtins.str type: The type of OpenID.
         :param _builtins.str vault_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret for basic authentication.
         """
         pulumi.set(__self__, "client_id", client_id)
@@ -4725,9 +5238,7 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailRe
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        The type of OpenID. The allowed values are:
-        * `IDCS_SECRET`: The OpenID configuration used is OpenSearch is IDCS.
-        * `BASIC_AUTH_SECRET`: Basic authentication use for OpenSearch
+        The type of OpenID.
         """
         return pulumi.get(self, "type")
 
@@ -4741,49 +5252,106 @@ class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemIndexConfigSecretDetailRe
 
 
 @pulumi.output_type
+class GetAgentKnowledgeBasesKnowledgeBaseCollectionItemKnowledgeBaseStatisticResult(dict):
+    def __init__(__self__, *,
+                 size_in_bytes: _builtins.str,
+                 total_ingested_files: _builtins.str):
+        """
+        :param _builtins.str size_in_bytes: Knowledge Base size in bytes.
+        :param _builtins.str total_ingested_files: Total number of ingested files in Knowledge Base.
+        """
+        pulumi.set(__self__, "size_in_bytes", size_in_bytes)
+        pulumi.set(__self__, "total_ingested_files", total_ingested_files)
+
+    @_builtins.property
+    @pulumi.getter(name="sizeInBytes")
+    def size_in_bytes(self) -> _builtins.str:
+        """
+        Knowledge Base size in bytes.
+        """
+        return pulumi.get(self, "size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="totalIngestedFiles")
+    def total_ingested_files(self) -> _builtins.str:
+        """
+        Total number of ingested files in Knowledge Base.
+        """
+        return pulumi.get(self, "total_ingested_files")
+
+
+@pulumi.output_type
 class GetAgentToolToolConfigResult(dict):
     def __init__(__self__, *,
+                 agent_endpoint_id: _builtins.str,
+                 api_schemas: Sequence['outputs.GetAgentToolToolConfigApiSchemaResult'],
                  database_connections: Sequence['outputs.GetAgentToolToolConfigDatabaseConnectionResult'],
                  database_schemas: Sequence['outputs.GetAgentToolToolConfigDatabaseSchemaResult'],
                  dialect: _builtins.str,
                  functions: Sequence['outputs.GetAgentToolToolConfigFunctionResult'],
                  generation_llm_customizations: Sequence['outputs.GetAgentToolToolConfigGenerationLlmCustomizationResult'],
+                 http_endpoint_auth_configs: Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigResult'],
                  icl_examples: Sequence['outputs.GetAgentToolToolConfigIclExampleResult'],
                  knowledge_base_configs: Sequence['outputs.GetAgentToolToolConfigKnowledgeBaseConfigResult'],
                  model_size: _builtins.str,
                  should_enable_self_correction: _builtins.bool,
                  should_enable_sql_execution: _builtins.bool,
+                 subnet_id: _builtins.str,
                  table_and_column_descriptions: Sequence['outputs.GetAgentToolToolConfigTableAndColumnDescriptionResult'],
                  tool_config_type: _builtins.str):
         """
+        :param _builtins.str agent_endpoint_id: The AgentEndpoint OCID to be used as a tool in this agent.
+        :param Sequence['GetAgentToolToolConfigApiSchemaArgs'] api_schemas: The input location definition for Api schema.
         :param Sequence['GetAgentToolToolConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
         :param Sequence['GetAgentToolToolConfigDatabaseSchemaArgs'] database_schemas: The input location definition.
         :param _builtins.str dialect: Dialect to be used for SQL generation.
         :param Sequence['GetAgentToolToolConfigFunctionArgs'] functions: Details of Function for Function calling tool.
         :param Sequence['GetAgentToolToolConfigGenerationLlmCustomizationArgs'] generation_llm_customizations: Configuration to customize LLM.
+        :param Sequence['GetAgentToolToolConfigHttpEndpointAuthConfigArgs'] http_endpoint_auth_configs: Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
         :param Sequence['GetAgentToolToolConfigIclExampleArgs'] icl_examples: The input location definition.
         :param Sequence['GetAgentToolToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: The KnowledgeBase configurations that this RAG Tool uses
         :param _builtins.str model_size: Size of the model.
         :param _builtins.bool should_enable_self_correction: To enable/disable self correction.
         :param _builtins.bool should_enable_sql_execution: To enable/disable SQL execution.
+        :param _builtins.str subnet_id: The subnet ID from agent developer tenancy through which the egress is going to be routed.
         :param Sequence['GetAgentToolToolConfigTableAndColumnDescriptionArgs'] table_and_column_descriptions: The input location definition.
         :param _builtins.str tool_config_type: The type of the Tool config. The allowed values are:
                * `SQL_TOOL_CONFIG`: The config for sql Tool.
                * `RAG_TOOL_CONFIG`: The config for rag Tool.
                * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
         """
+        pulumi.set(__self__, "agent_endpoint_id", agent_endpoint_id)
+        pulumi.set(__self__, "api_schemas", api_schemas)
         pulumi.set(__self__, "database_connections", database_connections)
         pulumi.set(__self__, "database_schemas", database_schemas)
         pulumi.set(__self__, "dialect", dialect)
         pulumi.set(__self__, "functions", functions)
         pulumi.set(__self__, "generation_llm_customizations", generation_llm_customizations)
+        pulumi.set(__self__, "http_endpoint_auth_configs", http_endpoint_auth_configs)
         pulumi.set(__self__, "icl_examples", icl_examples)
         pulumi.set(__self__, "knowledge_base_configs", knowledge_base_configs)
         pulumi.set(__self__, "model_size", model_size)
         pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
         pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "table_and_column_descriptions", table_and_column_descriptions)
         pulumi.set(__self__, "tool_config_type", tool_config_type)
+
+    @_builtins.property
+    @pulumi.getter(name="agentEndpointId")
+    def agent_endpoint_id(self) -> _builtins.str:
+        """
+        The AgentEndpoint OCID to be used as a tool in this agent.
+        """
+        return pulumi.get(self, "agent_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchemas")
+    def api_schemas(self) -> Sequence['outputs.GetAgentToolToolConfigApiSchemaResult']:
+        """
+        The input location definition for Api schema.
+        """
+        return pulumi.get(self, "api_schemas")
 
     @_builtins.property
     @pulumi.getter(name="databaseConnections")
@@ -4826,6 +5394,14 @@ class GetAgentToolToolConfigResult(dict):
         return pulumi.get(self, "generation_llm_customizations")
 
     @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthConfigs")
+    def http_endpoint_auth_configs(self) -> Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigResult']:
+        """
+        Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        """
+        return pulumi.get(self, "http_endpoint_auth_configs")
+
+    @_builtins.property
     @pulumi.getter(name="iclExamples")
     def icl_examples(self) -> Sequence['outputs.GetAgentToolToolConfigIclExampleResult']:
         """
@@ -4866,6 +5442,14 @@ class GetAgentToolToolConfigResult(dict):
         return pulumi.get(self, "should_enable_sql_execution")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter(name="tableAndColumnDescriptions")
     def table_and_column_descriptions(self) -> Sequence['outputs.GetAgentToolToolConfigTableAndColumnDescriptionResult']:
         """
@@ -4883,6 +5467,72 @@ class GetAgentToolToolConfigResult(dict):
         * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
         """
         return pulumi.get(self, "tool_config_type")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigApiSchemaResult(dict):
+    def __init__(__self__, *,
+                 api_schema_input_location_type: _builtins.str,
+                 bucket: _builtins.str,
+                 content: _builtins.str,
+                 namespace: _builtins.str,
+                 object: _builtins.str):
+        """
+        :param _builtins.str api_schema_input_location_type: Type of Api Schema InputLocation. The allowed values are:
+               * `INLINE`: The Api schema input location is inline.
+               * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        :param _builtins.str bucket: The bucket name of an object.
+        :param _builtins.str content: Inline content as input.
+        :param _builtins.str namespace: The namespace name of an object.
+        :param _builtins.str object: The location/name of object.
+        """
+        pulumi.set(__self__, "api_schema_input_location_type", api_schema_input_location_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchemaInputLocationType")
+    def api_schema_input_location_type(self) -> _builtins.str:
+        """
+        Type of Api Schema InputLocation. The allowed values are:
+        * `INLINE`: The Api schema input location is inline.
+        * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        """
+        return pulumi.get(self, "api_schema_input_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> _builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The location/name of object.
+        """
+        return pulumi.get(self, "object")
 
 
 @pulumi.output_type
@@ -5038,6 +5688,137 @@ class GetAgentToolToolConfigGenerationLlmCustomizationResult(dict):
         If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigHttpEndpointAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 http_endpoint_auth_sources: Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult']):
+        """
+        :param Sequence['GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs'] http_endpoint_auth_sources: A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        pulumi.set(__self__, "http_endpoint_auth_sources", http_endpoint_auth_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthSources")
+    def http_endpoint_auth_sources(self) -> Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult']:
+        """
+        A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_sources")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult(dict):
+    def __init__(__self__, *,
+                 http_endpoint_auth_scope: _builtins.str,
+                 http_endpoint_auth_scope_configs: Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult']):
+        """
+        :param _builtins.str http_endpoint_auth_scope: Specifies the level from which credentials should be resolved.
+        :param Sequence['GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs'] http_endpoint_auth_scope_configs: Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        pulumi.set(__self__, "http_endpoint_auth_scope", http_endpoint_auth_scope)
+        pulumi.set(__self__, "http_endpoint_auth_scope_configs", http_endpoint_auth_scope_configs)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScope")
+    def http_endpoint_auth_scope(self) -> _builtins.str:
+        """
+        Specifies the level from which credentials should be resolved.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfigs")
+    def http_endpoint_auth_scope_configs(self) -> Sequence['outputs.GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult']:
+        """
+        Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_configs")
+
+
+@pulumi.output_type
+class GetAgentToolToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult(dict):
+    def __init__(__self__, *,
+                 client_id: _builtins.str,
+                 http_endpoint_auth_scope_config_type: _builtins.str,
+                 idcs_url: _builtins.str,
+                 key_location: _builtins.str,
+                 key_name: _builtins.str,
+                 scope_url: _builtins.str,
+                 vault_secret_id: _builtins.str):
+        """
+        :param _builtins.str client_id: IDCS client ID.
+        :param _builtins.str http_endpoint_auth_scope_config_type: The type of authentication to be applied for this HTTP Endpoint.
+        :param _builtins.str idcs_url: IDCS OpenID discovery endpoint.
+        :param _builtins.str key_location: The location of the API key in the request.
+        :param _builtins.str key_name: The name of the key parameter in the location.
+        :param _builtins.str scope_url: OAuth2 scopes for token generation.
+        :param _builtins.str vault_secret_id: The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "http_endpoint_auth_scope_config_type", http_endpoint_auth_scope_config_type)
+        pulumi.set(__self__, "idcs_url", idcs_url)
+        pulumi.set(__self__, "key_location", key_location)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "scope_url", scope_url)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> _builtins.str:
+        """
+        IDCS client ID.
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfigType")
+    def http_endpoint_auth_scope_config_type(self) -> _builtins.str:
+        """
+        The type of authentication to be applied for this HTTP Endpoint.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> _builtins.str:
+        """
+        IDCS OpenID discovery endpoint.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @_builtins.property
+    @pulumi.getter(name="keyLocation")
+    def key_location(self) -> _builtins.str:
+        """
+        The location of the API key in the request.
+        """
+        return pulumi.get(self, "key_location")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        The name of the key parameter in the location.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> _builtins.str:
+        """
+        OAuth2 scopes for token generation.
+        """
+        return pulumi.get(self, "scope_url")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -5388,47 +6169,75 @@ class GetAgentToolsToolCollectionItemResult(dict):
 @pulumi.output_type
 class GetAgentToolsToolCollectionItemToolConfigResult(dict):
     def __init__(__self__, *,
+                 agent_endpoint_id: _builtins.str,
+                 api_schemas: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigApiSchemaResult'],
                  database_connections: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionResult'],
                  database_schemas: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaResult'],
                  dialect: _builtins.str,
                  functions: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigFunctionResult'],
                  generation_llm_customizations: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult'],
+                 http_endpoint_auth_configs: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult'],
                  icl_examples: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigIclExampleResult'],
                  knowledge_base_configs: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigResult'],
                  model_size: _builtins.str,
                  should_enable_self_correction: _builtins.bool,
                  should_enable_sql_execution: _builtins.bool,
+                 subnet_id: _builtins.str,
                  table_and_column_descriptions: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult'],
                  tool_config_type: _builtins.str):
         """
+        :param _builtins.str agent_endpoint_id: The AgentEndpoint OCID to be used as a tool in this agent.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigApiSchemaArgs'] api_schemas: The input location definition for Api schema.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigDatabaseConnectionArgs'] database_connections: The connection type for Databases.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigDatabaseSchemaArgs'] database_schemas: The input location definition.
         :param _builtins.str dialect: Dialect to be used for SQL generation.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigFunctionArgs'] functions: Details of Function for Function calling tool.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationArgs'] generation_llm_customizations: Configuration to customize LLM.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigArgs'] http_endpoint_auth_configs: Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigIclExampleArgs'] icl_examples: The input location definition.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigKnowledgeBaseConfigArgs'] knowledge_base_configs: The KnowledgeBase configurations that this RAG Tool uses
         :param _builtins.str model_size: Size of the model.
         :param _builtins.bool should_enable_self_correction: To enable/disable self correction.
         :param _builtins.bool should_enable_sql_execution: To enable/disable SQL execution.
+        :param _builtins.str subnet_id: The subnet ID from agent developer tenancy through which the egress is going to be routed.
         :param Sequence['GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionArgs'] table_and_column_descriptions: The input location definition.
         :param _builtins.str tool_config_type: The type of the Tool config. The allowed values are:
                * `SQL_TOOL_CONFIG`: The config for sql Tool.
                * `RAG_TOOL_CONFIG`: The config for rag Tool.
                * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
         """
+        pulumi.set(__self__, "agent_endpoint_id", agent_endpoint_id)
+        pulumi.set(__self__, "api_schemas", api_schemas)
         pulumi.set(__self__, "database_connections", database_connections)
         pulumi.set(__self__, "database_schemas", database_schemas)
         pulumi.set(__self__, "dialect", dialect)
         pulumi.set(__self__, "functions", functions)
         pulumi.set(__self__, "generation_llm_customizations", generation_llm_customizations)
+        pulumi.set(__self__, "http_endpoint_auth_configs", http_endpoint_auth_configs)
         pulumi.set(__self__, "icl_examples", icl_examples)
         pulumi.set(__self__, "knowledge_base_configs", knowledge_base_configs)
         pulumi.set(__self__, "model_size", model_size)
         pulumi.set(__self__, "should_enable_self_correction", should_enable_self_correction)
         pulumi.set(__self__, "should_enable_sql_execution", should_enable_sql_execution)
+        pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "table_and_column_descriptions", table_and_column_descriptions)
         pulumi.set(__self__, "tool_config_type", tool_config_type)
+
+    @_builtins.property
+    @pulumi.getter(name="agentEndpointId")
+    def agent_endpoint_id(self) -> _builtins.str:
+        """
+        The AgentEndpoint OCID to be used as a tool in this agent.
+        """
+        return pulumi.get(self, "agent_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchemas")
+    def api_schemas(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigApiSchemaResult']:
+        """
+        The input location definition for Api schema.
+        """
+        return pulumi.get(self, "api_schemas")
 
     @_builtins.property
     @pulumi.getter(name="databaseConnections")
@@ -5471,6 +6280,14 @@ class GetAgentToolsToolCollectionItemToolConfigResult(dict):
         return pulumi.get(self, "generation_llm_customizations")
 
     @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthConfigs")
+    def http_endpoint_auth_configs(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult']:
+        """
+        Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        """
+        return pulumi.get(self, "http_endpoint_auth_configs")
+
+    @_builtins.property
     @pulumi.getter(name="iclExamples")
     def icl_examples(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigIclExampleResult']:
         """
@@ -5511,6 +6328,14 @@ class GetAgentToolsToolCollectionItemToolConfigResult(dict):
         return pulumi.get(self, "should_enable_sql_execution")
 
     @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
     @pulumi.getter(name="tableAndColumnDescriptions")
     def table_and_column_descriptions(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigTableAndColumnDescriptionResult']:
         """
@@ -5528,6 +6353,72 @@ class GetAgentToolsToolCollectionItemToolConfigResult(dict):
         * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
         """
         return pulumi.get(self, "tool_config_type")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigApiSchemaResult(dict):
+    def __init__(__self__, *,
+                 api_schema_input_location_type: _builtins.str,
+                 bucket: _builtins.str,
+                 content: _builtins.str,
+                 namespace: _builtins.str,
+                 object: _builtins.str):
+        """
+        :param _builtins.str api_schema_input_location_type: Type of Api Schema InputLocation. The allowed values are:
+               * `INLINE`: The Api schema input location is inline.
+               * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        :param _builtins.str bucket: The bucket name of an object.
+        :param _builtins.str content: Inline content as input.
+        :param _builtins.str namespace: The namespace name of an object.
+        :param _builtins.str object: The location/name of object.
+        """
+        pulumi.set(__self__, "api_schema_input_location_type", api_schema_input_location_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "content", content)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "object", object)
+
+    @_builtins.property
+    @pulumi.getter(name="apiSchemaInputLocationType")
+    def api_schema_input_location_type(self) -> _builtins.str:
+        """
+        Type of Api Schema InputLocation. The allowed values are:
+        * `INLINE`: The Api schema input location is inline.
+        * `OBJECT_STORAGE_LOCATION`: The Api schema input location is object storage.
+        """
+        return pulumi.get(self, "api_schema_input_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The bucket name of an object.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> _builtins.str:
+        """
+        Inline content as input.
+        """
+        return pulumi.get(self, "content")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The namespace name of an object.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        The location/name of object.
+        """
+        return pulumi.get(self, "object")
 
 
 @pulumi.output_type
@@ -5683,6 +6574,137 @@ class GetAgentToolsToolCollectionItemToolConfigGenerationLlmCustomizationResult(
         If specified, the default instruction is replaced with provided instruction.
         """
         return pulumi.get(self, "instruction")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigResult(dict):
+    def __init__(__self__, *,
+                 http_endpoint_auth_sources: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult']):
+        """
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceArgs'] http_endpoint_auth_sources: A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        pulumi.set(__self__, "http_endpoint_auth_sources", http_endpoint_auth_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthSources")
+    def http_endpoint_auth_sources(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult']:
+        """
+        A list of credential sources from which authentication credentials can be resolved. Only AGENT is supported for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_sources")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceResult(dict):
+    def __init__(__self__, *,
+                 http_endpoint_auth_scope: _builtins.str,
+                 http_endpoint_auth_scope_configs: Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult']):
+        """
+        :param _builtins.str http_endpoint_auth_scope: Specifies the level from which credentials should be resolved.
+        :param Sequence['GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigArgs'] http_endpoint_auth_scope_configs: Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        pulumi.set(__self__, "http_endpoint_auth_scope", http_endpoint_auth_scope)
+        pulumi.set(__self__, "http_endpoint_auth_scope_configs", http_endpoint_auth_scope_configs)
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScope")
+    def http_endpoint_auth_scope(self) -> _builtins.str:
+        """
+        Specifies the level from which credentials should be resolved.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope")
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfigs")
+    def http_endpoint_auth_scope_configs(self) -> Sequence['outputs.GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult']:
+        """
+        Subset of AuthScopeConfig allowed for HTTP Endpoint Tool.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_configs")
+
+
+@pulumi.output_type
+class GetAgentToolsToolCollectionItemToolConfigHttpEndpointAuthConfigHttpEndpointAuthSourceHttpEndpointAuthScopeConfigResult(dict):
+    def __init__(__self__, *,
+                 client_id: _builtins.str,
+                 http_endpoint_auth_scope_config_type: _builtins.str,
+                 idcs_url: _builtins.str,
+                 key_location: _builtins.str,
+                 key_name: _builtins.str,
+                 scope_url: _builtins.str,
+                 vault_secret_id: _builtins.str):
+        """
+        :param _builtins.str client_id: IDCS client ID.
+        :param _builtins.str http_endpoint_auth_scope_config_type: The type of authentication to be applied for this HTTP Endpoint.
+        :param _builtins.str idcs_url: IDCS OpenID discovery endpoint.
+        :param _builtins.str key_location: The location of the API key in the request.
+        :param _builtins.str key_name: The name of the key parameter in the location.
+        :param _builtins.str scope_url: OAuth2 scopes for token generation.
+        :param _builtins.str vault_secret_id: The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "http_endpoint_auth_scope_config_type", http_endpoint_auth_scope_config_type)
+        pulumi.set(__self__, "idcs_url", idcs_url)
+        pulumi.set(__self__, "key_location", key_location)
+        pulumi.set(__self__, "key_name", key_name)
+        pulumi.set(__self__, "scope_url", scope_url)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> _builtins.str:
+        """
+        IDCS client ID.
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="httpEndpointAuthScopeConfigType")
+    def http_endpoint_auth_scope_config_type(self) -> _builtins.str:
+        """
+        The type of authentication to be applied for this HTTP Endpoint.
+        """
+        return pulumi.get(self, "http_endpoint_auth_scope_config_type")
+
+    @_builtins.property
+    @pulumi.getter(name="idcsUrl")
+    def idcs_url(self) -> _builtins.str:
+        """
+        IDCS OpenID discovery endpoint.
+        """
+        return pulumi.get(self, "idcs_url")
+
+    @_builtins.property
+    @pulumi.getter(name="keyLocation")
+    def key_location(self) -> _builtins.str:
+        """
+        The location of the API key in the request.
+        """
+        return pulumi.get(self, "key_location")
+
+    @_builtins.property
+    @pulumi.getter(name="keyName")
+    def key_name(self) -> _builtins.str:
+        """
+        The name of the key parameter in the location.
+        """
+        return pulumi.get(self, "key_name")
+
+    @_builtins.property
+    @pulumi.getter(name="scopeUrl")
+    def scope_url(self) -> _builtins.str:
+        """
+        OAuth2 scopes for token generation.
+        """
+        return pulumi.get(self, "scope_url")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> _builtins.str:
+        """
+        The OCID of the vault secret with username:password. Required when `authScope` is AGENT.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type

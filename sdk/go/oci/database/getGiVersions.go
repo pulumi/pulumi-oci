@@ -34,6 +34,7 @@ import (
 //				AvailabilityDomain: pulumi.StringRef(giVersionAvailabilityDomain),
 //				ResourceId:         pulumi.StringRef(testResource.Id),
 //				Shape:              pulumi.StringRef(giVersionShape),
+//				ShapeAttribute:     pulumi.StringRef(giVersionShapeAttribute),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -64,6 +65,8 @@ type GetGiVersionsArgs struct {
 	ResourceId *string `pulumi:"resourceId"`
 	// If provided, filters the results for the given shape.
 	Shape *string `pulumi:"shape"`
+	// If provided and applicable, return the results based on the shapeAttribute provided
+	ShapeAttribute *string `pulumi:"shapeAttribute"`
 }
 
 // A collection of values returned by getGiVersions.
@@ -74,9 +77,10 @@ type GetGiVersionsResult struct {
 	// The list of gi_versions.
 	GiVersions []GetGiVersionsGiVersion `pulumi:"giVersions"`
 	// The provider-assigned unique ID for this managed resource.
-	Id         string  `pulumi:"id"`
-	ResourceId *string `pulumi:"resourceId"`
-	Shape      *string `pulumi:"shape"`
+	Id             string  `pulumi:"id"`
+	ResourceId     *string `pulumi:"resourceId"`
+	Shape          *string `pulumi:"shape"`
+	ShapeAttribute *string `pulumi:"shapeAttribute"`
 }
 
 func GetGiVersionsOutput(ctx *pulumi.Context, args GetGiVersionsOutputArgs, opts ...pulumi.InvokeOption) GetGiVersionsResultOutput {
@@ -99,6 +103,8 @@ type GetGiVersionsOutputArgs struct {
 	ResourceId pulumi.StringPtrInput `pulumi:"resourceId"`
 	// If provided, filters the results for the given shape.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
+	// If provided and applicable, return the results based on the shapeAttribute provided
+	ShapeAttribute pulumi.StringPtrInput `pulumi:"shapeAttribute"`
 }
 
 func (GetGiVersionsOutputArgs) ElementType() reflect.Type {
@@ -148,6 +154,10 @@ func (o GetGiVersionsResultOutput) ResourceId() pulumi.StringPtrOutput {
 
 func (o GetGiVersionsResultOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetGiVersionsResult) *string { return v.Shape }).(pulumi.StringPtrOutput)
+}
+
+func (o GetGiVersionsResultOutput) ShapeAttribute() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGiVersionsResult) *string { return v.ShapeAttribute }).(pulumi.StringPtrOutput)
 }
 
 func init() {

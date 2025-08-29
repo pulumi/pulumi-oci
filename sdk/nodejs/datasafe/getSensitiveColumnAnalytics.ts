@@ -37,6 +37,7 @@ import * as utilities from "../utilities";
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeIds: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -55,6 +56,7 @@ export function getSensitiveColumnAnalytics(args: GetSensitiveColumnAnalyticsArg
         "sensitiveDataModelId": args.sensitiveDataModelId,
         "sensitiveTypeGroupId": args.sensitiveTypeGroupId,
         "sensitiveTypeIds": args.sensitiveTypeIds,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -105,6 +107,10 @@ export interface GetSensitiveColumnAnalyticsArgs {
      */
     sensitiveTypeIds?: string[];
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
@@ -148,6 +154,7 @@ export interface GetSensitiveColumnAnalyticsResult {
      * The OCID of the sensitive type associated with the sensitive column.
      */
     readonly sensitiveTypeIds?: string[];
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target database associated with the sensitive column.
      */
@@ -184,6 +191,7 @@ export interface GetSensitiveColumnAnalyticsResult {
  *     sensitiveDataModelId: testSensitiveDataModel.id,
  *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeIds: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -202,6 +210,7 @@ export function getSensitiveColumnAnalyticsOutput(args: GetSensitiveColumnAnalyt
         "sensitiveDataModelId": args.sensitiveDataModelId,
         "sensitiveTypeGroupId": args.sensitiveTypeGroupId,
         "sensitiveTypeIds": args.sensitiveTypeIds,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -251,6 +260,10 @@ export interface GetSensitiveColumnAnalyticsOutputArgs {
      * A filter to return only the sensitive columns that are associated with one of the sensitive types identified by the specified OCIDs.
      */
     sensitiveTypeIds?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

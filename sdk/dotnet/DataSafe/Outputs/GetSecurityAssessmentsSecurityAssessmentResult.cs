@@ -13,6 +13,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
     [OutputType]
     public sealed class GetSecurityAssessmentsSecurityAssessmentResult
     {
+        public readonly int ApplyTemplateTrigger;
+        public readonly string BaseSecurityAssessmentId;
+        /// <summary>
+        /// The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+        /// </summary>
+        public readonly string BaselineAssessmentId;
+        /// <summary>
+        /// The security checks to be evaluated for type template.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentCheckResult> Checks;
+        public readonly int CompareToTemplateBaselineTrigger;
         /// <summary>
         /// A filter to return only resources that match the specified compartment OCID.
         /// </summary>
@@ -69,6 +80,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// The summary of findings for the security assessment.
         /// </summary>
         public readonly string Link;
+        public readonly int RemoveTemplateTrigger;
         /// <summary>
         /// Schedule of the assessment that runs periodically in the specified format: - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// </summary>
@@ -90,6 +102,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        public readonly string TargetDatabaseGroupId;
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
@@ -98,9 +114,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly ImmutableArray<string> TargetIds;
         /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        public readonly string TargetType;
+        /// <summary>
         /// The version of the target database.
         /// </summary>
         public readonly string TargetVersion;
+        /// <summary>
+        /// The OCID of the security assessment of type TEMPLATE.
+        /// </summary>
+        public readonly string TemplateAssessmentId;
         /// <summary>
         /// The date and time the security assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         /// </summary>
@@ -124,6 +148,16 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
         [OutputConstructor]
         private GetSecurityAssessmentsSecurityAssessmentResult(
+            int applyTemplateTrigger,
+
+            string baseSecurityAssessmentId,
+
+            string baselineAssessmentId,
+
+            ImmutableArray<Outputs.GetSecurityAssessmentsSecurityAssessmentCheckResult> checks,
+
+            int compareToTemplateBaselineTrigger,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -152,6 +186,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string link,
 
+            int removeTemplateTrigger,
+
             string schedule,
 
             string scheduleSecurityAssessmentId,
@@ -162,11 +198,17 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             ImmutableDictionary<string, string> systemTags,
 
+            string targetDatabaseGroupId,
+
             string targetId,
 
             ImmutableArray<string> targetIds,
 
+            string targetType,
+
             string targetVersion,
+
+            string templateAssessmentId,
 
             string timeCreated,
 
@@ -178,6 +220,11 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string type)
         {
+            ApplyTemplateTrigger = applyTemplateTrigger;
+            BaseSecurityAssessmentId = baseSecurityAssessmentId;
+            BaselineAssessmentId = baselineAssessmentId;
+            Checks = checks;
+            CompareToTemplateBaselineTrigger = compareToTemplateBaselineTrigger;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;
@@ -192,14 +239,18 @@ namespace Pulumi.Oci.DataSafe.Outputs
             LastComparedBaselineId = lastComparedBaselineId;
             LifecycleDetails = lifecycleDetails;
             Link = link;
+            RemoveTemplateTrigger = removeTemplateTrigger;
             Schedule = schedule;
             ScheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
             State = state;
             Statistics = statistics;
             SystemTags = systemTags;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
             TargetIds = targetIds;
+            TargetType = targetType;
             TargetVersion = targetVersion;
+            TemplateAssessmentId = templateAssessmentId;
             TimeCreated = timeCreated;
             TimeLastAssessed = timeLastAssessed;
             TimeUpdated = timeUpdated;

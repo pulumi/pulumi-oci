@@ -36,6 +36,7 @@ public final class GetDbVersionsResult {
      * 
      */
     private @Nullable Boolean isUpgradeSupported;
+    private @Nullable String shapeAttribute;
     private @Nullable String storageManagement;
 
     private GetDbVersionsResult() {}
@@ -75,6 +76,9 @@ public final class GetDbVersionsResult {
     public Optional<Boolean> isUpgradeSupported() {
         return Optional.ofNullable(this.isUpgradeSupported);
     }
+    public Optional<String> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
     public Optional<String> storageManagement() {
         return Optional.ofNullable(this.storageManagement);
     }
@@ -96,6 +100,7 @@ public final class GetDbVersionsResult {
         private String id;
         private @Nullable Boolean isDatabaseSoftwareImageSupported;
         private @Nullable Boolean isUpgradeSupported;
+        private @Nullable String shapeAttribute;
         private @Nullable String storageManagement;
         public Builder() {}
         public Builder(GetDbVersionsResult defaults) {
@@ -108,6 +113,7 @@ public final class GetDbVersionsResult {
     	      this.id = defaults.id;
     	      this.isDatabaseSoftwareImageSupported = defaults.isDatabaseSoftwareImageSupported;
     	      this.isUpgradeSupported = defaults.isUpgradeSupported;
+    	      this.shapeAttribute = defaults.shapeAttribute;
     	      this.storageManagement = defaults.storageManagement;
         }
 
@@ -172,6 +178,12 @@ public final class GetDbVersionsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shapeAttribute(@Nullable String shapeAttribute) {
+
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
+        @CustomType.Setter
         public Builder storageManagement(@Nullable String storageManagement) {
 
             this.storageManagement = storageManagement;
@@ -187,6 +199,7 @@ public final class GetDbVersionsResult {
             _resultValue.id = id;
             _resultValue.isDatabaseSoftwareImageSupported = isDatabaseSoftwareImageSupported;
             _resultValue.isUpgradeSupported = isUpgradeSupported;
+            _resultValue.shapeAttribute = shapeAttribute;
             _resultValue.storageManagement = storageManagement;
             return _resultValue;
         }

@@ -105,6 +105,8 @@ type Database struct {
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringOutput `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
 	State pulumi.StringOutput `pulumi:"state"`
+	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+	StorageSizeDetails DatabaseStorageSizeDetailArrayOutput `pulumi:"storageSizeDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the database was created.
@@ -231,6 +233,8 @@ type databaseState struct {
 	SourceDatabasePointInTimeRecoveryTimestamp *string `pulumi:"sourceDatabasePointInTimeRecoveryTimestamp"`
 	// The current state of the database.
 	State *string `pulumi:"state"`
+	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+	StorageSizeDetails []DatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the database was created.
@@ -319,6 +323,8 @@ type DatabaseState struct {
 	SourceDatabasePointInTimeRecoveryTimestamp pulumi.StringPtrInput
 	// The current state of the database.
 	State pulumi.StringPtrInput
+	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+	StorageSizeDetails DatabaseStorageSizeDetailArrayInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput
 	// The date and time the database was created.
@@ -669,6 +675,11 @@ func (o DatabaseOutput) SourceDatabasePointInTimeRecoveryTimestamp() pulumi.Stri
 // The current state of the database.
 func (o DatabaseOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Database) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+func (o DatabaseOutput) StorageSizeDetails() DatabaseStorageSizeDetailArrayOutput {
+	return o.ApplyT(func(v *Database) DatabaseStorageSizeDetailArrayOutput { return v.StorageSizeDetails }).(DatabaseStorageSizeDetailArrayOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

@@ -65,6 +65,8 @@ type LookupAgentDataIngestionJobResult struct {
 	DataIngestionJobId string `pulumi:"dataIngestionJobId"`
 	// **DataIngestionJobStatistics**
 	DataIngestionJobStatistics []GetAgentDataIngestionJobDataIngestionJobStatistic `pulumi:"dataIngestionJobStatistics"`
+	// DataIngestionJob type.
+	DataIngestionJobTypes []GetAgentDataIngestionJobDataIngestionJobType `pulumi:"dataIngestionJobTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 	DataSourceId string `pulumi:"dataSourceId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -76,7 +78,8 @@ type LookupAgentDataIngestionJobResult struct {
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
-	Id string `pulumi:"id"`
+	Id              string `pulumi:"id"`
+	KnowledgeBaseId string `pulumi:"knowledgeBaseId"`
 	// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current state of the data ingestion job.
@@ -139,6 +142,13 @@ func (o LookupAgentDataIngestionJobResultOutput) DataIngestionJobStatistics() Ge
 	}).(GetAgentDataIngestionJobDataIngestionJobStatisticArrayOutput)
 }
 
+// DataIngestionJob type.
+func (o LookupAgentDataIngestionJobResultOutput) DataIngestionJobTypes() GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput {
+	return o.ApplyT(func(v LookupAgentDataIngestionJobResult) []GetAgentDataIngestionJobDataIngestionJobType {
+		return v.DataIngestionJobTypes
+	}).(GetAgentDataIngestionJobDataIngestionJobTypeArrayOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
 func (o LookupAgentDataIngestionJobResultOutput) DataSourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentDataIngestionJobResult) string { return v.DataSourceId }).(pulumi.StringOutput)
@@ -167,6 +177,10 @@ func (o LookupAgentDataIngestionJobResultOutput) FreeformTags() pulumi.StringMap
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DataIngestionJob.
 func (o LookupAgentDataIngestionJobResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAgentDataIngestionJobResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupAgentDataIngestionJobResultOutput) KnowledgeBaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAgentDataIngestionJobResult) string { return v.KnowledgeBaseId }).(pulumi.StringOutput)
 }
 
 // A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

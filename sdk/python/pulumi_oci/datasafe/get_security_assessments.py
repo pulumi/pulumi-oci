@@ -28,7 +28,7 @@ class GetSecurityAssessmentsResult:
     """
     A collection of values returned by getSecurityAssessments.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, is_baseline=None, is_schedule_assessment=None, schedule_assessment_id=None, security_assessments=None, state=None, target_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, triggered_by=None, type=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, is_baseline=None, is_schedule_assessment=None, schedule_assessment_id=None, security_assessments=None, state=None, target_database_group_id=None, target_id=None, target_type=None, template_assessment_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, triggered_by=None, type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -62,9 +62,18 @@ class GetSecurityAssessmentsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
+        if template_assessment_id and not isinstance(template_assessment_id, str):
+            raise TypeError("Expected argument 'template_assessment_id' to be a str")
+        pulumi.set(__self__, "template_assessment_id", template_assessment_id)
         if time_created_greater_than_or_equal_to and not isinstance(time_created_greater_than_or_equal_to, str):
             raise TypeError("Expected argument 'time_created_greater_than_or_equal_to' to be a str")
         pulumi.set(__self__, "time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
@@ -152,9 +161,33 @@ class GetSecurityAssessmentsResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the target database group that the group assessment is created for.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[_builtins.str]:
+        """
+        Indicates whether the security assessment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
+
+    @_builtins.property
+    @pulumi.getter(name="templateAssessmentId")
+    def template_assessment_id(self) -> Optional[_builtins.str]:
+        """
+        The ocid of a security assessment which is of type TEMPLATE, this will be null or empty when type is TEMPLATE.
+        """
+        return pulumi.get(self, "template_assessment_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedGreaterThanOrEqualTo")
@@ -178,7 +211,7 @@ class GetSecurityAssessmentsResult:
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         """
-        The type of this security assessment. The possible types are:
+        The type of the security assessment. Possible values are:
         """
         return pulumi.get(self, "type")
 
@@ -200,7 +233,10 @@ class AwaitableGetSecurityAssessmentsResult(GetSecurityAssessmentsResult):
             schedule_assessment_id=self.schedule_assessment_id,
             security_assessments=self.security_assessments,
             state=self.state,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
+            target_type=self.target_type,
+            template_assessment_id=self.template_assessment_id,
             time_created_greater_than_or_equal_to=self.time_created_greater_than_or_equal_to,
             time_created_less_than=self.time_created_less_than,
             triggered_by=self.triggered_by,
@@ -216,7 +252,10 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
                              is_schedule_assessment: Optional[_builtins.bool] = None,
                              schedule_assessment_id: Optional[_builtins.str] = None,
                              state: Optional[_builtins.str] = None,
+                             target_database_group_id: Optional[_builtins.str] = None,
                              target_id: Optional[_builtins.str] = None,
+                             target_type: Optional[_builtins.str] = None,
+                             template_assessment_id: Optional[_builtins.str] = None,
                              time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
                              time_created_less_than: Optional[_builtins.str] = None,
                              triggered_by: Optional[_builtins.str] = None,
@@ -255,7 +294,10 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
         is_schedule_assessment=security_assessment_is_schedule_assessment,
         schedule_assessment_id=test_schedule_assessment["id"],
         state=security_assessment_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
+        target_type=security_assessment_target_type,
+        template_assessment_id=test_template_assessment["id"],
         time_created_greater_than_or_equal_to=security_assessment_time_created_greater_than_or_equal_to,
         time_created_less_than=security_assessment_time_created_less_than,
         triggered_by=security_assessment_triggered_by,
@@ -271,7 +313,10 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
     :param _builtins.str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A filter to return only only target database resources or target database group resources.
+    :param _builtins.str template_assessment_id: The OCID of the security assessment of type TEMPLATE.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -291,7 +336,10 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
     __args__['isScheduleAssessment'] = is_schedule_assessment
     __args__['scheduleAssessmentId'] = schedule_assessment_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
+    __args__['templateAssessmentId'] = template_assessment_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['triggeredBy'] = triggered_by
@@ -311,7 +359,10 @@ def get_security_assessments(access_level: Optional[_builtins.str] = None,
         schedule_assessment_id=pulumi.get(__ret__, 'schedule_assessment_id'),
         security_assessments=pulumi.get(__ret__, 'security_assessments'),
         state=pulumi.get(__ret__, 'state'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
+        template_assessment_id=pulumi.get(__ret__, 'template_assessment_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
@@ -325,7 +376,10 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
                                     is_schedule_assessment: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                     schedule_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                    template_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                     triggered_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -364,7 +418,10 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
         is_schedule_assessment=security_assessment_is_schedule_assessment,
         schedule_assessment_id=test_schedule_assessment["id"],
         state=security_assessment_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
+        target_type=security_assessment_target_type,
+        template_assessment_id=test_template_assessment["id"],
         time_created_greater_than_or_equal_to=security_assessment_time_created_greater_than_or_equal_to,
         time_created_less_than=security_assessment_time_created_less_than,
         triggered_by=security_assessment_triggered_by,
@@ -380,7 +437,10 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     :param _builtins.bool is_schedule_assessment: A filter to return only security assessments of type save schedule.
     :param _builtins.str schedule_assessment_id: The OCID of the security assessment of type SAVE_SCHEDULE.
     :param _builtins.str state: A filter to return only resources that match the specified lifecycle state.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A filter to return only only target database resources or target database group resources.
+    :param _builtins.str template_assessment_id: The OCID of the security assessment of type TEMPLATE.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -400,7 +460,10 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
     __args__['isScheduleAssessment'] = is_schedule_assessment
     __args__['scheduleAssessmentId'] = schedule_assessment_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
+    __args__['templateAssessmentId'] = template_assessment_id
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['triggeredBy'] = triggered_by
@@ -419,7 +482,10 @@ def get_security_assessments_output(access_level: Optional[pulumi.Input[Optional
         schedule_assessment_id=pulumi.get(__response__, 'schedule_assessment_id'),
         security_assessments=pulumi.get(__response__, 'security_assessments'),
         state=pulumi.get(__response__, 'state'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
+        template_assessment_id=pulumi.get(__response__, 'template_assessment_id'),
         time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
         triggered_by=pulumi.get(__response__, 'triggered_by'),

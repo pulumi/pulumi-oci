@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GenerativeAi.AgentDataIngestionJobArgs;
 import com.pulumi.oci.GenerativeAi.inputs.AgentDataIngestionJobState;
 import com.pulumi.oci.GenerativeAi.outputs.AgentDataIngestionJobDataIngestionJobStatistic;
+import com.pulumi.oci.GenerativeAi.outputs.AgentDataIngestionJobDataIngestionJobType;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -103,6 +104,20 @@ public class AgentDataIngestionJob extends com.pulumi.resources.CustomResource {
         return this.dataIngestionJobStatistics;
     }
     /**
+     * DataIngestionJob type.
+     * 
+     */
+    @Export(name="dataIngestionJobTypes", refs={List.class,AgentDataIngestionJobDataIngestionJobType.class}, tree="[0,1]")
+    private Output<List<AgentDataIngestionJobDataIngestionJobType>> dataIngestionJobTypes;
+
+    /**
+     * @return DataIngestionJob type.
+     * 
+     */
+    public Output<List<AgentDataIngestionJobDataIngestionJobType>> dataIngestionJobTypes() {
+        return this.dataIngestionJobTypes;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      * 
      */
@@ -177,6 +192,12 @@ public class AgentDataIngestionJob extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
+    }
+    @Export(name="knowledgeBaseId", refs={String.class}, tree="[0]")
+    private Output<String> knowledgeBaseId;
+
+    public Output<String> knowledgeBaseId() {
+        return this.knowledgeBaseId;
     }
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

@@ -28,6 +28,7 @@ public final class GetDbSystemShapesResult {
      * 
      */
     private String id;
+    private @Nullable String shapeAttribute;
 
     private GetDbSystemShapesResult() {}
     public Optional<String> availabilityDomain() {
@@ -53,6 +54,9 @@ public final class GetDbSystemShapesResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -68,6 +72,7 @@ public final class GetDbSystemShapesResult {
         private List<GetDbSystemShapesDbSystemShape> dbSystemShapes;
         private @Nullable List<GetDbSystemShapesFilter> filters;
         private String id;
+        private @Nullable String shapeAttribute;
         public Builder() {}
         public Builder(GetDbSystemShapesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -76,6 +81,7 @@ public final class GetDbSystemShapesResult {
     	      this.dbSystemShapes = defaults.dbSystemShapes;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.shapeAttribute = defaults.shapeAttribute;
         }
 
         @CustomType.Setter
@@ -120,6 +126,12 @@ public final class GetDbSystemShapesResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder shapeAttribute(@Nullable String shapeAttribute) {
+
+            this.shapeAttribute = shapeAttribute;
+            return this;
+        }
         public GetDbSystemShapesResult build() {
             final var _resultValue = new GetDbSystemShapesResult();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -127,6 +139,7 @@ public final class GetDbSystemShapesResult {
             _resultValue.dbSystemShapes = dbSystemShapes;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.shapeAttribute = shapeAttribute;
             return _resultValue;
         }
     }

@@ -11,11 +11,23 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail {
     /**
+     * @return The status of Data Safe user exclusion in the audit policy.
+     * 
+     */
+    private String datasafeUserExclusionStatus;
+    /**
      * @return The security policy entry type. Allowed values:
      * * FIREWALL_POLICY - The SQL Firewall policy entry type.
+     * * AUDIT_POLICY - The audit policy entry type.
+     * * CONFIG - Config changes deployment.
      * 
      */
     private String entryType;
+    /**
+     * @return Specifies why exclusion of the Data Safe user did not succeed.
+     * 
+     */
+    private String excludeDatasafeUserFailureMsg;
     /**
      * @return The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
      * 
@@ -29,12 +41,28 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetai
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail() {}
     /**
+     * @return The status of Data Safe user exclusion in the audit policy.
+     * 
+     */
+    public String datasafeUserExclusionStatus() {
+        return this.datasafeUserExclusionStatus;
+    }
+    /**
      * @return The security policy entry type. Allowed values:
      * * FIREWALL_POLICY - The SQL Firewall policy entry type.
+     * * AUDIT_POLICY - The audit policy entry type.
+     * * CONFIG - Config changes deployment.
      * 
      */
     public String entryType() {
         return this.entryType;
+    }
+    /**
+     * @return Specifies why exclusion of the Data Safe user did not succeed.
+     * 
+     */
+    public String excludeDatasafeUserFailureMsg() {
+        return this.excludeDatasafeUserFailureMsg;
     }
     /**
      * @return The time the the SQL Firewall policy was generated on the target database, in the format defined by RFC3339.
@@ -60,23 +88,43 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetai
     }
     @CustomType.Builder
     public static final class Builder {
+        private String datasafeUserExclusionStatus;
         private String entryType;
+        private String excludeDatasafeUserFailureMsg;
         private String timeGenerated;
         private String timeStatusUpdated;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.datasafeUserExclusionStatus = defaults.datasafeUserExclusionStatus;
     	      this.entryType = defaults.entryType;
+    	      this.excludeDatasafeUserFailureMsg = defaults.excludeDatasafeUserFailureMsg;
     	      this.timeGenerated = defaults.timeGenerated;
     	      this.timeStatusUpdated = defaults.timeStatusUpdated;
         }
 
+        @CustomType.Setter
+        public Builder datasafeUserExclusionStatus(String datasafeUserExclusionStatus) {
+            if (datasafeUserExclusionStatus == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail", "datasafeUserExclusionStatus");
+            }
+            this.datasafeUserExclusionStatus = datasafeUserExclusionStatus;
+            return this;
+        }
         @CustomType.Setter
         public Builder entryType(String entryType) {
             if (entryType == null) {
               throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail", "entryType");
             }
             this.entryType = entryType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder excludeDatasafeUserFailureMsg(String excludeDatasafeUserFailureMsg) {
+            if (excludeDatasafeUserFailureMsg == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail", "excludeDatasafeUserFailureMsg");
+            }
+            this.excludeDatasafeUserFailureMsg = excludeDatasafeUserFailureMsg;
             return this;
         }
         @CustomType.Setter
@@ -97,7 +145,9 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetai
         }
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail build() {
             final var _resultValue = new GetSecurityPolicyDeploymentSecurityPolicyEntryStateEntryDetail();
+            _resultValue.datasafeUserExclusionStatus = datasafeUserExclusionStatus;
             _resultValue.entryType = entryType;
+            _resultValue.excludeDatasafeUserFailureMsg = excludeDatasafeUserFailureMsg;
             _resultValue.timeGenerated = timeGenerated;
             _resultValue.timeStatusUpdated = timeStatusUpdated;
             return _resultValue;

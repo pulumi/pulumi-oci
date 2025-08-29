@@ -28,7 +28,7 @@ class GetDbSystemShapesResult:
     """
     A collection of values returned by getDbSystemShapes.
     """
-    def __init__(__self__, availability_domain=None, compartment_id=None, db_system_shapes=None, filters=None, id=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, db_system_shapes=None, filters=None, id=None, shape_attribute=None):
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -44,6 +44,9 @@ class GetDbSystemShapesResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if shape_attribute and not isinstance(shape_attribute, str):
+            raise TypeError("Expected argument 'shape_attribute' to be a str")
+        pulumi.set(__self__, "shape_attribute", shape_attribute)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -76,6 +79,11 @@ class GetDbSystemShapesResult:
         """
         return pulumi.get(self, "id")
 
+    @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "shape_attribute")
+
 
 class AwaitableGetDbSystemShapesResult(GetDbSystemShapesResult):
     # pylint: disable=using-constant-test
@@ -87,12 +95,14 @@ class AwaitableGetDbSystemShapesResult(GetDbSystemShapesResult):
             compartment_id=self.compartment_id,
             db_system_shapes=self.db_system_shapes,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            shape_attribute=self.shape_attribute)
 
 
 def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
                          compartment_id: Optional[_builtins.str] = None,
                          filters: Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]] = None,
+                         shape_attribute: Optional[_builtins.str] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbSystemShapesResult:
     """
     This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -106,17 +116,20 @@ def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
-        availability_domain=db_system_shape_availability_domain)
+        availability_domain=db_system_shape_availability_domain,
+        shape_attribute=db_system_shape_shape_attribute)
     ```
 
 
     :param _builtins.str availability_domain: The name of the Availability Domain.
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str shape_attribute: If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['shapeAttribute'] = shape_attribute
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getDbSystemShapes:getDbSystemShapes', __args__, opts=opts, typ=GetDbSystemShapesResult).value
 
@@ -125,10 +138,12 @@ def get_db_system_shapes(availability_domain: Optional[_builtins.str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         db_system_shapes=pulumi.get(__ret__, 'db_system_shapes'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        shape_attribute=pulumi.get(__ret__, 'shape_attribute'))
 def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                 filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDbSystemShapesFilterArgs', 'GetDbSystemShapesFilterArgsDict']]]]] = None,
+                                shape_attribute: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemShapesResult]:
     """
     This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -142,17 +157,20 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
     import pulumi_oci as oci
 
     test_db_system_shapes = oci.Database.get_db_system_shapes(compartment_id=compartment_id,
-        availability_domain=db_system_shape_availability_domain)
+        availability_domain=db_system_shape_availability_domain,
+        shape_attribute=db_system_shape_shape_attribute)
     ```
 
 
     :param _builtins.str availability_domain: The name of the Availability Domain.
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str shape_attribute: If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
     """
     __args__ = dict()
     __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
+    __args__['shapeAttribute'] = shape_attribute
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Database/getDbSystemShapes:getDbSystemShapes', __args__, opts=opts, typ=GetDbSystemShapesResult)
     return __ret__.apply(lambda __response__: GetDbSystemShapesResult(
@@ -160,4 +178,5 @@ def get_db_system_shapes_output(availability_domain: Optional[pulumi.Input[Optio
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         db_system_shapes=pulumi.get(__response__, 'db_system_shapes'),
         filters=pulumi.get(__response__, 'filters'),
-        id=pulumi.get(__response__, 'id')))
+        id=pulumi.get(__response__, 'id'),
+        shape_attribute=pulumi.get(__response__, 'shape_attribute')))

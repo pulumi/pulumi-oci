@@ -6,6 +6,7 @@ package com.pulumi.oci.GenerativeAi.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBaseIndexConfig;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentKnowledgeBaseKnowledgeBaseStatistic;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -44,11 +45,16 @@ public final class GetAgentKnowledgeBaseResult {
      */
     private String id;
     /**
-     * @return **IndexConfig**
+     * @return The index configuration of Knowledge bases.
      * 
      */
     private List<GetAgentKnowledgeBaseIndexConfig> indexConfigs;
     private String knowledgeBaseId;
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    private List<GetAgentKnowledgeBaseKnowledgeBaseStatistic> knowledgeBaseStatistics;
     /**
      * @return A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      * 
@@ -119,7 +125,7 @@ public final class GetAgentKnowledgeBaseResult {
         return this.id;
     }
     /**
-     * @return **IndexConfig**
+     * @return The index configuration of Knowledge bases.
      * 
      */
     public List<GetAgentKnowledgeBaseIndexConfig> indexConfigs() {
@@ -127,6 +133,13 @@ public final class GetAgentKnowledgeBaseResult {
     }
     public String knowledgeBaseId() {
         return this.knowledgeBaseId;
+    }
+    /**
+     * @return Statistics for Default Knowledge Base.
+     * 
+     */
+    public List<GetAgentKnowledgeBaseKnowledgeBaseStatistic> knowledgeBaseStatistics() {
+        return this.knowledgeBaseStatistics;
     }
     /**
      * @return A message that describes the current state of the knowledge base in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -181,6 +194,7 @@ public final class GetAgentKnowledgeBaseResult {
         private String id;
         private List<GetAgentKnowledgeBaseIndexConfig> indexConfigs;
         private String knowledgeBaseId;
+        private List<GetAgentKnowledgeBaseKnowledgeBaseStatistic> knowledgeBaseStatistics;
         private String lifecycleDetails;
         private String state;
         private Map<String,String> systemTags;
@@ -197,6 +211,7 @@ public final class GetAgentKnowledgeBaseResult {
     	      this.id = defaults.id;
     	      this.indexConfigs = defaults.indexConfigs;
     	      this.knowledgeBaseId = defaults.knowledgeBaseId;
+    	      this.knowledgeBaseStatistics = defaults.knowledgeBaseStatistics;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -272,6 +287,17 @@ public final class GetAgentKnowledgeBaseResult {
             return this;
         }
         @CustomType.Setter
+        public Builder knowledgeBaseStatistics(List<GetAgentKnowledgeBaseKnowledgeBaseStatistic> knowledgeBaseStatistics) {
+            if (knowledgeBaseStatistics == null) {
+              throw new MissingRequiredPropertyException("GetAgentKnowledgeBaseResult", "knowledgeBaseStatistics");
+            }
+            this.knowledgeBaseStatistics = knowledgeBaseStatistics;
+            return this;
+        }
+        public Builder knowledgeBaseStatistics(GetAgentKnowledgeBaseKnowledgeBaseStatistic... knowledgeBaseStatistics) {
+            return knowledgeBaseStatistics(List.of(knowledgeBaseStatistics));
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetAgentKnowledgeBaseResult", "lifecycleDetails");
@@ -321,6 +347,7 @@ public final class GetAgentKnowledgeBaseResult {
             _resultValue.id = id;
             _resultValue.indexConfigs = indexConfigs;
             _resultValue.knowledgeBaseId = knowledgeBaseId;
+            _resultValue.knowledgeBaseStatistics = knowledgeBaseStatistics;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

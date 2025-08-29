@@ -42,6 +42,7 @@ namespace Pulumi.Oci.DataSafe
     ///         },
     ///         IsAssessmentScheduled = userAssessmentIsAssessmentScheduled,
     ///         Schedule = userAssessmentSchedule,
+    ///         TargetType = userAssessmentTargetType,
     ///     });
     /// 
     /// });
@@ -163,11 +164,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the target database on which the user assessment is to be run.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of target database group.
+        /// </summary>
+        [Output("targetDatabaseGroupId")]
+        public Output<string> TargetDatabaseGroupId { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the target database or target database group on which user assessment is to be run.
         /// </summary>
         [Output("targetId")]
         public Output<string> TargetId { get; private set; } = null!;
@@ -177,6 +180,16 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("targetIds")]
         public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("targetType")]
+        public Output<string> TargetType { get; private set; } = null!;
 
         /// <summary>
         /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -311,14 +324,20 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? Schedule { get; set; }
 
         /// <summary>
-        /// The OCID of the target database on which the user assessment is to be run.
+        /// The OCID of the target database or target database group on which user assessment is to be run.
+        /// </summary>
+        [Input("targetId", required: true)]
+        public Input<string> TargetId { get; set; } = null!;
+
+        /// <summary>
+        /// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("targetId", required: true)]
-        public Input<string> TargetId { get; set; } = null!;
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         public UserAssessmentArgs()
         {
@@ -463,11 +482,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the target database on which the user assessment is to be run.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of target database group.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
+        /// The OCID of the target database or target database group on which user assessment is to be run.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -483,6 +504,16 @@ namespace Pulumi.Oci.DataSafe
             get => _targetIds ?? (_targetIds = new InputList<string>());
             set => _targetIds = value;
         }
+
+        /// <summary>
+        /// The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         /// <summary>
         /// The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).

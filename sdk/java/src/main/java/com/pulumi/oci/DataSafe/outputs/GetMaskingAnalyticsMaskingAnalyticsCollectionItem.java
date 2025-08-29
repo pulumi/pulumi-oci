@@ -27,6 +27,11 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
      * 
      */
     private String metricName;
+    /**
+     * @return The date and time the target database was last masked using a masking policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    private String timeLastMasked;
 
     private GetMaskingAnalyticsMaskingAnalyticsCollectionItem() {}
     /**
@@ -50,6 +55,13 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
     public String metricName() {
         return this.metricName;
     }
+    /**
+     * @return The date and time the target database was last masked using a masking policy, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * 
+     */
+    public String timeLastMasked() {
+        return this.timeLastMasked;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -63,12 +75,14 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
         private String count;
         private List<GetMaskingAnalyticsMaskingAnalyticsCollectionItemDimension> dimensions;
         private String metricName;
+        private String timeLastMasked;
         public Builder() {}
         public Builder(GetMaskingAnalyticsMaskingAnalyticsCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.count = defaults.count;
     	      this.dimensions = defaults.dimensions;
     	      this.metricName = defaults.metricName;
+    	      this.timeLastMasked = defaults.timeLastMasked;
         }
 
         @CustomType.Setter
@@ -98,11 +112,20 @@ public final class GetMaskingAnalyticsMaskingAnalyticsCollectionItem {
             this.metricName = metricName;
             return this;
         }
+        @CustomType.Setter
+        public Builder timeLastMasked(String timeLastMasked) {
+            if (timeLastMasked == null) {
+              throw new MissingRequiredPropertyException("GetMaskingAnalyticsMaskingAnalyticsCollectionItem", "timeLastMasked");
+            }
+            this.timeLastMasked = timeLastMasked;
+            return this;
+        }
         public GetMaskingAnalyticsMaskingAnalyticsCollectionItem build() {
             final var _resultValue = new GetMaskingAnalyticsMaskingAnalyticsCollectionItem();
             _resultValue.count = count;
             _resultValue.dimensions = dimensions;
             _resultValue.metricName = metricName;
+            _resultValue.timeLastMasked = timeLastMasked;
             return _resultValue;
         }
     }

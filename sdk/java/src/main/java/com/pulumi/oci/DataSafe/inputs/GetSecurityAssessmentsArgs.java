@@ -147,6 +147,21 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -159,6 +174,36 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
      */
     public Optional<Output<String>> targetId() {
         return Optional.ofNullable(this.targetId);
+    }
+
+    /**
+     * A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return A filter to return only only target database resources or target database group resources.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
+    /**
+     * The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    @Import(name="templateAssessmentId")
+    private @Nullable Output<String> templateAssessmentId;
+
+    /**
+     * @return The OCID of the security assessment of type TEMPLATE.
+     * 
+     */
+    public Optional<Output<String>> templateAssessmentId() {
+        return Optional.ofNullable(this.templateAssessmentId);
     }
 
     /**
@@ -241,7 +286,10 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
         this.isScheduleAssessment = $.isScheduleAssessment;
         this.scheduleAssessmentId = $.scheduleAssessmentId;
         this.state = $.state;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
+        this.targetType = $.targetType;
+        this.templateAssessmentId = $.templateAssessmentId;
         this.timeCreatedGreaterThanOrEqualTo = $.timeCreatedGreaterThanOrEqualTo;
         this.timeCreatedLessThan = $.timeCreatedLessThan;
         this.triggeredBy = $.triggeredBy;
@@ -448,6 +496,27 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
         }
 
         /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
+        }
+
+        /**
          * @param targetId A filter to return only items related to a specific target OCID.
          * 
          * @return builder
@@ -466,6 +535,48 @@ public final class GetSecurityAssessmentsArgs extends com.pulumi.resources.Invok
          */
         public Builder targetId(String targetId) {
             return targetId(Output.of(targetId));
+        }
+
+        /**
+         * @param targetType A filter to return only only target database resources or target database group resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType A filter to return only only target database resources or target database group resources.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
+        }
+
+        /**
+         * @param templateAssessmentId The OCID of the security assessment of type TEMPLATE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateAssessmentId(@Nullable Output<String> templateAssessmentId) {
+            $.templateAssessmentId = templateAssessmentId;
+            return this;
+        }
+
+        /**
+         * @param templateAssessmentId The OCID of the security assessment of type TEMPLATE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            return templateAssessmentId(Output.of(templateAssessmentId));
         }
 
         /**

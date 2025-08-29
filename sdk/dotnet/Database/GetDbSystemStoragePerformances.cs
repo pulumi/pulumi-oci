@@ -40,6 +40,12 @@ namespace Pulumi.Oci.Database
     public sealed class GetDbSystemStoragePerformancesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
+        /// <summary>
         /// Optional. Filters the performance results by database edition. Valid values are:
         /// * STANDARD_EDITION
         /// * ENTERPRISE_EDITION
@@ -80,6 +86,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetDbSystemStoragePerformancesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
         /// <summary>
         /// Optional. Filters the performance results by database edition. Valid values are:
         /// * STANDARD_EDITION
@@ -123,6 +135,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetDbSystemStoragePerformancesResult
     {
+        public readonly string? CompartmentId;
         public readonly string? DatabaseEdition;
         /// <summary>
         /// The list of db_system_storage_performances.
@@ -141,6 +154,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetDbSystemStoragePerformancesResult(
+            string? compartmentId,
+
             string? databaseEdition,
 
             ImmutableArray<Outputs.GetDbSystemStoragePerformancesDbSystemStoragePerformanceResult> dbSystemStoragePerformances,
@@ -153,6 +168,7 @@ namespace Pulumi.Oci.Database
 
             string storageManagement)
         {
+            CompartmentId = compartmentId;
             DatabaseEdition = databaseEdition;
             DbSystemStoragePerformances = dbSystemStoragePerformances;
             Filters = filters;

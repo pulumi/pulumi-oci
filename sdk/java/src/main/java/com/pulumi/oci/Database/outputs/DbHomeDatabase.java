@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.DbHomeDatabaseConnectionString;
 import com.pulumi.oci.Database.outputs.DbHomeDatabaseDbBackupConfig;
 import com.pulumi.oci.Database.outputs.DbHomeDatabaseEncryptionKeyLocationDetails;
+import com.pulumi.oci.Database.outputs.DbHomeDatabaseStorageSizeDetails;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -138,6 +139,11 @@ public final class DbHomeDatabase {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    private @Nullable DbHomeDatabaseStorageSizeDetails storageSizeDetails;
     /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
@@ -332,6 +338,13 @@ public final class DbHomeDatabase {
         return Optional.ofNullable(this.state);
     }
     /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Optional<DbHomeDatabaseStorageSizeDetails> storageSizeDetails() {
+        return Optional.ofNullable(this.storageSizeDetails);
+    }
+    /**
      * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
      * 
      */
@@ -394,6 +407,7 @@ public final class DbHomeDatabase {
         private @Nullable List<String> pluggableDatabases;
         private @Nullable String sidPrefix;
         private @Nullable String state;
+        private @Nullable DbHomeDatabaseStorageSizeDetails storageSizeDetails;
         private @Nullable String tdeWalletPassword;
         private @Nullable String timeCreated;
         private @Nullable String timeStampForPointInTimeRecovery;
@@ -426,6 +440,7 @@ public final class DbHomeDatabase {
     	      this.pluggableDatabases = defaults.pluggableDatabases;
     	      this.sidPrefix = defaults.sidPrefix;
     	      this.state = defaults.state;
+    	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeStampForPointInTimeRecovery = defaults.timeStampForPointInTimeRecovery;
@@ -594,6 +609,12 @@ public final class DbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder storageSizeDetails(@Nullable DbHomeDatabaseStorageSizeDetails storageSizeDetails) {
+
+            this.storageSizeDetails = storageSizeDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tdeWalletPassword(@Nullable String tdeWalletPassword) {
 
             this.tdeWalletPassword = tdeWalletPassword;
@@ -644,6 +665,7 @@ public final class DbHomeDatabase {
             _resultValue.pluggableDatabases = pluggableDatabases;
             _resultValue.sidPrefix = sidPrefix;
             _resultValue.state = state;
+            _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeStampForPointInTimeRecovery = timeStampForPointInTimeRecovery;

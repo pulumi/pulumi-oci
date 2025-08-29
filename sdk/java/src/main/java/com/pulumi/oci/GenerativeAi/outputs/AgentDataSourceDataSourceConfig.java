@@ -13,8 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class AgentDataSourceDataSourceConfig {
     /**
-     * @return (Updatable) The type of the tool. The allowed values are:
-     * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+     * @return (Updatable) The type of the tool.
      * 
      */
     private String dataSourceConfigType;
@@ -26,8 +25,7 @@ public final class AgentDataSourceDataSourceConfig {
 
     private AgentDataSourceDataSourceConfig() {}
     /**
-     * @return (Updatable) The type of the tool. The allowed values are:
-     * * `OCI_OBJECT_STORAGE`: The data source is Oracle Cloud Infrastructure Object Storage.
+     * @return (Updatable) The type of the tool.
      * 
      */
     public String dataSourceConfigType() {

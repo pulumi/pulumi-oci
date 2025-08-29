@@ -19,6 +19,21 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
     public static final GetDbSystemStoragePerformancesArgs Empty = new GetDbSystemStoragePerformancesArgs();
 
     /**
+     * Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Optional. Filters the performance results by database edition. Valid values are:
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
@@ -87,6 +102,7 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
     private GetDbSystemStoragePerformancesArgs() {}
 
     private GetDbSystemStoragePerformancesArgs(GetDbSystemStoragePerformancesArgs $) {
+        this.compartmentId = $.compartmentId;
         this.databaseEdition = $.databaseEdition;
         this.filters = $.filters;
         this.shapeType = $.shapeType;
@@ -109,6 +125,27 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
 
         public Builder(GetDbSystemStoragePerformancesArgs defaults) {
             $ = new GetDbSystemStoragePerformancesArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param compartmentId Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
         }
 
         /**

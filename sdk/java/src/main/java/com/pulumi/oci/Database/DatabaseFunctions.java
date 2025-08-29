@@ -18923,6 +18923,7 @@ public final class DatabaseFunctions {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .shapeAttribute(dbSystemShapeShapeAttribute)
      *             .build());
      * 
      *     }
@@ -18968,6 +18969,7 @@ public final class DatabaseFunctions {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .shapeAttribute(dbSystemShapeShapeAttribute)
      *             .build());
      * 
      *     }
@@ -19013,6 +19015,7 @@ public final class DatabaseFunctions {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .shapeAttribute(dbSystemShapeShapeAttribute)
      *             .build());
      * 
      *     }
@@ -19058,6 +19061,7 @@ public final class DatabaseFunctions {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .shapeAttribute(dbSystemShapeShapeAttribute)
      *             .build());
      * 
      *     }
@@ -19103,6 +19107,7 @@ public final class DatabaseFunctions {
      *         final var testDbSystemShapes = DatabaseFunctions.getDbSystemShapes(GetDbSystemShapesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(dbSystemShapeAvailabilityDomain)
+     *             .shapeAttribute(dbSystemShapeShapeAttribute)
      *             .build());
      * 
      *     }
@@ -19936,6 +19941,7 @@ public final class DatabaseFunctions {
      *             .dbSystemShape(dbVersionDbSystemShape)
      *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
      *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .shapeAttribute(dbVersionShapeAttribute)
      *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
@@ -19985,6 +19991,7 @@ public final class DatabaseFunctions {
      *             .dbSystemShape(dbVersionDbSystemShape)
      *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
      *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .shapeAttribute(dbVersionShapeAttribute)
      *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
@@ -20034,6 +20041,7 @@ public final class DatabaseFunctions {
      *             .dbSystemShape(dbVersionDbSystemShape)
      *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
      *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .shapeAttribute(dbVersionShapeAttribute)
      *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
@@ -20083,6 +20091,7 @@ public final class DatabaseFunctions {
      *             .dbSystemShape(dbVersionDbSystemShape)
      *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
      *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .shapeAttribute(dbVersionShapeAttribute)
      *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
@@ -20132,6 +20141,7 @@ public final class DatabaseFunctions {
      *             .dbSystemShape(dbVersionDbSystemShape)
      *             .isDatabaseSoftwareImageSupported(dbVersionIsDatabaseSoftwareImageSupported)
      *             .isUpgradeSupported(dbVersionIsUpgradeSupported)
+     *             .shapeAttribute(dbVersionShapeAttribute)
      *             .storageManagement(dbVersionStorageManagement)
      *             .build());
      * 
@@ -22622,10 +22632,14 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .attachedShapeAttributes(exascaleDbStorageVaultAttachedShapeAttributes)
+     *             .attachedShapeAttributesNotEqualTo(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo)
      *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
+     *             .vmClusterCountGreaterThanOrEqualTo(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo)
+     *             .vmClusterCountLessThanOrEqualTo(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -22670,10 +22684,14 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .attachedShapeAttributes(exascaleDbStorageVaultAttachedShapeAttributes)
+     *             .attachedShapeAttributesNotEqualTo(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo)
      *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
+     *             .vmClusterCountGreaterThanOrEqualTo(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo)
+     *             .vmClusterCountLessThanOrEqualTo(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -22718,10 +22736,14 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .attachedShapeAttributes(exascaleDbStorageVaultAttachedShapeAttributes)
+     *             .attachedShapeAttributesNotEqualTo(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo)
      *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
+     *             .vmClusterCountGreaterThanOrEqualTo(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo)
+     *             .vmClusterCountLessThanOrEqualTo(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -22766,10 +22788,14 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .attachedShapeAttributes(exascaleDbStorageVaultAttachedShapeAttributes)
+     *             .attachedShapeAttributesNotEqualTo(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo)
      *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
+     *             .vmClusterCountGreaterThanOrEqualTo(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo)
+     *             .vmClusterCountLessThanOrEqualTo(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -22814,10 +22840,14 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .attachedShapeAttributes(exascaleDbStorageVaultAttachedShapeAttributes)
+     *             .attachedShapeAttributesNotEqualTo(exascaleDbStorageVaultAttachedShapeAttributesNotEqualTo)
      *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
      *             .displayName(exascaleDbStorageVaultDisplayName)
      *             .exadataInfrastructureId(testExadataInfrastructure.id())
      *             .state(exascaleDbStorageVaultState)
+     *             .vmClusterCountGreaterThanOrEqualTo(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo)
+     *             .vmClusterCountLessThanOrEqualTo(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo)
      *             .build());
      * 
      *     }
@@ -26070,6 +26100,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
+     *             .shapeAttribute(giVersionShapeAttribute)
      *             .build());
      * 
      *     }
@@ -26117,6 +26148,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
+     *             .shapeAttribute(giVersionShapeAttribute)
      *             .build());
      * 
      *     }
@@ -26164,6 +26196,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
+     *             .shapeAttribute(giVersionShapeAttribute)
      *             .build());
      * 
      *     }
@@ -26211,6 +26244,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
+     *             .shapeAttribute(giVersionShapeAttribute)
      *             .build());
      * 
      *     }
@@ -26258,6 +26292,7 @@ public final class DatabaseFunctions {
      *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .resourceId(testResource.id())
      *             .shape(giVersionShape)
+     *             .shapeAttribute(giVersionShapeAttribute)
      *             .build());
      * 
      *     }

@@ -18,18 +18,18 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
     public static final SecurityPolicyArgs Empty = new SecurityPolicyArgs();
 
     /**
-     * (Updatable) The OCID of the compartment containing the security policy.
+     * (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
-    @Import(name="compartmentId")
-    private @Nullable Output<String> compartmentId;
+    @Import(name="compartmentId", required=true)
+    private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing the security policy.
+     * @return (Updatable) The OCID of the compartment in which to create the security policy.
      * 
      */
-    public Optional<Output<String>> compartmentId() {
-        return Optional.ofNullable(this.compartmentId);
+    public Output<String> compartmentId() {
+        return this.compartmentId;
     }
 
     /**
@@ -80,6 +80,9 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
@@ -87,30 +90,12 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
     /**
      * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
         return Optional.ofNullable(this.freeformTags);
-    }
-
-    /**
-     * The OCID of the security policy resource.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
-    @Import(name="securityPolicyId", required=true)
-    private Output<String> securityPolicyId;
-
-    /**
-     * @return The OCID of the security policy resource.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
-     */
-    public Output<String> securityPolicyId() {
-        return this.securityPolicyId;
     }
 
     private SecurityPolicyArgs() {}
@@ -121,7 +106,6 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
-        this.securityPolicyId = $.securityPolicyId;
     }
 
     public static Builder builder() {
@@ -143,18 +127,18 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the security policy.
          * 
          * @return builder
          * 
          */
-        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+        public Builder compartmentId(Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing the security policy.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the security policy.
          * 
          * @return builder
          * 
@@ -229,6 +213,9 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -240,6 +227,9 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
         /**
          * @param freeformTags (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
          * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
          * @return builder
          * 
          */
@@ -247,36 +237,9 @@ public final class SecurityPolicyArgs extends com.pulumi.resources.ResourceArgs 
             return freeformTags(Output.of(freeformTags));
         }
 
-        /**
-         * @param securityPolicyId The OCID of the security policy resource.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
-        public Builder securityPolicyId(Output<String> securityPolicyId) {
-            $.securityPolicyId = securityPolicyId;
-            return this;
-        }
-
-        /**
-         * @param securityPolicyId The OCID of the security policy resource.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
-         * @return builder
-         * 
-         */
-        public Builder securityPolicyId(String securityPolicyId) {
-            return securityPolicyId(Output.of(securityPolicyId));
-        }
-
         public SecurityPolicyArgs build() {
-            if ($.securityPolicyId == null) {
-                throw new MissingRequiredPropertyException("SecurityPolicyArgs", "securityPolicyId");
+            if ($.compartmentId == null) {
+                throw new MissingRequiredPropertyException("SecurityPolicyArgs", "compartmentId");
             }
             return $;
         }

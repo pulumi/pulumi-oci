@@ -41,6 +41,12 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
      * 
      */
     private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
+    private @Nullable String securityPolicyEntryType;
+    /**
+     * @return The OCID of the target on which the security policy is deployed.
+     * 
+     */
+    private @Nullable String targetId;
 
     private GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult() {}
     /**
@@ -81,6 +87,16 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
     public List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections() {
         return this.securityPolicyEntryStateCollections;
     }
+    public Optional<String> securityPolicyEntryType() {
+        return Optional.ofNullable(this.securityPolicyEntryType);
+    }
+    /**
+     * @return The OCID of the target on which the security policy is deployed.
+     * 
+     */
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -97,6 +113,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
         private String securityPolicyDeploymentId;
         private @Nullable String securityPolicyEntryId;
         private List<GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection> securityPolicyEntryStateCollections;
+        private @Nullable String securityPolicyEntryType;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -106,6 +124,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
     	      this.securityPolicyDeploymentId = defaults.securityPolicyDeploymentId;
     	      this.securityPolicyEntryId = defaults.securityPolicyEntryId;
     	      this.securityPolicyEntryStateCollections = defaults.securityPolicyEntryStateCollections;
+    	      this.securityPolicyEntryType = defaults.securityPolicyEntryType;
+    	      this.targetId = defaults.targetId;
         }
 
         @CustomType.Setter
@@ -156,6 +176,18 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
         public Builder securityPolicyEntryStateCollections(GetSecurityPolicyDeploymentSecurityPolicyEntryStatesSecurityPolicyEntryStateCollection... securityPolicyEntryStateCollections) {
             return securityPolicyEntryStateCollections(List.of(securityPolicyEntryStateCollections));
         }
+        @CustomType.Setter
+        public Builder securityPolicyEntryType(@Nullable String securityPolicyEntryType) {
+
+            this.securityPolicyEntryType = securityPolicyEntryType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder targetId(@Nullable String targetId) {
+
+            this.targetId = targetId;
+            return this;
+        }
         public GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult build() {
             final var _resultValue = new GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult();
             _resultValue.deploymentStatus = deploymentStatus;
@@ -164,6 +196,8 @@ public final class GetSecurityPolicyDeploymentSecurityPolicyEntryStatesResult {
             _resultValue.securityPolicyDeploymentId = securityPolicyDeploymentId;
             _resultValue.securityPolicyEntryId = securityPolicyEntryId;
             _resultValue.securityPolicyEntryStateCollections = securityPolicyEntryStateCollections;
+            _resultValue.securityPolicyEntryType = securityPolicyEntryType;
+            _resultValue.targetId = targetId;
             return _resultValue;
         }
     }

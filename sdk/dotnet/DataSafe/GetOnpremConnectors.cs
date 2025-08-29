@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
         ///         DisplayName = onPremConnectorDisplayName,
         ///         OnPremConnectorId = testOnPremConnector.Id,
-        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
+        ///         State = onPremConnectorState,
         ///     });
         /// 
         /// });
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
         ///         DisplayName = onPremConnectorDisplayName,
         ///         OnPremConnectorId = testOnPremConnector.Id,
-        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
+        ///         State = onPremConnectorState,
         ///     });
         /// 
         /// });
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.DataSafe
         ///         CompartmentIdInSubtree = onPremConnectorCompartmentIdInSubtree,
         ///         DisplayName = onPremConnectorDisplayName,
         ///         OnPremConnectorId = testOnPremConnector.Id,
-        ///         OnPremConnectorLifecycleState = onPremConnectorOnPremConnectorLifecycleState,
+        ///         State = onPremConnectorState,
         ///     });
         /// 
         /// });
@@ -152,8 +152,8 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// A filter to return only on-premises connector resources that match the specified lifecycle state.
         /// </summary>
-        [Input("onPremConnectorLifecycleState")]
-        public string? OnPremConnectorLifecycleState { get; set; }
+        [Input("state")]
+        public string? State { get; set; }
 
         public GetOnpremConnectorsArgs()
         {
@@ -204,8 +204,8 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// A filter to return only on-premises connector resources that match the specified lifecycle state.
         /// </summary>
-        [Input("onPremConnectorLifecycleState")]
-        public Input<string>? OnPremConnectorLifecycleState { get; set; }
+        [Input("state")]
+        public Input<string>? State { get; set; }
 
         public GetOnpremConnectorsInvokeArgs()
         {
@@ -233,11 +233,14 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         public readonly string? OnPremConnectorId;
-        public readonly string? OnPremConnectorLifecycleState;
         /// <summary>
         /// The list of on_prem_connectors.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOnpremConnectorsOnPremConnectorResult> OnPremConnectors;
+        /// <summary>
+        /// The current state of the on-premises connector.
+        /// </summary>
+        public readonly string? State;
 
         [OutputConstructor]
         private GetOnpremConnectorsResult(
@@ -255,9 +258,9 @@ namespace Pulumi.Oci.DataSafe
 
             string? onPremConnectorId,
 
-            string? onPremConnectorLifecycleState,
+            ImmutableArray<Outputs.GetOnpremConnectorsOnPremConnectorResult> onPremConnectors,
 
-            ImmutableArray<Outputs.GetOnpremConnectorsOnPremConnectorResult> onPremConnectors)
+            string? state)
         {
             AccessLevel = accessLevel;
             CompartmentId = compartmentId;
@@ -266,8 +269,8 @@ namespace Pulumi.Oci.DataSafe
             Filters = filters;
             Id = id;
             OnPremConnectorId = onPremConnectorId;
-            OnPremConnectorLifecycleState = onPremConnectorLifecycleState;
             OnPremConnectors = onPremConnectors;
+            State = state;
         }
     }
 }

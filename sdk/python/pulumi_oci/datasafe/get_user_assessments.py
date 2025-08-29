@@ -28,7 +28,7 @@ class GetUserAssessmentsResult:
     """
     A collection of values returned by getUserAssessments.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, ignored_targets=None, is_baseline=None, is_schedule_assessment=None, schedule_user_assessment_id=None, state=None, target_id=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, triggered_by=None, type=None, user_assessments=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, ignored_targets=None, is_baseline=None, is_schedule_assessment=None, schedule_user_assessment_id=None, state=None, target_database_group_id=None, target_id=None, target_type=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, triggered_by=None, type=None, user_assessments=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -62,9 +62,15 @@ class GetUserAssessmentsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created_greater_than_or_equal_to and not isinstance(time_created_greater_than_or_equal_to, str):
             raise TypeError("Expected argument 'time_created_greater_than_or_equal_to' to be a str")
         pulumi.set(__self__, "time_created_greater_than_or_equal_to", time_created_greater_than_or_equal_to)
@@ -155,9 +161,25 @@ class GetUserAssessmentsResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of target database group.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[_builtins.str]:
+        """
+        Indicates whether the user assessment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreatedGreaterThanOrEqualTo")
@@ -211,7 +233,9 @@ class AwaitableGetUserAssessmentsResult(GetUserAssessmentsResult):
             is_schedule_assessment=self.is_schedule_assessment,
             schedule_user_assessment_id=self.schedule_user_assessment_id,
             state=self.state,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id,
+            target_type=self.target_type,
             time_created_greater_than_or_equal_to=self.time_created_greater_than_or_equal_to,
             time_created_less_than=self.time_created_less_than,
             triggered_by=self.triggered_by,
@@ -228,7 +252,9 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
                          is_schedule_assessment: Optional[_builtins.bool] = None,
                          schedule_user_assessment_id: Optional[_builtins.str] = None,
                          state: Optional[_builtins.str] = None,
+                         target_database_group_id: Optional[_builtins.str] = None,
                          target_id: Optional[_builtins.str] = None,
+                         target_type: Optional[_builtins.str] = None,
                          time_created_greater_than_or_equal_to: Optional[_builtins.str] = None,
                          time_created_less_than: Optional[_builtins.str] = None,
                          triggered_by: Optional[_builtins.str] = None,
@@ -267,7 +293,9 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
         is_schedule_assessment=user_assessment_is_schedule_assessment,
         schedule_user_assessment_id=test_user_assessment["id"],
         state=user_assessment_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
+        target_type=user_assessment_target_type,
         time_created_greater_than_or_equal_to=user_assessment_time_created_greater_than_or_equal_to,
         time_created_less_than=user_assessment_time_created_less_than,
         triggered_by=user_assessment_triggered_by,
@@ -283,7 +311,9 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
     :param _builtins.bool is_schedule_assessment: A filter to return only user assessments of type SAVE_SCHEDULE.
     :param _builtins.str schedule_user_assessment_id: The OCID of the user assessment of type SAVE_SCHEDULE.
     :param _builtins.str state: The current state of the user assessment.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A filter to return only only target database resources or target database group resources.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -303,7 +333,9 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
     __args__['isScheduleAssessment'] = is_schedule_assessment
     __args__['scheduleUserAssessmentId'] = schedule_user_assessment_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['triggeredBy'] = triggered_by
@@ -323,7 +355,9 @@ def get_user_assessments(access_level: Optional[_builtins.str] = None,
         is_schedule_assessment=pulumi.get(__ret__, 'is_schedule_assessment'),
         schedule_user_assessment_id=pulumi.get(__ret__, 'schedule_user_assessment_id'),
         state=pulumi.get(__ret__, 'state'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created_greater_than_or_equal_to=pulumi.get(__ret__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         triggered_by=pulumi.get(__ret__, 'triggered_by'),
@@ -338,7 +372,9 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
                                 is_schedule_assessment: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                 schedule_user_assessment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                target_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 time_created_greater_than_or_equal_to: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 time_created_less_than: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                 triggered_by: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -377,7 +413,9 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
         is_schedule_assessment=user_assessment_is_schedule_assessment,
         schedule_user_assessment_id=test_user_assessment["id"],
         state=user_assessment_state,
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"],
+        target_type=user_assessment_target_type,
         time_created_greater_than_or_equal_to=user_assessment_time_created_greater_than_or_equal_to,
         time_created_less_than=user_assessment_time_created_less_than,
         triggered_by=user_assessment_triggered_by,
@@ -393,7 +431,9 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
     :param _builtins.bool is_schedule_assessment: A filter to return only user assessments of type SAVE_SCHEDULE.
     :param _builtins.str schedule_user_assessment_id: The OCID of the user assessment of type SAVE_SCHEDULE.
     :param _builtins.str state: The current state of the user assessment.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
+    :param _builtins.str target_type: A filter to return only only target database resources or target database group resources.
     :param _builtins.str time_created_greater_than_or_equal_to: A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
            
            **Example:** 2016-12-19T16:39:57.600Z
@@ -413,7 +453,9 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
     __args__['isScheduleAssessment'] = is_schedule_assessment
     __args__['scheduleUserAssessmentId'] = schedule_user_assessment_id
     __args__['state'] = state
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
+    __args__['targetType'] = target_type
     __args__['timeCreatedGreaterThanOrEqualTo'] = time_created_greater_than_or_equal_to
     __args__['timeCreatedLessThan'] = time_created_less_than
     __args__['triggeredBy'] = triggered_by
@@ -432,7 +474,9 @@ def get_user_assessments_output(access_level: Optional[pulumi.Input[Optional[_bu
         is_schedule_assessment=pulumi.get(__response__, 'is_schedule_assessment'),
         schedule_user_assessment_id=pulumi.get(__response__, 'schedule_user_assessment_id'),
         state=pulumi.get(__response__, 'state'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created_greater_than_or_equal_to=pulumi.get(__response__, 'time_created_greater_than_or_equal_to'),
         time_created_less_than=pulumi.get(__response__, 'time_created_less_than'),
         triggered_by=pulumi.get(__response__, 'triggered_by'),

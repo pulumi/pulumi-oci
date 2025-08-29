@@ -85,6 +85,21 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.shape);
     }
 
+    /**
+     * If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    @Import(name="shapeAttribute")
+    private @Nullable Output<String> shapeAttribute;
+
+    /**
+     * @return If provided and applicable, return the results based on the shapeAttribute provided
+     * 
+     */
+    public Optional<Output<String>> shapeAttribute() {
+        return Optional.ofNullable(this.shapeAttribute);
+    }
+
     private GetGiVersionsArgs() {}
 
     private GetGiVersionsArgs(GetGiVersionsArgs $) {
@@ -93,6 +108,7 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
         this.filters = $.filters;
         this.resourceId = $.resourceId;
         this.shape = $.shape;
+        this.shapeAttribute = $.shapeAttribute;
     }
 
     public static Builder builder() {
@@ -208,6 +224,27 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder shape(String shape) {
             return shape(Output.of(shape));
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return the results based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(@Nullable Output<String> shapeAttribute) {
+            $.shapeAttribute = shapeAttribute;
+            return this;
+        }
+
+        /**
+         * @param shapeAttribute If provided and applicable, return the results based on the shapeAttribute provided
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeAttribute(String shapeAttribute) {
+            return shapeAttribute(Output.of(shapeAttribute));
         }
 
         public GetGiVersionsArgs build() {

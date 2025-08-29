@@ -41,7 +41,9 @@ import * as utilities from "../utilities";
  *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
  *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
  *     state: auditProfileState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: auditProfileTargetType,
  * });
  * ```
  */
@@ -58,7 +60,9 @@ export function getAuditProfiles(args: GetAuditProfilesArgs, opts?: pulumi.Invok
         "isOverrideGlobalRetentionSetting": args.isOverrideGlobalRetentionSetting,
         "isPaidUsageEnabled": args.isPaidUsageEnabled,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
     }, opts);
 }
 
@@ -104,9 +108,17 @@ export interface GetAuditProfilesArgs {
      */
     state?: string;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    targetType?: string;
 }
 
 /**
@@ -124,7 +136,7 @@ export interface GetAuditProfilesResult {
      */
     readonly auditProfileId?: string;
     /**
-     * The OCID of the compartment that contains the audit.
+     * The OCID of the compartment that contains the audit profile.
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
@@ -138,7 +150,7 @@ export interface GetAuditProfilesResult {
      */
     readonly id: string;
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      */
     readonly isOverrideGlobalRetentionSetting?: boolean;
     /**
@@ -149,10 +161,15 @@ export interface GetAuditProfilesResult {
      * The current state of the audit profile.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      */
     readonly targetId?: string;
+    /**
+     * The resource type that is represented by the audit profile.
+     */
+    readonly targetType?: string;
 }
 /**
  * This data source provides the list of Audit Profiles in Oracle Cloud Infrastructure Data Safe service.
@@ -189,7 +206,9 @@ export interface GetAuditProfilesResult {
  *     isOverrideGlobalRetentionSetting: auditProfileIsOverrideGlobalRetentionSetting,
  *     isPaidUsageEnabled: auditProfileIsPaidUsageEnabled,
  *     state: auditProfileState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
+ *     targetType: auditProfileTargetType,
  * });
  * ```
  */
@@ -206,7 +225,9 @@ export function getAuditProfilesOutput(args: GetAuditProfilesOutputArgs, opts?: 
         "isOverrideGlobalRetentionSetting": args.isOverrideGlobalRetentionSetting,
         "isPaidUsageEnabled": args.isPaidUsageEnabled,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
+        "targetType": args.targetType,
     }, opts);
 }
 
@@ -252,7 +273,15 @@ export interface GetAuditProfilesOutputArgs {
      */
     state?: pulumi.Input<string>;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * A optional filter to return only resources that belong to the specified audit profile type.
+     */
+    targetType?: pulumi.Input<string>;
 }

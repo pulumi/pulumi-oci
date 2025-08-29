@@ -13,6 +13,18 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
     public sealed class AgentToolToolConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) The AgentEndpoint OCID to be used as a tool in this agent.
+        /// </summary>
+        [Input("agentEndpointId")]
+        public Input<string>? AgentEndpointId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The input location definition for Api schema.
+        /// </summary>
+        [Input("apiSchema")]
+        public Input<Inputs.AgentToolToolConfigApiSchemaArgs>? ApiSchema { get; set; }
+
+        /// <summary>
         /// (Updatable) The connection type for Databases.
         /// </summary>
         [Input("databaseConnection")]
@@ -41,6 +53,12 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         /// </summary>
         [Input("generationLlmCustomization")]
         public Input<Inputs.AgentToolToolConfigGenerationLlmCustomizationArgs>? GenerationLlmCustomization { get; set; }
+
+        /// <summary>
+        /// (Updatable) Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+        /// </summary>
+        [Input("httpEndpointAuthConfig")]
+        public Input<Inputs.AgentToolToolConfigHttpEndpointAuthConfigArgs>? HttpEndpointAuthConfig { get; set; }
 
         /// <summary>
         /// (Updatable) The input location definition.
@@ -77,6 +95,12 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         /// </summary>
         [Input("shouldEnableSqlExecution")]
         public Input<bool>? ShouldEnableSqlExecution { get; set; }
+
+        /// <summary>
+        /// (Updatable) The subnet ID from agent developer tenancy through which the egress is going to be routed.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         /// <summary>
         /// (Updatable) The input location definition.

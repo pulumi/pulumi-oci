@@ -98,6 +98,18 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of compute servers for the DB system.
+        /// </summary>
+        [Output("computeCount")]
+        public Output<int> ComputeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -128,7 +140,7 @@ namespace Pulumi.Oci.Database
         public Output<int> DataStoragePercentage { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         /// </summary>
         [Output("dataStorageSizeInGb")]
         public Output<int> DataStorageSizeInGb { get; private set; } = null!;
@@ -280,7 +292,7 @@ namespace Pulumi.Oci.Database
         public Output<string> NextMaintenanceRunId { get; private set; } = null!;
 
         /// <summary>
-        /// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        /// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         /// </summary>
         [Output("nodeCount")]
         public Output<int> NodeCount { get; private set; } = null!;
@@ -541,6 +553,18 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) The number of compute servers for the DB system.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -571,7 +595,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? DataStoragePercentage { get; set; }
 
         /// <summary>
-        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
@@ -693,7 +717,7 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.DbSystemMaintenanceWindowDetailsArgs>? MaintenanceWindowDetails { get; set; }
 
         /// <summary>
-        /// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        /// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }
@@ -856,6 +880,18 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
+        /// (Updatable) The number of compute servers for the DB system.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// (Updatable) The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// (Updatable) The number of CPU cores to enable for a bare metal or Exadata DB system or AMD VMDB Systems. The valid values depend on the specified shape:
         /// * BM.DenseIO1.36 - Specify a multiple of 2, from 2 to 36.
         /// * BM.DenseIO2.52 - Specify a multiple of 2, from 2 to 52.
@@ -886,7 +922,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? DataStoragePercentage { get; set; }
 
         /// <summary>
-        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. Required for VMDBs.
+        /// (Updatable) Size (in GB) of the initial data volume that will be created and attached to a virtual machine DB system. You can scale up storage after provisioning, as needed. Note that the total storage size attached will be more than the amount you specify to allow for REDO/RECO space and software volume. By default this will be set to 256. Required for VMDBs.
         /// </summary>
         [Input("dataStorageSizeInGb")]
         public Input<int>? DataStorageSizeInGb { get; set; }
@@ -1068,7 +1104,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? NextMaintenanceRunId { get; set; }
 
         /// <summary>
-        /// The number of nodes to launch for a 2-node RAC virtual machine DB system. Specify either 1 or 2.
+        /// The number of nodes to launch for a virtual machine DB system. Specify either 1 or 2. By default this will be set to 1.
         /// </summary>
         [Input("nodeCount")]
         public Input<int>? NodeCount { get; set; }

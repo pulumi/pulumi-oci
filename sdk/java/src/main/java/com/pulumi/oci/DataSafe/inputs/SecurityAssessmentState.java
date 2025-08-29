@@ -5,8 +5,10 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentCheckArgs;
 import com.pulumi.oci.DataSafe.inputs.SecurityAssessmentStatisticArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -18,6 +20,81 @@ import javax.annotation.Nullable;
 public final class SecurityAssessmentState extends com.pulumi.resources.ResourceArgs {
 
     public static final SecurityAssessmentState Empty = new SecurityAssessmentState();
+
+    /**
+     * (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     * 
+     */
+    @Import(name="applyTemplateTrigger")
+    private @Nullable Output<Integer> applyTemplateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> applyTemplateTrigger() {
+        return Optional.ofNullable(this.applyTemplateTrigger);
+    }
+
+    /**
+     * The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     * 
+     */
+    @Import(name="baseSecurityAssessmentId")
+    private @Nullable Output<String> baseSecurityAssessmentId;
+
+    /**
+     * @return The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+     * 
+     */
+    public Optional<Output<String>> baseSecurityAssessmentId() {
+        return Optional.ofNullable(this.baseSecurityAssessmentId);
+    }
+
+    /**
+     * The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    @Import(name="baselineAssessmentId")
+    private @Nullable Output<String> baselineAssessmentId;
+
+    /**
+     * @return The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+     * 
+     */
+    public Optional<Output<String>> baselineAssessmentId() {
+        return Optional.ofNullable(this.baselineAssessmentId);
+    }
+
+    /**
+     * The security checks to be evaluated for type template.
+     * 
+     */
+    @Import(name="checks")
+    private @Nullable Output<List<SecurityAssessmentCheckArgs>> checks;
+
+    /**
+     * @return The security checks to be evaluated for type template.
+     * 
+     */
+    public Optional<Output<List<SecurityAssessmentCheckArgs>>> checks() {
+        return Optional.ofNullable(this.checks);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     * 
+     */
+    @Import(name="compareToTemplateBaselineTrigger")
+    private @Nullable Output<Integer> compareToTemplateBaselineTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+     * 
+     */
+    public Optional<Output<Integer>> compareToTemplateBaselineTrigger() {
+        return Optional.ofNullable(this.compareToTemplateBaselineTrigger);
+    }
 
     /**
      * (Updatable) The OCID of the compartment that contains the security assessment.
@@ -215,6 +292,27 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="removeTemplateTrigger")
+    private @Nullable Output<Integer> removeTemplateTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> removeTemplateTrigger() {
+        return Optional.ofNullable(this.removeTemplateTrigger);
+    }
+
+    /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
@@ -294,20 +392,29 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The OCID of the target database on which security assessment is to be run.
+     * The OCID of the target database group that the group assessment is created for.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable Output<String> targetDatabaseGroupId;
+
+    /**
+     * @return The OCID of the target database group that the group assessment is created for.
+     * 
+     */
+    public Optional<Output<String>> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
+     * The OCID of the target database or target database group on which security assessment is to be run.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the target database on which security assessment is to be run.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the target database or target database group on which security assessment is to be run.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -330,6 +437,21 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     */
+    @Import(name="targetType")
+    private @Nullable Output<String> targetType;
+
+    /**
+     * @return The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+     * 
+     */
+    public Optional<Output<String>> targetType() {
+        return Optional.ofNullable(this.targetType);
+    }
+
+    /**
      * The version of the target database.
      * 
      */
@@ -342,6 +464,21 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
      */
     public Optional<Output<String>> targetVersion() {
         return Optional.ofNullable(this.targetVersion);
+    }
+
+    /**
+     * The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     * 
+     */
+    @Import(name="templateAssessmentId")
+    private @Nullable Output<String> templateAssessmentId;
+
+    /**
+     * @return The OCID of the template assessment. It will be required while creating the template baseline assessment.
+     * 
+     */
+    public Optional<Output<String>> templateAssessmentId() {
+        return Optional.ofNullable(this.templateAssessmentId);
     }
 
     /**
@@ -405,14 +542,14 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
-     * The type of this security assessment. The possible types are:
+     * The type of the security assessment
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of this security assessment. The possible types are:
+     * @return The type of the security assessment
      * 
      */
     public Optional<Output<String>> type() {
@@ -422,6 +559,11 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     private SecurityAssessmentState() {}
 
     private SecurityAssessmentState(SecurityAssessmentState $) {
+        this.applyTemplateTrigger = $.applyTemplateTrigger;
+        this.baseSecurityAssessmentId = $.baseSecurityAssessmentId;
+        this.baselineAssessmentId = $.baselineAssessmentId;
+        this.checks = $.checks;
+        this.compareToTemplateBaselineTrigger = $.compareToTemplateBaselineTrigger;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -435,14 +577,18 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         this.lastComparedBaselineId = $.lastComparedBaselineId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.link = $.link;
+        this.removeTemplateTrigger = $.removeTemplateTrigger;
         this.schedule = $.schedule;
         this.scheduleSecurityAssessmentId = $.scheduleSecurityAssessmentId;
         this.state = $.state;
         this.statistics = $.statistics;
         this.systemTags = $.systemTags;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
         this.targetIds = $.targetIds;
+        this.targetType = $.targetType;
         this.targetVersion = $.targetVersion;
+        this.templateAssessmentId = $.templateAssessmentId;
         this.timeCreated = $.timeCreated;
         this.timeLastAssessed = $.timeLastAssessed;
         this.timeUpdated = $.timeUpdated;
@@ -466,6 +612,121 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
 
         public Builder(SecurityAssessmentState defaults) {
             $ = new SecurityAssessmentState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param applyTemplateTrigger (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyTemplateTrigger(@Nullable Output<Integer> applyTemplateTrigger) {
+            $.applyTemplateTrigger = applyTemplateTrigger;
+            return this;
+        }
+
+        /**
+         * @param applyTemplateTrigger (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder applyTemplateTrigger(Integer applyTemplateTrigger) {
+            return applyTemplateTrigger(Output.of(applyTemplateTrigger));
+        }
+
+        /**
+         * @param baseSecurityAssessmentId The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baseSecurityAssessmentId(@Nullable Output<String> baseSecurityAssessmentId) {
+            $.baseSecurityAssessmentId = baseSecurityAssessmentId;
+            return this;
+        }
+
+        /**
+         * @param baseSecurityAssessmentId The OCID of the security assessment. The assessment should be of type SAVED.  It will be required while creating the template baseline assessment for individual targets to fetch the detailed information from an existing security assessment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baseSecurityAssessmentId(String baseSecurityAssessmentId) {
+            return baseSecurityAssessmentId(Output.of(baseSecurityAssessmentId));
+        }
+
+        /**
+         * @param baselineAssessmentId The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baselineAssessmentId(@Nullable Output<String> baselineAssessmentId) {
+            $.baselineAssessmentId = baselineAssessmentId;
+            return this;
+        }
+
+        /**
+         * @param baselineAssessmentId The ocid of a security assessment which is of type TEMPLATE_BASELINE, this will be null or empty when type is TEMPLATE_BASELINE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder baselineAssessmentId(String baselineAssessmentId) {
+            return baselineAssessmentId(Output.of(baselineAssessmentId));
+        }
+
+        /**
+         * @param checks The security checks to be evaluated for type template.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder checks(@Nullable Output<List<SecurityAssessmentCheckArgs>> checks) {
+            $.checks = checks;
+            return this;
+        }
+
+        /**
+         * @param checks The security checks to be evaluated for type template.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder checks(List<SecurityAssessmentCheckArgs> checks) {
+            return checks(Output.of(checks));
+        }
+
+        /**
+         * @param checks The security checks to be evaluated for type template.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder checks(SecurityAssessmentCheckArgs... checks) {
+            return checks(List.of(checks));
+        }
+
+        /**
+         * @param compareToTemplateBaselineTrigger (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compareToTemplateBaselineTrigger(@Nullable Output<Integer> compareToTemplateBaselineTrigger) {
+            $.compareToTemplateBaselineTrigger = compareToTemplateBaselineTrigger;
+            return this;
+        }
+
+        /**
+         * @param compareToTemplateBaselineTrigger (Updatable) An optional property when incremented triggers Compare To Template Baseline. Could be set to any integer value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compareToTemplateBaselineTrigger(Integer compareToTemplateBaselineTrigger) {
+            return compareToTemplateBaselineTrigger(Output.of(compareToTemplateBaselineTrigger));
         }
 
         /**
@@ -762,6 +1023,33 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param removeTemplateTrigger (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeTemplateTrigger(@Nullable Output<Integer> removeTemplateTrigger) {
+            $.removeTemplateTrigger = removeTemplateTrigger;
+            return this;
+        }
+
+        /**
+         * @param removeTemplateTrigger (Updatable) An optional property when incremented triggers Remove Template. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder removeTemplateTrigger(Integer removeTemplateTrigger) {
+            return removeTemplateTrigger(Output.of(removeTemplateTrigger));
+        }
+
+        /**
          * @param schedule (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
          * 
          * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
@@ -881,10 +1169,28 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param targetId The OCID of the target database on which security assessment is to be run.
+         * @param targetDatabaseGroupId The OCID of the target database group that the group assessment is created for.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable Output<String> targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId The OCID of the target database group that the group assessment is created for.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(String targetDatabaseGroupId) {
+            return targetDatabaseGroupId(Output.of(targetDatabaseGroupId));
+        }
+
+        /**
+         * @param targetId The OCID of the target database or target database group on which security assessment is to be run.
          * 
          * @return builder
          * 
@@ -895,10 +1201,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param targetId The OCID of the target database on which security assessment is to be run.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param targetId The OCID of the target database or target database group on which security assessment is to be run.
          * 
          * @return builder
          * 
@@ -939,6 +1242,27 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param targetType The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(@Nullable Output<String> targetType) {
+            $.targetType = targetType;
+            return this;
+        }
+
+        /**
+         * @param targetType The type of security assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetType(String targetType) {
+            return targetType(Output.of(targetType));
+        }
+
+        /**
          * @param targetVersion The version of the target database.
          * 
          * @return builder
@@ -957,6 +1281,27 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
          */
         public Builder targetVersion(String targetVersion) {
             return targetVersion(Output.of(targetVersion));
+        }
+
+        /**
+         * @param templateAssessmentId The OCID of the template assessment. It will be required while creating the template baseline assessment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateAssessmentId(@Nullable Output<String> templateAssessmentId) {
+            $.templateAssessmentId = templateAssessmentId;
+            return this;
+        }
+
+        /**
+         * @param templateAssessmentId The OCID of the template assessment. It will be required while creating the template baseline assessment.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder templateAssessmentId(String templateAssessmentId) {
+            return templateAssessmentId(Output.of(templateAssessmentId));
         }
 
         /**
@@ -1044,7 +1389,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of this security assessment. The possible types are:
+         * @param type The type of the security assessment
          * 
          * @return builder
          * 
@@ -1055,7 +1400,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param type The type of this security assessment. The possible types are:
+         * @param type The type of the security assessment
          * 
          * @return builder
          * 

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testDbSystemShapes = oci.Database.getDbSystemShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemShapeAvailabilityDomain,
+ *     shapeAttribute: dbSystemShapeShapeAttribute,
  * });
  * ```
  */
@@ -29,6 +30,7 @@ export function getDbSystemShapes(args: GetDbSystemShapesArgs, opts?: pulumi.Inv
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "shapeAttribute": args.shapeAttribute,
     }, opts);
 }
 
@@ -45,6 +47,10 @@ export interface GetDbSystemShapesArgs {
      */
     compartmentId: string;
     filters?: inputs.Database.GetDbSystemShapesFilter[];
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    shapeAttribute?: string;
 }
 
 /**
@@ -62,6 +68,7 @@ export interface GetDbSystemShapesResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly shapeAttribute?: string;
 }
 /**
  * This data source provides the list of Db System Shapes in Oracle Cloud Infrastructure Database service.
@@ -77,6 +84,7 @@ export interface GetDbSystemShapesResult {
  * const testDbSystemShapes = oci.Database.getDbSystemShapes({
  *     compartmentId: compartmentId,
  *     availabilityDomain: dbSystemShapeAvailabilityDomain,
+ *     shapeAttribute: dbSystemShapeShapeAttribute,
  * });
  * ```
  */
@@ -86,6 +94,7 @@ export function getDbSystemShapesOutput(args: GetDbSystemShapesOutputArgs, opts?
         "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
+        "shapeAttribute": args.shapeAttribute,
     }, opts);
 }
 
@@ -102,4 +111,8 @@ export interface GetDbSystemShapesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetDbSystemShapesFilterArgs>[]>;
+    /**
+     * If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+     */
+    shapeAttribute?: pulumi.Input<string>;
 }

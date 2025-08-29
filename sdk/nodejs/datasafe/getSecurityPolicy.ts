@@ -71,6 +71,10 @@ export interface GetSecurityPolicyResult {
     readonly lifecycleDetails: string;
     readonly securityPolicyId: string;
     /**
+     * The type of the security policy.
+     */
+    readonly securityPolicyType: string;
+    /**
      * The current state of the security policy.
      */
     readonly state: string;

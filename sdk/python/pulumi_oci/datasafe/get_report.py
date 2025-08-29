@@ -26,10 +26,13 @@ class GetReportResult:
     """
     A collection of values returned by getReport.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_generated=None, type=None):
+    def __init__(__self__, compartment_id=None, data_source=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mime_type=None, report_definition_id=None, report_id=None, state=None, system_tags=None, time_created=None, time_generated=None, time_updated=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if data_source and not isinstance(data_source, str):
+            raise TypeError("Expected argument 'data_source' to be a str")
+        pulumi.set(__self__, "data_source", data_source)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -63,9 +66,15 @@ class GetReportResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if time_created and not isinstance(time_created, str):
+            raise TypeError("Expected argument 'time_created' to be a str")
+        pulumi.set(__self__, "time_created", time_created)
         if time_generated and not isinstance(time_generated, str):
             raise TypeError("Expected argument 'time_generated' to be a str")
         pulumi.set(__self__, "time_generated", time_generated)
+        if time_updated and not isinstance(time_updated, str):
+            raise TypeError("Expected argument 'time_updated' to be a str")
+        pulumi.set(__self__, "time_updated", time_updated)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -77,6 +86,14 @@ class GetReportResult:
         The OCID of the compartment containing the report.
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="dataSource")
+    def data_source(self) -> _builtins.str:
+        """
+        Specifies the name of a resource that provides data for the report. For example alerts, events.
+        """
+        return pulumi.get(self, "data_source")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -164,12 +181,28 @@ class GetReportResult:
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Specifies the time at which the report was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
     @pulumi.getter(name="timeGenerated")
     def time_generated(self) -> _builtins.str:
         """
         Specifies the date and time the report was generated.
         """
         return pulumi.get(self, "time_generated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time of the report update in Data Safe.
+        """
+        return pulumi.get(self, "time_updated")
 
     @_builtins.property
     @pulumi.getter
@@ -187,6 +220,7 @@ class AwaitableGetReportResult(GetReportResult):
             yield self
         return GetReportResult(
             compartment_id=self.compartment_id,
+            data_source=self.data_source,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
@@ -198,7 +232,9 @@ class AwaitableGetReportResult(GetReportResult):
             report_id=self.report_id,
             state=self.state,
             system_tags=self.system_tags,
+            time_created=self.time_created,
             time_generated=self.time_generated,
+            time_updated=self.time_updated,
             type=self.type)
 
 
@@ -228,6 +264,7 @@ def get_report(report_id: Optional[_builtins.str] = None,
 
     return AwaitableGetReportResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        data_source=pulumi.get(__ret__, 'data_source'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
@@ -239,7 +276,9 @@ def get_report(report_id: Optional[_builtins.str] = None,
         report_id=pulumi.get(__ret__, 'report_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        time_created=pulumi.get(__ret__, 'time_created'),
         time_generated=pulumi.get(__ret__, 'time_generated'),
+        time_updated=pulumi.get(__ret__, 'time_updated'),
         type=pulumi.get(__ret__, 'type'))
 def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetReportResult]:
@@ -266,6 +305,7 @@ def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getReport:getReport', __args__, opts=opts, typ=GetReportResult)
     return __ret__.apply(lambda __response__: GetReportResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
+        data_source=pulumi.get(__response__, 'data_source'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
@@ -277,5 +317,7 @@ def get_report_output(report_id: Optional[pulumi.Input[_builtins.str]] = None,
         report_id=pulumi.get(__response__, 'report_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
+        time_created=pulumi.get(__response__, 'time_created'),
         time_generated=pulumi.get(__response__, 'time_generated'),
+        time_updated=pulumi.get(__response__, 'time_updated'),
         type=pulumi.get(__response__, 'type')))

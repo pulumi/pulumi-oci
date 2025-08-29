@@ -9,13 +9,16 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified compartment.
+ * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
  */
 export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFindingsArgs, opts?: pulumi.InvokeOptions): Promise<GetSecurityAssessmentFindingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
+        "category": args.category,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsReferences": args.containsReferences,
+        "containsSeverities": args.containsSeverities,
         "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
@@ -26,6 +29,7 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
         "severity": args.severity,
         "state": args.state,
         "targetId": args.targetId,
+        "targetIds": args.targetIds,
     }, opts);
 }
 
@@ -38,9 +42,15 @@ export interface GetSecurityAssessmentFindingsArgs {
      */
     accessLevel?: string;
     /**
+     * The category of the finding.
+     */
+    category?: string;
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: boolean;
+    containsReferences?: string[];
+    containsSeverities?: string[];
     /**
      * Specifies a subset of fields to be returned in the response.
      */
@@ -81,6 +91,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+     */
+    targetIds?: string[];
 }
 
 /**
@@ -88,7 +102,13 @@ export interface GetSecurityAssessmentFindingsArgs {
  */
 export interface GetSecurityAssessmentFindingsResult {
     readonly accessLevel?: string;
+    /**
+     * The category to which the finding belongs to.
+     */
+    readonly category?: string;
     readonly compartmentIdInSubtree?: boolean;
+    readonly containsReferences?: string[];
+    readonly containsSeverities?: string[];
     readonly fields?: string[];
     readonly filters?: outputs.DataSafe.GetSecurityAssessmentFindingsFilter[];
     readonly findingKey?: string;
@@ -122,17 +142,21 @@ export interface GetSecurityAssessmentFindingsResult {
      * The OCID of the target database.
      */
     readonly targetId?: string;
+    readonly targetIds?: string[];
 }
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
  *
- * List all the findings from all the targets in the specified compartment.
+ * Lists all the findings for the specified assessment except for type TEMPLATE. If the assessment is of type TEMPLATE_BASELINE, the findings returned are the security checks with the user-defined severity from the template.
  */
 export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentFindingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSecurityAssessmentFindingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
+        "category": args.category,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
+        "containsReferences": args.containsReferences,
+        "containsSeverities": args.containsSeverities,
         "fields": args.fields,
         "filters": args.filters,
         "findingKey": args.findingKey,
@@ -143,6 +167,7 @@ export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentF
         "severity": args.severity,
         "state": args.state,
         "targetId": args.targetId,
+        "targetIds": args.targetIds,
     }, opts);
 }
 
@@ -155,9 +180,15 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      */
     accessLevel?: pulumi.Input<string>;
     /**
+     * The category of the finding.
+     */
+    category?: pulumi.Input<string>;
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Specifies a subset of fields to be returned in the response.
      */
@@ -198,4 +229,8 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: pulumi.Input<string>;
+    /**
+     * An optional filter to return only findings that match the specified target ids. Use this parameter to filter by multiple target ids.
+     */
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

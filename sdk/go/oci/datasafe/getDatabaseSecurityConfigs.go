@@ -49,6 +49,7 @@ import (
 //				DatabaseSecurityConfigId:        pulumi.StringRef(testDatabaseSecurityConfig.Id),
 //				DisplayName:                     pulumi.StringRef(databaseSecurityConfigDisplayName),
 //				State:                           pulumi.StringRef(databaseSecurityConfigState),
+//				TargetDatabaseGroupId:           pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:                        pulumi.StringRef(testTarget.Id),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(databaseSecurityConfigTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(databaseSecurityConfigTimeCreatedLessThan),
@@ -86,6 +87,8 @@ type GetDatabaseSecurityConfigsArgs struct {
 	Filters     []GetDatabaseSecurityConfigsFilter `pulumi:"filters"`
 	// The current state of the database security configuration.
 	State *string `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -113,7 +116,8 @@ type GetDatabaseSecurityConfigsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The current state of the database security config.
-	State *string `pulumi:"state"`
+	State                 *string `pulumi:"state"`
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// The target OCID corresponding to the database security config.
 	TargetId                        *string `pulumi:"targetId"`
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
@@ -144,6 +148,8 @@ type GetDatabaseSecurityConfigsOutputArgs struct {
 	Filters     GetDatabaseSecurityConfigsFilterArrayInput `pulumi:"filters"`
 	// The current state of the database security configuration.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 	// A filter to return only the resources that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeCreatedGreaterThanOrEqualToQueryParam parameter retrieves all resources created after that date.
@@ -216,6 +222,10 @@ func (o GetDatabaseSecurityConfigsResultOutput) Id() pulumi.StringOutput {
 // The current state of the database security config.
 func (o GetDatabaseSecurityConfigsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDatabaseSecurityConfigsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetDatabaseSecurityConfigsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSecurityConfigsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The target OCID corresponding to the database security config.

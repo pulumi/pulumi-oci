@@ -25,11 +25,32 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.accessLevel);
     }
 
+    @Import(name="category")
+    private @Nullable String category;
+
+    public Optional<String> category() {
+        return Optional.ofNullable(this.category);
+    }
+
     @Import(name="compartmentIdInSubtree")
     private @Nullable Boolean compartmentIdInSubtree;
 
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+
+    @Import(name="containsReferences")
+    private @Nullable List<String> containsReferences;
+
+    public Optional<List<String>> containsReferences() {
+        return Optional.ofNullable(this.containsReferences);
+    }
+
+    @Import(name="containsSeverities")
+    private @Nullable List<String> containsSeverities;
+
+    public Optional<List<String>> containsSeverities() {
+        return Optional.ofNullable(this.containsSeverities);
     }
 
     @Import(name="fields")
@@ -102,11 +123,21 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.targetId);
     }
 
+    @Import(name="targetIds")
+    private @Nullable List<String> targetIds;
+
+    public Optional<List<String>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
+    }
+
     private GetSecurityAssessmentFindingPlainArgs() {}
 
     private GetSecurityAssessmentFindingPlainArgs(GetSecurityAssessmentFindingPlainArgs $) {
         this.accessLevel = $.accessLevel;
+        this.category = $.category;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
+        this.containsReferences = $.containsReferences;
+        this.containsSeverities = $.containsSeverities;
         this.fields = $.fields;
         this.filters = $.filters;
         this.findingKey = $.findingKey;
@@ -117,6 +148,7 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         this.severity = $.severity;
         this.state = $.state;
         this.targetId = $.targetId;
+        this.targetIds = $.targetIds;
     }
 
     public static Builder builder() {
@@ -142,9 +174,32 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
             return this;
         }
 
+        public Builder category(@Nullable String category) {
+            $.category = category;
+            return this;
+        }
+
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
             $.compartmentIdInSubtree = compartmentIdInSubtree;
             return this;
+        }
+
+        public Builder containsReferences(@Nullable List<String> containsReferences) {
+            $.containsReferences = containsReferences;
+            return this;
+        }
+
+        public Builder containsReferences(String... containsReferences) {
+            return containsReferences(List.of(containsReferences));
+        }
+
+        public Builder containsSeverities(@Nullable List<String> containsSeverities) {
+            $.containsSeverities = containsSeverities;
+            return this;
+        }
+
+        public Builder containsSeverities(String... containsSeverities) {
+            return containsSeverities(List.of(containsSeverities));
         }
 
         public Builder fields(@Nullable List<String> fields) {
@@ -203,6 +258,15 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         public Builder targetId(@Nullable String targetId) {
             $.targetId = targetId;
             return this;
+        }
+
+        public Builder targetIds(@Nullable List<String> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         public GetSecurityAssessmentFindingPlainArgs build() {

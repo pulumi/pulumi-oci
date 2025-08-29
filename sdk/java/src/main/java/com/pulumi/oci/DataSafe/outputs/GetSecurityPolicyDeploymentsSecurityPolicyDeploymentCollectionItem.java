@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
@@ -21,6 +22,7 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
      * 
      */
     private Map<String,String> definedTags;
+    private Integer deployTrigger;
     /**
      * @return The description of the security policy deployment.
      * 
@@ -46,11 +48,7 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
      * 
      */
     private String lifecycleDetails;
-    /**
-     * @return An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
-     * 
-     */
-    private String securityPolicyDeploymentId;
+    private Integer refreshTrigger;
     /**
      * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
      * 
@@ -72,10 +70,20 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
      */
     private String targetId;
     /**
+     * @return A optional filter to return only resources that belong to the specified target type.
+     * 
+     */
+    private String targetType;
+    /**
      * @return The time that the security policy deployment was created, in the format defined by RFC3339.
      * 
      */
     private String timeCreated;
+    /**
+     * @return The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    private String timeDeployed;
     /**
      * @return The last date and time the security policy deployment was updated, in the format defined by RFC3339.
      * 
@@ -96,6 +104,9 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    public Integer deployTrigger() {
+        return this.deployTrigger;
     }
     /**
      * @return The description of the security policy deployment.
@@ -132,12 +143,8 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
-    /**
-     * @return An optional filter to return only resources that match the specified OCID of the security policy deployment resource.
-     * 
-     */
-    public String securityPolicyDeploymentId() {
-        return this.securityPolicyDeploymentId;
+    public Integer refreshTrigger() {
+        return this.refreshTrigger;
     }
     /**
      * @return An optional filter to return only resources that match the specified OCID of the security policy resource.
@@ -168,11 +175,25 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
         return this.targetId;
     }
     /**
+     * @return A optional filter to return only resources that belong to the specified target type.
+     * 
+     */
+    public String targetType() {
+        return this.targetType;
+    }
+    /**
      * @return The time that the security policy deployment was created, in the format defined by RFC3339.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
+    }
+    /**
+     * @return The last date and time the security policy was deployed, in the format defined by RFC3339.
+     * 
+     */
+    public String timeDeployed() {
+        return this.timeDeployed;
     }
     /**
      * @return The last date and time the security policy deployment was updated, in the format defined by RFC3339.
@@ -193,34 +214,40 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
     public static final class Builder {
         private String compartmentId;
         private Map<String,String> definedTags;
+        private Integer deployTrigger;
         private String description;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
-        private String securityPolicyDeploymentId;
+        private Integer refreshTrigger;
         private String securityPolicyId;
         private String state;
         private Map<String,String> systemTags;
         private String targetId;
+        private String targetType;
         private String timeCreated;
+        private String timeDeployed;
         private String timeUpdated;
         public Builder() {}
         public Builder(GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.deployTrigger = defaults.deployTrigger;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
-    	      this.securityPolicyDeploymentId = defaults.securityPolicyDeploymentId;
+    	      this.refreshTrigger = defaults.refreshTrigger;
     	      this.securityPolicyId = defaults.securityPolicyId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.targetId = defaults.targetId;
+    	      this.targetType = defaults.targetType;
     	      this.timeCreated = defaults.timeCreated;
+    	      this.timeDeployed = defaults.timeDeployed;
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
@@ -238,6 +265,14 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
               throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder deployTrigger(Integer deployTrigger) {
+            if (deployTrigger == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "deployTrigger");
+            }
+            this.deployTrigger = deployTrigger;
             return this;
         }
         @CustomType.Setter
@@ -281,11 +316,11 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
             return this;
         }
         @CustomType.Setter
-        public Builder securityPolicyDeploymentId(String securityPolicyDeploymentId) {
-            if (securityPolicyDeploymentId == null) {
-              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "securityPolicyDeploymentId");
+        public Builder refreshTrigger(Integer refreshTrigger) {
+            if (refreshTrigger == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "refreshTrigger");
             }
-            this.securityPolicyDeploymentId = securityPolicyDeploymentId;
+            this.refreshTrigger = refreshTrigger;
             return this;
         }
         @CustomType.Setter
@@ -321,11 +356,27 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
             return this;
         }
         @CustomType.Setter
+        public Builder targetType(String targetType) {
+            if (targetType == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "targetType");
+            }
+            this.targetType = targetType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "timeCreated");
             }
             this.timeCreated = timeCreated;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeDeployed(String timeDeployed) {
+            if (timeDeployed == null) {
+              throw new MissingRequiredPropertyException("GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem", "timeDeployed");
+            }
+            this.timeDeployed = timeDeployed;
             return this;
         }
         @CustomType.Setter
@@ -340,17 +391,20 @@ public final class GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectio
             final var _resultValue = new GetSecurityPolicyDeploymentsSecurityPolicyDeploymentCollectionItem();
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.deployTrigger = deployTrigger;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
-            _resultValue.securityPolicyDeploymentId = securityPolicyDeploymentId;
+            _resultValue.refreshTrigger = refreshTrigger;
             _resultValue.securityPolicyId = securityPolicyId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.targetId = targetId;
+            _resultValue.targetType = targetType;
             _resultValue.timeCreated = timeCreated;
+            _resultValue.timeDeployed = timeDeployed;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;
         }

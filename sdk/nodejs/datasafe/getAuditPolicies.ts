@@ -38,6 +38,7 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
  *     displayName: auditPolicyDisplayName,
  *     state: auditPolicyState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -52,6 +53,7 @@ export function getAuditPolicies(args: GetAuditPoliciesArgs, opts?: pulumi.Invok
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -86,6 +88,10 @@ export interface GetAuditPoliciesArgs {
      */
     state?: string;
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
+    /**
      * A filter to return only items related to a specific target OCID.
      */
     targetId?: string;
@@ -119,6 +125,7 @@ export interface GetAuditPoliciesResult {
      * The current state of the audit policy.
      */
     readonly state?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target for which the audit policy is created.
      */
@@ -156,6 +163,7 @@ export interface GetAuditPoliciesResult {
  *     compartmentIdInSubtree: auditPolicyCompartmentIdInSubtree,
  *     displayName: auditPolicyDisplayName,
  *     state: auditPolicyState,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -170,6 +178,7 @@ export function getAuditPoliciesOutput(args: GetAuditPoliciesOutputArgs, opts?: 
         "displayName": args.displayName,
         "filters": args.filters,
         "state": args.state,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -203,6 +212,10 @@ export interface GetAuditPoliciesOutputArgs {
      * The current state of the audit policy.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

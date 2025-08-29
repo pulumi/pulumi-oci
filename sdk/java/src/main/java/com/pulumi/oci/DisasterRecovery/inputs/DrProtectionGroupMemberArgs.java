@@ -12,6 +12,8 @@ import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBackupLocat
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeAttachAndMountOperationsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberBlockVolumeOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberCommonDestinationKeyArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
@@ -23,6 +25,7 @@ import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVaultMappin
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVirtualNodePoolConfigArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberVnicMappingArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -167,6 +170,36 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<String>> connectionStringType() {
         return Optional.ofNullable(this.connectionStringType);
+    }
+
+    /**
+     * (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+     * 
+     */
+    @Import(name="dbSystemAdminUserDetails")
+    private @Nullable Output<DrProtectionGroupMemberDbSystemAdminUserDetailsArgs> dbSystemAdminUserDetails;
+
+    /**
+     * @return (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberDbSystemAdminUserDetailsArgs>> dbSystemAdminUserDetails() {
+        return Optional.ofNullable(this.dbSystemAdminUserDetails);
+    }
+
+    /**
+     * (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+     * 
+     */
+    @Import(name="dbSystemReplicationUserDetails")
+    private @Nullable Output<DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs> dbSystemReplicationUserDetails;
+
+    /**
+     * @return (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs>> dbSystemReplicationUserDetails() {
+        return Optional.ofNullable(this.dbSystemReplicationUserDetails);
     }
 
     /**
@@ -332,6 +365,36 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
      */
     public Optional<Output<List<DrProtectionGroupMemberFileSystemOperationArgs>>> fileSystemOperations() {
         return Optional.ofNullable(this.fileSystemOperations);
+    }
+
+    /**
+     * (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+     * 
+     */
+    @Import(name="gtidReconciliationTimeout")
+    private @Nullable Output<Integer> gtidReconciliationTimeout;
+
+    /**
+     * @return (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+     * 
+     */
+    public Optional<Output<Integer>> gtidReconciliationTimeout() {
+        return Optional.ofNullable(this.gtidReconciliationTimeout);
+    }
+
+    /**
+     * (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+     * 
+     */
+    @Import(name="isContinueOnGtidReconciliationTimeout")
+    private @Nullable Output<Boolean> isContinueOnGtidReconciliationTimeout;
+
+    /**
+     * @return (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+     * 
+     */
+    public Optional<Output<Boolean>> isContinueOnGtidReconciliationTimeout() {
+        return Optional.ofNullable(this.isContinueOnGtidReconciliationTimeout);
     }
 
     /**
@@ -515,6 +578,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * 
+     */
+    @Import(name="peerDbSystemId")
+    private @Nullable Output<String> peerDbSystemId;
+
+    /**
+     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> peerDbSystemId() {
+        return Optional.ofNullable(this.peerDbSystemId);
+    }
+
+    /**
      * (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
      * 
      * If you add the entry for source volumes and its corresponding vault and encryption keys here, you can not use  &#39;commonDestinationKey&#39; for encrypting all volumes with common encryption key. Similarly, if you specify common vault and encryption key using &#39;commonDestinationKey&#39;, you cannot specify vaults and encryption keys individually  for each volume using &#39;sourceVolumeToDestinationEncryptionKeyMappings&#39;.
@@ -609,6 +687,8 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.bucket = $.bucket;
         this.commonDestinationKey = $.commonDestinationKey;
         this.connectionStringType = $.connectionStringType;
+        this.dbSystemAdminUserDetails = $.dbSystemAdminUserDetails;
+        this.dbSystemReplicationUserDetails = $.dbSystemReplicationUserDetails;
         this.destinationAvailabilityDomain = $.destinationAvailabilityDomain;
         this.destinationBackupPolicyId = $.destinationBackupPolicyId;
         this.destinationCapacityReservationId = $.destinationCapacityReservationId;
@@ -620,6 +700,8 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.destinationSnapshotPolicyId = $.destinationSnapshotPolicyId;
         this.exportMappings = $.exportMappings;
         this.fileSystemOperations = $.fileSystemOperations;
+        this.gtidReconciliationTimeout = $.gtidReconciliationTimeout;
+        this.isContinueOnGtidReconciliationTimeout = $.isContinueOnGtidReconciliationTimeout;
         this.isMovable = $.isMovable;
         this.isRetainFaultDomain = $.isRetainFaultDomain;
         this.isStartStopEnabled = $.isStartStopEnabled;
@@ -632,6 +714,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.networkLoadBalancerMappings = $.networkLoadBalancerMappings;
         this.passwordVaultSecretId = $.passwordVaultSecretId;
         this.peerClusterId = $.peerClusterId;
+        this.peerDbSystemId = $.peerDbSystemId;
         this.sourceVolumeToDestinationEncryptionKeyMappings = $.sourceVolumeToDestinationEncryptionKeyMappings;
         this.vaultMappings = $.vaultMappings;
         this.virtualNodePoolConfigs = $.virtualNodePoolConfigs;
@@ -864,6 +947,48 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder connectionStringType(String connectionStringType) {
             return connectionStringType(Output.of(connectionStringType));
+        }
+
+        /**
+         * @param dbSystemAdminUserDetails (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemAdminUserDetails(@Nullable Output<DrProtectionGroupMemberDbSystemAdminUserDetailsArgs> dbSystemAdminUserDetails) {
+            $.dbSystemAdminUserDetails = dbSystemAdminUserDetails;
+            return this;
+        }
+
+        /**
+         * @param dbSystemAdminUserDetails (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemAdminUserDetails(DrProtectionGroupMemberDbSystemAdminUserDetailsArgs dbSystemAdminUserDetails) {
+            return dbSystemAdminUserDetails(Output.of(dbSystemAdminUserDetails));
+        }
+
+        /**
+         * @param dbSystemReplicationUserDetails (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemReplicationUserDetails(@Nullable Output<DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs> dbSystemReplicationUserDetails) {
+            $.dbSystemReplicationUserDetails = dbSystemReplicationUserDetails;
+            return this;
+        }
+
+        /**
+         * @param dbSystemReplicationUserDetails (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder dbSystemReplicationUserDetails(DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs dbSystemReplicationUserDetails) {
+            return dbSystemReplicationUserDetails(Output.of(dbSystemReplicationUserDetails));
         }
 
         /**
@@ -1115,6 +1240,48 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder fileSystemOperations(DrProtectionGroupMemberFileSystemOperationArgs... fileSystemOperations) {
             return fileSystemOperations(List.of(fileSystemOperations));
+        }
+
+        /**
+         * @param gtidReconciliationTimeout (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gtidReconciliationTimeout(@Nullable Output<Integer> gtidReconciliationTimeout) {
+            $.gtidReconciliationTimeout = gtidReconciliationTimeout;
+            return this;
+        }
+
+        /**
+         * @param gtidReconciliationTimeout (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder gtidReconciliationTimeout(Integer gtidReconciliationTimeout) {
+            return gtidReconciliationTimeout(Output.of(gtidReconciliationTimeout));
+        }
+
+        /**
+         * @param isContinueOnGtidReconciliationTimeout (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isContinueOnGtidReconciliationTimeout(@Nullable Output<Boolean> isContinueOnGtidReconciliationTimeout) {
+            $.isContinueOnGtidReconciliationTimeout = isContinueOnGtidReconciliationTimeout;
+            return this;
+        }
+
+        /**
+         * @param isContinueOnGtidReconciliationTimeout (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isContinueOnGtidReconciliationTimeout(Boolean isContinueOnGtidReconciliationTimeout) {
+            return isContinueOnGtidReconciliationTimeout(Output.of(isContinueOnGtidReconciliationTimeout));
         }
 
         /**
@@ -1397,6 +1564,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
          */
         public Builder peerClusterId(String peerClusterId) {
             return peerClusterId(Output.of(peerClusterId));
+        }
+
+        /**
+         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbSystemId(@Nullable Output<String> peerDbSystemId) {
+            $.peerDbSystemId = peerDbSystemId;
+            return this;
+        }
+
+        /**
+         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder peerDbSystemId(String peerDbSystemId) {
+            return peerDbSystemId(Output.of(peerDbSystemId));
         }
 
         /**

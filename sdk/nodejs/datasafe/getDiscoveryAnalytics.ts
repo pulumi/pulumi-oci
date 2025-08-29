@@ -25,7 +25,9 @@ import * as utilities from "../utilities";
  *     groupBy: discoveryAnalyticGroupBy,
  *     isCommon: discoveryAnalyticIsCommon,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -39,7 +41,9 @@ export function getDiscoveryAnalytics(args: GetDiscoveryAnalyticsArgs, opts?: pu
         "groupBy": args.groupBy,
         "isCommon": args.isCommon,
         "sensitiveDataModelId": args.sensitiveDataModelId,
+        "sensitiveTypeGroupId": args.sensitiveTypeGroupId,
         "sensitiveTypeId": args.sensitiveTypeId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -70,9 +74,17 @@ export interface GetDiscoveryAnalyticsArgs {
      */
     sensitiveDataModelId?: string;
     /**
+     * An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+     */
+    sensitiveTypeGroupId?: string;
+    /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
     sensitiveTypeId?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -100,10 +112,12 @@ export interface GetDiscoveryAnalyticsResult {
      * The OCID of the sensitive data model.
      */
     readonly sensitiveDataModelId?: string;
+    readonly sensitiveTypeGroupId?: string;
     /**
      * The OCID of the sensitive type.
      */
     readonly sensitiveTypeId?: string;
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target database.
      */
@@ -128,7 +142,9 @@ export interface GetDiscoveryAnalyticsResult {
  *     groupBy: discoveryAnalyticGroupBy,
  *     isCommon: discoveryAnalyticIsCommon,
  *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     sensitiveTypeGroupId: testSensitiveTypeGroup.id,
  *     sensitiveTypeId: testSensitiveType.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -142,7 +158,9 @@ export function getDiscoveryAnalyticsOutput(args: GetDiscoveryAnalyticsOutputArg
         "groupBy": args.groupBy,
         "isCommon": args.isCommon,
         "sensitiveDataModelId": args.sensitiveDataModelId,
+        "sensitiveTypeGroupId": args.sensitiveTypeGroupId,
         "sensitiveTypeId": args.sensitiveTypeId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -173,9 +191,17 @@ export interface GetDiscoveryAnalyticsOutputArgs {
      */
     sensitiveDataModelId?: pulumi.Input<string>;
     /**
+     * An optional filter to return only resources that match the specified OCID of the sensitive type group resource.
+     */
+    sensitiveTypeGroupId?: pulumi.Input<string>;
+    /**
      * A filter to return only items related to a specific sensitive type OCID.
      */
     sensitiveTypeId?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

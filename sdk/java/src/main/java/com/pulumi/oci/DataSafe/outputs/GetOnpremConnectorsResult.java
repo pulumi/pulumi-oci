@@ -35,12 +35,16 @@ public final class GetOnpremConnectorsResult {
      */
     private String id;
     private @Nullable String onPremConnectorId;
-    private @Nullable String onPremConnectorLifecycleState;
     /**
      * @return The list of on_prem_connectors.
      * 
      */
     private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
+    /**
+     * @return The current state of the on-premises connector.
+     * 
+     */
+    private @Nullable String state;
 
     private GetOnpremConnectorsResult() {}
     public Optional<String> accessLevel() {
@@ -76,15 +80,19 @@ public final class GetOnpremConnectorsResult {
     public Optional<String> onPremConnectorId() {
         return Optional.ofNullable(this.onPremConnectorId);
     }
-    public Optional<String> onPremConnectorLifecycleState() {
-        return Optional.ofNullable(this.onPremConnectorLifecycleState);
-    }
     /**
      * @return The list of on_prem_connectors.
      * 
      */
     public List<GetOnpremConnectorsOnPremConnector> onPremConnectors() {
         return this.onPremConnectors;
+    }
+    /**
+     * @return The current state of the on-premises connector.
+     * 
+     */
+    public Optional<String> state() {
+        return Optional.ofNullable(this.state);
     }
 
     public static Builder builder() {
@@ -103,8 +111,8 @@ public final class GetOnpremConnectorsResult {
         private @Nullable List<GetOnpremConnectorsFilter> filters;
         private String id;
         private @Nullable String onPremConnectorId;
-        private @Nullable String onPremConnectorLifecycleState;
         private List<GetOnpremConnectorsOnPremConnector> onPremConnectors;
+        private @Nullable String state;
         public Builder() {}
         public Builder(GetOnpremConnectorsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -115,8 +123,8 @@ public final class GetOnpremConnectorsResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.onPremConnectorId = defaults.onPremConnectorId;
-    	      this.onPremConnectorLifecycleState = defaults.onPremConnectorLifecycleState;
     	      this.onPremConnectors = defaults.onPremConnectors;
+    	      this.state = defaults.state;
         }
 
         @CustomType.Setter
@@ -169,12 +177,6 @@ public final class GetOnpremConnectorsResult {
             return this;
         }
         @CustomType.Setter
-        public Builder onPremConnectorLifecycleState(@Nullable String onPremConnectorLifecycleState) {
-
-            this.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
-            return this;
-        }
-        @CustomType.Setter
         public Builder onPremConnectors(List<GetOnpremConnectorsOnPremConnector> onPremConnectors) {
             if (onPremConnectors == null) {
               throw new MissingRequiredPropertyException("GetOnpremConnectorsResult", "onPremConnectors");
@@ -185,6 +187,12 @@ public final class GetOnpremConnectorsResult {
         public Builder onPremConnectors(GetOnpremConnectorsOnPremConnector... onPremConnectors) {
             return onPremConnectors(List.of(onPremConnectors));
         }
+        @CustomType.Setter
+        public Builder state(@Nullable String state) {
+
+            this.state = state;
+            return this;
+        }
         public GetOnpremConnectorsResult build() {
             final var _resultValue = new GetOnpremConnectorsResult();
             _resultValue.accessLevel = accessLevel;
@@ -194,8 +202,8 @@ public final class GetOnpremConnectorsResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.onPremConnectorId = onPremConnectorId;
-            _resultValue.onPremConnectorLifecycleState = onPremConnectorLifecycleState;
             _resultValue.onPremConnectors = onPremConnectors;
+            _resultValue.state = state;
             return _resultValue;
         }
     }

@@ -39,6 +39,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbAzureVault{}
 	case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
 		r = &DbmulticloudOracleDbAzureVaultAssociation{}
+	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
+		r = &ManagedKafkaKafkaCluster{}
+	case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
+		r = &ManagedKafkaKafkaClusterConfig{}
+	case "oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement":
+		r = &ManagedKafkaKafkaClusterSuperusersManagement{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -95,6 +101,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/dbmulticloudOracleDbAzureVaultAssociation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/managedKafkaKafkaCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/managedKafkaKafkaClusterConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/managedKafkaKafkaClusterSuperusersManagement",
 		&module{version},
 	)
 }

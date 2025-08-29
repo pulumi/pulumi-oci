@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.DatabaseDataGuardGroup;
 import com.pulumi.oci.Database.outputs.DatabaseDatabase;
 import com.pulumi.oci.Database.outputs.DatabaseDatabaseManagementConfig;
 import com.pulumi.oci.Database.outputs.DatabaseDbBackupConfig;
+import com.pulumi.oci.Database.outputs.DatabaseStorageSizeDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -544,6 +545,20 @@ public class Database extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    @Export(name="storageSizeDetails", refs={List.class,DatabaseStorageSizeDetail.class}, tree="[0,1]")
+    private Output<List<DatabaseStorageSizeDetail>> storageSizeDetails;
+
+    /**
+     * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+     * 
+     */
+    public Output<List<DatabaseStorageSizeDetail>> storageSizeDetails() {
+        return this.storageSizeDetails;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

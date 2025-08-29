@@ -78,6 +78,10 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
      */
     public /*out*/ readonly dataIngestionJobStatistics!: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobStatistic[]>;
     /**
+     * DataIngestionJob type.
+     */
+    public /*out*/ readonly dataIngestionJobTypes!: pulumi.Output<outputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobType[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      */
     public readonly dataSourceId!: pulumi.Output<string>;
@@ -101,6 +105,7 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: string}>;
+    public /*out*/ readonly knowledgeBaseId!: pulumi.Output<string>;
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */
@@ -137,11 +142,13 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
             const state = argsOrState as AgentDataIngestionJobState | undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["dataIngestionJobStatistics"] = state ? state.dataIngestionJobStatistics : undefined;
+            resourceInputs["dataIngestionJobTypes"] = state ? state.dataIngestionJobTypes : undefined;
             resourceInputs["dataSourceId"] = state ? state.dataSourceId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["knowledgeBaseId"] = state ? state.knowledgeBaseId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
@@ -162,6 +169,8 @@ export class AgentDataIngestionJob extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["dataIngestionJobStatistics"] = undefined /*out*/;
+            resourceInputs["dataIngestionJobTypes"] = undefined /*out*/;
+            resourceInputs["knowledgeBaseId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -186,6 +195,10 @@ export interface AgentDataIngestionJobState {
      */
     dataIngestionJobStatistics?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobStatistic>[]>;
     /**
+     * DataIngestionJob type.
+     */
+    dataIngestionJobTypes?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.AgentDataIngestionJobDataIngestionJobType>[]>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
      */
     dataSourceId?: pulumi.Input<string>;
@@ -209,6 +222,7 @@ export interface AgentDataIngestionJobState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    knowledgeBaseId?: pulumi.Input<string>;
     /**
      * A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
      */

@@ -44,7 +44,7 @@ export interface GetAuditProfileArgs {
  */
 export interface GetAuditProfileResult {
     /**
-     * Indicates number of audit records collected by Data Safe in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
+     * Number of audit records collected in the current calendar month.  Audit records for the Data Safe service account are excluded and are not counted towards your monthly free limit.
      */
     readonly auditCollectedVolume: string;
     /**
@@ -52,12 +52,12 @@ export interface GetAuditProfileResult {
      */
     readonly auditProfileId: string;
     /**
-     * Indicates the list of available audit trails on the target.
+     * Contains the list of available audit trails on the target database.
      */
     readonly auditTrails: outputs.DataSafe.GetAuditProfileAuditTrail[];
     readonly changeRetentionTrigger: number;
     /**
-     * The OCID of the compartment that contains the audit.
+     * The OCID of the compartment that contains the audit profile.
      */
     readonly compartmentId: string;
     /**
@@ -81,7 +81,11 @@ export interface GetAuditProfileResult {
      */
     readonly id: string;
     /**
-     * Indicates whether audit retention settings like online and offline months is set at the target level overriding the global audit retention settings.
+     * Indicates whether audit paid usage settings specified at the target database level override both the global settings and the target group level paid usage settings. Enabling paid usage continues the collection of audit records beyond the free limit of one million audit records per month per target database, potentially incurring additional charges. For more information, see [Data Safe Price List](https://www.oracle.com/cloud/price-list/#data-safe).
+     */
+    readonly isOverrideGlobalPaidUsage: boolean;
+    /**
+     * Indicates whether audit retention settings like online and offline months set at the  target level override both the global settings and the target group level audit retention settings.
      */
     readonly isOverrideGlobalRetentionSetting: boolean;
     /**
@@ -93,13 +97,25 @@ export interface GetAuditProfileResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Indicates the number of months the audit records will be stored offline in the Data Safe audit archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in archive, please contact the Oracle Support.
+     * Number of months the audit records will be stored offline in the offline archive. Minimum: 0; Maximum: 72 months. If you have a requirement to store the audit data even longer in the offline archive, please contact the Oracle Support.
      */
     readonly offlineMonths: number;
     /**
-     * Indicates the number of months the audit records will be stored online in Oracle Data Safe audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
+     * The name or the OCID of the resource from which the offline month retention setting is sourced. For example, a global setting or a target database group OCID.
+     */
+    readonly offlineMonthsSource: string;
+    /**
+     * Number of months the audit records will be stored online in the audit repository for immediate reporting and analysis.  Minimum: 1; Maximum: 12 months
      */
     readonly onlineMonths: number;
+    /**
+     * The name or the OCID of the resource from which the online month retention setting is sourced. For example, a global setting or a target database group OCID.
+     */
+    readonly onlineMonthsSource: string;
+    /**
+     * The name or the OCID of the resource from which the paid usage setting is sourced. For example, a global setting or a target database group OCID.
+     */
+    readonly paidUsageSource: string;
     /**
      * The current state of the audit profile.
      */
@@ -109,9 +125,13 @@ export interface GetAuditProfileResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The OCID of the Data Safe target for which the audit profile is created.
+     * The OCID of the target database or target database group for which the audit profile is created.
      */
     readonly targetId: string;
+    /**
+     * The resource type that is represented by the audit profile.
+     */
+    readonly targetType: string;
     /**
      * The date and time the audit profile was created, in the format defined by RFC3339.
      */

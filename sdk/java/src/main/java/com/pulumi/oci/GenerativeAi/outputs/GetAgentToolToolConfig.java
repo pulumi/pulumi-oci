@@ -5,10 +5,12 @@ package com.pulumi.oci.GenerativeAi.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigApiSchema;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigDatabaseConnection;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigDatabaseSchema;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigFunction;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigGenerationLlmCustomization;
+import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigHttpEndpointAuthConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigIclExample;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigKnowledgeBaseConfig;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolToolConfigTableAndColumnDescription;
@@ -19,6 +21,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetAgentToolToolConfig {
+    /**
+     * @return The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    private String agentEndpointId;
+    /**
+     * @return The input location definition for Api schema.
+     * 
+     */
+    private List<GetAgentToolToolConfigApiSchema> apiSchemas;
     /**
      * @return The connection type for Databases.
      * 
@@ -45,6 +57,11 @@ public final class GetAgentToolToolConfig {
      */
     private List<GetAgentToolToolConfigGenerationLlmCustomization> generationLlmCustomizations;
     /**
+     * @return Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    private List<GetAgentToolToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfigs;
+    /**
      * @return The input location definition.
      * 
      */
@@ -70,6 +87,11 @@ public final class GetAgentToolToolConfig {
      */
     private Boolean shouldEnableSqlExecution;
     /**
+     * @return The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    private String subnetId;
+    /**
      * @return The input location definition.
      * 
      */
@@ -84,6 +106,20 @@ public final class GetAgentToolToolConfig {
     private String toolConfigType;
 
     private GetAgentToolToolConfig() {}
+    /**
+     * @return The AgentEndpoint OCID to be used as a tool in this agent.
+     * 
+     */
+    public String agentEndpointId() {
+        return this.agentEndpointId;
+    }
+    /**
+     * @return The input location definition for Api schema.
+     * 
+     */
+    public List<GetAgentToolToolConfigApiSchema> apiSchemas() {
+        return this.apiSchemas;
+    }
     /**
      * @return The connection type for Databases.
      * 
@@ -118,6 +154,13 @@ public final class GetAgentToolToolConfig {
      */
     public List<GetAgentToolToolConfigGenerationLlmCustomization> generationLlmCustomizations() {
         return this.generationLlmCustomizations;
+    }
+    /**
+     * @return Authentication configuration used for HTTP Endpoint tools. Defines the type of authentication and the source of credentials.
+     * 
+     */
+    public List<GetAgentToolToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfigs() {
+        return this.httpEndpointAuthConfigs;
     }
     /**
      * @return The input location definition.
@@ -155,6 +198,13 @@ public final class GetAgentToolToolConfig {
         return this.shouldEnableSqlExecution;
     }
     /**
+     * @return The subnet ID from agent developer tenancy through which the egress is going to be routed.
+     * 
+     */
+    public String subnetId() {
+        return this.subnetId;
+    }
+    /**
      * @return The input location definition.
      * 
      */
@@ -181,35 +231,62 @@ public final class GetAgentToolToolConfig {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String agentEndpointId;
+        private List<GetAgentToolToolConfigApiSchema> apiSchemas;
         private List<GetAgentToolToolConfigDatabaseConnection> databaseConnections;
         private List<GetAgentToolToolConfigDatabaseSchema> databaseSchemas;
         private String dialect;
         private List<GetAgentToolToolConfigFunction> functions;
         private List<GetAgentToolToolConfigGenerationLlmCustomization> generationLlmCustomizations;
+        private List<GetAgentToolToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfigs;
         private List<GetAgentToolToolConfigIclExample> iclExamples;
         private List<GetAgentToolToolConfigKnowledgeBaseConfig> knowledgeBaseConfigs;
         private String modelSize;
         private Boolean shouldEnableSelfCorrection;
         private Boolean shouldEnableSqlExecution;
+        private String subnetId;
         private List<GetAgentToolToolConfigTableAndColumnDescription> tableAndColumnDescriptions;
         private String toolConfigType;
         public Builder() {}
         public Builder(GetAgentToolToolConfig defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.agentEndpointId = defaults.agentEndpointId;
+    	      this.apiSchemas = defaults.apiSchemas;
     	      this.databaseConnections = defaults.databaseConnections;
     	      this.databaseSchemas = defaults.databaseSchemas;
     	      this.dialect = defaults.dialect;
     	      this.functions = defaults.functions;
     	      this.generationLlmCustomizations = defaults.generationLlmCustomizations;
+    	      this.httpEndpointAuthConfigs = defaults.httpEndpointAuthConfigs;
     	      this.iclExamples = defaults.iclExamples;
     	      this.knowledgeBaseConfigs = defaults.knowledgeBaseConfigs;
     	      this.modelSize = defaults.modelSize;
     	      this.shouldEnableSelfCorrection = defaults.shouldEnableSelfCorrection;
     	      this.shouldEnableSqlExecution = defaults.shouldEnableSqlExecution;
+    	      this.subnetId = defaults.subnetId;
     	      this.tableAndColumnDescriptions = defaults.tableAndColumnDescriptions;
     	      this.toolConfigType = defaults.toolConfigType;
         }
 
+        @CustomType.Setter
+        public Builder agentEndpointId(String agentEndpointId) {
+            if (agentEndpointId == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "agentEndpointId");
+            }
+            this.agentEndpointId = agentEndpointId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder apiSchemas(List<GetAgentToolToolConfigApiSchema> apiSchemas) {
+            if (apiSchemas == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "apiSchemas");
+            }
+            this.apiSchemas = apiSchemas;
+            return this;
+        }
+        public Builder apiSchemas(GetAgentToolToolConfigApiSchema... apiSchemas) {
+            return apiSchemas(List.of(apiSchemas));
+        }
         @CustomType.Setter
         public Builder databaseConnections(List<GetAgentToolToolConfigDatabaseConnection> databaseConnections) {
             if (databaseConnections == null) {
@@ -263,6 +340,17 @@ public final class GetAgentToolToolConfig {
             return generationLlmCustomizations(List.of(generationLlmCustomizations));
         }
         @CustomType.Setter
+        public Builder httpEndpointAuthConfigs(List<GetAgentToolToolConfigHttpEndpointAuthConfig> httpEndpointAuthConfigs) {
+            if (httpEndpointAuthConfigs == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "httpEndpointAuthConfigs");
+            }
+            this.httpEndpointAuthConfigs = httpEndpointAuthConfigs;
+            return this;
+        }
+        public Builder httpEndpointAuthConfigs(GetAgentToolToolConfigHttpEndpointAuthConfig... httpEndpointAuthConfigs) {
+            return httpEndpointAuthConfigs(List.of(httpEndpointAuthConfigs));
+        }
+        @CustomType.Setter
         public Builder iclExamples(List<GetAgentToolToolConfigIclExample> iclExamples) {
             if (iclExamples == null) {
               throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "iclExamples");
@@ -309,6 +397,14 @@ public final class GetAgentToolToolConfig {
             return this;
         }
         @CustomType.Setter
+        public Builder subnetId(String subnetId) {
+            if (subnetId == null) {
+              throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "subnetId");
+            }
+            this.subnetId = subnetId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tableAndColumnDescriptions(List<GetAgentToolToolConfigTableAndColumnDescription> tableAndColumnDescriptions) {
             if (tableAndColumnDescriptions == null) {
               throw new MissingRequiredPropertyException("GetAgentToolToolConfig", "tableAndColumnDescriptions");
@@ -329,16 +425,20 @@ public final class GetAgentToolToolConfig {
         }
         public GetAgentToolToolConfig build() {
             final var _resultValue = new GetAgentToolToolConfig();
+            _resultValue.agentEndpointId = agentEndpointId;
+            _resultValue.apiSchemas = apiSchemas;
             _resultValue.databaseConnections = databaseConnections;
             _resultValue.databaseSchemas = databaseSchemas;
             _resultValue.dialect = dialect;
             _resultValue.functions = functions;
             _resultValue.generationLlmCustomizations = generationLlmCustomizations;
+            _resultValue.httpEndpointAuthConfigs = httpEndpointAuthConfigs;
             _resultValue.iclExamples = iclExamples;
             _resultValue.knowledgeBaseConfigs = knowledgeBaseConfigs;
             _resultValue.modelSize = modelSize;
             _resultValue.shouldEnableSelfCorrection = shouldEnableSelfCorrection;
             _resultValue.shouldEnableSqlExecution = shouldEnableSqlExecution;
+            _resultValue.subnetId = subnetId;
             _resultValue.tableAndColumnDescriptions = tableAndColumnDescriptions;
             _resultValue.toolConfigType = toolConfigType;
             return _resultValue;

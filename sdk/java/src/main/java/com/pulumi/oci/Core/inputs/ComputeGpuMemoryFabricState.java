@@ -32,6 +32,21 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
     }
 
     /**
+     * The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    @Import(name="availableHostCount")
+    private @Nullable Output<String> availableHostCount;
+
+    /**
+     * @return The total number of available bare metal hosts located in this compute GPU memory fabric.
+     * 
+     */
+    public Optional<Output<String>> availableHostCount() {
+        return Optional.ofNullable(this.availableHostCount);
+    }
+
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
      * 
      */
@@ -251,6 +266,7 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
 
     private ComputeGpuMemoryFabricState(ComputeGpuMemoryFabricState $) {
         this.additionalData = $.additionalData;
+        this.availableHostCount = $.availableHostCount;
         this.compartmentId = $.compartmentId;
         this.computeGpuMemoryFabricId = $.computeGpuMemoryFabricId;
         this.computeHpcIslandId = $.computeHpcIslandId;
@@ -304,6 +320,27 @@ public final class ComputeGpuMemoryFabricState extends com.pulumi.resources.Reso
          */
         public Builder additionalData(Map<String,String> additionalData) {
             return additionalData(Output.of(additionalData));
+        }
+
+        /**
+         * @param availableHostCount The total number of available bare metal hosts located in this compute GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableHostCount(@Nullable Output<String> availableHostCount) {
+            $.availableHostCount = availableHostCount;
+            return this;
+        }
+
+        /**
+         * @param availableHostCount The total number of available bare metal hosts located in this compute GPU memory fabric.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableHostCount(String availableHostCount) {
+            return availableHostCount(Output.of(availableHostCount));
         }
 
         /**

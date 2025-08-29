@@ -38,6 +38,12 @@ from .get_dbmulticloud_oracle_db_azure_vault import *
 from .get_dbmulticloud_oracle_db_azure_vault_association import *
 from .get_dbmulticloud_oracle_db_azure_vault_associations import *
 from .get_dbmulticloud_oracle_db_azure_vaults import *
+from .get_managed_kafka_kafka_cluster import *
+from .get_managed_kafka_kafka_cluster_config import *
+from .get_managed_kafka_kafka_cluster_config_version import *
+from .get_managed_kafka_kafka_cluster_config_versions import *
+from .get_managed_kafka_kafka_cluster_configs import *
+from .get_managed_kafka_kafka_clusters import *
 from .get_wlms_managed_instance import *
 from .get_wlms_managed_instance_scan_results import *
 from .get_wlms_managed_instance_server import *
@@ -55,5 +61,8 @@ from .get_wlms_wls_domain_server_backups import *
 from .get_wlms_wls_domain_server_installed_patches import *
 from .get_wlms_wls_domain_servers import *
 from .get_wlms_wls_domains import *
+from .managed_kafka_kafka_cluster import *
+from .managed_kafka_kafka_cluster_config import *
+from .managed_kafka_kafka_cluster_superusers_management import *
 from ._inputs import *
 from . import outputs

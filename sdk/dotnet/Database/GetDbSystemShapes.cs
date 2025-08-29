@@ -30,6 +30,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = dbSystemShapeAvailabilityDomain,
+        ///         ShapeAttribute = dbSystemShapeShapeAttribute,
         ///     });
         /// 
         /// });
@@ -57,6 +58,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = dbSystemShapeAvailabilityDomain,
+        ///         ShapeAttribute = dbSystemShapeShapeAttribute,
         ///     });
         /// 
         /// });
@@ -84,6 +86,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         AvailabilityDomain = dbSystemShapeAvailabilityDomain,
+        ///         ShapeAttribute = dbSystemShapeShapeAttribute,
         ///     });
         /// 
         /// });
@@ -116,6 +119,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public string? ShapeAttribute { get; set; }
+
         public GetDbSystemShapesArgs()
         {
         }
@@ -144,6 +153,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// If provided and applicable, return DB System shape parameters based on the shapeAttribute provided
+        /// </summary>
+        [Input("shapeAttribute")]
+        public Input<string>? ShapeAttribute { get; set; }
+
         public GetDbSystemShapesInvokeArgs()
         {
         }
@@ -165,6 +180,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ShapeAttribute;
 
         [OutputConstructor]
         private GetDbSystemShapesResult(
@@ -176,13 +192,16 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetDbSystemShapesFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? shapeAttribute)
         {
             AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             DbSystemShapes = dbSystemShapes;
             Filters = filters;
             Id = id;
+            ShapeAttribute = shapeAttribute;
         }
     }
 }

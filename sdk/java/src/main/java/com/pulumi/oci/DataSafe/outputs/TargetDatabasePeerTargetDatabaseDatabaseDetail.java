@@ -49,6 +49,11 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
      */
     private @Nullable Integer listenerPort;
     /**
+     * @return (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    private @Nullable String pluggableDatabaseId;
+    /**
      * @return (Updatable) The service name of the database registered as target database.
      * 
      */
@@ -110,6 +115,13 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
         return Optional.ofNullable(this.listenerPort);
     }
     /**
+     * @return (Updatable) The OCID of the pluggable database registered as a target database in Data Safe.
+     * 
+     */
+    public Optional<String> pluggableDatabaseId() {
+        return Optional.ofNullable(this.pluggableDatabaseId);
+    }
+    /**
      * @return (Updatable) The service name of the database registered as target database.
      * 
      */
@@ -140,6 +152,7 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
         private @Nullable String instanceId;
         private @Nullable List<String> ipAddresses;
         private @Nullable Integer listenerPort;
+        private @Nullable String pluggableDatabaseId;
         private @Nullable String serviceName;
         private @Nullable String vmClusterId;
         public Builder() {}
@@ -152,6 +165,7 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
     	      this.instanceId = defaults.instanceId;
     	      this.ipAddresses = defaults.ipAddresses;
     	      this.listenerPort = defaults.listenerPort;
+    	      this.pluggableDatabaseId = defaults.pluggableDatabaseId;
     	      this.serviceName = defaults.serviceName;
     	      this.vmClusterId = defaults.vmClusterId;
         }
@@ -202,6 +216,12 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder pluggableDatabaseId(@Nullable String pluggableDatabaseId) {
+
+            this.pluggableDatabaseId = pluggableDatabaseId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder serviceName(@Nullable String serviceName) {
 
             this.serviceName = serviceName;
@@ -222,6 +242,7 @@ public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
             _resultValue.instanceId = instanceId;
             _resultValue.ipAddresses = ipAddresses;
             _resultValue.listenerPort = listenerPort;
+            _resultValue.pluggableDatabaseId = pluggableDatabaseId;
             _resultValue.serviceName = serviceName;
             _resultValue.vmClusterId = vmClusterId;
             return _resultValue;

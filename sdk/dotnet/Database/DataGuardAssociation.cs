@@ -41,6 +41,8 @@ namespace Pulumi.Oci.Database
     ///         TransportType = dataGuardAssociationTransportType,
     ///         AvailabilityDomain = dataGuardAssociationAvailabilityDomain,
     ///         BackupNetworkNsgIds = dataGuardAssociationBackupNetworkNsgIds,
+    ///         ComputeCount = dataGuardAssociationComputeCount,
+    ///         ComputeModel = dataGuardAssociationComputeModel,
     ///         CpuCoreCount = dataGuardAssociationCpuCoreCount,
     ///         DatabaseDefinedTags = dataGuardAssociationDatabaseDefinedTags,
     ///         DatabaseFreeformTags = dataGuardAssociationDatabaseFreeformTags,
@@ -108,6 +110,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("backupNetworkNsgIds")]
         public Output<ImmutableArray<string>> BackupNetworkNsgIds { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        [Output("computeCount")]
+        public Output<int> ComputeCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Output("computeModel")]
+        public Output<string> ComputeModel { get; private set; } = null!;
 
         /// <summary>
         /// The number of CPU cores available for AMD-based virtual machine DB systems.
@@ -459,6 +473,18 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
+
+        /// <summary>
         /// The number of CPU cores available for AMD-based virtual machine DB systems.
         /// </summary>
         [Input("cpuCoreCount")]
@@ -786,6 +812,18 @@ namespace Pulumi.Oci.Database
             get => _backupNetworkNsgIds ?? (_backupNetworkNsgIds = new InputList<string>());
             set => _backupNetworkNsgIds = value;
         }
+
+        /// <summary>
+        /// The number of compute servers for the DB system.
+        /// </summary>
+        [Input("computeCount")]
+        public Input<int>? ComputeCount { get; set; }
+
+        /// <summary>
+        /// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        /// </summary>
+        [Input("computeModel")]
+        public Input<string>? ComputeModel { get; set; }
 
         /// <summary>
         /// The number of CPU cores available for AMD-based virtual machine DB systems.

@@ -51,7 +51,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = userAssessmentIsScheduleAssessment,
         ///         ScheduleUserAssessmentId = testUserAssessment.Id,
         ///         State = userAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = userAssessmentTargetType,
         ///         TimeCreatedGreaterThanOrEqualTo = userAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = userAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = userAssessmentTriggeredBy,
@@ -104,7 +106,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = userAssessmentIsScheduleAssessment,
         ///         ScheduleUserAssessmentId = testUserAssessment.Id,
         ///         State = userAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = userAssessmentTargetType,
         ///         TimeCreatedGreaterThanOrEqualTo = userAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = userAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = userAssessmentTriggeredBy,
@@ -157,7 +161,9 @@ namespace Pulumi.Oci.DataSafe
         ///         IsScheduleAssessment = userAssessmentIsScheduleAssessment,
         ///         ScheduleUserAssessmentId = testUserAssessment.Id,
         ///         State = userAssessmentState,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
+        ///         TargetType = userAssessmentTargetType,
         ///         TimeCreatedGreaterThanOrEqualTo = userAssessmentTimeCreatedGreaterThanOrEqualTo,
         ///         TimeCreatedLessThan = userAssessmentTimeCreatedLessThan,
         ///         TriggeredBy = userAssessmentTriggeredBy,
@@ -231,10 +237,22 @@ namespace Pulumi.Oci.DataSafe
         public string? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public string? TargetId { get; set; }
+
+        /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        [Input("targetType")]
+        public string? TargetType { get; set; }
 
         /// <summary>
         /// A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
@@ -329,10 +347,22 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
+
+        /// <summary>
+        /// A filter to return only only target database resources or target database group resources.
+        /// </summary>
+        [Input("targetType")]
+        public Input<string>? TargetType { get; set; }
 
         /// <summary>
         /// A filter to return only user assessments that were created after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using timeCreatedGreaterThanOrEqualTo parameter retrieves all assessments created after that date.
@@ -401,7 +431,15 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the user assessment.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The OCID of target database group.
+        /// </summary>
+        public readonly string? TargetDatabaseGroupId;
         public readonly string? TargetId;
+        /// <summary>
+        /// Indicates whether the user assessment is for a target database or a target database group.
+        /// </summary>
+        public readonly string? TargetType;
         public readonly string? TimeCreatedGreaterThanOrEqualTo;
         public readonly string? TimeCreatedLessThan;
         /// <summary>
@@ -441,7 +479,11 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? targetDatabaseGroupId,
+
             string? targetId,
+
+            string? targetType,
 
             string? timeCreatedGreaterThanOrEqualTo,
 
@@ -464,7 +506,9 @@ namespace Pulumi.Oci.DataSafe
             IsScheduleAssessment = isScheduleAssessment;
             ScheduleUserAssessmentId = scheduleUserAssessmentId;
             State = state;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
+            TargetType = targetType;
             TimeCreatedGreaterThanOrEqualTo = timeCreatedGreaterThanOrEqualTo;
             TimeCreatedLessThan = timeCreatedLessThan;
             TriggeredBy = triggeredBy;

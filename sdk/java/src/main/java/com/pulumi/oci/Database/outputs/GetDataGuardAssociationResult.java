@@ -27,6 +27,8 @@ public final class GetDataGuardAssociationResult {
     private String applyRate;
     private String availabilityDomain;
     private List<String> backupNetworkNsgIds;
+    private Integer computeCount;
+    private String computeModel;
     private Integer cpuCoreCount;
     private Boolean createAsync;
     private String creationType;
@@ -148,6 +150,12 @@ public final class GetDataGuardAssociationResult {
     }
     public List<String> backupNetworkNsgIds() {
         return this.backupNetworkNsgIds;
+    }
+    public Integer computeCount() {
+        return this.computeCount;
+    }
+    public String computeModel() {
+        return this.computeModel;
     }
     public Integer cpuCoreCount() {
         return this.cpuCoreCount;
@@ -351,6 +359,8 @@ public final class GetDataGuardAssociationResult {
         private String applyRate;
         private String availabilityDomain;
         private List<String> backupNetworkNsgIds;
+        private Integer computeCount;
+        private String computeModel;
         private Integer cpuCoreCount;
         private Boolean createAsync;
         private String creationType;
@@ -402,6 +412,8 @@ public final class GetDataGuardAssociationResult {
     	      this.applyRate = defaults.applyRate;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
+    	      this.computeCount = defaults.computeCount;
+    	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
     	      this.createAsync = defaults.createAsync;
     	      this.creationType = defaults.creationType;
@@ -482,6 +494,22 @@ public final class GetDataGuardAssociationResult {
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
+        }
+        @CustomType.Setter
+        public Builder computeCount(Integer computeCount) {
+            if (computeCount == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "computeCount");
+            }
+            this.computeCount = computeCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder computeModel(String computeModel) {
+            if (computeModel == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "computeModel");
+            }
+            this.computeModel = computeModel;
+            return this;
         }
         @CustomType.Setter
         public Builder cpuCoreCount(Integer cpuCoreCount) {
@@ -850,6 +878,8 @@ public final class GetDataGuardAssociationResult {
             _resultValue.applyRate = applyRate;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupNetworkNsgIds = backupNetworkNsgIds;
+            _resultValue.computeCount = computeCount;
+            _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
             _resultValue.createAsync = createAsync;
             _resultValue.creationType = creationType;

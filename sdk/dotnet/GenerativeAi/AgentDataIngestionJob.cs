@@ -69,6 +69,12 @@ namespace Pulumi.Oci.GenerativeAi
         public Output<ImmutableArray<Outputs.AgentDataIngestionJobDataIngestionJobStatistic>> DataIngestionJobStatistics { get; private set; } = null!;
 
         /// <summary>
+        /// DataIngestionJob type.
+        /// </summary>
+        [Output("dataIngestionJobTypes")]
+        public Output<ImmutableArray<Outputs.AgentDataIngestionJobDataIngestionJobType>> DataIngestionJobTypes { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
         /// </summary>
         [Output("dataSourceId")]
@@ -101,6 +107,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
+
+        [Output("knowledgeBaseId")]
+        public Output<string> KnowledgeBaseId { get; private set; } = null!;
 
         /// <summary>
         /// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
@@ -256,6 +265,18 @@ namespace Pulumi.Oci.GenerativeAi
             set => _dataIngestionJobStatistics = value;
         }
 
+        [Input("dataIngestionJobTypes")]
+        private InputList<Inputs.AgentDataIngestionJobDataIngestionJobTypeGetArgs>? _dataIngestionJobTypes;
+
+        /// <summary>
+        /// DataIngestionJob type.
+        /// </summary>
+        public InputList<Inputs.AgentDataIngestionJobDataIngestionJobTypeGetArgs> DataIngestionJobTypes
+        {
+            get => _dataIngestionJobTypes ?? (_dataIngestionJobTypes = new InputList<Inputs.AgentDataIngestionJobDataIngestionJobTypeGetArgs>());
+            set => _dataIngestionJobTypes = value;
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent DataSource.
         /// </summary>
@@ -301,6 +322,9 @@ namespace Pulumi.Oci.GenerativeAi
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        [Input("knowledgeBaseId")]
+        public Input<string>? KnowledgeBaseId { get; set; }
 
         /// <summary>
         /// A message that describes the current state of the data ingestion job in more detail. For example, can be used to provide actionable information for a resource in the Failed state.

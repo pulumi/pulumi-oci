@@ -28,15 +28,12 @@ class UserAssessmentArgs:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 schedule: Optional[pulumi.Input[_builtins.str]] = None):
+                 schedule: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a UserAssessment resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains the user assessment.
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which the user assessment is to be run.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) The description of the user assessment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The display name of the user assessment.
@@ -45,6 +42,11 @@ class UserAssessmentArgs:
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
+        :param pulumi.Input[_builtins.str] target_type: The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "target_id", target_id)
@@ -60,6 +62,8 @@ class UserAssessmentArgs:
             pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -77,11 +81,7 @@ class UserAssessmentArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which user assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -163,6 +163,22 @@ class UserAssessmentArgs:
     def schedule(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "schedule", value)
 
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
+
 
 @pulumi.input_type
 class _UserAssessmentState:
@@ -184,8 +200,10 @@ class _UserAssessmentState:
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  statistics: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 target_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
                  target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_assessed: Optional[pulumi.Input[_builtins.str]] = None,
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -212,12 +230,14 @@ class _UserAssessmentState:
         :param pulumi.Input[_builtins.str] state: The current state of the user assessment.
         :param pulumi.Input[_builtins.str] statistics: Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which the user assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_database_group_id: The OCID of target database group.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
+        :param pulumi.Input[_builtins.str] target_type: The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[_builtins.str] time_created: The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_last_assessed: The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -258,10 +278,14 @@ class _UserAssessmentState:
             pulumi.set(__self__, "statistics", statistics)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if target_database_group_id is not None:
+            pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if target_ids is not None:
             pulumi.set(__self__, "target_ids", target_ids)
+        if target_type is not None:
+            pulumi.set(__self__, "target_type", target_type)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_last_assessed is not None:
@@ -480,14 +504,22 @@ class _UserAssessmentState:
         pulumi.set(self, "system_tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The OCID of target database group.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @target_database_group_id.setter
+    def target_database_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_database_group_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which user assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -506,6 +538,22 @@ class _UserAssessmentState:
     @target_ids.setter
     def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "target_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_type", value)
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -582,6 +630,7 @@ class UserAssessment(pulumi.CustomResource):
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the User Assessment resource in Oracle Cloud Infrastructure Data Safe service.
@@ -608,7 +657,8 @@ class UserAssessment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_assessment_scheduled=user_assessment_is_assessment_scheduled,
-            schedule=user_assessment_schedule)
+            schedule=user_assessment_schedule,
+            target_type=user_assessment_target_type)
         ```
 
         ## Import
@@ -630,7 +680,8 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] schedule: (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which the user assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_type: The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
                
                
                ** IMPORTANT **
@@ -667,7 +718,8 @@ class UserAssessment(pulumi.CustomResource):
                 "Department": "Finance",
             },
             is_assessment_scheduled=user_assessment_is_assessment_scheduled,
-            schedule=user_assessment_schedule)
+            schedule=user_assessment_schedule,
+            target_type=user_assessment_target_type)
         ```
 
         ## Import
@@ -701,6 +753,7 @@ class UserAssessment(pulumi.CustomResource):
                  is_assessment_scheduled: Optional[pulumi.Input[_builtins.bool]] = None,
                  schedule: Optional[pulumi.Input[_builtins.str]] = None,
                  target_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -722,6 +775,7 @@ class UserAssessment(pulumi.CustomResource):
             if target_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_id'")
             __props__.__dict__["target_id"] = target_id
+            __props__.__dict__["target_type"] = target_type
             __props__.__dict__["ignored_assessment_ids"] = None
             __props__.__dict__["ignored_targets"] = None
             __props__.__dict__["is_baseline"] = None
@@ -732,6 +786,7 @@ class UserAssessment(pulumi.CustomResource):
             __props__.__dict__["state"] = None
             __props__.__dict__["statistics"] = None
             __props__.__dict__["system_tags"] = None
+            __props__.__dict__["target_database_group_id"] = None
             __props__.__dict__["target_ids"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_last_assessed"] = None
@@ -765,8 +820,10 @@ class UserAssessment(pulumi.CustomResource):
             state: Optional[pulumi.Input[_builtins.str]] = None,
             statistics: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             target_id: Optional[pulumi.Input[_builtins.str]] = None,
             target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_type: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_last_assessed: Optional[pulumi.Input[_builtins.str]] = None,
             time_updated: Optional[pulumi.Input[_builtins.str]] = None,
@@ -798,12 +855,14 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] state: The current state of the user assessment.
         :param pulumi.Input[_builtins.str] statistics: Map that contains maps of values. Example: `{"Operations": {"CostCenter": "42"}}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database on which the user assessment is to be run.
+        :param pulumi.Input[_builtins.str] target_database_group_id: The OCID of target database group.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target database or target database group on which user assessment is to be run.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
+        :param pulumi.Input[_builtins.str] target_type: The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] target_ids: Array of database target OCIDs.
         :param pulumi.Input[_builtins.str] time_created: The date and time the user assessment was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_last_assessed: The date and time the user assessment was last executed, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param pulumi.Input[_builtins.str] time_updated: The date and time the user assessment was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -831,8 +890,10 @@ class UserAssessment(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["statistics"] = statistics
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["target_database_group_id"] = target_database_group_id
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["target_ids"] = target_ids
+        __props__.__dict__["target_type"] = target_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_assessed"] = time_last_assessed
         __props__.__dict__["time_updated"] = time_updated
@@ -979,14 +1040,18 @@ class UserAssessment(pulumi.CustomResource):
         return pulumi.get(self, "system_tags")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of target database group.
+        """
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The OCID of the target database on which the user assessment is to be run.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the target database or target database group on which user assessment is to be run.
         """
         return pulumi.get(self, "target_id")
 
@@ -997,6 +1062,18 @@ class UserAssessment(pulumi.CustomResource):
         Array of database target OCIDs.
         """
         return pulumi.get(self, "target_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of user assessment resource whether it is individual or group resource. For individual target use type TARGET_DATABASE and for group resource use type TARGET_DATABASE_GROUP. If not provided, TARGET_DATABASE would be used as default value.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

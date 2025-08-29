@@ -24,6 +24,11 @@ public final class GetReportsResult {
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
+     * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    private @Nullable String dataSource;
+    /**
      * @return Name of the report.
      * 
      */
@@ -75,6 +80,13 @@ public final class GetReportsResult {
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
+    }
+    /**
+     * @return Specifies the name of a resource that provides data for the report. For example alerts, events.
+     * 
+     */
+    public Optional<String> dataSource() {
+        return Optional.ofNullable(this.dataSource);
     }
     /**
      * @return Name of the report.
@@ -147,6 +159,7 @@ public final class GetReportsResult {
         private @Nullable String accessLevel;
         private String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
+        private @Nullable String dataSource;
         private @Nullable String displayName;
         private @Nullable List<GetReportsFilter> filters;
         private String id;
@@ -163,6 +176,7 @@ public final class GetReportsResult {
     	      this.accessLevel = defaults.accessLevel;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
+    	      this.dataSource = defaults.dataSource;
     	      this.displayName = defaults.displayName;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -193,6 +207,12 @@ public final class GetReportsResult {
         public Builder compartmentIdInSubtree(@Nullable Boolean compartmentIdInSubtree) {
 
             this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder dataSource(@Nullable String dataSource) {
+
+            this.dataSource = dataSource;
             return this;
         }
         @CustomType.Setter
@@ -270,6 +290,7 @@ public final class GetReportsResult {
             _resultValue.accessLevel = accessLevel;
             _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
+            _resultValue.dataSource = dataSource;
             _resultValue.displayName = displayName;
             _resultValue.filters = filters;
             _resultValue.id = id;

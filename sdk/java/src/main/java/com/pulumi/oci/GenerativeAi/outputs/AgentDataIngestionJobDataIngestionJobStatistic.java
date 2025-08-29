@@ -22,6 +22,11 @@ public final class AgentDataIngestionJobDataIngestionJobStatistic {
      */
     private @Nullable Integer numberOfFailedFiles;
     /**
+     * @return The number of files that have been ignored during the ingestion.
+     * 
+     */
+    private @Nullable Integer numberOfIgnoredFiles;
+    /**
      * @return The number of files that have been successfully ingested during the ingestion.
      * 
      */
@@ -43,6 +48,13 @@ public final class AgentDataIngestionJobDataIngestionJobStatistic {
         return Optional.ofNullable(this.numberOfFailedFiles);
     }
     /**
+     * @return The number of files that have been ignored during the ingestion.
+     * 
+     */
+    public Optional<Integer> numberOfIgnoredFiles() {
+        return Optional.ofNullable(this.numberOfIgnoredFiles);
+    }
+    /**
      * @return The number of files that have been successfully ingested during the ingestion.
      * 
      */
@@ -61,12 +73,14 @@ public final class AgentDataIngestionJobDataIngestionJobStatistic {
     public static final class Builder {
         private @Nullable Integer durationInSeconds;
         private @Nullable Integer numberOfFailedFiles;
+        private @Nullable Integer numberOfIgnoredFiles;
         private @Nullable Integer numberOfIngestedFiles;
         public Builder() {}
         public Builder(AgentDataIngestionJobDataIngestionJobStatistic defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.durationInSeconds = defaults.durationInSeconds;
     	      this.numberOfFailedFiles = defaults.numberOfFailedFiles;
+    	      this.numberOfIgnoredFiles = defaults.numberOfIgnoredFiles;
     	      this.numberOfIngestedFiles = defaults.numberOfIngestedFiles;
         }
 
@@ -83,6 +97,12 @@ public final class AgentDataIngestionJobDataIngestionJobStatistic {
             return this;
         }
         @CustomType.Setter
+        public Builder numberOfIgnoredFiles(@Nullable Integer numberOfIgnoredFiles) {
+
+            this.numberOfIgnoredFiles = numberOfIgnoredFiles;
+            return this;
+        }
+        @CustomType.Setter
         public Builder numberOfIngestedFiles(@Nullable Integer numberOfIngestedFiles) {
 
             this.numberOfIngestedFiles = numberOfIngestedFiles;
@@ -92,6 +112,7 @@ public final class AgentDataIngestionJobDataIngestionJobStatistic {
             final var _resultValue = new AgentDataIngestionJobDataIngestionJobStatistic();
             _resultValue.durationInSeconds = durationInSeconds;
             _resultValue.numberOfFailedFiles = numberOfFailedFiles;
+            _resultValue.numberOfIgnoredFiles = numberOfIgnoredFiles;
             _resultValue.numberOfIngestedFiles = numberOfIngestedFiles;
             return _resultValue;
         }

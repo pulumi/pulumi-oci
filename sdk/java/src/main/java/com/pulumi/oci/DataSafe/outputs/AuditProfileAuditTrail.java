@@ -20,12 +20,17 @@ public final class AuditProfileAuditTrail {
      */
     private @Nullable String auditCollectionStartTime;
     /**
-     * @return The OCID of the audit.
+     * @return The OCID of the  parent audit.
      * 
      */
     private @Nullable String auditProfileId;
     /**
-     * @return (Updatable) The OCID of the compartment that contains the audit.
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    private @Nullable Boolean canUpdateLastArchiveTimeOnTarget;
+    /**
+     * @return (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     private @Nullable String compartmentId;
@@ -100,7 +105,7 @@ public final class AuditProfileAuditTrail {
      */
     private @Nullable Map<String,String> systemTags;
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     private @Nullable String targetId;
@@ -144,14 +149,21 @@ public final class AuditProfileAuditTrail {
         return Optional.ofNullable(this.auditCollectionStartTime);
     }
     /**
-     * @return The OCID of the audit.
+     * @return The OCID of the  parent audit.
      * 
      */
     public Optional<String> auditProfileId() {
         return Optional.ofNullable(this.auditProfileId);
     }
     /**
-     * @return (Updatable) The OCID of the compartment that contains the audit.
+     * @return Indicates if the Datasafe updates last archive time on target database. If isAutoPurgeEnabled field is enabled, this field must be true.
+     * 
+     */
+    public Optional<Boolean> canUpdateLastArchiveTimeOnTarget() {
+        return Optional.ofNullable(this.canUpdateLastArchiveTimeOnTarget);
+    }
+    /**
+     * @return (Updatable) The OCID of the compartment where you want to create the audit profile.
      * 
      */
     public Optional<String> compartmentId() {
@@ -256,7 +268,7 @@ public final class AuditProfileAuditTrail {
         return this.systemTags == null ? Map.of() : this.systemTags;
     }
     /**
-     * @return The OCID of the Data Safe target for which the audit profile is created.
+     * @return The OCID of the target database or target database group for which the audit profile is created.
      * 
      */
     public Optional<String> targetId() {
@@ -316,6 +328,7 @@ public final class AuditProfileAuditTrail {
     public static final class Builder {
         private @Nullable String auditCollectionStartTime;
         private @Nullable String auditProfileId;
+        private @Nullable Boolean canUpdateLastArchiveTimeOnTarget;
         private @Nullable String compartmentId;
         private @Nullable Map<String,String> definedTags;
         private @Nullable String description;
@@ -343,6 +356,7 @@ public final class AuditProfileAuditTrail {
     	      Objects.requireNonNull(defaults);
     	      this.auditCollectionStartTime = defaults.auditCollectionStartTime;
     	      this.auditProfileId = defaults.auditProfileId;
+    	      this.canUpdateLastArchiveTimeOnTarget = defaults.canUpdateLastArchiveTimeOnTarget;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -377,6 +391,12 @@ public final class AuditProfileAuditTrail {
         public Builder auditProfileId(@Nullable String auditProfileId) {
 
             this.auditProfileId = auditProfileId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder canUpdateLastArchiveTimeOnTarget(@Nullable Boolean canUpdateLastArchiveTimeOnTarget) {
+
+            this.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             return this;
         }
         @CustomType.Setter
@@ -515,6 +535,7 @@ public final class AuditProfileAuditTrail {
             final var _resultValue = new AuditProfileAuditTrail();
             _resultValue.auditCollectionStartTime = auditCollectionStartTime;
             _resultValue.auditProfileId = auditProfileId;
+            _resultValue.canUpdateLastArchiveTimeOnTarget = canUpdateLastArchiveTimeOnTarget;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

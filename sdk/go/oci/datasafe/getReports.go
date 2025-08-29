@@ -33,6 +33,7 @@ import (
 //				CompartmentId:                     compartmentId,
 //				AccessLevel:                       pulumi.StringRef(reportAccessLevel),
 //				CompartmentIdInSubtree:            pulumi.BoolRef(reportCompartmentIdInSubtree),
+//				DataSource:                        pulumi.StringRef(reportDataSource),
 //				DisplayName:                       pulumi.StringRef(reportDisplayName),
 //				MimeType:                          pulumi.StringRef(reportMimeType),
 //				ReportDefinitionId:                pulumi.StringRef(testReportDefinition.Id),
@@ -67,6 +68,8 @@ type GetReportsArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
+	DataSource *string `pulumi:"dataSource"`
 	// The name of the report definition to query.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetReportsFilter `pulumi:"filters"`
@@ -94,6 +97,8 @@ type GetReportsResult struct {
 	// The OCID of the compartment containing the report.
 	CompartmentId          string `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool  `pulumi:"compartmentIdInSubtree"`
+	// Specifies the name of a resource that provides data for the report. For example alerts, events.
+	DataSource *string `pulumi:"dataSource"`
 	// Name of the report.
 	DisplayName *string            `pulumi:"displayName"`
 	Filters     []GetReportsFilter `pulumi:"filters"`
@@ -130,6 +135,8 @@ type GetReportsOutputArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
 	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// Specifies the name of a resource that provides data for the report. For example  alerts, events.
+	DataSource pulumi.StringPtrInput `pulumi:"dataSource"`
 	// The name of the report definition to query.
 	DisplayName pulumi.StringPtrInput      `pulumi:"displayName"`
 	Filters     GetReportsFilterArrayInput `pulumi:"filters"`
@@ -181,6 +188,11 @@ func (o GetReportsResultOutput) CompartmentId() pulumi.StringOutput {
 
 func (o GetReportsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *bool { return v.CompartmentIdInSubtree }).(pulumi.BoolPtrOutput)
+}
+
+// Specifies the name of a resource that provides data for the report. For example alerts, events.
+func (o GetReportsResultOutput) DataSource() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportsResult) *string { return v.DataSource }).(pulumi.StringPtrOutput)
 }
 
 // Name of the report.

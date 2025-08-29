@@ -16,8 +16,7 @@ public final class GetAgentKnowledgeBaseIndexConfigDatabaseConnection {
      */
     private String connectionId;
     /**
-     * @return The type of Database connection. The allowed values are:
-     * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+     * @return The type of Database connection.
      * 
      */
     private String connectionType;
@@ -31,8 +30,7 @@ public final class GetAgentKnowledgeBaseIndexConfigDatabaseConnection {
         return this.connectionId;
     }
     /**
-     * @return The type of Database connection. The allowed values are:
-     * * `DATABASE_TOOL_CONNECTION`: This allows the service to connect to a vector store via a Database Tools Connection.
+     * @return The type of Database connection.
      * 
      */
     public String connectionType() {

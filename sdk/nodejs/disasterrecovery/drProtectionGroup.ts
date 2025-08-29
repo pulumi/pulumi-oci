@@ -49,6 +49,7 @@ import * as utilities from "../utilities";
  *         }],
  *         backupConfig: {
  *             backupSchedule: drProtectionGroupMembersBackupConfigBackupSchedule,
+ *             excludeNamespaces: drProtectionGroupMembersBackupConfigExcludeNamespaces,
  *             imageReplicationVaultSecretId: testSecret.id,
  *             maxNumberOfBackupsRetained: drProtectionGroupMembersBackupConfigMaxNumberOfBackupsRetained,
  *             namespaces: drProtectionGroupMembersBackupConfigNamespaces,
@@ -82,6 +83,14 @@ import * as utilities from "../utilities";
  *             vaultId: testVault.id,
  *         },
  *         connectionStringType: drProtectionGroupMembersConnectionStringType,
+ *         dbSystemAdminUserDetails: {
+ *             passwordVaultSecretId: testSecret.id,
+ *             username: drProtectionGroupMembersDbSystemAdminUserDetailsUsername,
+ *         },
+ *         dbSystemReplicationUserDetails: {
+ *             passwordVaultSecretId: testSecret.id,
+ *             username: drProtectionGroupMembersDbSystemReplicationUserDetailsUsername,
+ *         },
  *         destinationAvailabilityDomain: drProtectionGroupMembersDestinationAvailabilityDomain,
  *         destinationBackupPolicyId: testPolicy.id,
  *         destinationCapacityReservationId: destinationCapacityReservationId,
@@ -109,6 +118,8 @@ import * as utilities from "../utilities";
  *                 mountTargetId: testMountTarget.id,
  *             },
  *         }],
+ *         gtidReconciliationTimeout: drProtectionGroupMembersGtidReconciliationTimeout,
+ *         isContinueOnGtidReconciliationTimeout: drProtectionGroupMembersIsContinueOnGtidReconciliationTimeout,
  *         isMovable: drProtectionGroupMembersIsMovable,
  *         isRetainFaultDomain: drProtectionGroupMembersIsRetainFaultDomain,
  *         isStartStopEnabled: drProtectionGroupMembersIsStartStopEnabled,
@@ -129,6 +140,7 @@ import * as utilities from "../utilities";
  *             sourceNetworkLoadBalancerId: testNetworkLoadBalancer.id,
  *         }],
  *         peerClusterId: testCluster.id,
+ *         peerDbSystemId: testDbSystem.id,
  *         sourceVolumeToDestinationEncryptionKeyMappings: [{
  *             destinationEncryptionKey: {
  *                 encryptionKeyId: testKey.id,

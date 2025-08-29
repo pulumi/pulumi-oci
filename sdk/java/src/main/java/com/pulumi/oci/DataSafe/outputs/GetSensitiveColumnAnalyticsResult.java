@@ -57,6 +57,7 @@ public final class GetSensitiveColumnAnalyticsResult {
      * 
      */
     private @Nullable List<String> sensitiveTypeIds;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target database associated with the sensitive column.
      * 
@@ -131,6 +132,9 @@ public final class GetSensitiveColumnAnalyticsResult {
     public List<String> sensitiveTypeIds() {
         return this.sensitiveTypeIds == null ? List.of() : this.sensitiveTypeIds;
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the target database associated with the sensitive column.
      * 
@@ -161,6 +165,7 @@ public final class GetSensitiveColumnAnalyticsResult {
         private @Nullable String sensitiveDataModelId;
         private @Nullable String sensitiveTypeGroupId;
         private @Nullable List<String> sensitiveTypeIds;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetSensitiveColumnAnalyticsResult defaults) {
@@ -178,6 +183,7 @@ public final class GetSensitiveColumnAnalyticsResult {
     	      this.sensitiveDataModelId = defaults.sensitiveDataModelId;
     	      this.sensitiveTypeGroupId = defaults.sensitiveTypeGroupId;
     	      this.sensitiveTypeIds = defaults.sensitiveTypeIds;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -287,6 +293,12 @@ public final class GetSensitiveColumnAnalyticsResult {
             return sensitiveTypeIds(List.of(sensitiveTypeIds));
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -307,6 +319,7 @@ public final class GetSensitiveColumnAnalyticsResult {
             _resultValue.sensitiveDataModelId = sensitiveDataModelId;
             _resultValue.sensitiveTypeGroupId = sensitiveTypeGroupId;
             _resultValue.sensitiveTypeIds = sensitiveTypeIds;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

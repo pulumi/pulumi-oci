@@ -370,6 +370,92 @@ class AgentTool(pulumi.CustomResource):
 
         Creates a tool.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_tool = oci.generativeai.AgentTool("test_tool",
+            agent_id=test_agent["id"],
+            compartment_id=compartment_id,
+            description=tool_description,
+            tool_config={
+                "tool_config_type": tool_tool_config_tool_config_type,
+                "agent_endpoint_id": test_agent_endpoint["id"],
+                "api_schema": {
+                    "api_schema_input_location_type": tool_tool_config_api_schema_api_schema_input_location_type,
+                    "bucket": tool_tool_config_api_schema_bucket,
+                    "content": tool_tool_config_api_schema_content,
+                    "namespace": tool_tool_config_api_schema_namespace,
+                    "object": tool_tool_config_api_schema_object,
+                },
+                "database_connection": {
+                    "connection_id": test_connection["id"],
+                    "connection_type": tool_tool_config_database_connection_connection_type,
+                },
+                "database_schema": {
+                    "input_location_type": tool_tool_config_database_schema_input_location_type,
+                    "bucket": tool_tool_config_database_schema_bucket,
+                    "content": tool_tool_config_database_schema_content,
+                    "namespace": tool_tool_config_database_schema_namespace,
+                    "prefix": tool_tool_config_database_schema_prefix,
+                },
+                "dialect": tool_tool_config_dialect,
+                "function": {
+                    "description": tool_tool_config_function_description,
+                    "name": tool_tool_config_function_name,
+                    "parameters": tool_tool_config_function_parameters,
+                },
+                "generation_llm_customization": {
+                    "instruction": tool_tool_config_generation_llm_customization_instruction,
+                },
+                "http_endpoint_auth_config": {
+                    "http_endpoint_auth_sources": [{
+                        "http_endpoint_auth_scope": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope,
+                        "http_endpoint_auth_scope_config": {
+                            "http_endpoint_auth_scope_config_type": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_http_endpoint_auth_scope_config_type,
+                            "client_id": test_client["id"],
+                            "idcs_url": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_idcs_url,
+                            "key_location": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_key_location,
+                            "key_name": test_key["name"],
+                            "scope_url": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_scope_url,
+                            "vault_secret_id": test_secret["id"],
+                        },
+                    }],
+                },
+                "icl_examples": {
+                    "input_location_type": tool_tool_config_icl_examples_input_location_type,
+                    "bucket": tool_tool_config_icl_examples_bucket,
+                    "content": tool_tool_config_icl_examples_content,
+                    "namespace": tool_tool_config_icl_examples_namespace,
+                    "prefix": tool_tool_config_icl_examples_prefix,
+                },
+                "knowledge_base_configs": [{
+                    "knowledge_base_id": test_knowledge_base["id"],
+                }],
+                "model_size": tool_tool_config_model_size,
+                "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
+                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
+                "subnet_id": test_subnet["id"],
+                "table_and_column_description": {
+                    "input_location_type": tool_tool_config_table_and_column_description_input_location_type,
+                    "bucket": tool_tool_config_table_and_column_description_bucket,
+                    "content": tool_tool_config_table_and_column_description_content,
+                    "namespace": tool_tool_config_table_and_column_description_namespace,
+                    "prefix": tool_tool_config_table_and_column_description_prefix,
+                },
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=tool_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            metadata=tool_metadata)
+        ```
+
         ## Import
 
         Tools can be imported using the `id`, e.g.
@@ -399,6 +485,92 @@ class AgentTool(pulumi.CustomResource):
         This resource provides the Tool resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
         Creates a tool.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_tool = oci.generativeai.AgentTool("test_tool",
+            agent_id=test_agent["id"],
+            compartment_id=compartment_id,
+            description=tool_description,
+            tool_config={
+                "tool_config_type": tool_tool_config_tool_config_type,
+                "agent_endpoint_id": test_agent_endpoint["id"],
+                "api_schema": {
+                    "api_schema_input_location_type": tool_tool_config_api_schema_api_schema_input_location_type,
+                    "bucket": tool_tool_config_api_schema_bucket,
+                    "content": tool_tool_config_api_schema_content,
+                    "namespace": tool_tool_config_api_schema_namespace,
+                    "object": tool_tool_config_api_schema_object,
+                },
+                "database_connection": {
+                    "connection_id": test_connection["id"],
+                    "connection_type": tool_tool_config_database_connection_connection_type,
+                },
+                "database_schema": {
+                    "input_location_type": tool_tool_config_database_schema_input_location_type,
+                    "bucket": tool_tool_config_database_schema_bucket,
+                    "content": tool_tool_config_database_schema_content,
+                    "namespace": tool_tool_config_database_schema_namespace,
+                    "prefix": tool_tool_config_database_schema_prefix,
+                },
+                "dialect": tool_tool_config_dialect,
+                "function": {
+                    "description": tool_tool_config_function_description,
+                    "name": tool_tool_config_function_name,
+                    "parameters": tool_tool_config_function_parameters,
+                },
+                "generation_llm_customization": {
+                    "instruction": tool_tool_config_generation_llm_customization_instruction,
+                },
+                "http_endpoint_auth_config": {
+                    "http_endpoint_auth_sources": [{
+                        "http_endpoint_auth_scope": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope,
+                        "http_endpoint_auth_scope_config": {
+                            "http_endpoint_auth_scope_config_type": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_http_endpoint_auth_scope_config_type,
+                            "client_id": test_client["id"],
+                            "idcs_url": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_idcs_url,
+                            "key_location": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_key_location,
+                            "key_name": test_key["name"],
+                            "scope_url": tool_tool_config_http_endpoint_auth_config_http_endpoint_auth_sources_http_endpoint_auth_scope_config_scope_url,
+                            "vault_secret_id": test_secret["id"],
+                        },
+                    }],
+                },
+                "icl_examples": {
+                    "input_location_type": tool_tool_config_icl_examples_input_location_type,
+                    "bucket": tool_tool_config_icl_examples_bucket,
+                    "content": tool_tool_config_icl_examples_content,
+                    "namespace": tool_tool_config_icl_examples_namespace,
+                    "prefix": tool_tool_config_icl_examples_prefix,
+                },
+                "knowledge_base_configs": [{
+                    "knowledge_base_id": test_knowledge_base["id"],
+                }],
+                "model_size": tool_tool_config_model_size,
+                "should_enable_self_correction": tool_tool_config_should_enable_self_correction,
+                "should_enable_sql_execution": tool_tool_config_should_enable_sql_execution,
+                "subnet_id": test_subnet["id"],
+                "table_and_column_description": {
+                    "input_location_type": tool_tool_config_table_and_column_description_input_location_type,
+                    "bucket": tool_tool_config_table_and_column_description_bucket,
+                    "content": tool_tool_config_table_and_column_description_content,
+                    "namespace": tool_tool_config_table_and_column_description_namespace,
+                    "prefix": tool_tool_config_table_and_column_description_prefix,
+                },
+            },
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=tool_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            metadata=tool_metadata)
+        ```
 
         ## Import
 

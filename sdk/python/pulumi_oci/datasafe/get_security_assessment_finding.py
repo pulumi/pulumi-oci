@@ -28,13 +28,22 @@ class GetSecurityAssessmentFindingResult:
     """
     A collection of values returned by getSecurityAssessmentFinding.
     """
-    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None):
+    def __init__(__self__, access_level=None, category=None, compartment_id_in_subtree=None, contains_references=None, contains_severities=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None, target_ids=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
+        if category and not isinstance(category, str):
+            raise TypeError("Expected argument 'category' to be a str")
+        pulumi.set(__self__, "category", category)
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
+        if contains_references and not isinstance(contains_references, list):
+            raise TypeError("Expected argument 'contains_references' to be a list")
+        pulumi.set(__self__, "contains_references", contains_references)
+        if contains_severities and not isinstance(contains_severities, list):
+            raise TypeError("Expected argument 'contains_severities' to be a list")
+        pulumi.set(__self__, "contains_severities", contains_severities)
         if fields and not isinstance(fields, list):
             raise TypeError("Expected argument 'fields' to be a list")
         pulumi.set(__self__, "fields", fields)
@@ -71,6 +80,9 @@ class GetSecurityAssessmentFindingResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_ids and not isinstance(target_ids, list):
+            raise TypeError("Expected argument 'target_ids' to be a list")
+        pulumi.set(__self__, "target_ids", target_ids)
 
     @_builtins.property
     @pulumi.getter(name="accessLevel")
@@ -78,9 +90,24 @@ class GetSecurityAssessmentFindingResult:
         return pulumi.get(self, "access_level")
 
     @_builtins.property
+    @pulumi.getter
+    def category(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "category")
+
+    @_builtins.property
     @pulumi.getter(name="compartmentIdInSubtree")
     def compartment_id_in_subtree(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "compartment_id_in_subtree")
+
+    @_builtins.property
+    @pulumi.getter(name="containsReferences")
+    def contains_references(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "contains_references")
+
+    @_builtins.property
+    @pulumi.getter(name="containsSeverities")
+    def contains_severities(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "contains_severities")
 
     @_builtins.property
     @pulumi.getter
@@ -145,6 +172,11 @@ class GetSecurityAssessmentFindingResult:
     def target_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "target_id")
 
+    @_builtins.property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "target_ids")
+
 
 class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingResult):
     # pylint: disable=using-constant-test
@@ -153,7 +185,10 @@ class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingRe
             yield self
         return GetSecurityAssessmentFindingResult(
             access_level=self.access_level,
+            category=self.category,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
+            contains_references=self.contains_references,
+            contains_severities=self.contains_severities,
             fields=self.fields,
             filters=self.filters,
             finding_key=self.finding_key,
@@ -165,11 +200,15 @@ class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingRe
             security_assessment_id=self.security_assessment_id,
             severity=self.severity,
             state=self.state,
-            target_id=self.target_id)
+            target_id=self.target_id,
+            target_ids=self.target_ids)
 
 
 def get_security_assessment_finding(access_level: Optional[_builtins.str] = None,
+                                    category: Optional[_builtins.str] = None,
                                     compartment_id_in_subtree: Optional[_builtins.bool] = None,
+                                    contains_references: Optional[Sequence[_builtins.str]] = None,
+                                    contains_severities: Optional[Sequence[_builtins.str]] = None,
                                     fields: Optional[Sequence[_builtins.str]] = None,
                                     filters: Optional[Sequence[Union['GetSecurityAssessmentFindingFilterArgs', 'GetSecurityAssessmentFindingFilterArgsDict']]] = None,
                                     finding_key: Optional[_builtins.str] = None,
@@ -180,13 +219,17 @@ def get_security_assessment_finding(access_level: Optional[_builtins.str] = None
                                     severity: Optional[_builtins.str] = None,
                                     state: Optional[_builtins.str] = None,
                                     target_id: Optional[_builtins.str] = None,
+                                    target_ids: Optional[Sequence[_builtins.str]] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingResult:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
+    __args__['category'] = category
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['containsReferences'] = contains_references
+    __args__['containsSeverities'] = contains_severities
     __args__['fields'] = fields
     __args__['filters'] = filters
     __args__['findingKey'] = finding_key
@@ -197,12 +240,16 @@ def get_security_assessment_finding(access_level: Optional[_builtins.str] = None
     __args__['severity'] = severity
     __args__['state'] = state
     __args__['targetId'] = target_id
+    __args__['targetIds'] = target_ids
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding', __args__, opts=opts, typ=GetSecurityAssessmentFindingResult).value
 
     return AwaitableGetSecurityAssessmentFindingResult(
         access_level=pulumi.get(__ret__, 'access_level'),
+        category=pulumi.get(__ret__, 'category'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
+        contains_references=pulumi.get(__ret__, 'contains_references'),
+        contains_severities=pulumi.get(__ret__, 'contains_severities'),
         fields=pulumi.get(__ret__, 'fields'),
         filters=pulumi.get(__ret__, 'filters'),
         finding_key=pulumi.get(__ret__, 'finding_key'),
@@ -214,9 +261,13 @@ def get_security_assessment_finding(access_level: Optional[_builtins.str] = None
         security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
         severity=pulumi.get(__ret__, 'severity'),
         state=pulumi.get(__ret__, 'state'),
-        target_id=pulumi.get(__ret__, 'target_id'))
+        target_id=pulumi.get(__ret__, 'target_id'),
+        target_ids=pulumi.get(__ret__, 'target_ids'))
 def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                           category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
+                                           contains_references: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                           contains_severities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                            fields: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                            filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSecurityAssessmentFindingFilterArgs', 'GetSecurityAssessmentFindingFilterArgsDict']]]]] = None,
                                            finding_key: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -227,13 +278,17 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
                                            severity: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                            target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                           target_ids: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                            opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityAssessmentFindingResult]:
     """
     Use this data source to access information about an existing resource.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
+    __args__['category'] = category
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
+    __args__['containsReferences'] = contains_references
+    __args__['containsSeverities'] = contains_severities
     __args__['fields'] = fields
     __args__['filters'] = filters
     __args__['findingKey'] = finding_key
@@ -244,11 +299,15 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
     __args__['severity'] = severity
     __args__['state'] = state
     __args__['targetId'] = target_id
+    __args__['targetIds'] = target_ids
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding', __args__, opts=opts, typ=GetSecurityAssessmentFindingResult)
     return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingResult(
         access_level=pulumi.get(__response__, 'access_level'),
+        category=pulumi.get(__response__, 'category'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
+        contains_references=pulumi.get(__response__, 'contains_references'),
+        contains_severities=pulumi.get(__response__, 'contains_severities'),
         fields=pulumi.get(__response__, 'fields'),
         filters=pulumi.get(__response__, 'filters'),
         finding_key=pulumi.get(__response__, 'finding_key'),
@@ -260,4 +319,5 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
         security_assessment_id=pulumi.get(__response__, 'security_assessment_id'),
         severity=pulumi.get(__response__, 'severity'),
         state=pulumi.get(__response__, 'state'),
-        target_id=pulumi.get(__response__, 'target_id')))
+        target_id=pulumi.get(__response__, 'target_id'),
+        target_ids=pulumi.get(__response__, 'target_ids')))

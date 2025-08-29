@@ -79,6 +79,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? ConnectionStringType { get; set; }
 
         /// <summary>
+        /// (Updatable) The credentials for the HeatWave MySQL DB System administrator user, containing the username and the OCID of the Vault secret that stores the password.
+        /// </summary>
+        [Input("dbSystemAdminUserDetails")]
+        public Input<Inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsGetArgs>? DbSystemAdminUserDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The credentials for the HeatWave MySQL DB System replication user, containing the username and the OCID of the Vault secret that stores the password.
+        /// </summary>
+        [Input("dbSystemReplicationUserDetails")]
+        public Input<Inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsGetArgs>? DbSystemReplicationUserDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) The availability domain of the destination mount target.  Example: `BBTh:region-AD`
         /// </summary>
         [Input("destinationAvailabilityDomain")]
@@ -155,6 +167,18 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
             get => _fileSystemOperations ?? (_fileSystemOperations = new InputList<Inputs.DrProtectionGroupMemberFileSystemOperationGetArgs>());
             set => _fileSystemOperations = value;
         }
+
+        /// <summary>
+        /// (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
+        /// </summary>
+        [Input("gtidReconciliationTimeout")]
+        public Input<int>? GtidReconciliationTimeout { get; set; }
+
+        /// <summary>
+        /// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        /// </summary>
+        [Input("isContinueOnGtidReconciliationTimeout")]
+        public Input<bool>? IsContinueOnGtidReconciliationTimeout { get; set; }
 
         /// <summary>
         /// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
@@ -255,6 +279,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         /// </summary>
         [Input("peerClusterId")]
         public Input<string>? PeerClusterId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        /// </summary>
+        [Input("peerDbSystemId")]
+        public Input<string>? PeerDbSystemId { get; set; }
 
         [Input("sourceVolumeToDestinationEncryptionKeyMappings")]
         private InputList<Inputs.DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingGetArgs>? _sourceVolumeToDestinationEncryptionKeyMappings;

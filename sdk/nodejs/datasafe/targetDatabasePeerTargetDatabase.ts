@@ -26,6 +26,7 @@ import * as utilities from "../utilities";
  *         instanceId: testInstance.id,
  *         ipAddresses: targetDatabasePeerTargetDatabaseDatabaseDetailsIpAddresses,
  *         listenerPort: targetDatabasePeerTargetDatabaseDatabaseDetailsListenerPort,
+ *         pluggableDatabaseId: testPluggableDatabase.id,
  *         serviceName: testService.name,
  *         vmClusterId: testVmCluster.id,
  *     },

@@ -111,8 +111,10 @@ __all__ = [
     'DatabaseDatabaseEncryptionKeyLocationDetails',
     'DatabaseDatabaseManagementConfig',
     'DatabaseDatabaseSourceEncryptionKeyLocationDetails',
+    'DatabaseDatabaseStorageSizeDetails',
     'DatabaseDbBackupConfig',
     'DatabaseDbBackupConfigBackupDestinationDetail',
+    'DatabaseStorageSizeDetail',
     'DatabaseUpgradeConnectionString',
     'DatabaseUpgradeDataGuardGroup',
     'DatabaseUpgradeDataGuardGroupMember',
@@ -124,6 +126,7 @@ __all__ = [
     'DbHomeDatabaseDbBackupConfig',
     'DbHomeDatabaseDbBackupConfigBackupDestinationDetail',
     'DbHomeDatabaseEncryptionKeyLocationDetails',
+    'DbHomeDatabaseStorageSizeDetails',
     'DbSystemDataCollectionOptions',
     'DbSystemDbHome',
     'DbSystemDbHomeDatabase',
@@ -481,6 +484,7 @@ __all__ = [
     'GetDatabaseDatabaseEncryptionKeyLocationDetailResult',
     'GetDatabaseDatabaseManagementConfigResult',
     'GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult',
+    'GetDatabaseDatabaseStorageSizeDetailResult',
     'GetDatabaseDbBackupConfigResult',
     'GetDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDatabaseMaintenanceRunHistoriesFilterResult',
@@ -505,6 +509,7 @@ __all__ = [
     'GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult',
     'GetDatabaseSoftwareImagesDatabaseSoftwareImageResult',
     'GetDatabaseSoftwareImagesFilterResult',
+    'GetDatabaseStorageSizeDetailResult',
     'GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryResult',
     'GetDatabaseUpgradeHistoryEntriesFilterResult',
     'GetDatabasesDatabaseResult',
@@ -517,14 +522,17 @@ __all__ = [
     'GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult',
     'GetDatabasesDatabaseDatabaseManagementConfigResult',
     'GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult',
+    'GetDatabasesDatabaseDatabaseStorageSizeDetailResult',
     'GetDatabasesDatabaseDbBackupConfigResult',
     'GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult',
+    'GetDatabasesDatabaseStorageSizeDetailResult',
     'GetDatabasesFilterResult',
     'GetDbHomeDatabaseResult',
     'GetDbHomeDatabaseConnectionStringResult',
     'GetDbHomeDatabaseDbBackupConfigResult',
     'GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDbHomeDatabaseEncryptionKeyLocationDetailResult',
+    'GetDbHomeDatabaseStorageSizeDetailResult',
     'GetDbHomePatchHistoryEntriesFilterResult',
     'GetDbHomePatchHistoryEntriesPatchHistoryEntryResult',
     'GetDbHomePatchesFilterResult',
@@ -535,6 +543,7 @@ __all__ = [
     'GetDbHomesDbHomeDatabaseDbBackupConfigResult',
     'GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailResult',
     'GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult',
+    'GetDbHomesDbHomeDatabaseStorageSizeDetailResult',
     'GetDbHomesFilterResult',
     'GetDbNodeConsoleConnectionsConsoleConnectionResult',
     'GetDbNodeConsoleConnectionsFilterResult',
@@ -8368,6 +8377,8 @@ class DatabaseDatabase(dict):
             suggest = "source_encryption_key_location_details"
         elif key == "sourceTdeWalletPassword":
             suggest = "source_tde_wallet_password"
+        elif key == "storageSizeDetails":
+            suggest = "storage_size_details"
         elif key == "tdeWalletPassword":
             suggest = "tde_wallet_password"
         elif key == "transportType":
@@ -8411,6 +8422,7 @@ class DatabaseDatabase(dict):
                  source_database_id: Optional[_builtins.str] = None,
                  source_encryption_key_location_details: Optional['outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails'] = None,
                  source_tde_wallet_password: Optional[_builtins.str] = None,
+                 storage_size_details: Optional['outputs.DatabaseDatabaseStorageSizeDetails'] = None,
                  tde_wallet_password: Optional[_builtins.str] = None,
                  transport_type: Optional[_builtins.str] = None,
                  vault_id: Optional[_builtins.str] = None):
@@ -8445,6 +8457,7 @@ class DatabaseDatabase(dict):
         :param _builtins.str source_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
         :param 'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs' source_encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param _builtins.str source_tde_wallet_password: The TDE wallet password of the source database specified by 'sourceDatabaseId'.
+        :param 'DatabaseDatabaseStorageSizeDetailsArgs' storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
@@ -8504,6 +8517,8 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
         if source_tde_wallet_password is not None:
             pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
+        if storage_size_details is not None:
+            pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         if transport_type is not None:
@@ -8708,6 +8723,14 @@ class DatabaseDatabase(dict):
         The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         """
         return pulumi.get(self, "source_tde_wallet_password")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Optional['outputs.DatabaseDatabaseStorageSizeDetails']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -9157,6 +9180,68 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
 
 
 @pulumi.output_type
+class DatabaseDatabaseStorageSizeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataStorageSizeInGb":
+            suggest = "data_storage_size_in_gb"
+        elif key == "recoStorageSizeInGbs":
+            suggest = "reco_storage_size_in_gbs"
+        elif key == "redoLogStorageSizeInGbs":
+            suggest = "redo_log_storage_size_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseDatabaseStorageSizeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseDatabaseStorageSizeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseDatabaseStorageSizeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int data_storage_size_in_gb: (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        (Updatable) The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        (Updatable) The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+
+@pulumi.output_type
 class DatabaseDbBackupConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -9404,6 +9489,70 @@ class DatabaseDbBackupConfigBackupDestinationDetail(dict):
         For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         """
         return pulumi.get(self, "vpc_user")
+
+
+@pulumi.output_type
+class DatabaseStorageSizeDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataStorageSizeInGb":
+            suggest = "data_storage_size_in_gb"
+        elif key == "recoStorageSizeInGbs":
+            suggest = "reco_storage_size_in_gbs"
+        elif key == "redoLogStorageSizeInGbs":
+            suggest = "redo_log_storage_size_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DatabaseStorageSizeDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DatabaseStorageSizeDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DatabaseStorageSizeDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: Optional[_builtins.int] = None,
+                 reco_storage_size_in_gbs: Optional[_builtins.int] = None,
+                 redo_log_storage_size_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        if data_storage_size_in_gb is not None:
+            pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        if reco_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> Optional[_builtins.int]:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
 
 
 @pulumi.output_type
@@ -10075,6 +10224,8 @@ class DbHomeDatabase(dict):
             suggest = "pluggable_databases"
         elif key == "sidPrefix":
             suggest = "sid_prefix"
+        elif key == "storageSizeDetails":
+            suggest = "storage_size_details"
         elif key == "tdeWalletPassword":
             suggest = "tde_wallet_password"
         elif key == "timeCreated":
@@ -10121,6 +10272,7 @@ class DbHomeDatabase(dict):
                  pluggable_databases: Optional[Sequence[_builtins.str]] = None,
                  sid_prefix: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
+                 storage_size_details: Optional['outputs.DbHomeDatabaseStorageSizeDetails'] = None,
                  tde_wallet_password: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
                  time_stamp_for_point_in_time_recovery: Optional[_builtins.str] = None,
@@ -10153,6 +10305,7 @@ class DbHomeDatabase(dict):
         :param Sequence[_builtins.str] pluggable_databases: The list of pluggable databases that needs to be restored into new database.
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param _builtins.str state: The current state of the Database Home.
+        :param 'DbHomeDatabaseStorageSizeDetailsArgs' storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
         :param _builtins.str time_created: The date and time the Database Home was created.
         :param _builtins.str time_stamp_for_point_in_time_recovery: The point in time of the original database from which the new database is created. If not specifed, the latest backup is used to create the database.
@@ -10207,6 +10360,8 @@ class DbHomeDatabase(dict):
             pulumi.set(__self__, "sid_prefix", sid_prefix)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_size_details is not None:
+            pulumi.set(__self__, "storage_size_details", storage_size_details)
         if tde_wallet_password is not None:
             pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         if time_created is not None:
@@ -10413,6 +10568,14 @@ class DbHomeDatabase(dict):
         The current state of the Database Home.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Optional['outputs.DbHomeDatabaseStorageSizeDetails']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -10804,6 +10967,64 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
         Provide the HSM password as you would in RDBMS for External HSM.
         """
         return pulumi.get(self, "hsm_password")
+
+
+@pulumi.output_type
+class DbHomeDatabaseStorageSizeDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataStorageSizeInGb":
+            suggest = "data_storage_size_in_gb"
+        elif key == "recoStorageSizeInGbs":
+            suggest = "reco_storage_size_in_gbs"
+        elif key == "redoLogStorageSizeInGbs":
+            suggest = "redo_log_storage_size_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbHomeDatabaseStorageSizeDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbHomeDatabaseStorageSizeDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbHomeDatabaseStorageSizeDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        if redo_log_storage_size_in_gbs is not None:
+            pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
 
 
 @pulumi.output_type
@@ -11682,10 +11903,8 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
         """
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
-        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local region.
-        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.
-               
-               For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
+        :param _builtins.str remote_region: The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         :param _builtins.str type: Type of the database backup destination.
         """
         if dbrs_policy_id is not None:
@@ -11719,7 +11938,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="isRemote")
     def is_remote(self) -> Optional[_builtins.bool]:
         """
-        Indicates whether the backup destination is cross-region or local region.
+        Indicates whether the backup destination is cross-region or local.
         """
         return pulumi.get(self, "is_remote")
 
@@ -11727,9 +11946,7 @@ class DbSystemDbHomeDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="remoteRegion")
     def remote_region(self) -> Optional[_builtins.str]:
         """
-        The name of the remote region where the remote automatic incremental backups will be stored.
-
-        For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+        The name of the remote region where the remote automatic incremental backups will be stored.           For information about valid region names, see [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
         """
         return pulumi.get(self, "remote_region")
 
@@ -38493,6 +38710,8 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  apply_rate: _builtins.str,
                  availability_domain: _builtins.str,
                  backup_network_nsg_ids: Sequence[_builtins.str],
+                 compute_count: _builtins.int,
+                 compute_model: _builtins.str,
                  cpu_core_count: _builtins.int,
                  create_async: _builtins.bool,
                  creation_type: _builtins.str,
@@ -38558,6 +38777,8 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "apply_rate", apply_rate)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "create_async", create_async)
         pulumi.set(__self__, "creation_type", creation_type)
@@ -38627,6 +38848,16 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "backup_network_nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> _builtins.int:
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> _builtins.str:
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -39147,6 +39378,7 @@ class GetDatabaseDatabaseResult(dict):
                  source_database_id: _builtins.str,
                  source_encryption_key_location_details: Sequence['outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult'],
                  source_tde_wallet_password: _builtins.str,
+                 storage_size_details: Sequence['outputs.GetDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
                  transport_type: _builtins.str,
                  vault_id: _builtins.str):
@@ -39167,6 +39399,7 @@ class GetDatabaseDatabaseResult(dict):
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
+        :param Sequence['GetDatabaseDatabaseStorageSizeDetailArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
                * MAXIMUM_PERFORMANCE - ASYNC
@@ -39197,6 +39430,7 @@ class GetDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "source_database_id", source_database_id)
         pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         pulumi.set(__self__, "transport_type", transport_type)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -39368,6 +39602,14 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="sourceTdeWalletPassword")
     def source_tde_wallet_password(self) -> _builtins.str:
         return pulumi.get(self, "source_tde_wallet_password")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDatabaseDatabaseStorageSizeDetailResult']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -39669,6 +39911,46 @@ class GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         """
         return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
+class GetDatabaseDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
 
 
 @pulumi.output_type
@@ -42464,6 +42746,46 @@ class GetDatabaseSoftwareImagesFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+
+@pulumi.output_type
 class GetDatabaseUpgradeHistoryEntriesDatabaseUpgradeHistoryEntryResult(dict):
     def __init__(__self__, *,
                  action: _builtins.str,
@@ -42672,6 +42994,7 @@ class GetDatabasesDatabaseResult(dict):
                  source: _builtins.str,
                  source_database_point_in_time_recovery_timestamp: _builtins.str,
                  state: _builtins.str,
+                 storage_size_details: Sequence['outputs.GetDatabasesDatabaseStorageSizeDetailResult'],
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  vault_id: _builtins.str,
@@ -42706,6 +43029,7 @@ class GetDatabasesDatabaseResult(dict):
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
         :param _builtins.str source_database_point_in_time_recovery_timestamp: Point in time recovery timeStamp of the source database at which cloned database system is cloned from the source database system, as described in [RFC 3339](https://tools.ietf.org/rfc/rfc3339)
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
+        :param Sequence['GetDatabasesDatabaseStorageSizeDetailArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str time_created: The date and time the database was created.
         :param _builtins.str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
@@ -42747,6 +43071,7 @@ class GetDatabasesDatabaseResult(dict):
         pulumi.set(__self__, "source", source)
         pulumi.set(__self__, "source_database_point_in_time_recovery_timestamp", source_database_point_in_time_recovery_timestamp)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -43020,6 +43345,14 @@ class GetDatabasesDatabaseResult(dict):
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDatabasesDatabaseStorageSizeDetailResult']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -43260,6 +43593,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  source_database_id: _builtins.str,
                  source_encryption_key_location_details: Sequence['outputs.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult'],
                  source_tde_wallet_password: _builtins.str,
+                 storage_size_details: Sequence['outputs.GetDatabasesDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
                  transport_type: _builtins.str,
                  vault_id: _builtins.str):
@@ -43280,6 +43614,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param _builtins.str pdb_name: The name of the pluggable database. The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. Pluggable database should not be same as database name.
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
+        :param Sequence['GetDatabasesDatabaseDatabaseStorageSizeDetailArgs'] storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str transport_type: The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
                * MAXIMUM_AVAILABILITY - SYNC or FASTSYNC
                * MAXIMUM_PERFORMANCE - ASYNC
@@ -43310,6 +43645,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "source_database_id", source_database_id)
         pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         pulumi.set(__self__, "transport_type", transport_type)
         pulumi.set(__self__, "vault_id", vault_id)
@@ -43481,6 +43817,14 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="sourceTdeWalletPassword")
     def source_tde_wallet_password(self) -> _builtins.str:
         return pulumi.get(self, "source_tde_wallet_password")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseStorageSizeDetailResult']:
+        """
+        The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -43777,6 +44121,46 @@ class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDatabasesDatabaseDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+
+@pulumi.output_type
 class GetDatabasesDatabaseDbBackupConfigResult(dict):
     def __init__(__self__, *,
                  auto_backup_enabled: _builtins.bool,
@@ -43948,6 +44332,46 @@ class GetDatabasesDatabaseDbBackupConfigBackupDestinationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetDatabasesDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        """
+        :param _builtins.int data_storage_size_in_gb: The DATA storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int reco_storage_size_in_gbs: The RECO storage size, in gigabytes, that is applicable for the database.
+        :param _builtins.int redo_log_storage_size_in_gbs: The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        """
+        The DATA storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The RECO storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        """
+        The REDO Log storage size, in gigabytes, that is applicable for the database.
+        """
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
+
+
+@pulumi.output_type
 class GetDatabasesFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -44002,6 +44426,7 @@ class GetDbHomeDatabaseResult(dict):
                  pluggable_databases: Sequence[_builtins.str],
                  sid_prefix: _builtins.str,
                  state: _builtins.str,
+                 storage_size_details: Sequence['outputs.GetDbHomeDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
                  time_created: _builtins.str,
                  time_stamp_for_point_in_time_recovery: _builtins.str,
@@ -44042,6 +44467,7 @@ class GetDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "pluggable_databases", pluggable_databases)
         pulumi.set(__self__, "sid_prefix", sid_prefix)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
@@ -44195,6 +44621,11 @@ class GetDbHomeDatabaseResult(dict):
         The current state of the Database Home.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDbHomeDatabaseStorageSizeDetailResult']:
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -44391,6 +44822,32 @@ class GetDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
+class GetDbHomeDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
 
 
 @pulumi.output_type
@@ -44901,6 +45358,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
                  pluggable_databases: Sequence[_builtins.str],
                  sid_prefix: _builtins.str,
                  state: _builtins.str,
+                 storage_size_details: Sequence['outputs.GetDbHomesDbHomeDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
                  time_created: _builtins.str,
                  time_stamp_for_point_in_time_recovery: _builtins.str,
@@ -44942,6 +45400,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "pluggable_databases", pluggable_databases)
         pulumi.set(__self__, "sid_prefix", sid_prefix)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_stamp_for_point_in_time_recovery", time_stamp_for_point_in_time_recovery)
@@ -45098,6 +45557,11 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         A filter to return only resources that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageSizeDetails")
+    def storage_size_details(self) -> Sequence['outputs.GetDbHomesDbHomeDatabaseStorageSizeDetailResult']:
+        return pulumi.get(self, "storage_size_details")
 
     @_builtins.property
     @pulumi.getter(name="tdeWalletPassword")
@@ -45294,6 +45758,32 @@ class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         return pulumi.get(self, "provider_type")
+
+
+@pulumi.output_type
+class GetDbHomesDbHomeDatabaseStorageSizeDetailResult(dict):
+    def __init__(__self__, *,
+                 data_storage_size_in_gb: _builtins.int,
+                 reco_storage_size_in_gbs: _builtins.int,
+                 redo_log_storage_size_in_gbs: _builtins.int):
+        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
+        pulumi.set(__self__, "reco_storage_size_in_gbs", reco_storage_size_in_gbs)
+        pulumi.set(__self__, "redo_log_storage_size_in_gbs", redo_log_storage_size_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="dataStorageSizeInGb")
+    def data_storage_size_in_gb(self) -> _builtins.int:
+        return pulumi.get(self, "data_storage_size_in_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="recoStorageSizeInGbs")
+    def reco_storage_size_in_gbs(self) -> _builtins.int:
+        return pulumi.get(self, "reco_storage_size_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="redoLogStorageSizeInGbs")
+    def redo_log_storage_size_in_gbs(self) -> _builtins.int:
+        return pulumi.get(self, "redo_log_storage_size_in_gbs")
 
 
 @pulumi.output_type
@@ -45627,6 +46117,8 @@ class GetDbNodesDbNodeResult(dict):
                  backup_ipv6id: _builtins.str,
                  backup_vnic2id: _builtins.str,
                  backup_vnic_id: _builtins.str,
+                 compute_count: _builtins.int,
+                 compute_model: _builtins.str,
                  cpu_core_count: _builtins.int,
                  db_node_id: _builtins.str,
                  db_node_storage_size_in_gbs: _builtins.int,
@@ -45657,6 +46149,8 @@ class GetDbNodesDbNodeResult(dict):
         :param _builtins.str backup_ipv6id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup IPv6 address associated with the database node. Use this OCID with the [GetIpv6](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/GetIpv6) API to get the IPv6 address needed to make a database connection.
         :param _builtins.str backup_vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second backup VNIC.
         :param _builtins.str backup_vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
+        :param _builtins.int compute_count: The number of compute servers for the DB system.
+        :param _builtins.str compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param _builtins.int cpu_core_count: The number of CPU cores enabled on the Db node.
         :param _builtins.int db_node_storage_size_in_gbs: The allocated local node storage in GBs on the Db node.
         :param _builtins.str db_server_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exacc Db server.
@@ -45686,6 +46180,8 @@ class GetDbNodesDbNodeResult(dict):
         pulumi.set(__self__, "backup_ipv6id", backup_ipv6id)
         pulumi.set(__self__, "backup_vnic2id", backup_vnic2id)
         pulumi.set(__self__, "backup_vnic_id", backup_vnic_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "db_node_id", db_node_id)
         pulumi.set(__self__, "db_node_storage_size_in_gbs", db_node_storage_size_in_gbs)
@@ -45750,6 +46246,22 @@ class GetDbNodesDbNodeResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup VNIC.
         """
         return pulumi.get(self, "backup_vnic_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> _builtins.int:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> _builtins.str:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -46745,6 +47257,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
                  minimum_node_count: _builtins.int,
                  name: _builtins.str,
                  shape: _builtins.str,
+                 shape_attributes: Sequence[_builtins.str],
                  shape_family: _builtins.str,
                  shape_type: _builtins.str):
         """
@@ -46771,6 +47284,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         :param _builtins.int minimum_node_count: The minimum number of compute servers available for this shape.
         :param _builtins.str name: The name of the shape used for the DB system.
         :param _builtins.str shape: Deprecated. Use `name` instead of `shape`.
+        :param Sequence[_builtins.str] shape_attributes: The shapeAttributes of the DB system shape.
         :param _builtins.str shape_family: The family of the shape used for the DB system.
         :param _builtins.str shape_type: The shape type for the virtual machine DB system. Shape type is determined by CPU hardware. Valid values are `AMD` , `INTEL` or `INTEL_FLEX_X9`.
         """
@@ -46797,6 +47311,7 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         pulumi.set(__self__, "minimum_node_count", minimum_node_count)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_attributes", shape_attributes)
         pulumi.set(__self__, "shape_family", shape_family)
         pulumi.set(__self__, "shape_type", shape_type)
 
@@ -46984,6 +47499,14 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
         Deprecated. Use `name` instead of `shape`.
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeAttributes")
+    def shape_attributes(self) -> Sequence[_builtins.str]:
+        """
+        The shapeAttributes of the DB system shape.
+        """
+        return pulumi.get(self, "shape_attributes")
 
     @_builtins.property
     @pulumi.getter(name="shapeFamily")
@@ -47306,6 +47829,8 @@ class GetDbSystemsDbSystemResult(dict):
                  backup_subnet_id: _builtins.str,
                  cluster_name: _builtins.str,
                  compartment_id: _builtins.str,
+                 compute_count: _builtins.int,
+                 compute_model: _builtins.str,
                  cpu_core_count: _builtins.int,
                  data_collection_options: Sequence['outputs.GetDbSystemsDbSystemDataCollectionOptionResult'],
                  data_storage_percentage: _builtins.int,
@@ -47366,6 +47891,8 @@ class GetDbSystemsDbSystemResult(dict):
         :param _builtins.str backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param _builtins.str cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.int compute_count: The number of compute servers for the DB system.
+        :param _builtins.str compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
         :param _builtins.int cpu_core_count: The number of CPU cores enabled on the DB system.
         :param Sequence['GetDbSystemsDbSystemDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
         :param _builtins.int data_storage_percentage: The percentage assigned to DATA storage (user data and database files). The remaining percentage is assigned to RECO storage (database redo logs, archive logs, and recovery manager backups). Accepted values are 40 and 80. The default is 80 percent assigned to DATA storage. Not applicable for virtual machine DB systems. Required for BMDBs.
@@ -47422,6 +47949,8 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         pulumi.set(__self__, "cluster_name", cluster_name)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "compute_count", compute_count)
+        pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
         pulumi.set(__self__, "data_collection_options", data_collection_options)
         pulumi.set(__self__, "data_storage_percentage", data_storage_percentage)
@@ -47516,6 +48045,22 @@ class GetDbSystemsDbSystemResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="computeCount")
+    def compute_count(self) -> _builtins.int:
+        """
+        The number of compute servers for the DB system.
+        """
+        return pulumi.get(self, "compute_count")
+
+    @_builtins.property
+    @pulumi.getter(name="computeModel")
+    def compute_model(self) -> _builtins.str:
+        """
+        The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+        """
+        return pulumi.get(self, "compute_model")
 
     @_builtins.property
     @pulumi.getter(name="cpuCoreCount")
@@ -51105,6 +51650,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
                  scan_listener_port_tcp_ssl: _builtins.int,
                  security_attributes: Mapping[str, _builtins.str],
                  shape: _builtins.str,
+                 shape_attribute: _builtins.str,
                  ssh_public_keys: Sequence[_builtins.str],
                  state: _builtins.str,
                  subnet_id: _builtins.str,
@@ -51150,6 +51696,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         :param _builtins.int scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
         :param Mapping[str, _builtins.str] security_attributes: Security Attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}`
         :param _builtins.str shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        :param _builtins.str shape_attribute: The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
         :param Sequence[_builtins.str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
@@ -51194,6 +51741,7 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
         pulumi.set(__self__, "security_attributes", security_attributes)
         pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "shape_attribute", shape_attribute)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -51469,6 +52017,14 @@ class GetExadbVmClustersExadbVmClusterResult(dict):
         The shape of the Exadata VM cluster on Exascale Infrastructure resource
         """
         return pulumi.get(self, "shape")
+
+    @_builtins.property
+    @pulumi.getter(name="shapeAttribute")
+    def shape_attribute(self) -> _builtins.str:
+        """
+        The type of Exascale storage used for Exadata VM cluster. The default is SMART_STORAGE which supports Oracle Database 23ai and later
+        """
+        return pulumi.get(self, "shape_attribute")
 
     @_builtins.property
     @pulumi.getter(name="sshPublicKeys")
@@ -51854,6 +52410,7 @@ class GetExascaleDbStorageVaultHighCapacityDatabaseStorageResult(dict):
 class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
     def __init__(__self__, *,
                  additional_flash_cache_in_percent: _builtins.int,
+                 attached_shape_attributes: Sequence[_builtins.str],
                  availability_domain: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
@@ -51874,6 +52431,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
                  vm_cluster_ids: Sequence[_builtins.str]):
         """
         :param _builtins.int additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param Sequence[_builtins.str] attached_shape_attributes: A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
         :param _builtins.str availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param _builtins.str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -51894,6 +52452,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         :param Sequence[_builtins.str] vm_cluster_ids: The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
         """
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        pulumi.set(__self__, "attached_shape_attributes", attached_shape_attributes)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -51920,6 +52479,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         The size of additional Flash Cache in percentage of High Capacity database storage.
         """
         return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @_builtins.property
+    @pulumi.getter(name="attachedShapeAttributes")
+    def attached_shape_attributes(self) -> Sequence[_builtins.str]:
+        """
+        A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+        """
+        return pulumi.get(self, "attached_shape_attributes")
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")

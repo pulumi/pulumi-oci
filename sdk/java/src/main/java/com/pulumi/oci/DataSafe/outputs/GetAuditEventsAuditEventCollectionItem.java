@@ -127,6 +127,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String extendedEventAttributes;
     /**
+     * @return The user ID of the external user of the audit event.
+     * 
+     */
+    private String externalUserId;
+    /**
      * @return Fine-grained auditing (FGA) policy name that generated this audit record.
      * 
      */
@@ -201,6 +206,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      * 
      */
     private String targetName;
+    /**
+     * @return The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+     * 
+     */
+    private String targetUser;
     /**
      * @return The timestamp when this audit event was collected from the target database by Data Safe.
      * 
@@ -371,6 +381,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.extendedEventAttributes;
     }
     /**
+     * @return The user ID of the external user of the audit event.
+     * 
+     */
+    public String externalUserId() {
+        return this.externalUserId;
+    }
+    /**
      * @return Fine-grained auditing (FGA) policy name that generated this audit record.
      * 
      */
@@ -476,6 +493,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.targetName;
     }
     /**
+     * @return The user on whom the GRANT/REVOKE/AUDIT/NOAUDIT statement was executed.
+     * 
+     */
+    public String targetUser() {
+        return this.targetUser;
+    }
+    /**
      * @return The timestamp when this audit event was collected from the target database by Data Safe.
      * 
      */
@@ -521,6 +545,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         private String errorMessage;
         private String eventName;
         private String extendedEventAttributes;
+        private String externalUserId;
         private String fgaPolicyName;
         private Map<String,String> freeformTags;
         private String id;
@@ -536,6 +561,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         private String targetClass;
         private String targetId;
         private String targetName;
+        private String targetUser;
         private String timeCollected;
         private String trailSource;
         public Builder() {}
@@ -563,6 +589,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
     	      this.errorMessage = defaults.errorMessage;
     	      this.eventName = defaults.eventName;
     	      this.extendedEventAttributes = defaults.extendedEventAttributes;
+    	      this.externalUserId = defaults.externalUserId;
     	      this.fgaPolicyName = defaults.fgaPolicyName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -578,6 +605,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
     	      this.targetClass = defaults.targetClass;
     	      this.targetId = defaults.targetId;
     	      this.targetName = defaults.targetName;
+    	      this.targetUser = defaults.targetUser;
     	      this.timeCollected = defaults.timeCollected;
     	      this.trailSource = defaults.trailSource;
         }
@@ -759,6 +787,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder externalUserId(String externalUserId) {
+            if (externalUserId == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "externalUserId");
+            }
+            this.externalUserId = externalUserId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder fgaPolicyName(String fgaPolicyName) {
             if (fgaPolicyName == null) {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "fgaPolicyName");
@@ -879,6 +915,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder targetUser(String targetUser) {
+            if (targetUser == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "targetUser");
+            }
+            this.targetUser = targetUser;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCollected(String timeCollected) {
             if (timeCollected == null) {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "timeCollected");
@@ -918,6 +962,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
             _resultValue.errorMessage = errorMessage;
             _resultValue.eventName = eventName;
             _resultValue.extendedEventAttributes = extendedEventAttributes;
+            _resultValue.externalUserId = externalUserId;
             _resultValue.fgaPolicyName = fgaPolicyName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
@@ -933,6 +978,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
             _resultValue.targetClass = targetClass;
             _resultValue.targetId = targetId;
             _resultValue.targetName = targetName;
+            _resultValue.targetUser = targetUser;
             _resultValue.timeCollected = timeCollected;
             _resultValue.trailSource = trailSource;
             return _resultValue;

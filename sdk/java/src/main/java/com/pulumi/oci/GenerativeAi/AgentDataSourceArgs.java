@@ -34,18 +34,14 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) **DataSourceConfig**
-     * 
-     * The details of data source.
+     * (Updatable) The details of data source.
      * 
      */
     @Import(name="dataSourceConfig", required=true)
     private Output<AgentDataSourceDataSourceConfigArgs> dataSourceConfig;
 
     /**
-     * @return (Updatable) **DataSourceConfig**
-     * 
-     * The details of data source.
+     * @return (Updatable) The details of data source.
      * 
      */
     public Output<AgentDataSourceDataSourceConfigArgs> dataSourceConfig() {
@@ -201,9 +197,7 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dataSourceConfig (Updatable) **DataSourceConfig**
-         * 
-         * The details of data source.
+         * @param dataSourceConfig (Updatable) The details of data source.
          * 
          * @return builder
          * 
@@ -214,9 +208,7 @@ public final class AgentDataSourceArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param dataSourceConfig (Updatable) **DataSourceConfig**
-         * 
-         * The details of data source.
+         * @param dataSourceConfig (Updatable) The details of data source.
          * 
          * @return builder
          * 

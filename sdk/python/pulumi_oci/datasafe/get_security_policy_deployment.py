@@ -26,13 +26,16 @@ class GetSecurityPolicyDeploymentResult:
     """
     A collection of values returned by getSecurityPolicyDeployment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, security_policy_deployment_id=None, security_policy_id=None, state=None, system_tags=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, deploy_trigger=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, refresh_trigger=None, security_policy_deployment_id=None, security_policy_id=None, state=None, system_tags=None, target_id=None, target_type=None, time_created=None, time_deployed=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if deploy_trigger and not isinstance(deploy_trigger, int):
+            raise TypeError("Expected argument 'deploy_trigger' to be a int")
+        pulumi.set(__self__, "deploy_trigger", deploy_trigger)
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -48,6 +51,9 @@ class GetSecurityPolicyDeploymentResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if refresh_trigger and not isinstance(refresh_trigger, int):
+            raise TypeError("Expected argument 'refresh_trigger' to be a int")
+        pulumi.set(__self__, "refresh_trigger", refresh_trigger)
         if security_policy_deployment_id and not isinstance(security_policy_deployment_id, str):
             raise TypeError("Expected argument 'security_policy_deployment_id' to be a str")
         pulumi.set(__self__, "security_policy_deployment_id", security_policy_deployment_id)
@@ -63,9 +69,15 @@ class GetSecurityPolicyDeploymentResult:
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
+        if target_type and not isinstance(target_type, str):
+            raise TypeError("Expected argument 'target_type' to be a str")
+        pulumi.set(__self__, "target_type", target_type)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
+        if time_deployed and not isinstance(time_deployed, str):
+            raise TypeError("Expected argument 'time_deployed' to be a str")
+        pulumi.set(__self__, "time_deployed", time_deployed)
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
@@ -85,6 +97,11 @@ class GetSecurityPolicyDeploymentResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="deployTrigger")
+    def deploy_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "deploy_trigger")
 
     @_builtins.property
     @pulumi.getter
@@ -127,6 +144,11 @@ class GetSecurityPolicyDeploymentResult:
         return pulumi.get(self, "lifecycle_details")
 
     @_builtins.property
+    @pulumi.getter(name="refreshTrigger")
+    def refresh_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "refresh_trigger")
+
+    @_builtins.property
     @pulumi.getter(name="securityPolicyDeploymentId")
     def security_policy_deployment_id(self) -> _builtins.str:
         return pulumi.get(self, "security_policy_deployment_id")
@@ -159,9 +181,17 @@ class GetSecurityPolicyDeploymentResult:
     @pulumi.getter(name="targetId")
     def target_id(self) -> _builtins.str:
         """
-        The OCID of the target where the security policy is deployed.
+        The OCID of the target/target group where the security policy is deployed.
         """
         return pulumi.get(self, "target_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> _builtins.str:
+        """
+        Indicates whether the security policy deployment is for a target database or a target database group.
+        """
+        return pulumi.get(self, "target_type")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -170,6 +200,14 @@ class GetSecurityPolicyDeploymentResult:
         The time that the security policy deployment was created, in the format defined by RFC3339.
         """
         return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeDeployed")
+    def time_deployed(self) -> _builtins.str:
+        """
+        The last date and time the security policy was deployed, in the format defined by RFC3339.
+        """
+        return pulumi.get(self, "time_deployed")
 
     @_builtins.property
     @pulumi.getter(name="timeUpdated")
@@ -188,17 +226,21 @@ class AwaitableGetSecurityPolicyDeploymentResult(GetSecurityPolicyDeploymentResu
         return GetSecurityPolicyDeploymentResult(
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            deploy_trigger=self.deploy_trigger,
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            refresh_trigger=self.refresh_trigger,
             security_policy_deployment_id=self.security_policy_deployment_id,
             security_policy_id=self.security_policy_id,
             state=self.state,
             system_tags=self.system_tags,
             target_id=self.target_id,
+            target_type=self.target_type,
             time_created=self.time_created,
+            time_deployed=self.time_deployed,
             time_updated=self.time_updated)
 
 
@@ -229,17 +271,21 @@ def get_security_policy_deployment(security_policy_deployment_id: Optional[_buil
     return AwaitableGetSecurityPolicyDeploymentResult(
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        deploy_trigger=pulumi.get(__ret__, 'deploy_trigger'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        refresh_trigger=pulumi.get(__ret__, 'refresh_trigger'),
         security_policy_deployment_id=pulumi.get(__ret__, 'security_policy_deployment_id'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         target_id=pulumi.get(__ret__, 'target_id'),
+        target_type=pulumi.get(__ret__, 'target_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
+        time_deployed=pulumi.get(__ret__, 'time_deployed'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 def get_security_policy_deployment_output(security_policy_deployment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetSecurityPolicyDeploymentResult]:
@@ -267,15 +313,19 @@ def get_security_policy_deployment_output(security_policy_deployment_id: Optiona
     return __ret__.apply(lambda __response__: GetSecurityPolicyDeploymentResult(
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        deploy_trigger=pulumi.get(__response__, 'deploy_trigger'),
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        refresh_trigger=pulumi.get(__response__, 'refresh_trigger'),
         security_policy_deployment_id=pulumi.get(__response__, 'security_policy_deployment_id'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         target_id=pulumi.get(__response__, 'target_id'),
+        target_type=pulumi.get(__response__, 'target_type'),
         time_created=pulumi.get(__response__, 'time_created'),
+        time_deployed=pulumi.get(__response__, 'time_deployed'),
         time_updated=pulumi.get(__response__, 'time_updated')))

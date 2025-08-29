@@ -52,6 +52,36 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     }
 
     /**
+     * The number of compute servers for the DB system.
+     * 
+     */
+    @Import(name="computeCount")
+    private @Nullable Output<Integer> computeCount;
+
+    /**
+     * @return The number of compute servers for the DB system.
+     * 
+     */
+    public Optional<Output<Integer>> computeCount() {
+        return Optional.ofNullable(this.computeCount);
+    }
+
+    /**
+     * The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    @Import(name="computeModel")
+    private @Nullable Output<String> computeModel;
+
+    /**
+     * @return The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+     * 
+     */
+    public Optional<Output<String>> computeModel() {
+        return Optional.ofNullable(this.computeModel);
+    }
+
+    /**
      * The number of CPU cores available for AMD-based virtual machine DB systems.
      * 
      */
@@ -633,6 +663,8 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
     private DataGuardAssociationArgs(DataGuardAssociationArgs $) {
         this.availabilityDomain = $.availabilityDomain;
         this.backupNetworkNsgIds = $.backupNetworkNsgIds;
+        this.computeCount = $.computeCount;
+        this.computeModel = $.computeModel;
         this.cpuCoreCount = $.cpuCoreCount;
         this.createAsync = $.createAsync;
         this.creationType = $.creationType;
@@ -738,6 +770,48 @@ public final class DataGuardAssociationArgs extends com.pulumi.resources.Resourc
          */
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
+        }
+
+        /**
+         * @param computeCount The number of compute servers for the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(@Nullable Output<Integer> computeCount) {
+            $.computeCount = computeCount;
+            return this;
+        }
+
+        /**
+         * @param computeCount The number of compute servers for the DB system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeCount(Integer computeCount) {
+            return computeCount(Output.of(computeCount));
+        }
+
+        /**
+         * @param computeModel The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(@Nullable Output<String> computeModel) {
+            $.computeModel = computeModel;
+            return this;
+        }
+
+        /**
+         * @param computeModel The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder computeModel(String computeModel) {
+            return computeModel(Output.of(computeModel));
         }
 
         /**

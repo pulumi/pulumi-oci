@@ -54,14 +54,14 @@ public final class GetProjectsPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * unique Project identifier
+     * The filter to find the project with the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return unique Project identifier
+     * @return The filter to find the project with the given identifier.
      * 
      */
     public Optional<String> id() {
@@ -69,14 +69,14 @@ public final class GetProjectsPlainArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match projects with the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match projects with the given lifecycleState.
      * 
      */
     public Optional<String> state() {
@@ -143,7 +143,7 @@ public final class GetProjectsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id unique Project identifier
+         * @param id The filter to find the project with the given identifier.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class GetProjectsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state The filter to match projects with the given lifecycleState.
          * 
          * @return builder
          * 

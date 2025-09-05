@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Multi Cloud Resource Discovery based on filters.
+        /// Lists all Multicloud Resource Discovery resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Oci
         ///         MultiCloudResourceDiscoveryId = testMultiCloudResourceDiscovery.Id,
         ///         OracleDbAzureConnectorId = testOracleDbAzureConnector.Id,
         ///         ResourceType = multiCloudResourceDiscoveryResourceType,
+        ///         ResourcesFilters = multiCloudResourceDiscoveryResourcesFilter,
         ///         State = multiCloudResourceDiscoveryState,
         ///     });
         /// 
@@ -46,7 +47,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Multi Cloud Resource Discovery based on filters.
+        /// Lists all Multicloud Resource Discovery resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -66,6 +67,7 @@ namespace Pulumi.Oci.Oci
         ///         MultiCloudResourceDiscoveryId = testMultiCloudResourceDiscovery.Id,
         ///         OracleDbAzureConnectorId = testOracleDbAzureConnector.Id,
         ///         ResourceType = multiCloudResourceDiscoveryResourceType,
+        ///         ResourcesFilters = multiCloudResourceDiscoveryResourcesFilter,
         ///         State = multiCloudResourceDiscoveryState,
         ///     });
         /// 
@@ -78,7 +80,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Multi Cloud Resource Discovery based on filters.
+        /// Lists all Multicloud Resource Discovery resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -98,6 +100,7 @@ namespace Pulumi.Oci.Oci
         ///         MultiCloudResourceDiscoveryId = testMultiCloudResourceDiscovery.Id,
         ///         OracleDbAzureConnectorId = testOracleDbAzureConnector.Id,
         ///         ResourceType = multiCloudResourceDiscoveryResourceType,
+        ///         ResourcesFilters = multiCloudResourceDiscoveryResourcesFilter,
         ///         State = multiCloudResourceDiscoveryState,
         ///     });
         /// 
@@ -118,7 +121,7 @@ namespace Pulumi.Oci.Oci
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Display Name of the Multi Cloud Discovery Resource.
+        /// A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -132,25 +135,37 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
         /// </summary>
         [Input("multiCloudResourceDiscoveryId")]
         public string? MultiCloudResourceDiscoveryId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public string? OracleDbAzureConnectorId { get; set; }
 
         /// <summary>
-        /// The type of Multi Cloud Resource.
+        /// The type of Multicloud Resource.
         /// </summary>
         [Input("resourceType")]
         public string? ResourceType { get; set; }
 
+        [Input("resourcesFilters")]
+        private List<string>? _resourcesFilters;
+
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        /// Specifies the type(s) of resources to discover in the target cloud provider.
+        /// </summary>
+        public List<string> ResourcesFilters
+        {
+            get => _resourcesFilters ?? (_resourcesFilters = new List<string>());
+            set => _resourcesFilters = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -170,7 +185,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Display Name of the Multi Cloud Discovery Resource.
+        /// A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -184,25 +199,37 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
         /// </summary>
         [Input("multiCloudResourceDiscoveryId")]
         public Input<string>? MultiCloudResourceDiscoveryId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public Input<string>? OracleDbAzureConnectorId { get; set; }
 
         /// <summary>
-        /// The type of Multi Cloud Resource.
+        /// The type of Multicloud Resource.
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
 
+        [Input("resourcesFilters")]
+        private InputList<string>? _resourcesFilters;
+
         /// <summary>
-        /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        /// Specifies the type(s) of resources to discover in the target cloud provider.
+        /// </summary>
+        public InputList<string> ResourcesFilters
+        {
+            get => _resourcesFilters ?? (_resourcesFilters = new InputList<string>());
+            set => _resourcesFilters = value;
+        }
+
+        /// <summary>
+        /// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -218,11 +245,11 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudMultiCloudResourceDiscoveriesResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Display name of Multi Cloud Discovery Resource.
+        /// Display name of the Multicloud Resource Discovery resource.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDbmulticloudMultiCloudResourceDiscoveriesFilterResult> Filters;
@@ -240,6 +267,10 @@ namespace Pulumi.Oci.Oci
         /// Resource Type to discover.
         /// </summary>
         public readonly string? ResourceType;
+        /// <summary>
+        /// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+        /// </summary>
+        public readonly ImmutableArray<string> ResourcesFilters;
         /// <summary>
         /// The current lifecycle state of the discovered resource.
         /// </summary>
@@ -263,6 +294,8 @@ namespace Pulumi.Oci.Oci
 
             string? resourceType,
 
+            ImmutableArray<string> resourcesFilters,
+
             string? state)
         {
             CompartmentId = compartmentId;
@@ -273,6 +306,7 @@ namespace Pulumi.Oci.Oci
             MultiCloudResourceDiscoverySummaryCollections = multiCloudResourceDiscoverySummaryCollections;
             OracleDbAzureConnectorId = oracleDbAzureConnectorId;
             ResourceType = resourceType;
+            ResourcesFilters = resourcesFilters;
             State = state;
         }
     }

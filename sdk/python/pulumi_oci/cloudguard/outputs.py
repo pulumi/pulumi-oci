@@ -30,16 +30,22 @@ __all__ = [
     'DetectorRecipeDetectorRuleCandidateResponderRule',
     'DetectorRecipeDetectorRuleDetails',
     'DetectorRecipeDetectorRuleDetailsConfiguration',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue',
     'DetectorRecipeDetectorRuleDetailsConfigurationValue',
     'DetectorRecipeDetectorRuleDetailsEntitiesMapping',
     'DetectorRecipeDetectorRuleEntitiesMapping',
+    'DetectorRecipeDetectorRuleRuleType',
     'DetectorRecipeEffectiveDetectorRule',
     'DetectorRecipeEffectiveDetectorRuleCandidateResponderRule',
     'DetectorRecipeEffectiveDetectorRuleDetail',
     'DetectorRecipeEffectiveDetectorRuleDetailConfiguration',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue',
     'DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping',
     'DetectorRecipeEffectiveDetectorRuleEntitiesMapping',
+    'DetectorRecipeEffectiveDetectorRuleRuleType',
     'ResponderRecipeEffectiveResponderRule',
     'ResponderRecipeEffectiveResponderRuleDetail',
     'ResponderRecipeEffectiveResponderRuleDetailConfiguration',
@@ -53,14 +59,20 @@ __all__ = [
     'TargetTargetDetectorRecipeDetectorRuleDetails',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue',
     'TargetTargetDetectorRecipeDetectorRuleEntitiesMapping',
+    'TargetTargetDetectorRecipeDetectorRuleRuleType',
     'TargetTargetDetectorRecipeEffectiveDetectorRule',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetail',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType',
     'TargetTargetResponderRecipe',
     'TargetTargetResponderRecipeEffectiveResponderRule',
     'TargetTargetResponderRecipeEffectiveResponderRuleDetail',
@@ -107,32 +119,44 @@ __all__ = [
     'GetDetectorRecipeDetectorRuleCandidateResponderRuleResult',
     'GetDetectorRecipeDetectorRuleDetailResult',
     'GetDetectorRecipeDetectorRuleDetailConfigurationResult',
+    'GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult',
     'GetDetectorRecipeDetectorRuleDetailConfigurationValueResult',
     'GetDetectorRecipeDetectorRuleDetailEntitiesMappingResult',
     'GetDetectorRecipeDetectorRuleEntitiesMappingResult',
+    'GetDetectorRecipeDetectorRuleRuleTypeResult',
     'GetDetectorRecipeEffectiveDetectorRuleResult',
     'GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult',
     'GetDetectorRecipeEffectiveDetectorRuleDetailResult',
     'GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult',
+    'GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult',
     'GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult',
     'GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingResult',
     'GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult',
+    'GetDetectorRecipeEffectiveDetectorRuleRuleTypeResult',
     'GetDetectorRecipesDetectorRecipeCollectionResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRuleResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingResult',
     'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult',
+    'GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeResult',
     'GetDetectorRecipesFilterResult',
     'GetGuardTargetTargetDetailResult',
     'GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult',
@@ -141,14 +165,20 @@ __all__ = [
     'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailResult',
     'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult',
     'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult',
+    'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult',
     'GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult',
     'GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult',
+    'GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult',
+    'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult',
     'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult',
+    'GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult',
     'GetGuardTargetTargetResponderRecipeResult',
     'GetGuardTargetTargetResponderRecipeEffectiveResponderRuleResult',
     'GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailResult',
@@ -166,14 +196,20 @@ __all__ = [
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult',
     'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult',
+    'GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult',
     'GetGuardTargetsTargetCollectionItemTargetResponderRecipeResult',
     'GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleResult',
     'GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailResult',
@@ -943,12 +979,16 @@ class DetectorRecipeDetectorRule(dict):
             suggest = "display_name"
         elif key == "entitiesMappings":
             suggest = "entities_mappings"
+        elif key == "isCloneable":
+            suggest = "is_cloneable"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
         elif key == "managedListTypes":
             suggest = "managed_list_types"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "ruleTypes":
+            suggest = "rule_types"
         elif key == "serviceType":
             suggest = "service_type"
         elif key == "timeCreated":
@@ -976,10 +1016,12 @@ class DetectorRecipeDetectorRule(dict):
                  detector: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
                  entities_mappings: Optional[Sequence['outputs.DetectorRecipeDetectorRuleEntitiesMapping']] = None,
+                 is_cloneable: Optional[_builtins.bool] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  managed_list_types: Optional[Sequence[_builtins.str]] = None,
                  recommendation: Optional[_builtins.str] = None,
                  resource_type: Optional[_builtins.str] = None,
+                 rule_types: Optional[Sequence['outputs.DetectorRecipeDetectorRuleRuleType']] = None,
                  service_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
@@ -997,10 +1039,12 @@ class DetectorRecipeDetectorRule(dict):
                
                Avoid entering confidential information.
         :param Sequence['DetectorRecipeDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['DetectorRecipeDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the resource
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -1020,6 +1064,8 @@ class DetectorRecipeDetectorRule(dict):
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -1028,6 +1074,8 @@ class DetectorRecipeDetectorRule(dict):
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -1106,6 +1154,14 @@ class DetectorRecipeDetectorRule(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[_builtins.bool]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[_builtins.str]:
         """
@@ -1136,6 +1192,14 @@ class DetectorRecipeDetectorRule(dict):
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[Sequence['outputs.DetectorRecipeDetectorRuleRuleType']]:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -1393,6 +1457,12 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
         suggest = None
         if key == "configKey":
             suggest = "config_key"
+        elif key == "additionalProperties":
+            suggest = "additional_properties"
+        elif key == "allowedValues":
+            suggest = "allowed_values"
+        elif key == "allowedValuesDataType":
+            suggest = "allowed_values_data_type"
         elif key == "dataType":
             suggest = "data_type"
 
@@ -1410,18 +1480,30 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
     def __init__(__self__, *,
                  config_key: _builtins.str,
                  name: _builtins.str,
+                 additional_properties: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty']] = None,
+                 allowed_values: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue']] = None,
+                 allowed_values_data_type: Optional[_builtins.str] = None,
                  data_type: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None,
                  values: Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationValue']] = None):
         """
         :param _builtins.str config_key: (Updatable) Unique identifier of the configuration
         :param _builtins.str name: (Updatable) Configuration name
+        :param Sequence['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs'] additional_properties: (Updatable) Map of additional property values for configuration
+        :param Sequence['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs'] allowed_values: (Updatable) Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: (Updatable) Map property Value data type
         :param _builtins.str data_type: (Updatable) Configuration data type
         :param _builtins.str value: (Updatable) Configuration value
         :param Sequence['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: (Updatable) List of configuration values
         """
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "name", name)
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if data_type is not None:
             pulumi.set(__self__, "data_type", data_type)
         if value is not None:
@@ -1446,6 +1528,30 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
         return pulumi.get(self, "name")
 
     @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty']]:
+        """
+        (Updatable) Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[Sequence['outputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue']]:
+        """
+        (Updatable) Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
+
+    @_builtins.property
     @pulumi.getter(name="dataType")
     def data_type(self) -> Optional[_builtins.str]:
         """
@@ -1468,6 +1574,95 @@ class DetectorRecipeDetectorRuleDetailsConfiguration(dict):
         (Updatable) List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertyType":
+            suggest = "property_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 property_type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: (Updatable) Name for Additional Property, for example, "interpreter", "router"
+        :param _builtins.str property_type: (Updatable) Property Type
+        :param _builtins.str value: (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Name for Additional Property, for example, "interpreter", "router"
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: (Updatable) key
+        :param _builtins.str value: (Updatable) value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        (Updatable) key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        (Updatable) value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -1661,6 +1856,37 @@ class DetectorRecipeDetectorRuleEntitiesMapping(dict):
 
 
 @pulumi.output_type
+class DetectorRecipeDetectorRuleRuleType(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class DetectorRecipeEffectiveDetectorRule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1675,12 +1901,16 @@ class DetectorRecipeEffectiveDetectorRule(dict):
             suggest = "display_name"
         elif key == "entitiesMappings":
             suggest = "entities_mappings"
+        elif key == "isCloneable":
+            suggest = "is_cloneable"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
         elif key == "managedListTypes":
             suggest = "managed_list_types"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "ruleTypes":
+            suggest = "rule_types"
         elif key == "serviceType":
             suggest = "service_type"
         elif key == "timeCreated":
@@ -1708,10 +1938,12 @@ class DetectorRecipeEffectiveDetectorRule(dict):
                  detector_rule_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
                  entities_mappings: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
+                 is_cloneable: Optional[_builtins.bool] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  managed_list_types: Optional[Sequence[_builtins.str]] = None,
                  recommendation: Optional[_builtins.str] = None,
                  resource_type: Optional[_builtins.str] = None,
+                 rule_types: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleRuleType']] = None,
                  service_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
@@ -1729,10 +1961,12 @@ class DetectorRecipeEffectiveDetectorRule(dict):
                
                Avoid entering confidential information.
         :param Sequence['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the resource
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -1754,6 +1988,8 @@ class DetectorRecipeEffectiveDetectorRule(dict):
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -1762,6 +1998,8 @@ class DetectorRecipeEffectiveDetectorRule(dict):
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -1840,6 +2078,14 @@ class DetectorRecipeEffectiveDetectorRule(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[_builtins.bool]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[_builtins.str]:
         """
@@ -1870,6 +2116,14 @@ class DetectorRecipeEffectiveDetectorRule(dict):
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleRuleType']]:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -2131,7 +2385,13 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "configKey":
+        if key == "additionalProperties":
+            suggest = "additional_properties"
+        elif key == "allowedValues":
+            suggest = "allowed_values"
+        elif key == "allowedValuesDataType":
+            suggest = "allowed_values_data_type"
+        elif key == "configKey":
             suggest = "config_key"
         elif key == "dataType":
             suggest = "data_type"
@@ -2148,18 +2408,30 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 additional_properties: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty']] = None,
+                 allowed_values: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue']] = None,
+                 allowed_values_data_type: Optional[_builtins.str] = None,
                  config_key: Optional[_builtins.str] = None,
                  data_type: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None,
                  values: Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None):
         """
+        :param Sequence['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         :param Sequence['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -2170,6 +2442,30 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty']]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[Sequence['outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue']]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[_builtins.str]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -2199,7 +2495,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -2210,6 +2506,97 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertyType":
+            suggest = "property_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 property_type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[_builtins.str]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2240,7 +2627,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(dict):
         """
         :param _builtins.str list_type: Configuration list item type (CUSTOM or MANAGED)
         :param _builtins.str managed_list_type: Type of content in the managed list
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         """
         if list_type is not None:
             pulumi.set(__self__, "list_type", list_type)
@@ -2269,7 +2656,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -2408,6 +2795,37 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class DetectorRecipeEffectiveDetectorRuleRuleType(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -3547,12 +3965,16 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
             suggest = "display_name"
         elif key == "entitiesMappings":
             suggest = "entities_mappings"
+        elif key == "isCloneable":
+            suggest = "is_cloneable"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
         elif key == "managedListTypes":
             suggest = "managed_list_types"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "ruleTypes":
+            suggest = "rule_types"
         elif key == "serviceType":
             suggest = "service_type"
         elif key == "timeCreated":
@@ -3579,10 +4001,12 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
                  detector: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
                  entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping']] = None,
+                 is_cloneable: Optional[_builtins.bool] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  managed_list_types: Optional[Sequence[_builtins.str]] = None,
                  recommendation: Optional[_builtins.str] = None,
                  resource_type: Optional[_builtins.str] = None,
+                 rule_types: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleRuleType']] = None,
                  service_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
@@ -3599,10 +4023,12 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
                
                Avoid entering confidential information.
         :param Sequence['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: (Updatable) The enablement state of the detector rule
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -3620,6 +4046,8 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -3628,6 +4056,8 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -3698,6 +4128,14 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[_builtins.bool]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[_builtins.str]:
         """
@@ -3728,6 +4166,14 @@ class TargetTargetDetectorRecipeDetectorRule(dict):
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleRuleType']]:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -3915,7 +4361,13 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "configKey":
+        if key == "additionalProperties":
+            suggest = "additional_properties"
+        elif key == "allowedValues":
+            suggest = "allowed_values"
+        elif key == "allowedValuesDataType":
+            suggest = "allowed_values_data_type"
+        elif key == "configKey":
             suggest = "config_key"
         elif key == "dataType":
             suggest = "data_type"
@@ -3932,18 +4384,30 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 additional_properties: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty']] = None,
+                 allowed_values: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue']] = None,
+                 allowed_values_data_type: Optional[_builtins.str] = None,
                  config_key: Optional[_builtins.str] = None,
                  data_type: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None,
                  values: Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue']] = None):
         """
+        :param Sequence['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs'] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -3954,6 +4418,30 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty']]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue']]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[_builtins.str]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -3994,6 +4482,97 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration(dict):
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertyType":
+            suggest = "property_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 property_type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[_builtins.str]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -4127,6 +4706,37 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping(dict):
 
 
 @pulumi.output_type
+class TargetTargetDetectorRecipeDetectorRuleRuleType(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4139,12 +4749,16 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
             suggest = "display_name"
         elif key == "entitiesMappings":
             suggest = "entities_mappings"
+        elif key == "isCloneable":
+            suggest = "is_cloneable"
         elif key == "lifecycleDetails":
             suggest = "lifecycle_details"
         elif key == "managedListTypes":
             suggest = "managed_list_types"
         elif key == "resourceType":
             suggest = "resource_type"
+        elif key == "ruleTypes":
+            suggest = "rule_types"
         elif key == "serviceType":
             suggest = "service_type"
         elif key == "timeCreated":
@@ -4171,10 +4785,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
                  detector_rule_id: Optional[_builtins.str] = None,
                  display_name: Optional[_builtins.str] = None,
                  entities_mappings: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping']] = None,
+                 is_cloneable: Optional[_builtins.bool] = None,
                  lifecycle_details: Optional[_builtins.str] = None,
                  managed_list_types: Optional[Sequence[_builtins.str]] = None,
                  recommendation: Optional[_builtins.str] = None,
                  resource_type: Optional[_builtins.str] = None,
+                 rule_types: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType']] = None,
                  service_type: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
                  time_created: Optional[_builtins.str] = None,
@@ -4191,10 +4807,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
                
                Avoid entering confidential information.
         :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: (Updatable) The enablement state of the detector rule
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -4214,6 +4832,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -4222,6 +4842,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -4292,6 +4914,14 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[_builtins.bool]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[_builtins.str]:
         """
@@ -4322,6 +4952,14 @@ class TargetTargetDetectorRecipeEffectiveDetectorRule(dict):
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType']]:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -4511,7 +5149,13 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "configKey":
+        if key == "additionalProperties":
+            suggest = "additional_properties"
+        elif key == "allowedValues":
+            suggest = "allowed_values"
+        elif key == "allowedValuesDataType":
+            suggest = "allowed_values_data_type"
+        elif key == "configKey":
             suggest = "config_key"
         elif key == "dataType":
             suggest = "data_type"
@@ -4528,18 +5172,30 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 additional_properties: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty']] = None,
+                 allowed_values: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue']] = None,
+                 allowed_values_data_type: Optional[_builtins.str] = None,
                  config_key: Optional[_builtins.str] = None,
                  data_type: Optional[_builtins.str] = None,
                  name: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None,
                  values: Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue']] = None):
         """
+        :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -4550,6 +5206,30 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty']]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[Sequence['outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue']]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[_builtins.str]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -4590,6 +5270,97 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration(dict):
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "propertyType":
+            suggest = "property_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 property_type: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[_builtins.str]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -4720,6 +5491,37 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping(dict):
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 values: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -7431,10 +8233,12 @@ class GetDetectorRecipeDetectorRuleResult(dict):
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetDetectorRecipeDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -7448,10 +8252,12 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule.
         :param _builtins.str display_name: Display name of the entity
         :param Sequence['GetDetectorRecipeDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['GetDetectorRecipeDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the resource
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -7465,10 +8271,12 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -7539,6 +8347,14 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -7569,6 +8385,14 @@ class GetDetectorRecipeDetectorRuleResult(dict):
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetDetectorRecipeDetectorRuleRuleTypeResult']:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -7763,23 +8587,56 @@ class GetDetectorRecipeDetectorRuleDetailResult(dict):
 @pulumi.output_type
 class GetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         :param Sequence['GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -7809,7 +8666,7 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -7823,6 +8680,75 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult(dict):
     def __init__(__self__, *,
                  list_type: _builtins.str,
@@ -7831,7 +8757,7 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult(dict):
         """
         :param _builtins.str list_type: Configuration list item type (CUSTOM or MANAGED)
         :param _builtins.str managed_list_type: Type of content in the managed list
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         """
         pulumi.set(__self__, "list_type", list_type)
         pulumi.set(__self__, "managed_list_type", managed_list_type)
@@ -7857,7 +8783,7 @@ class GetDetectorRecipeDetectorRuleDetailConfigurationValueResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -7943,6 +8869,35 @@ class GetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
 
 
 @pulumi.output_type
+class GetDetectorRecipeDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
     def __init__(__self__, *,
                  candidate_responder_rules: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleResult'],
@@ -7953,10 +8908,12 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -7970,10 +8927,12 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule.
         :param _builtins.str display_name: Display name of the entity
         :param Sequence['GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the resource
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -7987,10 +8946,12 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -8061,6 +9022,14 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -8091,6 +9060,14 @@ class GetDetectorRecipeEffectiveDetectorRuleResult(dict):
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleRuleTypeResult']:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -8285,23 +9262,56 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailResult(dict):
 @pulumi.output_type
 class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         :param Sequence['GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -8331,7 +9341,7 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -8345,6 +9355,75 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult(dict):
     def __init__(__self__, *,
                  list_type: _builtins.str,
@@ -8353,7 +9432,7 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult(dict)
         """
         :param _builtins.str list_type: Configuration list item type (CUSTOM or MANAGED)
         :param _builtins.str managed_list_type: Type of content in the managed list
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         """
         pulumi.set(__self__, "list_type", list_type)
         pulumi.set(__self__, "managed_list_type", managed_list_type)
@@ -8379,7 +9458,7 @@ class GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult(dict)
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -8462,6 +9541,35 @@ class GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult(dict):
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class GetDetectorRecipeEffectiveDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -8681,10 +9789,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -8698,10 +9808,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -8715,10 +9827,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -8789,6 +9903,14 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -8819,6 +9941,14 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult(dict):
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeResult']:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -9013,23 +10143,56 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailResult(dic
 @pulumi.output_type
 class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -9059,7 +10222,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -9073,6 +10236,75 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
 
 
 @pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueResult(dict):
     def __init__(__self__, *,
                  list_type: _builtins.str,
@@ -9081,7 +10313,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
         """
         :param _builtins.str list_type: Configuration list item type (CUSTOM or MANAGED)
         :param _builtins.str managed_list_type: Type of content in the managed list
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         """
         pulumi.set(__self__, "list_type", list_type)
         pulumi.set(__self__, "managed_list_type", managed_list_type)
@@ -9107,7 +10339,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurat
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -9193,6 +10425,35 @@ class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingR
 
 
 @pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(dict):
     def __init__(__self__, *,
                  candidate_responder_rules: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleResult'],
@@ -9203,10 +10464,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -9220,10 +10483,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for the detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: Resource type of the configuration to which the rule is applied
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs'] rule_types: Detector rule type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         :param _builtins.str time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -9237,10 +10502,12 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -9311,6 +10578,14 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -9341,6 +10616,14 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleResult(
         Resource type of the configuration to which the rule is applied
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeResult']:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -9535,23 +10818,56 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailR
 @pulumi.output_type
 class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         :param Sequence['GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -9581,7 +10897,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -9595,6 +10911,75 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
 
 
 @pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult(dict):
     def __init__(__self__, *,
                  list_type: _builtins.str,
@@ -9603,7 +10988,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
         """
         :param _builtins.str list_type: Configuration list item type (CUSTOM or MANAGED)
         :param _builtins.str managed_list_type: Type of content in the managed list
-        :param _builtins.str value: Configuration value
+        :param _builtins.str value: Detector rule type value
         """
         pulumi.set(__self__, "list_type", list_type)
         pulumi.set(__self__, "managed_list_type", managed_list_type)
@@ -9629,7 +11014,7 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailC
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -9712,6 +11097,35 @@ class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitie
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Detector rule type value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -10112,10 +11526,12 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -10128,10 +11544,12 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule
         :param _builtins.str display_name: Responder rule display name
         :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the responder rule
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -10144,10 +11562,12 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -10210,6 +11630,14 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -10240,6 +11668,14 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleResult(dict):
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeResult']:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -10379,23 +11815,56 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupResult(d
 @pulumi.output_type
 class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -10436,6 +11905,75 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult(di
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -10519,6 +12057,35 @@ class GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingResult(dict):
 
 
 @pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
     def __init__(__self__, *,
                  data_source_id: _builtins.str,
@@ -10528,10 +12095,12 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -10544,10 +12113,12 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule
         :param _builtins.str display_name: Responder rule display name
         :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The current lifecycle state of the responder rule
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -10560,10 +12131,12 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -10626,6 +12199,14 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -10656,6 +12237,14 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult']:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -10795,23 +12384,56 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGrou
 @pulumi.output_type
 class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -10852,6 +12474,75 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -10932,6 +12623,35 @@ class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResu
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -12126,10 +13846,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -12142,10 +13864,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -12158,10 +13882,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -12224,6 +13950,14 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -12254,6 +13988,14 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleResult(
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeResult']:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -12393,23 +14135,56 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
 @pulumi.output_type
 class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -12450,6 +14225,75 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailC
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -12533,6 +14377,35 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitie
 
 
 @pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
+
+
+@pulumi.output_type
 class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleResult(dict):
     def __init__(__self__, *,
                  data_source_id: _builtins.str,
@@ -12542,10 +14415,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
                  detector_rule_id: _builtins.str,
                  display_name: _builtins.str,
                  entities_mappings: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult'],
+                 is_cloneable: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  managed_list_types: Sequence[_builtins.str],
                  recommendation: _builtins.str,
                  resource_type: _builtins.str,
+                 rule_types: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult'],
                  service_type: _builtins.str,
                  state: _builtins.str,
                  time_created: _builtins.str,
@@ -12558,10 +14433,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         :param _builtins.str detector_rule_id: The unique identifier of the detector rule
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs'] entities_mappings: Data source entities mapping for a detector rule
+        :param _builtins.bool is_cloneable: Is the rule cloneable?
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param Sequence[_builtins.str] managed_list_types: List of managed list types related to this rule
         :param _builtins.str recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param _builtins.str resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs'] rule_types: Rule category type
         :param _builtins.str service_type: Service type of the configuration to which the rule is applied
         :param _builtins.str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         :param _builtins.str time_created: The date and time the target was created. Format defined by RFC3339.
@@ -12574,10 +14451,12 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         pulumi.set(__self__, "detector_rule_id", detector_rule_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities_mappings", entities_mappings)
+        pulumi.set(__self__, "is_cloneable", is_cloneable)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "managed_list_types", managed_list_types)
         pulumi.set(__self__, "recommendation", recommendation)
         pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "rule_types", rule_types)
         pulumi.set(__self__, "service_type", service_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -12640,6 +14519,14 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         return pulumi.get(self, "entities_mappings")
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> _builtins.bool:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -12670,6 +14557,14 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         """
         return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult']:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -12809,23 +14704,56 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
 @pulumi.output_type
 class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationResult(dict):
     def __init__(__self__, *,
+                 additional_properties: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult'],
+                 allowed_values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult'],
+                 allowed_values_data_type: _builtins.str,
                  config_key: _builtins.str,
                  data_type: _builtins.str,
                  name: _builtins.str,
                  value: _builtins.str,
                  values: Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueResult']):
         """
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs'] additional_properties: Map of additional property values for configuration
+        :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs'] allowed_values: Map of possible values for configuration
+        :param _builtins.str allowed_values_data_type: Map property Value data type
         :param _builtins.str config_key: Unique identifier of the configuration
         :param _builtins.str data_type: Configuration data type
         :param _builtins.str name: Configuration name
         :param _builtins.str value: Configuration value
         :param Sequence['GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs'] values: List of configuration values
         """
+        pulumi.set(__self__, "additional_properties", additional_properties)
+        pulumi.set(__self__, "allowed_values", allowed_values)
+        pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "value", value)
         pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult']:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Sequence['outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult']:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> _builtins.str:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -12866,6 +14794,75 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         List of configuration values
         """
         return pulumi.get(self, "values")
+
+
+@pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 property_type: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str property_type: Property Type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "property_type", property_type)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> _builtins.str:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param _builtins.str value: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -12946,6 +14943,35 @@ class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRu
         The entity value mapped to a data source query
         """
         return pulumi.get(self, "query_field")
+
+
+@pulumi.output_type
+class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 values: Sequence[_builtins.str]):
+        """
+        :param _builtins.str key: The unique identifier of the detector rule type
+        :param Sequence[_builtins.str] values: Configuration value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
 
 
 @pulumi.output_type
@@ -13573,6 +15599,7 @@ class GetManagedListsManagedListCollectionItemResult(dict):
                  display_name: _builtins.str,
                  feed_provider: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
+                 group: _builtins.str,
                  id: _builtins.str,
                  is_editable: _builtins.bool,
                  lifecyle_details: _builtins.str,
@@ -13590,6 +15617,7 @@ class GetManagedListsManagedListCollectionItemResult(dict):
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param _builtins.str feed_provider: Provider of the managed list feed
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param _builtins.str group: Managed list type group
         :param _builtins.str id: Unique identifier that can't be changed after creation
         :param _builtins.bool is_editable: Is this list editable?
         :param _builtins.str lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -13607,6 +15635,7 @@ class GetManagedListsManagedListCollectionItemResult(dict):
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "feed_provider", feed_provider)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "group", group)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_editable", is_editable)
         pulumi.set(__self__, "lifecyle_details", lifecyle_details)
@@ -13665,6 +15694,14 @@ class GetManagedListsManagedListCollectionItemResult(dict):
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def group(self) -> _builtins.str:
+        """
+        Managed list type group
+        """
+        return pulumi.get(self, "group")
 
     @_builtins.property
     @pulumi.getter

@@ -14,13 +14,12 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ModelTestingDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket *string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId *string `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   string  `pulumi:"datasetType"`
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object *string `pulumi:"object"`
@@ -38,13 +37,12 @@ type ModelTestingDatasetInput interface {
 }
 
 type ModelTestingDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -127,22 +125,21 @@ func (o ModelTestingDatasetOutput) ToModelTestingDatasetPtrOutputWithContext(ctx
 	}).(ModelTestingDatasetPtrOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelTestingDatasetOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelTestingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelTestingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTestingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTestingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -176,7 +173,7 @@ func (o ModelTestingDatasetPtrOutput) Elem() ModelTestingDatasetOutput {
 	}).(ModelTestingDatasetOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelTestingDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -186,7 +183,7 @@ func (o ModelTestingDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelTestingDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -196,7 +193,7 @@ func (o ModelTestingDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelTestingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -206,7 +203,6 @@ func (o ModelTestingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTestingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTestingDataset) *string {
 		if v == nil {
@@ -227,13 +223,12 @@ func (o ModelTestingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type ModelTrainingDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket *string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId *string `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   string  `pulumi:"datasetType"`
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object *string `pulumi:"object"`
@@ -251,13 +246,12 @@ type ModelTrainingDatasetInput interface {
 }
 
 type ModelTrainingDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -340,22 +334,21 @@ func (o ModelTrainingDatasetOutput) ToModelTrainingDatasetPtrOutputWithContext(c
 	}).(ModelTrainingDatasetPtrOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelTrainingDatasetOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelTrainingDatasetOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTrainingDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelTrainingDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -389,7 +382,7 @@ func (o ModelTrainingDatasetPtrOutput) Elem() ModelTrainingDatasetOutput {
 	}).(ModelTrainingDatasetOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelTrainingDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -399,7 +392,7 @@ func (o ModelTrainingDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelTrainingDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -409,7 +402,7 @@ func (o ModelTrainingDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelTrainingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -419,7 +412,6 @@ func (o ModelTrainingDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelTrainingDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelTrainingDataset) *string {
 		if v == nil {
@@ -440,13 +432,12 @@ func (o ModelTrainingDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 }
 
 type ModelValidationDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket *string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId *string `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType string `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   string  `pulumi:"datasetType"`
 	NamespaceName *string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	//
@@ -467,13 +458,12 @@ type ModelValidationDatasetInput interface {
 }
 
 type ModelValidationDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringPtrInput `pulumi:"datasetId"`
-	// Type of the Dataset.
-	DatasetType pulumi.StringInput `pulumi:"datasetType"`
-	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// The dataset type, based on where it is stored.
+	DatasetType   pulumi.StringInput    `pulumi:"datasetType"`
 	NamespaceName pulumi.StringPtrInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	//
@@ -559,22 +549,21 @@ func (o ModelValidationDatasetOutput) ToModelValidationDatasetPtrOutputWithConte
 	}).(ModelValidationDatasetPtrOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelValidationDatasetOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelValidationDataset) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelValidationDatasetOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelValidationDataset) *string { return v.DatasetId }).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelValidationDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelValidationDatasetOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelValidationDataset) *string { return v.NamespaceName }).(pulumi.StringPtrOutput)
 }
@@ -611,7 +600,7 @@ func (o ModelValidationDatasetPtrOutput) Elem() ModelValidationDatasetOutput {
 	}).(ModelValidationDatasetOutput)
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o ModelValidationDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelValidationDataset) *string {
 		if v == nil {
@@ -621,7 +610,7 @@ func (o ModelValidationDatasetPtrOutput) Bucket() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o ModelValidationDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelValidationDataset) *string {
 		if v == nil {
@@ -631,7 +620,7 @@ func (o ModelValidationDatasetPtrOutput) DatasetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o ModelValidationDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelValidationDataset) *string {
 		if v == nil {
@@ -641,7 +630,6 @@ func (o ModelValidationDatasetPtrOutput) DatasetType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The namespace name of the ObjectStorage bucket that contains the input data file.
 func (o ModelValidationDatasetPtrOutput) NamespaceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelValidationDataset) *string {
 		if v == nil {
@@ -664,6 +652,977 @@ func (o ModelValidationDatasetPtrOutput) Object() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type StreamGroupStreamOverlap struct {
+	// (Updatable) List of streamSource OCIDs.
+	OverlappingStreams []string `pulumi:"overlappingStreams"`
+}
+
+// StreamGroupStreamOverlapInput is an input type that accepts StreamGroupStreamOverlapArgs and StreamGroupStreamOverlapOutput values.
+// You can construct a concrete instance of `StreamGroupStreamOverlapInput` via:
+//
+//	StreamGroupStreamOverlapArgs{...}
+type StreamGroupStreamOverlapInput interface {
+	pulumi.Input
+
+	ToStreamGroupStreamOverlapOutput() StreamGroupStreamOverlapOutput
+	ToStreamGroupStreamOverlapOutputWithContext(context.Context) StreamGroupStreamOverlapOutput
+}
+
+type StreamGroupStreamOverlapArgs struct {
+	// (Updatable) List of streamSource OCIDs.
+	OverlappingStreams pulumi.StringArrayInput `pulumi:"overlappingStreams"`
+}
+
+func (StreamGroupStreamOverlapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (i StreamGroupStreamOverlapArgs) ToStreamGroupStreamOverlapOutput() StreamGroupStreamOverlapOutput {
+	return i.ToStreamGroupStreamOverlapOutputWithContext(context.Background())
+}
+
+func (i StreamGroupStreamOverlapArgs) ToStreamGroupStreamOverlapOutputWithContext(ctx context.Context) StreamGroupStreamOverlapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamGroupStreamOverlapOutput)
+}
+
+// StreamGroupStreamOverlapArrayInput is an input type that accepts StreamGroupStreamOverlapArray and StreamGroupStreamOverlapArrayOutput values.
+// You can construct a concrete instance of `StreamGroupStreamOverlapArrayInput` via:
+//
+//	StreamGroupStreamOverlapArray{ StreamGroupStreamOverlapArgs{...} }
+type StreamGroupStreamOverlapArrayInput interface {
+	pulumi.Input
+
+	ToStreamGroupStreamOverlapArrayOutput() StreamGroupStreamOverlapArrayOutput
+	ToStreamGroupStreamOverlapArrayOutputWithContext(context.Context) StreamGroupStreamOverlapArrayOutput
+}
+
+type StreamGroupStreamOverlapArray []StreamGroupStreamOverlapInput
+
+func (StreamGroupStreamOverlapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (i StreamGroupStreamOverlapArray) ToStreamGroupStreamOverlapArrayOutput() StreamGroupStreamOverlapArrayOutput {
+	return i.ToStreamGroupStreamOverlapArrayOutputWithContext(context.Background())
+}
+
+func (i StreamGroupStreamOverlapArray) ToStreamGroupStreamOverlapArrayOutputWithContext(ctx context.Context) StreamGroupStreamOverlapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamGroupStreamOverlapArrayOutput)
+}
+
+type StreamGroupStreamOverlapOutput struct{ *pulumi.OutputState }
+
+func (StreamGroupStreamOverlapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (o StreamGroupStreamOverlapOutput) ToStreamGroupStreamOverlapOutput() StreamGroupStreamOverlapOutput {
+	return o
+}
+
+func (o StreamGroupStreamOverlapOutput) ToStreamGroupStreamOverlapOutputWithContext(ctx context.Context) StreamGroupStreamOverlapOutput {
+	return o
+}
+
+// (Updatable) List of streamSource OCIDs.
+func (o StreamGroupStreamOverlapOutput) OverlappingStreams() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v StreamGroupStreamOverlap) []string { return v.OverlappingStreams }).(pulumi.StringArrayOutput)
+}
+
+type StreamGroupStreamOverlapArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamGroupStreamOverlapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (o StreamGroupStreamOverlapArrayOutput) ToStreamGroupStreamOverlapArrayOutput() StreamGroupStreamOverlapArrayOutput {
+	return o
+}
+
+func (o StreamGroupStreamOverlapArrayOutput) ToStreamGroupStreamOverlapArrayOutputWithContext(ctx context.Context) StreamGroupStreamOverlapArrayOutput {
+	return o
+}
+
+func (o StreamGroupStreamOverlapArrayOutput) Index(i pulumi.IntInput) StreamGroupStreamOverlapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamGroupStreamOverlap {
+		return vs[0].([]StreamGroupStreamOverlap)[vs[1].(int)]
+	}).(StreamGroupStreamOverlapOutput)
+}
+
+type StreamJobFeature struct {
+	// (Updatable) The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType string `pulumi:"featureType"`
+	// (Updatable) The maximum number of results to return.
+	MaxResults *int `pulumi:"maxResults"`
+	// (Updatable) Whether or not return face landmarks.
+	ShouldReturnLandmarks *bool `pulumi:"shouldReturnLandmarks"`
+	// (Updatable) List of details of what to track.
+	TrackingTypes []StreamJobFeatureTrackingType `pulumi:"trackingTypes"`
+}
+
+// StreamJobFeatureInput is an input type that accepts StreamJobFeatureArgs and StreamJobFeatureOutput values.
+// You can construct a concrete instance of `StreamJobFeatureInput` via:
+//
+//	StreamJobFeatureArgs{...}
+type StreamJobFeatureInput interface {
+	pulumi.Input
+
+	ToStreamJobFeatureOutput() StreamJobFeatureOutput
+	ToStreamJobFeatureOutputWithContext(context.Context) StreamJobFeatureOutput
+}
+
+type StreamJobFeatureArgs struct {
+	// (Updatable) The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType pulumi.StringInput `pulumi:"featureType"`
+	// (Updatable) The maximum number of results to return.
+	MaxResults pulumi.IntPtrInput `pulumi:"maxResults"`
+	// (Updatable) Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolPtrInput `pulumi:"shouldReturnLandmarks"`
+	// (Updatable) List of details of what to track.
+	TrackingTypes StreamJobFeatureTrackingTypeArrayInput `pulumi:"trackingTypes"`
+}
+
+func (StreamJobFeatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobFeature)(nil)).Elem()
+}
+
+func (i StreamJobFeatureArgs) ToStreamJobFeatureOutput() StreamJobFeatureOutput {
+	return i.ToStreamJobFeatureOutputWithContext(context.Background())
+}
+
+func (i StreamJobFeatureArgs) ToStreamJobFeatureOutputWithContext(ctx context.Context) StreamJobFeatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobFeatureOutput)
+}
+
+// StreamJobFeatureArrayInput is an input type that accepts StreamJobFeatureArray and StreamJobFeatureArrayOutput values.
+// You can construct a concrete instance of `StreamJobFeatureArrayInput` via:
+//
+//	StreamJobFeatureArray{ StreamJobFeatureArgs{...} }
+type StreamJobFeatureArrayInput interface {
+	pulumi.Input
+
+	ToStreamJobFeatureArrayOutput() StreamJobFeatureArrayOutput
+	ToStreamJobFeatureArrayOutputWithContext(context.Context) StreamJobFeatureArrayOutput
+}
+
+type StreamJobFeatureArray []StreamJobFeatureInput
+
+func (StreamJobFeatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamJobFeature)(nil)).Elem()
+}
+
+func (i StreamJobFeatureArray) ToStreamJobFeatureArrayOutput() StreamJobFeatureArrayOutput {
+	return i.ToStreamJobFeatureArrayOutputWithContext(context.Background())
+}
+
+func (i StreamJobFeatureArray) ToStreamJobFeatureArrayOutputWithContext(ctx context.Context) StreamJobFeatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobFeatureArrayOutput)
+}
+
+type StreamJobFeatureOutput struct{ *pulumi.OutputState }
+
+func (StreamJobFeatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobFeature)(nil)).Elem()
+}
+
+func (o StreamJobFeatureOutput) ToStreamJobFeatureOutput() StreamJobFeatureOutput {
+	return o
+}
+
+func (o StreamJobFeatureOutput) ToStreamJobFeatureOutputWithContext(ctx context.Context) StreamJobFeatureOutput {
+	return o
+}
+
+// (Updatable) The feature of video analysis. Allowed values are:
+// * OBJECT_TRACKING: Object tracking feature(OT).
+// * FACE_DETECTION: Face detection feature(FD).
+func (o StreamJobFeatureOutput) FeatureType() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamJobFeature) string { return v.FeatureType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The maximum number of results to return.
+func (o StreamJobFeatureOutput) MaxResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v StreamJobFeature) *int { return v.MaxResults }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Whether or not return face landmarks.
+func (o StreamJobFeatureOutput) ShouldReturnLandmarks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v StreamJobFeature) *bool { return v.ShouldReturnLandmarks }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of details of what to track.
+func (o StreamJobFeatureOutput) TrackingTypes() StreamJobFeatureTrackingTypeArrayOutput {
+	return o.ApplyT(func(v StreamJobFeature) []StreamJobFeatureTrackingType { return v.TrackingTypes }).(StreamJobFeatureTrackingTypeArrayOutput)
+}
+
+type StreamJobFeatureArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamJobFeatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamJobFeature)(nil)).Elem()
+}
+
+func (o StreamJobFeatureArrayOutput) ToStreamJobFeatureArrayOutput() StreamJobFeatureArrayOutput {
+	return o
+}
+
+func (o StreamJobFeatureArrayOutput) ToStreamJobFeatureArrayOutputWithContext(ctx context.Context) StreamJobFeatureArrayOutput {
+	return o
+}
+
+func (o StreamJobFeatureArrayOutput) Index(i pulumi.IntInput) StreamJobFeatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamJobFeature {
+		return vs[0].([]StreamJobFeature)[vs[1].(int)]
+	}).(StreamJobFeatureOutput)
+}
+
+type StreamJobFeatureTrackingType struct {
+	// (Updatable) compartment Id of biometric compartment.
+	BiometricStoreCompartmentId *string `pulumi:"biometricStoreCompartmentId"`
+	// (Updatable) Which biometric store user wants to do face recognition
+	BiometricStoreId *string `pulumi:"biometricStoreId"`
+	// (Updatable) The detection model OCID.
+	DetectionModelId *string `pulumi:"detectionModelId"`
+	// (Updatable) The maximum number of results to return.
+	MaxResults *int `pulumi:"maxResults"`
+	// (Updatable) List of the objects to be tracked.
+	Objects []string `pulumi:"objects"`
+	// (Updatable) Whether or not return face landmarks.
+	ShouldReturnLandmarks *bool `pulumi:"shouldReturnLandmarks"`
+	// (Updatable) The tracking model OCID.
+	TrackingModelId *string `pulumi:"trackingModelId"`
+}
+
+// StreamJobFeatureTrackingTypeInput is an input type that accepts StreamJobFeatureTrackingTypeArgs and StreamJobFeatureTrackingTypeOutput values.
+// You can construct a concrete instance of `StreamJobFeatureTrackingTypeInput` via:
+//
+//	StreamJobFeatureTrackingTypeArgs{...}
+type StreamJobFeatureTrackingTypeInput interface {
+	pulumi.Input
+
+	ToStreamJobFeatureTrackingTypeOutput() StreamJobFeatureTrackingTypeOutput
+	ToStreamJobFeatureTrackingTypeOutputWithContext(context.Context) StreamJobFeatureTrackingTypeOutput
+}
+
+type StreamJobFeatureTrackingTypeArgs struct {
+	// (Updatable) compartment Id of biometric compartment.
+	BiometricStoreCompartmentId pulumi.StringPtrInput `pulumi:"biometricStoreCompartmentId"`
+	// (Updatable) Which biometric store user wants to do face recognition
+	BiometricStoreId pulumi.StringPtrInput `pulumi:"biometricStoreId"`
+	// (Updatable) The detection model OCID.
+	DetectionModelId pulumi.StringPtrInput `pulumi:"detectionModelId"`
+	// (Updatable) The maximum number of results to return.
+	MaxResults pulumi.IntPtrInput `pulumi:"maxResults"`
+	// (Updatable) List of the objects to be tracked.
+	Objects pulumi.StringArrayInput `pulumi:"objects"`
+	// (Updatable) Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolPtrInput `pulumi:"shouldReturnLandmarks"`
+	// (Updatable) The tracking model OCID.
+	TrackingModelId pulumi.StringPtrInput `pulumi:"trackingModelId"`
+}
+
+func (StreamJobFeatureTrackingTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (i StreamJobFeatureTrackingTypeArgs) ToStreamJobFeatureTrackingTypeOutput() StreamJobFeatureTrackingTypeOutput {
+	return i.ToStreamJobFeatureTrackingTypeOutputWithContext(context.Background())
+}
+
+func (i StreamJobFeatureTrackingTypeArgs) ToStreamJobFeatureTrackingTypeOutputWithContext(ctx context.Context) StreamJobFeatureTrackingTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobFeatureTrackingTypeOutput)
+}
+
+// StreamJobFeatureTrackingTypeArrayInput is an input type that accepts StreamJobFeatureTrackingTypeArray and StreamJobFeatureTrackingTypeArrayOutput values.
+// You can construct a concrete instance of `StreamJobFeatureTrackingTypeArrayInput` via:
+//
+//	StreamJobFeatureTrackingTypeArray{ StreamJobFeatureTrackingTypeArgs{...} }
+type StreamJobFeatureTrackingTypeArrayInput interface {
+	pulumi.Input
+
+	ToStreamJobFeatureTrackingTypeArrayOutput() StreamJobFeatureTrackingTypeArrayOutput
+	ToStreamJobFeatureTrackingTypeArrayOutputWithContext(context.Context) StreamJobFeatureTrackingTypeArrayOutput
+}
+
+type StreamJobFeatureTrackingTypeArray []StreamJobFeatureTrackingTypeInput
+
+func (StreamJobFeatureTrackingTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (i StreamJobFeatureTrackingTypeArray) ToStreamJobFeatureTrackingTypeArrayOutput() StreamJobFeatureTrackingTypeArrayOutput {
+	return i.ToStreamJobFeatureTrackingTypeArrayOutputWithContext(context.Background())
+}
+
+func (i StreamJobFeatureTrackingTypeArray) ToStreamJobFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) StreamJobFeatureTrackingTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobFeatureTrackingTypeArrayOutput)
+}
+
+type StreamJobFeatureTrackingTypeOutput struct{ *pulumi.OutputState }
+
+func (StreamJobFeatureTrackingTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (o StreamJobFeatureTrackingTypeOutput) ToStreamJobFeatureTrackingTypeOutput() StreamJobFeatureTrackingTypeOutput {
+	return o
+}
+
+func (o StreamJobFeatureTrackingTypeOutput) ToStreamJobFeatureTrackingTypeOutputWithContext(ctx context.Context) StreamJobFeatureTrackingTypeOutput {
+	return o
+}
+
+// (Updatable) compartment Id of biometric compartment.
+func (o StreamJobFeatureTrackingTypeOutput) BiometricStoreCompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *string { return v.BiometricStoreCompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Which biometric store user wants to do face recognition
+func (o StreamJobFeatureTrackingTypeOutput) BiometricStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *string { return v.BiometricStoreId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The detection model OCID.
+func (o StreamJobFeatureTrackingTypeOutput) DetectionModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *string { return v.DetectionModelId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The maximum number of results to return.
+func (o StreamJobFeatureTrackingTypeOutput) MaxResults() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *int { return v.MaxResults }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) List of the objects to be tracked.
+func (o StreamJobFeatureTrackingTypeOutput) Objects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) []string { return v.Objects }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Whether or not return face landmarks.
+func (o StreamJobFeatureTrackingTypeOutput) ShouldReturnLandmarks() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *bool { return v.ShouldReturnLandmarks }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The tracking model OCID.
+func (o StreamJobFeatureTrackingTypeOutput) TrackingModelId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamJobFeatureTrackingType) *string { return v.TrackingModelId }).(pulumi.StringPtrOutput)
+}
+
+type StreamJobFeatureTrackingTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (StreamJobFeatureTrackingTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]StreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (o StreamJobFeatureTrackingTypeArrayOutput) ToStreamJobFeatureTrackingTypeArrayOutput() StreamJobFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o StreamJobFeatureTrackingTypeArrayOutput) ToStreamJobFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) StreamJobFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o StreamJobFeatureTrackingTypeArrayOutput) Index(i pulumi.IntInput) StreamJobFeatureTrackingTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) StreamJobFeatureTrackingType {
+		return vs[0].([]StreamJobFeatureTrackingType)[vs[1].(int)]
+	}).(StreamJobFeatureTrackingTypeOutput)
+}
+
+type StreamJobStreamOutputLocation struct {
+	// (Updatable) The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// (Updatable) Object storage output location
+	OboToken *string `pulumi:"oboToken"`
+	// (Updatable) Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// (Updatable) The Object Storage folder name.
+	Prefix string `pulumi:"prefix"`
+}
+
+// StreamJobStreamOutputLocationInput is an input type that accepts StreamJobStreamOutputLocationArgs and StreamJobStreamOutputLocationOutput values.
+// You can construct a concrete instance of `StreamJobStreamOutputLocationInput` via:
+//
+//	StreamJobStreamOutputLocationArgs{...}
+type StreamJobStreamOutputLocationInput interface {
+	pulumi.Input
+
+	ToStreamJobStreamOutputLocationOutput() StreamJobStreamOutputLocationOutput
+	ToStreamJobStreamOutputLocationOutputWithContext(context.Context) StreamJobStreamOutputLocationOutput
+}
+
+type StreamJobStreamOutputLocationArgs struct {
+	// (Updatable) The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// (Updatable) The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// (Updatable) Object storage output location
+	OboToken pulumi.StringPtrInput `pulumi:"oboToken"`
+	// (Updatable) Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// (Updatable) The Object Storage folder name.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (StreamJobStreamOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (i StreamJobStreamOutputLocationArgs) ToStreamJobStreamOutputLocationOutput() StreamJobStreamOutputLocationOutput {
+	return i.ToStreamJobStreamOutputLocationOutputWithContext(context.Background())
+}
+
+func (i StreamJobStreamOutputLocationArgs) ToStreamJobStreamOutputLocationOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobStreamOutputLocationOutput)
+}
+
+func (i StreamJobStreamOutputLocationArgs) ToStreamJobStreamOutputLocationPtrOutput() StreamJobStreamOutputLocationPtrOutput {
+	return i.ToStreamJobStreamOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i StreamJobStreamOutputLocationArgs) ToStreamJobStreamOutputLocationPtrOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobStreamOutputLocationOutput).ToStreamJobStreamOutputLocationPtrOutputWithContext(ctx)
+}
+
+// StreamJobStreamOutputLocationPtrInput is an input type that accepts StreamJobStreamOutputLocationArgs, StreamJobStreamOutputLocationPtr and StreamJobStreamOutputLocationPtrOutput values.
+// You can construct a concrete instance of `StreamJobStreamOutputLocationPtrInput` via:
+//
+//	        StreamJobStreamOutputLocationArgs{...}
+//
+//	or:
+//
+//	        nil
+type StreamJobStreamOutputLocationPtrInput interface {
+	pulumi.Input
+
+	ToStreamJobStreamOutputLocationPtrOutput() StreamJobStreamOutputLocationPtrOutput
+	ToStreamJobStreamOutputLocationPtrOutputWithContext(context.Context) StreamJobStreamOutputLocationPtrOutput
+}
+
+type streamJobStreamOutputLocationPtrType StreamJobStreamOutputLocationArgs
+
+func StreamJobStreamOutputLocationPtr(v *StreamJobStreamOutputLocationArgs) StreamJobStreamOutputLocationPtrInput {
+	return (*streamJobStreamOutputLocationPtrType)(v)
+}
+
+func (*streamJobStreamOutputLocationPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (i *streamJobStreamOutputLocationPtrType) ToStreamJobStreamOutputLocationPtrOutput() StreamJobStreamOutputLocationPtrOutput {
+	return i.ToStreamJobStreamOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (i *streamJobStreamOutputLocationPtrType) ToStreamJobStreamOutputLocationPtrOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamJobStreamOutputLocationPtrOutput)
+}
+
+type StreamJobStreamOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (StreamJobStreamOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (o StreamJobStreamOutputLocationOutput) ToStreamJobStreamOutputLocationOutput() StreamJobStreamOutputLocationOutput {
+	return o
+}
+
+func (o StreamJobStreamOutputLocationOutput) ToStreamJobStreamOutputLocationOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationOutput {
+	return o
+}
+
+func (o StreamJobStreamOutputLocationOutput) ToStreamJobStreamOutputLocationPtrOutput() StreamJobStreamOutputLocationPtrOutput {
+	return o.ToStreamJobStreamOutputLocationPtrOutputWithContext(context.Background())
+}
+
+func (o StreamJobStreamOutputLocationOutput) ToStreamJobStreamOutputLocationPtrOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamJobStreamOutputLocation) *StreamJobStreamOutputLocation {
+		return &v
+	}).(StreamJobStreamOutputLocationPtrOutput)
+}
+
+// (Updatable) The Object Storage bucket name.
+func (o StreamJobStreamOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamJobStreamOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// (Updatable) The Object Storage namespace.
+func (o StreamJobStreamOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamJobStreamOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// (Updatable) Object storage output location
+func (o StreamJobStreamOutputLocationOutput) OboToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamJobStreamOutputLocation) *string { return v.OboToken }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of device Allowed values are:
+// * OBJECT_STORAGE
+// * LIVEKIT_WEBRTC_AGENT
+func (o StreamJobStreamOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamJobStreamOutputLocation) string { return v.OutputLocationType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The Object Storage folder name.
+func (o StreamJobStreamOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamJobStreamOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type StreamJobStreamOutputLocationPtrOutput struct{ *pulumi.OutputState }
+
+func (StreamJobStreamOutputLocationPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (o StreamJobStreamOutputLocationPtrOutput) ToStreamJobStreamOutputLocationPtrOutput() StreamJobStreamOutputLocationPtrOutput {
+	return o
+}
+
+func (o StreamJobStreamOutputLocationPtrOutput) ToStreamJobStreamOutputLocationPtrOutputWithContext(ctx context.Context) StreamJobStreamOutputLocationPtrOutput {
+	return o
+}
+
+func (o StreamJobStreamOutputLocationPtrOutput) Elem() StreamJobStreamOutputLocationOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) StreamJobStreamOutputLocation {
+		if v != nil {
+			return *v
+		}
+		var ret StreamJobStreamOutputLocation
+		return ret
+	}).(StreamJobStreamOutputLocationOutput)
+}
+
+// (Updatable) The Object Storage bucket name.
+func (o StreamJobStreamOutputLocationPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage namespace.
+func (o StreamJobStreamOutputLocationPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Object storage output location
+func (o StreamJobStreamOutputLocationPtrOutput) OboToken() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OboToken
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of device Allowed values are:
+// * OBJECT_STORAGE
+// * LIVEKIT_WEBRTC_AGENT
+func (o StreamJobStreamOutputLocationPtrOutput) OutputLocationType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OutputLocationType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The Object Storage folder name.
+func (o StreamJobStreamOutputLocationPtrOutput) Prefix() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamJobStreamOutputLocation) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Prefix
+	}).(pulumi.StringPtrOutput)
+}
+
+type StreamSourceStreamSourceDetails struct {
+	// (Updatable) url of camera
+	CameraUrl string `pulumi:"cameraUrl"`
+	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId *string `pulumi:"secretId"`
+	// (Updatable) Type of source Allowed values are:
+	// * RTSP
+	SourceType string `pulumi:"sourceType"`
+	// (Updatable) Details about a stream Connection type
+	StreamNetworkAccessDetails StreamSourceStreamSourceDetailsStreamNetworkAccessDetails `pulumi:"streamNetworkAccessDetails"`
+}
+
+// StreamSourceStreamSourceDetailsInput is an input type that accepts StreamSourceStreamSourceDetailsArgs and StreamSourceStreamSourceDetailsOutput values.
+// You can construct a concrete instance of `StreamSourceStreamSourceDetailsInput` via:
+//
+//	StreamSourceStreamSourceDetailsArgs{...}
+type StreamSourceStreamSourceDetailsInput interface {
+	pulumi.Input
+
+	ToStreamSourceStreamSourceDetailsOutput() StreamSourceStreamSourceDetailsOutput
+	ToStreamSourceStreamSourceDetailsOutputWithContext(context.Context) StreamSourceStreamSourceDetailsOutput
+}
+
+type StreamSourceStreamSourceDetailsArgs struct {
+	// (Updatable) url of camera
+	CameraUrl pulumi.StringInput `pulumi:"cameraUrl"`
+	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
+	// (Updatable) Type of source Allowed values are:
+	// * RTSP
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// (Updatable) Details about a stream Connection type
+	StreamNetworkAccessDetails StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsInput `pulumi:"streamNetworkAccessDetails"`
+}
+
+func (StreamSourceStreamSourceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamSourceStreamSourceDetails)(nil)).Elem()
+}
+
+func (i StreamSourceStreamSourceDetailsArgs) ToStreamSourceStreamSourceDetailsOutput() StreamSourceStreamSourceDetailsOutput {
+	return i.ToStreamSourceStreamSourceDetailsOutputWithContext(context.Background())
+}
+
+func (i StreamSourceStreamSourceDetailsArgs) ToStreamSourceStreamSourceDetailsOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsOutput)
+}
+
+func (i StreamSourceStreamSourceDetailsArgs) ToStreamSourceStreamSourceDetailsPtrOutput() StreamSourceStreamSourceDetailsPtrOutput {
+	return i.ToStreamSourceStreamSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i StreamSourceStreamSourceDetailsArgs) ToStreamSourceStreamSourceDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsOutput).ToStreamSourceStreamSourceDetailsPtrOutputWithContext(ctx)
+}
+
+// StreamSourceStreamSourceDetailsPtrInput is an input type that accepts StreamSourceStreamSourceDetailsArgs, StreamSourceStreamSourceDetailsPtr and StreamSourceStreamSourceDetailsPtrOutput values.
+// You can construct a concrete instance of `StreamSourceStreamSourceDetailsPtrInput` via:
+//
+//	        StreamSourceStreamSourceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type StreamSourceStreamSourceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToStreamSourceStreamSourceDetailsPtrOutput() StreamSourceStreamSourceDetailsPtrOutput
+	ToStreamSourceStreamSourceDetailsPtrOutputWithContext(context.Context) StreamSourceStreamSourceDetailsPtrOutput
+}
+
+type streamSourceStreamSourceDetailsPtrType StreamSourceStreamSourceDetailsArgs
+
+func StreamSourceStreamSourceDetailsPtr(v *StreamSourceStreamSourceDetailsArgs) StreamSourceStreamSourceDetailsPtrInput {
+	return (*streamSourceStreamSourceDetailsPtrType)(v)
+}
+
+func (*streamSourceStreamSourceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamSourceStreamSourceDetails)(nil)).Elem()
+}
+
+func (i *streamSourceStreamSourceDetailsPtrType) ToStreamSourceStreamSourceDetailsPtrOutput() StreamSourceStreamSourceDetailsPtrOutput {
+	return i.ToStreamSourceStreamSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *streamSourceStreamSourceDetailsPtrType) ToStreamSourceStreamSourceDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsPtrOutput)
+}
+
+type StreamSourceStreamSourceDetailsOutput struct{ *pulumi.OutputState }
+
+func (StreamSourceStreamSourceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamSourceStreamSourceDetails)(nil)).Elem()
+}
+
+func (o StreamSourceStreamSourceDetailsOutput) ToStreamSourceStreamSourceDetailsOutput() StreamSourceStreamSourceDetailsOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsOutput) ToStreamSourceStreamSourceDetailsOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsOutput) ToStreamSourceStreamSourceDetailsPtrOutput() StreamSourceStreamSourceDetailsPtrOutput {
+	return o.ToStreamSourceStreamSourceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o StreamSourceStreamSourceDetailsOutput) ToStreamSourceStreamSourceDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamSourceStreamSourceDetails) *StreamSourceStreamSourceDetails {
+		return &v
+	}).(StreamSourceStreamSourceDetailsPtrOutput)
+}
+
+// (Updatable) url of camera
+func (o StreamSourceStreamSourceDetailsOutput) CameraUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetails) string { return v.CameraUrl }).(pulumi.StringOutput)
+}
+
+// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+func (o StreamSourceStreamSourceDetailsOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetails) *string { return v.SecretId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of source Allowed values are:
+// * RTSP
+func (o StreamSourceStreamSourceDetailsOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetails) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Details about a stream Connection type
+func (o StreamSourceStreamSourceDetailsOutput) StreamNetworkAccessDetails() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetails) StreamSourceStreamSourceDetailsStreamNetworkAccessDetails {
+		return v.StreamNetworkAccessDetails
+	}).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput)
+}
+
+type StreamSourceStreamSourceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (StreamSourceStreamSourceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamSourceStreamSourceDetails)(nil)).Elem()
+}
+
+func (o StreamSourceStreamSourceDetailsPtrOutput) ToStreamSourceStreamSourceDetailsPtrOutput() StreamSourceStreamSourceDetailsPtrOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsPtrOutput) ToStreamSourceStreamSourceDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsPtrOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsPtrOutput) Elem() StreamSourceStreamSourceDetailsOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetails) StreamSourceStreamSourceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret StreamSourceStreamSourceDetails
+		return ret
+	}).(StreamSourceStreamSourceDetailsOutput)
+}
+
+// (Updatable) url of camera
+func (o StreamSourceStreamSourceDetailsPtrOutput) CameraUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.CameraUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+func (o StreamSourceStreamSourceDetailsPtrOutput) SecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of source Allowed values are:
+// * RTSP
+func (o StreamSourceStreamSourceDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details about a stream Connection type
+func (o StreamSourceStreamSourceDetailsPtrOutput) StreamNetworkAccessDetails() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetails) *StreamSourceStreamSourceDetailsStreamNetworkAccessDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.StreamNetworkAccessDetails
+	}).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput)
+}
+
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetails struct {
+	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// (Updatable) Type of access Allowed values are:
+	// * PRIVATE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StreamAccessType string `pulumi:"streamAccessType"`
+}
+
+// StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsInput is an input type that accepts StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs and StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput values.
+// You can construct a concrete instance of `StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsInput` via:
+//
+//	StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs{...}
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsInput interface {
+	pulumi.Input
+
+	ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput
+	ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutputWithContext(context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput
+}
+
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs struct {
+	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// (Updatable) Type of access Allowed values are:
+	// * PRIVATE
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	StreamAccessType pulumi.StringInput `pulumi:"streamAccessType"`
+}
+
+func (StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamSourceStreamSourceDetailsStreamNetworkAccessDetails)(nil)).Elem()
+}
+
+func (i StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return i.ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutputWithContext(context.Background())
+}
+
+func (i StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput)
+}
+
+func (i StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return i.ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput).ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(ctx)
+}
+
+// StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrInput is an input type that accepts StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs, StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtr and StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput values.
+// You can construct a concrete instance of `StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrInput` via:
+//
+//	        StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrInput interface {
+	pulumi.Input
+
+	ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput
+	ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput
+}
+
+type streamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrType StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs
+
+func StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtr(v *StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrInput {
+	return (*streamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrType)(v)
+}
+
+func (*streamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamSourceStreamSourceDetailsStreamNetworkAccessDetails)(nil)).Elem()
+}
+
+func (i *streamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrType) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return i.ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *streamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrType) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput)
+}
+
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput struct{ *pulumi.OutputState }
+
+func (StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*StreamSourceStreamSourceDetailsStreamNetworkAccessDetails)(nil)).Elem()
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return o.ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) *StreamSourceStreamSourceDetailsStreamNetworkAccessDetails {
+		return &v
+	}).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput)
+}
+
+// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Type of access Allowed values are:
+// * PRIVATE
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput) StreamAccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) string { return v.StreamAccessType }).(pulumi.StringOutput)
+}
+
+type StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**StreamSourceStreamSourceDetailsStreamNetworkAccessDetails)(nil)).Elem()
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) ToStreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutputWithContext(ctx context.Context) StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput {
+	return o
+}
+
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) Elem() StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) StreamSourceStreamSourceDetailsStreamNetworkAccessDetails {
+		if v != nil {
+			return *v
+		}
+		var ret StreamSourceStreamSourceDetailsStreamNetworkAccessDetails
+		return ret
+	}).(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput)
+}
+
+// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PrivateEndpointId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of access Allowed values are:
+// * PRIVATE
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput) StreamAccessType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *StreamSourceStreamSourceDetailsStreamNetworkAccessDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.StreamAccessType
+	}).(pulumi.StringPtrOutput)
+}
+
 type GetModelTestingDataset struct {
 	// The name of the ObjectStorage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
@@ -672,6 +1631,7 @@ type GetModelTestingDataset struct {
 	// Type of the Dataset.
 	DatasetType string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -696,6 +1656,7 @@ type GetModelTestingDatasetArgs struct {
 	// Type of the Dataset.
 	DatasetType pulumi.StringInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -768,6 +1729,7 @@ func (o GetModelTestingDatasetOutput) DatasetType() pulumi.StringOutput {
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
+// > > > > > > > theirs
 func (o GetModelTestingDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTestingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -805,6 +1767,7 @@ type GetModelTrainingDataset struct {
 	// Type of the Dataset.
 	DatasetType string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -829,6 +1792,7 @@ type GetModelTrainingDatasetArgs struct {
 	// Type of the Dataset.
 	DatasetType pulumi.StringInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -901,6 +1865,7 @@ func (o GetModelTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
+// > > > > > > > theirs
 func (o GetModelTrainingDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelTrainingDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -938,6 +1903,7 @@ type GetModelValidationDataset struct {
 	// Type of the Dataset.
 	DatasetType string `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object string `pulumi:"object"`
@@ -962,6 +1928,7 @@ type GetModelValidationDatasetArgs struct {
 	// Type of the Dataset.
 	DatasetType pulumi.StringInput `pulumi:"datasetType"`
 	// The namespace name of the ObjectStorage bucket that contains the input data file.
+	// > > > > > > > theirs
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
 	Object pulumi.StringInput `pulumi:"object"`
@@ -1034,6 +2001,7 @@ func (o GetModelValidationDatasetOutput) DatasetType() pulumi.StringOutput {
 }
 
 // The namespace name of the ObjectStorage bucket that contains the input data file.
+// > > > > > > > theirs
 func (o GetModelValidationDatasetOutput) NamespaceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelValidationDataset) string { return v.NamespaceName }).(pulumi.StringOutput)
 }
@@ -1264,59 +2232,59 @@ func (o GetModelsModelCollectionArrayOutput) Index(i pulumi.IntInput) GetModelsM
 }
 
 type GetModelsModelCollectionItem struct {
-	// Average precision of the trained model
+	// The mean average precision of the trained model.
 	AveragePrecision float64 `pulumi:"averagePrecision"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Confidence ratio of the calculation
+	// The intersection over the union threshold used for calculating precision and recall.
 	ConfidenceThreshold float64 `pulumi:"confidenceThreshold"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A short description of the model.
+	// An optional description of the model.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// unique Model identifier
+	// The filter to find the model with the given identifier.
 	Id string `pulumi:"id"`
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode bool `pulumi:"isQuickMode"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours float64 `pulumi:"maxTrainingDurationInHours"`
-	// Complete Training Metrics for successful trained model
+	// The complete set of per-label metrics for successfully trained models.
 	Metrics string `pulumi:"metrics"`
-	// Type of the Model.
+	// What type of Vision model this is.
 	ModelType string `pulumi:"modelType"`
-	// The version of the model
+	// The version of the model.
 	ModelVersion string `pulumi:"modelVersion"`
-	// Precision of the trained model
+	// The precision of the trained model.
 	Precision float64 `pulumi:"precision"`
 	// The ID of the project for which to list the objects.
 	ProjectId string `pulumi:"projectId"`
-	// Recall of the trained model
+	// Recall of the trained model.
 	Recall float64 `pulumi:"recall"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match models with the given lifecycleState.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Total number of testing Images
+	// The number of images set aside for evaluating model performance metrics after training.
 	TestImageCount int `pulumi:"testImageCount"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDatasets []GetModelsModelCollectionItemTestingDataset `pulumi:"testingDatasets"`
-	// The time the Model was created. An RFC3339 formatted datetime string
+	// When the model was created, as an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Model was updated. An RFC3339 formatted datetime string
+	// When the model was updated, as an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Total number of training Images
+	// The number of images in the dataset used to train, validate, and test the model.
 	TotalImageCount int `pulumi:"totalImageCount"`
-	// Total hours actually used for training
+	// The total hours actually used for model training.
 	TrainedDurationInHours float64 `pulumi:"trainedDurationInHours"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDatasets []GetModelsModelCollectionItemTrainingDataset `pulumi:"trainingDatasets"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDatasets []GetModelsModelCollectionItemValidationDataset `pulumi:"validationDatasets"`
 }
 
@@ -1332,59 +2300,59 @@ type GetModelsModelCollectionItemInput interface {
 }
 
 type GetModelsModelCollectionItemArgs struct {
-	// Average precision of the trained model
+	// The mean average precision of the trained model.
 	AveragePrecision pulumi.Float64Input `pulumi:"averagePrecision"`
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Confidence ratio of the calculation
+	// The intersection over the union threshold used for calculating precision and recall.
 	ConfidenceThreshold pulumi.Float64Input `pulumi:"confidenceThreshold"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A short description of the model.
+	// An optional description of the model.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// unique Model identifier
+	// The filter to find the model with the given identifier.
 	Id pulumi.StringInput `pulumi:"id"`
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolInput `pulumi:"isQuickMode"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours pulumi.Float64Input `pulumi:"maxTrainingDurationInHours"`
-	// Complete Training Metrics for successful trained model
+	// The complete set of per-label metrics for successfully trained models.
 	Metrics pulumi.StringInput `pulumi:"metrics"`
-	// Type of the Model.
+	// What type of Vision model this is.
 	ModelType pulumi.StringInput `pulumi:"modelType"`
-	// The version of the model
+	// The version of the model.
 	ModelVersion pulumi.StringInput `pulumi:"modelVersion"`
-	// Precision of the trained model
+	// The precision of the trained model.
 	Precision pulumi.Float64Input `pulumi:"precision"`
 	// The ID of the project for which to list the objects.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
-	// Recall of the trained model
+	// Recall of the trained model.
 	Recall pulumi.Float64Input `pulumi:"recall"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match models with the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// Total number of testing Images
+	// The number of images set aside for evaluating model performance metrics after training.
 	TestImageCount pulumi.IntInput `pulumi:"testImageCount"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDatasets GetModelsModelCollectionItemTestingDatasetArrayInput `pulumi:"testingDatasets"`
-	// The time the Model was created. An RFC3339 formatted datetime string
+	// When the model was created, as an RFC3339 datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Model was updated. An RFC3339 formatted datetime string
+	// When the model was updated, as an RFC3339 datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-	// Total number of training Images
+	// The number of images in the dataset used to train, validate, and test the model.
 	TotalImageCount pulumi.IntInput `pulumi:"totalImageCount"`
-	// Total hours actually used for training
+	// The total hours actually used for model training.
 	TrainedDurationInHours pulumi.Float64Input `pulumi:"trainedDurationInHours"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDatasets GetModelsModelCollectionItemTrainingDatasetArrayInput `pulumi:"trainingDatasets"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDatasets GetModelsModelCollectionItemValidationDatasetArrayInput `pulumi:"validationDatasets"`
 }
 
@@ -1439,7 +2407,7 @@ func (o GetModelsModelCollectionItemOutput) ToGetModelsModelCollectionItemOutput
 	return o
 }
 
-// Average precision of the trained model
+// The mean average precision of the trained model.
 func (o GetModelsModelCollectionItemOutput) AveragePrecision() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.AveragePrecision }).(pulumi.Float64Output)
 }
@@ -1449,17 +2417,17 @@ func (o GetModelsModelCollectionItemOutput) CompartmentId() pulumi.StringOutput 
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Confidence ratio of the calculation
+// The intersection over the union threshold used for calculating precision and recall.
 func (o GetModelsModelCollectionItemOutput) ConfidenceThreshold() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.ConfidenceThreshold }).(pulumi.Float64Output)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o GetModelsModelCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A short description of the model.
+// An optional description of the model.
 func (o GetModelsModelCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -1469,47 +2437,47 @@ func (o GetModelsModelCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o GetModelsModelCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// unique Model identifier
+// The filter to find the model with the given identifier.
 func (o GetModelsModelCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// If It's true, Training is set for recommended epochs needed for quick training.
+// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
 func (o GetModelsModelCollectionItemOutput) IsQuickMode() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) bool { return v.IsQuickMode }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail, that can provide actionable information if training failed.
 func (o GetModelsModelCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The maximum duration in hours for which the training will run.
+// The maximum model training duration in hours, expressed as a decimal fraction.
 func (o GetModelsModelCollectionItemOutput) MaxTrainingDurationInHours() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.MaxTrainingDurationInHours }).(pulumi.Float64Output)
 }
 
-// Complete Training Metrics for successful trained model
+// The complete set of per-label metrics for successfully trained models.
 func (o GetModelsModelCollectionItemOutput) Metrics() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.Metrics }).(pulumi.StringOutput)
 }
 
-// Type of the Model.
+// What type of Vision model this is.
 func (o GetModelsModelCollectionItemOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// The version of the model
+// The version of the model.
 func (o GetModelsModelCollectionItemOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Precision of the trained model
+// The precision of the trained model.
 func (o GetModelsModelCollectionItemOutput) Precision() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.Precision }).(pulumi.Float64Output)
 }
@@ -1519,61 +2487,61 @@ func (o GetModelsModelCollectionItemOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// Recall of the trained model
+// Recall of the trained model.
 func (o GetModelsModelCollectionItemOutput) Recall() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.Recall }).(pulumi.Float64Output)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// The filter to match models with the given lifecycleState.
 func (o GetModelsModelCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o GetModelsModelCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Total number of testing Images
+// The number of images set aside for evaluating model performance metrics after training.
 func (o GetModelsModelCollectionItemOutput) TestImageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) int { return v.TestImageCount }).(pulumi.IntOutput)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o GetModelsModelCollectionItemOutput) TestingDatasets() GetModelsModelCollectionItemTestingDatasetArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemTestingDataset {
 		return v.TestingDatasets
 	}).(GetModelsModelCollectionItemTestingDatasetArrayOutput)
 }
 
-// The time the Model was created. An RFC3339 formatted datetime string
+// When the model was created, as an RFC3339 datetime string.
 func (o GetModelsModelCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Model was updated. An RFC3339 formatted datetime string
+// When the model was updated, as an RFC3339 datetime string.
 func (o GetModelsModelCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Total number of training Images
+// The number of images in the dataset used to train, validate, and test the model.
 func (o GetModelsModelCollectionItemOutput) TotalImageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) int { return v.TotalImageCount }).(pulumi.IntOutput)
 }
 
-// Total hours actually used for training
+// The total hours actually used for model training.
 func (o GetModelsModelCollectionItemOutput) TrainedDurationInHours() pulumi.Float64Output {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) float64 { return v.TrainedDurationInHours }).(pulumi.Float64Output)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o GetModelsModelCollectionItemOutput) TrainingDatasets() GetModelsModelCollectionItemTrainingDatasetArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemTrainingDataset {
 		return v.TrainingDatasets
 	}).(GetModelsModelCollectionItemTrainingDatasetArrayOutput)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o GetModelsModelCollectionItemOutput) ValidationDatasets() GetModelsModelCollectionItemValidationDatasetArrayOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItem) []GetModelsModelCollectionItemValidationDataset {
 		return v.ValidationDatasets
@@ -1601,11 +2569,11 @@ func (o GetModelsModelCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMod
 }
 
 type GetModelsModelCollectionItemTestingDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId string `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   string `pulumi:"datasetType"`
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1624,11 +2592,11 @@ type GetModelsModelCollectionItemTestingDatasetInput interface {
 }
 
 type GetModelsModelCollectionItemTestingDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1686,17 +2654,17 @@ func (o GetModelsModelCollectionItemTestingDatasetOutput) ToGetModelsModelCollec
 	return o
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o GetModelsModelCollectionItemTestingDatasetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o GetModelsModelCollectionItemTestingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTestingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
@@ -1731,11 +2699,11 @@ func (o GetModelsModelCollectionItemTestingDatasetArrayOutput) Index(i pulumi.In
 }
 
 type GetModelsModelCollectionItemTrainingDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId string `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   string `pulumi:"datasetType"`
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1754,11 +2722,11 @@ type GetModelsModelCollectionItemTrainingDatasetInput interface {
 }
 
 type GetModelsModelCollectionItemTrainingDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1816,17 +2784,17 @@ func (o GetModelsModelCollectionItemTrainingDatasetOutput) ToGetModelsModelColle
 	return o
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o GetModelsModelCollectionItemTrainingDatasetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.DatasetId }).(pulumi.StringOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o GetModelsModelCollectionItemTrainingDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemTrainingDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
@@ -1861,11 +2829,11 @@ func (o GetModelsModelCollectionItemTrainingDatasetArrayOutput) Index(i pulumi.I
 }
 
 type GetModelsModelCollectionItemValidationDataset struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket string `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId string `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   string `pulumi:"datasetType"`
 	NamespaceName string `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1884,11 +2852,11 @@ type GetModelsModelCollectionItemValidationDatasetInput interface {
 }
 
 type GetModelsModelCollectionItemValidationDatasetArgs struct {
-	// The name of the ObjectStorage bucket that contains the input data file.
+	// The name of the Object Storage bucket that contains the input data file.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OCID of the Data Science Labeling Dataset.
+	// OCID of the Data Labeling dataset.
 	DatasetId pulumi.StringInput `pulumi:"datasetId"`
-	// Type of the Dataset.
+	// The dataset type, based on where it is stored.
 	DatasetType   pulumi.StringInput `pulumi:"datasetType"`
 	NamespaceName pulumi.StringInput `pulumi:"namespaceName"`
 	// The object name of the input data file.
@@ -1946,17 +2914,17 @@ func (o GetModelsModelCollectionItemValidationDatasetOutput) ToGetModelsModelCol
 	return o
 }
 
-// The name of the ObjectStorage bucket that contains the input data file.
+// The name of the Object Storage bucket that contains the input data file.
 func (o GetModelsModelCollectionItemValidationDatasetOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OCID of the Data Science Labeling Dataset.
+// OCID of the Data Labeling dataset.
 func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.DatasetId }).(pulumi.StringOutput)
 }
 
-// Type of the Dataset.
+// The dataset type, based on where it is stored.
 func (o GetModelsModelCollectionItemValidationDatasetOutput) DatasetType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelsModelCollectionItemValidationDataset) string { return v.DatasetType }).(pulumi.StringOutput)
 }
@@ -2193,25 +3161,25 @@ func (o GetProjectsProjectCollectionArrayOutput) Index(i pulumi.IntInput) GetPro
 type GetProjectsProjectCollectionItem struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A short description of the project.
+	// An optional description of the project.
 	Description string `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// unique Project identifier
+	// The filter to find the project with the given identifier.
 	Id string `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match projects with the given lifecycleState.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The time the Project was created. An RFC3339 formatted datetime string
+	// When the project was created, as an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Project was updated. An RFC3339 formatted datetime string
+	// When the project was updated, as an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -2229,25 +3197,25 @@ type GetProjectsProjectCollectionItemInput interface {
 type GetProjectsProjectCollectionItemArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A short description of the project.
+	// An optional description of the project.
 	Description pulumi.StringInput `pulumi:"description"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// unique Project identifier
+	// The filter to find the project with the given identifier.
 	Id pulumi.StringInput `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match projects with the given lifecycleState.
 	State pulumi.StringInput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The time the Project was created. An RFC3339 formatted datetime string
+	// When the project was created, as an RFC3339 datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time the Project was updated. An RFC3339 formatted datetime string
+	// When the project was updated, as an RFC3339 datetime string.
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
 }
 
@@ -2307,12 +3275,12 @@ func (o GetProjectsProjectCollectionItemOutput) CompartmentId() pulumi.StringOut
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o GetProjectsProjectCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A short description of the project.
+// An optional description of the project.
 func (o GetProjectsProjectCollectionItemOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.Description }).(pulumi.StringOutput)
 }
@@ -2322,37 +3290,37 @@ func (o GetProjectsProjectCollectionItemOutput) DisplayName() pulumi.StringOutpu
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o GetProjectsProjectCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// unique Project identifier
+// The filter to find the project with the given identifier.
 func (o GetProjectsProjectCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail, that can provide actionable information if creation failed.
 func (o GetProjectsProjectCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// A filter to return only resources their lifecycleState matches the given lifecycleState.
+// The filter to match projects with the given lifecycleState.
 func (o GetProjectsProjectCollectionItemOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o GetProjectsProjectCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The time the Project was created. An RFC3339 formatted datetime string
+// When the project was created, as an RFC3339 datetime string.
 func (o GetProjectsProjectCollectionItemOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Project was updated. An RFC3339 formatted datetime string
+// When the project was updated, as an RFC3339 datetime string.
 func (o GetProjectsProjectCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProjectsProjectCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
@@ -2377,6 +3345,3128 @@ func (o GetProjectsProjectCollectionItemArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetProjectsProjectCollectionItemOutput)
 }
 
+type GetStreamGroupStreamOverlap struct {
+	// List of streamSource OCIDs.
+	OverlappingStreams []string `pulumi:"overlappingStreams"`
+}
+
+// GetStreamGroupStreamOverlapInput is an input type that accepts GetStreamGroupStreamOverlapArgs and GetStreamGroupStreamOverlapOutput values.
+// You can construct a concrete instance of `GetStreamGroupStreamOverlapInput` via:
+//
+//	GetStreamGroupStreamOverlapArgs{...}
+type GetStreamGroupStreamOverlapInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupStreamOverlapOutput() GetStreamGroupStreamOverlapOutput
+	ToGetStreamGroupStreamOverlapOutputWithContext(context.Context) GetStreamGroupStreamOverlapOutput
+}
+
+type GetStreamGroupStreamOverlapArgs struct {
+	// List of streamSource OCIDs.
+	OverlappingStreams pulumi.StringArrayInput `pulumi:"overlappingStreams"`
+}
+
+func (GetStreamGroupStreamOverlapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (i GetStreamGroupStreamOverlapArgs) ToGetStreamGroupStreamOverlapOutput() GetStreamGroupStreamOverlapOutput {
+	return i.ToGetStreamGroupStreamOverlapOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupStreamOverlapArgs) ToGetStreamGroupStreamOverlapOutputWithContext(ctx context.Context) GetStreamGroupStreamOverlapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupStreamOverlapOutput)
+}
+
+// GetStreamGroupStreamOverlapArrayInput is an input type that accepts GetStreamGroupStreamOverlapArray and GetStreamGroupStreamOverlapArrayOutput values.
+// You can construct a concrete instance of `GetStreamGroupStreamOverlapArrayInput` via:
+//
+//	GetStreamGroupStreamOverlapArray{ GetStreamGroupStreamOverlapArgs{...} }
+type GetStreamGroupStreamOverlapArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupStreamOverlapArrayOutput() GetStreamGroupStreamOverlapArrayOutput
+	ToGetStreamGroupStreamOverlapArrayOutputWithContext(context.Context) GetStreamGroupStreamOverlapArrayOutput
+}
+
+type GetStreamGroupStreamOverlapArray []GetStreamGroupStreamOverlapInput
+
+func (GetStreamGroupStreamOverlapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (i GetStreamGroupStreamOverlapArray) ToGetStreamGroupStreamOverlapArrayOutput() GetStreamGroupStreamOverlapArrayOutput {
+	return i.ToGetStreamGroupStreamOverlapArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupStreamOverlapArray) ToGetStreamGroupStreamOverlapArrayOutputWithContext(ctx context.Context) GetStreamGroupStreamOverlapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupStreamOverlapArrayOutput)
+}
+
+type GetStreamGroupStreamOverlapOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupStreamOverlapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (o GetStreamGroupStreamOverlapOutput) ToGetStreamGroupStreamOverlapOutput() GetStreamGroupStreamOverlapOutput {
+	return o
+}
+
+func (o GetStreamGroupStreamOverlapOutput) ToGetStreamGroupStreamOverlapOutputWithContext(ctx context.Context) GetStreamGroupStreamOverlapOutput {
+	return o
+}
+
+// List of streamSource OCIDs.
+func (o GetStreamGroupStreamOverlapOutput) OverlappingStreams() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupStreamOverlap) []string { return v.OverlappingStreams }).(pulumi.StringArrayOutput)
+}
+
+type GetStreamGroupStreamOverlapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupStreamOverlapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupStreamOverlap)(nil)).Elem()
+}
+
+func (o GetStreamGroupStreamOverlapArrayOutput) ToGetStreamGroupStreamOverlapArrayOutput() GetStreamGroupStreamOverlapArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupStreamOverlapArrayOutput) ToGetStreamGroupStreamOverlapArrayOutputWithContext(ctx context.Context) GetStreamGroupStreamOverlapArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupStreamOverlapArrayOutput) Index(i pulumi.IntInput) GetStreamGroupStreamOverlapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamGroupStreamOverlap {
+		return vs[0].([]GetStreamGroupStreamOverlap)[vs[1].(int)]
+	}).(GetStreamGroupStreamOverlapOutput)
+}
+
+type GetStreamGroupsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetStreamGroupsFilterInput is an input type that accepts GetStreamGroupsFilterArgs and GetStreamGroupsFilterOutput values.
+// You can construct a concrete instance of `GetStreamGroupsFilterInput` via:
+//
+//	GetStreamGroupsFilterArgs{...}
+type GetStreamGroupsFilterInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsFilterOutput() GetStreamGroupsFilterOutput
+	ToGetStreamGroupsFilterOutputWithContext(context.Context) GetStreamGroupsFilterOutput
+}
+
+type GetStreamGroupsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetStreamGroupsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsFilter)(nil)).Elem()
+}
+
+func (i GetStreamGroupsFilterArgs) ToGetStreamGroupsFilterOutput() GetStreamGroupsFilterOutput {
+	return i.ToGetStreamGroupsFilterOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsFilterArgs) ToGetStreamGroupsFilterOutputWithContext(ctx context.Context) GetStreamGroupsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsFilterOutput)
+}
+
+// GetStreamGroupsFilterArrayInput is an input type that accepts GetStreamGroupsFilterArray and GetStreamGroupsFilterArrayOutput values.
+// You can construct a concrete instance of `GetStreamGroupsFilterArrayInput` via:
+//
+//	GetStreamGroupsFilterArray{ GetStreamGroupsFilterArgs{...} }
+type GetStreamGroupsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsFilterArrayOutput() GetStreamGroupsFilterArrayOutput
+	ToGetStreamGroupsFilterArrayOutputWithContext(context.Context) GetStreamGroupsFilterArrayOutput
+}
+
+type GetStreamGroupsFilterArray []GetStreamGroupsFilterInput
+
+func (GetStreamGroupsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsFilter)(nil)).Elem()
+}
+
+func (i GetStreamGroupsFilterArray) ToGetStreamGroupsFilterArrayOutput() GetStreamGroupsFilterArrayOutput {
+	return i.ToGetStreamGroupsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsFilterArray) ToGetStreamGroupsFilterArrayOutputWithContext(ctx context.Context) GetStreamGroupsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsFilterArrayOutput)
+}
+
+type GetStreamGroupsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsFilter)(nil)).Elem()
+}
+
+func (o GetStreamGroupsFilterOutput) ToGetStreamGroupsFilterOutput() GetStreamGroupsFilterOutput {
+	return o
+}
+
+func (o GetStreamGroupsFilterOutput) ToGetStreamGroupsFilterOutputWithContext(ctx context.Context) GetStreamGroupsFilterOutput {
+	return o
+}
+
+func (o GetStreamGroupsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetStreamGroupsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamGroupsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetStreamGroupsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetStreamGroupsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsFilter)(nil)).Elem()
+}
+
+func (o GetStreamGroupsFilterArrayOutput) ToGetStreamGroupsFilterArrayOutput() GetStreamGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsFilterArrayOutput) ToGetStreamGroupsFilterArrayOutputWithContext(ctx context.Context) GetStreamGroupsFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamGroupsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamGroupsFilter {
+		return vs[0].([]GetStreamGroupsFilter)[vs[1].(int)]
+	}).(GetStreamGroupsFilterOutput)
+}
+
+type GetStreamGroupsStreamGroupCollection struct {
+	Items []GetStreamGroupsStreamGroupCollectionItem `pulumi:"items"`
+}
+
+// GetStreamGroupsStreamGroupCollectionInput is an input type that accepts GetStreamGroupsStreamGroupCollectionArgs and GetStreamGroupsStreamGroupCollectionOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionArgs{...}
+type GetStreamGroupsStreamGroupCollectionInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionOutput() GetStreamGroupsStreamGroupCollectionOutput
+	ToGetStreamGroupsStreamGroupCollectionOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionArgs struct {
+	Items GetStreamGroupsStreamGroupCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetStreamGroupsStreamGroupCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollection)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionArgs) ToGetStreamGroupsStreamGroupCollectionOutput() GetStreamGroupsStreamGroupCollectionOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionArgs) ToGetStreamGroupsStreamGroupCollectionOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionOutput)
+}
+
+// GetStreamGroupsStreamGroupCollectionArrayInput is an input type that accepts GetStreamGroupsStreamGroupCollectionArray and GetStreamGroupsStreamGroupCollectionArrayOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionArrayInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionArray{ GetStreamGroupsStreamGroupCollectionArgs{...} }
+type GetStreamGroupsStreamGroupCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionArrayOutput() GetStreamGroupsStreamGroupCollectionArrayOutput
+	ToGetStreamGroupsStreamGroupCollectionArrayOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionArrayOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionArray []GetStreamGroupsStreamGroupCollectionInput
+
+func (GetStreamGroupsStreamGroupCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollection)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionArray) ToGetStreamGroupsStreamGroupCollectionArrayOutput() GetStreamGroupsStreamGroupCollectionArrayOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionArray) ToGetStreamGroupsStreamGroupCollectionArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionArrayOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollection)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionOutput) ToGetStreamGroupsStreamGroupCollectionOutput() GetStreamGroupsStreamGroupCollectionOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionOutput) ToGetStreamGroupsStreamGroupCollectionOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionOutput) Items() GetStreamGroupsStreamGroupCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollection) []GetStreamGroupsStreamGroupCollectionItem {
+		return v.Items
+	}).(GetStreamGroupsStreamGroupCollectionItemArrayOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollection)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionArrayOutput) ToGetStreamGroupsStreamGroupCollectionArrayOutput() GetStreamGroupsStreamGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionArrayOutput) ToGetStreamGroupsStreamGroupCollectionArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamGroupsStreamGroupCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamGroupsStreamGroupCollection {
+		return vs[0].([]GetStreamGroupsStreamGroupCollection)[vs[1].(int)]
+	}).(GetStreamGroupsStreamGroupCollectionOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id string `pulumi:"id"`
+	// Stream
+	IsEnabled bool `pulumi:"isEnabled"`
+	// The current state of the streamGroup.
+	State string `pulumi:"state"`
+	// List of streamSource OCIDs where the streamSource overlaps in field of view.
+	StreamOverlaps []GetStreamGroupsStreamGroupCollectionItemStreamOverlap `pulumi:"streamOverlaps"`
+	// List of streamSource OCIDs associated with the stream group
+	StreamSourceIds []string `pulumi:"streamSourceIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// When the streamGroup was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the streamGroup was updated, as an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetStreamGroupsStreamGroupCollectionItemInput is an input type that accepts GetStreamGroupsStreamGroupCollectionItemArgs and GetStreamGroupsStreamGroupCollectionItemOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionItemInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionItemArgs{...}
+type GetStreamGroupsStreamGroupCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionItemOutput() GetStreamGroupsStreamGroupCollectionItemOutput
+	ToGetStreamGroupsStreamGroupCollectionItemOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionItemOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Stream
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// The current state of the streamGroup.
+	State pulumi.StringInput `pulumi:"state"`
+	// List of streamSource OCIDs where the streamSource overlaps in field of view.
+	StreamOverlaps GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayInput `pulumi:"streamOverlaps"`
+	// List of streamSource OCIDs associated with the stream group
+	StreamSourceIds pulumi.StringArrayInput `pulumi:"streamSourceIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// When the streamGroup was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the streamGroup was updated, as an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetStreamGroupsStreamGroupCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemArgs) ToGetStreamGroupsStreamGroupCollectionItemOutput() GetStreamGroupsStreamGroupCollectionItemOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemArgs) ToGetStreamGroupsStreamGroupCollectionItemOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionItemOutput)
+}
+
+// GetStreamGroupsStreamGroupCollectionItemArrayInput is an input type that accepts GetStreamGroupsStreamGroupCollectionItemArray and GetStreamGroupsStreamGroupCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionItemArrayInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionItemArray{ GetStreamGroupsStreamGroupCollectionItemArgs{...} }
+type GetStreamGroupsStreamGroupCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionItemArrayOutput() GetStreamGroupsStreamGroupCollectionItemArrayOutput
+	ToGetStreamGroupsStreamGroupCollectionItemArrayOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionItemArrayOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionItemArray []GetStreamGroupsStreamGroupCollectionItemInput
+
+func (GetStreamGroupsStreamGroupCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemArray) ToGetStreamGroupsStreamGroupCollectionItemArrayOutput() GetStreamGroupsStreamGroupCollectionItemArrayOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemArray) ToGetStreamGroupsStreamGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionItemArrayOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) ToGetStreamGroupsStreamGroupCollectionItemOutput() GetStreamGroupsStreamGroupCollectionItemOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) ToGetStreamGroupsStreamGroupCollectionItemOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The filter to find the device with the given identifier.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Stream
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+// The current state of the streamGroup.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// List of streamSource OCIDs where the streamSource overlaps in field of view.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) StreamOverlaps() GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) []GetStreamGroupsStreamGroupCollectionItemStreamOverlap {
+		return v.StreamOverlaps
+	}).(GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput)
+}
+
+// List of streamSource OCIDs associated with the stream group
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) StreamSourceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) []string { return v.StreamSourceIds }).(pulumi.StringArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// When the streamGroup was created, as an RFC3339 datetime string.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the streamGroup was updated, as an RFC3339 datetime string.
+func (o GetStreamGroupsStreamGroupCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemArrayOutput) ToGetStreamGroupsStreamGroupCollectionItemArrayOutput() GetStreamGroupsStreamGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemArrayOutput) ToGetStreamGroupsStreamGroupCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamGroupsStreamGroupCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamGroupsStreamGroupCollectionItem {
+		return vs[0].([]GetStreamGroupsStreamGroupCollectionItem)[vs[1].(int)]
+	}).(GetStreamGroupsStreamGroupCollectionItemOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlap struct {
+	// List of streamSource OCIDs.
+	OverlappingStreams []string `pulumi:"overlappingStreams"`
+}
+
+// GetStreamGroupsStreamGroupCollectionItemStreamOverlapInput is an input type that accepts GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs and GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionItemStreamOverlapInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs{...}
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput
+	ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs struct {
+	// List of streamSource OCIDs.
+	OverlappingStreams pulumi.StringArrayInput `pulumi:"overlappingStreams"`
+}
+
+func (GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemStreamOverlap)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput)
+}
+
+// GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayInput is an input type that accepts GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray and GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput values.
+// You can construct a concrete instance of `GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayInput` via:
+//
+//	GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray{ GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs{...} }
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput
+	ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutputWithContext(context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput
+}
+
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray []GetStreamGroupsStreamGroupCollectionItemStreamOverlapInput
+
+func (GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollectionItemStreamOverlap)(nil)).Elem()
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput {
+	return i.ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemStreamOverlap)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput {
+	return o
+}
+
+// List of streamSource OCIDs.
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput) OverlappingStreams() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamGroupsStreamGroupCollectionItemStreamOverlap) []string { return v.OverlappingStreams }).(pulumi.StringArrayOutput)
+}
+
+type GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamGroupsStreamGroupCollectionItemStreamOverlap)(nil)).Elem()
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput() GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput) ToGetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutputWithContext(ctx context.Context) GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput {
+	return o
+}
+
+func (o GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput) Index(i pulumi.IntInput) GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamGroupsStreamGroupCollectionItemStreamOverlap {
+		return vs[0].([]GetStreamGroupsStreamGroupCollectionItemStreamOverlap)[vs[1].(int)]
+	}).(GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput)
+}
+
+type GetStreamJobFeature struct {
+	// The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType string `pulumi:"featureType"`
+	// The maximum number of results to return.
+	MaxResults int `pulumi:"maxResults"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks bool `pulumi:"shouldReturnLandmarks"`
+	// List of details of what to track.
+	TrackingTypes []GetStreamJobFeatureTrackingType `pulumi:"trackingTypes"`
+}
+
+// GetStreamJobFeatureInput is an input type that accepts GetStreamJobFeatureArgs and GetStreamJobFeatureOutput values.
+// You can construct a concrete instance of `GetStreamJobFeatureInput` via:
+//
+//	GetStreamJobFeatureArgs{...}
+type GetStreamJobFeatureInput interface {
+	pulumi.Input
+
+	ToGetStreamJobFeatureOutput() GetStreamJobFeatureOutput
+	ToGetStreamJobFeatureOutputWithContext(context.Context) GetStreamJobFeatureOutput
+}
+
+type GetStreamJobFeatureArgs struct {
+	// The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType pulumi.StringInput `pulumi:"featureType"`
+	// The maximum number of results to return.
+	MaxResults pulumi.IntInput `pulumi:"maxResults"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolInput `pulumi:"shouldReturnLandmarks"`
+	// List of details of what to track.
+	TrackingTypes GetStreamJobFeatureTrackingTypeArrayInput `pulumi:"trackingTypes"`
+}
+
+func (GetStreamJobFeatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobFeature)(nil)).Elem()
+}
+
+func (i GetStreamJobFeatureArgs) ToGetStreamJobFeatureOutput() GetStreamJobFeatureOutput {
+	return i.ToGetStreamJobFeatureOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobFeatureArgs) ToGetStreamJobFeatureOutputWithContext(ctx context.Context) GetStreamJobFeatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobFeatureOutput)
+}
+
+// GetStreamJobFeatureArrayInput is an input type that accepts GetStreamJobFeatureArray and GetStreamJobFeatureArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobFeatureArrayInput` via:
+//
+//	GetStreamJobFeatureArray{ GetStreamJobFeatureArgs{...} }
+type GetStreamJobFeatureArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobFeatureArrayOutput() GetStreamJobFeatureArrayOutput
+	ToGetStreamJobFeatureArrayOutputWithContext(context.Context) GetStreamJobFeatureArrayOutput
+}
+
+type GetStreamJobFeatureArray []GetStreamJobFeatureInput
+
+func (GetStreamJobFeatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobFeature)(nil)).Elem()
+}
+
+func (i GetStreamJobFeatureArray) ToGetStreamJobFeatureArrayOutput() GetStreamJobFeatureArrayOutput {
+	return i.ToGetStreamJobFeatureArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobFeatureArray) ToGetStreamJobFeatureArrayOutputWithContext(ctx context.Context) GetStreamJobFeatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobFeatureArrayOutput)
+}
+
+type GetStreamJobFeatureOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobFeatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobFeature)(nil)).Elem()
+}
+
+func (o GetStreamJobFeatureOutput) ToGetStreamJobFeatureOutput() GetStreamJobFeatureOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureOutput) ToGetStreamJobFeatureOutputWithContext(ctx context.Context) GetStreamJobFeatureOutput {
+	return o
+}
+
+// The feature of video analysis. Allowed values are:
+// * OBJECT_TRACKING: Object tracking feature(OT).
+// * FACE_DETECTION: Face detection feature(FD).
+func (o GetStreamJobFeatureOutput) FeatureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobFeature) string { return v.FeatureType }).(pulumi.StringOutput)
+}
+
+// The maximum number of results to return.
+func (o GetStreamJobFeatureOutput) MaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v GetStreamJobFeature) int { return v.MaxResults }).(pulumi.IntOutput)
+}
+
+// Whether or not return face landmarks.
+func (o GetStreamJobFeatureOutput) ShouldReturnLandmarks() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamJobFeature) bool { return v.ShouldReturnLandmarks }).(pulumi.BoolOutput)
+}
+
+// List of details of what to track.
+func (o GetStreamJobFeatureOutput) TrackingTypes() GetStreamJobFeatureTrackingTypeArrayOutput {
+	return o.ApplyT(func(v GetStreamJobFeature) []GetStreamJobFeatureTrackingType { return v.TrackingTypes }).(GetStreamJobFeatureTrackingTypeArrayOutput)
+}
+
+type GetStreamJobFeatureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobFeatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobFeature)(nil)).Elem()
+}
+
+func (o GetStreamJobFeatureArrayOutput) ToGetStreamJobFeatureArrayOutput() GetStreamJobFeatureArrayOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureArrayOutput) ToGetStreamJobFeatureArrayOutputWithContext(ctx context.Context) GetStreamJobFeatureArrayOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureArrayOutput) Index(i pulumi.IntInput) GetStreamJobFeatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobFeature {
+		return vs[0].([]GetStreamJobFeature)[vs[1].(int)]
+	}).(GetStreamJobFeatureOutput)
+}
+
+type GetStreamJobFeatureTrackingType struct {
+	// compartment Id of biometric compartment.
+	BiometricStoreCompartmentId string `pulumi:"biometricStoreCompartmentId"`
+	// Which biometric store user wants to do face recognition
+	BiometricStoreId string `pulumi:"biometricStoreId"`
+	// The detection model OCID.
+	DetectionModelId string `pulumi:"detectionModelId"`
+	// The maximum number of results to return.
+	MaxResults int `pulumi:"maxResults"`
+	// List of the objects to be tracked.
+	Objects []string `pulumi:"objects"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks bool `pulumi:"shouldReturnLandmarks"`
+	// The tracking model OCID.
+	TrackingModelId string `pulumi:"trackingModelId"`
+}
+
+// GetStreamJobFeatureTrackingTypeInput is an input type that accepts GetStreamJobFeatureTrackingTypeArgs and GetStreamJobFeatureTrackingTypeOutput values.
+// You can construct a concrete instance of `GetStreamJobFeatureTrackingTypeInput` via:
+//
+//	GetStreamJobFeatureTrackingTypeArgs{...}
+type GetStreamJobFeatureTrackingTypeInput interface {
+	pulumi.Input
+
+	ToGetStreamJobFeatureTrackingTypeOutput() GetStreamJobFeatureTrackingTypeOutput
+	ToGetStreamJobFeatureTrackingTypeOutputWithContext(context.Context) GetStreamJobFeatureTrackingTypeOutput
+}
+
+type GetStreamJobFeatureTrackingTypeArgs struct {
+	// compartment Id of biometric compartment.
+	BiometricStoreCompartmentId pulumi.StringInput `pulumi:"biometricStoreCompartmentId"`
+	// Which biometric store user wants to do face recognition
+	BiometricStoreId pulumi.StringInput `pulumi:"biometricStoreId"`
+	// The detection model OCID.
+	DetectionModelId pulumi.StringInput `pulumi:"detectionModelId"`
+	// The maximum number of results to return.
+	MaxResults pulumi.IntInput `pulumi:"maxResults"`
+	// List of the objects to be tracked.
+	Objects pulumi.StringArrayInput `pulumi:"objects"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolInput `pulumi:"shouldReturnLandmarks"`
+	// The tracking model OCID.
+	TrackingModelId pulumi.StringInput `pulumi:"trackingModelId"`
+}
+
+func (GetStreamJobFeatureTrackingTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (i GetStreamJobFeatureTrackingTypeArgs) ToGetStreamJobFeatureTrackingTypeOutput() GetStreamJobFeatureTrackingTypeOutput {
+	return i.ToGetStreamJobFeatureTrackingTypeOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobFeatureTrackingTypeArgs) ToGetStreamJobFeatureTrackingTypeOutputWithContext(ctx context.Context) GetStreamJobFeatureTrackingTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobFeatureTrackingTypeOutput)
+}
+
+// GetStreamJobFeatureTrackingTypeArrayInput is an input type that accepts GetStreamJobFeatureTrackingTypeArray and GetStreamJobFeatureTrackingTypeArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobFeatureTrackingTypeArrayInput` via:
+//
+//	GetStreamJobFeatureTrackingTypeArray{ GetStreamJobFeatureTrackingTypeArgs{...} }
+type GetStreamJobFeatureTrackingTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobFeatureTrackingTypeArrayOutput() GetStreamJobFeatureTrackingTypeArrayOutput
+	ToGetStreamJobFeatureTrackingTypeArrayOutputWithContext(context.Context) GetStreamJobFeatureTrackingTypeArrayOutput
+}
+
+type GetStreamJobFeatureTrackingTypeArray []GetStreamJobFeatureTrackingTypeInput
+
+func (GetStreamJobFeatureTrackingTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (i GetStreamJobFeatureTrackingTypeArray) ToGetStreamJobFeatureTrackingTypeArrayOutput() GetStreamJobFeatureTrackingTypeArrayOutput {
+	return i.ToGetStreamJobFeatureTrackingTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobFeatureTrackingTypeArray) ToGetStreamJobFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) GetStreamJobFeatureTrackingTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobFeatureTrackingTypeArrayOutput)
+}
+
+type GetStreamJobFeatureTrackingTypeOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobFeatureTrackingTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (o GetStreamJobFeatureTrackingTypeOutput) ToGetStreamJobFeatureTrackingTypeOutput() GetStreamJobFeatureTrackingTypeOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureTrackingTypeOutput) ToGetStreamJobFeatureTrackingTypeOutputWithContext(ctx context.Context) GetStreamJobFeatureTrackingTypeOutput {
+	return o
+}
+
+// compartment Id of biometric compartment.
+func (o GetStreamJobFeatureTrackingTypeOutput) BiometricStoreCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) string { return v.BiometricStoreCompartmentId }).(pulumi.StringOutput)
+}
+
+// Which biometric store user wants to do face recognition
+func (o GetStreamJobFeatureTrackingTypeOutput) BiometricStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) string { return v.BiometricStoreId }).(pulumi.StringOutput)
+}
+
+// The detection model OCID.
+func (o GetStreamJobFeatureTrackingTypeOutput) DetectionModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) string { return v.DetectionModelId }).(pulumi.StringOutput)
+}
+
+// The maximum number of results to return.
+func (o GetStreamJobFeatureTrackingTypeOutput) MaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) int { return v.MaxResults }).(pulumi.IntOutput)
+}
+
+// List of the objects to be tracked.
+func (o GetStreamJobFeatureTrackingTypeOutput) Objects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) []string { return v.Objects }).(pulumi.StringArrayOutput)
+}
+
+// Whether or not return face landmarks.
+func (o GetStreamJobFeatureTrackingTypeOutput) ShouldReturnLandmarks() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) bool { return v.ShouldReturnLandmarks }).(pulumi.BoolOutput)
+}
+
+// The tracking model OCID.
+func (o GetStreamJobFeatureTrackingTypeOutput) TrackingModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobFeatureTrackingType) string { return v.TrackingModelId }).(pulumi.StringOutput)
+}
+
+type GetStreamJobFeatureTrackingTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobFeatureTrackingTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobFeatureTrackingType)(nil)).Elem()
+}
+
+func (o GetStreamJobFeatureTrackingTypeArrayOutput) ToGetStreamJobFeatureTrackingTypeArrayOutput() GetStreamJobFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureTrackingTypeArrayOutput) ToGetStreamJobFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) GetStreamJobFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o GetStreamJobFeatureTrackingTypeArrayOutput) Index(i pulumi.IntInput) GetStreamJobFeatureTrackingTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobFeatureTrackingType {
+		return vs[0].([]GetStreamJobFeatureTrackingType)[vs[1].(int)]
+	}).(GetStreamJobFeatureTrackingTypeOutput)
+}
+
+type GetStreamJobStreamOutputLocation struct {
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// Object storage output location
+	OboToken string `pulumi:"oboToken"`
+	// Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// The Object Storage folder name.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetStreamJobStreamOutputLocationInput is an input type that accepts GetStreamJobStreamOutputLocationArgs and GetStreamJobStreamOutputLocationOutput values.
+// You can construct a concrete instance of `GetStreamJobStreamOutputLocationInput` via:
+//
+//	GetStreamJobStreamOutputLocationArgs{...}
+type GetStreamJobStreamOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetStreamJobStreamOutputLocationOutput() GetStreamJobStreamOutputLocationOutput
+	ToGetStreamJobStreamOutputLocationOutputWithContext(context.Context) GetStreamJobStreamOutputLocationOutput
+}
+
+type GetStreamJobStreamOutputLocationArgs struct {
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Object storage output location
+	OboToken pulumi.StringInput `pulumi:"oboToken"`
+	// Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// The Object Storage folder name.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetStreamJobStreamOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (i GetStreamJobStreamOutputLocationArgs) ToGetStreamJobStreamOutputLocationOutput() GetStreamJobStreamOutputLocationOutput {
+	return i.ToGetStreamJobStreamOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobStreamOutputLocationArgs) ToGetStreamJobStreamOutputLocationOutputWithContext(ctx context.Context) GetStreamJobStreamOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobStreamOutputLocationOutput)
+}
+
+// GetStreamJobStreamOutputLocationArrayInput is an input type that accepts GetStreamJobStreamOutputLocationArray and GetStreamJobStreamOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobStreamOutputLocationArrayInput` via:
+//
+//	GetStreamJobStreamOutputLocationArray{ GetStreamJobStreamOutputLocationArgs{...} }
+type GetStreamJobStreamOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobStreamOutputLocationArrayOutput() GetStreamJobStreamOutputLocationArrayOutput
+	ToGetStreamJobStreamOutputLocationArrayOutputWithContext(context.Context) GetStreamJobStreamOutputLocationArrayOutput
+}
+
+type GetStreamJobStreamOutputLocationArray []GetStreamJobStreamOutputLocationInput
+
+func (GetStreamJobStreamOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (i GetStreamJobStreamOutputLocationArray) ToGetStreamJobStreamOutputLocationArrayOutput() GetStreamJobStreamOutputLocationArrayOutput {
+	return i.ToGetStreamJobStreamOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobStreamOutputLocationArray) ToGetStreamJobStreamOutputLocationArrayOutputWithContext(ctx context.Context) GetStreamJobStreamOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobStreamOutputLocationArrayOutput)
+}
+
+type GetStreamJobStreamOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobStreamOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (o GetStreamJobStreamOutputLocationOutput) ToGetStreamJobStreamOutputLocationOutput() GetStreamJobStreamOutputLocationOutput {
+	return o
+}
+
+func (o GetStreamJobStreamOutputLocationOutput) ToGetStreamJobStreamOutputLocationOutputWithContext(ctx context.Context) GetStreamJobStreamOutputLocationOutput {
+	return o
+}
+
+// The Object Storage bucket name.
+func (o GetStreamJobStreamOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobStreamOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace.
+func (o GetStreamJobStreamOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobStreamOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Object storage output location
+func (o GetStreamJobStreamOutputLocationOutput) OboToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobStreamOutputLocation) string { return v.OboToken }).(pulumi.StringOutput)
+}
+
+// Type of device Allowed values are:
+// * OBJECT_STORAGE
+// * LIVEKIT_WEBRTC_AGENT
+func (o GetStreamJobStreamOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobStreamOutputLocation) string { return v.OutputLocationType }).(pulumi.StringOutput)
+}
+
+// The Object Storage folder name.
+func (o GetStreamJobStreamOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobStreamOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetStreamJobStreamOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobStreamOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobStreamOutputLocation)(nil)).Elem()
+}
+
+func (o GetStreamJobStreamOutputLocationArrayOutput) ToGetStreamJobStreamOutputLocationArrayOutput() GetStreamJobStreamOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetStreamJobStreamOutputLocationArrayOutput) ToGetStreamJobStreamOutputLocationArrayOutputWithContext(ctx context.Context) GetStreamJobStreamOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetStreamJobStreamOutputLocationArrayOutput) Index(i pulumi.IntInput) GetStreamJobStreamOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobStreamOutputLocation {
+		return vs[0].([]GetStreamJobStreamOutputLocation)[vs[1].(int)]
+	}).(GetStreamJobStreamOutputLocationOutput)
+}
+
+type GetStreamJobsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetStreamJobsFilterInput is an input type that accepts GetStreamJobsFilterArgs and GetStreamJobsFilterOutput values.
+// You can construct a concrete instance of `GetStreamJobsFilterInput` via:
+//
+//	GetStreamJobsFilterArgs{...}
+type GetStreamJobsFilterInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsFilterOutput() GetStreamJobsFilterOutput
+	ToGetStreamJobsFilterOutputWithContext(context.Context) GetStreamJobsFilterOutput
+}
+
+type GetStreamJobsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetStreamJobsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsFilter)(nil)).Elem()
+}
+
+func (i GetStreamJobsFilterArgs) ToGetStreamJobsFilterOutput() GetStreamJobsFilterOutput {
+	return i.ToGetStreamJobsFilterOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsFilterArgs) ToGetStreamJobsFilterOutputWithContext(ctx context.Context) GetStreamJobsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsFilterOutput)
+}
+
+// GetStreamJobsFilterArrayInput is an input type that accepts GetStreamJobsFilterArray and GetStreamJobsFilterArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsFilterArrayInput` via:
+//
+//	GetStreamJobsFilterArray{ GetStreamJobsFilterArgs{...} }
+type GetStreamJobsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsFilterArrayOutput() GetStreamJobsFilterArrayOutput
+	ToGetStreamJobsFilterArrayOutputWithContext(context.Context) GetStreamJobsFilterArrayOutput
+}
+
+type GetStreamJobsFilterArray []GetStreamJobsFilterInput
+
+func (GetStreamJobsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsFilter)(nil)).Elem()
+}
+
+func (i GetStreamJobsFilterArray) ToGetStreamJobsFilterArrayOutput() GetStreamJobsFilterArrayOutput {
+	return i.ToGetStreamJobsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsFilterArray) ToGetStreamJobsFilterArrayOutputWithContext(ctx context.Context) GetStreamJobsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsFilterArrayOutput)
+}
+
+type GetStreamJobsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsFilter)(nil)).Elem()
+}
+
+func (o GetStreamJobsFilterOutput) ToGetStreamJobsFilterOutput() GetStreamJobsFilterOutput {
+	return o
+}
+
+func (o GetStreamJobsFilterOutput) ToGetStreamJobsFilterOutputWithContext(ctx context.Context) GetStreamJobsFilterOutput {
+	return o
+}
+
+func (o GetStreamJobsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetStreamJobsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamJobsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetStreamJobsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetStreamJobsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsFilter)(nil)).Elem()
+}
+
+func (o GetStreamJobsFilterArrayOutput) ToGetStreamJobsFilterArrayOutput() GetStreamJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsFilterArrayOutput) ToGetStreamJobsFilterArrayOutputWithContext(ctx context.Context) GetStreamJobsFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsFilterArrayOutput) Index(i pulumi.IntInput) GetStreamJobsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsFilter {
+		return vs[0].([]GetStreamJobsFilter)[vs[1].(int)]
+	}).(GetStreamJobsFilterOutput)
+}
+
+type GetStreamJobsStreamJobCollection struct {
+	Items []GetStreamJobsStreamJobCollectionItem `pulumi:"items"`
+}
+
+// GetStreamJobsStreamJobCollectionInput is an input type that accepts GetStreamJobsStreamJobCollectionArgs and GetStreamJobsStreamJobCollectionOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionInput` via:
+//
+//	GetStreamJobsStreamJobCollectionArgs{...}
+type GetStreamJobsStreamJobCollectionInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionOutput() GetStreamJobsStreamJobCollectionOutput
+	ToGetStreamJobsStreamJobCollectionOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionOutput
+}
+
+type GetStreamJobsStreamJobCollectionArgs struct {
+	Items GetStreamJobsStreamJobCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetStreamJobsStreamJobCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollection)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionArgs) ToGetStreamJobsStreamJobCollectionOutput() GetStreamJobsStreamJobCollectionOutput {
+	return i.ToGetStreamJobsStreamJobCollectionOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionArgs) ToGetStreamJobsStreamJobCollectionOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionOutput)
+}
+
+// GetStreamJobsStreamJobCollectionArrayInput is an input type that accepts GetStreamJobsStreamJobCollectionArray and GetStreamJobsStreamJobCollectionArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionArrayInput` via:
+//
+//	GetStreamJobsStreamJobCollectionArray{ GetStreamJobsStreamJobCollectionArgs{...} }
+type GetStreamJobsStreamJobCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionArrayOutput() GetStreamJobsStreamJobCollectionArrayOutput
+	ToGetStreamJobsStreamJobCollectionArrayOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionArrayOutput
+}
+
+type GetStreamJobsStreamJobCollectionArray []GetStreamJobsStreamJobCollectionInput
+
+func (GetStreamJobsStreamJobCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollection)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionArray) ToGetStreamJobsStreamJobCollectionArrayOutput() GetStreamJobsStreamJobCollectionArrayOutput {
+	return i.ToGetStreamJobsStreamJobCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionArray) ToGetStreamJobsStreamJobCollectionArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollection)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionOutput) ToGetStreamJobsStreamJobCollectionOutput() GetStreamJobsStreamJobCollectionOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionOutput) ToGetStreamJobsStreamJobCollectionOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionOutput) Items() GetStreamJobsStreamJobCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollection) []GetStreamJobsStreamJobCollectionItem { return v.Items }).(GetStreamJobsStreamJobCollectionItemArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollection)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionArrayOutput) ToGetStreamJobsStreamJobCollectionArrayOutput() GetStreamJobsStreamJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionArrayOutput) ToGetStreamJobsStreamJobCollectionArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamJobsStreamJobCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsStreamJobCollection {
+		return vs[0].([]GetStreamJobsStreamJobCollection)[vs[1].(int)]
+	}).(GetStreamJobsStreamJobCollectionOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItem struct {
+	// participant id of agent where results need to be sent
+	AgentParticipantId string `pulumi:"agentParticipantId"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// a list of document analysis features.
+	Features []GetStreamJobsStreamJobCollectionItemFeature `pulumi:"features"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The filter to find the streamjob with the given identifier.
+	Id string `pulumi:"id"`
+	// Additional details about current state of streamJob
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The filter to match projects with the given lifecycleState.
+	State string `pulumi:"state"`
+	// Details about a where results will be Sent
+	StreamOutputLocations []GetStreamJobsStreamJobCollectionItemStreamOutputLocation `pulumi:"streamOutputLocations"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the streamSource
+	StreamSourceId string `pulumi:"streamSourceId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// When the streamJob was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the stream job was updated, as an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetStreamJobsStreamJobCollectionItemInput is an input type that accepts GetStreamJobsStreamJobCollectionItemArgs and GetStreamJobsStreamJobCollectionItemOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemArgs{...}
+type GetStreamJobsStreamJobCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemOutput() GetStreamJobsStreamJobCollectionItemOutput
+	ToGetStreamJobsStreamJobCollectionItemOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemArgs struct {
+	// participant id of agent where results need to be sent
+	AgentParticipantId pulumi.StringInput `pulumi:"agentParticipantId"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// a list of document analysis features.
+	Features GetStreamJobsStreamJobCollectionItemFeatureArrayInput `pulumi:"features"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The filter to find the streamjob with the given identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional details about current state of streamJob
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The filter to match projects with the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Details about a where results will be Sent
+	StreamOutputLocations GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayInput `pulumi:"streamOutputLocations"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the streamSource
+	StreamSourceId pulumi.StringInput `pulumi:"streamSourceId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// When the streamJob was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the stream job was updated, as an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetStreamJobsStreamJobCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemArgs) ToGetStreamJobsStreamJobCollectionItemOutput() GetStreamJobsStreamJobCollectionItemOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemArgs) ToGetStreamJobsStreamJobCollectionItemOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemOutput)
+}
+
+// GetStreamJobsStreamJobCollectionItemArrayInput is an input type that accepts GetStreamJobsStreamJobCollectionItemArray and GetStreamJobsStreamJobCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemArrayInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemArray{ GetStreamJobsStreamJobCollectionItemArgs{...} }
+type GetStreamJobsStreamJobCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemArrayOutput() GetStreamJobsStreamJobCollectionItemArrayOutput
+	ToGetStreamJobsStreamJobCollectionItemArrayOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemArrayOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemArray []GetStreamJobsStreamJobCollectionItemInput
+
+func (GetStreamJobsStreamJobCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemArray) ToGetStreamJobsStreamJobCollectionItemArrayOutput() GetStreamJobsStreamJobCollectionItemArrayOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemArray) ToGetStreamJobsStreamJobCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemOutput) ToGetStreamJobsStreamJobCollectionItemOutput() GetStreamJobsStreamJobCollectionItemOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemOutput) ToGetStreamJobsStreamJobCollectionItemOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemOutput {
+	return o
+}
+
+// participant id of agent where results need to be sent
+func (o GetStreamJobsStreamJobCollectionItemOutput) AgentParticipantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.AgentParticipantId }).(pulumi.StringOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetStreamJobsStreamJobCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+func (o GetStreamJobsStreamJobCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetStreamJobsStreamJobCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// a list of document analysis features.
+func (o GetStreamJobsStreamJobCollectionItemOutput) Features() GetStreamJobsStreamJobCollectionItemFeatureArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) []GetStreamJobsStreamJobCollectionItemFeature {
+		return v.Features
+	}).(GetStreamJobsStreamJobCollectionItemFeatureArrayOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o GetStreamJobsStreamJobCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The filter to find the streamjob with the given identifier.
+func (o GetStreamJobsStreamJobCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional details about current state of streamJob
+func (o GetStreamJobsStreamJobCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The filter to match projects with the given lifecycleState.
+func (o GetStreamJobsStreamJobCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Details about a where results will be Sent
+func (o GetStreamJobsStreamJobCollectionItemOutput) StreamOutputLocations() GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) []GetStreamJobsStreamJobCollectionItemStreamOutputLocation {
+		return v.StreamOutputLocations
+	}).(GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the streamSource
+func (o GetStreamJobsStreamJobCollectionItemOutput) StreamSourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.StreamSourceId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+func (o GetStreamJobsStreamJobCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// When the streamJob was created, as an RFC3339 datetime string.
+func (o GetStreamJobsStreamJobCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the stream job was updated, as an RFC3339 datetime string.
+func (o GetStreamJobsStreamJobCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemArrayOutput) ToGetStreamJobsStreamJobCollectionItemArrayOutput() GetStreamJobsStreamJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemArrayOutput) ToGetStreamJobsStreamJobCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamJobsStreamJobCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsStreamJobCollectionItem {
+		return vs[0].([]GetStreamJobsStreamJobCollectionItem)[vs[1].(int)]
+	}).(GetStreamJobsStreamJobCollectionItemOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeature struct {
+	// The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType string `pulumi:"featureType"`
+	// The maximum number of results to return.
+	MaxResults int `pulumi:"maxResults"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks bool `pulumi:"shouldReturnLandmarks"`
+	// List of details of what to track.
+	TrackingTypes []GetStreamJobsStreamJobCollectionItemFeatureTrackingType `pulumi:"trackingTypes"`
+}
+
+// GetStreamJobsStreamJobCollectionItemFeatureInput is an input type that accepts GetStreamJobsStreamJobCollectionItemFeatureArgs and GetStreamJobsStreamJobCollectionItemFeatureOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemFeatureInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemFeatureArgs{...}
+type GetStreamJobsStreamJobCollectionItemFeatureInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemFeatureOutput() GetStreamJobsStreamJobCollectionItemFeatureOutput
+	ToGetStreamJobsStreamJobCollectionItemFeatureOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemFeatureOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureArgs struct {
+	// The feature of video analysis. Allowed values are:
+	// * OBJECT_TRACKING: Object tracking feature(OT).
+	// * FACE_DETECTION: Face detection feature(FD).
+	FeatureType pulumi.StringInput `pulumi:"featureType"`
+	// The maximum number of results to return.
+	MaxResults pulumi.IntInput `pulumi:"maxResults"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolInput `pulumi:"shouldReturnLandmarks"`
+	// List of details of what to track.
+	TrackingTypes GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayInput `pulumi:"trackingTypes"`
+}
+
+func (GetStreamJobsStreamJobCollectionItemFeatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeature)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureArgs) ToGetStreamJobsStreamJobCollectionItemFeatureOutput() GetStreamJobsStreamJobCollectionItemFeatureOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemFeatureOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureArgs) ToGetStreamJobsStreamJobCollectionItemFeatureOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemFeatureOutput)
+}
+
+// GetStreamJobsStreamJobCollectionItemFeatureArrayInput is an input type that accepts GetStreamJobsStreamJobCollectionItemFeatureArray and GetStreamJobsStreamJobCollectionItemFeatureArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemFeatureArrayInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemFeatureArray{ GetStreamJobsStreamJobCollectionItemFeatureArgs{...} }
+type GetStreamJobsStreamJobCollectionItemFeatureArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureArrayOutput
+	ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemFeatureArrayOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureArray []GetStreamJobsStreamJobCollectionItemFeatureInput
+
+func (GetStreamJobsStreamJobCollectionItemFeatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemFeature)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureArray) ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureArrayOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureArray) ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemFeatureArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemFeatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeature)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) ToGetStreamJobsStreamJobCollectionItemFeatureOutput() GetStreamJobsStreamJobCollectionItemFeatureOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) ToGetStreamJobsStreamJobCollectionItemFeatureOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureOutput {
+	return o
+}
+
+// The feature of video analysis. Allowed values are:
+// * OBJECT_TRACKING: Object tracking feature(OT).
+// * FACE_DETECTION: Face detection feature(FD).
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) FeatureType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeature) string { return v.FeatureType }).(pulumi.StringOutput)
+}
+
+// The maximum number of results to return.
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) MaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeature) int { return v.MaxResults }).(pulumi.IntOutput)
+}
+
+// Whether or not return face landmarks.
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) ShouldReturnLandmarks() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeature) bool { return v.ShouldReturnLandmarks }).(pulumi.BoolOutput)
+}
+
+// List of details of what to track.
+func (o GetStreamJobsStreamJobCollectionItemFeatureOutput) TrackingTypes() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeature) []GetStreamJobsStreamJobCollectionItemFeatureTrackingType {
+		return v.TrackingTypes
+	}).(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemFeatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemFeature)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureArrayOutput) ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureArrayOutput) ToGetStreamJobsStreamJobCollectionItemFeatureArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureArrayOutput) Index(i pulumi.IntInput) GetStreamJobsStreamJobCollectionItemFeatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsStreamJobCollectionItemFeature {
+		return vs[0].([]GetStreamJobsStreamJobCollectionItemFeature)[vs[1].(int)]
+	}).(GetStreamJobsStreamJobCollectionItemFeatureOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingType struct {
+	// compartment Id of biometric compartment.
+	BiometricStoreCompartmentId string `pulumi:"biometricStoreCompartmentId"`
+	// Which biometric store user wants to do face recognition
+	BiometricStoreId string `pulumi:"biometricStoreId"`
+	// The detection model OCID.
+	DetectionModelId string `pulumi:"detectionModelId"`
+	// The maximum number of results to return.
+	MaxResults int `pulumi:"maxResults"`
+	// List of the objects to be tracked.
+	Objects []string `pulumi:"objects"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks bool `pulumi:"shouldReturnLandmarks"`
+	// The tracking model OCID.
+	TrackingModelId string `pulumi:"trackingModelId"`
+}
+
+// GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeInput is an input type that accepts GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs and GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs{...}
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput
+	ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs struct {
+	// compartment Id of biometric compartment.
+	BiometricStoreCompartmentId pulumi.StringInput `pulumi:"biometricStoreCompartmentId"`
+	// Which biometric store user wants to do face recognition
+	BiometricStoreId pulumi.StringInput `pulumi:"biometricStoreId"`
+	// The detection model OCID.
+	DetectionModelId pulumi.StringInput `pulumi:"detectionModelId"`
+	// The maximum number of results to return.
+	MaxResults pulumi.IntInput `pulumi:"maxResults"`
+	// List of the objects to be tracked.
+	Objects pulumi.StringArrayInput `pulumi:"objects"`
+	// Whether or not return face landmarks.
+	ShouldReturnLandmarks pulumi.BoolInput `pulumi:"shouldReturnLandmarks"`
+	// The tracking model OCID.
+	TrackingModelId pulumi.StringInput `pulumi:"trackingModelId"`
+}
+
+func (GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureTrackingType)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput)
+}
+
+// GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayInput is an input type that accepts GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray and GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray{ GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs{...} }
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput
+	ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray []GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeInput
+
+func (GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemFeatureTrackingType)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureTrackingType)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput {
+	return o
+}
+
+// compartment Id of biometric compartment.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) BiometricStoreCompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) string {
+		return v.BiometricStoreCompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Which biometric store user wants to do face recognition
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) BiometricStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) string { return v.BiometricStoreId }).(pulumi.StringOutput)
+}
+
+// The detection model OCID.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) DetectionModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) string { return v.DetectionModelId }).(pulumi.StringOutput)
+}
+
+// The maximum number of results to return.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) MaxResults() pulumi.IntOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) int { return v.MaxResults }).(pulumi.IntOutput)
+}
+
+// List of the objects to be tracked.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) Objects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) []string { return v.Objects }).(pulumi.StringArrayOutput)
+}
+
+// Whether or not return face landmarks.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) ShouldReturnLandmarks() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) bool { return v.ShouldReturnLandmarks }).(pulumi.BoolOutput)
+}
+
+// The tracking model OCID.
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput) TrackingModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemFeatureTrackingType) string { return v.TrackingModelId }).(pulumi.StringOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemFeatureTrackingType)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput() GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput) ToGetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput) Index(i pulumi.IntInput) GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsStreamJobCollectionItemFeatureTrackingType {
+		return vs[0].([]GetStreamJobsStreamJobCollectionItemFeatureTrackingType)[vs[1].(int)]
+	}).(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocation struct {
+	// The Object Storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// Object storage output location
+	OboToken string `pulumi:"oboToken"`
+	// Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType string `pulumi:"outputLocationType"`
+	// The Object Storage folder name.
+	Prefix string `pulumi:"prefix"`
+}
+
+// GetStreamJobsStreamJobCollectionItemStreamOutputLocationInput is an input type that accepts GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs and GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemStreamOutputLocationInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs{...}
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput
+	ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs struct {
+	// The Object Storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The Object Storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Object storage output location
+	OboToken pulumi.StringInput `pulumi:"oboToken"`
+	// Type of device Allowed values are:
+	// * OBJECT_STORAGE
+	// * LIVEKIT_WEBRTC_AGENT
+	OutputLocationType pulumi.StringInput `pulumi:"outputLocationType"`
+	// The Object Storage folder name.
+	Prefix pulumi.StringInput `pulumi:"prefix"`
+}
+
+func (GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemStreamOutputLocation)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput)
+}
+
+// GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayInput is an input type that accepts GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray and GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput values.
+// You can construct a concrete instance of `GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayInput` via:
+//
+//	GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray{ GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs{...} }
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput
+	ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutputWithContext(context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput
+}
+
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray []GetStreamJobsStreamJobCollectionItemStreamOutputLocationInput
+
+func (GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemStreamOutputLocation)(nil)).Elem()
+}
+
+func (i GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput {
+	return i.ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemStreamOutputLocation)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput {
+	return o
+}
+
+// The Object Storage bucket name.
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemStreamOutputLocation) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The Object Storage namespace.
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemStreamOutputLocation) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Object storage output location
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) OboToken() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemStreamOutputLocation) string { return v.OboToken }).(pulumi.StringOutput)
+}
+
+// Type of device Allowed values are:
+// * OBJECT_STORAGE
+// * LIVEKIT_WEBRTC_AGENT
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) OutputLocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemStreamOutputLocation) string { return v.OutputLocationType }).(pulumi.StringOutput)
+}
+
+// The Object Storage folder name.
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput) Prefix() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamJobsStreamJobCollectionItemStreamOutputLocation) string { return v.Prefix }).(pulumi.StringOutput)
+}
+
+type GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamJobsStreamJobCollectionItemStreamOutputLocation)(nil)).Elem()
+}
+
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput() GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput) ToGetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutputWithContext(ctx context.Context) GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput {
+	return o
+}
+
+func (o GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput) Index(i pulumi.IntInput) GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamJobsStreamJobCollectionItemStreamOutputLocation {
+		return vs[0].([]GetStreamJobsStreamJobCollectionItemStreamOutputLocation)[vs[1].(int)]
+	}).(GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput)
+}
+
+type GetStreamSourceStreamSourceDetail struct {
+	// url of camera
+	CameraUrl string `pulumi:"cameraUrl"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId string `pulumi:"secretId"`
+	// Type of source Allowed values are:
+	// * RTSP
+	SourceType string `pulumi:"sourceType"`
+	// Details about a stream Connection type
+	StreamNetworkAccessDetails []GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail `pulumi:"streamNetworkAccessDetails"`
+}
+
+// GetStreamSourceStreamSourceDetailInput is an input type that accepts GetStreamSourceStreamSourceDetailArgs and GetStreamSourceStreamSourceDetailOutput values.
+// You can construct a concrete instance of `GetStreamSourceStreamSourceDetailInput` via:
+//
+//	GetStreamSourceStreamSourceDetailArgs{...}
+type GetStreamSourceStreamSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetStreamSourceStreamSourceDetailOutput() GetStreamSourceStreamSourceDetailOutput
+	ToGetStreamSourceStreamSourceDetailOutputWithContext(context.Context) GetStreamSourceStreamSourceDetailOutput
+}
+
+type GetStreamSourceStreamSourceDetailArgs struct {
+	// url of camera
+	CameraUrl pulumi.StringInput `pulumi:"cameraUrl"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// Type of source Allowed values are:
+	// * RTSP
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// Details about a stream Connection type
+	StreamNetworkAccessDetails GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayInput `pulumi:"streamNetworkAccessDetails"`
+}
+
+func (GetStreamSourceStreamSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourceStreamSourceDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourceStreamSourceDetailArgs) ToGetStreamSourceStreamSourceDetailOutput() GetStreamSourceStreamSourceDetailOutput {
+	return i.ToGetStreamSourceStreamSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourceStreamSourceDetailArgs) ToGetStreamSourceStreamSourceDetailOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourceStreamSourceDetailOutput)
+}
+
+// GetStreamSourceStreamSourceDetailArrayInput is an input type that accepts GetStreamSourceStreamSourceDetailArray and GetStreamSourceStreamSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourceStreamSourceDetailArrayInput` via:
+//
+//	GetStreamSourceStreamSourceDetailArray{ GetStreamSourceStreamSourceDetailArgs{...} }
+type GetStreamSourceStreamSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourceStreamSourceDetailArrayOutput() GetStreamSourceStreamSourceDetailArrayOutput
+	ToGetStreamSourceStreamSourceDetailArrayOutputWithContext(context.Context) GetStreamSourceStreamSourceDetailArrayOutput
+}
+
+type GetStreamSourceStreamSourceDetailArray []GetStreamSourceStreamSourceDetailInput
+
+func (GetStreamSourceStreamSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourceStreamSourceDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourceStreamSourceDetailArray) ToGetStreamSourceStreamSourceDetailArrayOutput() GetStreamSourceStreamSourceDetailArrayOutput {
+	return i.ToGetStreamSourceStreamSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourceStreamSourceDetailArray) ToGetStreamSourceStreamSourceDetailArrayOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourceStreamSourceDetailArrayOutput)
+}
+
+type GetStreamSourceStreamSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourceStreamSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourceStreamSourceDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourceStreamSourceDetailOutput) ToGetStreamSourceStreamSourceDetailOutput() GetStreamSourceStreamSourceDetailOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailOutput) ToGetStreamSourceStreamSourceDetailOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailOutput {
+	return o
+}
+
+// url of camera
+func (o GetStreamSourceStreamSourceDetailOutput) CameraUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetail) string { return v.CameraUrl }).(pulumi.StringOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+func (o GetStreamSourceStreamSourceDetailOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetail) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// Type of source Allowed values are:
+// * RTSP
+func (o GetStreamSourceStreamSourceDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// Details about a stream Connection type
+func (o GetStreamSourceStreamSourceDetailOutput) StreamNetworkAccessDetails() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetail) []GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail {
+		return v.StreamNetworkAccessDetails
+	}).(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput)
+}
+
+type GetStreamSourceStreamSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourceStreamSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourceStreamSourceDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourceStreamSourceDetailArrayOutput) ToGetStreamSourceStreamSourceDetailArrayOutput() GetStreamSourceStreamSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailArrayOutput) ToGetStreamSourceStreamSourceDetailArrayOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailArrayOutput) Index(i pulumi.IntInput) GetStreamSourceStreamSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourceStreamSourceDetail {
+		return vs[0].([]GetStreamSourceStreamSourceDetail)[vs[1].(int)]
+	}).(GetStreamSourceStreamSourceDetailOutput)
+}
+
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// Type of access Allowed values are:
+	// * PRIVATE
+	StreamAccessType string `pulumi:"streamAccessType"`
+}
+
+// GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailInput is an input type that accepts GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs and GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput values.
+// You can construct a concrete instance of `GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailInput` via:
+//
+//	GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs{...}
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailInput interface {
+	pulumi.Input
+
+	ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput
+	ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput
+}
+
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// Type of access Allowed values are:
+	// * PRIVATE
+	StreamAccessType pulumi.StringInput `pulumi:"streamAccessType"`
+}
+
+func (GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return i.ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput)
+}
+
+// GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayInput is an input type that accepts GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray and GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayInput` via:
+//
+//	GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray{ GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs{...} }
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput
+	ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput
+}
+
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray []GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailInput
+
+func (GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return i.ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput)
+}
+
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return o
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// Type of access Allowed values are:
+// * PRIVATE
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput) StreamAccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail) string { return v.StreamAccessType }).(pulumi.StringOutput)
+}
+
+type GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ToGetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(ctx context.Context) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput) Index(i pulumi.IntInput) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail {
+		return vs[0].([]GetStreamSourceStreamSourceDetailStreamNetworkAccessDetail)[vs[1].(int)]
+	}).(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput)
+}
+
+type GetStreamSourcesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetStreamSourcesFilterInput is an input type that accepts GetStreamSourcesFilterArgs and GetStreamSourcesFilterOutput values.
+// You can construct a concrete instance of `GetStreamSourcesFilterInput` via:
+//
+//	GetStreamSourcesFilterArgs{...}
+type GetStreamSourcesFilterInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesFilterOutput() GetStreamSourcesFilterOutput
+	ToGetStreamSourcesFilterOutputWithContext(context.Context) GetStreamSourcesFilterOutput
+}
+
+type GetStreamSourcesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetStreamSourcesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesFilter)(nil)).Elem()
+}
+
+func (i GetStreamSourcesFilterArgs) ToGetStreamSourcesFilterOutput() GetStreamSourcesFilterOutput {
+	return i.ToGetStreamSourcesFilterOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesFilterArgs) ToGetStreamSourcesFilterOutputWithContext(ctx context.Context) GetStreamSourcesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesFilterOutput)
+}
+
+// GetStreamSourcesFilterArrayInput is an input type that accepts GetStreamSourcesFilterArray and GetStreamSourcesFilterArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourcesFilterArrayInput` via:
+//
+//	GetStreamSourcesFilterArray{ GetStreamSourcesFilterArgs{...} }
+type GetStreamSourcesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesFilterArrayOutput() GetStreamSourcesFilterArrayOutput
+	ToGetStreamSourcesFilterArrayOutputWithContext(context.Context) GetStreamSourcesFilterArrayOutput
+}
+
+type GetStreamSourcesFilterArray []GetStreamSourcesFilterInput
+
+func (GetStreamSourcesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesFilter)(nil)).Elem()
+}
+
+func (i GetStreamSourcesFilterArray) ToGetStreamSourcesFilterArrayOutput() GetStreamSourcesFilterArrayOutput {
+	return i.ToGetStreamSourcesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesFilterArray) ToGetStreamSourcesFilterArrayOutputWithContext(ctx context.Context) GetStreamSourcesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesFilterArrayOutput)
+}
+
+type GetStreamSourcesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesFilter)(nil)).Elem()
+}
+
+func (o GetStreamSourcesFilterOutput) ToGetStreamSourcesFilterOutput() GetStreamSourcesFilterOutput {
+	return o
+}
+
+func (o GetStreamSourcesFilterOutput) ToGetStreamSourcesFilterOutputWithContext(ctx context.Context) GetStreamSourcesFilterOutput {
+	return o
+}
+
+func (o GetStreamSourcesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetStreamSourcesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetStreamSourcesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetStreamSourcesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetStreamSourcesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetStreamSourcesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesFilter)(nil)).Elem()
+}
+
+func (o GetStreamSourcesFilterArrayOutput) ToGetStreamSourcesFilterArrayOutput() GetStreamSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesFilterArrayOutput) ToGetStreamSourcesFilterArrayOutputWithContext(ctx context.Context) GetStreamSourcesFilterArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesFilterArrayOutput) Index(i pulumi.IntInput) GetStreamSourcesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourcesFilter {
+		return vs[0].([]GetStreamSourcesFilter)[vs[1].(int)]
+	}).(GetStreamSourcesFilterOutput)
+}
+
+type GetStreamSourcesStreamSourceCollection struct {
+	Items []GetStreamSourcesStreamSourceCollectionItem `pulumi:"items"`
+}
+
+// GetStreamSourcesStreamSourceCollectionInput is an input type that accepts GetStreamSourcesStreamSourceCollectionArgs and GetStreamSourcesStreamSourceCollectionOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionArgs{...}
+type GetStreamSourcesStreamSourceCollectionInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionOutput() GetStreamSourcesStreamSourceCollectionOutput
+	ToGetStreamSourcesStreamSourceCollectionOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionArgs struct {
+	Items GetStreamSourcesStreamSourceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetStreamSourcesStreamSourceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollection)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionArgs) ToGetStreamSourcesStreamSourceCollectionOutput() GetStreamSourcesStreamSourceCollectionOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionArgs) ToGetStreamSourcesStreamSourceCollectionOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionOutput)
+}
+
+// GetStreamSourcesStreamSourceCollectionArrayInput is an input type that accepts GetStreamSourcesStreamSourceCollectionArray and GetStreamSourcesStreamSourceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionArrayInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionArray{ GetStreamSourcesStreamSourceCollectionArgs{...} }
+type GetStreamSourcesStreamSourceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionArrayOutput() GetStreamSourcesStreamSourceCollectionArrayOutput
+	ToGetStreamSourcesStreamSourceCollectionArrayOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionArrayOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionArray []GetStreamSourcesStreamSourceCollectionInput
+
+func (GetStreamSourcesStreamSourceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollection)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionArray) ToGetStreamSourcesStreamSourceCollectionArrayOutput() GetStreamSourcesStreamSourceCollectionArrayOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionArray) ToGetStreamSourcesStreamSourceCollectionArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollection)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionOutput) ToGetStreamSourcesStreamSourceCollectionOutput() GetStreamSourcesStreamSourceCollectionOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionOutput) ToGetStreamSourcesStreamSourceCollectionOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionOutput) Items() GetStreamSourcesStreamSourceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollection) []GetStreamSourcesStreamSourceCollectionItem {
+		return v.Items
+	}).(GetStreamSourcesStreamSourceCollectionItemArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollection)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionArrayOutput) ToGetStreamSourcesStreamSourceCollectionArrayOutput() GetStreamSourcesStreamSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionArrayOutput) ToGetStreamSourcesStreamSourceCollectionArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionArrayOutput) Index(i pulumi.IntInput) GetStreamSourcesStreamSourceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourcesStreamSourceCollection {
+		return vs[0].([]GetStreamSourcesStreamSourceCollection)[vs[1].(int)]
+	}).(GetStreamSourcesStreamSourceCollectionOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id string `pulumi:"id"`
+	// The filter to match projects with the given lifecycleState.
+	State string `pulumi:"state"`
+	// Details about a stream source
+	StreamSourceDetails []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail `pulumi:"streamSourceDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// When the streamSource was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the streamSource was updated, as an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetStreamSourcesStreamSourceCollectionItemInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemArgs and GetStreamSourcesStreamSourceCollectionItemOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemArgs{...}
+type GetStreamSourcesStreamSourceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemOutput() GetStreamSourcesStreamSourceCollectionItemOutput
+	ToGetStreamSourcesStreamSourceCollectionItemOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The filter to match projects with the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// Details about a stream source
+	StreamSourceDetails GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayInput `pulumi:"streamSourceDetails"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// When the streamSource was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the streamSource was updated, as an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetStreamSourcesStreamSourceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemArgs) ToGetStreamSourcesStreamSourceCollectionItemOutput() GetStreamSourcesStreamSourceCollectionItemOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemArgs) ToGetStreamSourcesStreamSourceCollectionItemOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemOutput)
+}
+
+// GetStreamSourcesStreamSourceCollectionItemArrayInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemArray and GetStreamSourcesStreamSourceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemArrayInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemArray{ GetStreamSourcesStreamSourceCollectionItemArgs{...} }
+type GetStreamSourcesStreamSourceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemArrayOutput() GetStreamSourcesStreamSourceCollectionItemArrayOutput
+	ToGetStreamSourcesStreamSourceCollectionItemArrayOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemArrayOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemArray []GetStreamSourcesStreamSourceCollectionItemInput
+
+func (GetStreamSourcesStreamSourceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItem)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemArray) ToGetStreamSourcesStreamSourceCollectionItemArrayOutput() GetStreamSourcesStreamSourceCollectionItemArrayOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemArray) ToGetStreamSourcesStreamSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) ToGetStreamSourcesStreamSourceCollectionItemOutput() GetStreamSourcesStreamSourceCollectionItemOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) ToGetStreamSourcesStreamSourceCollectionItemOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The filter to find the device with the given identifier.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The filter to match projects with the given lifecycleState.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Details about a stream source
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) StreamSourceDetails() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail {
+		return v.StreamSourceDetails
+	}).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// When the streamSource was created, as an RFC3339 datetime string.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the streamSource was updated, as an RFC3339 datetime string.
+func (o GetStreamSourcesStreamSourceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItem)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemArrayOutput() GetStreamSourcesStreamSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetStreamSourcesStreamSourceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourcesStreamSourceCollectionItem {
+		return vs[0].([]GetStreamSourcesStreamSourceCollectionItem)[vs[1].(int)]
+	}).(GetStreamSourcesStreamSourceCollectionItemOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail struct {
+	// url of camera
+	CameraUrl string `pulumi:"cameraUrl"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId string `pulumi:"secretId"`
+	// Type of source Allowed values are:
+	// * RTSP
+	SourceType string `pulumi:"sourceType"`
+	// Details about a stream Connection type
+	StreamNetworkAccessDetails []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail `pulumi:"streamNetworkAccessDetails"`
+}
+
+// GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs and GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs{...}
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs struct {
+	// url of camera
+	CameraUrl pulumi.StringInput `pulumi:"cameraUrl"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// Type of source Allowed values are:
+	// * RTSP
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// Details about a stream Connection type
+	StreamNetworkAccessDetails GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayInput `pulumi:"streamNetworkAccessDetails"`
+}
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput)
+}
+
+// GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray and GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray{ GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs{...} }
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailInput
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput {
+	return o
+}
+
+// url of camera
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) CameraUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail) string { return v.CameraUrl }).(pulumi.StringOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// Type of source Allowed values are:
+// * RTSP
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// Details about a stream Connection type
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput) StreamNetworkAccessDetails() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail) []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail {
+		return v.StreamNetworkAccessDetails
+	}).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput) Index(i pulumi.IntInput) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail {
+		return vs[0].([]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetail)[vs[1].(int)]
+	}).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// Type of access Allowed values are:
+	// * PRIVATE
+	StreamAccessType string `pulumi:"streamAccessType"`
+}
+
+// GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs and GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs{...}
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs struct {
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// Type of access Allowed values are:
+	// * PRIVATE
+	StreamAccessType pulumi.StringInput `pulumi:"streamAccessType"`
+}
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput)
+}
+
+// GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayInput is an input type that accepts GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray and GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput values.
+// You can construct a concrete instance of `GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayInput` via:
+//
+//	GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray{ GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs{...} }
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput
+	ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray []GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailInput
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return i.ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return o
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail) string {
+		return v.PrivateEndpointId
+	}).(pulumi.StringOutput)
+}
+
+// Type of access Allowed values are:
+// * PRIVATE
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput) StreamAccessType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail) string {
+		return v.StreamAccessType
+	}).(pulumi.StringOutput)
+}
+
+type GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail)(nil)).Elem()
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput() GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput) ToGetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutputWithContext(ctx context.Context) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput {
+	return o
+}
+
+func (o GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput) Index(i pulumi.IntInput) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail {
+		return vs[0].([]GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetail)[vs[1].(int)]
+	}).(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput)
+}
+
+type GetVisionPrivateEndpointsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetVisionPrivateEndpointsFilterInput is an input type that accepts GetVisionPrivateEndpointsFilterArgs and GetVisionPrivateEndpointsFilterOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsFilterInput` via:
+//
+//	GetVisionPrivateEndpointsFilterArgs{...}
+type GetVisionPrivateEndpointsFilterInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsFilterOutput() GetVisionPrivateEndpointsFilterOutput
+	ToGetVisionPrivateEndpointsFilterOutputWithContext(context.Context) GetVisionPrivateEndpointsFilterOutput
+}
+
+type GetVisionPrivateEndpointsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetVisionPrivateEndpointsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsFilterArgs) ToGetVisionPrivateEndpointsFilterOutput() GetVisionPrivateEndpointsFilterOutput {
+	return i.ToGetVisionPrivateEndpointsFilterOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsFilterArgs) ToGetVisionPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsFilterOutput)
+}
+
+// GetVisionPrivateEndpointsFilterArrayInput is an input type that accepts GetVisionPrivateEndpointsFilterArray and GetVisionPrivateEndpointsFilterArrayOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsFilterArrayInput` via:
+//
+//	GetVisionPrivateEndpointsFilterArray{ GetVisionPrivateEndpointsFilterArgs{...} }
+type GetVisionPrivateEndpointsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsFilterArrayOutput() GetVisionPrivateEndpointsFilterArrayOutput
+	ToGetVisionPrivateEndpointsFilterArrayOutputWithContext(context.Context) GetVisionPrivateEndpointsFilterArrayOutput
+}
+
+type GetVisionPrivateEndpointsFilterArray []GetVisionPrivateEndpointsFilterInput
+
+func (GetVisionPrivateEndpointsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsFilterArray) ToGetVisionPrivateEndpointsFilterArrayOutput() GetVisionPrivateEndpointsFilterArrayOutput {
+	return i.ToGetVisionPrivateEndpointsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsFilterArray) ToGetVisionPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsFilterArrayOutput)
+}
+
+type GetVisionPrivateEndpointsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsFilterOutput) ToGetVisionPrivateEndpointsFilterOutput() GetVisionPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsFilterOutput) ToGetVisionPrivateEndpointsFilterOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsFilterOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetVisionPrivateEndpointsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetVisionPrivateEndpointsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetVisionPrivateEndpointsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsFilter)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsFilterArrayOutput) ToGetVisionPrivateEndpointsFilterArrayOutput() GetVisionPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsFilterArrayOutput) ToGetVisionPrivateEndpointsFilterArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsFilterArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsFilterArrayOutput) Index(i pulumi.IntInput) GetVisionPrivateEndpointsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVisionPrivateEndpointsFilter {
+		return vs[0].([]GetVisionPrivateEndpointsFilter)[vs[1].(int)]
+	}).(GetVisionPrivateEndpointsFilterOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollection struct {
+	Items []GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem `pulumi:"items"`
+}
+
+// GetVisionPrivateEndpointsVisionPrivateEndpointCollectionInput is an input type that accepts GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs and GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsVisionPrivateEndpointCollectionInput` via:
+//
+//	GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs{...}
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutputWithContext(context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs struct {
+	Items GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput {
+	return i.ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput)
+}
+
+// GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayInput is an input type that accepts GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray and GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayInput` via:
+//
+//	GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray{ GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs{...} }
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutputWithContext(context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray []GetVisionPrivateEndpointsVisionPrivateEndpointCollectionInput
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsVisionPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput {
+	return i.ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput) Items() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollection) []GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem {
+		return v.Items
+	}).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsVisionPrivateEndpointCollection)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput) Index(i pulumi.IntInput) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVisionPrivateEndpointsVisionPrivateEndpointCollection {
+		return vs[0].([]GetVisionPrivateEndpointsVisionPrivateEndpointCollection)[vs[1].(int)]
+	}).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// An optional description of the visionPrivateEndpoint.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id string `pulumi:"id"`
+	// A message describing the current state in more detail, that can provide actionable information if creation failed.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The filter to match projects with the given lifecycleState.
+	State string `pulumi:"state"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of subnet
+	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// When the visionPrivateEndpoint was created, as an RFC3339 datetime string.
+	TimeCreated string `pulumi:"timeCreated"`
+	// When the visionPrivateEndpoint was updated, as an RFC3339 datetime string.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemInput is an input type that accepts GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs and GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemInput` via:
+//
+//	GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs{...}
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutputWithContext(context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs struct {
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// An optional description of the visionPrivateEndpoint.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The filter to find the device with the given identifier.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A message describing the current state in more detail, that can provide actionable information if creation failed.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The filter to match projects with the given lifecycleState.
+	State pulumi.StringInput `pulumi:"state"`
+	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of subnet
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// When the visionPrivateEndpoint was created, as an RFC3339 datetime string.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// When the visionPrivateEndpoint was updated, as an RFC3339 datetime string.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput {
+	return i.ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput)
+}
+
+// GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayInput is an input type that accepts GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray and GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayInput` via:
+//
+//	GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray{ GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs{...} }
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput
+	ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutputWithContext(context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray []GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemInput
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput {
+	return i.ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput {
+	return o
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// An optional description of the visionPrivateEndpoint.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The filter to find the device with the given identifier.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A message describing the current state in more detail, that can provide actionable information if creation failed.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The filter to match projects with the given lifecycleState.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of subnet
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// When the visionPrivateEndpoint was created, as an RFC3339 datetime string.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// When the visionPrivateEndpoint was updated, as an RFC3339 datetime string.
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+type GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem)(nil)).Elem()
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput() GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput) ToGetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutputWithContext(ctx context.Context) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput) Index(i pulumi.IntInput) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem {
+		return vs[0].([]GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItem)[vs[1].(int)]
+	}).(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTestingDatasetInput)(nil)).Elem(), ModelTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTestingDatasetPtrInput)(nil)).Elem(), ModelTestingDatasetArgs{})
@@ -2384,6 +6474,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelTrainingDatasetPtrInput)(nil)).Elem(), ModelTrainingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelValidationDatasetInput)(nil)).Elem(), ModelValidationDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ModelValidationDatasetPtrInput)(nil)).Elem(), ModelValidationDatasetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamGroupStreamOverlapInput)(nil)).Elem(), StreamGroupStreamOverlapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamGroupStreamOverlapArrayInput)(nil)).Elem(), StreamGroupStreamOverlapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobFeatureInput)(nil)).Elem(), StreamJobFeatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobFeatureArrayInput)(nil)).Elem(), StreamJobFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobFeatureTrackingTypeInput)(nil)).Elem(), StreamJobFeatureTrackingTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobFeatureTrackingTypeArrayInput)(nil)).Elem(), StreamJobFeatureTrackingTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobStreamOutputLocationInput)(nil)).Elem(), StreamJobStreamOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamJobStreamOutputLocationPtrInput)(nil)).Elem(), StreamJobStreamOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamSourceStreamSourceDetailsInput)(nil)).Elem(), StreamSourceStreamSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamSourceStreamSourceDetailsPtrInput)(nil)).Elem(), StreamSourceStreamSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsInput)(nil)).Elem(), StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrInput)(nil)).Elem(), StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTestingDatasetInput)(nil)).Elem(), GetModelTestingDatasetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTestingDatasetArrayInput)(nil)).Elem(), GetModelTestingDatasetArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelTrainingDatasetInput)(nil)).Elem(), GetModelTrainingDatasetArgs{})
@@ -2408,12 +6510,72 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionArrayInput)(nil)).Elem(), GetProjectsProjectCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemInput)(nil)).Elem(), GetProjectsProjectCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectsProjectCollectionItemArrayInput)(nil)).Elem(), GetProjectsProjectCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupStreamOverlapInput)(nil)).Elem(), GetStreamGroupStreamOverlapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupStreamOverlapArrayInput)(nil)).Elem(), GetStreamGroupStreamOverlapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsFilterInput)(nil)).Elem(), GetStreamGroupsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsFilterArrayInput)(nil)).Elem(), GetStreamGroupsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionArrayInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemArrayInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemStreamOverlapInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayInput)(nil)).Elem(), GetStreamGroupsStreamGroupCollectionItemStreamOverlapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobFeatureInput)(nil)).Elem(), GetStreamJobFeatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobFeatureArrayInput)(nil)).Elem(), GetStreamJobFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobFeatureTrackingTypeInput)(nil)).Elem(), GetStreamJobFeatureTrackingTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobFeatureTrackingTypeArrayInput)(nil)).Elem(), GetStreamJobFeatureTrackingTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobStreamOutputLocationInput)(nil)).Elem(), GetStreamJobStreamOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobStreamOutputLocationArrayInput)(nil)).Elem(), GetStreamJobStreamOutputLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsFilterInput)(nil)).Elem(), GetStreamJobsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsFilterArrayInput)(nil)).Elem(), GetStreamJobsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionArrayInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemArrayInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemFeatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureArrayInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemFeatureArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemStreamOutputLocationInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayInput)(nil)).Elem(), GetStreamJobsStreamJobCollectionItemStreamOutputLocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourceStreamSourceDetailInput)(nil)).Elem(), GetStreamSourceStreamSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourceStreamSourceDetailArrayInput)(nil)).Elem(), GetStreamSourceStreamSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailInput)(nil)).Elem(), GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayInput)(nil)).Elem(), GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesFilterInput)(nil)).Elem(), GetStreamSourcesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesFilterArrayInput)(nil)).Elem(), GetStreamSourcesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionArrayInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemArrayInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayInput)(nil)).Elem(), GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsFilterInput)(nil)).Elem(), GetVisionPrivateEndpointsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsFilterArrayInput)(nil)).Elem(), GetVisionPrivateEndpointsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionInput)(nil)).Elem(), GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayInput)(nil)).Elem(), GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemInput)(nil)).Elem(), GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayInput)(nil)).Elem(), GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArray{})
 	pulumi.RegisterOutputType(ModelTestingDatasetOutput{})
 	pulumi.RegisterOutputType(ModelTestingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelTrainingDatasetOutput{})
 	pulumi.RegisterOutputType(ModelTrainingDatasetPtrOutput{})
 	pulumi.RegisterOutputType(ModelValidationDatasetOutput{})
 	pulumi.RegisterOutputType(ModelValidationDatasetPtrOutput{})
+	pulumi.RegisterOutputType(StreamGroupStreamOverlapOutput{})
+	pulumi.RegisterOutputType(StreamGroupStreamOverlapArrayOutput{})
+	pulumi.RegisterOutputType(StreamJobFeatureOutput{})
+	pulumi.RegisterOutputType(StreamJobFeatureArrayOutput{})
+	pulumi.RegisterOutputType(StreamJobFeatureTrackingTypeOutput{})
+	pulumi.RegisterOutputType(StreamJobFeatureTrackingTypeArrayOutput{})
+	pulumi.RegisterOutputType(StreamJobStreamOutputLocationOutput{})
+	pulumi.RegisterOutputType(StreamJobStreamOutputLocationPtrOutput{})
+	pulumi.RegisterOutputType(StreamSourceStreamSourceDetailsOutput{})
+	pulumi.RegisterOutputType(StreamSourceStreamSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsOutput{})
+	pulumi.RegisterOutputType(StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsPtrOutput{})
 	pulumi.RegisterOutputType(GetModelTestingDatasetOutput{})
 	pulumi.RegisterOutputType(GetModelTestingDatasetArrayOutput{})
 	pulumi.RegisterOutputType(GetModelTrainingDatasetOutput{})
@@ -2438,4 +6600,52 @@ func init() {
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetProjectsProjectCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupStreamOverlapOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupStreamOverlapArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsFilterOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionItemStreamOverlapOutput{})
+	pulumi.RegisterOutputType(GetStreamGroupsStreamGroupCollectionItemStreamOverlapArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobFeatureOutput{})
+	pulumi.RegisterOutputType(GetStreamJobFeatureArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobFeatureTrackingTypeOutput{})
+	pulumi.RegisterOutputType(GetStreamJobFeatureTrackingTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobStreamOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetStreamJobStreamOutputLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsFilterOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemFeatureOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemFeatureArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemStreamOutputLocationOutput{})
+	pulumi.RegisterOutputType(GetStreamJobsStreamJobCollectionItemStreamOutputLocationArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourceStreamSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetStreamSourceStreamSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailOutput{})
+	pulumi.RegisterOutputType(GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesFilterOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailOutput{})
+	pulumi.RegisterOutputType(GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsFilterOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemArrayOutput{})
 }

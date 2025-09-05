@@ -27,6 +27,7 @@ public final class GetModelValidationDataset {
     private String datasetType;
     /**
      * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     private String namespaceName;
@@ -60,6 +61,7 @@ public final class GetModelValidationDataset {
     }
     /**
      * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public String namespaceName() {

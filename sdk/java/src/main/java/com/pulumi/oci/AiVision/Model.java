@@ -23,7 +23,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
  * 
- * Creates a new Model.
+ * Create a new model.
  * 
  * ## Example Usage
  * 
@@ -64,10 +64,10 @@ import javax.annotation.Nullable;
  *                 .namespaceName(modelTrainingDatasetNamespace)
  *                 .object(modelTrainingDatasetObject)
  *                 .build())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .definedTags(modelDefinedTags)
  *             .description(modelDescription)
  *             .displayName(modelDisplayName)
- *             .freeformTags(Map.of("bar-key", "value"))
+ *             .freeformTags(modelFreeformTags)
  *             .isQuickMode(modelIsQuickMode)
  *             .maxTrainingDurationInHours(modelMaxTrainingDurationInHours)
  *             .modelVersion(modelModelVersion)
@@ -105,364 +105,364 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:AiVision/model:Model")
 public class Model extends com.pulumi.resources.CustomResource {
     /**
-     * Average precision of the trained model
+     * The mean average precision of the trained model.
      * 
      */
     @Export(name="averagePrecision", refs={Double.class}, tree="[0]")
     private Output<Double> averagePrecision;
 
     /**
-     * @return Average precision of the trained model
+     * @return The mean average precision of the trained model.
      * 
      */
     public Output<Double> averagePrecision() {
         return this.averagePrecision;
     }
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment identifier.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Confidence ratio of the calculation
+     * The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     @Export(name="confidenceThreshold", refs={Double.class}, tree="[0]")
     private Output<Double> confidenceThreshold;
 
     /**
-     * @return Confidence ratio of the calculation
+     * @return The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     public Output<Double> confidenceThreshold() {
         return this.confidenceThreshold;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the Model.
+     * @return (Updatable) An optional description of the model.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Model Identifier
+     * @return (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,String>> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     @Export(name="isQuickMode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isQuickMode;
 
     /**
-     * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * @return Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     public Output<Boolean> isQuickMode() {
         return this.isQuickMode;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     @Export(name="maxTrainingDurationInHours", refs={Double.class}, tree="[0]")
     private Output<Double> maxTrainingDurationInHours;
 
     /**
-     * @return The maximum duration in hours for which the training will run.
+     * @return The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     public Output<Double> maxTrainingDurationInHours() {
         return this.maxTrainingDurationInHours;
     }
     /**
-     * Complete Training Metrics for successful trained model
+     * The complete set of per-label metrics for successfully trained models.
      * 
      */
     @Export(name="metrics", refs={String.class}, tree="[0]")
     private Output<String> metrics;
 
     /**
-     * @return Complete Training Metrics for successful trained model
+     * @return The complete set of per-label metrics for successfully trained models.
      * 
      */
     public Output<String> metrics() {
         return this.metrics;
     }
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
-     * @return The  type of the model.
+     * @return Which type of Vision model this is.
      * 
      */
     public Output<String> modelType() {
         return this.modelType;
     }
     /**
-     * Model version.
+     * The model version
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
     private Output<String> modelVersion;
 
     /**
-     * @return Model version.
+     * @return The model version
      * 
      */
     public Output<String> modelVersion() {
         return this.modelVersion;
     }
     /**
-     * Precision of the trained model
+     * The precision of the trained model.
      * 
      */
     @Export(name="precision", refs={Double.class}, tree="[0]")
     private Output<Double> precision;
 
     /**
-     * @return Precision of the trained model
+     * @return The precision of the trained model.
      * 
      */
     public Output<Double> precision() {
         return this.precision;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
-     * Recall of the trained model
+     * Recall of the trained model.
      * 
      */
     @Export(name="recall", refs={Double.class}, tree="[0]")
     private Output<Double> recall;
 
     /**
-     * @return Recall of the trained model
+     * @return Recall of the trained model.
      * 
      */
     public Output<Double> recall() {
         return this.recall;
     }
     /**
-     * The current state of the Model.
+     * The current state of the model.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Model.
+     * @return The current state of the model.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
     /**
-     * Total number of testing Images
+     * The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     @Export(name="testImageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> testImageCount;
 
     /**
-     * @return Total number of testing Images
+     * @return The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     public Output<Integer> testImageCount() {
         return this.testImageCount;
     }
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="testingDataset", refs={ModelTestingDataset.class}, tree="[0]")
     private Output<ModelTestingDataset> testingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Output<ModelTestingDataset> testingDataset() {
         return this.testingDataset;
     }
     /**
-     * The time the Model was created. An RFC3339 formatted datetime string
+     * When the model was created, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the Model was created. An RFC3339 formatted datetime string
+     * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the Model was updated. An RFC3339 formatted datetime string
+     * When the model was updated, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the Model was updated. An RFC3339 formatted datetime string
+     * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * Total number of training Images
+     * The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     @Export(name="totalImageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalImageCount;
 
     /**
-     * @return Total number of training Images
+     * @return The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     public Output<Integer> totalImageCount() {
         return this.totalImageCount;
     }
     /**
-     * Total hours actually used for training
+     * The total hours actually used for model training.
      * 
      */
     @Export(name="trainedDurationInHours", refs={Double.class}, tree="[0]")
     private Output<Double> trainedDurationInHours;
 
     /**
-     * @return Total hours actually used for training
+     * @return The total hours actually used for model training.
      * 
      */
     public Output<Double> trainedDurationInHours() {
         return this.trainedDurationInHours;
     }
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="trainingDataset", refs={ModelTrainingDataset.class}, tree="[0]")
     private Output<ModelTrainingDataset> trainingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Output<ModelTrainingDataset> trainingDataset() {
         return this.trainingDataset;
     }
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Export(name="validationDataset", refs={ModelValidationDataset.class}, tree="[0]")
     private Output<ModelValidationDataset> validationDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Output<ModelValidationDataset> validationDataset() {

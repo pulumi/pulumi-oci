@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -47,6 +48,21 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
      */
     public Optional<Output<List<String>>> attachedShapeAttributes() {
         return Optional.ofNullable(this.attachedShapeAttributes);
+    }
+
+    /**
+     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    @Import(name="autoscaleLimitInGbs")
+    private @Nullable Output<Integer> autoscaleLimitInGbs;
+
+    /**
+     * @return (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    public Optional<Output<Integer>> autoscaleLimitInGbs() {
+        return Optional.ofNullable(this.autoscaleLimitInGbs);
     }
 
     /**
@@ -185,6 +201,21 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    @Import(name="isAutoscaleEnabled")
+    private @Nullable Output<Boolean> isAutoscaleEnabled;
+
+    /**
+     * @return (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    public Optional<Output<Boolean>> isAutoscaleEnabled() {
+        return Optional.ofNullable(this.isAutoscaleEnabled);
+    }
+
+    /**
      * Additional information about the current lifecycle state.
      * 
      */
@@ -315,6 +346,7 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
     private ExascaleDbStorageVaultState(ExascaleDbStorageVaultState $) {
         this.additionalFlashCacheInPercent = $.additionalFlashCacheInPercent;
         this.attachedShapeAttributes = $.attachedShapeAttributes;
+        this.autoscaleLimitInGbs = $.autoscaleLimitInGbs;
         this.availabilityDomain = $.availabilityDomain;
         this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
@@ -324,6 +356,7 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
         this.exadataInfrastructureId = $.exadataInfrastructureId;
         this.freeformTags = $.freeformTags;
         this.highCapacityDatabaseStorage = $.highCapacityDatabaseStorage;
+        this.isAutoscaleEnabled = $.isAutoscaleEnabled;
         this.lifecycleDetails = $.lifecycleDetails;
         this.state = $.state;
         this.subscriptionId = $.subscriptionId;
@@ -402,6 +435,27 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
          */
         public Builder attachedShapeAttributes(String... attachedShapeAttributes) {
             return attachedShapeAttributes(List.of(attachedShapeAttributes));
+        }
+
+        /**
+         * @param autoscaleLimitInGbs (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoscaleLimitInGbs(@Nullable Output<Integer> autoscaleLimitInGbs) {
+            $.autoscaleLimitInGbs = autoscaleLimitInGbs;
+            return this;
+        }
+
+        /**
+         * @param autoscaleLimitInGbs (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder autoscaleLimitInGbs(Integer autoscaleLimitInGbs) {
+            return autoscaleLimitInGbs(Output.of(autoscaleLimitInGbs));
         }
 
         /**
@@ -591,6 +645,27 @@ public final class ExascaleDbStorageVaultState extends com.pulumi.resources.Reso
          */
         public Builder highCapacityDatabaseStorage(ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs highCapacityDatabaseStorage) {
             return highCapacityDatabaseStorage(Output.of(highCapacityDatabaseStorage));
+        }
+
+        /**
+         * @param isAutoscaleEnabled (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoscaleEnabled(@Nullable Output<Boolean> isAutoscaleEnabled) {
+            $.isAutoscaleEnabled = isAutoscaleEnabled;
+            return this;
+        }
+
+        /**
+         * @param isAutoscaleEnabled (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            return isAutoscaleEnabled(Output.of(isAutoscaleEnabled));
         }
 
         /**

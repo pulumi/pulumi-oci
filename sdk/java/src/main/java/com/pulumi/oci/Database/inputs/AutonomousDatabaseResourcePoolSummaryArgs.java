@@ -17,6 +17,21 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
     public static final AutonomousDatabaseResourcePoolSummaryArgs Empty = new AutonomousDatabaseResourcePoolSummaryArgs();
 
     /**
+     * Available capacity left for new elastic pool members provision
+     * 
+     */
+    @Import(name="availableComputeCapacity")
+    private @Nullable Output<Integer> availableComputeCapacity;
+
+    /**
+     * @return Available capacity left for new elastic pool members provision
+     * 
+     */
+    public Optional<Output<Integer>> availableComputeCapacity() {
+        return Optional.ofNullable(this.availableComputeCapacity);
+    }
+
+    /**
      * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
@@ -46,11 +61,28 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
         return Optional.ofNullable(this.poolSize);
     }
 
+    /**
+     * Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    @Import(name="totalComputeCapacity")
+    private @Nullable Output<Integer> totalComputeCapacity;
+
+    /**
+     * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    public Optional<Output<Integer>> totalComputeCapacity() {
+        return Optional.ofNullable(this.totalComputeCapacity);
+    }
+
     private AutonomousDatabaseResourcePoolSummaryArgs() {}
 
     private AutonomousDatabaseResourcePoolSummaryArgs(AutonomousDatabaseResourcePoolSummaryArgs $) {
+        this.availableComputeCapacity = $.availableComputeCapacity;
         this.isDisabled = $.isDisabled;
         this.poolSize = $.poolSize;
+        this.totalComputeCapacity = $.totalComputeCapacity;
     }
 
     public static Builder builder() {
@@ -69,6 +101,27 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
 
         public Builder(AutonomousDatabaseResourcePoolSummaryArgs defaults) {
             $ = new AutonomousDatabaseResourcePoolSummaryArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availableComputeCapacity Available capacity left for new elastic pool members provision
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableComputeCapacity(@Nullable Output<Integer> availableComputeCapacity) {
+            $.availableComputeCapacity = availableComputeCapacity;
+            return this;
+        }
+
+        /**
+         * @param availableComputeCapacity Available capacity left for new elastic pool members provision
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availableComputeCapacity(Integer availableComputeCapacity) {
+            return availableComputeCapacity(Output.of(availableComputeCapacity));
         }
 
         /**
@@ -111,6 +164,27 @@ public final class AutonomousDatabaseResourcePoolSummaryArgs extends com.pulumi.
          */
         public Builder poolSize(Integer poolSize) {
             return poolSize(Output.of(poolSize));
+        }
+
+        /**
+         * @param totalComputeCapacity Resource Pool total capacity, it&#39;s currently 4x of pool size
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalComputeCapacity(@Nullable Output<Integer> totalComputeCapacity) {
+            $.totalComputeCapacity = totalComputeCapacity;
+            return this;
+        }
+
+        /**
+         * @param totalComputeCapacity Resource Pool total capacity, it&#39;s currently 4x of pool size
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalComputeCapacity(Integer totalComputeCapacity) {
+            return totalComputeCapacity(Output.of(totalComputeCapacity));
         }
 
         public AutonomousDatabaseResourcePoolSummaryArgs build() {

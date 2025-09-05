@@ -16,22 +16,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureBlobContainersResult {
     /**
-     * @return Azure Storage Account Name.
+     * @return Azure Storage account name.
      * 
      */
     private @Nullable String azureStorageAccountName;
     /**
-     * @return Azure Storage Container Name.
+     * @return Azure Storage container name.
      * 
      */
     private @Nullable String azureStorageContainerName;
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Display name of Oracle DB Azure Blob Container.
+     * @return Oracle DB Azure Blob Container resource name.
      * 
      */
     private @Nullable String displayName;
@@ -48,35 +48,35 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersResult {
      */
     private List<GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection> oracleDbAzureBlobContainerSummaryCollections;
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureBlobContainersResult() {}
     /**
-     * @return Azure Storage Account Name.
+     * @return Azure Storage account name.
      * 
      */
     public Optional<String> azureStorageAccountName() {
         return Optional.ofNullable(this.azureStorageAccountName);
     }
     /**
-     * @return Azure Storage Container Name.
+     * @return Azure Storage container name.
      * 
      */
     public Optional<String> azureStorageContainerName() {
         return Optional.ofNullable(this.azureStorageContainerName);
     }
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Display name of Oracle DB Azure Blob Container.
+     * @return Oracle DB Azure Blob Container resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -103,7 +103,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersResult {
         return this.oracleDbAzureBlobContainerSummaryCollections;
     }
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     public Optional<String> state() {

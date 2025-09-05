@@ -12,17 +12,17 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
     /**
-     * @return Azure Storage Account Name.
+     * @return Azure Storage account name.
      * 
      */
     private String azureStorageAccountName;
     /**
-     * @return Azure Storage Container Name.
+     * @return Azure Storage container name.
      * 
      */
     private String azureStorageContainerName;
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      * 
      */
     private String compartmentId;
@@ -32,7 +32,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return Display name of Oracle DB Azure Blob Container.
+     * @return Oracle DB Azure Blob Container resource name.
      * 
      */
     private String displayName;
@@ -42,12 +42,12 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     private String lastModification;
@@ -58,7 +58,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
     private String lifecycleStateDetails;
     private String oracleDbAzureBlobContainerId;
     /**
-     * @return Private endpoint DNS Alias.
+     * @return Private endpoint&#39;s DNS Alias.
      * 
      */
     private String privateEndpointDnsAlias;
@@ -68,7 +68,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     private String privateEndpointIpAddress;
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     private String state;
@@ -90,21 +90,21 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
 
     private GetDbmulticloudOracleDbAzureBlobContainerResult() {}
     /**
-     * @return Azure Storage Account Name.
+     * @return Azure Storage account name.
      * 
      */
     public String azureStorageAccountName() {
         return this.azureStorageAccountName;
     }
     /**
-     * @return Azure Storage Container Name.
+     * @return Azure Storage container name.
      * 
      */
     public String azureStorageContainerName() {
         return this.azureStorageContainerName;
     }
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      * 
      */
     public String compartmentId() {
@@ -118,7 +118,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
         return this.definedTags;
     }
     /**
-     * @return Display name of Oracle DB Azure Blob Container.
+     * @return Oracle DB Azure Blob Container resource name.
      * 
      */
     public String displayName() {
@@ -132,14 +132,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
         return this.freeformTags;
     }
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     public String lastModification() {
@@ -156,7 +156,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
         return this.oracleDbAzureBlobContainerId;
     }
     /**
-     * @return Private endpoint DNS Alias.
+     * @return Private endpoint&#39;s DNS Alias.
      * 
      */
     public String privateEndpointDnsAlias() {
@@ -170,7 +170,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerResult {
         return this.privateEndpointIpAddress;
     }
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     public String state() {

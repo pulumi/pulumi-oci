@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Key Details form a particular Container Resource ID.
+        /// Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Key Details form a particular Container Resource ID.
+        /// Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Key Details form a particular Container Resource ID.
+        /// Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureKeyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
         /// </summary>
         [Input("oracleDbAzureKeyId", required: true)]
         public string OracleDbAzureKeyId { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureKeyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
         /// </summary>
         [Input("oracleDbAzureKeyId", required: true)]
         public Input<string> OracleDbAzureKeyId { get; set; } = null!;
@@ -127,11 +127,11 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureKeyResult
     {
         /// <summary>
-        /// The Azure ID of the Azure Key, Azure Key URL.
+        /// The ID of the Azure Key resource.
         /// </summary>
         public readonly string AzureKeyId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// Display name of Oracle DB Azure Vault Key.
+        /// Oracle DB Azure Vault Key resource name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -151,7 +151,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        /// Key properties
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> KeyProperties;
+        /// <summary>
+        /// Description of the latest modification of the Oracle DB Azure Vault Key resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -160,11 +164,15 @@ namespace Pulumi.Oci.Oci
         public readonly string LifecycleStateDetails;
         public readonly string OracleDbAzureKeyId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         /// </summary>
         public readonly string OracleDbAzureVaultId;
         /// <summary>
-        /// The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+        /// Key Resource type.
+        /// </summary>
+        public readonly string ResourceType;
+        /// <summary>
+        /// The current lifecycle state of the Oracle DB Azure Vault Key resource.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -172,11 +180,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -194,6 +202,8 @@ namespace Pulumi.Oci.Oci
 
             string id,
 
+            ImmutableDictionary<string, string> keyProperties,
+
             string lastModification,
 
             string lifecycleStateDetails,
@@ -201,6 +211,8 @@ namespace Pulumi.Oci.Oci
             string oracleDbAzureKeyId,
 
             string oracleDbAzureVaultId,
+
+            string resourceType,
 
             string state,
 
@@ -216,10 +228,12 @@ namespace Pulumi.Oci.Oci
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            KeyProperties = keyProperties;
             LastModification = lastModification;
             LifecycleStateDetails = lifecycleStateDetails;
             OracleDbAzureKeyId = oracleDbAzureKeyId;
             OracleDbAzureVaultId = oracleDbAzureVaultId;
+            ResourceType = resourceType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

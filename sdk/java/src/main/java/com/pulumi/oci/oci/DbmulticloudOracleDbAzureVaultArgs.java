@@ -18,14 +18,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     public static final DbmulticloudOracleDbAzureVaultArgs Empty = new DbmulticloudOracleDbAzureVaultArgs();
 
     /**
-     * (Updatable) Azure Vault Id.
+     * (Updatable) Azure Vault ID.
      * 
      */
     @Import(name="azureVaultId")
     private @Nullable Output<String> azureVaultId;
 
     /**
-     * @return (Updatable) Azure Vault Id.
+     * @return (Updatable) Azure Vault ID.
      * 
      */
     public Optional<Output<String>> azureVaultId() {
@@ -33,14 +33,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -63,14 +63,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Display name of DB Azure Vault.
+     * (Updatable) Oracle DB Azure Vault resource name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of DB Azure Vault.
+     * @return (Updatable) Oracle DB Azure Vault resource name.
      * 
      */
     public Output<String> displayName() {
@@ -93,14 +93,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Vault Resource Location.
+     * (Updatable) Oracle DB Azure Vault resource location.
      * 
      */
     @Import(name="location")
     private @Nullable Output<String> location;
 
     /**
-     * @return (Updatable) Vault Resource Location.
+     * @return (Updatable) Oracle DB Azure Vault resource location.
      * 
      */
     public Optional<Output<String>> location() {
@@ -108,14 +108,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Display name of Azure Resource Group.
+     * (Updatable) Oracle DB Azure resource group name.
      * 
      */
     @Import(name="oracleDbAzureResourceGroup")
     private @Nullable Output<String> oracleDbAzureResourceGroup;
 
     /**
-     * @return (Updatable) Display name of Azure Resource Group.
+     * @return (Updatable) Oracle DB Azure resource group name.
      * 
      */
     public Optional<Output<String>> oracleDbAzureResourceGroup() {
@@ -123,14 +123,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     @Import(name="oracleDbConnectorId", required=true)
     private Output<String> oracleDbConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     public Output<String> oracleDbConnectorId() {
@@ -138,14 +138,14 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Resource&#39;s properties.
+     * (Updatable) resource&#39;s properties.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<Map<String,String>> properties;
 
     /**
-     * @return (Updatable) Resource&#39;s properties.
+     * @return (Updatable) resource&#39;s properties.
      * 
      */
     public Optional<Output<Map<String,String>>> properties() {
@@ -153,7 +153,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Vault Resource Type.
+     * (Updatable) Oracle DB Azure Vault resource type.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,7 +163,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) Vault Resource Type.
+     * @return (Updatable) Oracle DB Azure Vault resource type.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,7 +207,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param azureVaultId (Updatable) Azure Vault Id.
+         * @param azureVaultId (Updatable) Azure Vault ID.
          * 
          * @return builder
          * 
@@ -218,7 +218,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param azureVaultId (Updatable) Azure Vault Id.
+         * @param azureVaultId (Updatable) Azure Vault ID.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param displayName (Updatable) Display name of DB Azure Vault.
+         * @param displayName (Updatable) Oracle DB Azure Vault resource name.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param displayName (Updatable) Display name of DB Azure Vault.
+         * @param displayName (Updatable) Oracle DB Azure Vault resource name.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param location (Updatable) Vault Resource Location.
+         * @param location (Updatable) Oracle DB Azure Vault resource location.
          * 
          * @return builder
          * 
@@ -323,7 +323,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param location (Updatable) Vault Resource Location.
+         * @param location (Updatable) Oracle DB Azure Vault resource location.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param oracleDbAzureResourceGroup (Updatable) Display name of Azure Resource Group.
+         * @param oracleDbAzureResourceGroup (Updatable) Oracle DB Azure resource group name.
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param oracleDbAzureResourceGroup (Updatable) Display name of Azure Resource Group.
+         * @param oracleDbAzureResourceGroup (Updatable) Oracle DB Azure resource group name.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param properties (Updatable) Resource&#39;s properties.
+         * @param properties (Updatable) resource&#39;s properties.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param properties (Updatable) Resource&#39;s properties.
+         * @param properties (Updatable) resource&#39;s properties.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param type (Updatable) Vault Resource Type.
+         * @param type (Updatable) Oracle DB Azure Vault resource type.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -410,7 +410,7 @@ public final class DbmulticloudOracleDbAzureVaultArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param type (Updatable) Vault Resource Type.
+         * @param type (Updatable) Oracle DB Azure Vault resource type.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

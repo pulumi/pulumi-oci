@@ -68,6 +68,12 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Managed list type group
+        /// </summary>
+        [Output("group")]
+        public Output<string> Group { get; private set; } = null!;
+
+        /// <summary>
         /// Is this list editable?
         /// </summary>
         [Output("isEditable")]
@@ -219,6 +225,12 @@ namespace Pulumi.Oci.CloudGuard
             set => _freeformTags = value;
         }
 
+        /// <summary>
+        /// (Updatable) Managed list type group
+        /// </summary>
+        [Input("group")]
+        public Input<string>? Group { get; set; }
+
         [Input("listItems")]
         private InputList<string>? _listItems;
 
@@ -308,6 +320,12 @@ namespace Pulumi.Oci.CloudGuard
             get => _freeformTags ?? (_freeformTags = new InputMap<string>());
             set => _freeformTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) Managed list type group
+        /// </summary>
+        [Input("group")]
+        public Input<string>? Group { get; set; }
 
         /// <summary>
         /// Is this list editable?

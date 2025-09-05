@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudMultiCloudResourceDiscoveryResource {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     private String id;
@@ -44,7 +44,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResource {
 
     private GetDbmulticloudMultiCloudResourceDiscoveryResource() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     public String id() {

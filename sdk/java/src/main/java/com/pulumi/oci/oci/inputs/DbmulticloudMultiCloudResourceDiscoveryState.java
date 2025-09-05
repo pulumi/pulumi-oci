@@ -19,14 +19,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     public static final DbmulticloudMultiCloudResourceDiscoveryState Empty = new DbmulticloudMultiCloudResourceDiscoveryState();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -49,14 +49,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     }
 
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Discovered Resource.
+     * @return (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -79,14 +79,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     }
 
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     @Import(name="lastModification")
     private @Nullable Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     public Optional<Output<String>> lastModification() {
@@ -109,14 +109,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     @Import(name="oracleDbConnectorId")
     private @Nullable Output<String> oracleDbConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     public Optional<Output<String>> oracleDbConnectorId() {
@@ -126,18 +126,12 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     /**
      * (Updatable) Resource Type to discover.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return (Updatable) Resource Type to discover.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -157,6 +151,27 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
      */
     public Optional<Output<List<DbmulticloudMultiCloudResourceDiscoveryResourceArgs>>> resources() {
         return Optional.ofNullable(this.resources);
+    }
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="resourcesFilter")
+    private @Nullable Output<Map<String,String>> resourcesFilter;
+
+    /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> resourcesFilter() {
+        return Optional.ofNullable(this.resourcesFilter);
     }
 
     /**
@@ -190,14 +205,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -205,14 +220,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
     }
 
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -231,6 +246,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.resourceType = $.resourceType;
         this.resources = $.resources;
+        this.resourcesFilter = $.resourcesFilter;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -256,7 +272,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -267,7 +283,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -298,7 +314,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param displayName (Updatable) Display name of Discovered Resource.
+         * @param displayName (Updatable) Display name of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -309,7 +325,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param displayName (Updatable) Display name of Discovered Resource.
+         * @param displayName (Updatable) Display name of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -340,7 +356,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Multi Cloud Discovery Resource.
+         * @param lastModification Description of the latest modification of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -351,7 +367,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Multi Cloud Discovery Resource.
+         * @param lastModification Description of the latest modification of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -382,7 +398,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          * 
          * @return builder
          * 
@@ -393,7 +409,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          * 
          * @return builder
          * 
@@ -405,9 +421,6 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         /**
          * @param resourceType (Updatable) Resource Type to discover.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -418,9 +431,6 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
 
         /**
          * @param resourceType (Updatable) Resource Type to discover.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -458,6 +468,33 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
          */
         public Builder resources(DbmulticloudMultiCloudResourceDiscoveryResourceArgs... resources) {
             return resources(List.of(resources));
+        }
+
+        /**
+         * @param resourcesFilter Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilter(@Nullable Output<Map<String,String>> resourcesFilter) {
+            $.resourcesFilter = resourcesFilter;
+            return this;
+        }
+
+        /**
+         * @param resourcesFilter Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilter(Map<String,String> resourcesFilter) {
+            return resourcesFilter(Output.of(resourcesFilter));
         }
 
         /**
@@ -503,7 +540,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param timeCreated Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeCreated Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -514,7 +551,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param timeCreated Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeCreated Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -524,7 +561,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param timeUpdated Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeUpdated Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -535,7 +572,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryState extends com.pulu
         }
 
         /**
-         * @param timeUpdated Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeUpdated Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 

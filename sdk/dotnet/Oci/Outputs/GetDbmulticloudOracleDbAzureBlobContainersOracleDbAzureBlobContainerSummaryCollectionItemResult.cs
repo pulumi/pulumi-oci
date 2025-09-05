@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItemResult
     {
         /// <summary>
-        /// A filter to return Azure Blob Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
         /// </summary>
         public readonly string AzureStorageAccountName;
         /// <summary>
-        /// A filter to return Azure Blob containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
         /// </summary>
         public readonly string AzureStorageContainerName;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A filter to return Azure Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Container resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LifecycleStateDetails;
         /// <summary>
-        /// Private endpoint DNS Alias.
+        /// Private endpoint's DNS Alias.
         /// </summary>
         public readonly string PrivateEndpointDnsAlias;
         /// <summary>

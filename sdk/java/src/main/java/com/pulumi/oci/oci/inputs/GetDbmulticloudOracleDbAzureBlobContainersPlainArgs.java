@@ -18,14 +18,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
     public static final GetDbmulticloudOracleDbAzureBlobContainersPlainArgs Empty = new GetDbmulticloudOracleDbAzureBlobContainersPlainArgs();
 
     /**
-     * A filter to return Azure Blob Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      * 
      */
     @Import(name="azureStorageAccountName")
     private @Nullable String azureStorageAccountName;
 
     /**
-     * @return A filter to return Azure Blob Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      * 
      */
     public Optional<String> azureStorageAccountName() {
@@ -33,14 +33,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
     }
 
     /**
-     * A filter to return Azure Blob containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      * 
      */
     @Import(name="azureStorageContainerName")
     private @Nullable String azureStorageContainerName;
 
     /**
-     * @return A filter to return Azure Blob containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      * 
      */
     public Optional<String> azureStorageContainerName() {
@@ -63,14 +63,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
     }
 
     /**
-     * A filter to return Azure Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return Azure Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      * 
      */
     public Optional<String> displayName() {
@@ -85,14 +85,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     @Import(name="oracleDbAzureBlobContainerId")
     private @Nullable String oracleDbAzureBlobContainerId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     public Optional<String> oracleDbAzureBlobContainerId() {
@@ -145,7 +145,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
         }
 
         /**
-         * @param azureStorageAccountName A filter to return Azure Blob Containers.
+         * @param azureStorageAccountName A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
         }
 
         /**
-         * @param azureStorageContainerName A filter to return Azure Blob containers.
+         * @param azureStorageContainerName A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
         }
 
         /**
-         * @param displayName A filter to return Azure Containers.
+         * @param displayName A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersPlainArgs extends c
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureBlobContainerId A filter to return Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 

@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerArgs extends com.pul
     public static final GetDbmulticloudOracleDbAzureBlobContainerArgs Empty = new GetDbmulticloudOracleDbAzureBlobContainerArgs();
 
     /**
-     * The ID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
      * 
      */
     @Import(name="oracleDbAzureBlobContainerId", required=true)
     private Output<String> oracleDbAzureBlobContainerId;
 
     /**
-     * @return The ID of the Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
      * 
      */
     public Output<String> oracleDbAzureBlobContainerId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId The ID of the Oracle DB Azure Blob Container Resource.
+         * @param oracleDbAzureBlobContainerId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainerArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId The ID of the Oracle DB Azure Blob Container Resource.
+         * @param oracleDbAzureBlobContainerId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 

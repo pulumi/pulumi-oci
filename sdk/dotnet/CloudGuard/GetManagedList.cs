@@ -148,6 +148,10 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
+        /// Managed list type group
+        /// </summary>
+        public readonly string Group;
+        /// <summary>
         /// Unique identifier that can't be changed after creation
         /// </summary>
         public readonly string Id;
@@ -203,6 +207,8 @@ namespace Pulumi.Oci.CloudGuard
 
             ImmutableDictionary<string, string> freeformTags,
 
+            string group,
+
             string id,
 
             bool isEditable,
@@ -231,6 +237,7 @@ namespace Pulumi.Oci.CloudGuard
             DisplayName = displayName;
             FeedProvider = feedProvider;
             FreeformTags = freeformTags;
+            Group = group;
             Id = id;
             IsEditable = isEditable;
             LifecyleDetails = lifecyleDetails;

@@ -14,20 +14,17 @@ namespace Pulumi.Oci.AiVision.Outputs
     public sealed class ModelTrainingDataset
     {
         /// <summary>
-        /// The name of the ObjectStorage bucket that contains the input data file.
+        /// The name of the Object Storage bucket that contains the input data file.
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
-        /// The OCID of the Data Science Labeling Dataset.
+        /// OCID of the Data Labeling dataset.
         /// </summary>
         public readonly string? DatasetId;
         /// <summary>
-        /// Type of the Dataset.
+        /// The dataset type, based on where it is stored.
         /// </summary>
         public readonly string DatasetType;
-        /// <summary>
-        /// The namespace name of the ObjectStorage bucket that contains the input data file.
-        /// </summary>
         public readonly string? NamespaceName;
         /// <summary>
         /// The object name of the input data file.

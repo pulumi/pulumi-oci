@@ -32,7 +32,9 @@ class MysqlBackupArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  retention_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[_builtins.str]] = None,
-                 source_details: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']] = None):
+                 source_details: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']] = None,
+                 validate_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]] = None,
+                 validate_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         The set of arguments for constructing a MysqlBackup resource.
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
@@ -46,6 +48,8 @@ class MysqlBackupArgs:
         :param pulumi.Input[_builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[_builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input['MysqlBackupSourceDetailsArgs'] source_details: Details of backup source in the cloud.
+        :param pulumi.Input[_builtins.int] validate_trigger: (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+               * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
         """
         if backup_type is not None:
             pulumi.set(__self__, "backup_type", backup_type)
@@ -71,6 +75,10 @@ class MysqlBackupArgs:
             pulumi.set(__self__, "soft_delete", soft_delete)
         if source_details is not None:
             pulumi.set(__self__, "source_details", source_details)
+        if validate_backup_details is not None:
+            pulumi.set(__self__, "validate_backup_details", validate_backup_details)
+        if validate_trigger is not None:
+            pulumi.set(__self__, "validate_trigger", validate_trigger)
 
     @_builtins.property
     @pulumi.getter(name="backupType")
@@ -213,12 +221,35 @@ class MysqlBackupArgs:
     def source_details(self, value: Optional[pulumi.Input['MysqlBackupSourceDetailsArgs']]):
         pulumi.set(self, "source_details", value)
 
+    @_builtins.property
+    @pulumi.getter(name="validateBackupDetails")
+    def validate_backup_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]]:
+        return pulumi.get(self, "validate_backup_details")
+
+    @validate_backup_details.setter
+    def validate_backup_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]]):
+        pulumi.set(self, "validate_backup_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validateTrigger")
+    def validate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        """
+        return pulumi.get(self, "validate_trigger")
+
+    @validate_trigger.setter
+    def validate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "validate_trigger", value)
+
 
 @pulumi.input_type
 class _MysqlBackupState:
     def __init__(__self__, *,
                  backup_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  backup_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 backup_validation_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  creation_type: Optional[pulumi.Input[_builtins.str]] = None,
                  data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -242,11 +273,14 @@ class _MysqlBackupState:
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_copy_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
-                 time_updated: Optional[pulumi.Input[_builtins.str]] = None):
+                 time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+                 validate_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]] = None,
+                 validate_trigger: Optional[pulumi.Input[_builtins.int]] = None):
         """
         Input properties used for looking up and filtering MysqlBackup resources.
         :param pulumi.Input[_builtins.int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailArgs']]] backup_validation_details: Backup validation details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[_builtins.str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
@@ -270,11 +304,15 @@ class _MysqlBackupState:
         :param pulumi.Input[_builtins.str] time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_created: The time the backup record was created.
         :param pulumi.Input[_builtins.str] time_updated: The time at which the backup was updated.
+        :param pulumi.Input[_builtins.int] validate_trigger: (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+               * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
         """
         if backup_size_in_gbs is not None:
             pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
         if backup_type is not None:
             pulumi.set(__self__, "backup_type", backup_type)
+        if backup_validation_details is not None:
+            pulumi.set(__self__, "backup_validation_details", backup_validation_details)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if creation_type is not None:
@@ -323,6 +361,10 @@ class _MysqlBackupState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if validate_backup_details is not None:
+            pulumi.set(__self__, "validate_backup_details", validate_backup_details)
+        if validate_trigger is not None:
+            pulumi.set(__self__, "validate_trigger", validate_trigger)
 
     @_builtins.property
     @pulumi.getter(name="backupSizeInGbs")
@@ -347,6 +389,18 @@ class _MysqlBackupState:
     @backup_type.setter
     def backup_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "backup_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupValidationDetails")
+    def backup_validation_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailArgs']]]]:
+        """
+        Backup validation details.
+        """
+        return pulumi.get(self, "backup_validation_details")
+
+    @backup_validation_details.setter
+    def backup_validation_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailArgs']]]]):
+        pulumi.set(self, "backup_validation_details", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -633,6 +687,28 @@ class _MysqlBackupState:
     def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
+    @_builtins.property
+    @pulumi.getter(name="validateBackupDetails")
+    def validate_backup_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]]:
+        return pulumi.get(self, "validate_backup_details")
+
+    @validate_backup_details.setter
+    def validate_backup_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupValidateBackupDetailArgs']]]]):
+        pulumi.set(self, "validate_backup_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validateTrigger")
+    def validate_trigger(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        """
+        return pulumi.get(self, "validate_trigger")
+
+    @validate_trigger.setter
+    def validate_trigger(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "validate_trigger", value)
+
 
 @pulumi.type_token("oci:Mysql/mysqlBackup:MysqlBackup")
 class MysqlBackup(pulumi.CustomResource):
@@ -652,6 +728,8 @@ class MysqlBackup(pulumi.CustomResource):
                  retention_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[_builtins.str]] = None,
                  source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
+                 validate_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupValidateBackupDetailArgs', 'MysqlBackupValidateBackupDetailArgsDict']]]]] = None,
+                 validate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         """
         This resource provides the Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.
@@ -700,6 +778,8 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] retention_in_days: (Updatable) Number of days to retain this backup.
         :param pulumi.Input[_builtins.str] soft_delete: (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
         :param pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']] source_details: Details of backup source in the cloud.
+        :param pulumi.Input[_builtins.int] validate_trigger: (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+               * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
         """
         ...
     @overload
@@ -768,6 +848,8 @@ class MysqlBackup(pulumi.CustomResource):
                  retention_in_days: Optional[pulumi.Input[_builtins.int]] = None,
                  soft_delete: Optional[pulumi.Input[_builtins.str]] = None,
                  source_details: Optional[pulumi.Input[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict']]] = None,
+                 validate_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupValidateBackupDetailArgs', 'MysqlBackupValidateBackupDetailArgsDict']]]]] = None,
+                 validate_trigger: Optional[pulumi.Input[_builtins.int]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -789,7 +871,10 @@ class MysqlBackup(pulumi.CustomResource):
             __props__.__dict__["retention_in_days"] = retention_in_days
             __props__.__dict__["soft_delete"] = soft_delete
             __props__.__dict__["source_details"] = source_details
+            __props__.__dict__["validate_backup_details"] = validate_backup_details
+            __props__.__dict__["validate_trigger"] = validate_trigger
             __props__.__dict__["backup_size_in_gbs"] = None
+            __props__.__dict__["backup_validation_details"] = None
             __props__.__dict__["creation_type"] = None
             __props__.__dict__["data_storage_size_in_gb"] = None
             __props__.__dict__["db_system_snapshots"] = None
@@ -815,6 +900,7 @@ class MysqlBackup(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             backup_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             backup_type: Optional[pulumi.Input[_builtins.str]] = None,
+            backup_validation_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupBackupValidationDetailArgs', 'MysqlBackupBackupValidationDetailArgsDict']]]]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             creation_type: Optional[pulumi.Input[_builtins.str]] = None,
             data_storage_size_in_gb: Optional[pulumi.Input[_builtins.int]] = None,
@@ -838,7 +924,9 @@ class MysqlBackup(pulumi.CustomResource):
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_copy_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
-            time_updated: Optional[pulumi.Input[_builtins.str]] = None) -> 'MysqlBackup':
+            time_updated: Optional[pulumi.Input[_builtins.str]] = None,
+            validate_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupValidateBackupDetailArgs', 'MysqlBackupValidateBackupDetailArgsDict']]]]] = None,
+            validate_trigger: Optional[pulumi.Input[_builtins.int]] = None) -> 'MysqlBackup':
         """
         Get an existing MysqlBackup resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -848,6 +936,7 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.int] backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param pulumi.Input[_builtins.str] backup_type: The type of backup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['MysqlBackupBackupValidationDetailArgs', 'MysqlBackupBackupValidationDetailArgsDict']]]] backup_validation_details: Backup validation details.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
         :param pulumi.Input[_builtins.str] creation_type: Indicates how the backup was created: manually, automatic, or by an Operator.
         :param pulumi.Input[_builtins.int] data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
@@ -871,6 +960,8 @@ class MysqlBackup(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[_builtins.str] time_created: The time the backup record was created.
         :param pulumi.Input[_builtins.str] time_updated: The time at which the backup was updated.
+        :param pulumi.Input[_builtins.int] validate_trigger: (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+               * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -878,6 +969,7 @@ class MysqlBackup(pulumi.CustomResource):
 
         __props__.__dict__["backup_size_in_gbs"] = backup_size_in_gbs
         __props__.__dict__["backup_type"] = backup_type
+        __props__.__dict__["backup_validation_details"] = backup_validation_details
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["creation_type"] = creation_type
         __props__.__dict__["data_storage_size_in_gb"] = data_storage_size_in_gb
@@ -902,6 +994,8 @@ class MysqlBackup(pulumi.CustomResource):
         __props__.__dict__["time_copy_created"] = time_copy_created
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["validate_backup_details"] = validate_backup_details
+        __props__.__dict__["validate_trigger"] = validate_trigger
         return MysqlBackup(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -919,6 +1013,14 @@ class MysqlBackup(pulumi.CustomResource):
         The type of backup.
         """
         return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupValidationDetails")
+    def backup_validation_details(self) -> pulumi.Output[Sequence['outputs.MysqlBackupBackupValidationDetail']]:
+        """
+        Backup validation details.
+        """
+        return pulumi.get(self, "backup_validation_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1108,4 +1210,18 @@ class MysqlBackup(pulumi.CustomResource):
         The time at which the backup was updated.
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="validateBackupDetails")
+    def validate_backup_details(self) -> pulumi.Output[Optional[Sequence['outputs.MysqlBackupValidateBackupDetail']]]:
+        return pulumi.get(self, "validate_backup_details")
+
+    @_builtins.property
+    @pulumi.getter(name="validateTrigger")
+    def validate_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:
+        """
+        (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        """
+        return pulumi.get(self, "validate_trigger")
 

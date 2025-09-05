@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem {
     /**
-     * @return Azure Vault Id.
+     * @return Azure Vault ID.
      * 
      */
     private String azureVaultId;
@@ -27,7 +27,7 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return Azure Vaults.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -37,12 +37,12 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the DB Azure Vault Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault resource.
      * 
      */
     private String lastModification;
@@ -52,22 +52,22 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
      */
     private String lifecycleStateDetails;
     /**
-     * @return Vault Resource Location.
+     * @return Oracle DB Azure Vault resource location.
      * 
      */
     private String location;
     /**
-     * @return A filter to return Azure Vaults.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
      * 
      */
     private String oracleDbAzureResourceGroup;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     private String oracleDbConnectorId;
     /**
-     * @return Resource&#39;s properties.
+     * @return Oracle DB Azure Vault resource&#39;s properties.
      * 
      */
     private Map<String,String> properties;
@@ -82,24 +82,24 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
      */
     private Map<String,String> systemTags;
     /**
-     * @return Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
     /**
-     * @return Vault Resource Type.
+     * @return Oracle DB Azure Vault resource type.
      * 
      */
     private String type;
 
     private GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItem() {}
     /**
-     * @return Azure Vault Id.
+     * @return Azure Vault ID.
      * 
      */
     public String azureVaultId() {
@@ -120,7 +120,7 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
         return this.definedTags;
     }
     /**
-     * @return A filter to return Azure Vaults.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -134,14 +134,14 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the DB Azure Vault Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault resource.
      * 
      */
     public String lastModification() {
@@ -155,28 +155,28 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
         return this.lifecycleStateDetails;
     }
     /**
-     * @return Vault Resource Location.
+     * @return Oracle DB Azure Vault resource location.
      * 
      */
     public String location() {
         return this.location;
     }
     /**
-     * @return A filter to return Azure Vaults.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
      * 
      */
     public String oracleDbAzureResourceGroup() {
         return this.oracleDbAzureResourceGroup;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     public String oracleDbConnectorId() {
         return this.oracleDbConnectorId;
     }
     /**
-     * @return Resource&#39;s properties.
+     * @return Oracle DB Azure Vault resource&#39;s properties.
      * 
      */
     public Map<String,String> properties() {
@@ -197,21 +197,21 @@ public final class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCo
         return this.systemTags;
     }
     /**
-     * @return Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Vault Resource Type.
+     * @return Oracle DB Azure Vault resource type.
      * 
      */
     public String type() {

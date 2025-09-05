@@ -18,11 +18,11 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A short description of the project.
+        /// An optional description of the project.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,31 +30,31 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique Project identifier
+        /// The filter to find the project with the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail, that can provide actionable information if creation failed.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match projects with the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// The time the Project was created. An RFC3339 formatted datetime string
+        /// When the project was created, as an RFC3339 datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Project was updated. An RFC3339 formatted datetime string
+        /// When the project was updated, as an RFC3339 datetime string.
         /// </summary>
         public readonly string TimeUpdated;
 

@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureConnectorsResult {
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      * 
      */
     private @Nullable String dbClusterResourceId;
@@ -43,21 +43,21 @@ public final class GetDbmulticloudOracleDbAzureConnectorsResult {
      */
     private List<GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection> oracleDbAzureConnectorSummaryCollections;
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureConnectorsResult() {}
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      * 
      */
     public Optional<String> dbClusterResourceId() {
@@ -91,7 +91,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsResult {
         return this.oracleDbAzureConnectorSummaryCollections;
     }
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     public Optional<String> state() {

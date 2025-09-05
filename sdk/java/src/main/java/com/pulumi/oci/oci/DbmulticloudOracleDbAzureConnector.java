@@ -18,9 +18,9 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Creates Oracle DB Azure Connector Resource and configured Azure Identity in Oracle Cloud Infrastructure Database Resource.
+ * Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
  * 
- *   Patch Azure Arc Agent on VM Cluster with new version.
+ *   Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
  * 
  * ## Import
  * 
@@ -34,56 +34,70 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector")
 public class DbmulticloudOracleDbAzureConnector extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      * 
      */
     @Export(name="accessToken", refs={String.class}, tree="[0]")
     private Output<String> accessToken;
 
     /**
-     * @return (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * @return (Updatable) Azure bearer access token.
      * 
      */
     public Output<String> accessToken() {
         return this.accessToken;
     }
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     @Export(name="arcAgentNodes", refs={List.class,DbmulticloudOracleDbAzureConnectorArcAgentNode.class}, tree="[0,1]")
     private Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNode>> arcAgentNodes;
 
     /**
-     * @return List of All VMs where Arc Agent is Install under VMCluster.
+     * @return List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     public Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNode>> arcAgentNodes() {
         return this.arcAgentNodes;
     }
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    @Export(name="azureIdentityConnectivityStatus", refs={String.class}, tree="[0]")
+    private Output<String> azureIdentityConnectivityStatus;
+
+    /**
+     * @return The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    public Output<String> azureIdentityConnectivityStatus() {
+        return this.azureIdentityConnectivityStatus;
+    }
+    /**
+     * (Updatable) Azure Identity mechanism.
      * 
      */
     @Export(name="azureIdentityMechanism", refs={String.class}, tree="[0]")
     private Output<String> azureIdentityMechanism;
 
     /**
-     * @return (Updatable) Azure Identity Mechanism.
+     * @return (Updatable) Azure Identity mechanism.
      * 
      */
     public Output<String> azureIdentityMechanism() {
         return this.azureIdentityMechanism;
     }
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      * 
      */
     @Export(name="azureResourceGroup", refs={String.class}, tree="[0]")
     private Output<String> azureResourceGroup;
 
     /**
-     * @return (Updatable) Azure Resource Group Name.
+     * @return (Updatable) Azure Resource group name.
      * 
      */
     public Output<String> azureResourceGroup() {
@@ -118,56 +132,56 @@ public class DbmulticloudOracleDbAzureConnector extends com.pulumi.resources.Cus
         return this.azureTenantId;
     }
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     @Export(name="dbClusterResourceId", refs={String.class}, tree="[0]")
     private Output<String> dbClusterResourceId;
 
     /**
-     * @return (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     public Output<String> dbClusterResourceId() {
         return this.dbClusterResourceId;
     }
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Oracle DB Azure Connector Resource name.
+     * @return (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     public Output<String> lastModification() {
@@ -188,42 +202,42 @@ public class DbmulticloudOracleDbAzureConnector extends com.pulumi.resources.Cus
         return this.lifecycleStateDetails;
     }
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeUpdated() {

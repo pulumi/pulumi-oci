@@ -68,7 +68,7 @@ class GetProjectResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        Compartment Identifier
+        A compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -76,7 +76,7 @@ class GetProjectResult:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -84,7 +84,7 @@ class GetProjectResult:
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        A short description of the project.
+        An optional description of the project.
         """
         return pulumi.get(self, "description")
 
@@ -92,7 +92,7 @@ class GetProjectResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Project Identifier, can be renamed
+        A human-friendly name for the project, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -100,7 +100,7 @@ class GetProjectResult:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -108,7 +108,7 @@ class GetProjectResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable after creation.
         """
         return pulumi.get(self, "id")
 
@@ -116,7 +116,7 @@ class GetProjectResult:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if creation failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -129,7 +129,7 @@ class GetProjectResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current state of the Project.
+        The current state of the project.
         """
         return pulumi.get(self, "state")
 
@@ -137,7 +137,7 @@ class GetProjectResult:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -145,7 +145,7 @@ class GetProjectResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The time the Project was created. An RFC3339 formatted datetime string
+        When the project was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -153,7 +153,7 @@ class GetProjectResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The time the Project was updated. An RFC3339 formatted datetime string
+        When the project was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -183,7 +183,7 @@ def get_project(project_id: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
 
-    Gets a Project by identifier
+    Get a project by identifier.
 
     ## Example Usage
 
@@ -195,7 +195,7 @@ def get_project(project_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str project_id: unique Project identifier
+    :param _builtins.str project_id: A unique project identifier.
     """
     __args__ = dict()
     __args__['projectId'] = project_id
@@ -220,7 +220,7 @@ def get_project_output(project_id: Optional[pulumi.Input[_builtins.str]] = None,
     """
     This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
 
-    Gets a Project by identifier
+    Get a project by identifier.
 
     ## Example Usage
 
@@ -232,7 +232,7 @@ def get_project_output(project_id: Optional[pulumi.Input[_builtins.str]] = None,
     ```
 
 
-    :param _builtins.str project_id: unique Project identifier
+    :param _builtins.str project_id: A unique project identifier.
     """
     __args__ = dict()
     __args__['projectId'] = project_id

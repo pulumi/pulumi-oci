@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Multi Cloud Resource Discovery based on filters.
+ * Lists all Multicloud Resource Discovery resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -23,6 +23,7 @@ import * as utilities from "../utilities";
  *     multiCloudResourceDiscoveryId: testMultiCloudResourceDiscovery.id,
  *     oracleDbAzureConnectorId: testOracleDbAzureConnector.id,
  *     resourceType: multiCloudResourceDiscoveryResourceType,
+ *     resourcesFilters: multiCloudResourceDiscoveryResourcesFilter,
  *     state: multiCloudResourceDiscoveryState,
  * });
  * ```
@@ -36,6 +37,7 @@ export function getDbmulticloudMultiCloudResourceDiscoveries(args: GetDbmulticlo
         "multiCloudResourceDiscoveryId": args.multiCloudResourceDiscoveryId,
         "oracleDbAzureConnectorId": args.oracleDbAzureConnectorId,
         "resourceType": args.resourceType,
+        "resourcesFilters": args.resourcesFilters,
         "state": args.state,
     }, opts);
 }
@@ -49,24 +51,28 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesArgs {
      */
     compartmentId: string;
     /**
-     * Display Name of the Multi Cloud Discovery Resource.
+     * A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudMultiCloudResourceDiscoveriesFilter[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
      */
     multiCloudResourceDiscoveryId?: string;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: string;
     /**
-     * The type of Multi Cloud Resource.
+     * The type of Multicloud Resource.
      */
     resourceType?: string;
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * Specifies the type(s) of resources to discover in the target cloud provider.
+     */
+    resourcesFilters?: string[];
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
     state?: string;
 }
@@ -76,11 +82,11 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesArgs {
  */
 export interface GetDbmulticloudMultiCloudResourceDiscoveriesResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      */
     readonly compartmentId: string;
     /**
-     * Display name of Multi Cloud Discovery Resource.
+     * Display name of the Multicloud Resource Discovery resource.
      */
     readonly displayName?: string;
     readonly filters?: outputs.oci.GetDbmulticloudMultiCloudResourceDiscoveriesFilter[];
@@ -99,6 +105,10 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesResult {
      */
     readonly resourceType?: string;
     /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+     */
+    readonly resourcesFilters?: string[];
+    /**
      * The current lifecycle state of the discovered resource.
      */
     readonly state?: string;
@@ -106,7 +116,7 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesResult {
 /**
  * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Multi Cloud Resource Discovery based on filters.
+ * Lists all Multicloud Resource Discovery resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -120,6 +130,7 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesResult {
  *     multiCloudResourceDiscoveryId: testMultiCloudResourceDiscovery.id,
  *     oracleDbAzureConnectorId: testOracleDbAzureConnector.id,
  *     resourceType: multiCloudResourceDiscoveryResourceType,
+ *     resourcesFilters: multiCloudResourceDiscoveryResourcesFilter,
  *     state: multiCloudResourceDiscoveryState,
  * });
  * ```
@@ -133,6 +144,7 @@ export function getDbmulticloudMultiCloudResourceDiscoveriesOutput(args: GetDbmu
         "multiCloudResourceDiscoveryId": args.multiCloudResourceDiscoveryId,
         "oracleDbAzureConnectorId": args.oracleDbAzureConnectorId,
         "resourceType": args.resourceType,
+        "resourcesFilters": args.resourcesFilters,
         "state": args.state,
     }, opts);
 }
@@ -146,24 +158,28 @@ export interface GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Display Name of the Multi Cloud Discovery Resource.
+     * A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgs>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
      */
     multiCloudResourceDiscoveryId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: pulumi.Input<string>;
     /**
-     * The type of Multi Cloud Resource.
+     * The type of Multicloud Resource.
      */
     resourceType?: pulumi.Input<string>;
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * Specifies the type(s) of resources to discover in the target cloud provider.
+     */
+    resourcesFilters?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      */
     state?: pulumi.Input<string>;
 }

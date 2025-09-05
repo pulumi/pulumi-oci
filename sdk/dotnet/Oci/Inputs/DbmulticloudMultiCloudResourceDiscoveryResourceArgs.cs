@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class DbmulticloudMultiCloudResourceDiscoveryResourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        /// The ID of the Discovered Resource.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

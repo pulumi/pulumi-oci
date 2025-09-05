@@ -998,7 +998,7 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testBackup.id())
+     *             .backupId(testMysqlBackup.id())
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
@@ -1048,7 +1048,7 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testBackup.id())
+     *             .backupId(testMysqlBackup.id())
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
@@ -1098,7 +1098,7 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testBackup.id())
+     *             .backupId(testMysqlBackup.id())
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
@@ -1148,7 +1148,7 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testBackup.id())
+     *             .backupId(testMysqlBackup.id())
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)
@@ -1198,7 +1198,7 @@ public final class MysqlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMysqlBackups = MysqlFunctions.getMysqlBackups(GetMysqlBackupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .backupId(testBackup.id())
+     *             .backupId(testMysqlBackup.id())
      *             .creationType(mysqlBackupCreationType)
      *             .dbSystemId(testDbSystem.id())
      *             .displayName(mysqlBackupDisplayName)

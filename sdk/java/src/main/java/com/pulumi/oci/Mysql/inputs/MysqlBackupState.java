@@ -5,10 +5,12 @@ package com.pulumi.oci.Mysql.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupBackupValidationDetailArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSummaryArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupEncryptDataArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupSourceDetailsArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupValidateBackupDetailArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -50,6 +52,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> backupType() {
         return Optional.ofNullable(this.backupType);
+    }
+
+    /**
+     * Backup validation details.
+     * 
+     */
+    @Import(name="backupValidationDetails")
+    private @Nullable Output<List<MysqlBackupBackupValidationDetailArgs>> backupValidationDetails;
+
+    /**
+     * @return Backup validation details.
+     * 
+     */
+    public Optional<Output<List<MysqlBackupBackupValidationDetailArgs>>> backupValidationDetails() {
+        return Optional.ofNullable(this.backupValidationDetails);
     }
 
     /**
@@ -404,11 +421,36 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.timeUpdated);
     }
 
+    @Import(name="validateBackupDetails")
+    private @Nullable Output<List<MysqlBackupValidateBackupDetailArgs>> validateBackupDetails;
+
+    public Optional<Output<List<MysqlBackupValidateBackupDetailArgs>>> validateBackupDetails() {
+        return Optional.ofNullable(this.validateBackupDetails);
+    }
+
+    /**
+     * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     * 
+     */
+    @Import(name="validateTrigger")
+    private @Nullable Output<Integer> validateTrigger;
+
+    /**
+     * @return (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     * 
+     */
+    public Optional<Output<Integer>> validateTrigger() {
+        return Optional.ofNullable(this.validateTrigger);
+    }
+
     private MysqlBackupState() {}
 
     private MysqlBackupState(MysqlBackupState $) {
         this.backupSizeInGbs = $.backupSizeInGbs;
         this.backupType = $.backupType;
+        this.backupValidationDetails = $.backupValidationDetails;
         this.compartmentId = $.compartmentId;
         this.creationType = $.creationType;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
@@ -433,6 +475,8 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         this.timeCopyCreated = $.timeCopyCreated;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
+        this.validateBackupDetails = $.validateBackupDetails;
+        this.validateTrigger = $.validateTrigger;
     }
 
     public static Builder builder() {
@@ -493,6 +537,37 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder backupType(String backupType) {
             return backupType(Output.of(backupType));
+        }
+
+        /**
+         * @param backupValidationDetails Backup validation details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupValidationDetails(@Nullable Output<List<MysqlBackupBackupValidationDetailArgs>> backupValidationDetails) {
+            $.backupValidationDetails = backupValidationDetails;
+            return this;
+        }
+
+        /**
+         * @param backupValidationDetails Backup validation details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupValidationDetails(List<MysqlBackupBackupValidationDetailArgs> backupValidationDetails) {
+            return backupValidationDetails(Output.of(backupValidationDetails));
+        }
+
+        /**
+         * @param backupValidationDetails Backup validation details.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupValidationDetails(MysqlBackupBackupValidationDetailArgs... backupValidationDetails) {
+            return backupValidationDetails(List.of(backupValidationDetails));
         }
 
         /**
@@ -999,6 +1074,42 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeUpdated(String timeUpdated) {
             return timeUpdated(Output.of(timeUpdated));
+        }
+
+        public Builder validateBackupDetails(@Nullable Output<List<MysqlBackupValidateBackupDetailArgs>> validateBackupDetails) {
+            $.validateBackupDetails = validateBackupDetails;
+            return this;
+        }
+
+        public Builder validateBackupDetails(List<MysqlBackupValidateBackupDetailArgs> validateBackupDetails) {
+            return validateBackupDetails(Output.of(validateBackupDetails));
+        }
+
+        public Builder validateBackupDetails(MysqlBackupValidateBackupDetailArgs... validateBackupDetails) {
+            return validateBackupDetails(List.of(validateBackupDetails));
+        }
+
+        /**
+         * @param validateTrigger (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+         * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateTrigger(@Nullable Output<Integer> validateTrigger) {
+            $.validateTrigger = validateTrigger;
+            return this;
+        }
+
+        /**
+         * @param validateTrigger (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+         * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder validateTrigger(Integer validateTrigger) {
+            return validateTrigger(Output.of(validateTrigger));
         }
 
         public MysqlBackupState build() {

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
 //
-// # Gets a Project by identifier
+// Get a project by identifier.
 //
 // ## Example Usage
 //
@@ -52,34 +52,34 @@ func LookupProject(ctx *pulumi.Context, args *LookupProjectArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getProject.
 type LookupProjectArgs struct {
-	// unique Project identifier
+	// A unique project identifier.
 	ProjectId string `pulumi:"projectId"`
 }
 
 // A collection of values returned by getProject.
 type LookupProjectResult struct {
-	// Compartment Identifier
+	// A compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A short description of the project.
+	// An optional description of the project.
 	Description string `pulumi:"description"`
-	// Project Identifier, can be renamed
+	// A human-friendly name for the project, which can be changed.
 	DisplayName string `pulumi:"displayName"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable after creation.
 	Id string `pulumi:"id"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if creation failed.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	ProjectId        string `pulumi:"projectId"`
-	// The current state of the Project.
+	// The current state of the project.
 	State string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The time the Project was created. An RFC3339 formatted datetime string
+	// When the project was created, as an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time the Project was updated. An RFC3339 formatted datetime string
+	// When the project was updated, as an RFC3339 datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -94,7 +94,7 @@ func LookupProjectOutput(ctx *pulumi.Context, args LookupProjectOutputArgs, opts
 
 // A collection of arguments for invoking getProject.
 type LookupProjectOutputArgs struct {
-	// unique Project identifier
+	// A unique project identifier.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 }
 
@@ -117,37 +117,37 @@ func (o LookupProjectResultOutput) ToLookupProjectResultOutputWithContext(ctx co
 	return o
 }
 
-// Compartment Identifier
+// A compartment identifier.
 func (o LookupProjectResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o LookupProjectResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// A short description of the project.
+// An optional description of the project.
 func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// Project Identifier, can be renamed
+// A human-friendly name for the project, which can be changed.
 func (o LookupProjectResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o LookupProjectResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier that is immutable after creation.
 func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail, that can provide actionable information if creation failed.
 func (o LookupProjectResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -156,22 +156,22 @@ func (o LookupProjectResultOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// The current state of the Project.
+// The current state of the project.
 func (o LookupProjectResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o LookupProjectResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupProjectResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The time the Project was created. An RFC3339 formatted datetime string
+// When the project was created, as an RFC3339 datetime string.
 func (o LookupProjectResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Project was updated. An RFC3339 formatted datetime string
+// When the project was updated, as an RFC3339 datetime string.
 func (o LookupProjectResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

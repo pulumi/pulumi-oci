@@ -78,6 +78,10 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     declare public readonly backupType: pulumi.Output<string>;
     /**
+     * Backup validation details.
+     */
+    declare public /*out*/ readonly backupValidationDetails: pulumi.Output<outputs.Mysql.MysqlBackupBackupValidationDetail[]>;
+    /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
@@ -170,6 +174,12 @@ export class MysqlBackup extends pulumi.CustomResource {
      * The time at which the backup was updated.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
+    declare public readonly validateBackupDetails: pulumi.Output<outputs.Mysql.MysqlBackupValidateBackupDetail[] | undefined>;
+    /**
+     * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     */
+    declare public readonly validateTrigger: pulumi.Output<number | undefined>;
 
     /**
      * Create a MysqlBackup resource with the given unique name, arguments, and options.
@@ -186,6 +196,7 @@ export class MysqlBackup extends pulumi.CustomResource {
             const state = argsOrState as MysqlBackupState | undefined;
             resourceInputs["backupSizeInGbs"] = state?.backupSizeInGbs;
             resourceInputs["backupType"] = state?.backupType;
+            resourceInputs["backupValidationDetails"] = state?.backupValidationDetails;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["creationType"] = state?.creationType;
             resourceInputs["dataStorageSizeInGb"] = state?.dataStorageSizeInGb;
@@ -210,6 +221,8 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["timeCopyCreated"] = state?.timeCopyCreated;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeUpdated"] = state?.timeUpdated;
+            resourceInputs["validateBackupDetails"] = state?.validateBackupDetails;
+            resourceInputs["validateTrigger"] = state?.validateTrigger;
         } else {
             const args = argsOrState as MysqlBackupArgs | undefined;
             resourceInputs["backupType"] = args?.backupType;
@@ -224,7 +237,10 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["retentionInDays"] = args?.retentionInDays;
             resourceInputs["softDelete"] = args?.softDelete;
             resourceInputs["sourceDetails"] = args?.sourceDetails;
+            resourceInputs["validateBackupDetails"] = args?.validateBackupDetails;
+            resourceInputs["validateTrigger"] = args?.validateTrigger;
             resourceInputs["backupSizeInGbs"] = undefined /*out*/;
+            resourceInputs["backupValidationDetails"] = undefined /*out*/;
             resourceInputs["creationType"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dbSystemSnapshots"] = undefined /*out*/;
@@ -256,6 +272,10 @@ export interface MysqlBackupState {
      * The type of backup.
      */
     backupType?: pulumi.Input<string>;
+    /**
+     * Backup validation details.
+     */
+    backupValidationDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupBackupValidationDetail>[]>;
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
      */
@@ -349,6 +369,12 @@ export interface MysqlBackupState {
      * The time at which the backup was updated.
      */
     timeUpdated?: pulumi.Input<string>;
+    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[]>;
+    /**
+     * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     */
+    validateTrigger?: pulumi.Input<number>;
 }
 
 /**
@@ -400,4 +426,10 @@ export interface MysqlBackupArgs {
      * Details of backup source in the cloud.
      */
     sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
+    validateBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupValidateBackupDetail>[]>;
+    /**
+     * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     */
+    validateTrigger?: pulumi.Input<number>;
 }

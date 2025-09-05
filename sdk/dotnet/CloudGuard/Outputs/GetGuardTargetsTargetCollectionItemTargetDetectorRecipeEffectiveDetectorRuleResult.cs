@@ -42,6 +42,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult> EntitiesMappings;
         /// <summary>
+        /// Is the rule cloneable?
+        /// </summary>
+        public readonly bool IsCloneable;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -57,6 +61,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         /// </summary>
         public readonly string ResourceType;
+        /// <summary>
+        /// Rule category type
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult> RuleTypes;
         /// <summary>
         /// Service type of the configuration to which the rule is applied
         /// </summary>
@@ -90,6 +98,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult> entitiesMappings,
 
+            bool isCloneable,
+
             string lifecycleDetails,
 
             ImmutableArray<string> managedListTypes,
@@ -97,6 +107,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string recommendation,
 
             string resourceType,
+
+            ImmutableArray<Outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeResult> ruleTypes,
 
             string serviceType,
 
@@ -113,10 +125,12 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             DetectorRuleId = detectorRuleId;
             DisplayName = displayName;
             EntitiesMappings = entitiesMappings;
+            IsCloneable = isCloneable;
             LifecycleDetails = lifecycleDetails;
             ManagedListTypes = managedListTypes;
             Recommendation = recommendation;
             ResourceType = resourceType;
+            RuleTypes = ruleTypes;
             ServiceType = serviceType;
             State = state;
             TimeCreated = timeCreated;

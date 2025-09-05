@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class DbmulticloudMultiCloudResourceDiscoveryResource
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        /// The ID of the Discovered Resource.
         /// </summary>
         public readonly string? Id;
         /// <summary>

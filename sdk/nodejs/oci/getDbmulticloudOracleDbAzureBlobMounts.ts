@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Blob Mounts based on filters.
+ * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -49,20 +49,20 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudOracleDbAzureBlobMountsFilter[];
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId?: string;
     /**
-     * ID of Oracle DB Azure Blob Mount Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
     oracleDbAzureBlobMountId?: string;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: string;
     /**
@@ -76,11 +76,11 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsArgs {
  */
 export interface GetDbmulticloudOracleDbAzureBlobMountsResult {
     /**
-     * The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      */
     readonly compartmentId: string;
     /**
-     * Oracle DB Azure Blob Mount name.
+     * Oracle DB Azure Blob Mount resource name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.oci.GetDbmulticloudOracleDbAzureBlobMountsFilter[];
@@ -89,7 +89,7 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsResult {
      */
     readonly id: string;
     /**
-     * The OCID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      */
     readonly oracleDbAzureBlobContainerId?: string;
     readonly oracleDbAzureBlobMountId?: string;
@@ -98,18 +98,18 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsResult {
      */
     readonly oracleDbAzureBlobMountSummaryCollections: outputs.oci.GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection[];
     /**
-     * The OCID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      */
     readonly oracleDbAzureConnectorId?: string;
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Blob Mounts based on filters.
+ * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -149,20 +149,20 @@ export interface GetDbmulticloudOracleDbAzureBlobMountsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobMountsFilterArgs>[]>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId?: pulumi.Input<string>;
     /**
-     * ID of Oracle DB Azure Blob Mount Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
     oracleDbAzureBlobMountId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: pulumi.Input<string>;
     /**

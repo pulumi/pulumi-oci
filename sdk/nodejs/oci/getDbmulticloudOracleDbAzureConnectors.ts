@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Connector Resource based on filters.
+ * Lists all Oracle DB Azure Connector resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -47,16 +47,16 @@ export interface GetDbmulticloudOracleDbAzureConnectorsArgs {
      */
     compartmentId: string;
     /**
-     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
      */
     dbClusterResourceId?: string;
     /**
-     * A filter to return Oracle DB Azure Connector Resource that match the given display name.
+     * A filter to return Oracle DB Azure Connector resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudOracleDbAzureConnectorsFilter[];
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: string;
     /**
@@ -70,11 +70,11 @@ export interface GetDbmulticloudOracleDbAzureConnectorsArgs {
  */
 export interface GetDbmulticloudOracleDbAzureConnectorsResult {
     /**
-     * The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
     readonly compartmentId: string;
     /**
-     * The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      */
     readonly dbClusterResourceId?: string;
     /**
@@ -92,14 +92,14 @@ export interface GetDbmulticloudOracleDbAzureConnectorsResult {
      */
     readonly oracleDbAzureConnectorSummaryCollections: outputs.oci.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection[];
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Connector Resource based on filters.
+ * Lists all Oracle DB Azure Connector resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -137,16 +137,16 @@ export interface GetDbmulticloudOracleDbAzureConnectorsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
      */
     dbClusterResourceId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Connector Resource that match the given display name.
+     * A filter to return Oracle DB Azure Connector resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureConnectorsFilterArgs>[]>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: pulumi.Input<string>;
     /**

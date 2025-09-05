@@ -66,6 +66,10 @@ export interface GetManagedListResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
+     * Managed list type group
+     */
+    readonly group: string;
+    /**
      * Unique identifier that can't be changed after creation
      */
     readonly id: string;

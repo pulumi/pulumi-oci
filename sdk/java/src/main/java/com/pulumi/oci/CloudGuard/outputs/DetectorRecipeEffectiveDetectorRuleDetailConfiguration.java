@@ -4,6 +4,8 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -13,6 +15,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    private @Nullable String allowedValuesDataType;
     /**
      * @return Unique identifier of the configuration
      * 
@@ -29,7 +46,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
      */
     private @Nullable String name;
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     private @Nullable String value;
@@ -40,6 +57,27 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
 
     private DetectorRecipeEffectiveDetectorRuleDetailConfiguration() {}
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    public List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties == null ? List.of() : this.additionalProperties;
+    }
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    public List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues == null ? List.of() : this.allowedValues;
+    }
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    public Optional<String> allowedValuesDataType() {
+        return Optional.ofNullable(this.allowedValuesDataType);
+    }
     /**
      * @return Unique identifier of the configuration
      * 
@@ -62,7 +100,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     public Optional<String> value() {
@@ -85,6 +123,9 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+        private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+        private @Nullable String allowedValuesDataType;
         private @Nullable String configKey;
         private @Nullable String dataType;
         private @Nullable String name;
@@ -93,6 +134,9 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         public Builder() {}
         public Builder(DetectorRecipeEffectiveDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -100,6 +144,30 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties) {
+
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues) {
+
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(@Nullable String allowedValuesDataType) {
+
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
 
@@ -135,6 +203,9 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         }
         public DetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
             final var _resultValue = new DetectorRecipeEffectiveDetectorRuleDetailConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

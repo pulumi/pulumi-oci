@@ -18,14 +18,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     public static final DbmulticloudOracleDbAzureConnectorState Empty = new DbmulticloudOracleDbAzureConnectorState();
 
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      * 
      */
     @Import(name="accessToken")
     private @Nullable Output<String> accessToken;
 
     /**
-     * @return (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * @return (Updatable) Azure bearer access token.
      * 
      */
     public Optional<Output<String>> accessToken() {
@@ -33,14 +33,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     @Import(name="arcAgentNodes")
     private @Nullable Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs>> arcAgentNodes;
 
     /**
-     * @return List of All VMs where Arc Agent is Install under VMCluster.
+     * @return List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     public Optional<Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs>>> arcAgentNodes() {
@@ -48,14 +48,29 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    @Import(name="azureIdentityConnectivityStatus")
+    private @Nullable Output<String> azureIdentityConnectivityStatus;
+
+    /**
+     * @return The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    public Optional<Output<String>> azureIdentityConnectivityStatus() {
+        return Optional.ofNullable(this.azureIdentityConnectivityStatus);
+    }
+
+    /**
+     * (Updatable) Azure Identity mechanism.
      * 
      */
     @Import(name="azureIdentityMechanism")
     private @Nullable Output<String> azureIdentityMechanism;
 
     /**
-     * @return (Updatable) Azure Identity Mechanism.
+     * @return (Updatable) Azure Identity mechanism.
      * 
      */
     public Optional<Output<String>> azureIdentityMechanism() {
@@ -63,14 +78,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      * 
      */
     @Import(name="azureResourceGroup")
     private @Nullable Output<String> azureResourceGroup;
 
     /**
-     * @return (Updatable) Azure Resource Group Name.
+     * @return (Updatable) Azure Resource group name.
      * 
      */
     public Optional<Output<String>> azureResourceGroup() {
@@ -108,14 +123,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -123,14 +138,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     @Import(name="dbClusterResourceId")
     private @Nullable Output<String> dbClusterResourceId;
 
     /**
-     * @return (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     public Optional<Output<String>> dbClusterResourceId() {
@@ -138,14 +153,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Oracle DB Azure Connector Resource name.
+     * @return (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -153,14 +168,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="lastModification")
     private @Nullable Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     public Optional<Output<String>> lastModification() {
@@ -183,14 +198,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     public Optional<Output<String>> state() {
@@ -198,14 +213,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -213,14 +228,14 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     }
 
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -232,6 +247,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
     private DbmulticloudOracleDbAzureConnectorState(DbmulticloudOracleDbAzureConnectorState $) {
         this.accessToken = $.accessToken;
         this.arcAgentNodes = $.arcAgentNodes;
+        this.azureIdentityConnectivityStatus = $.azureIdentityConnectivityStatus;
         this.azureIdentityMechanism = $.azureIdentityMechanism;
         this.azureResourceGroup = $.azureResourceGroup;
         this.azureSubscriptionId = $.azureSubscriptionId;
@@ -265,7 +281,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param accessToken (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+         * @param accessToken (Updatable) Azure bearer access token.
          * 
          * @return builder
          * 
@@ -276,7 +292,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param accessToken (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+         * @param accessToken (Updatable) Azure bearer access token.
          * 
          * @return builder
          * 
@@ -286,7 +302,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -297,7 +313,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -307,7 +323,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -317,7 +333,28 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param azureIdentityMechanism (Updatable) Azure Identity Mechanism.
+         * @param azureIdentityConnectivityStatus The current Connectivity status of Azure Identity Connector resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureIdentityConnectivityStatus(@Nullable Output<String> azureIdentityConnectivityStatus) {
+            $.azureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
+            return this;
+        }
+
+        /**
+         * @param azureIdentityConnectivityStatus The current Connectivity status of Azure Identity Connector resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureIdentityConnectivityStatus(String azureIdentityConnectivityStatus) {
+            return azureIdentityConnectivityStatus(Output.of(azureIdentityConnectivityStatus));
+        }
+
+        /**
+         * @param azureIdentityMechanism (Updatable) Azure Identity mechanism.
          * 
          * @return builder
          * 
@@ -328,7 +365,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param azureIdentityMechanism (Updatable) Azure Identity Mechanism.
+         * @param azureIdentityMechanism (Updatable) Azure Identity mechanism.
          * 
          * @return builder
          * 
@@ -338,7 +375,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param azureResourceGroup (Updatable) Azure Resource Group Name.
+         * @param azureResourceGroup (Updatable) Azure Resource group name.
          * 
          * @return builder
          * 
@@ -349,7 +386,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param azureResourceGroup (Updatable) Azure Resource Group Name.
+         * @param azureResourceGroup (Updatable) Azure Resource group name.
          * 
          * @return builder
          * 
@@ -401,7 +438,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -412,7 +449,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -422,7 +459,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param dbClusterResourceId (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+         * @param dbClusterResourceId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
          * 
          * @return builder
          * 
@@ -433,7 +470,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param dbClusterResourceId (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+         * @param dbClusterResourceId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
          * 
          * @return builder
          * 
@@ -443,7 +480,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Connector Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Connector resource name.
          * 
          * @return builder
          * 
@@ -454,7 +491,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Connector Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Connector resource name.
          * 
          * @return builder
          * 
@@ -464,7 +501,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector Resource.
+         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -475,7 +512,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector Resource.
+         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -506,7 +543,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param state The current lifecycle state of the Azure Arc Agent Resource.
+         * @param state The current lifecycle state of the Azure Arc Agent resource.
          * 
          * @return builder
          * 
@@ -517,7 +554,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param state The current lifecycle state of the Azure Arc Agent Resource.
+         * @param state The current lifecycle state of the Azure Arc Agent resource.
          * 
          * @return builder
          * 
@@ -527,7 +564,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param timeCreated Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeCreated Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -538,7 +575,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param timeCreated Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeCreated Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -548,7 +585,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param timeUpdated Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeUpdated Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -559,7 +596,7 @@ public final class DbmulticloudOracleDbAzureConnectorState extends com.pulumi.re
         }
 
         /**
-         * @param timeUpdated Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeUpdated Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 

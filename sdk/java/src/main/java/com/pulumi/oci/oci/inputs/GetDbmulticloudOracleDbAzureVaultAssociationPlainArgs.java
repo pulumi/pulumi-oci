@@ -14,14 +14,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs extends
     public static final GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs Empty = new GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs();
 
     /**
-     * The ID of the Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     @Import(name="oracleDbAzureVaultAssociationId", required=true)
     private String oracleDbAzureVaultAssociationId;
 
     /**
-     * @return The ID of the Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     public String oracleDbAzureVaultAssociationId() {
@@ -53,7 +53,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationPlainArgs extends
         }
 
         /**
-         * @param oracleDbAzureVaultAssociationId The ID of the Oracle DB Azure Vault Association Resource.
+         * @param oracleDbAzureVaultAssociationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 

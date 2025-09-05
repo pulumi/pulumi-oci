@@ -55,7 +55,7 @@ class GetModelsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        Compartment Identifier
+        The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -63,7 +63,7 @@ class GetModelsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Model Identifier, can be renamed
+        A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -76,7 +76,7 @@ class GetModelsResult:
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        Unique identifier that is immutable on creation
+        A unique identifier that is immutable after creation.
         """
         return pulumi.get(self, "id")
 
@@ -92,7 +92,7 @@ class GetModelsResult:
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         """
         return pulumi.get(self, "project_id")
 
@@ -100,7 +100,7 @@ class GetModelsResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current state of the Model.
+        The current state of the model.
         """
         return pulumi.get(self, "state")
 
@@ -130,7 +130,7 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
 
-    Returns a list of Models.
+    Returns a list of models in a compartment.
 
     ## Example Usage
 
@@ -148,9 +148,9 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.str id: unique Model identifier
+    :param _builtins.str id: The filter to find the model with the given identifier.
     :param _builtins.str project_id: The ID of the project for which to list the objects.
-    :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param _builtins.str state: The filter to match models with the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -180,7 +180,7 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
     """
     This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
 
-    Returns a list of Models.
+    Returns a list of models in a compartment.
 
     ## Example Usage
 
@@ -198,9 +198,9 @@ def get_models_output(compartment_id: Optional[pulumi.Input[Optional[_builtins.s
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-    :param _builtins.str id: unique Model identifier
+    :param _builtins.str id: The filter to find the model with the given identifier.
     :param _builtins.str project_id: The ID of the project for which to list the objects.
-    :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
+    :param _builtins.str state: The filter to match models with the given lifecycleState.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureVaultArgs extends com.pulumi.reso
     public static final GetDbmulticloudOracleDbAzureVaultArgs Empty = new GetDbmulticloudOracleDbAzureVaultArgs();
 
     /**
-     * The ID of the Oracle DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     @Import(name="oracleDbAzureVaultId", required=true)
     private Output<String> oracleDbAzureVaultId;
 
     /**
-     * @return The ID of the Oracle DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public Output<String> oracleDbAzureVaultId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureVaultArgs extends com.pulumi.reso
         }
 
         /**
-         * @param oracleDbAzureVaultId The ID of the Oracle DB Azure Vault Resource.
+         * @param oracleDbAzureVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureVaultArgs extends com.pulumi.reso
         }
 
         /**
-         * @param oracleDbAzureVaultId The ID of the Oracle DB Azure Vault Resource.
+         * @param oracleDbAzureVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 

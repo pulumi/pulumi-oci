@@ -23,7 +23,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return Azure Vault Association.
+     * @return A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -33,17 +33,17 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     private String id;
     /**
-     * @return The Associated Resources are accessible or not.
+     * @return The Associated resource is accessible or not.
      * 
      */
     private Boolean isResourceAccessible;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault Association resource.
      * 
      */
     private String lastModification;
@@ -53,12 +53,12 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
      */
     private String lifecycleStateDetails;
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     private String oracleDbAzureConnectorId;
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     private String oracleDbAzureVaultId;
@@ -73,12 +73,12 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
      */
     private Map<String,String> systemTags;
     /**
-     * @return Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
@@ -99,7 +99,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
         return this.definedTags;
     }
     /**
-     * @return A filter to return Azure Vault Association.
+     * @return A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -113,21 +113,21 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return The Associated Resources are accessible or not.
+     * @return The Associated resource is accessible or not.
      * 
      */
     public Boolean isResourceAccessible() {
         return this.isResourceAccessible;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault Association resource.
      * 
      */
     public String lastModification() {
@@ -141,14 +141,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
         return this.lifecycleStateDetails;
     }
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public String oracleDbAzureConnectorId() {
         return this.oracleDbAzureConnectorId;
     }
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public String oracleDbAzureVaultId() {
@@ -169,14 +169,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVau
         return this.systemTags;
     }
     /**
-     * @return Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {

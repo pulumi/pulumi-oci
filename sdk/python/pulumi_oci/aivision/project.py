@@ -26,11 +26,11 @@ class ProjectArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a Project resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the project.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Project Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the project.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the project, that can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
                
                
                ** IMPORTANT **
@@ -50,7 +50,7 @@ class ProjectArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -62,7 +62,7 @@ class ProjectArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -74,7 +74,7 @@ class ProjectArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A short description of the project.
+        (Updatable) An optional description of the project.
         """
         return pulumi.get(self, "description")
 
@@ -86,7 +86,7 @@ class ProjectArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Project Identifier
+        (Updatable) A human-friendly name for the project, that can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -98,7 +98,7 @@ class ProjectArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
 
 
         ** IMPORTANT **
@@ -126,20 +126,20 @@ class _ProjectState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering Project resources.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the project.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Project Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the project.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the project, that can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] state: The current state of the Project.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: The time the Project was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.str] time_updated: The time the Project was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param pulumi.Input[_builtins.str] state: The current state of the project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.str] time_updated: When the project was updated, as an RFC3339 datetime string.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -166,7 +166,7 @@ class _ProjectState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -178,7 +178,7 @@ class _ProjectState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -190,7 +190,7 @@ class _ProjectState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A short description of the project.
+        (Updatable) An optional description of the project.
         """
         return pulumi.get(self, "description")
 
@@ -202,7 +202,7 @@ class _ProjectState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Project Identifier
+        (Updatable) A human-friendly name for the project, that can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -214,7 +214,7 @@ class _ProjectState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
 
 
         ** IMPORTANT **
@@ -230,7 +230,7 @@ class _ProjectState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if creation failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -242,7 +242,7 @@ class _ProjectState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the Project.
+        The current state of the project.
         """
         return pulumi.get(self, "state")
 
@@ -254,7 +254,7 @@ class _ProjectState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -266,7 +266,7 @@ class _ProjectState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time the Project was created. An RFC3339 formatted datetime string
+        When the project was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -278,7 +278,7 @@ class _ProjectState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time the Project was updated. An RFC3339 formatted datetime string
+        When the project was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -302,7 +302,7 @@ class Project(pulumi.CustomResource):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
 
-        Creates a new Project.
+        Create a new project.
 
         ## Example Usage
 
@@ -312,14 +312,10 @@ class Project(pulumi.CustomResource):
 
         test_project = oci.aivision.Project("test_project",
             compartment_id=compartment_id,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
+            defined_tags=project_defined_tags,
             description=project_description,
             display_name=project_display_name,
-            freeform_tags={
-                "bar-key": "value",
-            })
+            freeform_tags=project_freeform_tags)
         ```
 
         ## Import
@@ -332,11 +328,11 @@ class Project(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the project.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Project Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the project.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the project, that can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
                
                
                ** IMPORTANT **
@@ -351,7 +347,7 @@ class Project(pulumi.CustomResource):
         """
         This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
 
-        Creates a new Project.
+        Create a new project.
 
         ## Example Usage
 
@@ -361,14 +357,10 @@ class Project(pulumi.CustomResource):
 
         test_project = oci.aivision.Project("test_project",
             compartment_id=compartment_id,
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
+            defined_tags=project_defined_tags,
             description=project_description,
             display_name=project_display_name,
-            freeform_tags={
-                "bar-key": "value",
-            })
+            freeform_tags=project_freeform_tags)
         ```
 
         ## Import
@@ -447,20 +439,20 @@ class Project(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the project.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Project Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the project.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the project, that can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.str] state: The current state of the Project.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: The time the Project was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.str] time_updated: The time the Project was updated. An RFC3339 formatted datetime string
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param pulumi.Input[_builtins.str] state: The current state of the project.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[_builtins.str] time_created: When the project was created, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.str] time_updated: When the project was updated, as an RFC3339 datetime string.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -482,7 +474,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -490,7 +482,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -498,7 +490,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A short description of the project.
+        (Updatable) An optional description of the project.
         """
         return pulumi.get(self, "description")
 
@@ -506,7 +498,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Project Identifier
+        (Updatable) A human-friendly name for the project, that can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -514,7 +506,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
 
 
         ** IMPORTANT **
@@ -526,7 +518,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if creation failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -534,7 +526,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current state of the Project.
+        The current state of the project.
         """
         return pulumi.get(self, "state")
 
@@ -542,7 +534,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -550,7 +542,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        The time the Project was created. An RFC3339 formatted datetime string
+        When the project was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -558,7 +550,7 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        The time the Project was updated. An RFC3339 formatted datetime string
+        When the project was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 

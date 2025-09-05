@@ -376,7 +376,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
 
-    Gets a Model by identifier
+    Get a model by identifier.
 
     ## Example Usage
 
@@ -388,7 +388,7 @@ def get_model(model_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str model_id: unique Model identifier
+    :param _builtins.str model_id: A unique model identifier.
     """
     __args__ = dict()
     __args__['modelId'] = model_id
@@ -429,7 +429,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     """
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
 
-    Gets a Model by identifier
+    Get a model by identifier.
 
     ## Example Usage
 
@@ -441,7 +441,7 @@ def get_model_output(model_id: Optional[pulumi.Input[_builtins.str]] = None,
     ```
 
 
-    :param _builtins.str model_id: unique Model identifier
+    :param _builtins.str model_id: A unique model identifier.
     """
     __args__ = dict()
     __args__['modelId'] = model_id

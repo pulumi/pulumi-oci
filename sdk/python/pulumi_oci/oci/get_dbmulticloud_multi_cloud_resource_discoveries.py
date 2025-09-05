@@ -28,7 +28,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesResult:
     """
     A collection of values returned by getDbmulticloudMultiCloudResourceDiscoveries.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, multi_cloud_resource_discovery_id=None, multi_cloud_resource_discovery_summary_collections=None, oracle_db_azure_connector_id=None, resource_type=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, multi_cloud_resource_discovery_id=None, multi_cloud_resource_discovery_summary_collections=None, oracle_db_azure_connector_id=None, resource_type=None, resources_filters=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -53,6 +53,9 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesResult:
         if resource_type and not isinstance(resource_type, str):
             raise TypeError("Expected argument 'resource_type' to be a str")
         pulumi.set(__self__, "resource_type", resource_type)
+        if resources_filters and not isinstance(resources_filters, list):
+            raise TypeError("Expected argument 'resources_filters' to be a list")
+        pulumi.set(__self__, "resources_filters", resources_filters)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -61,7 +64,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -69,7 +72,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Display name of Multi Cloud Discovery Resource.
+        Display name of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "display_name")
 
@@ -113,6 +116,14 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesResult:
         return pulumi.get(self, "resource_type")
 
     @_builtins.property
+    @pulumi.getter(name="resourcesFilters")
+    def resources_filters(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+        """
+        return pulumi.get(self, "resources_filters")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
@@ -135,6 +146,7 @@ class AwaitableGetDbmulticloudMultiCloudResourceDiscoveriesResult(GetDbmulticlou
             multi_cloud_resource_discovery_summary_collections=self.multi_cloud_resource_discovery_summary_collections,
             oracle_db_azure_connector_id=self.oracle_db_azure_connector_id,
             resource_type=self.resource_type,
+            resources_filters=self.resources_filters,
             state=self.state)
 
 
@@ -144,12 +156,13 @@ def get_dbmulticloud_multi_cloud_resource_discoveries(compartment_id: Optional[_
                                                       multi_cloud_resource_discovery_id: Optional[_builtins.str] = None,
                                                       oracle_db_azure_connector_id: Optional[_builtins.str] = None,
                                                       resource_type: Optional[_builtins.str] = None,
+                                                      resources_filters: Optional[Sequence[_builtins.str]] = None,
                                                       state: Optional[_builtins.str] = None,
                                                       opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbmulticloudMultiCloudResourceDiscoveriesResult:
     """
     This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Multi Cloud Resource Discovery based on filters.
+    Lists all Multicloud Resource Discovery resources based on the specified filters.
 
     ## Example Usage
 
@@ -162,16 +175,18 @@ def get_dbmulticloud_multi_cloud_resource_discoveries(compartment_id: Optional[_
         multi_cloud_resource_discovery_id=test_multi_cloud_resource_discovery["id"],
         oracle_db_azure_connector_id=test_oracle_db_azure_connector["id"],
         resource_type=multi_cloud_resource_discovery_resource_type,
+        resources_filters=multi_cloud_resource_discovery_resources_filter,
         state=multi_cloud_resource_discovery_state)
     ```
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: Display Name of the Multi Cloud Discovery Resource.
-    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
-    :param _builtins.str resource_type: The type of Multi Cloud Resource.
-    :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+    :param _builtins.str display_name: A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
+    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
+    :param _builtins.str resource_type: The type of Multicloud Resource.
+    :param Sequence[_builtins.str] resources_filters: Specifies the type(s) of resources to discover in the target cloud provider.
+    :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -180,6 +195,7 @@ def get_dbmulticloud_multi_cloud_resource_discoveries(compartment_id: Optional[_
     __args__['multiCloudResourceDiscoveryId'] = multi_cloud_resource_discovery_id
     __args__['oracleDbAzureConnectorId'] = oracle_db_azure_connector_id
     __args__['resourceType'] = resource_type
+    __args__['resourcesFilters'] = resources_filters
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries', __args__, opts=opts, typ=GetDbmulticloudMultiCloudResourceDiscoveriesResult).value
@@ -193,6 +209,7 @@ def get_dbmulticloud_multi_cloud_resource_discoveries(compartment_id: Optional[_
         multi_cloud_resource_discovery_summary_collections=pulumi.get(__ret__, 'multi_cloud_resource_discovery_summary_collections'),
         oracle_db_azure_connector_id=pulumi.get(__ret__, 'oracle_db_azure_connector_id'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
+        resources_filters=pulumi.get(__ret__, 'resources_filters'),
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                                              display_name: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
@@ -200,12 +217,13 @@ def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Opt
                                                              multi_cloud_resource_discovery_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                              oracle_db_azure_connector_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                              resource_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                             resources_filters: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                                              state: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudMultiCloudResourceDiscoveriesResult]:
     """
     This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Multi Cloud Resource Discovery based on filters.
+    Lists all Multicloud Resource Discovery resources based on the specified filters.
 
     ## Example Usage
 
@@ -218,16 +236,18 @@ def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Opt
         multi_cloud_resource_discovery_id=test_multi_cloud_resource_discovery["id"],
         oracle_db_azure_connector_id=test_oracle_db_azure_connector["id"],
         resource_type=multi_cloud_resource_discovery_resource_type,
+        resources_filters=multi_cloud_resource_discovery_resources_filter,
         state=multi_cloud_resource_discovery_state)
     ```
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: Display Name of the Multi Cloud Discovery Resource.
-    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
-    :param _builtins.str resource_type: The type of Multi Cloud Resource.
-    :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+    :param _builtins.str display_name: A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
+    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
+    :param _builtins.str resource_type: The type of Multicloud Resource.
+    :param Sequence[_builtins.str] resources_filters: Specifies the type(s) of resources to discover in the target cloud provider.
+    :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -236,6 +256,7 @@ def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Opt
     __args__['multiCloudResourceDiscoveryId'] = multi_cloud_resource_discovery_id
     __args__['oracleDbAzureConnectorId'] = oracle_db_azure_connector_id
     __args__['resourceType'] = resource_type
+    __args__['resourcesFilters'] = resources_filters
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDbmulticloudMultiCloudResourceDiscoveries:getDbmulticloudMultiCloudResourceDiscoveries', __args__, opts=opts, typ=GetDbmulticloudMultiCloudResourceDiscoveriesResult)
@@ -248,4 +269,5 @@ def get_dbmulticloud_multi_cloud_resource_discoveries_output(compartment_id: Opt
         multi_cloud_resource_discovery_summary_collections=pulumi.get(__response__, 'multi_cloud_resource_discovery_summary_collections'),
         oracle_db_azure_connector_id=pulumi.get(__response__, 'oracle_db_azure_connector_id'),
         resource_type=pulumi.get(__response__, 'resource_type'),
+        resources_filters=pulumi.get(__response__, 'resources_filters'),
         state=pulumi.get(__response__, 'state')))

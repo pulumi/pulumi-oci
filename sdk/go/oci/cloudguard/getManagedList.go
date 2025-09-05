@@ -70,6 +70,8 @@ type LookupManagedListResult struct {
 	FeedProvider string `pulumi:"feedProvider"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Managed list type group
+	Group string `pulumi:"group"`
 	// Unique identifier that can't be changed after creation
 	Id string `pulumi:"id"`
 	// Is this list editable?
@@ -155,6 +157,11 @@ func (o LookupManagedListResultOutput) FeedProvider() pulumi.StringOutput {
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o LookupManagedListResultOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupManagedListResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Managed list type group
+func (o LookupManagedListResultOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupManagedListResult) string { return v.Group }).(pulumi.StringOutput)
 }
 
 // Unique identifier that can't be changed after creation

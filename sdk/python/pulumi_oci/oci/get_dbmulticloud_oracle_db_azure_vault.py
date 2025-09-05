@@ -86,7 +86,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="azureVaultId")
     def azure_vault_id(self) -> _builtins.str:
         """
-        Azure Vault Id.
+        Azure Vault ID.
         """
         return pulumi.get(self, "azure_vault_id")
 
@@ -94,7 +94,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -110,7 +110,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -126,7 +126,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "id")
 
@@ -134,7 +134,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -150,7 +150,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter
     def location(self) -> _builtins.str:
         """
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
         """
         return pulumi.get(self, "location")
 
@@ -158,7 +158,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> _builtins.str:
         """
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -171,7 +171,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -179,7 +179,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter
     def properties(self) -> Mapping[str, _builtins.str]:
         """
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
         """
         return pulumi.get(self, "properties")
 
@@ -187,7 +187,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "state")
 
@@ -203,7 +203,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -211,7 +211,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -219,7 +219,7 @@ class GetDbmulticloudOracleDbAzureVaultResult:
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
         """
         return pulumi.get(self, "type")
 
@@ -255,7 +255,7 @@ def get_dbmulticloud_oracle_db_azure_vault(oracle_db_azure_vault_id: Optional[_b
     """
     This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+    Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
 
     ## Example Usage
 
@@ -267,7 +267,7 @@ def get_dbmulticloud_oracle_db_azure_vault(oracle_db_azure_vault_id: Optional[_b
     ```
 
 
-    :param _builtins.str oracle_db_azure_vault_id: The ID of the Oracle DB Azure Vault Resource.
+    :param _builtins.str oracle_db_azure_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureVaultId'] = oracle_db_azure_vault_id
@@ -298,7 +298,7 @@ def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: Opti
     """
     This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+    Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
 
     ## Example Usage
 
@@ -310,7 +310,7 @@ def get_dbmulticloud_oracle_db_azure_vault_output(oracle_db_azure_vault_id: Opti
     ```
 
 
-    :param _builtins.str oracle_db_azure_vault_id: The ID of the Oracle DB Azure Vault Resource.
+    :param _builtins.str oracle_db_azure_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureVaultId'] = oracle_db_azure_vault_id

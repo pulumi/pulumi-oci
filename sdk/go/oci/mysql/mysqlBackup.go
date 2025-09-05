@@ -66,6 +66,8 @@ type MysqlBackup struct {
 	BackupSizeInGbs pulumi.IntOutput `pulumi:"backupSizeInGbs"`
 	// The type of backup.
 	BackupType pulumi.StringOutput `pulumi:"backupType"`
+	// Backup validation details.
+	BackupValidationDetails MysqlBackupBackupValidationDetailArrayOutput `pulumi:"backupValidationDetails"`
 	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
@@ -112,7 +114,11 @@ type MysqlBackup struct {
 	// The time the backup record was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
+	TimeUpdated           pulumi.StringOutput                        `pulumi:"timeUpdated"`
+	ValidateBackupDetails MysqlBackupValidateBackupDetailArrayOutput `pulumi:"validateBackupDetails"`
+	// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+	// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+	ValidateTrigger pulumi.IntPtrOutput `pulumi:"validateTrigger"`
 }
 
 // NewMysqlBackup registers a new resource with the given unique name, arguments, and options.
@@ -149,6 +155,8 @@ type mysqlBackupState struct {
 	BackupSizeInGbs *int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
 	BackupType *string `pulumi:"backupType"`
+	// Backup validation details.
+	BackupValidationDetails []MysqlBackupBackupValidationDetail `pulumi:"backupValidationDetails"`
 	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
@@ -195,7 +203,11 @@ type mysqlBackupState struct {
 	// The time the backup record was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated *string `pulumi:"timeUpdated"`
+	TimeUpdated           *string                           `pulumi:"timeUpdated"`
+	ValidateBackupDetails []MysqlBackupValidateBackupDetail `pulumi:"validateBackupDetails"`
+	// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+	// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+	ValidateTrigger *int `pulumi:"validateTrigger"`
 }
 
 type MysqlBackupState struct {
@@ -203,6 +215,8 @@ type MysqlBackupState struct {
 	BackupSizeInGbs pulumi.IntPtrInput
 	// The type of backup.
 	BackupType pulumi.StringPtrInput
+	// Backup validation details.
+	BackupValidationDetails MysqlBackupBackupValidationDetailArrayInput
 	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringPtrInput
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
@@ -249,7 +263,11 @@ type MysqlBackupState struct {
 	// The time the backup record was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the backup was updated.
-	TimeUpdated pulumi.StringPtrInput
+	TimeUpdated           pulumi.StringPtrInput
+	ValidateBackupDetails MysqlBackupValidateBackupDetailArrayInput
+	// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+	// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+	ValidateTrigger pulumi.IntPtrInput
 }
 
 func (MysqlBackupState) ElementType() reflect.Type {
@@ -279,7 +297,11 @@ type mysqlBackupArgs struct {
 	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
 	SoftDelete *string `pulumi:"softDelete"`
 	// Details of backup source in the cloud.
-	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
+	SourceDetails         *MysqlBackupSourceDetails         `pulumi:"sourceDetails"`
+	ValidateBackupDetails []MysqlBackupValidateBackupDetail `pulumi:"validateBackupDetails"`
+	// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+	// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+	ValidateTrigger *int `pulumi:"validateTrigger"`
 }
 
 // The set of arguments for constructing a MysqlBackup resource.
@@ -306,7 +328,11 @@ type MysqlBackupArgs struct {
 	// (Updatable) Retains the backup to be deleted due to the retention policy in DELETE SCHEDULED state for 7 days before permanently deleting it.
 	SoftDelete pulumi.StringPtrInput
 	// Details of backup source in the cloud.
-	SourceDetails MysqlBackupSourceDetailsPtrInput
+	SourceDetails         MysqlBackupSourceDetailsPtrInput
+	ValidateBackupDetails MysqlBackupValidateBackupDetailArrayInput
+	// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+	// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+	ValidateTrigger pulumi.IntPtrInput
 }
 
 func (MysqlBackupArgs) ElementType() reflect.Type {
@@ -404,6 +430,11 @@ func (o MysqlBackupOutput) BackupSizeInGbs() pulumi.IntOutput {
 // The type of backup.
 func (o MysqlBackupOutput) BackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Backup validation details.
+func (o MysqlBackupOutput) BackupValidationDetails() MysqlBackupBackupValidationDetailArrayOutput {
+	return o.ApplyT(func(v *MysqlBackup) MysqlBackupBackupValidationDetailArrayOutput { return v.BackupValidationDetails }).(MysqlBackupBackupValidationDetailArrayOutput)
 }
 
 // (Updatable) The OCID of the compartment the backup exists in.
@@ -523,6 +554,16 @@ func (o MysqlBackupOutput) TimeCreated() pulumi.StringOutput {
 // The time at which the backup was updated.
 func (o MysqlBackupOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o MysqlBackupOutput) ValidateBackupDetails() MysqlBackupValidateBackupDetailArrayOutput {
+	return o.ApplyT(func(v *MysqlBackup) MysqlBackupValidateBackupDetailArrayOutput { return v.ValidateBackupDetails }).(MysqlBackupValidateBackupDetailArrayOutput)
+}
+
+// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+func (o MysqlBackupOutput) ValidateTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.IntPtrOutput { return v.ValidateTrigger }).(pulumi.IntPtrOutput)
 }
 
 type MysqlBackupArrayOutput struct{ *pulumi.OutputState }

@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.
     public static final GetDbmulticloudOracleDbAzureConnectorArgs Empty = new GetDbmulticloudOracleDbAzureConnectorArgs();
 
     /**
-     * The ID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="oracleDbAzureConnectorId", required=true)
     private Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return The ID of the Oracle DB Azure Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     public Output<String> oracleDbAzureConnectorId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.
         }
 
         /**
-         * @param oracleDbAzureConnectorId The ID of the Oracle DB Azure Connector Resource.
+         * @param oracleDbAzureConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.
         }
 
         /**
-         * @param oracleDbAzureConnectorId The ID of the Oracle DB Azure Connector Resource.
+         * @param oracleDbAzureConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 

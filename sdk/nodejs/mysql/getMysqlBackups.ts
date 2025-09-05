@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testMysqlBackups = oci.Mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
- *     backupId: testBackup.id,
+ *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlBackupDisplayName,
@@ -129,7 +129,7 @@ export interface GetMysqlBackupsResult {
  *
  * const testMysqlBackups = oci.Mysql.getMysqlBackups({
  *     compartmentId: compartmentId,
- *     backupId: testBackup.id,
+ *     backupId: testMysqlBackup.id,
  *     creationType: mysqlBackupCreationType,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlBackupDisplayName,

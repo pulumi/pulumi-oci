@@ -482,6 +482,38 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "AiVision/streamGroup",
+  "fqn": "pulumi_oci.aivision",
+  "classes": {
+   "oci:AiVision/streamGroup:StreamGroup": "StreamGroup"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiVision/streamJob",
+  "fqn": "pulumi_oci.aivision",
+  "classes": {
+   "oci:AiVision/streamJob:StreamJob": "StreamJob"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiVision/streamSource",
+  "fqn": "pulumi_oci.aivision",
+  "classes": {
+   "oci:AiVision/streamSource:StreamSource": "StreamSource"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "AiVision/visionPrivateEndpoint",
+  "fqn": "pulumi_oci.aivision",
+  "classes": {
+   "oci:AiVision/visionPrivateEndpoint:VisionPrivateEndpoint": "VisionPrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Analytics/analyticsInstance",
   "fqn": "pulumi_oci.analytics",
   "classes": {
@@ -7262,6 +7294,22 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation": "DbmulticloudOracleDbAzureVaultAssociation"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbGcpIdentityConnector",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector": "DbmulticloudOracleDbGcpIdentityConnector"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbGcpKeyRing",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing": "DbmulticloudOracleDbGcpKeyRing"
   }
  },
  {

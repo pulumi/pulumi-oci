@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Returns a list of Models.
+ * Returns a list of models in a compartment.
  *
  * ## Example Usage
  *
@@ -53,7 +53,7 @@ export interface GetModelsArgs {
     displayName?: string;
     filters?: inputs.AiVision.GetModelsFilter[];
     /**
-     * unique Model identifier
+     * The filter to find the model with the given identifier.
      */
     id?: string;
     /**
@@ -61,7 +61,7 @@ export interface GetModelsArgs {
      */
     projectId?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match models with the given lifecycleState.
      */
     state?: string;
 }
@@ -71,16 +71,16 @@ export interface GetModelsArgs {
  */
 export interface GetModelsResult {
     /**
-     * Compartment Identifier
+     * The compartment identifier.
      */
     readonly compartmentId?: string;
     /**
-     * Model Identifier, can be renamed
+     * A human-friendly name for the model, which can be changed.
      */
     readonly displayName?: string;
     readonly filters?: outputs.AiVision.GetModelsFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable after creation.
      */
     readonly id?: string;
     /**
@@ -88,18 +88,18 @@ export interface GetModelsResult {
      */
     readonly modelCollections: outputs.AiVision.GetModelsModelCollection[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
     readonly projectId?: string;
     /**
-     * The current state of the Model.
+     * The current state of the model.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Returns a list of Models.
+ * Returns a list of models in a compartment.
  *
  * ## Example Usage
  *
@@ -143,7 +143,7 @@ export interface GetModelsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetModelsFilterArgs>[]>;
     /**
-     * unique Model identifier
+     * The filter to find the model with the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
@@ -151,7 +151,7 @@ export interface GetModelsOutputArgs {
      */
     projectId?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match models with the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

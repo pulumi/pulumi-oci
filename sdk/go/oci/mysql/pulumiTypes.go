@@ -1143,6 +1143,258 @@ func (o HeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) HeatWave
 	}).(HeatWaveClusterClusterNodeOutput)
 }
 
+type MysqlBackupBackupValidationDetail struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus *string `pulumi:"backupPreparationStatus"`
+	// Error message if the backup validation has failed.
+	ErrorMessage *string `pulumi:"errorMessage"`
+	// The estimated restore duration of the backup.
+	EstimatedRestoreDuration *string `pulumi:"estimatedRestoreDuration"`
+	// Prepared backup details.
+	PreparedBackupDetails []MysqlBackupBackupValidationDetailPreparedBackupDetail `pulumi:"preparedBackupDetails"`
+	// The date and time of the most recent validation performed on the backup.
+	TimeLastValidated *string `pulumi:"timeLastValidated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus *string `pulumi:"validationStatus"`
+}
+
+// MysqlBackupBackupValidationDetailInput is an input type that accepts MysqlBackupBackupValidationDetailArgs and MysqlBackupBackupValidationDetailOutput values.
+// You can construct a concrete instance of `MysqlBackupBackupValidationDetailInput` via:
+//
+//	MysqlBackupBackupValidationDetailArgs{...}
+type MysqlBackupBackupValidationDetailInput interface {
+	pulumi.Input
+
+	ToMysqlBackupBackupValidationDetailOutput() MysqlBackupBackupValidationDetailOutput
+	ToMysqlBackupBackupValidationDetailOutputWithContext(context.Context) MysqlBackupBackupValidationDetailOutput
+}
+
+type MysqlBackupBackupValidationDetailArgs struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus pulumi.StringPtrInput `pulumi:"backupPreparationStatus"`
+	// Error message if the backup validation has failed.
+	ErrorMessage pulumi.StringPtrInput `pulumi:"errorMessage"`
+	// The estimated restore duration of the backup.
+	EstimatedRestoreDuration pulumi.StringPtrInput `pulumi:"estimatedRestoreDuration"`
+	// Prepared backup details.
+	PreparedBackupDetails MysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput `pulumi:"preparedBackupDetails"`
+	// The date and time of the most recent validation performed on the backup.
+	TimeLastValidated pulumi.StringPtrInput `pulumi:"timeLastValidated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus pulumi.StringPtrInput `pulumi:"validationStatus"`
+}
+
+func (MysqlBackupBackupValidationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupBackupValidationDetailArgs) ToMysqlBackupBackupValidationDetailOutput() MysqlBackupBackupValidationDetailOutput {
+	return i.ToMysqlBackupBackupValidationDetailOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupBackupValidationDetailArgs) ToMysqlBackupBackupValidationDetailOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupBackupValidationDetailOutput)
+}
+
+// MysqlBackupBackupValidationDetailArrayInput is an input type that accepts MysqlBackupBackupValidationDetailArray and MysqlBackupBackupValidationDetailArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupBackupValidationDetailArrayInput` via:
+//
+//	MysqlBackupBackupValidationDetailArray{ MysqlBackupBackupValidationDetailArgs{...} }
+type MysqlBackupBackupValidationDetailArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupBackupValidationDetailArrayOutput() MysqlBackupBackupValidationDetailArrayOutput
+	ToMysqlBackupBackupValidationDetailArrayOutputWithContext(context.Context) MysqlBackupBackupValidationDetailArrayOutput
+}
+
+type MysqlBackupBackupValidationDetailArray []MysqlBackupBackupValidationDetailInput
+
+func (MysqlBackupBackupValidationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupBackupValidationDetailArray) ToMysqlBackupBackupValidationDetailArrayOutput() MysqlBackupBackupValidationDetailArrayOutput {
+	return i.ToMysqlBackupBackupValidationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupBackupValidationDetailArray) ToMysqlBackupBackupValidationDetailArrayOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupBackupValidationDetailArrayOutput)
+}
+
+type MysqlBackupBackupValidationDetailOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupBackupValidationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupBackupValidationDetailOutput) ToMysqlBackupBackupValidationDetailOutput() MysqlBackupBackupValidationDetailOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailOutput) ToMysqlBackupBackupValidationDetailOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailOutput {
+	return o
+}
+
+// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+func (o MysqlBackupBackupValidationDetailOutput) BackupPreparationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) *string { return v.BackupPreparationStatus }).(pulumi.StringPtrOutput)
+}
+
+// Error message if the backup validation has failed.
+func (o MysqlBackupBackupValidationDetailOutput) ErrorMessage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) *string { return v.ErrorMessage }).(pulumi.StringPtrOutput)
+}
+
+// The estimated restore duration of the backup.
+func (o MysqlBackupBackupValidationDetailOutput) EstimatedRestoreDuration() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) *string { return v.EstimatedRestoreDuration }).(pulumi.StringPtrOutput)
+}
+
+// Prepared backup details.
+func (o MysqlBackupBackupValidationDetailOutput) PreparedBackupDetails() MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) []MysqlBackupBackupValidationDetailPreparedBackupDetail {
+		return v.PreparedBackupDetails
+	}).(MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput)
+}
+
+// The date and time of the most recent validation performed on the backup.
+func (o MysqlBackupBackupValidationDetailOutput) TimeLastValidated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) *string { return v.TimeLastValidated }).(pulumi.StringPtrOutput)
+}
+
+// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+func (o MysqlBackupBackupValidationDetailOutput) ValidationStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetail) *string { return v.ValidationStatus }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupBackupValidationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupBackupValidationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupBackupValidationDetailArrayOutput) ToMysqlBackupBackupValidationDetailArrayOutput() MysqlBackupBackupValidationDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailArrayOutput) ToMysqlBackupBackupValidationDetailArrayOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailArrayOutput) Index(i pulumi.IntInput) MysqlBackupBackupValidationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupBackupValidationDetail {
+		return vs[0].([]MysqlBackupBackupValidationDetail)[vs[1].(int)]
+	}).(MysqlBackupBackupValidationDetailOutput)
+}
+
+type MysqlBackupBackupValidationDetailPreparedBackupDetail struct {
+	// The estimated time saving when this prepared backup is restored.
+	PreparedBackupRestoreReductionInMinutes *int `pulumi:"preparedBackupRestoreReductionInMinutes"`
+	// The date and time the backup was prepared.
+	TimePrepared *string `pulumi:"timePrepared"`
+}
+
+// MysqlBackupBackupValidationDetailPreparedBackupDetailInput is an input type that accepts MysqlBackupBackupValidationDetailPreparedBackupDetailArgs and MysqlBackupBackupValidationDetailPreparedBackupDetailOutput values.
+// You can construct a concrete instance of `MysqlBackupBackupValidationDetailPreparedBackupDetailInput` via:
+//
+//	MysqlBackupBackupValidationDetailPreparedBackupDetailArgs{...}
+type MysqlBackupBackupValidationDetailPreparedBackupDetailInput interface {
+	pulumi.Input
+
+	ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailOutput
+	ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailOutput
+}
+
+type MysqlBackupBackupValidationDetailPreparedBackupDetailArgs struct {
+	// The estimated time saving when this prepared backup is restored.
+	PreparedBackupRestoreReductionInMinutes pulumi.IntPtrInput `pulumi:"preparedBackupRestoreReductionInMinutes"`
+	// The date and time the backup was prepared.
+	TimePrepared pulumi.StringPtrInput `pulumi:"timePrepared"`
+}
+
+func (MysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return i.ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupBackupValidationDetailPreparedBackupDetailOutput)
+}
+
+// MysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput is an input type that accepts MysqlBackupBackupValidationDetailPreparedBackupDetailArray and MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput` via:
+//
+//	MysqlBackupBackupValidationDetailPreparedBackupDetailArray{ MysqlBackupBackupValidationDetailPreparedBackupDetailArgs{...} }
+type MysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput
+	ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput
+}
+
+type MysqlBackupBackupValidationDetailPreparedBackupDetailArray []MysqlBackupBackupValidationDetailPreparedBackupDetailInput
+
+func (MysqlBackupBackupValidationDetailPreparedBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupBackupValidationDetailPreparedBackupDetailArray) ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return i.ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupBackupValidationDetailPreparedBackupDetailArray) ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput)
+}
+
+type MysqlBackupBackupValidationDetailPreparedBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ToMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return o
+}
+
+// The estimated time saving when this prepared backup is restored.
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailOutput) PreparedBackupRestoreReductionInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetailPreparedBackupDetail) *int {
+		return v.PreparedBackupRestoreReductionInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// The date and time the backup was prepared.
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailOutput) TimePrepared() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MysqlBackupBackupValidationDetailPreparedBackupDetail) *string { return v.TimePrepared }).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ToMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(ctx context.Context) MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) Index(i pulumi.IntInput) MysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupBackupValidationDetailPreparedBackupDetail {
+		return vs[0].([]MysqlBackupBackupValidationDetailPreparedBackupDetail)[vs[1].(int)]
+	}).(MysqlBackupBackupValidationDetailPreparedBackupDetailOutput)
+}
+
 type MysqlBackupDbSystemSnapshot struct {
 	// The username for the administrative user.
 	AdminUsername *string `pulumi:"adminUsername"`
@@ -3290,6 +3542,103 @@ func (o MysqlBackupSourceDetailsPtrOutput) Region() pulumi.StringPtrOutput {
 		}
 		return &v.Region
 	}).(pulumi.StringPtrOutput)
+}
+
+type MysqlBackupValidateBackupDetail struct {
+	// Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+	IsPreparedBackupRequired bool `pulumi:"isPreparedBackupRequired"`
+}
+
+// MysqlBackupValidateBackupDetailInput is an input type that accepts MysqlBackupValidateBackupDetailArgs and MysqlBackupValidateBackupDetailOutput values.
+// You can construct a concrete instance of `MysqlBackupValidateBackupDetailInput` via:
+//
+//	MysqlBackupValidateBackupDetailArgs{...}
+type MysqlBackupValidateBackupDetailInput interface {
+	pulumi.Input
+
+	ToMysqlBackupValidateBackupDetailOutput() MysqlBackupValidateBackupDetailOutput
+	ToMysqlBackupValidateBackupDetailOutputWithContext(context.Context) MysqlBackupValidateBackupDetailOutput
+}
+
+type MysqlBackupValidateBackupDetailArgs struct {
+	// Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+	IsPreparedBackupRequired pulumi.BoolInput `pulumi:"isPreparedBackupRequired"`
+}
+
+func (MysqlBackupValidateBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupValidateBackupDetailArgs) ToMysqlBackupValidateBackupDetailOutput() MysqlBackupValidateBackupDetailOutput {
+	return i.ToMysqlBackupValidateBackupDetailOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupValidateBackupDetailArgs) ToMysqlBackupValidateBackupDetailOutputWithContext(ctx context.Context) MysqlBackupValidateBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupValidateBackupDetailOutput)
+}
+
+// MysqlBackupValidateBackupDetailArrayInput is an input type that accepts MysqlBackupValidateBackupDetailArray and MysqlBackupValidateBackupDetailArrayOutput values.
+// You can construct a concrete instance of `MysqlBackupValidateBackupDetailArrayInput` via:
+//
+//	MysqlBackupValidateBackupDetailArray{ MysqlBackupValidateBackupDetailArgs{...} }
+type MysqlBackupValidateBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToMysqlBackupValidateBackupDetailArrayOutput() MysqlBackupValidateBackupDetailArrayOutput
+	ToMysqlBackupValidateBackupDetailArrayOutputWithContext(context.Context) MysqlBackupValidateBackupDetailArrayOutput
+}
+
+type MysqlBackupValidateBackupDetailArray []MysqlBackupValidateBackupDetailInput
+
+func (MysqlBackupValidateBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (i MysqlBackupValidateBackupDetailArray) ToMysqlBackupValidateBackupDetailArrayOutput() MysqlBackupValidateBackupDetailArrayOutput {
+	return i.ToMysqlBackupValidateBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i MysqlBackupValidateBackupDetailArray) ToMysqlBackupValidateBackupDetailArrayOutputWithContext(ctx context.Context) MysqlBackupValidateBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MysqlBackupValidateBackupDetailArrayOutput)
+}
+
+type MysqlBackupValidateBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupValidateBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupValidateBackupDetailOutput) ToMysqlBackupValidateBackupDetailOutput() MysqlBackupValidateBackupDetailOutput {
+	return o
+}
+
+func (o MysqlBackupValidateBackupDetailOutput) ToMysqlBackupValidateBackupDetailOutputWithContext(ctx context.Context) MysqlBackupValidateBackupDetailOutput {
+	return o
+}
+
+// Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+func (o MysqlBackupValidateBackupDetailOutput) IsPreparedBackupRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v MysqlBackupValidateBackupDetail) bool { return v.IsPreparedBackupRequired }).(pulumi.BoolOutput)
+}
+
+type MysqlBackupValidateBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (MysqlBackupValidateBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (o MysqlBackupValidateBackupDetailArrayOutput) ToMysqlBackupValidateBackupDetailArrayOutput() MysqlBackupValidateBackupDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupValidateBackupDetailArrayOutput) ToMysqlBackupValidateBackupDetailArrayOutputWithContext(ctx context.Context) MysqlBackupValidateBackupDetailArrayOutput {
+	return o
+}
+
+func (o MysqlBackupValidateBackupDetailArrayOutput) Index(i pulumi.IntInput) MysqlBackupValidateBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MysqlBackupValidateBackupDetail {
+		return vs[0].([]MysqlBackupValidateBackupDetail)[vs[1].(int)]
+	}).(MysqlBackupValidateBackupDetailOutput)
 }
 
 type MysqlConfigurationInitVariables struct {
@@ -12230,6 +12579,258 @@ func (o GetHeatWaveClusterClusterNodeArrayOutput) Index(i pulumi.IntInput) GetHe
 	}).(GetHeatWaveClusterClusterNodeOutput)
 }
 
+type GetMysqlBackupBackupValidationDetail struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus string `pulumi:"backupPreparationStatus"`
+	// Error message if the backup validation has failed.
+	ErrorMessage string `pulumi:"errorMessage"`
+	// The estimated restore duration of the backup.
+	EstimatedRestoreDuration string `pulumi:"estimatedRestoreDuration"`
+	// Prepared backup details.
+	PreparedBackupDetails []GetMysqlBackupBackupValidationDetailPreparedBackupDetail `pulumi:"preparedBackupDetails"`
+	// The date and time of the most recent validation performed on the backup.
+	TimeLastValidated string `pulumi:"timeLastValidated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus string `pulumi:"validationStatus"`
+}
+
+// GetMysqlBackupBackupValidationDetailInput is an input type that accepts GetMysqlBackupBackupValidationDetailArgs and GetMysqlBackupBackupValidationDetailOutput values.
+// You can construct a concrete instance of `GetMysqlBackupBackupValidationDetailInput` via:
+//
+//	GetMysqlBackupBackupValidationDetailArgs{...}
+type GetMysqlBackupBackupValidationDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupBackupValidationDetailOutput() GetMysqlBackupBackupValidationDetailOutput
+	ToGetMysqlBackupBackupValidationDetailOutputWithContext(context.Context) GetMysqlBackupBackupValidationDetailOutput
+}
+
+type GetMysqlBackupBackupValidationDetailArgs struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus pulumi.StringInput `pulumi:"backupPreparationStatus"`
+	// Error message if the backup validation has failed.
+	ErrorMessage pulumi.StringInput `pulumi:"errorMessage"`
+	// The estimated restore duration of the backup.
+	EstimatedRestoreDuration pulumi.StringInput `pulumi:"estimatedRestoreDuration"`
+	// Prepared backup details.
+	PreparedBackupDetails GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput `pulumi:"preparedBackupDetails"`
+	// The date and time of the most recent validation performed on the backup.
+	TimeLastValidated pulumi.StringInput `pulumi:"timeLastValidated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus pulumi.StringInput `pulumi:"validationStatus"`
+}
+
+func (GetMysqlBackupBackupValidationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupBackupValidationDetailArgs) ToGetMysqlBackupBackupValidationDetailOutput() GetMysqlBackupBackupValidationDetailOutput {
+	return i.ToGetMysqlBackupBackupValidationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupBackupValidationDetailArgs) ToGetMysqlBackupBackupValidationDetailOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupBackupValidationDetailOutput)
+}
+
+// GetMysqlBackupBackupValidationDetailArrayInput is an input type that accepts GetMysqlBackupBackupValidationDetailArray and GetMysqlBackupBackupValidationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupBackupValidationDetailArrayInput` via:
+//
+//	GetMysqlBackupBackupValidationDetailArray{ GetMysqlBackupBackupValidationDetailArgs{...} }
+type GetMysqlBackupBackupValidationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupBackupValidationDetailArrayOutput() GetMysqlBackupBackupValidationDetailArrayOutput
+	ToGetMysqlBackupBackupValidationDetailArrayOutputWithContext(context.Context) GetMysqlBackupBackupValidationDetailArrayOutput
+}
+
+type GetMysqlBackupBackupValidationDetailArray []GetMysqlBackupBackupValidationDetailInput
+
+func (GetMysqlBackupBackupValidationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupBackupValidationDetailArray) ToGetMysqlBackupBackupValidationDetailArrayOutput() GetMysqlBackupBackupValidationDetailArrayOutput {
+	return i.ToGetMysqlBackupBackupValidationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupBackupValidationDetailArray) ToGetMysqlBackupBackupValidationDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupBackupValidationDetailArrayOutput)
+}
+
+type GetMysqlBackupBackupValidationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupBackupValidationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupBackupValidationDetailOutput) ToGetMysqlBackupBackupValidationDetailOutput() GetMysqlBackupBackupValidationDetailOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailOutput) ToGetMysqlBackupBackupValidationDetailOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailOutput {
+	return o
+}
+
+// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+func (o GetMysqlBackupBackupValidationDetailOutput) BackupPreparationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) string { return v.BackupPreparationStatus }).(pulumi.StringOutput)
+}
+
+// Error message if the backup validation has failed.
+func (o GetMysqlBackupBackupValidationDetailOutput) ErrorMessage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) string { return v.ErrorMessage }).(pulumi.StringOutput)
+}
+
+// The estimated restore duration of the backup.
+func (o GetMysqlBackupBackupValidationDetailOutput) EstimatedRestoreDuration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) string { return v.EstimatedRestoreDuration }).(pulumi.StringOutput)
+}
+
+// Prepared backup details.
+func (o GetMysqlBackupBackupValidationDetailOutput) PreparedBackupDetails() GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) []GetMysqlBackupBackupValidationDetailPreparedBackupDetail {
+		return v.PreparedBackupDetails
+	}).(GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput)
+}
+
+// The date and time of the most recent validation performed on the backup.
+func (o GetMysqlBackupBackupValidationDetailOutput) TimeLastValidated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) string { return v.TimeLastValidated }).(pulumi.StringOutput)
+}
+
+// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+func (o GetMysqlBackupBackupValidationDetailOutput) ValidationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetail) string { return v.ValidationStatus }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupBackupValidationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupBackupValidationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupBackupValidationDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupBackupValidationDetailArrayOutput) ToGetMysqlBackupBackupValidationDetailArrayOutput() GetMysqlBackupBackupValidationDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailArrayOutput) ToGetMysqlBackupBackupValidationDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupBackupValidationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupBackupValidationDetail {
+		return vs[0].([]GetMysqlBackupBackupValidationDetail)[vs[1].(int)]
+	}).(GetMysqlBackupBackupValidationDetailOutput)
+}
+
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetail struct {
+	// The estimated time saving when this prepared backup is restored.
+	PreparedBackupRestoreReductionInMinutes int `pulumi:"preparedBackupRestoreReductionInMinutes"`
+	// The date and time the backup was prepared.
+	TimePrepared string `pulumi:"timePrepared"`
+}
+
+// GetMysqlBackupBackupValidationDetailPreparedBackupDetailInput is an input type that accepts GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs and GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput values.
+// You can construct a concrete instance of `GetMysqlBackupBackupValidationDetailPreparedBackupDetailInput` via:
+//
+//	GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs{...}
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput
+	ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput
+}
+
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs struct {
+	// The estimated time saving when this prepared backup is restored.
+	PreparedBackupRestoreReductionInMinutes pulumi.IntInput `pulumi:"preparedBackupRestoreReductionInMinutes"`
+	// The date and time the backup was prepared.
+	TimePrepared pulumi.StringInput `pulumi:"timePrepared"`
+}
+
+func (GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return i.ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput)
+}
+
+// GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput is an input type that accepts GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray and GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput` via:
+//
+//	GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray{ GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs{...} }
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput
+	ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput
+}
+
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray []GetMysqlBackupBackupValidationDetailPreparedBackupDetailInput
+
+func (GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return i.ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput)
+}
+
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return o
+}
+
+// The estimated time saving when this prepared backup is restored.
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput) PreparedBackupRestoreReductionInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetailPreparedBackupDetail) int {
+		return v.PreparedBackupRestoreReductionInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The date and time the backup was prepared.
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput) TimePrepared() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupBackupValidationDetailPreparedBackupDetail) string { return v.TimePrepared }).(pulumi.StringOutput)
+}
+
+type GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupBackupValidationDetailPreparedBackupDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput() GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) ToGetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupBackupValidationDetailPreparedBackupDetail {
+		return vs[0].([]GetMysqlBackupBackupValidationDetailPreparedBackupDetail)[vs[1].(int)]
+	}).(GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput)
+}
+
 type GetMysqlBackupDbSystemSnapshot struct {
 	// The username for the administrative user.
 	AdminUsername string `pulumi:"adminUsername"`
@@ -14279,7 +14880,103 @@ func (o GetMysqlBackupSourceDetailArrayOutput) Index(i pulumi.IntInput) GetMysql
 	}).(GetMysqlBackupSourceDetailOutput)
 }
 
+type GetMysqlBackupValidateBackupDetail struct {
+	IsPreparedBackupRequired bool `pulumi:"isPreparedBackupRequired"`
+}
+
+// GetMysqlBackupValidateBackupDetailInput is an input type that accepts GetMysqlBackupValidateBackupDetailArgs and GetMysqlBackupValidateBackupDetailOutput values.
+// You can construct a concrete instance of `GetMysqlBackupValidateBackupDetailInput` via:
+//
+//	GetMysqlBackupValidateBackupDetailArgs{...}
+type GetMysqlBackupValidateBackupDetailInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupValidateBackupDetailOutput() GetMysqlBackupValidateBackupDetailOutput
+	ToGetMysqlBackupValidateBackupDetailOutputWithContext(context.Context) GetMysqlBackupValidateBackupDetailOutput
+}
+
+type GetMysqlBackupValidateBackupDetailArgs struct {
+	IsPreparedBackupRequired pulumi.BoolInput `pulumi:"isPreparedBackupRequired"`
+}
+
+func (GetMysqlBackupValidateBackupDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupValidateBackupDetailArgs) ToGetMysqlBackupValidateBackupDetailOutput() GetMysqlBackupValidateBackupDetailOutput {
+	return i.ToGetMysqlBackupValidateBackupDetailOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupValidateBackupDetailArgs) ToGetMysqlBackupValidateBackupDetailOutputWithContext(ctx context.Context) GetMysqlBackupValidateBackupDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupValidateBackupDetailOutput)
+}
+
+// GetMysqlBackupValidateBackupDetailArrayInput is an input type that accepts GetMysqlBackupValidateBackupDetailArray and GetMysqlBackupValidateBackupDetailArrayOutput values.
+// You can construct a concrete instance of `GetMysqlBackupValidateBackupDetailArrayInput` via:
+//
+//	GetMysqlBackupValidateBackupDetailArray{ GetMysqlBackupValidateBackupDetailArgs{...} }
+type GetMysqlBackupValidateBackupDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMysqlBackupValidateBackupDetailArrayOutput() GetMysqlBackupValidateBackupDetailArrayOutput
+	ToGetMysqlBackupValidateBackupDetailArrayOutputWithContext(context.Context) GetMysqlBackupValidateBackupDetailArrayOutput
+}
+
+type GetMysqlBackupValidateBackupDetailArray []GetMysqlBackupValidateBackupDetailInput
+
+func (GetMysqlBackupValidateBackupDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (i GetMysqlBackupValidateBackupDetailArray) ToGetMysqlBackupValidateBackupDetailArrayOutput() GetMysqlBackupValidateBackupDetailArrayOutput {
+	return i.ToGetMysqlBackupValidateBackupDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMysqlBackupValidateBackupDetailArray) ToGetMysqlBackupValidateBackupDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupValidateBackupDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupValidateBackupDetailArrayOutput)
+}
+
+type GetMysqlBackupValidateBackupDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupValidateBackupDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupValidateBackupDetailOutput) ToGetMysqlBackupValidateBackupDetailOutput() GetMysqlBackupValidateBackupDetailOutput {
+	return o
+}
+
+func (o GetMysqlBackupValidateBackupDetailOutput) ToGetMysqlBackupValidateBackupDetailOutputWithContext(ctx context.Context) GetMysqlBackupValidateBackupDetailOutput {
+	return o
+}
+
+func (o GetMysqlBackupValidateBackupDetailOutput) IsPreparedBackupRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMysqlBackupValidateBackupDetail) bool { return v.IsPreparedBackupRequired }).(pulumi.BoolOutput)
+}
+
+type GetMysqlBackupValidateBackupDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMysqlBackupValidateBackupDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMysqlBackupValidateBackupDetail)(nil)).Elem()
+}
+
+func (o GetMysqlBackupValidateBackupDetailArrayOutput) ToGetMysqlBackupValidateBackupDetailArrayOutput() GetMysqlBackupValidateBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupValidateBackupDetailArrayOutput) ToGetMysqlBackupValidateBackupDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupValidateBackupDetailArrayOutput {
+	return o
+}
+
+func (o GetMysqlBackupValidateBackupDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupValidateBackupDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupValidateBackupDetail {
+		return vs[0].([]GetMysqlBackupValidateBackupDetail)[vs[1].(int)]
+	}).(GetMysqlBackupValidateBackupDetailOutput)
+}
+
 type GetMysqlBackupsBackup struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus string `pulumi:"backupPreparationStatus"`
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
 	BackupSizeInGbs int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
@@ -14293,8 +14990,6 @@ type GetMysqlBackupsBackup struct {
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId                string                                         `pulumi:"dbSystemId"`
 	DbSystemSnapshotSummaries []GetMysqlBackupsBackupDbSystemSnapshotSummary `pulumi:"dbSystemSnapshotSummaries"`
-	// Snapshot of the DbSystem details at the time of the backup
-	DbSystemSnapshots []GetMysqlBackupsBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
@@ -14320,8 +15015,7 @@ type GetMysqlBackupsBackup struct {
 	// The shape of the DB System instance used for backup.
 	ShapeName string `pulumi:"shapeName"`
 	// Backup Soft Delete
-	SoftDelete    string                              `pulumi:"softDelete"`
-	SourceDetails []GetMysqlBackupsBackupSourceDetail `pulumi:"sourceDetails"`
+	SoftDelete string `pulumi:"softDelete"`
 	// Backup Lifecycle State
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14330,8 +15024,8 @@ type GetMysqlBackupsBackup struct {
 	TimeCopyCreated string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time at which the backup was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus string `pulumi:"validationStatus"`
 }
 
 // GetMysqlBackupsBackupInput is an input type that accepts GetMysqlBackupsBackupArgs and GetMysqlBackupsBackupOutput values.
@@ -14346,6 +15040,8 @@ type GetMysqlBackupsBackupInput interface {
 }
 
 type GetMysqlBackupsBackupArgs struct {
+	// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+	BackupPreparationStatus pulumi.StringInput `pulumi:"backupPreparationStatus"`
 	// The size of the backup in base-2 (IEC) gibibytes. (GiB).
 	BackupSizeInGbs pulumi.IntInput `pulumi:"backupSizeInGbs"`
 	// The type of backup.
@@ -14359,8 +15055,6 @@ type GetMysqlBackupsBackupArgs struct {
 	// The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbSystemId                pulumi.StringInput                                     `pulumi:"dbSystemId"`
 	DbSystemSnapshotSummaries GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayInput `pulumi:"dbSystemSnapshotSummaries"`
-	// Snapshot of the DbSystem details at the time of the backup
-	DbSystemSnapshots GetMysqlBackupsBackupDbSystemSnapshotArrayInput `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
 	// A user-supplied description for the backup.
@@ -14386,8 +15080,7 @@ type GetMysqlBackupsBackupArgs struct {
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
 	// Backup Soft Delete
-	SoftDelete    pulumi.StringInput                          `pulumi:"softDelete"`
-	SourceDetails GetMysqlBackupsBackupSourceDetailArrayInput `pulumi:"sourceDetails"`
+	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
 	// Backup Lifecycle State
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14396,8 +15089,8 @@ type GetMysqlBackupsBackupArgs struct {
 	TimeCopyCreated pulumi.StringInput `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time at which the backup was updated.
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+	ValidationStatus pulumi.StringInput `pulumi:"validationStatus"`
 }
 
 func (GetMysqlBackupsBackupArgs) ElementType() reflect.Type {
@@ -14451,6 +15144,11 @@ func (o GetMysqlBackupsBackupOutput) ToGetMysqlBackupsBackupOutputWithContext(ct
 	return o
 }
 
+// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+func (o GetMysqlBackupsBackupOutput) BackupPreparationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.BackupPreparationStatus }).(pulumi.StringOutput)
+}
+
 // The size of the backup in base-2 (IEC) gibibytes. (GiB).
 func (o GetMysqlBackupsBackupOutput) BackupSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) int { return v.BackupSizeInGbs }).(pulumi.IntOutput)
@@ -14485,11 +15183,6 @@ func (o GetMysqlBackupsBackupOutput) DbSystemSnapshotSummaries() GetMysqlBackups
 	return o.ApplyT(func(v GetMysqlBackupsBackup) []GetMysqlBackupsBackupDbSystemSnapshotSummary {
 		return v.DbSystemSnapshotSummaries
 	}).(GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayOutput)
-}
-
-// Snapshot of the DbSystem details at the time of the backup
-func (o GetMysqlBackupsBackupOutput) DbSystemSnapshots() GetMysqlBackupsBackupDbSystemSnapshotArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) []GetMysqlBackupsBackupDbSystemSnapshot { return v.DbSystemSnapshots }).(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -14557,10 +15250,6 @@ func (o GetMysqlBackupsBackupOutput) SoftDelete() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.SoftDelete }).(pulumi.StringOutput)
 }
 
-func (o GetMysqlBackupsBackupOutput) SourceDetails() GetMysqlBackupsBackupSourceDetailArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) []GetMysqlBackupsBackupSourceDetail { return v.SourceDetails }).(GetMysqlBackupsBackupSourceDetailArrayOutput)
-}
-
 // Backup Lifecycle State
 func (o GetMysqlBackupsBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.State }).(pulumi.StringOutput)
@@ -14581,9 +15270,9 @@ func (o GetMysqlBackupsBackupOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time at which the backup was updated.
-func (o GetMysqlBackupsBackupOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.TimeUpdated }).(pulumi.StringOutput)
+// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+func (o GetMysqlBackupsBackupOutput) ValidationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMysqlBackupsBackup) string { return v.ValidationStatus }).(pulumi.StringOutput)
 }
 
 type GetMysqlBackupsBackupArrayOutput struct{ *pulumi.OutputState }
@@ -14604,1727 +15293,6 @@ func (o GetMysqlBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetMysqlBacku
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackup {
 		return vs[0].([]GetMysqlBackupsBackup)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshot struct {
-	// The username for the administrative user.
-	AdminUsername string `pulumi:"adminUsername"`
-	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The Backup policy for the DB System.
-	BackupPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy `pulumi:"backupPolicies"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId string `pulumi:"configurationId"`
-	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery string `pulumi:"crashRecovery"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
-	// Data Storage information.
-	DataStorages []GetMysqlBackupsBackupDbSystemSnapshotDataStorage `pulumi:"dataStorages"`
-	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement string `pulumi:"databaseManagement"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// The Deletion policy for the DB System.
-	DeletionPolicies []GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy `pulumi:"deletionPolicies"`
-	// A user-supplied description for the backup.
-	Description string `pulumi:"description"`
-	// A filter to return only the resource matching the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
-	// Encrypt data details.
-	EncryptDatas []GetMysqlBackupsBackupDbSystemSnapshotEncryptData `pulumi:"encryptDatas"`
-	// The network endpoints available for this DB System.
-	Endpoints []GetMysqlBackupsBackupDbSystemSnapshotEndpoint `pulumi:"endpoints"`
-	// The name of the Fault Domain the DB System is located in.
-	FaultDomain string `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel string `pulumi:"hostnameLabel"`
-	// OCID of the backup itself
-	Id string `pulumi:"id"`
-	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
-	// Specifies if the DB System is highly available.
-	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
-	Maintenances []GetMysqlBackupsBackupDbSystemSnapshotMaintenance `pulumi:"maintenances"`
-	// The MySQL server version of the DB System used for backup.
-	MysqlVersion string `pulumi:"mysqlVersion"`
-	// Network Security Group OCIDs used for the VNIC attachment.
-	NsgIds []string `pulumi:"nsgIds"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port int `pulumi:"port"`
-	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
-	// The read endpoint of a DB System.
-	ReadEndpoints []GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint `pulumi:"readEndpoints"`
-	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-	Region string `pulumi:"region"`
-	// REST configuration details.
-	Rests []GetMysqlBackupsBackupDbSystemSnapshotRest `pulumi:"rests"`
-	// Secure connection configuration details.
-	SecureConnections []GetMysqlBackupsBackupDbSystemSnapshotSecureConnection `pulumi:"secureConnections"`
-	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
-	// The OCID of the subnet the DB System is associated with.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotArgs and GetMysqlBackupsBackupDbSystemSnapshotOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotOutput() GetMysqlBackupsBackupDbSystemSnapshotOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotArgs struct {
-	// The username for the administrative user.
-	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
-	// The Availability Domain where the primary DB System should be located.
-	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
-	// The Backup policy for the DB System.
-	BackupPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput `pulumi:"backupPolicies"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The OCID of the Configuration to be used for Instances in this DB System.
-	ConfigurationId pulumi.StringInput `pulumi:"configurationId"`
-	// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-	CrashRecovery pulumi.StringInput `pulumi:"crashRecovery"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
-	// Data Storage information.
-	DataStorages GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput `pulumi:"dataStorages"`
-	// Whether to enable monitoring via the Database Management service.
-	DatabaseManagement pulumi.StringInput `pulumi:"databaseManagement"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// The Deletion policy for the DB System.
-	DeletionPolicies GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput `pulumi:"deletionPolicies"`
-	// A user-supplied description for the backup.
-	Description pulumi.StringInput `pulumi:"description"`
-	// A filter to return only the resource matching the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Encrypt data details.
-	EncryptDatas GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput `pulumi:"encryptDatas"`
-	// The network endpoints available for this DB System.
-	Endpoints GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput `pulumi:"endpoints"`
-	// The name of the Fault Domain the DB System is located in.
-	FaultDomain pulumi.StringInput `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-	HostnameLabel pulumi.StringInput `pulumi:"hostnameLabel"`
-	// OCID of the backup itself
-	Id pulumi.StringInput `pulumi:"id"`
-	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// Specifies if the DB System is highly available.
-	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
-	// The Maintenance Policy for the DB System or Read Replica that this model is included in.
-	Maintenances GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput `pulumi:"maintenances"`
-	// The MySQL server version of the DB System used for backup.
-	MysqlVersion pulumi.StringInput `pulumi:"mysqlVersion"`
-	// Network Security Group OCIDs used for the VNIC attachment.
-	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port pulumi.IntInput `pulumi:"port"`
-	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
-	// The read endpoint of a DB System.
-	ReadEndpoints GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput `pulumi:"readEndpoints"`
-	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-	Region pulumi.StringInput `pulumi:"region"`
-	// REST configuration details.
-	Rests GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput `pulumi:"rests"`
-	// Secure connection configuration details.
-	SecureConnections GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput `pulumi:"secureConnections"`
-	// The shape of the DB System instance used for backup.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// The OCID of the subnet the DB System is associated with.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshot)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToGetMysqlBackupsBackupDbSystemSnapshotOutput() GetMysqlBackupsBackupDbSystemSnapshotOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotArgs) ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotArray and GetMysqlBackupsBackupDbSystemSnapshotArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotArray{ GetMysqlBackupsBackupDbSystemSnapshotArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotArray []GetMysqlBackupsBackupDbSystemSnapshotInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshot)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotArray) ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshot)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToGetMysqlBackupsBackupDbSystemSnapshotOutput() GetMysqlBackupsBackupDbSystemSnapshotOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ToGetMysqlBackupsBackupDbSystemSnapshotOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotOutput {
-	return o
-}
-
-// The username for the administrative user.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AdminUsername() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.AdminUsername }).(pulumi.StringOutput)
-}
-
-// The Availability Domain where the primary DB System should be located.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) AvailabilityDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
-}
-
-// The Backup policy for the DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) BackupPolicies() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
-		return v.BackupPolicies
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput)
-}
-
-// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The OCID of the Configuration to be used for Instances in this DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ConfigurationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.ConfigurationId }).(pulumi.StringOutput)
-}
-
-// Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) CrashRecovery() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.CrashRecovery }).(pulumi.StringOutput)
-}
-
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
-}
-
-// Data Storage information.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DataStorages() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotDataStorage {
-		return v.DataStorages
-	}).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput)
-}
-
-// Whether to enable monitoring via the Database Management service.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DatabaseManagement() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DatabaseManagement }).(pulumi.StringOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
-}
-
-// The Deletion policy for the DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DeletionPolicies() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
-		return v.DeletionPolicies
-	}).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput)
-}
-
-// A user-supplied description for the backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// A filter to return only the resource matching the given display name exactly.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Encrypt data details.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) EncryptDatas() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotEncryptData {
-		return v.EncryptDatas
-	}).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput)
-}
-
-// The network endpoints available for this DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Endpoints() GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
-		return v.Endpoints
-	}).(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput)
-}
-
-// The name of the Fault Domain the DB System is located in.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FaultDomain() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.FaultDomain }).(pulumi.StringOutput)
-}
-
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) HostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.HostnameLabel }).(pulumi.StringOutput)
-}
-
-// OCID of the backup itself
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-// Specifies if the DB System is highly available.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) IsHighlyAvailable() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
-}
-
-// The Maintenance Policy for the DB System or Read Replica that this model is included in.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Maintenances() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
-		return v.Maintenances
-	}).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput)
-}
-
-// The MySQL server version of the DB System used for backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) MysqlVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.MysqlVersion }).(pulumi.StringOutput)
-}
-
-// Network Security Group OCIDs used for the VNIC attachment.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) NsgIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
-}
-
-// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.Port }).(pulumi.IntOutput)
-}
-
-// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) int { return v.PortX }).(pulumi.IntOutput)
-}
-
-// The read endpoint of a DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ReadEndpoints() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint {
-		return v.ReadEndpoints
-	}).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput)
-}
-
-// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.Region }).(pulumi.StringOutput)
-}
-
-// REST configuration details.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) Rests() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotRest {
-		return v.Rests
-	}).(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput)
-}
-
-// Secure connection configuration details.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) SecureConnections() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) []GetMysqlBackupsBackupDbSystemSnapshotSecureConnection {
-		return v.SecureConnections
-	}).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput)
-}
-
-// The shape of the DB System instance used for backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.ShapeName }).(pulumi.StringOutput)
-}
-
-// The OCID of the subnet the DB System is associated with.
-func (o GetMysqlBackupsBackupDbSystemSnapshotOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshot) string { return v.SubnetId }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshot)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshot {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshot)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy struct {
-	// List of policies of a DB system to schedule cross-region DB system backup copy.
-	CopyPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy `pulumi:"copyPolicies"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled bool `pulumi:"isEnabled"`
-	// The PITR policy for the DB System.
-	PitrPolicies []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy `pulumi:"pitrPolicies"`
-	// Number of days to retain this backup.
-	RetentionInDays int `pulumi:"retentionInDays"`
-	// Backup Soft Delete
-	SoftDelete string `pulumi:"softDelete"`
-	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs struct {
-	// List of policies of a DB system to schedule cross-region DB system backup copy.
-	CopyPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput `pulumi:"copyPolicies"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The PITR policy for the DB System.
-	PitrPolicies GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput `pulumi:"pitrPolicies"`
-	// Number of days to retain this backup.
-	RetentionInDays pulumi.IntInput `pulumi:"retentionInDays"`
-	// Backup Soft Delete
-	SoftDelete pulumi.StringInput `pulumi:"softDelete"`
-	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
-	return o
-}
-
-// List of policies of a DB system to schedule cross-region DB system backup copy.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) CopyPolicies() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy {
-		return v.CopyPolicies
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
-}
-
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
-}
-
-// Specifies if the DB System read endpoint is enabled or not.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
-}
-
-// The PITR policy for the DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) PitrPolicies() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
-		return v.PitrPolicies
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
-}
-
-// Number of days to retain this backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) RetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) int { return v.RetentionInDays }).(pulumi.IntOutput)
-}
-
-// Backup Soft Delete
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) SoftDelete() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) string { return v.SoftDelete }).(pulumi.StringOutput)
-}
-
-// The start time of the maintenance window.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy) string { return v.WindowStartTime }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicy)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy struct {
-	// Number of days to retain the copied DB system backup.
-	BackupCopyRetentionInDays int `pulumi:"backupCopyRetentionInDays"`
-	// The destination region name to which the DB system backup will be copied.
-	CopyToRegion string `pulumi:"copyToRegion"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs struct {
-	// Number of days to retain the copied DB system backup.
-	BackupCopyRetentionInDays pulumi.IntInput `pulumi:"backupCopyRetentionInDays"`
-	// The destination region name to which the DB system backup will be copied.
-	CopyToRegion pulumi.StringInput `pulumi:"copyToRegion"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
-	return o
-}
-
-// Number of days to retain the copied DB system backup.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) BackupCopyRetentionInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy) int {
-		return v.BackupCopyRetentionInDays
-	}).(pulumi.IntOutput)
-}
-
-// The destination region name to which the DB system backup will be copied.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput) CopyToRegion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy) string { return v.CopyToRegion }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicy)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy struct {
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled bool `pulumi:"isEnabled"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs struct {
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
-	return o
-}
-
-// Specifies if the DB System read endpoint is enabled or not.
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy) bool { return v.IsEnabled }).(pulumi.BoolOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicy)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorage struct {
-	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-	AllocatedStorageSizeInGbs int `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
-	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
-	DataStorageSizeLimitInGbs int `pulumi:"dataStorageSizeLimitInGbs"`
-	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-	IsAutoExpandStorageEnabled bool `pulumi:"isAutoExpandStorageEnabled"`
-	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
-	MaxStorageSizeInGbs int `pulumi:"maxStorageSizeInGbs"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs and GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs struct {
-	// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-	AllocatedStorageSizeInGbs pulumi.IntInput `pulumi:"allocatedStorageSizeInGbs"`
-	// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-	DataStorageSizeInGb pulumi.IntInput `pulumi:"dataStorageSizeInGb"`
-	// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
-	DataStorageSizeLimitInGbs pulumi.IntInput `pulumi:"dataStorageSizeLimitInGbs"`
-	// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-	IsAutoExpandStorageEnabled pulumi.BoolInput `pulumi:"isAutoExpandStorageEnabled"`
-	// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
-	MaxStorageSizeInGbs pulumi.IntInput `pulumi:"maxStorageSizeInGbs"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray and GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray{ GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray []GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
-	return o
-}
-
-// The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) AllocatedStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.AllocatedStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-// DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeInGb() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeInGb }).(pulumi.IntOutput)
-}
-
-// The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) DataStorageSizeLimitInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.DataStorageSizeLimitInGbs }).(pulumi.IntOutput)
-}
-
-// Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) IsAutoExpandStorageEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) bool { return v.IsAutoExpandStorageEnabled }).(pulumi.BoolOutput)
-}
-
-// Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput) MaxStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDataStorage) int { return v.MaxStorageSizeInGbs }).(pulumi.IntOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotDataStorage {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotDataStorage)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy struct {
-	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention string `pulumi:"automaticBackupRetention"`
-	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup string `pulumi:"finalBackup"`
-	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected bool `pulumi:"isDeleteProtected"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs and GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs struct {
-	// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-	AutomaticBackupRetention pulumi.StringInput `pulumi:"automaticBackupRetention"`
-	// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-	FinalBackup pulumi.StringInput `pulumi:"finalBackup"`
-	// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-	IsDeleteProtected pulumi.BoolInput `pulumi:"isDeleteProtected"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray and GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray{ GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray []GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
-	return o
-}
-
-// Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) AutomaticBackupRetention() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) string { return v.AutomaticBackupRetention }).(pulumi.StringOutput)
-}
-
-// Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) FinalBackup() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) string { return v.FinalBackup }).(pulumi.StringOutput)
-}
-
-// Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput) IsDeleteProtected() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy) bool { return v.IsDeleteProtected }).(pulumi.BoolOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicy)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptData struct {
-	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
-	KeyGenerationType string `pulumi:"keyGenerationType"`
-	// The OCID of the key to use.
-	KeyId string `pulumi:"keyId"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs and GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs struct {
-	// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
-	KeyGenerationType pulumi.StringInput `pulumi:"keyGenerationType"`
-	// The OCID of the key to use.
-	KeyId pulumi.StringInput `pulumi:"keyId"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray and GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray{ GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray []GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
-	return o
-}
-
-// Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) KeyGenerationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEncryptData) string { return v.KeyGenerationType }).(pulumi.StringOutput)
-}
-
-// The OCID of the key to use.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput) KeyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEncryptData) string { return v.KeyId }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotEncryptData {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotEncryptData)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEndpoint struct {
-	// The network address of the DB System.
-	Hostname string `pulumi:"hostname"`
-	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress string `pulumi:"ipAddress"`
-	// The access modes from the client that this endpoint supports.
-	Modes []string `pulumi:"modes"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port int `pulumi:"port"`
-	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX int `pulumi:"portX"`
-	// The OCID of the resource that this endpoint is attached to.
-	ResourceId string `pulumi:"resourceId"`
-	// The type of endpoint that clients and connectors can connect to.
-	ResourceType string `pulumi:"resourceType"`
-	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status string `pulumi:"status"`
-	// Additional information about the current endpoint status.
-	StatusDetails string `pulumi:"statusDetails"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotEndpointInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs and GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEndpointInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs struct {
-	// The network address of the DB System.
-	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
-	// The access modes from the client that this endpoint supports.
-	Modes pulumi.StringArrayInput `pulumi:"modes"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port pulumi.IntInput `pulumi:"port"`
-	// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-	PortX pulumi.IntInput `pulumi:"portX"`
-	// The OCID of the resource that this endpoint is attached to.
-	ResourceId pulumi.StringInput `pulumi:"resourceId"`
-	// The type of endpoint that clients and connectors can connect to.
-	ResourceType pulumi.StringInput `pulumi:"resourceType"`
-	// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-	Status pulumi.StringInput `pulumi:"status"`
-	// Additional information about the current endpoint status.
-	StatusDetails pulumi.StringInput `pulumi:"statusDetails"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpoint)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotEndpointArray and GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotEndpointArray{ GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointArray []GetMysqlBackupsBackupDbSystemSnapshotEndpointInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpoint)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
-	return o
-}
-
-// The network address of the DB System.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Hostname() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.Hostname }).(pulumi.StringOutput)
-}
-
-// The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) IpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.IpAddress }).(pulumi.StringOutput)
-}
-
-// The access modes from the client that this endpoint supports.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Modes() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) []string { return v.Modes }).(pulumi.StringArrayOutput)
-}
-
-// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.Port }).(pulumi.IntOutput)
-}
-
-// The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) PortX() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) int { return v.PortX }).(pulumi.IntOutput)
-}
-
-// The OCID of the resource that this endpoint is attached to.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceId }).(pulumi.StringOutput)
-}
-
-// The type of endpoint that clients and connectors can connect to.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) ResourceType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.ResourceType }).(pulumi.StringOutput)
-}
-
-// The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// Additional information about the current endpoint status.
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput) StatusDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotEndpoint) string { return v.StatusDetails }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotEndpoint)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotEndpoint {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotEndpoint)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenance struct {
-	// The start time of the maintenance window.
-	WindowStartTime string `pulumi:"windowStartTime"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs and GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs struct {
-	// The start time of the maintenance window.
-	WindowStartTime pulumi.StringInput `pulumi:"windowStartTime"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenance)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray and GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{ GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray []GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenance)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
-	return o
-}
-
-// The start time of the maintenance window.
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput) WindowStartTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotMaintenance) string { return v.WindowStartTime }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotMaintenance)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotMaintenance {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotMaintenance)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint struct {
-	// A list of IP addresses of read replicas that are excluded from serving read requests.
-	ExcludeIps []string `pulumi:"excludeIps"`
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled bool `pulumi:"isEnabled"`
-	// The hostname for the read endpoint of the DB System. Used for DNS.
-	ReadEndpointHostnameLabel string `pulumi:"readEndpointHostnameLabel"`
-	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-	ReadEndpointIpAddress string `pulumi:"readEndpointIpAddress"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs and GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs struct {
-	// A list of IP addresses of read replicas that are excluded from serving read requests.
-	ExcludeIps pulumi.StringArrayInput `pulumi:"excludeIps"`
-	// Specifies if the DB System read endpoint is enabled or not.
-	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// The hostname for the read endpoint of the DB System. Used for DNS.
-	ReadEndpointHostnameLabel pulumi.StringInput `pulumi:"readEndpointHostnameLabel"`
-	// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-	ReadEndpointIpAddress pulumi.StringInput `pulumi:"readEndpointIpAddress"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray and GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray{ GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray []GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
-	return o
-}
-
-// A list of IP addresses of read replicas that are excluded from serving read requests.
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ExcludeIps() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) []string { return v.ExcludeIps }).(pulumi.StringArrayOutput)
-}
-
-// Specifies if the DB System read endpoint is enabled or not.
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) IsEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) bool { return v.IsEnabled }).(pulumi.BoolOutput)
-}
-
-// The hostname for the read endpoint of the DB System. Used for DNS.
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointHostnameLabel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointHostnameLabel }).(pulumi.StringOutput)
-}
-
-// The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput) ReadEndpointIpAddress() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint) string { return v.ReadEndpointIpAddress }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotReadEndpoint)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotRest struct {
-	// Select how REST is configured across the DB System instances.
-	Configuration string `pulumi:"configuration"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port int `pulumi:"port"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotRestInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotRestArgs and GetMysqlBackupsBackupDbSystemSnapshotRestOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotRestInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotRestArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotRestInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotRestArgs struct {
-	// Select how REST is configured across the DB System instances.
-	Configuration pulumi.StringInput `pulumi:"configuration"`
-	// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-	Port pulumi.IntInput `pulumi:"port"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotRestArgs) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotRestOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotRestArray and GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotRestArray{ GetMysqlBackupsBackupDbSystemSnapshotRestArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotRestArray []GetMysqlBackupsBackupDbSystemSnapshotRestInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotRestArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotRestArray) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotRestArray) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotRestOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutput() GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
-	return o
-}
-
-// Select how REST is configured across the DB System instances.
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) Configuration() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotRest) string { return v.Configuration }).(pulumi.StringOutput)
-}
-
-// The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestOutput) Port() pulumi.IntOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotRest) int { return v.Port }).(pulumi.IntOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotRest)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotRestArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotRestOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotRest {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotRest)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotRestOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnection struct {
-	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
-	CertificateGenerationType string `pulumi:"certificateGenerationType"`
-	// The OCID of the certificate to use.
-	CertificateId string `pulumi:"certificateId"`
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs and GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{...}
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs struct {
-	// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
-	CertificateGenerationType pulumi.StringInput `pulumi:"certificateGenerationType"`
-	// The OCID of the certificate to use.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
-}
-
-func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput)
-}
-
-// GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput is an input type that accepts GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray and GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput` via:
-//
-//	GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{ GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{...} }
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput
-	ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray []GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput
-
-func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
-	return i.ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
-	return o
-}
-
-// Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) CertificateGenerationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotSecureConnection) string {
-		return v.CertificateGenerationType
-	}).(pulumi.StringOutput)
-}
-
-// The OCID of the certificate to use.
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupDbSystemSnapshotSecureConnection) string { return v.CertificateId }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput() GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) ToGetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupDbSystemSnapshotSecureConnection {
-		return vs[0].([]GetMysqlBackupsBackupDbSystemSnapshotSecureConnection)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput)
 }
 
 type GetMysqlBackupsBackupDbSystemSnapshotSummary struct {
@@ -16546,121 +15514,6 @@ func (o GetMysqlBackupsBackupEncryptDataArrayOutput) Index(i pulumi.IntInput) Ge
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupEncryptData {
 		return vs[0].([]GetMysqlBackupsBackupEncryptData)[vs[1].(int)]
 	}).(GetMysqlBackupsBackupEncryptDataOutput)
-}
-
-type GetMysqlBackupsBackupSourceDetail struct {
-	// Backup OCID
-	BackupId string `pulumi:"backupId"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
-	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-	Region string `pulumi:"region"`
-}
-
-// GetMysqlBackupsBackupSourceDetailInput is an input type that accepts GetMysqlBackupsBackupSourceDetailArgs and GetMysqlBackupsBackupSourceDetailOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupSourceDetailInput` via:
-//
-//	GetMysqlBackupsBackupSourceDetailArgs{...}
-type GetMysqlBackupsBackupSourceDetailInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupSourceDetailOutput() GetMysqlBackupsBackupSourceDetailOutput
-	ToGetMysqlBackupsBackupSourceDetailOutputWithContext(context.Context) GetMysqlBackupsBackupSourceDetailOutput
-}
-
-type GetMysqlBackupsBackupSourceDetailArgs struct {
-	// Backup OCID
-	BackupId pulumi.StringInput `pulumi:"backupId"`
-	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-	Region pulumi.StringInput `pulumi:"region"`
-}
-
-func (GetMysqlBackupsBackupSourceDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupSourceDetail)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupSourceDetailArgs) ToGetMysqlBackupsBackupSourceDetailOutput() GetMysqlBackupsBackupSourceDetailOutput {
-	return i.ToGetMysqlBackupsBackupSourceDetailOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupSourceDetailArgs) ToGetMysqlBackupsBackupSourceDetailOutputWithContext(ctx context.Context) GetMysqlBackupsBackupSourceDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupSourceDetailOutput)
-}
-
-// GetMysqlBackupsBackupSourceDetailArrayInput is an input type that accepts GetMysqlBackupsBackupSourceDetailArray and GetMysqlBackupsBackupSourceDetailArrayOutput values.
-// You can construct a concrete instance of `GetMysqlBackupsBackupSourceDetailArrayInput` via:
-//
-//	GetMysqlBackupsBackupSourceDetailArray{ GetMysqlBackupsBackupSourceDetailArgs{...} }
-type GetMysqlBackupsBackupSourceDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetMysqlBackupsBackupSourceDetailArrayOutput() GetMysqlBackupsBackupSourceDetailArrayOutput
-	ToGetMysqlBackupsBackupSourceDetailArrayOutputWithContext(context.Context) GetMysqlBackupsBackupSourceDetailArrayOutput
-}
-
-type GetMysqlBackupsBackupSourceDetailArray []GetMysqlBackupsBackupSourceDetailInput
-
-func (GetMysqlBackupsBackupSourceDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupSourceDetail)(nil)).Elem()
-}
-
-func (i GetMysqlBackupsBackupSourceDetailArray) ToGetMysqlBackupsBackupSourceDetailArrayOutput() GetMysqlBackupsBackupSourceDetailArrayOutput {
-	return i.ToGetMysqlBackupsBackupSourceDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetMysqlBackupsBackupSourceDetailArray) ToGetMysqlBackupsBackupSourceDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupSourceDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetMysqlBackupsBackupSourceDetailArrayOutput)
-}
-
-type GetMysqlBackupsBackupSourceDetailOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupSourceDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetMysqlBackupsBackupSourceDetail)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupSourceDetailOutput) ToGetMysqlBackupsBackupSourceDetailOutput() GetMysqlBackupsBackupSourceDetailOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupSourceDetailOutput) ToGetMysqlBackupsBackupSourceDetailOutputWithContext(ctx context.Context) GetMysqlBackupsBackupSourceDetailOutput {
-	return o
-}
-
-// Backup OCID
-func (o GetMysqlBackupsBackupSourceDetailOutput) BackupId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupSourceDetail) string { return v.BackupId }).(pulumi.StringOutput)
-}
-
-// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-func (o GetMysqlBackupsBackupSourceDetailOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupSourceDetail) string { return v.CompartmentId }).(pulumi.StringOutput)
-}
-
-// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-func (o GetMysqlBackupsBackupSourceDetailOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetMysqlBackupsBackupSourceDetail) string { return v.Region }).(pulumi.StringOutput)
-}
-
-type GetMysqlBackupsBackupSourceDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetMysqlBackupsBackupSourceDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetMysqlBackupsBackupSourceDetail)(nil)).Elem()
-}
-
-func (o GetMysqlBackupsBackupSourceDetailArrayOutput) ToGetMysqlBackupsBackupSourceDetailArrayOutput() GetMysqlBackupsBackupSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupSourceDetailArrayOutput) ToGetMysqlBackupsBackupSourceDetailArrayOutputWithContext(ctx context.Context) GetMysqlBackupsBackupSourceDetailArrayOutput {
-	return o
-}
-
-func (o GetMysqlBackupsBackupSourceDetailArrayOutput) Index(i pulumi.IntInput) GetMysqlBackupsBackupSourceDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMysqlBackupsBackupSourceDetail {
-		return vs[0].([]GetMysqlBackupsBackupSourceDetail)[vs[1].(int)]
-	}).(GetMysqlBackupsBackupSourceDetailOutput)
 }
 
 type GetMysqlBackupsFilter struct {
@@ -27502,6 +26355,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ChannelTargetFilterArrayInput)(nil)).Elem(), ChannelTargetFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HeatWaveClusterClusterNodeInput)(nil)).Elem(), HeatWaveClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HeatWaveClusterClusterNodeArrayInput)(nil)).Elem(), HeatWaveClusterClusterNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupBackupValidationDetailInput)(nil)).Elem(), MysqlBackupBackupValidationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupBackupValidationDetailArrayInput)(nil)).Elem(), MysqlBackupBackupValidationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupBackupValidationDetailPreparedBackupDetailInput)(nil)).Elem(), MysqlBackupBackupValidationDetailPreparedBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput)(nil)).Elem(), MysqlBackupBackupValidationDetailPreparedBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), MysqlBackupDbSystemSnapshotBackupPolicyArgs{})
@@ -27532,6 +26389,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupEncryptDataPtrInput)(nil)).Elem(), MysqlBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupSourceDetailsInput)(nil)).Elem(), MysqlBackupSourceDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupSourceDetailsPtrInput)(nil)).Elem(), MysqlBackupSourceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupValidateBackupDetailInput)(nil)).Elem(), MysqlBackupValidateBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MysqlBackupValidateBackupDetailArrayInput)(nil)).Elem(), MysqlBackupValidateBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationInitVariablesPtrInput)(nil)).Elem(), MysqlConfigurationInitVariablesArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MysqlConfigurationVariablesInput)(nil)).Elem(), MysqlConfigurationVariablesArgs{})
@@ -27612,6 +26471,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChannelsFilterArrayInput)(nil)).Elem(), GetChannelsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHeatWaveClusterClusterNodeInput)(nil)).Elem(), GetHeatWaveClusterClusterNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHeatWaveClusterClusterNodeArrayInput)(nil)).Elem(), GetHeatWaveClusterClusterNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupBackupValidationDetailInput)(nil)).Elem(), GetMysqlBackupBackupValidationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupBackupValidationDetailArrayInput)(nil)).Elem(), GetMysqlBackupBackupValidationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupBackupValidationDetailPreparedBackupDetailInput)(nil)).Elem(), GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayInput)(nil)).Elem(), GetMysqlBackupBackupValidationDetailPreparedBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupDbSystemSnapshotBackupPolicyArgs{})
@@ -27642,38 +26505,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupEncryptDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupSourceDetailInput)(nil)).Elem(), GetMysqlBackupSourceDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupSourceDetailArrayInput)(nil)).Elem(), GetMysqlBackupSourceDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupValidateBackupDetailInput)(nil)).Elem(), GetMysqlBackupValidateBackupDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupValidateBackupDetailArrayInput)(nil)).Elem(), GetMysqlBackupValidateBackupDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupInput)(nil)).Elem(), GetMysqlBackupsBackupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupArrayInput)(nil)).Elem(), GetMysqlBackupsBackupArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDataStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptDataInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRestInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotRestArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotRestArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotRestArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayInput)(nil)).Elem(), GetMysqlBackupsBackupDbSystemSnapshotSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupEncryptDataInput)(nil)).Elem(), GetMysqlBackupsBackupEncryptDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupEncryptDataArrayInput)(nil)).Elem(), GetMysqlBackupsBackupEncryptDataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupSourceDetailInput)(nil)).Elem(), GetMysqlBackupsBackupSourceDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsBackupSourceDetailArrayInput)(nil)).Elem(), GetMysqlBackupsBackupSourceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterInput)(nil)).Elem(), GetMysqlBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlBackupsFilterArrayInput)(nil)).Elem(), GetMysqlBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMysqlConfigurationInitVariableInput)(nil)).Elem(), GetMysqlConfigurationInitVariableArgs{})
@@ -27818,6 +26657,10 @@ func init() {
 	pulumi.RegisterOutputType(ChannelTargetFilterArrayOutput{})
 	pulumi.RegisterOutputType(HeatWaveClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(HeatWaveClusterClusterNodeArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupBackupValidationDetailOutput{})
+	pulumi.RegisterOutputType(MysqlBackupBackupValidationDetailArrayOutput{})
+	pulumi.RegisterOutputType(MysqlBackupBackupValidationDetailPreparedBackupDetailOutput{})
+	pulumi.RegisterOutputType(MysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(MysqlBackupDbSystemSnapshotBackupPolicyOutput{})
@@ -27848,6 +26691,8 @@ func init() {
 	pulumi.RegisterOutputType(MysqlBackupEncryptDataPtrOutput{})
 	pulumi.RegisterOutputType(MysqlBackupSourceDetailsOutput{})
 	pulumi.RegisterOutputType(MysqlBackupSourceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MysqlBackupValidateBackupDetailOutput{})
+	pulumi.RegisterOutputType(MysqlBackupValidateBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationInitVariablesPtrOutput{})
 	pulumi.RegisterOutputType(MysqlConfigurationVariablesOutput{})
@@ -27928,6 +26773,10 @@ func init() {
 	pulumi.RegisterOutputType(GetChannelsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetHeatWaveClusterClusterNodeOutput{})
 	pulumi.RegisterOutputType(GetHeatWaveClusterClusterNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupBackupValidationDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupBackupValidationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupBackupValidationDetailPreparedBackupDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupBackupValidationDetailPreparedBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupDbSystemSnapshotBackupPolicyOutput{})
@@ -27958,38 +26807,14 @@ func init() {
 	pulumi.RegisterOutputType(GetMysqlBackupEncryptDataArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupSourceDetailOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupSourceDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupValidateBackupDetailOutput{})
+	pulumi.RegisterOutputType(GetMysqlBackupValidateBackupDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDataStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotEndpointArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotRestOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotRestArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupDbSystemSnapshotSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupEncryptDataOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsBackupEncryptDataArrayOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupSourceDetailOutput{})
-	pulumi.RegisterOutputType(GetMysqlBackupsBackupSourceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetMysqlBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMysqlConfigurationInitVariableOutput{})

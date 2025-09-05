@@ -13,26 +13,23 @@ namespace Pulumi.Oci.AiVision.Inputs
     public sealed class ModelTestingDatasetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the ObjectStorage bucket that contains the input data file.
+        /// The name of the Object Storage bucket that contains the input data file.
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// The OCID of the Data Science Labeling Dataset.
+        /// OCID of the Data Labeling dataset.
         /// </summary>
         [Input("datasetId")]
         public Input<string>? DatasetId { get; set; }
 
         /// <summary>
-        /// Type of the Dataset.
+        /// The dataset type, based on where it is stored.
         /// </summary>
         [Input("datasetType", required: true)]
         public Input<string> DatasetType { get; set; } = null!;
 
-        /// <summary>
-        /// The namespace name of the ObjectStorage bucket that contains the input data file.
-        /// </summary>
         [Input("namespaceName")]
         public Input<string>? NamespaceName { get; set; }
 

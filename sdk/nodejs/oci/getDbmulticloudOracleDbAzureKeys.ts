@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Keys based on filters.
+ * Lists all Oracle DB Azure Keys based on the specified filters.
  *
  * ## Example Usage
  *
@@ -47,16 +47,16 @@ export interface GetDbmulticloudOracleDbAzureKeysArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return Azure Vault Keys.
+     * A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudOracleDbAzureKeysFilter[];
     /**
-     * A filter to return Oracle DB Azure Vault Key Resources.
+     * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     oracleDbAzureKeyId?: string;
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId?: string;
     /**
@@ -70,11 +70,11 @@ export interface GetDbmulticloudOracleDbAzureKeysArgs {
  */
 export interface GetDbmulticloudOracleDbAzureKeysResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
      */
     readonly compartmentId: string;
     /**
-     * Display name of Oracle DB Azure Vault Key.
+     * Oracle DB Azure Vault Key resource name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.oci.GetDbmulticloudOracleDbAzureKeysFilter[];
@@ -88,18 +88,18 @@ export interface GetDbmulticloudOracleDbAzureKeysResult {
      */
     readonly oracleDbAzureKeySummaryCollections: outputs.oci.GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     readonly oracleDbAzureVaultId?: string;
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Key resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Keys based on filters.
+ * Lists all Oracle DB Azure Keys based on the specified filters.
  *
  * ## Example Usage
  *
@@ -137,16 +137,16 @@ export interface GetDbmulticloudOracleDbAzureKeysOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return Azure Vault Keys.
+     * A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureKeysFilterArgs>[]>;
     /**
-     * A filter to return Oracle DB Azure Vault Key Resources.
+     * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     oracleDbAzureKeyId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId?: pulumi.Input<string>;
     /**

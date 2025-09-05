@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A filter to return Azure Vault Association.
+        /// A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -30,15 +30,15 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The Associated Resources are accessible or not.
+        /// The Associated resource is accessible or not.
         /// </summary>
         public readonly bool IsResourceAccessible;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        /// Description of the latest modification of the Oracle DB Azure Vault Association resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -46,11 +46,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LifecycleStateDetails;
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         public readonly string OracleDbAzureConnectorId;
         /// <summary>
-        /// A filter to return Oracle DB Azure Vault Resources.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         /// </summary>
         public readonly string OracleDbAzureVaultId;
         /// <summary>
@@ -62,11 +62,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeUpdated;
 

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbmulticloudMultiCloudResourceDiscoveryResource {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     private @Nullable String id;
@@ -45,7 +45,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryResource {
 
     private DbmulticloudMultiCloudResourceDiscoveryResource() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     public Optional<String> id() {

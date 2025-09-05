@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Oci
     /// <summary>
     /// This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
     /// 
-    /// Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+    /// Creates Oracle DB Azure Blob Container resource.
     /// 
     /// ## Example Usage
     /// 
@@ -57,19 +57,19 @@ namespace Pulumi.Oci.Oci
     public partial class DbmulticloudOracleDbAzureBlobContainer : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Azure Storage Account Name.
+        /// (Updatable) Azure Storage account name.
         /// </summary>
         [Output("azureStorageAccountName")]
         public Output<string> AzureStorageAccountName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure Storage Container Name.
+        /// (Updatable) Azure Storage container name.
         /// </summary>
         [Output("azureStorageContainerName")]
         public Output<string> AzureStorageContainerName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Display name of Oracle DB Azure Blob Container.
+        /// (Updatable) Oracle DB Azure Blob Container resource name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Container resource.
         /// </summary>
         [Output("lastModification")]
         public Output<string> LastModification { get; private set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Private endpoint DNS Alias.
+        /// (Updatable) Private endpoint's DNS alias.
         /// </summary>
         [Output("privateEndpointDnsAlias")]
         public Output<string> PrivateEndpointDnsAlias { get; private set; } = null!;
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> PrivateEndpointIpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Container resource.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -191,19 +191,19 @@ namespace Pulumi.Oci.Oci
     public sealed class DbmulticloudOracleDbAzureBlobContainerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Azure Storage Account Name.
+        /// (Updatable) Azure Storage account name.
         /// </summary>
         [Input("azureStorageAccountName", required: true)]
         public Input<string> AzureStorageAccountName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Azure Storage Container Name.
+        /// (Updatable) Azure Storage container name.
         /// </summary>
         [Input("azureStorageContainerName", required: true)]
         public Input<string> AzureStorageContainerName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -221,7 +221,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) Display name of Oracle DB Azure Blob Container.
+        /// (Updatable) Oracle DB Azure Blob Container resource name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -239,7 +239,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) Private endpoint DNS Alias.
+        /// (Updatable) Private endpoint's DNS alias.
         /// </summary>
         [Input("privateEndpointDnsAlias")]
         public Input<string>? PrivateEndpointDnsAlias { get; set; }
@@ -263,19 +263,19 @@ namespace Pulumi.Oci.Oci
     public sealed class DbmulticloudOracleDbAzureBlobContainerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Azure Storage Account Name.
+        /// (Updatable) Azure Storage account name.
         /// </summary>
         [Input("azureStorageAccountName")]
         public Input<string>? AzureStorageAccountName { get; set; }
 
         /// <summary>
-        /// (Updatable) Azure Storage Container Name.
+        /// (Updatable) Azure Storage container name.
         /// </summary>
         [Input("azureStorageContainerName")]
         public Input<string>? AzureStorageContainerName { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) Display name of Oracle DB Azure Blob Container.
+        /// (Updatable) Oracle DB Azure Blob Container resource name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -311,7 +311,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("lastModification")]
         public Input<string>? LastModification { get; set; }
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? LifecycleStateDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Private endpoint DNS Alias.
+        /// (Updatable) Private endpoint's DNS alias.
         /// </summary>
         [Input("privateEndpointDnsAlias")]
         public Input<string>? PrivateEndpointDnsAlias { get; set; }
@@ -339,7 +339,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? PrivateEndpointIpAddress { get; set; }
 
         /// <summary>
-        /// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

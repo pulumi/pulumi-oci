@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Gets a Project by identifier
+ * Get a project by identifier.
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getProject(args: GetProjectArgs, opts?: pulumi.InvokeOptions): P
  */
 export interface GetProjectArgs {
     /**
-     * unique Project identifier
+     * A unique project identifier.
      */
     projectId: string;
 }
@@ -42,55 +42,55 @@ export interface GetProjectArgs {
  */
 export interface GetProjectResult {
     /**
-     * Compartment Identifier
+     * A compartment identifier.
      */
     readonly compartmentId: string;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * A short description of the project.
+     * An optional description of the project.
      */
     readonly description: string;
     /**
-     * Project Identifier, can be renamed
+     * A human-friendly name for the project, which can be changed.
      */
     readonly displayName: string;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable after creation.
      */
     readonly id: string;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if creation failed.
      */
     readonly lifecycleDetails: string;
     readonly projectId: string;
     /**
-     * The current state of the Project.
+     * The current state of the project.
      */
     readonly state: string;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The time the Project was created. An RFC3339 formatted datetime string
+     * When the project was created, as an RFC3339 datetime string.
      */
     readonly timeCreated: string;
     /**
-     * The time the Project was updated. An RFC3339 formatted datetime string
+     * When the project was updated, as an RFC3339 datetime string.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Gets a Project by identifier
+ * Get a project by identifier.
  *
  * ## Example Usage
  *
@@ -115,7 +115,7 @@ export function getProjectOutput(args: GetProjectOutputArgs, opts?: pulumi.Invok
  */
 export interface GetProjectOutputArgs {
     /**
-     * unique Project identifier
+     * A unique project identifier.
      */
     projectId: pulumi.Input<string>;
 }

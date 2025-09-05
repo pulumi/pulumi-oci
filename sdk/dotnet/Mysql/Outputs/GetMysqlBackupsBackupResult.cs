@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class GetMysqlBackupsBackupResult
     {
         /// <summary>
+        /// Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        /// </summary>
+        public readonly string BackupPreparationStatus;
+        /// <summary>
         /// The size of the backup in base-2 (IEC) gibibytes. (GiB).
         /// </summary>
         public readonly int BackupSizeInGbs;
@@ -38,10 +42,6 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string DbSystemId;
         public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult> DbSystemSnapshotSummaries;
-        /// <summary>
-        /// Snapshot of the DbSystem details at the time of the backup
-        /// </summary>
-        public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotResult> DbSystemSnapshots;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
@@ -94,7 +94,6 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// Backup Soft Delete
         /// </summary>
         public readonly string SoftDelete;
-        public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// Backup Lifecycle State
         /// </summary>
@@ -112,12 +111,14 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time at which the backup was updated.
+        /// The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
         /// </summary>
-        public readonly string TimeUpdated;
+        public readonly string ValidationStatus;
 
         [OutputConstructor]
         private GetMysqlBackupsBackupResult(
+            string backupPreparationStatus,
+
             int backupSizeInGbs,
 
             string backupType,
@@ -131,8 +132,6 @@ namespace Pulumi.Oci.Mysql.Outputs
             string dbSystemId,
 
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult> dbSystemSnapshotSummaries,
-
-            ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotResult> dbSystemSnapshots,
 
             ImmutableDictionary<string, string> definedTags,
 
@@ -160,8 +159,6 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string softDelete,
 
-            ImmutableArray<Outputs.GetMysqlBackupsBackupSourceDetailResult> sourceDetails,
-
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -170,8 +167,9 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string validationStatus)
         {
+            BackupPreparationStatus = backupPreparationStatus;
             BackupSizeInGbs = backupSizeInGbs;
             BackupType = backupType;
             CompartmentId = compartmentId;
@@ -179,7 +177,6 @@ namespace Pulumi.Oci.Mysql.Outputs
             DataStorageSizeInGb = dataStorageSizeInGb;
             DbSystemId = dbSystemId;
             DbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
-            DbSystemSnapshots = dbSystemSnapshots;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
@@ -193,12 +190,11 @@ namespace Pulumi.Oci.Mysql.Outputs
             RetentionInDays = retentionInDays;
             ShapeName = shapeName;
             SoftDelete = softDelete;
-            SourceDetails = sourceDetails;
             State = state;
             SystemTags = systemTags;
             TimeCopyCreated = timeCopyCreated;
             TimeCreated = timeCreated;
-            TimeUpdated = timeUpdated;
+            ValidationStatus = validationStatus;
         }
     }
 }

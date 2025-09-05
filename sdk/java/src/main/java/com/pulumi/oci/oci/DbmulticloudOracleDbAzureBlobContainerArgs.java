@@ -18,14 +18,14 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
     public static final DbmulticloudOracleDbAzureBlobContainerArgs Empty = new DbmulticloudOracleDbAzureBlobContainerArgs();
 
     /**
-     * (Updatable) Azure Storage Account Name.
+     * (Updatable) Azure Storage account name.
      * 
      */
     @Import(name="azureStorageAccountName", required=true)
     private Output<String> azureStorageAccountName;
 
     /**
-     * @return (Updatable) Azure Storage Account Name.
+     * @return (Updatable) Azure Storage account name.
      * 
      */
     public Output<String> azureStorageAccountName() {
@@ -33,14 +33,14 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Azure Storage Container Name.
+     * (Updatable) Azure Storage container name.
      * 
      */
     @Import(name="azureStorageContainerName", required=true)
     private Output<String> azureStorageContainerName;
 
     /**
-     * @return (Updatable) Azure Storage Container Name.
+     * @return (Updatable) Azure Storage container name.
      * 
      */
     public Output<String> azureStorageContainerName() {
@@ -48,14 +48,14 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -78,14 +78,14 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Display name of Oracle DB Azure Blob Container.
+     * (Updatable) Oracle DB Azure Blob Container resource name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Oracle DB Azure Blob Container.
+     * @return (Updatable) Oracle DB Azure Blob Container resource name.
      * 
      */
     public Output<String> displayName() {
@@ -108,14 +108,14 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Private endpoint DNS Alias.
+     * (Updatable) Private endpoint&#39;s DNS alias.
      * 
      */
     @Import(name="privateEndpointDnsAlias")
     private @Nullable Output<String> privateEndpointDnsAlias;
 
     /**
-     * @return (Updatable) Private endpoint DNS Alias.
+     * @return (Updatable) Private endpoint&#39;s DNS alias.
      * 
      */
     public Optional<Output<String>> privateEndpointDnsAlias() {
@@ -175,7 +175,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param azureStorageAccountName (Updatable) Azure Storage Account Name.
+         * @param azureStorageAccountName (Updatable) Azure Storage account name.
          * 
          * @return builder
          * 
@@ -186,7 +186,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param azureStorageAccountName (Updatable) Azure Storage Account Name.
+         * @param azureStorageAccountName (Updatable) Azure Storage account name.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param azureStorageContainerName (Updatable) Azure Storage Container Name.
+         * @param azureStorageContainerName (Updatable) Azure Storage container name.
          * 
          * @return builder
          * 
@@ -207,7 +207,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param azureStorageContainerName (Updatable) Azure Storage Container Name.
+         * @param azureStorageContainerName (Updatable) Azure Storage container name.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 
@@ -228,7 +228,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param displayName (Updatable) Display name of Oracle DB Azure Blob Container.
+         * @param displayName (Updatable) Oracle DB Azure Blob Container resource name.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param displayName (Updatable) Display name of Oracle DB Azure Blob Container.
+         * @param displayName (Updatable) Oracle DB Azure Blob Container resource name.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param privateEndpointDnsAlias (Updatable) Private endpoint DNS Alias.
+         * @param privateEndpointDnsAlias (Updatable) Private endpoint&#39;s DNS alias.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class DbmulticloudOracleDbAzureBlobContainerArgs extends com.pulumi
         }
 
         /**
-         * @param privateEndpointDnsAlias (Updatable) Private endpoint DNS Alias.
+         * @param privateEndpointDnsAlias (Updatable) Private endpoint&#39;s DNS alias.
          * 
          * @return builder
          * 

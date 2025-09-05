@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Creates a new Model.
+ * Create a new model.
  *
  * ## Example Usage
  *
@@ -28,14 +28,10 @@ import * as utilities from "../utilities";
  *         namespaceName: modelTrainingDatasetNamespace,
  *         object: modelTrainingDatasetObject,
  *     },
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
+ *     definedTags: modelDefinedTags,
  *     description: modelDescription,
  *     displayName: modelDisplayName,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
+ *     freeformTags: modelFreeformTags,
  *     isQuickMode: modelIsQuickMode,
  *     maxTrainingDurationInHours: modelMaxTrainingDurationInHours,
  *     modelVersion: modelModelVersion,
@@ -93,107 +89,107 @@ export class Model extends pulumi.CustomResource {
     }
 
     /**
-     * Average precision of the trained model
+     * The mean average precision of the trained model.
      */
     declare public /*out*/ readonly averagePrecision: pulumi.Output<number>;
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * Confidence ratio of the calculation
+     * The intersection over the union threshold used for calculating precision and recall.
      */
     declare public /*out*/ readonly confidenceThreshold: pulumi.Output<number>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * If It's true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
     declare public readonly isQuickMode: pulumi.Output<boolean>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      */
     declare public readonly maxTrainingDurationInHours: pulumi.Output<number>;
     /**
-     * Complete Training Metrics for successful trained model
+     * The complete set of per-label metrics for successfully trained models.
      */
     declare public /*out*/ readonly metrics: pulumi.Output<string>;
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      */
     declare public readonly modelType: pulumi.Output<string>;
     /**
-     * Model version.
+     * The model version
      */
     declare public readonly modelVersion: pulumi.Output<string>;
     /**
-     * Precision of the trained model
+     * The precision of the trained model.
      */
     declare public /*out*/ readonly precision: pulumi.Output<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
     declare public readonly projectId: pulumi.Output<string>;
     /**
-     * Recall of the trained model
+     * Recall of the trained model.
      */
     declare public /*out*/ readonly recall: pulumi.Output<number>;
     /**
-     * The current state of the Model.
+     * The current state of the model.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Total number of testing Images
+     * The number of images set aside for evaluating model performance metrics after training.
      */
     declare public /*out*/ readonly testImageCount: pulumi.Output<number>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     declare public readonly testingDataset: pulumi.Output<outputs.AiVision.ModelTestingDataset>;
     /**
-     * The time the Model was created. An RFC3339 formatted datetime string
+     * When the model was created, as an RFC3339 datetime string.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * The time the Model was updated. An RFC3339 formatted datetime string
+     * When the model was updated, as an RFC3339 datetime string.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * Total number of training Images
+     * The number of images in the dataset used to train, validate, and test the model.
      */
     declare public /*out*/ readonly totalImageCount: pulumi.Output<number>;
     /**
-     * Total hours actually used for training
+     * The total hours actually used for model training.
      */
     declare public /*out*/ readonly trainedDurationInHours: pulumi.Output<number>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     declare public readonly trainingDataset: pulumi.Output<outputs.AiVision.ModelTrainingDataset>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     declare public readonly validationDataset: pulumi.Output<outputs.AiVision.ModelValidationDataset>;
 
@@ -287,107 +283,107 @@ export class Model extends pulumi.CustomResource {
  */
 export interface ModelState {
     /**
-     * Average precision of the trained model
+     * The mean average precision of the trained model.
      */
     averagePrecision?: pulumi.Input<number>;
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Confidence ratio of the calculation
+     * The intersection over the union threshold used for calculating precision and recall.
      */
     confidenceThreshold?: pulumi.Input<number>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * If It's true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
     isQuickMode?: pulumi.Input<boolean>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      */
     maxTrainingDurationInHours?: pulumi.Input<number>;
     /**
-     * Complete Training Metrics for successful trained model
+     * The complete set of per-label metrics for successfully trained models.
      */
     metrics?: pulumi.Input<string>;
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      */
     modelType?: pulumi.Input<string>;
     /**
-     * Model version.
+     * The model version
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * Precision of the trained model
+     * The precision of the trained model.
      */
     precision?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
     projectId?: pulumi.Input<string>;
     /**
-     * Recall of the trained model
+     * Recall of the trained model.
      */
     recall?: pulumi.Input<number>;
     /**
-     * The current state of the Model.
+     * The current state of the model.
      */
     state?: pulumi.Input<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Total number of testing Images
+     * The number of images set aside for evaluating model performance metrics after training.
      */
     testImageCount?: pulumi.Input<number>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset>;
     /**
-     * The time the Model was created. An RFC3339 formatted datetime string
+     * When the model was created, as an RFC3339 datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the Model was updated. An RFC3339 formatted datetime string
+     * When the model was updated, as an RFC3339 datetime string.
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * Total number of training Images
+     * The number of images in the dataset used to train, validate, and test the model.
      */
     totalImageCount?: pulumi.Input<number>;
     /**
-     * Total hours actually used for training
+     * The total hours actually used for model training.
      */
     trainedDurationInHours?: pulumi.Input<number>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     trainingDataset?: pulumi.Input<inputs.AiVision.ModelTrainingDataset>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset>;
 }
@@ -397,55 +393,55 @@ export interface ModelState {
  */
 export interface ModelArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * If It's true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      */
     isQuickMode?: pulumi.Input<boolean>;
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      */
     maxTrainingDurationInHours?: pulumi.Input<number>;
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      */
     modelType: pulumi.Input<string>;
     /**
-     * Model version.
+     * The model version
      */
     modelVersion?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      */
     projectId: pulumi.Input<string>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     testingDataset?: pulumi.Input<inputs.AiVision.ModelTestingDataset>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     trainingDataset: pulumi.Input<inputs.AiVision.ModelTrainingDataset>;
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      */
     validationDataset?: pulumi.Input<inputs.AiVision.ModelValidationDataset>;
 }

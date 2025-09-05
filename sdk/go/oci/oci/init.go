@@ -39,6 +39,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbAzureVault{}
 	case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
 		r = &DbmulticloudOracleDbAzureVaultAssociation{}
+	case "oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector":
+		r = &DbmulticloudOracleDbGcpIdentityConnector{}
+	case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
+		r = &DbmulticloudOracleDbGcpKeyRing{}
 	case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
 		r = &ManagedKafkaKafkaCluster{}
 	case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
@@ -101,6 +105,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/dbmulticloudOracleDbAzureVaultAssociation",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbGcpIdentityConnector",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbGcpKeyRing",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

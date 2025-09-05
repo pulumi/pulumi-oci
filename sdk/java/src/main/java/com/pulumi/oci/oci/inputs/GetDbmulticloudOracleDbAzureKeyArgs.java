@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureKeyArgs extends com.pulumi.resour
     public static final GetDbmulticloudOracleDbAzureKeyArgs Empty = new GetDbmulticloudOracleDbAzureKeyArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      * 
      */
     @Import(name="oracleDbAzureKeyId", required=true)
     private Output<String> oracleDbAzureKeyId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      * 
      */
     public Output<String> oracleDbAzureKeyId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureKeyArgs extends com.pulumi.resour
         }
 
         /**
-         * @param oracleDbAzureKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+         * @param oracleDbAzureKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureKeyArgs extends com.pulumi.resour
         }
 
         /**
-         * @param oracleDbAzureKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+         * @param oracleDbAzureKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
          * 
          * @return builder
          * 

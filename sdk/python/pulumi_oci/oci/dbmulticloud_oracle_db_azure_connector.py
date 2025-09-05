@@ -34,16 +34,16 @@ class DbmulticloudOracleDbAzureConnectorArgs:
                  lifecycle_state_details: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureConnector resource.
-        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
-        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity Mechanism.
-        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource Group Name.
+        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
+        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
+        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
         :param pulumi.Input[_builtins.str] azure_subscription_id: (Updatable) Azure Subscription ID.
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure Tenant ID.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
-        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector Resource name.
-        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
+        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector resource name.
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         """
         pulumi.set(__self__, "access_token", access_token)
@@ -65,7 +65,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+        (Updatable) Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
@@ -77,7 +77,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="azureIdentityMechanism")
     def azure_identity_mechanism(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Azure Identity Mechanism.
+        (Updatable) Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
@@ -89,7 +89,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="azureResourceGroup")
     def azure_resource_group(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Azure Resource Group Name.
+        (Updatable) Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
@@ -125,7 +125,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -137,7 +137,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -149,7 +149,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Oracle DB Azure Connector Resource name.
+        (Updatable) Oracle DB Azure Connector resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -161,7 +161,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="arcAgentNodes")
     def arc_agent_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
         """
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
 
@@ -173,7 +173,7 @@ class DbmulticloudOracleDbAzureConnectorArgs:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -199,6 +199,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     def __init__(__self__, *,
                  access_token: Optional[pulumi.Input[_builtins.str]] = None,
                  arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]] = None,
+                 azure_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -213,25 +214,28 @@ class _DbmulticloudOracleDbAzureConnectorState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureConnector resources.
-        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
-        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
-        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity Mechanism.
-        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource Group Name.
+        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[_builtins.str] azure_identity_connectivity_status: The current Connectivity status of Azure Identity Connector resource.
+        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
+        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
         :param pulumi.Input[_builtins.str] azure_subscription_id: (Updatable) Azure Subscription ID.
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure Tenant ID.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
-        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector Resource name.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
+        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector resource name.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent Resource.
-        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent resource.
+        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         if access_token is not None:
             pulumi.set(__self__, "access_token", access_token)
         if arc_agent_nodes is not None:
             pulumi.set(__self__, "arc_agent_nodes", arc_agent_nodes)
+        if azure_identity_connectivity_status is not None:
+            pulumi.set(__self__, "azure_identity_connectivity_status", azure_identity_connectivity_status)
         if azure_identity_mechanism is not None:
             pulumi.set(__self__, "azure_identity_mechanism", azure_identity_mechanism)
         if azure_resource_group is not None:
@@ -261,7 +265,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="accessToken")
     def access_token(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+        (Updatable) Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
@@ -273,7 +277,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="arcAgentNodes")
     def arc_agent_nodes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs']]]]:
         """
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
 
@@ -282,10 +286,22 @@ class _DbmulticloudOracleDbAzureConnectorState:
         pulumi.set(self, "arc_agent_nodes", value)
 
     @_builtins.property
+    @pulumi.getter(name="azureIdentityConnectivityStatus")
+    def azure_identity_connectivity_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current Connectivity status of Azure Identity Connector resource.
+        """
+        return pulumi.get(self, "azure_identity_connectivity_status")
+
+    @azure_identity_connectivity_status.setter
+    def azure_identity_connectivity_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "azure_identity_connectivity_status", value)
+
+    @_builtins.property
     @pulumi.getter(name="azureIdentityMechanism")
     def azure_identity_mechanism(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Identity Mechanism.
+        (Updatable) Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
@@ -297,7 +313,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="azureResourceGroup")
     def azure_resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Resource Group Name.
+        (Updatable) Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
@@ -333,7 +349,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -345,7 +361,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -357,7 +373,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Oracle DB Azure Connector Resource name.
+        (Updatable) Oracle DB Azure Connector resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -369,7 +385,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -393,7 +409,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "state")
 
@@ -405,7 +421,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -417,7 +433,7 @@ class _DbmulticloudOracleDbAzureConnectorState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -447,9 +463,9 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Creates Oracle DB Azure Connector Resource and configured Azure Identity in Oracle Cloud Infrastructure Database Resource.
+        Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
 
-          Patch Azure Arc Agent on VM Cluster with new version.
+          Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
 
         ## Import
 
@@ -461,16 +477,16 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
-        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity Mechanism.
-        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource Group Name.
+        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
+        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
         :param pulumi.Input[_builtins.str] azure_subscription_id: (Updatable) Azure Subscription ID.
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure Tenant ID.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
-        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector Resource name.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
+        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector resource name.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         """
         ...
@@ -482,9 +498,9 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Creates Oracle DB Azure Connector Resource and configured Azure Identity in Oracle Cloud Infrastructure Database Resource.
+        Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
 
-          Patch Azure Arc Agent on VM Cluster with new version.
+          Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
 
         ## Import
 
@@ -556,6 +572,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["last_modification"] = last_modification
             __props__.__dict__["lifecycle_state_details"] = lifecycle_state_details
+            __props__.__dict__["azure_identity_connectivity_status"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
@@ -571,6 +588,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             access_token: Optional[pulumi.Input[_builtins.str]] = None,
             arc_agent_nodes: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]]] = None,
+            azure_identity_connectivity_status: Optional[pulumi.Input[_builtins.str]] = None,
             azure_identity_mechanism: Optional[pulumi.Input[_builtins.str]] = None,
             azure_resource_group: Optional[pulumi.Input[_builtins.str]] = None,
             azure_subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -590,20 +608,21 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
-        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
-        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity Mechanism.
-        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource Group Name.
+        :param pulumi.Input[_builtins.str] access_token: (Updatable) Azure bearer access token.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict']]]] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param pulumi.Input[_builtins.str] azure_identity_connectivity_status: The current Connectivity status of Azure Identity Connector resource.
+        :param pulumi.Input[_builtins.str] azure_identity_mechanism: (Updatable) Azure Identity mechanism.
+        :param pulumi.Input[_builtins.str] azure_resource_group: (Updatable) Azure Resource group name.
         :param pulumi.Input[_builtins.str] azure_subscription_id: (Updatable) Azure Subscription ID.
         :param pulumi.Input[_builtins.str] azure_tenant_id: (Updatable) Azure Tenant ID.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
-        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector Resource name.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
+        :param pulumi.Input[_builtins.str] db_cluster_resource_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Connector resource name.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Connector resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent Resource.
-        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent resource.
+        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -611,6 +630,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
 
         __props__.__dict__["access_token"] = access_token
         __props__.__dict__["arc_agent_nodes"] = arc_agent_nodes
+        __props__.__dict__["azure_identity_connectivity_status"] = azure_identity_connectivity_status
         __props__.__dict__["azure_identity_mechanism"] = azure_identity_mechanism
         __props__.__dict__["azure_resource_group"] = azure_resource_group
         __props__.__dict__["azure_subscription_id"] = azure_subscription_id
@@ -629,7 +649,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+        (Updatable) Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
@@ -637,15 +657,23 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="arcAgentNodes")
     def arc_agent_nodes(self) -> pulumi.Output[Sequence['outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]:
         """
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="azureIdentityConnectivityStatus")
+    def azure_identity_connectivity_status(self) -> pulumi.Output[_builtins.str]:
+        """
+        The current Connectivity status of Azure Identity Connector resource.
+        """
+        return pulumi.get(self, "azure_identity_connectivity_status")
 
     @_builtins.property
     @pulumi.getter(name="azureIdentityMechanism")
     def azure_identity_mechanism(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure Identity Mechanism.
+        (Updatable) Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
@@ -653,7 +681,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="azureResourceGroup")
     def azure_resource_group(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure Resource Group Name.
+        (Updatable) Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
@@ -677,7 +705,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -685,7 +713,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -693,7 +721,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Oracle DB Azure Connector Resource name.
+        (Updatable) Oracle DB Azure Connector resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -701,7 +729,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> pulumi.Output[_builtins.str]:
         """
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -717,7 +745,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "state")
 
@@ -725,7 +753,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -733,7 +761,7 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 

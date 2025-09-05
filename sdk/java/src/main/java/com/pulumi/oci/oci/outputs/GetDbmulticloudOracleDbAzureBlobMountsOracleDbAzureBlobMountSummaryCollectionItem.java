@@ -22,7 +22,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -32,12 +32,12 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The OCID for the new Oracle DB Azure Blob Mount resource.
+     * @return The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      * 
      */
     private String lastModification;
@@ -47,17 +47,17 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
      */
     private String lifecycleStateDetails;
     /**
-     * @return Azure Container mount path.
+     * @return Oracle DB Azure Blob Mount path.
      * 
      */
     private String mountPath;
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     private String oracleDbAzureBlobContainerId;
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     private String oracleDbAzureConnectorId;
@@ -98,7 +98,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
         return this.definedTags;
     }
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -112,14 +112,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
         return this.freeformTags;
     }
     /**
-     * @return The OCID for the new Oracle DB Azure Blob Mount resource.
+     * @return The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public String lastModification() {
@@ -133,21 +133,21 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountS
         return this.lifecycleStateDetails;
     }
     /**
-     * @return Azure Container mount path.
+     * @return Oracle DB Azure Blob Mount path.
      * 
      */
     public String mountPath() {
         return this.mountPath;
     }
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     public String oracleDbAzureBlobContainerId() {
         return this.oracleDbAzureBlobContainerId;
     }
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public String oracleDbAzureConnectorId() {

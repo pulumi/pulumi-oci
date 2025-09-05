@@ -34,14 +34,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
     }
 
     /**
-     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+     * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
      * 
      */
     @Import(name="dbClusterResourceId")
     private @Nullable Output<String> dbClusterResourceId;
 
     /**
-     * @return The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+     * @return The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
      * 
      */
     public Optional<Output<String>> dbClusterResourceId() {
@@ -49,14 +49,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
     }
 
     /**
-     * A filter to return Oracle DB Azure Connector Resource that match the given display name.
+     * A filter to return Oracle DB Azure Connector resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return Oracle DB Azure Connector Resource that match the given display name.
+     * @return A filter to return Oracle DB Azure Connector resources that match the specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -71,14 +71,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     @Import(name="oracleDbAzureConnectorId")
     private @Nullable Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public Optional<Output<String>> oracleDbAzureConnectorId() {
@@ -151,7 +151,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param dbClusterResourceId The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+         * @param dbClusterResourceId The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param dbClusterResourceId The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+         * @param dbClusterResourceId The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param displayName A filter to return Oracle DB Azure Connector Resource that match the given display name.
+         * @param displayName A filter to return Oracle DB Azure Connector resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param displayName A filter to return Oracle DB Azure Connector Resource that match the given display name.
+         * @param displayName A filter to return Oracle DB Azure Connector resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorsArgs extends com.pulumi
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+// Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // ## Example Usage
 //
@@ -52,40 +52,40 @@ func LookupDbmulticloudOracleDbAzureVaultAssociation(ctx *pulumi.Context, args *
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVaultAssociation.
 type LookupDbmulticloudOracleDbAzureVaultAssociationArgs struct {
-	// The ID of the Oracle DB Azure Vault Association Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
 	OracleDbAzureVaultAssociationId string `pulumi:"oracleDbAzureVaultAssociationId"`
 }
 
 // A collection of values returned by getDbmulticloudOracleDbAzureVaultAssociation.
 type LookupDbmulticloudOracleDbAzureVaultAssociationResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Display name of Oracle DB Azure Vault Association.
+	// Oracle DB Azure Vault Association resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
 	Id string `pulumi:"id"`
-	// The Associated Resources are accessible or not.
+	// The Associated resource is accessible or not.
 	IsResourceAccessible bool `pulumi:"isResourceAccessible"`
-	// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+	// Description of the latest modification of the Oracle DB Azure Vault Association resource.
 	LastModification string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 	OracleDbAzureConnectorId        string `pulumi:"oracleDbAzureConnectorId"`
 	OracleDbAzureVaultAssociationId string `pulumi:"oracleDbAzureVaultAssociationId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 	OracleDbAzureVaultId string `pulumi:"oracleDbAzureVaultId"`
-	// The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+	// The current lifecycle state of the Oracle DB Azure Vault Association resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
-	// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -100,7 +100,7 @@ func LookupDbmulticloudOracleDbAzureVaultAssociationOutput(ctx *pulumi.Context, 
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVaultAssociation.
 type LookupDbmulticloudOracleDbAzureVaultAssociationOutputArgs struct {
-	// The ID of the Oracle DB Azure Vault Association Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
 	OracleDbAzureVaultAssociationId pulumi.StringInput `pulumi:"oracleDbAzureVaultAssociationId"`
 }
 
@@ -123,7 +123,7 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) ToLookupDbm
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -133,7 +133,7 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) DefinedTags
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Display name of Oracle DB Azure Vault Association.
+// Oracle DB Azure Vault Association resource name.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -143,17 +143,17 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) FreeformTag
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The Associated Resources are accessible or not.
+// The Associated resource is accessible or not.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) IsResourceAccessible() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) bool { return v.IsResourceAccessible }).(pulumi.BoolOutput)
 }
 
-// Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+// Description of the latest modification of the Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -163,7 +163,7 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) LifecycleSt
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) OracleDbAzureConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string {
 		return v.OracleDbAzureConnectorId
@@ -176,12 +176,12 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) OracleDbAzu
 	}).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) OracleDbAzureVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.OracleDbAzureVaultId }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+// The current lifecycle state of the Oracle DB Azure Vault Association resource.
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -191,12 +191,12 @@ func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) SystemTags(
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o LookupDbmulticloudOracleDbAzureVaultAssociationResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultAssociationResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

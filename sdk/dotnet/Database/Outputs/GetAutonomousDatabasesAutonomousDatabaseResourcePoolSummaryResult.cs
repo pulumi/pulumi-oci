@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult
     {
         /// <summary>
+        /// Available capacity left for new elastic pool members provision
+        /// </summary>
+        public readonly int AvailableComputeCapacity;
+        /// <summary>
         /// Indicates if the resource pool should be deleted for the Autonomous Database.
         /// </summary>
         public readonly bool IsDisabled;
@@ -21,15 +25,25 @@ namespace Pulumi.Oci.Database.Outputs
         /// Resource pool size.
         /// </summary>
         public readonly int PoolSize;
+        /// <summary>
+        /// Resource Pool total capacity, it's currently 4x of pool size
+        /// </summary>
+        public readonly int TotalComputeCapacity;
 
         [OutputConstructor]
         private GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(
+            int availableComputeCapacity,
+
             bool isDisabled,
 
-            int poolSize)
+            int poolSize,
+
+            int totalComputeCapacity)
         {
+            AvailableComputeCapacity = availableComputeCapacity;
             IsDisabled = isDisabled;
             PoolSize = poolSize;
+            TotalComputeCapacity = totalComputeCapacity;
         }
     }
 }

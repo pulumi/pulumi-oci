@@ -17,12 +17,12 @@ public final class GetProjectsProjectCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     private Map<String,String> definedTags;
     /**
-     * @return A short description of the project.
+     * @return An optional description of the project.
      * 
      */
     private String description;
@@ -32,37 +32,37 @@ public final class GetProjectsProjectCollectionItem {
      */
     private String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique Project identifier
+     * @return The filter to find the project with the given identifier.
      * 
      */
     private String id;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match projects with the given lifecycleState.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     private Map<String,String> systemTags;
     /**
-     * @return The time the Project was created. An RFC3339 formatted datetime string
+     * @return When the project was created, as an RFC3339 datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Project was updated. An RFC3339 formatted datetime string
+     * @return When the project was updated, as an RFC3339 datetime string.
      * 
      */
     private String timeUpdated;
@@ -76,14 +76,14 @@ public final class GetProjectsProjectCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return A short description of the project.
+     * @return An optional description of the project.
      * 
      */
     public String description() {
@@ -97,49 +97,49 @@ public final class GetProjectsProjectCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return unique Project identifier
+     * @return The filter to find the project with the given identifier.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match projects with the given lifecycleState.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The time the Project was created. An RFC3339 formatted datetime string
+     * @return When the project was created, as an RFC3339 datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Project was updated. An RFC3339 formatted datetime string
+     * @return When the project was updated, as an RFC3339 datetime string.
      * 
      */
     public String timeUpdated() {

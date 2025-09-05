@@ -1645,6 +1645,8 @@ type DetectorRecipeDetectorRule struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []DetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable *bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -1653,6 +1655,8 @@ type DetectorRecipeDetectorRule struct {
 	Recommendation *string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []DetectorRecipeDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType *string `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -1695,6 +1699,8 @@ type DetectorRecipeDetectorRuleArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings DetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolPtrInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -1703,6 +1709,8 @@ type DetectorRecipeDetectorRuleArgs struct {
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes DetectorRecipeDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringPtrInput `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -1812,6 +1820,11 @@ func (o DetectorRecipeDetectorRuleOutput) EntitiesMappings() DetectorRecipeDetec
 	}).(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o DetectorRecipeDetectorRuleOutput) IsCloneable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRule) *bool { return v.IsCloneable }).(pulumi.BoolPtrOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -1830,6 +1843,11 @@ func (o DetectorRecipeDetectorRuleOutput) Recommendation() pulumi.StringPtrOutpu
 // Resource type of the configuration to which the rule is applied
 func (o DetectorRecipeDetectorRuleOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type
+func (o DetectorRecipeDetectorRuleOutput) RuleTypes() DetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRule) []DetectorRecipeDetectorRuleRuleType { return v.RuleTypes }).(DetectorRecipeDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -2131,6 +2149,12 @@ func (o DetectorRecipeDetectorRuleDetailsOutput) RiskLevel() pulumi.StringOutput
 }
 
 type DetectorRecipeDetectorRuleDetailsConfiguration struct {
+	// (Updatable) Map of additional property values for configuration
+	AdditionalProperties []DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// (Updatable) Map of possible values for configuration
+	AllowedValues []DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue `pulumi:"allowedValues"`
+	// (Updatable) Map property Value data type
+	AllowedValuesDataType *string `pulumi:"allowedValuesDataType"`
 	// (Updatable) Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// (Updatable) Configuration data type
@@ -2155,6 +2179,12 @@ type DetectorRecipeDetectorRuleDetailsConfigurationInput interface {
 }
 
 type DetectorRecipeDetectorRuleDetailsConfigurationArgs struct {
+	// (Updatable) Map of additional property values for configuration
+	AdditionalProperties DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// (Updatable) Map of possible values for configuration
+	AllowedValues DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// (Updatable) Map property Value data type
+	AllowedValuesDataType pulumi.StringPtrInput `pulumi:"allowedValuesDataType"`
 	// (Updatable) Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// (Updatable) Configuration data type
@@ -2218,6 +2248,25 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) ToDetectorRecipeDe
 	return o
 }
 
+// (Updatable) Map of additional property values for configuration
+func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) AdditionalProperties() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfiguration) []DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput)
+}
+
+// (Updatable) Map of possible values for configuration
+func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) AllowedValues() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfiguration) []DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput)
+}
+
+// (Updatable) Map property Value data type
+func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) AllowedValuesDataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.AllowedValuesDataType }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) Unique identifier of the configuration
 func (o DetectorRecipeDetectorRuleDetailsConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfiguration) string { return v.ConfigKey }).(pulumi.StringOutput)
@@ -2263,6 +2312,229 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) Index(i pulum
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleDetailsConfiguration {
 		return vs[0].([]DetectorRecipeDetectorRuleDetailsConfiguration)[vs[1].(int)]
 	}).(DetectorRecipeDetectorRuleDetailsConfigurationOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty struct {
+	// (Updatable) Name for Additional Property, for example, "interpreter", "router"
+	Key *string `pulumi:"key"`
+	// (Updatable) Property Type
+	PropertyType *string `pulumi:"propertyType"`
+	// (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+	Value *string `pulumi:"value"`
+}
+
+// DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs and DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{...}
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs struct {
+	// (Updatable) Name for Additional Property, for example, "interpreter", "router"
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// (Updatable) Property Type
+	PropertyType pulumi.StringPtrInput `pulumi:"propertyType"`
+	// (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput)
+}
+
+// DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray and DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray{ DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{...} }
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray []DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// (Updatable) Name for Additional Property, for example, "interpreter", "router"
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Property Type
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string {
+		return v.PropertyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+		return vs[0].([]DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue struct {
+	// (Updatable) key
+	Key string `pulumi:"key"`
+	// (Updatable) value
+	Value string `pulumi:"value"`
+}
+
+// DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs and DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{...}
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs struct {
+	// (Updatable) key
+	Key pulumi.StringInput `pulumi:"key"`
+	// (Updatable) value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput)
+}
+
+// DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput is an input type that accepts DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray and DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput` via:
+//
+//	DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray{ DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{...} }
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput
+	ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray []DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return i.ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return o
+}
+
+// (Updatable) key
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// (Updatable) value
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ToDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+		return vs[0].([]DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)[vs[1].(int)]
+	}).(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput)
 }
 
 type DetectorRecipeDetectorRuleDetailsConfigurationValue struct {
@@ -2616,6 +2888,112 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.Int
 	}).(DetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
+type DetectorRecipeDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// DetectorRecipeDetectorRuleRuleTypeInput is an input type that accepts DetectorRecipeDetectorRuleRuleTypeArgs and DetectorRecipeDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleRuleTypeInput` via:
+//
+//	DetectorRecipeDetectorRuleRuleTypeArgs{...}
+type DetectorRecipeDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleRuleTypeOutput() DetectorRecipeDetectorRuleRuleTypeOutput
+	ToDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Context) DetectorRecipeDetectorRuleRuleTypeOutput
+}
+
+type DetectorRecipeDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (DetectorRecipeDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleRuleTypeArgs) ToDetectorRecipeDetectorRuleRuleTypeOutput() DetectorRecipeDetectorRuleRuleTypeOutput {
+	return i.ToDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleRuleTypeArgs) ToDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
+// DetectorRecipeDetectorRuleRuleTypeArrayInput is an input type that accepts DetectorRecipeDetectorRuleRuleTypeArray and DetectorRecipeDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeDetectorRuleRuleTypeArrayInput` via:
+//
+//	DetectorRecipeDetectorRuleRuleTypeArray{ DetectorRecipeDetectorRuleRuleTypeArgs{...} }
+type DetectorRecipeDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeDetectorRuleRuleTypeArrayOutput() DetectorRecipeDetectorRuleRuleTypeArrayOutput
+	ToDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Context) DetectorRecipeDetectorRuleRuleTypeArrayOutput
+}
+
+type DetectorRecipeDetectorRuleRuleTypeArray []DetectorRecipeDetectorRuleRuleTypeInput
+
+func (DetectorRecipeDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i DetectorRecipeDetectorRuleRuleTypeArray) ToDetectorRecipeDetectorRuleRuleTypeArrayOutput() DetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return i.ToDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeDetectorRuleRuleTypeArray) ToDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeDetectorRuleRuleTypeArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleRuleTypeOutput) ToDetectorRecipeDetectorRuleRuleTypeOutput() DetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleRuleTypeOutput) ToDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o DetectorRecipeDetectorRuleRuleTypeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleRuleType) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type value
+func (o DetectorRecipeDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type DetectorRecipeDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o DetectorRecipeDetectorRuleRuleTypeArrayOutput) ToDetectorRecipeDetectorRuleRuleTypeArrayOutput() DetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleRuleTypeArrayOutput) ToDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) DetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) DetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeDetectorRuleRuleType {
+		return vs[0].([]DetectorRecipeDetectorRuleRuleType)[vs[1].(int)]
+	}).(DetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
 type DetectorRecipeEffectiveDetectorRule struct {
 	// List of responder rules that can be used to remediate this detector rule
 	CandidateResponderRules []DetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
@@ -2637,6 +3015,8 @@ type DetectorRecipeEffectiveDetectorRule struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []DetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable *bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -2645,6 +3025,8 @@ type DetectorRecipeEffectiveDetectorRule struct {
 	Recommendation *string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []DetectorRecipeEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType *string `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -2687,6 +3069,8 @@ type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolPtrInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -2695,6 +3079,8 @@ type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes DetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringPtrInput `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -2806,6 +3192,11 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() DetectorRe
 	}).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o DetectorRecipeEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *bool { return v.IsCloneable }).(pulumi.BoolPtrOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -2824,6 +3215,13 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) Recommendation() pulumi.Strin
 // Resource type of the configuration to which the rule is applied
 func (o DetectorRecipeEffectiveDetectorRuleOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type
+func (o DetectorRecipeEffectiveDetectorRuleOutput) RuleTypes() DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []DetectorRecipeEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -3176,13 +3574,19 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.Int
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType *string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey *string `pulumi:"configKey"`
 	// Configuration data type
 	DataType *string `pulumi:"dataType"`
 	// Configuration name
 	Name *string `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value *string `pulumi:"value"`
 	// List of configuration values
 	Values []DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -3200,13 +3604,19 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringPtrInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// Configuration data type
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
 	// Configuration name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 	// List of configuration values
 	Values DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -3263,6 +3673,25 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToDetector
 	return o
 }
 
+// Map of additional property values for configuration
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.AllowedValuesDataType }).(pulumi.StringPtrOutput)
+}
+
 // Unique identifier of the configuration
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
@@ -3278,7 +3707,7 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Name() pul
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3310,12 +3739,237 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index
 	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Property Type
+	PropertyType *string `pulumi:"propertyType"`
+	// Detector rule type value
+	Value *string `pulumi:"value"`
+}
+
+// DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringPtrInput `pulumi:"propertyType"`
+	// Detector rule type value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Property Type
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string {
+		return v.PropertyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type value
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Detector rule type value
+	Value *string `pulumi:"value"`
+}
+
+// DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Detector rule type value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray and DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray []DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type value
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
 	// Configuration list item type (CUSTOM or MANAGED)
 	ListType *string `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType *string `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value *string `pulumi:"value"`
 }
 
@@ -3335,7 +3989,7 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs struct {
 	ListType pulumi.StringPtrInput `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType pulumi.StringPtrInput `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3400,7 +4054,7 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Manag
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string { return v.ManagedListType }).(pulumi.StringPtrOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3665,6 +4319,112 @@ func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]DetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// DetectorRecipeEffectiveDetectorRuleRuleTypeInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleRuleTypeArgs and DetectorRecipeEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...}
+type DetectorRecipeEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+	ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (DetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// DetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts DetectorRecipeEffectiveDetectorRuleRuleTypeArray and DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `DetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	DetectorRecipeEffectiveDetectorRuleRuleTypeArray{ DetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...} }
+type DetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+	ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type DetectorRecipeEffectiveDetectorRuleRuleTypeArray []DetectorRecipeEffectiveDetectorRuleRuleTypeInput
+
+func (DetectorRecipeEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i DetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleRuleType) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Detector rule type value
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) DetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DetectorRecipeEffectiveDetectorRuleRuleType {
+		return vs[0].([]DetectorRecipeEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(DetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type ResponderRecipeEffectiveResponderRule struct {
@@ -5109,6 +5869,8 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []TargetTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable *bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -5117,6 +5879,8 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	Recommendation *string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType *string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []TargetTargetDetectorRecipeDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType *string `pulumi:"serviceType"`
 	// (Updatable) The enablement state of the detector rule
@@ -5157,6 +5921,8 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolPtrInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -5165,6 +5931,8 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringPtrInput `pulumi:"serviceType"`
 	// (Updatable) The enablement state of the detector rule
@@ -5269,6 +6037,11 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) EntitiesMappings() TargetT
 	}).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o TargetTargetDetectorRecipeDetectorRuleOutput) IsCloneable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *bool { return v.IsCloneable }).(pulumi.BoolPtrOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -5287,6 +6060,13 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) Recommendation() pulumi.St
 // The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Rule category type
+func (o TargetTargetDetectorRecipeDetectorRuleOutput) RuleTypes() TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) []TargetTargetDetectorRecipeDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -5537,6 +6317,12 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) 
 }
 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType *string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey *string `pulumi:"configKey"`
 	// Configuration data type
@@ -5561,6 +6347,12 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput interface {
 }
 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringPtrInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// Configuration data type
@@ -5624,6 +6416,27 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ToTarg
 	return o
 }
 
+// Map of additional property values for configuration
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) AdditionalProperties() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) AllowedValues() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) AllowedValuesDataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringPtrOutput)
+}
+
 // Unique identifier of the configuration
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
@@ -5669,6 +6482,233 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput) I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
 		return vs[0].([]TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration)[vs[1].(int)]
 	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Property Type
+	PropertyType *string `pulumi:"propertyType"`
+	// Configuration value
+	Value *string `pulumi:"value"`
+}
+
+// TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{...}
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringPtrInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput)
+}
+
+// TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{...} }
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Property Type
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string {
+		return v.PropertyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+		return vs[0].([]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Configuration value
+	Value *string `pulumi:"value"`
+}
+
+// TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{...}
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput)
+}
+
+// TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray and TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray{ TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{...} }
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput
+	ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+		return vs[0].([]TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput)
 }
 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue struct {
@@ -5909,6 +6949,112 @@ func (o TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(
 	}).(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
+type TargetTargetDetectorRecipeDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// TargetTargetDetectorRecipeDetectorRuleRuleTypeInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs and TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleRuleTypeInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{...}
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput
+	ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
+// TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput is an input type that accepts TargetTargetDetectorRecipeDetectorRuleRuleTypeArray and TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput` via:
+//
+//	TargetTargetDetectorRecipeDetectorRuleRuleTypeArray{ TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{...} }
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+	ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+}
+
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeArray []TargetTargetDetectorRecipeDetectorRuleRuleTypeInput
+
+func (TargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return i.ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleRuleType) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeDetectorRuleRuleType {
+		return vs[0].([]TargetTargetDetectorRecipeDetectorRuleRuleType)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
 type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	// The ID of the attached data source
 	DataSourceId *string `pulumi:"dataSourceId"`
@@ -5928,6 +7074,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable *bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -5936,6 +7084,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	Recommendation *string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType *string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType *string `pulumi:"serviceType"`
 	// (Updatable) The enablement state of the detector rule
@@ -5976,6 +7126,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolPtrInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -5984,6 +7136,8 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringPtrInput `pulumi:"serviceType"`
 	// (Updatable) The enablement state of the detector rule
@@ -6088,6 +7242,11 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings(
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *bool { return v.IsCloneable }).(pulumi.BoolPtrOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
@@ -6106,6 +7265,13 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Recommendation() 
 // The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Rule category type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) RuleTypes() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) []TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -6405,6 +7571,12 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType *string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey *string `pulumi:"configKey"`
 	// Configuration data type
@@ -6429,6 +7601,12 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput int
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringPtrInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// Configuration data type
@@ -6492,6 +7670,27 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput
 	return o
 }
 
+// Map of additional property values for configuration
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringPtrOutput)
+}
+
 // Unique identifier of the configuration
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
@@ -6537,6 +7736,237 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Property Type
+	PropertyType *string `pulumi:"propertyType"`
+	// Configuration value
+	Value *string `pulumi:"value"`
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringPtrInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Property Type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string {
+		return v.PropertyType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Configuration value
+	Value *string `pulumi:"value"`
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray and TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) *string {
+		return v.Key
+	}).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) *string {
+		return v.Value
+	}).(pulumi.StringPtrOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
@@ -6779,6 +8209,112 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutpu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key *string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs and TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...}
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray and TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{ TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...} }
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+	ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray []TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Configuration value
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return vs[0].([]TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type TargetTargetResponderRecipe struct {
@@ -12363,6 +13899,8 @@ type GetDetectorRecipeDetectorRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []GetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -12371,6 +13909,8 @@ type GetDetectorRecipeDetectorRule struct {
 	Recommendation string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []GetDetectorRecipeDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -12409,6 +13949,8 @@ type GetDetectorRecipeDetectorRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -12417,6 +13959,8 @@ type GetDetectorRecipeDetectorRuleArgs struct {
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes GetDetectorRecipeDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -12522,6 +14066,11 @@ func (o GetDetectorRecipeDetectorRuleOutput) EntitiesMappings() GetDetectorRecip
 	}).(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetDetectorRecipeDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -12540,6 +14089,11 @@ func (o GetDetectorRecipeDetectorRuleOutput) Recommendation() pulumi.StringOutpu
 // Resource type of the configuration to which the rule is applied
 func (o GetDetectorRecipeDetectorRuleOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// Detector rule type
+func (o GetDetectorRecipeDetectorRuleOutput) RuleTypes() GetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRule) []GetDetectorRecipeDetectorRuleRuleType { return v.RuleTypes }).(GetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -12880,13 +14434,19 @@ func (o GetDetectorRecipeDetectorRuleDetailArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetDetectorRecipeDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
 	DataType string `pulumi:"dataType"`
 	// Configuration name
 	Name string `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 	// List of configuration values
 	Values []GetDetectorRecipeDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -12904,13 +14464,19 @@ type GetDetectorRecipeDetectorRuleDetailConfigurationInput interface {
 }
 
 type GetDetectorRecipeDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
 	DataType pulumi.StringInput `pulumi:"dataType"`
 	// Configuration name
 	Name pulumi.StringInput `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 	// List of configuration values
 	Values GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -12967,6 +14533,25 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ToGetDetectorRec
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) []GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValues() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) []GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) string { return v.AllowedValuesDataType }).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) string { return v.ConfigKey }).(pulumi.StringOutput)
@@ -12982,7 +14567,7 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) Name() pulumi.St
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfiguration) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -13014,12 +14599,235 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput) Index(i pul
 	}).(GetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 }
 
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray and GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray []GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs and GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray and GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{ GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray []GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
 type GetDetectorRecipeDetectorRuleDetailConfigurationValue struct {
 	// Configuration list item type (CUSTOM or MANAGED)
 	ListType string `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType string `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 }
 
@@ -13039,7 +14847,7 @@ type GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs struct {
 	ListType pulumi.StringInput `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType pulumi.StringInput `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -13104,7 +14912,7 @@ func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) ManagedList
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationValue) string { return v.ManagedListType }).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleDetailConfigurationValue) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -13359,6 +15167,112 @@ func (o GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.
 	}).(GetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
+type GetDetectorRecipeDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// GetDetectorRecipeDetectorRuleRuleTypeInput is an input type that accepts GetDetectorRecipeDetectorRuleRuleTypeArgs and GetDetectorRecipeDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleRuleTypeInput` via:
+//
+//	GetDetectorRecipeDetectorRuleRuleTypeArgs{...}
+type GetDetectorRecipeDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleRuleTypeOutput() GetDetectorRecipeDetectorRuleRuleTypeOutput
+	ToGetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleRuleTypeOutput
+}
+
+type GetDetectorRecipeDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDetectorRecipeDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetDetectorRecipeDetectorRuleRuleTypeOutput() GetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return i.ToGetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
+// GetDetectorRecipeDetectorRuleRuleTypeArrayInput is an input type that accepts GetDetectorRecipeDetectorRuleRuleTypeArray and GetDetectorRecipeDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetDetectorRecipeDetectorRuleRuleTypeArray{ GetDetectorRecipeDetectorRuleRuleTypeArgs{...} }
+type GetDetectorRecipeDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+	ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+}
+
+type GetDetectorRecipeDetectorRuleRuleTypeArray []GetDetectorRecipeDetectorRuleRuleTypeInput
+
+func (GetDetectorRecipeDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeDetectorRuleRuleTypeArray) ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeDetectorRuleRuleTypeArray) ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetDetectorRecipeDetectorRuleRuleTypeOutput() GetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleRuleType) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDetectorRecipeDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeDetectorRuleRuleType {
+		return vs[0].([]GetDetectorRecipeDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
 type GetDetectorRecipeEffectiveDetectorRule struct {
 	// List of responder rules that can be used to remediate this detector rule
 	CandidateResponderRules []GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
@@ -13376,6 +15290,8 @@ type GetDetectorRecipeEffectiveDetectorRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -13384,6 +15300,8 @@ type GetDetectorRecipeEffectiveDetectorRule struct {
 	Recommendation string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []GetDetectorRecipeEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -13422,6 +15340,8 @@ type GetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -13430,6 +15350,8 @@ type GetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The current lifecycle state of the resource
@@ -13537,6 +15459,11 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() GetDete
 	}).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetDetectorRecipeEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -13555,6 +15482,13 @@ func (o GetDetectorRecipeEffectiveDetectorRuleOutput) Recommendation() pulumi.St
 // Resource type of the configuration to which the rule is applied
 func (o GetDetectorRecipeEffectiveDetectorRuleOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// Detector rule type
+func (o GetDetectorRecipeEffectiveDetectorRuleOutput) RuleTypes() GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRule) []GetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -13895,13 +15829,19 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
 	DataType string `pulumi:"dataType"`
 	// Configuration name
 	Name string `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 	// List of configuration values
 	Values []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -13919,13 +15859,19 @@ type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 }
 
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
 	DataType pulumi.StringInput `pulumi:"dataType"`
 	// Configuration name
 	Name pulumi.StringInput `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 	// List of configuration values
 	Values GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -13982,6 +15928,27 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToGetDe
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string { return v.ConfigKey }).(pulumi.StringOutput)
@@ -13997,7 +15964,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Name() 
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -14029,12 +15996,239 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) In
 	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray and GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray []GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
 type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
 	// Configuration list item type (CUSTOM or MANAGED)
 	ListType string `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType string `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 }
 
@@ -14054,7 +16248,7 @@ type GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs struct {
 	ListType pulumi.StringInput `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType pulumi.StringInput `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -14121,7 +16315,7 @@ func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Ma
 	}).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -14374,6 +16568,112 @@ func (o GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput) Index(
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleRuleTypeInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs and GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...}
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray and GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{ GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...} }
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+	ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray []GetDetectorRecipeEffectiveDetectorRuleRuleTypeInput
+
+func (GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleRuleType) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipeEffectiveDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return vs[0].([]GetDetectorRecipeEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type GetDetectorRecipesDetectorRecipeCollection struct {
@@ -14734,6 +17034,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -14742,6 +17044,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule struct {
 	Recommendation string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -14780,6 +17084,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -14788,6 +17094,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleArgs struct {
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -14895,6 +17203,11 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Entiti
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -14913,6 +17226,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) Recomm
 // Resource type of the configuration to which the rule is applied
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// Detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleOutput) RuleTypes() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule) []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -15263,13 +17583,19 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOut
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
 	DataType string `pulumi:"dataType"`
 	// Configuration name
 	Name string `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 	// List of configuration values
 	Values []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -15287,13 +17613,19 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurati
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
 	DataType pulumi.StringInput `pulumi:"dataType"`
 	// Configuration name
 	Name pulumi.StringInput `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 	// List of configuration values
 	Values GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -15350,6 +17682,27 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration) []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) AllowedValues() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration) []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration) string {
@@ -15371,7 +17724,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	}).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration) string {
 		return v.Value
@@ -15405,12 +17758,243 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput)
 }
 
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
 type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue struct {
 	// Configuration list item type (CUSTOM or MANAGED)
 	ListType string `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType string `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 }
 
@@ -15430,7 +18014,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurati
 	ListType pulumi.StringInput `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType pulumi.StringInput `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -15499,7 +18083,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigur
 	}).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue) string {
 		return v.Value
@@ -15768,6 +18352,112 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappin
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput)
 }
 
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray and GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray{ GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray []GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput)
+}
+
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct {
 	// List of responder rules that can be used to remediate this detector rule
 	CandidateResponderRules []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
@@ -15785,6 +18475,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct 
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -15793,6 +18485,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule struct 
 	Recommendation string `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType string `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -15831,6 +18525,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs str
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for the detector rule
 	EntitiesMappings GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -15839,6 +18535,8 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs str
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// Resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Detector rule type
+	RuleTypes GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -15954,6 +18652,11 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
@@ -15980,6 +18683,13 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutpu
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) string {
 		return v.ResourceType
 	}).(pulumi.StringOutput)
+}
+
+// Detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput) RuleTypes() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule) []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -16348,13 +19058,19 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
 	DataType string `pulumi:"dataType"`
 	// Configuration name
 	Name string `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 	// List of configuration values
 	Values []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -16372,13 +19088,19 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailCo
 }
 
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
 	DataType pulumi.StringInput `pulumi:"dataType"`
 	// Configuration name
 	Name pulumi.StringInput `pulumi:"name"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 	// List of configuration values
 	Values GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -16435,6 +19157,27 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration) []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration) []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration) string {
@@ -16456,7 +19199,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	}).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfiguration) string {
 		return v.Value
@@ -16490,12 +19233,243 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput)
 }
 
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Value string `pulumi:"value"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
 type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue struct {
 	// Configuration list item type (CUSTOM or MANAGED)
 	ListType string `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType string `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value string `pulumi:"value"`
 }
 
@@ -16515,7 +19489,7 @@ type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailCo
 	ListType pulumi.StringInput `pulumi:"listType"`
 	// Type of content in the managed list
 	ManagedListType pulumi.StringInput `pulumi:"managedListType"`
-	// Configuration value
+	// Detector rule type value
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -16584,7 +19558,7 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetai
 	}).(pulumi.StringOutput)
 }
 
-// Configuration value
+// Detector rule type value
 func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValue) string {
 		return v.Value
@@ -16851,6 +19825,116 @@ func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntit
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Detector rule type value
+	Values []string `pulumi:"values"`
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs{...}
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Detector rule type value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray and GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray{ GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs{...} }
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput
+	ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray []GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeInput
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Detector rule type value
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput() GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput) ToGetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType {
+		return vs[0].([]GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type GetDetectorRecipesFilter struct {
@@ -17520,6 +20604,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -17528,6 +20614,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRule struct {
 	Recommendation string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The current lifecycle state of the responder rule
@@ -17564,6 +20652,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -17572,6 +20662,8 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleArgs struct {
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The current lifecycle state of the responder rule
@@ -17672,6 +20764,11 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) EntitiesMappings()
 	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -17690,6 +20787,13 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) Recommendation() p
 // The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// Rule category type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleOutput) RuleTypes() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRule) []GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -17987,6 +21091,12 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayO
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
@@ -18011,6 +21121,12 @@ type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationInput inte
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
@@ -18074,6 +21190,27 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration) []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValues() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration) []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration) string { return v.ConfigKey }).(pulumi.StringOutput)
@@ -18119,6 +21256,237 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfiguration)[vs[1].(int)]
 	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray and GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray []GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
 }
 
 type GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValue struct {
@@ -18355,6 +21723,112 @@ func (o GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput
 	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs and GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{...}
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray and GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray{ GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{...} }
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray []GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeInput
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	// The ID of the attached data source
 	DataSourceId string `pulumi:"dataSourceId"`
@@ -18370,6 +21844,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -18378,6 +21854,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	Recommendation string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The current lifecycle state of the responder rule
@@ -18414,6 +21892,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -18422,6 +21902,8 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The current lifecycle state of the responder rule
@@ -18522,6 +22004,11 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) EntitiesM
 	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -18540,6 +22027,13 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Recommend
 // The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// Rule category type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput) RuleTypes() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRule) []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -18841,6 +22335,12 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGr
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
@@ -18865,6 +22365,12 @@ type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationI
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
@@ -18928,6 +22434,27 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string {
@@ -18981,6 +22508,237 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurati
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
 	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
 }
 
 type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
@@ -19223,6 +22981,112 @@ func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingAr
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...}
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray and GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{ GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...} }
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+	ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray []GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return vs[0].([]GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type GetGuardTargetTargetResponderRecipe struct {
@@ -21328,6 +25192,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct 
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -21336,6 +25202,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule struct 
 	Recommendation string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -21372,6 +25240,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs str
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -21380,6 +25250,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleArgs str
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -21488,6 +25360,11 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) bool { return v.IsCloneable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
@@ -21514,6 +25391,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutpu
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) string {
 		return v.ResourceType
 	}).(pulumi.StringOutput)
+}
+
+// Rule category type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleOutput) RuleTypes() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -21827,6 +25711,12 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
@@ -21851,6 +25741,12 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailCo
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
@@ -21914,6 +25810,27 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValues() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration) string {
@@ -21967,6 +25884,237 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetai
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration)[vs[1].(int)]
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput)
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue struct {
@@ -22211,6 +26359,116 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntit
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput)
 }
 
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput)
+}
+
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule struct {
 	// The ID of the attached data source
 	DataSourceId string `pulumi:"dataSourceId"`
@@ -22226,6 +26484,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	DisplayName string `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable bool `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -22234,6 +26494,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	Recommendation string `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType string `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType string `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -22270,6 +26532,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Data source entities mapping for a detector rule
 	EntitiesMappings GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
+	// Is the rule cloneable?
+	IsCloneable pulumi.BoolInput `pulumi:"isCloneable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// List of managed list types related to this rule
@@ -22278,6 +26542,8 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 	Recommendation pulumi.StringInput `pulumi:"recommendation"`
 	// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
 	ResourceType pulumi.StringInput `pulumi:"resourceType"`
+	// Rule category type
+	RuleTypes GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput `pulumi:"ruleTypes"`
 	// Service type of the configuration to which the rule is applied
 	ServiceType pulumi.StringInput `pulumi:"serviceType"`
 	// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
@@ -22388,6 +26654,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput)
 }
 
+// Is the rule cloneable?
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) IsCloneable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) bool {
+		return v.IsCloneable
+	}).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
@@ -22414,6 +26687,13 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) string {
 		return v.ResourceType
 	}).(pulumi.StringOutput)
+}
+
+// Rule category type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput) RuleTypes() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRule) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return v.RuleTypes
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
 }
 
 // Service type of the configuration to which the rule is applied
@@ -22729,6 +27009,12 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
+	// Map of additional property values for configuration
+	AdditionalProperties []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType string `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey string `pulumi:"configKey"`
 	// Configuration data type
@@ -22753,6 +27039,12 @@ type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRul
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
+	// Map of additional property values for configuration
+	AdditionalProperties GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput `pulumi:"additionalProperties"`
+	// Map of possible values for configuration
+	AllowedValues GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput `pulumi:"allowedValues"`
+	// Map property Value data type
+	AllowedValuesDataType pulumi.StringInput `pulumi:"allowedValuesDataType"`
 	// Unique identifier of the configuration
 	ConfigKey pulumi.StringInput `pulumi:"configKey"`
 	// Configuration data type
@@ -22816,6 +27108,27 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return o
 }
 
+// Map of additional property values for configuration
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AdditionalProperties() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return v.AdditionalProperties
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+// Map of possible values for configuration
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValues() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return v.AllowedValues
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+// Map property Value data type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) AllowedValuesDataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string {
+		return v.AllowedValuesDataType
+	}).(pulumi.StringOutput)
+}
+
 // Unique identifier of the configuration
 func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) string {
@@ -22869,6 +27182,237 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration)[vs[1].(int)]
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Property Type
+	PropertyType string `pulumi:"propertyType"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Property Type
+	PropertyType pulumi.StringInput `pulumi:"propertyType"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Property Type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) PropertyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.PropertyType
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Value string `pulumi:"value"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue) string {
+		return v.Value
+	}).(pulumi.StringOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput)
 }
 
 type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
@@ -23111,6 +27655,116 @@ func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetector
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping)[vs[1].(int)]
 	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType struct {
+	// The unique identifier of the detector rule type
+	Key string `pulumi:"key"`
+	// Configuration value
+	Values []string `pulumi:"values"`
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...}
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs struct {
+	// The unique identifier of the detector rule type
+	Key pulumi.StringInput `pulumi:"key"`
+	// Configuration value
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
+}
+
+// GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput is an input type that accepts GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray and GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput values.
+// You can construct a concrete instance of `GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput` via:
+//
+//	GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{ GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{...} }
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+	ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray []GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return i.ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return o
+}
+
+// The unique identifier of the detector rule type
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType) string {
+		return v.Key
+	}).(pulumi.StringOutput)
+}
+
+// Configuration value
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType) []string {
+		return v.Values
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType)(nil)).Elem()
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput() GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) ToGetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutputWithContext(ctx context.Context) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput {
+	return o
+}
+
+func (o GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput) Index(i pulumi.IntInput) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+		return vs[0].([]GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleType)[vs[1].(int)]
+	}).(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput)
 }
 
 type GetGuardTargetsTargetCollectionItemTargetResponderRecipe struct {
@@ -24452,6 +29106,8 @@ type GetManagedListsManagedListCollectionItem struct {
 	FeedProvider string `pulumi:"feedProvider"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// Managed list type group
+	Group string `pulumi:"group"`
 	// Unique identifier that can't be changed after creation
 	Id string `pulumi:"id"`
 	// Is this list editable?
@@ -24498,6 +29154,8 @@ type GetManagedListsManagedListCollectionItemArgs struct {
 	FeedProvider pulumi.StringInput `pulumi:"feedProvider"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// Managed list type group
+	Group pulumi.StringInput `pulumi:"group"`
 	// Unique identifier that can't be changed after creation
 	Id pulumi.StringInput `pulumi:"id"`
 	// Is this list editable?
@@ -24599,6 +29257,11 @@ func (o GetManagedListsManagedListCollectionItemOutput) FeedProvider() pulumi.St
 // Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o GetManagedListsManagedListCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetManagedListsManagedListCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// Managed list type group
+func (o GetManagedListsManagedListCollectionItemOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v GetManagedListsManagedListCollectionItem) string { return v.Group }).(pulumi.StringOutput)
 }
 
 // Unique identifier that can't be changed after creation
@@ -29656,12 +34319,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationValueInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMappingInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleDetailsEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), DetectorRecipeDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleRuleTypeInput)(nil)).Elem(), DetectorRecipeDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeDetectorRuleRuleTypeArrayInput)(nil)).Elem(), DetectorRecipeDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -29670,12 +34339,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), DetectorRecipeEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleArrayInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ResponderRecipeEffectiveResponderRuleDetailInput)(nil)).Elem(), ResponderRecipeEffectiveResponderRuleDetailArgs{})
@@ -29700,10 +34375,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleRuleTypeInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -29712,10 +34393,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeInput)(nil)).Elem(), TargetTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeArrayInput)(nil)).Elem(), TargetTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TargetTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), TargetTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -29807,12 +34494,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleDetailEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleRuleTypeInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetDetectorRecipeDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -29821,12 +34514,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemArgs{})
@@ -29839,12 +34538,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleArgs{})
@@ -29853,12 +34558,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterInput)(nil)).Elem(), GetDetectorRecipesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDetectorRecipesFilterArrayInput)(nil)).Elem(), GetDetectorRecipesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetailInput)(nil)).Elem(), GetGuardTargetTargetDetailArgs{})
@@ -29875,10 +34586,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -29887,10 +34604,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeArrayInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), GetGuardTargetTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -29925,10 +34648,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailArgs{})
@@ -29937,10 +34666,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleInput)(nil)).Elem(), GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleArgs{})
@@ -30060,12 +34795,18 @@ func init() {
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationValueOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleDetailsEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -30074,12 +34815,18 @@ func init() {
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(DetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleArrayOutput{})
 	pulumi.RegisterOutputType(ResponderRecipeEffectiveResponderRuleDetailOutput{})
@@ -30104,10 +34851,16 @@ func init() {
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -30116,10 +34869,16 @@ func init() {
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(TargetTargetResponderRecipeEffectiveResponderRuleOutput{})
@@ -30211,12 +34970,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleDetailEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -30225,12 +34990,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemOutput{})
@@ -30243,12 +35014,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleCandidateResponderRuleOutput{})
@@ -30257,12 +35034,18 @@ func init() {
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailEntitiesMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterOutput{})
 	pulumi.RegisterOutputType(GetDetectorRecipesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetailOutput{})
@@ -30279,10 +35062,16 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -30291,10 +35080,16 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetTargetResponderRecipeEffectiveResponderRuleOutput{})
@@ -30329,10 +35124,16 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailOutput{})
@@ -30341,10 +35142,16 @@ func init() {
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeOutput{})
+	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeArrayOutput{})
 	pulumi.RegisterOutputType(GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleOutput{})

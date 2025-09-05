@@ -11,17 +11,17 @@ import java.util.Objects;
 @CustomType
 public final class GetModelsModelCollectionItemTrainingDataset {
     /**
-     * @return The name of the ObjectStorage bucket that contains the input data file.
+     * @return The name of the Object Storage bucket that contains the input data file.
      * 
      */
     private String bucket;
     /**
-     * @return The OCID of the Data Science Labeling Dataset.
+     * @return OCID of the Data Labeling dataset.
      * 
      */
     private String datasetId;
     /**
-     * @return Type of the Dataset.
+     * @return The dataset type, based on where it is stored.
      * 
      */
     private String datasetType;
@@ -34,21 +34,21 @@ public final class GetModelsModelCollectionItemTrainingDataset {
 
     private GetModelsModelCollectionItemTrainingDataset() {}
     /**
-     * @return The name of the ObjectStorage bucket that contains the input data file.
+     * @return The name of the Object Storage bucket that contains the input data file.
      * 
      */
     public String bucket() {
         return this.bucket;
     }
     /**
-     * @return The OCID of the Data Science Labeling Dataset.
+     * @return OCID of the Data Labeling dataset.
      * 
      */
     public String datasetId() {
         return this.datasetId;
     }
     /**
-     * @return Type of the Dataset.
+     * @return The dataset type, based on where it is stored.
      * 
      */
     public String datasetType() {

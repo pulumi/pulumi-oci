@@ -14,6 +14,18 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult
     {
         /// <summary>
+        /// Map of additional property values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult> AdditionalProperties;
+        /// <summary>
+        /// Map of possible values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult> AllowedValues;
+        /// <summary>
+        /// Map property Value data type
+        /// </summary>
+        public readonly string AllowedValuesDataType;
+        /// <summary>
         /// Unique identifier of the configuration
         /// </summary>
         public readonly string ConfigKey;
@@ -36,6 +48,12 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationResult(
+            ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalPropertyResult> additionalProperties,
+
+            ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValueResult> allowedValues,
+
+            string allowedValuesDataType,
+
             string configKey,
 
             string dataType,
@@ -46,6 +64,9 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeDetectorRuleDetailConfigurationValueResult> values)
         {
+            AdditionalProperties = additionalProperties;
+            AllowedValues = allowedValues;
+            AllowedValuesDataType = allowedValuesDataType;
             ConfigKey = configKey;
             DataType = dataType;
             Name = name;

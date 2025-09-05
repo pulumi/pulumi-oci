@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Create DB Azure Vaults based on the provided information, this will fetch Keys related to Azure Vaults.
+ * Creates DB Azure Vault resource.
  *
  * ## Example Usage
  *
@@ -70,11 +70,11 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Azure Vault Id.
+     * (Updatable) Azure Vault ID.
      */
     declare public readonly azureVaultId: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -82,7 +82,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Display name of DB Azure Vault.
+     * (Updatable) Oracle DB Azure Vault resource name.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
@@ -90,7 +90,7 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Description of the latest modification of the DB Azure Vault Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault resource.
      */
     declare public /*out*/ readonly lastModification: pulumi.Output<string>;
     /**
@@ -98,23 +98,23 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
-     * (Updatable) Vault Resource Location.
+     * (Updatable) Oracle DB Azure Vault resource location.
      */
     declare public readonly location: pulumi.Output<string>;
     /**
-     * (Updatable) Display name of Azure Resource Group.
+     * (Updatable) Oracle DB Azure resource group name.
      */
     declare public readonly oracleDbAzureResourceGroup: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
     declare public readonly oracleDbConnectorId: pulumi.Output<string>;
     /**
-     * (Updatable) Resource's properties.
+     * (Updatable) resource's properties.
      */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
     /**
-     * The lifecycle state of the DB Azure Vault Resource.
+     * The lifecycle state of the Oracle DB Azure Vault resource.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -122,15 +122,15 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
     /**
-     * (Updatable) Vault Resource Type.
+     * (Updatable) Oracle DB Azure Vault resource type.
      *
      *
      * ** IMPORTANT **
@@ -205,11 +205,11 @@ export class DbmulticloudOracleDbAzureVault extends pulumi.CustomResource {
  */
 export interface DbmulticloudOracleDbAzureVaultState {
     /**
-     * (Updatable) Azure Vault Id.
+     * (Updatable) Azure Vault ID.
      */
     azureVaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -217,7 +217,7 @@ export interface DbmulticloudOracleDbAzureVaultState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of DB Azure Vault.
+     * (Updatable) Oracle DB Azure Vault resource name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -225,7 +225,7 @@ export interface DbmulticloudOracleDbAzureVaultState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Description of the latest modification of the DB Azure Vault Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault resource.
      */
     lastModification?: pulumi.Input<string>;
     /**
@@ -233,23 +233,23 @@ export interface DbmulticloudOracleDbAzureVaultState {
      */
     lifecycleStateDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Vault Resource Location.
+     * (Updatable) Oracle DB Azure Vault resource location.
      */
     location?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of Azure Resource Group.
+     * (Updatable) Oracle DB Azure resource group name.
      */
     oracleDbAzureResourceGroup?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
     oracleDbConnectorId?: pulumi.Input<string>;
     /**
-     * (Updatable) Resource's properties.
+     * (Updatable) resource's properties.
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The lifecycle state of the DB Azure Vault Resource.
+     * The lifecycle state of the Oracle DB Azure Vault resource.
      */
     state?: pulumi.Input<string>;
     /**
@@ -257,15 +257,15 @@ export interface DbmulticloudOracleDbAzureVaultState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) Vault Resource Type.
+     * (Updatable) Oracle DB Azure Vault resource type.
      *
      *
      * ** IMPORTANT **
@@ -279,11 +279,11 @@ export interface DbmulticloudOracleDbAzureVaultState {
  */
 export interface DbmulticloudOracleDbAzureVaultArgs {
     /**
-     * (Updatable) Azure Vault Id.
+     * (Updatable) Azure Vault ID.
      */
     azureVaultId?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -291,7 +291,7 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of DB Azure Vault.
+     * (Updatable) Oracle DB Azure Vault resource name.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -299,23 +299,23 @@ export interface DbmulticloudOracleDbAzureVaultArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Vault Resource Location.
+     * (Updatable) Oracle DB Azure Vault resource location.
      */
     location?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of Azure Resource Group.
+     * (Updatable) Oracle DB Azure resource group name.
      */
     oracleDbAzureResourceGroup?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
     oracleDbConnectorId: pulumi.Input<string>;
     /**
-     * (Updatable) Resource's properties.
+     * (Updatable) resource's properties.
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Vault Resource Type.
+     * (Updatable) Oracle DB Azure Vault resource type.
      *
      *
      * ** IMPORTANT **

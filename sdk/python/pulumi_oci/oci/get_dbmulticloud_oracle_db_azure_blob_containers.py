@@ -61,7 +61,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersResult:
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> Optional[_builtins.str]:
         """
-        Azure Storage Account Name.
+        Azure Storage account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -69,7 +69,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersResult:
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> Optional[_builtins.str]:
         """
-        Azure Storage Container Name.
+        Azure Storage container name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -77,7 +77,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -85,7 +85,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -119,7 +119,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "state")
 
@@ -152,7 +152,7 @@ def get_dbmulticloud_oracle_db_azure_blob_containers(azure_storage_account_name:
     """
     This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Blob Container based on filter.
+    Lists all Oracle DB Azure Blob Container resources based on the specified filters.
 
     ## Example Usage
 
@@ -169,11 +169,11 @@ def get_dbmulticloud_oracle_db_azure_blob_containers(azure_storage_account_name:
     ```
 
 
-    :param _builtins.str azure_storage_account_name: A filter to return Azure Blob Containers.
-    :param _builtins.str azure_storage_container_name: A filter to return Azure Blob containers.
+    :param _builtins.str azure_storage_account_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
+    :param _builtins.str azure_storage_container_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Containers.
-    :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Mount Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Container resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -208,7 +208,7 @@ def get_dbmulticloud_oracle_db_azure_blob_containers_output(azure_storage_accoun
     """
     This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Blob Container based on filter.
+    Lists all Oracle DB Azure Blob Container resources based on the specified filters.
 
     ## Example Usage
 
@@ -225,11 +225,11 @@ def get_dbmulticloud_oracle_db_azure_blob_containers_output(azure_storage_accoun
     ```
 
 
-    :param _builtins.str azure_storage_account_name: A filter to return Azure Blob Containers.
-    :param _builtins.str azure_storage_container_name: A filter to return Azure Blob containers.
+    :param _builtins.str azure_storage_account_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
+    :param _builtins.str azure_storage_container_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Containers.
-    :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Mount Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Container resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

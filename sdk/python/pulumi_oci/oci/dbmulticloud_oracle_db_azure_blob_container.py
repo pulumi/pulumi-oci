@@ -29,13 +29,13 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
                  private_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureBlobContainer resource.
-        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage Account Name.
-        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage Container Name.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Blob Container.
+        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
+        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Container resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint DNS Alias.
+        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
                
@@ -59,7 +59,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Azure Storage Account Name.
+        (Updatable) Azure Storage account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -71,7 +71,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Azure Storage Container Name.
+        (Updatable) Azure Storage container name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -83,7 +83,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -95,7 +95,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Display name of Oracle DB Azure Blob Container.
+        (Updatable) Oracle DB Azure Blob Container resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -131,7 +131,7 @@ class DbmulticloudOracleDbAzureBlobContainerArgs:
     @pulumi.getter(name="privateEndpointDnsAlias")
     def private_endpoint_dns_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Private endpoint DNS Alias.
+        (Updatable) Private endpoint's DNS alias.
         """
         return pulumi.get(self, "private_endpoint_dns_alias")
 
@@ -175,21 +175,21 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureBlobContainer resources.
-        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage Account Name.
-        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage Container Name.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
+        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Blob Container.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Container resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Container resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint DNS Alias.
+        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Container resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -227,7 +227,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Storage Account Name.
+        (Updatable) Azure Storage account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -239,7 +239,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Storage Container Name.
+        (Updatable) Azure Storage container name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -251,7 +251,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -275,7 +275,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Display name of Oracle DB Azure Blob Container.
+        (Updatable) Oracle DB Azure Blob Container resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -299,7 +299,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -323,7 +323,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter(name="privateEndpointDnsAlias")
     def private_endpoint_dns_alias(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Private endpoint DNS Alias.
+        (Updatable) Private endpoint's DNS alias.
         """
         return pulumi.get(self, "private_endpoint_dns_alias")
 
@@ -351,7 +351,7 @@ class _DbmulticloudOracleDbAzureBlobContainerState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "state")
 
@@ -414,7 +414,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+        Creates Oracle DB Azure Blob Container resource.
 
         ## Example Usage
 
@@ -447,13 +447,13 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage Account Name.
-        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage Container Name.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
+        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Blob Container.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Container resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint DNS Alias.
+        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
                
@@ -469,7 +469,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+        Creates Oracle DB Azure Blob Container resource.
 
         ## Example Usage
 
@@ -585,21 +585,21 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage Account Name.
-        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage Container Name.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] azure_storage_account_name: (Updatable) Azure Storage account name.
+        :param pulumi.Input[_builtins.str] azure_storage_container_name: (Updatable) Azure Storage container name.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Blob Container.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Container resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Container resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint DNS Alias.
+        :param pulumi.Input[_builtins.str] private_endpoint_dns_alias: (Updatable) Private endpoint's DNS alias.
         :param pulumi.Input[_builtins.str] private_endpoint_ip_address: (Updatable) Private endpoint IP.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Container resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Blob Container was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Blob Container was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -628,7 +628,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure Storage Account Name.
+        (Updatable) Azure Storage account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -636,7 +636,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure Storage Container Name.
+        (Updatable) Azure Storage container name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -644,7 +644,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -660,7 +660,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Display name of Oracle DB Azure Blob Container.
+        (Updatable) Oracle DB Azure Blob Container resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -676,7 +676,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> pulumi.Output[_builtins.str]:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -692,7 +692,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter(name="privateEndpointDnsAlias")
     def private_endpoint_dns_alias(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Private endpoint DNS Alias.
+        (Updatable) Private endpoint's DNS alias.
         """
         return pulumi.get(self, "private_endpoint_dns_alias")
 
@@ -712,7 +712,7 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "state")
 

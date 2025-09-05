@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+ * Creates Oracle DB Azure Blob Container resource.
  * 
  * ## Example Usage
  * 
@@ -73,42 +73,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer")
 public class DbmulticloudOracleDbAzureBlobContainer extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Azure Storage Account Name.
+     * (Updatable) Azure Storage account name.
      * 
      */
     @Export(name="azureStorageAccountName", refs={String.class}, tree="[0]")
     private Output<String> azureStorageAccountName;
 
     /**
-     * @return (Updatable) Azure Storage Account Name.
+     * @return (Updatable) Azure Storage account name.
      * 
      */
     public Output<String> azureStorageAccountName() {
         return this.azureStorageAccountName;
     }
     /**
-     * (Updatable) Azure Storage Container Name.
+     * (Updatable) Azure Storage container name.
      * 
      */
     @Export(name="azureStorageContainerName", refs={String.class}, tree="[0]")
     private Output<String> azureStorageContainerName;
 
     /**
-     * @return (Updatable) Azure Storage Container Name.
+     * @return (Updatable) Azure Storage container name.
      * 
      */
     public Output<String> azureStorageContainerName() {
         return this.azureStorageContainerName;
     }
     /**
-     * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -129,14 +129,14 @@ public class DbmulticloudOracleDbAzureBlobContainer extends com.pulumi.resources
         return this.definedTags;
     }
     /**
-     * (Updatable) Display name of Oracle DB Azure Blob Container.
+     * (Updatable) Oracle DB Azure Blob Container resource name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Oracle DB Azure Blob Container.
+     * @return (Updatable) Oracle DB Azure Blob Container resource name.
      * 
      */
     public Output<String> displayName() {
@@ -157,14 +157,14 @@ public class DbmulticloudOracleDbAzureBlobContainer extends com.pulumi.resources
         return this.freeformTags;
     }
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     public Output<String> lastModification() {
@@ -185,14 +185,14 @@ public class DbmulticloudOracleDbAzureBlobContainer extends com.pulumi.resources
         return this.lifecycleStateDetails;
     }
     /**
-     * (Updatable) Private endpoint DNS Alias.
+     * (Updatable) Private endpoint&#39;s DNS alias.
      * 
      */
     @Export(name="privateEndpointDnsAlias", refs={String.class}, tree="[0]")
     private Output<String> privateEndpointDnsAlias;
 
     /**
-     * @return (Updatable) Private endpoint DNS Alias.
+     * @return (Updatable) Private endpoint&#39;s DNS alias.
      * 
      */
     public Output<String> privateEndpointDnsAlias() {
@@ -219,14 +219,14 @@ public class DbmulticloudOracleDbAzureBlobContainer extends com.pulumi.resources
         return this.privateEndpointIpAddress;
     }
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Container resource.
      * 
      */
     public Output<String> state() {

@@ -12,6 +12,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary {
     /**
+     * @return Available capacity left for new elastic pool members provision
+     * 
+     */
+    private Integer availableComputeCapacity;
+    /**
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
@@ -21,8 +26,20 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSum
      * 
      */
     private Integer poolSize;
+    /**
+     * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    private Integer totalComputeCapacity;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary() {}
+    /**
+     * @return Available capacity left for new elastic pool members provision
+     * 
+     */
+    public Integer availableComputeCapacity() {
+        return this.availableComputeCapacity;
+    }
     /**
      * @return Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
@@ -37,6 +54,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSum
     public Integer poolSize() {
         return this.poolSize;
     }
+    /**
+     * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    public Integer totalComputeCapacity() {
+        return this.totalComputeCapacity;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -47,15 +71,27 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSum
     }
     @CustomType.Builder
     public static final class Builder {
+        private Integer availableComputeCapacity;
         private Boolean isDisabled;
         private Integer poolSize;
+        private Integer totalComputeCapacity;
         public Builder() {}
         public Builder(GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availableComputeCapacity = defaults.availableComputeCapacity;
     	      this.isDisabled = defaults.isDisabled;
     	      this.poolSize = defaults.poolSize;
+    	      this.totalComputeCapacity = defaults.totalComputeCapacity;
         }
 
+        @CustomType.Setter
+        public Builder availableComputeCapacity(Integer availableComputeCapacity) {
+            if (availableComputeCapacity == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary", "availableComputeCapacity");
+            }
+            this.availableComputeCapacity = availableComputeCapacity;
+            return this;
+        }
         @CustomType.Setter
         public Builder isDisabled(Boolean isDisabled) {
             if (isDisabled == null) {
@@ -72,10 +108,20 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSum
             this.poolSize = poolSize;
             return this;
         }
+        @CustomType.Setter
+        public Builder totalComputeCapacity(Integer totalComputeCapacity) {
+            if (totalComputeCapacity == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary", "totalComputeCapacity");
+            }
+            this.totalComputeCapacity = totalComputeCapacity;
+            return this;
+        }
         public GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary build() {
             final var _resultValue = new GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummary();
+            _resultValue.availableComputeCapacity = availableComputeCapacity;
             _resultValue.isDisabled = isDisabled;
             _resultValue.poolSize = poolSize;
+            _resultValue.totalComputeCapacity = totalComputeCapacity;
             return _resultValue;
         }
     }

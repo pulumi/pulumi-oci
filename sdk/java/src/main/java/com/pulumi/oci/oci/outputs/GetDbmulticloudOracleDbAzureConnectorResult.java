@@ -13,22 +13,27 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureConnectorResult {
     /**
-     * @return Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+     * @return Azure bearer access token.
      * 
      */
     private String accessToken;
     /**
-     * @return List of All VMs where Arc Agent is Install under VMCluster.
+     * @return List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     private List<GetDbmulticloudOracleDbAzureConnectorArcAgentNode> arcAgentNodes;
     /**
-     * @return Azure Identity Mechanism.
+     * @return The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    private String azureIdentityConnectivityStatus;
+    /**
+     * @return Azure Identity mechanism.
      * 
      */
     private String azureIdentityMechanism;
     /**
-     * @return Azure Resource Group Name.
+     * @return Azure Resource group name.
      * 
      */
     private String azureResourceGroup;
@@ -43,12 +48,12 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
      */
     private String azureTenantId;
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      * 
      */
     private String dbClusterResourceId;
@@ -58,12 +63,12 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
      */
     private String displayName;
     /**
-     * @return The ID of the Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     private String lastModification;
@@ -74,45 +79,52 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
     private String lifecycleStateDetails;
     private String oracleDbAzureConnectorId;
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     private String state;
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
 
     private GetDbmulticloudOracleDbAzureConnectorResult() {}
     /**
-     * @return Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+     * @return Azure bearer access token.
      * 
      */
     public String accessToken() {
         return this.accessToken;
     }
     /**
-     * @return List of All VMs where Arc Agent is Install under VMCluster.
+     * @return List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     public List<GetDbmulticloudOracleDbAzureConnectorArcAgentNode> arcAgentNodes() {
         return this.arcAgentNodes;
     }
     /**
-     * @return Azure Identity Mechanism.
+     * @return The current Connectivity status of Azure Identity Connector resource.
+     * 
+     */
+    public String azureIdentityConnectivityStatus() {
+        return this.azureIdentityConnectivityStatus;
+    }
+    /**
+     * @return Azure Identity mechanism.
      * 
      */
     public String azureIdentityMechanism() {
         return this.azureIdentityMechanism;
     }
     /**
-     * @return Azure Resource Group Name.
+     * @return Azure Resource group name.
      * 
      */
     public String azureResourceGroup() {
@@ -133,14 +145,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
         return this.azureTenantId;
     }
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      * 
      */
     public String dbClusterResourceId() {
@@ -154,14 +166,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
         return this.displayName;
     }
     /**
-     * @return The ID of the Oracle DB Azure Connector resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     public String lastModification() {
@@ -178,21 +190,21 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
         return this.oracleDbAzureConnectorId;
     }
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Azure Arc Agent resource.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {
@@ -210,6 +222,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
     public static final class Builder {
         private String accessToken;
         private List<GetDbmulticloudOracleDbAzureConnectorArcAgentNode> arcAgentNodes;
+        private String azureIdentityConnectivityStatus;
         private String azureIdentityMechanism;
         private String azureResourceGroup;
         private String azureSubscriptionId;
@@ -229,6 +242,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessToken = defaults.accessToken;
     	      this.arcAgentNodes = defaults.arcAgentNodes;
+    	      this.azureIdentityConnectivityStatus = defaults.azureIdentityConnectivityStatus;
     	      this.azureIdentityMechanism = defaults.azureIdentityMechanism;
     	      this.azureResourceGroup = defaults.azureResourceGroup;
     	      this.azureSubscriptionId = defaults.azureSubscriptionId;
@@ -263,6 +277,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
         }
         public Builder arcAgentNodes(GetDbmulticloudOracleDbAzureConnectorArcAgentNode... arcAgentNodes) {
             return arcAgentNodes(List.of(arcAgentNodes));
+        }
+        @CustomType.Setter
+        public Builder azureIdentityConnectivityStatus(String azureIdentityConnectivityStatus) {
+            if (azureIdentityConnectivityStatus == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureConnectorResult", "azureIdentityConnectivityStatus");
+            }
+            this.azureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
+            return this;
         }
         @CustomType.Setter
         public Builder azureIdentityMechanism(String azureIdentityMechanism) {
@@ -380,6 +402,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorResult {
             final var _resultValue = new GetDbmulticloudOracleDbAzureConnectorResult();
             _resultValue.accessToken = accessToken;
             _resultValue.arcAgentNodes = arcAgentNodes;
+            _resultValue.azureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
             _resultValue.azureIdentityMechanism = azureIdentityMechanism;
             _resultValue.azureResourceGroup = azureResourceGroup;
             _resultValue.azureSubscriptionId = azureSubscriptionId;

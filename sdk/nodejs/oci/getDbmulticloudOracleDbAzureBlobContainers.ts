@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Blob Container based on filter.
+ * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -45,11 +45,11 @@ export function getDbmulticloudOracleDbAzureBlobContainers(args: GetDbmulticloud
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainersArgs {
     /**
-     * A filter to return Azure Blob Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      */
     azureStorageAccountName?: string;
     /**
-     * A filter to return Azure Blob containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      */
     azureStorageContainerName?: string;
     /**
@@ -57,12 +57,12 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return Azure Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudOracleDbAzureBlobContainersFilter[];
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId?: string;
     /**
@@ -76,19 +76,19 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersArgs {
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainersResult {
     /**
-     * Azure Storage Account Name.
+     * Azure Storage account name.
      */
     readonly azureStorageAccountName?: string;
     /**
-     * Azure Storage Container Name.
+     * Azure Storage container name.
      */
     readonly azureStorageContainerName?: string;
     /**
-     * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      */
     readonly compartmentId: string;
     /**
-     * Display name of Oracle DB Azure Blob Container.
+     * Oracle DB Azure Blob Container resource name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.oci.GetDbmulticloudOracleDbAzureBlobContainersFilter[];
@@ -102,14 +102,14 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersResult {
      */
     readonly oracleDbAzureBlobContainerSummaryCollections: outputs.oci.GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection[];
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Blob Container based on filter.
+ * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
  *
  * ## Example Usage
  *
@@ -145,11 +145,11 @@ export function getDbmulticloudOracleDbAzureBlobContainersOutput(args: GetDbmult
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainersOutputArgs {
     /**
-     * A filter to return Azure Blob Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      */
     azureStorageAccountName?: pulumi.Input<string>;
     /**
-     * A filter to return Azure Blob containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      */
     azureStorageContainerName?: pulumi.Input<string>;
     /**
@@ -157,12 +157,12 @@ export interface GetDbmulticloudOracleDbAzureBlobContainersOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return Azure Containers.
+     * A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureBlobContainersFilterArgs>[]>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId?: pulumi.Input<string>;
     /**

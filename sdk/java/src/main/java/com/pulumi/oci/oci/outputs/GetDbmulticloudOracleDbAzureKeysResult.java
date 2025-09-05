@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureKeysResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Display name of Oracle DB Azure Vault Key.
+     * @return Oracle DB Azure Vault Key resource name.
      * 
      */
     private @Nullable String displayName;
@@ -38,26 +38,26 @@ public final class GetDbmulticloudOracleDbAzureKeysResult {
      */
     private List<GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection> oracleDbAzureKeySummaryCollections;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     private @Nullable String oracleDbAzureVaultId;
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Vault Key resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureKeysResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Display name of Oracle DB Azure Vault Key.
+     * @return Oracle DB Azure Vault Key resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -84,14 +84,14 @@ public final class GetDbmulticloudOracleDbAzureKeysResult {
         return this.oracleDbAzureKeySummaryCollections;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public Optional<String> oracleDbAzureVaultId() {
         return Optional.ofNullable(this.oracleDbAzureVaultId);
     }
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Vault Key resource.
      * 
      */
     public Optional<String> state() {

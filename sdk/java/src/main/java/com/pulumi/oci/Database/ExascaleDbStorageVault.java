@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.ExascaleDbStorageVaultArgs;
 import com.pulumi.oci.Database.inputs.ExascaleDbStorageVaultState;
 import com.pulumi.oci.Database.outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -56,11 +57,13 @@ import javax.annotation.Nullable;
  *                 .totalSizeInGbs(exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs)
  *                 .build())
  *             .additionalFlashCacheInPercent(exascaleDbStorageVaultAdditionalFlashCacheInPercent)
+ *             .autoscaleLimitInGbs(exascaleDbStorageVaultAutoscaleLimitInGbs)
  *             .clusterPlacementGroupId(testClusterPlacementGroup.id())
  *             .definedTags(exascaleDbStorageVaultDefinedTags)
  *             .description(exascaleDbStorageVaultDescription)
  *             .exadataInfrastructureId(testExadataInfrastructure.id())
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isAutoscaleEnabled(exascaleDbStorageVaultIsAutoscaleEnabled)
  *             .subscriptionId(tenantSubscriptionId)
  *             .timeZone(exascaleDbStorageVaultTimeZone)
  *             .build());
@@ -109,6 +112,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
      */
     public Output<List<String>> attachedShapeAttributes() {
         return this.attachedShapeAttributes;
+    }
+    /**
+     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    @Export(name="autoscaleLimitInGbs", refs={Integer.class}, tree="[0]")
+    private Output<Integer> autoscaleLimitInGbs;
+
+    /**
+     * @return (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    public Output<Integer> autoscaleLimitInGbs() {
+        return this.autoscaleLimitInGbs;
     }
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
@@ -235,6 +252,20 @@ public class ExascaleDbStorageVault extends com.pulumi.resources.CustomResource 
      */
     public Output<ExascaleDbStorageVaultHighCapacityDatabaseStorage> highCapacityDatabaseStorage() {
         return this.highCapacityDatabaseStorage;
+    }
+    /**
+     * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    @Export(name="isAutoscaleEnabled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAutoscaleEnabled;
+
+    /**
+     * @return (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    public Output<Boolean> isAutoscaleEnabled() {
+        return this.isAutoscaleEnabled;
     }
     /**
      * Additional information about the current lifecycle state.

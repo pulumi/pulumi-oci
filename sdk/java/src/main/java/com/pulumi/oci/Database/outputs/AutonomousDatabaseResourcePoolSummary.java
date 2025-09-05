@@ -13,6 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousDatabaseResourcePoolSummary {
     /**
+     * @return Available capacity left for new elastic pool members provision
+     * 
+     */
+    private @Nullable Integer availableComputeCapacity;
+    /**
      * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
      */
@@ -22,8 +27,20 @@ public final class AutonomousDatabaseResourcePoolSummary {
      * 
      */
     private @Nullable Integer poolSize;
+    /**
+     * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    private @Nullable Integer totalComputeCapacity;
 
     private AutonomousDatabaseResourcePoolSummary() {}
+    /**
+     * @return Available capacity left for new elastic pool members provision
+     * 
+     */
+    public Optional<Integer> availableComputeCapacity() {
+        return Optional.ofNullable(this.availableComputeCapacity);
+    }
     /**
      * @return (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
      * 
@@ -38,6 +55,13 @@ public final class AutonomousDatabaseResourcePoolSummary {
     public Optional<Integer> poolSize() {
         return Optional.ofNullable(this.poolSize);
     }
+    /**
+     * @return Resource Pool total capacity, it&#39;s currently 4x of pool size
+     * 
+     */
+    public Optional<Integer> totalComputeCapacity() {
+        return Optional.ofNullable(this.totalComputeCapacity);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,15 +72,25 @@ public final class AutonomousDatabaseResourcePoolSummary {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable Integer availableComputeCapacity;
         private @Nullable Boolean isDisabled;
         private @Nullable Integer poolSize;
+        private @Nullable Integer totalComputeCapacity;
         public Builder() {}
         public Builder(AutonomousDatabaseResourcePoolSummary defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availableComputeCapacity = defaults.availableComputeCapacity;
     	      this.isDisabled = defaults.isDisabled;
     	      this.poolSize = defaults.poolSize;
+    	      this.totalComputeCapacity = defaults.totalComputeCapacity;
         }
 
+        @CustomType.Setter
+        public Builder availableComputeCapacity(@Nullable Integer availableComputeCapacity) {
+
+            this.availableComputeCapacity = availableComputeCapacity;
+            return this;
+        }
         @CustomType.Setter
         public Builder isDisabled(@Nullable Boolean isDisabled) {
 
@@ -69,10 +103,18 @@ public final class AutonomousDatabaseResourcePoolSummary {
             this.poolSize = poolSize;
             return this;
         }
+        @CustomType.Setter
+        public Builder totalComputeCapacity(@Nullable Integer totalComputeCapacity) {
+
+            this.totalComputeCapacity = totalComputeCapacity;
+            return this;
+        }
         public AutonomousDatabaseResourcePoolSummary build() {
             final var _resultValue = new AutonomousDatabaseResourcePoolSummary();
+            _resultValue.availableComputeCapacity = availableComputeCapacity;
             _resultValue.isDisabled = isDisabled;
             _resultValue.poolSize = poolSize;
+            _resultValue.totalComputeCapacity = totalComputeCapacity;
             return _resultValue;
         }
     }

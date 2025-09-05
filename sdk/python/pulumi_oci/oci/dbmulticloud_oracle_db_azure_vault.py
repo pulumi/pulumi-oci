@@ -31,16 +31,16 @@ class DbmulticloudOracleDbAzureVaultArgs:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB Azure Vault.
-        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
-        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault Id.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault resource name.
+        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] location: (Updatable) Vault Resource Location.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Display name of Azure Resource Group.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) Resource's properties.
-        :param pulumi.Input[_builtins.str] type: (Updatable) Vault Resource Type.
+        :param pulumi.Input[_builtins.str] location: (Updatable) Oracle DB Azure Vault resource location.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
                ** IMPORTANT **
@@ -68,7 +68,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -80,7 +80,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Display name of DB Azure Vault.
+        (Updatable) Oracle DB Azure Vault resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -92,7 +92,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -104,7 +104,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter(name="azureVaultId")
     def azure_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Vault Id.
+        (Updatable) Azure Vault ID.
         """
         return pulumi.get(self, "azure_vault_id")
 
@@ -140,7 +140,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter
     def location(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Vault Resource Location.
+        (Updatable) Oracle DB Azure Vault resource location.
         """
         return pulumi.get(self, "location")
 
@@ -152,7 +152,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Display name of Azure Resource Group.
+        (Updatable) Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -164,7 +164,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Resource's properties.
+        (Updatable) resource's properties.
         """
         return pulumi.get(self, "properties")
 
@@ -176,7 +176,7 @@ class DbmulticloudOracleDbAzureVaultArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Vault Resource Type.
+        (Updatable) Oracle DB Azure Vault resource type.
 
 
         ** IMPORTANT **
@@ -210,22 +210,22 @@ class _DbmulticloudOracleDbAzureVaultState:
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
-        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault Id.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB Azure Vault.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] location: (Updatable) Vault Resource Location.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Display name of Azure Resource Group.
-        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) Resource's properties.
-        :param pulumi.Input[_builtins.str] state: The lifecycle state of the DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] location: (Updatable) Oracle DB Azure Vault resource location.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
+        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] type: (Updatable) Vault Resource Type.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
                ** IMPORTANT **
@@ -268,7 +268,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="azureVaultId")
     def azure_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Azure Vault Id.
+        (Updatable) Azure Vault ID.
         """
         return pulumi.get(self, "azure_vault_id")
 
@@ -280,7 +280,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -304,7 +304,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Display name of DB Azure Vault.
+        (Updatable) Oracle DB Azure Vault resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -328,7 +328,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -352,7 +352,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter
     def location(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Vault Resource Location.
+        (Updatable) Oracle DB Azure Vault resource location.
         """
         return pulumi.get(self, "location")
 
@@ -364,7 +364,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Display name of Azure Resource Group.
+        (Updatable) Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -376,7 +376,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -388,7 +388,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter
     def properties(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Resource's properties.
+        (Updatable) resource's properties.
         """
         return pulumi.get(self, "properties")
 
@@ -400,7 +400,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "state")
 
@@ -424,7 +424,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -436,7 +436,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -448,7 +448,7 @@ class _DbmulticloudOracleDbAzureVaultState:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Vault Resource Type.
+        (Updatable) Oracle DB Azure Vault resource type.
 
 
         ** IMPORTANT **
@@ -481,7 +481,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Create DB Azure Vaults based on the provided information, this will fetch Keys related to Azure Vaults.
+        Creates DB Azure Vault resource.
 
         ## Example Usage
 
@@ -516,16 +516,16 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault Id.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB Azure Vault.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] location: (Updatable) Vault Resource Location.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Display name of Azure Resource Group.
-        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) Resource's properties.
-        :param pulumi.Input[_builtins.str] type: (Updatable) Vault Resource Type.
+        :param pulumi.Input[_builtins.str] location: (Updatable) Oracle DB Azure Vault resource location.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
+        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
                ** IMPORTANT **
@@ -540,7 +540,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Create DB Azure Vaults based on the provided information, this will fetch Keys related to Azure Vaults.
+        Creates DB Azure Vault resource.
 
         ## Example Usage
 
@@ -662,22 +662,22 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault Id.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] azure_vault_id: (Updatable) Azure Vault ID.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of DB Azure Vault.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] location: (Updatable) Vault Resource Location.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Display name of Azure Resource Group.
-        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) Resource's properties.
-        :param pulumi.Input[_builtins.str] state: The lifecycle state of the DB Azure Vault Resource.
+        :param pulumi.Input[_builtins.str] location: (Updatable) Oracle DB Azure Vault resource location.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_resource_group: (Updatable) Oracle DB Azure resource group name.
+        :param pulumi.Input[_builtins.str] oracle_db_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: (Updatable) resource's properties.
+        :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB Azure Vault resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] type: (Updatable) Vault Resource Type.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] type: (Updatable) Oracle DB Azure Vault resource type.
                
                
                ** IMPORTANT **
@@ -709,7 +709,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="azureVaultId")
     def azure_vault_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Azure Vault Id.
+        (Updatable) Azure Vault ID.
         """
         return pulumi.get(self, "azure_vault_id")
 
@@ -717,7 +717,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -733,7 +733,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Display name of DB Azure Vault.
+        (Updatable) Oracle DB Azure Vault resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -749,7 +749,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> pulumi.Output[_builtins.str]:
         """
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -765,7 +765,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter
     def location(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Vault Resource Location.
+        (Updatable) Oracle DB Azure Vault resource location.
         """
         return pulumi.get(self, "location")
 
@@ -773,7 +773,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Display name of Azure Resource Group.
+        (Updatable) Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -781,7 +781,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -789,7 +789,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter
     def properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Resource's properties.
+        (Updatable) resource's properties.
         """
         return pulumi.get(self, "properties")
 
@@ -797,7 +797,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "state")
 
@@ -813,7 +813,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -821,7 +821,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -829,7 +829,7 @@ class DbmulticloudOracleDbAzureVault(pulumi.CustomResource):
     @pulumi.getter
     def type(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Vault Resource Type.
+        (Updatable) Oracle DB Azure Vault resource type.
 
 
         ** IMPORTANT **

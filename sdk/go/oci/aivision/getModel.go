@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
 //
-// # Gets a Model by identifier
+// Get a model by identifier.
 //
 // ## Example Usage
 //
@@ -52,7 +52,7 @@ func LookupModel(ctx *pulumi.Context, args *LookupModelArgs, opts ...pulumi.Invo
 
 // A collection of arguments for invoking getModel.
 type LookupModelArgs struct {
-	// unique Model identifier
+	// A unique model identifier.
 	ModelId string `pulumi:"modelId"`
 }
 
@@ -126,7 +126,7 @@ func LookupModelOutput(ctx *pulumi.Context, args LookupModelOutputArgs, opts ...
 
 // A collection of arguments for invoking getModel.
 type LookupModelOutputArgs struct {
-	// unique Model identifier
+	// A unique model identifier.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 }
 

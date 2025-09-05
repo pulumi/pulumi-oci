@@ -83,6 +83,12 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
+        /// Is the rule cloneable?
+        /// </summary>
+        [Input("isCloneable")]
+        public Input<bool>? IsCloneable { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -111,6 +117,18 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
+
+        [Input("ruleTypes")]
+        private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleRuleTypeGetArgs>? _ruleTypes;
+
+        /// <summary>
+        /// Detector rule type
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleRuleTypeGetArgs> RuleTypes
+        {
+            get => _ruleTypes ?? (_ruleTypes = new InputList<Inputs.DetectorRecipeEffectiveDetectorRuleRuleTypeGetArgs>());
+            set => _ruleTypes = value;
+        }
 
         /// <summary>
         /// Service type of the configuration to which the rule is applied

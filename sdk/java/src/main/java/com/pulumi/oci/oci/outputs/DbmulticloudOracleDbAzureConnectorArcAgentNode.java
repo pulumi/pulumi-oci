@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbmulticloudOracleDbAzureConnectorArcAgentNode {
     /**
-     * @return Current Arc Agent Version installed on this node of VM Cluster.
+     * @return Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
      * 
      */
     private @Nullable String currentArcAgentVersion;
@@ -22,24 +22,24 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNode {
      */
     private @Nullable String hostId;
     /**
-     * @return Host Name or Azure Arc Agent Name.
+     * @return Host name or Azure Arc Agent name.
      * 
      */
     private @Nullable String hostName;
     /**
-     * @return The current status of the Azure Arc Agent Resource.
+     * @return The current status of the Azure Arc Agent resource.
      * 
      */
     private @Nullable String status;
     /**
-     * @return time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private @Nullable String timeLastChecked;
 
     private DbmulticloudOracleDbAzureConnectorArcAgentNode() {}
     /**
-     * @return Current Arc Agent Version installed on this node of VM Cluster.
+     * @return Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
      * 
      */
     public Optional<String> currentArcAgentVersion() {
@@ -53,21 +53,21 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNode {
         return Optional.ofNullable(this.hostId);
     }
     /**
-     * @return Host Name or Azure Arc Agent Name.
+     * @return Host name or Azure Arc Agent name.
      * 
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
-     * @return The current status of the Azure Arc Agent Resource.
+     * @return The current status of the Azure Arc Agent resource.
      * 
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<String> timeLastChecked() {

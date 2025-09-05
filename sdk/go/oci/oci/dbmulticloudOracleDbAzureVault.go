@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Create DB Azure Vaults based on the provided information, this will fetch Keys related to Azure Vaults.
+// Creates DB Azure Vault resource.
 //
 // ## Example Usage
 //
@@ -65,37 +65,37 @@ import (
 type DbmulticloudOracleDbAzureVault struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Azure Vault Id.
+	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringOutput `pulumi:"azureVaultId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) Display name of DB Azure Vault.
+	// (Updatable) Oracle DB Azure Vault resource name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Description of the latest modification of the DB Azure Vault Resource.
+	// Description of the latest modification of the Oracle DB Azure Vault resource.
 	LastModification pulumi.StringOutput `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
-	// (Updatable) Vault Resource Location.
+	// (Updatable) Oracle DB Azure Vault resource location.
 	Location pulumi.StringOutput `pulumi:"location"`
-	// (Updatable) Display name of Azure Resource Group.
+	// (Updatable) Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup pulumi.StringOutput `pulumi:"oracleDbAzureResourceGroup"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId pulumi.StringOutput `pulumi:"oracleDbConnectorId"`
-	// (Updatable) Resource's properties.
+	// (Updatable) resource's properties.
 	Properties pulumi.StringMapOutput `pulumi:"properties"`
-	// The lifecycle state of the DB Azure Vault Resource.
+	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) Vault Resource Type.
+	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -141,37 +141,37 @@ func GetDbmulticloudOracleDbAzureVault(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbAzureVault resources.
 type dbmulticloudOracleDbAzureVaultState struct {
-	// (Updatable) Azure Vault Id.
+	// (Updatable) Azure Vault ID.
 	AzureVaultId *string `pulumi:"azureVaultId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of DB Azure Vault.
+	// (Updatable) Oracle DB Azure Vault resource name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Description of the latest modification of the DB Azure Vault Resource.
+	// Description of the latest modification of the Oracle DB Azure Vault resource.
 	LastModification *string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
-	// (Updatable) Vault Resource Location.
+	// (Updatable) Oracle DB Azure Vault resource location.
 	Location *string `pulumi:"location"`
-	// (Updatable) Display name of Azure Resource Group.
+	// (Updatable) Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup *string `pulumi:"oracleDbAzureResourceGroup"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId *string `pulumi:"oracleDbConnectorId"`
-	// (Updatable) Resource's properties.
+	// (Updatable) resource's properties.
 	Properties map[string]string `pulumi:"properties"`
-	// The lifecycle state of the DB Azure Vault Resource.
+	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated *string `pulumi:"timeCreated"`
-	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) Vault Resource Type.
+	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -179,37 +179,37 @@ type dbmulticloudOracleDbAzureVaultState struct {
 }
 
 type DbmulticloudOracleDbAzureVaultState struct {
-	// (Updatable) Azure Vault Id.
+	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of DB Azure Vault.
+	// (Updatable) Oracle DB Azure Vault resource name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Description of the latest modification of the DB Azure Vault Resource.
+	// Description of the latest modification of the Oracle DB Azure Vault resource.
 	LastModification pulumi.StringPtrInput
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringPtrInput
-	// (Updatable) Vault Resource Location.
+	// (Updatable) Oracle DB Azure Vault resource location.
 	Location pulumi.StringPtrInput
-	// (Updatable) Display name of Azure Resource Group.
+	// (Updatable) Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId pulumi.StringPtrInput
-	// (Updatable) Resource's properties.
+	// (Updatable) resource's properties.
 	Properties pulumi.StringMapInput
-	// The lifecycle state of the DB Azure Vault Resource.
+	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated pulumi.StringPtrInput
-	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) Vault Resource Type.
+	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -221,25 +221,25 @@ func (DbmulticloudOracleDbAzureVaultState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbAzureVaultArgs struct {
-	// (Updatable) Azure Vault Id.
+	// (Updatable) Azure Vault ID.
 	AzureVaultId *string `pulumi:"azureVaultId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of DB Azure Vault.
+	// (Updatable) Oracle DB Azure Vault resource name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Vault Resource Location.
+	// (Updatable) Oracle DB Azure Vault resource location.
 	Location *string `pulumi:"location"`
-	// (Updatable) Display name of Azure Resource Group.
+	// (Updatable) Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup *string `pulumi:"oracleDbAzureResourceGroup"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
-	// (Updatable) Resource's properties.
+	// (Updatable) resource's properties.
 	Properties map[string]string `pulumi:"properties"`
-	// (Updatable) Vault Resource Type.
+	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -248,25 +248,25 @@ type dbmulticloudOracleDbAzureVaultArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbAzureVault resource.
 type DbmulticloudOracleDbAzureVaultArgs struct {
-	// (Updatable) Azure Vault Id.
+	// (Updatable) Azure Vault ID.
 	AzureVaultId pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of DB Azure Vault.
+	// (Updatable) Oracle DB Azure Vault resource name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Vault Resource Location.
+	// (Updatable) Oracle DB Azure Vault resource location.
 	Location pulumi.StringPtrInput
-	// (Updatable) Display name of Azure Resource Group.
+	// (Updatable) Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId pulumi.StringInput
-	// (Updatable) Resource's properties.
+	// (Updatable) resource's properties.
 	Properties pulumi.StringMapInput
-	// (Updatable) Vault Resource Type.
+	// (Updatable) Oracle DB Azure Vault resource type.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -360,12 +360,12 @@ func (o DbmulticloudOracleDbAzureVaultOutput) ToDbmulticloudOracleDbAzureVaultOu
 	return o
 }
 
-// (Updatable) Azure Vault Id.
+// (Updatable) Azure Vault ID.
 func (o DbmulticloudOracleDbAzureVaultOutput) AzureVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.AzureVaultId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
 func (o DbmulticloudOracleDbAzureVaultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -375,7 +375,7 @@ func (o DbmulticloudOracleDbAzureVaultOutput) DefinedTags() pulumi.StringMapOutp
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Display name of DB Azure Vault.
+// (Updatable) Oracle DB Azure Vault resource name.
 func (o DbmulticloudOracleDbAzureVaultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -385,7 +385,7 @@ func (o DbmulticloudOracleDbAzureVaultOutput) FreeformTags() pulumi.StringMapOut
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the latest modification of the DB Azure Vault Resource.
+// Description of the latest modification of the Oracle DB Azure Vault resource.
 func (o DbmulticloudOracleDbAzureVaultOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -395,27 +395,27 @@ func (o DbmulticloudOracleDbAzureVaultOutput) LifecycleStateDetails() pulumi.Str
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Vault Resource Location.
+// (Updatable) Oracle DB Azure Vault resource location.
 func (o DbmulticloudOracleDbAzureVaultOutput) Location() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.Location }).(pulumi.StringOutput)
 }
 
-// (Updatable) Display name of Azure Resource Group.
+// (Updatable) Oracle DB Azure resource group name.
 func (o DbmulticloudOracleDbAzureVaultOutput) OracleDbAzureResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.OracleDbAzureResourceGroup }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 func (o DbmulticloudOracleDbAzureVaultOutput) OracleDbConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.OracleDbConnectorId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Resource's properties.
+// (Updatable) resource's properties.
 func (o DbmulticloudOracleDbAzureVaultOutput) Properties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.Properties }).(pulumi.StringMapOutput)
 }
 
-// The lifecycle state of the DB Azure Vault Resource.
+// The lifecycle state of the Oracle DB Azure Vault resource.
 func (o DbmulticloudOracleDbAzureVaultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -425,17 +425,17 @@ func (o DbmulticloudOracleDbAzureVaultOutput) SystemTags() pulumi.StringMapOutpu
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 func (o DbmulticloudOracleDbAzureVaultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 func (o DbmulticloudOracleDbAzureVaultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureVault) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) Vault Resource Type.
+// (Updatable) Oracle DB Azure Vault resource type.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

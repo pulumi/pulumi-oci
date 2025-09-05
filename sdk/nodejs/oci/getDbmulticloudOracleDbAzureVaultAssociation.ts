@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+ * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getDbmulticloudOracleDbAzureVaultAssociation(args: GetDbmulticlo
  */
 export interface GetDbmulticloudOracleDbAzureVaultAssociationArgs {
     /**
-     * The ID of the Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
     oracleDbAzureVaultAssociationId: string;
 }
@@ -42,7 +42,7 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationArgs {
  */
 export interface GetDbmulticloudOracleDbAzureVaultAssociationResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      */
     readonly compartmentId: string;
     /**
@@ -50,7 +50,7 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Display name of Oracle DB Azure Vault Association.
+     * Oracle DB Azure Vault Association resource name.
      */
     readonly displayName: string;
     /**
@@ -58,15 +58,15 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
     readonly id: string;
     /**
-     * The Associated Resources are accessible or not.
+     * The Associated resource is accessible or not.
      */
     readonly isResourceAccessible: boolean;
     /**
-     * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault Association resource.
      */
     readonly lastModification: string;
     /**
@@ -74,16 +74,16 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationResult {
      */
     readonly lifecycleStateDetails: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      */
     readonly oracleDbAzureConnectorId: string;
     readonly oracleDbAzureVaultAssociationId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      */
     readonly oracleDbAzureVaultId: string;
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Association resource.
      */
     readonly state: string;
     /**
@@ -91,18 +91,18 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeCreated: string;
     /**
-     * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+ * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -127,7 +127,7 @@ export function getDbmulticloudOracleDbAzureVaultAssociationOutput(args: GetDbmu
  */
 export interface GetDbmulticloudOracleDbAzureVaultAssociationOutputArgs {
     /**
-     * The ID of the Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
     oracleDbAzureVaultAssociationId: pulumi.Input<string>;
 }

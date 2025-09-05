@@ -12,12 +12,12 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem {
     /**
-     * @return A filter to return Azure Blob Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      * 
      */
     private String azureStorageAccountName;
     /**
-     * @return A filter to return Azure Blob containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      * 
      */
     private String azureStorageContainerName;
@@ -32,7 +32,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return Azure Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -42,12 +42,12 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     private String lastModification;
@@ -57,7 +57,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
      */
     private String lifecycleStateDetails;
     /**
-     * @return Private endpoint DNS Alias.
+     * @return Private endpoint&#39;s DNS Alias.
      * 
      */
     private String privateEndpointDnsAlias;
@@ -89,14 +89,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
 
     private GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionItem() {}
     /**
-     * @return A filter to return Azure Blob Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
      * 
      */
     public String azureStorageAccountName() {
         return this.azureStorageAccountName;
     }
     /**
-     * @return A filter to return Azure Blob containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
      * 
      */
     public String azureStorageContainerName() {
@@ -117,7 +117,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
         return this.definedTags;
     }
     /**
-     * @return A filter to return Azure Containers.
+     * @return A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -131,14 +131,14 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
         return this.freeformTags;
     }
     /**
-     * @return The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Container resource.
      * 
      */
     public String lastModification() {
@@ -152,7 +152,7 @@ public final class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobCo
         return this.lifecycleStateDetails;
     }
     /**
-     * @return Private endpoint DNS Alias.
+     * @return Private endpoint&#39;s DNS Alias.
      * 
      */
     public String privateEndpointDnsAlias() {

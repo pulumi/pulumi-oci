@@ -16,14 +16,14 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
     public static final DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs Empty = new DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs();
 
     /**
-     * Current Arc Agent Version installed on this node of VM Cluster.
+     * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
      * 
      */
     @Import(name="currentArcAgentVersion")
     private @Nullable Output<String> currentArcAgentVersion;
 
     /**
-     * @return Current Arc Agent Version installed on this node of VM Cluster.
+     * @return Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
      * 
      */
     public Optional<Output<String>> currentArcAgentVersion() {
@@ -46,14 +46,14 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
     }
 
     /**
-     * Host Name or Azure Arc Agent Name.
+     * Host name or Azure Arc Agent name.
      * 
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
-     * @return Host Name or Azure Arc Agent Name.
+     * @return Host name or Azure Arc Agent name.
      * 
      */
     public Optional<Output<String>> hostName() {
@@ -61,14 +61,14 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
     }
 
     /**
-     * The current status of the Azure Arc Agent Resource.
+     * The current status of the Azure Arc Agent resource.
      * 
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return The current status of the Azure Arc Agent Resource.
+     * @return The current status of the Azure Arc Agent resource.
      * 
      */
     public Optional<Output<String>> status() {
@@ -76,14 +76,14 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
     }
 
     /**
-     * time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Import(name="timeLastChecked")
     private @Nullable Output<String> timeLastChecked;
 
     /**
-     * @return time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Optional<Output<String>> timeLastChecked() {
@@ -119,7 +119,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param currentArcAgentVersion Current Arc Agent Version installed on this node of VM Cluster.
+         * @param currentArcAgentVersion Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param currentArcAgentVersion Current Arc Agent Version installed on this node of VM Cluster.
+         * @param currentArcAgentVersion Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param hostName Host Name or Azure Arc Agent Name.
+         * @param hostName Host name or Azure Arc Agent name.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param hostName Host Name or Azure Arc Agent Name.
+         * @param hostName Host name or Azure Arc Agent name.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param status The current status of the Azure Arc Agent Resource.
+         * @param status The current status of the Azure Arc Agent resource.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param status The current status of the Azure Arc Agent Resource.
+         * @param status The current status of the Azure Arc Agent resource.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param timeLastChecked time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeLastChecked Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs extends co
         }
 
         /**
-         * @param timeLastChecked time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+         * @param timeLastChecked Time when the Azure Arc Agent&#39;s status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
          * 
          * @return builder
          * 

@@ -14,14 +14,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountPlainArgs extends com.pu
     public static final GetDbmulticloudOracleDbAzureBlobMountPlainArgs Empty = new GetDbmulticloudOracleDbAzureBlobMountPlainArgs();
 
     /**
-     * The ID of the Azure Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     @Import(name="oracleDbAzureBlobMountId", required=true)
     private String oracleDbAzureBlobMountId;
 
     /**
-     * @return The ID of the Azure Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public String oracleDbAzureBlobMountId() {
@@ -53,7 +53,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountPlainArgs extends com.pu
         }
 
         /**
-         * @param oracleDbAzureBlobMountId The ID of the Azure Container Resource.
+         * @param oracleDbAzureBlobMountId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 

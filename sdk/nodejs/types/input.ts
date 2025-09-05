@@ -1096,22 +1096,67 @@ export namespace AiVision {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetStreamGroupsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetStreamGroupsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetStreamJobsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetStreamJobsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetStreamSourcesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetStreamSourcesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetVisionPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetVisionPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface ModelTestingDataset {
         /**
-         * The name of the ObjectStorage bucket that contains the input data file.
+         * The name of the Object Storage bucket that contains the input data file.
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The OCID of the Data Science Labeling Dataset.
+         * OCID of the Data Labeling dataset.
          */
         datasetId?: pulumi.Input<string>;
         /**
-         * Type of the Dataset.
+         * The dataset type, based on where it is stored.
          */
         datasetType: pulumi.Input<string>;
-        /**
-         * The namespace name of the ObjectStorage bucket that contains the input data file.
-         */
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
@@ -1121,20 +1166,17 @@ export namespace AiVision {
 
     export interface ModelTrainingDataset {
         /**
-         * The name of the ObjectStorage bucket that contains the input data file.
+         * The name of the Object Storage bucket that contains the input data file.
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The OCID of the Data Science Labeling Dataset.
+         * OCID of the Data Labeling dataset.
          */
         datasetId?: pulumi.Input<string>;
         /**
-         * Type of the Dataset.
+         * The dataset type, based on where it is stored.
          */
         datasetType: pulumi.Input<string>;
-        /**
-         * The namespace name of the ObjectStorage bucket that contains the input data file.
-         */
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
@@ -1144,29 +1186,145 @@ export namespace AiVision {
 
     export interface ModelValidationDataset {
         /**
-         * The name of the ObjectStorage bucket that contains the input data file.
+         * The name of the Object Storage bucket that contains the input data file.
          */
         bucket?: pulumi.Input<string>;
         /**
-         * The OCID of the Data Science Labeling Dataset.
+         * OCID of the Data Labeling dataset.
          */
         datasetId?: pulumi.Input<string>;
         /**
-         * Type of the Dataset.
+         * The dataset type, based on where it is stored.
          */
         datasetType: pulumi.Input<string>;
-        /**
-         * The namespace name of the ObjectStorage bucket that contains the input data file.
-         */
         namespaceName?: pulumi.Input<string>;
         /**
          * The object name of the input data file.
-         *
          *
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         object?: pulumi.Input<string>;
+    }
+
+    export interface StreamGroupStreamOverlap {
+        /**
+         * (Updatable) List of streamSource OCIDs.
+         */
+        overlappingStreams?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface StreamJobFeature {
+        /**
+         * (Updatable) The feature of video analysis. Allowed values are:
+         * * OBJECT_TRACKING: Object tracking feature(OT).
+         * * FACE_DETECTION: Face detection feature(FD).
+         */
+        featureType: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number of results to return.
+         */
+        maxResults?: pulumi.Input<number>;
+        /**
+         * (Updatable) Whether or not return face landmarks.
+         */
+        shouldReturnLandmarks?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) List of details of what to track.
+         */
+        trackingTypes?: pulumi.Input<pulumi.Input<inputs.AiVision.StreamJobFeatureTrackingType>[]>;
+    }
+
+    export interface StreamJobFeatureTrackingType {
+        /**
+         * (Updatable) compartment Id of biometric compartment.
+         */
+        biometricStoreCompartmentId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Which biometric store user wants to do face recognition
+         */
+        biometricStoreId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The detection model OCID.
+         */
+        detectionModelId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The maximum number of results to return.
+         */
+        maxResults?: pulumi.Input<number>;
+        /**
+         * (Updatable) List of the objects to be tracked.
+         */
+        objects?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Whether or not return face landmarks.
+         */
+        shouldReturnLandmarks?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The tracking model OCID.
+         */
+        trackingModelId?: pulumi.Input<string>;
+    }
+
+    export interface StreamJobStreamOutputLocation {
+        /**
+         * (Updatable) The Object Storage bucket name.
+         */
+        bucket: pulumi.Input<string>;
+        /**
+         * (Updatable) The Object Storage namespace.
+         */
+        namespace: pulumi.Input<string>;
+        /**
+         * (Updatable) Object storage output location
+         */
+        oboToken?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of device Allowed values are:
+         * * OBJECT_STORAGE
+         * * LIVEKIT_WEBRTC_AGENT
+         */
+        outputLocationType: pulumi.Input<string>;
+        /**
+         * (Updatable) The Object Storage folder name.
+         */
+        prefix: pulumi.Input<string>;
+    }
+
+    export interface StreamSourceStreamSourceDetails {
+        /**
+         * (Updatable) url of camera
+         */
+        cameraUrl: pulumi.Input<string>;
+        /**
+         * (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+         */
+        secretId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of source Allowed values are:
+         * * RTSP
+         */
+        sourceType: pulumi.Input<string>;
+        /**
+         * (Updatable) Details about a stream Connection type
+         */
+        streamNetworkAccessDetails: pulumi.Input<inputs.AiVision.StreamSourceStreamSourceDetailsStreamNetworkAccessDetails>;
+    }
+
+    export interface StreamSourceStreamSourceDetailsStreamNetworkAccessDetails {
+        /**
+         * (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+         */
+        privateEndpointId: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of access Allowed values are:
+         * * PRIVATE
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        streamAccessType: pulumi.Input<string>;
     }
 }
 
@@ -8096,6 +8254,10 @@ export namespace CloudGuard {
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleEntitiesMapping>[]>;
         /**
+         * Is the rule cloneable?
+         */
+        isCloneable?: pulumi.Input<boolean>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -8111,6 +8273,10 @@ export namespace CloudGuard {
          * Resource type of the configuration to which the rule is applied
          */
         resourceType?: pulumi.Input<string>;
+        /**
+         * Detector rule type
+         */
+        ruleTypes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleRuleType>[]>;
         /**
          * Service type of the configuration to which the rule is applied
          */
@@ -8191,6 +8357,18 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeDetectorRuleDetailsConfiguration {
         /**
+         * (Updatable) Map of additional property values for configuration
+         */
+        additionalProperties?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty>[]>;
+        /**
+         * (Updatable) Map of possible values for configuration
+         */
+        allowedValues?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue>[]>;
+        /**
+         * (Updatable) Map property Value data type
+         */
+        allowedValuesDataType?: pulumi.Input<string>;
+        /**
          * (Updatable) Unique identifier of the configuration
          */
         configKey: pulumi.Input<string>;
@@ -8210,6 +8388,32 @@ export namespace CloudGuard {
          * (Updatable) List of configuration values
          */
         values?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRuleDetailsConfigurationValue>[]>;
+    }
+
+    export interface DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+        /**
+         * (Updatable) Name for Additional Property, for example, "interpreter", "router"
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * (Updatable) Property Type
+         */
+        propertyType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+        /**
+         * (Updatable) key
+         */
+        key: pulumi.Input<string>;
+        /**
+         * (Updatable) value
+         */
+        value: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeDetectorRuleDetailsConfigurationValue {
@@ -8259,6 +8463,17 @@ export namespace CloudGuard {
         queryField?: pulumi.Input<string>;
     }
 
+    export interface DetectorRecipeDetectorRuleRuleType {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Detector rule type value
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface DetectorRecipeEffectiveDetectorRule {
         /**
          * List of responder rules that can be used to remediate this detector rule
@@ -8297,6 +8512,10 @@ export namespace CloudGuard {
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
         /**
+         * Is the rule cloneable?
+         */
+        isCloneable?: pulumi.Input<boolean>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -8312,6 +8531,10 @@ export namespace CloudGuard {
          * Resource type of the configuration to which the rule is applied
          */
         resourceType?: pulumi.Input<string>;
+        /**
+         * Detector rule type
+         */
+        ruleTypes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleRuleType>[]>;
         /**
          * Service type of the configuration to which the rule is applied
          */
@@ -8394,6 +8617,18 @@ export namespace CloudGuard {
 
     export interface DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         /**
+         * Map of additional property values for configuration
+         */
+        additionalProperties?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty>[]>;
+        /**
+         * Map of possible values for configuration
+         */
+        allowedValues?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue>[]>;
+        /**
+         * Map property Value data type
+         */
+        allowedValuesDataType?: pulumi.Input<string>;
+        /**
          * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
@@ -8406,13 +8641,39 @@ export namespace CloudGuard {
          */
         name?: pulumi.Input<string>;
         /**
-         * Configuration value
+         * Detector rule type value
          */
         value?: pulumi.Input<string>;
         /**
          * List of configuration values
          */
         values?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue>[]>;
+    }
+
+    export interface DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Property Type
+         */
+        propertyType?: pulumi.Input<string>;
+        /**
+         * Detector rule type value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Detector rule type value
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
@@ -8425,7 +8686,7 @@ export namespace CloudGuard {
          */
         managedListType?: pulumi.Input<string>;
         /**
-         * Configuration value
+         * Detector rule type value
          */
         value?: pulumi.Input<string>;
     }
@@ -8462,6 +8723,17 @@ export namespace CloudGuard {
          * The entity value mapped to a data source query
          */
         queryField?: pulumi.Input<string>;
+    }
+
+    export interface DetectorRecipeEffectiveDetectorRuleRuleType {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Detector rule type value
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAdhocQueriesFilter {
@@ -9019,6 +9291,10 @@ export namespace CloudGuard {
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping>[]>;
         /**
+         * Is the rule cloneable?
+         */
+        isCloneable?: pulumi.Input<boolean>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -9034,6 +9310,10 @@ export namespace CloudGuard {
          * The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          */
         resourceType?: pulumi.Input<string>;
+        /**
+         * Rule category type
+         */
+        ruleTypes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleRuleType>[]>;
         /**
          * Service type of the configuration to which the rule is applied
          */
@@ -9092,6 +9372,18 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
         /**
+         * Map of additional property values for configuration
+         */
+        additionalProperties?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty>[]>;
+        /**
+         * Map of possible values for configuration
+         */
+        allowedValues?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue>[]>;
+        /**
+         * Map property Value data type
+         */
+        allowedValuesDataType?: pulumi.Input<string>;
+        /**
          * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
@@ -9111,6 +9403,32 @@ export namespace CloudGuard {
          * List of configuration values
          */
         values?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue>[]>;
+    }
+
+    export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Property Type
+         */
+        propertyType?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValue {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue {
@@ -9143,6 +9461,17 @@ export namespace CloudGuard {
          * The entity value mapped to a data source query
          */
         queryField?: pulumi.Input<string>;
+    }
+
+    export interface TargetTargetDetectorRecipeDetectorRuleRuleType {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRule {
@@ -9179,6 +9508,10 @@ export namespace CloudGuard {
          */
         entitiesMappings?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping>[]>;
         /**
+         * Is the rule cloneable?
+         */
+        isCloneable?: pulumi.Input<boolean>;
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          */
         lifecycleDetails?: pulumi.Input<string>;
@@ -9194,6 +9527,10 @@ export namespace CloudGuard {
          * The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          */
         resourceType?: pulumi.Input<string>;
+        /**
+         * Rule category type
+         */
+        ruleTypes?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType>[]>;
         /**
          * Service type of the configuration to which the rule is applied
          */
@@ -9252,6 +9589,18 @@ export namespace CloudGuard {
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
         /**
+         * Map of additional property values for configuration
+         */
+        additionalProperties?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty>[]>;
+        /**
+         * Map of possible values for configuration
+         */
+        allowedValues?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue>[]>;
+        /**
+         * Map property Value data type
+         */
+        allowedValuesDataType?: pulumi.Input<string>;
+        /**
          * Unique identifier of the configuration
          */
         configKey?: pulumi.Input<string>;
@@ -9271,6 +9620,32 @@ export namespace CloudGuard {
          * List of configuration values
          */
         values?: pulumi.Input<pulumi.Input<inputs.CloudGuard.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue>[]>;
+    }
+
+    export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Property Type
+         */
+        propertyType?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        value?: pulumi.Input<string>;
     }
 
     export interface TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
@@ -9303,6 +9678,17 @@ export namespace CloudGuard {
          * The entity value mapped to a data source query
          */
         queryField?: pulumi.Input<string>;
+    }
+
+    export interface TargetTargetDetectorRecipeEffectiveDetectorRuleRuleType {
+        /**
+         * The unique identifier of the detector rule type
+         */
+        key?: pulumi.Input<string>;
+        /**
+         * Configuration value
+         */
+        values?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface TargetTargetResponderRecipe {
@@ -28448,6 +28834,10 @@ export namespace Database {
 
     export interface AutonomousDatabaseResourcePoolSummary {
         /**
+         * Available capacity left for new elastic pool members provision
+         */
+        availableComputeCapacity?: pulumi.Input<number>;
+        /**
          * (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
          */
         isDisabled?: pulumi.Input<boolean>;
@@ -28455,6 +28845,10 @@ export namespace Database {
          * (Updatable) Resource pool size.
          */
         poolSize?: pulumi.Input<number>;
+        /**
+         * Resource Pool total capacity, it's currently 4x of pool size
+         */
+        totalComputeCapacity?: pulumi.Input<number>;
     }
 
     export interface AutonomousDatabaseScheduledOperation {
@@ -80737,6 +81131,44 @@ export namespace Mysql {
         timeUpdated?: pulumi.Input<string>;
     }
 
+    export interface MysqlBackupBackupValidationDetail {
+        /**
+         * Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+         */
+        backupPreparationStatus?: pulumi.Input<string>;
+        /**
+         * Error message if the backup validation has failed.
+         */
+        errorMessage?: pulumi.Input<string>;
+        /**
+         * The estimated restore duration of the backup.
+         */
+        estimatedRestoreDuration?: pulumi.Input<string>;
+        /**
+         * Prepared backup details.
+         */
+        preparedBackupDetails?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupBackupValidationDetailPreparedBackupDetail>[]>;
+        /**
+         * The date and time of the most recent validation performed on the backup.
+         */
+        timeLastValidated?: pulumi.Input<string>;
+        /**
+         * The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+         */
+        validationStatus?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupBackupValidationDetailPreparedBackupDetail {
+        /**
+         * The estimated time saving when this prepared backup is restored.
+         */
+        preparedBackupRestoreReductionInMinutes?: pulumi.Input<number>;
+        /**
+         * The date and time the backup was prepared.
+         */
+        timePrepared?: pulumi.Input<string>;
+    }
+
     export interface MysqlBackupDbSystemSnapshot {
         /**
          * The username for the administrative user.
@@ -81096,6 +81528,13 @@ export namespace Mysql {
          * The region of the backup source.
          */
         region: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupValidateBackupDetail {
+        /**
+         * Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+         */
+        isPreparedBackupRequired: pulumi.Input<boolean>;
     }
 
     export interface MysqlConfigurationInitVariables {
@@ -93520,7 +93959,7 @@ export namespace oci {
 
     export interface DbmulticloudMultiCloudResourceDiscoveryResource {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+         * The ID of the Discovered Resource.
          */
         id?: pulumi.Input<string>;
         /**
@@ -93547,7 +93986,7 @@ export namespace oci {
 
     export interface DbmulticloudOracleDbAzureConnectorArcAgentNode {
         /**
-         * Current Arc Agent Version installed on this node of VM Cluster.
+         * Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
          */
         currentArcAgentVersion?: pulumi.Input<string>;
         /**
@@ -93555,15 +93994,34 @@ export namespace oci {
          */
         hostId?: pulumi.Input<string>;
         /**
-         * Host Name or Azure Arc Agent Name.
+         * Host name or Azure Arc Agent name.
          */
         hostName?: pulumi.Input<string>;
         /**
-         * The current status of the Azure Arc Agent Resource.
+         * The current status of the Azure Arc Agent resource.
          */
         status?: pulumi.Input<string>;
         /**
-         * time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+         * Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+         */
+        timeLastChecked?: pulumi.Input<string>;
+    }
+
+    export interface DbmulticloudOracleDbGcpIdentityConnectorGcpNode {
+        /**
+         * Host ID.
+         */
+        hostId?: pulumi.Input<string>;
+        /**
+         * Host Name or Identity Connector name.
+         */
+        hostName?: pulumi.Input<string>;
+        /**
+         * The current status of the GCP Identity Connector resource.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
          */
         timeLastChecked?: pulumi.Input<string>;
     }
@@ -93719,6 +94177,42 @@ export namespace oci {
     }
 
     export interface GetDbmulticloudOracleDbAzureVaultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbGcpIdentityConnectorsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbGcpKeyRingsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbGcpKeyRingsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbGcpKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbGcpKeysFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

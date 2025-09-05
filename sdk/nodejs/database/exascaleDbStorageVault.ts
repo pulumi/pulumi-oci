@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *         totalSizeInGbs: exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
  *     },
  *     additionalFlashCacheInPercent: exascaleDbStorageVaultAdditionalFlashCacheInPercent,
+ *     autoscaleLimitInGbs: exascaleDbStorageVaultAutoscaleLimitInGbs,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     definedTags: exascaleDbStorageVaultDefinedTags,
  *     description: exascaleDbStorageVaultDescription,
@@ -32,6 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isAutoscaleEnabled: exascaleDbStorageVaultIsAutoscaleEnabled,
  *     subscriptionId: tenantSubscriptionId,
  *     timeZone: exascaleDbStorageVaultTimeZone,
  * });
@@ -82,6 +84,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly attachedShapeAttributes: pulumi.Output<string[]>;
     /**
+     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    declare public readonly autoscaleLimitInGbs: pulumi.Output<number>;
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
     declare public readonly availabilityDomain: pulumi.Output<string>;
@@ -117,6 +123,10 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      * (Updatable) Create exadata Database Storage Details
      */
     declare public readonly highCapacityDatabaseStorage: pulumi.Output<outputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage>;
+    /**
+     * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     */
+    declare public readonly isAutoscaleEnabled: pulumi.Output<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -169,6 +179,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             const state = argsOrState as ExascaleDbStorageVaultState | undefined;
             resourceInputs["additionalFlashCacheInPercent"] = state?.additionalFlashCacheInPercent;
             resourceInputs["attachedShapeAttributes"] = state?.attachedShapeAttributes;
+            resourceInputs["autoscaleLimitInGbs"] = state?.autoscaleLimitInGbs;
             resourceInputs["availabilityDomain"] = state?.availabilityDomain;
             resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = state?.compartmentId;
@@ -178,6 +189,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             resourceInputs["exadataInfrastructureId"] = state?.exadataInfrastructureId;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["highCapacityDatabaseStorage"] = state?.highCapacityDatabaseStorage;
+            resourceInputs["isAutoscaleEnabled"] = state?.isAutoscaleEnabled;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["state"] = state?.state;
             resourceInputs["subscriptionId"] = state?.subscriptionId;
@@ -201,6 +213,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
                 throw new Error("Missing required property 'highCapacityDatabaseStorage'");
             }
             resourceInputs["additionalFlashCacheInPercent"] = args?.additionalFlashCacheInPercent;
+            resourceInputs["autoscaleLimitInGbs"] = args?.autoscaleLimitInGbs;
             resourceInputs["availabilityDomain"] = args?.availabilityDomain;
             resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = args?.compartmentId;
@@ -210,6 +223,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
             resourceInputs["exadataInfrastructureId"] = args?.exadataInfrastructureId;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["highCapacityDatabaseStorage"] = args?.highCapacityDatabaseStorage;
+            resourceInputs["isAutoscaleEnabled"] = args?.isAutoscaleEnabled;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["attachedShapeAttributes"] = undefined /*out*/;
@@ -237,6 +251,10 @@ export interface ExascaleDbStorageVaultState {
      * The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
      */
     attachedShapeAttributes?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    autoscaleLimitInGbs?: pulumi.Input<number>;
     /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
@@ -273,6 +291,10 @@ export interface ExascaleDbStorageVaultState {
      * (Updatable) Create exadata Database Storage Details
      */
     highCapacityDatabaseStorage?: pulumi.Input<inputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage>;
+    /**
+     * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     */
+    isAutoscaleEnabled?: pulumi.Input<boolean>;
     /**
      * Additional information about the current lifecycle state.
      */
@@ -320,6 +342,10 @@ export interface ExascaleDbStorageVaultArgs {
      */
     additionalFlashCacheInPercent?: pulumi.Input<number>;
     /**
+     * (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    autoscaleLimitInGbs?: pulumi.Input<number>;
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
     availabilityDomain: pulumi.Input<string>;
@@ -355,6 +381,10 @@ export interface ExascaleDbStorageVaultArgs {
      * (Updatable) Create exadata Database Storage Details
      */
     highCapacityDatabaseStorage: pulumi.Input<inputs.Database.ExascaleDbStorageVaultHighCapacityDatabaseStorage>;
+    /**
+     * (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     */
+    isAutoscaleEnabled?: pulumi.Input<boolean>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      */

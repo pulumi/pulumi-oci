@@ -23,14 +23,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     public static final ModelArgs Empty = new ModelArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -38,14 +38,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -53,14 +53,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the Model.
+     * @return (Updatable) An optional description of the model.
      * 
      */
     public Optional<Output<String>> description() {
@@ -68,14 +68,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Model Identifier
+     * @return (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -83,14 +83,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -98,14 +98,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     @Import(name="isQuickMode")
     private @Nullable Output<Boolean> isQuickMode;
 
     /**
-     * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * @return Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     public Optional<Output<Boolean>> isQuickMode() {
@@ -113,14 +113,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     @Import(name="maxTrainingDurationInHours")
     private @Nullable Output<Double> maxTrainingDurationInHours;
 
     /**
-     * @return The maximum duration in hours for which the training will run.
+     * @return The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     public Optional<Output<Double>> maxTrainingDurationInHours() {
@@ -128,14 +128,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return The  type of the model.
+     * @return Which type of Vision model this is.
      * 
      */
     public Output<String> modelType() {
@@ -143,14 +143,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Model version.
+     * The model version
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return Model version.
+     * @return The model version
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -158,14 +158,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     @Import(name="projectId", required=true)
     private Output<String> projectId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     public Output<String> projectId() {
@@ -173,14 +173,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="testingDataset")
     private @Nullable Output<ModelTestingDatasetArgs> testingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Optional<Output<ModelTestingDatasetArgs>> testingDataset() {
@@ -188,14 +188,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="trainingDataset", required=true)
     private Output<ModelTrainingDatasetArgs> trainingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Output<ModelTrainingDatasetArgs> trainingDataset() {
@@ -203,14 +203,14 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="validationDataset")
     private @Nullable Output<ModelValidationDatasetArgs> validationDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Optional<Output<ModelValidationDatasetArgs>> validationDataset() {
@@ -254,7 +254,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment identifier.
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment identifier.
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the Model.
+         * @param description (Updatable) An optional description of the model.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the Model.
+         * @param description (Updatable) An optional description of the model.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Model Identifier
+         * @param displayName (Updatable) A human-friendly name for the model, which can be changed.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Model Identifier
+         * @param displayName (Updatable) A human-friendly name for the model, which can be changed.
          * 
          * @return builder
          * 
@@ -338,7 +338,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -349,7 +349,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isQuickMode If It&#39;s true, Training is set for recommended epochs needed for quick training.
+         * @param isQuickMode Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
          * 
          * @return builder
          * 
@@ -370,7 +370,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isQuickMode If It&#39;s true, Training is set for recommended epochs needed for quick training.
+         * @param isQuickMode Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTrainingDurationInHours The maximum duration in hours for which the training will run.
+         * @param maxTrainingDurationInHours The maximum model training duration in hours, expressed as a decimal fraction.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTrainingDurationInHours The maximum duration in hours for which the training will run.
+         * @param maxTrainingDurationInHours The maximum model training duration in hours, expressed as a decimal fraction.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType The  type of the model.
+         * @param modelType Which type of Vision model this is.
          * 
          * @return builder
          * 
@@ -412,7 +412,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType The  type of the model.
+         * @param modelType Which type of Vision model this is.
          * 
          * @return builder
          * 
@@ -422,7 +422,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion Model version.
+         * @param modelVersion The model version
          * 
          * @return builder
          * 
@@ -433,7 +433,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion Model version.
+         * @param modelVersion The model version
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
          * 
          * @return builder
          * 
@@ -454,7 +454,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
          * 
          * @return builder
          * 
@@ -464,7 +464,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param testingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -475,7 +475,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param testingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -485,7 +485,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param trainingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param trainingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -506,7 +506,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validationDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param validationDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class ModelArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validationDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param validationDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 

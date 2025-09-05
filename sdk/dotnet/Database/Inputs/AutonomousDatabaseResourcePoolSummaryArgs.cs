@@ -13,6 +13,12 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousDatabaseResourcePoolSummaryArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// Available capacity left for new elastic pool members provision
+        /// </summary>
+        [Input("availableComputeCapacity")]
+        public Input<int>? AvailableComputeCapacity { get; set; }
+
+        /// <summary>
         /// (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         /// </summary>
         [Input("isDisabled")]
@@ -23,6 +29,12 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("poolSize")]
         public Input<int>? PoolSize { get; set; }
+
+        /// <summary>
+        /// Resource Pool total capacity, it's currently 4x of pool size
+        /// </summary>
+        [Input("totalComputeCapacity")]
+        public Input<int>? TotalComputeCapacity { get; set; }
 
         public AutonomousDatabaseResourcePoolSummaryArgs()
         {

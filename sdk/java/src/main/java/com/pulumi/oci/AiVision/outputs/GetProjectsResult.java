@@ -16,18 +16,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetProjectsResult {
     /**
-     * @return Compartment Identifier
+     * @return A compartment identifier.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return Project Identifier, can be renamed
+     * @return A human-friendly name for the project, which can be changed.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetProjectsFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     private @Nullable String id;
@@ -37,21 +37,21 @@ public final class GetProjectsResult {
      */
     private List<GetProjectsProjectCollection> projectCollections;
     /**
-     * @return The current state of the Project.
+     * @return The current state of the project.
      * 
      */
     private @Nullable String state;
 
     private GetProjectsResult() {}
     /**
-     * @return Compartment Identifier
+     * @return A compartment identifier.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return Project Identifier, can be renamed
+     * @return A human-friendly name for the project, which can be changed.
      * 
      */
     public Optional<String> displayName() {
@@ -61,7 +61,7 @@ public final class GetProjectsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     public Optional<String> id() {
@@ -75,7 +75,7 @@ public final class GetProjectsResult {
         return this.projectCollections;
     }
     /**
-     * @return The current state of the Project.
+     * @return The current state of the project.
      * 
      */
     public Optional<String> state() {

@@ -16,10 +16,34 @@ import com.pulumi.oci.AiVision.inputs.GetProjectArgs;
 import com.pulumi.oci.AiVision.inputs.GetProjectPlainArgs;
 import com.pulumi.oci.AiVision.inputs.GetProjectsArgs;
 import com.pulumi.oci.AiVision.inputs.GetProjectsPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamGroupPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamGroupsPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamJobPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamJobsPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamSourcePlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+import com.pulumi.oci.AiVision.inputs.GetStreamSourcesPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointPlainArgs;
+import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsPlainArgs;
 import com.pulumi.oci.AiVision.outputs.GetModelResult;
 import com.pulumi.oci.AiVision.outputs.GetModelsResult;
 import com.pulumi.oci.AiVision.outputs.GetProjectResult;
 import com.pulumi.oci.AiVision.outputs.GetProjectsResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamGroupResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamGroupsResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamJobResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamJobsResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamSourceResult;
+import com.pulumi.oci.AiVision.outputs.GetStreamSourcesResult;
+import com.pulumi.oci.AiVision.outputs.GetVisionPrivateEndpointResult;
+import com.pulumi.oci.AiVision.outputs.GetVisionPrivateEndpointsResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -27,7 +51,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Model by identifier
+     * Get a model by identifier.
      * 
      * ## Example Usage
      * 
@@ -71,7 +95,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Model by identifier
+     * Get a model by identifier.
      * 
      * ## Example Usage
      * 
@@ -115,7 +139,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Model by identifier
+     * Get a model by identifier.
      * 
      * ## Example Usage
      * 
@@ -159,7 +183,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Model by identifier
+     * Get a model by identifier.
      * 
      * ## Example Usage
      * 
@@ -203,7 +227,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Model by identifier
+     * Get a model by identifier.
      * 
      * ## Example Usage
      * 
@@ -247,7 +271,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -295,7 +319,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -343,7 +367,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -391,7 +415,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -439,7 +463,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -487,7 +511,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -535,7 +559,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Models.
+     * Returns a list of models in a compartment.
      * 
      * ## Example Usage
      * 
@@ -583,7 +607,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Project by identifier
+     * Get a project by identifier.
      * 
      * ## Example Usage
      * 
@@ -627,7 +651,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Project by identifier
+     * Get a project by identifier.
      * 
      * ## Example Usage
      * 
@@ -671,7 +695,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Project by identifier
+     * Get a project by identifier.
      * 
      * ## Example Usage
      * 
@@ -715,7 +739,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Project by identifier
+     * Get a project by identifier.
      * 
      * ## Example Usage
      * 
@@ -759,7 +783,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Gets a Project by identifier
+     * Get a project by identifier.
      * 
      * ## Example Usage
      * 
@@ -803,7 +827,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -850,7 +874,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -897,7 +921,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -944,7 +968,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -991,7 +1015,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -1038,7 +1062,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -1085,7 +1109,7 @@ public final class AiVisionFunctions {
     /**
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
      * 
-     * Returns a list of Projects.
+     * Returns a list of projects.
      * 
      * ## Example Usage
      * 
@@ -1128,5 +1152,2194 @@ public final class AiVisionFunctions {
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiVision/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamGroup
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupResult> getStreamGroup(GetStreamGroupArgs args) {
+        return getStreamGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamGroup
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamGroupResult> getStreamGroupPlain(GetStreamGroupPlainArgs args) {
+        return getStreamGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamGroup
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupResult> getStreamGroup(GetStreamGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamGroup:getStreamGroup", TypeShape.of(GetStreamGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamGroup
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupResult> getStreamGroup(GetStreamGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamGroup:getStreamGroup", TypeShape.of(GetStreamGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Group resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamGroup
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamGroupResult> getStreamGroupPlain(GetStreamGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamGroup:getStreamGroup", TypeShape.of(GetStreamGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupsResult> getStreamGroups() {
+        return getStreamGroups(GetStreamGroupsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamGroupsResult> getStreamGroupsPlain() {
+        return getStreamGroupsPlain(GetStreamGroupsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupsResult> getStreamGroups(GetStreamGroupsArgs args) {
+        return getStreamGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamGroupsResult> getStreamGroupsPlain(GetStreamGroupsPlainArgs args) {
+        return getStreamGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupsResult> getStreamGroups(GetStreamGroupsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamGroups:getStreamGroups", TypeShape.of(GetStreamGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamGroupsResult> getStreamGroups(GetStreamGroupsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamGroups:getStreamGroups", TypeShape.of(GetStreamGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamGroups in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamGroupsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamGroups = AiVisionFunctions.getStreamGroups(GetStreamGroupsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamGroupDisplayName)
+     *             .id(streamGroupId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamGroupsResult> getStreamGroupsPlain(GetStreamGroupsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamGroups:getStreamGroups", TypeShape.of(GetStreamGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get details of a stream analysis job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobResult> getStreamJob(GetStreamJobArgs args) {
+        return getStreamJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get details of a stream analysis job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamJobResult> getStreamJobPlain(GetStreamJobPlainArgs args) {
+        return getStreamJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get details of a stream analysis job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobResult> getStreamJob(GetStreamJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamJob:getStreamJob", TypeShape.of(GetStreamJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get details of a stream analysis job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobResult> getStreamJob(GetStreamJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamJob:getStreamJob", TypeShape.of(GetStreamJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get details of a stream analysis job.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamJobResult> getStreamJobPlain(GetStreamJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamJob:getStreamJob", TypeShape.of(GetStreamJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobsResult> getStreamJobs() {
+        return getStreamJobs(GetStreamJobsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamJobsResult> getStreamJobsPlain() {
+        return getStreamJobsPlain(GetStreamJobsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobsResult> getStreamJobs(GetStreamJobsArgs args) {
+        return getStreamJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamJobsResult> getStreamJobsPlain(GetStreamJobsPlainArgs args) {
+        return getStreamJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobsResult> getStreamJobs(GetStreamJobsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamJobs:getStreamJobs", TypeShape.of(GetStreamJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamJobsResult> getStreamJobs(GetStreamJobsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamJobs:getStreamJobs", TypeShape.of(GetStreamJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get list of stream jobs
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamJobsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamJobs = AiVisionFunctions.getStreamJobs(GetStreamJobsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamJobDisplayName)
+     *             .id(streamJobId)
+     *             .state(streamJobState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamJobsResult> getStreamJobsPlain(GetStreamJobsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamJobs:getStreamJobs", TypeShape.of(GetStreamJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamSource
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourceResult> getStreamSource(GetStreamSourceArgs args) {
+        return getStreamSource(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamSource
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamSourceResult> getStreamSourcePlain(GetStreamSourcePlainArgs args) {
+        return getStreamSourcePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamSource
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourceResult> getStreamSource(GetStreamSourceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamSource:getStreamSource", TypeShape.of(GetStreamSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamSource
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourceResult> getStreamSource(GetStreamSourceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamSource:getStreamSource", TypeShape.of(GetStreamSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Stream Source resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a  streamSource
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourceArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamSourceResult> getStreamSourcePlain(GetStreamSourcePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamSource:getStreamSource", TypeShape.of(GetStreamSourceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourcesResult> getStreamSources() {
+        return getStreamSources(GetStreamSourcesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamSourcesResult> getStreamSourcesPlain() {
+        return getStreamSourcesPlain(GetStreamSourcesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourcesResult> getStreamSources(GetStreamSourcesArgs args) {
+        return getStreamSources(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamSourcesResult> getStreamSourcesPlain(GetStreamSourcesPlainArgs args) {
+        return getStreamSourcesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourcesResult> getStreamSources(GetStreamSourcesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamSources:getStreamSources", TypeShape.of(GetStreamSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetStreamSourcesResult> getStreamSources(GetStreamSourcesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getStreamSources:getStreamSources", TypeShape.of(GetStreamSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Stream Sources in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Gets a list of the streamSources in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetStreamSourcesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testStreamSources = AiVisionFunctions.getStreamSources(GetStreamSourcesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(streamSourceDisplayName)
+     *             .id(streamSourceId)
+     *             .state(streamSourceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetStreamSourcesResult> getStreamSourcesPlain(GetStreamSourcesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getStreamSources:getStreamSources", TypeShape.of(GetStreamSourcesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a visionPrivateEndpoint by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointResult> getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs args) {
+        return getVisionPrivateEndpoint(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a visionPrivateEndpoint by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetVisionPrivateEndpointResult> getVisionPrivateEndpointPlain(GetVisionPrivateEndpointPlainArgs args) {
+        return getVisionPrivateEndpointPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a visionPrivateEndpoint by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointResult> getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getVisionPrivateEndpoint:getVisionPrivateEndpoint", TypeShape.of(GetVisionPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a visionPrivateEndpoint by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointResult> getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getVisionPrivateEndpoint:getVisionPrivateEndpoint", TypeShape.of(GetVisionPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Vision Private Endpoint resource in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Get a visionPrivateEndpoint by identifier.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetVisionPrivateEndpointResult> getVisionPrivateEndpointPlain(GetVisionPrivateEndpointPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getVisionPrivateEndpoint:getVisionPrivateEndpoint", TypeShape.of(GetVisionPrivateEndpointResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointsResult> getVisionPrivateEndpoints() {
+        return getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetVisionPrivateEndpointsResult> getVisionPrivateEndpointsPlain() {
+        return getVisionPrivateEndpointsPlain(GetVisionPrivateEndpointsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointsResult> getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs args) {
+        return getVisionPrivateEndpoints(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetVisionPrivateEndpointsResult> getVisionPrivateEndpointsPlain(GetVisionPrivateEndpointsPlainArgs args) {
+        return getVisionPrivateEndpointsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointsResult> getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getVisionPrivateEndpoints:getVisionPrivateEndpoints", TypeShape.of(GetVisionPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetVisionPrivateEndpointsResult> getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:AiVision/getVisionPrivateEndpoints:getVisionPrivateEndpoints", TypeShape.of(GetVisionPrivateEndpointsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
+     * 
+     * Returns a list of visionPrivateEndpoints.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.AiVision.AiVisionFunctions;
+     * import com.pulumi.oci.AiVision.inputs.GetVisionPrivateEndpointsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVisionPrivateEndpoints = AiVisionFunctions.getVisionPrivateEndpoints(GetVisionPrivateEndpointsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(visionPrivateEndpointDisplayName)
+     *             .id(visionPrivateEndpointId)
+     *             .state(visionPrivateEndpointState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetVisionPrivateEndpointsResult> getVisionPrivateEndpointsPlain(GetVisionPrivateEndpointsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:AiVision/getVisionPrivateEndpoints:getVisionPrivateEndpoints", TypeShape.of(GetVisionPrivateEndpointsResult.class), args, Utilities.withVersion(options));
     }
 }

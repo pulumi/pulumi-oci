@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+// Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
 //
 // ## Example Usage
 //
@@ -52,46 +52,46 @@ func LookupDbmulticloudOracleDbAzureVault(ctx *pulumi.Context, args *LookupDbmul
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVault.
 type LookupDbmulticloudOracleDbAzureVaultArgs struct {
-	// The ID of the Oracle DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId string `pulumi:"oracleDbAzureVaultId"`
 }
 
 // A collection of values returned by getDbmulticloudOracleDbAzureVault.
 type LookupDbmulticloudOracleDbAzureVaultResult struct {
-	// Azure Vault Id.
+	// Azure Vault ID.
 	AzureVaultId string `pulumi:"azureVaultId"`
-	// The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Display name of DB Azure Vault.
+	// Oracle DB Azure Vault resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
 	Id string `pulumi:"id"`
-	// Description of the latest modification of the DB Azure Vault Resource.
+	// Description of the latest modification of the Oracle DB Azure Vault resource.
 	LastModification string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
-	// Vault Resource Location.
+	// Oracle DB Azure Vault resource location.
 	Location string `pulumi:"location"`
-	// Display name of Azure Resource Group.
+	// Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup string `pulumi:"oracleDbAzureResourceGroup"`
 	OracleDbAzureVaultId       string `pulumi:"oracleDbAzureVaultId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
-	// Resource's properties.
+	// Oracle DB Azure Vault resource's properties.
 	Properties map[string]string `pulumi:"properties"`
-	// The lifecycle state of the DB Azure Vault Resource.
+	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
-	// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+	// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 	TimeUpdated string `pulumi:"timeUpdated"`
-	// Vault Resource Type.
+	// Oracle DB Azure Vault resource type.
 	Type string `pulumi:"type"`
 }
 
@@ -106,7 +106,7 @@ func LookupDbmulticloudOracleDbAzureVaultOutput(ctx *pulumi.Context, args Lookup
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureVault.
 type LookupDbmulticloudOracleDbAzureVaultOutputArgs struct {
-	// The ID of the Oracle DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId pulumi.StringInput `pulumi:"oracleDbAzureVaultId"`
 }
 
@@ -129,12 +129,12 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) ToLookupDbmulticloudOr
 	return o
 }
 
-// Azure Vault Id.
+// Azure Vault ID.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) AzureVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.AzureVaultId }).(pulumi.StringOutput)
 }
 
-// The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -144,7 +144,7 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) DefinedTags() pulumi.S
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Display name of DB Azure Vault.
+// Oracle DB Azure Vault resource name.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -154,12 +154,12 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) FreeformTags() pulumi.
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Description of the latest modification of the DB Azure Vault Resource.
+// Description of the latest modification of the Oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -169,12 +169,12 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) LifecycleStateDetails(
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// Vault Resource Location.
+// Oracle DB Azure Vault resource location.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Location() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.Location }).(pulumi.StringOutput)
 }
 
-// Display name of Azure Resource Group.
+// Oracle DB Azure resource group name.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) OracleDbAzureResourceGroup() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.OracleDbAzureResourceGroup }).(pulumi.StringOutput)
 }
@@ -183,17 +183,17 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) OracleDbAzureVaultId()
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.OracleDbAzureVaultId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) OracleDbConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.OracleDbConnectorId }).(pulumi.StringOutput)
 }
 
-// Resource's properties.
+// Oracle DB Azure Vault resource's properties.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Properties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
 }
 
-// The lifecycle state of the DB Azure Vault Resource.
+// The lifecycle state of the Oracle DB Azure Vault resource.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -203,17 +203,17 @@ func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) SystemTags() pulumi.St
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+// Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+// Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Vault Resource Type.
+// Oracle DB Azure Vault resource type.
 func (o LookupDbmulticloudOracleDbAzureVaultResultOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureVaultResult) string { return v.Type }).(pulumi.StringOutput)
 }

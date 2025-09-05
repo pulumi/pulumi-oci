@@ -7,6 +7,8 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRuleDetails;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMapping;
+import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeDetectorRuleRuleType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,6 +57,11 @@ public final class TargetTargetDetectorRecipeDetectorRule {
      */
     private @Nullable List<TargetTargetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
     /**
+     * @return Is the rule cloneable?
+     * 
+     */
+    private @Nullable Boolean isCloneable;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -74,6 +81,11 @@ public final class TargetTargetDetectorRecipeDetectorRule {
      * 
      */
     private @Nullable String resourceType;
+    /**
+     * @return Rule category type
+     * 
+     */
+    private @Nullable List<TargetTargetDetectorRecipeDetectorRuleRuleType> ruleTypes;
     /**
      * @return Service type of the configuration to which the rule is applied
      * 
@@ -150,6 +162,13 @@ public final class TargetTargetDetectorRecipeDetectorRule {
         return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
     }
     /**
+     * @return Is the rule cloneable?
+     * 
+     */
+    public Optional<Boolean> isCloneable() {
+        return Optional.ofNullable(this.isCloneable);
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -176,6 +195,13 @@ public final class TargetTargetDetectorRecipeDetectorRule {
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
+    }
+    /**
+     * @return Rule category type
+     * 
+     */
+    public List<TargetTargetDetectorRecipeDetectorRuleRuleType> ruleTypes() {
+        return this.ruleTypes == null ? List.of() : this.ruleTypes;
     }
     /**
      * @return Service type of the configuration to which the rule is applied
@@ -222,10 +248,12 @@ public final class TargetTargetDetectorRecipeDetectorRule {
         private String detectorRuleId;
         private @Nullable String displayName;
         private @Nullable List<TargetTargetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
+        private @Nullable Boolean isCloneable;
         private @Nullable String lifecycleDetails;
         private @Nullable List<String> managedListTypes;
         private @Nullable String recommendation;
         private @Nullable String resourceType;
+        private @Nullable List<TargetTargetDetectorRecipeDetectorRuleRuleType> ruleTypes;
         private @Nullable String serviceType;
         private @Nullable String state;
         private @Nullable String timeCreated;
@@ -240,10 +268,12 @@ public final class TargetTargetDetectorRecipeDetectorRule {
     	      this.detectorRuleId = defaults.detectorRuleId;
     	      this.displayName = defaults.displayName;
     	      this.entitiesMappings = defaults.entitiesMappings;
+    	      this.isCloneable = defaults.isCloneable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedListTypes = defaults.managedListTypes;
     	      this.recommendation = defaults.recommendation;
     	      this.resourceType = defaults.resourceType;
+    	      this.ruleTypes = defaults.ruleTypes;
     	      this.serviceType = defaults.serviceType;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -300,6 +330,12 @@ public final class TargetTargetDetectorRecipeDetectorRule {
             return entitiesMappings(List.of(entitiesMappings));
         }
         @CustomType.Setter
+        public Builder isCloneable(@Nullable Boolean isCloneable) {
+
+            this.isCloneable = isCloneable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(@Nullable String lifecycleDetails) {
 
             this.lifecycleDetails = lifecycleDetails;
@@ -325,6 +361,15 @@ public final class TargetTargetDetectorRecipeDetectorRule {
 
             this.resourceType = resourceType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ruleTypes(@Nullable List<TargetTargetDetectorRecipeDetectorRuleRuleType> ruleTypes) {
+
+            this.ruleTypes = ruleTypes;
+            return this;
+        }
+        public Builder ruleTypes(TargetTargetDetectorRecipeDetectorRuleRuleType... ruleTypes) {
+            return ruleTypes(List.of(ruleTypes));
         }
         @CustomType.Setter
         public Builder serviceType(@Nullable String serviceType) {
@@ -359,10 +404,12 @@ public final class TargetTargetDetectorRecipeDetectorRule {
             _resultValue.detectorRuleId = detectorRuleId;
             _resultValue.displayName = displayName;
             _resultValue.entitiesMappings = entitiesMappings;
+            _resultValue.isCloneable = isCloneable;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managedListTypes = managedListTypes;
             _resultValue.recommendation = recommendation;
             _resultValue.resourceType = resourceType;
+            _resultValue.ruleTypes = ruleTypes;
             _resultValue.serviceType = serviceType;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Container based on filter.
+        /// Lists all Oracle DB Azure Blob Container resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Container based on filter.
+        /// Lists all Oracle DB Azure Blob Container resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Container based on filter.
+        /// Lists all Oracle DB Azure Blob Container resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -112,13 +112,13 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureBlobContainersArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return Azure Blob Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
         /// </summary>
         [Input("azureStorageAccountName")]
         public string? AzureStorageAccountName { get; set; }
 
         /// <summary>
-        /// A filter to return Azure Blob containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
         /// </summary>
         [Input("azureStorageContainerName")]
         public string? AzureStorageContainerName { get; set; }
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Oci
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Azure Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId")]
         public string? OracleDbAzureBlobContainerId { get; set; }
@@ -164,13 +164,13 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureBlobContainersInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return Azure Blob Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
         /// </summary>
         [Input("azureStorageAccountName")]
         public Input<string>? AzureStorageAccountName { get; set; }
 
         /// <summary>
-        /// A filter to return Azure Blob containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
         /// </summary>
         [Input("azureStorageContainerName")]
         public Input<string>? AzureStorageContainerName { get; set; }
@@ -182,7 +182,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Azure Containers.
+        /// A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -196,7 +196,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId")]
         public Input<string>? OracleDbAzureBlobContainerId { get; set; }
@@ -218,19 +218,19 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureBlobContainersResult
     {
         /// <summary>
-        /// Azure Storage Account Name.
+        /// Azure Storage account name.
         /// </summary>
         public readonly string? AzureStorageAccountName;
         /// <summary>
-        /// Azure Storage Container Name.
+        /// Azure Storage container name.
         /// </summary>
         public readonly string? AzureStorageContainerName;
         /// <summary>
-        /// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Display name of Oracle DB Azure Blob Container.
+        /// Oracle DB Azure Blob Container resource name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureBlobContainersFilterResult> Filters;
@@ -244,7 +244,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionResult> OracleDbAzureBlobContainerSummaryCollections;
         /// <summary>
-        /// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Container resource.
         /// </summary>
         public readonly string? State;
 

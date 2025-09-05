@@ -15,14 +15,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryArgs extends com.pu
     public static final GetDbmulticloudMultiCloudResourceDiscoveryArgs Empty = new GetDbmulticloudMultiCloudResourceDiscoveryArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
      * 
      */
     @Import(name="multiCloudResourceDiscoveryId", required=true)
     private Output<String> multiCloudResourceDiscoveryId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
      * 
      */
     public Output<String> multiCloudResourceDiscoveryId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryArgs extends com.pu
         }
 
         /**
-         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryArgs extends com.pu
         }
 
         /**
-         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
          * 
          * @return builder
          * 

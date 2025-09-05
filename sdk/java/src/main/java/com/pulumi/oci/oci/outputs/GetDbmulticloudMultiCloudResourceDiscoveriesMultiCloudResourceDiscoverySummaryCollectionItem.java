@@ -24,7 +24,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
      */
     private Map<String,String> definedTags;
     /**
-     * @return Display Name of the Multi Cloud Discovery Resource.
+     * @return A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -34,12 +34,12 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     private String lastModification;
@@ -49,12 +49,12 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
      */
     private String lifecycleStateDetails;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     private String oracleDbConnectorId;
     /**
-     * @return The type of Multi Cloud Resource.
+     * @return The type of Multicloud Resource.
      * 
      */
     private String resourceType;
@@ -64,7 +64,12 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
      */
     private List<GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource> resources;
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return Specifies the type(s) of resources to discover in the target cloud provider.
+     * 
+     */
+    private Map<String,String> resourcesFilter;
+    /**
+     * @return A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     private String state;
@@ -74,12 +79,12 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
      */
     private Map<String,String> systemTags;
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
@@ -100,7 +105,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         return this.definedTags;
     }
     /**
-     * @return Display Name of the Multi Cloud Discovery Resource.
+     * @return A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -114,14 +119,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     public String lastModification() {
@@ -135,14 +140,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         return this.lifecycleStateDetails;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     public String oracleDbConnectorId() {
         return this.oracleDbConnectorId;
     }
     /**
-     * @return The type of Multi Cloud Resource.
+     * @return The type of Multicloud Resource.
      * 
      */
     public String resourceType() {
@@ -156,7 +161,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         return this.resources;
     }
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return Specifies the type(s) of resources to discover in the target cloud provider.
+     * 
+     */
+    public Map<String,String> resourcesFilter() {
+        return this.resourcesFilter;
+    }
+    /**
+     * @return A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     public String state() {
@@ -170,14 +182,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         return this.systemTags;
     }
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {
@@ -203,6 +215,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
         private String oracleDbConnectorId;
         private String resourceType;
         private List<GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResource> resources;
+        private Map<String,String> resourcesFilter;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -220,6 +233,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.resourceType = defaults.resourceType;
     	      this.resources = defaults.resources;
+    	      this.resourcesFilter = defaults.resourcesFilter;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -310,6 +324,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
             return resources(List.of(resources));
         }
         @CustomType.Setter
+        public Builder resourcesFilter(Map<String,String> resourcesFilter) {
+            if (resourcesFilter == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem", "resourcesFilter");
+            }
+            this.resourcesFilter = resourcesFilter;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItem", "state");
@@ -353,6 +375,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourc
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.resourceType = resourceType;
             _resultValue.resources = resources;
+            _resultValue.resourcesFilter = resourcesFilter;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

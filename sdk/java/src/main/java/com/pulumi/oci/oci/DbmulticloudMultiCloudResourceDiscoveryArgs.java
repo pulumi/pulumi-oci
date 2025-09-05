@@ -18,14 +18,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
     public static final DbmulticloudMultiCloudResourceDiscoveryArgs Empty = new DbmulticloudMultiCloudResourceDiscoveryArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -48,14 +48,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Discovered Resource.
+     * @return (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     public Output<String> displayName() {
@@ -78,14 +78,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     @Import(name="oracleDbConnectorId", required=true)
     private Output<String> oracleDbConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     public Output<String> oracleDbConnectorId() {
@@ -95,9 +95,6 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
     /**
      * (Updatable) Resource Type to discover.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="resourceType", required=true)
     private Output<String> resourceType;
@@ -105,12 +102,30 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
     /**
      * @return (Updatable) Resource Type to discover.
      * 
+     */
+    public Output<String> resourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> resourceType() {
-        return this.resourceType;
+    @Import(name="resourcesFilter")
+    private @Nullable Output<Map<String,String>> resourcesFilter;
+
+    /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Map<String,String>>> resourcesFilter() {
+        return Optional.ofNullable(this.resourcesFilter);
     }
 
     private DbmulticloudMultiCloudResourceDiscoveryArgs() {}
@@ -122,6 +137,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         this.freeformTags = $.freeformTags;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.resourceType = $.resourceType;
+        this.resourcesFilter = $.resourcesFilter;
     }
 
     public static Builder builder() {
@@ -143,7 +159,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -154,7 +170,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -185,7 +201,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param displayName (Updatable) Display name of Discovered Resource.
+         * @param displayName (Updatable) Display name of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -196,7 +212,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param displayName (Updatable) Display name of Discovered Resource.
+         * @param displayName (Updatable) Display name of the Multicloud Resource Discovery resource.
          * 
          * @return builder
          * 
@@ -227,7 +243,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          * 
          * @return builder
          * 
@@ -238,7 +254,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         }
 
         /**
-         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+         * @param oracleDbConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          * 
          * @return builder
          * 
@@ -249,9 +265,6 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
 
         /**
          * @param resourceType (Updatable) Resource Type to discover.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -264,14 +277,38 @@ public final class DbmulticloudMultiCloudResourceDiscoveryArgs extends com.pulum
         /**
          * @param resourceType (Updatable) Resource Type to discover.
          * 
+         * @return builder
+         * 
+         */
+        public Builder resourceType(String resourceType) {
+            return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param resourcesFilter Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder resourceType(String resourceType) {
-            return resourceType(Output.of(resourceType));
+        public Builder resourcesFilter(@Nullable Output<Map<String,String>> resourcesFilter) {
+            $.resourcesFilter = resourcesFilter;
+            return this;
+        }
+
+        /**
+         * @param resourcesFilter Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilter(Map<String,String> resourcesFilter) {
+            return resourcesFilter(Output.of(resourcesFilter));
         }
 
         public DbmulticloudMultiCloudResourceDiscoveryArgs build() {

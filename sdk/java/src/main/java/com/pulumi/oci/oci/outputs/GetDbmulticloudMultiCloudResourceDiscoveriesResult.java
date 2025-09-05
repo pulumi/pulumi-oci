@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Display name of Multi Cloud Discovery Resource.
+     * @return Display name of the Multicloud Resource Discovery resource.
      * 
      */
     private @Nullable String displayName;
@@ -44,6 +44,11 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
      */
     private @Nullable String resourceType;
     /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     */
+    private @Nullable List<String> resourcesFilters;
+    /**
      * @return The current lifecycle state of the discovered resource.
      * 
      */
@@ -51,14 +56,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
 
     private GetDbmulticloudMultiCloudResourceDiscoveriesResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Display name of Multi Cloud Discovery Resource.
+     * @return Display name of the Multicloud Resource Discovery resource.
      * 
      */
     public Optional<String> displayName() {
@@ -95,6 +100,13 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
         return Optional.ofNullable(this.resourceType);
     }
     /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     */
+    public List<String> resourcesFilters() {
+        return this.resourcesFilters == null ? List.of() : this.resourcesFilters;
+    }
+    /**
      * @return The current lifecycle state of the discovered resource.
      * 
      */
@@ -119,6 +131,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
         private List<GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollection> multiCloudResourceDiscoverySummaryCollections;
         private @Nullable String oracleDbAzureConnectorId;
         private @Nullable String resourceType;
+        private @Nullable List<String> resourcesFilters;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetDbmulticloudMultiCloudResourceDiscoveriesResult defaults) {
@@ -131,6 +144,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
     	      this.multiCloudResourceDiscoverySummaryCollections = defaults.multiCloudResourceDiscoverySummaryCollections;
     	      this.oracleDbAzureConnectorId = defaults.oracleDbAzureConnectorId;
     	      this.resourceType = defaults.resourceType;
+    	      this.resourcesFilters = defaults.resourcesFilters;
     	      this.state = defaults.state;
         }
 
@@ -195,6 +209,15 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder resourcesFilters(@Nullable List<String> resourcesFilters) {
+
+            this.resourcesFilters = resourcesFilters;
+            return this;
+        }
+        public Builder resourcesFilters(String... resourcesFilters) {
+            return resourcesFilters(List.of(resourcesFilters));
+        }
+        @CustomType.Setter
         public Builder state(@Nullable String state) {
 
             this.state = state;
@@ -210,6 +233,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesResult {
             _resultValue.multiCloudResourceDiscoverySummaryCollections = multiCloudResourceDiscoverySummaryCollections;
             _resultValue.oracleDbAzureConnectorId = oracleDbAzureConnectorId;
             _resultValue.resourceType = resourceType;
+            _resultValue.resourcesFilters = resourcesFilters;
             _resultValue.state = state;
             return _resultValue;
         }

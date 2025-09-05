@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+ * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getDbmulticloudOracleDbAzureKey(args: GetDbmulticloudOracleDbAzu
  */
 export interface GetDbmulticloudOracleDbAzureKeyArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      */
     oracleDbAzureKeyId: string;
 }
@@ -42,11 +42,11 @@ export interface GetDbmulticloudOracleDbAzureKeyArgs {
  */
 export interface GetDbmulticloudOracleDbAzureKeyResult {
     /**
-     * The Azure ID of the Azure Key, Azure Key URL.
+     * The ID of the Azure Key resource.
      */
     readonly azureKeyId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
      */
     readonly compartmentId: string;
     /**
@@ -54,7 +54,7 @@ export interface GetDbmulticloudOracleDbAzureKeyResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Display name of Oracle DB Azure Vault Key.
+     * Oracle DB Azure Vault Key resource name.
      */
     readonly displayName: string;
     /**
@@ -66,7 +66,11 @@ export interface GetDbmulticloudOracleDbAzureKeyResult {
      */
     readonly id: string;
     /**
-     * Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+     * Key properties
+     */
+    readonly keyProperties: {[key: string]: string};
+    /**
+     * Description of the latest modification of the Oracle DB Azure Vault Key resource.
      */
     readonly lastModification: string;
     /**
@@ -75,11 +79,15 @@ export interface GetDbmulticloudOracleDbAzureKeyResult {
     readonly lifecycleStateDetails: string;
     readonly oracleDbAzureKeyId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     readonly oracleDbAzureVaultId: string;
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+     * Key Resource type.
+     */
+    readonly resourceType: string;
+    /**
+     * The current lifecycle state of the Oracle DB Azure Vault Key resource.
      */
     readonly state: string;
     /**
@@ -87,18 +95,18 @@ export interface GetDbmulticloudOracleDbAzureKeyResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeCreated: string;
     /**
-     * Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+ * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -123,7 +131,7 @@ export function getDbmulticloudOracleDbAzureKeyOutput(args: GetDbmulticloudOracl
  */
 export interface GetDbmulticloudOracleDbAzureKeyOutputArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      */
     oracleDbAzureKeyId: pulumi.Input<string>;
 }

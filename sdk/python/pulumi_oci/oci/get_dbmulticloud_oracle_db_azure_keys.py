@@ -58,7 +58,7 @@ class GetDbmulticloudOracleDbAzureKeysResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -66,7 +66,7 @@ class GetDbmulticloudOracleDbAzureKeysResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Display name of Oracle DB Azure Vault Key.
+        Oracle DB Azure Vault Key resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -100,7 +100,7 @@ class GetDbmulticloudOracleDbAzureKeysResult:
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_azure_vault_id")
 
@@ -108,7 +108,7 @@ class GetDbmulticloudOracleDbAzureKeysResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "state")
 
@@ -139,7 +139,7 @@ def get_dbmulticloud_oracle_db_azure_keys(compartment_id: Optional[_builtins.str
     """
     This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Keys based on filters.
+    Lists all Oracle DB Azure Keys based on the specified filters.
 
     ## Example Usage
 
@@ -156,9 +156,9 @@ def get_dbmulticloud_oracle_db_azure_keys(compartment_id: Optional[_builtins.str
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Vault Keys.
-    :param _builtins.str oracle_db_azure_key_id: A filter to return Oracle DB Azure Vault Key Resources.
-    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_key_id: A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -190,7 +190,7 @@ def get_dbmulticloud_oracle_db_azure_keys_output(compartment_id: Optional[pulumi
     """
     This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Keys based on filters.
+    Lists all Oracle DB Azure Keys based on the specified filters.
 
     ## Example Usage
 
@@ -207,9 +207,9 @@ def get_dbmulticloud_oracle_db_azure_keys_output(compartment_id: Optional[pulumi
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Vault Keys.
-    :param _builtins.str oracle_db_azure_key_id: A filter to return Oracle DB Azure Vault Key Resources.
-    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_key_id: A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

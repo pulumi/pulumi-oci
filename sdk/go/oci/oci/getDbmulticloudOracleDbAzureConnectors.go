@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Lists the all Oracle DB Azure Connector Resource based on filters.
+// Lists all Oracle DB Azure Connector resources based on the specified filters.
 //
 // ## Example Usage
 //
@@ -58,12 +58,12 @@ func GetDbmulticloudOracleDbAzureConnectors(ctx *pulumi.Context, args *GetDbmult
 type GetDbmulticloudOracleDbAzureConnectorsArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
 	DbClusterResourceId *string `pulumi:"dbClusterResourceId"`
-	// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+	// A filter to return Oracle DB Azure Connector resources that match the specified display name.
 	DisplayName *string                                        `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureConnectorsFilter `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -71,9 +71,9 @@ type GetDbmulticloudOracleDbAzureConnectorsArgs struct {
 
 // A collection of values returned by getDbmulticloudOracleDbAzureConnectors.
 type GetDbmulticloudOracleDbAzureConnectorsResult struct {
-	// The ID of the compartment that contains Oracle DB Azure Connector resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
 	DbClusterResourceId *string `pulumi:"dbClusterResourceId"`
 	// Oracle DB Azure Connector resource name.
 	DisplayName *string                                        `pulumi:"displayName"`
@@ -83,7 +83,7 @@ type GetDbmulticloudOracleDbAzureConnectorsResult struct {
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
 	// The list of oracle_db_azure_connector_summary_collection.
 	OracleDbAzureConnectorSummaryCollections []GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollection `pulumi:"oracleDbAzureConnectorSummaryCollections"`
-	// The current lifecycle state of the Azure Arc Agent Resource.
+	// The current lifecycle state of the Azure Arc Agent resource.
 	State *string `pulumi:"state"`
 }
 
@@ -100,12 +100,12 @@ func GetDbmulticloudOracleDbAzureConnectorsOutput(ctx *pulumi.Context, args GetD
 type GetDbmulticloudOracleDbAzureConnectorsOutputArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
 	DbClusterResourceId pulumi.StringPtrInput `pulumi:"dbClusterResourceId"`
-	// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+	// A filter to return Oracle DB Azure Connector resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                                  `pulumi:"displayName"`
 	Filters     GetDbmulticloudOracleDbAzureConnectorsFilterArrayInput `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId pulumi.StringPtrInput `pulumi:"oracleDbAzureConnectorId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -130,12 +130,12 @@ func (o GetDbmulticloudOracleDbAzureConnectorsResultOutput) ToGetDbmulticloudOra
 	return o
 }
 
-// The ID of the compartment that contains Oracle DB Azure Connector resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
 func (o GetDbmulticloudOracleDbAzureConnectorsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
 func (o GetDbmulticloudOracleDbAzureConnectorsResultOutput) DbClusterResourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsResult) *string { return v.DbClusterResourceId }).(pulumi.StringPtrOutput)
 }
@@ -167,7 +167,7 @@ func (o GetDbmulticloudOracleDbAzureConnectorsResultOutput) OracleDbAzureConnect
 	}).(GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionArrayOutput)
 }
 
-// The current lifecycle state of the Azure Arc Agent Resource.
+// The current lifecycle state of the Azure Arc Agent resource.
 func (o GetDbmulticloudOracleDbAzureConnectorsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureConnectorsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

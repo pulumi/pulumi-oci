@@ -31,7 +31,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := mysql.GetMysqlBackups(ctx, &mysql.GetMysqlBackupsArgs{
 //				CompartmentId: compartmentId,
-//				BackupId:      pulumi.StringRef(testBackup.Id),
+//				BackupId:      pulumi.StringRef(testMysqlBackup.Id),
 //				CreationType:  pulumi.StringRef(mysqlBackupCreationType),
 //				DbSystemId:    pulumi.StringRef(testDbSystem.Id),
 //				DisplayName:   pulumi.StringRef(mysqlBackupDisplayName),

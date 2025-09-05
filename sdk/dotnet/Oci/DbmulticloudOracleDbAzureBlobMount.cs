@@ -12,8 +12,7 @@ namespace Pulumi.Oci.Oci
     /// <summary>
     /// This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
     /// 
-    /// Creates Oracle DB Azure Blob Mount resource and mounts Azure Container in Oracle Cloud Infrastructure Database Resource,
-    /// based on provided Azure Container details and Database Resource ID.
+    /// Creates Oracle DB Azure Blob Mount resource.
     /// 
     /// ## Example Usage
     /// 
@@ -56,7 +55,7 @@ namespace Pulumi.Oci.Oci
     public partial class DbmulticloudOracleDbAzureBlobMount : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        /// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -68,7 +67,7 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Oracle DB Azure Blob Mount Resource name.
+        /// (Updatable) Oracle DB Azure Blob Mount resource name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -80,7 +79,7 @@ namespace Pulumi.Oci.Oci
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Output("lastModification")]
         public Output<string> LastModification { get; private set; } = null!;
@@ -92,19 +91,19 @@ namespace Pulumi.Oci.Oci
         public Output<string> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Azure Container mount path.
+        /// Oracle DB Azure Blob Mount path.
         /// </summary>
         [Output("mountPath")]
         public Output<string> MountPath { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Output("oracleDbAzureBlobContainerId")]
         public Output<string> OracleDbAzureBlobContainerId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -114,7 +113,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> OracleDbAzureConnectorId { get; private set; } = null!;
 
         /// <summary>
-        /// The current lifecycle state of the Azure Arc Agent Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -184,7 +183,7 @@ namespace Pulumi.Oci.Oci
     public sealed class DbmulticloudOracleDbAzureBlobMountArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        /// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -202,7 +201,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) Oracle DB Azure Blob Mount Resource name.
+        /// (Updatable) Oracle DB Azure Blob Mount resource name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -220,13 +219,13 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId", required: true)]
         public Input<string> OracleDbAzureBlobContainerId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -244,7 +243,7 @@ namespace Pulumi.Oci.Oci
     public sealed class DbmulticloudOracleDbAzureBlobMountState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        /// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -262,7 +261,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// (Updatable) Oracle DB Azure Blob Mount Resource name.
+        /// (Updatable) Oracle DB Azure Blob Mount resource name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -280,7 +279,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("lastModification")]
         public Input<string>? LastModification { get; set; }
@@ -292,19 +291,19 @@ namespace Pulumi.Oci.Oci
         public Input<string>? LifecycleStateDetails { get; set; }
 
         /// <summary>
-        /// Azure Container mount path.
+        /// Oracle DB Azure Blob Mount path.
         /// </summary>
         [Input("mountPath")]
         public Input<string>? MountPath { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId")]
         public Input<string>? OracleDbAzureBlobContainerId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -314,7 +313,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? OracleDbAzureConnectorId { get; set; }
 
         /// <summary>
-        /// The current lifecycle state of the Azure Arc Agent Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

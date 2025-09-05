@@ -9,9 +9,9 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Creates Oracle DB Azure Connector Resource and configured Azure Identity in Oracle Cloud Infrastructure Database Resource.
+ * Creates Oracle DB Azure Connector resource and configured Azure Identity in Oracle Database resource.
  *
- *   Patch Azure Arc Agent on VM Cluster with new version.
+ *   Patch Azure Arc Agent on Oracle Cloud VM Cluster with new version.
  *
  * ## Import
  *
@@ -50,19 +50,23 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      */
     declare public readonly accessToken: pulumi.Output<string>;
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
     declare public readonly arcAgentNodes: pulumi.Output<outputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode[]>;
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * The current Connectivity status of Azure Identity Connector resource.
+     */
+    declare public /*out*/ readonly azureIdentityConnectivityStatus: pulumi.Output<string>;
+    /**
+     * (Updatable) Azure Identity mechanism.
      */
     declare public readonly azureIdentityMechanism: pulumi.Output<string>;
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      */
     declare public readonly azureResourceGroup: pulumi.Output<string>;
     /**
@@ -74,19 +78,19 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
      */
     declare public readonly azureTenantId: pulumi.Output<string>;
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      */
     declare public readonly dbClusterResourceId: pulumi.Output<string>;
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
     declare public readonly lastModification: pulumi.Output<string>;
     /**
@@ -94,15 +98,15 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
      */
     declare public readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
@@ -121,6 +125,7 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
             const state = argsOrState as DbmulticloudOracleDbAzureConnectorState | undefined;
             resourceInputs["accessToken"] = state?.accessToken;
             resourceInputs["arcAgentNodes"] = state?.arcAgentNodes;
+            resourceInputs["azureIdentityConnectivityStatus"] = state?.azureIdentityConnectivityStatus;
             resourceInputs["azureIdentityMechanism"] = state?.azureIdentityMechanism;
             resourceInputs["azureResourceGroup"] = state?.azureResourceGroup;
             resourceInputs["azureSubscriptionId"] = state?.azureSubscriptionId;
@@ -170,6 +175,7 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["lastModification"] = args?.lastModification;
             resourceInputs["lifecycleStateDetails"] = args?.lifecycleStateDetails;
+            resourceInputs["azureIdentityConnectivityStatus"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
@@ -184,19 +190,23 @@ export class DbmulticloudOracleDbAzureConnector extends pulumi.CustomResource {
  */
 export interface DbmulticloudOracleDbAzureConnectorState {
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      */
     accessToken?: pulumi.Input<string>;
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
     arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[]>;
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * The current Connectivity status of Azure Identity Connector resource.
+     */
+    azureIdentityConnectivityStatus?: pulumi.Input<string>;
+    /**
+     * (Updatable) Azure Identity mechanism.
      */
     azureIdentityMechanism?: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      */
     azureResourceGroup?: pulumi.Input<string>;
     /**
@@ -208,19 +218,19 @@ export interface DbmulticloudOracleDbAzureConnectorState {
      */
     azureTenantId?: pulumi.Input<string>;
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      */
     dbClusterResourceId?: pulumi.Input<string>;
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
     lastModification?: pulumi.Input<string>;
     /**
@@ -228,15 +238,15 @@ export interface DbmulticloudOracleDbAzureConnectorState {
      */
     lifecycleStateDetails?: pulumi.Input<string>;
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      */
     state?: pulumi.Input<string>;
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -246,19 +256,19 @@ export interface DbmulticloudOracleDbAzureConnectorState {
  */
 export interface DbmulticloudOracleDbAzureConnectorArgs {
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      */
     accessToken: pulumi.Input<string>;
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
     arcAgentNodes?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAzureConnectorArcAgentNode>[]>;
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * (Updatable) Azure Identity mechanism.
      */
     azureIdentityMechanism: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      */
     azureResourceGroup: pulumi.Input<string>;
     /**
@@ -270,19 +280,19 @@ export interface DbmulticloudOracleDbAzureConnectorArgs {
      */
     azureTenantId: pulumi.Input<string>;
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      */
     dbClusterResourceId: pulumi.Input<string>;
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      */
     displayName: pulumi.Input<string>;
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
     lastModification?: pulumi.Input<string>;
     /**

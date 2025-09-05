@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
 //
-// Creates a new Model.
+// Create a new model.
 //
 // ## Example Usage
 //
@@ -41,14 +41,10 @@ import (
 //					NamespaceName: pulumi.Any(modelTrainingDatasetNamespace),
 //					Object:        pulumi.Any(modelTrainingDatasetObject),
 //				},
-//				DefinedTags: pulumi.StringMap{
-//					"foo-namespace.bar-key": pulumi.String("value"),
-//				},
-//				Description: pulumi.Any(modelDescription),
-//				DisplayName: pulumi.Any(modelDisplayName),
-//				FreeformTags: pulumi.StringMap{
-//					"bar-key": pulumi.String("value"),
-//				},
+//				DefinedTags:                pulumi.Any(modelDefinedTags),
+//				Description:                pulumi.Any(modelDescription),
+//				DisplayName:                pulumi.Any(modelDisplayName),
+//				FreeformTags:               pulumi.Any(modelFreeformTags),
 //				IsQuickMode:                pulumi.Any(modelIsQuickMode),
 //				MaxTrainingDurationInHours: pulumi.Any(modelMaxTrainingDurationInHours),
 //				ModelVersion:               pulumi.Any(modelModelVersion),
@@ -86,57 +82,57 @@ import (
 type Model struct {
 	pulumi.CustomResourceState
 
-	// Average precision of the trained model
+	// The mean average precision of the trained model.
 	AveragePrecision pulumi.Float64Output `pulumi:"averagePrecision"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// Confidence ratio of the calculation
+	// The intersection over the union threshold used for calculating precision and recall.
 	ConfidenceThreshold pulumi.Float64Output `pulumi:"confidenceThreshold"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) A short description of the Model.
+	// (Updatable) An optional description of the model.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Model Identifier
+	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolOutput `pulumi:"isQuickMode"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours pulumi.Float64Output `pulumi:"maxTrainingDurationInHours"`
-	// Complete Training Metrics for successful trained model
+	// The complete set of per-label metrics for successfully trained models.
 	Metrics pulumi.StringOutput `pulumi:"metrics"`
-	// The  type of the model.
+	// Which type of Vision model this is.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
-	// Model version.
+	// The model version
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
-	// Precision of the trained model
+	// The precision of the trained model.
 	Precision pulumi.Float64Output `pulumi:"precision"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
-	// Recall of the trained model
+	// Recall of the trained model.
 	Recall pulumi.Float64Output `pulumi:"recall"`
-	// The current state of the Model.
+	// The current state of the model.
 	State pulumi.StringOutput `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Total number of testing Images
+	// The number of images set aside for evaluating model performance metrics after training.
 	TestImageCount pulumi.IntOutput `pulumi:"testImageCount"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetOutput `pulumi:"testingDataset"`
-	// The time the Model was created. An RFC3339 formatted datetime string
+	// When the model was created, as an RFC3339 datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time the Model was updated. An RFC3339 formatted datetime string
+	// When the model was updated, as an RFC3339 datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// Total number of training Images
+	// The number of images in the dataset used to train, validate, and test the model.
 	TotalImageCount pulumi.IntOutput `pulumi:"totalImageCount"`
-	// Total hours actually used for training
+	// The total hours actually used for model training.
 	TrainedDurationInHours pulumi.Float64Output `pulumi:"trainedDurationInHours"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDataset ModelTrainingDatasetOutput `pulumi:"trainingDataset"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDataset ModelValidationDatasetOutput `pulumi:"validationDataset"`
 }
 
@@ -182,112 +178,112 @@ func GetModel(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Model resources.
 type modelState struct {
-	// Average precision of the trained model
+	// The mean average precision of the trained model.
 	AveragePrecision *float64 `pulumi:"averagePrecision"`
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Confidence ratio of the calculation
+	// The intersection over the union threshold used for calculating precision and recall.
 	ConfidenceThreshold *float64 `pulumi:"confidenceThreshold"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A short description of the Model.
+	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
-	// (Updatable) Model Identifier
+	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours *float64 `pulumi:"maxTrainingDurationInHours"`
-	// Complete Training Metrics for successful trained model
+	// The complete set of per-label metrics for successfully trained models.
 	Metrics *string `pulumi:"metrics"`
-	// The  type of the model.
+	// Which type of Vision model this is.
 	ModelType *string `pulumi:"modelType"`
-	// Model version.
+	// The model version
 	ModelVersion *string `pulumi:"modelVersion"`
-	// Precision of the trained model
+	// The precision of the trained model.
 	Precision *float64 `pulumi:"precision"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId *string `pulumi:"projectId"`
-	// Recall of the trained model
+	// Recall of the trained model.
 	Recall *float64 `pulumi:"recall"`
-	// The current state of the Model.
+	// The current state of the model.
 	State *string `pulumi:"state"`
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Total number of testing Images
+	// The number of images set aside for evaluating model performance metrics after training.
 	TestImageCount *int `pulumi:"testImageCount"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDataset *ModelTestingDataset `pulumi:"testingDataset"`
-	// The time the Model was created. An RFC3339 formatted datetime string
+	// When the model was created, as an RFC3339 datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time the Model was updated. An RFC3339 formatted datetime string
+	// When the model was updated, as an RFC3339 datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// Total number of training Images
+	// The number of images in the dataset used to train, validate, and test the model.
 	TotalImageCount *int `pulumi:"totalImageCount"`
-	// Total hours actually used for training
+	// The total hours actually used for model training.
 	TrainedDurationInHours *float64 `pulumi:"trainedDurationInHours"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDataset *ModelTrainingDataset `pulumi:"trainingDataset"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDataset *ModelValidationDataset `pulumi:"validationDataset"`
 }
 
 type ModelState struct {
-	// Average precision of the trained model
+	// The mean average precision of the trained model.
 	AveragePrecision pulumi.Float64PtrInput
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringPtrInput
-	// Confidence ratio of the calculation
+	// The intersection over the union threshold used for calculating precision and recall.
 	ConfidenceThreshold pulumi.Float64PtrInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) A short description of the Model.
+	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
-	// (Updatable) Model Identifier
+	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
-	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+	// A message describing the current state in more detail, that can provide actionable information if training failed.
 	LifecycleDetails pulumi.StringPtrInput
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours pulumi.Float64PtrInput
-	// Complete Training Metrics for successful trained model
+	// The complete set of per-label metrics for successfully trained models.
 	Metrics pulumi.StringPtrInput
-	// The  type of the model.
+	// Which type of Vision model this is.
 	ModelType pulumi.StringPtrInput
-	// Model version.
+	// The model version
 	ModelVersion pulumi.StringPtrInput
-	// Precision of the trained model
+	// The precision of the trained model.
 	Precision pulumi.Float64PtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId pulumi.StringPtrInput
-	// Recall of the trained model
+	// Recall of the trained model.
 	Recall pulumi.Float64PtrInput
-	// The current state of the Model.
+	// The current state of the model.
 	State pulumi.StringPtrInput
-	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 	SystemTags pulumi.StringMapInput
-	// Total number of testing Images
+	// The number of images set aside for evaluating model performance metrics after training.
 	TestImageCount pulumi.IntPtrInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetPtrInput
-	// The time the Model was created. An RFC3339 formatted datetime string
+	// When the model was created, as an RFC3339 datetime string.
 	TimeCreated pulumi.StringPtrInput
-	// The time the Model was updated. An RFC3339 formatted datetime string
+	// When the model was updated, as an RFC3339 datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// Total number of training Images
+	// The number of images in the dataset used to train, validate, and test the model.
 	TotalImageCount pulumi.IntPtrInput
-	// Total hours actually used for training
+	// The total hours actually used for model training.
 	TrainedDurationInHours pulumi.Float64PtrInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDataset ModelTrainingDatasetPtrInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDataset ModelValidationDatasetPtrInput
 }
 
@@ -296,61 +292,61 @@ func (ModelState) ElementType() reflect.Type {
 }
 
 type modelArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) A short description of the Model.
+	// (Updatable) An optional description of the model.
 	Description *string `pulumi:"description"`
-	// (Updatable) Model Identifier
+	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode *bool `pulumi:"isQuickMode"`
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours *float64 `pulumi:"maxTrainingDurationInHours"`
-	// The  type of the model.
+	// Which type of Vision model this is.
 	ModelType string `pulumi:"modelType"`
-	// Model version.
+	// The model version
 	ModelVersion *string `pulumi:"modelVersion"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId string `pulumi:"projectId"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDataset *ModelTestingDataset `pulumi:"testingDataset"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDataset ModelTrainingDataset `pulumi:"trainingDataset"`
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDataset *ModelValidationDataset `pulumi:"validationDataset"`
 }
 
 // The set of arguments for constructing a Model resource.
 type ModelArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) The compartment identifier.
 	CompartmentId pulumi.StringInput
-	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) A short description of the Model.
+	// (Updatable) An optional description of the model.
 	Description pulumi.StringPtrInput
-	// (Updatable) Model Identifier
+	// (Updatable) A human-friendly name for the model, which can be changed.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 	FreeformTags pulumi.StringMapInput
-	// If It's true, Training is set for recommended epochs needed for quick training.
+	// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 	IsQuickMode pulumi.BoolPtrInput
-	// The maximum duration in hours for which the training will run.
+	// The maximum model training duration in hours, expressed as a decimal fraction.
 	MaxTrainingDurationInHours pulumi.Float64PtrInput
-	// The  type of the model.
+	// Which type of Vision model this is.
 	ModelType pulumi.StringInput
-	// Model version.
+	// The model version
 	ModelVersion pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId pulumi.StringInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TestingDataset ModelTestingDatasetPtrInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	TrainingDataset ModelTrainingDatasetInput
-	// The base entity for a Dataset, which is the input for Model creation.
+	// The base entity which is the input for creating and training a model.
 	ValidationDataset ModelValidationDatasetPtrInput
 }
 
@@ -441,132 +437,132 @@ func (o ModelOutput) ToModelOutputWithContext(ctx context.Context) ModelOutput {
 	return o
 }
 
-// Average precision of the trained model
+// The mean average precision of the trained model.
 func (o ModelOutput) AveragePrecision() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.AveragePrecision }).(pulumi.Float64Output)
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) The compartment identifier.
 func (o ModelOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Confidence ratio of the calculation
+// The intersection over the union threshold used for calculating precision and recall.
 func (o ModelOutput) ConfidenceThreshold() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.ConfidenceThreshold }).(pulumi.Float64Output)
 }
 
-// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
 func (o ModelOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) A short description of the Model.
+// (Updatable) An optional description of the model.
 func (o ModelOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Model Identifier
+// (Updatable) A human-friendly name for the model, which can be changed.
 func (o ModelOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
 func (o ModelOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// If It's true, Training is set for recommended epochs needed for quick training.
+// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
 func (o ModelOutput) IsQuickMode() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Model) pulumi.BoolOutput { return v.IsQuickMode }).(pulumi.BoolOutput)
 }
 
-// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+// A message describing the current state in more detail, that can provide actionable information if training failed.
 func (o ModelOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// The maximum duration in hours for which the training will run.
+// The maximum model training duration in hours, expressed as a decimal fraction.
 func (o ModelOutput) MaxTrainingDurationInHours() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.MaxTrainingDurationInHours }).(pulumi.Float64Output)
 }
 
-// Complete Training Metrics for successful trained model
+// The complete set of per-label metrics for successfully trained models.
 func (o ModelOutput) Metrics() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.Metrics }).(pulumi.StringOutput)
 }
 
-// The  type of the model.
+// Which type of Vision model this is.
 func (o ModelOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// Model version.
+// The model version
 func (o ModelOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
 }
 
-// Precision of the trained model
+// The precision of the trained model.
 func (o ModelOutput) Precision() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.Precision }).(pulumi.Float64Output)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 func (o ModelOutput) ProjectId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.ProjectId }).(pulumi.StringOutput)
 }
 
-// Recall of the trained model
+// Recall of the trained model.
 func (o ModelOutput) Recall() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.Recall }).(pulumi.Float64Output)
 }
 
-// The current state of the Model.
+// The current state of the model.
 func (o ModelOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
 func (o ModelOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Total number of testing Images
+// The number of images set aside for evaluating model performance metrics after training.
 func (o ModelOutput) TestImageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Model) pulumi.IntOutput { return v.TestImageCount }).(pulumi.IntOutput)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o ModelOutput) TestingDataset() ModelTestingDatasetOutput {
 	return o.ApplyT(func(v *Model) ModelTestingDatasetOutput { return v.TestingDataset }).(ModelTestingDatasetOutput)
 }
 
-// The time the Model was created. An RFC3339 formatted datetime string
+// When the model was created, as an RFC3339 datetime string.
 func (o ModelOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time the Model was updated. An RFC3339 formatted datetime string
+// When the model was updated, as an RFC3339 datetime string.
 func (o ModelOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *Model) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// Total number of training Images
+// The number of images in the dataset used to train, validate, and test the model.
 func (o ModelOutput) TotalImageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Model) pulumi.IntOutput { return v.TotalImageCount }).(pulumi.IntOutput)
 }
 
-// Total hours actually used for training
+// The total hours actually used for model training.
 func (o ModelOutput) TrainedDurationInHours() pulumi.Float64Output {
 	return o.ApplyT(func(v *Model) pulumi.Float64Output { return v.TrainedDurationInHours }).(pulumi.Float64Output)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o ModelOutput) TrainingDataset() ModelTrainingDatasetOutput {
 	return o.ApplyT(func(v *Model) ModelTrainingDatasetOutput { return v.TrainingDataset }).(ModelTrainingDatasetOutput)
 }
 
-// The base entity for a Dataset, which is the input for Model creation.
+// The base entity which is the input for creating and training a model.
 func (o ModelOutput) ValidationDataset() ModelValidationDatasetOutput {
 	return o.ApplyT(func(v *Model) ModelValidationDatasetOutput { return v.ValidationDataset }).(ModelValidationDatasetOutput)
 }

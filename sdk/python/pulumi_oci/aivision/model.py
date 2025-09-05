@@ -36,19 +36,19 @@ class ModelArgs:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         The set of arguments for constructing a Model resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[_builtins.str] model_type: The  type of the model.
-        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the Model.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Model Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.bool] is_quick_mode: If It's true, Training is set for recommended epochs needed for quick training.
-        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum duration in hours for which the training will run.
-        :param pulumi.Input[_builtins.str] model_version: Model version.
-        :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
+        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum model training duration in hours, expressed as a decimal fraction.
+        :param pulumi.Input[_builtins.str] model_version: The model version
+        :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity which is the input for creating and training a model.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "model_type", model_type)
@@ -77,7 +77,7 @@ class ModelArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -89,7 +89,7 @@ class ModelArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[_builtins.str]:
         """
-        The  type of the model.
+        Which type of Vision model this is.
         """
         return pulumi.get(self, "model_type")
 
@@ -101,7 +101,7 @@ class ModelArgs:
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         """
         return pulumi.get(self, "project_id")
 
@@ -113,7 +113,7 @@ class ModelArgs:
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> pulumi.Input['ModelTrainingDatasetArgs']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_dataset")
 
@@ -125,7 +125,7 @@ class ModelArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -137,7 +137,7 @@ class ModelArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A short description of the Model.
+        (Updatable) An optional description of the model.
         """
         return pulumi.get(self, "description")
 
@@ -149,7 +149,7 @@ class ModelArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Model Identifier
+        (Updatable) A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -161,7 +161,7 @@ class ModelArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -173,7 +173,7 @@ class ModelArgs:
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If It's true, Training is set for recommended epochs needed for quick training.
+        Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
@@ -185,7 +185,7 @@ class ModelArgs:
     @pulumi.getter(name="maxTrainingDurationInHours")
     def max_training_duration_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        The maximum duration in hours for which the training will run.
+        The maximum model training duration in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_duration_in_hours")
 
@@ -197,7 +197,7 @@ class ModelArgs:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Model version.
+        The model version
         """
         return pulumi.get(self, "model_version")
 
@@ -209,7 +209,7 @@ class ModelArgs:
     @pulumi.getter(name="testingDataset")
     def testing_dataset(self) -> Optional[pulumi.Input['ModelTestingDatasetArgs']]:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_dataset")
 
@@ -221,7 +221,7 @@ class ModelArgs:
     @pulumi.getter(name="validationDataset")
     def validation_dataset(self) -> Optional[pulumi.Input['ModelValidationDatasetArgs']]:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_dataset")
 
@@ -261,32 +261,32 @@ class _ModelState:
                  validation_dataset: Optional[pulumi.Input['ModelValidationDatasetArgs']] = None):
         """
         Input properties used for looking up and filtering Model resources.
-        :param pulumi.Input[_builtins.float] average_precision: Average precision of the trained model
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[_builtins.float] confidence_threshold: Confidence ratio of the calculation
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the Model.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Model Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.bool] is_quick_mode: If It's true, Training is set for recommended epochs needed for quick training.
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum duration in hours for which the training will run.
-        :param pulumi.Input[_builtins.str] metrics: Complete Training Metrics for successful trained model
-        :param pulumi.Input[_builtins.str] model_type: The  type of the model.
-        :param pulumi.Input[_builtins.str] model_version: Model version.
-        :param pulumi.Input[_builtins.float] precision: Precision of the trained model
-        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[_builtins.float] recall: Recall of the trained model
-        :param pulumi.Input[_builtins.str] state: The current state of the Model.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.int] test_image_count: Total number of testing Images
-        :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[_builtins.str] time_created: The time the Model was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.str] time_updated: The time the Model was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.int] total_image_count: Total number of training Images
-        :param pulumi.Input[_builtins.float] trained_duration_in_hours: Total hours actually used for training
-        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[_builtins.float] average_precision: The mean average precision of the trained model.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[_builtins.float] confidence_threshold: The intersection over the union threshold used for calculating precision and recall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum model training duration in hours, expressed as a decimal fraction.
+        :param pulumi.Input[_builtins.str] metrics: The complete set of per-label metrics for successfully trained models.
+        :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
+        :param pulumi.Input[_builtins.str] model_version: The model version
+        :param pulumi.Input[_builtins.float] precision: The precision of the trained model.
+        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+        :param pulumi.Input[_builtins.float] recall: Recall of the trained model.
+        :param pulumi.Input[_builtins.str] state: The current state of the model.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[_builtins.int] test_image_count: The number of images set aside for evaluating model performance metrics after training.
+        :param pulumi.Input['ModelTestingDatasetArgs'] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[_builtins.str] time_created: When the model was created, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.str] time_updated: When the model was updated, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.int] total_image_count: The number of images in the dataset used to train, validate, and test the model.
+        :param pulumi.Input[_builtins.float] trained_duration_in_hours: The total hours actually used for model training.
+        :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input['ModelValidationDatasetArgs'] validation_dataset: The base entity which is the input for creating and training a model.
         """
         if average_precision is not None:
             pulumi.set(__self__, "average_precision", average_precision)
@@ -345,7 +345,7 @@ class _ModelState:
     @pulumi.getter(name="averagePrecision")
     def average_precision(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        Average precision of the trained model
+        The mean average precision of the trained model.
         """
         return pulumi.get(self, "average_precision")
 
@@ -357,7 +357,7 @@ class _ModelState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -369,7 +369,7 @@ class _ModelState:
     @pulumi.getter(name="confidenceThreshold")
     def confidence_threshold(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        Confidence ratio of the calculation
+        The intersection over the union threshold used for calculating precision and recall.
         """
         return pulumi.get(self, "confidence_threshold")
 
@@ -381,7 +381,7 @@ class _ModelState:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -393,7 +393,7 @@ class _ModelState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) A short description of the Model.
+        (Updatable) An optional description of the model.
         """
         return pulumi.get(self, "description")
 
@@ -405,7 +405,7 @@ class _ModelState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Model Identifier
+        (Updatable) A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -417,7 +417,7 @@ class _ModelState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -429,7 +429,7 @@ class _ModelState:
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        If It's true, Training is set for recommended epochs needed for quick training.
+        Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
@@ -441,7 +441,7 @@ class _ModelState:
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -453,7 +453,7 @@ class _ModelState:
     @pulumi.getter(name="maxTrainingDurationInHours")
     def max_training_duration_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        The maximum duration in hours for which the training will run.
+        The maximum model training duration in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_duration_in_hours")
 
@@ -465,7 +465,7 @@ class _ModelState:
     @pulumi.getter
     def metrics(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Complete Training Metrics for successful trained model
+        The complete set of per-label metrics for successfully trained models.
         """
         return pulumi.get(self, "metrics")
 
@@ -477,7 +477,7 @@ class _ModelState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The  type of the model.
+        Which type of Vision model this is.
         """
         return pulumi.get(self, "model_type")
 
@@ -489,7 +489,7 @@ class _ModelState:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Model version.
+        The model version
         """
         return pulumi.get(self, "model_version")
 
@@ -501,7 +501,7 @@ class _ModelState:
     @pulumi.getter
     def precision(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        Precision of the trained model
+        The precision of the trained model.
         """
         return pulumi.get(self, "precision")
 
@@ -513,7 +513,7 @@ class _ModelState:
     @pulumi.getter(name="projectId")
     def project_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         """
         return pulumi.get(self, "project_id")
 
@@ -525,7 +525,7 @@ class _ModelState:
     @pulumi.getter
     def recall(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        Recall of the trained model
+        Recall of the trained model.
         """
         return pulumi.get(self, "recall")
 
@@ -537,7 +537,7 @@ class _ModelState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current state of the Model.
+        The current state of the model.
         """
         return pulumi.get(self, "state")
 
@@ -549,7 +549,7 @@ class _ModelState:
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -561,7 +561,7 @@ class _ModelState:
     @pulumi.getter(name="testImageCount")
     def test_image_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Total number of testing Images
+        The number of images set aside for evaluating model performance metrics after training.
         """
         return pulumi.get(self, "test_image_count")
 
@@ -573,7 +573,7 @@ class _ModelState:
     @pulumi.getter(name="testingDataset")
     def testing_dataset(self) -> Optional[pulumi.Input['ModelTestingDatasetArgs']]:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_dataset")
 
@@ -585,7 +585,7 @@ class _ModelState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time the Model was created. An RFC3339 formatted datetime string
+        When the model was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -597,7 +597,7 @@ class _ModelState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The time the Model was updated. An RFC3339 formatted datetime string
+        When the model was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -609,7 +609,7 @@ class _ModelState:
     @pulumi.getter(name="totalImageCount")
     def total_image_count(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
-        Total number of training Images
+        The number of images in the dataset used to train, validate, and test the model.
         """
         return pulumi.get(self, "total_image_count")
 
@@ -621,7 +621,7 @@ class _ModelState:
     @pulumi.getter(name="trainedDurationInHours")
     def trained_duration_in_hours(self) -> Optional[pulumi.Input[_builtins.float]]:
         """
-        Total hours actually used for training
+        The total hours actually used for model training.
         """
         return pulumi.get(self, "trained_duration_in_hours")
 
@@ -633,7 +633,7 @@ class _ModelState:
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> Optional[pulumi.Input['ModelTrainingDatasetArgs']]:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_dataset")
 
@@ -645,7 +645,7 @@ class _ModelState:
     @pulumi.getter(name="validationDataset")
     def validation_dataset(self) -> Optional[pulumi.Input['ModelValidationDatasetArgs']]:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_dataset")
 
@@ -677,7 +677,7 @@ class Model(pulumi.CustomResource):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
 
-        Creates a new Model.
+        Create a new model.
 
         ## Example Usage
 
@@ -696,14 +696,10 @@ class Model(pulumi.CustomResource):
                 "namespace_name": model_training_dataset_namespace,
                 "object": model_training_dataset_object,
             },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
+            defined_tags=model_defined_tags,
             description=model_description,
             display_name=model_display_name,
-            freeform_tags={
-                "bar-key": "value",
-            },
+            freeform_tags=model_freeform_tags,
             is_quick_mode=model_is_quick_mode,
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
@@ -733,19 +729,19 @@ class Model(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the Model.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Model Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.bool] is_quick_mode: If It's true, Training is set for recommended epochs needed for quick training.
-        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum duration in hours for which the training will run.
-        :param pulumi.Input[_builtins.str] model_type: The  type of the model.
-        :param pulumi.Input[_builtins.str] model_version: Model version.
-        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum model training duration in hours, expressed as a decimal fraction.
+        :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
+        :param pulumi.Input[_builtins.str] model_version: The model version
+        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         ...
     @overload
@@ -756,7 +752,7 @@ class Model(pulumi.CustomResource):
         """
         This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
 
-        Creates a new Model.
+        Create a new model.
 
         ## Example Usage
 
@@ -775,14 +771,10 @@ class Model(pulumi.CustomResource):
                 "namespace_name": model_training_dataset_namespace,
                 "object": model_training_dataset_object,
             },
-            defined_tags={
-                "foo-namespace.bar-key": "value",
-            },
+            defined_tags=model_defined_tags,
             description=model_description,
             display_name=model_display_name,
-            freeform_tags={
-                "bar-key": "value",
-            },
+            freeform_tags=model_freeform_tags,
             is_quick_mode=model_is_quick_mode,
             max_training_duration_in_hours=model_max_training_duration_in_hours,
             model_version=model_model_version,
@@ -924,32 +916,32 @@ class Model(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.float] average_precision: Average precision of the trained model
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) Compartment Identifier
-        :param pulumi.Input[_builtins.float] confidence_threshold: Confidence ratio of the calculation
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[_builtins.str] description: (Updatable) A short description of the Model.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Model Identifier
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[_builtins.bool] is_quick_mode: If It's true, Training is set for recommended epochs needed for quick training.
-        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum duration in hours for which the training will run.
-        :param pulumi.Input[_builtins.str] metrics: Complete Training Metrics for successful trained model
-        :param pulumi.Input[_builtins.str] model_type: The  type of the model.
-        :param pulumi.Input[_builtins.str] model_version: Model version.
-        :param pulumi.Input[_builtins.float] precision: Precision of the trained model
-        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
-        :param pulumi.Input[_builtins.float] recall: Recall of the trained model
-        :param pulumi.Input[_builtins.str] state: The current state of the Model.
-        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.int] test_image_count: Total number of testing Images
-        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[_builtins.str] time_created: The time the Model was created. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.str] time_updated: The time the Model was updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[_builtins.int] total_image_count: Total number of training Images
-        :param pulumi.Input[_builtins.float] trained_duration_in_hours: Total hours actually used for training
-        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity for a Dataset, which is the input for Model creation.
-        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity for a Dataset, which is the input for Model creation.
+        :param pulumi.Input[_builtins.float] average_precision: The mean average precision of the trained model.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment identifier.
+        :param pulumi.Input[_builtins.float] confidence_threshold: The intersection over the union threshold used for calculating precision and recall.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the model.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) A human-friendly name for the model, which can be changed.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param pulumi.Input[_builtins.bool] is_quick_mode: Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
+        :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param pulumi.Input[_builtins.float] max_training_duration_in_hours: The maximum model training duration in hours, expressed as a decimal fraction.
+        :param pulumi.Input[_builtins.str] metrics: The complete set of per-label metrics for successfully trained models.
+        :param pulumi.Input[_builtins.str] model_type: Which type of Vision model this is.
+        :param pulumi.Input[_builtins.str] model_version: The model version
+        :param pulumi.Input[_builtins.float] precision: The precision of the trained model.
+        :param pulumi.Input[_builtins.str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
+        :param pulumi.Input[_builtins.float] recall: Recall of the trained model.
+        :param pulumi.Input[_builtins.str] state: The current state of the model.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param pulumi.Input[_builtins.int] test_image_count: The number of images set aside for evaluating model performance metrics after training.
+        :param pulumi.Input[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict']] testing_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[_builtins.str] time_created: When the model was created, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.str] time_updated: When the model was updated, as an RFC3339 datetime string.
+        :param pulumi.Input[_builtins.int] total_image_count: The number of images in the dataset used to train, validate, and test the model.
+        :param pulumi.Input[_builtins.float] trained_duration_in_hours: The total hours actually used for model training.
+        :param pulumi.Input[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict']] training_dataset: The base entity which is the input for creating and training a model.
+        :param pulumi.Input[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict']] validation_dataset: The base entity which is the input for creating and training a model.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -987,7 +979,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="averagePrecision")
     def average_precision(self) -> pulumi.Output[_builtins.float]:
         """
-        Average precision of the trained model
+        The mean average precision of the trained model.
         """
         return pulumi.get(self, "average_precision")
 
@@ -995,7 +987,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Compartment Identifier
+        (Updatable) The compartment identifier.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1003,7 +995,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="confidenceThreshold")
     def confidence_threshold(self) -> pulumi.Output[_builtins.float]:
         """
-        Confidence ratio of the calculation
+        The intersection over the union threshold used for calculating precision and recall.
         """
         return pulumi.get(self, "confidence_threshold")
 
@@ -1011,7 +1003,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1019,7 +1011,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) A short description of the Model.
+        (Updatable) An optional description of the model.
         """
         return pulumi.get(self, "description")
 
@@ -1027,7 +1019,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Model Identifier
+        (Updatable) A human-friendly name for the model, which can be changed.
         """
         return pulumi.get(self, "display_name")
 
@@ -1035,7 +1027,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -1043,7 +1035,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> pulumi.Output[_builtins.bool]:
         """
-        If It's true, Training is set for recommended epochs needed for quick training.
+        Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
@@ -1051,7 +1043,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[_builtins.str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1059,7 +1051,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="maxTrainingDurationInHours")
     def max_training_duration_in_hours(self) -> pulumi.Output[_builtins.float]:
         """
-        The maximum duration in hours for which the training will run.
+        The maximum model training duration in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_duration_in_hours")
 
@@ -1067,7 +1059,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def metrics(self) -> pulumi.Output[_builtins.str]:
         """
-        Complete Training Metrics for successful trained model
+        The complete set of per-label metrics for successfully trained models.
         """
         return pulumi.get(self, "metrics")
 
@@ -1075,7 +1067,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[_builtins.str]:
         """
-        The  type of the model.
+        Which type of Vision model this is.
         """
         return pulumi.get(self, "model_type")
 
@@ -1083,7 +1075,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Model version.
+        The model version
         """
         return pulumi.get(self, "model_version")
 
@@ -1091,7 +1083,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def precision(self) -> pulumi.Output[_builtins.float]:
         """
-        Precision of the trained model
+        The precision of the trained model.
         """
         return pulumi.get(self, "precision")
 
@@ -1099,7 +1091,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="projectId")
     def project_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         """
         return pulumi.get(self, "project_id")
 
@@ -1107,7 +1099,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def recall(self) -> pulumi.Output[_builtins.float]:
         """
-        Recall of the trained model
+        Recall of the trained model.
         """
         return pulumi.get(self, "recall")
 
@@ -1115,7 +1107,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current state of the Model.
+        The current state of the model.
         """
         return pulumi.get(self, "state")
 
@@ -1123,7 +1115,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -1131,7 +1123,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="testImageCount")
     def test_image_count(self) -> pulumi.Output[_builtins.int]:
         """
-        Total number of testing Images
+        The number of images set aside for evaluating model performance metrics after training.
         """
         return pulumi.get(self, "test_image_count")
 
@@ -1139,7 +1131,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="testingDataset")
     def testing_dataset(self) -> pulumi.Output['outputs.ModelTestingDataset']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_dataset")
 
@@ -1147,7 +1139,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        The time the Model was created. An RFC3339 formatted datetime string
+        When the model was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -1155,7 +1147,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        The time the Model was updated. An RFC3339 formatted datetime string
+        When the model was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -1163,7 +1155,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="totalImageCount")
     def total_image_count(self) -> pulumi.Output[_builtins.int]:
         """
-        Total number of training Images
+        The number of images in the dataset used to train, validate, and test the model.
         """
         return pulumi.get(self, "total_image_count")
 
@@ -1171,7 +1163,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="trainedDurationInHours")
     def trained_duration_in_hours(self) -> pulumi.Output[_builtins.float]:
         """
-        Total hours actually used for training
+        The total hours actually used for model training.
         """
         return pulumi.get(self, "trained_duration_in_hours")
 
@@ -1179,7 +1171,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="trainingDataset")
     def training_dataset(self) -> pulumi.Output['outputs.ModelTrainingDataset']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_dataset")
 
@@ -1187,7 +1179,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter(name="validationDataset")
     def validation_dataset(self) -> pulumi.Output['outputs.ModelValidationDataset']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_dataset")
 

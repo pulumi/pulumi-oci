@@ -14,14 +14,14 @@ public final class GetProjectPlainArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetProjectPlainArgs Empty = new GetProjectPlainArgs();
 
     /**
-     * unique Project identifier
+     * A unique project identifier.
      * 
      */
     @Import(name="projectId", required=true)
     private String projectId;
 
     /**
-     * @return unique Project identifier
+     * @return A unique project identifier.
      * 
      */
     public String projectId() {
@@ -53,7 +53,7 @@ public final class GetProjectPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param projectId unique Project identifier
+         * @param projectId A unique project identifier.
          * 
          * @return builder
          * 

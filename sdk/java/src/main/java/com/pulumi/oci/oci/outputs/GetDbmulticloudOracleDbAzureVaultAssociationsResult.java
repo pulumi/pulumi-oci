@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureVaultAssociationsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Display name of Oracle DB Azure Vault Association.
+     * @return Oracle DB Azure Vault Association resource name.
      * 
      */
     private @Nullable String displayName;
@@ -32,7 +32,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsResult {
      */
     private String id;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     private @Nullable String oracleDbAzureConnectorId;
@@ -43,26 +43,26 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsResult {
      */
     private List<GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection> oracleDbAzureVaultAssociationSummaryCollections;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      */
     private @Nullable String oracleDbAzureVaultId;
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Vault Association resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureVaultAssociationsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Display name of Oracle DB Azure Vault Association.
+     * @return Oracle DB Azure Vault Association resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -79,7 +79,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsResult {
         return this.id;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Optional<String> oracleDbAzureConnectorId() {
@@ -96,14 +96,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsResult {
         return this.oracleDbAzureVaultAssociationSummaryCollections;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Optional<String> oracleDbAzureVaultId() {
         return Optional.ofNullable(this.oracleDbAzureVaultId);
     }
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Vault Association resource.
      * 
      */
     public Optional<String> state() {

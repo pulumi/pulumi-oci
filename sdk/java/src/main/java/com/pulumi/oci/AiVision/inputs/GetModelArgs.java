@@ -15,14 +15,14 @@ public final class GetModelArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetModelArgs Empty = new GetModelArgs();
 
     /**
-     * unique Model identifier
+     * A unique model identifier.
      * 
      */
     @Import(name="modelId", required=true)
     private Output<String> modelId;
 
     /**
-     * @return unique Model identifier
+     * @return A unique model identifier.
      * 
      */
     public Output<String> modelId() {
@@ -54,7 +54,7 @@ public final class GetModelArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param modelId unique Model identifier
+         * @param modelId A unique model identifier.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetModelArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param modelId unique Model identifier
+         * @param modelId A unique model identifier.
          * 
          * @return builder
          * 

@@ -27,13 +27,16 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAzureConnector.
     """
-    def __init__(__self__, access_token=None, arc_agent_nodes=None, azure_identity_mechanism=None, azure_resource_group=None, azure_subscription_id=None, azure_tenant_id=None, compartment_id=None, db_cluster_resource_id=None, display_name=None, id=None, last_modification=None, lifecycle_state_details=None, oracle_db_azure_connector_id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, access_token=None, arc_agent_nodes=None, azure_identity_connectivity_status=None, azure_identity_mechanism=None, azure_resource_group=None, azure_subscription_id=None, azure_tenant_id=None, compartment_id=None, db_cluster_resource_id=None, display_name=None, id=None, last_modification=None, lifecycle_state_details=None, oracle_db_azure_connector_id=None, state=None, time_created=None, time_updated=None):
         if access_token and not isinstance(access_token, str):
             raise TypeError("Expected argument 'access_token' to be a str")
         pulumi.set(__self__, "access_token", access_token)
         if arc_agent_nodes and not isinstance(arc_agent_nodes, list):
             raise TypeError("Expected argument 'arc_agent_nodes' to be a list")
         pulumi.set(__self__, "arc_agent_nodes", arc_agent_nodes)
+        if azure_identity_connectivity_status and not isinstance(azure_identity_connectivity_status, str):
+            raise TypeError("Expected argument 'azure_identity_connectivity_status' to be a str")
+        pulumi.set(__self__, "azure_identity_connectivity_status", azure_identity_connectivity_status)
         if azure_identity_mechanism and not isinstance(azure_identity_mechanism, str):
             raise TypeError("Expected argument 'azure_identity_mechanism' to be a str")
         pulumi.set(__self__, "azure_identity_mechanism", azure_identity_mechanism)
@@ -81,7 +84,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="accessToken")
     def access_token(self) -> _builtins.str:
         """
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
@@ -89,15 +92,23 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="arcAgentNodes")
     def arc_agent_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult']:
         """
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="azureIdentityConnectivityStatus")
+    def azure_identity_connectivity_status(self) -> _builtins.str:
+        """
+        The current Connectivity status of Azure Identity Connector resource.
+        """
+        return pulumi.get(self, "azure_identity_connectivity_status")
 
     @_builtins.property
     @pulumi.getter(name="azureIdentityMechanism")
     def azure_identity_mechanism(self) -> _builtins.str:
         """
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
@@ -105,7 +116,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="azureResourceGroup")
     def azure_resource_group(self) -> _builtins.str:
         """
-        Azure Resource Group Name.
+        Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
@@ -129,7 +140,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Connector resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -137,7 +148,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> _builtins.str:
         """
-        The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -153,7 +164,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The ID of the Oracle DB Azure Connector resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "id")
 
@@ -161,7 +172,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -182,7 +193,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "state")
 
@@ -190,7 +201,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -198,7 +209,7 @@ class GetDbmulticloudOracleDbAzureConnectorResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -211,6 +222,7 @@ class AwaitableGetDbmulticloudOracleDbAzureConnectorResult(GetDbmulticloudOracle
         return GetDbmulticloudOracleDbAzureConnectorResult(
             access_token=self.access_token,
             arc_agent_nodes=self.arc_agent_nodes,
+            azure_identity_connectivity_status=self.azure_identity_connectivity_status,
             azure_identity_mechanism=self.azure_identity_mechanism,
             azure_resource_group=self.azure_resource_group,
             azure_subscription_id=self.azure_subscription_id,
@@ -232,7 +244,7 @@ def get_dbmulticloud_oracle_db_azure_connector(oracle_db_azure_connector_id: Opt
     """
     This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Connector Resource form a particular Resource ID.
+    Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -244,7 +256,7 @@ def get_dbmulticloud_oracle_db_azure_connector(oracle_db_azure_connector_id: Opt
     ```
 
 
-    :param _builtins.str oracle_db_azure_connector_id: The ID of the Oracle DB Azure Connector Resource.
+    :param _builtins.str oracle_db_azure_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureConnectorId'] = oracle_db_azure_connector_id
@@ -254,6 +266,7 @@ def get_dbmulticloud_oracle_db_azure_connector(oracle_db_azure_connector_id: Opt
     return AwaitableGetDbmulticloudOracleDbAzureConnectorResult(
         access_token=pulumi.get(__ret__, 'access_token'),
         arc_agent_nodes=pulumi.get(__ret__, 'arc_agent_nodes'),
+        azure_identity_connectivity_status=pulumi.get(__ret__, 'azure_identity_connectivity_status'),
         azure_identity_mechanism=pulumi.get(__ret__, 'azure_identity_mechanism'),
         azure_resource_group=pulumi.get(__ret__, 'azure_resource_group'),
         azure_subscription_id=pulumi.get(__ret__, 'azure_subscription_id'),
@@ -273,7 +286,7 @@ def get_dbmulticloud_oracle_db_azure_connector_output(oracle_db_azure_connector_
     """
     This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Connector Resource form a particular Resource ID.
+    Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -285,7 +298,7 @@ def get_dbmulticloud_oracle_db_azure_connector_output(oracle_db_azure_connector_
     ```
 
 
-    :param _builtins.str oracle_db_azure_connector_id: The ID of the Oracle DB Azure Connector Resource.
+    :param _builtins.str oracle_db_azure_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureConnectorId'] = oracle_db_azure_connector_id
@@ -294,6 +307,7 @@ def get_dbmulticloud_oracle_db_azure_connector_output(oracle_db_azure_connector_
     return __ret__.apply(lambda __response__: GetDbmulticloudOracleDbAzureConnectorResult(
         access_token=pulumi.get(__response__, 'access_token'),
         arc_agent_nodes=pulumi.get(__response__, 'arc_agent_nodes'),
+        azure_identity_connectivity_status=pulumi.get(__response__, 'azure_identity_connectivity_status'),
         azure_identity_mechanism=pulumi.get(__response__, 'azure_identity_mechanism'),
         azure_resource_group=pulumi.get(__response__, 'azure_resource_group'),
         azure_subscription_id=pulumi.get(__response__, 'azure_subscription_id'),

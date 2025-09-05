@@ -34,6 +34,7 @@ namespace Pulumi.Oci.Database
     ///             TotalSizeInGbs = exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
     ///         },
     ///         AdditionalFlashCacheInPercent = exascaleDbStorageVaultAdditionalFlashCacheInPercent,
+    ///         AutoscaleLimitInGbs = exascaleDbStorageVaultAutoscaleLimitInGbs,
     ///         ClusterPlacementGroupId = testClusterPlacementGroup.Id,
     ///         DefinedTags = exascaleDbStorageVaultDefinedTags,
     ///         Description = exascaleDbStorageVaultDescription,
@@ -42,6 +43,7 @@ namespace Pulumi.Oci.Database
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsAutoscaleEnabled = exascaleDbStorageVaultIsAutoscaleEnabled,
     ///         SubscriptionId = tenantSubscriptionId,
     ///         TimeZone = exascaleDbStorageVaultTimeZone,
     ///     });
@@ -71,6 +73,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("attachedShapeAttributes")]
         public Output<ImmutableArray<string>> AttachedShapeAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// </summary>
+        [Output("autoscaleLimitInGbs")]
+        public Output<int> AutoscaleLimitInGbs { get; private set; } = null!;
 
         /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
@@ -125,6 +133,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("highCapacityDatabaseStorage")]
         public Output<Outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage> HighCapacityDatabaseStorage { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        /// </summary>
+        [Output("isAutoscaleEnabled")]
+        public Output<bool> IsAutoscaleEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Additional information about the current lifecycle state.
@@ -231,6 +245,12 @@ namespace Pulumi.Oci.Database
         public Input<int>? AdditionalFlashCacheInPercent { get; set; }
 
         /// <summary>
+        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// </summary>
+        [Input("autoscaleLimitInGbs")]
+        public Input<int>? AutoscaleLimitInGbs { get; set; }
+
+        /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
         /// </summary>
         [Input("availabilityDomain", required: true)]
@@ -297,6 +317,12 @@ namespace Pulumi.Oci.Database
         public Input<Inputs.ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs> HighCapacityDatabaseStorage { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        /// </summary>
+        [Input("isAutoscaleEnabled")]
+        public Input<bool>? IsAutoscaleEnabled { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         /// </summary>
         [Input("subscriptionId")]
@@ -337,6 +363,12 @@ namespace Pulumi.Oci.Database
             get => _attachedShapeAttributes ?? (_attachedShapeAttributes = new InputList<string>());
             set => _attachedShapeAttributes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// </summary>
+        [Input("autoscaleLimitInGbs")]
+        public Input<int>? AutoscaleLimitInGbs { get; set; }
 
         /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
@@ -403,6 +435,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("highCapacityDatabaseStorage")]
         public Input<Inputs.ExascaleDbStorageVaultHighCapacityDatabaseStorageGetArgs>? HighCapacityDatabaseStorage { get; set; }
+
+        /// <summary>
+        /// (Updatable) Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        /// </summary>
+        [Input("isAutoscaleEnabled")]
+        public Input<bool>? IsAutoscaleEnabled { get; set; }
 
         /// <summary>
         /// Additional information about the current lifecycle state.

@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Creates a new Project.
+ * Create a new project.
  *
  * ## Example Usage
  *
@@ -17,14 +17,10 @@ import * as utilities from "../utilities";
  *
  * const testProject = new oci.aivision.Project("test_project", {
  *     compartmentId: compartmentId,
- *     definedTags: {
- *         "foo-namespace.bar-key": "value",
- *     },
+ *     definedTags: projectDefinedTags,
  *     description: projectDescription,
  *     displayName: projectDisplayName,
- *     freeformTags: {
- *         "bar-key": "value",
- *     },
+ *     freeformTags: projectFreeformTags,
  * });
  * ```
  *
@@ -65,23 +61,23 @@ export class Project extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) A short description of the project.
+     * (Updatable) An optional description of the project.
      */
     declare public readonly description: pulumi.Output<string>;
     /**
-     * (Updatable) Project Identifier
+     * (Updatable) A human-friendly name for the project, that can be changed.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **
@@ -89,23 +85,23 @@ export class Project extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if creation failed.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
     /**
-     * The current state of the Project.
+     * The current state of the project.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The time the Project was created. An RFC3339 formatted datetime string
+     * When the project was created, as an RFC3339 datetime string.
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * The time the Project was updated. An RFC3339 formatted datetime string
+     * When the project was updated, as an RFC3339 datetime string.
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
@@ -158,23 +154,23 @@ export class Project extends pulumi.CustomResource {
  */
 export interface ProjectState {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A short description of the project.
+     * (Updatable) An optional description of the project.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Project Identifier
+     * (Updatable) A human-friendly name for the project, that can be changed.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **
@@ -182,23 +178,23 @@ export interface ProjectState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if creation failed.
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * The current state of the Project.
+     * The current state of the project.
      */
     state?: pulumi.Input<string>;
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The time the Project was created. An RFC3339 formatted datetime string
+     * When the project was created, as an RFC3339 datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time the Project was updated. An RFC3339 formatted datetime string
+     * When the project was updated, as an RFC3339 datetime string.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -208,23 +204,23 @@ export interface ProjectState {
  */
 export interface ProjectArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) A short description of the project.
+     * (Updatable) An optional description of the project.
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Project Identifier
+     * (Updatable) A human-friendly name for the project, that can be changed.
      */
     displayName?: pulumi.Input<string>;
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}` 
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}` 
      *
      *
      * ** IMPORTANT **

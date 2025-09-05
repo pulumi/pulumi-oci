@@ -77,7 +77,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -93,7 +93,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Oracle DB Azure Blob Mount name.
+        Oracle DB Azure Blob Mount resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -109,7 +109,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The OCID for the new Oracle DB Azure Blob Mount resource.
+        The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "id")
 
@@ -117,7 +117,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -133,7 +133,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> _builtins.str:
         """
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
         """
         return pulumi.get(self, "mount_path")
 
@@ -141,7 +141,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="oracleDbAzureBlobContainerId")
     def oracle_db_azure_blob_container_id(self) -> _builtins.str:
         """
-        The OCID of the Oracle DB Azure Blob Container Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "oracle_db_azure_blob_container_id")
 
@@ -154,7 +154,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> _builtins.str:
         """
-        The OCID of the Oracle DB Azure Connector Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -162,7 +162,7 @@ class GetDbmulticloudOracleDbAzureBlobMountResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "state")
 
@@ -219,7 +219,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mount(oracle_db_azure_blob_mount_id: O
     """
     This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+    Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -231,7 +231,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mount(oracle_db_azure_blob_mount_id: O
     ```
 
 
-    :param _builtins.str oracle_db_azure_blob_mount_id: The ID of the Azure Container Resource.
+    :param _builtins.str oracle_db_azure_blob_mount_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureBlobMountId'] = oracle_db_azure_blob_mount_id
@@ -259,7 +259,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mount_output(oracle_db_azure_blob_moun
     """
     This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+    Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -271,7 +271,7 @@ def get_dbmulticloud_oracle_db_azure_blob_mount_output(oracle_db_azure_blob_moun
     ```
 
 
-    :param _builtins.str oracle_db_azure_blob_mount_id: The ID of the Azure Container Resource.
+    :param _builtins.str oracle_db_azure_blob_mount_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureBlobMountId'] = oracle_db_azure_blob_mount_id

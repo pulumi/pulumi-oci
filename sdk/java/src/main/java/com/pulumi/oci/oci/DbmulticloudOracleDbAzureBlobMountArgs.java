@@ -18,14 +18,14 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
     public static final DbmulticloudOracleDbAzureBlobMountArgs Empty = new DbmulticloudOracleDbAzureBlobMountArgs();
 
     /**
-     * (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+     * (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+     * @return (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -48,14 +48,14 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Oracle DB Azure Blob Mount Resource name.
+     * (Updatable) Oracle DB Azure Blob Mount resource name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Oracle DB Azure Blob Mount Resource name.
+     * @return (Updatable) Oracle DB Azure Blob Mount resource name.
      * 
      */
     public Output<String> displayName() {
@@ -78,14 +78,14 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     @Import(name="oracleDbAzureBlobContainerId", required=true)
     private Output<String> oracleDbAzureBlobContainerId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> oracleDbAzureBlobContainerId() {
@@ -93,7 +93,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,7 +103,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
     private Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,7 +143,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+         * @param compartmentId (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+         * @param compartmentId (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Blob Mount Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Blob Mount resource name.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Blob Mount Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Blob Mount resource name.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+         * @param oracleDbAzureBlobContainerId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+         * @param oracleDbAzureBlobContainerId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param oracleDbAzureConnectorId (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +262,7 @@ public final class DbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.res
         }
 
         /**
-         * @param oracleDbAzureConnectorId (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

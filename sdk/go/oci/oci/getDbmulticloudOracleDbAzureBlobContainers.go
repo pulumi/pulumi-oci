@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Lists the all Oracle DB Azure Blob Container based on filter.
+// Lists all Oracle DB Azure Blob Container resources based on the specified filters.
 //
 // ## Example Usage
 //
@@ -57,16 +57,16 @@ func GetDbmulticloudOracleDbAzureBlobContainers(ctx *pulumi.Context, args *GetDb
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobContainers.
 type GetDbmulticloudOracleDbAzureBlobContainersArgs struct {
-	// A filter to return Azure Blob Containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
 	AzureStorageAccountName *string `pulumi:"azureStorageAccountName"`
-	// A filter to return Azure Blob containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
 	AzureStorageContainerName *string `pulumi:"azureStorageContainerName"`
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return Azure Containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
 	DisplayName *string                                            `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureBlobContainersFilter `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Blob Container resource.
 	OracleDbAzureBlobContainerId *string `pulumi:"oracleDbAzureBlobContainerId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -74,13 +74,13 @@ type GetDbmulticloudOracleDbAzureBlobContainersArgs struct {
 
 // A collection of values returned by getDbmulticloudOracleDbAzureBlobContainers.
 type GetDbmulticloudOracleDbAzureBlobContainersResult struct {
-	// Azure Storage Account Name.
+	// Azure Storage account name.
 	AzureStorageAccountName *string `pulumi:"azureStorageAccountName"`
-	// Azure Storage Container Name.
+	// Azure Storage container name.
 	AzureStorageContainerName *string `pulumi:"azureStorageContainerName"`
-	// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Display name of Oracle DB Azure Blob Container.
+	// Oracle DB Azure Blob Container resource name.
 	DisplayName *string                                            `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureBlobContainersFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -88,7 +88,7 @@ type GetDbmulticloudOracleDbAzureBlobContainersResult struct {
 	OracleDbAzureBlobContainerId *string `pulumi:"oracleDbAzureBlobContainerId"`
 	// The list of oracle_db_azure_blob_container_summary_collection.
 	OracleDbAzureBlobContainerSummaryCollections []GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollection `pulumi:"oracleDbAzureBlobContainerSummaryCollections"`
-	// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 	State *string `pulumi:"state"`
 }
 
@@ -103,16 +103,16 @@ func GetDbmulticloudOracleDbAzureBlobContainersOutput(ctx *pulumi.Context, args 
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobContainers.
 type GetDbmulticloudOracleDbAzureBlobContainersOutputArgs struct {
-	// A filter to return Azure Blob Containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
 	AzureStorageAccountName pulumi.StringPtrInput `pulumi:"azureStorageAccountName"`
-	// A filter to return Azure Blob containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
 	AzureStorageContainerName pulumi.StringPtrInput `pulumi:"azureStorageContainerName"`
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return Azure Containers.
+	// A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                                      `pulumi:"displayName"`
 	Filters     GetDbmulticloudOracleDbAzureBlobContainersFilterArrayInput `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Blob Container resource.
 	OracleDbAzureBlobContainerId pulumi.StringPtrInput `pulumi:"oracleDbAzureBlobContainerId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -137,22 +137,22 @@ func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) ToGetDbmulticlou
 	return o
 }
 
-// Azure Storage Account Name.
+// Azure Storage account name.
 func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) AzureStorageAccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersResult) *string { return v.AzureStorageAccountName }).(pulumi.StringPtrOutput)
 }
 
-// Azure Storage Container Name.
+// Azure Storage container name.
 func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) AzureStorageContainerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersResult) *string { return v.AzureStorageContainerName }).(pulumi.StringPtrOutput)
 }
 
-// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
 func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Display name of Oracle DB Azure Blob Container.
+// Oracle DB Azure Blob Container resource name.
 func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -181,7 +181,7 @@ func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) OracleDbAzureBlo
 	}).(GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummaryCollectionArrayOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 func (o GetDbmulticloudOracleDbAzureBlobContainersResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureBlobContainersResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

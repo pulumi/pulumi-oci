@@ -6,6 +6,8 @@ package com.pulumi.oci.CloudGuard.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs;
+import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs;
 import com.pulumi.oci.CloudGuard.inputs.DetectorRecipeDetectorRuleDetailsConfigurationValueArgs;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +19,51 @@ import javax.annotation.Nullable;
 public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DetectorRecipeDetectorRuleDetailsConfigurationArgs Empty = new DetectorRecipeDetectorRuleDetailsConfigurationArgs();
+
+    /**
+     * (Updatable) Map of additional property values for configuration
+     * 
+     */
+    @Import(name="additionalProperties")
+    private @Nullable Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs>> additionalProperties;
+
+    /**
+     * @return (Updatable) Map of additional property values for configuration
+     * 
+     */
+    public Optional<Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs>>> additionalProperties() {
+        return Optional.ofNullable(this.additionalProperties);
+    }
+
+    /**
+     * (Updatable) Map of possible values for configuration
+     * 
+     */
+    @Import(name="allowedValues")
+    private @Nullable Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs>> allowedValues;
+
+    /**
+     * @return (Updatable) Map of possible values for configuration
+     * 
+     */
+    public Optional<Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs>>> allowedValues() {
+        return Optional.ofNullable(this.allowedValues);
+    }
+
+    /**
+     * (Updatable) Map property Value data type
+     * 
+     */
+    @Import(name="allowedValuesDataType")
+    private @Nullable Output<String> allowedValuesDataType;
+
+    /**
+     * @return (Updatable) Map property Value data type
+     * 
+     */
+    public Optional<Output<String>> allowedValuesDataType() {
+        return Optional.ofNullable(this.allowedValuesDataType);
+    }
 
     /**
      * (Updatable) Unique identifier of the configuration
@@ -96,6 +143,9 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
     private DetectorRecipeDetectorRuleDetailsConfigurationArgs() {}
 
     private DetectorRecipeDetectorRuleDetailsConfigurationArgs(DetectorRecipeDetectorRuleDetailsConfigurationArgs $) {
+        this.additionalProperties = $.additionalProperties;
+        this.allowedValues = $.allowedValues;
+        this.allowedValuesDataType = $.allowedValuesDataType;
         this.configKey = $.configKey;
         this.dataType = $.dataType;
         this.name = $.name;
@@ -119,6 +169,89 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationArgs extends co
 
         public Builder(DetectorRecipeDetectorRuleDetailsConfigurationArgs defaults) {
             $ = new DetectorRecipeDetectorRuleDetailsConfigurationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param additionalProperties (Updatable) Map of additional property values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalProperties(@Nullable Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs>> additionalProperties) {
+            $.additionalProperties = additionalProperties;
+            return this;
+        }
+
+        /**
+         * @param additionalProperties (Updatable) Map of additional property values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalProperties(List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs> additionalProperties) {
+            return additionalProperties(Output.of(additionalProperties));
+        }
+
+        /**
+         * @param additionalProperties (Updatable) Map of additional property values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder additionalProperties(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+
+        /**
+         * @param allowedValues (Updatable) Map of possible values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedValues(@Nullable Output<List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs>> allowedValues) {
+            $.allowedValues = allowedValues;
+            return this;
+        }
+
+        /**
+         * @param allowedValues (Updatable) Map of possible values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedValues(List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs> allowedValues) {
+            return allowedValues(Output.of(allowedValues));
+        }
+
+        /**
+         * @param allowedValues (Updatable) Map of possible values for configuration
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedValues(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+
+        /**
+         * @param allowedValuesDataType (Updatable) Map property Value data type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedValuesDataType(@Nullable Output<String> allowedValuesDataType) {
+            $.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
+
+        /**
+         * @param allowedValuesDataType (Updatable) Map property Value data type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowedValuesDataType(String allowedValuesDataType) {
+            return allowedValuesDataType(Output.of(allowedValuesDataType));
         }
 
         /**

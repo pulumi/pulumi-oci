@@ -14,19 +14,23 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemResult
     {
         /// <summary>
-        /// Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        /// Azure bearer access token.
         /// </summary>
         public readonly string AccessToken;
         /// <summary>
-        /// List of All VMs where Arc Agent is Install under VMCluster.
+        /// List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult> ArcAgentNodes;
         /// <summary>
-        /// Azure Identity Mechanism.
+        /// The current Connectivity status of Azure Identity Connector resource.
+        /// </summary>
+        public readonly string AzureIdentityConnectivityStatus;
+        /// <summary>
+        /// Azure Identity mechanism.
         /// </summary>
         public readonly string AzureIdentityMechanism;
         /// <summary>
-        /// Azure Resource Group Name.
+        /// Azure Resource group name.
         /// </summary>
         public readonly string AzureResourceGroup;
         /// <summary>
@@ -42,19 +46,19 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
         /// </summary>
         public readonly string DbClusterResourceId;
         /// <summary>
-        /// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        /// A filter to return Oracle DB Azure Connector resources that match the specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The ID of the Oracle DB Azure Connector resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Connector Resource.
+        /// Description of the latest modification of the Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -66,11 +70,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -79,6 +83,8 @@ namespace Pulumi.Oci.Oci.Outputs
             string accessToken,
 
             ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult> arcAgentNodes,
+
+            string azureIdentityConnectivityStatus,
 
             string azureIdentityMechanism,
 
@@ -108,6 +114,7 @@ namespace Pulumi.Oci.Oci.Outputs
         {
             AccessToken = accessToken;
             ArcAgentNodes = arcAgentNodes;
+            AzureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
             AzureIdentityMechanism = azureIdentityMechanism;
             AzureResourceGroup = azureResourceGroup;
             AzureSubscriptionId = azureSubscriptionId;

@@ -14,14 +14,14 @@ public final class GetDbmulticloudOracleDbAzureConnectorPlainArgs extends com.pu
     public static final GetDbmulticloudOracleDbAzureConnectorPlainArgs Empty = new GetDbmulticloudOracleDbAzureConnectorPlainArgs();
 
     /**
-     * The ID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="oracleDbAzureConnectorId", required=true)
     private String oracleDbAzureConnectorId;
 
     /**
-     * @return The ID of the Oracle DB Azure Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      * 
      */
     public String oracleDbAzureConnectorId() {
@@ -53,7 +53,7 @@ public final class GetDbmulticloudOracleDbAzureConnectorPlainArgs extends com.pu
         }
 
         /**
-         * @param oracleDbAzureConnectorId The ID of the Oracle DB Azure Connector Resource.
+         * @param oracleDbAzureConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 

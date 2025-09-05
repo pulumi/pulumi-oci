@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRuleCandidateResponderRule;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRuleDetail;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping;
+import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipeEffectiveDetectorRuleRuleType;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,6 +57,11 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
      */
     private List<GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
     /**
+     * @return Is the rule cloneable?
+     * 
+     */
+    private Boolean isCloneable;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -74,6 +81,11 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
      * 
      */
     private String resourceType;
+    /**
+     * @return Detector rule type
+     * 
+     */
+    private List<GetDetectorRecipeEffectiveDetectorRuleRuleType> ruleTypes;
     /**
      * @return Service type of the configuration to which the rule is applied
      * 
@@ -153,6 +165,13 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
         return this.entitiesMappings;
     }
     /**
+     * @return Is the rule cloneable?
+     * 
+     */
+    public Boolean isCloneable() {
+        return this.isCloneable;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -179,6 +198,13 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
      */
     public String resourceType() {
         return this.resourceType;
+    }
+    /**
+     * @return Detector rule type
+     * 
+     */
+    public List<GetDetectorRecipeEffectiveDetectorRuleRuleType> ruleTypes() {
+        return this.ruleTypes;
     }
     /**
      * @return Service type of the configuration to which the rule is applied
@@ -226,10 +252,12 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
         private String detectorRuleId;
         private String displayName;
         private List<GetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
+        private Boolean isCloneable;
         private String lifecycleDetails;
         private List<String> managedListTypes;
         private String recommendation;
         private String resourceType;
+        private List<GetDetectorRecipeEffectiveDetectorRuleRuleType> ruleTypes;
         private String serviceType;
         private String state;
         private String timeCreated;
@@ -245,10 +273,12 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
     	      this.detectorRuleId = defaults.detectorRuleId;
     	      this.displayName = defaults.displayName;
     	      this.entitiesMappings = defaults.entitiesMappings;
+    	      this.isCloneable = defaults.isCloneable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.managedListTypes = defaults.managedListTypes;
     	      this.recommendation = defaults.recommendation;
     	      this.resourceType = defaults.resourceType;
+    	      this.ruleTypes = defaults.ruleTypes;
     	      this.serviceType = defaults.serviceType;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -329,6 +359,14 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
             return entitiesMappings(List.of(entitiesMappings));
         }
         @CustomType.Setter
+        public Builder isCloneable(Boolean isCloneable) {
+            if (isCloneable == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRule", "isCloneable");
+            }
+            this.isCloneable = isCloneable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRule", "lifecycleDetails");
@@ -362,6 +400,17 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
             }
             this.resourceType = resourceType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder ruleTypes(List<GetDetectorRecipeEffectiveDetectorRuleRuleType> ruleTypes) {
+            if (ruleTypes == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeEffectiveDetectorRule", "ruleTypes");
+            }
+            this.ruleTypes = ruleTypes;
+            return this;
+        }
+        public Builder ruleTypes(GetDetectorRecipeEffectiveDetectorRuleRuleType... ruleTypes) {
+            return ruleTypes(List.of(ruleTypes));
         }
         @CustomType.Setter
         public Builder serviceType(String serviceType) {
@@ -405,10 +454,12 @@ public final class GetDetectorRecipeEffectiveDetectorRule {
             _resultValue.detectorRuleId = detectorRuleId;
             _resultValue.displayName = displayName;
             _resultValue.entitiesMappings = entitiesMappings;
+            _resultValue.isCloneable = isCloneable;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.managedListTypes = managedListTypes;
             _resultValue.recommendation = recommendation;
             _resultValue.resourceType = resourceType;
+            _resultValue.ruleTypes = ruleTypes;
             _resultValue.serviceType = serviceType;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

@@ -76,6 +76,10 @@ export class ManagedList extends pulumi.CustomResource {
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * (Updatable) Managed list type group
+     */
+    declare public readonly group: pulumi.Output<string>;
+    /**
      * Is this list editable?
      */
     declare public /*out*/ readonly isEditable: pulumi.Output<boolean>;
@@ -135,6 +139,7 @@ export class ManagedList extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["feedProvider"] = state?.feedProvider;
             resourceInputs["freeformTags"] = state?.freeformTags;
+            resourceInputs["group"] = state?.group;
             resourceInputs["isEditable"] = state?.isEditable;
             resourceInputs["lifecyleDetails"] = state?.lifecyleDetails;
             resourceInputs["listItems"] = state?.listItems;
@@ -157,6 +162,7 @@ export class ManagedList extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["freeformTags"] = args?.freeformTags;
+            resourceInputs["group"] = args?.group;
             resourceInputs["listItems"] = args?.listItems;
             resourceInputs["listType"] = args?.listType;
             resourceInputs["sourceManagedListId"] = args?.sourceManagedListId;
@@ -207,6 +213,10 @@ export interface ManagedListState {
      * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Managed list type group
+     */
+    group?: pulumi.Input<string>;
     /**
      * Is this list editable?
      */
@@ -279,6 +289,10 @@ export interface ManagedListArgs {
      * Avoid entering confidential information.
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * (Updatable) Managed list type group
+     */
+    group?: pulumi.Input<string>;
     /**
      * (Updatable) List of items in the managed list
      */

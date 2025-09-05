@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Project resource in Oracle Cloud Infrastructure Ai Vision service.
  * 
- * Creates a new Project.
+ * Create a new project.
  * 
  * ## Example Usage
  * 
@@ -46,10 +46,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testProject = new Project("testProject", ProjectArgs.builder()
  *             .compartmentId(compartmentId)
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .definedTags(projectDefinedTags)
  *             .description(projectDescription)
  *             .displayName(projectDisplayName)
- *             .freeformTags(Map.of("bar-key", "value"))
+ *             .freeformTags(projectFreeformTags)
  *             .build());
  * 
  *     }
@@ -70,63 +70,63 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:AiVision/project:Project")
 public class Project extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment identifier.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Output<Map<String,String>> definedTags() {
         return this.definedTags;
     }
     /**
-     * (Updatable) A short description of the project.
+     * (Updatable) An optional description of the project.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the project.
+     * @return (Updatable) An optional description of the project.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Project Identifier
+     * (Updatable) A human-friendly name for the project, that can be changed.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Project Identifier
+     * @return (Updatable) A human-friendly name for the project, that can be changed.
      * 
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -136,7 +136,7 @@ public class Project extends com.pulumi.resources.CustomResource {
     private Output<Map<String,String>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,70 +146,70 @@ public class Project extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     @Export(name="lifecycleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * The current state of the Project.
+     * The current state of the project.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Project.
+     * @return The current state of the project.
      * 
      */
     public Output<String> state() {
         return this.state;
     }
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     @Export(name="systemTags", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Output<Map<String,String>> systemTags() {
         return this.systemTags;
     }
     /**
-     * The time the Project was created. An RFC3339 formatted datetime string
+     * When the project was created, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the Project was created. An RFC3339 formatted datetime string
+     * @return When the project was created, as an RFC3339 datetime string.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The time the Project was updated. An RFC3339 formatted datetime string
+     * When the project was updated, as an RFC3339 datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the Project was updated. An RFC3339 formatted datetime string
+     * @return When the project was updated, as an RFC3339 datetime string.
      * 
      */
     public Output<String> timeUpdated() {

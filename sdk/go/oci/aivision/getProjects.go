@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
 //
-// Returns a list of Projects.
+// Returns a list of projects.
 //
 // ## Example Usage
 //
@@ -60,24 +60,24 @@ type GetProjectsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetProjectsFilter `pulumi:"filters"`
-	// unique Project identifier
+	// The filter to find the project with the given identifier.
 	Id *string `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match projects with the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getProjects.
 type GetProjectsResult struct {
-	// Compartment Identifier
+	// A compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Project Identifier, can be renamed
+	// A human-friendly name for the project, which can be changed.
 	DisplayName *string             `pulumi:"displayName"`
 	Filters     []GetProjectsFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable after creation.
 	Id *string `pulumi:"id"`
 	// The list of project_collection.
 	ProjectCollections []GetProjectsProjectCollection `pulumi:"projectCollections"`
-	// The current state of the Project.
+	// The current state of the project.
 	State *string `pulumi:"state"`
 }
 
@@ -97,9 +97,9 @@ type GetProjectsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput       `pulumi:"displayName"`
 	Filters     GetProjectsFilterArrayInput `pulumi:"filters"`
-	// unique Project identifier
+	// The filter to find the project with the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match projects with the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -122,12 +122,12 @@ func (o GetProjectsResultOutput) ToGetProjectsResultOutputWithContext(ctx contex
 	return o
 }
 
-// Compartment Identifier
+// A compartment identifier.
 func (o GetProjectsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProjectsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Project Identifier, can be renamed
+// A human-friendly name for the project, which can be changed.
 func (o GetProjectsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProjectsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -136,7 +136,7 @@ func (o GetProjectsResultOutput) Filters() GetProjectsFilterArrayOutput {
 	return o.ApplyT(func(v GetProjectsResult) []GetProjectsFilter { return v.Filters }).(GetProjectsFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier that is immutable after creation.
 func (o GetProjectsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProjectsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -146,7 +146,7 @@ func (o GetProjectsResultOutput) ProjectCollections() GetProjectsProjectCollecti
 	return o.ApplyT(func(v GetProjectsResult) []GetProjectsProjectCollection { return v.ProjectCollections }).(GetProjectsProjectCollectionArrayOutput)
 }
 
-// The current state of the Project.
+// The current state of the project.
 func (o GetProjectsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetProjectsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

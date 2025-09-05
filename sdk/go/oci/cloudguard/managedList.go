@@ -44,6 +44,8 @@ type ManagedList struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
+	// (Updatable) Managed list type group
+	Group pulumi.StringOutput `pulumi:"group"`
 	// Is this list editable?
 	IsEditable pulumi.BoolOutput `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -121,6 +123,8 @@ type managedListState struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Managed list type group
+	Group *string `pulumi:"group"`
 	// Is this list editable?
 	IsEditable *bool `pulumi:"isEditable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -163,6 +167,8 @@ type ManagedListState struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Managed list type group
+	Group pulumi.StringPtrInput
 	// Is this list editable?
 	IsEditable pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
@@ -207,6 +213,8 @@ type managedListArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// (Updatable) Managed list type group
+	Group *string `pulumi:"group"`
 	// (Updatable) List of items in the managed list
 	ListItems []string `pulumi:"listItems"`
 	// Type of information stored in the list
@@ -236,6 +244,8 @@ type ManagedListArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.StringMapInput
+	// (Updatable) Managed list type group
+	Group pulumi.StringPtrInput
 	// (Updatable) List of items in the managed list
 	ListItems pulumi.StringArrayInput
 	// Type of information stored in the list
@@ -368,6 +378,11 @@ func (o ManagedListOutput) FeedProvider() pulumi.StringOutput {
 // Avoid entering confidential information.
 func (o ManagedListOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *ManagedList) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Managed list type group
+func (o ManagedListOutput) Group() pulumi.StringOutput {
+	return o.ApplyT(func(v *ManagedList) pulumi.StringOutput { return v.Group }).(pulumi.StringOutput)
 }
 
 // Is this list editable?

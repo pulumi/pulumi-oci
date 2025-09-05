@@ -27,7 +27,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     """
     A collection of values returned by getDbmulticloudMultiCloudResourceDiscovery.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_modification=None, lifecycle_state_details=None, multi_cloud_resource_discovery_id=None, oracle_db_connector_id=None, resource_type=None, resources=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_modification=None, lifecycle_state_details=None, multi_cloud_resource_discovery_id=None, oracle_db_connector_id=None, resource_type=None, resources=None, resources_filter=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -61,6 +61,9 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
         if resources and not isinstance(resources, list):
             raise TypeError("Expected argument 'resources' to be a list")
         pulumi.set(__self__, "resources", resources)
+        if resources_filter and not isinstance(resources_filter, dict):
+            raise TypeError("Expected argument 'resources_filter' to be a dict")
+        pulumi.set(__self__, "resources_filter", resources_filter)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -78,7 +81,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -94,7 +97,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display name of Multi Cloud Discovery Resource.
+        Display name of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "display_name")
 
@@ -110,7 +113,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -118,7 +121,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Multi Cloud Discovery Resource.
+        Description of the latest modification of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -139,7 +142,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -158,6 +161,14 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
         List of All Discovered resources.
         """
         return pulumi.get(self, "resources")
+
+    @_builtins.property
+    @pulumi.getter(name="resourcesFilter")
+    def resources_filter(self) -> Mapping[str, _builtins.str]:
+        """
+        Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+        """
+        return pulumi.get(self, "resources_filter")
 
     @_builtins.property
     @pulumi.getter
@@ -179,7 +190,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -187,7 +198,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -209,6 +220,7 @@ class AwaitableGetDbmulticloudMultiCloudResourceDiscoveryResult(GetDbmulticloudM
             oracle_db_connector_id=self.oracle_db_connector_id,
             resource_type=self.resource_type,
             resources=self.resources,
+            resources_filter=self.resources_filter,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -220,7 +232,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery(multi_cloud_resource_discove
     """
     This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Multi Cloud Discovered Resource Details form a particular resource ID.
+    Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -232,7 +244,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery(multi_cloud_resource_discove
     ```
 
 
-    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
     """
     __args__ = dict()
     __args__['multiCloudResourceDiscoveryId'] = multi_cloud_resource_discovery_id
@@ -251,6 +263,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery(multi_cloud_resource_discove
         oracle_db_connector_id=pulumi.get(__ret__, 'oracle_db_connector_id'),
         resource_type=pulumi.get(__ret__, 'resource_type'),
         resources=pulumi.get(__ret__, 'resources'),
+        resources_filter=pulumi.get(__ret__, 'resources_filter'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -260,7 +273,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery_output(multi_cloud_resource_
     """
     This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Multi Cloud Discovered Resource Details form a particular resource ID.
+    Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -272,7 +285,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery_output(multi_cloud_resource_
     ```
 
 
-    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+    :param _builtins.str multi_cloud_resource_discovery_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
     """
     __args__ = dict()
     __args__['multiCloudResourceDiscoveryId'] = multi_cloud_resource_discovery_id
@@ -290,6 +303,7 @@ def get_dbmulticloud_multi_cloud_resource_discovery_output(multi_cloud_resource_
         oracle_db_connector_id=pulumi.get(__response__, 'oracle_db_connector_id'),
         resource_type=pulumi.get(__response__, 'resource_type'),
         resources=pulumi.get(__response__, 'resources'),
+        resources_filter=pulumi.get(__response__, 'resources_filter'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

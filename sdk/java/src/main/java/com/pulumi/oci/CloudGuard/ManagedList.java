@@ -129,6 +129,20 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) Managed list type group
+     * 
+     */
+    @Export(name="group", refs={String.class}, tree="[0]")
+    private Output<String> group;
+
+    /**
+     * @return (Updatable) Managed list type group
+     * 
+     */
+    public Output<String> group() {
+        return this.group;
+    }
+    /**
      * Is this list editable?
      * 
      */

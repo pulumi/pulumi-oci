@@ -14,6 +14,18 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult
     {
         /// <summary>
+        /// Map of additional property values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult> AdditionalProperties;
+        /// <summary>
+        /// Map of possible values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult> AllowedValues;
+        /// <summary>
+        /// Map property Value data type
+        /// </summary>
+        public readonly string AllowedValuesDataType;
+        /// <summary>
         /// Unique identifier of the configuration
         /// </summary>
         public readonly string ConfigKey;
@@ -26,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Configuration value
+        /// Detector rule type value
         /// </summary>
         public readonly string Value;
         /// <summary>
@@ -36,6 +48,12 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationResult(
+            ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAdditionalPropertyResult> additionalProperties,
+
+            ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationAllowedValueResult> allowedValues,
+
+            string allowedValuesDataType,
+
             string configKey,
 
             string dataType,
@@ -46,6 +64,9 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRuleDetailConfigurationValueResult> values)
         {
+            AdditionalProperties = additionalProperties;
+            AllowedValues = allowedValues;
+            AllowedValuesDataType = allowedValuesDataType;
             ConfigKey = configKey;
             DataType = dataType;
             Name = name;

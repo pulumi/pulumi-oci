@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Lists the all DB Azure Vaults based on filters.
+// Lists all DB Azure Vault resources based on the specified filters.
 //
 // ## Example Usage
 //
@@ -59,14 +59,14 @@ func GetDbmulticloudOracleDbAzureVaults(ctx *pulumi.Context, args *GetDbmulticlo
 type GetDbmulticloudOracleDbAzureVaultsArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return Azure Vaults.
+	// A filter to return Oracle DB Azure Vault resources that match the specified display name.
 	DisplayName *string                                    `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureVaultsFilter `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
-	// A filter to return Azure Vaults.
+	// A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup *string `pulumi:"oracleDbAzureResourceGroup"`
-	// A filter to return Oracle DB Azure Vault Resources.
+	// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId *string `pulumi:"oracleDbAzureVaultId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -74,20 +74,20 @@ type GetDbmulticloudOracleDbAzureVaultsArgs struct {
 
 // A collection of values returned by getDbmulticloudOracleDbAzureVaults.
 type GetDbmulticloudOracleDbAzureVaultsResult struct {
-	// The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Display name of DB Azure Vault.
+	// Oracle DB Azure Vault resource name.
 	DisplayName *string                                    `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureVaultsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id                       string  `pulumi:"id"`
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
-	// Display name of Azure Resource Group.
+	// Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup *string `pulumi:"oracleDbAzureResourceGroup"`
 	OracleDbAzureVaultId       *string `pulumi:"oracleDbAzureVaultId"`
 	// The list of oracle_db_azure_vault_summary_collection.
 	OracleDbAzureVaultSummaryCollections []GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection `pulumi:"oracleDbAzureVaultSummaryCollections"`
-	// The lifecycle state of the DB Azure Vault Resource.
+	// The lifecycle state of the Oracle DB Azure Vault resource.
 	State *string `pulumi:"state"`
 }
 
@@ -104,14 +104,14 @@ func GetDbmulticloudOracleDbAzureVaultsOutput(ctx *pulumi.Context, args GetDbmul
 type GetDbmulticloudOracleDbAzureVaultsOutputArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return Azure Vaults.
+	// A filter to return Oracle DB Azure Vault resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                              `pulumi:"displayName"`
 	Filters     GetDbmulticloudOracleDbAzureVaultsFilterArrayInput `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId pulumi.StringPtrInput `pulumi:"oracleDbAzureConnectorId"`
-	// A filter to return Azure Vaults.
+	// A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
 	OracleDbAzureResourceGroup pulumi.StringPtrInput `pulumi:"oracleDbAzureResourceGroup"`
-	// A filter to return Oracle DB Azure Vault Resources.
+	// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId pulumi.StringPtrInput `pulumi:"oracleDbAzureVaultId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -136,12 +136,12 @@ func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) ToGetDbmulticloudOracleD
 	return o
 }
 
-// The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
 func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Display name of DB Azure Vault.
+// Oracle DB Azure Vault resource name.
 func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -161,7 +161,7 @@ func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) OracleDbAzureConnectorId
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsResult) *string { return v.OracleDbAzureConnectorId }).(pulumi.StringPtrOutput)
 }
 
-// Display name of Azure Resource Group.
+// Oracle DB Azure resource group name.
 func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) OracleDbAzureResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsResult) *string { return v.OracleDbAzureResourceGroup }).(pulumi.StringPtrOutput)
 }
@@ -177,7 +177,7 @@ func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) OracleDbAzureVaultSummar
 	}).(GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionArrayOutput)
 }
 
-// The lifecycle state of the DB Azure Vault Resource.
+// The lifecycle state of the Oracle DB Azure Vault resource.
 func (o GetDbmulticloudOracleDbAzureVaultsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureVaultsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

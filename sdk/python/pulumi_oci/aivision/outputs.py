@@ -19,6 +19,12 @@ __all__ = [
     'ModelTestingDataset',
     'ModelTrainingDataset',
     'ModelValidationDataset',
+    'StreamGroupStreamOverlap',
+    'StreamJobFeature',
+    'StreamJobFeatureTrackingType',
+    'StreamJobStreamOutputLocation',
+    'StreamSourceStreamSourceDetails',
+    'StreamSourceStreamSourceDetailsStreamNetworkAccessDetails',
     'GetModelTestingDatasetResult',
     'GetModelTrainingDatasetResult',
     'GetModelValidationDatasetResult',
@@ -31,6 +37,30 @@ __all__ = [
     'GetProjectsFilterResult',
     'GetProjectsProjectCollectionResult',
     'GetProjectsProjectCollectionItemResult',
+    'GetStreamGroupStreamOverlapResult',
+    'GetStreamGroupsFilterResult',
+    'GetStreamGroupsStreamGroupCollectionResult',
+    'GetStreamGroupsStreamGroupCollectionItemResult',
+    'GetStreamGroupsStreamGroupCollectionItemStreamOverlapResult',
+    'GetStreamJobFeatureResult',
+    'GetStreamJobFeatureTrackingTypeResult',
+    'GetStreamJobStreamOutputLocationResult',
+    'GetStreamJobsFilterResult',
+    'GetStreamJobsStreamJobCollectionResult',
+    'GetStreamJobsStreamJobCollectionItemResult',
+    'GetStreamJobsStreamJobCollectionItemFeatureResult',
+    'GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeResult',
+    'GetStreamJobsStreamJobCollectionItemStreamOutputLocationResult',
+    'GetStreamSourceStreamSourceDetailResult',
+    'GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailResult',
+    'GetStreamSourcesFilterResult',
+    'GetStreamSourcesStreamSourceCollectionResult',
+    'GetStreamSourcesStreamSourceCollectionItemResult',
+    'GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailResult',
+    'GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailResult',
+    'GetVisionPrivateEndpointsFilterResult',
+    'GetVisionPrivateEndpointsVisionPrivateEndpointCollectionResult',
+    'GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemResult',
 ]
 
 @pulumi.output_type
@@ -63,10 +93,9 @@ class ModelTestingDataset(dict):
                  namespace_name: Optional[_builtins.str] = None,
                  object: Optional[_builtins.str] = None):
         """
-        :param _builtins.str dataset_type: Type of the Dataset.
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
@@ -83,7 +112,7 @@ class ModelTestingDataset(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -91,7 +120,7 @@ class ModelTestingDataset(dict):
     @pulumi.getter
     def bucket(self) -> Optional[_builtins.str]:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -99,16 +128,13 @@ class ModelTestingDataset(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[_builtins.str]:
-        """
-        The namespace name of the ObjectStorage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace_name")
 
     @_builtins.property
@@ -150,10 +176,9 @@ class ModelTrainingDataset(dict):
                  namespace_name: Optional[_builtins.str] = None,
                  object: Optional[_builtins.str] = None):
         """
-        :param _builtins.str dataset_type: Type of the Dataset.
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "dataset_type", dataset_type)
@@ -170,7 +195,7 @@ class ModelTrainingDataset(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -178,7 +203,7 @@ class ModelTrainingDataset(dict):
     @pulumi.getter
     def bucket(self) -> Optional[_builtins.str]:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -186,16 +211,13 @@ class ModelTrainingDataset(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[_builtins.str]:
-        """
-        The namespace name of the ObjectStorage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace_name")
 
     @_builtins.property
@@ -237,12 +259,10 @@ class ModelValidationDataset(dict):
                  namespace_name: Optional[_builtins.str] = None,
                  object: Optional[_builtins.str] = None):
         """
-        :param _builtins.str dataset_type: Type of the Dataset.
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
         :param _builtins.str object: The object name of the input data file.
-               
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -261,7 +281,7 @@ class ModelValidationDataset(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -269,7 +289,7 @@ class ModelValidationDataset(dict):
     @pulumi.getter
     def bucket(self) -> Optional[_builtins.str]:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -277,16 +297,13 @@ class ModelValidationDataset(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
     @_builtins.property
     @pulumi.getter(name="namespaceName")
     def namespace_name(self) -> Optional[_builtins.str]:
-        """
-        The namespace name of the ObjectStorage bucket that contains the input data file.
-        """
         return pulumi.get(self, "namespace_name")
 
     @_builtins.property
@@ -295,11 +312,466 @@ class ModelValidationDataset(dict):
         """
         The object name of the input data file.
 
-
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object")
+
+
+@pulumi.output_type
+class StreamGroupStreamOverlap(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overlappingStreams":
+            suggest = "overlapping_streams"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamGroupStreamOverlap. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamGroupStreamOverlap.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamGroupStreamOverlap.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 overlapping_streams: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] overlapping_streams: (Updatable) List of streamSource OCIDs.
+        """
+        if overlapping_streams is not None:
+            pulumi.set(__self__, "overlapping_streams", overlapping_streams)
+
+    @_builtins.property
+    @pulumi.getter(name="overlappingStreams")
+    def overlapping_streams(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) List of streamSource OCIDs.
+        """
+        return pulumi.get(self, "overlapping_streams")
+
+
+@pulumi.output_type
+class StreamJobFeature(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "featureType":
+            suggest = "feature_type"
+        elif key == "maxResults":
+            suggest = "max_results"
+        elif key == "shouldReturnLandmarks":
+            suggest = "should_return_landmarks"
+        elif key == "trackingTypes":
+            suggest = "tracking_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamJobFeature. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamJobFeature.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamJobFeature.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 feature_type: _builtins.str,
+                 max_results: Optional[_builtins.int] = None,
+                 should_return_landmarks: Optional[_builtins.bool] = None,
+                 tracking_types: Optional[Sequence['outputs.StreamJobFeatureTrackingType']] = None):
+        """
+        :param _builtins.str feature_type: (Updatable) The feature of video analysis. Allowed values are:
+               * OBJECT_TRACKING: Object tracking feature(OT).
+               * FACE_DETECTION: Face detection feature(FD).
+        :param _builtins.int max_results: (Updatable) The maximum number of results to return.
+        :param _builtins.bool should_return_landmarks: (Updatable) Whether or not return face landmarks.
+        :param Sequence['StreamJobFeatureTrackingTypeArgs'] tracking_types: (Updatable) List of details of what to track.
+        """
+        pulumi.set(__self__, "feature_type", feature_type)
+        if max_results is not None:
+            pulumi.set(__self__, "max_results", max_results)
+        if should_return_landmarks is not None:
+            pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        if tracking_types is not None:
+            pulumi.set(__self__, "tracking_types", tracking_types)
+
+    @_builtins.property
+    @pulumi.getter(name="featureType")
+    def feature_type(self) -> _builtins.str:
+        """
+        (Updatable) The feature of video analysis. Allowed values are:
+        * OBJECT_TRACKING: Object tracking feature(OT).
+        * FACE_DETECTION: Face detection feature(FD).
+        """
+        return pulumi.get(self, "feature_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingTypes")
+    def tracking_types(self) -> Optional[Sequence['outputs.StreamJobFeatureTrackingType']]:
+        """
+        (Updatable) List of details of what to track.
+        """
+        return pulumi.get(self, "tracking_types")
+
+
+@pulumi.output_type
+class StreamJobFeatureTrackingType(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "biometricStoreCompartmentId":
+            suggest = "biometric_store_compartment_id"
+        elif key == "biometricStoreId":
+            suggest = "biometric_store_id"
+        elif key == "detectionModelId":
+            suggest = "detection_model_id"
+        elif key == "maxResults":
+            suggest = "max_results"
+        elif key == "shouldReturnLandmarks":
+            suggest = "should_return_landmarks"
+        elif key == "trackingModelId":
+            suggest = "tracking_model_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamJobFeatureTrackingType. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamJobFeatureTrackingType.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamJobFeatureTrackingType.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 biometric_store_compartment_id: Optional[_builtins.str] = None,
+                 biometric_store_id: Optional[_builtins.str] = None,
+                 detection_model_id: Optional[_builtins.str] = None,
+                 max_results: Optional[_builtins.int] = None,
+                 objects: Optional[Sequence[_builtins.str]] = None,
+                 should_return_landmarks: Optional[_builtins.bool] = None,
+                 tracking_model_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str biometric_store_compartment_id: (Updatable) compartment Id of biometric compartment.
+        :param _builtins.str biometric_store_id: (Updatable) Which biometric store user wants to do face recognition
+        :param _builtins.str detection_model_id: (Updatable) The detection model OCID.
+        :param _builtins.int max_results: (Updatable) The maximum number of results to return.
+        :param Sequence[_builtins.str] objects: (Updatable) List of the objects to be tracked.
+        :param _builtins.bool should_return_landmarks: (Updatable) Whether or not return face landmarks.
+        :param _builtins.str tracking_model_id: (Updatable) The tracking model OCID.
+        """
+        if biometric_store_compartment_id is not None:
+            pulumi.set(__self__, "biometric_store_compartment_id", biometric_store_compartment_id)
+        if biometric_store_id is not None:
+            pulumi.set(__self__, "biometric_store_id", biometric_store_id)
+        if detection_model_id is not None:
+            pulumi.set(__self__, "detection_model_id", detection_model_id)
+        if max_results is not None:
+            pulumi.set(__self__, "max_results", max_results)
+        if objects is not None:
+            pulumi.set(__self__, "objects", objects)
+        if should_return_landmarks is not None:
+            pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        if tracking_model_id is not None:
+            pulumi.set(__self__, "tracking_model_id", tracking_model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreCompartmentId")
+    def biometric_store_compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) compartment Id of biometric compartment.
+        """
+        return pulumi.get(self, "biometric_store_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreId")
+    def biometric_store_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Which biometric store user wants to do face recognition
+        """
+        return pulumi.get(self, "biometric_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="detectionModelId")
+    def detection_model_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The detection model OCID.
+        """
+        return pulumi.get(self, "detection_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) List of the objects to be tracked.
+        """
+        return pulumi.get(self, "objects")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingModelId")
+    def tracking_model_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The tracking model OCID.
+        """
+        return pulumi.get(self, "tracking_model_id")
+
+
+@pulumi.output_type
+class StreamJobStreamOutputLocation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "outputLocationType":
+            suggest = "output_location_type"
+        elif key == "oboToken":
+            suggest = "obo_token"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamJobStreamOutputLocation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamJobStreamOutputLocation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamJobStreamOutputLocation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 output_location_type: _builtins.str,
+                 prefix: _builtins.str,
+                 obo_token: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str bucket: (Updatable) The Object Storage bucket name.
+        :param _builtins.str namespace: (Updatable) The Object Storage namespace.
+        :param _builtins.str output_location_type: (Updatable) Type of device Allowed values are:
+               * OBJECT_STORAGE
+               * LIVEKIT_WEBRTC_AGENT
+        :param _builtins.str prefix: (Updatable) The Object Storage folder name.
+        :param _builtins.str obo_token: (Updatable) Object storage output location
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        pulumi.set(__self__, "prefix", prefix)
+        if obo_token is not None:
+            pulumi.set(__self__, "obo_token", obo_token)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        (Updatable) The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        (Updatable) The Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of device Allowed values are:
+        * OBJECT_STORAGE
+        * LIVEKIT_WEBRTC_AGENT
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        (Updatable) The Object Storage folder name.
+        """
+        return pulumi.get(self, "prefix")
+
+    @_builtins.property
+    @pulumi.getter(name="oboToken")
+    def obo_token(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Object storage output location
+        """
+        return pulumi.get(self, "obo_token")
+
+
+@pulumi.output_type
+class StreamSourceStreamSourceDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "cameraUrl":
+            suggest = "camera_url"
+        elif key == "sourceType":
+            suggest = "source_type"
+        elif key == "streamNetworkAccessDetails":
+            suggest = "stream_network_access_details"
+        elif key == "secretId":
+            suggest = "secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamSourceStreamSourceDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamSourceStreamSourceDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamSourceStreamSourceDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 camera_url: _builtins.str,
+                 source_type: _builtins.str,
+                 stream_network_access_details: 'outputs.StreamSourceStreamSourceDetailsStreamNetworkAccessDetails',
+                 secret_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str camera_url: (Updatable) url of camera
+        :param _builtins.str source_type: (Updatable) Type of source Allowed values are:
+               * RTSP
+        :param 'StreamSourceStreamSourceDetailsStreamNetworkAccessDetailsArgs' stream_network_access_details: (Updatable) Details about a stream Connection type
+        :param _builtins.str secret_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        """
+        pulumi.set(__self__, "camera_url", camera_url)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "stream_network_access_details", stream_network_access_details)
+        if secret_id is not None:
+            pulumi.set(__self__, "secret_id", secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="cameraUrl")
+    def camera_url(self) -> _builtins.str:
+        """
+        (Updatable) url of camera
+        """
+        return pulumi.get(self, "camera_url")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of source Allowed values are:
+        * RTSP
+        """
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="streamNetworkAccessDetails")
+    def stream_network_access_details(self) -> 'outputs.StreamSourceStreamSourceDetailsStreamNetworkAccessDetails':
+        """
+        (Updatable) Details about a stream Connection type
+        """
+        return pulumi.get(self, "stream_network_access_details")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        """
+        return pulumi.get(self, "secret_id")
+
+
+@pulumi.output_type
+class StreamSourceStreamSourceDetailsStreamNetworkAccessDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "privateEndpointId":
+            suggest = "private_endpoint_id"
+        elif key == "streamAccessType":
+            suggest = "stream_access_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in StreamSourceStreamSourceDetailsStreamNetworkAccessDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        StreamSourceStreamSourceDetailsStreamNetworkAccessDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        StreamSourceStreamSourceDetailsStreamNetworkAccessDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 private_endpoint_id: _builtins.str,
+                 stream_access_type: _builtins.str):
+        """
+        :param _builtins.str private_endpoint_id: (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        :param _builtins.str stream_access_type: (Updatable) Type of access Allowed values are:
+               * PRIVATE
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "stream_access_type", stream_access_type)
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="streamAccessType")
+    def stream_access_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of access Allowed values are:
+        * PRIVATE
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "stream_access_type")
 
 
 @pulumi.output_type
@@ -315,6 +787,7 @@ class GetModelTestingDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+               >>>>>>> theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -352,6 +825,7 @@ class GetModelTestingDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "namespace_name")
 
@@ -377,6 +851,7 @@ class GetModelTrainingDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+               >>>>>>> theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -414,6 +889,7 @@ class GetModelTrainingDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "namespace_name")
 
@@ -439,6 +915,7 @@ class GetModelValidationDatasetResult(dict):
         :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
         :param _builtins.str dataset_type: Type of the Dataset.
         :param _builtins.str namespace_name: The namespace name of the ObjectStorage bucket that contains the input data file.
+               >>>>>>> theirs
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -476,6 +953,7 @@ class GetModelValidationDatasetResult(dict):
     def namespace_name(self) -> _builtins.str:
         """
         The namespace name of the ObjectStorage bucket that contains the input data file.
+        >>>>>>> theirs
         """
         return pulumi.get(self, "namespace_name")
 
@@ -558,33 +1036,33 @@ class GetModelsModelCollectionItemResult(dict):
                  training_datasets: Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult'],
                  validation_datasets: Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']):
         """
-        :param _builtins.float average_precision: Average precision of the trained model
+        :param _builtins.float average_precision: The mean average precision of the trained model.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
-        :param _builtins.float confidence_threshold: Confidence ratio of the calculation
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param _builtins.str description: A short description of the model.
+        :param _builtins.float confidence_threshold: The intersection over the union threshold used for calculating precision and recall.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str description: An optional description of the model.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param _builtins.str id: unique Model identifier
-        :param _builtins.bool is_quick_mode: If It's true, Training is set for recommended epochs needed for quick training.
-        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param _builtins.float max_training_duration_in_hours: The maximum duration in hours for which the training will run.
-        :param _builtins.str metrics: Complete Training Metrics for successful trained model
-        :param _builtins.str model_type: Type of the Model.
-        :param _builtins.str model_version: The version of the model
-        :param _builtins.float precision: Precision of the trained model
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the model with the given identifier.
+        :param _builtins.bool is_quick_mode: Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if training failed.
+        :param _builtins.float max_training_duration_in_hours: The maximum model training duration in hours, expressed as a decimal fraction.
+        :param _builtins.str metrics: The complete set of per-label metrics for successfully trained models.
+        :param _builtins.str model_type: What type of Vision model this is.
+        :param _builtins.str model_version: The version of the model.
+        :param _builtins.float precision: The precision of the trained model.
         :param _builtins.str project_id: The ID of the project for which to list the objects.
-        :param _builtins.float recall: Recall of the trained model
-        :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.int test_image_count: Total number of testing Images
-        :param Sequence['GetModelsModelCollectionItemTestingDatasetArgs'] testing_datasets: The base entity for a Dataset, which is the input for Model creation.
-        :param _builtins.str time_created: The time the Model was created. An RFC3339 formatted datetime string
-        :param _builtins.str time_updated: The time the Model was updated. An RFC3339 formatted datetime string
-        :param _builtins.int total_image_count: Total number of training Images
-        :param _builtins.float trained_duration_in_hours: Total hours actually used for training
-        :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: The base entity for a Dataset, which is the input for Model creation.
-        :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity for a Dataset, which is the input for Model creation.
+        :param _builtins.float recall: Recall of the trained model.
+        :param _builtins.str state: The filter to match models with the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.int test_image_count: The number of images set aside for evaluating model performance metrics after training.
+        :param Sequence['GetModelsModelCollectionItemTestingDatasetArgs'] testing_datasets: The base entity which is the input for creating and training a model.
+        :param _builtins.str time_created: When the model was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the model was updated, as an RFC3339 datetime string.
+        :param _builtins.int total_image_count: The number of images in the dataset used to train, validate, and test the model.
+        :param _builtins.float trained_duration_in_hours: The total hours actually used for model training.
+        :param Sequence['GetModelsModelCollectionItemTrainingDatasetArgs'] training_datasets: The base entity which is the input for creating and training a model.
+        :param Sequence['GetModelsModelCollectionItemValidationDatasetArgs'] validation_datasets: The base entity which is the input for creating and training a model.
         """
         pulumi.set(__self__, "average_precision", average_precision)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -618,7 +1096,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="averagePrecision")
     def average_precision(self) -> _builtins.float:
         """
-        Average precision of the trained model
+        The mean average precision of the trained model.
         """
         return pulumi.get(self, "average_precision")
 
@@ -634,7 +1112,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="confidenceThreshold")
     def confidence_threshold(self) -> _builtins.float:
         """
-        Confidence ratio of the calculation
+        The intersection over the union threshold used for calculating precision and recall.
         """
         return pulumi.get(self, "confidence_threshold")
 
@@ -642,7 +1120,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -650,7 +1128,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        A short description of the model.
+        An optional description of the model.
         """
         return pulumi.get(self, "description")
 
@@ -666,7 +1144,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -674,7 +1152,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        unique Model identifier
+        The filter to find the model with the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -682,7 +1160,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="isQuickMode")
     def is_quick_mode(self) -> _builtins.bool:
         """
-        If It's true, Training is set for recommended epochs needed for quick training.
+        Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         """
         return pulumi.get(self, "is_quick_mode")
 
@@ -690,7 +1168,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if training failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -698,7 +1176,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="maxTrainingDurationInHours")
     def max_training_duration_in_hours(self) -> _builtins.float:
         """
-        The maximum duration in hours for which the training will run.
+        The maximum model training duration in hours, expressed as a decimal fraction.
         """
         return pulumi.get(self, "max_training_duration_in_hours")
 
@@ -706,7 +1184,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def metrics(self) -> _builtins.str:
         """
-        Complete Training Metrics for successful trained model
+        The complete set of per-label metrics for successfully trained models.
         """
         return pulumi.get(self, "metrics")
 
@@ -714,7 +1192,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="modelType")
     def model_type(self) -> _builtins.str:
         """
-        Type of the Model.
+        What type of Vision model this is.
         """
         return pulumi.get(self, "model_type")
 
@@ -722,7 +1200,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> _builtins.str:
         """
-        The version of the model
+        The version of the model.
         """
         return pulumi.get(self, "model_version")
 
@@ -730,7 +1208,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def precision(self) -> _builtins.float:
         """
-        Precision of the trained model
+        The precision of the trained model.
         """
         return pulumi.get(self, "precision")
 
@@ -746,7 +1224,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def recall(self) -> _builtins.float:
         """
-        Recall of the trained model
+        Recall of the trained model.
         """
         return pulumi.get(self, "recall")
 
@@ -754,7 +1232,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        The filter to match models with the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -762,7 +1240,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -770,7 +1248,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="testImageCount")
     def test_image_count(self) -> _builtins.int:
         """
-        Total number of testing Images
+        The number of images set aside for evaluating model performance metrics after training.
         """
         return pulumi.get(self, "test_image_count")
 
@@ -778,7 +1256,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="testingDatasets")
     def testing_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemTestingDatasetResult']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "testing_datasets")
 
@@ -786,7 +1264,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The time the Model was created. An RFC3339 formatted datetime string
+        When the model was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -794,7 +1272,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The time the Model was updated. An RFC3339 formatted datetime string
+        When the model was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -802,7 +1280,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="totalImageCount")
     def total_image_count(self) -> _builtins.int:
         """
-        Total number of training Images
+        The number of images in the dataset used to train, validate, and test the model.
         """
         return pulumi.get(self, "total_image_count")
 
@@ -810,7 +1288,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="trainedDurationInHours")
     def trained_duration_in_hours(self) -> _builtins.float:
         """
-        Total hours actually used for training
+        The total hours actually used for model training.
         """
         return pulumi.get(self, "trained_duration_in_hours")
 
@@ -818,7 +1296,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="trainingDatasets")
     def training_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemTrainingDatasetResult']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "training_datasets")
 
@@ -826,7 +1304,7 @@ class GetModelsModelCollectionItemResult(dict):
     @pulumi.getter(name="validationDatasets")
     def validation_datasets(self) -> Sequence['outputs.GetModelsModelCollectionItemValidationDatasetResult']:
         """
-        The base entity for a Dataset, which is the input for Model creation.
+        The base entity which is the input for creating and training a model.
         """
         return pulumi.get(self, "validation_datasets")
 
@@ -840,9 +1318,9 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
                  namespace_name: _builtins.str,
                  object: _builtins.str):
         """
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str dataset_type: Type of the Dataset.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -855,7 +1333,7 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -863,7 +1341,7 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> _builtins.str:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
@@ -871,7 +1349,7 @@ class GetModelsModelCollectionItemTestingDatasetResult(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -898,9 +1376,9 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
                  namespace_name: _builtins.str,
                  object: _builtins.str):
         """
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str dataset_type: Type of the Dataset.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -913,7 +1391,7 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -921,7 +1399,7 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> _builtins.str:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
@@ -929,7 +1407,7 @@ class GetModelsModelCollectionItemTrainingDatasetResult(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -956,9 +1434,9 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
                  namespace_name: _builtins.str,
                  object: _builtins.str):
         """
-        :param _builtins.str bucket: The name of the ObjectStorage bucket that contains the input data file.
-        :param _builtins.str dataset_id: The OCID of the Data Science Labeling Dataset.
-        :param _builtins.str dataset_type: Type of the Dataset.
+        :param _builtins.str bucket: The name of the Object Storage bucket that contains the input data file.
+        :param _builtins.str dataset_id: OCID of the Data Labeling dataset.
+        :param _builtins.str dataset_type: The dataset type, based on where it is stored.
         :param _builtins.str object: The object name of the input data file.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -971,7 +1449,7 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        The name of the ObjectStorage bucket that contains the input data file.
+        The name of the Object Storage bucket that contains the input data file.
         """
         return pulumi.get(self, "bucket")
 
@@ -979,7 +1457,7 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
     @pulumi.getter(name="datasetId")
     def dataset_id(self) -> _builtins.str:
         """
-        The OCID of the Data Science Labeling Dataset.
+        OCID of the Data Labeling dataset.
         """
         return pulumi.get(self, "dataset_id")
 
@@ -987,7 +1465,7 @@ class GetModelsModelCollectionItemValidationDatasetResult(dict):
     @pulumi.getter(name="datasetType")
     def dataset_type(self) -> _builtins.str:
         """
-        Type of the Dataset.
+        The dataset type, based on where it is stored.
         """
         return pulumi.get(self, "dataset_type")
 
@@ -1060,16 +1538,16 @@ class GetProjectsProjectCollectionItemResult(dict):
                  time_updated: _builtins.str):
         """
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param _builtins.str description: A short description of the project.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str description: An optional description of the project.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
-        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param _builtins.str id: unique Project identifier
-        :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param _builtins.str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
-        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: The time the Project was created. An RFC3339 formatted datetime string
-        :param _builtins.str time_updated: The time the Project was updated. An RFC3339 formatted datetime string
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the project with the given identifier.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param _builtins.str state: The filter to match projects with the given lifecycleState.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.str time_created: When the project was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the project was updated, as an RFC3339 datetime string.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -1095,7 +1573,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -1103,7 +1581,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter
     def description(self) -> _builtins.str:
         """
-        A short description of the project.
+        An optional description of the project.
         """
         return pulumi.get(self, "description")
 
@@ -1119,7 +1597,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -1127,7 +1605,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        unique Project identifier
+        The filter to find the project with the given identifier.
         """
         return pulumi.get(self, "id")
 
@@ -1135,7 +1613,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail, that can provide actionable information if creation failed.
         """
         return pulumi.get(self, "lifecycle_details")
 
@@ -1143,7 +1621,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only resources their lifecycleState matches the given lifecycleState.
+        The filter to match projects with the given lifecycleState.
         """
         return pulumi.get(self, "state")
 
@@ -1151,7 +1629,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, _builtins.str]:
         """
-        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         """
         return pulumi.get(self, "system_tags")
 
@@ -1159,7 +1637,7 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        The time the Project was created. An RFC3339 formatted datetime string
+        When the project was created, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -1167,7 +1645,1333 @@ class GetProjectsProjectCollectionItemResult(dict):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        The time the Project was updated. An RFC3339 formatted datetime string
+        When the project was updated, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetStreamGroupStreamOverlapResult(dict):
+    def __init__(__self__, *,
+                 overlapping_streams: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] overlapping_streams: List of streamSource OCIDs.
+        """
+        pulumi.set(__self__, "overlapping_streams", overlapping_streams)
+
+    @_builtins.property
+    @pulumi.getter(name="overlappingStreams")
+    def overlapping_streams(self) -> Sequence[_builtins.str]:
+        """
+        List of streamSource OCIDs.
+        """
+        return pulumi.get(self, "overlapping_streams")
+
+
+@pulumi.output_type
+class GetStreamGroupsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetStreamGroupsStreamGroupCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetStreamGroupsStreamGroupCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetStreamGroupsStreamGroupCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetStreamGroupsStreamGroupCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_enabled: _builtins.bool,
+                 state: _builtins.str,
+                 stream_overlaps: Sequence['outputs.GetStreamGroupsStreamGroupCollectionItemStreamOverlapResult'],
+                 stream_source_ids: Sequence[_builtins.str],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the device with the given identifier.
+        :param _builtins.bool is_enabled: Stream
+        :param _builtins.str state: The current state of the streamGroup.
+        :param Sequence['GetStreamGroupsStreamGroupCollectionItemStreamOverlapArgs'] stream_overlaps: List of streamSource OCIDs where the streamSource overlaps in field of view.
+        :param Sequence[_builtins.str] stream_source_ids: List of streamSource OCIDs associated with the stream group
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.str time_created: When the streamGroup was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the streamGroup was updated, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_enabled", is_enabled)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_overlaps", stream_overlaps)
+        pulumi.set(__self__, "stream_source_ids", stream_source_ids)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The filter to find the device with the given identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> _builtins.bool:
+        """
+        Stream
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The current state of the streamGroup.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="streamOverlaps")
+    def stream_overlaps(self) -> Sequence['outputs.GetStreamGroupsStreamGroupCollectionItemStreamOverlapResult']:
+        """
+        List of streamSource OCIDs where the streamSource overlaps in field of view.
+        """
+        return pulumi.get(self, "stream_overlaps")
+
+    @_builtins.property
+    @pulumi.getter(name="streamSourceIds")
+    def stream_source_ids(self) -> Sequence[_builtins.str]:
+        """
+        List of streamSource OCIDs associated with the stream group
+        """
+        return pulumi.get(self, "stream_source_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the streamGroup was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        When the streamGroup was updated, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetStreamGroupsStreamGroupCollectionItemStreamOverlapResult(dict):
+    def __init__(__self__, *,
+                 overlapping_streams: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] overlapping_streams: List of streamSource OCIDs.
+        """
+        pulumi.set(__self__, "overlapping_streams", overlapping_streams)
+
+    @_builtins.property
+    @pulumi.getter(name="overlappingStreams")
+    def overlapping_streams(self) -> Sequence[_builtins.str]:
+        """
+        List of streamSource OCIDs.
+        """
+        return pulumi.get(self, "overlapping_streams")
+
+
+@pulumi.output_type
+class GetStreamJobFeatureResult(dict):
+    def __init__(__self__, *,
+                 feature_type: _builtins.str,
+                 max_results: _builtins.int,
+                 should_return_landmarks: _builtins.bool,
+                 tracking_types: Sequence['outputs.GetStreamJobFeatureTrackingTypeResult']):
+        """
+        :param _builtins.str feature_type: The feature of video analysis. Allowed values are:
+               * OBJECT_TRACKING: Object tracking feature(OT).
+               * FACE_DETECTION: Face detection feature(FD).
+        :param _builtins.int max_results: The maximum number of results to return.
+        :param _builtins.bool should_return_landmarks: Whether or not return face landmarks.
+        :param Sequence['GetStreamJobFeatureTrackingTypeArgs'] tracking_types: List of details of what to track.
+        """
+        pulumi.set(__self__, "feature_type", feature_type)
+        pulumi.set(__self__, "max_results", max_results)
+        pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        pulumi.set(__self__, "tracking_types", tracking_types)
+
+    @_builtins.property
+    @pulumi.getter(name="featureType")
+    def feature_type(self) -> _builtins.str:
+        """
+        The feature of video analysis. Allowed values are:
+        * OBJECT_TRACKING: Object tracking feature(OT).
+        * FACE_DETECTION: Face detection feature(FD).
+        """
+        return pulumi.get(self, "feature_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> _builtins.int:
+        """
+        The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> _builtins.bool:
+        """
+        Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingTypes")
+    def tracking_types(self) -> Sequence['outputs.GetStreamJobFeatureTrackingTypeResult']:
+        """
+        List of details of what to track.
+        """
+        return pulumi.get(self, "tracking_types")
+
+
+@pulumi.output_type
+class GetStreamJobFeatureTrackingTypeResult(dict):
+    def __init__(__self__, *,
+                 biometric_store_compartment_id: _builtins.str,
+                 biometric_store_id: _builtins.str,
+                 detection_model_id: _builtins.str,
+                 max_results: _builtins.int,
+                 objects: Sequence[_builtins.str],
+                 should_return_landmarks: _builtins.bool,
+                 tracking_model_id: _builtins.str):
+        """
+        :param _builtins.str biometric_store_compartment_id: compartment Id of biometric compartment.
+        :param _builtins.str biometric_store_id: Which biometric store user wants to do face recognition
+        :param _builtins.str detection_model_id: The detection model OCID.
+        :param _builtins.int max_results: The maximum number of results to return.
+        :param Sequence[_builtins.str] objects: List of the objects to be tracked.
+        :param _builtins.bool should_return_landmarks: Whether or not return face landmarks.
+        :param _builtins.str tracking_model_id: The tracking model OCID.
+        """
+        pulumi.set(__self__, "biometric_store_compartment_id", biometric_store_compartment_id)
+        pulumi.set(__self__, "biometric_store_id", biometric_store_id)
+        pulumi.set(__self__, "detection_model_id", detection_model_id)
+        pulumi.set(__self__, "max_results", max_results)
+        pulumi.set(__self__, "objects", objects)
+        pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        pulumi.set(__self__, "tracking_model_id", tracking_model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreCompartmentId")
+    def biometric_store_compartment_id(self) -> _builtins.str:
+        """
+        compartment Id of biometric compartment.
+        """
+        return pulumi.get(self, "biometric_store_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreId")
+    def biometric_store_id(self) -> _builtins.str:
+        """
+        Which biometric store user wants to do face recognition
+        """
+        return pulumi.get(self, "biometric_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="detectionModelId")
+    def detection_model_id(self) -> _builtins.str:
+        """
+        The detection model OCID.
+        """
+        return pulumi.get(self, "detection_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> _builtins.int:
+        """
+        The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Sequence[_builtins.str]:
+        """
+        List of the objects to be tracked.
+        """
+        return pulumi.get(self, "objects")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> _builtins.bool:
+        """
+        Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingModelId")
+    def tracking_model_id(self) -> _builtins.str:
+        """
+        The tracking model OCID.
+        """
+        return pulumi.get(self, "tracking_model_id")
+
+
+@pulumi.output_type
+class GetStreamJobStreamOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 obo_token: _builtins.str,
+                 output_location_type: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: The Object Storage bucket name.
+        :param _builtins.str namespace: The Object Storage namespace.
+        :param _builtins.str obo_token: Object storage output location
+        :param _builtins.str output_location_type: Type of device Allowed values are:
+               * OBJECT_STORAGE
+               * LIVEKIT_WEBRTC_AGENT
+        :param _builtins.str prefix: The Object Storage folder name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "obo_token", obo_token)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="oboToken")
+    def obo_token(self) -> _builtins.str:
+        """
+        Object storage output location
+        """
+        return pulumi.get(self, "obo_token")
+
+    @_builtins.property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> _builtins.str:
+        """
+        Type of device Allowed values are:
+        * OBJECT_STORAGE
+        * LIVEKIT_WEBRTC_AGENT
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        The Object Storage folder name.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetStreamJobsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetStreamJobsStreamJobCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetStreamJobsStreamJobCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetStreamJobsStreamJobCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetStreamJobsStreamJobCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 agent_participant_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 features: Sequence['outputs.GetStreamJobsStreamJobCollectionItemFeatureResult'],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 stream_output_locations: Sequence['outputs.GetStreamJobsStreamJobCollectionItemStreamOutputLocationResult'],
+                 stream_source_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str agent_participant_id: participant id of agent where results need to be sent
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Sequence['GetStreamJobsStreamJobCollectionItemFeatureArgs'] features: a list of document analysis features.
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the streamjob with the given identifier.
+        :param _builtins.str lifecycle_details: Additional details about current state of streamJob
+        :param _builtins.str state: The filter to match projects with the given lifecycleState.
+        :param Sequence['GetStreamJobsStreamJobCollectionItemStreamOutputLocationArgs'] stream_output_locations: Details about a where results will be Sent
+        :param _builtins.str stream_source_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the streamSource
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.str time_created: When the streamJob was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the stream job was updated, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "agent_participant_id", agent_participant_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "features", features)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_output_locations", stream_output_locations)
+        pulumi.set(__self__, "stream_source_id", stream_source_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="agentParticipantId")
+    def agent_participant_id(self) -> _builtins.str:
+        """
+        participant id of agent where results need to be sent
+        """
+        return pulumi.get(self, "agent_participant_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def features(self) -> Sequence['outputs.GetStreamJobsStreamJobCollectionItemFeatureResult']:
+        """
+        a list of document analysis features.
+        """
+        return pulumi.get(self, "features")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The filter to find the streamjob with the given identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional details about current state of streamJob
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The filter to match projects with the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="streamOutputLocations")
+    def stream_output_locations(self) -> Sequence['outputs.GetStreamJobsStreamJobCollectionItemStreamOutputLocationResult']:
+        """
+        Details about a where results will be Sent
+        """
+        return pulumi.get(self, "stream_output_locations")
+
+    @_builtins.property
+    @pulumi.getter(name="streamSourceId")
+    def stream_source_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the streamSource
+        """
+        return pulumi.get(self, "stream_source_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the streamJob was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        When the stream job was updated, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetStreamJobsStreamJobCollectionItemFeatureResult(dict):
+    def __init__(__self__, *,
+                 feature_type: _builtins.str,
+                 max_results: _builtins.int,
+                 should_return_landmarks: _builtins.bool,
+                 tracking_types: Sequence['outputs.GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeResult']):
+        """
+        :param _builtins.str feature_type: The feature of video analysis. Allowed values are:
+               * OBJECT_TRACKING: Object tracking feature(OT).
+               * FACE_DETECTION: Face detection feature(FD).
+        :param _builtins.int max_results: The maximum number of results to return.
+        :param _builtins.bool should_return_landmarks: Whether or not return face landmarks.
+        :param Sequence['GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeArgs'] tracking_types: List of details of what to track.
+        """
+        pulumi.set(__self__, "feature_type", feature_type)
+        pulumi.set(__self__, "max_results", max_results)
+        pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        pulumi.set(__self__, "tracking_types", tracking_types)
+
+    @_builtins.property
+    @pulumi.getter(name="featureType")
+    def feature_type(self) -> _builtins.str:
+        """
+        The feature of video analysis. Allowed values are:
+        * OBJECT_TRACKING: Object tracking feature(OT).
+        * FACE_DETECTION: Face detection feature(FD).
+        """
+        return pulumi.get(self, "feature_type")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> _builtins.int:
+        """
+        The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> _builtins.bool:
+        """
+        Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingTypes")
+    def tracking_types(self) -> Sequence['outputs.GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeResult']:
+        """
+        List of details of what to track.
+        """
+        return pulumi.get(self, "tracking_types")
+
+
+@pulumi.output_type
+class GetStreamJobsStreamJobCollectionItemFeatureTrackingTypeResult(dict):
+    def __init__(__self__, *,
+                 biometric_store_compartment_id: _builtins.str,
+                 biometric_store_id: _builtins.str,
+                 detection_model_id: _builtins.str,
+                 max_results: _builtins.int,
+                 objects: Sequence[_builtins.str],
+                 should_return_landmarks: _builtins.bool,
+                 tracking_model_id: _builtins.str):
+        """
+        :param _builtins.str biometric_store_compartment_id: compartment Id of biometric compartment.
+        :param _builtins.str biometric_store_id: Which biometric store user wants to do face recognition
+        :param _builtins.str detection_model_id: The detection model OCID.
+        :param _builtins.int max_results: The maximum number of results to return.
+        :param Sequence[_builtins.str] objects: List of the objects to be tracked.
+        :param _builtins.bool should_return_landmarks: Whether or not return face landmarks.
+        :param _builtins.str tracking_model_id: The tracking model OCID.
+        """
+        pulumi.set(__self__, "biometric_store_compartment_id", biometric_store_compartment_id)
+        pulumi.set(__self__, "biometric_store_id", biometric_store_id)
+        pulumi.set(__self__, "detection_model_id", detection_model_id)
+        pulumi.set(__self__, "max_results", max_results)
+        pulumi.set(__self__, "objects", objects)
+        pulumi.set(__self__, "should_return_landmarks", should_return_landmarks)
+        pulumi.set(__self__, "tracking_model_id", tracking_model_id)
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreCompartmentId")
+    def biometric_store_compartment_id(self) -> _builtins.str:
+        """
+        compartment Id of biometric compartment.
+        """
+        return pulumi.get(self, "biometric_store_compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="biometricStoreId")
+    def biometric_store_id(self) -> _builtins.str:
+        """
+        Which biometric store user wants to do face recognition
+        """
+        return pulumi.get(self, "biometric_store_id")
+
+    @_builtins.property
+    @pulumi.getter(name="detectionModelId")
+    def detection_model_id(self) -> _builtins.str:
+        """
+        The detection model OCID.
+        """
+        return pulumi.get(self, "detection_model_id")
+
+    @_builtins.property
+    @pulumi.getter(name="maxResults")
+    def max_results(self) -> _builtins.int:
+        """
+        The maximum number of results to return.
+        """
+        return pulumi.get(self, "max_results")
+
+    @_builtins.property
+    @pulumi.getter
+    def objects(self) -> Sequence[_builtins.str]:
+        """
+        List of the objects to be tracked.
+        """
+        return pulumi.get(self, "objects")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldReturnLandmarks")
+    def should_return_landmarks(self) -> _builtins.bool:
+        """
+        Whether or not return face landmarks.
+        """
+        return pulumi.get(self, "should_return_landmarks")
+
+    @_builtins.property
+    @pulumi.getter(name="trackingModelId")
+    def tracking_model_id(self) -> _builtins.str:
+        """
+        The tracking model OCID.
+        """
+        return pulumi.get(self, "tracking_model_id")
+
+
+@pulumi.output_type
+class GetStreamJobsStreamJobCollectionItemStreamOutputLocationResult(dict):
+    def __init__(__self__, *,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 obo_token: _builtins.str,
+                 output_location_type: _builtins.str,
+                 prefix: _builtins.str):
+        """
+        :param _builtins.str bucket: The Object Storage bucket name.
+        :param _builtins.str namespace: The Object Storage namespace.
+        :param _builtins.str obo_token: Object storage output location
+        :param _builtins.str output_location_type: Type of device Allowed values are:
+               * OBJECT_STORAGE
+               * LIVEKIT_WEBRTC_AGENT
+        :param _builtins.str prefix: The Object Storage folder name.
+        """
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "obo_token", obo_token)
+        pulumi.set(__self__, "output_location_type", output_location_type)
+        pulumi.set(__self__, "prefix", prefix)
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        The Object Storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Object Storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="oboToken")
+    def obo_token(self) -> _builtins.str:
+        """
+        Object storage output location
+        """
+        return pulumi.get(self, "obo_token")
+
+    @_builtins.property
+    @pulumi.getter(name="outputLocationType")
+    def output_location_type(self) -> _builtins.str:
+        """
+        Type of device Allowed values are:
+        * OBJECT_STORAGE
+        * LIVEKIT_WEBRTC_AGENT
+        """
+        return pulumi.get(self, "output_location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def prefix(self) -> _builtins.str:
+        """
+        The Object Storage folder name.
+        """
+        return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetStreamSourceStreamSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 camera_url: _builtins.str,
+                 secret_id: _builtins.str,
+                 source_type: _builtins.str,
+                 stream_network_access_details: Sequence['outputs.GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailResult']):
+        """
+        :param _builtins.str camera_url: url of camera
+        :param _builtins.str secret_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        :param _builtins.str source_type: Type of source Allowed values are:
+               * RTSP
+        :param Sequence['GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailArgs'] stream_network_access_details: Details about a stream Connection type
+        """
+        pulumi.set(__self__, "camera_url", camera_url)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "stream_network_access_details", stream_network_access_details)
+
+    @_builtins.property
+    @pulumi.getter(name="cameraUrl")
+    def camera_url(self) -> _builtins.str:
+        """
+        url of camera
+        """
+        return pulumi.get(self, "camera_url")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        """
+        Type of source Allowed values are:
+        * RTSP
+        """
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="streamNetworkAccessDetails")
+    def stream_network_access_details(self) -> Sequence['outputs.GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailResult']:
+        """
+        Details about a stream Connection type
+        """
+        return pulumi.get(self, "stream_network_access_details")
+
+
+@pulumi.output_type
+class GetStreamSourceStreamSourceDetailStreamNetworkAccessDetailResult(dict):
+    def __init__(__self__, *,
+                 private_endpoint_id: _builtins.str,
+                 stream_access_type: _builtins.str):
+        """
+        :param _builtins.str private_endpoint_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        :param _builtins.str stream_access_type: Type of access Allowed values are:
+               * PRIVATE
+        """
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "stream_access_type", stream_access_type)
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="streamAccessType")
+    def stream_access_type(self) -> _builtins.str:
+        """
+        Type of access Allowed values are:
+        * PRIVATE
+        """
+        return pulumi.get(self, "stream_access_type")
+
+
+@pulumi.output_type
+class GetStreamSourcesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetStreamSourcesStreamSourceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetStreamSourcesStreamSourceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 state: _builtins.str,
+                 stream_source_details: Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailResult'],
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the device with the given identifier.
+        :param _builtins.str state: The filter to match projects with the given lifecycleState.
+        :param Sequence['GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailArgs'] stream_source_details: Details about a stream source
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.str time_created: When the streamSource was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the streamSource was updated, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "stream_source_details", stream_source_details)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The filter to find the device with the given identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The filter to match projects with the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="streamSourceDetails")
+    def stream_source_details(self) -> Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailResult']:
+        """
+        Details about a stream source
+        """
+        return pulumi.get(self, "stream_source_details")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the streamSource was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        When the streamSource was updated, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 camera_url: _builtins.str,
+                 secret_id: _builtins.str,
+                 source_type: _builtins.str,
+                 stream_network_access_details: Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailResult']):
+        """
+        :param _builtins.str camera_url: url of camera
+        :param _builtins.str secret_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        :param _builtins.str source_type: Type of source Allowed values are:
+               * RTSP
+        :param Sequence['GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailArgs'] stream_network_access_details: Details about a stream Connection type
+        """
+        pulumi.set(__self__, "camera_url", camera_url)
+        pulumi.set(__self__, "secret_id", secret_id)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "stream_network_access_details", stream_network_access_details)
+
+    @_builtins.property
+    @pulumi.getter(name="cameraUrl")
+    def camera_url(self) -> _builtins.str:
+        """
+        url of camera
+        """
+        return pulumi.get(self, "camera_url")
+
+    @_builtins.property
+    @pulumi.getter(name="secretId")
+    def secret_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of secret where credentials are stored in username:password format.
+        """
+        return pulumi.get(self, "secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        """
+        Type of source Allowed values are:
+        * RTSP
+        """
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="streamNetworkAccessDetails")
+    def stream_network_access_details(self) -> Sequence['outputs.GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailResult']:
+        """
+        Details about a stream Connection type
+        """
+        return pulumi.get(self, "stream_network_access_details")
+
+
+@pulumi.output_type
+class GetStreamSourcesStreamSourceCollectionItemStreamSourceDetailStreamNetworkAccessDetailResult(dict):
+    def __init__(__self__, *,
+                 private_endpoint_id: _builtins.str,
+                 stream_access_type: _builtins.str):
+        """
+        :param _builtins.str private_endpoint_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        :param _builtins.str stream_access_type: Type of access Allowed values are:
+               * PRIVATE
+        """
+        pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
+        pulumi.set(__self__, "stream_access_type", stream_access_type)
+
+    @_builtins.property
+    @pulumi.getter(name="privateEndpointId")
+    def private_endpoint_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private Endpoint
+        """
+        return pulumi.get(self, "private_endpoint_id")
+
+    @_builtins.property
+    @pulumi.getter(name="streamAccessType")
+    def stream_access_type(self) -> _builtins.str:
+        """
+        Type of access Allowed values are:
+        * PRIVATE
+        """
+        return pulumi.get(self, "stream_access_type")
+
+
+@pulumi.output_type
+class GetVisionPrivateEndpointsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetVisionPrivateEndpointsVisionPrivateEndpointCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetVisionPrivateEndpointsVisionPrivateEndpointCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 description: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 state: _builtins.str,
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        :param _builtins.str description: An optional description of the visionPrivateEndpoint.
+        :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
+        :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        :param _builtins.str id: The filter to find the device with the given identifier.
+        :param _builtins.str lifecycle_details: A message describing the current state in more detail, that can provide actionable information if creation failed.
+        :param _builtins.str state: The filter to match projects with the given lifecycleState.
+        :param _builtins.str subnet_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of subnet
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        :param _builtins.str time_created: When the visionPrivateEndpoint was created, as an RFC3339 datetime string.
+        :param _builtins.str time_updated: When the visionPrivateEndpoint was updated, as an RFC3339 datetime string.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The ID of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        """
+        An optional description of the visionPrivateEndpoint.
+        """
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire display name given.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The filter to find the device with the given identifier.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message describing the current state in more detail, that can provide actionable information if creation failed.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The filter to match projects with the given lifecycleState.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> _builtins.str:
+        """
+        [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of subnet
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        When the visionPrivateEndpoint was created, as an RFC3339 datetime string.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        When the visionPrivateEndpoint was updated, as an RFC3339 datetime string.
         """
         return pulumi.get(self, "time_updated")
 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Gets a Model by identifier
+ * Get a model by identifier.
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promi
  */
 export interface GetModelArgs {
     /**
-     * unique Model identifier
+     * A unique model identifier.
      */
     modelId: string;
 }
@@ -156,7 +156,7 @@ export interface GetModelResult {
 /**
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Gets a Model by identifier
+ * Get a model by identifier.
  *
  * ## Example Usage
  *
@@ -181,7 +181,7 @@ export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOut
  */
 export interface GetModelOutputArgs {
     /**
-     * unique Model identifier
+     * A unique model identifier.
      */
     modelId: pulumi.Input<string>;
 }

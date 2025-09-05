@@ -17,8 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Creates Oracle DB Azure Blob Mount resource and mounts Azure Container in Oracle Cloud Infrastructure Database Resource,
- * based on provided Azure Container details and Database Resource ID.
+ * Creates Oracle DB Azure Blob Mount resource.
  * 
  * ## Example Usage
  * 
@@ -72,14 +71,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount")
 public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+     * (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+     * @return (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -100,14 +99,14 @@ public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.Cus
         return this.definedTags;
     }
     /**
-     * (Updatable) Oracle DB Azure Blob Mount Resource name.
+     * (Updatable) Oracle DB Azure Blob Mount resource name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Oracle DB Azure Blob Mount Resource name.
+     * @return (Updatable) Oracle DB Azure Blob Mount resource name.
      * 
      */
     public Output<String> displayName() {
@@ -128,14 +127,14 @@ public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.Cus
         return this.freeformTags;
     }
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> lastModification() {
@@ -156,35 +155,35 @@ public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.Cus
         return this.lifecycleStateDetails;
     }
     /**
-     * Azure Container mount path.
+     * Oracle DB Azure Blob Mount path.
      * 
      */
     @Export(name="mountPath", refs={String.class}, tree="[0]")
     private Output<String> mountPath;
 
     /**
-     * @return Azure Container mount path.
+     * @return Oracle DB Azure Blob Mount path.
      * 
      */
     public Output<String> mountPath() {
         return this.mountPath;
     }
     /**
-     * (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     @Export(name="oracleDbAzureBlobContainerId", refs={String.class}, tree="[0]")
     private Output<String> oracleDbAzureBlobContainerId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> oracleDbAzureBlobContainerId() {
         return this.oracleDbAzureBlobContainerId;
     }
     /**
-     * (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +193,7 @@ public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.Cus
     private Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,14 +203,14 @@ public class DbmulticloudOracleDbAzureBlobMount extends com.pulumi.resources.Cus
         return this.oracleDbAzureConnectorId;
     }
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> state() {

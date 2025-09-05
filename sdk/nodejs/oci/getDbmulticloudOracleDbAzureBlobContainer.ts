@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+ * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getDbmulticloudOracleDbAzureBlobContainer(args: GetDbmulticloudO
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainerArgs {
     /**
-     * The ID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId: string;
 }
@@ -42,15 +42,15 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerArgs {
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
     /**
-     * Azure Storage Account Name.
+     * Azure Storage account name.
      */
     readonly azureStorageAccountName: string;
     /**
-     * Azure Storage Container Name.
+     * Azure Storage container name.
      */
     readonly azureStorageContainerName: string;
     /**
-     * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
      */
     readonly compartmentId: string;
     /**
@@ -58,7 +58,7 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Display name of Oracle DB Azure Blob Container.
+     * Oracle DB Azure Blob Container resource name.
      */
     readonly displayName: string;
     /**
@@ -66,11 +66,11 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      */
     readonly id: string;
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Container resource.
      */
     readonly lastModification: string;
     /**
@@ -79,7 +79,7 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
     readonly lifecycleStateDetails: string;
     readonly oracleDbAzureBlobContainerId: string;
     /**
-     * Private endpoint DNS Alias.
+     * Private endpoint's DNS Alias.
      */
     readonly privateEndpointDnsAlias: string;
     /**
@@ -87,7 +87,7 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
      */
     readonly privateEndpointIpAddress: string;
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      */
     readonly state: string;
     /**
@@ -106,7 +106,7 @@ export interface GetDbmulticloudOracleDbAzureBlobContainerResult {
 /**
  * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+ * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -131,7 +131,7 @@ export function getDbmulticloudOracleDbAzureBlobContainerOutput(args: GetDbmulti
  */
 export interface GetDbmulticloudOracleDbAzureBlobContainerOutputArgs {
     /**
-     * The ID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
      */
     oracleDbAzureBlobContainerId: pulumi.Input<string>;
 }

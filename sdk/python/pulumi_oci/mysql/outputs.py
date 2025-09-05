@@ -22,6 +22,8 @@ __all__ = [
     'ChannelTarget',
     'ChannelTargetFilter',
     'HeatWaveClusterClusterNode',
+    'MysqlBackupBackupValidationDetail',
+    'MysqlBackupBackupValidationDetailPreparedBackupDetail',
     'MysqlBackupDbSystemSnapshot',
     'MysqlBackupDbSystemSnapshotBackupPolicy',
     'MysqlBackupDbSystemSnapshotBackupPolicyCopyPolicy',
@@ -37,6 +39,7 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotSummary',
     'MysqlBackupEncryptData',
     'MysqlBackupSourceDetails',
+    'MysqlBackupValidateBackupDetail',
     'MysqlConfigurationInitVariables',
     'MysqlConfigurationVariables',
     'MysqlDbSystemBackupPolicy',
@@ -77,6 +80,8 @@ __all__ = [
     'GetChannelsChannelTargetFilterResult',
     'GetChannelsFilterResult',
     'GetHeatWaveClusterClusterNodeResult',
+    'GetMysqlBackupBackupValidationDetailResult',
+    'GetMysqlBackupBackupValidationDetailPreparedBackupDetailResult',
     'GetMysqlBackupDbSystemSnapshotResult',
     'GetMysqlBackupDbSystemSnapshotBackupPolicyResult',
     'GetMysqlBackupDbSystemSnapshotBackupPolicyCopyPolicyResult',
@@ -92,22 +97,10 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotSummaryResult',
     'GetMysqlBackupEncryptDataResult',
     'GetMysqlBackupSourceDetailResult',
+    'GetMysqlBackupValidateBackupDetailResult',
     'GetMysqlBackupsBackupResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotDataStorageResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotEncryptDataResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotEndpointResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotRestResult',
-    'GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult',
     'GetMysqlBackupsBackupDbSystemSnapshotSummaryResult',
     'GetMysqlBackupsBackupEncryptDataResult',
-    'GetMysqlBackupsBackupSourceDetailResult',
     'GetMysqlBackupsFilterResult',
     'GetMysqlConfigurationInitVariableResult',
     'GetMysqlConfigurationVariableResult',
@@ -653,6 +646,162 @@ class HeatWaveClusterClusterNode(dict):
         The time the HeatWave cluster was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class MysqlBackupBackupValidationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupPreparationStatus":
+            suggest = "backup_preparation_status"
+        elif key == "errorMessage":
+            suggest = "error_message"
+        elif key == "estimatedRestoreDuration":
+            suggest = "estimated_restore_duration"
+        elif key == "preparedBackupDetails":
+            suggest = "prepared_backup_details"
+        elif key == "timeLastValidated":
+            suggest = "time_last_validated"
+        elif key == "validationStatus":
+            suggest = "validation_status"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupBackupValidationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupBackupValidationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupBackupValidationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_preparation_status: Optional[_builtins.str] = None,
+                 error_message: Optional[_builtins.str] = None,
+                 estimated_restore_duration: Optional[_builtins.str] = None,
+                 prepared_backup_details: Optional[Sequence['outputs.MysqlBackupBackupValidationDetailPreparedBackupDetail']] = None,
+                 time_last_validated: Optional[_builtins.str] = None,
+                 validation_status: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str backup_preparation_status: Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        :param _builtins.str error_message: Error message if the backup validation has failed.
+        :param _builtins.str estimated_restore_duration: The estimated restore duration of the backup.
+        :param Sequence['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs'] prepared_backup_details: Prepared backup details.
+        :param _builtins.str time_last_validated: The date and time of the most recent validation performed on the backup.
+        :param _builtins.str validation_status: The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        if backup_preparation_status is not None:
+            pulumi.set(__self__, "backup_preparation_status", backup_preparation_status)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if estimated_restore_duration is not None:
+            pulumi.set(__self__, "estimated_restore_duration", estimated_restore_duration)
+        if prepared_backup_details is not None:
+            pulumi.set(__self__, "prepared_backup_details", prepared_backup_details)
+        if time_last_validated is not None:
+            pulumi.set(__self__, "time_last_validated", time_last_validated)
+        if validation_status is not None:
+            pulumi.set(__self__, "validation_status", validation_status)
+
+    @_builtins.property
+    @pulumi.getter(name="backupPreparationStatus")
+    def backup_preparation_status(self) -> Optional[_builtins.str]:
+        """
+        Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        """
+        return pulumi.get(self, "backup_preparation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> Optional[_builtins.str]:
+        """
+        Error message if the backup validation has failed.
+        """
+        return pulumi.get(self, "error_message")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRestoreDuration")
+    def estimated_restore_duration(self) -> Optional[_builtins.str]:
+        """
+        The estimated restore duration of the backup.
+        """
+        return pulumi.get(self, "estimated_restore_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupDetails")
+    def prepared_backup_details(self) -> Optional[Sequence['outputs.MysqlBackupBackupValidationDetailPreparedBackupDetail']]:
+        """
+        Prepared backup details.
+        """
+        return pulumi.get(self, "prepared_backup_details")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastValidated")
+    def time_last_validated(self) -> Optional[_builtins.str]:
+        """
+        The date and time of the most recent validation performed on the backup.
+        """
+        return pulumi.get(self, "time_last_validated")
+
+    @_builtins.property
+    @pulumi.getter(name="validationStatus")
+    def validation_status(self) -> Optional[_builtins.str]:
+        """
+        The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        return pulumi.get(self, "validation_status")
+
+
+@pulumi.output_type
+class MysqlBackupBackupValidationDetailPreparedBackupDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "preparedBackupRestoreReductionInMinutes":
+            suggest = "prepared_backup_restore_reduction_in_minutes"
+        elif key == "timePrepared":
+            suggest = "time_prepared"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupBackupValidationDetailPreparedBackupDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupBackupValidationDetailPreparedBackupDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupBackupValidationDetailPreparedBackupDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 prepared_backup_restore_reduction_in_minutes: Optional[_builtins.int] = None,
+                 time_prepared: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int prepared_backup_restore_reduction_in_minutes: The estimated time saving when this prepared backup is restored.
+        :param _builtins.str time_prepared: The date and time the backup was prepared.
+        """
+        if prepared_backup_restore_reduction_in_minutes is not None:
+            pulumi.set(__self__, "prepared_backup_restore_reduction_in_minutes", prepared_backup_restore_reduction_in_minutes)
+        if time_prepared is not None:
+            pulumi.set(__self__, "time_prepared", time_prepared)
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupRestoreReductionInMinutes")
+    def prepared_backup_restore_reduction_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        The estimated time saving when this prepared backup is restored.
+        """
+        return pulumi.get(self, "prepared_backup_restore_reduction_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="timePrepared")
+    def time_prepared(self) -> Optional[_builtins.str]:
+        """
+        The date and time the backup was prepared.
+        """
+        return pulumi.get(self, "time_prepared")
 
 
 @pulumi.output_type
@@ -2038,6 +2187,41 @@ class MysqlBackupSourceDetails(dict):
         The region of the backup source.
         """
         return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class MysqlBackupValidateBackupDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isPreparedBackupRequired":
+            suggest = "is_prepared_backup_required"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupValidateBackupDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupValidateBackupDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupValidateBackupDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_prepared_backup_required: _builtins.bool):
+        """
+        :param _builtins.bool is_prepared_backup_required: Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+        """
+        pulumi.set(__self__, "is_prepared_backup_required", is_prepared_backup_required)
+
+    @_builtins.property
+    @pulumi.getter(name="isPreparedBackupRequired")
+    def is_prepared_backup_required(self) -> _builtins.bool:
+        """
+        Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+        """
+        return pulumi.get(self, "is_prepared_backup_required")
 
 
 @pulumi.output_type
@@ -6857,6 +7041,108 @@ class GetHeatWaveClusterClusterNodeResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlBackupBackupValidationDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_preparation_status: _builtins.str,
+                 error_message: _builtins.str,
+                 estimated_restore_duration: _builtins.str,
+                 prepared_backup_details: Sequence['outputs.GetMysqlBackupBackupValidationDetailPreparedBackupDetailResult'],
+                 time_last_validated: _builtins.str,
+                 validation_status: _builtins.str):
+        """
+        :param _builtins.str backup_preparation_status: Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        :param _builtins.str error_message: Error message if the backup validation has failed.
+        :param _builtins.str estimated_restore_duration: The estimated restore duration of the backup.
+        :param Sequence['GetMysqlBackupBackupValidationDetailPreparedBackupDetailArgs'] prepared_backup_details: Prepared backup details.
+        :param _builtins.str time_last_validated: The date and time of the most recent validation performed on the backup.
+        :param _builtins.str validation_status: The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        pulumi.set(__self__, "backup_preparation_status", backup_preparation_status)
+        pulumi.set(__self__, "error_message", error_message)
+        pulumi.set(__self__, "estimated_restore_duration", estimated_restore_duration)
+        pulumi.set(__self__, "prepared_backup_details", prepared_backup_details)
+        pulumi.set(__self__, "time_last_validated", time_last_validated)
+        pulumi.set(__self__, "validation_status", validation_status)
+
+    @_builtins.property
+    @pulumi.getter(name="backupPreparationStatus")
+    def backup_preparation_status(self) -> _builtins.str:
+        """
+        Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        """
+        return pulumi.get(self, "backup_preparation_status")
+
+    @_builtins.property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> _builtins.str:
+        """
+        Error message if the backup validation has failed.
+        """
+        return pulumi.get(self, "error_message")
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRestoreDuration")
+    def estimated_restore_duration(self) -> _builtins.str:
+        """
+        The estimated restore duration of the backup.
+        """
+        return pulumi.get(self, "estimated_restore_duration")
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupDetails")
+    def prepared_backup_details(self) -> Sequence['outputs.GetMysqlBackupBackupValidationDetailPreparedBackupDetailResult']:
+        """
+        Prepared backup details.
+        """
+        return pulumi.get(self, "prepared_backup_details")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastValidated")
+    def time_last_validated(self) -> _builtins.str:
+        """
+        The date and time of the most recent validation performed on the backup.
+        """
+        return pulumi.get(self, "time_last_validated")
+
+    @_builtins.property
+    @pulumi.getter(name="validationStatus")
+    def validation_status(self) -> _builtins.str:
+        """
+        The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        return pulumi.get(self, "validation_status")
+
+
+@pulumi.output_type
+class GetMysqlBackupBackupValidationDetailPreparedBackupDetailResult(dict):
+    def __init__(__self__, *,
+                 prepared_backup_restore_reduction_in_minutes: _builtins.int,
+                 time_prepared: _builtins.str):
+        """
+        :param _builtins.int prepared_backup_restore_reduction_in_minutes: The estimated time saving when this prepared backup is restored.
+        :param _builtins.str time_prepared: The date and time the backup was prepared.
+        """
+        pulumi.set(__self__, "prepared_backup_restore_reduction_in_minutes", prepared_backup_restore_reduction_in_minutes)
+        pulumi.set(__self__, "time_prepared", time_prepared)
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupRestoreReductionInMinutes")
+    def prepared_backup_restore_reduction_in_minutes(self) -> _builtins.int:
+        """
+        The estimated time saving when this prepared backup is restored.
+        """
+        return pulumi.get(self, "prepared_backup_restore_reduction_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="timePrepared")
+    def time_prepared(self) -> _builtins.str:
+        """
+        The date and time the backup was prepared.
+        """
+        return pulumi.get(self, "time_prepared")
+
+
+@pulumi.output_type
 class GetMysqlBackupDbSystemSnapshotResult(dict):
     def __init__(__self__, *,
                  admin_username: _builtins.str,
@@ -7831,8 +8117,21 @@ class GetMysqlBackupSourceDetailResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlBackupValidateBackupDetailResult(dict):
+    def __init__(__self__, *,
+                 is_prepared_backup_required: _builtins.bool):
+        pulumi.set(__self__, "is_prepared_backup_required", is_prepared_backup_required)
+
+    @_builtins.property
+    @pulumi.getter(name="isPreparedBackupRequired")
+    def is_prepared_backup_required(self) -> _builtins.bool:
+        return pulumi.get(self, "is_prepared_backup_required")
+
+
+@pulumi.output_type
 class GetMysqlBackupsBackupResult(dict):
     def __init__(__self__, *,
+                 backup_preparation_status: _builtins.str,
                  backup_size_in_gbs: _builtins.int,
                  backup_type: _builtins.str,
                  compartment_id: _builtins.str,
@@ -7840,7 +8139,6 @@ class GetMysqlBackupsBackupResult(dict):
                  data_storage_size_in_gb: _builtins.int,
                  db_system_id: _builtins.str,
                  db_system_snapshot_summaries: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult'],
-                 db_system_snapshots: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
                  display_name: _builtins.str,
@@ -7854,20 +8152,19 @@ class GetMysqlBackupsBackupResult(dict):
                  retention_in_days: _builtins.int,
                  shape_name: _builtins.str,
                  soft_delete: _builtins.str,
-                 source_details: Sequence['outputs.GetMysqlBackupsBackupSourceDetailResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_copy_created: _builtins.str,
                  time_created: _builtins.str,
-                 time_updated: _builtins.str):
+                 validation_status: _builtins.str):
         """
+        :param _builtins.str backup_preparation_status: Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
         :param _builtins.int backup_size_in_gbs: The size of the backup in base-2 (IEC) gibibytes. (GiB).
         :param _builtins.str backup_type: The type of backup.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.str creation_type: Backup creationType
         :param _builtins.int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
         :param _builtins.str db_system_id: The DB System [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotArgs'] db_system_snapshots: Snapshot of the DbSystem details at the time of the backup
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param _builtins.str description: A user-supplied description for the backup.
         :param _builtins.str display_name: A filter to return only the resource matching the given display name exactly.
@@ -7885,8 +8182,9 @@ class GetMysqlBackupsBackupResult(dict):
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param _builtins.str time_created: The time the backup record was created.
-        :param _builtins.str time_updated: The time at which the backup was updated.
+        :param _builtins.str validation_status: The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
         """
+        pulumi.set(__self__, "backup_preparation_status", backup_preparation_status)
         pulumi.set(__self__, "backup_size_in_gbs", backup_size_in_gbs)
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -7894,7 +8192,6 @@ class GetMysqlBackupsBackupResult(dict):
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "db_system_id", db_system_id)
         pulumi.set(__self__, "db_system_snapshot_summaries", db_system_snapshot_summaries)
-        pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
@@ -7908,12 +8205,19 @@ class GetMysqlBackupsBackupResult(dict):
         pulumi.set(__self__, "retention_in_days", retention_in_days)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "soft_delete", soft_delete)
-        pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_copy_created", time_copy_created)
         pulumi.set(__self__, "time_created", time_created)
-        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "validation_status", validation_status)
+
+    @_builtins.property
+    @pulumi.getter(name="backupPreparationStatus")
+    def backup_preparation_status(self) -> _builtins.str:
+        """
+        Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        """
+        return pulumi.get(self, "backup_preparation_status")
 
     @_builtins.property
     @pulumi.getter(name="backupSizeInGbs")
@@ -7967,14 +8271,6 @@ class GetMysqlBackupsBackupResult(dict):
     @pulumi.getter(name="dbSystemSnapshotSummaries")
     def db_system_snapshot_summaries(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult']:
         return pulumi.get(self, "db_system_snapshot_summaries")
-
-    @_builtins.property
-    @pulumi.getter(name="dbSystemSnapshots")
-    def db_system_snapshots(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult']:
-        """
-        Snapshot of the DbSystem details at the time of the backup
-        """
-        return pulumi.get(self, "db_system_snapshots")
 
     @_builtins.property
     @pulumi.getter(name="definedTags")
@@ -8081,11 +8377,6 @@ class GetMysqlBackupsBackupResult(dict):
         return pulumi.get(self, "soft_delete")
 
     @_builtins.property
-    @pulumi.getter(name="sourceDetails")
-    def source_details(self) -> Sequence['outputs.GetMysqlBackupsBackupSourceDetailResult']:
-        return pulumi.get(self, "source_details")
-
-    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
@@ -8118,877 +8409,12 @@ class GetMysqlBackupsBackupResult(dict):
         return pulumi.get(self, "time_created")
 
     @_builtins.property
-    @pulumi.getter(name="timeUpdated")
-    def time_updated(self) -> _builtins.str:
+    @pulumi.getter(name="validationStatus")
+    def validation_status(self) -> _builtins.str:
         """
-        The time at which the backup was updated.
+        The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
         """
-        return pulumi.get(self, "time_updated")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
-    def __init__(__self__, *,
-                 admin_username: _builtins.str,
-                 availability_domain: _builtins.str,
-                 backup_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult'],
-                 compartment_id: _builtins.str,
-                 configuration_id: _builtins.str,
-                 crash_recovery: _builtins.str,
-                 data_storage_size_in_gb: _builtins.int,
-                 data_storages: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDataStorageResult'],
-                 database_management: _builtins.str,
-                 defined_tags: Mapping[str, _builtins.str],
-                 deletion_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult'],
-                 description: _builtins.str,
-                 display_name: _builtins.str,
-                 encrypt_datas: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEncryptDataResult'],
-                 endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult'],
-                 fault_domain: _builtins.str,
-                 freeform_tags: Mapping[str, _builtins.str],
-                 hostname_label: _builtins.str,
-                 id: _builtins.str,
-                 ip_address: _builtins.str,
-                 is_highly_available: _builtins.bool,
-                 maintenances: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult'],
-                 mysql_version: _builtins.str,
-                 nsg_ids: Sequence[_builtins.str],
-                 port: _builtins.int,
-                 port_x: _builtins.int,
-                 read_endpoints: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult'],
-                 region: _builtins.str,
-                 rests: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotRestResult'],
-                 secure_connections: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult'],
-                 shape_name: _builtins.str,
-                 subnet_id: _builtins.str):
-        """
-        :param _builtins.str admin_username: The username for the administrative user.
-        :param _builtins.str availability_domain: The Availability Domain where the primary DB System should be located.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyArgs'] backup_policies: The Backup policy for the DB System.
-        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str configuration_id: The OCID of the Configuration to be used for Instances in this DB System.
-        :param _builtins.str crash_recovery: Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        :param _builtins.int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotDataStorageArgs'] data_storages: Data Storage information.
-        :param _builtins.str database_management: Whether to enable monitoring via the Database Management service.
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyArgs'] deletion_policies: The Deletion policy for the DB System.
-        :param _builtins.str description: A user-supplied description for the backup.
-        :param _builtins.str display_name: A filter to return only the resource matching the given display name exactly.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotEncryptDataArgs'] encrypt_datas: Encrypt data details.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotEndpointArgs'] endpoints: The network endpoints available for this DB System.
-        :param _builtins.str fault_domain: The name of the Fault Domain the DB System is located in.
-        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param _builtins.str hostname_label: The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-        :param _builtins.str id: OCID of the backup itself
-        :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param _builtins.bool is_highly_available: Specifies if the DB System is highly available.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotMaintenanceArgs'] maintenances: The Maintenance Policy for the DB System or Read Replica that this model is included in.
-        :param _builtins.str mysql_version: The MySQL server version of the DB System used for backup.
-        :param Sequence[_builtins.str] nsg_ids: Network Security Group OCIDs used for the VNIC attachment.
-        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotReadEndpointArgs'] read_endpoints: The read endpoint of a DB System.
-        :param _builtins.str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotRestArgs'] rests: REST configuration details.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
-        :param _builtins.str shape_name: The shape of the DB System instance used for backup.
-        :param _builtins.str subnet_id: The OCID of the subnet the DB System is associated with.
-        """
-        pulumi.set(__self__, "admin_username", admin_username)
-        pulumi.set(__self__, "availability_domain", availability_domain)
-        pulumi.set(__self__, "backup_policies", backup_policies)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "configuration_id", configuration_id)
-        pulumi.set(__self__, "crash_recovery", crash_recovery)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "data_storages", data_storages)
-        pulumi.set(__self__, "database_management", database_management)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "deletion_policies", deletion_policies)
-        pulumi.set(__self__, "description", description)
-        pulumi.set(__self__, "display_name", display_name)
-        pulumi.set(__self__, "encrypt_datas", encrypt_datas)
-        pulumi.set(__self__, "endpoints", endpoints)
-        pulumi.set(__self__, "fault_domain", fault_domain)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "hostname_label", hostname_label)
-        pulumi.set(__self__, "id", id)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "is_highly_available", is_highly_available)
-        pulumi.set(__self__, "maintenances", maintenances)
-        pulumi.set(__self__, "mysql_version", mysql_version)
-        pulumi.set(__self__, "nsg_ids", nsg_ids)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "read_endpoints", read_endpoints)
-        pulumi.set(__self__, "region", region)
-        pulumi.set(__self__, "rests", rests)
-        pulumi.set(__self__, "secure_connections", secure_connections)
-        pulumi.set(__self__, "shape_name", shape_name)
-        pulumi.set(__self__, "subnet_id", subnet_id)
-
-    @_builtins.property
-    @pulumi.getter(name="adminUsername")
-    def admin_username(self) -> _builtins.str:
-        """
-        The username for the administrative user.
-        """
-        return pulumi.get(self, "admin_username")
-
-    @_builtins.property
-    @pulumi.getter(name="availabilityDomain")
-    def availability_domain(self) -> _builtins.str:
-        """
-        The Availability Domain where the primary DB System should be located.
-        """
-        return pulumi.get(self, "availability_domain")
-
-    @_builtins.property
-    @pulumi.getter(name="backupPolicies")
-    def backup_policies(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult']:
-        """
-        The Backup policy for the DB System.
-        """
-        return pulumi.get(self, "backup_policies")
-
-    @_builtins.property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @_builtins.property
-    @pulumi.getter(name="configurationId")
-    def configuration_id(self) -> _builtins.str:
-        """
-        The OCID of the Configuration to be used for Instances in this DB System.
-        """
-        return pulumi.get(self, "configuration_id")
-
-    @_builtins.property
-    @pulumi.getter(name="crashRecovery")
-    def crash_recovery(self) -> _builtins.str:
-        """
-        Whether to run the DB System with InnoDB Redo Logs and the Double Write Buffer enabled or disabled, and whether to enable or disable syncing of the Binary Logs.
-        """
-        return pulumi.get(self, "crash_recovery")
-
-    @_builtins.property
-    @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> _builtins.int:
-        """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-        """
-        return pulumi.get(self, "data_storage_size_in_gb")
-
-    @_builtins.property
-    @pulumi.getter(name="dataStorages")
-    def data_storages(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDataStorageResult']:
-        """
-        Data Storage information.
-        """
-        return pulumi.get(self, "data_storages")
-
-    @_builtins.property
-    @pulumi.getter(name="databaseManagement")
-    def database_management(self) -> _builtins.str:
-        """
-        Whether to enable monitoring via the Database Management service.
-        """
-        return pulumi.get(self, "database_management")
-
-    @_builtins.property
-    @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        return pulumi.get(self, "defined_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="deletionPolicies")
-    def deletion_policies(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult']:
-        """
-        The Deletion policy for the DB System.
-        """
-        return pulumi.get(self, "deletion_policies")
-
-    @_builtins.property
-    @pulumi.getter
-    def description(self) -> _builtins.str:
-        """
-        A user-supplied description for the backup.
-        """
-        return pulumi.get(self, "description")
-
-    @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> _builtins.str:
-        """
-        A filter to return only the resource matching the given display name exactly.
-        """
-        return pulumi.get(self, "display_name")
-
-    @_builtins.property
-    @pulumi.getter(name="encryptDatas")
-    def encrypt_datas(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEncryptDataResult']:
-        """
-        Encrypt data details.
-        """
-        return pulumi.get(self, "encrypt_datas")
-
-    @_builtins.property
-    @pulumi.getter
-    def endpoints(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotEndpointResult']:
-        """
-        The network endpoints available for this DB System.
-        """
-        return pulumi.get(self, "endpoints")
-
-    @_builtins.property
-    @pulumi.getter(name="faultDomain")
-    def fault_domain(self) -> _builtins.str:
-        """
-        The name of the Fault Domain the DB System is located in.
-        """
-        return pulumi.get(self, "fault_domain")
-
-    @_builtins.property
-    @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
-        return pulumi.get(self, "freeform_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="hostnameLabel")
-    def hostname_label(self) -> _builtins.str:
-        """
-        The hostname for the primary endpoint of the DB System. Used for DNS. The value is the hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example, "dbsystem-1" in FQDN "dbsystem-1.subnet123.vcn1.oraclevcn.com"). Must be unique across all VNICs in the subnet and comply with RFC 952 and RFC 1123.
-        """
-        return pulumi.get(self, "hostname_label")
-
-    @_builtins.property
-    @pulumi.getter
-    def id(self) -> _builtins.str:
-        """
-        OCID of the backup itself
-        """
-        return pulumi.get(self, "id")
-
-    @_builtins.property
-    @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> _builtins.str:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        """
-        return pulumi.get(self, "ip_address")
-
-    @_builtins.property
-    @pulumi.getter(name="isHighlyAvailable")
-    def is_highly_available(self) -> _builtins.bool:
-        """
-        Specifies if the DB System is highly available.
-        """
-        return pulumi.get(self, "is_highly_available")
-
-    @_builtins.property
-    @pulumi.getter
-    def maintenances(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult']:
-        """
-        The Maintenance Policy for the DB System or Read Replica that this model is included in.
-        """
-        return pulumi.get(self, "maintenances")
-
-    @_builtins.property
-    @pulumi.getter(name="mysqlVersion")
-    def mysql_version(self) -> _builtins.str:
-        """
-        The MySQL server version of the DB System used for backup.
-        """
-        return pulumi.get(self, "mysql_version")
-
-    @_builtins.property
-    @pulumi.getter(name="nsgIds")
-    def nsg_ids(self) -> Sequence[_builtins.str]:
-        """
-        Network Security Group OCIDs used for the VNIC attachment.
-        """
-        return pulumi.get(self, "nsg_ids")
-
-    @_builtins.property
-    @pulumi.getter
-    def port(self) -> _builtins.int:
-        """
-        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        """
-        return pulumi.get(self, "port")
-
-    @_builtins.property
-    @pulumi.getter(name="portX")
-    def port_x(self) -> _builtins.int:
-        """
-        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        """
-        return pulumi.get(self, "port_x")
-
-    @_builtins.property
-    @pulumi.getter(name="readEndpoints")
-    def read_endpoints(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult']:
-        """
-        The read endpoint of a DB System.
-        """
-        return pulumi.get(self, "read_endpoints")
-
-    @_builtins.property
-    @pulumi.getter
-    def region(self) -> _builtins.str:
-        """
-        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-        """
-        return pulumi.get(self, "region")
-
-    @_builtins.property
-    @pulumi.getter
-    def rests(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotRestResult']:
-        """
-        REST configuration details.
-        """
-        return pulumi.get(self, "rests")
-
-    @_builtins.property
-    @pulumi.getter(name="secureConnections")
-    def secure_connections(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult']:
-        """
-        Secure connection configuration details.
-        """
-        return pulumi.get(self, "secure_connections")
-
-    @_builtins.property
-    @pulumi.getter(name="shapeName")
-    def shape_name(self) -> _builtins.str:
-        """
-        The shape of the DB System instance used for backup.
-        """
-        return pulumi.get(self, "shape_name")
-
-    @_builtins.property
-    @pulumi.getter(name="subnetId")
-    def subnet_id(self) -> _builtins.str:
-        """
-        The OCID of the subnet the DB System is associated with.
-        """
-        return pulumi.get(self, "subnet_id")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult(dict):
-    def __init__(__self__, *,
-                 copy_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyResult'],
-                 defined_tags: Mapping[str, _builtins.str],
-                 freeform_tags: Mapping[str, _builtins.str],
-                 is_enabled: _builtins.bool,
-                 pitr_policies: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult'],
-                 retention_in_days: _builtins.int,
-                 soft_delete: _builtins.str,
-                 window_start_time: _builtins.str):
-        """
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyArgs'] copy_policies: List of policies of a DB system to schedule cross-region DB system backup copy.
-        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
-        :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
-        :param _builtins.int retention_in_days: Number of days to retain this backup.
-        :param _builtins.str soft_delete: Backup Soft Delete
-        :param _builtins.str window_start_time: The start time of the maintenance window.
-        """
-        pulumi.set(__self__, "copy_policies", copy_policies)
-        pulumi.set(__self__, "defined_tags", defined_tags)
-        pulumi.set(__self__, "freeform_tags", freeform_tags)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "pitr_policies", pitr_policies)
-        pulumi.set(__self__, "retention_in_days", retention_in_days)
-        pulumi.set(__self__, "soft_delete", soft_delete)
-        pulumi.set(__self__, "window_start_time", window_start_time)
-
-    @_builtins.property
-    @pulumi.getter(name="copyPolicies")
-    def copy_policies(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyResult']:
-        """
-        List of policies of a DB system to schedule cross-region DB system backup copy.
-        """
-        return pulumi.get(self, "copy_policies")
-
-    @_builtins.property
-    @pulumi.getter(name="definedTags")
-    def defined_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        """
-        return pulumi.get(self, "defined_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="freeformTags")
-    def freeform_tags(self) -> Mapping[str, _builtins.str]:
-        """
-        Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        """
-        return pulumi.get(self, "freeform_tags")
-
-    @_builtins.property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> _builtins.bool:
-        """
-        Specifies if the DB System read endpoint is enabled or not.
-        """
-        return pulumi.get(self, "is_enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="pitrPolicies")
-    def pitr_policies(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult']:
-        """
-        The PITR policy for the DB System.
-        """
-        return pulumi.get(self, "pitr_policies")
-
-    @_builtins.property
-    @pulumi.getter(name="retentionInDays")
-    def retention_in_days(self) -> _builtins.int:
-        """
-        Number of days to retain this backup.
-        """
-        return pulumi.get(self, "retention_in_days")
-
-    @_builtins.property
-    @pulumi.getter(name="softDelete")
-    def soft_delete(self) -> _builtins.str:
-        """
-        Backup Soft Delete
-        """
-        return pulumi.get(self, "soft_delete")
-
-    @_builtins.property
-    @pulumi.getter(name="windowStartTime")
-    def window_start_time(self) -> _builtins.str:
-        """
-        The start time of the maintenance window.
-        """
-        return pulumi.get(self, "window_start_time")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyCopyPolicyResult(dict):
-    def __init__(__self__, *,
-                 backup_copy_retention_in_days: _builtins.int,
-                 copy_to_region: _builtins.str):
-        """
-        :param _builtins.int backup_copy_retention_in_days: Number of days to retain the copied DB system backup.
-        :param _builtins.str copy_to_region: The destination region name to which the DB system backup will be copied.
-        """
-        pulumi.set(__self__, "backup_copy_retention_in_days", backup_copy_retention_in_days)
-        pulumi.set(__self__, "copy_to_region", copy_to_region)
-
-    @_builtins.property
-    @pulumi.getter(name="backupCopyRetentionInDays")
-    def backup_copy_retention_in_days(self) -> _builtins.int:
-        """
-        Number of days to retain the copied DB system backup.
-        """
-        return pulumi.get(self, "backup_copy_retention_in_days")
-
-    @_builtins.property
-    @pulumi.getter(name="copyToRegion")
-    def copy_to_region(self) -> _builtins.str:
-        """
-        The destination region name to which the DB system backup will be copied.
-        """
-        return pulumi.get(self, "copy_to_region")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyPitrPolicyResult(dict):
-    def __init__(__self__, *,
-                 is_enabled: _builtins.bool):
-        """
-        :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
-        """
-        pulumi.set(__self__, "is_enabled", is_enabled)
-
-    @_builtins.property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> _builtins.bool:
-        """
-        Specifies if the DB System read endpoint is enabled or not.
-        """
-        return pulumi.get(self, "is_enabled")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotDataStorageResult(dict):
-    def __init__(__self__, *,
-                 allocated_storage_size_in_gbs: _builtins.int,
-                 data_storage_size_in_gb: _builtins.int,
-                 data_storage_size_limit_in_gbs: _builtins.int,
-                 is_auto_expand_storage_enabled: _builtins.bool,
-                 max_storage_size_in_gbs: _builtins.int):
-        """
-        :param _builtins.int allocated_storage_size_in_gbs: The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-        :param _builtins.int data_storage_size_in_gb: DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-        :param _builtins.int data_storage_size_limit_in_gbs: The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
-        :param _builtins.bool is_auto_expand_storage_enabled: Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-        :param _builtins.int max_storage_size_in_gbs: Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
-        """
-        pulumi.set(__self__, "allocated_storage_size_in_gbs", allocated_storage_size_in_gbs)
-        pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
-        pulumi.set(__self__, "data_storage_size_limit_in_gbs", data_storage_size_limit_in_gbs)
-        pulumi.set(__self__, "is_auto_expand_storage_enabled", is_auto_expand_storage_enabled)
-        pulumi.set(__self__, "max_storage_size_in_gbs", max_storage_size_in_gbs)
-
-    @_builtins.property
-    @pulumi.getter(name="allocatedStorageSizeInGbs")
-    def allocated_storage_size_in_gbs(self) -> _builtins.int:
-        """
-        The actual allocated storage size for the DB System. This may be higher than dataStorageSizeInGBs if an automatic storage expansion has occurred.
-        """
-        return pulumi.get(self, "allocated_storage_size_in_gbs")
-
-    @_builtins.property
-    @pulumi.getter(name="dataStorageSizeInGb")
-    def data_storage_size_in_gb(self) -> _builtins.int:
-        """
-        DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs. Replaced by dataStorage.dataStorageSizeInGBs.
-        """
-        return pulumi.get(self, "data_storage_size_in_gb")
-
-    @_builtins.property
-    @pulumi.getter(name="dataStorageSizeLimitInGbs")
-    def data_storage_size_limit_in_gbs(self) -> _builtins.int:
-        """
-        The absolute limit the DB System's storage size may ever expand to, either manually or automatically. This limit is based based on the initial dataStorageSizeInGBs when the DB System was first created. Both dataStorageSizeInGBs and maxDataStorageSizeInGBs can not exceed this value.
-        """
-        return pulumi.get(self, "data_storage_size_limit_in_gbs")
-
-    @_builtins.property
-    @pulumi.getter(name="isAutoExpandStorageEnabled")
-    def is_auto_expand_storage_enabled(self) -> _builtins.bool:
-        """
-        Enable/disable automatic storage expansion. When set to true, the DB System will automatically add storage incrementally up to the value specified in maxStorageSizeInGBs.
-        """
-        return pulumi.get(self, "is_auto_expand_storage_enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="maxStorageSizeInGbs")
-    def max_storage_size_in_gbs(self) -> _builtins.int:
-        """
-        Maximum storage size this DB System can expand to. When isAutoExpandStorageEnabled is set to true, the DB System will add storage incrementally up to this value.
-        """
-        return pulumi.get(self, "max_storage_size_in_gbs")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotDeletionPolicyResult(dict):
-    def __init__(__self__, *,
-                 automatic_backup_retention: _builtins.str,
-                 final_backup: _builtins.str,
-                 is_delete_protected: _builtins.bool):
-        """
-        :param _builtins.str automatic_backup_retention: Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        :param _builtins.str final_backup: Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        :param _builtins.bool is_delete_protected: Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
-        pulumi.set(__self__, "automatic_backup_retention", automatic_backup_retention)
-        pulumi.set(__self__, "final_backup", final_backup)
-        pulumi.set(__self__, "is_delete_protected", is_delete_protected)
-
-    @_builtins.property
-    @pulumi.getter(name="automaticBackupRetention")
-    def automatic_backup_retention(self) -> _builtins.str:
-        """
-        Specifies if any automatic backups created for a DB System should be retained or deleted when the DB System is deleted.
-        """
-        return pulumi.get(self, "automatic_backup_retention")
-
-    @_builtins.property
-    @pulumi.getter(name="finalBackup")
-    def final_backup(self) -> _builtins.str:
-        """
-        Specifies whether or not a backup is taken when the DB System is deleted. REQUIRE_FINAL_BACKUP: a backup is taken if the DB System is deleted. SKIP_FINAL_BACKUP: a backup is not taken if the DB System is deleted.
-        """
-        return pulumi.get(self, "final_backup")
-
-    @_builtins.property
-    @pulumi.getter(name="isDeleteProtected")
-    def is_delete_protected(self) -> _builtins.bool:
-        """
-        Specifies whether the DB System can be deleted. Set to true to prevent deletion, false (default) to allow.
-        """
-        return pulumi.get(self, "is_delete_protected")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotEncryptDataResult(dict):
-    def __init__(__self__, *,
-                 key_generation_type: _builtins.str,
-                 key_id: _builtins.str):
-        """
-        :param _builtins.str key_generation_type: Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
-        :param _builtins.str key_id: The OCID of the key to use.
-        """
-        pulumi.set(__self__, "key_generation_type", key_generation_type)
-        pulumi.set(__self__, "key_id", key_id)
-
-    @_builtins.property
-    @pulumi.getter(name="keyGenerationType")
-    def key_generation_type(self) -> _builtins.str:
-        """
-        Select whether to use Oracle-managed key (SYSTEM) or your own key (BYOK).
-        """
-        return pulumi.get(self, "key_generation_type")
-
-    @_builtins.property
-    @pulumi.getter(name="keyId")
-    def key_id(self) -> _builtins.str:
-        """
-        The OCID of the key to use.
-        """
-        return pulumi.get(self, "key_id")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotEndpointResult(dict):
-    def __init__(__self__, *,
-                 hostname: _builtins.str,
-                 ip_address: _builtins.str,
-                 modes: Sequence[_builtins.str],
-                 port: _builtins.int,
-                 port_x: _builtins.int,
-                 resource_id: _builtins.str,
-                 resource_type: _builtins.str,
-                 status: _builtins.str,
-                 status_details: _builtins.str):
-        """
-        :param _builtins.str hostname: The network address of the DB System.
-        :param _builtins.str ip_address: The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        :param Sequence[_builtins.str] modes: The access modes from the client that this endpoint supports.
-        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        :param _builtins.int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        :param _builtins.str resource_id: The OCID of the resource that this endpoint is attached to.
-        :param _builtins.str resource_type: The type of endpoint that clients and connectors can connect to.
-        :param _builtins.str status: The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        :param _builtins.str status_details: Additional information about the current endpoint status.
-        """
-        pulumi.set(__self__, "hostname", hostname)
-        pulumi.set(__self__, "ip_address", ip_address)
-        pulumi.set(__self__, "modes", modes)
-        pulumi.set(__self__, "port", port)
-        pulumi.set(__self__, "port_x", port_x)
-        pulumi.set(__self__, "resource_id", resource_id)
-        pulumi.set(__self__, "resource_type", resource_type)
-        pulumi.set(__self__, "status", status)
-        pulumi.set(__self__, "status_details", status_details)
-
-    @_builtins.property
-    @pulumi.getter
-    def hostname(self) -> _builtins.str:
-        """
-        The network address of the DB System.
-        """
-        return pulumi.get(self, "hostname")
-
-    @_builtins.property
-    @pulumi.getter(name="ipAddress")
-    def ip_address(self) -> _builtins.str:
-        """
-        The IP address the DB System is configured to listen on. A private IP address of the primary endpoint of the DB System. Must be an available IP address within the subnet's CIDR. This will be a "dotted-quad" style IPv4 address.
-        """
-        return pulumi.get(self, "ip_address")
-
-    @_builtins.property
-    @pulumi.getter
-    def modes(self) -> Sequence[_builtins.str]:
-        """
-        The access modes from the client that this endpoint supports.
-        """
-        return pulumi.get(self, "modes")
-
-    @_builtins.property
-    @pulumi.getter
-    def port(self) -> _builtins.int:
-        """
-        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        """
-        return pulumi.get(self, "port")
-
-    @_builtins.property
-    @pulumi.getter(name="portX")
-    def port_x(self) -> _builtins.int:
-        """
-        The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
-        """
-        return pulumi.get(self, "port_x")
-
-    @_builtins.property
-    @pulumi.getter(name="resourceId")
-    def resource_id(self) -> _builtins.str:
-        """
-        The OCID of the resource that this endpoint is attached to.
-        """
-        return pulumi.get(self, "resource_id")
-
-    @_builtins.property
-    @pulumi.getter(name="resourceType")
-    def resource_type(self) -> _builtins.str:
-        """
-        The type of endpoint that clients and connectors can connect to.
-        """
-        return pulumi.get(self, "resource_type")
-
-    @_builtins.property
-    @pulumi.getter
-    def status(self) -> _builtins.str:
-        """
-        The state of the endpoints, as far as it can seen from the DB System. There may be some inconsistency with the actual state of the MySQL service.
-        """
-        return pulumi.get(self, "status")
-
-    @_builtins.property
-    @pulumi.getter(name="statusDetails")
-    def status_details(self) -> _builtins.str:
-        """
-        Additional information about the current endpoint status.
-        """
-        return pulumi.get(self, "status_details")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult(dict):
-    def __init__(__self__, *,
-                 window_start_time: _builtins.str):
-        """
-        :param _builtins.str window_start_time: The start time of the maintenance window.
-        """
-        pulumi.set(__self__, "window_start_time", window_start_time)
-
-    @_builtins.property
-    @pulumi.getter(name="windowStartTime")
-    def window_start_time(self) -> _builtins.str:
-        """
-        The start time of the maintenance window.
-        """
-        return pulumi.get(self, "window_start_time")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotReadEndpointResult(dict):
-    def __init__(__self__, *,
-                 exclude_ips: Sequence[_builtins.str],
-                 is_enabled: _builtins.bool,
-                 read_endpoint_hostname_label: _builtins.str,
-                 read_endpoint_ip_address: _builtins.str):
-        """
-        :param Sequence[_builtins.str] exclude_ips: A list of IP addresses of read replicas that are excluded from serving read requests.
-        :param _builtins.bool is_enabled: Specifies if the DB System read endpoint is enabled or not.
-        :param _builtins.str read_endpoint_hostname_label: The hostname for the read endpoint of the DB System. Used for DNS.
-        :param _builtins.str read_endpoint_ip_address: The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        """
-        pulumi.set(__self__, "exclude_ips", exclude_ips)
-        pulumi.set(__self__, "is_enabled", is_enabled)
-        pulumi.set(__self__, "read_endpoint_hostname_label", read_endpoint_hostname_label)
-        pulumi.set(__self__, "read_endpoint_ip_address", read_endpoint_ip_address)
-
-    @_builtins.property
-    @pulumi.getter(name="excludeIps")
-    def exclude_ips(self) -> Sequence[_builtins.str]:
-        """
-        A list of IP addresses of read replicas that are excluded from serving read requests.
-        """
-        return pulumi.get(self, "exclude_ips")
-
-    @_builtins.property
-    @pulumi.getter(name="isEnabled")
-    def is_enabled(self) -> _builtins.bool:
-        """
-        Specifies if the DB System read endpoint is enabled or not.
-        """
-        return pulumi.get(self, "is_enabled")
-
-    @_builtins.property
-    @pulumi.getter(name="readEndpointHostnameLabel")
-    def read_endpoint_hostname_label(self) -> _builtins.str:
-        """
-        The hostname for the read endpoint of the DB System. Used for DNS.
-        """
-        return pulumi.get(self, "read_endpoint_hostname_label")
-
-    @_builtins.property
-    @pulumi.getter(name="readEndpointIpAddress")
-    def read_endpoint_ip_address(self) -> _builtins.str:
-        """
-        The IP address the DB System read endpoint is configured to listen on. A private IP address of your choice to assign to the read endpoint of the DB System. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This should be a "dotted-quad" style IPv4 address.
-        """
-        return pulumi.get(self, "read_endpoint_ip_address")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotRestResult(dict):
-    def __init__(__self__, *,
-                 configuration: _builtins.str,
-                 port: _builtins.int):
-        """
-        :param _builtins.str configuration: Select how REST is configured across the DB System instances.
-        :param _builtins.int port: The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        """
-        pulumi.set(__self__, "configuration", configuration)
-        pulumi.set(__self__, "port", port)
-
-    @_builtins.property
-    @pulumi.getter
-    def configuration(self) -> _builtins.str:
-        """
-        Select how REST is configured across the DB System instances.
-        """
-        return pulumi.get(self, "configuration")
-
-    @_builtins.property
-    @pulumi.getter
-    def port(self) -> _builtins.int:
-        """
-        The port for REST to listen on. Supported port numbers are 443 and from 1024 to 65535.
-        """
-        return pulumi.get(self, "port")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult(dict):
-    def __init__(__self__, *,
-                 certificate_generation_type: _builtins.str,
-                 certificate_id: _builtins.str):
-        """
-        :param _builtins.str certificate_generation_type: Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
-        :param _builtins.str certificate_id: The OCID of the certificate to use.
-        """
-        pulumi.set(__self__, "certificate_generation_type", certificate_generation_type)
-        pulumi.set(__self__, "certificate_id", certificate_id)
-
-    @_builtins.property
-    @pulumi.getter(name="certificateGenerationType")
-    def certificate_generation_type(self) -> _builtins.str:
-        """
-        Select whether to use MySQL Database Service-managed certificate (SYSTEM) or your own certificate (BYOC).
-        """
-        return pulumi.get(self, "certificate_generation_type")
-
-    @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> _builtins.str:
-        """
-        The OCID of the certificate to use.
-        """
-        return pulumi.get(self, "certificate_id")
+        return pulumi.get(self, "validation_status")
 
 
 @pulumi.output_type
@@ -9058,46 +8484,6 @@ class GetMysqlBackupsBackupEncryptDataResult(dict):
         The OCID of the key to use.
         """
         return pulumi.get(self, "key_id")
-
-
-@pulumi.output_type
-class GetMysqlBackupsBackupSourceDetailResult(dict):
-    def __init__(__self__, *,
-                 backup_id: _builtins.str,
-                 compartment_id: _builtins.str,
-                 region: _builtins.str):
-        """
-        :param _builtins.str backup_id: Backup OCID
-        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param _builtins.str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-        """
-        pulumi.set(__self__, "backup_id", backup_id)
-        pulumi.set(__self__, "compartment_id", compartment_id)
-        pulumi.set(__self__, "region", region)
-
-    @_builtins.property
-    @pulumi.getter(name="backupId")
-    def backup_id(self) -> _builtins.str:
-        """
-        Backup OCID
-        """
-        return pulumi.get(self, "backup_id")
-
-    @_builtins.property
-    @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
-        """
-        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        """
-        return pulumi.get(self, "compartment_id")
-
-    @_builtins.property
-    @pulumi.getter
-    def region(self) -> _builtins.str:
-        """
-        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
-        """
-        return pulumi.get(self, "region")
 
 
 @pulumi.output_type

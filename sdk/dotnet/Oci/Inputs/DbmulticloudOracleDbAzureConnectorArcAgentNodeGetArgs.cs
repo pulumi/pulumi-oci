@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Oci.Inputs
     public sealed class DbmulticloudOracleDbAzureConnectorArcAgentNodeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Current Arc Agent Version installed on this node of VM Cluster.
+        /// Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         /// </summary>
         [Input("currentArcAgentVersion")]
         public Input<string>? CurrentArcAgentVersion { get; set; }
@@ -25,19 +25,19 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<string>? HostId { get; set; }
 
         /// <summary>
-        /// Host Name or Azure Arc Agent Name.
+        /// Host name or Azure Arc Agent name.
         /// </summary>
         [Input("hostName")]
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// The current status of the Azure Arc Agent Resource.
+        /// The current status of the Azure Arc Agent resource.
         /// </summary>
         [Input("status")]
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         [Input("timeLastChecked")]
         public Input<string>? TimeLastChecked { get; set; }

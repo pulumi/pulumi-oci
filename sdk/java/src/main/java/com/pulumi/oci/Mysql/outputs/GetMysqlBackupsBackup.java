@@ -5,10 +5,8 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshot;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSummary;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupEncryptData;
-import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupSourceDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,6 +15,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMysqlBackupsBackup {
+    /**
+     * @return Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+     * 
+     */
+    private String backupPreparationStatus;
     /**
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
@@ -48,11 +51,6 @@ public final class GetMysqlBackupsBackup {
      */
     private String dbSystemId;
     private List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries;
-    /**
-     * @return Snapshot of the DbSystem details at the time of the backup
-     * 
-     */
-    private List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
@@ -118,7 +116,6 @@ public final class GetMysqlBackupsBackup {
      * 
      */
     private String softDelete;
-    private List<GetMysqlBackupsBackupSourceDetail> sourceDetails;
     /**
      * @return Backup Lifecycle State
      * 
@@ -140,12 +137,19 @@ public final class GetMysqlBackupsBackup {
      */
     private String timeCreated;
     /**
-     * @return The time at which the backup was updated.
+     * @return The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
      * 
      */
-    private String timeUpdated;
+    private String validationStatus;
 
     private GetMysqlBackupsBackup() {}
+    /**
+     * @return Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+     * 
+     */
+    public String backupPreparationStatus() {
+        return this.backupPreparationStatus;
+    }
     /**
      * @return The size of the backup in base-2 (IEC) gibibytes. (GiB).
      * 
@@ -190,13 +194,6 @@ public final class GetMysqlBackupsBackup {
     }
     public List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries() {
         return this.dbSystemSnapshotSummaries;
-    }
-    /**
-     * @return Snapshot of the DbSystem details at the time of the backup
-     * 
-     */
-    public List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots() {
-        return this.dbSystemSnapshots;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -289,9 +286,6 @@ public final class GetMysqlBackupsBackup {
     public String softDelete() {
         return this.softDelete;
     }
-    public List<GetMysqlBackupsBackupSourceDetail> sourceDetails() {
-        return this.sourceDetails;
-    }
     /**
      * @return Backup Lifecycle State
      * 
@@ -321,11 +315,11 @@ public final class GetMysqlBackupsBackup {
         return this.timeCreated;
     }
     /**
-     * @return The time at which the backup was updated.
+     * @return The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
      * 
      */
-    public String timeUpdated() {
-        return this.timeUpdated;
+    public String validationStatus() {
+        return this.validationStatus;
     }
 
     public static Builder builder() {
@@ -337,6 +331,7 @@ public final class GetMysqlBackupsBackup {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String backupPreparationStatus;
         private Integer backupSizeInGbs;
         private String backupType;
         private String compartmentId;
@@ -344,7 +339,6 @@ public final class GetMysqlBackupsBackup {
         private Integer dataStorageSizeInGb;
         private String dbSystemId;
         private List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries;
-        private List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots;
         private Map<String,String> definedTags;
         private String description;
         private String displayName;
@@ -358,15 +352,15 @@ public final class GetMysqlBackupsBackup {
         private Integer retentionInDays;
         private String shapeName;
         private String softDelete;
-        private List<GetMysqlBackupsBackupSourceDetail> sourceDetails;
         private String state;
         private Map<String,String> systemTags;
         private String timeCopyCreated;
         private String timeCreated;
-        private String timeUpdated;
+        private String validationStatus;
         public Builder() {}
         public Builder(GetMysqlBackupsBackup defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.backupPreparationStatus = defaults.backupPreparationStatus;
     	      this.backupSizeInGbs = defaults.backupSizeInGbs;
     	      this.backupType = defaults.backupType;
     	      this.compartmentId = defaults.compartmentId;
@@ -374,7 +368,6 @@ public final class GetMysqlBackupsBackup {
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dbSystemId = defaults.dbSystemId;
     	      this.dbSystemSnapshotSummaries = defaults.dbSystemSnapshotSummaries;
-    	      this.dbSystemSnapshots = defaults.dbSystemSnapshots;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
@@ -388,14 +381,21 @@ public final class GetMysqlBackupsBackup {
     	      this.retentionInDays = defaults.retentionInDays;
     	      this.shapeName = defaults.shapeName;
     	      this.softDelete = defaults.softDelete;
-    	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCopyCreated = defaults.timeCopyCreated;
     	      this.timeCreated = defaults.timeCreated;
-    	      this.timeUpdated = defaults.timeUpdated;
+    	      this.validationStatus = defaults.validationStatus;
         }
 
+        @CustomType.Setter
+        public Builder backupPreparationStatus(String backupPreparationStatus) {
+            if (backupPreparationStatus == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "backupPreparationStatus");
+            }
+            this.backupPreparationStatus = backupPreparationStatus;
+            return this;
+        }
         @CustomType.Setter
         public Builder backupSizeInGbs(Integer backupSizeInGbs) {
             if (backupSizeInGbs == null) {
@@ -454,17 +454,6 @@ public final class GetMysqlBackupsBackup {
         }
         public Builder dbSystemSnapshotSummaries(GetMysqlBackupsBackupDbSystemSnapshotSummary... dbSystemSnapshotSummaries) {
             return dbSystemSnapshotSummaries(List.of(dbSystemSnapshotSummaries));
-        }
-        @CustomType.Setter
-        public Builder dbSystemSnapshots(List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots) {
-            if (dbSystemSnapshots == null) {
-              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dbSystemSnapshots");
-            }
-            this.dbSystemSnapshots = dbSystemSnapshots;
-            return this;
-        }
-        public Builder dbSystemSnapshots(GetMysqlBackupsBackupDbSystemSnapshot... dbSystemSnapshots) {
-            return dbSystemSnapshots(List.of(dbSystemSnapshots));
         }
         @CustomType.Setter
         public Builder definedTags(Map<String,String> definedTags) {
@@ -574,17 +563,6 @@ public final class GetMysqlBackupsBackup {
             return this;
         }
         @CustomType.Setter
-        public Builder sourceDetails(List<GetMysqlBackupsBackupSourceDetail> sourceDetails) {
-            if (sourceDetails == null) {
-              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "sourceDetails");
-            }
-            this.sourceDetails = sourceDetails;
-            return this;
-        }
-        public Builder sourceDetails(GetMysqlBackupsBackupSourceDetail... sourceDetails) {
-            return sourceDetails(List.of(sourceDetails));
-        }
-        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "state");
@@ -617,15 +595,16 @@ public final class GetMysqlBackupsBackup {
             return this;
         }
         @CustomType.Setter
-        public Builder timeUpdated(String timeUpdated) {
-            if (timeUpdated == null) {
-              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "timeUpdated");
+        public Builder validationStatus(String validationStatus) {
+            if (validationStatus == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "validationStatus");
             }
-            this.timeUpdated = timeUpdated;
+            this.validationStatus = validationStatus;
             return this;
         }
         public GetMysqlBackupsBackup build() {
             final var _resultValue = new GetMysqlBackupsBackup();
+            _resultValue.backupPreparationStatus = backupPreparationStatus;
             _resultValue.backupSizeInGbs = backupSizeInGbs;
             _resultValue.backupType = backupType;
             _resultValue.compartmentId = compartmentId;
@@ -633,7 +612,6 @@ public final class GetMysqlBackupsBackup {
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dbSystemId = dbSystemId;
             _resultValue.dbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
-            _resultValue.dbSystemSnapshots = dbSystemSnapshots;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
@@ -647,12 +625,11 @@ public final class GetMysqlBackupsBackup {
             _resultValue.retentionInDays = retentionInDays;
             _resultValue.shapeName = shapeName;
             _resultValue.softDelete = softDelete;
-            _resultValue.sourceDetails = sourceDetails;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCopyCreated = timeCopyCreated;
             _resultValue.timeCreated = timeCreated;
-            _resultValue.timeUpdated = timeUpdated;
+            _resultValue.validationStatus = validationStatus;
             return _resultValue;
         }
     }

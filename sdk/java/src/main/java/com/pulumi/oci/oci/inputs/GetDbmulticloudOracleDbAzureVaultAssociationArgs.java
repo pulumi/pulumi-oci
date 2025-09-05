@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationArgs extends com.
     public static final GetDbmulticloudOracleDbAzureVaultAssociationArgs Empty = new GetDbmulticloudOracleDbAzureVaultAssociationArgs();
 
     /**
-     * The ID of the Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     @Import(name="oracleDbAzureVaultAssociationId", required=true)
     private Output<String> oracleDbAzureVaultAssociationId;
 
     /**
-     * @return The ID of the Oracle DB Azure Vault Association Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> oracleDbAzureVaultAssociationId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationArgs extends com.
         }
 
         /**
-         * @param oracleDbAzureVaultAssociationId The ID of the Oracle DB Azure Vault Association Resource.
+         * @param oracleDbAzureVaultAssociationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationArgs extends com.
         }
 
         /**
-         * @param oracleDbAzureVaultAssociationId The ID of the Oracle DB Azure Vault Association Resource.
+         * @param oracleDbAzureVaultAssociationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 

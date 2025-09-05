@@ -69,6 +69,12 @@ namespace Pulumi.Oci.Mysql
         public Output<string> BackupType { get; private set; } = null!;
 
         /// <summary>
+        /// Backup validation details.
+        /// </summary>
+        [Output("backupValidationDetails")]
+        public Output<ImmutableArray<Outputs.MysqlBackupBackupValidationDetail>> BackupValidationDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The OCID of the compartment the backup exists in.
         /// </summary>
         [Output("compartmentId")]
@@ -209,6 +215,16 @@ namespace Pulumi.Oci.Mysql
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
+        [Output("validateBackupDetails")]
+        public Output<ImmutableArray<Outputs.MysqlBackupValidateBackupDetail>> ValidateBackupDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        /// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        /// </summary>
+        [Output("validateTrigger")]
+        public Output<int?> ValidateTrigger { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a MysqlBackup resource with the given unique name, arguments, and options.
@@ -341,6 +357,21 @@ namespace Pulumi.Oci.Mysql
         [Input("sourceDetails")]
         public Input<Inputs.MysqlBackupSourceDetailsArgs>? SourceDetails { get; set; }
 
+        [Input("validateBackupDetails")]
+        private InputList<Inputs.MysqlBackupValidateBackupDetailArgs>? _validateBackupDetails;
+        public InputList<Inputs.MysqlBackupValidateBackupDetailArgs> ValidateBackupDetails
+        {
+            get => _validateBackupDetails ?? (_validateBackupDetails = new InputList<Inputs.MysqlBackupValidateBackupDetailArgs>());
+            set => _validateBackupDetails = value;
+        }
+
+        /// <summary>
+        /// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        /// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        /// </summary>
+        [Input("validateTrigger")]
+        public Input<int>? ValidateTrigger { get; set; }
+
         public MysqlBackupArgs()
         {
         }
@@ -360,6 +391,18 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("backupType")]
         public Input<string>? BackupType { get; set; }
+
+        [Input("backupValidationDetails")]
+        private InputList<Inputs.MysqlBackupBackupValidationDetailGetArgs>? _backupValidationDetails;
+
+        /// <summary>
+        /// Backup validation details.
+        /// </summary>
+        public InputList<Inputs.MysqlBackupBackupValidationDetailGetArgs> BackupValidationDetails
+        {
+            get => _backupValidationDetails ?? (_backupValidationDetails = new InputList<Inputs.MysqlBackupBackupValidationDetailGetArgs>());
+            set => _backupValidationDetails = value;
+        }
 
         /// <summary>
         /// (Updatable) The OCID of the compartment the backup exists in.
@@ -530,6 +573,21 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        [Input("validateBackupDetails")]
+        private InputList<Inputs.MysqlBackupValidateBackupDetailGetArgs>? _validateBackupDetails;
+        public InputList<Inputs.MysqlBackupValidateBackupDetailGetArgs> ValidateBackupDetails
+        {
+            get => _validateBackupDetails ?? (_validateBackupDetails = new InputList<Inputs.MysqlBackupValidateBackupDetailGetArgs>());
+            set => _validateBackupDetails = value;
+        }
+
+        /// <summary>
+        /// (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+        /// * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+        /// </summary>
+        [Input("validateTrigger")]
+        public Input<int>? ValidateTrigger { get; set; }
 
         public MysqlBackupState()
         {

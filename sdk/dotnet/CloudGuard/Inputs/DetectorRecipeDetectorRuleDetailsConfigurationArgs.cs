@@ -12,6 +12,36 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
     public sealed class DetectorRecipeDetectorRuleDetailsConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        [Input("additionalProperties")]
+        private InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs>? _additionalProperties;
+
+        /// <summary>
+        /// (Updatable) Map of additional property values for configuration
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs> AdditionalProperties
+        {
+            get => _additionalProperties ?? (_additionalProperties = new InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs>());
+            set => _additionalProperties = value;
+        }
+
+        [Input("allowedValues")]
+        private InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs>? _allowedValues;
+
+        /// <summary>
+        /// (Updatable) Map of possible values for configuration
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs> AllowedValues
+        {
+            get => _allowedValues ?? (_allowedValues = new InputList<Inputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs>());
+            set => _allowedValues = value;
+        }
+
+        /// <summary>
+        /// (Updatable) Map property Value data type
+        /// </summary>
+        [Input("allowedValuesDataType")]
+        public Input<string>? AllowedValuesDataType { get; set; }
+
         /// <summary>
         /// (Updatable) Unique identifier of the configuration
         /// </summary>

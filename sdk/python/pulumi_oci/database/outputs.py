@@ -5401,10 +5401,14 @@ class AutonomousDatabaseResourcePoolSummary(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "isDisabled":
+        if key == "availableComputeCapacity":
+            suggest = "available_compute_capacity"
+        elif key == "isDisabled":
             suggest = "is_disabled"
         elif key == "poolSize":
             suggest = "pool_size"
+        elif key == "totalComputeCapacity":
+            suggest = "total_compute_capacity"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabaseResourcePoolSummary. Access the value via the '{suggest}' property getter instead.")
@@ -5418,16 +5422,32 @@ class AutonomousDatabaseResourcePoolSummary(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 available_compute_capacity: Optional[_builtins.int] = None,
                  is_disabled: Optional[_builtins.bool] = None,
-                 pool_size: Optional[_builtins.int] = None):
+                 pool_size: Optional[_builtins.int] = None,
+                 total_compute_capacity: Optional[_builtins.int] = None):
         """
+        :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
         :param _builtins.bool is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: (Updatable) Resource pool size.
+        :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
+        if available_compute_capacity is not None:
+            pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if pool_size is not None:
             pulumi.set(__self__, "pool_size", pool_size)
+        if total_compute_capacity is not None:
+            pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
+
+    @_builtins.property
+    @pulumi.getter(name="availableComputeCapacity")
+    def available_compute_capacity(self) -> Optional[_builtins.int]:
+        """
+        Available capacity left for new elastic pool members provision
+        """
+        return pulumi.get(self, "available_compute_capacity")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -5444,6 +5464,14 @@ class AutonomousDatabaseResourcePoolSummary(dict):
         (Updatable) Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="totalComputeCapacity")
+    def total_compute_capacity(self) -> Optional[_builtins.int]:
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
+        return pulumi.get(self, "total_compute_capacity")
 
 
 @pulumi.output_type
@@ -24700,14 +24728,28 @@ class GetAutonomousDatabaseResourcePoolMembersResourcePoolMemberCollectionItemRe
 @pulumi.output_type
 class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
+                 available_compute_capacity: _builtins.int,
                  is_disabled: _builtins.bool,
-                 pool_size: _builtins.int):
+                 pool_size: _builtins.int,
+                 total_compute_capacity: _builtins.int):
         """
+        :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
         :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
+        pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
+
+    @_builtins.property
+    @pulumi.getter(name="availableComputeCapacity")
+    def available_compute_capacity(self) -> _builtins.int:
+        """
+        Available capacity left for new elastic pool members provision
+        """
+        return pulumi.get(self, "available_compute_capacity")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -24724,6 +24766,14 @@ class GetAutonomousDatabaseResourcePoolSummaryResult(dict):
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="totalComputeCapacity")
+    def total_compute_capacity(self) -> _builtins.int:
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
+        return pulumi.get(self, "total_compute_capacity")
 
 
 @pulumi.output_type
@@ -27807,14 +27857,28 @@ class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfiguratio
 @pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
+                 available_compute_capacity: _builtins.int,
                  is_disabled: _builtins.bool,
-                 pool_size: _builtins.int):
+                 pool_size: _builtins.int,
+                 total_compute_capacity: _builtins.int):
         """
+        :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
         :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
+        pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
+
+    @_builtins.property
+    @pulumi.getter(name="availableComputeCapacity")
+    def available_compute_capacity(self) -> _builtins.int:
+        """
+        Available capacity left for new elastic pool members provision
+        """
+        return pulumi.get(self, "available_compute_capacity")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -27831,6 +27895,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult(dict):
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="totalComputeCapacity")
+    def total_compute_capacity(self) -> _builtins.int:
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
+        return pulumi.get(self, "total_compute_capacity")
 
 
 @pulumi.output_type
@@ -30533,14 +30605,28 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
 @pulumi.output_type
 class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(dict):
     def __init__(__self__, *,
+                 available_compute_capacity: _builtins.int,
                  is_disabled: _builtins.bool,
-                 pool_size: _builtins.int):
+                 pool_size: _builtins.int,
+                 total_compute_capacity: _builtins.int):
         """
+        :param _builtins.int available_compute_capacity: Available capacity left for new elastic pool members provision
         :param _builtins.bool is_disabled: Indicates if the resource pool should be deleted for the Autonomous Database.
         :param _builtins.int pool_size: Resource pool size.
+        :param _builtins.int total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
+        pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
         pulumi.set(__self__, "is_disabled", is_disabled)
         pulumi.set(__self__, "pool_size", pool_size)
+        pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
+
+    @_builtins.property
+    @pulumi.getter(name="availableComputeCapacity")
+    def available_compute_capacity(self) -> _builtins.int:
+        """
+        Available capacity left for new elastic pool members provision
+        """
+        return pulumi.get(self, "available_compute_capacity")
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -30557,6 +30643,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult(di
         Resource pool size.
         """
         return pulumi.get(self, "pool_size")
+
+    @_builtins.property
+    @pulumi.getter(name="totalComputeCapacity")
+    def total_compute_capacity(self) -> _builtins.int:
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
+        return pulumi.get(self, "total_compute_capacity")
 
 
 @pulumi.output_type
@@ -52411,6 +52505,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
     def __init__(__self__, *,
                  additional_flash_cache_in_percent: _builtins.int,
                  attached_shape_attributes: Sequence[_builtins.str],
+                 autoscale_limit_in_gbs: _builtins.int,
                  availability_domain: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
@@ -52421,6 +52516,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  high_capacity_database_storages: Sequence['outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult'],
                  id: _builtins.str,
+                 is_autoscale_enabled: _builtins.bool,
                  lifecycle_details: _builtins.str,
                  state: _builtins.str,
                  subscription_id: _builtins.str,
@@ -52432,6 +52528,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         """
         :param _builtins.int additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
         :param Sequence[_builtins.str] attached_shape_attributes: A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
+        :param _builtins.int autoscale_limit_in_gbs: Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
         :param _builtins.str availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
         :param _builtins.str cluster_placement_group_id: A filter to return only resources that match the given cluster placement group ID exactly.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -52442,6 +52539,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param Sequence['GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storages: Exadata Database Storage Details
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        :param _builtins.bool is_autoscale_enabled: Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
         :param _builtins.str lifecycle_details: Additional information about the current lifecycle state.
         :param _builtins.str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -52453,6 +52551,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         """
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
         pulumi.set(__self__, "attached_shape_attributes", attached_shape_attributes)
+        pulumi.set(__self__, "autoscale_limit_in_gbs", autoscale_limit_in_gbs)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -52463,6 +52562,7 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "high_capacity_database_storages", high_capacity_database_storages)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_autoscale_enabled", is_autoscale_enabled)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -52487,6 +52587,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
         """
         return pulumi.get(self, "attached_shape_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="autoscaleLimitInGbs")
+    def autoscale_limit_in_gbs(self) -> _builtins.int:
+        """
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        """
+        return pulumi.get(self, "autoscale_limit_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -52567,6 +52675,14 @@ class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isAutoscaleEnabled")
+    def is_autoscale_enabled(self) -> _builtins.bool:
+        """
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_autoscale_enabled")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")

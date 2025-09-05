@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureVaultsResult {
     /**
-     * @return The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Display name of DB Azure Vault.
+     * @return Oracle DB Azure Vault resource name.
      * 
      */
     private @Nullable String displayName;
@@ -33,7 +33,7 @@ public final class GetDbmulticloudOracleDbAzureVaultsResult {
     private String id;
     private @Nullable String oracleDbAzureConnectorId;
     /**
-     * @return Display name of Azure Resource Group.
+     * @return Oracle DB Azure resource group name.
      * 
      */
     private @Nullable String oracleDbAzureResourceGroup;
@@ -44,21 +44,21 @@ public final class GetDbmulticloudOracleDbAzureVaultsResult {
      */
     private List<GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollection> oracleDbAzureVaultSummaryCollections;
     /**
-     * @return The lifecycle state of the DB Azure Vault Resource.
+     * @return The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureVaultsResult() {}
     /**
-     * @return The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Display name of DB Azure Vault.
+     * @return Oracle DB Azure Vault resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -78,7 +78,7 @@ public final class GetDbmulticloudOracleDbAzureVaultsResult {
         return Optional.ofNullable(this.oracleDbAzureConnectorId);
     }
     /**
-     * @return Display name of Azure Resource Group.
+     * @return Oracle DB Azure resource group name.
      * 
      */
     public Optional<String> oracleDbAzureResourceGroup() {
@@ -95,7 +95,7 @@ public final class GetDbmulticloudOracleDbAzureVaultsResult {
         return this.oracleDbAzureVaultSummaryCollections;
     }
     /**
-     * @return The lifecycle state of the DB Azure Vault Resource.
+     * @return The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
     public Optional<String> state() {

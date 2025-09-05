@@ -27,6 +27,7 @@ public final class GetModelTrainingDataset {
     private String datasetType;
     /**
      * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     private String namespaceName;
@@ -60,6 +61,7 @@ public final class GetModelTrainingDataset {
     }
     /**
      * @return The namespace name of the ObjectStorage bucket that contains the input data file.
+     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
      * 
      */
     public String namespaceName() {

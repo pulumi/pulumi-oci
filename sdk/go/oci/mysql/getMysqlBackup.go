@@ -63,6 +63,8 @@ type LookupMysqlBackupResult struct {
 	BackupSizeInGbs int `pulumi:"backupSizeInGbs"`
 	// The type of backup.
 	BackupType string `pulumi:"backupType"`
+	// Backup validation details.
+	BackupValidationDetails []GetMysqlBackupBackupValidationDetail `pulumi:"backupValidationDetails"`
 	// The OCID of the compartment the DB System belongs in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Indicates how the backup was created: manually, automatic, or by an Operator.
@@ -110,7 +112,9 @@ type LookupMysqlBackupResult struct {
 	// The time the backup record was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated           string                               `pulumi:"timeUpdated"`
+	ValidateBackupDetails []GetMysqlBackupValidateBackupDetail `pulumi:"validateBackupDetails"`
+	ValidateTrigger       int                                  `pulumi:"validateTrigger"`
 }
 
 func LookupMysqlBackupOutput(ctx *pulumi.Context, args LookupMysqlBackupOutputArgs, opts ...pulumi.InvokeOption) LookupMysqlBackupResultOutput {
@@ -159,6 +163,13 @@ func (o LookupMysqlBackupResultOutput) BackupSizeInGbs() pulumi.IntOutput {
 // The type of backup.
 func (o LookupMysqlBackupResultOutput) BackupType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.BackupType }).(pulumi.StringOutput)
+}
+
+// Backup validation details.
+func (o LookupMysqlBackupResultOutput) BackupValidationDetails() GetMysqlBackupBackupValidationDetailArrayOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupBackupValidationDetail {
+		return v.BackupValidationDetails
+	}).(GetMysqlBackupBackupValidationDetailArrayOutput)
 }
 
 // The OCID of the compartment the DB System belongs in.
@@ -284,6 +295,14 @@ func (o LookupMysqlBackupResultOutput) TimeCreated() pulumi.StringOutput {
 // The time at which the backup was updated.
 func (o LookupMysqlBackupResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o LookupMysqlBackupResultOutput) ValidateBackupDetails() GetMysqlBackupValidateBackupDetailArrayOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupValidateBackupDetail { return v.ValidateBackupDetails }).(GetMysqlBackupValidateBackupDetailArrayOutput)
+}
+
+func (o LookupMysqlBackupResultOutput) ValidateTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) int { return v.ValidateTrigger }).(pulumi.IntOutput)
 }
 
 func init() {

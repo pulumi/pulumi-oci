@@ -33,14 +33,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
      * 
      */
     public Optional<String> displayName() {
@@ -55,14 +55,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     @Import(name="oracleDbAzureBlobContainerId")
     private @Nullable String oracleDbAzureBlobContainerId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Blob Container resource.
      * 
      */
     public Optional<String> oracleDbAzureBlobContainerId() {
@@ -70,14 +70,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
     }
 
     /**
-     * ID of Oracle DB Azure Blob Mount Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     @Import(name="oracleDbAzureBlobMountId")
     private @Nullable String oracleDbAzureBlobMountId;
 
     /**
-     * @return ID of Oracle DB Azure Blob Mount Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public Optional<String> oracleDbAzureBlobMountId() {
@@ -85,14 +85,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     @Import(name="oracleDbAzureConnectorId")
     private @Nullable String oracleDbAzureConnectorId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public Optional<String> oracleDbAzureConnectorId() {
@@ -156,7 +156,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
         }
 
         /**
-         * @param displayName A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param displayName A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
         }
 
         /**
-         * @param oracleDbAzureBlobContainerId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureBlobContainerId A filter to return Oracle DB Azure Blob Container resource.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
         }
 
         /**
-         * @param oracleDbAzureBlobMountId ID of Oracle DB Azure Blob Mount Resource.
+         * @param oracleDbAzureBlobMountId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsPlainArgs extends com.p
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 

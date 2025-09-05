@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Connector Resource based on filters.
+        /// Lists all Oracle DB Azure Connector resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Connector Resource based on filters.
+        /// Lists all Oracle DB Azure Connector resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Connector Resource based on filters.
+        /// Lists all Oracle DB Azure Connector resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -115,13 +115,13 @@ namespace Pulumi.Oci.Oci
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
         /// </summary>
         [Input("dbClusterResourceId")]
         public string? DbClusterResourceId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        /// A filter to return Oracle DB Azure Connector resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public string? OracleDbAzureConnectorId { get; set; }
@@ -161,13 +161,13 @@ namespace Pulumi.Oci.Oci
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        /// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
         /// </summary>
         [Input("dbClusterResourceId")]
         public Input<string>? DbClusterResourceId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        /// A filter to return Oracle DB Azure Connector resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public Input<string>? OracleDbAzureConnectorId { get; set; }
@@ -203,11 +203,11 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureConnectorsResult
     {
         /// <summary>
-        /// The ID of the compartment that contains Oracle DB Azure Connector resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
         /// </summary>
         public readonly string? DbClusterResourceId;
         /// <summary>
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionResult> OracleDbAzureConnectorSummaryCollections;
         /// <summary>
-        /// The current lifecycle state of the Azure Arc Agent Resource.
+        /// The current lifecycle state of the Azure Arc Agent resource.
         /// </summary>
         public readonly string? State;
 

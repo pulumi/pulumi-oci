@@ -5,10 +5,12 @@ package com.pulumi.oci.Mysql.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupBackupValidationDetail;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshot;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupDbSystemSnapshotSummary;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupEncryptData;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupSourceDetail;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupValidateBackupDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -28,6 +30,11 @@ public final class GetMysqlBackupResult {
      * 
      */
     private String backupType;
+    /**
+     * @return Backup validation details.
+     * 
+     */
+    private List<GetMysqlBackupBackupValidationDetail> backupValidationDetails;
     /**
      * @return The OCID of the compartment the DB System belongs in.
      * 
@@ -145,6 +152,8 @@ public final class GetMysqlBackupResult {
      * 
      */
     private String timeUpdated;
+    private List<GetMysqlBackupValidateBackupDetail> validateBackupDetails;
+    private Integer validateTrigger;
 
     private GetMysqlBackupResult() {}
     public String backupId() {
@@ -163,6 +172,13 @@ public final class GetMysqlBackupResult {
      */
     public String backupType() {
         return this.backupType;
+    }
+    /**
+     * @return Backup validation details.
+     * 
+     */
+    public List<GetMysqlBackupBackupValidationDetail> backupValidationDetails() {
+        return this.backupValidationDetails;
     }
     /**
      * @return The OCID of the compartment the DB System belongs in.
@@ -331,6 +347,12 @@ public final class GetMysqlBackupResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    public List<GetMysqlBackupValidateBackupDetail> validateBackupDetails() {
+        return this.validateBackupDetails;
+    }
+    public Integer validateTrigger() {
+        return this.validateTrigger;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -344,6 +366,7 @@ public final class GetMysqlBackupResult {
         private String backupId;
         private Integer backupSizeInGbs;
         private String backupType;
+        private List<GetMysqlBackupBackupValidationDetail> backupValidationDetails;
         private String compartmentId;
         private String creationType;
         private Integer dataStorageSizeInGb;
@@ -369,12 +392,15 @@ public final class GetMysqlBackupResult {
         private String timeCopyCreated;
         private String timeCreated;
         private String timeUpdated;
+        private List<GetMysqlBackupValidateBackupDetail> validateBackupDetails;
+        private Integer validateTrigger;
         public Builder() {}
         public Builder(GetMysqlBackupResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.backupId = defaults.backupId;
     	      this.backupSizeInGbs = defaults.backupSizeInGbs;
     	      this.backupType = defaults.backupType;
+    	      this.backupValidationDetails = defaults.backupValidationDetails;
     	      this.compartmentId = defaults.compartmentId;
     	      this.creationType = defaults.creationType;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
@@ -400,6 +426,8 @@ public final class GetMysqlBackupResult {
     	      this.timeCopyCreated = defaults.timeCopyCreated;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.validateBackupDetails = defaults.validateBackupDetails;
+    	      this.validateTrigger = defaults.validateTrigger;
         }
 
         @CustomType.Setter
@@ -425,6 +453,17 @@ public final class GetMysqlBackupResult {
             }
             this.backupType = backupType;
             return this;
+        }
+        @CustomType.Setter
+        public Builder backupValidationDetails(List<GetMysqlBackupBackupValidationDetail> backupValidationDetails) {
+            if (backupValidationDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "backupValidationDetails");
+            }
+            this.backupValidationDetails = backupValidationDetails;
+            return this;
+        }
+        public Builder backupValidationDetails(GetMysqlBackupBackupValidationDetail... backupValidationDetails) {
+            return backupValidationDetails(List.of(backupValidationDetails));
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -638,11 +677,31 @@ public final class GetMysqlBackupResult {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder validateBackupDetails(List<GetMysqlBackupValidateBackupDetail> validateBackupDetails) {
+            if (validateBackupDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "validateBackupDetails");
+            }
+            this.validateBackupDetails = validateBackupDetails;
+            return this;
+        }
+        public Builder validateBackupDetails(GetMysqlBackupValidateBackupDetail... validateBackupDetails) {
+            return validateBackupDetails(List.of(validateBackupDetails));
+        }
+        @CustomType.Setter
+        public Builder validateTrigger(Integer validateTrigger) {
+            if (validateTrigger == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupResult", "validateTrigger");
+            }
+            this.validateTrigger = validateTrigger;
+            return this;
+        }
         public GetMysqlBackupResult build() {
             final var _resultValue = new GetMysqlBackupResult();
             _resultValue.backupId = backupId;
             _resultValue.backupSizeInGbs = backupSizeInGbs;
             _resultValue.backupType = backupType;
+            _resultValue.backupValidationDetails = backupValidationDetails;
             _resultValue.compartmentId = compartmentId;
             _resultValue.creationType = creationType;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
@@ -668,6 +727,8 @@ public final class GetMysqlBackupResult {
             _resultValue.timeCopyCreated = timeCopyCreated;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.validateBackupDetails = validateBackupDetails;
+            _resultValue.validateTrigger = validateTrigger;
             return _resultValue;
         }
     }

@@ -52,6 +52,10 @@ export interface GetExascaleDbStorageVaultResult {
      */
     readonly attachedShapeAttributes: string[];
     /**
+     * Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     */
+    readonly autoscaleLimitInGbs: number;
+    /**
      * The name of the availability domain in which the Exadata Database Storage Vault is located.
      */
     readonly availabilityDomain: string;
@@ -92,6 +96,10 @@ export interface GetExascaleDbStorageVaultResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
      */
     readonly id: string;
+    /**
+     * Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     */
+    readonly isAutoscaleEnabled: boolean;
     /**
      * Additional information about the current lifecycle state.
      */

@@ -17,14 +17,14 @@ public final class DbmulticloudMultiCloudResourceDiscoveryResourceArgs extends c
     public static final DbmulticloudMultiCloudResourceDiscoveryResourceArgs Empty = new DbmulticloudMultiCloudResourceDiscoveryResourceArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * The ID of the Discovered Resource.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     public Optional<Output<String>> id() {
@@ -136,7 +136,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryResourceArgs extends c
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+         * @param id The ID of the Discovered Resource.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class DbmulticloudMultiCloudResourceDiscoveryResourceArgs extends c
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+         * @param id The ID of the Discovered Resource.
          * 
          * @return builder
          * 

@@ -14,8 +14,7 @@ import (
 
 // This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Creates Oracle DB Azure Blob Mount resource and mounts Azure Container in Oracle Cloud Infrastructure Database Resource,
-// based on provided Azure Container details and Database Resource ID.
+// Creates Oracle DB Azure Blob Mount resource.
 //
 // ## Example Usage
 //
@@ -62,28 +61,28 @@ import (
 type DbmulticloudOracleDbAzureBlobMount struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) Oracle DB Azure Blob Mount Resource name.
+	// (Updatable) Oracle DB Azure Blob Mount resource name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 	LastModification pulumi.StringOutput `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
-	// Azure Container mount path.
+	// Oracle DB Azure Blob Mount path.
 	MountPath pulumi.StringOutput `pulumi:"mountPath"`
-	// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 	OracleDbAzureBlobContainerId pulumi.StringOutput `pulumi:"oracleDbAzureBlobContainerId"`
-	// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OracleDbAzureConnectorId pulumi.StringOutput `pulumi:"oracleDbAzureConnectorId"`
-	// The current lifecycle state of the Azure Arc Agent Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
@@ -135,28 +134,28 @@ func GetDbmulticloudOracleDbAzureBlobMount(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbAzureBlobMount resources.
 type dbmulticloudOracleDbAzureBlobMountState struct {
-	// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Oracle DB Azure Blob Mount Resource name.
+	// (Updatable) Oracle DB Azure Blob Mount resource name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 	LastModification *string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
-	// Azure Container mount path.
+	// Oracle DB Azure Blob Mount path.
 	MountPath *string `pulumi:"mountPath"`
-	// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 	OracleDbAzureBlobContainerId *string `pulumi:"oracleDbAzureBlobContainerId"`
-	// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
-	// The current lifecycle state of the Azure Arc Agent Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -167,28 +166,28 @@ type dbmulticloudOracleDbAzureBlobMountState struct {
 }
 
 type DbmulticloudOracleDbAzureBlobMountState struct {
-	// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Oracle DB Azure Blob Mount Resource name.
+	// (Updatable) Oracle DB Azure Blob Mount resource name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 	LastModification pulumi.StringPtrInput
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringPtrInput
-	// Azure Container mount path.
+	// Oracle DB Azure Blob Mount path.
 	MountPath pulumi.StringPtrInput
-	// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 	OracleDbAzureBlobContainerId pulumi.StringPtrInput
-	// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	OracleDbAzureConnectorId pulumi.StringPtrInput
-	// The current lifecycle state of the Azure Arc Agent Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
@@ -203,17 +202,17 @@ func (DbmulticloudOracleDbAzureBlobMountState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbAzureBlobMountArgs struct {
-	// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Oracle DB Azure Blob Mount Resource name.
+	// (Updatable) Oracle DB Azure Blob Mount resource name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 	OracleDbAzureBlobContainerId string `pulumi:"oracleDbAzureBlobContainerId"`
-	// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -222,17 +221,17 @@ type dbmulticloudOracleDbAzureBlobMountArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbAzureBlobMount resource.
 type DbmulticloudOracleDbAzureBlobMountArgs struct {
-	// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Oracle DB Azure Blob Mount Resource name.
+	// (Updatable) Oracle DB Azure Blob Mount resource name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 	OracleDbAzureBlobContainerId pulumi.StringInput
-	// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -326,7 +325,7 @@ func (o DbmulticloudOracleDbAzureBlobMountOutput) ToDbmulticloudOracleDbAzureBlo
 	return o
 }
 
-// (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -336,7 +335,7 @@ func (o DbmulticloudOracleDbAzureBlobMountOutput) DefinedTags() pulumi.StringMap
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Oracle DB Azure Blob Mount Resource name.
+// (Updatable) Oracle DB Azure Blob Mount resource name.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -346,7 +345,7 @@ func (o DbmulticloudOracleDbAzureBlobMountOutput) FreeformTags() pulumi.StringMa
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -356,17 +355,17 @@ func (o DbmulticloudOracleDbAzureBlobMountOutput) LifecycleStateDetails() pulumi
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// Azure Container mount path.
+// Oracle DB Azure Blob Mount path.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) MountPath() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.MountPath }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) OracleDbAzureBlobContainerId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.OracleDbAzureBlobContainerId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -374,7 +373,7 @@ func (o DbmulticloudOracleDbAzureBlobMountOutput) OracleDbAzureConnectorId() pul
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.OracleDbAzureConnectorId }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the Azure Arc Agent Resource.
+// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
 func (o DbmulticloudOracleDbAzureBlobMountOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobMount) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

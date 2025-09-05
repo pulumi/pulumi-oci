@@ -6667,6 +6667,10 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
 
 if not MYPY:
     class AutonomousDatabaseResourcePoolSummaryArgsDict(TypedDict):
+        available_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Available capacity left for new elastic pool members provision
+        """
         is_disabled: NotRequired[pulumi.Input[_builtins.bool]]
         """
         (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
@@ -6675,22 +6679,46 @@ if not MYPY:
         """
         (Updatable) Resource pool size.
         """
+        total_compute_capacity: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
 elif False:
     AutonomousDatabaseResourcePoolSummaryArgsDict: TypeAlias = Mapping[str, Any]
 
 @pulumi.input_type
 class AutonomousDatabaseResourcePoolSummaryArgs:
     def __init__(__self__, *,
+                 available_compute_capacity: Optional[pulumi.Input[_builtins.int]] = None,
                  is_disabled: Optional[pulumi.Input[_builtins.bool]] = None,
-                 pool_size: Optional[pulumi.Input[_builtins.int]] = None):
+                 pool_size: Optional[pulumi.Input[_builtins.int]] = None,
+                 total_compute_capacity: Optional[pulumi.Input[_builtins.int]] = None):
         """
+        :param pulumi.Input[_builtins.int] available_compute_capacity: Available capacity left for new elastic pool members provision
         :param pulumi.Input[_builtins.bool] is_disabled: (Updatable) Indicates if the resource pool should be deleted for the Autonomous Database.
         :param pulumi.Input[_builtins.int] pool_size: (Updatable) Resource pool size.
+        :param pulumi.Input[_builtins.int] total_compute_capacity: Resource Pool total capacity, it's currently 4x of pool size
         """
+        if available_compute_capacity is not None:
+            pulumi.set(__self__, "available_compute_capacity", available_compute_capacity)
         if is_disabled is not None:
             pulumi.set(__self__, "is_disabled", is_disabled)
         if pool_size is not None:
             pulumi.set(__self__, "pool_size", pool_size)
+        if total_compute_capacity is not None:
+            pulumi.set(__self__, "total_compute_capacity", total_compute_capacity)
+
+    @_builtins.property
+    @pulumi.getter(name="availableComputeCapacity")
+    def available_compute_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Available capacity left for new elastic pool members provision
+        """
+        return pulumi.get(self, "available_compute_capacity")
+
+    @available_compute_capacity.setter
+    def available_compute_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "available_compute_capacity", value)
 
     @_builtins.property
     @pulumi.getter(name="isDisabled")
@@ -6715,6 +6743,18 @@ class AutonomousDatabaseResourcePoolSummaryArgs:
     @pool_size.setter
     def pool_size(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "pool_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalComputeCapacity")
+    def total_compute_capacity(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        Resource Pool total capacity, it's currently 4x of pool size
+        """
+        return pulumi.get(self, "total_compute_capacity")
+
+    @total_compute_capacity.setter
+    def total_compute_capacity(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "total_compute_capacity", value)
 
 
 if not MYPY:

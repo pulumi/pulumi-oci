@@ -53,6 +53,10 @@ export interface GetMysqlBackupResult {
      */
     readonly backupType: string;
     /**
+     * Backup validation details.
+     */
+    readonly backupValidationDetails: outputs.Mysql.GetMysqlBackupBackupValidationDetail[];
+    /**
      * The OCID of the compartment the DB System belongs in.
      */
     readonly compartmentId: string;
@@ -146,6 +150,8 @@ export interface GetMysqlBackupResult {
      * The time at which the backup was updated.
      */
     readonly timeUpdated: string;
+    readonly validateBackupDetails: outputs.Mysql.GetMysqlBackupValidateBackupDetail[];
+    readonly validateTrigger: number;
 }
 /**
  * This data source provides details about a specific Mysql Backup resource in Oracle Cloud Infrastructure MySQL Database service.

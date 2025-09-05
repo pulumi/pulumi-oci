@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AiVision.Outputs
     public sealed class GetModelsModelCollectionItemResult
     {
         /// <summary>
-        /// Average precision of the trained model
+        /// The mean average precision of the trained model.
         /// </summary>
         public readonly double AveragePrecision;
         /// <summary>
@@ -22,15 +22,15 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Confidence ratio of the calculation
+        /// The intersection over the union threshold used for calculating precision and recall.
         /// </summary>
         public readonly double ConfidenceThreshold;
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A short description of the model.
+        /// An optional description of the model.
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -38,39 +38,39 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// unique Model identifier
+        /// The filter to find the model with the given identifier.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// If It's true, Training is set for recommended epochs needed for quick training.
+        /// Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         public readonly bool IsQuickMode;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The maximum duration in hours for which the training will run.
+        /// The maximum model training duration in hours, expressed as a decimal fraction.
         /// </summary>
         public readonly double MaxTrainingDurationInHours;
         /// <summary>
-        /// Complete Training Metrics for successful trained model
+        /// The complete set of per-label metrics for successfully trained models.
         /// </summary>
         public readonly string Metrics;
         /// <summary>
-        /// Type of the Model.
+        /// What type of Vision model this is.
         /// </summary>
         public readonly string ModelType;
         /// <summary>
-        /// The version of the model
+        /// The version of the model.
         /// </summary>
         public readonly string ModelVersion;
         /// <summary>
-        /// Precision of the trained model
+        /// The precision of the trained model.
         /// </summary>
         public readonly double Precision;
         /// <summary>
@@ -78,47 +78,47 @@ namespace Pulumi.Oci.AiVision.Outputs
         /// </summary>
         public readonly string ProjectId;
         /// <summary>
-        /// Recall of the trained model
+        /// Recall of the trained model.
         /// </summary>
         public readonly double Recall;
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match models with the given lifecycleState.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
         /// <summary>
-        /// Total number of testing Images
+        /// The number of images set aside for evaluating model performance metrics after training.
         /// </summary>
         public readonly int TestImageCount;
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemTestingDatasetResult> TestingDatasets;
         /// <summary>
-        /// The time the Model was created. An RFC3339 formatted datetime string
+        /// When the model was created, as an RFC3339 datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time the Model was updated. An RFC3339 formatted datetime string
+        /// When the model was updated, as an RFC3339 datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
-        /// Total number of training Images
+        /// The number of images in the dataset used to train, validate, and test the model.
         /// </summary>
         public readonly int TotalImageCount;
         /// <summary>
-        /// Total hours actually used for training
+        /// The total hours actually used for model training.
         /// </summary>
         public readonly double TrainedDurationInHours;
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemTrainingDatasetResult> TrainingDatasets;
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionItemValidationDatasetResult> ValidationDatasets;
 

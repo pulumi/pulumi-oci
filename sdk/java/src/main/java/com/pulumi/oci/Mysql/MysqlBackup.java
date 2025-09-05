@@ -9,10 +9,12 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.MysqlBackupArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupState;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupBackupValidationDetail;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshot;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotSummary;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupEncryptData;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupSourceDetails;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupValidateBackupDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
@@ -106,6 +108,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> backupType() {
         return this.backupType;
+    }
+    /**
+     * Backup validation details.
+     * 
+     */
+    @Export(name="backupValidationDetails", refs={List.class,MysqlBackupBackupValidationDetail.class}, tree="[0,1]")
+    private Output<List<MysqlBackupBackupValidationDetail>> backupValidationDetails;
+
+    /**
+     * @return Backup validation details.
+     * 
+     */
+    public Output<List<MysqlBackupBackupValidationDetail>> backupValidationDetails() {
+        return this.backupValidationDetails;
     }
     /**
      * (Updatable) The OCID of the compartment the backup exists in.
@@ -434,6 +450,28 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
+    }
+    @Export(name="validateBackupDetails", refs={List.class,MysqlBackupValidateBackupDetail.class}, tree="[0,1]")
+    private Output</* @Nullable */ List<MysqlBackupValidateBackupDetail>> validateBackupDetails;
+
+    public Output<Optional<List<MysqlBackupValidateBackupDetail>>> validateBackupDetails() {
+        return Codegen.optional(this.validateBackupDetails);
+    }
+    /**
+     * (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     * 
+     */
+    @Export(name="validateTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> validateTrigger;
+
+    /**
+     * @return (Updatable) An optional integer property when incremented will trigger a validation of the backup. Set the integer to 1 initially and increment it by 1 to re-trigger validation.
+     * * `validate-backup-details` - Details required to validate backup. **Note:** Validate action can only be called from update resource operation.
+     * 
+     */
+    public Output<Optional<Integer>> validateTrigger() {
+        return Codegen.optional(this.validateTrigger);
     }
 
     /**

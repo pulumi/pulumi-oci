@@ -50,6 +50,16 @@ export type DbmulticloudOracleDbAzureVaultAssociation = import("./dbmulticloudOr
 export const DbmulticloudOracleDbAzureVaultAssociation: typeof import("./dbmulticloudOracleDbAzureVaultAssociation").DbmulticloudOracleDbAzureVaultAssociation = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudOracleDbAzureVaultAssociation"], () => require("./dbmulticloudOracleDbAzureVaultAssociation"));
 
+export { DbmulticloudOracleDbGcpIdentityConnectorArgs, DbmulticloudOracleDbGcpIdentityConnectorState } from "./dbmulticloudOracleDbGcpIdentityConnector";
+export type DbmulticloudOracleDbGcpIdentityConnector = import("./dbmulticloudOracleDbGcpIdentityConnector").DbmulticloudOracleDbGcpIdentityConnector;
+export const DbmulticloudOracleDbGcpIdentityConnector: typeof import("./dbmulticloudOracleDbGcpIdentityConnector").DbmulticloudOracleDbGcpIdentityConnector = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbGcpIdentityConnector"], () => require("./dbmulticloudOracleDbGcpIdentityConnector"));
+
+export { DbmulticloudOracleDbGcpKeyRingArgs, DbmulticloudOracleDbGcpKeyRingState } from "./dbmulticloudOracleDbGcpKeyRing";
+export type DbmulticloudOracleDbGcpKeyRing = import("./dbmulticloudOracleDbGcpKeyRing").DbmulticloudOracleDbGcpKeyRing;
+export const DbmulticloudOracleDbGcpKeyRing: typeof import("./dbmulticloudOracleDbGcpKeyRing").DbmulticloudOracleDbGcpKeyRing = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbGcpKeyRing"], () => require("./dbmulticloudOracleDbGcpKeyRing"));
+
 export { GetApiPlatformApiPlatformInstanceArgs, GetApiPlatformApiPlatformInstanceResult, GetApiPlatformApiPlatformInstanceOutputArgs } from "./getApiPlatformApiPlatformInstance";
 export const getApiPlatformApiPlatformInstance: typeof import("./getApiPlatformApiPlatformInstance").getApiPlatformApiPlatformInstance = null as any;
 export const getApiPlatformApiPlatformInstanceOutput: typeof import("./getApiPlatformApiPlatformInstance").getApiPlatformApiPlatformInstanceOutput = null as any;
@@ -164,6 +174,36 @@ export { GetDbmulticloudOracleDbAzureVaultsArgs, GetDbmulticloudOracleDbAzureVau
 export const getDbmulticloudOracleDbAzureVaults: typeof import("./getDbmulticloudOracleDbAzureVaults").getDbmulticloudOracleDbAzureVaults = null as any;
 export const getDbmulticloudOracleDbAzureVaultsOutput: typeof import("./getDbmulticloudOracleDbAzureVaults").getDbmulticloudOracleDbAzureVaultsOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAzureVaults","getDbmulticloudOracleDbAzureVaultsOutput"], () => require("./getDbmulticloudOracleDbAzureVaults"));
+
+export { GetDbmulticloudOracleDbGcpIdentityConnectorArgs, GetDbmulticloudOracleDbGcpIdentityConnectorResult, GetDbmulticloudOracleDbGcpIdentityConnectorOutputArgs } from "./getDbmulticloudOracleDbGcpIdentityConnector";
+export const getDbmulticloudOracleDbGcpIdentityConnector: typeof import("./getDbmulticloudOracleDbGcpIdentityConnector").getDbmulticloudOracleDbGcpIdentityConnector = null as any;
+export const getDbmulticloudOracleDbGcpIdentityConnectorOutput: typeof import("./getDbmulticloudOracleDbGcpIdentityConnector").getDbmulticloudOracleDbGcpIdentityConnectorOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpIdentityConnector","getDbmulticloudOracleDbGcpIdentityConnectorOutput"], () => require("./getDbmulticloudOracleDbGcpIdentityConnector"));
+
+export { GetDbmulticloudOracleDbGcpIdentityConnectorsArgs, GetDbmulticloudOracleDbGcpIdentityConnectorsResult, GetDbmulticloudOracleDbGcpIdentityConnectorsOutputArgs } from "./getDbmulticloudOracleDbGcpIdentityConnectors";
+export const getDbmulticloudOracleDbGcpIdentityConnectors: typeof import("./getDbmulticloudOracleDbGcpIdentityConnectors").getDbmulticloudOracleDbGcpIdentityConnectors = null as any;
+export const getDbmulticloudOracleDbGcpIdentityConnectorsOutput: typeof import("./getDbmulticloudOracleDbGcpIdentityConnectors").getDbmulticloudOracleDbGcpIdentityConnectorsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpIdentityConnectors","getDbmulticloudOracleDbGcpIdentityConnectorsOutput"], () => require("./getDbmulticloudOracleDbGcpIdentityConnectors"));
+
+export { GetDbmulticloudOracleDbGcpKeyArgs, GetDbmulticloudOracleDbGcpKeyResult, GetDbmulticloudOracleDbGcpKeyOutputArgs } from "./getDbmulticloudOracleDbGcpKey";
+export const getDbmulticloudOracleDbGcpKey: typeof import("./getDbmulticloudOracleDbGcpKey").getDbmulticloudOracleDbGcpKey = null as any;
+export const getDbmulticloudOracleDbGcpKeyOutput: typeof import("./getDbmulticloudOracleDbGcpKey").getDbmulticloudOracleDbGcpKeyOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKey","getDbmulticloudOracleDbGcpKeyOutput"], () => require("./getDbmulticloudOracleDbGcpKey"));
+
+export { GetDbmulticloudOracleDbGcpKeyRingArgs, GetDbmulticloudOracleDbGcpKeyRingResult, GetDbmulticloudOracleDbGcpKeyRingOutputArgs } from "./getDbmulticloudOracleDbGcpKeyRing";
+export const getDbmulticloudOracleDbGcpKeyRing: typeof import("./getDbmulticloudOracleDbGcpKeyRing").getDbmulticloudOracleDbGcpKeyRing = null as any;
+export const getDbmulticloudOracleDbGcpKeyRingOutput: typeof import("./getDbmulticloudOracleDbGcpKeyRing").getDbmulticloudOracleDbGcpKeyRingOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKeyRing","getDbmulticloudOracleDbGcpKeyRingOutput"], () => require("./getDbmulticloudOracleDbGcpKeyRing"));
+
+export { GetDbmulticloudOracleDbGcpKeyRingsArgs, GetDbmulticloudOracleDbGcpKeyRingsResult, GetDbmulticloudOracleDbGcpKeyRingsOutputArgs } from "./getDbmulticloudOracleDbGcpKeyRings";
+export const getDbmulticloudOracleDbGcpKeyRings: typeof import("./getDbmulticloudOracleDbGcpKeyRings").getDbmulticloudOracleDbGcpKeyRings = null as any;
+export const getDbmulticloudOracleDbGcpKeyRingsOutput: typeof import("./getDbmulticloudOracleDbGcpKeyRings").getDbmulticloudOracleDbGcpKeyRingsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKeyRings","getDbmulticloudOracleDbGcpKeyRingsOutput"], () => require("./getDbmulticloudOracleDbGcpKeyRings"));
+
+export { GetDbmulticloudOracleDbGcpKeysArgs, GetDbmulticloudOracleDbGcpKeysResult, GetDbmulticloudOracleDbGcpKeysOutputArgs } from "./getDbmulticloudOracleDbGcpKeys";
+export const getDbmulticloudOracleDbGcpKeys: typeof import("./getDbmulticloudOracleDbGcpKeys").getDbmulticloudOracleDbGcpKeys = null as any;
+export const getDbmulticloudOracleDbGcpKeysOutput: typeof import("./getDbmulticloudOracleDbGcpKeys").getDbmulticloudOracleDbGcpKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbGcpKeys","getDbmulticloudOracleDbGcpKeysOutput"], () => require("./getDbmulticloudOracleDbGcpKeys"));
 
 export { GetManagedKafkaKafkaClusterArgs, GetManagedKafkaKafkaClusterResult, GetManagedKafkaKafkaClusterOutputArgs } from "./getManagedKafkaKafkaCluster";
 export const getManagedKafkaKafkaCluster: typeof import("./getManagedKafkaKafkaCluster").getManagedKafkaKafkaCluster = null as any;
@@ -318,6 +358,10 @@ const _module = {
                 return new DbmulticloudOracleDbAzureVault(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation":
                 return new DbmulticloudOracleDbAzureVaultAssociation(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector":
+                return new DbmulticloudOracleDbGcpIdentityConnector(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing":
+                return new DbmulticloudOracleDbGcpKeyRing(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster":
                 return new ManagedKafkaKafkaCluster(name, <any>undefined, { urn })
             case "oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig":
@@ -338,6 +382,8 @@ pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobM
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVault", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureVaultAssociation", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpIdentityConnector", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbGcpKeyRing", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperusersManagement", _module)

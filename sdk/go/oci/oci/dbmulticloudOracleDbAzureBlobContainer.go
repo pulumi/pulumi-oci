@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+// Creates Oracle DB Azure Blob Container resource.
 //
 // ## Example Usage
 //
@@ -63,30 +63,30 @@ import (
 type DbmulticloudOracleDbAzureBlobContainer struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Azure Storage Account Name.
+	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName pulumi.StringOutput `pulumi:"azureStorageAccountName"`
-	// (Updatable) Azure Storage Container Name.
+	// (Updatable) Azure Storage container name.
 	AzureStorageContainerName pulumi.StringOutput `pulumi:"azureStorageContainerName"`
-	// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) Display name of Oracle DB Azure Blob Container.
+	// (Updatable) Oracle DB Azure Blob Container resource name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 	LastModification pulumi.StringOutput `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
-	// (Updatable) Private endpoint DNS Alias.
+	// (Updatable) Private endpoint's DNS alias.
 	PrivateEndpointDnsAlias pulumi.StringOutput `pulumi:"privateEndpointDnsAlias"`
 	// (Updatable) Private endpoint IP.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateEndpointIpAddress pulumi.StringOutput `pulumi:"privateEndpointIpAddress"`
-	// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
@@ -138,30 +138,30 @@ func GetDbmulticloudOracleDbAzureBlobContainer(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudOracleDbAzureBlobContainer resources.
 type dbmulticloudOracleDbAzureBlobContainerState struct {
-	// (Updatable) Azure Storage Account Name.
+	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName *string `pulumi:"azureStorageAccountName"`
-	// (Updatable) Azure Storage Container Name.
+	// (Updatable) Azure Storage container name.
 	AzureStorageContainerName *string `pulumi:"azureStorageContainerName"`
-	// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of Oracle DB Azure Blob Container.
+	// (Updatable) Oracle DB Azure Blob Container resource name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 	LastModification *string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
-	// (Updatable) Private endpoint DNS Alias.
+	// (Updatable) Private endpoint's DNS alias.
 	PrivateEndpointDnsAlias *string `pulumi:"privateEndpointDnsAlias"`
 	// (Updatable) Private endpoint IP.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateEndpointIpAddress *string `pulumi:"privateEndpointIpAddress"`
-	// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -172,30 +172,30 @@ type dbmulticloudOracleDbAzureBlobContainerState struct {
 }
 
 type DbmulticloudOracleDbAzureBlobContainerState struct {
-	// (Updatable) Azure Storage Account Name.
+	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName pulumi.StringPtrInput
-	// (Updatable) Azure Storage Container Name.
+	// (Updatable) Azure Storage container name.
 	AzureStorageContainerName pulumi.StringPtrInput
-	// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of Oracle DB Azure Blob Container.
+	// (Updatable) Oracle DB Azure Blob Container resource name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 	LastModification pulumi.StringPtrInput
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringPtrInput
-	// (Updatable) Private endpoint DNS Alias.
+	// (Updatable) Private endpoint's DNS alias.
 	PrivateEndpointDnsAlias pulumi.StringPtrInput
 	// (Updatable) Private endpoint IP.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	PrivateEndpointIpAddress pulumi.StringPtrInput
-	// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
@@ -210,19 +210,19 @@ func (DbmulticloudOracleDbAzureBlobContainerState) ElementType() reflect.Type {
 }
 
 type dbmulticloudOracleDbAzureBlobContainerArgs struct {
-	// (Updatable) Azure Storage Account Name.
+	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName string `pulumi:"azureStorageAccountName"`
-	// (Updatable) Azure Storage Container Name.
+	// (Updatable) Azure Storage container name.
 	AzureStorageContainerName string `pulumi:"azureStorageContainerName"`
-	// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of Oracle DB Azure Blob Container.
+	// (Updatable) Oracle DB Azure Blob Container resource name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Private endpoint DNS Alias.
+	// (Updatable) Private endpoint's DNS alias.
 	PrivateEndpointDnsAlias *string `pulumi:"privateEndpointDnsAlias"`
 	// (Updatable) Private endpoint IP.
 	//
@@ -233,19 +233,19 @@ type dbmulticloudOracleDbAzureBlobContainerArgs struct {
 
 // The set of arguments for constructing a DbmulticloudOracleDbAzureBlobContainer resource.
 type DbmulticloudOracleDbAzureBlobContainerArgs struct {
-	// (Updatable) Azure Storage Account Name.
+	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName pulumi.StringInput
-	// (Updatable) Azure Storage Container Name.
+	// (Updatable) Azure Storage container name.
 	AzureStorageContainerName pulumi.StringInput
-	// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of Oracle DB Azure Blob Container.
+	// (Updatable) Oracle DB Azure Blob Container resource name.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Private endpoint DNS Alias.
+	// (Updatable) Private endpoint's DNS alias.
 	PrivateEndpointDnsAlias pulumi.StringPtrInput
 	// (Updatable) Private endpoint IP.
 	//
@@ -341,19 +341,19 @@ func (o DbmulticloudOracleDbAzureBlobContainerOutput) ToDbmulticloudOracleDbAzur
 	return o
 }
 
-// (Updatable) Azure Storage Account Name.
+// (Updatable) Azure Storage account name.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) AzureStorageAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.AzureStorageAccountName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Azure Storage Container Name.
+// (Updatable) Azure Storage container name.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) AzureStorageContainerName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput {
 		return v.AzureStorageContainerName
 	}).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -363,7 +363,7 @@ func (o DbmulticloudOracleDbAzureBlobContainerOutput) DefinedTags() pulumi.Strin
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Display name of Oracle DB Azure Blob Container.
+// (Updatable) Oracle DB Azure Blob Container resource name.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -373,7 +373,7 @@ func (o DbmulticloudOracleDbAzureBlobContainerOutput) FreeformTags() pulumi.Stri
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -383,7 +383,7 @@ func (o DbmulticloudOracleDbAzureBlobContainerOutput) LifecycleStateDetails() pu
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) Private endpoint DNS Alias.
+// (Updatable) Private endpoint's DNS alias.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) PrivateEndpointDnsAlias() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.PrivateEndpointDnsAlias }).(pulumi.StringOutput)
 }
@@ -396,7 +396,7 @@ func (o DbmulticloudOracleDbAzureBlobContainerOutput) PrivateEndpointIpAddress()
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 func (o DbmulticloudOracleDbAzureBlobContainerOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudOracleDbAzureBlobContainer) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

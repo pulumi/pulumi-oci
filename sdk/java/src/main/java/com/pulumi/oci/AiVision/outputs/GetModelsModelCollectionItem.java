@@ -19,7 +19,7 @@ import java.util.Objects;
 @CustomType
 public final class GetModelsModelCollectionItem {
     /**
-     * @return Average precision of the trained model
+     * @return The mean average precision of the trained model.
      * 
      */
     private Double averagePrecision;
@@ -29,17 +29,17 @@ public final class GetModelsModelCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return Confidence ratio of the calculation
+     * @return The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     private Double confidenceThreshold;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     private Map<String,String> definedTags;
     /**
-     * @return A short description of the model.
+     * @return An optional description of the model.
      * 
      */
     private String description;
@@ -49,47 +49,47 @@ public final class GetModelsModelCollectionItem {
      */
     private String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,String> freeformTags;
     /**
-     * @return unique Model identifier
+     * @return The filter to find the model with the given identifier.
      * 
      */
     private String id;
     /**
-     * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     private Boolean isQuickMode;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     private String lifecycleDetails;
     /**
-     * @return The maximum duration in hours for which the training will run.
+     * @return The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     private Double maxTrainingDurationInHours;
     /**
-     * @return Complete Training Metrics for successful trained model
+     * @return The complete set of per-label metrics for successfully trained models.
      * 
      */
     private String metrics;
     /**
-     * @return Type of the Model.
+     * @return What type of Vision model this is.
      * 
      */
     private String modelType;
     /**
-     * @return The version of the model
+     * @return The version of the model.
      * 
      */
     private String modelVersion;
     /**
-     * @return Precision of the trained model
+     * @return The precision of the trained model.
      * 
      */
     private Double precision;
@@ -99,64 +99,64 @@ public final class GetModelsModelCollectionItem {
      */
     private String projectId;
     /**
-     * @return Recall of the trained model
+     * @return Recall of the trained model.
      * 
      */
     private Double recall;
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match models with the given lifecycleState.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     private Map<String,String> systemTags;
     /**
-     * @return Total number of testing Images
+     * @return The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     private Integer testImageCount;
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     private List<GetModelsModelCollectionItemTestingDataset> testingDatasets;
     /**
-     * @return The time the Model was created. An RFC3339 formatted datetime string
+     * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Model was updated. An RFC3339 formatted datetime string
+     * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Total number of training Images
+     * @return The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     private Integer totalImageCount;
     /**
-     * @return Total hours actually used for training
+     * @return The total hours actually used for model training.
      * 
      */
     private Double trainedDurationInHours;
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     private List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets;
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     private List<GetModelsModelCollectionItemValidationDataset> validationDatasets;
 
     private GetModelsModelCollectionItem() {}
     /**
-     * @return Average precision of the trained model
+     * @return The mean average precision of the trained model.
      * 
      */
     public Double averagePrecision() {
@@ -170,21 +170,21 @@ public final class GetModelsModelCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return Confidence ratio of the calculation
+     * @return The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     public Double confidenceThreshold() {
         return this.confidenceThreshold;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return A short description of the model.
+     * @return An optional description of the model.
      * 
      */
     public String description() {
@@ -198,63 +198,63 @@ public final class GetModelsModelCollectionItem {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return unique Model identifier
+     * @return The filter to find the model with the given identifier.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * @return Set to true when experimenting with a new model type or dataset, so model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     public Boolean isQuickMode() {
         return this.isQuickMode;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
     /**
-     * @return The maximum duration in hours for which the training will run.
+     * @return The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     public Double maxTrainingDurationInHours() {
         return this.maxTrainingDurationInHours;
     }
     /**
-     * @return Complete Training Metrics for successful trained model
+     * @return The complete set of per-label metrics for successfully trained models.
      * 
      */
     public String metrics() {
         return this.metrics;
     }
     /**
-     * @return Type of the Model.
+     * @return What type of Vision model this is.
      * 
      */
     public String modelType() {
         return this.modelType;
     }
     /**
-     * @return The version of the model
+     * @return The version of the model.
      * 
      */
     public String modelVersion() {
         return this.modelVersion;
     }
     /**
-     * @return Precision of the trained model
+     * @return The precision of the trained model.
      * 
      */
     public Double precision() {
@@ -268,77 +268,77 @@ public final class GetModelsModelCollectionItem {
         return this.projectId;
     }
     /**
-     * @return Recall of the trained model
+     * @return Recall of the trained model.
      * 
      */
     public Double recall() {
         return this.recall;
     }
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match models with the given lifecycleState.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return Total number of testing Images
+     * @return The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     public Integer testImageCount() {
         return this.testImageCount;
     }
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemTestingDataset> testingDatasets() {
         return this.testingDatasets;
     }
     /**
-     * @return The time the Model was created. An RFC3339 formatted datetime string
+     * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Model was updated. An RFC3339 formatted datetime string
+     * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Total number of training Images
+     * @return The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     public Integer totalImageCount() {
         return this.totalImageCount;
     }
     /**
-     * @return Total hours actually used for training
+     * @return The total hours actually used for model training.
      * 
      */
     public Double trainedDurationInHours() {
         return this.trainedDurationInHours;
     }
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemTrainingDataset> trainingDatasets() {
         return this.trainingDatasets;
     }
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public List<GetModelsModelCollectionItemValidationDataset> validationDatasets() {

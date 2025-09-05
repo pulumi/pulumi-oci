@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Create Oracle DB Azure Vault Association based on the provided information.
+ * Creates Oracle DB Azure Vault Association resource.
  * 
  * ## Example Usage
  * 
@@ -72,14 +72,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation")
 public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -100,14 +100,14 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
         return this.definedTags;
     }
     /**
-     * (Updatable) Display name of Oracle DB Azure Vault Association.
+     * (Updatable) Oracle DB Azure Vault Association resource name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Oracle DB Azure Vault Association.
+     * @return (Updatable) Oracle DB Azure Vault Association resource name.
      * 
      */
     public Output<String> displayName() {
@@ -128,28 +128,28 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
         return this.freeformTags;
     }
     /**
-     * The Associated Resources are accessible or not.
+     * The Associated resource is accessible or not.
      * 
      */
     @Export(name="isResourceAccessible", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isResourceAccessible;
 
     /**
-     * @return The Associated Resources are accessible or not.
+     * @return The Associated resource is accessible or not.
      * 
      */
     public Output<Boolean> isResourceAccessible() {
         return this.isResourceAccessible;
     }
     /**
-     * Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault Association resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> lastModification() {
@@ -170,21 +170,21 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
         return this.lifecycleStateDetails;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     @Export(name="oracleDbAzureConnectorId", refs={String.class}, tree="[0]")
     private Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> oracleDbAzureConnectorId() {
         return this.oracleDbAzureConnectorId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -194,7 +194,7 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
     private Output<String> oracleDbAzureVaultId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -204,14 +204,14 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
         return this.oracleDbAzureVaultId;
     }
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Association resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> state() {
@@ -232,28 +232,28 @@ public class DbmulticloudOracleDbAzureVaultAssociation extends com.pulumi.resour
         return this.systemTags;
     }
     /**
-     * Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeUpdated() {

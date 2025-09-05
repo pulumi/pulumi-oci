@@ -43,12 +43,18 @@ __all__ = [
     'DetectorRecipeDetectorRuleDetailsArgsDict',
     'DetectorRecipeDetectorRuleDetailsConfigurationArgs',
     'DetectorRecipeDetectorRuleDetailsConfigurationArgsDict',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs',
+    'DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict',
     'DetectorRecipeDetectorRuleDetailsConfigurationValueArgs',
     'DetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict',
     'DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs',
     'DetectorRecipeDetectorRuleDetailsEntitiesMappingArgsDict',
     'DetectorRecipeDetectorRuleEntitiesMappingArgs',
     'DetectorRecipeDetectorRuleEntitiesMappingArgsDict',
+    'DetectorRecipeDetectorRuleRuleTypeArgs',
+    'DetectorRecipeDetectorRuleRuleTypeArgsDict',
     'DetectorRecipeEffectiveDetectorRuleArgs',
     'DetectorRecipeEffectiveDetectorRuleArgsDict',
     'DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgs',
@@ -57,12 +63,18 @@ __all__ = [
     'DetectorRecipeEffectiveDetectorRuleDetailArgsDict',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs',
+    'DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict',
     'DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgs',
     'DetectorRecipeEffectiveDetectorRuleDetailEntitiesMappingArgsDict',
     'DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs',
     'DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict',
+    'DetectorRecipeEffectiveDetectorRuleRuleTypeArgs',
+    'DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict',
     'ResponderRecipeEffectiveResponderRuleArgs',
     'ResponderRecipeEffectiveResponderRuleArgsDict',
     'ResponderRecipeEffectiveResponderRuleDetailArgs',
@@ -89,10 +101,16 @@ __all__ = [
     'TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgsDict',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs',
+    'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs',
     'TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgsDict',
     'TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs',
     'TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgsDict',
+    'TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs',
+    'TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs',
@@ -101,10 +119,16 @@ __all__ = [
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgsDict',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs',
     'TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgsDict',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs',
+    'TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict',
     'TargetTargetResponderRecipeArgs',
     'TargetTargetResponderRecipeArgsDict',
     'TargetTargetResponderRecipeEffectiveResponderRuleArgs',
@@ -1087,6 +1111,10 @@ if not MYPY:
         """
         Data source entities mapping for the detector rule
         """
+        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Is the rule cloneable?
+        """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -1102,6 +1130,10 @@ if not MYPY:
         resource_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         Resource type of the configuration to which the rule is applied
+        """
+        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+        """
+        Detector rule type
         """
         service_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -1133,10 +1165,12 @@ class DetectorRecipeDetectorRuleArgs:
                  detector: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  recommendation: Optional[pulumi.Input[_builtins.str]] = None,
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1154,10 +1188,12 @@ class DetectorRecipeDetectorRuleArgs:
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data source entities mapping for the detector rule
+        :param pulumi.Input[_builtins.bool] is_cloneable: Is the rule cloneable?
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_list_types: List of managed list types related to this rule
         :param pulumi.Input[_builtins.str] recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param pulumi.Input[_builtins.str] resource_type: Resource type of the configuration to which the rule is applied
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]] rule_types: Detector rule type
         :param pulumi.Input[_builtins.str] service_type: Service type of the configuration to which the rule is applied
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource
         :param pulumi.Input[_builtins.str] time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -1177,6 +1213,8 @@ class DetectorRecipeDetectorRuleArgs:
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -1185,6 +1223,8 @@ class DetectorRecipeDetectorRuleArgs:
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -1295,6 +1335,18 @@ class DetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @is_cloneable.setter
+    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_cloneable", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1341,6 +1393,18 @@ class DetectorRecipeDetectorRuleArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
+
+    @rule_types.setter
+    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleRuleTypeArgs']]]]):
+        pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -1689,6 +1753,18 @@ if not MYPY:
         """
         (Updatable) Configuration name
         """
+        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+        """
+        (Updatable) Map of additional property values for configuration
+        """
+        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+        """
+        (Updatable) Map of possible values for configuration
+        """
+        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Map property Value data type
+        """
         data_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         (Updatable) Configuration data type
@@ -1709,18 +1785,30 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
     def __init__(__self__, *,
                  config_key: pulumi.Input[_builtins.str],
                  name: pulumi.Input[_builtins.str],
+                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] config_key: (Updatable) Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] name: (Updatable) Configuration name
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]] additional_properties: (Updatable) Map of additional property values for configuration
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]] allowed_values: (Updatable) Map of possible values for configuration
+        :param pulumi.Input[_builtins.str] allowed_values_data_type: (Updatable) Map property Value data type
         :param pulumi.Input[_builtins.str] data_type: (Updatable) Configuration data type
         :param pulumi.Input[_builtins.str] value: (Updatable) Configuration value
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]] values: (Updatable) List of configuration values
         """
         pulumi.set(__self__, "config_key", config_key)
         pulumi.set(__self__, "name", name)
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if data_type is not None:
             pulumi.set(__self__, "data_type", data_type)
         if value is not None:
@@ -1751,6 +1839,42 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
     @name.setter
     def name(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
+        """
+        (Updatable) Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @additional_properties.setter
+    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
+        pulumi.set(self, "additional_properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
+        """
+        (Updatable) Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @allowed_values.setter
+    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
+        pulumi.set(self, "allowed_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
+
+    @allowed_values_data_type.setter
+    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -1787,6 +1911,128 @@ class DetectorRecipeDetectorRuleDetailsConfigurationArgs:
     @values.setter
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
+
+
+if not MYPY:
+    class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Name for Additional Property, for example, "interpreter", "router"
+        """
+        property_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Property Type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+        """
+elif False:
+    DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: (Updatable) Name for Additional Property, for example, "interpreter", "router"
+        :param pulumi.Input[_builtins.str] property_type: (Updatable) Property Type
+        :param pulumi.Input[_builtins.str] value: (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Name for Additional Property, for example, "interpreter", "router"
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @property_type.setter
+    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "property_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Value for Property Name, for example, "generic", "cloudguard"
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
+        key: pulumi.Input[_builtins.str]
+        """
+        (Updatable) key
+        """
+        value: pulumi.Input[_builtins.str]
+        """
+        (Updatable) value
+        """
+elif False:
+    DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[_builtins.str],
+                 value: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] key: (Updatable) key
+        :param pulumi.Input[_builtins.str] value: (Updatable) value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:
@@ -2008,6 +2254,58 @@ class DetectorRecipeDetectorRuleEntitiesMappingArgs:
 
 
 if not MYPY:
+    class DetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Detector rule type value
+        """
+elif False:
+    DetectorRecipeDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeDetectorRuleRuleTypeArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
+
+
+if not MYPY:
     class DetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
         candidate_responder_rules: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArgsDict']]]]
         """
@@ -2045,6 +2343,10 @@ if not MYPY:
         """
         Data source entities mapping for the detector rule
         """
+        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Is the rule cloneable?
+        """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -2060,6 +2362,10 @@ if not MYPY:
         resource_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         Resource type of the configuration to which the rule is applied
+        """
+        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+        """
+        Detector rule type
         """
         service_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2091,10 +2397,12 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
                  detector_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  recommendation: Optional[pulumi.Input[_builtins.str]] = None,
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2112,10 +2420,12 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data source entities mapping for the detector rule
+        :param pulumi.Input[_builtins.bool] is_cloneable: Is the rule cloneable?
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_list_types: List of managed list types related to this rule
         :param pulumi.Input[_builtins.str] recommendation: Recommendation for DetectorRecipeDetectorRule resource
         :param pulumi.Input[_builtins.str] resource_type: Resource type of the configuration to which the rule is applied
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]] rule_types: Detector rule type
         :param pulumi.Input[_builtins.str] service_type: Service type of the configuration to which the rule is applied
         :param pulumi.Input[_builtins.str] state: The current lifecycle state of the resource
         :param pulumi.Input[_builtins.str] time_created: The date and time the detector recipe was created Format defined by RFC3339.
@@ -2137,6 +2447,8 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -2145,6 +2457,8 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -2255,6 +2569,18 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @is_cloneable.setter
+    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_cloneable", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -2301,6 +2627,18 @@ class DetectorRecipeEffectiveDetectorRuleArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
+        """
+        Detector rule type
+        """
+        return pulumi.get(self, "rule_types")
+
+    @rule_types.setter
+    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
+        pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -2649,6 +2987,18 @@ class DetectorRecipeEffectiveDetectorRuleDetailArgs:
 
 if not MYPY:
     class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
+        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+        """
+        Map of additional property values for configuration
+        """
+        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+        """
+        Map of possible values for configuration
+        """
+        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Map property Value data type
+        """
         config_key: NotRequired[pulumi.Input[_builtins.str]]
         """
         Unique identifier of the configuration
@@ -2663,7 +3013,7 @@ if not MYPY:
         """
         value: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Configuration value
+        Detector rule type value
         """
         values: NotRequired[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict']]]]
         """
@@ -2675,18 +3025,30 @@ elif False:
 @pulumi.input_type
 class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     def __init__(__self__, *,
+                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  config_key: Optional[pulumi.Input[_builtins.str]] = None,
                  data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
+        :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
+        :param pulumi.Input[_builtins.str] allowed_values_data_type: Map property Value data type
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] data_type: Configuration data type
         :param pulumi.Input[_builtins.str] name: Configuration name
-        :param pulumi.Input[_builtins.str] value: Configuration value
+        :param pulumi.Input[_builtins.str] value: Detector rule type value
         :param pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -2697,6 +3059,42 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @additional_properties.setter
+    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
+        pulumi.set(self, "additional_properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @allowed_values.setter
+    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
+        pulumi.set(self, "allowed_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
+
+    @allowed_values_data_type.setter
+    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -2738,7 +3136,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -2760,6 +3158,130 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
 
 
 if not MYPY:
+    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        property_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Property Type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Detector rule type value
+        """
+elif False:
+    DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] property_type: Property Type
+        :param pulumi.Input[_builtins.str] value: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @property_type.setter
+    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "property_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Detector rule type value
+        """
+elif False:
+    DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] value: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
     class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict(TypedDict):
         list_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -2771,7 +3293,7 @@ if not MYPY:
         """
         value: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Configuration value
+        Detector rule type value
         """
 elif False:
     DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgsDict: TypeAlias = Mapping[str, Any]
@@ -2785,7 +3307,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
         """
         :param pulumi.Input[_builtins.str] list_type: Configuration list item type (CUSTOM or MANAGED)
         :param pulumi.Input[_builtins.str] managed_list_type: Type of content in the managed list
-        :param pulumi.Input[_builtins.str] value: Configuration value
+        :param pulumi.Input[_builtins.str] value: Detector rule type value
         """
         if list_type is not None:
             pulumi.set(__self__, "list_type", list_type)
@@ -2822,7 +3344,7 @@ class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs:
     @pulumi.getter
     def value(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Configuration value
+        Detector rule type value
         """
         return pulumi.get(self, "value")
 
@@ -2985,6 +3507,58 @@ class DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
     @query_field.setter
     def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "query_field", value)
+
+
+if not MYPY:
+    class DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Detector rule type value
+        """
+elif False:
+    DetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Detector rule type value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Detector rule type value
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
 
 
 if not MYPY:
@@ -4539,6 +5113,10 @@ if not MYPY:
         """
         Data source entities mapping for a detector rule
         """
+        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Is the rule cloneable?
+        """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -4554,6 +5132,10 @@ if not MYPY:
         resource_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        """
+        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict']]]]
+        """
+        Rule category type
         """
         service_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -4584,10 +5166,12 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
                  detector: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  recommendation: Optional[pulumi.Input[_builtins.str]] = None,
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -4604,10 +5188,12 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data source entities mapping for a detector rule
+        :param pulumi.Input[_builtins.bool] is_cloneable: Is the rule cloneable?
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_list_types: List of managed list types related to this rule
         :param pulumi.Input[_builtins.str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param pulumi.Input[_builtins.str] resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]] rule_types: Rule category type
         :param pulumi.Input[_builtins.str] service_type: Service type of the configuration to which the rule is applied
         :param pulumi.Input[_builtins.str] state: (Updatable) The enablement state of the detector rule
         :param pulumi.Input[_builtins.str] time_created: The date and time the target was created. Format defined by RFC3339.
@@ -4625,6 +5211,8 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -4633,6 +5221,8 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -4731,6 +5321,18 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @is_cloneable.setter
+    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_cloneable", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -4777,6 +5379,18 @@ class TargetTargetDetectorRecipeDetectorRuleArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
+
+    @rule_types.setter
+    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs']]]]):
+        pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -5011,6 +5625,18 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArgs:
 
 if not MYPY:
     class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgsDict(TypedDict):
+        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict']]]]
+        """
+        Map of additional property values for configuration
+        """
+        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict']]]]
+        """
+        Map of possible values for configuration
+        """
+        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Map property Value data type
+        """
         config_key: NotRequired[pulumi.Input[_builtins.str]]
         """
         Unique identifier of the configuration
@@ -5037,18 +5663,30 @@ elif False:
 @pulumi.input_type
 class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
     def __init__(__self__, *,
+                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  config_key: Optional[pulumi.Input[_builtins.str]] = None,
                  data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
+        :param pulumi.Input[_builtins.str] allowed_values_data_type: Map property Value data type
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] data_type: Configuration data type
         :param pulumi.Input[_builtins.str] name: Configuration name
         :param pulumi.Input[_builtins.str] value: Configuration value
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -5059,6 +5697,42 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @additional_properties.setter
+    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs']]]]):
+        pulumi.set(self, "additional_properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @allowed_values.setter
+    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs']]]]):
+        pulumi.set(self, "allowed_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
+
+    @allowed_values_data_type.setter
+    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -5119,6 +5793,130 @@ class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs:
     @values.setter
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
+
+
+if not MYPY:
+    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        property_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Property Type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAdditionalPropertyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] property_type: Property Type
+        :param pulumi.Input[_builtins.str] value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @property_type.setter
+    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "property_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationAllowedValueArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:
@@ -5272,6 +6070,58 @@ class TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs:
 
 
 if not MYPY:
+    class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
+
+
+if not MYPY:
     class TargetTargetDetectorRecipeEffectiveDetectorRuleArgsDict(TypedDict):
         data_source_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5305,6 +6155,10 @@ if not MYPY:
         """
         Data source entities mapping for a detector rule
         """
+        is_cloneable: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        Is the rule cloneable?
+        """
         lifecycle_details: NotRequired[pulumi.Input[_builtins.str]]
         """
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -5320,6 +6174,10 @@ if not MYPY:
         resource_type: NotRequired[pulumi.Input[_builtins.str]]
         """
         The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        """
+        rule_types: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict']]]]
+        """
+        Rule category type
         """
         service_type: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -5350,10 +6208,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
                  detector_rule_id: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  entities_mappings: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]]] = None,
+                 is_cloneable: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  managed_list_types: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  recommendation: Optional[pulumi.Input[_builtins.str]] = None,
                  resource_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 rule_types: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]] = None,
                  service_type: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
@@ -5370,10 +6230,12 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs']]] entities_mappings: Data source entities mapping for a detector rule
+        :param pulumi.Input[_builtins.bool] is_cloneable: Is the rule cloneable?
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_list_types: List of managed list types related to this rule
         :param pulumi.Input[_builtins.str] recommendation: Recommendation for TargetDetectorRecipeDetectorRule resource
         :param pulumi.Input[_builtins.str] resource_type: The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]] rule_types: Rule category type
         :param pulumi.Input[_builtins.str] service_type: Service type of the configuration to which the rule is applied
         :param pulumi.Input[_builtins.str] state: (Updatable) The enablement state of the detector rule
         :param pulumi.Input[_builtins.str] time_created: The date and time the target was created. Format defined by RFC3339.
@@ -5393,6 +6255,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "display_name", display_name)
         if entities_mappings is not None:
             pulumi.set(__self__, "entities_mappings", entities_mappings)
+        if is_cloneable is not None:
+            pulumi.set(__self__, "is_cloneable", is_cloneable)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if managed_list_types is not None:
@@ -5401,6 +6265,8 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
             pulumi.set(__self__, "recommendation", recommendation)
         if resource_type is not None:
             pulumi.set(__self__, "resource_type", resource_type)
+        if rule_types is not None:
+            pulumi.set(__self__, "rule_types", rule_types)
         if service_type is not None:
             pulumi.set(__self__, "service_type", service_type)
         if state is not None:
@@ -5499,6 +6365,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
         pulumi.set(self, "entities_mappings", value)
 
     @_builtins.property
+    @pulumi.getter(name="isCloneable")
+    def is_cloneable(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        Is the rule cloneable?
+        """
+        return pulumi.get(self, "is_cloneable")
+
+    @is_cloneable.setter
+    def is_cloneable(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_cloneable", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -5545,6 +6423,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs:
     @resource_type.setter
     def resource_type(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "resource_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTypes")
+    def rule_types(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]:
+        """
+        Rule category type
+        """
+        return pulumi.get(self, "rule_types")
+
+    @rule_types.setter
+    def rule_types(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs']]]]):
+        pulumi.set(self, "rule_types", value)
 
     @_builtins.property
     @pulumi.getter(name="serviceType")
@@ -5781,6 +6671,18 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs:
 
 if not MYPY:
     class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgsDict(TypedDict):
+        additional_properties: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict']]]]
+        """
+        Map of additional property values for configuration
+        """
+        allowed_values: NotRequired[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict']]]]
+        """
+        Map of possible values for configuration
+        """
+        allowed_values_data_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Map property Value data type
+        """
         config_key: NotRequired[pulumi.Input[_builtins.str]]
         """
         Unique identifier of the configuration
@@ -5807,18 +6709,30 @@ elif False:
 @pulumi.input_type
 class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     def __init__(__self__, *,
+                 additional_properties: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]] = None,
+                 allowed_values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]] = None,
+                 allowed_values_data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  config_key: Optional[pulumi.Input[_builtins.str]] = None,
                  data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  value: Optional[pulumi.Input[_builtins.str]] = None,
                  values: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]] additional_properties: Map of additional property values for configuration
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]] allowed_values: Map of possible values for configuration
+        :param pulumi.Input[_builtins.str] allowed_values_data_type: Map property Value data type
         :param pulumi.Input[_builtins.str] config_key: Unique identifier of the configuration
         :param pulumi.Input[_builtins.str] data_type: Configuration data type
         :param pulumi.Input[_builtins.str] name: Configuration name
         :param pulumi.Input[_builtins.str] value: Configuration value
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]] values: List of configuration values
         """
+        if additional_properties is not None:
+            pulumi.set(__self__, "additional_properties", additional_properties)
+        if allowed_values is not None:
+            pulumi.set(__self__, "allowed_values", allowed_values)
+        if allowed_values_data_type is not None:
+            pulumi.set(__self__, "allowed_values_data_type", allowed_values_data_type)
         if config_key is not None:
             pulumi.set(__self__, "config_key", config_key)
         if data_type is not None:
@@ -5829,6 +6743,42 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
             pulumi.set(__self__, "value", value)
         if values is not None:
             pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter(name="additionalProperties")
+    def additional_properties(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]:
+        """
+        Map of additional property values for configuration
+        """
+        return pulumi.get(self, "additional_properties")
+
+    @additional_properties.setter
+    def additional_properties(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs']]]]):
+        pulumi.set(self, "additional_properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValues")
+    def allowed_values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]:
+        """
+        Map of possible values for configuration
+        """
+        return pulumi.get(self, "allowed_values")
+
+    @allowed_values.setter
+    def allowed_values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs']]]]):
+        pulumi.set(self, "allowed_values", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowedValuesDataType")
+    def allowed_values_data_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Map property Value data type
+        """
+        return pulumi.get(self, "allowed_values_data_type")
+
+    @allowed_values_data_type.setter
+    def allowed_values_data_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "allowed_values_data_type", value)
 
     @_builtins.property
     @pulumi.getter(name="configKey")
@@ -5889,6 +6839,130 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs:
     @values.setter
     def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs']]]]):
         pulumi.set(self, "values", value)
+
+
+if not MYPY:
+    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        property_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Property Type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 property_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] property_type: Property Type
+        :param pulumi.Input[_builtins.str] value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if property_type is not None:
+            pulumi.set(__self__, "property_type", property_type)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="propertyType")
+    def property_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Property Type
+        """
+        return pulumi.get(self, "property_type")
+
+    @property_type.setter
+    def property_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "property_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+if not MYPY:
+    class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        value: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 value: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[_builtins.str] value: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "value", value)
 
 
 if not MYPY:
@@ -6039,6 +7113,58 @@ class TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs:
     @query_field.setter
     def query_field(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "query_field", value)
+
+
+if not MYPY:
+    class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict(TypedDict):
+        key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The unique identifier of the detector rule type
+        """
+        values: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        Configuration value
+        """
+elif False:
+    TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TargetTargetDetectorRecipeEffectiveDetectorRuleRuleTypeArgs:
+    def __init__(__self__, *,
+                 key: Optional[pulumi.Input[_builtins.str]] = None,
+                 values: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: The unique identifier of the detector rule type
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: Configuration value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The unique identifier of the detector rule type
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Configuration value
+        """
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "values", value)
 
 
 if not MYPY:

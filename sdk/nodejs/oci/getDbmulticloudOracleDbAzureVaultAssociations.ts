@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Associations based on filters.
+ * Lists all Oracle DB Azure Associations based on the specified filters.
  *
  * ## Example Usage
  *
@@ -49,20 +49,20 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsArgs {
      */
     compartmentId: string;
     /**
-     * A filter to return Azure Vault Association.
+     * A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      */
     displayName?: string;
     filters?: inputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsFilter[];
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: string;
     /**
-     * A filter to return Oracle DB Azure Vault Association Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
     oracleDbAzureVaultAssociationId?: string;
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId?: string;
     /**
@@ -76,11 +76,11 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsArgs {
  */
 export interface GetDbmulticloudOracleDbAzureVaultAssociationsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      */
     readonly compartmentId: string;
     /**
-     * Display name of Oracle DB Azure Vault Association.
+     * Oracle DB Azure Vault Association resource name.
      */
     readonly displayName?: string;
     readonly filters?: outputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsFilter[];
@@ -89,7 +89,7 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsResult {
      */
     readonly id: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      */
     readonly oracleDbAzureConnectorId?: string;
     readonly oracleDbAzureVaultAssociationId?: string;
@@ -98,18 +98,18 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsResult {
      */
     readonly oracleDbAzureVaultAssociationSummaryCollections: outputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociationSummaryCollection[];
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      */
     readonly oracleDbAzureVaultId?: string;
     /**
-     * The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+     * The current lifecycle state of the Oracle DB Azure Vault Association resource.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Lists the all Oracle DB Azure Associations based on filters.
+ * Lists all Oracle DB Azure Associations based on the specified filters.
  *
  * ## Example Usage
  *
@@ -149,20 +149,20 @@ export interface GetDbmulticloudOracleDbAzureVaultAssociationsOutputArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * A filter to return Azure Vault Association.
+     * A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      */
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.oci.GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgs>[]>;
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      */
     oracleDbAzureConnectorId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Vault Association Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      */
     oracleDbAzureVaultAssociationId?: pulumi.Input<string>;
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId?: pulumi.Input<string>;
     /**

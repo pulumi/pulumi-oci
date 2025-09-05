@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Create DB Azure Vaults based on the provided information, this will fetch Keys related to Azure Vaults.
+ * Creates DB Azure Vault resource.
  * 
  * ## Example Usage
  * 
@@ -75,28 +75,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault")
 public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Azure Vault Id.
+     * (Updatable) Azure Vault ID.
      * 
      */
     @Export(name="azureVaultId", refs={String.class}, tree="[0]")
     private Output<String> azureVaultId;
 
     /**
-     * @return (Updatable) Azure Vault Id.
+     * @return (Updatable) Azure Vault ID.
      * 
      */
     public Output<String> azureVaultId() {
         return this.azureVaultId;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains DB Azure Vault resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -117,14 +117,14 @@ public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomR
         return this.definedTags;
     }
     /**
-     * (Updatable) Display name of DB Azure Vault.
+     * (Updatable) Oracle DB Azure Vault resource name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of DB Azure Vault.
+     * @return (Updatable) Oracle DB Azure Vault resource name.
      * 
      */
     public Output<String> displayName() {
@@ -145,14 +145,14 @@ public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomR
         return this.freeformTags;
     }
     /**
-     * Description of the latest modification of the DB Azure Vault Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the DB Azure Vault Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Vault resource.
      * 
      */
     public Output<String> lastModification() {
@@ -173,70 +173,70 @@ public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomR
         return this.lifecycleStateDetails;
     }
     /**
-     * (Updatable) Vault Resource Location.
+     * (Updatable) Oracle DB Azure Vault resource location.
      * 
      */
     @Export(name="location", refs={String.class}, tree="[0]")
     private Output<String> location;
 
     /**
-     * @return (Updatable) Vault Resource Location.
+     * @return (Updatable) Oracle DB Azure Vault resource location.
      * 
      */
     public Output<String> location() {
         return this.location;
     }
     /**
-     * (Updatable) Display name of Azure Resource Group.
+     * (Updatable) Oracle DB Azure resource group name.
      * 
      */
     @Export(name="oracleDbAzureResourceGroup", refs={String.class}, tree="[0]")
     private Output<String> oracleDbAzureResourceGroup;
 
     /**
-     * @return (Updatable) Display name of Azure Resource Group.
+     * @return (Updatable) Oracle DB Azure resource group name.
      * 
      */
     public Output<String> oracleDbAzureResourceGroup() {
         return this.oracleDbAzureResourceGroup;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     @Export(name="oracleDbConnectorId", refs={String.class}, tree="[0]")
     private Output<String> oracleDbConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      * 
      */
     public Output<String> oracleDbConnectorId() {
         return this.oracleDbConnectorId;
     }
     /**
-     * (Updatable) Resource&#39;s properties.
+     * (Updatable) resource&#39;s properties.
      * 
      */
     @Export(name="properties", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> properties;
 
     /**
-     * @return (Updatable) Resource&#39;s properties.
+     * @return (Updatable) resource&#39;s properties.
      * 
      */
     public Output<Map<String,String>> properties() {
         return this.properties;
     }
     /**
-     * The lifecycle state of the DB Azure Vault Resource.
+     * The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The lifecycle state of the DB Azure Vault Resource.
+     * @return The lifecycle state of the Oracle DB Azure Vault resource.
      * 
      */
     public Output<String> state() {
@@ -257,35 +257,35 @@ public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomR
         return this.systemTags;
     }
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
+     * @return Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-23T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) Vault Resource Type.
+     * (Updatable) Oracle DB Azure Vault resource type.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,7 +295,7 @@ public class DbmulticloudOracleDbAzureVault extends com.pulumi.resources.CustomR
     private Output<String> type;
 
     /**
-     * @return (Updatable) Vault Resource Type.
+     * @return (Updatable) Oracle DB Azure Vault resource type.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

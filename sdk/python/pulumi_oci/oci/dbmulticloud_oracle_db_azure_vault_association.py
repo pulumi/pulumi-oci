@@ -27,10 +27,10 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureVaultAssociation resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Vault Association.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
                
                
                ** IMPORTANT **
@@ -51,7 +51,7 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -63,7 +63,7 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Display name of Oracle DB Azure Vault Association.
+        (Updatable) Oracle DB Azure Vault Association resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -75,7 +75,7 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -87,7 +87,7 @@ class DbmulticloudOracleDbAzureVaultAssociationArgs:
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
 
         ** IMPORTANT **
@@ -142,23 +142,23 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureVaultAssociation resources.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Vault Association.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_resource_accessible: The Associated Resources are accessible or not.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.bool] is_resource_accessible: The Associated resource is accessible or not.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault Association resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -191,7 +191,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -215,7 +215,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Display name of Oracle DB Azure Vault Association.
+        (Updatable) Oracle DB Azure Vault Association resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -239,7 +239,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="isResourceAccessible")
     def is_resource_accessible(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        The Associated Resources are accessible or not.
+        The Associated resource is accessible or not.
         """
         return pulumi.get(self, "is_resource_accessible")
 
@@ -251,7 +251,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -275,7 +275,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -287,7 +287,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
 
         ** IMPORTANT **
@@ -303,7 +303,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "state")
 
@@ -327,7 +327,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -339,7 +339,7 @@ class _DbmulticloudOracleDbAzureVaultAssociationState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -364,7 +364,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Create Oracle DB Azure Vault Association based on the provided information.
+        Creates Oracle DB Azure Vault Association resource.
 
         ## Example Usage
 
@@ -395,12 +395,12 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Vault Association.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
                
                
                ** IMPORTANT **
@@ -415,7 +415,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Create Oracle DB Azure Vault Association based on the provided information.
+        Creates Oracle DB Azure Vault Association resource.
 
         ## Example Usage
 
@@ -525,23 +525,23 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Display name of Oracle DB Azure Vault Association.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Vault Association resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_resource_accessible: The Associated Resources are accessible or not.
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.bool] is_resource_accessible: The Associated resource is accessible or not.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Vault Association resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_vault_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Vault Association resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -566,7 +566,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -582,7 +582,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Display name of Oracle DB Azure Vault Association.
+        (Updatable) Oracle DB Azure Vault Association resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -598,7 +598,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="isResourceAccessible")
     def is_resource_accessible(self) -> pulumi.Output[_builtins.bool]:
         """
-        The Associated Resources are accessible or not.
+        The Associated resource is accessible or not.
         """
         return pulumi.get(self, "is_resource_accessible")
 
@@ -606,7 +606,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> pulumi.Output[_builtins.str]:
         """
-        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -622,7 +622,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -630,7 +630,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
 
 
         ** IMPORTANT **
@@ -642,7 +642,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current lifecycle state of the Oracle DB Azure Vault Association Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "state")
 
@@ -658,7 +658,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -666,7 +666,7 @@ class DbmulticloudOracleDbAzureVaultAssociation(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[_builtins.str]:
         """
-        Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 

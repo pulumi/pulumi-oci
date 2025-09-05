@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Connector Resource form a particular Resource ID.
+        /// Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Connector Resource form a particular Resource ID.
+        /// Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Get Oracle DB Azure Connector Resource form a particular Resource ID.
+        /// Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// 
         /// ## Example Usage
@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureConnectorArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the Oracle DB Azure Connector Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         /// </summary>
         [Input("oracleDbAzureConnectorId", required: true)]
         public string OracleDbAzureConnectorId { get; set; } = null!;
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureConnectorInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the Oracle DB Azure Connector Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         /// </summary>
         [Input("oracleDbAzureConnectorId", required: true)]
         public Input<string> OracleDbAzureConnectorId { get; set; } = null!;
@@ -127,19 +127,23 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureConnectorResult
     {
         /// <summary>
-        /// Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        /// Azure bearer access token.
         /// </summary>
         public readonly string AccessToken;
         /// <summary>
-        /// List of All VMs where Arc Agent is Install under VMCluster.
+        /// List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult> ArcAgentNodes;
         /// <summary>
-        /// Azure Identity Mechanism.
+        /// The current Connectivity status of Azure Identity Connector resource.
+        /// </summary>
+        public readonly string AzureIdentityConnectivityStatus;
+        /// <summary>
+        /// Azure Identity mechanism.
         /// </summary>
         public readonly string AzureIdentityMechanism;
         /// <summary>
-        /// Azure Resource Group Name.
+        /// Azure Resource group name.
         /// </summary>
         public readonly string AzureResourceGroup;
         /// <summary>
@@ -151,11 +155,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string AzureTenantId;
         /// <summary>
-        /// The ID of the compartment that contains Oracle DB Azure Connector resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
         /// </summary>
         public readonly string DbClusterResourceId;
         /// <summary>
@@ -163,11 +167,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// The ID of the Oracle DB Azure Connector resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Connector Resource.
+        /// Description of the latest modification of the Oracle DB Azure Connector resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -176,15 +180,15 @@ namespace Pulumi.Oci.Oci
         public readonly string LifecycleStateDetails;
         public readonly string OracleDbAzureConnectorId;
         /// <summary>
-        /// The current lifecycle state of the Azure Arc Agent Resource.
+        /// The current lifecycle state of the Azure Arc Agent resource.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -193,6 +197,8 @@ namespace Pulumi.Oci.Oci
             string accessToken,
 
             ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult> arcAgentNodes,
+
+            string azureIdentityConnectivityStatus,
 
             string azureIdentityMechanism,
 
@@ -224,6 +230,7 @@ namespace Pulumi.Oci.Oci
         {
             AccessToken = accessToken;
             ArcAgentNodes = arcAgentNodes;
+            AzureIdentityConnectivityStatus = azureIdentityConnectivityStatus;
             AzureIdentityMechanism = azureIdentityMechanism;
             AzureResourceGroup = azureResourceGroup;
             AzureSubscriptionId = azureSubscriptionId;

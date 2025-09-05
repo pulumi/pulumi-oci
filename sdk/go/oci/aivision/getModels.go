@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
 //
-// Returns a list of Models.
+// Returns a list of models in a compartment.
 //
 // ## Example Usage
 //
@@ -61,28 +61,28 @@ type GetModelsArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
-	// unique Model identifier
+	// The filter to find the model with the given identifier.
 	Id *string `pulumi:"id"`
 	// The ID of the project for which to list the objects.
 	ProjectId *string `pulumi:"projectId"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match models with the given lifecycleState.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getModels.
 type GetModelsResult struct {
-	// Compartment Identifier
+	// The compartment identifier.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// Model Identifier, can be renamed
+	// A human-friendly name for the model, which can be changed.
 	DisplayName *string           `pulumi:"displayName"`
 	Filters     []GetModelsFilter `pulumi:"filters"`
-	// Unique identifier that is immutable on creation
+	// A unique identifier that is immutable after creation.
 	Id *string `pulumi:"id"`
 	// The list of model_collection.
 	ModelCollections []GetModelsModelCollection `pulumi:"modelCollections"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 	ProjectId *string `pulumi:"projectId"`
-	// The current state of the Model.
+	// The current state of the model.
 	State *string `pulumi:"state"`
 }
 
@@ -102,11 +102,11 @@ type GetModelsOutputArgs struct {
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringPtrInput     `pulumi:"displayName"`
 	Filters     GetModelsFilterArrayInput `pulumi:"filters"`
-	// unique Model identifier
+	// The filter to find the model with the given identifier.
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// The ID of the project for which to list the objects.
 	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
-	// A filter to return only resources their lifecycleState matches the given lifecycleState.
+	// The filter to match models with the given lifecycleState.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -129,12 +129,12 @@ func (o GetModelsResultOutput) ToGetModelsResultOutputWithContext(ctx context.Co
 	return o
 }
 
-// Compartment Identifier
+// The compartment identifier.
 func (o GetModelsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// Model Identifier, can be renamed
+// A human-friendly name for the model, which can be changed.
 func (o GetModelsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -143,7 +143,7 @@ func (o GetModelsResultOutput) Filters() GetModelsFilterArrayOutput {
 	return o.ApplyT(func(v GetModelsResult) []GetModelsFilter { return v.Filters }).(GetModelsFilterArrayOutput)
 }
 
-// Unique identifier that is immutable on creation
+// A unique identifier that is immutable after creation.
 func (o GetModelsResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
@@ -153,12 +153,12 @@ func (o GetModelsResultOutput) ModelCollections() GetModelsModelCollectionArrayO
 	return o.ApplyT(func(v GetModelsResult) []GetModelsModelCollection { return v.ModelCollections }).(GetModelsModelCollectionArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
 func (o GetModelsResultOutput) ProjectId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the Model.
+// The current state of the model.
 func (o GetModelsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetModelsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

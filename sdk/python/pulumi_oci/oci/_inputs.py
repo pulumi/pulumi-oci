@@ -29,6 +29,8 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs',
     'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict',
+    'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs',
+    'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict',
     'ManagedKafkaKafkaClusterAccessSubnetArgs',
     'ManagedKafkaKafkaClusterAccessSubnetArgsDict',
     'ManagedKafkaKafkaClusterBrokerShapeArgs',
@@ -61,6 +63,12 @@ __all__ = [
     'GetDbmulticloudOracleDbAzureVaultAssociationsFilterArgsDict',
     'GetDbmulticloudOracleDbAzureVaultsFilterArgs',
     'GetDbmulticloudOracleDbAzureVaultsFilterArgsDict',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict',
+    'GetDbmulticloudOracleDbGcpKeyRingsFilterArgs',
+    'GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict',
+    'GetDbmulticloudOracleDbGcpKeysFilterArgs',
+    'GetDbmulticloudOracleDbGcpKeysFilterArgsDict',
     'GetManagedKafkaKafkaClusterConfigVersionsFilterArgs',
     'GetManagedKafkaKafkaClusterConfigVersionsFilterArgsDict',
     'GetManagedKafkaKafkaClusterConfigsFilterArgs',
@@ -415,7 +423,7 @@ if not MYPY:
     class DbmulticloudMultiCloudResourceDiscoveryResourceArgsDict(TypedDict):
         id: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         location: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -450,7 +458,7 @@ class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
                  resource_group: Optional[pulumi.Input[_builtins.str]] = None,
                  type: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param pulumi.Input[_builtins.str] id: The ID of the Discovered Resource.
         :param pulumi.Input[_builtins.str] location: Discovered Resource Location.
         :param pulumi.Input[_builtins.str] name: Discovered Resource Name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: Discovered Resource's properties.
@@ -474,7 +482,7 @@ class DbmulticloudMultiCloudResourceDiscoveryResourceArgs:
     @pulumi.getter
     def id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -547,7 +555,7 @@ if not MYPY:
     class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict(TypedDict):
         current_arc_agent_version: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         """
         host_id: NotRequired[pulumi.Input[_builtins.str]]
         """
@@ -555,15 +563,15 @@ if not MYPY:
         """
         host_name: NotRequired[pulumi.Input[_builtins.str]]
         """
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
         """
         status: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
         """
         time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
         """
-        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
 elif False:
     DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict: TypeAlias = Mapping[str, Any]
@@ -577,11 +585,11 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
                  status: Optional[pulumi.Input[_builtins.str]] = None,
                  time_last_checked: Optional[pulumi.Input[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param pulumi.Input[_builtins.str] current_arc_agent_version: Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         :param pulumi.Input[_builtins.str] host_id: Host ID.
-        :param pulumi.Input[_builtins.str] host_name: Host Name or Azure Arc Agent Name.
-        :param pulumi.Input[_builtins.str] status: The current status of the Azure Arc Agent Resource.
-        :param pulumi.Input[_builtins.str] time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param pulumi.Input[_builtins.str] host_name: Host name or Azure Arc Agent name.
+        :param pulumi.Input[_builtins.str] status: The current status of the Azure Arc Agent resource.
+        :param pulumi.Input[_builtins.str] time_last_checked: Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         if current_arc_agent_version is not None:
             pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
@@ -598,7 +606,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
     @pulumi.getter(name="currentArcAgentVersion")
     def current_arc_agent_version(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         """
         return pulumi.get(self, "current_arc_agent_version")
 
@@ -622,7 +630,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
         """
         return pulumi.get(self, "host_name")
 
@@ -634,7 +642,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
     @pulumi.getter
     def status(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "status")
 
@@ -646,7 +654,99 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs:
     @pulumi.getter(name="timeLastChecked")
     def time_last_checked(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+    @time_last_checked.setter
+    def time_last_checked(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_last_checked", value)
+
+
+if not MYPY:
+    class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict(TypedDict):
+        host_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Host ID.
+        """
+        host_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Host Name or Identity Connector name.
+        """
+        status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The current status of the GCP Identity Connector resource.
+        """
+        time_last_checked: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+elif False:
+    DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs:
+    def __init__(__self__, *,
+                 host_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 host_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 status: Optional[pulumi.Input[_builtins.str]] = None,
+                 time_last_checked: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] host_id: Host ID.
+        :param pulumi.Input[_builtins.str] host_name: Host Name or Identity Connector name.
+        :param pulumi.Input[_builtins.str] status: The current status of the GCP Identity Connector resource.
+        :param pulumi.Input[_builtins.str] time_last_checked: time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @host_id.setter
+    def host_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Host Name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "host_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The current status of the GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
 
@@ -1456,6 +1556,147 @@ elif False:
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAzureVaultsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbGcpKeyRingsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbGcpKeyRingsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetDbmulticloudOracleDbGcpKeysFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetDbmulticloudOracleDbGcpKeysFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbGcpKeysFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

@@ -12,107 +12,107 @@ import java.util.Objects;
 @CustomType
 public final class GetProjectResult {
     /**
-     * @return Compartment Identifier
+     * @return A compartment identifier.
      * 
      */
     private String compartmentId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     private Map<String,String> definedTags;
     /**
-     * @return A short description of the project.
+     * @return An optional description of the project.
      * 
      */
     private String description;
     /**
-     * @return Project Identifier, can be renamed
+     * @return A human-friendly name for the project, which can be changed.
      * 
      */
     private String displayName;
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private Map<String,String> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     private String id;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     private String lifecycleDetails;
     private String projectId;
     /**
-     * @return The current state of the Project.
+     * @return The current state of the project.
      * 
      */
     private String state;
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     private Map<String,String> systemTags;
     /**
-     * @return The time the Project was created. An RFC3339 formatted datetime string
+     * @return When the project was created, as an RFC3339 datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return The time the Project was updated. An RFC3339 formatted datetime string
+     * @return When the project was updated, as an RFC3339 datetime string.
      * 
      */
     private String timeUpdated;
 
     private GetProjectResult() {}
     /**
-     * @return Compartment Identifier
+     * @return A compartment identifier.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
     }
     /**
-     * @return A short description of the project.
+     * @return An optional description of the project.
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Project Identifier, can be renamed
+     * @return A human-friendly name for the project, which can be changed.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,String> freeformTags() {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if creation failed.
      * 
      */
     public String lifecycleDetails() {
@@ -122,28 +122,28 @@ public final class GetProjectResult {
         return this.projectId;
     }
     /**
-     * @return The current state of the Project.
+     * @return The current state of the project.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Map<String,String> systemTags() {
         return this.systemTags;
     }
     /**
-     * @return The time the Project was created. An RFC3339 formatted datetime string
+     * @return When the project was created, as an RFC3339 datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The time the Project was updated. An RFC3339 formatted datetime string
+     * @return When the project was updated, as an RFC3339 datetime string.
      * 
      */
     public String timeUpdated() {

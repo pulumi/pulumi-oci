@@ -55,14 +55,14 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * unique Model identifier
+     * The filter to find the model with the given identifier.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return unique Model identifier
+     * @return The filter to find the model with the given identifier.
      * 
      */
     public Optional<Output<String>> id() {
@@ -85,14 +85,14 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match models with the given lifecycleState.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * @return The filter to match models with the given lifecycleState.
      * 
      */
     public Optional<Output<String>> state() {
@@ -184,7 +184,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Model identifier
+         * @param id The filter to find the model with the given identifier.
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param id unique Model identifier
+         * @param id The filter to find the model with the given identifier.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state The filter to match models with the given lifecycleState.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetModelsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param state A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * @param state The filter to match models with the given lifecycleState.
          * 
          * @return builder
          * 

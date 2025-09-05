@@ -25,6 +25,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Model{}
 	case "oci:AiVision/project:Project":
 		r = &Project{}
+	case "oci:AiVision/streamGroup:StreamGroup":
+		r = &StreamGroup{}
+	case "oci:AiVision/streamJob:StreamJob":
+		r = &StreamJob{}
+	case "oci:AiVision/streamSource:StreamSource":
+		r = &StreamSource{}
+	case "oci:AiVision/visionPrivateEndpoint:VisionPrivateEndpoint":
+		r = &VisionPrivateEndpoint{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -46,6 +54,26 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"AiVision/project",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiVision/streamGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiVision/streamJob",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiVision/streamSource",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"AiVision/visionPrivateEndpoint",
 		&module{version},
 	)
 }

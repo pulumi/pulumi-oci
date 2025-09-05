@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Mysql
         ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         BackupId = testBackup.Id,
+        ///         BackupId = testMysqlBackup.Id,
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,
@@ -63,7 +63,7 @@ namespace Pulumi.Oci.Mysql
         ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         BackupId = testBackup.Id,
+        ///         BackupId = testMysqlBackup.Id,
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,
@@ -96,7 +96,7 @@ namespace Pulumi.Oci.Mysql
         ///     var testMysqlBackups = Oci.Mysql.GetMysqlBackups.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
-        ///         BackupId = testBackup.Id,
+        ///         BackupId = testMysqlBackup.Id,
         ///         CreationType = mysqlBackupCreationType,
         ///         DbSystemId = testDbSystem.Id,
         ///         DisplayName = mysqlBackupDisplayName,

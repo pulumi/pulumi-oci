@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+ * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -34,7 +34,7 @@ export function getDbmulticloudOracleDbAzureConnector(args: GetDbmulticloudOracl
  */
 export interface GetDbmulticloudOracleDbAzureConnectorArgs {
     /**
-     * The ID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      */
     oracleDbAzureConnectorId: string;
 }
@@ -44,19 +44,23 @@ export interface GetDbmulticloudOracleDbAzureConnectorArgs {
  */
 export interface GetDbmulticloudOracleDbAzureConnectorResult {
     /**
-     * Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+     * Azure bearer access token.
      */
     readonly accessToken: string;
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      */
     readonly arcAgentNodes: outputs.oci.GetDbmulticloudOracleDbAzureConnectorArcAgentNode[];
     /**
-     * Azure Identity Mechanism.
+     * The current Connectivity status of Azure Identity Connector resource.
+     */
+    readonly azureIdentityConnectivityStatus: string;
+    /**
+     * Azure Identity mechanism.
      */
     readonly azureIdentityMechanism: string;
     /**
-     * Azure Resource Group Name.
+     * Azure Resource group name.
      */
     readonly azureResourceGroup: string;
     /**
@@ -68,11 +72,11 @@ export interface GetDbmulticloudOracleDbAzureConnectorResult {
      */
     readonly azureTenantId: string;
     /**
-     * The ID of the compartment that contains Oracle DB Azure Connector resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      */
     readonly compartmentId: string;
     /**
-     * The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
      */
     readonly dbClusterResourceId: string;
     /**
@@ -80,11 +84,11 @@ export interface GetDbmulticloudOracleDbAzureConnectorResult {
      */
     readonly displayName: string;
     /**
-     * The ID of the Oracle DB Azure Connector resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      */
     readonly id: string;
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      */
     readonly lastModification: string;
     /**
@@ -93,22 +97,22 @@ export interface GetDbmulticloudOracleDbAzureConnectorResult {
     readonly lifecycleStateDetails: string;
     readonly oracleDbAzureConnectorId: string;
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Azure Arc Agent resource.
      */
     readonly state: string;
     /**
-     * Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeCreated: string;
     /**
-     * Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+ * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -133,7 +137,7 @@ export function getDbmulticloudOracleDbAzureConnectorOutput(args: GetDbmulticlou
  */
 export interface GetDbmulticloudOracleDbAzureConnectorOutputArgs {
     /**
-     * The ID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
      */
     oracleDbAzureConnectorId: pulumi.Input<string>;
 }

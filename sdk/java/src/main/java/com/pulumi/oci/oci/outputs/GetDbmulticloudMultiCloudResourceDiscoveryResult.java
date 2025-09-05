@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     private String compartmentId;
@@ -24,7 +24,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
      */
     private Map<String,String> definedTags;
     /**
-     * @return Display name of Multi Cloud Discovery Resource.
+     * @return Display name of the Multicloud Resource Discovery resource.
      * 
      */
     private String displayName;
@@ -34,12 +34,12 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     private String lastModification;
@@ -50,7 +50,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
     private String lifecycleStateDetails;
     private String multiCloudResourceDiscoveryId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     private String oracleDbConnectorId;
@@ -65,6 +65,11 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
      */
     private List<GetDbmulticloudMultiCloudResourceDiscoveryResource> resources;
     /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     */
+    private Map<String,String> resourcesFilter;
+    /**
      * @return The current lifecycle state of the discovered resource.
      * 
      */
@@ -75,19 +80,19 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
 
     private GetDbmulticloudMultiCloudResourceDiscoveryResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     public String compartmentId() {
@@ -101,7 +106,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         return this.definedTags;
     }
     /**
-     * @return Display name of Multi Cloud Discovery Resource.
+     * @return Display name of the Multicloud Resource Discovery resource.
      * 
      */
     public String displayName() {
@@ -115,14 +120,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+     * @return The ID of the Discovered Resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     public String lastModification() {
@@ -139,7 +144,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         return this.multiCloudResourceDiscoveryId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     public String oracleDbConnectorId() {
@@ -160,6 +165,13 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         return this.resources;
     }
     /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     */
+    public Map<String,String> resourcesFilter() {
+        return this.resourcesFilter;
+    }
+    /**
      * @return The current lifecycle state of the discovered resource.
      * 
      */
@@ -174,14 +186,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         return this.systemTags;
     }
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {
@@ -208,6 +220,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
         private String oracleDbConnectorId;
         private String resourceType;
         private List<GetDbmulticloudMultiCloudResourceDiscoveryResource> resources;
+        private Map<String,String> resourcesFilter;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -226,6 +239,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.resourceType = defaults.resourceType;
     	      this.resources = defaults.resources;
+    	      this.resourcesFilter = defaults.resourcesFilter;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -324,6 +338,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
             return resources(List.of(resources));
         }
         @CustomType.Setter
+        public Builder resourcesFilter(Map<String,String> resourcesFilter) {
+            if (resourcesFilter == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudMultiCloudResourceDiscoveryResult", "resourcesFilter");
+            }
+            this.resourcesFilter = resourcesFilter;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudMultiCloudResourceDiscoveryResult", "state");
@@ -368,6 +390,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryResult {
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.resourceType = resourceType;
             _resultValue.resources = resources;
+            _resultValue.resourcesFilter = resourcesFilter;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

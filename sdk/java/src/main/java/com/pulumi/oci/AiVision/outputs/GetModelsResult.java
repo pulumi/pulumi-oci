@@ -16,18 +16,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetModelsResult {
     /**
-     * @return Compartment Identifier
+     * @return The compartment identifier.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return Model Identifier, can be renamed
+     * @return A human-friendly name for the model, which can be changed.
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetModelsFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     private @Nullable String id;
@@ -37,26 +37,26 @@ public final class GetModelsResult {
      */
     private List<GetModelsModelCollection> modelCollections;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     private @Nullable String projectId;
     /**
-     * @return The current state of the Model.
+     * @return The current state of the model.
      * 
      */
     private @Nullable String state;
 
     private GetModelsResult() {}
     /**
-     * @return Compartment Identifier
+     * @return The compartment identifier.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return Model Identifier, can be renamed
+     * @return A human-friendly name for the model, which can be changed.
      * 
      */
     public Optional<String> displayName() {
@@ -66,7 +66,7 @@ public final class GetModelsResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return A unique identifier that is immutable after creation.
      * 
      */
     public Optional<String> id() {
@@ -80,14 +80,14 @@ public final class GetModelsResult {
         return this.modelCollections;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     public Optional<String> projectId() {
         return Optional.ofNullable(this.projectId);
     }
     /**
-     * @return The current state of the Model.
+     * @return The current state of the model.
      * 
      */
     public Optional<String> state() {

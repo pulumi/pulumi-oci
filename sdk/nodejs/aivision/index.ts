@@ -25,6 +25,46 @@ export const getProjects: typeof import("./getProjects").getProjects = null as a
 export const getProjectsOutput: typeof import("./getProjects").getProjectsOutput = null as any;
 utilities.lazyLoad(exports, ["getProjects","getProjectsOutput"], () => require("./getProjects"));
 
+export { GetStreamGroupArgs, GetStreamGroupResult, GetStreamGroupOutputArgs } from "./getStreamGroup";
+export const getStreamGroup: typeof import("./getStreamGroup").getStreamGroup = null as any;
+export const getStreamGroupOutput: typeof import("./getStreamGroup").getStreamGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamGroup","getStreamGroupOutput"], () => require("./getStreamGroup"));
+
+export { GetStreamGroupsArgs, GetStreamGroupsResult, GetStreamGroupsOutputArgs } from "./getStreamGroups";
+export const getStreamGroups: typeof import("./getStreamGroups").getStreamGroups = null as any;
+export const getStreamGroupsOutput: typeof import("./getStreamGroups").getStreamGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamGroups","getStreamGroupsOutput"], () => require("./getStreamGroups"));
+
+export { GetStreamJobArgs, GetStreamJobResult, GetStreamJobOutputArgs } from "./getStreamJob";
+export const getStreamJob: typeof import("./getStreamJob").getStreamJob = null as any;
+export const getStreamJobOutput: typeof import("./getStreamJob").getStreamJobOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamJob","getStreamJobOutput"], () => require("./getStreamJob"));
+
+export { GetStreamJobsArgs, GetStreamJobsResult, GetStreamJobsOutputArgs } from "./getStreamJobs";
+export const getStreamJobs: typeof import("./getStreamJobs").getStreamJobs = null as any;
+export const getStreamJobsOutput: typeof import("./getStreamJobs").getStreamJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamJobs","getStreamJobsOutput"], () => require("./getStreamJobs"));
+
+export { GetStreamSourceArgs, GetStreamSourceResult, GetStreamSourceOutputArgs } from "./getStreamSource";
+export const getStreamSource: typeof import("./getStreamSource").getStreamSource = null as any;
+export const getStreamSourceOutput: typeof import("./getStreamSource").getStreamSourceOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamSource","getStreamSourceOutput"], () => require("./getStreamSource"));
+
+export { GetStreamSourcesArgs, GetStreamSourcesResult, GetStreamSourcesOutputArgs } from "./getStreamSources";
+export const getStreamSources: typeof import("./getStreamSources").getStreamSources = null as any;
+export const getStreamSourcesOutput: typeof import("./getStreamSources").getStreamSourcesOutput = null as any;
+utilities.lazyLoad(exports, ["getStreamSources","getStreamSourcesOutput"], () => require("./getStreamSources"));
+
+export { GetVisionPrivateEndpointArgs, GetVisionPrivateEndpointResult, GetVisionPrivateEndpointOutputArgs } from "./getVisionPrivateEndpoint";
+export const getVisionPrivateEndpoint: typeof import("./getVisionPrivateEndpoint").getVisionPrivateEndpoint = null as any;
+export const getVisionPrivateEndpointOutput: typeof import("./getVisionPrivateEndpoint").getVisionPrivateEndpointOutput = null as any;
+utilities.lazyLoad(exports, ["getVisionPrivateEndpoint","getVisionPrivateEndpointOutput"], () => require("./getVisionPrivateEndpoint"));
+
+export { GetVisionPrivateEndpointsArgs, GetVisionPrivateEndpointsResult, GetVisionPrivateEndpointsOutputArgs } from "./getVisionPrivateEndpoints";
+export const getVisionPrivateEndpoints: typeof import("./getVisionPrivateEndpoints").getVisionPrivateEndpoints = null as any;
+export const getVisionPrivateEndpointsOutput: typeof import("./getVisionPrivateEndpoints").getVisionPrivateEndpointsOutput = null as any;
+utilities.lazyLoad(exports, ["getVisionPrivateEndpoints","getVisionPrivateEndpointsOutput"], () => require("./getVisionPrivateEndpoints"));
+
 export { ModelArgs, ModelState } from "./model";
 export type Model = import("./model").Model;
 export const Model: typeof import("./model").Model = null as any;
@@ -35,6 +75,26 @@ export type Project = import("./project").Project;
 export const Project: typeof import("./project").Project = null as any;
 utilities.lazyLoad(exports, ["Project"], () => require("./project"));
 
+export { StreamGroupArgs, StreamGroupState } from "./streamGroup";
+export type StreamGroup = import("./streamGroup").StreamGroup;
+export const StreamGroup: typeof import("./streamGroup").StreamGroup = null as any;
+utilities.lazyLoad(exports, ["StreamGroup"], () => require("./streamGroup"));
+
+export { StreamJobArgs, StreamJobState } from "./streamJob";
+export type StreamJob = import("./streamJob").StreamJob;
+export const StreamJob: typeof import("./streamJob").StreamJob = null as any;
+utilities.lazyLoad(exports, ["StreamJob"], () => require("./streamJob"));
+
+export { StreamSourceArgs, StreamSourceState } from "./streamSource";
+export type StreamSource = import("./streamSource").StreamSource;
+export const StreamSource: typeof import("./streamSource").StreamSource = null as any;
+utilities.lazyLoad(exports, ["StreamSource"], () => require("./streamSource"));
+
+export { VisionPrivateEndpointArgs, VisionPrivateEndpointState } from "./visionPrivateEndpoint";
+export type VisionPrivateEndpoint = import("./visionPrivateEndpoint").VisionPrivateEndpoint;
+export const VisionPrivateEndpoint: typeof import("./visionPrivateEndpoint").VisionPrivateEndpoint = null as any;
+utilities.lazyLoad(exports, ["VisionPrivateEndpoint"], () => require("./visionPrivateEndpoint"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -44,6 +104,14 @@ const _module = {
                 return new Model(name, <any>undefined, { urn })
             case "oci:AiVision/project:Project":
                 return new Project(name, <any>undefined, { urn })
+            case "oci:AiVision/streamGroup:StreamGroup":
+                return new StreamGroup(name, <any>undefined, { urn })
+            case "oci:AiVision/streamJob:StreamJob":
+                return new StreamJob(name, <any>undefined, { urn })
+            case "oci:AiVision/streamSource:StreamSource":
+                return new StreamSource(name, <any>undefined, { urn })
+            case "oci:AiVision/visionPrivateEndpoint:VisionPrivateEndpoint":
+                return new VisionPrivateEndpoint(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -51,3 +119,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "AiVision/model", _module)
 pulumi.runtime.registerResourceModule("oci", "AiVision/project", _module)
+pulumi.runtime.registerResourceModule("oci", "AiVision/streamGroup", _module)
+pulumi.runtime.registerResourceModule("oci", "AiVision/streamJob", _module)
+pulumi.runtime.registerResourceModule("oci", "AiVision/streamSource", _module)
+pulumi.runtime.registerResourceModule("oci", "AiVision/visionPrivateEndpoint", _module)

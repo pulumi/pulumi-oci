@@ -12,7 +12,7 @@ namespace Pulumi.Oci.AiVision
     /// <summary>
     /// This resource provides the Model resource in Oracle Cloud Infrastructure Ai Vision service.
     /// 
-    /// Creates a new Model.
+    /// Create a new model.
     /// 
     /// ## Example Usage
     /// 
@@ -37,16 +37,10 @@ namespace Pulumi.Oci.AiVision
     ///             NamespaceName = modelTrainingDatasetNamespace,
     ///             Object = modelTrainingDatasetObject,
     ///         },
-    ///         DefinedTags = 
-    ///         {
-    ///             { "foo-namespace.bar-key", "value" },
-    ///         },
+    ///         DefinedTags = modelDefinedTags,
     ///         Description = modelDescription,
     ///         DisplayName = modelDisplayName,
-    ///         FreeformTags = 
-    ///         {
-    ///             { "bar-key", "value" },
-    ///         },
+    ///         FreeformTags = modelFreeformTags,
     ///         IsQuickMode = modelIsQuickMode,
     ///         MaxTrainingDurationInHours = modelMaxTrainingDurationInHours,
     ///         ModelVersion = modelModelVersion,
@@ -83,157 +77,157 @@ namespace Pulumi.Oci.AiVision
     public partial class Model : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Average precision of the trained model
+        /// The mean average precision of the trained model.
         /// </summary>
         [Output("averagePrecision")]
         public Output<double> AveragePrecision { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment identifier.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Confidence ratio of the calculation
+        /// The intersection over the union threshold used for calculating precision and recall.
         /// </summary>
         [Output("confidenceThreshold")]
         public Output<double> ConfidenceThreshold { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A short description of the Model.
+        /// (Updatable) An optional description of the model.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Model Identifier
+        /// (Updatable) A human-friendly name for the model, which can be changed.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// If It's true, Training is set for recommended epochs needed for quick training.
+        /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         [Output("isQuickMode")]
         public Output<bool> IsQuickMode { get; private set; } = null!;
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The maximum duration in hours for which the training will run.
+        /// The maximum model training duration in hours, expressed as a decimal fraction.
         /// </summary>
         [Output("maxTrainingDurationInHours")]
         public Output<double> MaxTrainingDurationInHours { get; private set; } = null!;
 
         /// <summary>
-        /// Complete Training Metrics for successful trained model
+        /// The complete set of per-label metrics for successfully trained models.
         /// </summary>
         [Output("metrics")]
         public Output<string> Metrics { get; private set; } = null!;
 
         /// <summary>
-        /// The  type of the model.
+        /// Which type of Vision model this is.
         /// </summary>
         [Output("modelType")]
         public Output<string> ModelType { get; private set; } = null!;
 
         /// <summary>
-        /// Model version.
+        /// The model version
         /// </summary>
         [Output("modelVersion")]
         public Output<string> ModelVersion { get; private set; } = null!;
 
         /// <summary>
-        /// Precision of the trained model
+        /// The precision of the trained model.
         /// </summary>
         [Output("precision")]
         public Output<double> Precision { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         /// </summary>
         [Output("projectId")]
         public Output<string> ProjectId { get; private set; } = null!;
 
         /// <summary>
-        /// Recall of the trained model
+        /// Recall of the trained model.
         /// </summary>
         [Output("recall")]
         public Output<double> Recall { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Model.
+        /// The current state of the model.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// Total number of testing Images
+        /// The number of images set aside for evaluating model performance metrics after training.
         /// </summary>
         [Output("testImageCount")]
         public Output<int> TestImageCount { get; private set; } = null!;
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("testingDataset")]
         public Output<Outputs.ModelTestingDataset> TestingDataset { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Model was created. An RFC3339 formatted datetime string
+        /// When the model was created, as an RFC3339 datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Model was updated. An RFC3339 formatted datetime string
+        /// When the model was updated, as an RFC3339 datetime string.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Total number of training Images
+        /// The number of images in the dataset used to train, validate, and test the model.
         /// </summary>
         [Output("totalImageCount")]
         public Output<int> TotalImageCount { get; private set; } = null!;
 
         /// <summary>
-        /// Total hours actually used for training
+        /// The total hours actually used for model training.
         /// </summary>
         [Output("trainedDurationInHours")]
         public Output<double> TrainedDurationInHours { get; private set; } = null!;
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("trainingDataset")]
         public Output<Outputs.ModelTrainingDataset> TrainingDataset { get; private set; } = null!;
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Output("validationDataset")]
         public Output<Outputs.ModelValidationDataset> ValidationDataset { get; private set; } = null!;
@@ -285,7 +279,7 @@ namespace Pulumi.Oci.AiVision
     public sealed class ModelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment identifier.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -294,7 +288,7 @@ namespace Pulumi.Oci.AiVision
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -303,13 +297,13 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// (Updatable) A short description of the Model.
+        /// (Updatable) An optional description of the model.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Model Identifier
+        /// (Updatable) A human-friendly name for the model, which can be changed.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -318,7 +312,7 @@ namespace Pulumi.Oci.AiVision
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -327,49 +321,49 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// If It's true, Training is set for recommended epochs needed for quick training.
+        /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         [Input("isQuickMode")]
         public Input<bool>? IsQuickMode { get; set; }
 
         /// <summary>
-        /// The maximum duration in hours for which the training will run.
+        /// The maximum model training duration in hours, expressed as a decimal fraction.
         /// </summary>
         [Input("maxTrainingDurationInHours")]
         public Input<double>? MaxTrainingDurationInHours { get; set; }
 
         /// <summary>
-        /// The  type of the model.
+        /// Which type of Vision model this is.
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;
 
         /// <summary>
-        /// Model version.
+        /// The model version
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         /// </summary>
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("testingDataset")]
         public Input<Inputs.ModelTestingDatasetArgs>? TestingDataset { get; set; }
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("trainingDataset", required: true)]
         public Input<Inputs.ModelTrainingDatasetArgs> TrainingDataset { get; set; } = null!;
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("validationDataset")]
         public Input<Inputs.ModelValidationDatasetArgs>? ValidationDataset { get; set; }
@@ -383,19 +377,19 @@ namespace Pulumi.Oci.AiVision
     public sealed class ModelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Average precision of the trained model
+        /// The mean average precision of the trained model.
         /// </summary>
         [Input("averagePrecision")]
         public Input<double>? AveragePrecision { get; set; }
 
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) The compartment identifier.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Confidence ratio of the calculation
+        /// The intersection over the union threshold used for calculating precision and recall.
         /// </summary>
         [Input("confidenceThreshold")]
         public Input<double>? ConfidenceThreshold { get; set; }
@@ -404,7 +398,7 @@ namespace Pulumi.Oci.AiVision
         private InputMap<string>? _definedTags;
 
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{"foo-namespace": {"bar-key": "value"}}`
         /// </summary>
         public InputMap<string> DefinedTags
         {
@@ -413,13 +407,13 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// (Updatable) A short description of the Model.
+        /// (Updatable) An optional description of the model.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Model Identifier
+        /// (Updatable) A human-friendly name for the model, which can be changed.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -428,7 +422,7 @@ namespace Pulumi.Oci.AiVision
         private InputMap<string>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{"bar-key": "value"}`
         /// </summary>
         public InputMap<string> FreeformTags
         {
@@ -437,61 +431,61 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// If It's true, Training is set for recommended epochs needed for quick training.
+        /// Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
         /// </summary>
         [Input("isQuickMode")]
         public Input<bool>? IsQuickMode { get; set; }
 
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail, that can provide actionable information if training failed.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The maximum duration in hours for which the training will run.
+        /// The maximum model training duration in hours, expressed as a decimal fraction.
         /// </summary>
         [Input("maxTrainingDurationInHours")]
         public Input<double>? MaxTrainingDurationInHours { get; set; }
 
         /// <summary>
-        /// Complete Training Metrics for successful trained model
+        /// The complete set of per-label metrics for successfully trained models.
         /// </summary>
         [Input("metrics")]
         public Input<string>? Metrics { get; set; }
 
         /// <summary>
-        /// The  type of the model.
+        /// Which type of Vision model this is.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
 
         /// <summary>
-        /// Model version.
+        /// The model version
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }
 
         /// <summary>
-        /// Precision of the trained model
+        /// The precision of the trained model.
         /// </summary>
         [Input("precision")]
         public Input<double>? Precision { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         /// </summary>
         [Input("projectId")]
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// Recall of the trained model
+        /// Recall of the trained model.
         /// </summary>
         [Input("recall")]
         public Input<double>? Recall { get; set; }
 
         /// <summary>
-        /// The current state of the Model.
+        /// The current state of the model.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -500,7 +494,7 @@ namespace Pulumi.Oci.AiVision
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{"orcl-cloud": {"free-tier-retained": "true"}}`
         /// </summary>
         public InputMap<string> SystemTags
         {
@@ -509,49 +503,49 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// Total number of testing Images
+        /// The number of images set aside for evaluating model performance metrics after training.
         /// </summary>
         [Input("testImageCount")]
         public Input<int>? TestImageCount { get; set; }
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("testingDataset")]
         public Input<Inputs.ModelTestingDatasetGetArgs>? TestingDataset { get; set; }
 
         /// <summary>
-        /// The time the Model was created. An RFC3339 formatted datetime string
+        /// When the model was created, as an RFC3339 datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time the Model was updated. An RFC3339 formatted datetime string
+        /// When the model was updated, as an RFC3339 datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Total number of training Images
+        /// The number of images in the dataset used to train, validate, and test the model.
         /// </summary>
         [Input("totalImageCount")]
         public Input<int>? TotalImageCount { get; set; }
 
         /// <summary>
-        /// Total hours actually used for training
+        /// The total hours actually used for model training.
         /// </summary>
         [Input("trainedDurationInHours")]
         public Input<double>? TrainedDurationInHours { get; set; }
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("trainingDataset")]
         public Input<Inputs.ModelTrainingDatasetGetArgs>? TrainingDataset { get; set; }
 
         /// <summary>
-        /// The base entity for a Dataset, which is the input for Model creation.
+        /// The base entity which is the input for creating and training a model.
         /// </summary>
         [Input("validationDataset")]
         public Input<Inputs.ModelValidationDatasetGetArgs>? ValidationDataset { get; set; }

@@ -27,6 +27,10 @@ __all__ = [
     'ChannelTargetFilterArgsDict',
     'HeatWaveClusterClusterNodeArgs',
     'HeatWaveClusterClusterNodeArgsDict',
+    'MysqlBackupBackupValidationDetailArgs',
+    'MysqlBackupBackupValidationDetailArgsDict',
+    'MysqlBackupBackupValidationDetailPreparedBackupDetailArgs',
+    'MysqlBackupBackupValidationDetailPreparedBackupDetailArgsDict',
     'MysqlBackupDbSystemSnapshotArgs',
     'MysqlBackupDbSystemSnapshotArgsDict',
     'MysqlBackupDbSystemSnapshotBackupPolicyArgs',
@@ -57,6 +61,8 @@ __all__ = [
     'MysqlBackupEncryptDataArgsDict',
     'MysqlBackupSourceDetailsArgs',
     'MysqlBackupSourceDetailsArgsDict',
+    'MysqlBackupValidateBackupDetailArgs',
+    'MysqlBackupValidateBackupDetailArgsDict',
     'MysqlConfigurationInitVariablesArgs',
     'MysqlConfigurationInitVariablesArgsDict',
     'MysqlConfigurationVariablesArgs',
@@ -754,6 +760,190 @@ class HeatWaveClusterClusterNodeArgs:
     @time_updated.setter
     def time_updated(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
+
+
+if not MYPY:
+    class MysqlBackupBackupValidationDetailArgsDict(TypedDict):
+        backup_preparation_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        """
+        error_message: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        Error message if the backup validation has failed.
+        """
+        estimated_restore_duration: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The estimated restore duration of the backup.
+        """
+        prepared_backup_details: NotRequired[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgsDict']]]]
+        """
+        Prepared backup details.
+        """
+        time_last_validated: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time of the most recent validation performed on the backup.
+        """
+        validation_status: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+elif False:
+    MysqlBackupBackupValidationDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupBackupValidationDetailArgs:
+    def __init__(__self__, *,
+                 backup_preparation_status: Optional[pulumi.Input[_builtins.str]] = None,
+                 error_message: Optional[pulumi.Input[_builtins.str]] = None,
+                 estimated_restore_duration: Optional[pulumi.Input[_builtins.str]] = None,
+                 prepared_backup_details: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs']]]] = None,
+                 time_last_validated: Optional[pulumi.Input[_builtins.str]] = None,
+                 validation_status: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_preparation_status: Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        :param pulumi.Input[_builtins.str] error_message: Error message if the backup validation has failed.
+        :param pulumi.Input[_builtins.str] estimated_restore_duration: The estimated restore duration of the backup.
+        :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs']]] prepared_backup_details: Prepared backup details.
+        :param pulumi.Input[_builtins.str] time_last_validated: The date and time of the most recent validation performed on the backup.
+        :param pulumi.Input[_builtins.str] validation_status: The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        if backup_preparation_status is not None:
+            pulumi.set(__self__, "backup_preparation_status", backup_preparation_status)
+        if error_message is not None:
+            pulumi.set(__self__, "error_message", error_message)
+        if estimated_restore_duration is not None:
+            pulumi.set(__self__, "estimated_restore_duration", estimated_restore_duration)
+        if prepared_backup_details is not None:
+            pulumi.set(__self__, "prepared_backup_details", prepared_backup_details)
+        if time_last_validated is not None:
+            pulumi.set(__self__, "time_last_validated", time_last_validated)
+        if validation_status is not None:
+            pulumi.set(__self__, "validation_status", validation_status)
+
+    @_builtins.property
+    @pulumi.getter(name="backupPreparationStatus")
+    def backup_preparation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Indicates whether the backup has been prepared successfully.  PREPARED: The backup is prepared one. NOT_PREPARED: The backup is not prepared.
+        """
+        return pulumi.get(self, "backup_preparation_status")
+
+    @backup_preparation_status.setter
+    def backup_preparation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "backup_preparation_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="errorMessage")
+    def error_message(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Error message if the backup validation has failed.
+        """
+        return pulumi.get(self, "error_message")
+
+    @error_message.setter
+    def error_message(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "error_message", value)
+
+    @_builtins.property
+    @pulumi.getter(name="estimatedRestoreDuration")
+    def estimated_restore_duration(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The estimated restore duration of the backup.
+        """
+        return pulumi.get(self, "estimated_restore_duration")
+
+    @estimated_restore_duration.setter
+    def estimated_restore_duration(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "estimated_restore_duration", value)
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupDetails")
+    def prepared_backup_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs']]]]:
+        """
+        Prepared backup details.
+        """
+        return pulumi.get(self, "prepared_backup_details")
+
+    @prepared_backup_details.setter
+    def prepared_backup_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupBackupValidationDetailPreparedBackupDetailArgs']]]]):
+        pulumi.set(self, "prepared_backup_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastValidated")
+    def time_last_validated(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time of the most recent validation performed on the backup.
+        """
+        return pulumi.get(self, "time_last_validated")
+
+    @time_last_validated.setter
+    def time_last_validated(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_last_validated", value)
+
+    @_builtins.property
+    @pulumi.getter(name="validationStatus")
+    def validation_status(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The status of backup validation:  NOT_VALIDATED (Default): The backup has not been validated.  VALIDATED: The backup has been validated successfully.  NEEDS_ATTENTION: The backup validation failed due to a transient issue. Validation should be retried.  FAILED: The backup cannot be restored.
+        """
+        return pulumi.get(self, "validation_status")
+
+    @validation_status.setter
+    def validation_status(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "validation_status", value)
+
+
+if not MYPY:
+    class MysqlBackupBackupValidationDetailPreparedBackupDetailArgsDict(TypedDict):
+        prepared_backup_restore_reduction_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        The estimated time saving when this prepared backup is restored.
+        """
+        time_prepared: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        The date and time the backup was prepared.
+        """
+elif False:
+    MysqlBackupBackupValidationDetailPreparedBackupDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupBackupValidationDetailPreparedBackupDetailArgs:
+    def __init__(__self__, *,
+                 prepared_backup_restore_reduction_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 time_prepared: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] prepared_backup_restore_reduction_in_minutes: The estimated time saving when this prepared backup is restored.
+        :param pulumi.Input[_builtins.str] time_prepared: The date and time the backup was prepared.
+        """
+        if prepared_backup_restore_reduction_in_minutes is not None:
+            pulumi.set(__self__, "prepared_backup_restore_reduction_in_minutes", prepared_backup_restore_reduction_in_minutes)
+        if time_prepared is not None:
+            pulumi.set(__self__, "time_prepared", time_prepared)
+
+    @_builtins.property
+    @pulumi.getter(name="preparedBackupRestoreReductionInMinutes")
+    def prepared_backup_restore_reduction_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The estimated time saving when this prepared backup is restored.
+        """
+        return pulumi.get(self, "prepared_backup_restore_reduction_in_minutes")
+
+    @prepared_backup_restore_reduction_in_minutes.setter
+    def prepared_backup_restore_reduction_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "prepared_backup_restore_reduction_in_minutes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timePrepared")
+    def time_prepared(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The date and time the backup was prepared.
+        """
+        return pulumi.get(self, "time_prepared")
+
+    @time_prepared.setter
+    def time_prepared(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "time_prepared", value)
 
 
 if not MYPY:
@@ -2510,6 +2700,37 @@ class MysqlBackupSourceDetailsArgs:
     @region.setter
     def region(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "region", value)
+
+
+if not MYPY:
+    class MysqlBackupValidateBackupDetailArgsDict(TypedDict):
+        is_prepared_backup_required: pulumi.Input[_builtins.bool]
+        """
+        Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+        """
+elif False:
+    MysqlBackupValidateBackupDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class MysqlBackupValidateBackupDetailArgs:
+    def __init__(__self__, *,
+                 is_prepared_backup_required: pulumi.Input[_builtins.bool]):
+        """
+        :param pulumi.Input[_builtins.bool] is_prepared_backup_required: Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+        """
+        pulumi.set(__self__, "is_prepared_backup_required", is_prepared_backup_required)
+
+    @_builtins.property
+    @pulumi.getter(name="isPreparedBackupRequired")
+    def is_prepared_backup_required(self) -> pulumi.Input[_builtins.bool]:
+        """
+        Specifies whether the backup needs to be prepared for fast restore or not. Set to true to prepare the backup **Note:** Prepare backup is a one time operation, therefore this field can be set to true only once.
+        """
+        return pulumi.get(self, "is_prepared_backup_required")
+
+    @is_prepared_backup_required.setter
+    def is_prepared_backup_required(self, value: pulumi.Input[_builtins.bool]):
+        pulumi.set(self, "is_prepared_backup_required", value)
 
 
 if not MYPY:

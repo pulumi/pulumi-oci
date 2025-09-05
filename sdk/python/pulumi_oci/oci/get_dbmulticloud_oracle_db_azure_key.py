@@ -26,7 +26,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAzureKey.
     """
-    def __init__(__self__, azure_key_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_modification=None, lifecycle_state_details=None, oracle_db_azure_key_id=None, oracle_db_azure_vault_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, azure_key_id=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_properties=None, last_modification=None, lifecycle_state_details=None, oracle_db_azure_key_id=None, oracle_db_azure_vault_id=None, resource_type=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if azure_key_id and not isinstance(azure_key_id, str):
             raise TypeError("Expected argument 'azure_key_id' to be a str")
         pulumi.set(__self__, "azure_key_id", azure_key_id)
@@ -45,6 +45,9 @@ class GetDbmulticloudOracleDbAzureKeyResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if key_properties and not isinstance(key_properties, dict):
+            raise TypeError("Expected argument 'key_properties' to be a dict")
+        pulumi.set(__self__, "key_properties", key_properties)
         if last_modification and not isinstance(last_modification, str):
             raise TypeError("Expected argument 'last_modification' to be a str")
         pulumi.set(__self__, "last_modification", last_modification)
@@ -57,6 +60,9 @@ class GetDbmulticloudOracleDbAzureKeyResult:
         if oracle_db_azure_vault_id and not isinstance(oracle_db_azure_vault_id, str):
             raise TypeError("Expected argument 'oracle_db_azure_vault_id' to be a str")
         pulumi.set(__self__, "oracle_db_azure_vault_id", oracle_db_azure_vault_id)
+        if resource_type and not isinstance(resource_type, str):
+            raise TypeError("Expected argument 'resource_type' to be a str")
+        pulumi.set(__self__, "resource_type", resource_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -74,7 +80,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="azureKeyId")
     def azure_key_id(self) -> _builtins.str:
         """
-        The Azure ID of the Azure Key, Azure Key URL.
+        The ID of the Azure Key resource.
         """
         return pulumi.get(self, "azure_key_id")
 
@@ -82,7 +88,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -98,7 +104,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display name of Oracle DB Azure Vault Key.
+        Oracle DB Azure Vault Key resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -119,10 +125,18 @@ class GetDbmulticloudOracleDbAzureKeyResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="keyProperties")
+    def key_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Key properties
+        """
+        return pulumi.get(self, "key_properties")
+
+    @_builtins.property
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -143,15 +157,23 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_azure_vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Key Resource type.
+        """
+        return pulumi.get(self, "resource_type")
 
     @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+        The current lifecycle state of the Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "state")
 
@@ -167,7 +189,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -175,7 +197,7 @@ class GetDbmulticloudOracleDbAzureKeyResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -192,10 +214,12 @@ class AwaitableGetDbmulticloudOracleDbAzureKeyResult(GetDbmulticloudOracleDbAzur
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            key_properties=self.key_properties,
             last_modification=self.last_modification,
             lifecycle_state_details=self.lifecycle_state_details,
             oracle_db_azure_key_id=self.oracle_db_azure_key_id,
             oracle_db_azure_vault_id=self.oracle_db_azure_vault_id,
+            resource_type=self.resource_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -207,7 +231,7 @@ def get_dbmulticloud_oracle_db_azure_key(oracle_db_azure_key_id: Optional[_built
     """
     This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Key Details form a particular Container Resource ID.
+    Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -219,7 +243,7 @@ def get_dbmulticloud_oracle_db_azure_key(oracle_db_azure_key_id: Optional[_built
     ```
 
 
-    :param _builtins.str oracle_db_azure_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+    :param _builtins.str oracle_db_azure_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureKeyId'] = oracle_db_azure_key_id
@@ -233,10 +257,12 @@ def get_dbmulticloud_oracle_db_azure_key(oracle_db_azure_key_id: Optional[_built
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        key_properties=pulumi.get(__ret__, 'key_properties'),
         last_modification=pulumi.get(__ret__, 'last_modification'),
         lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
         oracle_db_azure_key_id=pulumi.get(__ret__, 'oracle_db_azure_key_id'),
         oracle_db_azure_vault_id=pulumi.get(__ret__, 'oracle_db_azure_vault_id'),
+        resource_type=pulumi.get(__ret__, 'resource_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
@@ -246,7 +272,7 @@ def get_dbmulticloud_oracle_db_azure_key_output(oracle_db_azure_key_id: Optional
     """
     This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Key Details form a particular Container Resource ID.
+    Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -258,7 +284,7 @@ def get_dbmulticloud_oracle_db_azure_key_output(oracle_db_azure_key_id: Optional
     ```
 
 
-    :param _builtins.str oracle_db_azure_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+    :param _builtins.str oracle_db_azure_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureKeyId'] = oracle_db_azure_key_id
@@ -271,10 +297,12 @@ def get_dbmulticloud_oracle_db_azure_key_output(oracle_db_azure_key_id: Optional
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
+        key_properties=pulumi.get(__response__, 'key_properties'),
         last_modification=pulumi.get(__response__, 'last_modification'),
         lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
         oracle_db_azure_key_id=pulumi.get(__response__, 'oracle_db_azure_key_id'),
         oracle_db_azure_vault_id=pulumi.get(__response__, 'oracle_db_azure_vault_id'),
+        resource_type=pulumi.get(__response__, 'resource_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),

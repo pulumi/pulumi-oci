@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Gets a Model by identifier
+        /// Get a model by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Gets a Model by identifier
+        /// Get a model by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Gets a Model by identifier
+        /// Get a model by identifier.
         /// 
         /// ## Example Usage
         /// 
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.AiVision
     public sealed class GetModelArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Model identifier
+        /// A unique model identifier.
         /// </summary>
         [Input("modelId", required: true)]
         public string ModelId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.AiVision
     public sealed class GetModelInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// unique Model identifier
+        /// A unique model identifier.
         /// </summary>
         [Input("modelId", required: true)]
         public Input<string> ModelId { get; set; } = null!;

@@ -26,7 +26,7 @@ class GetManagedListResult:
     """
     A collection of values returned by getManagedList.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, feed_provider=None, freeform_tags=None, id=None, is_editable=None, lifecyle_details=None, list_items=None, list_type=None, managed_list_id=None, source_managed_list_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, feed_provider=None, freeform_tags=None, group=None, id=None, is_editable=None, lifecyle_details=None, list_items=None, list_type=None, managed_list_id=None, source_managed_list_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -45,6 +45,9 @@ class GetManagedListResult:
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if group and not isinstance(group, str):
+            raise TypeError("Expected argument 'group' to be a str")
+        pulumi.set(__self__, "group", group)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -126,6 +129,14 @@ class GetManagedListResult:
         Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def group(self) -> _builtins.str:
+        """
+        Managed list type group
+        """
+        return pulumi.get(self, "group")
 
     @_builtins.property
     @pulumi.getter
@@ -225,6 +236,7 @@ class AwaitableGetManagedListResult(GetManagedListResult):
             display_name=self.display_name,
             feed_provider=self.feed_provider,
             freeform_tags=self.freeform_tags,
+            group=self.group,
             id=self.id,
             is_editable=self.is_editable,
             lifecyle_details=self.lifecyle_details,
@@ -269,6 +281,7 @@ def get_managed_list(managed_list_id: Optional[_builtins.str] = None,
         display_name=pulumi.get(__ret__, 'display_name'),
         feed_provider=pulumi.get(__ret__, 'feed_provider'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
+        group=pulumi.get(__ret__, 'group'),
         id=pulumi.get(__ret__, 'id'),
         is_editable=pulumi.get(__ret__, 'is_editable'),
         lifecyle_details=pulumi.get(__ret__, 'lifecyle_details'),
@@ -310,6 +323,7 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[_builtins.str
         display_name=pulumi.get(__response__, 'display_name'),
         feed_provider=pulumi.get(__response__, 'feed_provider'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
+        group=pulumi.get(__response__, 'group'),
         id=pulumi.get(__response__, 'id'),
         is_editable=pulumi.get(__response__, 'is_editable'),
         lifecyle_details=pulumi.get(__response__, 'lifecyle_details'),

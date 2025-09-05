@@ -55,6 +55,18 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultAssociationsPl
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureVaultsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysPlainArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigArgs;
 import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterConfigPlainArgs;
@@ -124,6 +136,12 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationRe
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultAssociationsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureVaultsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpIdentityConnectorResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeyRingsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbGcpKeysResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionResult;
 import com.pulumi.oci.oci.outputs.GetManagedKafkaKafkaClusterConfigVersionsResult;
@@ -2699,7 +2717,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -2732,6 +2750,7 @@ public final class OciFunctions {
      *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
      *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
      *             .build());
      * 
@@ -2748,7 +2767,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -2781,6 +2800,7 @@ public final class OciFunctions {
      *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
      *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
      *             .build());
      * 
@@ -2797,7 +2817,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -2830,6 +2850,7 @@ public final class OciFunctions {
      *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
      *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
      *             .build());
      * 
@@ -2846,7 +2867,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -2879,6 +2900,7 @@ public final class OciFunctions {
      *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
      *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
      *             .build());
      * 
@@ -2895,7 +2917,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Multi Cloud Resource Discovery based on filters.
+     * Lists all Multicloud Resource Discovery resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -2928,6 +2950,7 @@ public final class OciFunctions {
      *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
      *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
+     *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
      *             .build());
      * 
@@ -2944,7 +2967,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -2988,7 +3011,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3032,7 +3055,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3076,7 +3099,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3120,7 +3143,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Multi Cloud Discovered Resource Details form a particular resource ID.
+     * Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3164,7 +3187,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3208,7 +3231,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3252,7 +3275,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3296,7 +3319,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3340,7 +3363,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3384,7 +3407,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3433,7 +3456,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3482,7 +3505,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3531,7 +3554,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3580,7 +3603,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Containers in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Container based on filter.
+     * Lists all Oracle DB Azure Blob Container resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3629,7 +3652,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3673,7 +3696,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3717,7 +3740,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3761,7 +3784,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3805,7 +3828,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+     * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -3849,7 +3872,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3898,7 +3921,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3947,7 +3970,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -3996,7 +4019,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4045,7 +4068,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Blob Mounts based on filters.
+     * Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4094,7 +4117,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4138,7 +4161,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4182,7 +4205,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4226,7 +4249,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4270,7 +4293,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Connector Resource form a particular Resource ID.
+     * Retrieves the Oracle DB Azure Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4314,7 +4337,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * Lists all Oracle DB Azure Connector resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4362,7 +4385,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * Lists all Oracle DB Azure Connector resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4410,7 +4433,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * Lists all Oracle DB Azure Connector resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4458,7 +4481,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * Lists all Oracle DB Azure Connector resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4506,7 +4529,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Connector Resource based on filters.
+     * Lists all Oracle DB Azure Connector resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4554,7 +4577,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4598,7 +4621,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4642,7 +4665,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4686,7 +4709,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4730,7 +4753,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Key Details form a particular Container Resource ID.
+     * Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -4774,7 +4797,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Keys based on filters.
+     * Lists all Oracle DB Azure Keys based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4822,7 +4845,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Keys based on filters.
+     * Lists all Oracle DB Azure Keys based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4870,7 +4893,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Keys based on filters.
+     * Lists all Oracle DB Azure Keys based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4918,7 +4941,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Keys based on filters.
+     * Lists all Oracle DB Azure Keys based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -4966,7 +4989,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Keys based on filters.
+     * Lists all Oracle DB Azure Keys based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5014,7 +5037,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
      * 
      * ## Example Usage
      * 
@@ -5058,7 +5081,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
      * 
      * ## Example Usage
      * 
@@ -5102,7 +5125,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
      * 
      * ## Example Usage
      * 
@@ -5146,7 +5169,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
      * 
      * ## Example Usage
      * 
@@ -5190,7 +5213,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+     * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
      * 
      * ## Example Usage
      * 
@@ -5234,7 +5257,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -5278,7 +5301,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -5322,7 +5345,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -5366,7 +5389,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -5410,7 +5433,7 @@ public final class OciFunctions {
     /**
      * This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Get Oracle DB Azure Vault Details Association form a particular Container Resource ID.
+     * Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      * ## Example Usage
      * 
@@ -5454,7 +5477,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Associations based on filters.
+     * Lists all Oracle DB Azure Associations based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5503,7 +5526,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Associations based on filters.
+     * Lists all Oracle DB Azure Associations based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5552,7 +5575,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Associations based on filters.
+     * Lists all Oracle DB Azure Associations based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5601,7 +5624,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Associations based on filters.
+     * Lists all Oracle DB Azure Associations based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5650,7 +5673,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vault Associations in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all Oracle DB Azure Associations based on filters.
+     * Lists all Oracle DB Azure Associations based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5699,7 +5722,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all DB Azure Vaults based on filters.
+     * Lists all DB Azure Vault resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5748,7 +5771,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all DB Azure Vaults based on filters.
+     * Lists all DB Azure Vault resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5797,7 +5820,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all DB Azure Vaults based on filters.
+     * Lists all DB Azure Vault resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5846,7 +5869,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all DB Azure Vaults based on filters.
+     * Lists all DB Azure Vault resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5895,7 +5918,7 @@ public final class OciFunctions {
     /**
      * This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
-     * Lists the all DB Azure Vaults based on filters.
+     * Lists all DB Azure Vault resources based on the specified filters.
      * 
      * ## Example Usage
      * 
@@ -5940,6 +5963,1381 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetDbmulticloudOracleDbAzureVaultsResult> getDbmulticloudOracleDbAzureVaultsPlain(GetDbmulticloudOracleDbAzureVaultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAzureVaults:getDbmulticloudOracleDbAzureVaults", TypeShape.of(GetDbmulticloudOracleDbAzureVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle DB GCP Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorResult> getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs args) {
+        return getDbmulticloudOracleDbGcpIdentityConnector(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle DB GCP Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpIdentityConnectorResult> getDbmulticloudOracleDbGcpIdentityConnectorPlain(GetDbmulticloudOracleDbGcpIdentityConnectorPlainArgs args) {
+        return getDbmulticloudOracleDbGcpIdentityConnectorPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle DB GCP Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorResult> getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpIdentityConnector:getDbmulticloudOracleDbGcpIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle DB GCP Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorResult> getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpIdentityConnector:getDbmulticloudOracleDbGcpIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Identity Connector resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle DB GCP Identity Connector for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpIdentityConnectorResult> getDbmulticloudOracleDbGcpIdentityConnectorPlain(GetDbmulticloudOracleDbGcpIdentityConnectorPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpIdentityConnector:getDbmulticloudOracleDbGcpIdentityConnector", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB GCP Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbGcpIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorsResult> getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs args) {
+        return getDbmulticloudOracleDbGcpIdentityConnectors(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB GCP Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbGcpIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpIdentityConnectorsResult> getDbmulticloudOracleDbGcpIdentityConnectorsPlain(GetDbmulticloudOracleDbGcpIdentityConnectorsPlainArgs args) {
+        return getDbmulticloudOracleDbGcpIdentityConnectorsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB GCP Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbGcpIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorsResult> getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpIdentityConnectors:getDbmulticloudOracleDbGcpIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB GCP Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbGcpIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpIdentityConnectorsResult> getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpIdentityConnectors:getDbmulticloudOracleDbGcpIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB GCP Identity Connectors based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpIdentityConnectorsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
+     *             .resourceId(testResource.id())
+     *             .state(oracleDbGcpIdentityConnectorState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpIdentityConnectorsResult> getDbmulticloudOracleDbGcpIdentityConnectorsPlain(GetDbmulticloudOracleDbGcpIdentityConnectorsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpIdentityConnectors:getDbmulticloudOracleDbGcpIdentityConnectors", TypeShape.of(GetDbmulticloudOracleDbGcpIdentityConnectorsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves Oracle DB Google Cloud Key details using a specific resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyResult> getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs args) {
+        return getDbmulticloudOracleDbGcpKey(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves Oracle DB Google Cloud Key details using a specific resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyResult> getDbmulticloudOracleDbGcpKeyPlain(GetDbmulticloudOracleDbGcpKeyPlainArgs args) {
+        return getDbmulticloudOracleDbGcpKeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves Oracle DB Google Cloud Key details using a specific resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyResult> getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKey:getDbmulticloudOracleDbGcpKey", TypeShape.of(GetDbmulticloudOracleDbGcpKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves Oracle DB Google Cloud Key details using a specific resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyResult> getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKey:getDbmulticloudOracleDbGcpKey", TypeShape.of(GetDbmulticloudOracleDbGcpKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves Oracle DB Google Cloud Key details using a specific resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyResult> getDbmulticloudOracleDbGcpKeyPlain(GetDbmulticloudOracleDbGcpKeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKey:getDbmulticloudOracleDbGcpKey", TypeShape.of(GetDbmulticloudOracleDbGcpKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle GCP Key Ring details using a specific Container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingResult> getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs args) {
+        return getDbmulticloudOracleDbGcpKeyRing(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle GCP Key Ring details using a specific Container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyRingResult> getDbmulticloudOracleDbGcpKeyRingPlain(GetDbmulticloudOracleDbGcpKeyRingPlainArgs args) {
+        return getDbmulticloudOracleDbGcpKeyRingPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle GCP Key Ring details using a specific Container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingResult> getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeyRing:getDbmulticloudOracleDbGcpKeyRing", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle GCP Key Ring details using a specific Container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingResult> getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeyRing:getDbmulticloudOracleDbGcpKeyRing", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Gcp Key Ring resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves the Oracle GCP Key Ring details using a specific Container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyRingResult> getDbmulticloudOracleDbGcpKeyRingPlain(GetDbmulticloudOracleDbGcpKeyRingPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeyRing:getDbmulticloudOracleDbGcpKeyRing", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB GCP Key Rings based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyRingDisplayName)
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyRingState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingsResult> getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs args) {
+        return getDbmulticloudOracleDbGcpKeyRings(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB GCP Key Rings based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyRingDisplayName)
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyRingState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyRingsResult> getDbmulticloudOracleDbGcpKeyRingsPlain(GetDbmulticloudOracleDbGcpKeyRingsPlainArgs args) {
+        return getDbmulticloudOracleDbGcpKeyRingsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB GCP Key Rings based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyRingDisplayName)
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyRingState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingsResult> getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeyRings:getDbmulticloudOracleDbGcpKeyRings", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB GCP Key Rings based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyRingDisplayName)
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyRingState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeyRingsResult> getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeyRings:getDbmulticloudOracleDbGcpKeyRings", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists the all DB GCP Key Rings based on filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeyRingsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyRingDisplayName)
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyRingState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeyRingsResult> getDbmulticloudOracleDbGcpKeyRingsPlain(GetDbmulticloudOracleDbGcpKeyRingsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeyRings:getDbmulticloudOracleDbGcpKeyRings", TypeShape.of(GetDbmulticloudOracleDbGcpKeyRingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB Google Cloud Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyDisplayName)
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs args) {
+        return getDbmulticloudOracleDbGcpKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB Google Cloud Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyDisplayName)
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeysPlain(GetDbmulticloudOracleDbGcpKeysPlainArgs args) {
+        return getDbmulticloudOracleDbGcpKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB Google Cloud Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyDisplayName)
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB Google Cloud Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyDisplayName)
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Gcp Keys in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all Oracle DB Google Cloud Keys based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbGcpKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbGcpKeyDisplayName)
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .state(oracleDbGcpKeyState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbGcpKeysResult> getDbmulticloudOracleDbGcpKeysPlain(GetDbmulticloudOracleDbGcpKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbGcpKeys:getDbmulticloudOracleDbGcpKeys", TypeShape.of(GetDbmulticloudOracleDbGcpKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Kafka Cluster resource in Oracle Cloud Infrastructure Managed Kafka service.

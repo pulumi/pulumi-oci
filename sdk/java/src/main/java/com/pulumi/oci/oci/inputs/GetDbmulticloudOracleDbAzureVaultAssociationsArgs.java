@@ -34,14 +34,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
     }
 
     /**
-     * A filter to return Azure Vault Association.
+     * A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return Azure Vault Association.
+     * @return A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -56,14 +56,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     @Import(name="oracleDbAzureConnectorId")
     private @Nullable Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public Optional<Output<String>> oracleDbAzureConnectorId() {
@@ -71,14 +71,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
     }
 
     /**
-     * A filter to return Oracle DB Azure Vault Association Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     @Import(name="oracleDbAzureVaultAssociationId")
     private @Nullable Output<String> oracleDbAzureVaultAssociationId;
 
     /**
-     * @return A filter to return Oracle DB Azure Vault Association Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
      * 
      */
     public Optional<Output<String>> oracleDbAzureVaultAssociationId() {
@@ -86,14 +86,14 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
     }
 
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     @Import(name="oracleDbAzureVaultId")
     private @Nullable Output<String> oracleDbAzureVaultId;
 
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public Optional<Output<String>> oracleDbAzureVaultId() {
@@ -167,7 +167,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param displayName A filter to return Azure Vault Association.
+         * @param displayName A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param displayName A filter to return Azure Vault Association.
+         * @param displayName A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureVaultAssociationId A filter to return Oracle DB Azure Vault Association Resources.
+         * @param oracleDbAzureVaultAssociationId A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureVaultAssociationId A filter to return Oracle DB Azure Vault Association Resources.
+         * @param oracleDbAzureVaultAssociationId A filter to return Oracle DB Azure Vault resources that match the specified OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault Resources.
+         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class GetDbmulticloudOracleDbAzureVaultAssociationsArgs extends com
         }
 
         /**
-         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault Resources.
+         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 

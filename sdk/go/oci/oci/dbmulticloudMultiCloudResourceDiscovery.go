@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Discover Azure Vaults and Keys based on the provided information.
+// Discovers Multicloud Resource and their associated resources based on the information provided.
 //
 // ## Example Usage
 //
@@ -41,6 +41,7 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
+//				ResourcesFilter: pulumi.Any(multiCloudResourceDiscoveryResourcesFilter),
 //			})
 //			if err != nil {
 //				return err
@@ -61,34 +62,36 @@ import (
 type DbmulticloudMultiCloudResourceDiscovery struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
-	// (Updatable) Display name of Discovered Resource.
+	// (Updatable) Display name of the Multicloud Resource Discovery resource.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Description of the latest modification of the Multi Cloud Discovery Resource.
+	// Description of the latest modification of the Multicloud Resource Discovery resource.
 	LastModification pulumi.StringOutput `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringOutput `pulumi:"lifecycleStateDetails"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId pulumi.StringOutput `pulumi:"oracleDbConnectorId"`
 	// (Updatable) Resource Type to discover.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringOutput `pulumi:"resourceType"`
 	// List of All Discovered resources.
 	Resources DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput `pulumi:"resources"`
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ResourcesFilter pulumi.StringMapOutput `pulumi:"resourcesFilter"`
 	// The current lifecycle state of the discovered resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -134,66 +137,70 @@ func GetDbmulticloudMultiCloudResourceDiscovery(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DbmulticloudMultiCloudResourceDiscovery resources.
 type dbmulticloudMultiCloudResourceDiscoveryState struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of Discovered Resource.
+	// (Updatable) Display name of the Multicloud Resource Discovery resource.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Description of the latest modification of the Multi Cloud Discovery Resource.
+	// Description of the latest modification of the Multicloud Resource Discovery resource.
 	LastModification *string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails *string `pulumi:"lifecycleStateDetails"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId *string `pulumi:"oracleDbConnectorId"`
 	// (Updatable) Resource Type to discover.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType *string `pulumi:"resourceType"`
 	// List of All Discovered resources.
 	Resources []DbmulticloudMultiCloudResourceDiscoveryResource `pulumi:"resources"`
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ResourcesFilter map[string]string `pulumi:"resourcesFilter"`
 	// The current lifecycle state of the discovered resource.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeCreated *string `pulumi:"timeCreated"`
-	// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type DbmulticloudMultiCloudResourceDiscoveryState struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of Discovered Resource.
+	// (Updatable) Display name of the Multicloud Resource Discovery resource.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Description of the latest modification of the Multi Cloud Discovery Resource.
+	// Description of the latest modification of the Multicloud Resource Discovery resource.
 	LastModification pulumi.StringPtrInput
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringPtrInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId pulumi.StringPtrInput
 	// (Updatable) Resource Type to discover.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ResourceType pulumi.StringPtrInput
 	// List of All Discovered resources.
 	Resources DbmulticloudMultiCloudResourceDiscoveryResourceArrayInput
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	ResourcesFilter pulumi.StringMapInput
 	// The current lifecycle state of the discovered resource.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeCreated pulumi.StringPtrInput
-	// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -202,40 +209,44 @@ func (DbmulticloudMultiCloudResourceDiscoveryState) ElementType() reflect.Type {
 }
 
 type dbmulticloudMultiCloudResourceDiscoveryArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// (Updatable) Display name of Discovered Resource.
+	// (Updatable) Display name of the Multicloud Resource Discovery resource.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// (Updatable) Resource Type to discover.
+	ResourceType string `pulumi:"resourceType"`
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType string `pulumi:"resourceType"`
+	ResourcesFilter map[string]string `pulumi:"resourcesFilter"`
 }
 
 // The set of arguments for constructing a DbmulticloudMultiCloudResourceDiscovery resource.
 type DbmulticloudMultiCloudResourceDiscoveryArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.StringMapInput
-	// (Updatable) Display name of Discovered Resource.
+	// (Updatable) Display name of the Multicloud Resource Discovery resource.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId pulumi.StringInput
 	// (Updatable) Resource Type to discover.
+	ResourceType pulumi.StringInput
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	ResourceType pulumi.StringInput
+	ResourcesFilter pulumi.StringMapInput
 }
 
 func (DbmulticloudMultiCloudResourceDiscoveryArgs) ElementType() reflect.Type {
@@ -325,7 +336,7 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) ToDbmulticloudMultiCloudR
 	return o
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -335,7 +346,7 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) DefinedTags() pulumi.Stri
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// (Updatable) Display name of Discovered Resource.
+// (Updatable) Display name of the Multicloud Resource Discovery resource.
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -345,7 +356,7 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) FreeformTags() pulumi.Str
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Description of the latest modification of the Multi Cloud Discovery Resource.
+// Description of the latest modification of the Multicloud Resource Discovery resource.
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -355,15 +366,12 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) LifecycleStateDetails() p
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.LifecycleStateDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) OracleDbConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.OracleDbConnectorId }).(pulumi.StringOutput)
 }
 
 // (Updatable) Resource Type to discover.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) ResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.ResourceType }).(pulumi.StringOutput)
 }
@@ -373,6 +381,14 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) Resources() DbmulticloudM
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput {
 		return v.Resources
 	}).(DbmulticloudMultiCloudResourceDiscoveryResourceArrayOutput)
+}
+
+// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o DbmulticloudMultiCloudResourceDiscoveryOutput) ResourcesFilter() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringMapOutput { return v.ResourcesFilter }).(pulumi.StringMapOutput)
 }
 
 // The current lifecycle state of the discovered resource.
@@ -385,12 +401,12 @@ func (o DbmulticloudMultiCloudResourceDiscoveryOutput) SystemTags() pulumi.Strin
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o DbmulticloudMultiCloudResourceDiscoveryOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbmulticloudMultiCloudResourceDiscovery) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

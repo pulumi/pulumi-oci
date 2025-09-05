@@ -58,7 +58,7 @@ class GetDbmulticloudOracleDbAzureConnectorsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Connector resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -66,7 +66,7 @@ class GetDbmulticloudOracleDbAzureConnectorsResult:
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> Optional[_builtins.str]:
         """
-        The ID of the DB Cluster Resource where this Azure Arc Agent identity to configure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent identity to configure.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -108,7 +108,7 @@ class GetDbmulticloudOracleDbAzureConnectorsResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "state")
 
@@ -139,7 +139,7 @@ def get_dbmulticloud_oracle_db_azure_connectors(compartment_id: Optional[_builti
     """
     This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Connector Resource based on filters.
+    Lists all Oracle DB Azure Connector resources based on the specified filters.
 
     ## Example Usage
 
@@ -156,9 +156,9 @@ def get_dbmulticloud_oracle_db_azure_connectors(compartment_id: Optional[_builti
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
-    :param _builtins.str display_name: A filter to return Oracle DB Azure Connector Resource that match the given display name.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
+    :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Connector resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -190,7 +190,7 @@ def get_dbmulticloud_oracle_db_azure_connectors_output(compartment_id: Optional[
     """
     This data source provides the list of Oracle Db Azure Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all Oracle DB Azure Connector Resource based on filters.
+    Lists all Oracle DB Azure Connector resources based on the specified filters.
 
     ## Example Usage
 
@@ -207,9 +207,9 @@ def get_dbmulticloud_oracle_db_azure_connectors_output(compartment_id: Optional[
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
-    :param _builtins.str display_name: A filter to return Oracle DB Azure Connector Resource that match the given display name.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
+    :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Connector resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

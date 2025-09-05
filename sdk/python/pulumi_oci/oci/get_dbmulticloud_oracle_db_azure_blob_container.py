@@ -80,7 +80,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> _builtins.str:
         """
-        Azure Storage Account Name.
+        Azure Storage account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -88,7 +88,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> _builtins.str:
         """
-        Azure Storage Container Name.
+        Azure Storage container name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -96,7 +96,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -112,7 +112,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display name of Oracle DB Azure Blob Container.
+        Oracle DB Azure Blob Container resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -128,7 +128,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "id")
 
@@ -136,7 +136,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -157,7 +157,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter(name="privateEndpointDnsAlias")
     def private_endpoint_dns_alias(self) -> _builtins.str:
         """
-        Private endpoint DNS Alias.
+        Private endpoint's DNS Alias.
         """
         return pulumi.get(self, "private_endpoint_dns_alias")
 
@@ -173,7 +173,7 @@ class GetDbmulticloudOracleDbAzureBlobContainerResult:
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "state")
 
@@ -231,7 +231,7 @@ def get_dbmulticloud_oracle_db_azure_blob_container(oracle_db_azure_blob_contain
     """
     This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+    Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -243,7 +243,7 @@ def get_dbmulticloud_oracle_db_azure_blob_container(oracle_db_azure_blob_contain
     ```
 
 
-    :param _builtins.str oracle_db_azure_blob_container_id: The ID of the Oracle DB Azure Blob Container Resource.
+    :param _builtins.str oracle_db_azure_blob_container_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureBlobContainerId'] = oracle_db_azure_blob_container_id
@@ -272,7 +272,7 @@ def get_dbmulticloud_oracle_db_azure_blob_container_output(oracle_db_azure_blob_
     """
     This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+    Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
     ## Example Usage
 
@@ -284,7 +284,7 @@ def get_dbmulticloud_oracle_db_azure_blob_container_output(oracle_db_azure_blob_
     ```
 
 
-    :param _builtins.str oracle_db_azure_blob_container_id: The ID of the Oracle DB Azure Blob Container Resource.
+    :param _builtins.str oracle_db_azure_blob_container_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
     """
     __args__ = dict()
     __args__['oracleDbAzureBlobContainerId'] = oracle_db_azure_blob_container_id

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -30,11 +30,11 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The OCID for the new Oracle DB Azure Blob Mount resource.
+        /// The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        /// Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string LastModification;
         /// <summary>
@@ -42,15 +42,15 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string LifecycleStateDetails;
         /// <summary>
-        /// Azure Container mount path.
+        /// Oracle DB Azure Blob Mount path.
         /// </summary>
         public readonly string MountPath;
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Container resource.
         /// </summary>
         public readonly string OracleDbAzureBlobContainerId;
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         public readonly string OracleDbAzureConnectorId;
         /// <summary>

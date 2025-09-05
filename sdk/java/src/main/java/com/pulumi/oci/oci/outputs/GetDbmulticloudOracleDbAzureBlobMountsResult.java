@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureBlobMountsResult {
     /**
-     * @return The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     private String compartmentId;
     /**
-     * @return Oracle DB Azure Blob Mount name.
+     * @return Oracle DB Azure Blob Mount resource name.
      * 
      */
     private @Nullable String displayName;
@@ -32,7 +32,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsResult {
      */
     private String id;
     /**
-     * @return The OCID of the Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     private @Nullable String oracleDbAzureBlobContainerId;
@@ -43,26 +43,26 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsResult {
      */
     private List<GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollection> oracleDbAzureBlobMountSummaryCollections;
     /**
-     * @return The OCID of the Oracle DB Azure Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     private @Nullable String oracleDbAzureConnectorId;
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      * 
      */
     private @Nullable String state;
 
     private GetDbmulticloudOracleDbAzureBlobMountsResult() {}
     /**
-     * @return The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Oracle DB Azure Blob Mount name.
+     * @return Oracle DB Azure Blob Mount resource name.
      * 
      */
     public Optional<String> displayName() {
@@ -79,7 +79,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsResult {
         return this.id;
     }
     /**
-     * @return The OCID of the Oracle DB Azure Blob Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Optional<String> oracleDbAzureBlobContainerId() {
@@ -96,14 +96,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountsResult {
         return this.oracleDbAzureBlobMountSummaryCollections;
     }
     /**
-     * @return The OCID of the Oracle DB Azure Connector Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      * 
      */
     public Optional<String> oracleDbAzureConnectorId() {
         return Optional.ofNullable(this.oracleDbAzureConnectorId);
     }
     /**
-     * @return The current lifecycle state of the Azure Arc Agent Resource.
+     * @return The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public Optional<String> state() {

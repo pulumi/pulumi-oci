@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeDetectorRuleDetailsConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -14,6 +16,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DetectorRecipeDetectorRuleDetailsConfiguration {
+    /**
+     * @return (Updatable) Map of additional property values for configuration
+     * 
+     */
+    private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return (Updatable) Map of possible values for configuration
+     * 
+     */
+    private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> allowedValues;
+    /**
+     * @return (Updatable) Map property Value data type
+     * 
+     */
+    private @Nullable String allowedValuesDataType;
     /**
      * @return (Updatable) Unique identifier of the configuration
      * 
@@ -41,6 +58,27 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
     private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationValue> values;
 
     private DetectorRecipeDetectorRuleDetailsConfiguration() {}
+    /**
+     * @return (Updatable) Map of additional property values for configuration
+     * 
+     */
+    public List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties == null ? List.of() : this.additionalProperties;
+    }
+    /**
+     * @return (Updatable) Map of possible values for configuration
+     * 
+     */
+    public List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues == null ? List.of() : this.allowedValues;
+    }
+    /**
+     * @return (Updatable) Map property Value data type
+     * 
+     */
+    public Optional<String> allowedValuesDataType() {
+        return Optional.ofNullable(this.allowedValuesDataType);
+    }
     /**
      * @return (Updatable) Unique identifier of the configuration
      * 
@@ -86,6 +124,9 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> additionalProperties;
+        private @Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> allowedValues;
+        private @Nullable String allowedValuesDataType;
         private String configKey;
         private @Nullable String dataType;
         private String name;
@@ -94,6 +135,9 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
         public Builder() {}
         public Builder(DetectorRecipeDetectorRuleDetailsConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -101,6 +145,30 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(@Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> additionalProperties) {
+
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(@Nullable List<DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> allowedValues) {
+
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(@Nullable String allowedValuesDataType) {
+
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(String configKey) {
             if (configKey == null) {
@@ -140,6 +208,9 @@ public final class DetectorRecipeDetectorRuleDetailsConfiguration {
         }
         public DetectorRecipeDetectorRuleDetailsConfiguration build() {
             final var _resultValue = new DetectorRecipeDetectorRuleDetailsConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

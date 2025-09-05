@@ -14,6 +14,18 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeDetectorRuleDetailsConfiguration
     {
         /// <summary>
+        /// (Updatable) Map of additional property values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> AdditionalProperties;
+        /// <summary>
+        /// (Updatable) Map of possible values for configuration
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> AllowedValues;
+        /// <summary>
+        /// (Updatable) Map property Value data type
+        /// </summary>
+        public readonly string? AllowedValuesDataType;
+        /// <summary>
         /// (Updatable) Unique identifier of the configuration
         /// </summary>
         public readonly string ConfigKey;
@@ -36,6 +48,12 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
         [OutputConstructor]
         private DetectorRecipeDetectorRuleDetailsConfiguration(
+            ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfigurationAdditionalProperty> additionalProperties,
+
+            ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfigurationAllowedValue> allowedValues,
+
+            string? allowedValuesDataType,
+
             string configKey,
 
             string? dataType,
@@ -46,6 +64,9 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfigurationValue> values)
         {
+            AdditionalProperties = additionalProperties;
+            AllowedValues = allowedValues;
+            AllowedValuesDataType = allowedValuesDataType;
             ConfigKey = configKey;
             DataType = dataType;
             Name = name;

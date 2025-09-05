@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+ * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getDbmulticloudOracleDbAzureVault(args: GetDbmulticloudOracleDbA
  */
 export interface GetDbmulticloudOracleDbAzureVaultArgs {
     /**
-     * The ID of the Oracle DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId: string;
 }
@@ -42,11 +42,11 @@ export interface GetDbmulticloudOracleDbAzureVaultArgs {
  */
 export interface GetDbmulticloudOracleDbAzureVaultResult {
     /**
-     * Azure Vault Id.
+     * Azure Vault ID.
      */
     readonly azureVaultId: string;
     /**
-     * The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
      */
     readonly compartmentId: string;
     /**
@@ -54,7 +54,7 @@ export interface GetDbmulticloudOracleDbAzureVaultResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Display name of DB Azure Vault.
+     * Oracle DB Azure Vault resource name.
      */
     readonly displayName: string;
     /**
@@ -62,11 +62,11 @@ export interface GetDbmulticloudOracleDbAzureVaultResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
      */
     readonly id: string;
     /**
-     * Description of the latest modification of the DB Azure Vault Resource.
+     * Description of the latest modification of the Oracle DB Azure Vault resource.
      */
     readonly lastModification: string;
     /**
@@ -74,24 +74,24 @@ export interface GetDbmulticloudOracleDbAzureVaultResult {
      */
     readonly lifecycleStateDetails: string;
     /**
-     * Vault Resource Location.
+     * Oracle DB Azure Vault resource location.
      */
     readonly location: string;
     /**
-     * Display name of Azure Resource Group.
+     * Oracle DB Azure resource group name.
      */
     readonly oracleDbAzureResourceGroup: string;
     readonly oracleDbAzureVaultId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
      */
     readonly oracleDbConnectorId: string;
     /**
-     * Resource's properties.
+     * Oracle DB Azure Vault resource's properties.
      */
     readonly properties: {[key: string]: string};
     /**
-     * The lifecycle state of the DB Azure Vault Resource.
+     * The lifecycle state of the Oracle DB Azure Vault resource.
      */
     readonly state: string;
     /**
@@ -99,22 +99,22 @@ export interface GetDbmulticloudOracleDbAzureVaultResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     readonly timeCreated: string;
     /**
-     * Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+     * Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
      */
     readonly timeUpdated: string;
     /**
-     * Vault Resource Type.
+     * Oracle DB Azure Vault resource type.
      */
     readonly type: string;
 }
 /**
  * This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Vault Details form a particular Container Resource ID.
+ * Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
  *
  * ## Example Usage
  *
@@ -139,7 +139,7 @@ export function getDbmulticloudOracleDbAzureVaultOutput(args: GetDbmulticloudOra
  */
 export interface GetDbmulticloudOracleDbAzureVaultOutputArgs {
     /**
-     * The ID of the Oracle DB Azure Vault Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      */
     oracleDbAzureVaultId: pulumi.Input<string>;
 }

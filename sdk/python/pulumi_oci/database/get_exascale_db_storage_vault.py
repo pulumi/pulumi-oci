@@ -27,13 +27,16 @@ class GetExascaleDbStorageVaultResult:
     """
     A collection of values returned by getExascaleDbStorageVault.
     """
-    def __init__(__self__, additional_flash_cache_in_percent=None, attached_shape_attributes=None, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, lifecycle_details=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
+    def __init__(__self__, additional_flash_cache_in_percent=None, attached_shape_attributes=None, autoscale_limit_in_gbs=None, availability_domain=None, cluster_placement_group_id=None, compartment_id=None, defined_tags=None, description=None, display_name=None, exadata_infrastructure_id=None, exascale_db_storage_vault_id=None, freeform_tags=None, high_capacity_database_storages=None, id=None, is_autoscale_enabled=None, lifecycle_details=None, state=None, subscription_id=None, system_tags=None, time_created=None, time_zone=None, vm_cluster_count=None, vm_cluster_ids=None):
         if additional_flash_cache_in_percent and not isinstance(additional_flash_cache_in_percent, int):
             raise TypeError("Expected argument 'additional_flash_cache_in_percent' to be a int")
         pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
         if attached_shape_attributes and not isinstance(attached_shape_attributes, list):
             raise TypeError("Expected argument 'attached_shape_attributes' to be a list")
         pulumi.set(__self__, "attached_shape_attributes", attached_shape_attributes)
+        if autoscale_limit_in_gbs and not isinstance(autoscale_limit_in_gbs, int):
+            raise TypeError("Expected argument 'autoscale_limit_in_gbs' to be a int")
+        pulumi.set(__self__, "autoscale_limit_in_gbs", autoscale_limit_in_gbs)
         if availability_domain and not isinstance(availability_domain, str):
             raise TypeError("Expected argument 'availability_domain' to be a str")
         pulumi.set(__self__, "availability_domain", availability_domain)
@@ -67,6 +70,9 @@ class GetExascaleDbStorageVaultResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_autoscale_enabled and not isinstance(is_autoscale_enabled, bool):
+            raise TypeError("Expected argument 'is_autoscale_enabled' to be a bool")
+        pulumi.set(__self__, "is_autoscale_enabled", is_autoscale_enabled)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -107,6 +113,14 @@ class GetExascaleDbStorageVaultResult:
         The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         """
         return pulumi.get(self, "attached_shape_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="autoscaleLimitInGbs")
+    def autoscale_limit_in_gbs(self) -> _builtins.int:
+        """
+        Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        """
+        return pulumi.get(self, "autoscale_limit_in_gbs")
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -194,6 +208,14 @@ class GetExascaleDbStorageVaultResult:
         return pulumi.get(self, "id")
 
     @_builtins.property
+    @pulumi.getter(name="isAutoscaleEnabled")
+    def is_autoscale_enabled(self) -> _builtins.bool:
+        """
+        Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        """
+        return pulumi.get(self, "is_autoscale_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> _builtins.str:
         """
@@ -266,6 +288,7 @@ class AwaitableGetExascaleDbStorageVaultResult(GetExascaleDbStorageVaultResult):
         return GetExascaleDbStorageVaultResult(
             additional_flash_cache_in_percent=self.additional_flash_cache_in_percent,
             attached_shape_attributes=self.attached_shape_attributes,
+            autoscale_limit_in_gbs=self.autoscale_limit_in_gbs,
             availability_domain=self.availability_domain,
             cluster_placement_group_id=self.cluster_placement_group_id,
             compartment_id=self.compartment_id,
@@ -277,6 +300,7 @@ class AwaitableGetExascaleDbStorageVaultResult(GetExascaleDbStorageVaultResult):
             freeform_tags=self.freeform_tags,
             high_capacity_database_storages=self.high_capacity_database_storages,
             id=self.id,
+            is_autoscale_enabled=self.is_autoscale_enabled,
             lifecycle_details=self.lifecycle_details,
             state=self.state,
             subscription_id=self.subscription_id,
@@ -314,6 +338,7 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[_builti
     return AwaitableGetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__ret__, 'additional_flash_cache_in_percent'),
         attached_shape_attributes=pulumi.get(__ret__, 'attached_shape_attributes'),
+        autoscale_limit_in_gbs=pulumi.get(__ret__, 'autoscale_limit_in_gbs'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -325,6 +350,7 @@ def get_exascale_db_storage_vault(exascale_db_storage_vault_id: Optional[_builti
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         high_capacity_database_storages=pulumi.get(__ret__, 'high_capacity_database_storages'),
         id=pulumi.get(__ret__, 'id'),
+        is_autoscale_enabled=pulumi.get(__ret__, 'is_autoscale_enabled'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         state=pulumi.get(__ret__, 'state'),
         subscription_id=pulumi.get(__ret__, 'subscription_id'),
@@ -359,6 +385,7 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
     return __ret__.apply(lambda __response__: GetExascaleDbStorageVaultResult(
         additional_flash_cache_in_percent=pulumi.get(__response__, 'additional_flash_cache_in_percent'),
         attached_shape_attributes=pulumi.get(__response__, 'attached_shape_attributes'),
+        autoscale_limit_in_gbs=pulumi.get(__response__, 'autoscale_limit_in_gbs'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -370,6 +397,7 @@ def get_exascale_db_storage_vault_output(exascale_db_storage_vault_id: Optional[
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         high_capacity_database_storages=pulumi.get(__response__, 'high_capacity_database_storages'),
         id=pulumi.get(__response__, 'id'),
+        is_autoscale_enabled=pulumi.get(__response__, 'is_autoscale_enabled'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
         state=pulumi.get(__response__, 'state'),
         subscription_id=pulumi.get(__response__, 'subscription_id'),

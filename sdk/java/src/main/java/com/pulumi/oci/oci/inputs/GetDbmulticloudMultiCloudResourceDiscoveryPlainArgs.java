@@ -14,14 +14,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs extends c
     public static final GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs Empty = new GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
      * 
      */
     @Import(name="multiCloudResourceDiscoveryId", required=true)
     private String multiCloudResourceDiscoveryId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
      * 
      */
     public String multiCloudResourceDiscoveryId() {
@@ -53,7 +53,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveryPlainArgs extends c
         }
 
         /**
-         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery Resource.
          * 
          * @return builder
          * 

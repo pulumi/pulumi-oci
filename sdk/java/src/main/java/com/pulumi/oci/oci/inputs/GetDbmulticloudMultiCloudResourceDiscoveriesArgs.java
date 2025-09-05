@@ -34,14 +34,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
     }
 
     /**
-     * Display Name of the Multi Cloud Discovery Resource.
+     * A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Display Name of the Multi Cloud Discovery Resource.
+     * @return A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -56,14 +56,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
      * 
      */
     @Import(name="multiCloudResourceDiscoveryId")
     private @Nullable Output<String> multiCloudResourceDiscoveryId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
      * 
      */
     public Optional<Output<String>> multiCloudResourceDiscoveryId() {
@@ -71,14 +71,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
     }
 
     /**
-     * A filter to return Oracle DB Azure Blob Mount Resources.
+     * A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     @Import(name="oracleDbAzureConnectorId")
     private @Nullable Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return A filter to return Oracle DB Azure Blob Mount Resources.
+     * @return A filter to return Oracle DB Azure Azure Identity Connector resources.
      * 
      */
     public Optional<Output<String>> oracleDbAzureConnectorId() {
@@ -86,14 +86,14 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
     }
 
     /**
-     * The type of Multi Cloud Resource.
+     * The type of Multicloud Resource.
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return The type of Multi Cloud Resource.
+     * @return The type of Multicloud Resource.
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -101,14 +101,29 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
     }
 
     /**
-     * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * Specifies the type(s) of resources to discover in the target cloud provider.
+     * 
+     */
+    @Import(name="resourcesFilters")
+    private @Nullable Output<List<String>> resourcesFilters;
+
+    /**
+     * @return Specifies the type(s) of resources to discover in the target cloud provider.
+     * 
+     */
+    public Optional<Output<List<String>>> resourcesFilters() {
+        return Optional.ofNullable(this.resourcesFilters);
+    }
+
+    /**
+     * A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+     * @return A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
      * 
      */
     public Optional<Output<String>> state() {
@@ -124,6 +139,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         this.multiCloudResourceDiscoveryId = $.multiCloudResourceDiscoveryId;
         this.oracleDbAzureConnectorId = $.oracleDbAzureConnectorId;
         this.resourceType = $.resourceType;
+        this.resourcesFilters = $.resourcesFilters;
         this.state = $.state;
     }
 
@@ -167,7 +183,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param displayName Display Name of the Multi Cloud Discovery Resource.
+         * @param displayName A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -178,7 +194,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param displayName Display Name of the Multi Cloud Discovery Resource.
+         * @param displayName A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -201,7 +217,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
          * 
          * @return builder
          * 
@@ -212,7 +228,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+         * @param multiCloudResourceDiscoveryId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
          * 
          * @return builder
          * 
@@ -222,7 +238,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 
@@ -233,7 +249,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Blob Mount Resources.
+         * @param oracleDbAzureConnectorId A filter to return Oracle DB Azure Azure Identity Connector resources.
          * 
          * @return builder
          * 
@@ -243,7 +259,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param resourceType The type of Multi Cloud Resource.
+         * @param resourceType The type of Multicloud Resource.
          * 
          * @return builder
          * 
@@ -254,7 +270,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param resourceType The type of Multi Cloud Resource.
+         * @param resourceType The type of Multicloud Resource.
          * 
          * @return builder
          * 
@@ -264,7 +280,38 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param state A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         * @param resourcesFilters Specifies the type(s) of resources to discover in the target cloud provider.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilters(@Nullable Output<List<String>> resourcesFilters) {
+            $.resourcesFilters = resourcesFilters;
+            return this;
+        }
+
+        /**
+         * @param resourcesFilters Specifies the type(s) of resources to discover in the target cloud provider.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilters(List<String> resourcesFilters) {
+            return resourcesFilters(Output.of(resourcesFilters));
+        }
+
+        /**
+         * @param resourcesFilters Specifies the type(s) of resources to discover in the target cloud provider.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder resourcesFilters(String... resourcesFilters) {
+            return resourcesFilters(List.of(resourcesFilters));
+        }
+
+        /**
+         * @param state A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
          * 
          * @return builder
          * 
@@ -275,7 +322,7 @@ public final class GetDbmulticloudMultiCloudResourceDiscoveriesArgs extends com.
         }
 
         /**
-         * @param state A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         * @param state A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
          * 
          * @return builder
          * 

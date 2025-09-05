@@ -27,7 +27,7 @@ class GetMysqlBackupResult:
     """
     A collection of values returned by getMysqlBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, soft_delete=None, source_details=None, state=None, system_tags=None, time_copy_created=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, backup_validation_details=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, encrypt_datas=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, soft_delete=None, source_details=None, state=None, system_tags=None, time_copy_created=None, time_created=None, time_updated=None, validate_backup_details=None, validate_trigger=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -37,6 +37,9 @@ class GetMysqlBackupResult:
         if backup_type and not isinstance(backup_type, str):
             raise TypeError("Expected argument 'backup_type' to be a str")
         pulumi.set(__self__, "backup_type", backup_type)
+        if backup_validation_details and not isinstance(backup_validation_details, list):
+            raise TypeError("Expected argument 'backup_validation_details' to be a list")
+        pulumi.set(__self__, "backup_validation_details", backup_validation_details)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -112,6 +115,12 @@ class GetMysqlBackupResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if validate_backup_details and not isinstance(validate_backup_details, list):
+            raise TypeError("Expected argument 'validate_backup_details' to be a list")
+        pulumi.set(__self__, "validate_backup_details", validate_backup_details)
+        if validate_trigger and not isinstance(validate_trigger, int):
+            raise TypeError("Expected argument 'validate_trigger' to be a int")
+        pulumi.set(__self__, "validate_trigger", validate_trigger)
 
     @_builtins.property
     @pulumi.getter(name="backupId")
@@ -133,6 +142,14 @@ class GetMysqlBackupResult:
         The type of backup.
         """
         return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter(name="backupValidationDetails")
+    def backup_validation_details(self) -> Sequence['outputs.GetMysqlBackupBackupValidationDetailResult']:
+        """
+        Backup validation details.
+        """
+        return pulumi.get(self, "backup_validation_details")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -328,6 +345,16 @@ class GetMysqlBackupResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @_builtins.property
+    @pulumi.getter(name="validateBackupDetails")
+    def validate_backup_details(self) -> Sequence['outputs.GetMysqlBackupValidateBackupDetailResult']:
+        return pulumi.get(self, "validate_backup_details")
+
+    @_builtins.property
+    @pulumi.getter(name="validateTrigger")
+    def validate_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "validate_trigger")
+
 
 class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
     # pylint: disable=using-constant-test
@@ -338,6 +365,7 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
             backup_id=self.backup_id,
             backup_size_in_gbs=self.backup_size_in_gbs,
             backup_type=self.backup_type,
+            backup_validation_details=self.backup_validation_details,
             compartment_id=self.compartment_id,
             creation_type=self.creation_type,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
@@ -362,7 +390,9 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
             system_tags=self.system_tags,
             time_copy_created=self.time_copy_created,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            validate_backup_details=self.validate_backup_details,
+            validate_trigger=self.validate_trigger)
 
 
 def get_mysql_backup(backup_id: Optional[_builtins.str] = None,
@@ -393,6 +423,7 @@ def get_mysql_backup(backup_id: Optional[_builtins.str] = None,
         backup_id=pulumi.get(__ret__, 'backup_id'),
         backup_size_in_gbs=pulumi.get(__ret__, 'backup_size_in_gbs'),
         backup_type=pulumi.get(__ret__, 'backup_type'),
+        backup_validation_details=pulumi.get(__ret__, 'backup_validation_details'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         creation_type=pulumi.get(__ret__, 'creation_type'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
@@ -417,7 +448,9 @@ def get_mysql_backup(backup_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_copy_created=pulumi.get(__ret__, 'time_copy_created'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        validate_backup_details=pulumi.get(__ret__, 'validate_backup_details'),
+        validate_trigger=pulumi.get(__ret__, 'validate_trigger'))
 def get_mysql_backup_output(backup_id: Optional[pulumi.Input[_builtins.str]] = None,
                             opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMysqlBackupResult]:
     """
@@ -445,6 +478,7 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[_builtins.str]] = N
         backup_id=pulumi.get(__response__, 'backup_id'),
         backup_size_in_gbs=pulumi.get(__response__, 'backup_size_in_gbs'),
         backup_type=pulumi.get(__response__, 'backup_type'),
+        backup_validation_details=pulumi.get(__response__, 'backup_validation_details'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         creation_type=pulumi.get(__response__, 'creation_type'),
         data_storage_size_in_gb=pulumi.get(__response__, 'data_storage_size_in_gb'),
@@ -469,4 +503,6 @@ def get_mysql_backup_output(backup_id: Optional[pulumi.Input[_builtins.str]] = N
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_copy_created=pulumi.get(__response__, 'time_copy_created'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        validate_backup_details=pulumi.get(__response__, 'validate_backup_details'),
+        validate_trigger=pulumi.get(__response__, 'validate_trigger')))

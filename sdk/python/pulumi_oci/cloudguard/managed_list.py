@@ -24,6 +24,7 @@ class ManagedListArgs:
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: Optional[pulumi.Input[_builtins.str]] = None,
                  list_items: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  list_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_managed_list_id: Optional[pulumi.Input[_builtins.str]] = None):
@@ -40,6 +41,7 @@ class ManagedListArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] group: (Updatable) Managed list type group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_items: (Updatable) List of items in the managed list
         :param pulumi.Input[_builtins.str] list_type: Type of information stored in the list
         :param pulumi.Input[_builtins.str] source_managed_list_id: OCID of the source managed list
@@ -56,6 +58,8 @@ class ManagedListArgs:
             pulumi.set(__self__, "description", description)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
         if list_items is not None:
             pulumi.set(__self__, "list_items", list_items)
         if list_type is not None:
@@ -130,6 +134,18 @@ class ManagedListArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @_builtins.property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Managed list type group
+        """
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group", value)
+
+    @_builtins.property
     @pulumi.getter(name="listItems")
     def list_items(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -179,6 +195,7 @@ class _ManagedListState:
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: Optional[pulumi.Input[_builtins.str]] = None,
                  is_editable: Optional[pulumi.Input[_builtins.bool]] = None,
                  lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
                  list_items: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -202,6 +219,7 @@ class _ManagedListState:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] group: (Updatable) Managed list type group
         :param pulumi.Input[_builtins.bool] is_editable: Is this list editable?
         :param pulumi.Input[_builtins.str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_items: (Updatable) List of items in the managed list
@@ -228,6 +246,8 @@ class _ManagedListState:
             pulumi.set(__self__, "feed_provider", feed_provider)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if group is not None:
+            pulumi.set(__self__, "group", group)
         if is_editable is not None:
             pulumi.set(__self__, "is_editable", is_editable)
         if lifecyle_details is not None:
@@ -324,6 +344,18 @@ class _ManagedListState:
     @freeform_tags.setter
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "freeform_tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def group(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Managed list type group
+        """
+        return pulumi.get(self, "group")
+
+    @group.setter
+    def group(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "group", value)
 
     @_builtins.property
     @pulumi.getter(name="isEditable")
@@ -449,6 +481,7 @@ class ManagedList(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: Optional[pulumi.Input[_builtins.str]] = None,
                  list_items: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  list_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_managed_list_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -479,6 +512,7 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] group: (Updatable) Managed list type group
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_items: (Updatable) List of items in the managed list
         :param pulumi.Input[_builtins.str] list_type: Type of information stored in the list
         :param pulumi.Input[_builtins.str] source_managed_list_id: OCID of the source managed list
@@ -526,6 +560,7 @@ class ManagedList(pulumi.CustomResource):
                  description: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 group: Optional[pulumi.Input[_builtins.str]] = None,
                  list_items: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  list_type: Optional[pulumi.Input[_builtins.str]] = None,
                  source_managed_list_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -547,6 +582,7 @@ class ManagedList(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["group"] = group
             __props__.__dict__["list_items"] = list_items
             __props__.__dict__["list_type"] = list_type
             __props__.__dict__["source_managed_list_id"] = source_managed_list_id
@@ -573,6 +609,7 @@ class ManagedList(pulumi.CustomResource):
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             feed_provider: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            group: Optional[pulumi.Input[_builtins.str]] = None,
             is_editable: Optional[pulumi.Input[_builtins.bool]] = None,
             lifecyle_details: Optional[pulumi.Input[_builtins.str]] = None,
             list_items: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -601,6 +638,7 @@ class ManagedList(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
+        :param pulumi.Input[_builtins.str] group: (Updatable) Managed list type group
         :param pulumi.Input[_builtins.bool] is_editable: Is this list editable?
         :param pulumi.Input[_builtins.str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] list_items: (Updatable) List of items in the managed list
@@ -625,6 +663,7 @@ class ManagedList(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["feed_provider"] = feed_provider
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["group"] = group
         __props__.__dict__["is_editable"] = is_editable
         __props__.__dict__["lifecyle_details"] = lifecyle_details
         __props__.__dict__["list_items"] = list_items
@@ -689,6 +728,14 @@ class ManagedList(pulumi.CustomResource):
         Avoid entering confidential information.
         """
         return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def group(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) Managed list type group
+        """
+        return pulumi.get(self, "group")
 
     @_builtins.property
     @pulumi.getter(name="isEditable")

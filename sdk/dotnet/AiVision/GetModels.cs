@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Models.
+        /// Returns a list of models in a compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Models.
+        /// Returns a list of models in a compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Models.
+        /// Returns a list of models in a compartment.
         /// 
         /// 
         /// ## Example Usage
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// unique Model identifier
+        /// The filter to find the model with the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -141,7 +141,7 @@ namespace Pulumi.Oci.AiVision
         public string? ProjectId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match models with the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// unique Model identifier
+        /// The filter to find the model with the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.AiVision
         public Input<string>? ProjectId { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match models with the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -203,16 +203,16 @@ namespace Pulumi.Oci.AiVision
     public sealed class GetModelsResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// The compartment identifier.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Model Identifier, can be renamed
+        /// A human-friendly name for the model, which can be changed.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetModelsFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier that is immutable after creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -220,11 +220,11 @@ namespace Pulumi.Oci.AiVision
         /// </summary>
         public readonly ImmutableArray<Outputs.GetModelsModelCollectionResult> ModelCollections;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
         /// </summary>
         public readonly string? ProjectId;
         /// <summary>
-        /// The current state of the Model.
+        /// The current state of the model.
         /// </summary>
         public readonly string? State;
 

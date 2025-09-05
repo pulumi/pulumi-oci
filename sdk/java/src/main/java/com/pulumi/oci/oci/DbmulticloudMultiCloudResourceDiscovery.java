@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
  * 
- * Discover Azure Vaults and Keys based on the provided information.
+ * Discovers Multicloud Resource and their associated resources based on the information provided.
  * 
  * ## Example Usage
  * 
@@ -53,6 +53,7 @@ import javax.annotation.Nullable;
  *             .resourceType(multiCloudResourceDiscoveryResourceType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .resourcesFilter(multiCloudResourceDiscoveryResourcesFilter)
  *             .build());
  * 
  *     }
@@ -73,14 +74,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery")
 public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -101,14 +102,14 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
         return this.definedTags;
     }
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Discovered Resource.
+     * @return (Updatable) Display name of the Multicloud Resource Discovery resource.
      * 
      */
     public Output<String> displayName() {
@@ -129,14 +130,14 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
         return this.freeformTags;
     }
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     @Export(name="lastModification", refs={String.class}, tree="[0]")
     private Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Multi Cloud Discovery Resource.
+     * @return Description of the latest modification of the Multicloud Resource Discovery resource.
      * 
      */
     public Output<String> lastModification() {
@@ -157,14 +158,14 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
         return this.lifecycleStateDetails;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     @Export(name="oracleDbConnectorId", refs={String.class}, tree="[0]")
     private Output<String> oracleDbConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
     public Output<String> oracleDbConnectorId() {
@@ -173,18 +174,12 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
     /**
      * (Updatable) Resource Type to discover.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
      * @return (Updatable) Resource Type to discover.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> resourceType() {
@@ -203,6 +198,26 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
      */
     public Output<List<DbmulticloudMultiCloudResourceDiscoveryResource>> resources() {
         return this.resources;
+    }
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="resourcesFilter", refs={Map.class,String.class}, tree="[0,1,1]")
+    private Output<Map<String,String>> resourcesFilter;
+
+    /**
+     * @return Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{&#34;keyRing&#34;: &#34;projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring&#34;}` or `{&#34;keyRing&#34;: &#34;dbmci-keyring&#34;}` Azure Example `{&#34;keyVault&#34;: &#34;/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001&#34;}` or `{&#34;keyVault&#34;: &#34;orp7HSM001&#34;}`
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Map<String,String>> resourcesFilter() {
+        return this.resourcesFilter;
     }
     /**
      * The current lifecycle state of the discovered resource.
@@ -233,28 +248,28 @@ public class DbmulticloudMultiCloudResourceDiscovery extends com.pulumi.resource
         return this.systemTags;
     }
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public Output<String> timeUpdated() {

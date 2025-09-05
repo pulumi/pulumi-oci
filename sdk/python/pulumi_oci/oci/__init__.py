@@ -15,6 +15,8 @@ from .dbmulticloud_oracle_db_azure_blob_mount import *
 from .dbmulticloud_oracle_db_azure_connector import *
 from .dbmulticloud_oracle_db_azure_vault import *
 from .dbmulticloud_oracle_db_azure_vault_association import *
+from .dbmulticloud_oracle_db_gcp_identity_connector import *
+from .dbmulticloud_oracle_db_gcp_key_ring import *
 from .get_api_platform_api_platform_instance import *
 from .get_api_platform_api_platform_instances import *
 from .get_apiaccesscontrol_api_metadata import *
@@ -38,6 +40,12 @@ from .get_dbmulticloud_oracle_db_azure_vault import *
 from .get_dbmulticloud_oracle_db_azure_vault_association import *
 from .get_dbmulticloud_oracle_db_azure_vault_associations import *
 from .get_dbmulticloud_oracle_db_azure_vaults import *
+from .get_dbmulticloud_oracle_db_gcp_identity_connector import *
+from .get_dbmulticloud_oracle_db_gcp_identity_connectors import *
+from .get_dbmulticloud_oracle_db_gcp_key import *
+from .get_dbmulticloud_oracle_db_gcp_key_ring import *
+from .get_dbmulticloud_oracle_db_gcp_key_rings import *
+from .get_dbmulticloud_oracle_db_gcp_keys import *
 from .get_managed_kafka_kafka_cluster import *
 from .get_managed_kafka_kafka_cluster_config import *
 from .get_managed_kafka_kafka_cluster_config_version import *

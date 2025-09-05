@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci.Outputs
     public sealed class DbmulticloudOracleDbAzureConnectorArcAgentNode
     {
         /// <summary>
-        /// Current Arc Agent Version installed on this node of VM Cluster.
+        /// Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         /// </summary>
         public readonly string? CurrentArcAgentVersion;
         /// <summary>
@@ -22,15 +22,15 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly string? HostId;
         /// <summary>
-        /// Host Name or Azure Arc Agent Name.
+        /// Host name or Azure Arc Agent name.
         /// </summary>
         public readonly string? HostName;
         /// <summary>
-        /// The current status of the Azure Arc Agent Resource.
+        /// The current status of the Azure Arc Agent resource.
         /// </summary>
         public readonly string? Status;
         /// <summary>
-        /// time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        /// Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         /// </summary>
         public readonly string? TimeLastChecked;
 

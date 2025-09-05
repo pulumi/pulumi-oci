@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Discover Azure Vaults and Keys based on the provided information.
+ * Discovers Multicloud Resource and their associated resources based on the information provided.
  *
  * ## Example Usage
  *
@@ -28,6 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     resourcesFilter: multiCloudResourceDiscoveryResourcesFilter,
  * });
  * ```
  *
@@ -68,7 +69,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -76,7 +77,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
@@ -84,7 +85,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      */
     declare public /*out*/ readonly lastModification: pulumi.Output<string>;
     /**
@@ -92,21 +93,25 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
      */
     declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     declare public readonly oracleDbConnectorId: pulumi.Output<string>;
     /**
      * (Updatable) Resource Type to discover.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly resourceType: pulumi.Output<string>;
     /**
      * List of All Discovered resources.
      */
     declare public /*out*/ readonly resources: pulumi.Output<outputs.oci.DbmulticloudMultiCloudResourceDiscoveryResource[]>;
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    declare public readonly resourcesFilter: pulumi.Output<{[key: string]: string}>;
     /**
      * The current lifecycle state of the discovered resource.
      */
@@ -116,11 +121,11 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeCreated: pulumi.Output<string>;
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     declare public /*out*/ readonly timeUpdated: pulumi.Output<string>;
 
@@ -146,6 +151,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
             resourceInputs["oracleDbConnectorId"] = state?.oracleDbConnectorId;
             resourceInputs["resourceType"] = state?.resourceType;
             resourceInputs["resources"] = state?.resources;
+            resourceInputs["resourcesFilter"] = state?.resourcesFilter;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -170,6 +176,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["oracleDbConnectorId"] = args?.oracleDbConnectorId;
             resourceInputs["resourceType"] = args?.resourceType;
+            resourceInputs["resourcesFilter"] = args?.resourcesFilter;
             resourceInputs["lastModification"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
             resourceInputs["resources"] = undefined /*out*/;
@@ -188,7 +195,7 @@ export class DbmulticloudMultiCloudResourceDiscovery extends pulumi.CustomResour
  */
 export interface DbmulticloudMultiCloudResourceDiscoveryState {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -196,7 +203,7 @@ export interface DbmulticloudMultiCloudResourceDiscoveryState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -204,7 +211,7 @@ export interface DbmulticloudMultiCloudResourceDiscoveryState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Description of the latest modification of the Multi Cloud Discovery Resource.
+     * Description of the latest modification of the Multicloud Resource Discovery resource.
      */
     lastModification?: pulumi.Input<string>;
     /**
@@ -212,21 +219,25 @@ export interface DbmulticloudMultiCloudResourceDiscoveryState {
      */
     lifecycleStateDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     oracleDbConnectorId?: pulumi.Input<string>;
     /**
      * (Updatable) Resource Type to discover.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     resourceType?: pulumi.Input<string>;
     /**
      * List of All Discovered resources.
      */
     resources?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudMultiCloudResourceDiscoveryResource>[]>;
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}` 
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    resourcesFilter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
      * The current lifecycle state of the discovered resource.
      */
@@ -236,11 +247,11 @@ export interface DbmulticloudMultiCloudResourceDiscoveryState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+     * Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -250,7 +261,7 @@ export interface DbmulticloudMultiCloudResourceDiscoveryState {
  */
 export interface DbmulticloudMultiCloudResourceDiscoveryArgs {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Discovered Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -258,7 +269,7 @@ export interface DbmulticloudMultiCloudResourceDiscoveryArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of Discovered Resource.
+     * (Updatable) Display name of the Multicloud Resource Discovery resource.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -266,15 +277,19 @@ export interface DbmulticloudMultiCloudResourceDiscoveryArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     oracleDbConnectorId: pulumi.Input<string>;
     /**
      * (Updatable) Resource Type to discover.
+     */
+    resourceType: pulumi.Input<string>;
+    /**
+     * Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}` 
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    resourceType: pulumi.Input<string>;
+    resourcesFilter?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
 }

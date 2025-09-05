@@ -21,7 +21,7 @@ public final class GetDetectorRecipeDetectorRuleDetailConfigurationValue {
      */
     private String managedListType;
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     private String value;
@@ -42,7 +42,7 @@ public final class GetDetectorRecipeDetectorRuleDetailConfigurationValue {
         return this.managedListType;
     }
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     public String value() {

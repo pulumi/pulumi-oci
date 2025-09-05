@@ -121,6 +121,21 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Managed list type group
+     * 
+     */
+    @Import(name="group")
+    private @Nullable Output<String> group;
+
+    /**
+     * @return (Updatable) Managed list type group
+     * 
+     */
+    public Optional<Output<String>> group() {
+        return Optional.ofNullable(this.group);
+    }
+
+    /**
      * Is this list editable?
      * 
      */
@@ -270,6 +285,7 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.feedProvider = $.feedProvider;
         this.freeformTags = $.freeformTags;
+        this.group = $.group;
         this.isEditable = $.isEditable;
         this.lifecyleDetails = $.lifecyleDetails;
         this.listItems = $.listItems;
@@ -435,6 +451,27 @@ public final class ManagedListState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder freeformTags(Map<String,String> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param group (Updatable) Managed list type group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder group(@Nullable Output<String> group) {
+            $.group = group;
+            return this;
+        }
+
+        /**
+         * @param group (Updatable) Managed list type group
+         * 
+         * @return builder
+         * 
+         */
+        public Builder group(String group) {
+            return group(Output.of(group));
         }
 
         /**

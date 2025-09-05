@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Oracle Db Azure Keys in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Lists the all Oracle DB Azure Keys based on filters.
+// Lists all Oracle DB Azure Keys based on the specified filters.
 //
 // ## Example Usage
 //
@@ -58,12 +58,12 @@ func GetDbmulticloudOracleDbAzureKeys(ctx *pulumi.Context, args *GetDbmulticloud
 type GetDbmulticloudOracleDbAzureKeysArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// A filter to return Azure Vault Keys.
+	// A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureKeysFilter `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Vault Key Resources.
+	// A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	OracleDbAzureKeyId *string `pulumi:"oracleDbAzureKeyId"`
-	// A filter to return Oracle DB Azure Vault Resources.
+	// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId *string `pulumi:"oracleDbAzureVaultId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
@@ -71,9 +71,9 @@ type GetDbmulticloudOracleDbAzureKeysArgs struct {
 
 // A collection of values returned by getDbmulticloudOracleDbAzureKeys.
 type GetDbmulticloudOracleDbAzureKeysResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Display name of Oracle DB Azure Vault Key.
+	// Oracle DB Azure Vault Key resource name.
 	DisplayName *string                                  `pulumi:"displayName"`
 	Filters     []GetDbmulticloudOracleDbAzureKeysFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -81,9 +81,9 @@ type GetDbmulticloudOracleDbAzureKeysResult struct {
 	OracleDbAzureKeyId *string `pulumi:"oracleDbAzureKeyId"`
 	// The list of oracle_db_azure_key_summary_collection.
 	OracleDbAzureKeySummaryCollections []GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollection `pulumi:"oracleDbAzureKeySummaryCollections"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId *string `pulumi:"oracleDbAzureVaultId"`
-	// The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+	// The current lifecycle state of the Oracle DB Azure Vault Key resource.
 	State *string `pulumi:"state"`
 }
 
@@ -100,12 +100,12 @@ func GetDbmulticloudOracleDbAzureKeysOutput(ctx *pulumi.Context, args GetDbmulti
 type GetDbmulticloudOracleDbAzureKeysOutputArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// A filter to return Azure Vault Keys.
+	// A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                            `pulumi:"displayName"`
 	Filters     GetDbmulticloudOracleDbAzureKeysFilterArrayInput `pulumi:"filters"`
-	// A filter to return Oracle DB Azure Vault Key Resources.
+	// A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	OracleDbAzureKeyId pulumi.StringPtrInput `pulumi:"oracleDbAzureKeyId"`
-	// A filter to return Oracle DB Azure Vault Resources.
+	// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId pulumi.StringPtrInput `pulumi:"oracleDbAzureVaultId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -130,12 +130,12 @@ func (o GetDbmulticloudOracleDbAzureKeysResultOutput) ToGetDbmulticloudOracleDbA
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
 func (o GetDbmulticloudOracleDbAzureKeysResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Display name of Oracle DB Azure Vault Key.
+// Oracle DB Azure Vault Key resource name.
 func (o GetDbmulticloudOracleDbAzureKeysResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -162,12 +162,12 @@ func (o GetDbmulticloudOracleDbAzureKeysResultOutput) OracleDbAzureKeySummaryCol
 	}).(GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 func (o GetDbmulticloudOracleDbAzureKeysResultOutput) OracleDbAzureVaultId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysResult) *string { return v.OracleDbAzureVaultId }).(pulumi.StringPtrOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+// The current lifecycle state of the Oracle DB Azure Vault Key resource.
 func (o GetDbmulticloudOracleDbAzureKeysResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeysResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

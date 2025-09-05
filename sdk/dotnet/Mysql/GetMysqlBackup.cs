@@ -133,6 +133,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string BackupType;
         /// <summary>
+        /// Backup validation details.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMysqlBackupBackupValidationDetailResult> BackupValidationDetails;
+        /// <summary>
         /// The OCID of the compartment the DB System belongs in.
         /// </summary>
         public readonly string CompartmentId;
@@ -226,6 +230,8 @@ namespace Pulumi.Oci.Mysql
         /// The time at which the backup was updated.
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly ImmutableArray<Outputs.GetMysqlBackupValidateBackupDetailResult> ValidateBackupDetails;
+        public readonly int ValidateTrigger;
 
         [OutputConstructor]
         private GetMysqlBackupResult(
@@ -234,6 +240,8 @@ namespace Pulumi.Oci.Mysql
             int backupSizeInGbs,
 
             string backupType,
+
+            ImmutableArray<Outputs.GetMysqlBackupBackupValidationDetailResult> backupValidationDetails,
 
             string compartmentId,
 
@@ -283,11 +291,16 @@ namespace Pulumi.Oci.Mysql
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            ImmutableArray<Outputs.GetMysqlBackupValidateBackupDetailResult> validateBackupDetails,
+
+            int validateTrigger)
         {
             BackupId = backupId;
             BackupSizeInGbs = backupSizeInGbs;
             BackupType = backupType;
+            BackupValidationDetails = backupValidationDetails;
             CompartmentId = compartmentId;
             CreationType = creationType;
             DataStorageSizeInGb = dataStorageSizeInGb;
@@ -313,6 +326,8 @@ namespace Pulumi.Oci.Mysql
             TimeCopyCreated = timeCopyCreated;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            ValidateBackupDetails = validateBackupDetails;
+            ValidateTrigger = validateTrigger;
         }
     }
 }

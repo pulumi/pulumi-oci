@@ -23,14 +23,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     public static final ModelState Empty = new ModelState();
 
     /**
-     * Average precision of the trained model
+     * The mean average precision of the trained model.
      * 
      */
     @Import(name="averagePrecision")
     private @Nullable Output<Double> averagePrecision;
 
     /**
-     * @return Average precision of the trained model
+     * @return The mean average precision of the trained model.
      * 
      */
     public Optional<Output<Double>> averagePrecision() {
@@ -38,14 +38,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) The compartment identifier.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) The compartment identifier.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -53,14 +53,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Confidence ratio of the calculation
+     * The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     @Import(name="confidenceThreshold")
     private @Nullable Output<Double> confidenceThreshold;
 
     /**
-     * @return Confidence ratio of the calculation
+     * @return The intersection over the union threshold used for calculating precision and recall.
      * 
      */
     public Optional<Output<Double>> confidenceThreshold() {
@@ -68,14 +68,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,String>> definedTags;
 
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
      * 
      */
     public Optional<Output<Map<String,String>>> definedTags() {
@@ -83,14 +83,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A short description of the Model.
+     * (Updatable) An optional description of the model.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the Model.
+     * @return (Updatable) An optional description of the model.
      * 
      */
     public Optional<Output<String>> description() {
@@ -98,14 +98,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Model Identifier
+     * (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Model Identifier
+     * @return (Updatable) A human-friendly name for the model, which can be changed.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -113,14 +113,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Import(name="freeformTags")
     private @Nullable Output<Map<String,String>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformTags() {
@@ -128,14 +128,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     @Import(name="isQuickMode")
     private @Nullable Output<Boolean> isQuickMode;
 
     /**
-     * @return If It&#39;s true, Training is set for recommended epochs needed for quick training.
+     * @return Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
      * 
      */
     public Optional<Output<Boolean>> isQuickMode() {
@@ -143,14 +143,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     @Import(name="lifecycleDetails")
     private @Nullable Output<String> lifecycleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail, that can provide actionable information if training failed.
      * 
      */
     public Optional<Output<String>> lifecycleDetails() {
@@ -158,14 +158,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The maximum duration in hours for which the training will run.
+     * The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     @Import(name="maxTrainingDurationInHours")
     private @Nullable Output<Double> maxTrainingDurationInHours;
 
     /**
-     * @return The maximum duration in hours for which the training will run.
+     * @return The maximum model training duration in hours, expressed as a decimal fraction.
      * 
      */
     public Optional<Output<Double>> maxTrainingDurationInHours() {
@@ -173,14 +173,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Complete Training Metrics for successful trained model
+     * The complete set of per-label metrics for successfully trained models.
      * 
      */
     @Import(name="metrics")
     private @Nullable Output<String> metrics;
 
     /**
-     * @return Complete Training Metrics for successful trained model
+     * @return The complete set of per-label metrics for successfully trained models.
      * 
      */
     public Optional<Output<String>> metrics() {
@@ -188,14 +188,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The  type of the model.
+     * Which type of Vision model this is.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return The  type of the model.
+     * @return Which type of Vision model this is.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -203,14 +203,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Model version.
+     * The model version
      * 
      */
     @Import(name="modelVersion")
     private @Nullable Output<String> modelVersion;
 
     /**
-     * @return Model version.
+     * @return The model version
      * 
      */
     public Optional<Output<String>> modelVersion() {
@@ -218,14 +218,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Precision of the trained model
+     * The precision of the trained model.
      * 
      */
     @Import(name="precision")
     private @Nullable Output<Double> precision;
 
     /**
-     * @return Precision of the trained model
+     * @return The precision of the trained model.
      * 
      */
     public Optional<Output<Double>> precision() {
@@ -233,14 +233,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
      * 
      */
     public Optional<Output<String>> projectId() {
@@ -248,14 +248,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Recall of the trained model
+     * Recall of the trained model.
      * 
      */
     @Import(name="recall")
     private @Nullable Output<Double> recall;
 
     /**
-     * @return Recall of the trained model
+     * @return Recall of the trained model.
      * 
      */
     public Optional<Output<Double>> recall() {
@@ -263,14 +263,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the Model.
+     * The current state of the model.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Model.
+     * @return The current state of the model.
      * 
      */
     public Optional<Output<String>> state() {
@@ -278,14 +278,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     @Import(name="systemTags")
     private @Nullable Output<Map<String,String>> systemTags;
 
     /**
-     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
      * 
      */
     public Optional<Output<Map<String,String>>> systemTags() {
@@ -293,14 +293,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Total number of testing Images
+     * The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     @Import(name="testImageCount")
     private @Nullable Output<Integer> testImageCount;
 
     /**
-     * @return Total number of testing Images
+     * @return The number of images set aside for evaluating model performance metrics after training.
      * 
      */
     public Optional<Output<Integer>> testImageCount() {
@@ -308,14 +308,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="testingDataset")
     private @Nullable Output<ModelTestingDatasetArgs> testingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Optional<Output<ModelTestingDatasetArgs>> testingDataset() {
@@ -323,14 +323,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Model was created. An RFC3339 formatted datetime string
+     * When the model was created, as an RFC3339 datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the Model was created. An RFC3339 formatted datetime string
+     * @return When the model was created, as an RFC3339 datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -338,14 +338,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The time the Model was updated. An RFC3339 formatted datetime string
+     * When the model was updated, as an RFC3339 datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the Model was updated. An RFC3339 formatted datetime string
+     * @return When the model was updated, as an RFC3339 datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -353,14 +353,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Total number of training Images
+     * The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     @Import(name="totalImageCount")
     private @Nullable Output<Integer> totalImageCount;
 
     /**
-     * @return Total number of training Images
+     * @return The number of images in the dataset used to train, validate, and test the model.
      * 
      */
     public Optional<Output<Integer>> totalImageCount() {
@@ -368,14 +368,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Total hours actually used for training
+     * The total hours actually used for model training.
      * 
      */
     @Import(name="trainedDurationInHours")
     private @Nullable Output<Double> trainedDurationInHours;
 
     /**
-     * @return Total hours actually used for training
+     * @return The total hours actually used for model training.
      * 
      */
     public Optional<Output<Double>> trainedDurationInHours() {
@@ -383,14 +383,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="trainingDataset")
     private @Nullable Output<ModelTrainingDatasetArgs> trainingDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Optional<Output<ModelTrainingDatasetArgs>> trainingDataset() {
@@ -398,14 +398,14 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The base entity for a Dataset, which is the input for Model creation.
+     * The base entity which is the input for creating and training a model.
      * 
      */
     @Import(name="validationDataset")
     private @Nullable Output<ModelValidationDatasetArgs> validationDataset;
 
     /**
-     * @return The base entity for a Dataset, which is the input for Model creation.
+     * @return The base entity which is the input for creating and training a model.
      * 
      */
     public Optional<Output<ModelValidationDatasetArgs>> validationDataset() {
@@ -462,7 +462,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param averagePrecision Average precision of the trained model
+         * @param averagePrecision The mean average precision of the trained model.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param averagePrecision Average precision of the trained model
+         * @param averagePrecision The mean average precision of the trained model.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment identifier.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) The compartment identifier.
          * 
          * @return builder
          * 
@@ -504,7 +504,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param confidenceThreshold Confidence ratio of the calculation
+         * @param confidenceThreshold The intersection over the union threshold used for calculating precision and recall.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param confidenceThreshold Confidence ratio of the calculation
+         * @param confidenceThreshold The intersection over the union threshold used for calculating precision and recall.
          * 
          * @return builder
          * 
@@ -525,7 +525,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
          * 
          * @return builder
          * 
@@ -536,7 +536,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For example: `{&#34;foo-namespace&#34;: {&#34;bar-key&#34;: &#34;value&#34;}}`
          * 
          * @return builder
          * 
@@ -546,7 +546,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the Model.
+         * @param description (Updatable) An optional description of the model.
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A short description of the Model.
+         * @param description (Updatable) An optional description of the model.
          * 
          * @return builder
          * 
@@ -567,7 +567,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Model Identifier
+         * @param displayName (Updatable) A human-friendly name for the model, which can be changed.
          * 
          * @return builder
          * 
@@ -578,7 +578,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Model Identifier
+         * @param displayName (Updatable) A human-friendly name for the model, which can be changed.
          * 
          * @return builder
          * 
@@ -588,7 +588,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param freeformTags (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+         * @param freeformTags (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. It exists for cross-compatibility only. For example: `{&#34;bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
          * 
@@ -609,7 +609,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isQuickMode If It&#39;s true, Training is set for recommended epochs needed for quick training.
+         * @param isQuickMode Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isQuickMode If It&#39;s true, Training is set for recommended epochs needed for quick training.
+         * @param isQuickMode Set to true when experimenting with a new model type or dataset, so the model training is quick, with a predefined low number of passes through the training data.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message describing the current state in more detail, that can provide actionable information if training failed.
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+         * @param lifecycleDetails A message describing the current state in more detail, that can provide actionable information if training failed.
          * 
          * @return builder
          * 
@@ -651,7 +651,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTrainingDurationInHours The maximum duration in hours for which the training will run.
+         * @param maxTrainingDurationInHours The maximum model training duration in hours, expressed as a decimal fraction.
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param maxTrainingDurationInHours The maximum duration in hours for which the training will run.
+         * @param maxTrainingDurationInHours The maximum model training duration in hours, expressed as a decimal fraction.
          * 
          * @return builder
          * 
@@ -672,7 +672,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metrics Complete Training Metrics for successful trained model
+         * @param metrics The complete set of per-label metrics for successfully trained models.
          * 
          * @return builder
          * 
@@ -683,7 +683,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metrics Complete Training Metrics for successful trained model
+         * @param metrics The complete set of per-label metrics for successfully trained models.
          * 
          * @return builder
          * 
@@ -693,7 +693,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType The  type of the model.
+         * @param modelType Which type of Vision model this is.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelType The  type of the model.
+         * @param modelType Which type of Vision model this is.
          * 
          * @return builder
          * 
@@ -714,7 +714,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion Model version.
+         * @param modelVersion The model version
          * 
          * @return builder
          * 
@@ -725,7 +725,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param modelVersion Model version.
+         * @param modelVersion The model version
          * 
          * @return builder
          * 
@@ -735,7 +735,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param precision Precision of the trained model
+         * @param precision The precision of the trained model.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param precision Precision of the trained model
+         * @param precision The precision of the trained model.
          * 
          * @return builder
          * 
@@ -756,7 +756,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
          * 
          * @return builder
          * 
@@ -767,7 +767,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model.
+         * @param projectId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project that contains the model.
          * 
          * @return builder
          * 
@@ -777,7 +777,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recall Recall of the trained model
+         * @param recall Recall of the trained model.
          * 
          * @return builder
          * 
@@ -788,7 +788,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param recall Recall of the trained model
+         * @param recall Recall of the trained model.
          * 
          * @return builder
          * 
@@ -798,7 +798,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Model.
+         * @param state The current state of the model.
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the Model.
+         * @param state The current state of the model.
          * 
          * @return builder
          * 
@@ -819,7 +819,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
          * 
          * @return builder
          * 
@@ -830,7 +830,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+         * @param systemTags Usage of system tag keys. These predefined keys are scoped to namespaces. For example: `{&#34;orcl-cloud&#34;: {&#34;free-tier-retained&#34;: &#34;true&#34;}}`
          * 
          * @return builder
          * 
@@ -840,7 +840,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testImageCount Total number of testing Images
+         * @param testImageCount The number of images set aside for evaluating model performance metrics after training.
          * 
          * @return builder
          * 
@@ -851,7 +851,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testImageCount Total number of testing Images
+         * @param testImageCount The number of images set aside for evaluating model performance metrics after training.
          * 
          * @return builder
          * 
@@ -861,7 +861,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param testingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -872,7 +872,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param testingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param testingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -882,7 +882,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the Model was created. An RFC3339 formatted datetime string
+         * @param timeCreated When the model was created, as an RFC3339 datetime string.
          * 
          * @return builder
          * 
@@ -893,7 +893,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeCreated The time the Model was created. An RFC3339 formatted datetime string
+         * @param timeCreated When the model was created, as an RFC3339 datetime string.
          * 
          * @return builder
          * 
@@ -903,7 +903,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Model was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated When the model was updated, as an RFC3339 datetime string.
          * 
          * @return builder
          * 
@@ -914,7 +914,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeUpdated The time the Model was updated. An RFC3339 formatted datetime string
+         * @param timeUpdated When the model was updated, as an RFC3339 datetime string.
          * 
          * @return builder
          * 
@@ -924,7 +924,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalImageCount Total number of training Images
+         * @param totalImageCount The number of images in the dataset used to train, validate, and test the model.
          * 
          * @return builder
          * 
@@ -935,7 +935,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param totalImageCount Total number of training Images
+         * @param totalImageCount The number of images in the dataset used to train, validate, and test the model.
          * 
          * @return builder
          * 
@@ -945,7 +945,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainedDurationInHours Total hours actually used for training
+         * @param trainedDurationInHours The total hours actually used for model training.
          * 
          * @return builder
          * 
@@ -956,7 +956,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainedDurationInHours Total hours actually used for training
+         * @param trainedDurationInHours The total hours actually used for model training.
          * 
          * @return builder
          * 
@@ -966,7 +966,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param trainingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -977,7 +977,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param trainingDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param trainingDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -987,7 +987,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validationDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param validationDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 
@@ -998,7 +998,7 @@ public final class ModelState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validationDataset The base entity for a Dataset, which is the input for Model creation.
+         * @param validationDataset The base entity which is the input for creating and training a model.
          * 
          * @return builder
          * 

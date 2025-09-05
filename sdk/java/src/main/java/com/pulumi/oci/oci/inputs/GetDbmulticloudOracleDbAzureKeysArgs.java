@@ -34,14 +34,14 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return Azure Vault Keys.
+     * A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return Azure Vault Keys.
+     * @return A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -56,14 +56,14 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return Oracle DB Azure Vault Key Resources.
+     * A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="oracleDbAzureKeyId")
     private @Nullable Output<String> oracleDbAzureKeyId;
 
     /**
-     * @return A filter to return Oracle DB Azure Vault Key Resources.
+     * @return A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<Output<String>> oracleDbAzureKeyId() {
@@ -71,14 +71,14 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
     }
 
     /**
-     * A filter to return Oracle DB Azure Vault Resources.
+     * A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     @Import(name="oracleDbAzureVaultId")
     private @Nullable Output<String> oracleDbAzureVaultId;
 
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public Optional<Output<String>> oracleDbAzureVaultId() {
@@ -151,7 +151,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return Azure Vault Keys.
+         * @param displayName A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param displayName A filter to return Azure Vault Keys.
+         * @param displayName A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param oracleDbAzureKeyId A filter to return Oracle DB Azure Vault Key Resources.
+         * @param oracleDbAzureKeyId A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param oracleDbAzureKeyId A filter to return Oracle DB Azure Vault Key Resources.
+         * @param oracleDbAzureKeyId A filter to return Oracle DB Azure Vault Keys resource that match the specified Oracle DB Azure Key [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault Resources.
+         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class GetDbmulticloudOracleDbAzureKeysArgs extends com.pulumi.resou
         }
 
         /**
-         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault Resources.
+         * @param oracleDbAzureVaultId A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
          * 
          * @return builder
          * 

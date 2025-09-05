@@ -16835,6 +16835,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
 	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
 	// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
 	AttachedShapeAttributes []string `pulumi:"attachedShapeAttributes"`
+	// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	AutoscaleLimitInGbs int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// A filter to return only resources that match the given cluster placement group ID exactly.
@@ -16855,6 +16857,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVault struct {
 	HighCapacityDatabaseStorages []GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage `pulumi:"highCapacityDatabaseStorages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 	Id string `pulumi:"id"`
+	// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+	IsAutoscaleEnabled bool `pulumi:"isAutoscaleEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
@@ -16889,6 +16893,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
 	AdditionalFlashCacheInPercent pulumi.IntInput `pulumi:"additionalFlashCacheInPercent"`
 	// A filter to return only Exadata Database Storage Vaults which match the given attachedShapeAttributes or has null attachedShapeAttributes
 	AttachedShapeAttributes pulumi.StringArrayInput `pulumi:"attachedShapeAttributes"`
+	// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	AutoscaleLimitInGbs pulumi.IntInput `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// A filter to return only resources that match the given cluster placement group ID exactly.
@@ -16909,6 +16915,8 @@ type GetExascaleDbStorageVaultsExascaleDbStorageVaultArgs struct {
 	HighCapacityDatabaseStorages GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArrayInput `pulumi:"highCapacityDatabaseStorages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+	IsAutoscaleEnabled pulumi.BoolInput `pulumi:"isAutoscaleEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
@@ -16988,6 +16996,11 @@ func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AttachedShapeAtt
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) []string { return v.AttachedShapeAttributes }).(pulumi.StringArrayOutput)
 }
 
+// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AutoscaleLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) int { return v.AutoscaleLimitInGbs }).(pulumi.IntOutput)
+}
+
 // The name of the availability domain in which the Exadata Database Storage Vault is located.
 func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -17038,6 +17051,11 @@ func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) HighCapacityData
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+func (o GetExascaleDbStorageVaultsExascaleDbStorageVaultOutput) IsAutoscaleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetExascaleDbStorageVaultsExascaleDbStorageVault) bool { return v.IsAutoscaleEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.

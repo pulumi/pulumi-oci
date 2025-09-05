@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -24,6 +25,11 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
      * 
      */
     private List<String> attachedShapeAttributes;
+    /**
+     * @return Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    private Integer autoscaleLimitInGbs;
     /**
      * @return The name of the availability domain in which the Exadata Database Storage Vault is located.
      * 
@@ -74,6 +80,11 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
      * 
      */
     private String id;
+    /**
+     * @return Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    private Boolean isAutoscaleEnabled;
     /**
      * @return Additional information about the current lifecycle state.
      * 
@@ -129,6 +140,13 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
      */
     public List<String> attachedShapeAttributes() {
         return this.attachedShapeAttributes;
+    }
+    /**
+     * @return Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+     * 
+     */
+    public Integer autoscaleLimitInGbs() {
+        return this.autoscaleLimitInGbs;
     }
     /**
      * @return The name of the availability domain in which the Exadata Database Storage Vault is located.
@@ -201,6 +219,13 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
         return this.id;
     }
     /**
+     * @return Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+     * 
+     */
+    public Boolean isAutoscaleEnabled() {
+        return this.isAutoscaleEnabled;
+    }
+    /**
      * @return Additional information about the current lifecycle state.
      * 
      */
@@ -268,6 +293,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
     public static final class Builder {
         private Integer additionalFlashCacheInPercent;
         private List<String> attachedShapeAttributes;
+        private Integer autoscaleLimitInGbs;
         private String availabilityDomain;
         private String clusterPlacementGroupId;
         private String compartmentId;
@@ -278,6 +304,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
         private Map<String,String> freeformTags;
         private List<GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorage> highCapacityDatabaseStorages;
         private String id;
+        private Boolean isAutoscaleEnabled;
         private String lifecycleDetails;
         private String state;
         private String subscriptionId;
@@ -291,6 +318,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
     	      Objects.requireNonNull(defaults);
     	      this.additionalFlashCacheInPercent = defaults.additionalFlashCacheInPercent;
     	      this.attachedShapeAttributes = defaults.attachedShapeAttributes;
+    	      this.autoscaleLimitInGbs = defaults.autoscaleLimitInGbs;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
@@ -301,6 +329,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
     	      this.freeformTags = defaults.freeformTags;
     	      this.highCapacityDatabaseStorages = defaults.highCapacityDatabaseStorages;
     	      this.id = defaults.id;
+    	      this.isAutoscaleEnabled = defaults.isAutoscaleEnabled;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.state = defaults.state;
     	      this.subscriptionId = defaults.subscriptionId;
@@ -329,6 +358,14 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
         }
         public Builder attachedShapeAttributes(String... attachedShapeAttributes) {
             return attachedShapeAttributes(List.of(attachedShapeAttributes));
+        }
+        @CustomType.Setter
+        public Builder autoscaleLimitInGbs(Integer autoscaleLimitInGbs) {
+            if (autoscaleLimitInGbs == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultsExascaleDbStorageVault", "autoscaleLimitInGbs");
+            }
+            this.autoscaleLimitInGbs = autoscaleLimitInGbs;
+            return this;
         }
         @CustomType.Setter
         public Builder availabilityDomain(String availabilityDomain) {
@@ -414,6 +451,14 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
             return this;
         }
         @CustomType.Setter
+        public Builder isAutoscaleEnabled(Boolean isAutoscaleEnabled) {
+            if (isAutoscaleEnabled == null) {
+              throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultsExascaleDbStorageVault", "isAutoscaleEnabled");
+            }
+            this.isAutoscaleEnabled = isAutoscaleEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetExascaleDbStorageVaultsExascaleDbStorageVault", "lifecycleDetails");
@@ -484,6 +529,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
             final var _resultValue = new GetExascaleDbStorageVaultsExascaleDbStorageVault();
             _resultValue.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
             _resultValue.attachedShapeAttributes = attachedShapeAttributes;
+            _resultValue.autoscaleLimitInGbs = autoscaleLimitInGbs;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
@@ -494,6 +540,7 @@ public final class GetExascaleDbStorageVaultsExascaleDbStorageVault {
             _resultValue.freeformTags = freeformTags;
             _resultValue.highCapacityDatabaseStorages = highCapacityDatabaseStorages;
             _resultValue.id = id;
+            _resultValue.isAutoscaleEnabled = isAutoscaleEnabled;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.state = state;
             _resultValue.subscriptionId = subscriptionId;

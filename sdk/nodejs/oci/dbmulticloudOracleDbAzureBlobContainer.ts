@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Capture Azure Container details for mounting Azure Container on multiple Oracle Cloud Infrastructure Database Resource.
+ * Creates Oracle DB Azure Blob Container resource.
  *
  * ## Example Usage
  *
@@ -68,15 +68,15 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
     }
 
     /**
-     * (Updatable) Azure Storage Account Name.
+     * (Updatable) Azure Storage account name.
      */
     declare public readonly azureStorageAccountName: pulumi.Output<string>;
     /**
-     * (Updatable) Azure Storage Container Name.
+     * (Updatable) Azure Storage container name.
      */
     declare public readonly azureStorageContainerName: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -84,7 +84,7 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable) Display name of Oracle DB Azure Blob Container.
+     * (Updatable) Oracle DB Azure Blob Container resource name.
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
@@ -92,7 +92,7 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Container resource.
      */
     declare public /*out*/ readonly lastModification: pulumi.Output<string>;
     /**
@@ -100,7 +100,7 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
      */
     declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
     /**
-     * (Updatable) Private endpoint DNS Alias.
+     * (Updatable) Private endpoint's DNS alias.
      */
     declare public readonly privateEndpointDnsAlias: pulumi.Output<string>;
     /**
@@ -112,7 +112,7 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
      */
     declare public readonly privateEndpointIpAddress: pulumi.Output<string>;
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
@@ -194,15 +194,15 @@ export class DbmulticloudOracleDbAzureBlobContainer extends pulumi.CustomResourc
  */
 export interface DbmulticloudOracleDbAzureBlobContainerState {
     /**
-     * (Updatable) Azure Storage Account Name.
+     * (Updatable) Azure Storage account name.
      */
     azureStorageAccountName?: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Storage Container Name.
+     * (Updatable) Azure Storage container name.
      */
     azureStorageContainerName?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -210,7 +210,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of Oracle DB Azure Blob Container.
+     * (Updatable) Oracle DB Azure Blob Container resource name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -218,7 +218,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Container resource.
      */
     lastModification?: pulumi.Input<string>;
     /**
@@ -226,7 +226,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
      */
     lifecycleStateDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Private endpoint DNS Alias.
+     * (Updatable) Private endpoint's DNS alias.
      */
     privateEndpointDnsAlias?: pulumi.Input<string>;
     /**
@@ -238,7 +238,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
      */
     privateEndpointIpAddress?: pulumi.Input<string>;
     /**
-     * The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Container resource.
      */
     state?: pulumi.Input<string>;
     /**
@@ -260,15 +260,15 @@ export interface DbmulticloudOracleDbAzureBlobContainerState {
  */
 export interface DbmulticloudOracleDbAzureBlobContainerArgs {
     /**
-     * (Updatable) Azure Storage Account Name.
+     * (Updatable) Azure Storage account name.
      */
     azureStorageAccountName: pulumi.Input<string>;
     /**
-     * (Updatable) Azure Storage Container Name.
+     * (Updatable) Azure Storage container name.
      */
     azureStorageContainerName: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the compartment that contains Oracle DB Azure Blob Container Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -276,7 +276,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Display name of Oracle DB Azure Blob Container.
+     * (Updatable) Oracle DB Azure Blob Container resource name.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -284,7 +284,7 @@ export interface DbmulticloudOracleDbAzureBlobContainerArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * (Updatable) Private endpoint DNS Alias.
+     * (Updatable) Private endpoint's DNS alias.
      */
     privateEndpointDnsAlias?: pulumi.Input<string>;
     /**

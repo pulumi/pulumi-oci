@@ -46,14 +46,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
     }
 
     /**
-     * Configuration value
+     * Detector rule type value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     public Optional<Output<String>> value() {
@@ -129,7 +129,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param value Configuration value
+         * @param value Detector rule type value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueAr
         }
 
         /**
-         * @param value Configuration value
+         * @param value Detector rule type value
          * 
          * @return builder
          * 

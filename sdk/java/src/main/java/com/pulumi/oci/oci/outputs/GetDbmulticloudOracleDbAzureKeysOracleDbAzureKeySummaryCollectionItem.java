@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem {
     /**
-     * @return The Azure ID of the Azure Key, Azure Key URL.
+     * @return The ID of the Azure Key resource.
      * 
      */
     private String azureKeyId;
@@ -27,7 +27,7 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return Azure Vault Keys.
+     * @return A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      * 
      */
     private String displayName;
@@ -37,12 +37,17 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
      */
     private Map<String,String> freeformTags;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      * 
      */
     private String id;
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+     * @return Key properties
+     * 
+     */
+    private Map<String,String> keyProperties;
+    /**
+     * @return Description of the latest modification of the Oracle DB Azure Vault Key resource.
      * 
      */
     private String lastModification;
@@ -52,10 +57,15 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
      */
     private String lifecycleStateDetails;
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     private String oracleDbAzureVaultId;
+    /**
+     * @return Key Resource type.
+     * 
+     */
+    private String resourceType;
     /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
@@ -67,19 +77,19 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
      */
     private Map<String,String> systemTags;
     /**
-     * @return Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeCreated;
     /**
-     * @return Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     private String timeUpdated;
 
     private GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem() {}
     /**
-     * @return The Azure ID of the Azure Key, Azure Key URL.
+     * @return The ID of the Azure Key resource.
      * 
      */
     public String azureKeyId() {
@@ -100,7 +110,7 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
         return this.definedTags;
     }
     /**
-     * @return A filter to return Azure Vault Keys.
+     * @return A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
      * 
      */
     public String displayName() {
@@ -114,14 +124,21 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
         return this.freeformTags;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+     * @return Key properties
+     * 
+     */
+    public Map<String,String> keyProperties() {
+        return this.keyProperties;
+    }
+    /**
+     * @return Description of the latest modification of the Oracle DB Azure Vault Key resource.
      * 
      */
     public String lastModification() {
@@ -135,11 +152,18 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
         return this.lifecycleStateDetails;
     }
     /**
-     * @return A filter to return Oracle DB Azure Vault Resources.
+     * @return A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
      * 
      */
     public String oracleDbAzureVaultId() {
         return this.oracleDbAzureVaultId;
+    }
+    /**
+     * @return Key Resource type.
+     * 
+     */
+    public String resourceType() {
+        return this.resourceType;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -156,14 +180,14 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
         return this.systemTags;
     }
     /**
-     * @return Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
+     * @return Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. &#39;2020-05-22T21:10:29.600Z&#39;
      * 
      */
     public String timeUpdated() {
@@ -185,9 +209,11 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
+        private Map<String,String> keyProperties;
         private String lastModification;
         private String lifecycleStateDetails;
         private String oracleDbAzureVaultId;
+        private String resourceType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -201,9 +227,11 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.keyProperties = defaults.keyProperties;
     	      this.lastModification = defaults.lastModification;
     	      this.lifecycleStateDetails = defaults.lifecycleStateDetails;
     	      this.oracleDbAzureVaultId = defaults.oracleDbAzureVaultId;
+    	      this.resourceType = defaults.resourceType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -259,6 +287,14 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
             return this;
         }
         @CustomType.Setter
+        public Builder keyProperties(Map<String,String> keyProperties) {
+            if (keyProperties == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem", "keyProperties");
+            }
+            this.keyProperties = keyProperties;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lastModification(String lastModification) {
             if (lastModification == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem", "lastModification");
@@ -280,6 +316,14 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem", "oracleDbAzureVaultId");
             }
             this.oracleDbAzureVaultId = oracleDbAzureVaultId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder resourceType(String resourceType) {
+            if (resourceType == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItem", "resourceType");
+            }
+            this.resourceType = resourceType;
             return this;
         }
         @CustomType.Setter
@@ -322,9 +366,11 @@ public final class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollec
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.keyProperties = keyProperties;
             _resultValue.lastModification = lastModification;
             _resultValue.lifecycleStateDetails = lifecycleStateDetails;
             _resultValue.oracleDbAzureVaultId = oracleDbAzureVaultId;
+            _resultValue.resourceType = resourceType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

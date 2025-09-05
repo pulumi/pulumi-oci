@@ -18,14 +18,14 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
     public static final DbmulticloudOracleDbAzureVaultAssociationArgs Empty = new DbmulticloudOracleDbAzureVaultAssociationArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -48,14 +48,14 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
     }
 
     /**
-     * (Updatable) Display name of Oracle DB Azure Vault Association.
+     * (Updatable) Oracle DB Azure Vault Association resource name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of Oracle DB Azure Vault Association.
+     * @return (Updatable) Oracle DB Azure Vault Association resource name.
      * 
      */
     public Output<String> displayName() {
@@ -78,14 +78,14 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     @Import(name="oracleDbAzureConnectorId", required=true)
     private Output<String> oracleDbAzureConnectorId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
      * 
      */
     public Output<String> oracleDbAzureConnectorId() {
@@ -93,7 +93,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -103,7 +103,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
     private Output<String> oracleDbAzureVaultId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,7 +143,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) Display name of Oracle DB Azure Vault Association.
+         * @param displayName (Updatable) Oracle DB Azure Vault Association resource name.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param displayName (Updatable) Display name of Oracle DB Azure Vault Association.
+         * @param displayName (Updatable) Oracle DB Azure Vault Association resource name.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector.
+         * @param oracleDbAzureConnectorId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector that contains Oracle DB Azure Vault Association resource.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureVaultId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+         * @param oracleDbAzureVaultId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,7 +262,7 @@ public final class DbmulticloudOracleDbAzureVaultAssociationArgs extends com.pul
         }
 
         /**
-         * @param oracleDbAzureVaultId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault.
+         * @param oracleDbAzureVaultId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault that contains Oracle DB Azure Vault Association resource.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

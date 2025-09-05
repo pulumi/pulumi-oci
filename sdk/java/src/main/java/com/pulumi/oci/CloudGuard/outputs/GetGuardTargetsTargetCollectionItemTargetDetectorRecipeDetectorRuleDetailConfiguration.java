@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -12,6 +14,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration {
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    private String allowedValuesDataType;
     /**
      * @return Unique identifier of the configuration
      * 
@@ -39,6 +56,27 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationValue> values;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration() {}
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties;
+    }
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues;
+    }
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    public String allowedValuesDataType() {
+        return this.allowedValuesDataType;
+    }
     /**
      * @return Unique identifier of the configuration
      * 
@@ -84,6 +122,9 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+        private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+        private String allowedValuesDataType;
         private String configKey;
         private String dataType;
         private String name;
@@ -92,6 +133,9 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         public Builder() {}
         public Builder(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -99,6 +143,36 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties) {
+            if (additionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration", "additionalProperties");
+            }
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue> allowedValues) {
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(String allowedValuesDataType) {
+            if (allowedValuesDataType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration", "allowedValuesDataType");
+            }
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(String configKey) {
             if (configKey == null) {
@@ -144,6 +218,9 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         }
         public GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration build() {
             final var _resultValue = new GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetailConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

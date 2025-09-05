@@ -14,7 +14,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Projects.
+        /// Returns a list of projects.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Projects.
+        /// Returns a list of projects.
         /// 
         /// 
         /// ## Example Usage
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
         /// 
-        /// Returns a list of Projects.
+        /// Returns a list of projects.
         /// 
         /// 
         /// ## Example Usage
@@ -126,13 +126,13 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// unique Project identifier
+        /// The filter to find the project with the given identifier.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match projects with the given lifecycleState.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -166,13 +166,13 @@ namespace Pulumi.Oci.AiVision
         }
 
         /// <summary>
-        /// unique Project identifier
+        /// The filter to find the project with the given identifier.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// A filter to return only resources their lifecycleState matches the given lifecycleState.
+        /// The filter to match projects with the given lifecycleState.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -188,16 +188,16 @@ namespace Pulumi.Oci.AiVision
     public sealed class GetProjectsResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// A compartment identifier.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// Project Identifier, can be renamed
+        /// A human-friendly name for the project, which can be changed.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetProjectsFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// A unique identifier that is immutable after creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.AiVision
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsProjectCollectionResult> ProjectCollections;
         /// <summary>
-        /// The current state of the Project.
+        /// The current state of the project.
         /// </summary>
         public readonly string? State;
 

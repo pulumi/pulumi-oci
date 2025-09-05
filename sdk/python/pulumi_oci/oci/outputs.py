@@ -23,6 +23,7 @@ __all__ = [
     'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList',
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
+    'DbmulticloudOracleDbGcpIdentityConnectorGcpNode',
     'ManagedKafkaKafkaClusterAccessSubnet',
     'ManagedKafkaKafkaClusterBrokerShape',
     'ManagedKafkaKafkaClusterConfigLatestConfig',
@@ -78,6 +79,17 @@ __all__ = [
     'GetDbmulticloudOracleDbAzureVaultsFilterResult',
     'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionResult',
     'GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorGcpNodeResult',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsFilterResult',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionResult',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemGcpNodeResult',
+    'GetDbmulticloudOracleDbGcpKeyRingsFilterResult',
+    'GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionResult',
+    'GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult',
+    'GetDbmulticloudOracleDbGcpKeysFilterResult',
+    'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionResult',
+    'GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult',
     'GetManagedKafkaKafkaClusterAccessSubnetResult',
     'GetManagedKafkaKafkaClusterBrokerShapeResult',
     'GetManagedKafkaKafkaClusterConfigLatestConfigResult',
@@ -436,7 +448,7 @@ class DbmulticloudMultiCloudResourceDiscoveryResource(dict):
                  resource_group: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param _builtins.str id: The ID of the Discovered Resource.
         :param _builtins.str location: Discovered Resource Location.
         :param _builtins.str name: Discovered Resource Name.
         :param Mapping[str, _builtins.str] properties: Discovered Resource's properties.
@@ -460,7 +472,7 @@ class DbmulticloudMultiCloudResourceDiscoveryResource(dict):
     @pulumi.getter
     def id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -537,11 +549,11 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
                  status: Optional[_builtins.str] = None,
                  time_last_checked: Optional[_builtins.str] = None):
         """
-        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         :param _builtins.str host_id: Host ID.
-        :param _builtins.str host_name: Host Name or Azure Arc Agent Name.
-        :param _builtins.str status: The current status of the Azure Arc Agent Resource.
-        :param _builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str host_name: Host name or Azure Arc Agent name.
+        :param _builtins.str status: The current status of the Azure Arc Agent resource.
+        :param _builtins.str time_last_checked: Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         if current_arc_agent_version is not None:
             pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
@@ -558,7 +570,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
     @pulumi.getter(name="currentArcAgentVersion")
     def current_arc_agent_version(self) -> Optional[_builtins.str]:
         """
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         """
         return pulumi.get(self, "current_arc_agent_version")
 
@@ -574,7 +586,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> Optional[_builtins.str]:
         """
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
         """
         return pulumi.get(self, "host_name")
 
@@ -582,7 +594,7 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
     @pulumi.getter
     def status(self) -> Optional[_builtins.str]:
         """
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "status")
 
@@ -590,7 +602,83 @@ class DbmulticloudOracleDbAzureConnectorArcAgentNode(dict):
     @pulumi.getter(name="timeLastChecked")
     def time_last_checked(self) -> Optional[_builtins.str]:
         """
-        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbGcpIdentityConnectorGcpNode(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "hostId":
+            suggest = "host_id"
+        elif key == "hostName":
+            suggest = "host_name"
+        elif key == "timeLastChecked":
+            suggest = "time_last_checked"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbGcpIdentityConnectorGcpNode. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbGcpIdentityConnectorGcpNode.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbGcpIdentityConnectorGcpNode.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 host_id: Optional[_builtins.str] = None,
+                 host_name: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None,
+                 time_last_checked: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str host_id: Host ID.
+        :param _builtins.str host_name: Host Name or Identity Connector name.
+        :param _builtins.str status: The current status of the GCP Identity Connector resource.
+        :param _builtins.str time_last_checked: time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        if host_id is not None:
+            pulumi.set(__self__, "host_id", host_id)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if time_last_checked is not None:
+            pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> Optional[_builtins.str]:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> Optional[_builtins.str]:
+        """
+        Host Name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        The current status of the GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> Optional[_builtins.str]:
+        """
+        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
 
@@ -2508,6 +2596,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
                  oracle_db_connector_id: _builtins.str,
                  resource_type: _builtins.str,
                  resources: Sequence['outputs.GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceResult'],
+                 resources_filter: Mapping[str, _builtins.str],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
@@ -2515,18 +2604,19 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
         """
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: Display Name of the Multi Cloud Discovery Resource.
+        :param _builtins.str display_name: A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
-        :param _builtins.str last_modification: Description of the latest modification of the Multi Cloud Discovery Resource.
+        :param _builtins.str id: The ID of the Discovered Resource.
+        :param _builtins.str last_modification: Description of the latest modification of the Multicloud Resource Discovery resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
-        :param _builtins.str resource_type: The type of Multi Cloud Resource.
+        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
+        :param _builtins.str resource_type: The type of Multicloud Resource.
         :param Sequence['GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySummaryCollectionItemResourceArgs'] resources: List of All Discovered resources.
-        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] resources_filter: Specifies the type(s) of resources to discover in the target cloud provider.
+        :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param _builtins.str time_updated: Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_created: Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2538,6 +2628,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
         pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "resources", resources)
+        pulumi.set(__self__, "resources_filter", resources_filter)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -2563,7 +2654,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        Display Name of the Multi Cloud Discovery Resource.
+        A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -2579,7 +2670,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -2587,7 +2678,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Multi Cloud Discovery Resource.
+        Description of the latest modification of the Multicloud Resource Discovery resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -2603,7 +2694,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -2611,7 +2702,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        The type of Multi Cloud Resource.
+        The type of Multicloud Resource.
         """
         return pulumi.get(self, "resource_type")
 
@@ -2624,10 +2715,18 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
         return pulumi.get(self, "resources")
 
     @_builtins.property
+    @pulumi.getter(name="resourcesFilter")
+    def resources_filter(self) -> Mapping[str, _builtins.str]:
+        """
+        Specifies the type(s) of resources to discover in the target cloud provider.
+        """
+        return pulumi.get(self, "resources_filter")
+
+    @_builtins.property
     @pulumi.getter
     def state(self) -> _builtins.str:
         """
-        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
         """
         return pulumi.get(self, "state")
 
@@ -2643,7 +2742,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Multi Cloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -2651,7 +2750,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Multi Cloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Multicloud Discovery Resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -2666,7 +2765,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
                  resource_group: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param _builtins.str id: The ID of the Discovered Resource.
         :param _builtins.str location: Discovered Resource Location.
         :param _builtins.str name: Discovered Resource Name.
         :param Mapping[str, _builtins.str] properties: Discovered Resource's properties.
@@ -2684,7 +2783,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveriesMultiCloudResourceDiscoverySum
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -2739,7 +2838,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResourceResult(dict):
                  resource_group: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        :param _builtins.str id: The ID of the Discovered Resource.
         :param _builtins.str location: Discovered Resource Location.
         :param _builtins.str name: Discovered Resource Name.
         :param Mapping[str, _builtins.str] properties: Discovered Resource's properties.
@@ -2757,7 +2856,7 @@ class GetDbmulticloudMultiCloudResourceDiscoveryResourceResult(dict):
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Discovered Resource.
+        The ID of the Discovered Resource.
         """
         return pulumi.get(self, "id")
 
@@ -2860,16 +2959,16 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str azure_storage_account_name: A filter to return Azure Blob Containers.
-        :param _builtins.str azure_storage_container_name: A filter to return Azure Blob containers.
+        :param _builtins.str azure_storage_account_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
+        :param _builtins.str azure_storage_container_name: A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: A filter to return Azure Containers.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
-        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Container resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str private_endpoint_dns_alias: Private endpoint DNS Alias.
+        :param _builtins.str private_endpoint_dns_alias: Private endpoint's DNS Alias.
         :param _builtins.str private_endpoint_ip_address: Private endpoint IP.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -2896,7 +2995,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> _builtins.str:
         """
-        A filter to return Azure Blob Containers.
+        A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Account name.
         """
         return pulumi.get(self, "azure_storage_account_name")
 
@@ -2904,7 +3003,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter(name="azureStorageContainerName")
     def azure_storage_container_name(self) -> _builtins.str:
         """
-        A filter to return Azure Blob containers.
+        A filter to return Oracle DB Azure Blob Container resources that match the specified Azure Storage name.
         """
         return pulumi.get(self, "azure_storage_container_name")
 
@@ -2928,7 +3027,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Azure Containers.
+        A filter to return Oracle DB Azure Blob Container resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -2944,7 +3043,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "id")
 
@@ -2952,7 +3051,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -2968,7 +3067,7 @@ class GetDbmulticloudOracleDbAzureBlobContainersOracleDbAzureBlobContainerSummar
     @pulumi.getter(name="privateEndpointDnsAlias")
     def private_endpoint_dns_alias(self) -> _builtins.str:
         """
-        Private endpoint DNS Alias.
+        Private endpoint's DNS Alias.
         """
         return pulumi.get(self, "private_endpoint_dns_alias")
 
@@ -3072,14 +3171,14 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
         """
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The OCID for the new Oracle DB Azure Blob Mount resource.
-        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        :param _builtins.str id: The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str mount_path: Azure Container mount path.
-        :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Mount Resources.
-        :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
+        :param _builtins.str mount_path: Oracle DB Azure Blob Mount path.
+        :param _builtins.str oracle_db_azure_blob_container_id: A filter to return Oracle DB Azure Blob Container resource.
+        :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -3120,7 +3219,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Blob Mount Resources.
+        A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -3136,7 +3235,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The OCID for the new Oracle DB Azure Blob Mount resource.
+        The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "id")
 
@@ -3144,7 +3243,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -3160,7 +3259,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> _builtins.str:
         """
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
         """
         return pulumi.get(self, "mount_path")
 
@@ -3168,7 +3267,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter(name="oracleDbAzureBlobContainerId")
     def oracle_db_azure_blob_container_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Blob Mount Resources.
+        A filter to return Oracle DB Azure Blob Container resource.
         """
         return pulumi.get(self, "oracle_db_azure_blob_container_id")
 
@@ -3176,7 +3275,7 @@ class GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollect
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Blob Mount Resources.
+        A filter to return Oracle DB Azure Azure Identity Connector resources.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -3222,11 +3321,11 @@ class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
                  status: _builtins.str,
                  time_last_checked: _builtins.str):
         """
-        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         :param _builtins.str host_id: Host ID.
-        :param _builtins.str host_name: Host Name or Azure Arc Agent Name.
-        :param _builtins.str status: The current status of the Azure Arc Agent Resource.
-        :param _builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str host_name: Host name or Azure Arc Agent name.
+        :param _builtins.str status: The current status of the Azure Arc Agent resource.
+        :param _builtins.str time_last_checked: Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
         pulumi.set(__self__, "host_id", host_id)
@@ -3238,7 +3337,7 @@ class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
     @pulumi.getter(name="currentArcAgentVersion")
     def current_arc_agent_version(self) -> _builtins.str:
         """
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         """
         return pulumi.get(self, "current_arc_agent_version")
 
@@ -3254,7 +3353,7 @@ class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
     @pulumi.getter(name="hostName")
     def host_name(self) -> _builtins.str:
         """
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
         """
         return pulumi.get(self, "host_name")
 
@@ -3262,7 +3361,7 @@ class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
     @pulumi.getter
     def status(self) -> _builtins.str:
         """
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "status")
 
@@ -3270,7 +3369,7 @@ class GetDbmulticloudOracleDbAzureConnectorArcAgentNodeResult(dict):
     @pulumi.getter(name="timeLastChecked")
     def time_last_checked(self) -> _builtins.str:
         """
-        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
 
@@ -3319,6 +3418,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     def __init__(__self__, *,
                  access_token: _builtins.str,
                  arc_agent_nodes: Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult'],
+                 azure_identity_connectivity_status: _builtins.str,
                  azure_identity_mechanism: _builtins.str,
                  azure_resource_group: _builtins.str,
                  azure_subscription_id: _builtins.str,
@@ -3333,24 +3433,26 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str access_token: Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
-        :param Sequence['GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs'] arc_agent_nodes: List of All VMs where Arc Agent is Install under VMCluster.
-        :param _builtins.str azure_identity_mechanism: Azure Identity Mechanism.
-        :param _builtins.str azure_resource_group: Azure Resource Group Name.
+        :param _builtins.str access_token: Azure bearer access token.
+        :param Sequence['GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeArgs'] arc_agent_nodes: List of all VMs where Arc Agent is installed under Cloud VM Cluster.
+        :param _builtins.str azure_identity_connectivity_status: The current Connectivity status of Azure Identity Connector resource.
+        :param _builtins.str azure_identity_mechanism: Azure Identity mechanism.
+        :param _builtins.str azure_resource_group: Azure Resource group name.
         :param _builtins.str azure_subscription_id: Azure Subscription ID.
         :param _builtins.str azure_tenant_id: Azure Tenant ID.
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
-        :param _builtins.str display_name: A filter to return Oracle DB Azure Connector Resource that match the given display name.
-        :param _builtins.str id: The ID of the Oracle DB Azure Connector resource.
-        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Connector Resource.
+        :param _builtins.str db_cluster_resource_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Connector resources that match the specified display name.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Connector resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-        :param _builtins.str time_created: Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param _builtins.str time_updated: Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_created: Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "access_token", access_token)
         pulumi.set(__self__, "arc_agent_nodes", arc_agent_nodes)
+        pulumi.set(__self__, "azure_identity_connectivity_status", azure_identity_connectivity_status)
         pulumi.set(__self__, "azure_identity_mechanism", azure_identity_mechanism)
         pulumi.set(__self__, "azure_resource_group", azure_resource_group)
         pulumi.set(__self__, "azure_subscription_id", azure_subscription_id)
@@ -3369,7 +3471,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="accessToken")
     def access_token(self) -> _builtins.str:
         """
-        Azure bearer access token. If bearer access token is provided then Service Principal detail is not required.
+        Azure bearer access token.
         """
         return pulumi.get(self, "access_token")
 
@@ -3377,15 +3479,23 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="arcAgentNodes")
     def arc_agent_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollectionItemArcAgentNodeResult']:
         """
-        List of All VMs where Arc Agent is Install under VMCluster.
+        List of all VMs where Arc Agent is installed under Cloud VM Cluster.
         """
         return pulumi.get(self, "arc_agent_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="azureIdentityConnectivityStatus")
+    def azure_identity_connectivity_status(self) -> _builtins.str:
+        """
+        The current Connectivity status of Azure Identity Connector resource.
+        """
+        return pulumi.get(self, "azure_identity_connectivity_status")
 
     @_builtins.property
     @pulumi.getter(name="azureIdentityMechanism")
     def azure_identity_mechanism(self) -> _builtins.str:
         """
-        Azure Identity Mechanism.
+        Azure Identity mechanism.
         """
         return pulumi.get(self, "azure_identity_mechanism")
 
@@ -3393,7 +3503,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="azureResourceGroup")
     def azure_resource_group(self) -> _builtins.str:
         """
-        Azure Resource Group Name.
+        Azure Resource group name.
         """
         return pulumi.get(self, "azure_resource_group")
 
@@ -3425,7 +3535,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="dbClusterResourceId")
     def db_cluster_resource_id(self) -> _builtins.str:
         """
-        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Resource.
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database resource.
         """
         return pulumi.get(self, "db_cluster_resource_id")
 
@@ -3433,7 +3543,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Connector Resource that match the given display name.
+        A filter to return Oracle DB Azure Connector resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -3441,7 +3551,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The ID of the Oracle DB Azure Connector resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "id")
 
@@ -3449,7 +3559,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Connector Resource.
+        Description of the latest modification of the Oracle DB Azure Connector resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -3473,7 +3583,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Connector Resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -3481,7 +3591,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Connector Resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -3495,11 +3605,11 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
                  status: _builtins.str,
                  time_last_checked: _builtins.str):
         """
-        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of VM Cluster.
+        :param _builtins.str current_arc_agent_version: Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         :param _builtins.str host_id: Host ID.
-        :param _builtins.str host_name: Host Name or Azure Arc Agent Name.
-        :param _builtins.str status: The current status of the Azure Arc Agent Resource.
-        :param _builtins.str time_last_checked: time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str host_name: Host name or Azure Arc Agent name.
+        :param _builtins.str status: The current status of the Azure Arc Agent resource.
+        :param _builtins.str time_last_checked: Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "current_arc_agent_version", current_arc_agent_version)
         pulumi.set(__self__, "host_id", host_id)
@@ -3511,7 +3621,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="currentArcAgentVersion")
     def current_arc_agent_version(self) -> _builtins.str:
         """
-        Current Arc Agent Version installed on this node of VM Cluster.
+        Current Arc Agent Version installed on this node of Oracle Cloud VM Cluster.
         """
         return pulumi.get(self, "current_arc_agent_version")
 
@@ -3527,7 +3637,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="hostName")
     def host_name(self) -> _builtins.str:
         """
-        Host Name or Azure Arc Agent Name.
+        Host name or Azure Arc Agent name.
         """
         return pulumi.get(self, "host_name")
 
@@ -3535,7 +3645,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter
     def status(self) -> _builtins.str:
         """
-        The current status of the Azure Arc Agent Resource.
+        The current status of the Azure Arc Agent resource.
         """
         return pulumi.get(self, "status")
 
@@ -3543,7 +3653,7 @@ class GetDbmulticloudOracleDbAzureConnectorsOracleDbAzureConnectorSummaryCollect
     @pulumi.getter(name="timeLastChecked")
     def time_last_checked(self) -> _builtins.str:
         """
-        time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Azure Arc Agent's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_last_checked")
 
@@ -3596,27 +3706,31 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
+                 key_properties: Mapping[str, _builtins.str],
                  last_modification: _builtins.str,
                  lifecycle_state_details: _builtins.str,
                  oracle_db_azure_vault_id: _builtins.str,
+                 resource_type: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_updated: _builtins.str):
         """
-        :param _builtins.str azure_key_id: The Azure ID of the Azure Key, Azure Key URL.
+        :param _builtins.str azure_key_id: The ID of the Azure Key resource.
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: A filter to return Azure Vault Keys.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
-        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
+        :param Mapping[str, _builtins.str] key_properties: Key properties
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Key resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+        :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
+        :param _builtins.str resource_type: Key Resource type.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param _builtins.str time_updated: Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_created: Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "azure_key_id", azure_key_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3624,9 +3738,11 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_properties", key_properties)
         pulumi.set(__self__, "last_modification", last_modification)
         pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
         pulumi.set(__self__, "oracle_db_azure_vault_id", oracle_db_azure_vault_id)
+        pulumi.set(__self__, "resource_type", resource_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -3636,7 +3752,7 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter(name="azureKeyId")
     def azure_key_id(self) -> _builtins.str:
         """
-        The Azure ID of the Azure Key, Azure Key URL.
+        The ID of the Azure Key resource.
         """
         return pulumi.get(self, "azure_key_id")
 
@@ -3660,7 +3776,7 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Azure Vault Keys.
+        A filter to return Oracle DB Azure Vault Keys resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -3676,15 +3792,23 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="keyProperties")
+    def key_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Key properties
+        """
+        return pulumi.get(self, "key_properties")
 
     @_builtins.property
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Key resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -3700,9 +3824,17 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Vault Resources.
+        A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_azure_vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Key Resource type.
+        """
+        return pulumi.get(self, "resource_type")
 
     @_builtins.property
     @pulumi.getter
@@ -3724,7 +3856,7 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -3732,7 +3864,7 @@ class GetDbmulticloudOracleDbAzureKeysOracleDbAzureKeySummaryCollectionItemResul
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -3796,18 +3928,18 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
         """
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: A filter to return Azure Vault Association.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
-        :param _builtins.bool is_resource_accessible: The Associated Resources are accessible or not.
-        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
+        :param _builtins.bool is_resource_accessible: The Associated resource is accessible or not.
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault Association resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
-        :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+        :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
+        :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
-        :param _builtins.str time_updated: Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_created: Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -3844,7 +3976,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Azure Vault Association.
+        A filter to return Oracle DB Azure Vault Association resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -3860,7 +3992,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "id")
 
@@ -3868,7 +4000,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="isResourceAccessible")
     def is_resource_accessible(self) -> _builtins.bool:
         """
-        The Associated Resources are accessible or not.
+        The Associated resource is accessible or not.
         """
         return pulumi.get(self, "is_resource_accessible")
 
@@ -3876,7 +4008,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the Oracle DB Azure Vault Association Resource.
+        Description of the latest modification of the Oracle DB Azure Vault Association resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -3892,7 +4024,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Blob Mount Resources.
+        A filter to return Oracle DB Azure Azure Identity Connector resources.
         """
         return pulumi.get(self, "oracle_db_azure_connector_id")
 
@@ -3900,7 +4032,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="oracleDbAzureVaultId")
     def oracle_db_azure_vault_id(self) -> _builtins.str:
         """
-        A filter to return Oracle DB Azure Vault Resources.
+        A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_azure_vault_id")
 
@@ -3924,7 +4056,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Association was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -3932,7 +4064,7 @@ class GetDbmulticloudOracleDbAzureVaultAssociationsOracleDbAzureVaultAssociation
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the Oracle DB Azure Vault Association was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        Time when the Oracle DB Azure Vault Association resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -3997,23 +4129,23 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
                  time_updated: _builtins.str,
                  type: _builtins.str):
         """
-        :param _builtins.str azure_vault_id: Azure Vault Id.
+        :param _builtins.str azure_vault_id: Azure Vault ID.
         :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param _builtins.str display_name: A filter to return Azure Vaults.
+        :param _builtins.str display_name: A filter to return Oracle DB Azure Vault resources that match the specified display name.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
-        :param _builtins.str last_modification: Description of the latest modification of the DB Azure Vault Resource.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
+        :param _builtins.str last_modification: Description of the latest modification of the Oracle DB Azure Vault resource.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param _builtins.str location: Vault Resource Location.
-        :param _builtins.str oracle_db_azure_resource_group: A filter to return Azure Vaults.
-        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
-        :param Mapping[str, _builtins.str] properties: Resource's properties.
+        :param _builtins.str location: Oracle DB Azure Vault resource location.
+        :param _builtins.str oracle_db_azure_resource_group: A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
+        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
+        :param Mapping[str, _builtins.str] properties: Oracle DB Azure Vault resource's properties.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param _builtins.str time_created: Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param _builtins.str time_updated: Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
-        :param _builtins.str type: Vault Resource Type.
+        :param _builtins.str time_created: Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param _builtins.str type: Oracle DB Azure Vault resource type.
         """
         pulumi.set(__self__, "azure_vault_id", azure_vault_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4037,7 +4169,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="azureVaultId")
     def azure_vault_id(self) -> _builtins.str:
         """
-        Azure Vault Id.
+        Azure Vault ID.
         """
         return pulumi.get(self, "azure_vault_id")
 
@@ -4061,7 +4193,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="displayName")
     def display_name(self) -> _builtins.str:
         """
-        A filter to return Azure Vaults.
+        A filter to return Oracle DB Azure Vault resources that match the specified display name.
         """
         return pulumi.get(self, "display_name")
 
@@ -4077,7 +4209,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "id")
 
@@ -4085,7 +4217,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> _builtins.str:
         """
-        Description of the latest modification of the DB Azure Vault Resource.
+        Description of the latest modification of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -4101,7 +4233,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter
     def location(self) -> _builtins.str:
         """
-        Vault Resource Location.
+        Oracle DB Azure Vault resource location.
         """
         return pulumi.get(self, "location")
 
@@ -4109,7 +4241,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> _builtins.str:
         """
-        A filter to return Azure Vaults.
+        A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -4117,7 +4249,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB Connector Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource that contains Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "oracle_db_connector_id")
 
@@ -4125,7 +4257,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter
     def properties(self) -> Mapping[str, _builtins.str]:
         """
-        Resource's properties.
+        Oracle DB Azure Vault resource's properties.
         """
         return pulumi.get(self, "properties")
 
@@ -4149,7 +4281,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
-        Time when the DB Azure Vault was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_created")
 
@@ -4157,7 +4289,7 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> _builtins.str:
         """
-        Time when the DB Azure Vault was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        Time when the DB Azure Vault resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
         """
         return pulumi.get(self, "time_updated")
 
@@ -4165,9 +4297,777 @@ class GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionItemR
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Vault Resource Type.
+        Oracle DB Azure Vault resource type.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorGcpNodeResult(dict):
+    def __init__(__self__, *,
+                 host_id: _builtins.str,
+                 host_name: _builtins.str,
+                 status: _builtins.str,
+                 time_last_checked: _builtins.str):
+        """
+        :param _builtins.str host_id: Host ID.
+        :param _builtins.str host_name: Host Name or Identity Connector name.
+        :param _builtins.str status: The current status of the GCP Identity Connector resource.
+        :param _builtins.str time_last_checked: time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> _builtins.str:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        Host Name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> _builtins.str:
+        """
+        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 gcp_identity_connectivity_status: _builtins.str,
+                 gcp_location: _builtins.str,
+                 gcp_nodes: Sequence['outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemGcpNodeResult'],
+                 gcp_resource_service_agent_id: _builtins.str,
+                 gcp_workload_identity_pool_id: _builtins.str,
+                 gcp_workload_identity_provider_id: _builtins.str,
+                 id: _builtins.str,
+                 issuer_url: _builtins.str,
+                 lifecycle_state_details: _builtins.str,
+                 project_id: _builtins.str,
+                 resource_id: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str gcp_identity_connectivity_status: The current Connectivity status of GCP Identity Connector resource.
+        :param _builtins.str gcp_location: GCP Location.
+        :param Sequence['GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemGcpNodeArgs'] gcp_nodes: List of All VMs where GCP Identity Connector is configured for this VMCluster.
+        :param _builtins.str gcp_resource_service_agent_id: The ID of the GCP resource service agent.
+        :param _builtins.str gcp_workload_identity_pool_id: The ID of the cloud GCP Workload Identity Pool.
+        :param _builtins.str gcp_workload_identity_provider_id: The ID of the GCP Workload Identity Provider.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB GCP Identity Connector resource.
+        :param _builtins.str issuer_url: OIDC token issuer Url.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param _builtins.str project_id: Project id of the customer project.
+        :param _builtins.str resource_id: A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the Oracle DB GCP Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Oracle DB GCP Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gcp_identity_connectivity_status", gcp_identity_connectivity_status)
+        pulumi.set(__self__, "gcp_location", gcp_location)
+        pulumi.set(__self__, "gcp_nodes", gcp_nodes)
+        pulumi.set(__self__, "gcp_resource_service_agent_id", gcp_resource_service_agent_id)
+        pulumi.set(__self__, "gcp_workload_identity_pool_id", gcp_workload_identity_pool_id)
+        pulumi.set(__self__, "gcp_workload_identity_provider_id", gcp_workload_identity_provider_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "issuer_url", issuer_url)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "project_id", project_id)
+        pulumi.set(__self__, "resource_id", resource_id)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB GCP Identity Connector resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpIdentityConnectivityStatus")
+    def gcp_identity_connectivity_status(self) -> _builtins.str:
+        """
+        The current Connectivity status of GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "gcp_identity_connectivity_status")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpLocation")
+    def gcp_location(self) -> _builtins.str:
+        """
+        GCP Location.
+        """
+        return pulumi.get(self, "gcp_location")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpNodes")
+    def gcp_nodes(self) -> Sequence['outputs.GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemGcpNodeResult']:
+        """
+        List of All VMs where GCP Identity Connector is configured for this VMCluster.
+        """
+        return pulumi.get(self, "gcp_nodes")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpResourceServiceAgentId")
+    def gcp_resource_service_agent_id(self) -> _builtins.str:
+        """
+        The ID of the GCP resource service agent.
+        """
+        return pulumi.get(self, "gcp_resource_service_agent_id")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpWorkloadIdentityPoolId")
+    def gcp_workload_identity_pool_id(self) -> _builtins.str:
+        """
+        The ID of the cloud GCP Workload Identity Pool.
+        """
+        return pulumi.get(self, "gcp_workload_identity_pool_id")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpWorkloadIdentityProviderId")
+    def gcp_workload_identity_provider_id(self) -> _builtins.str:
+        """
+        The ID of the GCP Workload Identity Provider.
+        """
+        return pulumi.get(self, "gcp_workload_identity_provider_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="issuerUrl")
+    def issuer_url(self) -> _builtins.str:
+        """
+        OIDC token issuer Url.
+        """
+        return pulumi.get(self, "issuer_url")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> _builtins.str:
+        """
+        Project id of the customer project.
+        """
+        return pulumi.get(self, "project_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceId")
+    def resource_id(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB GCP Identity Connector resource that match the given resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "resource_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the Oracle DB GCP Identity Connector resource was created expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the Oracle DB GCP Identity Connector resource was last modified expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpIdentityConnectorsOracleDbGcpIdentityConnectorSummaryCollectionItemGcpNodeResult(dict):
+    def __init__(__self__, *,
+                 host_id: _builtins.str,
+                 host_name: _builtins.str,
+                 status: _builtins.str,
+                 time_last_checked: _builtins.str):
+        """
+        :param _builtins.str host_id: Host ID.
+        :param _builtins.str host_name: Host Name or Identity Connector name.
+        :param _builtins.str status: The current status of the GCP Identity Connector resource.
+        :param _builtins.str time_last_checked: time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "host_id", host_id)
+        pulumi.set(__self__, "host_name", host_name)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "time_last_checked", time_last_checked)
+
+    @_builtins.property
+    @pulumi.getter(name="hostId")
+    def host_id(self) -> _builtins.str:
+        """
+        Host ID.
+        """
+        return pulumi.get(self, "host_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> _builtins.str:
+        """
+        Host Name or Identity Connector name.
+        """
+        return pulumi.get(self, "host_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        The current status of the GCP Identity Connector resource.
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastChecked")
+    def time_last_checked(self) -> _builtins.str:
+        """
+        time when the GCP Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeyRingsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeyRingsOracleDbGcpKeyRingSummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 gcp_key_ring_id: _builtins.str,
+                 id: _builtins.str,
+                 lifecycle_state_details: _builtins.str,
+                 location: _builtins.str,
+                 oracle_db_connector_id: _builtins.str,
+                 properties: Mapping[str, _builtins.str],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB GCP Key Ring resources that match the specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str gcp_key_ring_id: GCP Key Ring ID.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB GCP Key Ring resource.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param _builtins.str location: Location of the GCP Key Ring resource.
+        :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
+        :param Mapping[str, _builtins.str] properties: Oracle DB GCP Key Ring resource's properties.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        :param _builtins.str type: Oracle DB GCP Key Ring resource Type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gcp_key_ring_id", gcp_key_ring_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
+        pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB GCP Key Ring resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpKeyRingId")
+    def gcp_key_ring_id(self) -> _builtins.str:
+        """
+        GCP Key Ring ID.
+        """
+        return pulumi.get(self, "gcp_key_ring_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB GCP Key Ring resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def location(self) -> _builtins.str:
+        """
+        Location of the GCP Key Ring resource.
+        """
+        return pulumi.get(self, "location")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleDbConnectorId")
+    def oracle_db_connector_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where the Oracle DB GCP Identity Connector resource resides.
+        """
+        return pulumi.get(self, "oracle_db_connector_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Oracle DB GCP Key Ring resource's properties.
+        """
+        return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the DB GCP Key Ring resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the DB GCP Key Ring resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Oracle DB GCP Key Ring resource Type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbGcpKeysOracleDbGcpKeySummaryCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 gcp_key_id: _builtins.str,
+                 gcp_key_properties: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_state_details: _builtins.str,
+                 oracle_db_gcp_key_ring_id: _builtins.str,
+                 resource_type: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB Google Cloud Key resources that match the specified display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str gcp_key_id: TThe Google Cloud Key ID and Key URL associated with the Google Key under the specified Key Ring resource.
+        :param Mapping[str, _builtins.str] gcp_key_properties: Gcp Key properties
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Google Key resource.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param _builtins.str oracle_db_gcp_key_ring_id: A filter to return Oracle DB GCP Key Rings.
+        :param _builtins.str resource_type: Key resource type.
+        :param _builtins.str state: A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the Oracle DB Google Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        :param _builtins.str time_updated: Time when the Oracle DB Google Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gcp_key_id", gcp_key_id)
+        pulumi.set(__self__, "gcp_key_properties", gcp_key_properties)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "oracle_db_gcp_key_ring_id", oracle_db_gcp_key_ring_id)
+        pulumi.set(__self__, "resource_type", resource_type)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB Google Cloud Key resources that match the specified display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpKeyId")
+    def gcp_key_id(self) -> _builtins.str:
+        """
+        TThe Google Cloud Key ID and Key URL associated with the Google Key under the specified Key Ring resource.
+        """
+        return pulumi.get(self, "gcp_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="gcpKeyProperties")
+    def gcp_key_properties(self) -> Mapping[str, _builtins.str]:
+        """
+        Gcp Key properties
+        """
+        return pulumi.get(self, "gcp_key_properties")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Google Key resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter(name="oracleDbGcpKeyRingId")
+    def oracle_db_gcp_key_ring_id(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB GCP Key Rings.
+        """
+        return pulumi.get(self, "oracle_db_gcp_key_ring_id")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceType")
+    def resource_type(self) -> _builtins.str:
+        """
+        Key resource type.
+        """
+        return pulumi.get(self, "resource_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the Oracle DB Google Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the Oracle DB Google Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type

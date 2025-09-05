@@ -62,6 +62,8 @@ type LookupExascaleDbStorageVaultResult struct {
 	AdditionalFlashCacheInPercent int `pulumi:"additionalFlashCacheInPercent"`
 	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
 	AttachedShapeAttributes []string `pulumi:"attachedShapeAttributes"`
+	// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+	AutoscaleLimitInGbs int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
@@ -83,6 +85,8 @@ type LookupExascaleDbStorageVaultResult struct {
 	HighCapacityDatabaseStorages []GetExascaleDbStorageVaultHighCapacityDatabaseStorage `pulumi:"highCapacityDatabaseStorages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 	Id string `pulumi:"id"`
+	// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+	IsAutoscaleEnabled bool `pulumi:"isAutoscaleEnabled"`
 	// Additional information about the current lifecycle state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The current state of the Exadata Database Storage Vault.
@@ -145,6 +149,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) AttachedShapeAttributes() pulu
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) []string { return v.AttachedShapeAttributes }).(pulumi.StringArrayOutput)
 }
 
+// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+func (o LookupExascaleDbStorageVaultResultOutput) AutoscaleLimitInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) int { return v.AutoscaleLimitInGbs }).(pulumi.IntOutput)
+}
+
 // The name of the availability domain in which the Exadata Database Storage Vault is located.
 func (o LookupExascaleDbStorageVaultResultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
@@ -199,6 +208,11 @@ func (o LookupExascaleDbStorageVaultResultOutput) HighCapacityDatabaseStorages()
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
 func (o LookupExascaleDbStorageVaultResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+func (o LookupExascaleDbStorageVaultResultOutput) IsAutoscaleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupExascaleDbStorageVaultResult) bool { return v.IsAutoscaleEnabled }).(pulumi.BoolOutput)
 }
 
 // Additional information about the current lifecycle state.

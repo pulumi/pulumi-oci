@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Oracle Db Azure Blob Container resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Get Oracle DB Azure Blob Container Details form a particular Container Resource ID.
+// Retrieves the details of an Oracle DB–associated Azure Blob Container using the specified container resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // ## Example Usage
 //
@@ -52,36 +52,36 @@ func LookupDbmulticloudOracleDbAzureBlobContainer(ctx *pulumi.Context, args *Loo
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobContainer.
 type LookupDbmulticloudOracleDbAzureBlobContainerArgs struct {
-	// The ID of the Oracle DB Azure Blob Container Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
 	OracleDbAzureBlobContainerId string `pulumi:"oracleDbAzureBlobContainerId"`
 }
 
 // A collection of values returned by getDbmulticloudOracleDbAzureBlobContainer.
 type LookupDbmulticloudOracleDbAzureBlobContainerResult struct {
-	// Azure Storage Account Name.
+	// Azure Storage account name.
 	AzureStorageAccountName string `pulumi:"azureStorageAccountName"`
-	// Azure Storage Container Name.
+	// Azure Storage container name.
 	AzureStorageContainerName string `pulumi:"azureStorageContainerName"`
-	// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Display name of Oracle DB Azure Blob Container.
+	// Oracle DB Azure Blob Container resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 	Id string `pulumi:"id"`
-	// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+	// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 	LastModification string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails        string `pulumi:"lifecycleStateDetails"`
 	OracleDbAzureBlobContainerId string `pulumi:"oracleDbAzureBlobContainerId"`
-	// Private endpoint DNS Alias.
+	// Private endpoint's DNS Alias.
 	PrivateEndpointDnsAlias string `pulumi:"privateEndpointDnsAlias"`
 	// Private endpoint IP.
 	PrivateEndpointIpAddress string `pulumi:"privateEndpointIpAddress"`
-	// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+	// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
@@ -102,7 +102,7 @@ func LookupDbmulticloudOracleDbAzureBlobContainerOutput(ctx *pulumi.Context, arg
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureBlobContainer.
 type LookupDbmulticloudOracleDbAzureBlobContainerOutputArgs struct {
-	// The ID of the Oracle DB Azure Blob Container Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource.
 	OracleDbAzureBlobContainerId pulumi.StringInput `pulumi:"oracleDbAzureBlobContainerId"`
 }
 
@@ -125,17 +125,17 @@ func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) ToLookupDbmult
 	return o
 }
 
-// Azure Storage Account Name.
+// Azure Storage account name.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) AzureStorageAccountName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.AzureStorageAccountName }).(pulumi.StringOutput)
 }
 
-// Azure Storage Container Name.
+// Azure Storage container name.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) AzureStorageContainerName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.AzureStorageContainerName }).(pulumi.StringOutput)
 }
 
-// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of of the compartment that contains Oracle DB Azure Blob Container resource.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -145,7 +145,7 @@ func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) DefinedTags() 
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Display name of Oracle DB Azure Blob Container.
+// Oracle DB Azure Blob Container resource name.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -155,12 +155,12 @@ func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) FreeformTags()
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// The ID of the compartment that contains Oracle DB Azure Blob Container Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of Oracle DB Azure Blob Container resource.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Description of the latest modification of the Oracle DB Azure Blob Container Resource.
+// Description of the latest modification of the Oracle DB Azure Blob Container resource.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -176,7 +176,7 @@ func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) OracleDbAzureB
 	}).(pulumi.StringOutput)
 }
 
-// Private endpoint DNS Alias.
+// Private endpoint's DNS Alias.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) PrivateEndpointDnsAlias() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.PrivateEndpointDnsAlias }).(pulumi.StringOutput)
 }
@@ -186,7 +186,7 @@ func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) PrivateEndpoin
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.PrivateEndpointIpAddress }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Blob Container Resource.
+// The current lifecycle state of the Oracle DB Azure Blob Container resource.
 func (o LookupDbmulticloudOracleDbAzureBlobContainerResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAzureBlobContainerResult) string { return v.State }).(pulumi.StringOutput)
 }

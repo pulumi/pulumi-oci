@@ -4,6 +4,8 @@
 package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -13,6 +15,21 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    private @Nullable String allowedValuesDataType;
     /**
      * @return Unique identifier of the configuration
      * 
@@ -40,6 +57,27 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
 
     private TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration() {}
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties == null ? List.of() : this.additionalProperties;
+    }
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues == null ? List.of() : this.allowedValues;
+    }
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    public Optional<String> allowedValuesDataType() {
+        return Optional.ofNullable(this.allowedValuesDataType);
+    }
     /**
      * @return Unique identifier of the configuration
      * 
@@ -85,6 +123,9 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+        private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+        private @Nullable String allowedValuesDataType;
         private @Nullable String configKey;
         private @Nullable String dataType;
         private @Nullable String name;
@@ -93,6 +134,9 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         public Builder() {}
         public Builder(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -100,6 +144,30 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties) {
+
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(@Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues) {
+
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(@Nullable String allowedValuesDataType) {
+
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(@Nullable String configKey) {
 
@@ -135,6 +203,9 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
         public TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
             final var _resultValue = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Returns a list of Projects.
+ * Returns a list of projects.
  *
  * ## Example Usage
  *
@@ -51,11 +51,11 @@ export interface GetProjectsArgs {
     displayName?: string;
     filters?: inputs.AiVision.GetProjectsFilter[];
     /**
-     * unique Project identifier
+     * The filter to find the project with the given identifier.
      */
     id?: string;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match projects with the given lifecycleState.
      */
     state?: string;
 }
@@ -65,16 +65,16 @@ export interface GetProjectsArgs {
  */
 export interface GetProjectsResult {
     /**
-     * Compartment Identifier
+     * A compartment identifier.
      */
     readonly compartmentId?: string;
     /**
-     * Project Identifier, can be renamed
+     * A human-friendly name for the project, which can be changed.
      */
     readonly displayName?: string;
     readonly filters?: outputs.AiVision.GetProjectsFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * A unique identifier that is immutable after creation.
      */
     readonly id?: string;
     /**
@@ -82,14 +82,14 @@ export interface GetProjectsResult {
      */
     readonly projectCollections: outputs.AiVision.GetProjectsProjectCollection[];
     /**
-     * The current state of the Project.
+     * The current state of the project.
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Vision service.
  *
- * Returns a list of Projects.
+ * Returns a list of projects.
  *
  * ## Example Usage
  *
@@ -131,11 +131,11 @@ export interface GetProjectsOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.AiVision.GetProjectsFilterArgs>[]>;
     /**
-     * unique Project identifier
+     * The filter to find the project with the given identifier.
      */
     id?: pulumi.Input<string>;
     /**
-     * A filter to return only resources their lifecycleState matches the given lifecycleState.
+     * The filter to match projects with the given lifecycleState.
      */
     state?: pulumi.Input<string>;
 }

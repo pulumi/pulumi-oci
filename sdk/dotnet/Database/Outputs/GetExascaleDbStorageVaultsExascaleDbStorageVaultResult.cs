@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<string> AttachedShapeAttributes;
         /// <summary>
+        /// Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
+        /// </summary>
+        public readonly int AutoscaleLimitInGbs;
+        /// <summary>
         /// The name of the availability domain in which the Exadata Database Storage Vault is located.
         /// </summary>
         public readonly string AvailabilityDomain;
@@ -62,6 +66,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// Indicates if autoscale feature is enabled for the Database Storage Vault. The default value is `FALSE`.
+        /// </summary>
+        public readonly bool IsAutoscaleEnabled;
+        /// <summary>
         /// Additional information about the current lifecycle state.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -100,6 +108,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<string> attachedShapeAttributes,
 
+            int autoscaleLimitInGbs,
+
             string availabilityDomain,
 
             string clusterPlacementGroupId,
@@ -120,6 +130,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string id,
 
+            bool isAutoscaleEnabled,
+
             string lifecycleDetails,
 
             string state,
@@ -138,6 +150,7 @@ namespace Pulumi.Oci.Database.Outputs
         {
             AdditionalFlashCacheInPercent = additionalFlashCacheInPercent;
             AttachedShapeAttributes = attachedShapeAttributes;
+            AutoscaleLimitInGbs = autoscaleLimitInGbs;
             AvailabilityDomain = availabilityDomain;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
@@ -148,6 +161,7 @@ namespace Pulumi.Oci.Database.Outputs
             FreeformTags = freeformTags;
             HighCapacityDatabaseStorages = highCapacityDatabaseStorages;
             Id = id;
+            IsAutoscaleEnabled = isAutoscaleEnabled;
             LifecycleDetails = lifecycleDetails;
             State = state;
             SubscriptionId = subscriptionId;

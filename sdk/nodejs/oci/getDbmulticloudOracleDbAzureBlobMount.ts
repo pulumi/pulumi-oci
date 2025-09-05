@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+ * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -32,7 +32,7 @@ export function getDbmulticloudOracleDbAzureBlobMount(args: GetDbmulticloudOracl
  */
 export interface GetDbmulticloudOracleDbAzureBlobMountArgs {
     /**
-     * The ID of the Azure Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
     oracleDbAzureBlobMountId: string;
 }
@@ -42,7 +42,7 @@ export interface GetDbmulticloudOracleDbAzureBlobMountArgs {
  */
 export interface GetDbmulticloudOracleDbAzureBlobMountResult {
     /**
-     * The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
      */
     readonly compartmentId: string;
     /**
@@ -50,7 +50,7 @@ export interface GetDbmulticloudOracleDbAzureBlobMountResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
-     * Oracle DB Azure Blob Mount name.
+     * Oracle DB Azure Blob Mount resource name.
      */
     readonly displayName: string;
     /**
@@ -58,11 +58,11 @@ export interface GetDbmulticloudOracleDbAzureBlobMountResult {
      */
     readonly freeformTags: {[key: string]: string};
     /**
-     * The OCID for the new Oracle DB Azure Blob Mount resource.
+     * The The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
     readonly id: string;
     /**
-     * Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+     * Description of the latest modification of the Oracle DB Azure Blob Mount resource.
      */
     readonly lastModification: string;
     /**
@@ -70,20 +70,20 @@ export interface GetDbmulticloudOracleDbAzureBlobMountResult {
      */
     readonly lifecycleStateDetails: string;
     /**
-     * Azure Container mount path.
+     * Oracle DB Azure Blob Mount path.
      */
     readonly mountPath: string;
     /**
-     * The OCID of the Oracle DB Azure Blob Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
      */
     readonly oracleDbAzureBlobContainerId: string;
     readonly oracleDbAzureBlobMountId: string;
     /**
-     * The OCID of the Oracle DB Azure Connector Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
      */
     readonly oracleDbAzureConnectorId: string;
     /**
-     * The current lifecycle state of the Azure Arc Agent Resource.
+     * The current lifecycle state of the Oracle DB Azure Blob Mount resource.
      */
     readonly state: string;
     /**
@@ -102,7 +102,7 @@ export interface GetDbmulticloudOracleDbAzureBlobMountResult {
 /**
  * This data source provides details about a specific Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
  *
- * Get Oracle DB Azure Blob Mount Details form a particular Container Resource ID.
+ * Retrieves the Oracle DB Azure Blob Mount resource for a specified resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
  *
  * ## Example Usage
  *
@@ -127,7 +127,7 @@ export function getDbmulticloudOracleDbAzureBlobMountOutput(args: GetDbmulticlou
  */
 export interface GetDbmulticloudOracleDbAzureBlobMountOutputArgs {
     /**
-     * The ID of the Azure Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      */
     oracleDbAzureBlobMountId: pulumi.Input<string>;
 }

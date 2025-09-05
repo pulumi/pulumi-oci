@@ -19,14 +19,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     public static final DbmulticloudOracleDbAzureConnectorArgs Empty = new DbmulticloudOracleDbAzureConnectorArgs();
 
     /**
-     * (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * (Updatable) Azure bearer access token.
      * 
      */
     @Import(name="accessToken", required=true)
     private Output<String> accessToken;
 
     /**
-     * @return (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+     * @return (Updatable) Azure bearer access token.
      * 
      */
     public Output<String> accessToken() {
@@ -34,14 +34,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * List of All VMs where Arc Agent is Install under VMCluster.
+     * List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     @Import(name="arcAgentNodes")
     private @Nullable Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs>> arcAgentNodes;
 
     /**
-     * @return List of All VMs where Arc Agent is Install under VMCluster.
+     * @return List of all VMs where Arc Agent is installed under Cloud VM Cluster.
      * 
      */
     public Optional<Output<List<DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs>>> arcAgentNodes() {
@@ -49,14 +49,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Azure Identity Mechanism.
+     * (Updatable) Azure Identity mechanism.
      * 
      */
     @Import(name="azureIdentityMechanism", required=true)
     private Output<String> azureIdentityMechanism;
 
     /**
-     * @return (Updatable) Azure Identity Mechanism.
+     * @return (Updatable) Azure Identity mechanism.
      * 
      */
     public Output<String> azureIdentityMechanism() {
@@ -64,14 +64,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Azure Resource Group Name.
+     * (Updatable) Azure Resource group name.
      * 
      */
     @Import(name="azureResourceGroup", required=true)
     private Output<String> azureResourceGroup;
 
     /**
-     * @return (Updatable) Azure Resource Group Name.
+     * @return (Updatable) Azure Resource group name.
      * 
      */
     public Output<String> azureResourceGroup() {
@@ -109,14 +109,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
      * 
      */
     public Output<String> compartmentId() {
@@ -124,14 +124,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     @Import(name="dbClusterResourceId", required=true)
     private Output<String> dbClusterResourceId;
 
     /**
-     * @return (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
      * 
      */
     public Output<String> dbClusterResourceId() {
@@ -139,14 +139,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Oracle DB Azure Connector Resource name.
+     * (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Oracle DB Azure Connector Resource name.
+     * @return (Updatable) Oracle DB Azure Connector resource name.
      * 
      */
     public Output<String> displayName() {
@@ -154,14 +154,14 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
     }
 
     /**
-     * Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     @Import(name="lastModification")
     private @Nullable Output<String> lastModification;
 
     /**
-     * @return Description of the latest modification of the Oracle DB Azure Connector Resource.
+     * @return Description of the latest modification of the Oracle DB Azure Connector resource.
      * 
      */
     public Optional<Output<String>> lastModification() {
@@ -218,7 +218,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param accessToken (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+         * @param accessToken (Updatable) Azure bearer access token.
          * 
          * @return builder
          * 
@@ -229,7 +229,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param accessToken (Updatable) Azure bearer access token. If bearer access token is provided then Service Principal details are not requires.
+         * @param accessToken (Updatable) Azure bearer access token.
          * 
          * @return builder
          * 
@@ -239,7 +239,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -250,7 +250,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param arcAgentNodes List of All VMs where Arc Agent is Install under VMCluster.
+         * @param arcAgentNodes List of all VMs where Arc Agent is installed under Cloud VM Cluster.
          * 
          * @return builder
          * 
@@ -270,7 +270,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param azureIdentityMechanism (Updatable) Azure Identity Mechanism.
+         * @param azureIdentityMechanism (Updatable) Azure Identity mechanism.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param azureIdentityMechanism (Updatable) Azure Identity Mechanism.
+         * @param azureIdentityMechanism (Updatable) Azure Identity mechanism.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param azureResourceGroup (Updatable) Azure Resource Group Name.
+         * @param azureResourceGroup (Updatable) Azure Resource group name.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param azureResourceGroup (Updatable) Azure Resource Group Name.
+         * @param azureResourceGroup (Updatable) Azure Resource group name.
          * 
          * @return builder
          * 
@@ -354,7 +354,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -365,7 +365,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment that contains Oracle DB Azure Connector Resource.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -375,7 +375,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param dbClusterResourceId (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+         * @param dbClusterResourceId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param dbClusterResourceId (Updatable) The ID of the DB Cluster Resource where this Azure Arc Agent Identity to configure.
+         * @param dbClusterResourceId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Cloud VM Cluster resource where this Azure Arc Agent Identity to configure.
          * 
          * @return builder
          * 
@@ -396,7 +396,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Connector Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Connector resource name.
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param displayName (Updatable) Oracle DB Azure Connector Resource name.
+         * @param displayName (Updatable) Oracle DB Azure Connector resource name.
          * 
          * @return builder
          * 
@@ -417,7 +417,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector Resource.
+         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class DbmulticloudOracleDbAzureConnectorArgs extends com.pulumi.res
         }
 
         /**
-         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector Resource.
+         * @param lastModification Description of the latest modification of the Oracle DB Azure Connector resource.
          * 
          * @return builder
          * 

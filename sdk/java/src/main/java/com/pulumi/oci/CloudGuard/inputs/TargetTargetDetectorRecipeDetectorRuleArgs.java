@@ -8,6 +8,8 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeDetectorRuleDetailsArgs;
 import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeDetectorRuleEntitiesMappingArgs;
+import com.pulumi.oci.CloudGuard.inputs.TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -133,6 +135,21 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
     }
 
     /**
+     * Is the rule cloneable?
+     * 
+     */
+    @Import(name="isCloneable")
+    private @Nullable Output<Boolean> isCloneable;
+
+    /**
+     * @return Is the rule cloneable?
+     * 
+     */
+    public Optional<Output<Boolean>> isCloneable() {
+        return Optional.ofNullable(this.isCloneable);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -190,6 +207,21 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
+    }
+
+    /**
+     * Rule category type
+     * 
+     */
+    @Import(name="ruleTypes")
+    private @Nullable Output<List<TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs>> ruleTypes;
+
+    /**
+     * @return Rule category type
+     * 
+     */
+    public Optional<Output<List<TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs>>> ruleTypes() {
+        return Optional.ofNullable(this.ruleTypes);
     }
 
     /**
@@ -262,10 +294,12 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
         this.detectorRuleId = $.detectorRuleId;
         this.displayName = $.displayName;
         this.entitiesMappings = $.entitiesMappings;
+        this.isCloneable = $.isCloneable;
         this.lifecycleDetails = $.lifecycleDetails;
         this.managedListTypes = $.managedListTypes;
         this.recommendation = $.recommendation;
         this.resourceType = $.resourceType;
+        this.ruleTypes = $.ruleTypes;
         this.serviceType = $.serviceType;
         this.state = $.state;
         this.timeCreated = $.timeCreated;
@@ -456,6 +490,27 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
         }
 
         /**
+         * @param isCloneable Is the rule cloneable?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCloneable(@Nullable Output<Boolean> isCloneable) {
+            $.isCloneable = isCloneable;
+            return this;
+        }
+
+        /**
+         * @param isCloneable Is the rule cloneable?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isCloneable(Boolean isCloneable) {
+            return isCloneable(Output.of(isCloneable));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
          * @return builder
@@ -547,6 +602,37 @@ public final class TargetTargetDetectorRecipeDetectorRuleArgs extends com.pulumi
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
+        }
+
+        /**
+         * @param ruleTypes Rule category type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleTypes(@Nullable Output<List<TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs>> ruleTypes) {
+            $.ruleTypes = ruleTypes;
+            return this;
+        }
+
+        /**
+         * @param ruleTypes Rule category type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleTypes(List<TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs> ruleTypes) {
+            return ruleTypes(Output.of(ruleTypes));
+        }
+
+        /**
+         * @param ruleTypes Rule category type
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleTypes(TargetTargetDetectorRecipeDetectorRuleRuleTypeArgs... ruleTypes) {
+            return ruleTypes(List.of(ruleTypes));
         }
 
         /**

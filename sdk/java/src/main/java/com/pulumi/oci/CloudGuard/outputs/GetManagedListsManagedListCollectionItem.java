@@ -44,6 +44,11 @@ public final class GetManagedListsManagedListCollectionItem {
      */
     private Map<String,String> freeformTags;
     /**
+     * @return Managed list type group
+     * 
+     */
+    private String group;
+    /**
      * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
@@ -138,6 +143,13 @@ public final class GetManagedListsManagedListCollectionItem {
         return this.freeformTags;
     }
     /**
+     * @return Managed list type group
+     * 
+     */
+    public String group() {
+        return this.group;
+    }
+    /**
      * @return Unique identifier that can&#39;t be changed after creation
      * 
      */
@@ -223,6 +235,7 @@ public final class GetManagedListsManagedListCollectionItem {
         private String displayName;
         private String feedProvider;
         private Map<String,String> freeformTags;
+        private String group;
         private String id;
         private Boolean isEditable;
         private String lifecyleDetails;
@@ -242,6 +255,7 @@ public final class GetManagedListsManagedListCollectionItem {
     	      this.displayName = defaults.displayName;
     	      this.feedProvider = defaults.feedProvider;
     	      this.freeformTags = defaults.freeformTags;
+    	      this.group = defaults.group;
     	      this.id = defaults.id;
     	      this.isEditable = defaults.isEditable;
     	      this.lifecyleDetails = defaults.lifecyleDetails;
@@ -300,6 +314,14 @@ public final class GetManagedListsManagedListCollectionItem {
               throw new MissingRequiredPropertyException("GetManagedListsManagedListCollectionItem", "freeformTags");
             }
             this.freeformTags = freeformTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder group(String group) {
+            if (group == null) {
+              throw new MissingRequiredPropertyException("GetManagedListsManagedListCollectionItem", "group");
+            }
+            this.group = group;
             return this;
         }
         @CustomType.Setter
@@ -393,6 +415,7 @@ public final class GetManagedListsManagedListCollectionItem {
             _resultValue.displayName = displayName;
             _resultValue.feedProvider = feedProvider;
             _resultValue.freeformTags = freeformTags;
+            _resultValue.group = group;
             _resultValue.id = id;
             _resultValue.isEditable = isEditable;
             _resultValue.lifecyleDetails = lifecyleDetails;

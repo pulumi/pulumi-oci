@@ -15,14 +15,14 @@ public final class GetDbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.
     public static final GetDbmulticloudOracleDbAzureBlobMountArgs Empty = new GetDbmulticloudOracleDbAzureBlobMountArgs();
 
     /**
-     * The ID of the Azure Container Resource.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     @Import(name="oracleDbAzureBlobMountId", required=true)
     private Output<String> oracleDbAzureBlobMountId;
 
     /**
-     * @return The ID of the Azure Container Resource.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
      * 
      */
     public Output<String> oracleDbAzureBlobMountId() {
@@ -54,7 +54,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.
         }
 
         /**
-         * @param oracleDbAzureBlobMountId The ID of the Azure Container Resource.
+         * @param oracleDbAzureBlobMountId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDbmulticloudOracleDbAzureBlobMountArgs extends com.pulumi.
         }
 
         /**
-         * @param oracleDbAzureBlobMountId The ID of the Azure Container Resource.
+         * @param oracleDbAzureBlobMountId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
          * 
          * @return builder
          * 

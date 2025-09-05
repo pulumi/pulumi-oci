@@ -50,6 +50,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleEntitiesMapping> EntitiesMappings;
         /// <summary>
+        /// Is the rule cloneable?
+        /// </summary>
+        public readonly bool? IsCloneable;
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         public readonly string? LifecycleDetails;
@@ -65,6 +69,10 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// Resource type of the configuration to which the rule is applied
         /// </summary>
         public readonly string? ResourceType;
+        /// <summary>
+        /// Detector rule type
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleRuleType> RuleTypes;
         /// <summary>
         /// Service type of the configuration to which the rule is applied
         /// </summary>
@@ -100,6 +108,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
 
             ImmutableArray<Outputs.DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings,
 
+            bool? isCloneable,
+
             string? lifecycleDetails,
 
             ImmutableArray<string> managedListTypes,
@@ -107,6 +117,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string? recommendation,
 
             string? resourceType,
+
+            ImmutableArray<Outputs.DetectorRecipeDetectorRuleRuleType> ruleTypes,
 
             string? serviceType,
 
@@ -124,10 +136,12 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             DetectorRuleId = detectorRuleId;
             DisplayName = displayName;
             EntitiesMappings = entitiesMappings;
+            IsCloneable = isCloneable;
             LifecycleDetails = lifecycleDetails;
             ManagedListTypes = managedListTypes;
             Recommendation = recommendation;
             ResourceType = resourceType;
+            RuleTypes = ruleTypes;
             ServiceType = serviceType;
             State = state;
             TimeCreated = timeCreated;

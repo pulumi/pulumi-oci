@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all DB Azure Vaults based on filters.
+        /// Lists all DB Azure Vault resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all DB Azure Vaults based on filters.
+        /// Lists all DB Azure Vault resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all DB Azure Vaults based on filters.
+        /// Lists all DB Azure Vault resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Oci
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Azure Vaults.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -132,19 +132,19 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public string? OracleDbAzureConnectorId { get; set; }
 
         /// <summary>
-        /// A filter to return Azure Vaults.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
         /// </summary>
         [Input("oracleDbAzureResourceGroup")]
         public string? OracleDbAzureResourceGroup { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Vault Resources.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         /// </summary>
         [Input("oracleDbAzureVaultId")]
         public string? OracleDbAzureVaultId { get; set; }
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Azure Vaults.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -184,19 +184,19 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public Input<string>? OracleDbAzureConnectorId { get; set; }
 
         /// <summary>
-        /// A filter to return Azure Vaults.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
         /// </summary>
         [Input("oracleDbAzureResourceGroup")]
         public Input<string>? OracleDbAzureResourceGroup { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Vault Resources.
+        /// A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
         /// </summary>
         [Input("oracleDbAzureVaultId")]
         public Input<string>? OracleDbAzureVaultId { get; set; }
@@ -218,11 +218,11 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureVaultsResult
     {
         /// <summary>
-        /// The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Display name of DB Azure Vault.
+        /// Oracle DB Azure Vault resource name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureVaultsFilterResult> Filters;
@@ -232,7 +232,7 @@ namespace Pulumi.Oci.Oci
         public readonly string Id;
         public readonly string? OracleDbAzureConnectorId;
         /// <summary>
-        /// Display name of Azure Resource Group.
+        /// Oracle DB Azure resource group name.
         /// </summary>
         public readonly string? OracleDbAzureResourceGroup;
         public readonly string? OracleDbAzureVaultId;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureVaultsOracleDbAzureVaultSummaryCollectionResult> OracleDbAzureVaultSummaryCollections;
         /// <summary>
-        /// The lifecycle state of the DB Azure Vault Resource.
+        /// The lifecycle state of the Oracle DB Azure Vault resource.
         /// </summary>
         public readonly string? State;
 

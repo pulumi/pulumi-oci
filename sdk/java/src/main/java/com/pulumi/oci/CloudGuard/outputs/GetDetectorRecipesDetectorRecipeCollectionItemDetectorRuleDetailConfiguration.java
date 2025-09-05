@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -12,6 +14,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration {
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    private String allowedValuesDataType;
     /**
      * @return Unique identifier of the configuration
      * 
@@ -28,7 +45,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
      */
     private String name;
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     private String value;
@@ -39,6 +56,27 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
     private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue> values;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration() {}
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties;
+    }
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues;
+    }
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    public String allowedValuesDataType() {
+        return this.allowedValuesDataType;
+    }
     /**
      * @return Unique identifier of the configuration
      * 
@@ -61,7 +99,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
         return this.name;
     }
     /**
-     * @return Configuration value
+     * @return Detector rule type value
      * 
      */
     public String value() {
@@ -84,6 +122,9 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+        private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+        private String allowedValuesDataType;
         private String configKey;
         private String dataType;
         private String name;
@@ -92,6 +133,9 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
         public Builder() {}
         public Builder(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -99,6 +143,36 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties) {
+            if (additionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration", "additionalProperties");
+            }
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue> allowedValues) {
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(String allowedValuesDataType) {
+            if (allowedValuesDataType == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration", "allowedValuesDataType");
+            }
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(String configKey) {
             if (configKey == null) {
@@ -144,6 +218,9 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDet
         }
         public GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration build() {
             final var _resultValue = new GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

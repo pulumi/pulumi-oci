@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? ManagedListType;
         /// <summary>
-        /// Configuration value
+        /// Detector rule type value
         /// </summary>
         public readonly string? Value;
 

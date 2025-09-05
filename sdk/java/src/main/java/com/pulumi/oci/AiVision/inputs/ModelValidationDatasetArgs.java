@@ -17,14 +17,14 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
     public static final ModelValidationDatasetArgs Empty = new ModelValidationDatasetArgs();
 
     /**
-     * The name of the ObjectStorage bucket that contains the input data file.
+     * The name of the Object Storage bucket that contains the input data file.
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return The name of the ObjectStorage bucket that contains the input data file.
+     * @return The name of the Object Storage bucket that contains the input data file.
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -32,14 +32,14 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the Data Science Labeling Dataset.
+     * OCID of the Data Labeling dataset.
      * 
      */
     @Import(name="datasetId")
     private @Nullable Output<String> datasetId;
 
     /**
-     * @return The OCID of the Data Science Labeling Dataset.
+     * @return OCID of the Data Labeling dataset.
      * 
      */
     public Optional<Output<String>> datasetId() {
@@ -47,31 +47,23 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * Type of the Dataset.
+     * The dataset type, based on where it is stored.
      * 
      */
     @Import(name="datasetType", required=true)
     private Output<String> datasetType;
 
     /**
-     * @return Type of the Dataset.
+     * @return The dataset type, based on where it is stored.
      * 
      */
     public Output<String> datasetType() {
         return this.datasetType;
     }
 
-    /**
-     * The namespace name of the ObjectStorage bucket that contains the input data file.
-     * 
-     */
     @Import(name="namespaceName")
     private @Nullable Output<String> namespaceName;
 
-    /**
-     * @return The namespace name of the ObjectStorage bucket that contains the input data file.
-     * 
-     */
     public Optional<Output<String>> namespaceName() {
         return Optional.ofNullable(this.namespaceName);
     }
@@ -126,7 +118,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param bucket The name of the ObjectStorage bucket that contains the input data file.
+         * @param bucket The name of the Object Storage bucket that contains the input data file.
          * 
          * @return builder
          * 
@@ -137,7 +129,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param bucket The name of the ObjectStorage bucket that contains the input data file.
+         * @param bucket The name of the Object Storage bucket that contains the input data file.
          * 
          * @return builder
          * 
@@ -147,7 +139,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param datasetId The OCID of the Data Science Labeling Dataset.
+         * @param datasetId OCID of the Data Labeling dataset.
          * 
          * @return builder
          * 
@@ -158,7 +150,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param datasetId The OCID of the Data Science Labeling Dataset.
+         * @param datasetId OCID of the Data Labeling dataset.
          * 
          * @return builder
          * 
@@ -168,7 +160,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param datasetType Type of the Dataset.
+         * @param datasetType The dataset type, based on where it is stored.
          * 
          * @return builder
          * 
@@ -179,7 +171,7 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param datasetType Type of the Dataset.
+         * @param datasetType The dataset type, based on where it is stored.
          * 
          * @return builder
          * 
@@ -188,23 +180,11 @@ public final class ModelValidationDatasetArgs extends com.pulumi.resources.Resou
             return datasetType(Output.of(datasetType));
         }
 
-        /**
-         * @param namespaceName The namespace name of the ObjectStorage bucket that contains the input data file.
-         * 
-         * @return builder
-         * 
-         */
         public Builder namespaceName(@Nullable Output<String> namespaceName) {
             $.namespaceName = namespaceName;
             return this;
         }
 
-        /**
-         * @param namespaceName The namespace name of the ObjectStorage bucket that contains the input data file.
-         * 
-         * @return builder
-         * 
-         */
         public Builder namespaceName(String namespaceName) {
             return namespaceName(Output.of(namespaceName));
         }

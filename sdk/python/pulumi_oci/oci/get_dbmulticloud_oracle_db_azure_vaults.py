@@ -61,7 +61,7 @@ class GetDbmulticloudOracleDbAzureVaultsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that has this DB Azure Vault Resource.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -69,7 +69,7 @@ class GetDbmulticloudOracleDbAzureVaultsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
         """
-        Display name of DB Azure Vault.
+        Oracle DB Azure Vault resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -95,7 +95,7 @@ class GetDbmulticloudOracleDbAzureVaultsResult:
     @pulumi.getter(name="oracleDbAzureResourceGroup")
     def oracle_db_azure_resource_group(self) -> Optional[_builtins.str]:
         """
-        Display name of Azure Resource Group.
+        Oracle DB Azure resource group name.
         """
         return pulumi.get(self, "oracle_db_azure_resource_group")
 
@@ -116,7 +116,7 @@ class GetDbmulticloudOracleDbAzureVaultsResult:
     @pulumi.getter
     def state(self) -> Optional[_builtins.str]:
         """
-        The lifecycle state of the DB Azure Vault Resource.
+        The lifecycle state of the Oracle DB Azure Vault resource.
         """
         return pulumi.get(self, "state")
 
@@ -149,7 +149,7 @@ def get_dbmulticloud_oracle_db_azure_vaults(compartment_id: Optional[_builtins.s
     """
     This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all DB Azure Vaults based on filters.
+    Lists all DB Azure Vault resources based on the specified filters.
 
     ## Example Usage
 
@@ -167,10 +167,10 @@ def get_dbmulticloud_oracle_db_azure_vaults(compartment_id: Optional[_builtins.s
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Vaults.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
-    :param _builtins.str oracle_db_azure_resource_group: A filter to return Azure Vaults.
-    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Vault resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
+    :param _builtins.str oracle_db_azure_resource_group: A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
+    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -205,7 +205,7 @@ def get_dbmulticloud_oracle_db_azure_vaults_output(compartment_id: Optional[pulu
     """
     This data source provides the list of Oracle Db Azure Vaults in Oracle Cloud Infrastructure Dbmulticloud service.
 
-    Lists the all DB Azure Vaults based on filters.
+    Lists all DB Azure Vault resources based on the specified filters.
 
     ## Example Usage
 
@@ -223,10 +223,10 @@ def get_dbmulticloud_oracle_db_azure_vaults_output(compartment_id: Optional[pulu
 
 
     :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-    :param _builtins.str display_name: A filter to return Azure Vaults.
-    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Blob Mount Resources.
-    :param _builtins.str oracle_db_azure_resource_group: A filter to return Azure Vaults.
-    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault Resources.
+    :param _builtins.str display_name: A filter to return Oracle DB Azure Vault resources that match the specified display name.
+    :param _builtins.str oracle_db_azure_connector_id: A filter to return Oracle DB Azure Azure Identity Connector resources.
+    :param _builtins.str oracle_db_azure_resource_group: A filter to return Oracle DB Azure Vault resources that match the specified Oracle DB Azure resource group name.
+    :param _builtins.str oracle_db_azure_vault_id: A filter to return Oracle DB Azure Vault resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()

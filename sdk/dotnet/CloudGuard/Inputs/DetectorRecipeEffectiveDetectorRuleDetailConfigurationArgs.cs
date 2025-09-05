@@ -12,6 +12,36 @@ namespace Pulumi.Oci.CloudGuard.Inputs
 
     public sealed class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        [Input("additionalProperties")]
+        private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs>? _additionalProperties;
+
+        /// <summary>
+        /// Map of additional property values for configuration
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs> AdditionalProperties
+        {
+            get => _additionalProperties ?? (_additionalProperties = new InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalPropertyArgs>());
+            set => _additionalProperties = value;
+        }
+
+        [Input("allowedValues")]
+        private InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs>? _allowedValues;
+
+        /// <summary>
+        /// Map of possible values for configuration
+        /// </summary>
+        public InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs> AllowedValues
+        {
+            get => _allowedValues ?? (_allowedValues = new InputList<Inputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValueArgs>());
+            set => _allowedValues = value;
+        }
+
+        /// <summary>
+        /// Map property Value data type
+        /// </summary>
+        [Input("allowedValuesDataType")]
+        public Input<string>? AllowedValuesDataType { get; set; }
+
         /// <summary>
         /// Unique identifier of the configuration
         /// </summary>
@@ -31,7 +61,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Configuration value
+        /// Detector rule type value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

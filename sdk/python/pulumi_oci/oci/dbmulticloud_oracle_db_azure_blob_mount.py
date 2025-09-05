@@ -27,10 +27,10 @@ class DbmulticloudOracleDbAzureBlobMountArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbmulticloudOracleDbAzureBlobMount resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount Resource name.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount resource name.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
                
                
                ** IMPORTANT **
@@ -51,7 +51,7 @@ class DbmulticloudOracleDbAzureBlobMountArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -63,7 +63,7 @@ class DbmulticloudOracleDbAzureBlobMountArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Oracle DB Azure Blob Mount Resource name.
+        (Updatable) Oracle DB Azure Blob Mount resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -75,7 +75,7 @@ class DbmulticloudOracleDbAzureBlobMountArgs:
     @pulumi.getter(name="oracleDbAzureBlobContainerId")
     def oracle_db_azure_blob_container_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "oracle_db_azure_blob_container_id")
 
@@ -87,7 +87,7 @@ class DbmulticloudOracleDbAzureBlobMountArgs:
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 
 
         ** IMPORTANT **
@@ -142,20 +142,20 @@ class _DbmulticloudOracleDbAzureBlobMountState:
                  time_updated: Optional[pulumi.Input[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering DbmulticloudOracleDbAzureBlobMount resources.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount Resource name.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] mount_path: Azure Container mount path.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] mount_path: Oracle DB Azure Blob Mount path.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -191,7 +191,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -215,7 +215,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) Oracle DB Azure Blob Mount Resource name.
+        (Updatable) Oracle DB Azure Blob Mount resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -239,7 +239,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -263,7 +263,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
         """
         return pulumi.get(self, "mount_path")
 
@@ -275,7 +275,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="oracleDbAzureBlobContainerId")
     def oracle_db_azure_blob_container_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "oracle_db_azure_blob_container_id")
 
@@ -287,7 +287,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 
 
         ** IMPORTANT **
@@ -303,7 +303,7 @@ class _DbmulticloudOracleDbAzureBlobMountState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "state")
 
@@ -364,8 +364,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Creates Oracle DB Azure Blob Mount resource and mounts Azure Container in Oracle Cloud Infrastructure Database Resource,
-        based on provided Azure Container details and Database Resource ID.
+        Creates Oracle DB Azure Blob Mount resource.
 
         ## Example Usage
 
@@ -396,12 +395,12 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount Resource name.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
                
                
                ** IMPORTANT **
@@ -416,8 +415,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
         """
         This resource provides the Oracle Db Azure Blob Mount resource in Oracle Cloud Infrastructure Dbmulticloud service.
 
-        Creates Oracle DB Azure Blob Mount resource and mounts Azure Container in Oracle Cloud Infrastructure Database Resource,
-        based on provided Azure Container details and Database Resource ID.
+        Creates Oracle DB Azure Blob Mount resource.
 
         ## Example Usage
 
@@ -527,20 +525,20 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        :param pulumi.Input[_builtins.str] compartment_id: (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount Resource name.
+        :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB Azure Blob Mount resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        :param pulumi.Input[_builtins.str] last_modification: Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
-        :param pulumi.Input[_builtins.str] mount_path: Azure Container mount path.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
-        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        :param pulumi.Input[_builtins.str] mount_path: Oracle DB Azure Blob Mount path.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_blob_container_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
+        :param pulumi.Input[_builtins.str] oracle_db_azure_connector_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Azure Arc Agent Resource.
+        :param pulumi.Input[_builtins.str] state: The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: Time when the Oracle DB Azure Blob Mount was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
         :param pulumi.Input[_builtins.str] time_updated: Time when the Oracle DB Azure Blob Mount was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
@@ -568,7 +566,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the compartment that contains VMs where to mount Azure Container.
+        (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -584,7 +582,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) Oracle DB Azure Blob Mount Resource name.
+        (Updatable) Oracle DB Azure Blob Mount resource name.
         """
         return pulumi.get(self, "display_name")
 
@@ -600,7 +598,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="lastModification")
     def last_modification(self) -> pulumi.Output[_builtins.str]:
         """
-        Description of the latest modification of the Oracle DB Azure Blob Mount Resource.
+        Description of the latest modification of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "last_modification")
 
@@ -616,7 +614,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="mountPath")
     def mount_path(self) -> pulumi.Output[_builtins.str]:
         """
-        Azure Container mount path.
+        Oracle DB Azure Blob Mount path.
         """
         return pulumi.get(self, "mount_path")
 
@@ -624,7 +622,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbAzureBlobContainerId")
     def oracle_db_azure_blob_container_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Blob Container Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "oracle_db_azure_blob_container_id")
 
@@ -632,7 +630,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter(name="oracleDbAzureConnectorId")
     def oracle_db_azure_connector_id(self) -> pulumi.Output[_builtins.str]:
         """
-        (Updatable) The OCID of the Oracle DB Azure Connector Resource.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
 
 
         ** IMPORTANT **
@@ -644,7 +642,7 @@ class DbmulticloudOracleDbAzureBlobMount(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[_builtins.str]:
         """
-        The current lifecycle state of the Azure Arc Agent Resource.
+        The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         """
         return pulumi.get(self, "state")
 

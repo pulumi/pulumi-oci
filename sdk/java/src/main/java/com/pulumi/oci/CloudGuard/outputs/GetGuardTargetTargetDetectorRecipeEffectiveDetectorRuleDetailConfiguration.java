@@ -5,6 +5,8 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty;
+import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue;
 import com.pulumi.oci.CloudGuard.outputs.GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue;
 import java.lang.String;
 import java.util.List;
@@ -12,6 +14,21 @@ import java.util.Objects;
 
 @CustomType
 public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    private String allowedValuesDataType;
     /**
      * @return Unique identifier of the configuration
      * 
@@ -39,6 +56,27 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
 
     private GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration() {}
+    /**
+     * @return Map of additional property values for configuration
+     * 
+     */
+    public List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties() {
+        return this.additionalProperties;
+    }
+    /**
+     * @return Map of possible values for configuration
+     * 
+     */
+    public List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues() {
+        return this.allowedValues;
+    }
+    /**
+     * @return Map property Value data type
+     * 
+     */
+    public String allowedValuesDataType() {
+        return this.allowedValuesDataType;
+    }
     /**
      * @return Unique identifier of the configuration
      * 
@@ -84,6 +122,9 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties;
+        private List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues;
+        private String allowedValuesDataType;
         private String configKey;
         private String dataType;
         private String name;
@@ -92,6 +133,9 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
         public Builder() {}
         public Builder(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.additionalProperties = defaults.additionalProperties;
+    	      this.allowedValues = defaults.allowedValues;
+    	      this.allowedValuesDataType = defaults.allowedValuesDataType;
     	      this.configKey = defaults.configKey;
     	      this.dataType = defaults.dataType;
     	      this.name = defaults.name;
@@ -99,6 +143,36 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
     	      this.values = defaults.values;
         }
 
+        @CustomType.Setter
+        public Builder additionalProperties(List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty> additionalProperties) {
+            if (additionalProperties == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration", "additionalProperties");
+            }
+            this.additionalProperties = additionalProperties;
+            return this;
+        }
+        public Builder additionalProperties(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAdditionalProperty... additionalProperties) {
+            return additionalProperties(List.of(additionalProperties));
+        }
+        @CustomType.Setter
+        public Builder allowedValues(List<GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue> allowedValues) {
+            if (allowedValues == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration", "allowedValues");
+            }
+            this.allowedValues = allowedValues;
+            return this;
+        }
+        public Builder allowedValues(GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationAllowedValue... allowedValues) {
+            return allowedValues(List.of(allowedValues));
+        }
+        @CustomType.Setter
+        public Builder allowedValuesDataType(String allowedValuesDataType) {
+            if (allowedValuesDataType == null) {
+              throw new MissingRequiredPropertyException("GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration", "allowedValuesDataType");
+            }
+            this.allowedValuesDataType = allowedValuesDataType;
+            return this;
+        }
         @CustomType.Setter
         public Builder configKey(String configKey) {
             if (configKey == null) {
@@ -144,6 +218,9 @@ public final class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetail
         }
         public GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration build() {
             final var _resultValue = new GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration();
+            _resultValue.additionalProperties = additionalProperties;
+            _resultValue.allowedValues = allowedValues;
+            _resultValue.allowedValuesDataType = allowedValuesDataType;
             _resultValue.configKey = configKey;
             _resultValue.dataType = dataType;
             _resultValue.name = name;

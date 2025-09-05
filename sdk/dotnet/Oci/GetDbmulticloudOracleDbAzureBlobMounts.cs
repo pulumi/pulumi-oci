@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Mounts based on filters.
+        /// Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Mounts based on filters.
+        /// Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Oci
         /// <summary>
         /// This data source provides the list of Oracle Db Azure Blob Mounts in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
-        /// Lists the all Oracle DB Azure Blob Mounts based on filters.
+        /// Lists all Oracle DB Azure Blob Mount resources based on the specified filters.
         /// 
         /// 
         /// ## Example Usage
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Oci
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -132,19 +132,19 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId")]
         public string? OracleDbAzureBlobContainerId { get; set; }
 
         /// <summary>
-        /// ID of Oracle DB Azure Blob Mount Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("oracleDbAzureBlobMountId")]
         public string? OracleDbAzureBlobMountId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public string? OracleDbAzureConnectorId { get; set; }
@@ -170,7 +170,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Mount resources that match the specified display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -184,19 +184,19 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Blob Container resource.
         /// </summary>
         [Input("oracleDbAzureBlobContainerId")]
         public Input<string>? OracleDbAzureBlobContainerId { get; set; }
 
         /// <summary>
-        /// ID of Oracle DB Azure Blob Mount Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         [Input("oracleDbAzureBlobMountId")]
         public Input<string>? OracleDbAzureBlobMountId { get; set; }
 
         /// <summary>
-        /// A filter to return Oracle DB Azure Blob Mount Resources.
+        /// A filter to return Oracle DB Azure Azure Identity Connector resources.
         /// </summary>
         [Input("oracleDbAzureConnectorId")]
         public Input<string>? OracleDbAzureConnectorId { get; set; }
@@ -218,11 +218,11 @@ namespace Pulumi.Oci.Oci
     public sealed class GetDbmulticloudOracleDbAzureBlobMountsResult
     {
         /// <summary>
-        /// The OCID of the compartment that contains Oracle DB Azure Blob Mount resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Oracle DB Azure Blob Mount name.
+        /// Oracle DB Azure Blob Mount resource name.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureBlobMountsFilterResult> Filters;
@@ -231,7 +231,7 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The OCID of the Oracle DB Azure Blob Container Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Blob Container resource that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string? OracleDbAzureBlobContainerId;
         public readonly string? OracleDbAzureBlobMountId;
@@ -240,11 +240,11 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAzureBlobMountsOracleDbAzureBlobMountSummaryCollectionResult> OracleDbAzureBlobMountSummaryCollections;
         /// <summary>
-        /// The OCID of the Oracle DB Azure Connector Resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Connector resource that contains Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string? OracleDbAzureConnectorId;
         /// <summary>
-        /// The current lifecycle state of the Azure Arc Agent Resource.
+        /// The current lifecycle state of the Oracle DB Azure Blob Mount resource.
         /// </summary>
         public readonly string? State;
 

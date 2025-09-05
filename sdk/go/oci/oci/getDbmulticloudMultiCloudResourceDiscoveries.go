@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Lists the all Multi Cloud Resource Discovery based on filters.
+// Lists all Multicloud Resource Discovery resources based on the specified filters.
 //
 // ## Example Usage
 //
@@ -35,6 +35,7 @@ import (
 //				MultiCloudResourceDiscoveryId: pulumi.StringRef(testMultiCloudResourceDiscovery.Id),
 //				OracleDbAzureConnectorId:      pulumi.StringRef(testOracleDbAzureConnector.Id),
 //				ResourceType:                  pulumi.StringRef(multiCloudResourceDiscoveryResourceType),
+//				ResourcesFilters:              multiCloudResourceDiscoveryResourcesFilter,
 //				State:                         pulumi.StringRef(multiCloudResourceDiscoveryState),
 //			}, nil)
 //			if err != nil {
@@ -59,24 +60,26 @@ func GetDbmulticloudMultiCloudResourceDiscoveries(ctx *pulumi.Context, args *Get
 type GetDbmulticloudMultiCloudResourceDiscoveriesArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Display Name of the Multi Cloud Discovery Resource.
+	// A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
 	DisplayName *string                                              `pulumi:"displayName"`
 	Filters     []GetDbmulticloudMultiCloudResourceDiscoveriesFilter `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
 	MultiCloudResourceDiscoveryId *string `pulumi:"multiCloudResourceDiscoveryId"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId *string `pulumi:"oracleDbAzureConnectorId"`
-	// The type of Multi Cloud Resource.
+	// The type of Multicloud Resource.
 	ResourceType *string `pulumi:"resourceType"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// Specifies the type(s) of resources to discover in the target cloud provider.
+	ResourcesFilters []string `pulumi:"resourcesFilters"`
+	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
 }
 
 // A collection of values returned by getDbmulticloudMultiCloudResourceDiscoveries.
 type GetDbmulticloudMultiCloudResourceDiscoveriesResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId string `pulumi:"compartmentId"`
-	// Display name of Multi Cloud Discovery Resource.
+	// Display name of the Multicloud Resource Discovery resource.
 	DisplayName *string                                              `pulumi:"displayName"`
 	Filters     []GetDbmulticloudMultiCloudResourceDiscoveriesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
@@ -87,6 +90,8 @@ type GetDbmulticloudMultiCloudResourceDiscoveriesResult struct {
 	OracleDbAzureConnectorId                      *string                                                                                    `pulumi:"oracleDbAzureConnectorId"`
 	// Resource Type to discover.
 	ResourceType *string `pulumi:"resourceType"`
+	// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+	ResourcesFilters []string `pulumi:"resourcesFilters"`
 	// The current lifecycle state of the discovered resource.
 	State *string `pulumi:"state"`
 }
@@ -104,16 +109,18 @@ func GetDbmulticloudMultiCloudResourceDiscoveriesOutput(ctx *pulumi.Context, arg
 type GetDbmulticloudMultiCloudResourceDiscoveriesOutputArgs struct {
 	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// Display Name of the Multi Cloud Discovery Resource.
+	// A filter to return Oracle DB Multicloud Discovery resources that match the specified display name.
 	DisplayName pulumi.StringPtrInput                                        `pulumi:"displayName"`
 	Filters     GetDbmulticloudMultiCloudResourceDiscoveriesFilterArrayInput `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multi Cloud Discovery Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Multicloud Discovery resource.
 	MultiCloudResourceDiscoveryId pulumi.StringPtrInput `pulumi:"multiCloudResourceDiscoveryId"`
-	// A filter to return Oracle DB Azure Blob Mount Resources.
+	// A filter to return Oracle DB Azure Azure Identity Connector resources.
 	OracleDbAzureConnectorId pulumi.StringPtrInput `pulumi:"oracleDbAzureConnectorId"`
-	// The type of Multi Cloud Resource.
+	// The type of Multicloud Resource.
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	// Specifies the type(s) of resources to discover in the target cloud provider.
+	ResourcesFilters pulumi.StringArrayInput `pulumi:"resourcesFilters"`
+	// A filter to return only resources that match the specified lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
 
@@ -136,12 +143,12 @@ func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) ToGetDbmulticl
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multi Cloud Discovery Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// Display name of Multi Cloud Discovery Resource.
+// Display name of the Multicloud Resource Discovery resource.
 func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -177,6 +184,11 @@ func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) OracleDbAzureC
 // Resource Type to discover.
 func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) ResourceType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesResult) *string { return v.ResourceType }).(pulumi.StringPtrOutput)
+}
+
+// Discover resource using attributes as key-value pair. For GCP supported attributes (keyRing) For Azure supported attributes (keyVault) GCP Example `{"keyRing": "projects/db-mc-dataplane/locations/global/keyRings/dbmci-keyring"}` or `{"keyRing": "dbmci-keyring"}` Azure Example `{"keyVault": "/subscriptions/fd42b73d-5f28-4a23-ae7c-ca08c625fe07/resourceGroups/yumfei0808Test/providers/Microsoft.KeyVault/managedHSMs/orp7HSM001"}` or `{"keyVault": "orp7HSM001"}`
+func (o GetDbmulticloudMultiCloudResourceDiscoveriesResultOutput) ResourcesFilters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudMultiCloudResourceDiscoveriesResult) []string { return v.ResourcesFilters }).(pulumi.StringArrayOutput)
 }
 
 // The current lifecycle state of the discovered resource.

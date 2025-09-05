@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Oracle Db Azure Key resource in Oracle Cloud Infrastructure Dbmulticloud service.
 //
-// Get Oracle DB Azure Key Details form a particular Container Resource ID.
+// Retrieves detailed information about a Oracle DB Azure Key resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 //
 // ## Example Usage
 //
@@ -52,38 +52,42 @@ func GetDbmulticloudOracleDbAzureKey(ctx *pulumi.Context, args *GetDbmulticloudO
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureKey.
 type GetDbmulticloudOracleDbAzureKeyArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
 	OracleDbAzureKeyId string `pulumi:"oracleDbAzureKeyId"`
 }
 
 // A collection of values returned by getDbmulticloudOracleDbAzureKey.
 type GetDbmulticloudOracleDbAzureKeyResult struct {
-	// The Azure ID of the Azure Key, Azure Key URL.
+	// The ID of the Azure Key resource.
 	AzureKeyId string `pulumi:"azureKeyId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
-	// Display name of Oracle DB Azure Vault Key.
+	// Oracle DB Azure Vault Key resource name.
 	DisplayName string `pulumi:"displayName"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+	// Key properties
+	KeyProperties map[string]string `pulumi:"keyProperties"`
+	// Description of the latest modification of the Oracle DB Azure Vault Key resource.
 	LastModification string `pulumi:"lastModification"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
 	OracleDbAzureKeyId    string `pulumi:"oracleDbAzureKeyId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 	OracleDbAzureVaultId string `pulumi:"oracleDbAzureVaultId"`
-	// The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+	// Key Resource type.
+	ResourceType string `pulumi:"resourceType"`
+	// The current lifecycle state of the Oracle DB Azure Vault Key resource.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeCreated string `pulumi:"timeCreated"`
-	// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+	// Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 	TimeUpdated string `pulumi:"timeUpdated"`
 }
 
@@ -98,7 +102,7 @@ func GetDbmulticloudOracleDbAzureKeyOutput(ctx *pulumi.Context, args GetDbmultic
 
 // A collection of arguments for invoking getDbmulticloudOracleDbAzureKey.
 type GetDbmulticloudOracleDbAzureKeyOutputArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key Resource.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Key resource.
 	OracleDbAzureKeyId pulumi.StringInput `pulumi:"oracleDbAzureKeyId"`
 }
 
@@ -121,12 +125,12 @@ func (o GetDbmulticloudOracleDbAzureKeyResultOutput) ToGetDbmulticloudOracleDbAz
 	return o
 }
 
-// The Azure ID of the Azure Key, Azure Key URL.
+// The ID of the Azure Key resource.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) AzureKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.AzureKeyId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Key resource.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -136,7 +140,7 @@ func (o GetDbmulticloudOracleDbAzureKeyResultOutput) DefinedTags() pulumi.String
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
 }
 
-// Display name of Oracle DB Azure Vault Key.
+// Oracle DB Azure Vault Key resource name.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -151,7 +155,12 @@ func (o GetDbmulticloudOracleDbAzureKeyResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Description of the latest modification of the Oracle DB Azure Vault Key Resource.
+// Key properties
+func (o GetDbmulticloudOracleDbAzureKeyResultOutput) KeyProperties() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) map[string]string { return v.KeyProperties }).(pulumi.StringMapOutput)
+}
+
+// Description of the latest modification of the Oracle DB Azure Vault Key resource.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) LastModification() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.LastModification }).(pulumi.StringOutput)
 }
@@ -165,12 +174,17 @@ func (o GetDbmulticloudOracleDbAzureKeyResultOutput) OracleDbAzureKeyId() pulumi
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.OracleDbAzureKeyId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault Resource.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Azure Vault resource.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) OracleDbAzureVaultId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.OracleDbAzureVaultId }).(pulumi.StringOutput)
 }
 
-// The current lifecycle state of the Oracle DB Azure Vault Key Resource.
+// Key Resource type.
+func (o GetDbmulticloudOracleDbAzureKeyResultOutput) ResourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.ResourceType }).(pulumi.StringOutput)
+}
+
+// The current lifecycle state of the Oracle DB Azure Vault Key resource.
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.State }).(pulumi.StringOutput)
 }
@@ -180,12 +194,12 @@ func (o GetDbmulticloudOracleDbAzureKeyResultOutput) SystemTags() pulumi.StringM
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// Time when the Oracle DB Azure Vault Key was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Oracle DB Azure Vault Key resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// Time when the Oracle DB Azure Vault Key was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
+// Time when the Oracle DB Azure Vault Key resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'
 func (o GetDbmulticloudOracleDbAzureKeyResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAzureKeyResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

@@ -3,6 +3,8 @@ major-version: 3
 providerDefaultBranch: main
 parallel: 1
 timeout: 90
+esc:
+  enabled: true
 env:
   TF_VAR_tenancy_ocid: ${{ secrets.TF_VAR_tenancy_ocid }}
   TF_VAR_user_ocid: ${{ secrets.TF_VAR_user_ocid }}

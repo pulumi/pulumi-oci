@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Email
         public Output<string> CnameRecordValue { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        /// The lock compartment ID.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -94,6 +94,12 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.EmailReturnPathLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -242,7 +248,7 @@ namespace Pulumi.Oci.Email
         public Input<string>? CnameRecordValue { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        /// The lock compartment ID.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -288,6 +294,18 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.EmailReturnPathLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.EmailReturnPathLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.EmailReturnPathLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).

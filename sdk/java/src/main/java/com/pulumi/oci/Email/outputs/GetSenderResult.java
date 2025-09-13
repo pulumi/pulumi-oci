@@ -5,15 +5,17 @@ package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Email.outputs.GetSenderLock;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
 @CustomType
 public final class GetSenderResult {
     /**
-     * @return The OCID for the compartment.
+     * @return The lock compartment ID.
      * 
      */
     private String compartmentId;
@@ -47,6 +49,11 @@ public final class GetSenderResult {
      * 
      */
     private Boolean isSpf;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetSenderLock> locks;
     private String senderId;
     /**
      * @return The current status of the approved sender.
@@ -66,7 +73,7 @@ public final class GetSenderResult {
 
     private GetSenderResult() {}
     /**
-     * @return The OCID for the compartment.
+     * @return The lock compartment ID.
      * 
      */
     public String compartmentId() {
@@ -114,6 +121,13 @@ public final class GetSenderResult {
     public Boolean isSpf() {
         return this.isSpf;
     }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetSenderLock> locks() {
+        return this.locks;
+    }
     public String senderId() {
         return this.senderId;
     }
@@ -155,6 +169,7 @@ public final class GetSenderResult {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isSpf;
+        private List<GetSenderLock> locks;
         private String senderId;
         private String state;
         private Map<String,String> systemTags;
@@ -169,6 +184,7 @@ public final class GetSenderResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSpf = defaults.isSpf;
+    	      this.locks = defaults.locks;
     	      this.senderId = defaults.senderId;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -232,6 +248,17 @@ public final class GetSenderResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetSenderLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetSenderResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetSenderLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder senderId(String senderId) {
             if (senderId == null) {
               throw new MissingRequiredPropertyException("GetSenderResult", "senderId");
@@ -272,6 +299,7 @@ public final class GetSenderResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSpf = isSpf;
+            _resultValue.locks = locks;
             _resultValue.senderId = senderId;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

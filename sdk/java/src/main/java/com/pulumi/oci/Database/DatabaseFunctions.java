@@ -19128,6 +19128,39 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .databaseEdition(dbSystemStoragePerformanceDatabaseEdition)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19142,6 +19175,39 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .databaseEdition(dbSystemStoragePerformanceDatabaseEdition)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19156,6 +19222,39 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .databaseEdition(dbSystemStoragePerformanceDatabaseEdition)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19170,6 +19269,39 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .databaseEdition(dbSystemStoragePerformanceDatabaseEdition)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */
@@ -19184,6 +19316,39 @@ public final class DatabaseFunctions {
      * ## Example Usage
      * 
      * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDbSystemStoragePerformancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDbSystemStoragePerformances = DatabaseFunctions.getDbSystemStoragePerformances(GetDbSystemStoragePerformancesArgs.builder()
+     *             .storageManagement(dbSystemStoragePerformanceStorageManagement)
+     *             .shapeType(dbSystemStoragePerformanceShapeType)
+     *             .databaseEdition(dbSystemStoragePerformanceDatabaseEdition)
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * &lt;!--End PulumiCodeChooser --&gt;
      * 
      */

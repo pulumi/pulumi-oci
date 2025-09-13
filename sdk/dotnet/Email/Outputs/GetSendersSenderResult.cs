@@ -42,6 +42,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly bool IsSpf;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSendersSenderLockResult> Locks;
+        /// <summary>
         /// The current state of a sender.
         /// </summary>
         public readonly string State;
@@ -70,6 +74,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             bool isSpf,
 
+            ImmutableArray<Outputs.GetSendersSenderLockResult> locks,
+
             string state,
 
             ImmutableDictionary<string, string> systemTags,
@@ -83,6 +89,7 @@ namespace Pulumi.Oci.Email.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;
+            Locks = locks;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

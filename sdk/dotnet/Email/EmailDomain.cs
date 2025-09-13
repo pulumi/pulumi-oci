@@ -97,10 +97,13 @@ namespace Pulumi.Oci.Email
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         /// </summary>
         [Output("isSpf")]
         public Output<bool> IsSpf { get; private set; } = null!;
+
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.EmailDomainLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
@@ -291,10 +294,18 @@ namespace Pulumi.Oci.Email
         }
 
         /// <summary>
-        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         /// </summary>
         [Input("isSpf")]
         public Input<bool>? IsSpf { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.EmailDomainLockGetArgs>? _locks;
+        public InputList<Inputs.EmailDomainLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.EmailDomainLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).

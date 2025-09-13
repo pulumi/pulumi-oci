@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -42,7 +44,7 @@ export interface GetSenderArgs {
  */
 export interface GetSenderResult {
     /**
-     * The OCID for the compartment.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     /**
@@ -69,6 +71,10 @@ export interface GetSenderResult {
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
     readonly isSpf: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.Email.GetSenderLock[];
     readonly senderId: string;
     /**
      * The current status of the approved sender.

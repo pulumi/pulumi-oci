@@ -46,6 +46,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetEmailReturnPathsEmailReturnPathCollectionItemLockResult> Locks;
+        /// <summary>
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
         public readonly string Name;
@@ -88,6 +92,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetEmailReturnPathsEmailReturnPathCollectionItemLockResult> locks,
+
             string name,
 
             string parentResourceId,
@@ -108,6 +114,7 @@ namespace Pulumi.Oci.Email.Outputs
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             Name = name;
             ParentResourceId = parentResourceId;
             State = state;

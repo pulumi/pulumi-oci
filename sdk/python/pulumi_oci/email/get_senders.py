@@ -55,7 +55,7 @@ class GetSendersResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID for the compartment.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 

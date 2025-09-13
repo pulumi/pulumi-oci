@@ -60,7 +60,7 @@ type LookupEmailReturnPathArgs struct {
 type LookupEmailReturnPathResult struct {
 	// The DNS CNAME record value to provision to the Return Patn DNS subdomain, when using the CNAME method for Email Return Path setup (preferred).
 	CnameRecordValue string `pulumi:"cnameRecordValue"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -75,6 +75,8 @@ type LookupEmailReturnPathResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetEmailReturnPathLock `pulumi:"locks"`
 	// The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`
 	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the EmailDomain that this email return path belongs to.
@@ -128,7 +130,7 @@ func (o LookupEmailReturnPathResultOutput) CnameRecordValue() pulumi.StringOutpu
 	return o.ApplyT(func(v LookupEmailReturnPathResult) string { return v.CnameRecordValue }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+// The lock compartment ID.
 func (o LookupEmailReturnPathResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailReturnPathResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -165,6 +167,11 @@ func (o LookupEmailReturnPathResultOutput) Id() pulumi.StringOutput {
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 func (o LookupEmailReturnPathResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailReturnPathResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupEmailReturnPathResultOutput) Locks() GetEmailReturnPathLockArrayOutput {
+	return o.ApplyT(func(v LookupEmailReturnPathResult) []GetEmailReturnPathLock { return v.Locks }).(GetEmailReturnPathLockArrayOutput)
 }
 
 // The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`

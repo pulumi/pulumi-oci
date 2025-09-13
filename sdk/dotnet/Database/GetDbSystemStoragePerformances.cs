@@ -15,6 +15,28 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
+        ///     {
+        ///         StorageManagement = dbSystemStoragePerformanceStorageManagement,
+        ///         ShapeType = dbSystemStoragePerformanceShapeType,
+        ///         DatabaseEdition = dbSystemStoragePerformanceDatabaseEdition,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetDbSystemStoragePerformancesResult> InvokeAsync(GetDbSystemStoragePerformancesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesArgs(), options.WithDefaults());
@@ -23,6 +45,28 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
+        ///     {
+        ///         StorageManagement = dbSystemStoragePerformanceStorageManagement,
+        ///         ShapeType = dbSystemStoragePerformanceShapeType,
+        ///         DatabaseEdition = dbSystemStoragePerformanceDatabaseEdition,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDbSystemStoragePerformancesResult> Invoke(GetDbSystemStoragePerformancesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());
@@ -31,6 +75,28 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+        /// 
+        /// 
+        /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDbSystemStoragePerformances = Oci.Database.GetDbSystemStoragePerformances.Invoke(new()
+        ///     {
+        ///         StorageManagement = dbSystemStoragePerformanceStorageManagement,
+        ///         ShapeType = dbSystemStoragePerformanceShapeType,
+        ///         DatabaseEdition = dbSystemStoragePerformanceDatabaseEdition,
+        ///         CompartmentId = compartmentId,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDbSystemStoragePerformancesResult> Invoke(GetDbSystemStoragePerformancesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetDbSystemStoragePerformancesResult>("oci:Database/getDbSystemStoragePerformances:getDbSystemStoragePerformances", args ?? new GetDbSystemStoragePerformancesInvokeArgs(), options.WithDefaults());
@@ -50,7 +116,7 @@ namespace Pulumi.Oci.Database
         /// * STANDARD_EDITION
         /// * ENTERPRISE_EDITION
         /// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-        /// * ENTERPRISE_EDITION_EXTREME
+        /// * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
         /// * ENTERPRISE_EDITION_DEVELOPER
         /// </summary>
         [Input("databaseEdition")]
@@ -97,7 +163,7 @@ namespace Pulumi.Oci.Database
         /// * STANDARD_EDITION
         /// * ENTERPRISE_EDITION
         /// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-        /// * ENTERPRISE_EDITION_EXTREME
+        /// * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
         /// * ENTERPRISE_EDITION_DEVELOPER
         /// </summary>
         [Input("databaseEdition")]

@@ -75,8 +75,9 @@ type EmailDomain struct {
 	DomainVerificationStatus pulumi.StringOutput `pulumi:"domainVerificationStatus"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
-	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf pulumi.BoolOutput `pulumi:"isSpf"`
+	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
+	IsSpf pulumi.BoolOutput          `pulumi:"isSpf"`
+	Locks EmailDomainLockArrayOutput `pulumi:"locks"`
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// ** IMPORTANT **
@@ -137,8 +138,9 @@ type emailDomainState struct {
 	DomainVerificationStatus *string `pulumi:"domainVerificationStatus"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf *bool `pulumi:"isSpf"`
+	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
+	IsSpf *bool             `pulumi:"isSpf"`
+	Locks []EmailDomainLock `pulumi:"locks"`
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// ** IMPORTANT **
@@ -167,8 +169,9 @@ type EmailDomainState struct {
 	DomainVerificationStatus pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
 	IsSpf pulumi.BoolPtrInput
+	Locks EmailDomainLockArrayInput
 	// The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
 	//
 	// ** IMPORTANT **
@@ -345,9 +348,13 @@ func (o EmailDomainOutput) FreeformTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *EmailDomain) pulumi.StringMapOutput { return v.FreeformTags }).(pulumi.StringMapOutput)
 }
 
-// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
 func (o EmailDomainOutput) IsSpf() pulumi.BoolOutput {
 	return o.ApplyT(func(v *EmailDomain) pulumi.BoolOutput { return v.IsSpf }).(pulumi.BoolOutput)
+}
+
+func (o EmailDomainOutput) Locks() EmailDomainLockArrayOutput {
+	return o.ApplyT(func(v *EmailDomain) EmailDomainLockArrayOutput { return v.Locks }).(EmailDomainLockArrayOutput)
 }
 
 // The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).

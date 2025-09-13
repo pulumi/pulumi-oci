@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -46,7 +48,7 @@ export interface GetEmailDomainResult {
      */
     readonly activeDkimId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     /**
@@ -78,6 +80,10 @@ export interface GetEmailDomainResult {
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
     readonly isSpf: boolean;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.Email.GetEmailDomainLock[];
     /**
      * The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
      */

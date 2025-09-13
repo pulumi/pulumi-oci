@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly string ActiveDkimId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -160,6 +160,10 @@ namespace Pulumi.Oci.Email
         /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         /// </summary>
         public readonly bool IsSpf;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetEmailDomainLockResult> Locks;
         /// <summary>
         /// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
         /// </summary>
@@ -199,6 +203,8 @@ namespace Pulumi.Oci.Email
 
             bool isSpf,
 
+            ImmutableArray<Outputs.GetEmailDomainLockResult> locks,
+
             string name,
 
             string state,
@@ -217,6 +223,7 @@ namespace Pulumi.Oci.Email
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;
+            Locks = locks;
             Name = name;
             State = state;
             SystemTags = systemTags;

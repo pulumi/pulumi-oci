@@ -5,8 +5,10 @@ package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Email.inputs.EmailDomainLockArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -123,18 +125,25 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+     * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
      * 
      */
     @Import(name="isSpf")
     private @Nullable Output<Boolean> isSpf;
 
     /**
-     * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+     * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
      * 
      */
     public Optional<Output<Boolean>> isSpf() {
         return Optional.ofNullable(this.isSpf);
+    }
+
+    @Import(name="locks")
+    private @Nullable Output<List<EmailDomainLockArgs>> locks;
+
+    public Optional<Output<List<EmailDomainLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -214,6 +223,7 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
         this.domainVerificationStatus = $.domainVerificationStatus;
         this.freeformTags = $.freeformTags;
         this.isSpf = $.isSpf;
+        this.locks = $.locks;
         this.name = $.name;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -386,7 +396,7 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSpf Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+         * @param isSpf Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
          * 
          * @return builder
          * 
@@ -397,13 +407,26 @@ public final class EmailDomainState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isSpf Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+         * @param isSpf Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
          * 
          * @return builder
          * 
          */
         public Builder isSpf(Boolean isSpf) {
             return isSpf(Output.of(isSpf));
+        }
+
+        public Builder locks(@Nullable Output<List<EmailDomainLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        public Builder locks(List<EmailDomainLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        public Builder locks(EmailDomainLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

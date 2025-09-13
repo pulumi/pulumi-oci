@@ -13,6 +13,405 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type EmailDomainLock struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type *string `pulumi:"type"`
+}
+
+// EmailDomainLockInput is an input type that accepts EmailDomainLockArgs and EmailDomainLockOutput values.
+// You can construct a concrete instance of `EmailDomainLockInput` via:
+//
+//	EmailDomainLockArgs{...}
+type EmailDomainLockInput interface {
+	pulumi.Input
+
+	ToEmailDomainLockOutput() EmailDomainLockOutput
+	ToEmailDomainLockOutputWithContext(context.Context) EmailDomainLockOutput
+}
+
+type EmailDomainLockArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (EmailDomainLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailDomainLock)(nil)).Elem()
+}
+
+func (i EmailDomainLockArgs) ToEmailDomainLockOutput() EmailDomainLockOutput {
+	return i.ToEmailDomainLockOutputWithContext(context.Background())
+}
+
+func (i EmailDomainLockArgs) ToEmailDomainLockOutputWithContext(ctx context.Context) EmailDomainLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainLockOutput)
+}
+
+// EmailDomainLockArrayInput is an input type that accepts EmailDomainLockArray and EmailDomainLockArrayOutput values.
+// You can construct a concrete instance of `EmailDomainLockArrayInput` via:
+//
+//	EmailDomainLockArray{ EmailDomainLockArgs{...} }
+type EmailDomainLockArrayInput interface {
+	pulumi.Input
+
+	ToEmailDomainLockArrayOutput() EmailDomainLockArrayOutput
+	ToEmailDomainLockArrayOutputWithContext(context.Context) EmailDomainLockArrayOutput
+}
+
+type EmailDomainLockArray []EmailDomainLockInput
+
+func (EmailDomainLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailDomainLock)(nil)).Elem()
+}
+
+func (i EmailDomainLockArray) ToEmailDomainLockArrayOutput() EmailDomainLockArrayOutput {
+	return i.ToEmailDomainLockArrayOutputWithContext(context.Background())
+}
+
+func (i EmailDomainLockArray) ToEmailDomainLockArrayOutputWithContext(ctx context.Context) EmailDomainLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailDomainLockArrayOutput)
+}
+
+type EmailDomainLockOutput struct{ *pulumi.OutputState }
+
+func (EmailDomainLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailDomainLock)(nil)).Elem()
+}
+
+func (o EmailDomainLockOutput) ToEmailDomainLockOutput() EmailDomainLockOutput {
+	return o
+}
+
+func (o EmailDomainLockOutput) ToEmailDomainLockOutputWithContext(ctx context.Context) EmailDomainLockOutput {
+	return o
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+func (o EmailDomainLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailDomainLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o EmailDomainLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailDomainLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o EmailDomainLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailDomainLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o EmailDomainLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailDomainLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o EmailDomainLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailDomainLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type EmailDomainLockArrayOutput struct{ *pulumi.OutputState }
+
+func (EmailDomainLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailDomainLock)(nil)).Elem()
+}
+
+func (o EmailDomainLockArrayOutput) ToEmailDomainLockArrayOutput() EmailDomainLockArrayOutput {
+	return o
+}
+
+func (o EmailDomainLockArrayOutput) ToEmailDomainLockArrayOutputWithContext(ctx context.Context) EmailDomainLockArrayOutput {
+	return o
+}
+
+func (o EmailDomainLockArrayOutput) Index(i pulumi.IntInput) EmailDomainLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EmailDomainLock {
+		return vs[0].([]EmailDomainLock)[vs[1].(int)]
+	}).(EmailDomainLockOutput)
+}
+
+type EmailReturnPathLock struct {
+	// The lock compartment ID.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type *string `pulumi:"type"`
+}
+
+// EmailReturnPathLockInput is an input type that accepts EmailReturnPathLockArgs and EmailReturnPathLockOutput values.
+// You can construct a concrete instance of `EmailReturnPathLockInput` via:
+//
+//	EmailReturnPathLockArgs{...}
+type EmailReturnPathLockInput interface {
+	pulumi.Input
+
+	ToEmailReturnPathLockOutput() EmailReturnPathLockOutput
+	ToEmailReturnPathLockOutputWithContext(context.Context) EmailReturnPathLockOutput
+}
+
+type EmailReturnPathLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (EmailReturnPathLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailReturnPathLock)(nil)).Elem()
+}
+
+func (i EmailReturnPathLockArgs) ToEmailReturnPathLockOutput() EmailReturnPathLockOutput {
+	return i.ToEmailReturnPathLockOutputWithContext(context.Background())
+}
+
+func (i EmailReturnPathLockArgs) ToEmailReturnPathLockOutputWithContext(ctx context.Context) EmailReturnPathLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailReturnPathLockOutput)
+}
+
+// EmailReturnPathLockArrayInput is an input type that accepts EmailReturnPathLockArray and EmailReturnPathLockArrayOutput values.
+// You can construct a concrete instance of `EmailReturnPathLockArrayInput` via:
+//
+//	EmailReturnPathLockArray{ EmailReturnPathLockArgs{...} }
+type EmailReturnPathLockArrayInput interface {
+	pulumi.Input
+
+	ToEmailReturnPathLockArrayOutput() EmailReturnPathLockArrayOutput
+	ToEmailReturnPathLockArrayOutputWithContext(context.Context) EmailReturnPathLockArrayOutput
+}
+
+type EmailReturnPathLockArray []EmailReturnPathLockInput
+
+func (EmailReturnPathLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailReturnPathLock)(nil)).Elem()
+}
+
+func (i EmailReturnPathLockArray) ToEmailReturnPathLockArrayOutput() EmailReturnPathLockArrayOutput {
+	return i.ToEmailReturnPathLockArrayOutputWithContext(context.Background())
+}
+
+func (i EmailReturnPathLockArray) ToEmailReturnPathLockArrayOutputWithContext(ctx context.Context) EmailReturnPathLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(EmailReturnPathLockArrayOutput)
+}
+
+type EmailReturnPathLockOutput struct{ *pulumi.OutputState }
+
+func (EmailReturnPathLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*EmailReturnPathLock)(nil)).Elem()
+}
+
+func (o EmailReturnPathLockOutput) ToEmailReturnPathLockOutput() EmailReturnPathLockOutput {
+	return o
+}
+
+func (o EmailReturnPathLockOutput) ToEmailReturnPathLockOutputWithContext(ctx context.Context) EmailReturnPathLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o EmailReturnPathLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailReturnPathLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o EmailReturnPathLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailReturnPathLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o EmailReturnPathLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailReturnPathLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o EmailReturnPathLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailReturnPathLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o EmailReturnPathLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EmailReturnPathLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type EmailReturnPathLockArrayOutput struct{ *pulumi.OutputState }
+
+func (EmailReturnPathLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]EmailReturnPathLock)(nil)).Elem()
+}
+
+func (o EmailReturnPathLockArrayOutput) ToEmailReturnPathLockArrayOutput() EmailReturnPathLockArrayOutput {
+	return o
+}
+
+func (o EmailReturnPathLockArrayOutput) ToEmailReturnPathLockArrayOutputWithContext(ctx context.Context) EmailReturnPathLockArrayOutput {
+	return o
+}
+
+func (o EmailReturnPathLockArrayOutput) Index(i pulumi.IntInput) EmailReturnPathLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) EmailReturnPathLock {
+		return vs[0].([]EmailReturnPathLock)[vs[1].(int)]
+	}).(EmailReturnPathLockOutput)
+}
+
+type SenderLock struct {
+	// (Updatable) The OCID of the compartment that contains the sender.
+	CompartmentId *string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Lock type.
+	Type *string `pulumi:"type"`
+}
+
+// SenderLockInput is an input type that accepts SenderLockArgs and SenderLockOutput values.
+// You can construct a concrete instance of `SenderLockInput` via:
+//
+//	SenderLockArgs{...}
+type SenderLockInput interface {
+	pulumi.Input
+
+	ToSenderLockOutput() SenderLockOutput
+	ToSenderLockOutputWithContext(context.Context) SenderLockOutput
+}
+
+type SenderLockArgs struct {
+	// (Updatable) The OCID of the compartment that contains the sender.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (SenderLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SenderLock)(nil)).Elem()
+}
+
+func (i SenderLockArgs) ToSenderLockOutput() SenderLockOutput {
+	return i.ToSenderLockOutputWithContext(context.Background())
+}
+
+func (i SenderLockArgs) ToSenderLockOutputWithContext(ctx context.Context) SenderLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SenderLockOutput)
+}
+
+// SenderLockArrayInput is an input type that accepts SenderLockArray and SenderLockArrayOutput values.
+// You can construct a concrete instance of `SenderLockArrayInput` via:
+//
+//	SenderLockArray{ SenderLockArgs{...} }
+type SenderLockArrayInput interface {
+	pulumi.Input
+
+	ToSenderLockArrayOutput() SenderLockArrayOutput
+	ToSenderLockArrayOutputWithContext(context.Context) SenderLockArrayOutput
+}
+
+type SenderLockArray []SenderLockInput
+
+func (SenderLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SenderLock)(nil)).Elem()
+}
+
+func (i SenderLockArray) ToSenderLockArrayOutput() SenderLockArrayOutput {
+	return i.ToSenderLockArrayOutputWithContext(context.Background())
+}
+
+func (i SenderLockArray) ToSenderLockArrayOutputWithContext(ctx context.Context) SenderLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SenderLockArrayOutput)
+}
+
+type SenderLockOutput struct{ *pulumi.OutputState }
+
+func (SenderLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SenderLock)(nil)).Elem()
+}
+
+func (o SenderLockOutput) ToSenderLockOutput() SenderLockOutput {
+	return o
+}
+
+func (o SenderLockOutput) ToSenderLockOutputWithContext(ctx context.Context) SenderLockOutput {
+	return o
+}
+
+// (Updatable) The OCID of the compartment that contains the sender.
+func (o SenderLockOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SenderLock) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o SenderLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SenderLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o SenderLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SenderLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+func (o SenderLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SenderLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Lock type.
+func (o SenderLockOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SenderLock) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type SenderLockArrayOutput struct{ *pulumi.OutputState }
+
+func (SenderLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SenderLock)(nil)).Elem()
+}
+
+func (o SenderLockArrayOutput) ToSenderLockArrayOutput() SenderLockArrayOutput {
+	return o
+}
+
+func (o SenderLockArrayOutput) ToSenderLockArrayOutputWithContext(ctx context.Context) SenderLockArrayOutput {
+	return o
+}
+
+func (o SenderLockArrayOutput) Index(i pulumi.IntInput) SenderLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SenderLock {
+		return vs[0].([]SenderLock)[vs[1].(int)]
+	}).(SenderLockOutput)
+}
+
 type GetDkimsDkimCollection struct {
 	Items []GetDkimsDkimCollectionItem `pulumi:"items"`
 }
@@ -463,6 +862,139 @@ func (o GetDkimsFilterArrayOutput) Index(i pulumi.IntInput) GetDkimsFilterOutput
 	}).(GetDkimsFilterOutput)
 }
 
+type GetEmailDomainLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailDomainLockInput is an input type that accepts GetEmailDomainLockArgs and GetEmailDomainLockOutput values.
+// You can construct a concrete instance of `GetEmailDomainLockInput` via:
+//
+//	GetEmailDomainLockArgs{...}
+type GetEmailDomainLockInput interface {
+	pulumi.Input
+
+	ToGetEmailDomainLockOutput() GetEmailDomainLockOutput
+	ToGetEmailDomainLockOutputWithContext(context.Context) GetEmailDomainLockOutput
+}
+
+type GetEmailDomainLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailDomainLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailDomainLock)(nil)).Elem()
+}
+
+func (i GetEmailDomainLockArgs) ToGetEmailDomainLockOutput() GetEmailDomainLockOutput {
+	return i.ToGetEmailDomainLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailDomainLockArgs) ToGetEmailDomainLockOutputWithContext(ctx context.Context) GetEmailDomainLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainLockOutput)
+}
+
+// GetEmailDomainLockArrayInput is an input type that accepts GetEmailDomainLockArray and GetEmailDomainLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailDomainLockArrayInput` via:
+//
+//	GetEmailDomainLockArray{ GetEmailDomainLockArgs{...} }
+type GetEmailDomainLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailDomainLockArrayOutput() GetEmailDomainLockArrayOutput
+	ToGetEmailDomainLockArrayOutputWithContext(context.Context) GetEmailDomainLockArrayOutput
+}
+
+type GetEmailDomainLockArray []GetEmailDomainLockInput
+
+func (GetEmailDomainLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailDomainLock)(nil)).Elem()
+}
+
+func (i GetEmailDomainLockArray) ToGetEmailDomainLockArrayOutput() GetEmailDomainLockArrayOutput {
+	return i.ToGetEmailDomainLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailDomainLockArray) ToGetEmailDomainLockArrayOutputWithContext(ctx context.Context) GetEmailDomainLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainLockArrayOutput)
+}
+
+type GetEmailDomainLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailDomainLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailDomainLock)(nil)).Elem()
+}
+
+func (o GetEmailDomainLockOutput) ToGetEmailDomainLockOutput() GetEmailDomainLockOutput {
+	return o
+}
+
+func (o GetEmailDomainLockOutput) ToGetEmailDomainLockOutputWithContext(ctx context.Context) GetEmailDomainLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetEmailDomainLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailDomainLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailDomainLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailDomainLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailDomainLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailDomainLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailDomainLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailDomainLock)(nil)).Elem()
+}
+
+func (o GetEmailDomainLockArrayOutput) ToGetEmailDomainLockArrayOutput() GetEmailDomainLockArrayOutput {
+	return o
+}
+
+func (o GetEmailDomainLockArrayOutput) ToGetEmailDomainLockArrayOutputWithContext(ctx context.Context) GetEmailDomainLockArrayOutput {
+	return o
+}
+
+func (o GetEmailDomainLockArrayOutput) Index(i pulumi.IntInput) GetEmailDomainLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainLock {
+		return vs[0].([]GetEmailDomainLock)[vs[1].(int)]
+	}).(GetEmailDomainLockOutput)
+}
+
 type GetEmailDomainsEmailDomainCollection struct {
 	Items []GetEmailDomainsEmailDomainCollectionItem `pulumi:"items"`
 }
@@ -578,6 +1110,8 @@ type GetEmailDomainsEmailDomainCollectionItem struct {
 	Id string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf bool `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks []GetEmailDomainsEmailDomainCollectionItemLock `pulumi:"locks"`
 	// A filter to only return resources that match the given name exactly.
 	Name string `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
@@ -618,6 +1152,8 @@ type GetEmailDomainsEmailDomainCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf pulumi.BoolInput `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks GetEmailDomainsEmailDomainCollectionItemLockArrayInput `pulumi:"locks"`
 	// A filter to only return resources that match the given name exactly.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Filter returned list by specified lifecycle state. This parameter is case-insensitive.
@@ -724,6 +1260,13 @@ func (o GetEmailDomainsEmailDomainCollectionItemOutput) IsSpf() pulumi.BoolOutpu
 	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) bool { return v.IsSpf }).(pulumi.BoolOutput)
 }
 
+// Locks associated with this resource.
+func (o GetEmailDomainsEmailDomainCollectionItemOutput) Locks() GetEmailDomainsEmailDomainCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) []GetEmailDomainsEmailDomainCollectionItemLock {
+		return v.Locks
+	}).(GetEmailDomainsEmailDomainCollectionItemLockArrayOutput)
+}
+
 // A filter to only return resources that match the given name exactly.
 func (o GetEmailDomainsEmailDomainCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItem) string { return v.Name }).(pulumi.StringOutput)
@@ -762,6 +1305,139 @@ func (o GetEmailDomainsEmailDomainCollectionItemArrayOutput) Index(i pulumi.IntI
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsEmailDomainCollectionItem {
 		return vs[0].([]GetEmailDomainsEmailDomainCollectionItem)[vs[1].(int)]
 	}).(GetEmailDomainsEmailDomainCollectionItemOutput)
+}
+
+type GetEmailDomainsEmailDomainCollectionItemLock struct {
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailDomainsEmailDomainCollectionItemLockInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemLockArgs and GetEmailDomainsEmailDomainCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionItemLockInput` via:
+//
+//	GetEmailDomainsEmailDomainCollectionItemLockArgs{...}
+type GetEmailDomainsEmailDomainCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetEmailDomainsEmailDomainCollectionItemLockOutput() GetEmailDomainsEmailDomainCollectionItemLockOutput
+	ToGetEmailDomainsEmailDomainCollectionItemLockOutputWithContext(context.Context) GetEmailDomainsEmailDomainCollectionItemLockOutput
+}
+
+type GetEmailDomainsEmailDomainCollectionItemLockArgs struct {
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailDomainsEmailDomainCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailDomainsEmailDomainCollectionItemLockArgs) ToGetEmailDomainsEmailDomainCollectionItemLockOutput() GetEmailDomainsEmailDomainCollectionItemLockOutput {
+	return i.ToGetEmailDomainsEmailDomainCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailDomainsEmailDomainCollectionItemLockArgs) ToGetEmailDomainsEmailDomainCollectionItemLockOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemLockOutput)
+}
+
+// GetEmailDomainsEmailDomainCollectionItemLockArrayInput is an input type that accepts GetEmailDomainsEmailDomainCollectionItemLockArray and GetEmailDomainsEmailDomainCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailDomainsEmailDomainCollectionItemLockArrayInput` via:
+//
+//	GetEmailDomainsEmailDomainCollectionItemLockArray{ GetEmailDomainsEmailDomainCollectionItemLockArgs{...} }
+type GetEmailDomainsEmailDomainCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutput() GetEmailDomainsEmailDomainCollectionItemLockArrayOutput
+	ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutputWithContext(context.Context) GetEmailDomainsEmailDomainCollectionItemLockArrayOutput
+}
+
+type GetEmailDomainsEmailDomainCollectionItemLockArray []GetEmailDomainsEmailDomainCollectionItemLockInput
+
+func (GetEmailDomainsEmailDomainCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailDomainsEmailDomainCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailDomainsEmailDomainCollectionItemLockArray) ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutput() GetEmailDomainsEmailDomainCollectionItemLockArrayOutput {
+	return i.ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailDomainsEmailDomainCollectionItemLockArray) ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailDomainsEmailDomainCollectionItemLockArrayOutput)
+}
+
+type GetEmailDomainsEmailDomainCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailDomainsEmailDomainCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) ToGetEmailDomainsEmailDomainCollectionItemLockOutput() GetEmailDomainsEmailDomainCollectionItemLockOutput {
+	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) ToGetEmailDomainsEmailDomainCollectionItemLockOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemLockOutput {
+	return o
+}
+
+// The OCID for the compartment.
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailDomainsEmailDomainCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailDomainsEmailDomainCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailDomainsEmailDomainCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailDomainsEmailDomainCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailDomainsEmailDomainCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemLockArrayOutput) ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutput() GetEmailDomainsEmailDomainCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemLockArrayOutput) ToGetEmailDomainsEmailDomainCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailDomainsEmailDomainCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailDomainsEmailDomainCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetEmailDomainsEmailDomainCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsEmailDomainCollectionItemLock {
+		return vs[0].([]GetEmailDomainsEmailDomainCollectionItemLock)[vs[1].(int)]
+	}).(GetEmailDomainsEmailDomainCollectionItemLockOutput)
 }
 
 type GetEmailDomainsFilter struct {
@@ -871,6 +1547,139 @@ func (o GetEmailDomainsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailDomai
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailDomainsFilter {
 		return vs[0].([]GetEmailDomainsFilter)[vs[1].(int)]
 	}).(GetEmailDomainsFilterOutput)
+}
+
+type GetEmailReturnPathLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailReturnPathLockInput is an input type that accepts GetEmailReturnPathLockArgs and GetEmailReturnPathLockOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathLockInput` via:
+//
+//	GetEmailReturnPathLockArgs{...}
+type GetEmailReturnPathLockInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathLockOutput() GetEmailReturnPathLockOutput
+	ToGetEmailReturnPathLockOutputWithContext(context.Context) GetEmailReturnPathLockOutput
+}
+
+type GetEmailReturnPathLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailReturnPathLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathLock)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathLockArgs) ToGetEmailReturnPathLockOutput() GetEmailReturnPathLockOutput {
+	return i.ToGetEmailReturnPathLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathLockArgs) ToGetEmailReturnPathLockOutputWithContext(ctx context.Context) GetEmailReturnPathLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathLockOutput)
+}
+
+// GetEmailReturnPathLockArrayInput is an input type that accepts GetEmailReturnPathLockArray and GetEmailReturnPathLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathLockArrayInput` via:
+//
+//	GetEmailReturnPathLockArray{ GetEmailReturnPathLockArgs{...} }
+type GetEmailReturnPathLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathLockArrayOutput() GetEmailReturnPathLockArrayOutput
+	ToGetEmailReturnPathLockArrayOutputWithContext(context.Context) GetEmailReturnPathLockArrayOutput
+}
+
+type GetEmailReturnPathLockArray []GetEmailReturnPathLockInput
+
+func (GetEmailReturnPathLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathLock)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathLockArray) ToGetEmailReturnPathLockArrayOutput() GetEmailReturnPathLockArrayOutput {
+	return i.ToGetEmailReturnPathLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathLockArray) ToGetEmailReturnPathLockArrayOutputWithContext(ctx context.Context) GetEmailReturnPathLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathLockArrayOutput)
+}
+
+type GetEmailReturnPathLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathLock)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathLockOutput) ToGetEmailReturnPathLockOutput() GetEmailReturnPathLockOutput {
+	return o
+}
+
+func (o GetEmailReturnPathLockOutput) ToGetEmailReturnPathLockOutputWithContext(ctx context.Context) GetEmailReturnPathLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetEmailReturnPathLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailReturnPathLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailReturnPathLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailReturnPathLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailReturnPathLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailReturnPathLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathLock)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathLockArrayOutput) ToGetEmailReturnPathLockArrayOutput() GetEmailReturnPathLockArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathLockArrayOutput) ToGetEmailReturnPathLockArrayOutputWithContext(ctx context.Context) GetEmailReturnPathLockArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathLockArrayOutput) Index(i pulumi.IntInput) GetEmailReturnPathLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathLock {
+		return vs[0].([]GetEmailReturnPathLock)[vs[1].(int)]
+	}).(GetEmailReturnPathLockOutput)
 }
 
 type GetEmailReturnPathsEmailReturnPathCollection struct {
@@ -986,6 +1795,8 @@ type GetEmailReturnPathsEmailReturnPathCollectionItem struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetEmailReturnPathsEmailReturnPathCollectionItemLock `pulumi:"locks"`
 	// A filter to only return resources that match the given name exactly.
 	Name string `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
@@ -1028,6 +1839,8 @@ type GetEmailReturnPathsEmailReturnPathCollectionItemArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayInput `pulumi:"locks"`
 	// A filter to only return resources that match the given name exactly.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
@@ -1133,6 +1946,13 @@ func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) LifecycleDetails
 	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) Locks() GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) []GetEmailReturnPathsEmailReturnPathCollectionItemLock {
+		return v.Locks
+	}).(GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput)
+}
+
 // A filter to only return resources that match the given name exactly.
 func (o GetEmailReturnPathsEmailReturnPathCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItem) string { return v.Name }).(pulumi.StringOutput)
@@ -1181,6 +2001,139 @@ func (o GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput) Index(i pul
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsEmailReturnPathCollectionItem {
 		return vs[0].([]GetEmailReturnPathsEmailReturnPathCollectionItem)[vs[1].(int)]
 	}).(GetEmailReturnPathsEmailReturnPathCollectionItemOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemLock struct {
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionItemLockInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs and GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionItemLockInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs{...}
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs struct {
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput)
+}
+
+// GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayInput is an input type that accepts GetEmailReturnPathsEmailReturnPathCollectionItemLockArray and GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayInput` via:
+//
+//	GetEmailReturnPathsEmailReturnPathCollectionItemLockArray{ GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs{...} }
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput
+	ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutputWithContext(context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockArray []GetEmailReturnPathsEmailReturnPathCollectionItemLockInput
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemLockArray) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput {
+	return i.ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetEmailReturnPathsEmailReturnPathCollectionItemLockArray) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput {
+	return o
+}
+
+// The OCID for the compartment.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItemLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEmailReturnPathsEmailReturnPathCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetEmailReturnPathsEmailReturnPathCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput() GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput) ToGetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutputWithContext(ctx context.Context) GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsEmailReturnPathCollectionItemLock {
+		return vs[0].([]GetEmailReturnPathsEmailReturnPathCollectionItemLock)[vs[1].(int)]
+	}).(GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput)
 }
 
 type GetEmailReturnPathsFilter struct {
@@ -1290,6 +2243,139 @@ func (o GetEmailReturnPathsFilterArrayOutput) Index(i pulumi.IntInput) GetEmailR
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetEmailReturnPathsFilter {
 		return vs[0].([]GetEmailReturnPathsFilter)[vs[1].(int)]
 	}).(GetEmailReturnPathsFilterOutput)
+}
+
+type GetSenderLock struct {
+	// The lock compartment ID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetSenderLockInput is an input type that accepts GetSenderLockArgs and GetSenderLockOutput values.
+// You can construct a concrete instance of `GetSenderLockInput` via:
+//
+//	GetSenderLockArgs{...}
+type GetSenderLockInput interface {
+	pulumi.Input
+
+	ToGetSenderLockOutput() GetSenderLockOutput
+	ToGetSenderLockOutputWithContext(context.Context) GetSenderLockOutput
+}
+
+type GetSenderLockArgs struct {
+	// The lock compartment ID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetSenderLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderLock)(nil)).Elem()
+}
+
+func (i GetSenderLockArgs) ToGetSenderLockOutput() GetSenderLockOutput {
+	return i.ToGetSenderLockOutputWithContext(context.Background())
+}
+
+func (i GetSenderLockArgs) ToGetSenderLockOutputWithContext(ctx context.Context) GetSenderLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderLockOutput)
+}
+
+// GetSenderLockArrayInput is an input type that accepts GetSenderLockArray and GetSenderLockArrayOutput values.
+// You can construct a concrete instance of `GetSenderLockArrayInput` via:
+//
+//	GetSenderLockArray{ GetSenderLockArgs{...} }
+type GetSenderLockArrayInput interface {
+	pulumi.Input
+
+	ToGetSenderLockArrayOutput() GetSenderLockArrayOutput
+	ToGetSenderLockArrayOutputWithContext(context.Context) GetSenderLockArrayOutput
+}
+
+type GetSenderLockArray []GetSenderLockInput
+
+func (GetSenderLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderLock)(nil)).Elem()
+}
+
+func (i GetSenderLockArray) ToGetSenderLockArrayOutput() GetSenderLockArrayOutput {
+	return i.ToGetSenderLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetSenderLockArray) ToGetSenderLockArrayOutputWithContext(ctx context.Context) GetSenderLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSenderLockArrayOutput)
+}
+
+type GetSenderLockOutput struct{ *pulumi.OutputState }
+
+func (GetSenderLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSenderLock)(nil)).Elem()
+}
+
+func (o GetSenderLockOutput) ToGetSenderLockOutput() GetSenderLockOutput {
+	return o
+}
+
+func (o GetSenderLockOutput) ToGetSenderLockOutputWithContext(ctx context.Context) GetSenderLockOutput {
+	return o
+}
+
+// The lock compartment ID.
+func (o GetSenderLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetSenderLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetSenderLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSenderLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetSenderLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSenderLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetSenderLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSenderLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSenderLock)(nil)).Elem()
+}
+
+func (o GetSenderLockArrayOutput) ToGetSenderLockArrayOutput() GetSenderLockArrayOutput {
+	return o
+}
+
+func (o GetSenderLockArrayOutput) ToGetSenderLockArrayOutputWithContext(ctx context.Context) GetSenderLockArrayOutput {
+	return o
+}
+
+func (o GetSenderLockArrayOutput) Index(i pulumi.IntInput) GetSenderLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSenderLock {
+		return vs[0].([]GetSenderLock)[vs[1].(int)]
+	}).(GetSenderLockOutput)
 }
 
 type GetSendersFilter struct {
@@ -1413,6 +2499,8 @@ type GetSendersSender struct {
 	Id string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf bool `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks []GetSendersSenderLock `pulumi:"locks"`
 	// The current state of a sender.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1447,6 +2535,8 @@ type GetSendersSenderArgs struct {
 	Id pulumi.StringInput `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf pulumi.BoolInput `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks GetSendersSenderLockArrayInput `pulumi:"locks"`
 	// The current state of a sender.
 	State pulumi.StringInput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1541,6 +2631,11 @@ func (o GetSendersSenderOutput) IsSpf() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetSendersSender) bool { return v.IsSpf }).(pulumi.BoolOutput)
 }
 
+// Locks associated with this resource.
+func (o GetSendersSenderOutput) Locks() GetSendersSenderLockArrayOutput {
+	return o.ApplyT(func(v GetSendersSender) []GetSendersSenderLock { return v.Locks }).(GetSendersSenderLockArrayOutput)
+}
+
 // The current state of a sender.
 func (o GetSendersSenderOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSendersSender) string { return v.State }).(pulumi.StringOutput)
@@ -1574,6 +2669,139 @@ func (o GetSendersSenderArrayOutput) Index(i pulumi.IntInput) GetSendersSenderOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSendersSender {
 		return vs[0].([]GetSendersSender)[vs[1].(int)]
 	}).(GetSendersSenderOutput)
+}
+
+type GetSendersSenderLock struct {
+	// The OCID for the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated string `pulumi:"timeCreated"`
+	// Lock type.
+	Type string `pulumi:"type"`
+}
+
+// GetSendersSenderLockInput is an input type that accepts GetSendersSenderLockArgs and GetSendersSenderLockOutput values.
+// You can construct a concrete instance of `GetSendersSenderLockInput` via:
+//
+//	GetSendersSenderLockArgs{...}
+type GetSendersSenderLockInput interface {
+	pulumi.Input
+
+	ToGetSendersSenderLockOutput() GetSendersSenderLockOutput
+	ToGetSendersSenderLockOutputWithContext(context.Context) GetSendersSenderLockOutput
+}
+
+type GetSendersSenderLockArgs struct {
+	// The OCID for the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Lock type.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetSendersSenderLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSendersSenderLock)(nil)).Elem()
+}
+
+func (i GetSendersSenderLockArgs) ToGetSendersSenderLockOutput() GetSendersSenderLockOutput {
+	return i.ToGetSendersSenderLockOutputWithContext(context.Background())
+}
+
+func (i GetSendersSenderLockArgs) ToGetSendersSenderLockOutputWithContext(ctx context.Context) GetSendersSenderLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderLockOutput)
+}
+
+// GetSendersSenderLockArrayInput is an input type that accepts GetSendersSenderLockArray and GetSendersSenderLockArrayOutput values.
+// You can construct a concrete instance of `GetSendersSenderLockArrayInput` via:
+//
+//	GetSendersSenderLockArray{ GetSendersSenderLockArgs{...} }
+type GetSendersSenderLockArrayInput interface {
+	pulumi.Input
+
+	ToGetSendersSenderLockArrayOutput() GetSendersSenderLockArrayOutput
+	ToGetSendersSenderLockArrayOutputWithContext(context.Context) GetSendersSenderLockArrayOutput
+}
+
+type GetSendersSenderLockArray []GetSendersSenderLockInput
+
+func (GetSendersSenderLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSendersSenderLock)(nil)).Elem()
+}
+
+func (i GetSendersSenderLockArray) ToGetSendersSenderLockArrayOutput() GetSendersSenderLockArrayOutput {
+	return i.ToGetSendersSenderLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetSendersSenderLockArray) ToGetSendersSenderLockArrayOutputWithContext(ctx context.Context) GetSendersSenderLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSendersSenderLockArrayOutput)
+}
+
+type GetSendersSenderLockOutput struct{ *pulumi.OutputState }
+
+func (GetSendersSenderLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSendersSenderLock)(nil)).Elem()
+}
+
+func (o GetSendersSenderLockOutput) ToGetSendersSenderLockOutput() GetSendersSenderLockOutput {
+	return o
+}
+
+func (o GetSendersSenderLockOutput) ToGetSendersSenderLockOutputWithContext(ctx context.Context) GetSendersSenderLockOutput {
+	return o
+}
+
+// The OCID for the compartment.
+func (o GetSendersSenderLockOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSenderLock) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+func (o GetSendersSenderLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSenderLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+func (o GetSendersSenderLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSenderLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+func (o GetSendersSenderLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSenderLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Lock type.
+func (o GetSendersSenderLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSendersSenderLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetSendersSenderLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSendersSenderLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSendersSenderLock)(nil)).Elem()
+}
+
+func (o GetSendersSenderLockArrayOutput) ToGetSendersSenderLockArrayOutput() GetSendersSenderLockArrayOutput {
+	return o
+}
+
+func (o GetSendersSenderLockArrayOutput) ToGetSendersSenderLockArrayOutputWithContext(ctx context.Context) GetSendersSenderLockArrayOutput {
+	return o
+}
+
+func (o GetSendersSenderLockArrayOutput) Index(i pulumi.IntInput) GetSendersSenderLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSendersSenderLock {
+		return vs[0].([]GetSendersSenderLock)[vs[1].(int)]
+	}).(GetSendersSenderLockOutput)
 }
 
 type GetSuppressionsFilter struct {
@@ -1852,54 +3080,90 @@ func (o GetSuppressionsSuppressionArrayOutput) Index(i pulumi.IntInput) GetSuppr
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailDomainLockInput)(nil)).Elem(), EmailDomainLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailDomainLockArrayInput)(nil)).Elem(), EmailDomainLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailReturnPathLockInput)(nil)).Elem(), EmailReturnPathLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*EmailReturnPathLockArrayInput)(nil)).Elem(), EmailReturnPathLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SenderLockInput)(nil)).Elem(), SenderLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SenderLockArrayInput)(nil)).Elem(), SenderLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsDkimCollectionInput)(nil)).Elem(), GetDkimsDkimCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsDkimCollectionArrayInput)(nil)).Elem(), GetDkimsDkimCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsDkimCollectionItemInput)(nil)).Elem(), GetDkimsDkimCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsDkimCollectionItemArrayInput)(nil)).Elem(), GetDkimsDkimCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsFilterInput)(nil)).Elem(), GetDkimsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDkimsFilterArrayInput)(nil)).Elem(), GetDkimsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainLockInput)(nil)).Elem(), GetEmailDomainLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainLockArrayInput)(nil)).Elem(), GetEmailDomainLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionArrayInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemArrayInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemLockInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsEmailDomainCollectionItemLockArrayInput)(nil)).Elem(), GetEmailDomainsEmailDomainCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterInput)(nil)).Elem(), GetEmailDomainsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailDomainsFilterArrayInput)(nil)).Elem(), GetEmailDomainsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathLockInput)(nil)).Elem(), GetEmailReturnPathLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathLockArrayInput)(nil)).Elem(), GetEmailReturnPathLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionArrayInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemArrayInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemLockInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayInput)(nil)).Elem(), GetEmailReturnPathsEmailReturnPathCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsFilterInput)(nil)).Elem(), GetEmailReturnPathsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEmailReturnPathsFilterArrayInput)(nil)).Elem(), GetEmailReturnPathsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderLockInput)(nil)).Elem(), GetSenderLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSenderLockArrayInput)(nil)).Elem(), GetSenderLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersFilterInput)(nil)).Elem(), GetSendersFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersFilterArrayInput)(nil)).Elem(), GetSendersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersSenderInput)(nil)).Elem(), GetSendersSenderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersSenderArrayInput)(nil)).Elem(), GetSendersSenderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersSenderLockInput)(nil)).Elem(), GetSendersSenderLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSendersSenderLockArrayInput)(nil)).Elem(), GetSendersSenderLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSuppressionsFilterInput)(nil)).Elem(), GetSuppressionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSuppressionsFilterArrayInput)(nil)).Elem(), GetSuppressionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSuppressionsSuppressionInput)(nil)).Elem(), GetSuppressionsSuppressionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSuppressionsSuppressionArrayInput)(nil)).Elem(), GetSuppressionsSuppressionArray{})
+	pulumi.RegisterOutputType(EmailDomainLockOutput{})
+	pulumi.RegisterOutputType(EmailDomainLockArrayOutput{})
+	pulumi.RegisterOutputType(EmailReturnPathLockOutput{})
+	pulumi.RegisterOutputType(EmailReturnPathLockArrayOutput{})
+	pulumi.RegisterOutputType(SenderLockOutput{})
+	pulumi.RegisterOutputType(SenderLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDkimsDkimCollectionOutput{})
 	pulumi.RegisterOutputType(GetDkimsDkimCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDkimsDkimCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDkimsDkimCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDkimsFilterOutput{})
 	pulumi.RegisterOutputType(GetDkimsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailDomainLockOutput{})
+	pulumi.RegisterOutputType(GetEmailDomainLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetEmailDomainsEmailDomainCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterOutput{})
 	pulumi.RegisterOutputType(GetEmailDomainsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathLockOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetEmailReturnPathsEmailReturnPathCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsFilterOutput{})
 	pulumi.RegisterOutputType(GetEmailReturnPathsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetSenderLockOutput{})
+	pulumi.RegisterOutputType(GetSenderLockArrayOutput{})
 	pulumi.RegisterOutputType(GetSendersFilterOutput{})
 	pulumi.RegisterOutputType(GetSendersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSendersSenderOutput{})
 	pulumi.RegisterOutputType(GetSendersSenderArrayOutput{})
+	pulumi.RegisterOutputType(GetSendersSenderLockOutput{})
+	pulumi.RegisterOutputType(GetSendersSenderLockArrayOutput{})
 	pulumi.RegisterOutputType(GetSuppressionsFilterOutput{})
 	pulumi.RegisterOutputType(GetSuppressionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetSuppressionsSuppressionOutput{})

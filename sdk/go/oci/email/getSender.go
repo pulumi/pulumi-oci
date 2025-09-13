@@ -58,7 +58,7 @@ type LookupSenderArgs struct {
 
 // A collection of values returned by getSender.
 type LookupSenderResult struct {
-	// The OCID for the compartment.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -71,8 +71,10 @@ type LookupSenderResult struct {
 	// The unique OCID of the sender.
 	Id string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
-	IsSpf    bool   `pulumi:"isSpf"`
-	SenderId string `pulumi:"senderId"`
+	IsSpf bool `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks    []GetSenderLock `pulumi:"locks"`
+	SenderId string          `pulumi:"senderId"`
 	// The current status of the approved sender.
 	State string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -115,7 +117,7 @@ func (o LookupSenderResultOutput) ToLookupSenderResultOutputWithContext(ctx cont
 	return o
 }
 
-// The OCID for the compartment.
+// The lock compartment ID.
 func (o LookupSenderResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSenderResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -148,6 +150,11 @@ func (o LookupSenderResultOutput) Id() pulumi.StringOutput {
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 func (o LookupSenderResultOutput) IsSpf() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupSenderResult) bool { return v.IsSpf }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupSenderResultOutput) Locks() GetSenderLockArrayOutput {
+	return o.ApplyT(func(v LookupSenderResult) []GetSenderLock { return v.Locks }).(GetSenderLockArrayOutput)
 }
 
 func (o LookupSenderResultOutput) SenderId() pulumi.StringOutput {

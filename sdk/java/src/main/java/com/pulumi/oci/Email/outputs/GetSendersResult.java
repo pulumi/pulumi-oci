@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSendersResult {
     /**
-     * @return The OCID for the compartment.
+     * @return The lock compartment ID.
      * 
      */
     private String compartmentId;
@@ -45,7 +45,7 @@ public final class GetSendersResult {
 
     private GetSendersResult() {}
     /**
-     * @return The OCID for the compartment.
+     * @return The lock compartment ID.
      * 
      */
     public String compartmentId() {

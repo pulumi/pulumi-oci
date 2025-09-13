@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSenderResult',
@@ -26,7 +27,7 @@ class GetSenderResult:
     """
     A collection of values returned by getSender.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, email_address=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, sender_id=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, email_address=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, locks=None, sender_id=None, state=None, system_tags=None, time_created=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -48,6 +49,9 @@ class GetSenderResult:
         if is_spf and not isinstance(is_spf, bool):
             raise TypeError("Expected argument 'is_spf' to be a bool")
         pulumi.set(__self__, "is_spf", is_spf)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if sender_id and not isinstance(sender_id, str):
             raise TypeError("Expected argument 'sender_id' to be a str")
         pulumi.set(__self__, "sender_id", sender_id)
@@ -65,7 +69,7 @@ class GetSenderResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OCID for the compartment.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -118,6 +122,14 @@ class GetSenderResult:
         return pulumi.get(self, "is_spf")
 
     @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSenderLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
     @pulumi.getter(name="senderId")
     def sender_id(self) -> _builtins.str:
         return pulumi.get(self, "sender_id")
@@ -160,6 +172,7 @@ class AwaitableGetSenderResult(GetSenderResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_spf=self.is_spf,
+            locks=self.locks,
             sender_id=self.sender_id,
             state=self.state,
             system_tags=self.system_tags,
@@ -198,6 +211,7 @@ def get_sender(sender_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_spf=pulumi.get(__ret__, 'is_spf'),
+        locks=pulumi.get(__ret__, 'locks'),
         sender_id=pulumi.get(__ret__, 'sender_id'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -233,6 +247,7 @@ def get_sender_output(sender_id: Optional[pulumi.Input[_builtins.str]] = None,
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_spf=pulumi.get(__response__, 'is_spf'),
+        locks=pulumi.get(__response__, 'locks'),
         sender_id=pulumi.get(__response__, 'sender_id'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

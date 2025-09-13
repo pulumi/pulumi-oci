@@ -122,13 +122,25 @@ def get_db_system_storage_performances(compartment_id: Optional[_builtins.str] =
 
     Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+        shape_type=db_system_storage_performance_shape_type,
+        database_edition=db_system_storage_performance_database_edition,
+        compartment_id=compartment_id)
+    ```
+
 
     :param _builtins.str compartment_id: Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str database_edition: Optional. Filters the performance results by database edition. Valid values are:
            * STANDARD_EDITION
            * ENTERPRISE_EDITION
            * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-           * ENTERPRISE_EDITION_EXTREME
+           * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
            * ENTERPRISE_EDITION_DEVELOPER
     :param _builtins.str shape_type: Optional. Filters the performance results by shape type.
     :param _builtins.str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.
@@ -163,13 +175,25 @@ def get_db_system_storage_performances_output(compartment_id: Optional[pulumi.In
 
     Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
 
+    ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_db_system_storage_performances = oci.Database.get_db_system_storage_performances(storage_management=db_system_storage_performance_storage_management,
+        shape_type=db_system_storage_performance_shape_type,
+        database_edition=db_system_storage_performance_database_edition,
+        compartment_id=compartment_id)
+    ```
+
 
     :param _builtins.str compartment_id: Optional. The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.str database_edition: Optional. Filters the performance results by database edition. Valid values are:
            * STANDARD_EDITION
            * ENTERPRISE_EDITION
            * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-           * ENTERPRISE_EDITION_EXTREME
+           * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
            * ENTERPRISE_EDITION_DEVELOPER
     :param _builtins.str shape_type: Optional. Filters the performance results by shape type.
     :param _builtins.str storage_management: The DB system storage management option. Used to list database versions available for that storage manager. Valid values are `ASM` and `LVM`.

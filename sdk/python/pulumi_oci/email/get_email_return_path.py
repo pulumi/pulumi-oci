@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetEmailReturnPathResult',
@@ -26,7 +27,7 @@ class GetEmailReturnPathResult:
     """
     A collection of values returned by getEmailReturnPath.
     """
-    def __init__(__self__, cname_record_value=None, compartment_id=None, defined_tags=None, description=None, dns_subdomain_name=None, email_return_path_id=None, freeform_tags=None, id=None, lifecycle_details=None, name=None, parent_resource_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cname_record_value=None, compartment_id=None, defined_tags=None, description=None, dns_subdomain_name=None, email_return_path_id=None, freeform_tags=None, id=None, lifecycle_details=None, locks=None, name=None, parent_resource_id=None, state=None, system_tags=None, time_created=None, time_updated=None):
         if cname_record_value and not isinstance(cname_record_value, str):
             raise TypeError("Expected argument 'cname_record_value' to be a str")
         pulumi.set(__self__, "cname_record_value", cname_record_value)
@@ -54,6 +55,9 @@ class GetEmailReturnPathResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -85,7 +89,7 @@ class GetEmailReturnPathResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -141,6 +145,14 @@ class GetEmailReturnPathResult:
         A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetEmailReturnPathLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter
@@ -206,6 +218,7 @@ class AwaitableGetEmailReturnPathResult(GetEmailReturnPathResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             name=self.name,
             parent_resource_id=self.parent_resource_id,
             state=self.state,
@@ -248,6 +261,7 @@ def get_email_return_path(email_return_path_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         name=pulumi.get(__ret__, 'name'),
         parent_resource_id=pulumi.get(__ret__, 'parent_resource_id'),
         state=pulumi.get(__ret__, 'state'),
@@ -287,6 +301,7 @@ def get_email_return_path_output(email_return_path_id: Optional[pulumi.Input[_bu
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         lifecycle_details=pulumi.get(__response__, 'lifecycle_details'),
+        locks=pulumi.get(__response__, 'locks'),
         name=pulumi.get(__response__, 'name'),
         parent_resource_id=pulumi.get(__response__, 'parent_resource_id'),
         state=pulumi.get(__response__, 'state'),

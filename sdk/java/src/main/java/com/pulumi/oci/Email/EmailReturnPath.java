@@ -9,8 +9,10 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Email.EmailReturnPathArgs;
 import com.pulumi.oci.Email.inputs.EmailReturnPathState;
+import com.pulumi.oci.Email.outputs.EmailReturnPathLock;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -84,14 +86,14 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
         return this.cnameRecordValue;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     public Output<String> compartmentId() {
@@ -166,6 +168,20 @@ public class EmailReturnPath extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,EmailReturnPathLock.class}, tree="[0,1]")
+    private Output<List<EmailReturnPathLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<EmailReturnPathLock>> locks() {
+        return this.locks;
     }
     /**
      * The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).

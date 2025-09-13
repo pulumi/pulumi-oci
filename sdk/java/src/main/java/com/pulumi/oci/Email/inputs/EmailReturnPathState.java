@@ -5,7 +5,9 @@ package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Email.inputs.EmailReturnPathLockArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -32,14 +34,14 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -119,6 +121,21 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<EmailReturnPathLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<EmailReturnPathLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -227,6 +244,7 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
         this.dnsSubdomainName = $.dnsSubdomainName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.name = $.name;
         this.parentResourceId = $.parentResourceId;
         this.state = $.state;
@@ -275,7 +293,7 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+         * @param compartmentId The lock compartment ID.
          * 
          * @return builder
          * 
@@ -286,7 +304,7 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param compartmentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+         * @param compartmentId The lock compartment ID.
          * 
          * @return builder
          * 
@@ -398,6 +416,37 @@ public final class EmailReturnPathState extends com.pulumi.resources.ResourceArg
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<EmailReturnPathLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<EmailReturnPathLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(EmailReturnPathLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

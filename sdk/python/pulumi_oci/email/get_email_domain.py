@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetEmailDomainResult',
@@ -26,7 +27,7 @@ class GetEmailDomainResult:
     """
     A collection of values returned by getEmailDomain.
     """
-    def __init__(__self__, active_dkim_id=None, compartment_id=None, defined_tags=None, description=None, domain_verification_id=None, domain_verification_status=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, name=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, active_dkim_id=None, compartment_id=None, defined_tags=None, description=None, domain_verification_id=None, domain_verification_status=None, email_domain_id=None, freeform_tags=None, id=None, is_spf=None, locks=None, name=None, state=None, system_tags=None, time_created=None):
         if active_dkim_id and not isinstance(active_dkim_id, str):
             raise TypeError("Expected argument 'active_dkim_id' to be a str")
         pulumi.set(__self__, "active_dkim_id", active_dkim_id)
@@ -57,6 +58,9 @@ class GetEmailDomainResult:
         if is_spf and not isinstance(is_spf, bool):
             raise TypeError("Expected argument 'is_spf' to be a bool")
         pulumi.set(__self__, "is_spf", is_spf)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
@@ -82,7 +86,7 @@ class GetEmailDomainResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -149,6 +153,14 @@ class GetEmailDomainResult:
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetEmailDomainLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
@@ -196,6 +208,7 @@ class AwaitableGetEmailDomainResult(GetEmailDomainResult):
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_spf=self.is_spf,
+            locks=self.locks,
             name=self.name,
             state=self.state,
             system_tags=self.system_tags,
@@ -237,6 +250,7 @@ def get_email_domain(email_domain_id: Optional[_builtins.str] = None,
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_spf=pulumi.get(__ret__, 'is_spf'),
+        locks=pulumi.get(__ret__, 'locks'),
         name=pulumi.get(__ret__, 'name'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -275,6 +289,7 @@ def get_email_domain_output(email_domain_id: Optional[pulumi.Input[_builtins.str
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_spf=pulumi.get(__response__, 'is_spf'),
+        locks=pulumi.get(__response__, 'locks'),
         name=pulumi.get(__response__, 'name'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

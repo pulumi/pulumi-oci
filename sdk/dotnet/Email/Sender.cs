@@ -93,6 +93,12 @@ namespace Pulumi.Oci.Email
         public Output<bool> IsSpf { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.SenderLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// The current status of the approved sender.
         /// </summary>
         [Output("state")]
@@ -255,6 +261,18 @@ namespace Pulumi.Oci.Email
         /// </summary>
         [Input("isSpf")]
         public Input<bool>? IsSpf { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.SenderLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.SenderLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.SenderLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// The current status of the approved sender.

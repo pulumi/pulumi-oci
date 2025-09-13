@@ -64,7 +64,7 @@ export interface GetSendersArgs {
  */
 export interface GetSendersResult {
     /**
-     * The OCID for the compartment.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     readonly domain?: string;

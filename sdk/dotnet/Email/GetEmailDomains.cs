@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Email
     public sealed class GetEmailDomainsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>

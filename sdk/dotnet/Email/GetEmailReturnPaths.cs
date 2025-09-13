@@ -200,7 +200,7 @@ namespace Pulumi.Oci.Email
     public sealed class GetEmailReturnPathsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

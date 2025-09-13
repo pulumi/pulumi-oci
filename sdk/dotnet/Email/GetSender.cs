@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Email
     public sealed class GetSenderResult
     {
         /// <summary>
-        /// The OCID for the compartment.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -151,6 +151,10 @@ namespace Pulumi.Oci.Email
         /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         /// </summary>
         public readonly bool IsSpf;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSenderLockResult> Locks;
         public readonly string SenderId;
         /// <summary>
         /// The current status of the approved sender.
@@ -181,6 +185,8 @@ namespace Pulumi.Oci.Email
 
             bool isSpf,
 
+            ImmutableArray<Outputs.GetSenderLockResult> locks,
+
             string senderId,
 
             string state,
@@ -196,6 +202,7 @@ namespace Pulumi.Oci.Email
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;
+            Locks = locks;
             SenderId = senderId;
             State = state;
             SystemTags = systemTags;

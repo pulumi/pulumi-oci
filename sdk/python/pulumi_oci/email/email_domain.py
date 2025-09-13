@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['EmailDomainArgs', 'EmailDomain']
 
@@ -138,6 +140,7 @@ class _EmailDomainState:
                  domain_verification_status: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['EmailDomainLockArgs']]]] = None,
                  name: Optional[pulumi.Input[_builtins.str]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -151,7 +154,7 @@ class _EmailDomainState:
         :param pulumi.Input[_builtins.str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
         :param pulumi.Input[_builtins.str] domain_verification_status: The current domain verification status.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
                
                
@@ -177,6 +180,8 @@ class _EmailDomainState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_spf is not None:
             pulumi.set(__self__, "is_spf", is_spf)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if state is not None:
@@ -274,13 +279,22 @@ class _EmailDomainState:
     @pulumi.getter(name="isSpf")
     def is_spf(self) -> Optional[pulumi.Input[_builtins.bool]]:
         """
-        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         """
         return pulumi.get(self, "is_spf")
 
     @is_spf.setter
     def is_spf(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_spf", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['EmailDomainLockArgs']]]]:
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['EmailDomainLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter
@@ -472,6 +486,7 @@ class EmailDomain(pulumi.CustomResource):
             __props__.__dict__["active_dkim_id"] = None
             __props__.__dict__["domain_verification_status"] = None
             __props__.__dict__["is_spf"] = None
+            __props__.__dict__["locks"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -493,6 +508,7 @@ class EmailDomain(pulumi.CustomResource):
             domain_verification_status: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['EmailDomainLockArgs', 'EmailDomainLockArgsDict']]]]] = None,
             name: Optional[pulumi.Input[_builtins.str]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -511,7 +527,7 @@ class EmailDomain(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] domain_verification_id: (Updatable) Id for Domain in Domain Management (under governance) if DOMAINID verification method used.
         :param pulumi.Input[_builtins.str] domain_verification_status: The current domain verification status.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         :param pulumi.Input[_builtins.str] name: The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
                
                
@@ -533,6 +549,7 @@ class EmailDomain(pulumi.CustomResource):
         __props__.__dict__["domain_verification_status"] = domain_verification_status
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_spf"] = is_spf
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["name"] = name
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -599,9 +616,14 @@ class EmailDomain(pulumi.CustomResource):
     @pulumi.getter(name="isSpf")
     def is_spf(self) -> pulumi.Output[_builtins.bool]:
         """
-        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
         """
         return pulumi.get(self, "is_spf")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.EmailDomainLock']]:
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter

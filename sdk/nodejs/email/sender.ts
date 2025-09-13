@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -92,6 +94,10 @@ export class Sender extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly isSpf: pulumi.Output<boolean>;
     /**
+     * Locks associated with this resource.
+     */
+    declare public /*out*/ readonly locks: pulumi.Output<outputs.Email.SenderLock[]>;
+    /**
      * The current status of the approved sender.
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
@@ -123,6 +129,7 @@ export class Sender extends pulumi.CustomResource {
             resourceInputs["emailDomainId"] = state?.emailDomainId;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isSpf"] = state?.isSpf;
+            resourceInputs["locks"] = state?.locks;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
@@ -140,6 +147,7 @@ export class Sender extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["emailDomainId"] = undefined /*out*/;
             resourceInputs["isSpf"] = undefined /*out*/;
+            resourceInputs["locks"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -181,6 +189,10 @@ export interface SenderState {
      * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
      */
     isSpf?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.Email.SenderLock>[]>;
     /**
      * The current status of the approved sender.
      */

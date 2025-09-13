@@ -50,6 +50,10 @@ namespace Pulumi.Oci.Email.Outputs
         /// </summary>
         public readonly bool IsSpf;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetEmailDomainsEmailDomainCollectionItemLockResult> Locks;
+        /// <summary>
         /// A filter to only return resources that match the given name exactly.
         /// </summary>
         public readonly string Name;
@@ -86,6 +90,8 @@ namespace Pulumi.Oci.Email.Outputs
 
             bool isSpf,
 
+            ImmutableArray<Outputs.GetEmailDomainsEmailDomainCollectionItemLockResult> locks,
+
             string name,
 
             string state,
@@ -103,6 +109,7 @@ namespace Pulumi.Oci.Email.Outputs
             FreeformTags = freeformTags;
             Id = id;
             IsSpf = isSpf;
+            Locks = locks;
             Name = name;
             State = state;
             SystemTags = systemTags;

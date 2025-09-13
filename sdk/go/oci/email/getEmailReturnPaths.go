@@ -71,7 +71,7 @@ type GetEmailReturnPathsArgs struct {
 
 // A collection of values returned by getEmailReturnPaths.
 type GetEmailReturnPathsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+	// The lock compartment ID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The list of email_return_path_collection.
 	EmailReturnPathCollections []GetEmailReturnPathsEmailReturnPathCollection `pulumi:"emailReturnPathCollections"`
@@ -129,7 +129,7 @@ func (o GetEmailReturnPathsResultOutput) ToGetEmailReturnPathsResultOutputWithCo
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+// The lock compartment ID.
 func (o GetEmailReturnPathsResultOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetEmailReturnPathsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

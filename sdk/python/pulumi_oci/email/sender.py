@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['SenderArgs', 'Sender']
 
@@ -103,6 +105,7 @@ class _SenderState:
                  email_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['SenderLockArgs']]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None):
@@ -118,6 +121,7 @@ class _SenderState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param pulumi.Input[Sequence[pulumi.Input['SenderLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current status of the approved sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -134,6 +138,8 @@ class _SenderState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_spf is not None:
             pulumi.set(__self__, "is_spf", is_spf)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -216,6 +222,18 @@ class _SenderState:
     @is_spf.setter
     def is_spf(self, value: Optional[pulumi.Input[_builtins.bool]]):
         pulumi.set(self, "is_spf", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['SenderLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['SenderLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @_builtins.property
     @pulumi.getter
@@ -380,6 +398,7 @@ class Sender(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["email_domain_id"] = None
             __props__.__dict__["is_spf"] = None
+            __props__.__dict__["locks"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -399,6 +418,7 @@ class Sender(pulumi.CustomResource):
             email_domain_id: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_spf: Optional[pulumi.Input[_builtins.bool]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[Union['SenderLockArgs', 'SenderLockArgsDict']]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None) -> 'Sender':
@@ -419,6 +439,7 @@ class Sender(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.bool] is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SenderLockArgs', 'SenderLockArgsDict']]]] locks: Locks associated with this resource.
         :param pulumi.Input[_builtins.str] state: The current status of the approved sender.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -433,6 +454,7 @@ class Sender(pulumi.CustomResource):
         __props__.__dict__["email_domain_id"] = email_domain_id
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_spf"] = is_spf
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -489,6 +511,14 @@ class Sender(pulumi.CustomResource):
         Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
         """
         return pulumi.get(self, "is_spf")
+
+    @_builtins.property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.SenderLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @_builtins.property
     @pulumi.getter

@@ -128,7 +128,7 @@ namespace Pulumi.Oci.Email
         /// </summary>
         public readonly string CnameRecordValue;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -156,6 +156,10 @@ namespace Pulumi.Oci.Email
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetEmailReturnPathLockResult> Locks;
         /// <summary>
         /// The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`
         /// </summary>
@@ -201,6 +205,8 @@ namespace Pulumi.Oci.Email
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetEmailReturnPathLockResult> locks,
+
             string name,
 
             string parentResourceId,
@@ -222,6 +228,7 @@ namespace Pulumi.Oci.Email
             FreeformTags = freeformTags;
             Id = id;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             Name = name;
             ParentResourceId = parentResourceId;
             State = state;

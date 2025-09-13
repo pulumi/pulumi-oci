@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetEmailReturnPathsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     private @Nullable String compartmentId;
@@ -49,7 +49,7 @@ public final class GetEmailReturnPathsResult {
 
     private GetEmailReturnPathsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     public Optional<String> compartmentId() {

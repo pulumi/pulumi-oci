@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -69,7 +71,7 @@ export class EmailReturnPath extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly cnameRecordValue: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      */
     declare public /*out*/ readonly compartmentId: pulumi.Output<string>;
     /**
@@ -92,6 +94,10 @@ export class EmailReturnPath extends pulumi.CustomResource {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
     declare public /*out*/ readonly lifecycleDetails: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    declare public /*out*/ readonly locks: pulumi.Output<outputs.Email.EmailReturnPathLock[]>;
     /**
      * The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      */
@@ -141,6 +147,7 @@ export class EmailReturnPath extends pulumi.CustomResource {
             resourceInputs["dnsSubdomainName"] = state?.dnsSubdomainName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
+            resourceInputs["locks"] = state?.locks;
             resourceInputs["name"] = state?.name;
             resourceInputs["parentResourceId"] = state?.parentResourceId;
             resourceInputs["state"] = state?.state;
@@ -161,6 +168,7 @@ export class EmailReturnPath extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["dnsSubdomainName"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
+            resourceInputs["locks"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -180,7 +188,7 @@ export interface EmailReturnPathState {
      */
     cnameRecordValue?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -203,6 +211,10 @@ export interface EmailReturnPathState {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.Email.EmailReturnPathLock>[]>;
     /**
      * The name of the email return path domain in the Internet Domain Name System (DNS). The name must be a subdomain of the email domain used to send emails. The email return path name must be globally unique for this tenancy. If you do not provide the email return path name, we will generate one for you. If you do provide the email return path name, we suggest adding a short region indicator to allow using the same parent domain in other regions you might be subscribed to. Domain names limited to ASCII characters use alphanumeric, dash ("-"), and dot (".") characters. The dash and dot are only allowed between alphanumeric characters. Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).
      */

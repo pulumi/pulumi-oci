@@ -188,7 +188,7 @@ namespace Pulumi.Oci.Email
     public sealed class GetSendersResult
     {
         /// <summary>
-        /// The OCID for the compartment.
+        /// The lock compartment ID.
         /// </summary>
         public readonly string CompartmentId;
         public readonly string? Domain;

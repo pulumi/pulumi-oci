@@ -74,6 +74,8 @@ type Sender struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf pulumi.BoolOutput `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks SenderLockArrayOutput `pulumi:"locks"`
 	// The current status of the approved sender.
 	State pulumi.StringOutput `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -133,6 +135,8 @@ type senderState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf *bool `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks []SenderLock `pulumi:"locks"`
 	// The current status of the approved sender.
 	State *string `pulumi:"state"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -157,6 +161,8 @@ type SenderState struct {
 	FreeformTags pulumi.StringMapInput
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks SenderLockArrayInput
 	// The current status of the approved sender.
 	State pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -316,6 +322,11 @@ func (o SenderOutput) FreeformTags() pulumi.StringMapOutput {
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 func (o SenderOutput) IsSpf() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Sender) pulumi.BoolOutput { return v.IsSpf }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o SenderOutput) Locks() SenderLockArrayOutput {
+	return o.ApplyT(func(v *Sender) SenderLockArrayOutput { return v.Locks }).(SenderLockArrayOutput)
 }
 
 // The current status of the approved sender.

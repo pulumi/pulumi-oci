@@ -28,7 +28,7 @@ type ExportExportOption struct {
 	IsAnonymousAccessAllowed *bool `pulumi:"isAnonymousAccessAllowed"`
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort *bool `pulumi:"requirePrivilegedSourcePort"`
-	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	// (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 	//
 	// **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 	Source string `pulumi:"source"`
@@ -60,7 +60,7 @@ type ExportExportOptionArgs struct {
 	IsAnonymousAccessAllowed pulumi.BoolPtrInput `pulumi:"isAnonymousAccessAllowed"`
 	// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort pulumi.BoolPtrInput `pulumi:"requirePrivilegedSourcePort"`
-	// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	// (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 	//
 	// **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 	Source pulumi.StringInput `pulumi:"source"`
@@ -152,7 +152,7 @@ func (o ExportExportOptionOutput) RequirePrivilegedSourcePort() pulumi.BoolPtrOu
 	return o.ApplyT(func(v ExportExportOption) *bool { return v.RequirePrivilegedSourcePort }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+// (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 //
 // **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
 func (o ExportExportOptionOutput) Source() pulumi.StringOutput {
@@ -2382,7 +2382,7 @@ type GetExportsExportExportOption struct {
 	IsAnonymousAccessAllowed bool `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort bool `pulumi:"requirePrivilegedSourcePort"`
-	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	// Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 	Source string `pulumi:"source"`
 }
 
@@ -2412,7 +2412,7 @@ type GetExportsExportExportOptionArgs struct {
 	IsAnonymousAccessAllowed pulumi.BoolInput `pulumi:"isAnonymousAccessAllowed"`
 	// If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
 	RequirePrivilegedSourcePort pulumi.BoolInput `pulumi:"requirePrivilegedSourcePort"`
-	// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+	// Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -2502,7 +2502,7 @@ func (o GetExportsExportExportOptionOutput) RequirePrivilegedSourcePort() pulumi
 	return o.ApplyT(func(v GetExportsExportExportOption) bool { return v.RequirePrivilegedSourcePort }).(pulumi.BoolOutput)
 }
 
-// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+// Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
 func (o GetExportsExportExportOptionOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v GetExportsExportExportOption) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -4744,6 +4744,8 @@ type GetMountTargetsMountTarget struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks []GetMountTargetsMountTargetLock `pulumi:"locks"`
+	// The OCIDs of the IPv6 addresses associated with this mount target.
+	MountTargetIpv6ids []string `pulumi:"mountTargetIpv6ids"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds []string `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -4805,6 +4807,8 @@ type GetMountTargetsMountTargetArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
 	Locks GetMountTargetsMountTargetLockArrayInput `pulumi:"locks"`
+	// The OCIDs of the IPv6 addresses associated with this mount target.
+	MountTargetIpv6ids pulumi.StringArrayInput `pulumi:"mountTargetIpv6ids"`
 	// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
 	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
 	// Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
@@ -4948,6 +4952,11 @@ func (o GetMountTargetsMountTargetOutput) LifecycleDetails() pulumi.StringOutput
 // Locks associated with this resource.
 func (o GetMountTargetsMountTargetOutput) Locks() GetMountTargetsMountTargetLockArrayOutput {
 	return o.ApplyT(func(v GetMountTargetsMountTarget) []GetMountTargetsMountTargetLock { return v.Locks }).(GetMountTargetsMountTargetLockArrayOutput)
+}
+
+// The OCIDs of the IPv6 addresses associated with this mount target.
+func (o GetMountTargetsMountTargetOutput) MountTargetIpv6ids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMountTargetsMountTarget) []string { return v.MountTargetIpv6ids }).(pulumi.StringArrayOutput)
 }
 
 // A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).

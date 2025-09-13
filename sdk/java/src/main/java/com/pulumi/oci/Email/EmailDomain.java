@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Email.EmailDomainArgs;
 import com.pulumi.oci.Email.inputs.EmailDomainState;
+import com.pulumi.oci.Email.outputs.EmailDomainLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -170,18 +172,24 @@ public class EmailDomain extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+     * Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
      * 
      */
     @Export(name="isSpf", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isSpf;
 
     /**
-     * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+     * @return Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
      * 
      */
     public Output<Boolean> isSpf() {
         return this.isSpf;
+    }
+    @Export(name="locks", refs={List.class,EmailDomainLock.class}, tree="[0,1]")
+    private Output<List<EmailDomainLock>> locks;
+
+    public Output<List<EmailDomainLock>> locks() {
+        return this.locks;
     }
     /**
      * The name of the email domain in the Internet Domain Name System (DNS). The email domain name must be unique in the region for this tenancy. Domain names limited to ASCII characters use alphanumeric, dash (&#34;-&#34;), and dot (&#34;.&#34;) characters. The dash and dot are only allowed between alphanumeric characters. For details, see [RFC 5321, section 4.1.2](https://tools.ietf.org/html/rfc5321#section-4.1.2) Non-ASCII domain names should adopt IDNA2008 normalization (RFC 5891-5892).

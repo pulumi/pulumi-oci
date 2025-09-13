@@ -9,9 +9,11 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Email.SenderArgs;
 import com.pulumi.oci.Email.inputs.SenderState;
+import com.pulumi.oci.Email.outputs.SenderLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -158,6 +160,20 @@ public class Sender extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isSpf() {
         return this.isSpf;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,SenderLock.class}, tree="[0,1]")
+    private Output<List<SenderLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<SenderLock>> locks() {
+        return this.locks;
     }
     /**
      * The current status of the approved sender.

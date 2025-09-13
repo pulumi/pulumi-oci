@@ -68,7 +68,7 @@ type GetEmailDomainsArgs struct {
 
 // A collection of values returned by getEmailDomains.
 type GetEmailDomainsResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of email_domain_collection.
 	EmailDomainCollections []GetEmailDomainsEmailDomainCollection `pulumi:"emailDomainCollections"`
@@ -122,7 +122,7 @@ func (o GetEmailDomainsResultOutput) ToGetEmailDomainsResultOutputWithContext(ct
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+// The lock compartment ID.
 func (o GetEmailDomainsResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEmailDomainsResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

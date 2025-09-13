@@ -64,7 +64,7 @@ export interface GetEmailDomainsArgs {
  */
 export interface GetEmailDomainsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     /**

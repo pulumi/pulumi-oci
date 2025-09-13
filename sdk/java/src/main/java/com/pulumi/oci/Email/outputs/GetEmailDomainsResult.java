@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetEmailDomainsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+     * @return The lock compartment ID.
      * 
      */
     private String compartmentId;
@@ -44,7 +44,7 @@ public final class GetEmailDomainsResult {
 
     private GetEmailDomainsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+     * @return The lock compartment ID.
      * 
      */
     public String compartmentId() {

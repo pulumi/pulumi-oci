@@ -38,7 +38,7 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
      * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
      * * ENTERPRISE_EDITION_DEVELOPER
      * 
      */
@@ -50,7 +50,7 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
      * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
      * * ENTERPRISE_EDITION_DEVELOPER
      * 
      */
@@ -153,7 +153,7 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
          * * STANDARD_EDITION
          * * ENTERPRISE_EDITION
          * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-         * * ENTERPRISE_EDITION_EXTREME
+         * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
          * * ENTERPRISE_EDITION_DEVELOPER
          * 
          * @return builder
@@ -169,7 +169,7 @@ public final class GetDbSystemStoragePerformancesArgs extends com.pulumi.resourc
          * * STANDARD_EDITION
          * * ENTERPRISE_EDITION
          * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-         * * ENTERPRISE_EDITION_EXTREME
+         * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
          * * ENTERPRISE_EDITION_DEVELOPER
          * 
          * @return builder

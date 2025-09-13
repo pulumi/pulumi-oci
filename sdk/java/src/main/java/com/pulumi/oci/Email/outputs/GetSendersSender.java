@@ -5,8 +5,10 @@ package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Email.outputs.GetSendersSenderLock;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -47,6 +49,11 @@ public final class GetSendersSender {
      * 
      */
     private Boolean isSpf;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetSendersSenderLock> locks;
     /**
      * @return The current state of a sender.
      * 
@@ -114,6 +121,13 @@ public final class GetSendersSender {
         return this.isSpf;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetSendersSenderLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return The current state of a sender.
      * 
      */
@@ -151,6 +165,7 @@ public final class GetSendersSender {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isSpf;
+        private List<GetSendersSenderLock> locks;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
@@ -164,6 +179,7 @@ public final class GetSendersSender {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSpf = defaults.isSpf;
+    	      this.locks = defaults.locks;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -226,6 +242,17 @@ public final class GetSendersSender {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetSendersSenderLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetSendersSender", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetSendersSenderLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetSendersSender", "state");
@@ -258,6 +285,7 @@ public final class GetSendersSender {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSpf = isSpf;
+            _resultValue.locks = locks;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

@@ -5,7 +5,9 @@ package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Email.outputs.GetEmailReturnPathLock;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -17,7 +19,7 @@ public final class GetEmailReturnPathResult {
      */
     private String cnameRecordValue;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     private String compartmentId;
@@ -52,6 +54,11 @@ public final class GetEmailReturnPathResult {
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetEmailReturnPathLock> locks;
     /**
      * @return The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`
      * 
@@ -92,7 +99,7 @@ public final class GetEmailReturnPathResult {
         return this.cnameRecordValue;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * @return The lock compartment ID.
      * 
      */
     public String compartmentId() {
@@ -142,6 +149,13 @@ public final class GetEmailReturnPathResult {
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetEmailReturnPathLock> locks() {
+        return this.locks;
     }
     /**
      * @return The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`
@@ -204,6 +218,7 @@ public final class GetEmailReturnPathResult {
         private Map<String,String> freeformTags;
         private String id;
         private String lifecycleDetails;
+        private List<GetEmailReturnPathLock> locks;
         private String name;
         private String parentResourceId;
         private String state;
@@ -222,6 +237,7 @@ public final class GetEmailReturnPathResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.parentResourceId = defaults.parentResourceId;
     	      this.state = defaults.state;
@@ -303,6 +319,17 @@ public final class GetEmailReturnPathResult {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetEmailReturnPathLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetEmailReturnPathResult", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetEmailReturnPathLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetEmailReturnPathResult", "name");
@@ -361,6 +388,7 @@ public final class GetEmailReturnPathResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.name = name;
             _resultValue.parentResourceId = parentResourceId;
             _resultValue.state = state;

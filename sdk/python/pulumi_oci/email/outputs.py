@@ -16,20 +16,293 @@ from .. import _utilities
 from . import outputs
 
 __all__ = [
+    'EmailDomainLock',
+    'EmailReturnPathLock',
+    'SenderLock',
     'GetDkimsDkimCollectionResult',
     'GetDkimsDkimCollectionItemResult',
     'GetDkimsFilterResult',
+    'GetEmailDomainLockResult',
     'GetEmailDomainsEmailDomainCollectionResult',
     'GetEmailDomainsEmailDomainCollectionItemResult',
+    'GetEmailDomainsEmailDomainCollectionItemLockResult',
     'GetEmailDomainsFilterResult',
+    'GetEmailReturnPathLockResult',
     'GetEmailReturnPathsEmailReturnPathCollectionResult',
     'GetEmailReturnPathsEmailReturnPathCollectionItemResult',
+    'GetEmailReturnPathsEmailReturnPathCollectionItemLockResult',
     'GetEmailReturnPathsFilterResult',
+    'GetSenderLockResult',
     'GetSendersFilterResult',
     'GetSendersSenderResult',
+    'GetSendersSenderLockResult',
     'GetSuppressionsFilterResult',
     'GetSuppressionsSuppressionResult',
 ]
+
+@pulumi.output_type
+class EmailDomainLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EmailDomainLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EmailDomainLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EmailDomainLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class EmailReturnPathLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in EmailReturnPathLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        EmailReturnPathLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        EmailReturnPathLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class SenderLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "compartmentId":
+            suggest = "compartment_id"
+        elif key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SenderLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SenderLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SenderLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 compartment_id: Optional[_builtins.str] = None,
+                 message: Optional[_builtins.str] = None,
+                 related_resource_id: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str compartment_id: (Updatable) The OCID of the compartment that contains the sender.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str type: Lock type.
+        """
+        if compartment_id is not None:
+            pulumi.set(__self__, "compartment_id", compartment_id)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the compartment that contains the sender.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> Optional[_builtins.str]:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[_builtins.str]:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> Optional[_builtins.str]:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
 
 @pulumi.output_type
 class GetDkimsDkimCollectionResult(dict):
@@ -278,6 +551,68 @@ class GetDkimsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetEmailDomainLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetEmailDomainsEmailDomainCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemResult']):
@@ -301,6 +636,7 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_spf: _builtins.bool,
+                 locks: Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemLockResult'],
                  name: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -315,6 +651,7 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: A filter to only return resources that match the given id exactly.
         :param _builtins.bool is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param Sequence['GetEmailDomainsEmailDomainCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str name: A filter to only return resources that match the given name exactly.
         :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -329,6 +666,7 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_spf", is_spf)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -408,6 +746,14 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetEmailDomainsEmailDomainCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         A filter to only return resources that match the given name exactly.
@@ -437,6 +783,68 @@ class GetEmailDomainsEmailDomainCollectionItemResult(dict):
         The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetEmailDomainsEmailDomainCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID for the compartment.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -473,6 +881,68 @@ class GetEmailDomainsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetEmailReturnPathLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetEmailReturnPathsEmailReturnPathCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetEmailReturnPathsEmailReturnPathCollectionItemResult']):
@@ -495,6 +965,7 @@ class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  lifecycle_details: _builtins.str,
+                 locks: Sequence['outputs.GetEmailReturnPathsEmailReturnPathCollectionItemLockResult'],
                  name: _builtins.str,
                  parent_resource_id: _builtins.str,
                  state: _builtins.str,
@@ -510,6 +981,7 @@ class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: A filter to only return resources that match the given id exactly.
         :param _builtins.str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
+        :param Sequence['GetEmailReturnPathsEmailReturnPathCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str name: A filter to only return resources that match the given name exactly.
         :param _builtins.str parent_resource_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Email Domain to which this Email Return Path belongs.
         :param _builtins.str state: Filter returned list by specified lifecycle state. This parameter is case-insensitive.
@@ -525,6 +997,7 @@ class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "parent_resource_id", parent_resource_id)
         pulumi.set(__self__, "state", state)
@@ -598,6 +1071,14 @@ class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetEmailReturnPathsEmailReturnPathCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def name(self) -> _builtins.str:
         """
         A filter to only return resources that match the given name exactly.
@@ -646,6 +1127,68 @@ class GetEmailReturnPathsEmailReturnPathCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetEmailReturnPathsEmailReturnPathCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID for the compartment.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetEmailReturnPathsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -676,6 +1219,68 @@ class GetEmailReturnPathsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSenderLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The lock compartment ID.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The lock compartment ID.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -715,6 +1320,7 @@ class GetSendersSenderResult(dict):
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_spf: _builtins.bool,
+                 locks: Sequence['outputs.GetSendersSenderLockResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str):
@@ -726,6 +1332,7 @@ class GetSendersSenderResult(dict):
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The unique OCID of the sender.
         :param _builtins.bool is_spf: Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
+        :param Sequence['GetSendersSenderLockArgs'] locks: Locks associated with this resource.
         :param _builtins.str state: The current state of a sender.
         :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
@@ -737,6 +1344,7 @@ class GetSendersSenderResult(dict):
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_spf", is_spf)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -799,6 +1407,14 @@ class GetSendersSenderResult(dict):
 
     @_builtins.property
     @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetSendersSenderLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @_builtins.property
+    @pulumi.getter
     def state(self) -> _builtins.str:
         """
         The current state of a sender.
@@ -820,6 +1436,68 @@ class GetSendersSenderResult(dict):
         The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetSendersSenderLockResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 message: _builtins.str,
+                 related_resource_id: _builtins.str,
+                 time_created: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The OCID for the compartment.
+        :param _builtins.str message: A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        :param _builtins.str related_resource_id: The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        :param _builtins.str time_created: The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        :param _builtins.str type: Lock type.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The OCID for the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def message(self) -> _builtins.str:
+        """
+        A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @_builtins.property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> _builtins.str:
+        """
+        The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        Lock type.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type

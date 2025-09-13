@@ -55,7 +55,7 @@ class GetEmailReturnPathsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+        The lock compartment ID.
         """
         return pulumi.get(self, "compartment_id")
 

@@ -5,8 +5,10 @@ package com.pulumi.oci.Email.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.Email.inputs.SenderLockArgs;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -114,6 +116,21 @@ public final class SenderState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<SenderLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<SenderLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * The current status of the approved sender.
      * 
      */
@@ -167,6 +184,7 @@ public final class SenderState extends com.pulumi.resources.ResourceArgs {
         this.emailDomainId = $.emailDomainId;
         this.freeformTags = $.freeformTags;
         this.isSpf = $.isSpf;
+        this.locks = $.locks;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -320,6 +338,37 @@ public final class SenderState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isSpf(Boolean isSpf) {
             return isSpf(Output.of(isSpf));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<SenderLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<SenderLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(SenderLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

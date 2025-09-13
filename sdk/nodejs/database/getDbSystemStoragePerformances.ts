@@ -10,6 +10,20 @@ import * as utilities from "../utilities";
  * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
+ *     storageManagement: dbSystemStoragePerformanceStorageManagement,
+ *     shapeType: dbSystemStoragePerformanceShapeType,
+ *     databaseEdition: dbSystemStoragePerformanceDatabaseEdition,
+ *     compartmentId: compartmentId,
+ * });
+ * ```
  */
 export function getDbSystemStoragePerformances(args: GetDbSystemStoragePerformancesArgs, opts?: pulumi.InvokeOptions): Promise<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -35,7 +49,7 @@ export interface GetDbSystemStoragePerformancesArgs {
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
      * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
      * * ENTERPRISE_EDITION_DEVELOPER
      */
     databaseEdition?: string;
@@ -77,6 +91,20 @@ export interface GetDbSystemStoragePerformancesResult {
  * This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
  *
  * Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDbSystemStoragePerformances = oci.Database.getDbSystemStoragePerformances({
+ *     storageManagement: dbSystemStoragePerformanceStorageManagement,
+ *     shapeType: dbSystemStoragePerformanceShapeType,
+ *     databaseEdition: dbSystemStoragePerformanceDatabaseEdition,
+ *     compartmentId: compartmentId,
+ * });
+ * ```
  */
 export function getDbSystemStoragePerformancesOutput(args: GetDbSystemStoragePerformancesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDbSystemStoragePerformancesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -102,7 +130,7 @@ export interface GetDbSystemStoragePerformancesOutputArgs {
      * * STANDARD_EDITION
      * * ENTERPRISE_EDITION
      * * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-     * * ENTERPRISE_EDITION_EXTREME
+     * * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
      * * ENTERPRISE_EDITION_DEVELOPER
      */
     databaseEdition?: pulumi.Input<string>;

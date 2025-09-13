@@ -60,7 +60,7 @@ type LookupEmailDomainArgs struct {
 type LookupEmailDomainResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM key that will be used to sign mail sent from this email domain.
 	ActiveDkimId string `pulumi:"activeDkimId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+	// The lock compartment ID.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -77,6 +77,8 @@ type LookupEmailDomainResult struct {
 	Id string `pulumi:"id"`
 	// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 	IsSpf bool `pulumi:"isSpf"`
+	// Locks associated with this resource.
+	Locks []GetEmailDomainLock `pulumi:"locks"`
 	// The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`
 	Name string `pulumi:"name"`
 	// The current state of the email domain.
@@ -126,7 +128,7 @@ func (o LookupEmailDomainResultOutput) ActiveDkimId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.ActiveDkimId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email domain.
+// The lock compartment ID.
 func (o LookupEmailDomainResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEmailDomainResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -168,6 +170,11 @@ func (o LookupEmailDomainResultOutput) Id() pulumi.StringOutput {
 // Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).
 func (o LookupEmailDomainResultOutput) IsSpf() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupEmailDomainResult) bool { return v.IsSpf }).(pulumi.BoolOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupEmailDomainResultOutput) Locks() GetEmailDomainLockArrayOutput {
+	return o.ApplyT(func(v LookupEmailDomainResult) []GetEmailDomainLock { return v.Locks }).(GetEmailDomainLockArrayOutput)
 }
 
 // The name of the email domain in the Internet Domain Name System (DNS).  Example: `mydomain.example.com`

@@ -14,6 +14,35 @@ import (
 // This data source provides the list of Db System Storage Performances in Oracle Cloud Infrastructure Database service.
 //
 // Gets a list of possible expected storage performance parameters of a VMDB System based on Configuration.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.GetDbSystemStoragePerformances(ctx, &database.GetDbSystemStoragePerformancesArgs{
+//				StorageManagement: dbSystemStoragePerformanceStorageManagement,
+//				ShapeType:         pulumi.StringRef(dbSystemStoragePerformanceShapeType),
+//				DatabaseEdition:   pulumi.StringRef(dbSystemStoragePerformanceDatabaseEdition),
+//				CompartmentId:     pulumi.StringRef(compartmentId),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetDbSystemStoragePerformances(ctx *pulumi.Context, args *GetDbSystemStoragePerformancesArgs, opts ...pulumi.InvokeOption) (*GetDbSystemStoragePerformancesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDbSystemStoragePerformancesResult
@@ -32,7 +61,7 @@ type GetDbSystemStoragePerformancesArgs struct {
 	// * STANDARD_EDITION
 	// * ENTERPRISE_EDITION
 	// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-	// * ENTERPRISE_EDITION_EXTREME
+	// * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
 	// * ENTERPRISE_EDITION_DEVELOPER
 	DatabaseEdition *string                                `pulumi:"databaseEdition"`
 	Filters         []GetDbSystemStoragePerformancesFilter `pulumi:"filters"`
@@ -75,7 +104,7 @@ type GetDbSystemStoragePerformancesOutputArgs struct {
 	// * STANDARD_EDITION
 	// * ENTERPRISE_EDITION
 	// * ENTERPRISE_EDITION_HIGH_PERFORMANCE
-	// * ENTERPRISE_EDITION_EXTREME
+	// * ENTERPRISE_EDITION_EXTREME_PERFORMANCE
 	// * ENTERPRISE_EDITION_DEVELOPER
 	DatabaseEdition pulumi.StringPtrInput                          `pulumi:"databaseEdition"`
 	Filters         GetDbSystemStoragePerformancesFilterArrayInput `pulumi:"filters"`

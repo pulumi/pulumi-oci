@@ -5,8 +5,10 @@ package com.pulumi.oci.Email.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Email.outputs.GetEmailDomainsEmailDomainCollectionItemLock;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -57,6 +59,11 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
      * 
      */
     private Boolean isSpf;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetEmailDomainsEmailDomainCollectionItemLock> locks;
     /**
      * @return A filter to only return resources that match the given name exactly.
      * 
@@ -143,6 +150,13 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
         return this.isSpf;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetEmailDomainsEmailDomainCollectionItemLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return A filter to only return resources that match the given name exactly.
      * 
      */
@@ -189,6 +203,7 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isSpf;
+        private List<GetEmailDomainsEmailDomainCollectionItemLock> locks;
         private String name;
         private String state;
         private Map<String,String> systemTags;
@@ -205,6 +220,7 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSpf = defaults.isSpf;
+    	      this.locks = defaults.locks;
     	      this.name = defaults.name;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -284,6 +300,17 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetEmailDomainsEmailDomainCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetEmailDomainsEmailDomainCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetEmailDomainsEmailDomainCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder name(String name) {
             if (name == null) {
               throw new MissingRequiredPropertyException("GetEmailDomainsEmailDomainCollectionItem", "name");
@@ -326,6 +353,7 @@ public final class GetEmailDomainsEmailDomainCollectionItem {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSpf = isSpf;
+            _resultValue.locks = locks;
             _resultValue.name = name;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

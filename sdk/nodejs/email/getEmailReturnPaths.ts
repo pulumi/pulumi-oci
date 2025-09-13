@@ -71,7 +71,7 @@ export interface GetEmailReturnPathsArgs {
  */
 export interface GetEmailReturnPathsResult {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      */
     readonly compartmentId?: string;
     /**

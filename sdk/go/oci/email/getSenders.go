@@ -68,7 +68,7 @@ type GetSendersArgs struct {
 
 // A collection of values returned by getSenders.
 type GetSendersResult struct {
-	// The OCID for the compartment.
+	// The lock compartment ID.
 	CompartmentId string  `pulumi:"compartmentId"`
 	Domain        *string `pulumi:"domain"`
 	// The email address of the sender.
@@ -123,7 +123,7 @@ func (o GetSendersResultOutput) ToGetSendersResultOutputWithContext(ctx context.
 	return o
 }
 
-// The OCID for the compartment.
+// The lock compartment ID.
 func (o GetSendersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSendersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

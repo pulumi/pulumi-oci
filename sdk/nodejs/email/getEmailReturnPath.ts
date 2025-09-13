@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -46,7 +48,7 @@ export interface GetEmailReturnPathResult {
      */
     readonly cnameRecordValue: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this email return path.
+     * The lock compartment ID.
      */
     readonly compartmentId: string;
     /**
@@ -74,6 +76,10 @@ export interface GetEmailReturnPathResult {
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.Email.GetEmailReturnPathLock[];
     /**
      * The email return path domain in the Internet Domain Name System (DNS).  Example: `iad1.rp.example.com`
      */

@@ -41981,6 +41981,52 @@ export namespace Dns {
 }
 
 export namespace Email {
+    export interface EmailDomainLock {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the email domain was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Lock type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface EmailReturnPathLock {
+        /**
+         * The lock compartment ID.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the email return path was created. Times are expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, "YYYY-MM-ddThh:mmZ".  Example: `2021-02-12T22:47:12.613Z`
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Lock type.
+         */
+        type?: pulumi.Input<string>;
+    }
+
     export interface GetDkimsFilter {
         /**
          * A filter to only return resources that match the given name exactly.
@@ -42059,6 +42105,28 @@ export namespace Email {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface SenderLock {
+        /**
+         * (Updatable) The OCID of the compartment that contains the sender.
+         */
+        compartmentId?: pulumi.Input<string>;
+        /**
+         * A message added by the lock creator. The message typically gives an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The resource ID that is locking this resource. Indicates that deleting this resource removes the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The date and time the approved sender was added in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Lock type.
+         */
+        type?: pulumi.Input<string>;
+    }
 }
 
 export namespace Events {
@@ -42155,7 +42223,7 @@ export namespace FileStorage {
          */
         requirePrivilegedSourcePort?: pulumi.Input<boolean>;
         /**
-         * (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
+         * (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
          *
          * **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
          */

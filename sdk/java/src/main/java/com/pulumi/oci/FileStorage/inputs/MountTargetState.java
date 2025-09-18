@@ -116,11 +116,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
      * 
      * Note:
      * 
-     * If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-     * 
-     * If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
-     * 
-     * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * 
      * Example: `files-1`
      * 
@@ -133,11 +129,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
      * 
      * Note:
      * 
-     * If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-     * 
-     * If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
-     * 
-     * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * 
      * Example: `files-1`
      * 
@@ -249,21 +241,6 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<MountTargetLockArgs>>> locks() {
         return Optional.ofNullable(this.locks);
-    }
-
-    /**
-     * The OCIDs of the IPv6 addresses associated with this mount target.
-     * 
-     */
-    @Import(name="mountTargetIpv6ids")
-    private @Nullable Output<List<String>> mountTargetIpv6ids;
-
-    /**
-     * @return The OCIDs of the IPv6 addresses associated with this mount target.
-     * 
-     */
-    public Optional<Output<List<String>>> mountTargetIpv6ids() {
-        return Optional.ofNullable(this.mountTargetIpv6ids);
     }
 
     /**
@@ -439,7 +416,6 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
         this.ldapIdmap = $.ldapIdmap;
         this.lifecycleDetails = $.lifecycleDetails;
         this.locks = $.locks;
-        this.mountTargetIpv6ids = $.mountTargetIpv6ids;
         this.nsgIds = $.nsgIds;
         this.observedThroughput = $.observedThroughput;
         this.privateIpIds = $.privateIpIds;
@@ -601,11 +577,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          * 
          * Note:
          * 
-         * If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-         * 
-         * If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
-         * 
-         * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * 
          * Example: `files-1`
          * 
@@ -622,11 +594,7 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          * 
          * Note:
          * 
-         * If the IP address is IPv4, this attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value.
-         * 
-         * If the IP address is IPv6, it is stored in the [Ipv6] (https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6) resource To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s IPv6 address (`mountTargetIpv6Ids`). Then, you can use [UpdateIpv6](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/Ipv6/UpdateIpv6) to update the `hostnameLabel` value.
-         * 
-         * For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource, not in the `mountTarget` resource. To update the `hostnameLabel`, use `GetMountTarget` to obtain the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the mount target&#39;s private IPs (`privateIpIds`). Then, you can use [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp) to update the `hostnameLabel` value. For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * 
          * Example: `files-1`
          * 
@@ -792,37 +760,6 @@ public final class MountTargetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder locks(MountTargetLockArgs... locks) {
             return locks(List.of(locks));
-        }
-
-        /**
-         * @param mountTargetIpv6ids The OCIDs of the IPv6 addresses associated with this mount target.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder mountTargetIpv6ids(@Nullable Output<List<String>> mountTargetIpv6ids) {
-            $.mountTargetIpv6ids = mountTargetIpv6ids;
-            return this;
-        }
-
-        /**
-         * @param mountTargetIpv6ids The OCIDs of the IPv6 addresses associated with this mount target.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder mountTargetIpv6ids(List<String> mountTargetIpv6ids) {
-            return mountTargetIpv6ids(Output.of(mountTargetIpv6ids));
-        }
-
-        /**
-         * @param mountTargetIpv6ids The OCIDs of the IPv6 addresses associated with this mount target.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder mountTargetIpv6ids(String... mountTargetIpv6ids) {
-            return mountTargetIpv6ids(List.of(mountTargetIpv6ids));
         }
 
         /**

@@ -86,7 +86,7 @@ type GetExascaleDbStorageVaultsResult struct {
 	// The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
 	AttachedShapeAttributes           *string `pulumi:"attachedShapeAttributes"`
 	AttachedShapeAttributesNotEqualTo *string `pulumi:"attachedShapeAttributesNotEqualTo"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -165,7 +165,7 @@ func (o GetExascaleDbStorageVaultsResultOutput) AttachedShapeAttributesNotEqualT
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.AttachedShapeAttributesNotEqualTo }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 func (o GetExascaleDbStorageVaultsResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExascaleDbStorageVaultsResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
 }

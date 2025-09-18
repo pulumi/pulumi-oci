@@ -168,6 +168,12 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
     public Output<Optional<List<String>>> backupNetworkNsgIds() {
         return Codegen.optional(this.backupNetworkNsgIds);
     }
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
+    }
     /**
      * The number of compute servers for the DB system.
      * 
@@ -779,6 +785,12 @@ public class DataGuardAssociation extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * The date and time the Data Guard association was created.

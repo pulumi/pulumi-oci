@@ -38,7 +38,7 @@ public final class GetExadbVmClusterResult {
      */
     private String clusterName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     private String clusterPlacementGroupId;
@@ -270,7 +270,7 @@ public final class GetExadbVmClusterResult {
         return this.clusterName;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public String clusterPlacementGroupId() {

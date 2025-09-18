@@ -25309,6 +25309,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param _builtins.float byol_compute_count_limit: The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         :param _builtins.str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        :param _builtins.str clone_type: The Autonomous Database clone type.
         :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.float compute_count: Compute used by database tools.
@@ -25720,6 +25721,9 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
     @_builtins.property
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> _builtins.str:
+        """
+        The Autonomous Database clone type.
+        """
         return pulumi.get(self, "clone_type")
 
     @_builtins.property
@@ -28087,6 +28091,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  byol_compute_count_limit: _builtins.float,
                  character_set: _builtins.str,
                  clone_table_space_lists: Sequence[_builtins.int],
+                 clone_type: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_count: _builtins.float,
@@ -28216,6 +28221,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param _builtins.float byol_compute_count_limit: The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
         :param _builtins.str character_set: The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         :param Sequence[_builtins.int] clone_table_space_lists: A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
+        :param _builtins.str clone_type: A filter to return only resources that match the given clone type exactly.
         :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.float compute_count: Compute used by database tools.
@@ -28352,6 +28358,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_table_space_lists", clone_table_space_lists)
+        pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
@@ -28585,6 +28592,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         """
         return pulumi.get(self, "clone_table_space_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="cloneType")
+    def clone_type(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given clone type exactly.
+        """
+        return pulumi.get(self, "clone_type")
 
     @_builtins.property
     @pulumi.getter(name="clusterPlacementGroupId")
@@ -38804,6 +38819,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  apply_rate: _builtins.str,
                  availability_domain: _builtins.str,
                  backup_network_nsg_ids: Sequence[_builtins.str],
+                 cluster_placement_group_id: _builtins.str,
                  compute_count: _builtins.int,
                  compute_model: _builtins.str,
                  cpu_core_count: _builtins.int,
@@ -38846,6 +38862,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
                  state: _builtins.str,
                  storage_volume_performance_mode: _builtins.str,
                  subnet_id: _builtins.str,
+                 subscription_id: _builtins.str,
                  time_created: _builtins.str,
                  time_zone: _builtins.str,
                  transport_type: _builtins.str):
@@ -38871,6 +38888,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "apply_rate", apply_rate)
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "compute_model", compute_model)
         pulumi.set(__self__, "cpu_core_count", cpu_core_count)
@@ -38913,6 +38931,7 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
         pulumi.set(__self__, "transport_type", transport_type)
@@ -38942,6 +38961,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "backup_network_nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -39188,6 +39212,11 @@ class GetDataGuardAssociationsDataGuardAssociationResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> _builtins.str:
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")
@@ -47922,6 +47951,7 @@ class GetDbSystemsDbSystemResult(dict):
                  backup_network_nsg_ids: Sequence[_builtins.str],
                  backup_subnet_id: _builtins.str,
                  cluster_name: _builtins.str,
+                 cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
                  compute_count: _builtins.int,
                  compute_model: _builtins.str,
@@ -47972,6 +48002,7 @@ class GetDbSystemsDbSystemResult(dict):
                  state: _builtins.str,
                  storage_volume_performance_mode: _builtins.str,
                  subnet_id: _builtins.str,
+                 subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
                  time_zone: _builtins.str,
@@ -47984,6 +48015,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param Sequence[_builtins.str] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         :param _builtins.str backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet the DB system is associated with. Applicable only to Exadata DB systems.
         :param _builtins.str cluster_name: The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param _builtins.str cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param _builtins.int compute_count: The number of compute servers for the DB system.
         :param _builtins.str compute_model: The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -48030,6 +48062,7 @@ class GetDbSystemsDbSystemResult(dict):
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state exactly.
         :param _builtins.str storage_volume_performance_mode: The block storage volume performance level. Valid values are `BALANCED` and `HIGH_PERFORMANCE`. See [Block Volume Performance](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm) for more information.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
+        :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str time_created: The date and time the DB system was created.
         :param _builtins.str time_zone: The time zone of the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -48042,6 +48075,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
         pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         pulumi.set(__self__, "cluster_name", cluster_name)
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
         pulumi.set(__self__, "compute_model", compute_model)
@@ -48092,6 +48126,7 @@ class GetDbSystemsDbSystemResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_zone", time_zone)
@@ -48131,6 +48166,14 @@ class GetDbSystemsDbSystemResult(dict):
         The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+        """
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -48513,6 +48556,14 @@ class GetDbSystemsDbSystemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

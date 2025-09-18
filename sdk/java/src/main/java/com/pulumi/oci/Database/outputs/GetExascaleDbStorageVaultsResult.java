@@ -23,7 +23,7 @@ public final class GetExascaleDbStorageVaultsResult {
     private @Nullable String attachedShapeAttributes;
     private @Nullable String attachedShapeAttributesNotEqualTo;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     private @Nullable String clusterPlacementGroupId;
@@ -73,7 +73,7 @@ public final class GetExascaleDbStorageVaultsResult {
         return Optional.ofNullable(this.attachedShapeAttributesNotEqualTo);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public Optional<String> clusterPlacementGroupId() {

@@ -43,7 +43,7 @@ class ExascaleDbStorageVaultArgs:
         :param pulumi.Input['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storage: (Updatable) Create exadata Database Storage Details
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: (Updatable) Exadata Database Storage Vault description.
         :param pulumi.Input[_builtins.str] exadata_infrastructure_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
@@ -157,7 +157,7 @@ class ExascaleDbStorageVaultArgs:
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -284,7 +284,7 @@ class _ExascaleDbStorageVaultState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: (Updatable) Exadata Database Storage Vault description.
@@ -401,7 +401,7 @@ class _ExascaleDbStorageVaultState:
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -672,7 +672,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] additional_flash_cache_in_percent: (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
         :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: (Updatable) Exadata Database Storage Vault description.
@@ -843,7 +843,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] attached_shape_attributes: The shapeAttribute of the Exadata VM cluster(s) associated with the Exadata Database Storage Vault.
         :param pulumi.Input[_builtins.int] autoscale_limit_in_gbs: (Updatable) Maximum limit storage size in gigabytes, that is applicable for the Database Storage Vault.
         :param pulumi.Input[_builtins.str] availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] description: (Updatable) Exadata Database Storage Vault description.
@@ -928,7 +928,7 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 

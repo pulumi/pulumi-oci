@@ -105,6 +105,10 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private List<Integer> cloneTableSpaceLists;
+    /**
+     * @return The Autonomous Database clone type.
+     * 
+     */
     private String cloneType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
@@ -849,6 +853,10 @@ public final class GetAutonomousDatabaseResult {
     public List<Integer> cloneTableSpaceLists() {
         return this.cloneTableSpaceLists;
     }
+    /**
+     * @return The Autonomous Database clone type.
+     * 
+     */
     public String cloneType() {
         return this.cloneType;
     }

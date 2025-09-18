@@ -65,10 +65,6 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> Locks;
         /// <summary>
-        /// The OCIDs of the IPv6 addresses associated with this mount target.
-        /// </summary>
-        public readonly ImmutableArray<string> MountTargetIpv6ids;
-        /// <summary>
         /// A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -141,8 +137,6 @@ namespace Pulumi.Oci.FileStorage.Outputs
 
             ImmutableArray<Outputs.GetMountTargetsMountTargetLockResult> locks,
 
-            ImmutableArray<string> mountTargetIpv6ids,
-
             ImmutableArray<string> nsgIds,
 
             string observedThroughput,
@@ -178,7 +172,6 @@ namespace Pulumi.Oci.FileStorage.Outputs
             LdapIdmaps = ldapIdmaps;
             LifecycleDetails = lifecycleDetails;
             Locks = locks;
-            MountTargetIpv6ids = mountTargetIpv6ids;
             NsgIds = nsgIds;
             ObservedThroughput = observedThroughput;
             PrivateIpIds = privateIpIds;

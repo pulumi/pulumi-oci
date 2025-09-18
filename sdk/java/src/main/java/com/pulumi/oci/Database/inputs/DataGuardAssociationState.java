@@ -80,6 +80,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.backupNetworkNsgIds);
     }
 
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
     /**
      * The number of compute servers for the DB system.
      * 
@@ -733,6 +740,13 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.subnetId);
     }
 
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     /**
      * The date and time the Data Guard association was created.
      * 
@@ -799,6 +813,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.applyRate = $.applyRate;
         this.availabilityDomain = $.availabilityDomain;
         this.backupNetworkNsgIds = $.backupNetworkNsgIds;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.computeCount = $.computeCount;
         this.computeModel = $.computeModel;
         this.cpuCoreCount = $.cpuCoreCount;
@@ -840,6 +855,7 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
         this.state = $.state;
         this.storageVolumePerformanceMode = $.storageVolumePerformanceMode;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
         this.timeCreated = $.timeCreated;
         this.timeZone = $.timeZone;
         this.transportType = $.transportType;
@@ -955,6 +971,15 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
+        }
+
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -1875,6 +1900,15 @@ public final class DataGuardAssociationState extends com.pulumi.resources.Resour
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

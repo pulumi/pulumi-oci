@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetExadbVmClustersResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     private @Nullable String clusterPlacementGroupId;
@@ -54,7 +54,7 @@ public final class GetExadbVmClustersResult {
 
     private GetExadbVmClustersResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public Optional<String> clusterPlacementGroupId() {

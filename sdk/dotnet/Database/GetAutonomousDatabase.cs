@@ -186,6 +186,9 @@ namespace Pulumi.Oci.Database
         /// A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
         /// </summary>
         public readonly ImmutableArray<int> CloneTableSpaceLists;
+        /// <summary>
+        /// The Autonomous Database clone type.
+        /// </summary>
         public readonly string CloneType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.

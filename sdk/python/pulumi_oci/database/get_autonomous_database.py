@@ -626,6 +626,9 @@ class GetAutonomousDatabaseResult:
     @_builtins.property
     @pulumi.getter(name="cloneType")
     def clone_type(self) -> _builtins.str:
+        """
+        The Autonomous Database clone type.
+        """
         return pulumi.get(self, "clone_type")
 
     @_builtins.property

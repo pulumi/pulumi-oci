@@ -59,6 +59,7 @@ export interface GetDataGuardAssociationResult {
     readonly applyRate: string;
     readonly availabilityDomain: string;
     readonly backupNetworkNsgIds: string[];
+    readonly clusterPlacementGroupId: string;
     readonly computeCount: number;
     readonly computeModel: string;
     readonly cpuCoreCount: number;
@@ -138,6 +139,7 @@ export interface GetDataGuardAssociationResult {
     readonly state: string;
     readonly storageVolumePerformanceMode: string;
     readonly subnetId: string;
+    readonly subscriptionId: string;
     /**
      * The date and time the Data Guard association was created.
      */

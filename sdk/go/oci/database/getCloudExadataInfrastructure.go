@@ -67,7 +67,7 @@ type LookupCloudExadataInfrastructureResult struct {
 	// The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
 	AvailableStorageSizeInGbs    int    `pulumi:"availableStorageSizeInGbs"`
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -199,7 +199,7 @@ func (o LookupCloudExadataInfrastructureResultOutput) CloudExadataInfrastructure
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.CloudExadataInfrastructureId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 func (o LookupCloudExadataInfrastructureResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }

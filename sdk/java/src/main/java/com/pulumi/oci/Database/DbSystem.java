@@ -140,6 +140,12 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
     public Output<String> clusterName() {
         return this.clusterName;
     }
+    @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
+    private Output<String> clusterPlacementGroupId;
+
+    public Output<String> clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
+    }
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      * 
@@ -899,6 +905,12 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

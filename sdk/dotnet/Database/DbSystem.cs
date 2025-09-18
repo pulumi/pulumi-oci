@@ -91,6 +91,9 @@ namespace Pulumi.Oci.Database
         [Output("clusterName")]
         public Output<string> ClusterName { get; private set; } = null!;
 
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
         /// </summary>
@@ -422,6 +425,9 @@ namespace Pulumi.Oci.Database
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
+
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -545,6 +551,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
+
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
@@ -823,6 +832,9 @@ namespace Pulumi.Oci.Database
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
 
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
         /// <summary>
         /// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// 
@@ -872,6 +884,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("clusterName")]
         public Input<string>? ClusterName { get; set; }
+
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
@@ -1263,6 +1278,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<string>? _systemTags;

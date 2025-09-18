@@ -170,14 +170,14 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
         return this.clusterName;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
     private Output<String> clusterPlacementGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public Output<String> clusterPlacementGroupId() {

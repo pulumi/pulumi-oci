@@ -69,7 +69,7 @@ if not MYPY:
     class ExportExportOptionArgsDict(TypedDict):
         source: pulumi.Input[_builtins.str]
         """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
 
         **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         """
@@ -116,7 +116,7 @@ class ExportExportOptionArgs:
                  is_anonymous_access_allowed: Optional[pulumi.Input[_builtins.bool]] = None,
                  require_privileged_source_port: Optional[pulumi.Input[_builtins.bool]] = None):
         """
-        :param pulumi.Input[_builtins.str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        :param pulumi.Input[_builtins.str] source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         :param pulumi.Input[_builtins.str] access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
@@ -147,7 +147,7 @@ class ExportExportOptionArgs:
     @pulumi.getter
     def source(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
 
         **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         """

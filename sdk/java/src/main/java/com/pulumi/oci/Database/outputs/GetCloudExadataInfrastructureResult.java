@@ -40,7 +40,7 @@ public final class GetCloudExadataInfrastructureResult {
     private Integer availableStorageSizeInGbs;
     private String cloudExadataInfrastructureId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     private String clusterPlacementGroupId;
@@ -253,7 +253,7 @@ public final class GetCloudExadataInfrastructureResult {
         return this.cloudExadataInfrastructureId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public String clusterPlacementGroupId() {

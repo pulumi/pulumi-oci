@@ -27,7 +27,7 @@ class GetDataGuardAssociationResult:
     """
     A collection of values returned by getDataGuardAssociation.
     """
-    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, compute_count=None, compute_model=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, private_ip_v6=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, time_created=None, time_zone=None, transport_type=None):
+    def __init__(__self__, apply_lag=None, apply_rate=None, availability_domain=None, backup_network_nsg_ids=None, cluster_placement_group_id=None, compute_count=None, compute_model=None, cpu_core_count=None, create_async=None, creation_type=None, data_collection_options=None, data_guard_association_id=None, database_admin_password=None, database_defined_tags=None, database_freeform_tags=None, database_id=None, database_software_image_id=None, db_system_defined_tags=None, db_system_freeform_tags=None, db_system_security_attributes=None, delete_standby_db_home_on_delete=None, display_name=None, domain=None, fault_domains=None, hostname=None, id=None, is_active_data_guard_enabled=None, license_model=None, lifecycle_details=None, migrate_trigger=None, node_count=None, nsg_ids=None, peer_data_guard_association_id=None, peer_database_id=None, peer_db_home_id=None, peer_db_system_id=None, peer_db_unique_name=None, peer_role=None, peer_sid_prefix=None, peer_vm_cluster_id=None, private_ip=None, private_ip_v6=None, protection_mode=None, role=None, shape=None, state=None, storage_volume_performance_mode=None, subnet_id=None, subscription_id=None, time_created=None, time_zone=None, transport_type=None):
         if apply_lag and not isinstance(apply_lag, str):
             raise TypeError("Expected argument 'apply_lag' to be a str")
         pulumi.set(__self__, "apply_lag", apply_lag)
@@ -40,6 +40,9 @@ class GetDataGuardAssociationResult:
         if backup_network_nsg_ids and not isinstance(backup_network_nsg_ids, list):
             raise TypeError("Expected argument 'backup_network_nsg_ids' to be a list")
         pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cluster_placement_group_id and not isinstance(cluster_placement_group_id, str):
+            raise TypeError("Expected argument 'cluster_placement_group_id' to be a str")
+        pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_count and not isinstance(compute_count, int):
             raise TypeError("Expected argument 'compute_count' to be a int")
         pulumi.set(__self__, "compute_count", compute_count)
@@ -169,6 +172,9 @@ class GetDataGuardAssociationResult:
         if subnet_id and not isinstance(subnet_id, str):
             raise TypeError("Expected argument 'subnet_id' to be a str")
         pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -204,6 +210,11 @@ class GetDataGuardAssociationResult:
     @pulumi.getter(name="backupNetworkNsgIds")
     def backup_network_nsg_ids(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "backup_network_nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> _builtins.str:
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -457,6 +468,11 @@ class GetDataGuardAssociationResult:
         return pulumi.get(self, "subnet_id")
 
     @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> _builtins.str:
+        return pulumi.get(self, "subscription_id")
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> _builtins.str:
         """
@@ -488,6 +504,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             apply_rate=self.apply_rate,
             availability_domain=self.availability_domain,
             backup_network_nsg_ids=self.backup_network_nsg_ids,
+            cluster_placement_group_id=self.cluster_placement_group_id,
             compute_count=self.compute_count,
             compute_model=self.compute_model,
             cpu_core_count=self.cpu_core_count,
@@ -531,6 +548,7 @@ class AwaitableGetDataGuardAssociationResult(GetDataGuardAssociationResult):
             state=self.state,
             storage_volume_performance_mode=self.storage_volume_performance_mode,
             subnet_id=self.subnet_id,
+            subscription_id=self.subscription_id,
             time_created=self.time_created,
             time_zone=self.time_zone,
             transport_type=self.transport_type)
@@ -569,6 +587,7 @@ def get_data_guard_association(data_guard_association_id: Optional[_builtins.str
         apply_rate=pulumi.get(__ret__, 'apply_rate'),
         availability_domain=pulumi.get(__ret__, 'availability_domain'),
         backup_network_nsg_ids=pulumi.get(__ret__, 'backup_network_nsg_ids'),
+        cluster_placement_group_id=pulumi.get(__ret__, 'cluster_placement_group_id'),
         compute_count=pulumi.get(__ret__, 'compute_count'),
         compute_model=pulumi.get(__ret__, 'compute_model'),
         cpu_core_count=pulumi.get(__ret__, 'cpu_core_count'),
@@ -612,6 +631,7 @@ def get_data_guard_association(data_guard_association_id: Optional[_builtins.str
         state=pulumi.get(__ret__, 'state'),
         storage_volume_performance_mode=pulumi.get(__ret__, 'storage_volume_performance_mode'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         transport_type=pulumi.get(__ret__, 'transport_type'))
@@ -647,6 +667,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
         apply_rate=pulumi.get(__response__, 'apply_rate'),
         availability_domain=pulumi.get(__response__, 'availability_domain'),
         backup_network_nsg_ids=pulumi.get(__response__, 'backup_network_nsg_ids'),
+        cluster_placement_group_id=pulumi.get(__response__, 'cluster_placement_group_id'),
         compute_count=pulumi.get(__response__, 'compute_count'),
         compute_model=pulumi.get(__response__, 'compute_model'),
         cpu_core_count=pulumi.get(__response__, 'cpu_core_count'),
@@ -690,6 +711,7 @@ def get_data_guard_association_output(data_guard_association_id: Optional[pulumi
         state=pulumi.get(__response__, 'state'),
         storage_volume_performance_mode=pulumi.get(__response__, 'storage_volume_performance_mode'),
         subnet_id=pulumi.get(__response__, 'subnet_id'),
+        subscription_id=pulumi.get(__response__, 'subscription_id'),
         time_created=pulumi.get(__response__, 'time_created'),
         time_zone=pulumi.get(__response__, 'time_zone'),
         transport_type=pulumi.get(__response__, 'transport_type')))

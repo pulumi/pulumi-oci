@@ -92,7 +92,7 @@ export class ExascaleDbStorageVault extends pulumi.CustomResource {
      */
     declare public readonly availabilityDomain: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     declare public readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
@@ -260,7 +260,7 @@ export interface ExascaleDbStorageVaultState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     clusterPlacementGroupId?: pulumi.Input<string>;
     /**
@@ -350,7 +350,7 @@ export interface ExascaleDbStorageVaultArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     clusterPlacementGroupId?: pulumi.Input<string>;
     /**

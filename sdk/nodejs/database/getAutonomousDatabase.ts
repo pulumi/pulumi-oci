@@ -103,6 +103,9 @@ export interface GetAutonomousDatabaseResult {
      * A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
      */
     readonly cloneTableSpaceLists: number[];
+    /**
+     * The Autonomous Database clone type.
+     */
     readonly cloneType: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.

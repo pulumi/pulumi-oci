@@ -30,6 +30,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string ClusterName;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+        /// </summary>
+        public readonly string ClusterPlacementGroupId;
+        /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
@@ -212,6 +216,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
         public readonly ImmutableDictionary<string, string> SystemTags;
@@ -249,6 +257,8 @@ namespace Pulumi.Oci.Database.Outputs
             string backupSubnetId,
 
             string clusterName,
+
+            string clusterPlacementGroupId,
 
             string compartmentId,
 
@@ -350,6 +360,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string subnetId,
 
+            string subscriptionId,
+
             ImmutableDictionary<string, string> systemTags,
 
             string timeCreated,
@@ -368,6 +380,7 @@ namespace Pulumi.Oci.Database.Outputs
             BackupNetworkNsgIds = backupNetworkNsgIds;
             BackupSubnetId = backupSubnetId;
             ClusterName = clusterName;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
             ComputeModel = computeModel;
@@ -418,6 +431,7 @@ namespace Pulumi.Oci.Database.Outputs
             State = state;
             StorageVolumePerformanceMode = storageVolumePerformanceMode;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeZone = timeZone;

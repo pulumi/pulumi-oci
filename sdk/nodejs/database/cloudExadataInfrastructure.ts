@@ -107,7 +107,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly availableStorageSizeInGbs: pulumi.Output<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     declare public readonly clusterPlacementGroupId: pulumi.Output<string | undefined>;
     /**
@@ -383,7 +383,7 @@ export interface CloudExadataInfrastructureState {
      */
     availableStorageSizeInGbs?: pulumi.Input<number>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     clusterPlacementGroupId?: pulumi.Input<string>;
     /**
@@ -537,7 +537,7 @@ export interface CloudExadataInfrastructureArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     clusterPlacementGroupId?: pulumi.Input<string>;
     /**

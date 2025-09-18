@@ -29,6 +29,7 @@ class DataGuardAssociationArgs:
                  transport_type: pulumi.Input[_builtins.str],
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -59,6 +60,7 @@ class DataGuardAssociationArgs:
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DataGuardAssociation resource.
@@ -145,6 +147,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
         if compute_model is not None:
@@ -205,6 +209,8 @@ class DataGuardAssociationArgs:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -317,6 +323,15 @@ class DataGuardAssociationArgs:
     @backup_network_nsg_ids.setter
     def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -694,6 +709,15 @@ class DataGuardAssociationArgs:
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -713,6 +737,7 @@ class _DataGuardAssociationState:
                  apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -754,6 +779,7 @@ class _DataGuardAssociationState:
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None):
@@ -849,6 +875,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "availability_domain", availability_domain)
         if backup_network_nsg_ids is not None:
             pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
         if compute_model is not None:
@@ -931,6 +959,8 @@ class _DataGuardAssociationState:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if time_created is not None:
             pulumi.set(__self__, "time_created", time_created)
         if time_zone is not None:
@@ -985,6 +1015,15 @@ class _DataGuardAssociationState:
     @backup_network_nsg_ids.setter
     def backup_network_nsg_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "backup_network_nsg_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -1501,6 +1540,15 @@ class _DataGuardAssociationState:
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -1552,6 +1600,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1587,6 +1636,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -1820,6 +1870,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1855,6 +1906,7 @@ class DataGuardAssociation(pulumi.CustomResource):
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  transport_type: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
@@ -1868,6 +1920,7 @@ class DataGuardAssociation(pulumi.CustomResource):
 
             __props__.__dict__["availability_domain"] = availability_domain
             __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             __props__.__dict__["compute_count"] = compute_count
             __props__.__dict__["compute_model"] = compute_model
             __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -1913,6 +1966,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             __props__.__dict__["shape"] = shape
             __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["time_zone"] = time_zone
             if transport_type is None and not opts.urn:
                 raise TypeError("Missing required property 'transport_type'")
@@ -1942,6 +1996,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             apply_rate: Optional[pulumi.Input[_builtins.str]] = None,
             availability_domain: Optional[pulumi.Input[_builtins.str]] = None,
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_count: Optional[pulumi.Input[_builtins.int]] = None,
             compute_model: Optional[pulumi.Input[_builtins.str]] = None,
             cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -1983,6 +2038,7 @@ class DataGuardAssociation(pulumi.CustomResource):
             state: Optional[pulumi.Input[_builtins.str]] = None,
             storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_zone: Optional[pulumi.Input[_builtins.str]] = None,
             transport_type: Optional[pulumi.Input[_builtins.str]] = None) -> 'DataGuardAssociation':
@@ -2083,6 +2139,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["apply_rate"] = apply_rate
         __props__.__dict__["availability_domain"] = availability_domain
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compute_count"] = compute_count
         __props__.__dict__["compute_model"] = compute_model
         __props__.__dict__["cpu_core_count"] = cpu_core_count
@@ -2124,6 +2181,7 @@ class DataGuardAssociation(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
         __props__.__dict__["transport_type"] = transport_type
@@ -2160,6 +2218,11 @@ class DataGuardAssociation(pulumi.CustomResource):
         A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
         """
         return pulumi.get(self, "backup_network_nsg_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -2510,6 +2573,11 @@ class DataGuardAssociation(pulumi.CustomResource):
         These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="timeCreated")

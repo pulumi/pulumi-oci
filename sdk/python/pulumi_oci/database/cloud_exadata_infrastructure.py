@@ -41,7 +41,7 @@ class CloudExadataInfrastructureArgs:
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] shape: The shape of the cloud Exadata infrastructure resource.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureCustomerContactArgs']]] customer_contacts: (Updatable) Customer contacts.
         :param pulumi.Input[_builtins.str] database_server_type: The database server type of the Exadata infrastructure.
@@ -133,7 +133,7 @@ class CloudExadataInfrastructureArgs:
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -302,7 +302,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[_builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[_builtins.int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Exadata infrastructure.
@@ -473,7 +473,7 @@ class _CloudExadataInfrastructureState:
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -973,7 +973,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureCustomerContactArgs', 'CloudExadataInfrastructureCustomerContactArgsDict']]]] customer_contacts: (Updatable) Customer contacts.
@@ -1197,7 +1197,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] additional_storage_count: The requested number of additional storage servers for the Exadata infrastructure.
         :param pulumi.Input[_builtins.str] availability_domain: The availability domain where the cloud Exadata infrastructure is located.
         :param pulumi.Input[_builtins.int] available_storage_size_in_gbs: The available storage can be allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
-        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        :param pulumi.Input[_builtins.str] cluster_placement_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[_builtins.int] compute_count: (Updatable) The number of compute servers for the cloud Exadata infrastructure.
         :param pulumi.Input[_builtins.str] compute_model: The compute model of the Exadata infrastructure.
@@ -1318,7 +1318,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 

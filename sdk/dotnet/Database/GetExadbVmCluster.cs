@@ -143,7 +143,7 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string ClusterName;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         /// </summary>
         public readonly string ClusterPlacementGroupId;
         /// <summary>

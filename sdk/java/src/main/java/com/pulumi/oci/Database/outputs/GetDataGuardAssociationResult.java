@@ -27,6 +27,7 @@ public final class GetDataGuardAssociationResult {
     private String applyRate;
     private String availabilityDomain;
     private List<String> backupNetworkNsgIds;
+    private String clusterPlacementGroupId;
     private Integer computeCount;
     private String computeModel;
     private Integer cpuCoreCount;
@@ -118,6 +119,7 @@ public final class GetDataGuardAssociationResult {
     private String state;
     private String storageVolumePerformanceMode;
     private String subnetId;
+    private String subscriptionId;
     /**
      * @return The date and time the Data Guard association was created.
      * 
@@ -150,6 +152,9 @@ public final class GetDataGuardAssociationResult {
     }
     public List<String> backupNetworkNsgIds() {
         return this.backupNetworkNsgIds;
+    }
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     public Integer computeCount() {
         return this.computeCount;
@@ -328,6 +333,9 @@ public final class GetDataGuardAssociationResult {
     public String subnetId() {
         return this.subnetId;
     }
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
     /**
      * @return The date and time the Data Guard association was created.
      * 
@@ -359,6 +367,7 @@ public final class GetDataGuardAssociationResult {
         private String applyRate;
         private String availabilityDomain;
         private List<String> backupNetworkNsgIds;
+        private String clusterPlacementGroupId;
         private Integer computeCount;
         private String computeModel;
         private Integer cpuCoreCount;
@@ -402,6 +411,7 @@ public final class GetDataGuardAssociationResult {
         private String state;
         private String storageVolumePerformanceMode;
         private String subnetId;
+        private String subscriptionId;
         private String timeCreated;
         private String timeZone;
         private String transportType;
@@ -412,6 +422,7 @@ public final class GetDataGuardAssociationResult {
     	      this.applyRate = defaults.applyRate;
     	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.computeCount = defaults.computeCount;
     	      this.computeModel = defaults.computeModel;
     	      this.cpuCoreCount = defaults.cpuCoreCount;
@@ -455,6 +466,7 @@ public final class GetDataGuardAssociationResult {
     	      this.state = defaults.state;
     	      this.storageVolumePerformanceMode = defaults.storageVolumePerformanceMode;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
     	      this.transportType = defaults.transportType;
@@ -494,6 +506,14 @@ public final class GetDataGuardAssociationResult {
         }
         public Builder backupNetworkNsgIds(String... backupNetworkNsgIds) {
             return backupNetworkNsgIds(List.of(backupNetworkNsgIds));
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder computeCount(Integer computeCount) {
@@ -849,6 +869,14 @@ public final class GetDataGuardAssociationResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeCreated(String timeCreated) {
             if (timeCreated == null) {
               throw new MissingRequiredPropertyException("GetDataGuardAssociationResult", "timeCreated");
@@ -878,6 +906,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.applyRate = applyRate;
             _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.backupNetworkNsgIds = backupNetworkNsgIds;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.computeCount = computeCount;
             _resultValue.computeModel = computeModel;
             _resultValue.cpuCoreCount = cpuCoreCount;
@@ -921,6 +950,7 @@ public final class GetDataGuardAssociationResult {
             _resultValue.state = state;
             _resultValue.storageVolumePerformanceMode = storageVolumePerformanceMode;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;
             _resultValue.transportType = transportType;

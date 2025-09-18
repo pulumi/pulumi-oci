@@ -99,7 +99,7 @@ export interface GetExascaleDbStorageVaultsResult {
     readonly attachedShapeAttributes?: string;
     readonly attachedShapeAttributesNotEqualTo?: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     readonly clusterPlacementGroupId?: string;
     /**

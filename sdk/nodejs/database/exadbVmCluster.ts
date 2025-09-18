@@ -119,7 +119,7 @@ export class ExadbVmCluster extends pulumi.CustomResource {
      */
     declare public readonly clusterName: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     declare public /*out*/ readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
@@ -447,7 +447,7 @@ export interface ExadbVmClusterState {
      */
     clusterName?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      */
     clusterPlacementGroupId?: pulumi.Input<string>;
     /**

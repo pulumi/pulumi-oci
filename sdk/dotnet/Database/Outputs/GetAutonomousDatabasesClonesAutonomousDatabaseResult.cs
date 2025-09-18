@@ -74,6 +74,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<int> CloneTableSpaceLists;
         /// <summary>
+        /// A filter to return only resources that match the given clone type exactly.
+        /// </summary>
+        public readonly string CloneType;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
         /// </summary>
         public readonly string ClusterPlacementGroupId;
@@ -563,6 +567,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<int> cloneTableSpaceLists,
 
+            string cloneType,
+
             string clusterPlacementGroupId,
 
             string compartmentId,
@@ -804,6 +810,7 @@ namespace Pulumi.Oci.Database.Outputs
             ByolComputeCountLimit = byolComputeCountLimit;
             CharacterSet = characterSet;
             CloneTableSpaceLists = cloneTableSpaceLists;
+            CloneType = cloneType;
             ClusterPlacementGroupId = clusterPlacementGroupId;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;

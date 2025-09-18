@@ -23,6 +23,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string ApplyRate;
         public readonly string AvailabilityDomain;
         public readonly ImmutableArray<string> BackupNetworkNsgIds;
+        public readonly string ClusterPlacementGroupId;
         public readonly int ComputeCount;
         public readonly string ComputeModel;
         public readonly int CpuCoreCount;
@@ -101,6 +102,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string State;
         public readonly string StorageVolumePerformanceMode;
         public readonly string SubnetId;
+        public readonly string SubscriptionId;
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
@@ -120,6 +122,8 @@ namespace Pulumi.Oci.Database.Outputs
             string availabilityDomain,
 
             ImmutableArray<string> backupNetworkNsgIds,
+
+            string clusterPlacementGroupId,
 
             int computeCount,
 
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string subnetId,
 
+            string subscriptionId,
+
             string timeCreated,
 
             string timeZone,
@@ -215,6 +221,7 @@ namespace Pulumi.Oci.Database.Outputs
             ApplyRate = applyRate;
             AvailabilityDomain = availabilityDomain;
             BackupNetworkNsgIds = backupNetworkNsgIds;
+            ClusterPlacementGroupId = clusterPlacementGroupId;
             ComputeCount = computeCount;
             ComputeModel = computeModel;
             CpuCoreCount = cpuCoreCount;
@@ -257,6 +264,7 @@ namespace Pulumi.Oci.Database.Outputs
             State = state;
             StorageVolumePerformanceMode = storageVolumePerformanceMode;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             TimeCreated = timeCreated;
             TimeZone = timeZone;
             TransportType = transportType;

@@ -117,6 +117,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     declare public readonly backupNetworkNsgIds: pulumi.Output<string[] | undefined>;
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * The number of compute servers for the DB system.
      */
@@ -303,6 +304,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      */
     declare public readonly subnetId: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * The date and time the Data Guard association was created.
      */
@@ -340,6 +342,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["applyRate"] = state?.applyRate;
             resourceInputs["availabilityDomain"] = state?.availabilityDomain;
             resourceInputs["backupNetworkNsgIds"] = state?.backupNetworkNsgIds;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["computeCount"] = state?.computeCount;
             resourceInputs["computeModel"] = state?.computeModel;
             resourceInputs["cpuCoreCount"] = state?.cpuCoreCount;
@@ -381,6 +384,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["storageVolumePerformanceMode"] = state?.storageVolumePerformanceMode;
             resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
             resourceInputs["transportType"] = state?.transportType;
@@ -406,6 +410,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             }
             resourceInputs["availabilityDomain"] = args?.availabilityDomain;
             resourceInputs["backupNetworkNsgIds"] = args?.backupNetworkNsgIds;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["computeCount"] = args?.computeCount;
             resourceInputs["computeModel"] = args?.computeModel;
             resourceInputs["cpuCoreCount"] = args?.cpuCoreCount;
@@ -441,6 +446,7 @@ export class DataGuardAssociation extends pulumi.CustomResource {
             resourceInputs["shape"] = args?.shape;
             resourceInputs["storageVolumePerformanceMode"] = args?.storageVolumePerformanceMode;
             resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["transportType"] = args?.transportType;
             resourceInputs["applyLag"] = undefined /*out*/;
@@ -480,6 +486,7 @@ export interface DataGuardAssociationState {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * The number of compute servers for the DB system.
      */
@@ -666,6 +673,7 @@ export interface DataGuardAssociationState {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The date and time the Data Guard association was created.
      */
@@ -699,6 +707,7 @@ export interface DataGuardAssociationArgs {
      * A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
      */
     backupNetworkNsgIds?: pulumi.Input<pulumi.Input<string>[]>;
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * The number of compute servers for the DB system.
      */
@@ -861,6 +870,7 @@ export interface DataGuardAssociationArgs {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      */

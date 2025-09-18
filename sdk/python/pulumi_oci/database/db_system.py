@@ -31,6 +31,7 @@ class DbSystemArgs:
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
                  cpu_core_count: Optional[pulumi.Input[_builtins.int]] = None,
@@ -59,6 +60,7 @@ class DbSystemArgs:
                  source_db_system_id: Optional[pulumi.Input[_builtins.str]] = None,
                  sparse_diskgroup: Optional[pulumi.Input[_builtins.bool]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
@@ -158,6 +160,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compute_count is not None:
             pulumi.set(__self__, "compute_count", compute_count)
         if compute_model is not None:
@@ -214,6 +218,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "sparse_diskgroup", sparse_diskgroup)
         if storage_volume_performance_mode is not None:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if time_zone is not None:
             pulumi.set(__self__, "time_zone", time_zone)
 
@@ -354,6 +360,15 @@ class DbSystemArgs:
     @cluster_name.setter
     def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="computeCount")
@@ -713,6 +728,15 @@ class DbSystemArgs:
         pulumi.set(self, "storage_volume_performance_mode", value)
 
     @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
@@ -736,6 +760,7 @@ class _DbSystemState:
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -785,6 +810,7 @@ class _DbSystemState:
                  state: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -906,6 +932,8 @@ class _DbSystemState:
             pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
         if cluster_name is not None:
             pulumi.set(__self__, "cluster_name", cluster_name)
+        if cluster_placement_group_id is not None:
+            pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compute_count is not None:
@@ -1004,6 +1032,8 @@ class _DbSystemState:
             pulumi.set(__self__, "storage_volume_performance_mode", storage_volume_performance_mode)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if time_created is not None:
@@ -1068,6 +1098,15 @@ class _DbSystemState:
     @cluster_name.setter
     def cluster_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "cluster_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "cluster_placement_group_id")
+
+    @cluster_placement_group_id.setter
+    def cluster_placement_group_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "cluster_placement_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -1695,6 +1734,15 @@ class _DbSystemState:
         pulumi.set(self, "subnet_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -1793,6 +1841,7 @@ class DbSystem(pulumi.CustomResource):
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1827,6 +1876,7 @@ class DbSystem(pulumi.CustomResource):
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         """
@@ -2045,6 +2095,7 @@ class DbSystem(pulumi.CustomResource):
                  backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  compute_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compute_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2079,6 +2130,7 @@ class DbSystem(pulumi.CustomResource):
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
                  time_zone: Optional[pulumi.Input[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -2095,6 +2147,7 @@ class DbSystem(pulumi.CustomResource):
             __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
             __props__.__dict__["backup_subnet_id"] = backup_subnet_id
             __props__.__dict__["cluster_name"] = cluster_name
+            __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -2141,6 +2194,7 @@ class DbSystem(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["iorm_config_caches"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
@@ -2177,6 +2231,7 @@ class DbSystem(pulumi.CustomResource):
             backup_network_nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             backup_subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             cluster_name: Optional[pulumi.Input[_builtins.str]] = None,
+            cluster_placement_group_id: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             compute_count: Optional[pulumi.Input[_builtins.int]] = None,
             compute_model: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2226,6 +2281,7 @@ class DbSystem(pulumi.CustomResource):
             state: Optional[pulumi.Input[_builtins.str]] = None,
             storage_volume_performance_mode: Optional[pulumi.Input[_builtins.str]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
+            subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: Optional[pulumi.Input[_builtins.str]] = None,
             time_zone: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2352,6 +2408,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["backup_network_nsg_ids"] = backup_network_nsg_ids
         __props__.__dict__["backup_subnet_id"] = backup_subnet_id
         __props__.__dict__["cluster_name"] = cluster_name
+        __props__.__dict__["cluster_placement_group_id"] = cluster_placement_group_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["compute_count"] = compute_count
         __props__.__dict__["compute_model"] = compute_model
@@ -2401,6 +2458,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_volume_performance_mode"] = storage_volume_performance_mode
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_zone"] = time_zone
@@ -2443,6 +2501,11 @@ class DbSystem(pulumi.CustomResource):
         The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
         """
         return pulumi.get(self, "cluster_name")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterPlacementGroupId")
+    def cluster_placement_group_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "cluster_placement_group_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -2872,6 +2935,11 @@ class DbSystem(pulumi.CustomResource):
         These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "subscription_id")
 
     @_builtins.property
     @pulumi.getter(name="systemTags")

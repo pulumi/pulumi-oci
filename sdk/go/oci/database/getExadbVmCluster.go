@@ -66,7 +66,7 @@ type LookupExadbVmClusterResult struct {
 	BackupSubnetId string `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 	ClusterName string `pulumi:"clusterName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -204,7 +204,7 @@ func (o LookupExadbVmClusterResultOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.ClusterName }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 func (o LookupExadbVmClusterResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupExadbVmClusterResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }

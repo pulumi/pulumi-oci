@@ -8342,6 +8342,8 @@ type GetDbSystemsDbSystem struct {
 	BackupSubnetId string `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 	ClusterName string `pulumi:"clusterName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// The number of compute servers for the DB system.
@@ -8438,6 +8440,8 @@ type GetDbSystemsDbSystem struct {
 	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB system was created.
@@ -8474,6 +8478,8 @@ type GetDbSystemsDbSystemArgs struct {
 	BackupSubnetId pulumi.StringInput `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 	ClusterName pulumi.StringInput `pulumi:"clusterName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+	ClusterPlacementGroupId pulumi.StringInput `pulumi:"clusterPlacementGroupId"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// The number of compute servers for the DB system.
@@ -8570,6 +8576,8 @@ type GetDbSystemsDbSystemArgs struct {
 	StorageVolumePerformanceMode pulumi.StringInput `pulumi:"storageVolumePerformanceMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId pulumi.StringInput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// The date and time the DB system was created.
@@ -8655,6 +8663,11 @@ func (o GetDbSystemsDbSystemOutput) BackupSubnetId() pulumi.StringOutput {
 // The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 func (o GetDbSystemsDbSystemOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ClusterName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+func (o GetDbSystemsDbSystemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -8905,6 +8918,11 @@ func (o GetDbSystemsDbSystemOutput) StorageVolumePerformanceMode() pulumi.String
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the DB system is associated with.
 func (o GetDbSystemsDbSystemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o GetDbSystemsDbSystemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystem) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

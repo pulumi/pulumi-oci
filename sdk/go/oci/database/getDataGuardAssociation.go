@@ -64,19 +64,20 @@ type LookupDataGuardAssociationResult struct {
 	// The lag time between updates to the primary database and application of the redo data on the standby database, as computed by the reporting database.  Example: `9 seconds`
 	ApplyLag string `pulumi:"applyLag"`
 	// The rate at which redo logs are synced between the associated databases.  Example: `180 Mb per second`
-	ApplyRate              string                                        `pulumi:"applyRate"`
-	AvailabilityDomain     string                                        `pulumi:"availabilityDomain"`
-	BackupNetworkNsgIds    []string                                      `pulumi:"backupNetworkNsgIds"`
-	ComputeCount           int                                           `pulumi:"computeCount"`
-	ComputeModel           string                                        `pulumi:"computeModel"`
-	CpuCoreCount           int                                           `pulumi:"cpuCoreCount"`
-	CreateAsync            bool                                          `pulumi:"createAsync"`
-	CreationType           string                                        `pulumi:"creationType"`
-	DataCollectionOptions  []GetDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
-	DataGuardAssociationId string                                        `pulumi:"dataGuardAssociationId"`
-	DatabaseAdminPassword  string                                        `pulumi:"databaseAdminPassword"`
-	DatabaseDefinedTags    map[string]string                             `pulumi:"databaseDefinedTags"`
-	DatabaseFreeformTags   map[string]string                             `pulumi:"databaseFreeformTags"`
+	ApplyRate               string                                        `pulumi:"applyRate"`
+	AvailabilityDomain      string                                        `pulumi:"availabilityDomain"`
+	BackupNetworkNsgIds     []string                                      `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId string                                        `pulumi:"clusterPlacementGroupId"`
+	ComputeCount            int                                           `pulumi:"computeCount"`
+	ComputeModel            string                                        `pulumi:"computeModel"`
+	CpuCoreCount            int                                           `pulumi:"cpuCoreCount"`
+	CreateAsync             bool                                          `pulumi:"createAsync"`
+	CreationType            string                                        `pulumi:"creationType"`
+	DataCollectionOptions   []GetDataGuardAssociationDataCollectionOption `pulumi:"dataCollectionOptions"`
+	DataGuardAssociationId  string                                        `pulumi:"dataGuardAssociationId"`
+	DatabaseAdminPassword   string                                        `pulumi:"databaseAdminPassword"`
+	DatabaseDefinedTags     map[string]string                             `pulumi:"databaseDefinedTags"`
+	DatabaseFreeformTags    map[string]string                             `pulumi:"databaseFreeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the reporting database.
 	DatabaseId                  string            `pulumi:"databaseId"`
 	DatabaseSoftwareImageId     string            `pulumi:"databaseSoftwareImageId"`
@@ -122,6 +123,7 @@ type LookupDataGuardAssociationResult struct {
 	State                        string `pulumi:"state"`
 	StorageVolumePerformanceMode string `pulumi:"storageVolumePerformanceMode"`
 	SubnetId                     string `pulumi:"subnetId"`
+	SubscriptionId               string `pulumi:"subscriptionId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	TimeZone    string `pulumi:"timeZone"`
@@ -181,6 +183,10 @@ func (o LookupDataGuardAssociationResultOutput) AvailabilityDomain() pulumi.Stri
 
 func (o LookupDataGuardAssociationResultOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) []string { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 func (o LookupDataGuardAssociationResultOutput) ComputeCount() pulumi.IntOutput {
@@ -367,6 +373,10 @@ func (o LookupDataGuardAssociationResultOutput) StorageVolumePerformanceMode() p
 
 func (o LookupDataGuardAssociationResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o LookupDataGuardAssociationResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDataGuardAssociationResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // The date and time the Data Guard association was created.

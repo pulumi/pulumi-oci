@@ -109,7 +109,7 @@ class ExportExportOption(dict):
                  is_anonymous_access_allowed: Optional[_builtins.bool] = None,
                  require_privileged_source_port: Optional[_builtins.bool] = None):
         """
-        :param _builtins.str source: (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        :param _builtins.str source: (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
                
                **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         :param _builtins.str access: (Updatable) Type of access to grant clients using the file system through this export. If unspecified defaults to `READ_WRITE`.
@@ -140,7 +140,7 @@ class ExportExportOption(dict):
     @pulumi.getter
     def source(self) -> _builtins.str:
         """
-        (Updatable) Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        (Updatable) Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
 
         **Note:** Access will also be limited by any applicable VCN security rules and the ability to route IP packets to the mount target. Mount targets do not have Internet-routable IP addresses.
         """
@@ -1432,7 +1432,7 @@ class GetExportsExportExportOptionResult(dict):
         :param _builtins.str identity_squash: Used when clients accessing the file system through this export have their UID and GID remapped to 'anonymousUid' and 'anonymousGid'. If `ALL`, all users and groups are remapped; if `ROOT`, only the root user and group (UID/GID 0) are remapped; if `NONE`, no remapping is done. If unspecified, defaults to `ROOT`.
         :param _builtins.bool is_anonymous_access_allowed: Whether or not to enable anonymous access to the file system through this export in cases where a user isn't found in the LDAP server used for ID mapping. If true, and the user is not found in the LDAP directory, the operation uses the Squash UID and Squash GID.
         :param _builtins.bool require_privileged_source_port: If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
-        :param _builtins.str source: Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        :param _builtins.str source: Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
         """
         pulumi.set(__self__, "access", access)
         pulumi.set(__self__, "allowed_auths", allowed_auths)
@@ -1503,7 +1503,7 @@ class GetExportsExportExportOptionResult(dict):
     @pulumi.getter
     def source(self) -> _builtins.str:
         """
-        Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
         """
         return pulumi.get(self, "source")
 
@@ -2672,7 +2672,6 @@ class GetMountTargetsMountTargetResult(dict):
                  ldap_idmaps: Sequence['outputs.GetMountTargetsMountTargetLdapIdmapResult'],
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetMountTargetsMountTargetLockResult'],
-                 mount_target_ipv6ids: Sequence[_builtins.str],
                  nsg_ids: Sequence[_builtins.str],
                  observed_throughput: _builtins.str,
                  private_ip_ids: Sequence[_builtins.str],
@@ -2696,7 +2695,6 @@ class GetMountTargetsMountTargetResult(dict):
         :param Sequence['GetMountTargetsMountTargetLdapIdmapArgs'] ldap_idmaps: Mount target details about the LDAP ID mapping configuration.
         :param _builtins.str lifecycle_details: Additional information about the current 'lifecycleState'.
         :param Sequence['GetMountTargetsMountTargetLockArgs'] locks: Locks associated with this resource.
-        :param Sequence[_builtins.str] mount_target_ipv6ids: The OCIDs of the IPv6 addresses associated with this mount target.
         :param Sequence[_builtins.str] nsg_ids: A list of Network Security Group [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with this mount target. A maximum of 5 is allowed. Setting this to an empty array after the list is created removes the mount target from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
         :param _builtins.str observed_throughput: Current billed throughput for mount target in Gbps. This corresponds to shape of mount target. Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
         :param Sequence[_builtins.str] private_ip_ids: The OCIDs of the private IP addresses associated with this mount target.
@@ -2723,7 +2721,6 @@ class GetMountTargetsMountTargetResult(dict):
         pulumi.set(__self__, "ldap_idmaps", ldap_idmaps)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
-        pulumi.set(__self__, "mount_target_ipv6ids", mount_target_ipv6ids)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "observed_throughput", observed_throughput)
         pulumi.set(__self__, "private_ip_ids", private_ip_ids)
@@ -2845,14 +2842,6 @@ class GetMountTargetsMountTargetResult(dict):
         Locks associated with this resource.
         """
         return pulumi.get(self, "locks")
-
-    @_builtins.property
-    @pulumi.getter(name="mountTargetIpv6ids")
-    def mount_target_ipv6ids(self) -> Sequence[_builtins.str]:
-        """
-        The OCIDs of the IPv6 addresses associated with this mount target.
-        """
-        return pulumi.get(self, "mount_target_ipv6ids")
 
     @_builtins.property
     @pulumi.getter(name="nsgIds")

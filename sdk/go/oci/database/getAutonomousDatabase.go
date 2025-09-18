@@ -89,8 +89,9 @@ type LookupAutonomousDatabaseResult struct {
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
 	CharacterSet string `pulumi:"characterSet"`
 	// A list of the source Autonomous Database's table space number(s) used to create this partial clone from the backup.
-	CloneTableSpaceLists []int  `pulumi:"cloneTableSpaceLists"`
-	CloneType            string `pulumi:"cloneType"`
+	CloneTableSpaceLists []int `pulumi:"cloneTableSpaceLists"`
+	// The Autonomous Database clone type.
+	CloneType string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
 	ClusterPlacementGroupId string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -476,6 +477,7 @@ func (o LookupAutonomousDatabaseResultOutput) CloneTableSpaceLists() pulumi.IntA
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) []int { return v.CloneTableSpaceLists }).(pulumi.IntArrayOutput)
 }
 
+// The Autonomous Database clone type.
 func (o LookupAutonomousDatabaseResultOutput) CloneType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.CloneType }).(pulumi.StringOutput)
 }

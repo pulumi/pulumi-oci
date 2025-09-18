@@ -102,7 +102,8 @@ type DataGuardAssociation struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-	BackupNetworkNsgIds pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
+	BackupNetworkNsgIds     pulumi.StringArrayOutput `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId pulumi.StringOutput      `pulumi:"clusterPlacementGroupId"`
 	// The number of compute servers for the DB system.
 	ComputeCount pulumi.IntOutput `pulumi:"computeCount"`
 	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -209,7 +210,8 @@ type DataGuardAssociation struct {
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId       pulumi.StringOutput `pulumi:"subnetId"`
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -287,7 +289,8 @@ type dataGuardAssociationState struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	BackupNetworkNsgIds     []string `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId *string  `pulumi:"clusterPlacementGroupId"`
 	// The number of compute servers for the DB system.
 	ComputeCount *int `pulumi:"computeCount"`
 	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -394,7 +397,8 @@ type dataGuardAssociationState struct {
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetId       *string `pulumi:"subnetId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The date and time the Data Guard association was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -418,7 +422,8 @@ type DataGuardAssociationState struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-	BackupNetworkNsgIds pulumi.StringArrayInput
+	BackupNetworkNsgIds     pulumi.StringArrayInput
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// The number of compute servers for the DB system.
 	ComputeCount pulumi.IntPtrInput
 	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -525,7 +530,8 @@ type DataGuardAssociationState struct {
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId pulumi.StringPtrInput
+	SubnetId       pulumi.StringPtrInput
+	SubscriptionId pulumi.StringPtrInput
 	// The date and time the Data Guard association was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
@@ -549,7 +555,8 @@ type dataGuardAssociationArgs struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`
+	BackupNetworkNsgIds     []string `pulumi:"backupNetworkNsgIds"`
+	ClusterPlacementGroupId *string  `pulumi:"clusterPlacementGroupId"`
 	// The number of compute servers for the DB system.
 	ComputeCount *int `pulumi:"computeCount"`
 	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -644,7 +651,8 @@ type dataGuardAssociationArgs struct {
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetId       *string `pulumi:"subnetId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone *string `pulumi:"timeZone"`
 	// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -663,7 +671,8 @@ type DataGuardAssociationArgs struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain pulumi.StringPtrInput
 	// A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
-	BackupNetworkNsgIds pulumi.StringArrayInput
+	BackupNetworkNsgIds     pulumi.StringArrayInput
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// The number of compute servers for the DB system.
 	ComputeCount pulumi.IntPtrInput
 	// The compute model for Base Database Service. This is required if using the `computeCount` parameter. If using `cpuCoreCount` then it is an error to specify `computeModel` to a non-null value. The ECPU compute model is the recommended model, and the OCPU compute model is legacy.
@@ -758,7 +767,8 @@ type DataGuardAssociationArgs struct {
 	// * For 1- and 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.16.16/28
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
-	SubnetId pulumi.StringPtrInput
+	SubnetId       pulumi.StringPtrInput
+	SubscriptionId pulumi.StringPtrInput
 	// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	TimeZone pulumi.StringPtrInput
 	// (Updatable) The redo transport type to use for this Data Guard association.  Valid values depend on the specified `protectionMode`:
@@ -877,6 +887,10 @@ func (o DataGuardAssociationOutput) AvailabilityDomain() pulumi.StringOutput {
 // A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 func (o DataGuardAssociationOutput) BackupNetworkNsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringArrayOutput { return v.BackupNetworkNsgIds }).(pulumi.StringArrayOutput)
+}
+
+func (o DataGuardAssociationOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // The number of compute servers for the DB system.
@@ -1109,6 +1123,10 @@ func (o DataGuardAssociationOutput) StorageVolumePerformanceMode() pulumi.String
 // These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and backup subnet.
 func (o DataGuardAssociationOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o DataGuardAssociationOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DataGuardAssociation) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // The date and time the Data Guard association was created.

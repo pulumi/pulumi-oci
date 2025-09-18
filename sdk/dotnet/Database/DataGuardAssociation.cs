@@ -111,6 +111,9 @@ namespace Pulumi.Oci.Database
         [Output("backupNetworkNsgIds")]
         public Output<ImmutableArray<string>> BackupNetworkNsgIds { get; private set; } = null!;
 
+        [Output("clusterPlacementGroupId")]
+        public Output<string> ClusterPlacementGroupId { get; private set; } = null!;
+
         /// <summary>
         /// The number of compute servers for the DB system.
         /// </summary>
@@ -379,6 +382,9 @@ namespace Pulumi.Oci.Database
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
 
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
+
         /// <summary>
         /// The date and time the Data Guard association was created.
         /// </summary>
@@ -471,6 +477,9 @@ namespace Pulumi.Oci.Database
             get => _backupNetworkNsgIds ?? (_backupNetworkNsgIds = new InputList<string>());
             set => _backupNetworkNsgIds = value;
         }
+
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// The number of compute servers for the DB system.
@@ -756,6 +765,9 @@ namespace Pulumi.Oci.Database
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
+
         /// <summary>
         /// The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
         /// </summary>
@@ -812,6 +824,9 @@ namespace Pulumi.Oci.Database
             get => _backupNetworkNsgIds ?? (_backupNetworkNsgIds = new InputList<string>());
             set => _backupNetworkNsgIds = value;
         }
+
+        [Input("clusterPlacementGroupId")]
+        public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
         /// The number of compute servers for the DB system.
@@ -1132,6 +1147,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
         /// The date and time the Data Guard association was created.

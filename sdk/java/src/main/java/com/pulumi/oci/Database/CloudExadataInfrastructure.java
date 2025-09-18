@@ -160,14 +160,14 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
         return this.availableStorageSizeInGbs;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     @Export(name="clusterPlacementGroupId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> clusterPlacementGroupId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
      * 
      */
     public Output<Optional<String>> clusterPlacementGroupId() {

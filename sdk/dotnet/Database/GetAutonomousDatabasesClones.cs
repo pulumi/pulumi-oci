@@ -207,6 +207,9 @@ namespace Pulumi.Oci.Database
         /// The list of autonomous_databases.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseResult> AutonomousDatabases;
+        /// <summary>
+        /// The Autonomous Database clone type.
+        /// </summary>
         public readonly string? CloneType;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

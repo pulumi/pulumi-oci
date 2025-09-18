@@ -21,6 +21,10 @@ public final class GetAutonomousDatabasesClonesResult {
      * 
      */
     private List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases;
+    /**
+     * @return The Autonomous Database clone type.
+     * 
+     */
     private @Nullable String cloneType;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -55,6 +59,10 @@ public final class GetAutonomousDatabasesClonesResult {
     public List<GetAutonomousDatabasesClonesAutonomousDatabase> autonomousDatabases() {
         return this.autonomousDatabases;
     }
+    /**
+     * @return The Autonomous Database clone type.
+     * 
+     */
     public Optional<String> cloneType() {
         return Optional.ofNullable(this.cloneType);
     }

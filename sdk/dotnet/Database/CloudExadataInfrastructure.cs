@@ -114,7 +114,7 @@ namespace Pulumi.Oci.Database
         public Output<int> AvailableStorageSizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         /// </summary>
         [Output("clusterPlacementGroupId")]
         public Output<string?> ClusterPlacementGroupId { get; private set; } = null!;
@@ -380,7 +380,7 @@ namespace Pulumi.Oci.Database
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         /// </summary>
         [Input("clusterPlacementGroupId")]
         public Input<string>? ClusterPlacementGroupId { get; set; }
@@ -512,7 +512,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? AvailableStorageSizeInGbs { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
         /// </summary>
         [Input("clusterPlacementGroupId")]
         public Input<string>? ClusterPlacementGroupId { get; set; }

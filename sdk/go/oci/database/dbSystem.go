@@ -75,7 +75,8 @@ type DbSystem struct {
 	// **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 	BackupSubnetId pulumi.StringOutput `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName pulumi.StringOutput `pulumi:"clusterName"`
+	ClusterName             pulumi.StringOutput `pulumi:"clusterName"`
+	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the DB system.
@@ -210,7 +211,8 @@ type DbSystem struct {
 	// * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
+	SubnetId       pulumi.StringOutput `pulumi:"subnetId"`
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// The date and time the DB system was created.
@@ -290,7 +292,8 @@ type dbSystemState struct {
 	// **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 	BackupSubnetId *string `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName *string `pulumi:"clusterName"`
+	ClusterName             *string `pulumi:"clusterName"`
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the DB system.
@@ -425,7 +428,8 @@ type dbSystemState struct {
 	// * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-	SubnetId *string `pulumi:"subnetId"`
+	SubnetId       *string `pulumi:"subnetId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]string `pulumi:"systemTags"`
 	// The date and time the DB system was created.
@@ -455,7 +459,8 @@ type DbSystemState struct {
 	// **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 	BackupSubnetId pulumi.StringPtrInput
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName pulumi.StringPtrInput
+	ClusterName             pulumi.StringPtrInput
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) The number of compute servers for the DB system.
@@ -590,7 +595,8 @@ type DbSystemState struct {
 	// * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-	SubnetId pulumi.StringPtrInput
+	SubnetId       pulumi.StringPtrInput
+	SubscriptionId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.StringMapInput
 	// The date and time the DB system was created.
@@ -624,7 +630,8 @@ type dbSystemArgs struct {
 	// **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 	BackupSubnetId *string `pulumi:"backupSubnetId"`
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName *string `pulumi:"clusterName"`
+	ClusterName             *string `pulumi:"clusterName"`
+	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) The number of compute servers for the DB system.
@@ -729,7 +736,8 @@ type dbSystemArgs struct {
 	// * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-	SubnetId string `pulumi:"subnetId"`
+	SubnetId       string  `pulumi:"subnetId"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	//
 	// ** IMPORTANT **
@@ -748,7 +756,8 @@ type DbSystemArgs struct {
 	// **Subnet Restrictions:** See the subnet restrictions information for **subnetId**.
 	BackupSubnetId pulumi.StringPtrInput
 	// The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
-	ClusterName pulumi.StringPtrInput
+	ClusterName             pulumi.StringPtrInput
+	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) The number of compute servers for the DB system.
@@ -853,7 +862,8 @@ type DbSystemArgs struct {
 	// * For Exadata and virtual machine 2-node RAC DB systems, do not use a subnet that overlaps with 192.168.128.0/20.
 	//
 	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-	SubnetId pulumi.StringInput
+	SubnetId       pulumi.StringInput
+	SubscriptionId pulumi.StringPtrInput
 	// The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
 	//
 	// ** IMPORTANT **
@@ -968,6 +978,10 @@ func (o DbSystemOutput) BackupSubnetId() pulumi.StringOutput {
 // The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
 func (o DbSystemOutput) ClusterName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.ClusterName }).(pulumi.StringOutput)
+}
+
+func (o DbSystemOutput) ClusterPlacementGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
@@ -1250,6 +1264,10 @@ func (o DbSystemOutput) StorageVolumePerformanceMode() pulumi.StringOutput {
 // These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
 func (o DbSystemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+func (o DbSystemOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DbSystem) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

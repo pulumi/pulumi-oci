@@ -105,6 +105,7 @@ export class DbSystem extends pulumi.CustomResource {
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
     declare public readonly clusterName: pulumi.Output<string>;
+    declare public readonly clusterPlacementGroupId: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
@@ -338,6 +339,7 @@ export class DbSystem extends pulumi.CustomResource {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     declare public readonly subnetId: pulumi.Output<string>;
+    declare public readonly subscriptionId: pulumi.Output<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -388,6 +390,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["backupNetworkNsgIds"] = state?.backupNetworkNsgIds;
             resourceInputs["backupSubnetId"] = state?.backupSubnetId;
             resourceInputs["clusterName"] = state?.clusterName;
+            resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["computeCount"] = state?.computeCount;
             resourceInputs["computeModel"] = state?.computeModel;
@@ -437,6 +440,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["state"] = state?.state;
             resourceInputs["storageVolumePerformanceMode"] = state?.storageVolumePerformanceMode;
             resourceInputs["subnetId"] = state?.subnetId;
+            resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["timeCreated"] = state?.timeCreated;
             resourceInputs["timeZone"] = state?.timeZone;
@@ -471,6 +475,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["backupNetworkNsgIds"] = args?.backupNetworkNsgIds;
             resourceInputs["backupSubnetId"] = args?.backupSubnetId;
             resourceInputs["clusterName"] = args?.clusterName;
+            resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["computeCount"] = args?.computeCount;
             resourceInputs["computeModel"] = args?.computeModel;
@@ -505,6 +510,7 @@ export class DbSystem extends pulumi.CustomResource {
             resourceInputs["sshPublicKeys"] = args?.sshPublicKeys;
             resourceInputs["storageVolumePerformanceMode"] = args?.storageVolumePerformanceMode;
             resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["iormConfigCaches"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
@@ -555,6 +561,7 @@ export interface DbSystemState {
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
     clusterName?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
@@ -788,6 +795,7 @@ export interface DbSystemState {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string>;
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
@@ -844,6 +852,7 @@ export interface DbSystemArgs {
      * The cluster name for Exadata and 2-node RAC virtual machine DB systems. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
      */
     clusterName?: pulumi.Input<string>;
+    clusterPlacementGroupId?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      */
@@ -1017,6 +1026,7 @@ export interface DbSystemArgs {
      * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId: pulumi.Input<string>;
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      *

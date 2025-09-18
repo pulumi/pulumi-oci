@@ -41,6 +41,11 @@ public final class GetDbSystemsDbSystem {
      */
     private String clusterName;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     * 
+     */
+    private String clusterPlacementGroupId;
+    /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -266,6 +271,11 @@ public final class GetDbSystemsDbSystem {
      */
     private String subnetId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -329,6 +339,13 @@ public final class GetDbSystemsDbSystem {
      */
     public String clusterName() {
         return this.clusterName;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
+     * 
+     */
+    public String clusterPlacementGroupId() {
+        return this.clusterPlacementGroupId;
     }
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -656,6 +673,13 @@ public final class GetDbSystemsDbSystem {
         return this.subnetId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -718,6 +742,7 @@ public final class GetDbSystemsDbSystem {
         private List<String> backupNetworkNsgIds;
         private String backupSubnetId;
         private String clusterName;
+        private String clusterPlacementGroupId;
         private String compartmentId;
         private Integer computeCount;
         private String computeModel;
@@ -768,6 +793,7 @@ public final class GetDbSystemsDbSystem {
         private String state;
         private String storageVolumePerformanceMode;
         private String subnetId;
+        private String subscriptionId;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeZone;
@@ -782,6 +808,7 @@ public final class GetDbSystemsDbSystem {
     	      this.backupNetworkNsgIds = defaults.backupNetworkNsgIds;
     	      this.backupSubnetId = defaults.backupSubnetId;
     	      this.clusterName = defaults.clusterName;
+    	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
     	      this.computeModel = defaults.computeModel;
@@ -832,6 +859,7 @@ public final class GetDbSystemsDbSystem {
     	      this.state = defaults.state;
     	      this.storageVolumePerformanceMode = defaults.storageVolumePerformanceMode;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeZone = defaults.timeZone;
@@ -874,6 +902,14 @@ public final class GetDbSystemsDbSystem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "clusterName");
             }
             this.clusterName = clusterName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            if (clusterPlacementGroupId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "clusterPlacementGroupId");
+            }
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
         @CustomType.Setter
@@ -1310,6 +1346,14 @@ public final class GetDbSystemsDbSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,String> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystem", "systemTags");
@@ -1377,6 +1421,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.backupNetworkNsgIds = backupNetworkNsgIds;
             _resultValue.backupSubnetId = backupSubnetId;
             _resultValue.clusterName = clusterName;
+            _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;
             _resultValue.computeModel = computeModel;
@@ -1427,6 +1472,7 @@ public final class GetDbSystemsDbSystem {
             _resultValue.state = state;
             _resultValue.storageVolumePerformanceMode = storageVolumePerformanceMode;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeZone = timeZone;

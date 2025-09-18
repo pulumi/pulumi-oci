@@ -74,7 +74,8 @@ type GetAutonomousDatabasesClonesResult struct {
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`
 	// The list of autonomous_databases.
 	AutonomousDatabases []GetAutonomousDatabasesClonesAutonomousDatabase `pulumi:"autonomousDatabases"`
-	CloneType           *string                                          `pulumi:"cloneType"`
+	// The Autonomous Database clone type.
+	CloneType *string `pulumi:"cloneType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
@@ -140,6 +141,7 @@ func (o GetAutonomousDatabasesClonesResultOutput) AutonomousDatabases() GetAuton
 	}).(GetAutonomousDatabasesClonesAutonomousDatabaseArrayOutput)
 }
 
+// The Autonomous Database clone type.
 func (o GetAutonomousDatabasesClonesResultOutput) CloneType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesResult) *string { return v.CloneType }).(pulumi.StringPtrOutput)
 }

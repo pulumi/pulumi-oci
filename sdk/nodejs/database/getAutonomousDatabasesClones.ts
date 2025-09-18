@@ -74,6 +74,9 @@ export interface GetAutonomousDatabasesClonesResult {
      * The list of autonomous_databases.
      */
     readonly autonomousDatabases: outputs.Database.GetAutonomousDatabasesClonesAutonomousDatabase[];
+    /**
+     * The Autonomous Database clone type.
+     */
     readonly cloneType?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -48,7 +48,7 @@ public final class GetExportsExportExportOption {
      */
     private Boolean requirePrivilegedSourcePort;
     /**
-     * @return Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+     * @return Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
      * 
      */
     private String source;
@@ -104,7 +104,7 @@ public final class GetExportsExportExportOption {
         return this.requirePrivilegedSourcePort;
     }
     /**
-     * @return Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+     * @return Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
      * 
      */
     public String source() {

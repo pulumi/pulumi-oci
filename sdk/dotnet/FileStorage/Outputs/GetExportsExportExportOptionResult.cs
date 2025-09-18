@@ -42,7 +42,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly bool RequirePrivilegedSourcePort;
         /// <summary>
-        /// Clients these options should apply to. Must be a either single IPv4/IPv6 address or single IPv4/IPv6 CIDR block.
+        /// Clients these options should apply to. Must be a either single IPv4 address or single IPv4 CIDR block.
         /// </summary>
         public readonly string Source;
 

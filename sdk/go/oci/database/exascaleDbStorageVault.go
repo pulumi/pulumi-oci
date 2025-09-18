@@ -77,7 +77,7 @@ type ExascaleDbStorageVault struct {
 	AutoscaleLimitInGbs pulumi.IntOutput `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId pulumi.StringOutput `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -166,7 +166,7 @@ type exascaleDbStorageVaultState struct {
 	AutoscaleLimitInGbs *int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -214,7 +214,7 @@ type ExascaleDbStorageVaultState struct {
 	AutoscaleLimitInGbs pulumi.IntPtrInput
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringPtrInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
@@ -264,7 +264,7 @@ type exascaleDbStorageVaultArgs struct {
 	AutoscaleLimitInGbs *int `pulumi:"autoscaleLimitInGbs"`
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -299,7 +299,7 @@ type ExascaleDbStorageVaultArgs struct {
 	AutoscaleLimitInGbs pulumi.IntPtrInput
 	// The name of the availability domain in which the Exadata Database Storage Vault is located.
 	AvailabilityDomain pulumi.StringInput
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
@@ -433,7 +433,7 @@ func (o ExascaleDbStorageVaultOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 func (o ExascaleDbStorageVaultOutput) ClusterPlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ExascaleDbStorageVault) pulumi.StringOutput { return v.ClusterPlacementGroupId }).(pulumi.StringOutput)
 }

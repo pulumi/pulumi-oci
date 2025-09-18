@@ -71,7 +71,7 @@ type GetExadbVmClustersArgs struct {
 
 // A collection of values returned by getExadbVmClusters.
 type GetExadbVmClustersResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 	ClusterPlacementGroupId *string `pulumi:"clusterPlacementGroupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -131,7 +131,7 @@ func (o GetExadbVmClustersResultOutput) ToGetExadbVmClustersResultOutputWithCont
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Exadata Infrastructure or Db System.
 func (o GetExadbVmClustersResultOutput) ClusterPlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetExadbVmClustersResult) *string { return v.ClusterPlacementGroupId }).(pulumi.StringPtrOutput)
 }

@@ -107,6 +107,11 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     private List<Integer> cloneTableSpaceLists;
     /**
+     * @return A filter to return only resources that match the given clone type exactly.
+     * 
+     */
+    private String cloneType;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
      * 
      */
@@ -781,6 +786,13 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
      */
     public List<Integer> cloneTableSpaceLists() {
         return this.cloneTableSpaceLists;
+    }
+    /**
+     * @return A filter to return only resources that match the given clone type exactly.
+     * 
+     */
+    public String cloneType() {
+        return this.cloneType;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
@@ -1602,6 +1614,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         private Double byolComputeCountLimit;
         private String characterSet;
         private List<Integer> cloneTableSpaceLists;
+        private String cloneType;
         private String clusterPlacementGroupId;
         private String compartmentId;
         private Double computeCount;
@@ -1733,6 +1746,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
     	      this.byolComputeCountLimit = defaults.byolComputeCountLimit;
     	      this.characterSet = defaults.characterSet;
     	      this.cloneTableSpaceLists = defaults.cloneTableSpaceLists;
+    	      this.cloneType = defaults.cloneType;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.computeCount = defaults.computeCount;
@@ -1979,6 +1993,14 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
         }
         public Builder cloneTableSpaceLists(Integer... cloneTableSpaceLists) {
             return cloneTableSpaceLists(List.of(cloneTableSpaceLists));
+        }
+        @CustomType.Setter
+        public Builder cloneType(String cloneType) {
+            if (cloneType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesClonesAutonomousDatabase", "cloneType");
+            }
+            this.cloneType = cloneType;
+            return this;
         }
         @CustomType.Setter
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
@@ -2961,6 +2983,7 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabase {
             _resultValue.byolComputeCountLimit = byolComputeCountLimit;
             _resultValue.characterSet = characterSet;
             _resultValue.cloneTableSpaceLists = cloneTableSpaceLists;
+            _resultValue.cloneType = cloneType;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.computeCount = computeCount;

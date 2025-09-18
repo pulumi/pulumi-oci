@@ -88,6 +88,13 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.clusterName);
     }
 
+    @Import(name="clusterPlacementGroupId")
+    private @Nullable Output<String> clusterPlacementGroupId;
+
+    public Optional<Output<String>> clusterPlacementGroupId() {
+        return Optional.ofNullable(this.clusterPlacementGroupId);
+    }
+
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DB system  belongs in.
      * 
@@ -672,6 +679,13 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         return this.subnetId;
     }
 
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
+    }
+
     /**
      * The time zone to use for the DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
      * 
@@ -700,6 +714,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.backupNetworkNsgIds = $.backupNetworkNsgIds;
         this.backupSubnetId = $.backupSubnetId;
         this.clusterName = $.clusterName;
+        this.clusterPlacementGroupId = $.clusterPlacementGroupId;
         this.compartmentId = $.compartmentId;
         this.computeCount = $.computeCount;
         this.computeModel = $.computeModel;
@@ -734,6 +749,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.sshPublicKeys = $.sshPublicKeys;
         this.storageVolumePerformanceMode = $.storageVolumePerformanceMode;
         this.subnetId = $.subnetId;
+        this.subscriptionId = $.subscriptionId;
         this.timeZone = $.timeZone;
     }
 
@@ -851,6 +867,15 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder clusterName(String clusterName) {
             return clusterName(Output.of(clusterName));
+        }
+
+        public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
+            $.clusterPlacementGroupId = clusterPlacementGroupId;
+            return this;
+        }
+
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }
 
         /**
@@ -1678,6 +1703,15 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
+        }
+
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         /**

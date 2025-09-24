@@ -118,6 +118,10 @@ export interface GetCloudVmClusterResult {
      */
     readonly domain: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    readonly exascaleDbStorageVaultId: string;
+    /**
      * Details of the file system configuration of the VM cluster.
      */
     readonly fileSystemConfigurationDetails: outputs.Database.GetCloudVmClusterFileSystemConfigurationDetail[];
@@ -227,6 +231,10 @@ export interface GetCloudVmClusterResult {
      * The current state of the cloud VM cluster.
      */
     readonly state: string;
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     */
+    readonly storageManagementType: string;
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      */

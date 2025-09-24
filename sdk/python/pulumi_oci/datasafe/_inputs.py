@@ -43,6 +43,8 @@ __all__ = [
     'DatabaseSecurityConfigManagementSqlFirewallConfigArgsDict',
     'DatabaseSecurityConfigSqlFirewallConfigArgs',
     'DatabaseSecurityConfigSqlFirewallConfigArgsDict',
+    'DiscoveryJobsResultConfidenceLevelDetailArgs',
+    'DiscoveryJobsResultConfidenceLevelDetailArgsDict',
     'DiscoveryJobsResultModifiedAttributeArgs',
     'DiscoveryJobsResultModifiedAttributeArgsDict',
     'DiscoveryModTablesForDiscoveryArgs',
@@ -99,6 +101,8 @@ __all__ = [
     'SensitiveDataModelReferentialRelationParentArgsDict',
     'SensitiveDataModelTablesForDiscoveryArgs',
     'SensitiveDataModelTablesForDiscoveryArgsDict',
+    'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs',
+    'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict',
     'SensitiveTypeGroupGroupedSensitiveTypeItemArgs',
     'SensitiveTypeGroupGroupedSensitiveTypeItemArgsDict',
     'SensitiveTypeGroupGroupedSensitiveTypePatchOperationArgs',
@@ -2678,6 +2682,94 @@ class DatabaseSecurityConfigSqlFirewallConfigArgs:
     @violation_log_auto_purge.setter
     def violation_log_auto_purge(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "violation_log_auto_purge", value)
+
+
+if not MYPY:
+    class DiscoveryJobsResultConfidenceLevelDetailArgsDict(TypedDict):
+        does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
+        does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+        has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+elif False:
+    DiscoveryJobsResultConfidenceLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class DiscoveryJobsResultConfidenceLevelDetailArgs:
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: Optional[pulumi.Input[_builtins.bool]] = None,
+                 does_column_lead_to_pii_in_same_related_tables: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_comment_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_data_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_name_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[pulumi.Input[_builtins.bool]] = None):
+        if does_column_lead_to_pii_in_non_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        if does_column_lead_to_pii_in_same_related_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        if has_comment_pattern_matched is not None:
+            pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        if has_data_pattern_matched is not None:
+            pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        if has_name_pattern_matched is not None:
+            pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        if is_sensitive_type_from_same_context_found_in_same_or_related_tables is not None:
+            pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @does_column_lead_to_pii_in_non_tables.setter
+    def does_column_lead_to_pii_in_non_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "does_column_lead_to_pii_in_non_tables", value)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @does_column_lead_to_pii_in_same_related_tables.setter
+    def does_column_lead_to_pii_in_same_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "does_column_lead_to_pii_in_same_related_tables", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @has_comment_pattern_matched.setter
+    def has_comment_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_comment_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @has_data_pattern_matched.setter
+    def has_data_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_data_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @has_name_pattern_matched.setter
+    def has_name_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_name_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
+
+    @is_sensitive_type_from_same_context_found_in_same_or_related_tables.setter
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
 if not MYPY:
@@ -6698,6 +6790,94 @@ class SensitiveDataModelTablesForDiscoveryArgs:
     @table_names.setter
     def table_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "table_names", value)
+
+
+if not MYPY:
+    class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict(TypedDict):
+        does_column_lead_to_pii_in_non_tables: NotRequired[pulumi.Input[_builtins.bool]]
+        does_column_lead_to_pii_in_same_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+        has_comment_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        has_data_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        has_name_pattern_matched: NotRequired[pulumi.Input[_builtins.bool]]
+        is_sensitive_type_from_same_context_found_in_same_or_related_tables: NotRequired[pulumi.Input[_builtins.bool]]
+elif False:
+    SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs:
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: Optional[pulumi.Input[_builtins.bool]] = None,
+                 does_column_lead_to_pii_in_same_related_tables: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_comment_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_data_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 has_name_pattern_matched: Optional[pulumi.Input[_builtins.bool]] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[pulumi.Input[_builtins.bool]] = None):
+        if does_column_lead_to_pii_in_non_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        if does_column_lead_to_pii_in_same_related_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        if has_comment_pattern_matched is not None:
+            pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        if has_data_pattern_matched is not None:
+            pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        if has_name_pattern_matched is not None:
+            pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        if is_sensitive_type_from_same_context_found_in_same_or_related_tables is not None:
+            pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @does_column_lead_to_pii_in_non_tables.setter
+    def does_column_lead_to_pii_in_non_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "does_column_lead_to_pii_in_non_tables", value)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @does_column_lead_to_pii_in_same_related_tables.setter
+    def does_column_lead_to_pii_in_same_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "does_column_lead_to_pii_in_same_related_tables", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @has_comment_pattern_matched.setter
+    def has_comment_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_comment_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @has_data_pattern_matched.setter
+    def has_data_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_data_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @has_name_pattern_matched.setter
+    def has_name_pattern_matched(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "has_name_pattern_matched", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
+
+    @is_sensitive_type_from_same_context_found_in_same_or_related_tables.setter
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", value)
 
 
 if not MYPY:

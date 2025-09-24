@@ -86,6 +86,14 @@ export class RedisCluster extends pulumi.CustomResource {
      */
     declare public readonly definedTags: pulumi.Output<{[key: string]: string}>;
     /**
+     * The private IP address of the API endpoint for sharded cluster discovery.
+     */
+    declare public /*out*/ readonly discoveryEndpointIpAddress: pulumi.Output<string>;
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     */
+    declare public /*out*/ readonly discoveryFqdn: pulumi.Output<string>;
+    /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     declare public readonly displayName: pulumi.Output<string>;
@@ -182,6 +190,8 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["clusterMode"] = state?.clusterMode;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
+            resourceInputs["discoveryEndpointIpAddress"] = state?.discoveryEndpointIpAddress;
+            resourceInputs["discoveryFqdn"] = state?.discoveryFqdn;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
@@ -233,6 +243,8 @@ export class RedisCluster extends pulumi.CustomResource {
             resourceInputs["shardCount"] = args?.shardCount;
             resourceInputs["softwareVersion"] = args?.softwareVersion;
             resourceInputs["subnetId"] = args?.subnetId;
+            resourceInputs["discoveryEndpointIpAddress"] = undefined /*out*/;
+            resourceInputs["discoveryFqdn"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["nodeCollections"] = undefined /*out*/;
             resourceInputs["primaryEndpointIpAddress"] = undefined /*out*/;
@@ -265,6 +277,14 @@ export interface RedisClusterState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
+    /**
+     * The private IP address of the API endpoint for sharded cluster discovery.
+     */
+    discoveryEndpointIpAddress?: pulumi.Input<string>;
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     */
+    discoveryFqdn?: pulumi.Input<string>;
     /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */

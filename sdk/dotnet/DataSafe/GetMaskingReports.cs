@@ -32,6 +32,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccessLevel = maskingReportAccessLevel,
         ///         CompartmentIdInSubtree = maskingReportCompartmentIdInSubtree,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccessLevel = maskingReportAccessLevel,
         ///         CompartmentIdInSubtree = maskingReportCompartmentIdInSubtree,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -92,6 +94,7 @@ namespace Pulumi.Oci.DataSafe
         ///         AccessLevel = maskingReportAccessLevel,
         ///         CompartmentIdInSubtree = maskingReportCompartmentIdInSubtree,
         ///         MaskingPolicyId = testMaskingPolicy.Id,
+        ///         TargetDatabaseGroupId = testTargetDatabaseGroup.Id,
         ///         TargetId = testTarget.Id,
         ///     });
         /// 
@@ -136,6 +139,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("maskingPolicyId")]
         public string? MaskingPolicyId { get; set; }
+
+        /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public string? TargetDatabaseGroupId { get; set; }
 
         /// <summary>
         /// A filter to return only items related to a specific target OCID.
@@ -184,6 +193,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? MaskingPolicyId { get; set; }
 
         /// <summary>
+        /// A filter to return the target database group that matches the specified OCID.
+        /// </summary>
+        [Input("targetDatabaseGroupId")]
+        public Input<string>? TargetDatabaseGroupId { get; set; }
+
+        /// <summary>
         /// A filter to return only items related to a specific target OCID.
         /// </summary>
         [Input("targetId")]
@@ -218,6 +233,7 @@ namespace Pulumi.Oci.DataSafe
         /// The list of masking_report_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMaskingReportsMaskingReportCollectionResult> MaskingReportCollections;
+        public readonly string? TargetDatabaseGroupId;
         /// <summary>
         /// The OCID of the target database masked.
         /// </summary>
@@ -239,6 +255,8 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<Outputs.GetMaskingReportsMaskingReportCollectionResult> maskingReportCollections,
 
+            string? targetDatabaseGroupId,
+
             string? targetId)
         {
             AccessLevel = accessLevel;
@@ -248,6 +266,7 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             MaskingPolicyId = maskingPolicyId;
             MaskingReportCollections = maskingReportCollections;
+            TargetDatabaseGroupId = targetDatabaseGroupId;
             TargetId = targetId;
         }
     }

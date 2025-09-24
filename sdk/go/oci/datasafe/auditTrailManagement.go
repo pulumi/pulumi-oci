@@ -32,6 +32,7 @@ import (
 //			_, err := datasafe.NewAuditTrailManagement(ctx, "test_audit_trail_management", &datasafe.AuditTrailManagementArgs{
 //				CompartmentId:                    pulumi.Any(compartmentId),
 //				TargetId:                         pulumi.Any(testTargetDatabase.Id),
+//				TrailLocation:                    pulumi.Any(auditTrailManagementTrailLocation),
 //				CanUpdateLastArchiveTimeOnTarget: pulumi.Any(auditTrailManagementCanUpdateLastArchiveTimeOnTarget),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),

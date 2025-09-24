@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -63,6 +65,14 @@ export interface GetSensitiveDataModelsSensitiveColumnResult {
      * The name of the sensitive column.
      */
     readonly columnName: string;
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     */
+    readonly confidenceLevel: string;
+    /**
+     * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+     */
+    readonly confidenceLevelDetails: outputs.DataSafe.GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetail[];
     /**
      * The data type of the sensitive column.
      */

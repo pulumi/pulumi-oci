@@ -82,6 +82,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult> ExascaleConfigs;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
@@ -210,6 +214,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string displayName,
 
+            ImmutableArray<Outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult> exascaleConfigs,
+
             ImmutableDictionary<string, string> freeformTags,
 
             string id,
@@ -273,6 +279,7 @@ namespace Pulumi.Oci.Database.Outputs
             DefinedFileSystemConfigurations = definedFileSystemConfigurations;
             DefinedTags = definedTags;
             DisplayName = displayName;
+            ExascaleConfigs = exascaleConfigs;
             FreeformTags = freeformTags;
             Id = id;
             IsSchedulingPolicyAssociated = isSchedulingPolicyAssociated;

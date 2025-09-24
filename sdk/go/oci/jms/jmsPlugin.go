@@ -35,6 +35,7 @@ import (
 //			_, err := jms.NewJmsPlugin(ctx, "test_jms_plugin", &jms.JmsPluginArgs{
 //				AgentId:       pulumi.Any(jmsPluginAgentId),
 //				CompartmentId: pulumi.Any(compartmentId),
+//				AgentType:     pulumi.Any(jmsPluginAgentType),
 //				DefinedTags: pulumi.StringMap{
 //					"foo-namespace.bar-key": pulumi.String("value"),
 //				},
@@ -62,13 +63,13 @@ import (
 type JmsPlugin struct {
 	pulumi.CustomResourceState
 
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId pulumi.StringOutput `pulumi:"agentId"`
 	// The agent type.
 	AgentType pulumi.StringOutput `pulumi:"agentType"`
 	// The availability status.
 	AvailabilityStatus pulumi.StringOutput `pulumi:"availabilityStatus"`
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
@@ -135,13 +136,13 @@ func GetJmsPlugin(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering JmsPlugin resources.
 type jmsPluginState struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId *string `pulumi:"agentId"`
 	// The agent type.
 	AgentType *string `pulumi:"agentType"`
 	// The availability status.
 	AvailabilityStatus *string `pulumi:"availabilityStatus"`
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -173,13 +174,13 @@ type jmsPluginState struct {
 }
 
 type JmsPluginState struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId pulumi.StringPtrInput
 	// The agent type.
 	AgentType pulumi.StringPtrInput
 	// The availability status.
 	AvailabilityStatus pulumi.StringPtrInput
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.StringMapInput
@@ -215,9 +216,11 @@ func (JmsPluginState) ElementType() reflect.Type {
 }
 
 type jmsPluginArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId string `pulumi:"agentId"`
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The agent type.
+	AgentType *string `pulumi:"agentType"`
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -232,9 +235,11 @@ type jmsPluginArgs struct {
 
 // The set of arguments for constructing a JmsPlugin resource.
 type JmsPluginArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId pulumi.StringInput
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The agent type.
+	AgentType pulumi.StringPtrInput
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.StringMapInput
@@ -334,7 +339,7 @@ func (o JmsPluginOutput) ToJmsPluginOutputWithContext(ctx context.Context) JmsPl
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 func (o JmsPluginOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *JmsPlugin) pulumi.StringOutput { return v.AgentId }).(pulumi.StringOutput)
 }
@@ -349,7 +354,7 @@ func (o JmsPluginOutput) AvailabilityStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *JmsPlugin) pulumi.StringOutput { return v.AvailabilityStatus }).(pulumi.StringOutput)
 }
 
-// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o JmsPluginOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *JmsPlugin) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }

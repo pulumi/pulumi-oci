@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetJmsPluginsResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     private @Nullable String agentId;
@@ -32,7 +32,7 @@ public final class GetJmsPluginsResult {
      */
     private @Nullable String availabilityStatus;
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private @Nullable String compartmentId;
@@ -64,7 +64,7 @@ public final class GetJmsPluginsResult {
 
     private GetJmsPluginsResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     public Optional<String> agentId() {
@@ -85,7 +85,7 @@ public final class GetJmsPluginsResult {
         return Optional.ofNullable(this.availabilityStatus);
     }
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Optional<String> compartmentId() {

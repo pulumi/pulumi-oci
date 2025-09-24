@@ -274,6 +274,7 @@ class _CloudExadataInfrastructureState:
                  defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 exascale_configs: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_scheduling_policy_associated: Optional[pulumi.Input[_builtins.bool]] = None,
                  last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -315,6 +316,7 @@ class _CloudExadataInfrastructureState:
         :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs']]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -376,6 +378,8 @@ class _CloudExadataInfrastructureState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if exascale_configs is not None:
+            pulumi.set(__self__, "exascale_configs", exascale_configs)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_scheduling_policy_associated is not None:
@@ -624,6 +628,18 @@ class _CloudExadataInfrastructureState:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "display_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
+
+    @exascale_configs.setter
+    def exascale_configs(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['CloudExadataInfrastructureExascaleConfigArgs']]]]):
+        pulumi.set(self, "exascale_configs", value)
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -1121,6 +1137,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             __props__.__dict__["db_node_storage_size_in_gbs"] = None
             __props__.__dict__["db_server_version"] = None
             __props__.__dict__["defined_file_system_configurations"] = None
+            __props__.__dict__["exascale_configs"] = None
             __props__.__dict__["is_scheduling_policy_associated"] = None
             __props__.__dict__["last_maintenance_run_id"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -1164,6 +1181,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
             defined_file_system_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
+            exascale_configs: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_scheduling_policy_associated: Optional[pulumi.Input[_builtins.bool]] = None,
             last_maintenance_run_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1210,6 +1228,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureDefinedFileSystemConfigurationArgs', 'CloudExadataInfrastructureDefinedFileSystemConfigurationArgsDict']]]] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['CloudExadataInfrastructureExascaleConfigArgs', 'CloudExadataInfrastructureExascaleConfigArgsDict']]]] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
         :param pulumi.Input[_builtins.str] last_maintenance_run_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance run.
@@ -1258,6 +1277,7 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["defined_file_system_configurations"] = defined_file_system_configurations
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
+        __props__.__dict__["exascale_configs"] = exascale_configs
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_scheduling_policy_associated"] = is_scheduling_policy_associated
         __props__.__dict__["last_maintenance_run_id"] = last_maintenance_run_id
@@ -1417,6 +1437,14 @@ class CloudExadataInfrastructure(pulumi.CustomResource):
         (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> pulumi.Output[Sequence['outputs.CloudExadataInfrastructureExascaleConfig']]:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")

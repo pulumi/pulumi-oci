@@ -28,7 +28,7 @@ class GetMaskingReportsResult:
     """
     A collection of values returned by getMaskingReports.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, masking_policy_id=None, masking_report_collections=None, target_id=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, filters=None, id=None, masking_policy_id=None, masking_report_collections=None, target_database_group_id=None, target_id=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -50,6 +50,9 @@ class GetMaskingReportsResult:
         if masking_report_collections and not isinstance(masking_report_collections, list):
             raise TypeError("Expected argument 'masking_report_collections' to be a list")
         pulumi.set(__self__, "masking_report_collections", masking_report_collections)
+        if target_database_group_id and not isinstance(target_database_group_id, str):
+            raise TypeError("Expected argument 'target_database_group_id' to be a str")
+        pulumi.set(__self__, "target_database_group_id", target_database_group_id)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -102,6 +105,11 @@ class GetMaskingReportsResult:
         return pulumi.get(self, "masking_report_collections")
 
     @_builtins.property
+    @pulumi.getter(name="targetDatabaseGroupId")
+    def target_database_group_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "target_database_group_id")
+
+    @_builtins.property
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[_builtins.str]:
         """
@@ -123,6 +131,7 @@ class AwaitableGetMaskingReportsResult(GetMaskingReportsResult):
             id=self.id,
             masking_policy_id=self.masking_policy_id,
             masking_report_collections=self.masking_report_collections,
+            target_database_group_id=self.target_database_group_id,
             target_id=self.target_id)
 
 
@@ -131,6 +140,7 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
                         compartment_id_in_subtree: Optional[_builtins.bool] = None,
                         filters: Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]] = None,
                         masking_policy_id: Optional[_builtins.str] = None,
+                        target_database_group_id: Optional[_builtins.str] = None,
                         target_id: Optional[_builtins.str] = None,
                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMaskingReportsResult:
     """
@@ -148,6 +158,7 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
         access_level=masking_report_access_level,
         compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
         masking_policy_id=test_masking_policy["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -156,6 +167,7 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -164,6 +176,7 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['maskingPolicyId'] = masking_policy_id
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getMaskingReports:getMaskingReports', __args__, opts=opts, typ=GetMaskingReportsResult).value
@@ -176,12 +189,14 @@ def get_masking_reports(access_level: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         masking_policy_id=pulumi.get(__ret__, 'masking_policy_id'),
         masking_report_collections=pulumi.get(__ret__, 'masking_report_collections'),
+        target_database_group_id=pulumi.get(__ret__, 'target_database_group_id'),
         target_id=pulumi.get(__ret__, 'target_id'))
 def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                                compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                filters: Optional[pulumi.Input[Optional[Sequence[Union['GetMaskingReportsFilterArgs', 'GetMaskingReportsFilterArgsDict']]]]] = None,
                                masking_policy_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                               target_database_group_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                target_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetMaskingReportsResult]:
     """
@@ -199,6 +214,7 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
         access_level=masking_report_access_level,
         compartment_id_in_subtree=masking_report_compartment_id_in_subtree,
         masking_policy_id=test_masking_policy["id"],
+        target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
     ```
 
@@ -207,6 +223,7 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
     :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
     :param _builtins.str masking_policy_id: A filter to return only the resources that match the specified masking policy OCID.
+    :param _builtins.str target_database_group_id: A filter to return the target database group that matches the specified OCID.
     :param _builtins.str target_id: A filter to return only items related to a specific target OCID.
     """
     __args__ = dict()
@@ -215,6 +232,7 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['filters'] = filters
     __args__['maskingPolicyId'] = masking_policy_id
+    __args__['targetDatabaseGroupId'] = target_database_group_id
     __args__['targetId'] = target_id
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getMaskingReports:getMaskingReports', __args__, opts=opts, typ=GetMaskingReportsResult)
@@ -226,4 +244,5 @@ def get_masking_reports_output(access_level: Optional[pulumi.Input[Optional[_bui
         id=pulumi.get(__response__, 'id'),
         masking_policy_id=pulumi.get(__response__, 'masking_policy_id'),
         masking_report_collections=pulumi.get(__response__, 'masking_report_collections'),
+        target_database_group_id=pulumi.get(__response__, 'target_database_group_id'),
         target_id=pulumi.get(__response__, 'target_id')))

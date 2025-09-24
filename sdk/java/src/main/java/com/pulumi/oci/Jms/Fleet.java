@@ -145,6 +145,34 @@ public class Fleet extends com.pulumi.resources.CustomResource {
         return this.approximateJreCount;
     }
     /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    @Export(name="approximateLibraryCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> approximateLibraryCount;
+
+    /**
+     * @return The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Output<Integer> approximateLibraryCount() {
+        return this.approximateLibraryCount;
+    }
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    @Export(name="approximateLibraryVulnerabilityCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> approximateLibraryVulnerabilityCount;
+
+    /**
+     * @return The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Output<Integer> approximateLibraryVulnerabilityCount() {
+        return this.approximateLibraryVulnerabilityCount;
+    }
+    /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */

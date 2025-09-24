@@ -86,6 +86,21 @@ public final class GetMaskingReportsPlainArgs extends com.pulumi.resources.Invok
     }
 
     /**
+     * A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    @Import(name="targetDatabaseGroupId")
+    private @Nullable String targetDatabaseGroupId;
+
+    /**
+     * @return A filter to return the target database group that matches the specified OCID.
+     * 
+     */
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
+
+    /**
      * A filter to return only items related to a specific target OCID.
      * 
      */
@@ -108,6 +123,7 @@ public final class GetMaskingReportsPlainArgs extends com.pulumi.resources.Invok
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.filters = $.filters;
         this.maskingPolicyId = $.maskingPolicyId;
+        this.targetDatabaseGroupId = $.targetDatabaseGroupId;
         this.targetId = $.targetId;
     }
 
@@ -179,6 +195,17 @@ public final class GetMaskingReportsPlainArgs extends com.pulumi.resources.Invok
          */
         public Builder maskingPolicyId(@Nullable String maskingPolicyId) {
             $.maskingPolicyId = maskingPolicyId;
+            return this;
+        }
+
+        /**
+         * @param targetDatabaseGroupId A filter to return the target database group that matches the specified OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+            $.targetDatabaseGroupId = targetDatabaseGroupId;
             return this;
         }
 

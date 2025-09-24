@@ -27,7 +27,7 @@ class GetFleetResult:
     """
     A collection of values returned by getFleet.
     """
-    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_java_server_count=None, approximate_jre_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, is_export_setting_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
+    def __init__(__self__, approximate_application_count=None, approximate_installation_count=None, approximate_java_server_count=None, approximate_jre_count=None, approximate_library_count=None, approximate_library_vulnerability_count=None, approximate_managed_instance_count=None, compartment_id=None, defined_tags=None, description=None, display_name=None, fleet_id=None, freeform_tags=None, id=None, inventory_logs=None, is_advanced_features_enabled=None, is_export_setting_enabled=None, operation_logs=None, state=None, system_tags=None, time_created=None):
         if approximate_application_count and not isinstance(approximate_application_count, int):
             raise TypeError("Expected argument 'approximate_application_count' to be a int")
         pulumi.set(__self__, "approximate_application_count", approximate_application_count)
@@ -40,6 +40,12 @@ class GetFleetResult:
         if approximate_jre_count and not isinstance(approximate_jre_count, int):
             raise TypeError("Expected argument 'approximate_jre_count' to be a int")
         pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
+        if approximate_library_count and not isinstance(approximate_library_count, int):
+            raise TypeError("Expected argument 'approximate_library_count' to be a int")
+        pulumi.set(__self__, "approximate_library_count", approximate_library_count)
+        if approximate_library_vulnerability_count and not isinstance(approximate_library_vulnerability_count, int):
+            raise TypeError("Expected argument 'approximate_library_vulnerability_count' to be a int")
+        pulumi.set(__self__, "approximate_library_vulnerability_count", approximate_library_vulnerability_count)
         if approximate_managed_instance_count and not isinstance(approximate_managed_instance_count, int):
             raise TypeError("Expected argument 'approximate_managed_instance_count' to be a int")
         pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
@@ -117,6 +123,22 @@ class GetFleetResult:
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_jre_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryCount")
+    def approximate_library_count(self) -> _builtins.int:
+        """
+        The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryVulnerabilityCount")
+    def approximate_library_vulnerability_count(self) -> _builtins.int:
+        """
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_vulnerability_count")
 
     @_builtins.property
     @pulumi.getter(name="approximateManagedInstanceCount")
@@ -246,6 +268,8 @@ class AwaitableGetFleetResult(GetFleetResult):
             approximate_installation_count=self.approximate_installation_count,
             approximate_java_server_count=self.approximate_java_server_count,
             approximate_jre_count=self.approximate_jre_count,
+            approximate_library_count=self.approximate_library_count,
+            approximate_library_vulnerability_count=self.approximate_library_vulnerability_count,
             approximate_managed_instance_count=self.approximate_managed_instance_count,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
@@ -292,6 +316,8 @@ def get_fleet(fleet_id: Optional[_builtins.str] = None,
         approximate_installation_count=pulumi.get(__ret__, 'approximate_installation_count'),
         approximate_java_server_count=pulumi.get(__ret__, 'approximate_java_server_count'),
         approximate_jre_count=pulumi.get(__ret__, 'approximate_jre_count'),
+        approximate_library_count=pulumi.get(__ret__, 'approximate_library_count'),
+        approximate_library_vulnerability_count=pulumi.get(__ret__, 'approximate_library_vulnerability_count'),
         approximate_managed_instance_count=pulumi.get(__ret__, 'approximate_managed_instance_count'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -335,6 +361,8 @@ def get_fleet_output(fleet_id: Optional[pulumi.Input[_builtins.str]] = None,
         approximate_installation_count=pulumi.get(__response__, 'approximate_installation_count'),
         approximate_java_server_count=pulumi.get(__response__, 'approximate_java_server_count'),
         approximate_jre_count=pulumi.get(__response__, 'approximate_jre_count'),
+        approximate_library_count=pulumi.get(__response__, 'approximate_library_count'),
+        approximate_library_vulnerability_count=pulumi.get(__response__, 'approximate_library_vulnerability_count'),
         approximate_managed_instance_count=pulumi.get(__response__, 'approximate_managed_instance_count'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

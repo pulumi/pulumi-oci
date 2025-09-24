@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
+ *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
  *     isResultApplied: discoveryJobsResultIsResultApplied,
  *     objects: discoveryJobsResultObject,
@@ -32,6 +33,7 @@ export function getDiscoveryJobsResults(args: GetDiscoveryJobsResultsArgs, opts?
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
         "columnNames": args.columnNames,
+        "confidenceLevels": args.confidenceLevels,
         "discoveryJobId": args.discoveryJobId,
         "discoveryType": args.discoveryType,
         "filters": args.filters,
@@ -50,6 +52,10 @@ export interface GetDiscoveryJobsResultsArgs {
      * A filter to return only a specific column based on column name.
      */
     columnNames?: string[];
+    /**
+     * A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     */
+    confidenceLevels?: string[];
     /**
      * The OCID of the discovery job.
      */
@@ -85,6 +91,10 @@ export interface GetDiscoveryJobsResultsResult {
      * The name of the sensitive column.
      */
     readonly columnNames?: string[];
+    /**
+     * The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     */
+    readonly confidenceLevels?: string[];
     /**
      * The OCID of the discovery job.
      */
@@ -133,6 +143,7 @@ export interface GetDiscoveryJobsResultsResult {
  * const testDiscoveryJobsResults = oci.DataSafe.getDiscoveryJobsResults({
  *     discoveryJobId: testDiscoveryJob.id,
  *     columnNames: discoveryJobsResultColumnName,
+ *     confidenceLevels: discoveryJobsResultConfidenceLevel,
  *     discoveryType: discoveryJobsResultDiscoveryType,
  *     isResultApplied: discoveryJobsResultIsResultApplied,
  *     objects: discoveryJobsResultObject,
@@ -145,6 +156,7 @@ export function getDiscoveryJobsResultsOutput(args: GetDiscoveryJobsResultsOutpu
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults", {
         "columnNames": args.columnNames,
+        "confidenceLevels": args.confidenceLevels,
         "discoveryJobId": args.discoveryJobId,
         "discoveryType": args.discoveryType,
         "filters": args.filters,
@@ -163,6 +175,10 @@ export interface GetDiscoveryJobsResultsOutputArgs {
      * A filter to return only a specific column based on column name.
      */
     columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     */
+    confidenceLevels?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the discovery job.
      */

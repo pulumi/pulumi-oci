@@ -2962,6 +2962,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/cloudExadataInfrastructureConfigureExascaleManagement",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/cloudExadataInfrastructureConfigureExascaleManagement:CloudExadataInfrastructureConfigureExascaleManagement": "CloudExadataInfrastructureConfigureExascaleManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/cloudVmCluster",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -5186,6 +5194,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Jms/taskSchedule",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/taskSchedule:TaskSchedule": "TaskSchedule"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Kms/ekmsPrivateEndpoint",
   "fqn": "pulumi_oci.kms",
   "classes": {
@@ -5598,6 +5614,14 @@ _utilities.register(
   "fqn": "pulumi_oci.marketplace",
   "classes": {
    "oci:Marketplace/listingPackageAgreement:ListingPackageAgreement": "ListingPackageAgreement"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Marketplace/marketplaceExternalAttestedMetadata",
+  "fqn": "pulumi_oci.marketplace",
+  "classes": {
+   "oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata": "MarketplaceExternalAttestedMetadata"
   }
  },
  {

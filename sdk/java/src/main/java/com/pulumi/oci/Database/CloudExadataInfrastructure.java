@@ -11,6 +11,7 @@ import com.pulumi.oci.Database.CloudExadataInfrastructureArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureState;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureDefinedFileSystemConfiguration;
+import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.CloudExadataInfrastructureMaintenanceWindow;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -340,6 +341,20 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<String> displayName() {
         return this.displayName;
+    }
+    /**
+     * The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    @Export(name="exascaleConfigs", refs={List.class,CloudExadataInfrastructureExascaleConfig.class}, tree="[0,1]")
+    private Output<List<CloudExadataInfrastructureExascaleConfig>> exascaleConfigs;
+
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public Output<List<CloudExadataInfrastructureExascaleConfig>> exascaleConfigs() {
+        return this.exascaleConfigs;
     }
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`

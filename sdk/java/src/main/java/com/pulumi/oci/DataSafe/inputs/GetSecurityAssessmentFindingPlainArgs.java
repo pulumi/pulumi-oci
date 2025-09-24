@@ -32,6 +32,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.category);
     }
 
+    @Import(name="compartmentId")
+    private @Nullable String compartmentId;
+
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
     @Import(name="compartmentIdInSubtree")
     private @Nullable Boolean compartmentIdInSubtree;
 
@@ -135,6 +142,7 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
     private GetSecurityAssessmentFindingPlainArgs(GetSecurityAssessmentFindingPlainArgs $) {
         this.accessLevel = $.accessLevel;
         this.category = $.category;
+        this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.containsReferences = $.containsReferences;
         this.containsSeverities = $.containsSeverities;
@@ -176,6 +184,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
 
         public Builder category(@Nullable String category) {
             $.category = category;
+            return this;
+        }
+
+        public Builder compartmentId(@Nullable String compartmentId) {
+            $.compartmentId = compartmentId;
             return this;
         }
 

@@ -28,10 +28,13 @@ class GetDiscoveryJobsResultsResult:
     """
     A collection of values returned by getDiscoveryJobsResults.
     """
-    def __init__(__self__, column_names=None, discovery_job_id=None, discovery_job_result_collections=None, discovery_type=None, filters=None, id=None, is_result_applied=None, objects=None, planned_action=None, schema_names=None):
+    def __init__(__self__, column_names=None, confidence_levels=None, discovery_job_id=None, discovery_job_result_collections=None, discovery_type=None, filters=None, id=None, is_result_applied=None, objects=None, planned_action=None, schema_names=None):
         if column_names and not isinstance(column_names, list):
             raise TypeError("Expected argument 'column_names' to be a list")
         pulumi.set(__self__, "column_names", column_names)
+        if confidence_levels and not isinstance(confidence_levels, list):
+            raise TypeError("Expected argument 'confidence_levels' to be a list")
+        pulumi.set(__self__, "confidence_levels", confidence_levels)
         if discovery_job_id and not isinstance(discovery_job_id, str):
             raise TypeError("Expected argument 'discovery_job_id' to be a str")
         pulumi.set(__self__, "discovery_job_id", discovery_job_id)
@@ -67,6 +70,14 @@ class GetDiscoveryJobsResultsResult:
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_names")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevels")
+    def confidence_levels(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+        """
+        return pulumi.get(self, "confidence_levels")
 
     @_builtins.property
     @pulumi.getter(name="discoveryJobId")
@@ -145,6 +156,7 @@ class AwaitableGetDiscoveryJobsResultsResult(GetDiscoveryJobsResultsResult):
             yield self
         return GetDiscoveryJobsResultsResult(
             column_names=self.column_names,
+            confidence_levels=self.confidence_levels,
             discovery_job_id=self.discovery_job_id,
             discovery_job_result_collections=self.discovery_job_result_collections,
             discovery_type=self.discovery_type,
@@ -157,6 +169,7 @@ class AwaitableGetDiscoveryJobsResultsResult(GetDiscoveryJobsResultsResult):
 
 
 def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] = None,
+                               confidence_levels: Optional[Sequence[_builtins.str]] = None,
                                discovery_job_id: Optional[_builtins.str] = None,
                                discovery_type: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetDiscoveryJobsResultsFilterArgs', 'GetDiscoveryJobsResultsFilterArgsDict']]] = None,
@@ -178,6 +191,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
 
     test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
+        confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
         is_result_applied=discovery_jobs_result_is_result_applied,
         objects=discovery_jobs_result_object,
@@ -187,6 +201,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
 
 
     :param Sequence[_builtins.str] column_names: A filter to return only a specific column based on column name.
+    :param Sequence[_builtins.str] confidence_levels: A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
     :param _builtins.str discovery_job_id: The OCID of the discovery job.
     :param _builtins.str discovery_type: A filter to return only the resources that match the specified discovery type.
     :param _builtins.bool is_result_applied: A filter to return the discovery result resources based on the value of their isResultApplied attribute.
@@ -196,6 +211,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
     """
     __args__ = dict()
     __args__['columnNames'] = column_names
+    __args__['confidenceLevels'] = confidence_levels
     __args__['discoveryJobId'] = discovery_job_id
     __args__['discoveryType'] = discovery_type
     __args__['filters'] = filters
@@ -208,6 +224,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
 
     return AwaitableGetDiscoveryJobsResultsResult(
         column_names=pulumi.get(__ret__, 'column_names'),
+        confidence_levels=pulumi.get(__ret__, 'confidence_levels'),
         discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
         discovery_job_result_collections=pulumi.get(__ret__, 'discovery_job_result_collections'),
         discovery_type=pulumi.get(__ret__, 'discovery_type'),
@@ -218,6 +235,7 @@ def get_discovery_jobs_results(column_names: Optional[Sequence[_builtins.str]] =
         planned_action=pulumi.get(__ret__, 'planned_action'),
         schema_names=pulumi.get(__ret__, 'schema_names'))
 def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                      confidence_levels: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                       discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
                                       discovery_type: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                       filters: Optional[pulumi.Input[Optional[Sequence[Union['GetDiscoveryJobsResultsFilterArgs', 'GetDiscoveryJobsResultsFilterArgsDict']]]]] = None,
@@ -239,6 +257,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
 
     test_discovery_jobs_results = oci.DataSafe.get_discovery_jobs_results(discovery_job_id=test_discovery_job["id"],
         column_names=discovery_jobs_result_column_name,
+        confidence_levels=discovery_jobs_result_confidence_level,
         discovery_type=discovery_jobs_result_discovery_type,
         is_result_applied=discovery_jobs_result_is_result_applied,
         objects=discovery_jobs_result_object,
@@ -248,6 +267,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
 
 
     :param Sequence[_builtins.str] column_names: A filter to return only a specific column based on column name.
+    :param Sequence[_builtins.str] confidence_levels: A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
     :param _builtins.str discovery_job_id: The OCID of the discovery job.
     :param _builtins.str discovery_type: A filter to return only the resources that match the specified discovery type.
     :param _builtins.bool is_result_applied: A filter to return the discovery result resources based on the value of their isResultApplied attribute.
@@ -257,6 +277,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     """
     __args__ = dict()
     __args__['columnNames'] = column_names
+    __args__['confidenceLevels'] = confidence_levels
     __args__['discoveryJobId'] = discovery_job_id
     __args__['discoveryType'] = discovery_type
     __args__['filters'] = filters
@@ -268,6 +289,7 @@ def get_discovery_jobs_results_output(column_names: Optional[pulumi.Input[Option
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getDiscoveryJobsResults:getDiscoveryJobsResults', __args__, opts=opts, typ=GetDiscoveryJobsResultsResult)
     return __ret__.apply(lambda __response__: GetDiscoveryJobsResultsResult(
         column_names=pulumi.get(__response__, 'column_names'),
+        confidence_levels=pulumi.get(__response__, 'confidence_levels'),
         discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),
         discovery_job_result_collections=pulumi.get(__response__, 'discovery_job_result_collections'),
         discovery_type=pulumi.get(__response__, 'discovery_type'),

@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testAuditTrailManagement = new oci.datasafe.AuditTrailManagement("test_audit_trail_management", {
  *     compartmentId: compartmentId,
  *     targetId: testTargetDatabase.id,
+ *     trailLocation: auditTrailManagementTrailLocation,
  *     canUpdateLastArchiveTimeOnTarget: auditTrailManagementCanUpdateLastArchiveTimeOnTarget,
  *     definedTags: {
  *         "Operations.CostCenter": "42",

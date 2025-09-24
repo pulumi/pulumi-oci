@@ -271,6 +271,21 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Import(name="exascaleDbStorageVaultId")
+    private @Nullable Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<Output<String>> exascaleDbStorageVaultId() {
+        return Optional.ofNullable(this.exascaleDbStorageVaultId);
+    }
+
+    /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      * 
      */
@@ -620,6 +635,7 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.domain = $.domain;
+        this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
         this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
@@ -1017,6 +1033,27 @@ public final class CloudVmClusterArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(@Nullable Output<String> exascaleDbStorageVaultId) {
+            $.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            return this;
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            return exascaleDbStorageVaultId(Output.of(exascaleDbStorageVaultId));
         }
 
         /**

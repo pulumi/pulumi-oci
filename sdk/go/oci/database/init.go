@@ -69,6 +69,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &CloudDatabaseManagement{}
 	case "oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure":
 		r = &CloudExadataInfrastructure{}
+	case "oci:Database/cloudExadataInfrastructureConfigureExascaleManagement:CloudExadataInfrastructureConfigureExascaleManagement":
+		r = &CloudExadataInfrastructureConfigureExascaleManagement{}
 	case "oci:Database/cloudVmCluster:CloudVmCluster":
 		r = &CloudVmCluster{}
 	case "oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig":
@@ -298,6 +300,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/cloudExadataInfrastructure",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/cloudExadataInfrastructureConfigureExascaleManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

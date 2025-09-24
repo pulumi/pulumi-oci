@@ -30,6 +30,7 @@ from .backup_destination import *
 from .cloud_autonomous_vm_cluster import *
 from .cloud_database_management import *
 from .cloud_exadata_infrastructure import *
+from .cloud_exadata_infrastructure_configure_exascale_management import *
 from .cloud_vm_cluster import *
 from .cloud_vm_cluster_iorm_config import *
 from .data_guard_association import *

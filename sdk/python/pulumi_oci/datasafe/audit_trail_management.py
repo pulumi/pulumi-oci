@@ -659,6 +659,7 @@ class AuditTrailManagement(pulumi.CustomResource):
         test_audit_trail_management = oci.datasafe.AuditTrailManagement("test_audit_trail_management",
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
+            trail_location=audit_trail_management_trail_location,
             can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -716,6 +717,7 @@ class AuditTrailManagement(pulumi.CustomResource):
         test_audit_trail_management = oci.datasafe.AuditTrailManagement("test_audit_trail_management",
             compartment_id=compartment_id,
             target_id=test_target_database["id"],
+            trail_location=audit_trail_management_trail_location,
             can_update_last_archive_time_on_target=audit_trail_management_can_update_last_archive_time_on_target,
             defined_tags={
                 "Operations.CostCenter": "42",

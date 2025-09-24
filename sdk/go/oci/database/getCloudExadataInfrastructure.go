@@ -93,6 +93,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName string `pulumi:"displayName"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []GetCloudExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
@@ -266,6 +268,13 @@ func (o LookupCloudExadataInfrastructureResultOutput) DefinedTags() pulumi.Strin
 // The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 func (o LookupCloudExadataInfrastructureResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o LookupCloudExadataInfrastructureResultOutput) ExascaleConfigs() GetCloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) []GetCloudExadataInfrastructureExascaleConfig {
+		return v.ExascaleConfigs
+	}).(GetCloudExadataInfrastructureExascaleConfigArrayOutput)
 }
 
 // Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

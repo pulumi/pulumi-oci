@@ -18,14 +18,14 @@ public final class GetJmsPluginsPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetJmsPluginsPlainArgs Empty = new GetJmsPluginsPlainArgs();
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     @Import(name="agentId")
     private @Nullable String agentId;
 
     /**
-     * @return The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * @return The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     public Optional<String> agentId() {
@@ -225,7 +225,7 @@ public final class GetJmsPluginsPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param agentId The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * @param agentId The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
          * 
          * @return builder
          * 

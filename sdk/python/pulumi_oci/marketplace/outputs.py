@@ -67,6 +67,8 @@ __all__ = [
     'GetListingsListingRegionResult',
     'GetListingsListingRegionCountryResult',
     'GetListingsListingSupportedOperatingSystemResult',
+    'GetMarketplaceMetadataPublicKeysFilterResult',
+    'GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyResult',
     'GetPublicationIconResult',
     'GetPublicationPackageDetailResult',
     'GetPublicationPackageDetailEulaResult',
@@ -2467,6 +2469,128 @@ class GetListingsListingSupportedOperatingSystemResult(dict):
         The name of the listing.
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetMarketplaceMetadataPublicKeysFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyResult(dict):
+    def __init__(__self__, *,
+                 certificate_chains: Sequence[_builtins.str],
+                 certificate_thumbprint: _builtins.str,
+                 exponent: _builtins.str,
+                 key_algorithm: _builtins.str,
+                 key_id: _builtins.str,
+                 key_type: _builtins.str,
+                 key_use: _builtins.str,
+                 modulus: _builtins.str):
+        """
+        :param Sequence[_builtins.str] certificate_chains: chain of certificates used to sign JWT
+        :param _builtins.str certificate_thumbprint: unique identifier of associated X509 certificate
+        :param _builtins.str exponent: base64 encoded exponent for public key
+        :param _builtins.str key_algorithm: algorithm for public key (i.e. RS256)
+        :param _builtins.str key_id: unique id that maps to public certificate, directs user which certificate to use to verfiy
+        :param _builtins.str key_type: key type (i.e. RSA)
+        :param _builtins.str key_use: how key is to be used
+        :param _builtins.str modulus: RSA public modulus
+        """
+        pulumi.set(__self__, "certificate_chains", certificate_chains)
+        pulumi.set(__self__, "certificate_thumbprint", certificate_thumbprint)
+        pulumi.set(__self__, "exponent", exponent)
+        pulumi.set(__self__, "key_algorithm", key_algorithm)
+        pulumi.set(__self__, "key_id", key_id)
+        pulumi.set(__self__, "key_type", key_type)
+        pulumi.set(__self__, "key_use", key_use)
+        pulumi.set(__self__, "modulus", modulus)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateChains")
+    def certificate_chains(self) -> Sequence[_builtins.str]:
+        """
+        chain of certificates used to sign JWT
+        """
+        return pulumi.get(self, "certificate_chains")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateThumbprint")
+    def certificate_thumbprint(self) -> _builtins.str:
+        """
+        unique identifier of associated X509 certificate
+        """
+        return pulumi.get(self, "certificate_thumbprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def exponent(self) -> _builtins.str:
+        """
+        base64 encoded exponent for public key
+        """
+        return pulumi.get(self, "exponent")
+
+    @_builtins.property
+    @pulumi.getter(name="keyAlgorithm")
+    def key_algorithm(self) -> _builtins.str:
+        """
+        algorithm for public key (i.e. RS256)
+        """
+        return pulumi.get(self, "key_algorithm")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> _builtins.str:
+        """
+        unique id that maps to public certificate, directs user which certificate to use to verfiy
+        """
+        return pulumi.get(self, "key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keyType")
+    def key_type(self) -> _builtins.str:
+        """
+        key type (i.e. RSA)
+        """
+        return pulumi.get(self, "key_type")
+
+    @_builtins.property
+    @pulumi.getter(name="keyUse")
+    def key_use(self) -> _builtins.str:
+        """
+        how key is to be used
+        """
+        return pulumi.get(self, "key_use")
+
+    @_builtins.property
+    @pulumi.getter
+    def modulus(self) -> _builtins.str:
+        """
+        RSA public modulus
+        """
+        return pulumi.get(self, "modulus")
 
 
 @pulumi.output_type

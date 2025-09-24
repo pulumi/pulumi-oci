@@ -117,7 +117,7 @@ export class AuditPolicyManagement extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The OCID of the target for which the audit policy is created.
+     * The OCID of the target.
      */
     declare public readonly targetId: pulumi.Output<string | undefined>;
     /**
@@ -251,7 +251,7 @@ export interface AuditPolicyManagementState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>}>;
     /**
-     * The OCID of the target for which the audit policy is created.
+     * The OCID of the target.
      */
     targetId?: pulumi.Input<string>;
     /**
@@ -313,7 +313,7 @@ export interface AuditPolicyManagementArgs {
      */
     retrieveFromTargetTrigger?: pulumi.Input<boolean>;
     /**
-     * The OCID of the target for which the audit policy is created.
+     * The OCID of the target.
      */
     targetId?: pulumi.Input<string>;
 }

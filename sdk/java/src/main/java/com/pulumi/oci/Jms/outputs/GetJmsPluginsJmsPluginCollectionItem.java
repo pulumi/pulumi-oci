@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetJmsPluginsJmsPluginCollectionItem {
     /**
-     * @return The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * @return The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     private String agentId;
@@ -99,7 +99,7 @@ public final class GetJmsPluginsJmsPluginCollectionItem {
 
     private GetJmsPluginsJmsPluginCollectionItem() {}
     /**
-     * @return The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * @return The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     public String agentId() {

@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testJmsPlugin = new oci.jms.JmsPlugin("test_jms_plugin", {
  *     agentId: jmsPluginAgentId,
  *     compartmentId: compartmentId,
+ *     agentType: jmsPluginAgentType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -67,19 +68,19 @@ export class JmsPlugin extends pulumi.CustomResource {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      */
     declare public readonly agentId: pulumi.Output<string>;
     /**
      * The agent type.
      */
-    declare public /*out*/ readonly agentType: pulumi.Output<string>;
+    declare public readonly agentType: pulumi.Output<string>;
     /**
      * The availability status.
      */
     declare public /*out*/ readonly availabilityStatus: pulumi.Output<string>;
     /**
-     * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     declare public readonly compartmentId: pulumi.Output<string>;
     /**
@@ -173,11 +174,11 @@ export class JmsPlugin extends pulumi.CustomResource {
                 throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["agentId"] = args?.agentId;
+            resourceInputs["agentType"] = args?.agentType;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["fleetId"] = args?.fleetId;
             resourceInputs["freeformTags"] = args?.freeformTags;
-            resourceInputs["agentType"] = undefined /*out*/;
             resourceInputs["availabilityStatus"] = undefined /*out*/;
             resourceInputs["hostname"] = undefined /*out*/;
             resourceInputs["osArchitecture"] = undefined /*out*/;
@@ -199,7 +200,7 @@ export class JmsPlugin extends pulumi.CustomResource {
  */
 export interface JmsPluginState {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      */
     agentId?: pulumi.Input<string>;
     /**
@@ -211,7 +212,7 @@ export interface JmsPluginState {
      */
     availabilityStatus?: pulumi.Input<string>;
     /**
-     * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -273,11 +274,15 @@ export interface JmsPluginState {
  */
 export interface JmsPluginArgs {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      */
     agentId: pulumi.Input<string>;
     /**
-     * The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The agent type.
+     */
+    agentType?: pulumi.Input<string>;
+    /**
+     * The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     compartmentId: pulumi.Input<string>;
     /**

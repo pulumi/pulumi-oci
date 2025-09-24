@@ -30,6 +30,7 @@ namespace Pulumi.Oci.DataSafe
         ///     {
         ///         DiscoveryJobId = testDiscoveryJob.Id,
         ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         ConfidenceLevels = discoveryJobsResultConfidenceLevel,
         ///         DiscoveryType = discoveryJobsResultDiscoveryType,
         ///         IsResultApplied = discoveryJobsResultIsResultApplied,
         ///         Objects = discoveryJobsResultObject,
@@ -62,6 +63,7 @@ namespace Pulumi.Oci.DataSafe
         ///     {
         ///         DiscoveryJobId = testDiscoveryJob.Id,
         ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         ConfidenceLevels = discoveryJobsResultConfidenceLevel,
         ///         DiscoveryType = discoveryJobsResultDiscoveryType,
         ///         IsResultApplied = discoveryJobsResultIsResultApplied,
         ///         Objects = discoveryJobsResultObject,
@@ -94,6 +96,7 @@ namespace Pulumi.Oci.DataSafe
         ///     {
         ///         DiscoveryJobId = testDiscoveryJob.Id,
         ///         ColumnNames = discoveryJobsResultColumnName,
+        ///         ConfidenceLevels = discoveryJobsResultConfidenceLevel,
         ///         DiscoveryType = discoveryJobsResultDiscoveryType,
         ///         IsResultApplied = discoveryJobsResultIsResultApplied,
         ///         Objects = discoveryJobsResultObject,
@@ -121,6 +124,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _columnNames ?? (_columnNames = new List<string>());
             set => _columnNames = value;
+        }
+
+        [Input("confidenceLevels")]
+        private List<string>? _confidenceLevels;
+
+        /// <summary>
+        /// A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+        /// </summary>
+        public List<string> ConfidenceLevels
+        {
+            get => _confidenceLevels ?? (_confidenceLevels = new List<string>());
+            set => _confidenceLevels = value;
         }
 
         /// <summary>
@@ -199,6 +214,18 @@ namespace Pulumi.Oci.DataSafe
             set => _columnNames = value;
         }
 
+        [Input("confidenceLevels")]
+        private InputList<string>? _confidenceLevels;
+
+        /// <summary>
+        /// A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+        /// </summary>
+        public InputList<string> ConfidenceLevels
+        {
+            get => _confidenceLevels ?? (_confidenceLevels = new InputList<string>());
+            set => _confidenceLevels = value;
+        }
+
         /// <summary>
         /// The OCID of the discovery job.
         /// </summary>
@@ -270,6 +297,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableArray<string> ColumnNames;
         /// <summary>
+        /// The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+        /// </summary>
+        public readonly ImmutableArray<string> ConfidenceLevels;
+        /// <summary>
         /// The OCID of the discovery job.
         /// </summary>
         public readonly string DiscoveryJobId;
@@ -307,6 +338,8 @@ namespace Pulumi.Oci.DataSafe
         private GetDiscoveryJobsResultsResult(
             ImmutableArray<string> columnNames,
 
+            ImmutableArray<string> confidenceLevels,
+
             string discoveryJobId,
 
             ImmutableArray<Outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult> discoveryJobResultCollections,
@@ -326,6 +359,7 @@ namespace Pulumi.Oci.DataSafe
             ImmutableArray<string> schemaNames)
         {
             ColumnNames = columnNames;
+            ConfidenceLevels = confidenceLevels;
             DiscoveryJobId = discoveryJobId;
             DiscoveryJobResultCollections = discoveryJobResultCollections;
             DiscoveryType = discoveryType;

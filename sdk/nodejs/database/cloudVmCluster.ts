@@ -52,6 +52,7 @@ import * as utilities from "../utilities";
  *     dbServers: cloudVmClusterDbServers,
  *     definedTags: cloudVmClusterDefinedTags,
  *     domain: cloudVmClusterDomain,
+ *     exascaleDbStorageVaultId: testExascaleDbStorageVault.id,
  *     fileSystemConfigurationDetails: [{
  *         fileSystemSizeGb: cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb,
  *         mountPoint: cloudVmClusterFileSystemConfigurationDetailsMountPoint,
@@ -193,6 +194,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public readonly domain: pulumi.Output<string>;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    declare public readonly exascaleDbStorageVaultId: pulumi.Output<string>;
+    /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
     declare public readonly fileSystemConfigurationDetails: pulumi.Output<outputs.Database.CloudVmClusterFileSystemConfigurationDetail[]>;
@@ -306,6 +311,10 @@ export class CloudVmCluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     */
+    declare public /*out*/ readonly storageManagementType: pulumi.Output<string>;
+    /**
      * The storage allocation for the disk group, in gigabytes (GB).
      */
     declare public /*out*/ readonly storageSizeInGbs: pulumi.Output<number>;
@@ -390,6 +399,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["diskRedundancy"] = state?.diskRedundancy;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["domain"] = state?.domain;
+            resourceInputs["exascaleDbStorageVaultId"] = state?.exascaleDbStorageVaultId;
             resourceInputs["fileSystemConfigurationDetails"] = state?.fileSystemConfigurationDetails;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["giVersion"] = state?.giVersion;
@@ -417,6 +427,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["shape"] = state?.shape;
             resourceInputs["sshPublicKeys"] = state?.sshPublicKeys;
             resourceInputs["state"] = state?.state;
+            resourceInputs["storageManagementType"] = state?.storageManagementType;
             resourceInputs["storageSizeInGbs"] = state?.storageSizeInGbs;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["subscriptionId"] = state?.subscriptionId;
@@ -474,6 +485,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["domain"] = args?.domain;
+            resourceInputs["exascaleDbStorageVaultId"] = args?.exascaleDbStorageVaultId;
             resourceInputs["fileSystemConfigurationDetails"] = args?.fileSystemConfigurationDetails;
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["giVersion"] = args?.giVersion;
@@ -510,6 +522,7 @@ export class CloudVmCluster extends pulumi.CustomResource {
             resourceInputs["scanIpv6ids"] = undefined /*out*/;
             resourceInputs["shape"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["storageManagementType"] = undefined /*out*/;
             resourceInputs["storageSizeInGbs"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -606,6 +619,10 @@ export interface CloudVmClusterState {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
     domain?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    exascaleDbStorageVaultId?: pulumi.Input<string>;
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */
@@ -719,6 +736,10 @@ export interface CloudVmClusterState {
      * The current state of the cloud VM cluster.
      */
     state?: pulumi.Input<string>;
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     */
+    storageManagementType?: pulumi.Input<string>;
     /**
      * The storage allocation for the disk group, in gigabytes (GB).
      */
@@ -845,6 +866,10 @@ export interface CloudVmClusterArgs {
      * A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
      */
     domain?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     */
+    exascaleDbStorageVaultId?: pulumi.Input<string>;
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      */

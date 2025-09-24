@@ -16,12 +16,14 @@ from .get_listing_package_agreements import *
 from .get_listing_packages import *
 from .get_listing_taxes import *
 from .get_listings import *
+from .get_marketplace_metadata_public_keys import *
 from .get_publication import *
 from .get_publication_package import *
 from .get_publication_packages import *
 from .get_publications import *
 from .get_publishers import *
 from .listing_package_agreement import *
+from .marketplace_external_attested_metadata import *
 from .publication import *
 from ._inputs import *
 from . import outputs

@@ -27,7 +27,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_scheduling_policy_associated=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, compute_model=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, database_server_type=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, exascale_configs=None, freeform_tags=None, id=None, is_scheduling_policy_associated=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_type=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -82,6 +82,9 @@ class GetCloudExadataInfrastructureResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if exascale_configs and not isinstance(exascale_configs, list):
+            raise TypeError("Expected argument 'exascale_configs' to be a list")
+        pulumi.set(__self__, "exascale_configs", exascale_configs)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -294,6 +297,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "display_name")
 
     @_builtins.property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> Sequence['outputs.GetCloudExadataInfrastructureExascaleConfigResult']:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
+
+    @_builtins.property
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Mapping[str, _builtins.str]:
         """
@@ -502,6 +513,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             defined_file_system_configurations=self.defined_file_system_configurations,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
+            exascale_configs=self.exascale_configs,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_scheduling_policy_associated=self.is_scheduling_policy_associated,
@@ -570,6 +582,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[_
         defined_file_system_configurations=pulumi.get(__ret__, 'defined_file_system_configurations'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        exascale_configs=pulumi.get(__ret__, 'exascale_configs'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_scheduling_policy_associated=pulumi.get(__ret__, 'is_scheduling_policy_associated'),
@@ -635,6 +648,7 @@ def get_cloud_exadata_infrastructure_output(cloud_exadata_infrastructure_id: Opt
         defined_file_system_configurations=pulumi.get(__response__, 'defined_file_system_configurations'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
         display_name=pulumi.get(__response__, 'display_name'),
+        exascale_configs=pulumi.get(__response__, 'exascale_configs'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_scheduling_policy_associated=pulumi.get(__response__, 'is_scheduling_policy_associated'),

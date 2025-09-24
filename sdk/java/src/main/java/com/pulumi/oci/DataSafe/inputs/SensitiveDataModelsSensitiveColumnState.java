@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -74,6 +75,36 @@ public final class SensitiveDataModelsSensitiveColumnState extends com.pulumi.re
      */
     public Optional<Output<String>> columnName() {
         return Optional.ofNullable(this.columnName);
+    }
+
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    @Import(name="confidenceLevel")
+    private @Nullable Output<String> confidenceLevel;
+
+    /**
+     * @return The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    public Optional<Output<String>> confidenceLevel() {
+        return Optional.ofNullable(this.confidenceLevel);
+    }
+
+    /**
+     * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    @Import(name="confidenceLevelDetails")
+    private @Nullable Output<List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs>> confidenceLevelDetails;
+
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    public Optional<Output<List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs>>> confidenceLevelDetails() {
+        return Optional.ofNullable(this.confidenceLevelDetails);
     }
 
     /**
@@ -359,6 +390,8 @@ public final class SensitiveDataModelsSensitiveColumnState extends com.pulumi.re
         this.appName = $.appName;
         this.columnGroups = $.columnGroups;
         this.columnName = $.columnName;
+        this.confidenceLevel = $.confidenceLevel;
+        this.confidenceLevelDetails = $.confidenceLevelDetails;
         this.dataType = $.dataType;
         this.dbDefinedChildColumnKeys = $.dbDefinedChildColumnKeys;
         this.estimatedDataValueCount = $.estimatedDataValueCount;
@@ -499,6 +532,58 @@ public final class SensitiveDataModelsSensitiveColumnState extends com.pulumi.re
          */
         public Builder columnName(String columnName) {
             return columnName(Output.of(columnName));
+        }
+
+        /**
+         * @param confidenceLevel The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevel(@Nullable Output<String> confidenceLevel) {
+            $.confidenceLevel = confidenceLevel;
+            return this;
+        }
+
+        /**
+         * @param confidenceLevel The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevel(String confidenceLevel) {
+            return confidenceLevel(Output.of(confidenceLevel));
+        }
+
+        /**
+         * @param confidenceLevelDetails List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevelDetails(@Nullable Output<List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs>> confidenceLevelDetails) {
+            $.confidenceLevelDetails = confidenceLevelDetails;
+            return this;
+        }
+
+        /**
+         * @param confidenceLevelDetails List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevelDetails(List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs> confidenceLevelDetails) {
+            return confidenceLevelDetails(Output.of(confidenceLevelDetails));
+        }
+
+        /**
+         * @param confidenceLevelDetails List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevelDetails(SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs... confidenceLevelDetails) {
+            return confidenceLevelDetails(List.of(confidenceLevelDetails));
         }
 
         /**

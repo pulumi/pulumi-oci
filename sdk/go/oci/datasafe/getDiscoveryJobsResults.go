@@ -30,13 +30,14 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetDiscoveryJobsResults(ctx, &datasafe.GetDiscoveryJobsResultsArgs{
-//				DiscoveryJobId:  testDiscoveryJob.Id,
-//				ColumnNames:     discoveryJobsResultColumnName,
-//				DiscoveryType:   pulumi.StringRef(discoveryJobsResultDiscoveryType),
-//				IsResultApplied: pulumi.BoolRef(discoveryJobsResultIsResultApplied),
-//				Objects:         discoveryJobsResultObject,
-//				PlannedAction:   pulumi.StringRef(discoveryJobsResultPlannedAction),
-//				SchemaNames:     discoveryJobsResultSchemaName,
+//				DiscoveryJobId:   testDiscoveryJob.Id,
+//				ColumnNames:      discoveryJobsResultColumnName,
+//				ConfidenceLevels: discoveryJobsResultConfidenceLevel,
+//				DiscoveryType:    pulumi.StringRef(discoveryJobsResultDiscoveryType),
+//				IsResultApplied:  pulumi.BoolRef(discoveryJobsResultIsResultApplied),
+//				Objects:          discoveryJobsResultObject,
+//				PlannedAction:    pulumi.StringRef(discoveryJobsResultPlannedAction),
+//				SchemaNames:      discoveryJobsResultSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -60,6 +61,8 @@ func GetDiscoveryJobsResults(ctx *pulumi.Context, args *GetDiscoveryJobsResultsA
 type GetDiscoveryJobsResultsArgs struct {
 	// A filter to return only a specific column based on column name.
 	ColumnNames []string `pulumi:"columnNames"`
+	// A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+	ConfidenceLevels []string `pulumi:"confidenceLevels"`
 	// The OCID of the discovery job.
 	DiscoveryJobId string `pulumi:"discoveryJobId"`
 	// A filter to return only the resources that match the specified discovery type.
@@ -79,6 +82,8 @@ type GetDiscoveryJobsResultsArgs struct {
 type GetDiscoveryJobsResultsResult struct {
 	// The name of the sensitive column.
 	ColumnNames []string `pulumi:"columnNames"`
+	// The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+	ConfidenceLevels []string `pulumi:"confidenceLevels"`
 	// The OCID of the discovery job.
 	DiscoveryJobId string `pulumi:"discoveryJobId"`
 	// The list of discovery_job_result_collection.
@@ -111,6 +116,8 @@ func GetDiscoveryJobsResultsOutput(ctx *pulumi.Context, args GetDiscoveryJobsRes
 type GetDiscoveryJobsResultsOutputArgs struct {
 	// A filter to return only a specific column based on column name.
 	ColumnNames pulumi.StringArrayInput `pulumi:"columnNames"`
+	// A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+	ConfidenceLevels pulumi.StringArrayInput `pulumi:"confidenceLevels"`
 	// The OCID of the discovery job.
 	DiscoveryJobId pulumi.StringInput `pulumi:"discoveryJobId"`
 	// A filter to return only the resources that match the specified discovery type.
@@ -148,6 +155,11 @@ func (o GetDiscoveryJobsResultsResultOutput) ToGetDiscoveryJobsResultsResultOutp
 // The name of the sensitive column.
 func (o GetDiscoveryJobsResultsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
+}
+
+// The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+func (o GetDiscoveryJobsResultsResultOutput) ConfidenceLevels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDiscoveryJobsResultsResult) []string { return v.ConfidenceLevels }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the discovery job.

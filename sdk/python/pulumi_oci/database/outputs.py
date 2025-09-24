@@ -87,8 +87,15 @@ __all__ = [
     'CloudAutonomousVmClusterMaintenanceWindowDetailsMonth',
     'CloudAutonomousVmClusterMaintenanceWindowMonth',
     'CloudDatabaseManagementCredentialdetails',
+    'CloudExadataInfrastructureConfigureExascaleManagementCustomerContact',
+    'CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration',
+    'CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig',
+    'CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow',
+    'CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek',
+    'CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth',
     'CloudExadataInfrastructureCustomerContact',
     'CloudExadataInfrastructureDefinedFileSystemConfiguration',
+    'CloudExadataInfrastructureExascaleConfig',
     'CloudExadataInfrastructureMaintenanceWindow',
     'CloudExadataInfrastructureMaintenanceWindowDaysOfWeek',
     'CloudExadataInfrastructureMaintenanceWindowMonth',
@@ -441,6 +448,7 @@ __all__ = [
     'GetCloudAutonomousVmClustersFilterResult',
     'GetCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult',
+    'GetCloudExadataInfrastructureExascaleConfigResult',
     'GetCloudExadataInfrastructureMaintenanceWindowResult',
     'GetCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructureMaintenanceWindowMonthResult',
@@ -448,6 +456,7 @@ __all__ = [
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureCustomerContactResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationResult',
+    'GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowDaysOfWeekResult',
     'GetCloudExadataInfrastructuresCloudExadataInfrastructureMaintenanceWindowMonthResult',
@@ -7182,6 +7191,371 @@ class CloudDatabaseManagementCredentialdetails(dict):
 
 
 @pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementCustomerContact(dict):
+    def __init__(__self__, *,
+                 email: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str email: The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[_builtins.str]:
+        """
+        The email address used by Oracle to send notifications regarding databases and infrastructure.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isBackupPartition":
+            suggest = "is_backup_partition"
+        elif key == "isResizable":
+            suggest = "is_resizable"
+        elif key == "minSizeGb":
+            suggest = "min_size_gb"
+        elif key == "mountPoint":
+            suggest = "mount_point"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_backup_partition: Optional[_builtins.bool] = None,
+                 is_resizable: Optional[_builtins.bool] = None,
+                 min_size_gb: Optional[_builtins.int] = None,
+                 mount_point: Optional[_builtins.str] = None):
+        """
+        :param _builtins.bool is_backup_partition: If true, the file system is used to create a backup prior to Exadata VM OS update.
+        :param _builtins.bool is_resizable: If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        :param _builtins.int min_size_gb: The minimum size of file system.
+        :param _builtins.str mount_point: The mount point of file system.
+        """
+        if is_backup_partition is not None:
+            pulumi.set(__self__, "is_backup_partition", is_backup_partition)
+        if is_resizable is not None:
+            pulumi.set(__self__, "is_resizable", is_resizable)
+        if min_size_gb is not None:
+            pulumi.set(__self__, "min_size_gb", min_size_gb)
+        if mount_point is not None:
+            pulumi.set(__self__, "mount_point", mount_point)
+
+    @_builtins.property
+    @pulumi.getter(name="isBackupPartition")
+    def is_backup_partition(self) -> Optional[_builtins.bool]:
+        """
+        If true, the file system is used to create a backup prior to Exadata VM OS update.
+        """
+        return pulumi.get(self, "is_backup_partition")
+
+    @_builtins.property
+    @pulumi.getter(name="isResizable")
+    def is_resizable(self) -> Optional[_builtins.bool]:
+        """
+        If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+        """
+        return pulumi.get(self, "is_resizable")
+
+    @_builtins.property
+    @pulumi.getter(name="minSizeGb")
+    def min_size_gb(self) -> Optional[_builtins.int]:
+        """
+        The minimum size of file system.
+        """
+        return pulumi.get(self, "min_size_gb")
+
+    @_builtins.property
+    @pulumi.getter(name="mountPoint")
+    def mount_point(self) -> Optional[_builtins.str]:
+        """
+        The mount point of file system.
+        """
+        return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availableStorageInGbs":
+            suggest = "available_storage_in_gbs"
+        elif key == "totalStorageInGbs":
+            suggest = "total_storage_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Storage size needed for Exascale in GBs.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "customActionTimeoutInMins":
+            suggest = "custom_action_timeout_in_mins"
+        elif key == "daysOfWeeks":
+            suggest = "days_of_weeks"
+        elif key == "hoursOfDays":
+            suggest = "hours_of_days"
+        elif key == "isCustomActionTimeoutEnabled":
+            suggest = "is_custom_action_timeout_enabled"
+        elif key == "isMonthlyPatchingEnabled":
+            suggest = "is_monthly_patching_enabled"
+        elif key == "leadTimeInWeeks":
+            suggest = "lead_time_in_weeks"
+        elif key == "patchingMode":
+            suggest = "patching_mode"
+        elif key == "skipRus":
+            suggest = "skip_rus"
+        elif key == "weeksOfMonths":
+            suggest = "weeks_of_months"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 custom_action_timeout_in_mins: Optional[_builtins.int] = None,
+                 days_of_weeks: Optional[Sequence['outputs.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek']] = None,
+                 hours_of_days: Optional[Sequence[_builtins.int]] = None,
+                 is_custom_action_timeout_enabled: Optional[_builtins.bool] = None,
+                 is_monthly_patching_enabled: Optional[_builtins.bool] = None,
+                 lead_time_in_weeks: Optional[_builtins.int] = None,
+                 months: Optional[Sequence['outputs.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth']] = None,
+                 patching_mode: Optional[_builtins.str] = None,
+                 preference: Optional[_builtins.str] = None,
+                 skip_rus: Optional[Sequence[_builtins.bool]] = None,
+                 weeks_of_months: Optional[Sequence[_builtins.int]] = None):
+        """
+        :param _builtins.int custom_action_timeout_in_mins: Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        :param Sequence['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeekArgs'] days_of_weeks: Days during the week when maintenance should be performed.
+        :param Sequence[_builtins.int] hours_of_days: The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        :param _builtins.bool is_custom_action_timeout_enabled: If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        :param _builtins.bool is_monthly_patching_enabled: If true, enables the monthly patching option.
+        :param _builtins.int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        :param Sequence['CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param _builtins.str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        :param _builtins.str preference: The maintenance window scheduling preference.
+        :param Sequence[_builtins.bool] skip_rus: If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        :param Sequence[_builtins.int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        if custom_action_timeout_in_mins is not None:
+            pulumi.set(__self__, "custom_action_timeout_in_mins", custom_action_timeout_in_mins)
+        if days_of_weeks is not None:
+            pulumi.set(__self__, "days_of_weeks", days_of_weeks)
+        if hours_of_days is not None:
+            pulumi.set(__self__, "hours_of_days", hours_of_days)
+        if is_custom_action_timeout_enabled is not None:
+            pulumi.set(__self__, "is_custom_action_timeout_enabled", is_custom_action_timeout_enabled)
+        if is_monthly_patching_enabled is not None:
+            pulumi.set(__self__, "is_monthly_patching_enabled", is_monthly_patching_enabled)
+        if lead_time_in_weeks is not None:
+            pulumi.set(__self__, "lead_time_in_weeks", lead_time_in_weeks)
+        if months is not None:
+            pulumi.set(__self__, "months", months)
+        if patching_mode is not None:
+            pulumi.set(__self__, "patching_mode", patching_mode)
+        if preference is not None:
+            pulumi.set(__self__, "preference", preference)
+        if skip_rus is not None:
+            pulumi.set(__self__, "skip_rus", skip_rus)
+        if weeks_of_months is not None:
+            pulumi.set(__self__, "weeks_of_months", weeks_of_months)
+
+    @_builtins.property
+    @pulumi.getter(name="customActionTimeoutInMins")
+    def custom_action_timeout_in_mins(self) -> Optional[_builtins.int]:
+        """
+        Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+        """
+        return pulumi.get(self, "custom_action_timeout_in_mins")
+
+    @_builtins.property
+    @pulumi.getter(name="daysOfWeeks")
+    def days_of_weeks(self) -> Optional[Sequence['outputs.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek']]:
+        """
+        Days during the week when maintenance should be performed.
+        """
+        return pulumi.get(self, "days_of_weeks")
+
+    @_builtins.property
+    @pulumi.getter(name="hoursOfDays")
+    def hours_of_days(self) -> Optional[Sequence[_builtins.int]]:
+        """
+        The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+        """
+        return pulumi.get(self, "hours_of_days")
+
+    @_builtins.property
+    @pulumi.getter(name="isCustomActionTimeoutEnabled")
+    def is_custom_action_timeout_enabled(self) -> Optional[_builtins.bool]:
+        """
+        If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+        """
+        return pulumi.get(self, "is_custom_action_timeout_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="isMonthlyPatchingEnabled")
+    def is_monthly_patching_enabled(self) -> Optional[_builtins.bool]:
+        """
+        If true, enables the monthly patching option.
+        """
+        return pulumi.get(self, "is_monthly_patching_enabled")
+
+    @_builtins.property
+    @pulumi.getter(name="leadTimeInWeeks")
+    def lead_time_in_weeks(self) -> Optional[_builtins.int]:
+        """
+        Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+        """
+        return pulumi.get(self, "lead_time_in_weeks")
+
+    @_builtins.property
+    @pulumi.getter
+    def months(self) -> Optional[Sequence['outputs.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth']]:
+        """
+        Months during the year when maintenance should be performed.
+        """
+        return pulumi.get(self, "months")
+
+    @_builtins.property
+    @pulumi.getter(name="patchingMode")
+    def patching_mode(self) -> Optional[_builtins.str]:
+        """
+        Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+        """
+        return pulumi.get(self, "patching_mode")
+
+    @_builtins.property
+    @pulumi.getter
+    def preference(self) -> Optional[_builtins.str]:
+        """
+        The maintenance window scheduling preference.
+        """
+        return pulumi.get(self, "preference")
+
+    @_builtins.property
+    @pulumi.getter(name="skipRus")
+    def skip_rus(self) -> Optional[Sequence[_builtins.bool]]:
+        """
+        If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
+        return pulumi.get(self, "skip_rus")
+
+    @_builtins.property
+    @pulumi.getter(name="weeksOfMonths")
+    def weeks_of_months(self) -> Optional[Sequence[_builtins.int]]:
+        """
+        Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+        """
+        return pulumi.get(self, "weeks_of_months")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth(dict):
+    def __init__(__self__, *,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str name: Name of the month of the year.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Name of the month of the year.
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class CloudExadataInfrastructureCustomerContact(dict):
     def __init__(__self__, *,
                  email: Optional[_builtins.str] = None):
@@ -7276,6 +7650,56 @@ class CloudExadataInfrastructureDefinedFileSystemConfiguration(dict):
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class CloudExadataInfrastructureExascaleConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "availableStorageInGbs":
+            suggest = "available_storage_in_gbs"
+        elif key == "totalStorageInGbs":
+            suggest = "total_storage_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CloudExadataInfrastructureExascaleConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CloudExadataInfrastructureExascaleConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CloudExadataInfrastructureExascaleConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 available_storage_in_gbs: Optional[_builtins.int] = None,
+                 total_storage_in_gbs: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        if available_storage_in_gbs is not None:
+            pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        if total_storage_in_gbs is not None:
+            pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> Optional[_builtins.int]:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -36598,6 +37022,35 @@ class GetCloudExadataInfrastructureDefinedFileSystemConfigurationResult(dict):
 
 
 @pulumi.output_type
+class GetCloudExadataInfrastructureExascaleConfigResult(dict):
+    def __init__(__self__, *,
+                 available_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int):
+        """
+        :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
+
+
+@pulumi.output_type
 class GetCloudExadataInfrastructureMaintenanceWindowResult(dict):
     def __init__(__self__, *,
                  custom_action_timeout_in_mins: _builtins.int,
@@ -36808,6 +37261,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  defined_file_system_configurations: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationResult'],
                  defined_tags: Mapping[str, _builtins.str],
                  display_name: _builtins.str,
+                 exascale_configs: Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult'],
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_scheduling_policy_associated: _builtins.bool,
@@ -36849,6 +37303,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemConfigurationArgs'] defined_file_system_configurations: Details of the file system configuration of the Exadata infrastructure.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Sequence['GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigArgs'] exascale_configs: The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Exadata infrastructure resource.
         :param _builtins.bool is_scheduling_policy_associated: If true, the infrastructure is using granular maintenance scheduling preference.
@@ -36890,6 +37345,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "defined_file_system_configurations", defined_file_system_configurations)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "exascale_configs", exascale_configs)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_scheduling_policy_associated", is_scheduling_policy_associated)
@@ -37049,6 +37505,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         A filter to return only resources that match the entire display name given. The match is not case sensitive.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleConfigs")
+    def exascale_configs(self) -> Sequence['outputs.GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult']:
+        """
+        The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        """
+        return pulumi.get(self, "exascale_configs")
 
     @_builtins.property
     @pulumi.getter(name="freeformTags")
@@ -37302,6 +37766,35 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureDefinedFileSystemC
         The mount point of file system.
         """
         return pulumi.get(self, "mount_point")
+
+
+@pulumi.output_type
+class GetCloudExadataInfrastructuresCloudExadataInfrastructureExascaleConfigResult(dict):
+    def __init__(__self__, *,
+                 available_storage_in_gbs: _builtins.int,
+                 total_storage_in_gbs: _builtins.int):
+        """
+        :param _builtins.int available_storage_in_gbs: Available storage size for Exascale in GBs.
+        :param _builtins.int total_storage_in_gbs: Storage size needed for Exascale in GBs.
+        """
+        pulumi.set(__self__, "available_storage_in_gbs", available_storage_in_gbs)
+        pulumi.set(__self__, "total_storage_in_gbs", total_storage_in_gbs)
+
+    @_builtins.property
+    @pulumi.getter(name="availableStorageInGbs")
+    def available_storage_in_gbs(self) -> _builtins.int:
+        """
+        Available storage size for Exascale in GBs.
+        """
+        return pulumi.get(self, "available_storage_in_gbs")
+
+    @_builtins.property
+    @pulumi.getter(name="totalStorageInGbs")
+    def total_storage_in_gbs(self) -> _builtins.int:
+        """
+        Storage size needed for Exascale in GBs.
+        """
+        return pulumi.get(self, "total_storage_in_gbs")
 
 
 @pulumi.output_type
@@ -37859,6 +38352,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  disk_redundancy: _builtins.str,
                  display_name: _builtins.str,
                  domain: _builtins.str,
+                 exascale_db_storage_vault_id: _builtins.str,
                  file_system_configuration_details: Sequence['outputs.GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailResult'],
                  freeform_tags: Mapping[str, _builtins.str],
                  gi_version: _builtins.str,
@@ -37887,6 +38381,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  shape: _builtins.str,
                  ssh_public_keys: Sequence[_builtins.str],
                  state: _builtins.str,
+                 storage_management_type: _builtins.str,
                  storage_size_in_gbs: _builtins.int,
                  subnet_id: _builtins.str,
                  subscription_id: _builtins.str,
@@ -37918,6 +38413,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.str disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param _builtins.str domain: The domain name for the cloud VM cluster.
+        :param _builtins.str exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param Sequence['GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetailArgs'] file_system_configuration_details: Details of the file system configuration of the VM cluster.
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str gi_version: A valid Oracle Grid Infrastructure (GI) software version.
@@ -37945,6 +38441,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param _builtins.str shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param Sequence[_builtins.str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param _builtins.str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
+        :param _builtins.str storage_management_type: Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
         :param _builtins.int storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -37977,6 +38474,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "disk_redundancy", disk_redundancy)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "gi_version", gi_version)
@@ -38005,6 +38503,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "storage_management_type", storage_management_type)
         pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subscription_id", subscription_id)
@@ -38166,6 +38665,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The domain name for the cloud VM cluster.
         """
         return pulumi.get(self, "domain")
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @_builtins.property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -38385,6 +38892,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         A filter to return only cloud VM clusters that match the given lifecycle state exactly.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> _builtins.str:
+        """
+        Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInGbs")

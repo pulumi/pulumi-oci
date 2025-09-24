@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSensitiveDataModelsSensitiveColumnResult',
@@ -26,7 +27,7 @@ class GetSensitiveDataModelsSensitiveColumnResult:
     """
     A collection of values returned by getSensitiveDataModelsSensitiveColumn.
     """
-    def __init__(__self__, app_defined_child_column_keys=None, app_name=None, column_groups=None, column_name=None, data_type=None, db_defined_child_column_keys=None, estimated_data_value_count=None, id=None, key=None, lifecycle_details=None, object=None, object_type=None, parent_column_keys=None, relation_type=None, sample_data_values=None, schema_name=None, sensitive_column_key=None, sensitive_data_model_id=None, sensitive_type_id=None, source=None, state=None, status=None, time_created=None, time_updated=None):
+    def __init__(__self__, app_defined_child_column_keys=None, app_name=None, column_groups=None, column_name=None, confidence_level=None, confidence_level_details=None, data_type=None, db_defined_child_column_keys=None, estimated_data_value_count=None, id=None, key=None, lifecycle_details=None, object=None, object_type=None, parent_column_keys=None, relation_type=None, sample_data_values=None, schema_name=None, sensitive_column_key=None, sensitive_data_model_id=None, sensitive_type_id=None, source=None, state=None, status=None, time_created=None, time_updated=None):
         if app_defined_child_column_keys and not isinstance(app_defined_child_column_keys, list):
             raise TypeError("Expected argument 'app_defined_child_column_keys' to be a list")
         pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
@@ -39,6 +40,12 @@ class GetSensitiveDataModelsSensitiveColumnResult:
         if column_name and not isinstance(column_name, str):
             raise TypeError("Expected argument 'column_name' to be a str")
         pulumi.set(__self__, "column_name", column_name)
+        if confidence_level and not isinstance(confidence_level, str):
+            raise TypeError("Expected argument 'confidence_level' to be a str")
+        pulumi.set(__self__, "confidence_level", confidence_level)
+        if confidence_level_details and not isinstance(confidence_level_details, list):
+            raise TypeError("Expected argument 'confidence_level_details' to be a list")
+        pulumi.set(__self__, "confidence_level_details", confidence_level_details)
         if data_type and not isinstance(data_type, str):
             raise TypeError("Expected argument 'data_type' to be a str")
         pulumi.set(__self__, "data_type", data_type)
@@ -131,6 +138,22 @@ class GetSensitiveDataModelsSensitiveColumnResult:
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> _builtins.str:
+        """
+        The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        """
+        return pulumi.get(self, "confidence_level")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> Sequence['outputs.GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailResult']:
+        """
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        return pulumi.get(self, "confidence_level_details")
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -297,6 +320,8 @@ class AwaitableGetSensitiveDataModelsSensitiveColumnResult(GetSensitiveDataModel
             app_name=self.app_name,
             column_groups=self.column_groups,
             column_name=self.column_name,
+            confidence_level=self.confidence_level,
+            confidence_level_details=self.confidence_level_details,
             data_type=self.data_type,
             db_defined_child_column_keys=self.db_defined_child_column_keys,
             estimated_data_value_count=self.estimated_data_value_count,
@@ -352,6 +377,8 @@ def get_sensitive_data_models_sensitive_column(sensitive_column_key: Optional[_b
         app_name=pulumi.get(__ret__, 'app_name'),
         column_groups=pulumi.get(__ret__, 'column_groups'),
         column_name=pulumi.get(__ret__, 'column_name'),
+        confidence_level=pulumi.get(__ret__, 'confidence_level'),
+        confidence_level_details=pulumi.get(__ret__, 'confidence_level_details'),
         data_type=pulumi.get(__ret__, 'data_type'),
         db_defined_child_column_keys=pulumi.get(__ret__, 'db_defined_child_column_keys'),
         estimated_data_value_count=pulumi.get(__ret__, 'estimated_data_value_count'),
@@ -404,6 +431,8 @@ def get_sensitive_data_models_sensitive_column_output(sensitive_column_key: Opti
         app_name=pulumi.get(__response__, 'app_name'),
         column_groups=pulumi.get(__response__, 'column_groups'),
         column_name=pulumi.get(__response__, 'column_name'),
+        confidence_level=pulumi.get(__response__, 'confidence_level'),
+        confidence_level_details=pulumi.get(__response__, 'confidence_level_details'),
         data_type=pulumi.get(__response__, 'data_type'),
         db_defined_child_column_keys=pulumi.get(__response__, 'db_defined_child_column_keys'),
         estimated_data_value_count=pulumi.get(__response__, 'estimated_data_value_count'),

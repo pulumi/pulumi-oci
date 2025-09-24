@@ -14,14 +14,78 @@ namespace Pulumi.Oci.Jms.Outputs
     public sealed class GetInstallationSitesInstallationSiteCollectionItemResult
     {
         /// <summary>
-        /// A list of Java installation sites.
+        /// The approximate count of applications running on this installation
         /// </summary>
-        public readonly ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult> Items;
+        public readonly int ApproximateApplicationCount;
+        /// <summary>
+        /// The list of operations that are blocklisted.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemBlocklistResult> Blocklists;
+        /// <summary>
+        /// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+        /// </summary>
+        public readonly string InstallationKey;
+        /// <summary>
+        /// The essential properties to identify a Java Runtime.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemJreResult> Jres;
+        /// <summary>
+        /// The Fleet-unique identifier of the related managed instance.
+        /// </summary>
+        public readonly string ManagedInstanceId;
+        /// <summary>
+        /// Operating System of the platform on which the Java Runtime was reported.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult> OperatingSystems;
+        /// <summary>
+        /// The file system path of the installation.
+        /// </summary>
+        public readonly string Path;
+        /// <summary>
+        /// The security status of the Java Runtime.
+        /// </summary>
+        public readonly string SecurityStatus;
+        /// <summary>
+        /// The lifecycle state of the installation site.
+        /// </summary>
+        public readonly string State;
+        /// <summary>
+        /// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+        /// </summary>
+        public readonly string TimeLastSeen;
 
         [OutputConstructor]
-        private GetInstallationSitesInstallationSiteCollectionItemResult(ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult> items)
+        private GetInstallationSitesInstallationSiteCollectionItemResult(
+            int approximateApplicationCount,
+
+            ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemBlocklistResult> blocklists,
+
+            string installationKey,
+
+            ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemJreResult> jres,
+
+            string managedInstanceId,
+
+            ImmutableArray<Outputs.GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult> operatingSystems,
+
+            string path,
+
+            string securityStatus,
+
+            string state,
+
+            string timeLastSeen)
         {
-            Items = items;
+            ApproximateApplicationCount = approximateApplicationCount;
+            Blocklists = blocklists;
+            InstallationKey = installationKey;
+            Jres = jres;
+            ManagedInstanceId = managedInstanceId;
+            OperatingSystems = operatingSystems;
+            Path = path;
+            SecurityStatus = securityStatus;
+            State = state;
+            TimeLastSeen = timeLastSeen;
         }
     }
 }

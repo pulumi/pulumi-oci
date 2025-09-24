@@ -159,6 +159,10 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string LatestReleaseVersion;
         /// <summary>
+        /// The license type(s) associated with the Java family.
+        /// </summary>
+        public readonly ImmutableArray<string> LicenseTypes;
+        /// <summary>
         /// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string ReleaseDate;
@@ -185,6 +189,8 @@ namespace Pulumi.Oci.Jms
 
             string latestReleaseVersion,
 
+            ImmutableArray<string> licenseTypes,
+
             string releaseDate,
 
             string supportType)
@@ -197,6 +203,7 @@ namespace Pulumi.Oci.Jms
             IsSupportedVersion = isSupportedVersion;
             LatestReleaseArtifacts = latestReleaseArtifacts;
             LatestReleaseVersion = latestReleaseVersion;
+            LicenseTypes = licenseTypes;
             ReleaseDate = releaseDate;
             SupportType = supportType;
         }

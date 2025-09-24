@@ -28,13 +28,16 @@ class GetSecurityAssessmentFindingsResult:
     """
     A collection of values returned by getSecurityAssessmentFindings.
     """
-    def __init__(__self__, access_level=None, category=None, compartment_id_in_subtree=None, contains_references=None, contains_severities=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None, target_ids=None):
+    def __init__(__self__, access_level=None, category=None, compartment_id=None, compartment_id_in_subtree=None, contains_references=None, contains_severities=None, fields=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, scim_query=None, security_assessment_id=None, severity=None, state=None, target_id=None, target_ids=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
         if category and not isinstance(category, str):
             raise TypeError("Expected argument 'category' to be a str")
         pulumi.set(__self__, "category", category)
+        if compartment_id and not isinstance(compartment_id, str):
+            raise TypeError("Expected argument 'compartment_id' to be a str")
+        pulumi.set(__self__, "compartment_id", compartment_id)
         if compartment_id_in_subtree and not isinstance(compartment_id_in_subtree, bool):
             raise TypeError("Expected argument 'compartment_id_in_subtree' to be a bool")
         pulumi.set(__self__, "compartment_id_in_subtree", compartment_id_in_subtree)
@@ -96,6 +99,11 @@ class GetSecurityAssessmentFindingsResult:
         The category to which the finding belongs to.
         """
         return pulumi.get(self, "category")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "compartment_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentIdInSubtree")
@@ -207,6 +215,7 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
         return GetSecurityAssessmentFindingsResult(
             access_level=self.access_level,
             category=self.category,
+            compartment_id=self.compartment_id,
             compartment_id_in_subtree=self.compartment_id_in_subtree,
             contains_references=self.contains_references,
             contains_severities=self.contains_severities,
@@ -227,6 +236,7 @@ class AwaitableGetSecurityAssessmentFindingsResult(GetSecurityAssessmentFindings
 
 def get_security_assessment_findings(access_level: Optional[_builtins.str] = None,
                                      category: Optional[_builtins.str] = None,
+                                     compartment_id: Optional[_builtins.str] = None,
                                      compartment_id_in_subtree: Optional[_builtins.bool] = None,
                                      contains_references: Optional[Sequence[_builtins.str]] = None,
                                      contains_severities: Optional[Sequence[_builtins.str]] = None,
@@ -250,7 +260,10 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str category: The category of the finding.
+    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[_builtins.str] contains_references: An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+    :param Sequence[_builtins.str] contains_severities: A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
     :param Sequence[_builtins.str] fields: Specifies a subset of fields to be returned in the response.
     :param _builtins.str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
     :param _builtins.bool is_top_finding: A filter to return only the findings that are marked as top findings.
@@ -258,7 +271,8 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
            **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-           Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+           
+           Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
     :param _builtins.str security_assessment_id: The OCID of the security assessment.
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str state: A filter to return only the findings that match the specified lifecycle states.
@@ -268,6 +282,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     __args__ = dict()
     __args__['accessLevel'] = access_level
     __args__['category'] = category
+    __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['containsReferences'] = contains_references
     __args__['containsSeverities'] = contains_severities
@@ -288,6 +303,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
     return AwaitableGetSecurityAssessmentFindingsResult(
         access_level=pulumi.get(__ret__, 'access_level'),
         category=pulumi.get(__ret__, 'category'),
+        compartment_id=pulumi.get(__ret__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__ret__, 'compartment_id_in_subtree'),
         contains_references=pulumi.get(__ret__, 'contains_references'),
         contains_severities=pulumi.get(__ret__, 'contains_severities'),
@@ -306,6 +322,7 @@ def get_security_assessment_findings(access_level: Optional[_builtins.str] = Non
         target_ids=pulumi.get(__ret__, 'target_ids'))
 def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                             category: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                            compartment_id: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                             compartment_id_in_subtree: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
                                             contains_references: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                             contains_severities: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
@@ -329,7 +346,10 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str category: The category of the finding.
+    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
     :param _builtins.bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
+    :param Sequence[_builtins.str] contains_references: An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+    :param Sequence[_builtins.str] contains_severities: A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
     :param Sequence[_builtins.str] fields: Specifies a subset of fields to be returned in the response.
     :param _builtins.str finding_key: Each finding in security assessment has an associated key (think of key as a finding's name). For a given finding, the key will be the same across targets. The user can use these keys to filter the findings.
     :param _builtins.bool is_top_finding: A filter to return only the findings that are marked as top findings.
@@ -337,7 +357,8 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
     :param _builtins.str scim_query: The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
            
            **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-           Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+           
+           Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
     :param _builtins.str security_assessment_id: The OCID of the security assessment.
     :param _builtins.str severity: A filter to return only findings of a particular risk level.
     :param _builtins.str state: A filter to return only the findings that match the specified lifecycle states.
@@ -347,6 +368,7 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
     __args__ = dict()
     __args__['accessLevel'] = access_level
     __args__['category'] = category
+    __args__['compartmentId'] = compartment_id
     __args__['compartmentIdInSubtree'] = compartment_id_in_subtree
     __args__['containsReferences'] = contains_references
     __args__['containsSeverities'] = contains_severities
@@ -366,6 +388,7 @@ def get_security_assessment_findings_output(access_level: Optional[pulumi.Input[
     return __ret__.apply(lambda __response__: GetSecurityAssessmentFindingsResult(
         access_level=pulumi.get(__response__, 'access_level'),
         category=pulumi.get(__response__, 'category'),
+        compartment_id=pulumi.get(__response__, 'compartment_id'),
         compartment_id_in_subtree=pulumi.get(__response__, 'compartment_id_in_subtree'),
         contains_references=pulumi.get(__response__, 'contains_references'),
         contains_severities=pulumi.get(__response__, 'contains_severities'),

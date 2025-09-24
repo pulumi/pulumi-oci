@@ -26,6 +26,8 @@ import com.pulumi.oci.Marketplace.inputs.GetListingTaxesArgs;
 import com.pulumi.oci.Marketplace.inputs.GetListingTaxesPlainArgs;
 import com.pulumi.oci.Marketplace.inputs.GetListingsArgs;
 import com.pulumi.oci.Marketplace.inputs.GetListingsPlainArgs;
+import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysPlainArgs;
 import com.pulumi.oci.Marketplace.inputs.GetPublicationArgs;
 import com.pulumi.oci.Marketplace.inputs.GetPublicationPackageArgs;
 import com.pulumi.oci.Marketplace.inputs.GetPublicationPackagePlainArgs;
@@ -45,6 +47,7 @@ import com.pulumi.oci.Marketplace.outputs.GetListingPackagesResult;
 import com.pulumi.oci.Marketplace.outputs.GetListingResult;
 import com.pulumi.oci.Marketplace.outputs.GetListingTaxesResult;
 import com.pulumi.oci.Marketplace.outputs.GetListingsResult;
+import com.pulumi.oci.Marketplace.outputs.GetMarketplaceMetadataPublicKeysResult;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackageResult;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationPackagesResult;
 import com.pulumi.oci.Marketplace.outputs.GetPublicationResult;
@@ -2556,6 +2559,300 @@ public final class MarketplaceFunctions {
      */
     public static CompletableFuture<GetListingsResult> getListingsPlain(GetListingsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Marketplace/getListings:getListings", TypeShape.of(GetListingsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeys() {
+        return getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeysPlain() {
+        return getMarketplaceMetadataPublicKeysPlain(GetMarketplaceMetadataPublicKeysPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs args) {
+        return getMarketplaceMetadataPublicKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeysPlain(GetMarketplaceMetadataPublicKeysPlainArgs args) {
+        return getMarketplaceMetadataPublicKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Marketplace/getMarketplaceMetadataPublicKeys:getMarketplaceMetadataPublicKeys", TypeShape.of(GetMarketplaceMetadataPublicKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Marketplace/getMarketplaceMetadataPublicKeys:getMarketplaceMetadataPublicKeys", TypeShape.of(GetMarketplaceMetadataPublicKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Marketplace Metadata Public Keys in Oracle Cloud Infrastructure Marketplace service.
+     * 
+     * Get public certificates used in JWT signing, in JSON Web Key Sets format
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Marketplace.MarketplaceFunctions;
+     * import com.pulumi.oci.Marketplace.inputs.GetMarketplaceMetadataPublicKeysArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMarketplaceMetadataPublicKeys = MarketplaceFunctions.getMarketplaceMetadataPublicKeys(GetMarketplaceMetadataPublicKeysArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMarketplaceMetadataPublicKeysResult> getMarketplaceMetadataPublicKeysPlain(GetMarketplaceMetadataPublicKeysPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Marketplace/getMarketplaceMetadataPublicKeys:getMarketplaceMetadataPublicKeys", TypeShape.of(GetMarketplaceMetadataPublicKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Publication resource in Oracle Cloud Infrastructure Marketplace service.

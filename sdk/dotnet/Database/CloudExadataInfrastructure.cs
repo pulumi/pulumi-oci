@@ -192,6 +192,12 @@ namespace Pulumi.Oci.Database
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        [Output("exascaleConfigs")]
+        public Output<ImmutableArray<Outputs.CloudExadataInfrastructureExascaleConfig>> ExascaleConfigs { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         /// </summary>
         [Output("freeformTags")]
@@ -606,6 +612,18 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        [Input("exascaleConfigs")]
+        private InputList<Inputs.CloudExadataInfrastructureExascaleConfigGetArgs>? _exascaleConfigs;
+
+        /// <summary>
+        /// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+        /// </summary>
+        public InputList<Inputs.CloudExadataInfrastructureExascaleConfigGetArgs> ExascaleConfigs
+        {
+            get => _exascaleConfigs ?? (_exascaleConfigs = new InputList<Inputs.CloudExadataInfrastructureExascaleConfigGetArgs>());
+            set => _exascaleConfigs = value;
+        }
 
         [Input("freeformTags")]
         private InputMap<string>? _freeformTags;

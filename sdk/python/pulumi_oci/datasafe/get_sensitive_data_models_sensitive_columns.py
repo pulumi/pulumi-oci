@@ -28,13 +28,19 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
     """
     A collection of values returned by getSensitiveDataModelsSensitiveColumns.
     """
-    def __init__(__self__, column_group=None, column_names=None, data_types=None, filters=None, id=None, is_case_in_sensitive=None, object_types=None, objects=None, parent_column_keys=None, relation_types=None, schema_names=None, sensitive_column_collections=None, sensitive_column_lifecycle_state=None, sensitive_data_model_id=None, sensitive_type_ids=None, statuses=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, time_updated_greater_than_or_equal_to=None, time_updated_less_than=None):
+    def __init__(__self__, column_data_count_filter=None, column_group=None, column_names=None, confidence_levels=None, data_types=None, filters=None, id=None, is_case_in_sensitive=None, object_types=None, objects=None, parent_column_keys=None, relation_types=None, schema_names=None, sensitive_column_collections=None, sensitive_column_lifecycle_state=None, sensitive_data_model_id=None, sensitive_type_ids=None, statuses=None, time_created_greater_than_or_equal_to=None, time_created_less_than=None, time_updated_greater_than_or_equal_to=None, time_updated_less_than=None):
+        if column_data_count_filter and not isinstance(column_data_count_filter, str):
+            raise TypeError("Expected argument 'column_data_count_filter' to be a str")
+        pulumi.set(__self__, "column_data_count_filter", column_data_count_filter)
         if column_group and not isinstance(column_group, str):
             raise TypeError("Expected argument 'column_group' to be a str")
         pulumi.set(__self__, "column_group", column_group)
         if column_names and not isinstance(column_names, list):
             raise TypeError("Expected argument 'column_names' to be a list")
         pulumi.set(__self__, "column_names", column_names)
+        if confidence_levels and not isinstance(confidence_levels, list):
+            raise TypeError("Expected argument 'confidence_levels' to be a list")
+        pulumi.set(__self__, "confidence_levels", confidence_levels)
         if data_types and not isinstance(data_types, list):
             raise TypeError("Expected argument 'data_types' to be a list")
         pulumi.set(__self__, "data_types", data_types)
@@ -91,6 +97,11 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
         pulumi.set(__self__, "time_updated_less_than", time_updated_less_than)
 
     @_builtins.property
+    @pulumi.getter(name="columnDataCountFilter")
+    def column_data_count_filter(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "column_data_count_filter")
+
+    @_builtins.property
     @pulumi.getter(name="columnGroup")
     def column_group(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "column_group")
@@ -102,6 +113,14 @@ class GetSensitiveDataModelsSensitiveColumnsResult:
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_names")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevels")
+    def confidence_levels(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        """
+        return pulumi.get(self, "confidence_levels")
 
     @_builtins.property
     @pulumi.getter(name="dataTypes")
@@ -230,8 +249,10 @@ class AwaitableGetSensitiveDataModelsSensitiveColumnsResult(GetSensitiveDataMode
         if False:
             yield self
         return GetSensitiveDataModelsSensitiveColumnsResult(
+            column_data_count_filter=self.column_data_count_filter,
             column_group=self.column_group,
             column_names=self.column_names,
+            confidence_levels=self.confidence_levels,
             data_types=self.data_types,
             filters=self.filters,
             id=self.id,
@@ -252,8 +273,10 @@ class AwaitableGetSensitiveDataModelsSensitiveColumnsResult(GetSensitiveDataMode
             time_updated_less_than=self.time_updated_less_than)
 
 
-def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins.str] = None,
+def get_sensitive_data_models_sensitive_columns(column_data_count_filter: Optional[_builtins.str] = None,
+                                                column_group: Optional[_builtins.str] = None,
                                                 column_names: Optional[Sequence[_builtins.str]] = None,
+                                                confidence_levels: Optional[Sequence[_builtins.str]] = None,
                                                 data_types: Optional[Sequence[_builtins.str]] = None,
                                                 filters: Optional[Sequence[Union['GetSensitiveDataModelsSensitiveColumnsFilterArgs', 'GetSensitiveDataModelsSensitiveColumnsFilterArgsDict']]] = None,
                                                 is_case_in_sensitive: Optional[_builtins.bool] = None,
@@ -283,8 +306,10 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins
     import pulumi_oci as oci
 
     test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+        column_data_count_filter=sensitive_data_models_sensitive_column_column_data_count_filter,
         column_group=sensitive_data_models_sensitive_column_column_group,
         column_names=sensitive_data_models_sensitive_column_column_name,
+        confidence_levels=sensitive_data_models_sensitive_column_confidence_level,
         data_types=sensitive_data_models_sensitive_column_data_type,
         is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
         objects=sensitive_data_models_sensitive_column_object,
@@ -302,8 +327,10 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins
     ```
 
 
+    :param _builtins.str column_data_count_filter: Filters the sensitive columns with respect to the estimated row count.
     :param _builtins.str column_group: A filter to return only the sensitive columns that belong to the specified column group.
     :param Sequence[_builtins.str] column_names: A filter to return only a specific column based on column name.
+    :param Sequence[_builtins.str] confidence_levels: A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
     :param Sequence[_builtins.str] data_types: A filter to return only the resources that match the specified data types.
     :param _builtins.bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
     :param Sequence[_builtins.str] object_types: A filter to return only items related to a specific object type.
@@ -325,8 +352,10 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins
     :param _builtins.str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """
     __args__ = dict()
+    __args__['columnDataCountFilter'] = column_data_count_filter
     __args__['columnGroup'] = column_group
     __args__['columnNames'] = column_names
+    __args__['confidenceLevels'] = confidence_levels
     __args__['dataTypes'] = data_types
     __args__['filters'] = filters
     __args__['isCaseInSensitive'] = is_case_in_sensitive
@@ -347,8 +376,10 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnsResult).value
 
     return AwaitableGetSensitiveDataModelsSensitiveColumnsResult(
+        column_data_count_filter=pulumi.get(__ret__, 'column_data_count_filter'),
         column_group=pulumi.get(__ret__, 'column_group'),
         column_names=pulumi.get(__ret__, 'column_names'),
+        confidence_levels=pulumi.get(__ret__, 'confidence_levels'),
         data_types=pulumi.get(__ret__, 'data_types'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
@@ -367,8 +398,10 @@ def get_sensitive_data_models_sensitive_columns(column_group: Optional[_builtins
         time_created_less_than=pulumi.get(__ret__, 'time_created_less_than'),
         time_updated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_updated_greater_than_or_equal_to'),
         time_updated_less_than=pulumi.get(__ret__, 'time_updated_less_than'))
-def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+def get_sensitive_data_models_sensitive_columns_output(column_data_count_filter: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
+                                                       column_group: Optional[pulumi.Input[Optional[_builtins.str]]] = None,
                                                        column_names: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
+                                                       confidence_levels: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                                        data_types: Optional[pulumi.Input[Optional[Sequence[_builtins.str]]]] = None,
                                                        filters: Optional[pulumi.Input[Optional[Sequence[Union['GetSensitiveDataModelsSensitiveColumnsFilterArgs', 'GetSensitiveDataModelsSensitiveColumnsFilterArgsDict']]]]] = None,
                                                        is_case_in_sensitive: Optional[pulumi.Input[Optional[_builtins.bool]]] = None,
@@ -398,8 +431,10 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     import pulumi_oci as oci
 
     test_sensitive_data_models_sensitive_columns = oci.DataSafe.get_sensitive_data_models_sensitive_columns(sensitive_data_model_id=test_sensitive_data_model["id"],
+        column_data_count_filter=sensitive_data_models_sensitive_column_column_data_count_filter,
         column_group=sensitive_data_models_sensitive_column_column_group,
         column_names=sensitive_data_models_sensitive_column_column_name,
+        confidence_levels=sensitive_data_models_sensitive_column_confidence_level,
         data_types=sensitive_data_models_sensitive_column_data_type,
         is_case_in_sensitive=sensitive_data_models_sensitive_column_is_case_in_sensitive,
         objects=sensitive_data_models_sensitive_column_object,
@@ -417,8 +452,10 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     ```
 
 
+    :param _builtins.str column_data_count_filter: Filters the sensitive columns with respect to the estimated row count.
     :param _builtins.str column_group: A filter to return only the sensitive columns that belong to the specified column group.
     :param Sequence[_builtins.str] column_names: A filter to return only a specific column based on column name.
+    :param Sequence[_builtins.str] confidence_levels: A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
     :param Sequence[_builtins.str] data_types: A filter to return only the resources that match the specified data types.
     :param _builtins.bool is_case_in_sensitive: A boolean flag indicating whether the search should be case-insensitive. The search is case-sensitive by default. Set this parameter to true to do case-insensitive search.
     :param Sequence[_builtins.str] object_types: A filter to return only items related to a specific object type.
@@ -440,8 +477,10 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     :param _builtins.str time_updated_less_than: Search for resources that were updated before a specific date. Specifying this parameter corresponding `timeUpdatedLessThan` parameter will retrieve all resources updated before the specified created date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
     """
     __args__ = dict()
+    __args__['columnDataCountFilter'] = column_data_count_filter
     __args__['columnGroup'] = column_group
     __args__['columnNames'] = column_names
+    __args__['confidenceLevels'] = confidence_levels
     __args__['dataTypes'] = data_types
     __args__['filters'] = filters
     __args__['isCaseInSensitive'] = is_case_in_sensitive
@@ -461,8 +500,10 @@ def get_sensitive_data_models_sensitive_columns_output(column_group: Optional[pu
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns', __args__, opts=opts, typ=GetSensitiveDataModelsSensitiveColumnsResult)
     return __ret__.apply(lambda __response__: GetSensitiveDataModelsSensitiveColumnsResult(
+        column_data_count_filter=pulumi.get(__response__, 'column_data_count_filter'),
         column_group=pulumi.get(__response__, 'column_group'),
         column_names=pulumi.get(__response__, 'column_names'),
+        confidence_levels=pulumi.get(__response__, 'confidence_levels'),
         data_types=pulumi.get(__response__, 'data_types'),
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),

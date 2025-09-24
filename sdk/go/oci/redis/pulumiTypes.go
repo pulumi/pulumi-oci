@@ -3863,6 +3863,10 @@ type GetRedisClustersRedisClusterCollectionItem struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress string `pulumi:"discoveryEndpointIpAddress"`
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn string `pulumi:"discoveryFqdn"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -3923,6 +3927,10 @@ type GetRedisClustersRedisClusterCollectionItemArgs struct {
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress pulumi.StringInput `pulumi:"discoveryEndpointIpAddress"`
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn pulumi.StringInput `pulumi:"discoveryFqdn"`
 	// A filter to return only resources that match the entire display name given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -4029,6 +4037,16 @@ func (o GetRedisClustersRedisClusterCollectionItemOutput) CompartmentId() pulumi
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetRedisClustersRedisClusterCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The private IP address of the API endpoint for sharded cluster discovery.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) DiscoveryEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.DiscoveryEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+func (o GetRedisClustersRedisClusterCollectionItemOutput) DiscoveryFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRedisClustersRedisClusterCollectionItem) string { return v.DiscoveryFqdn }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the entire display name given.

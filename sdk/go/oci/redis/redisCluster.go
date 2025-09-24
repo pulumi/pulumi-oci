@@ -73,6 +73,10 @@ type RedisCluster struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress pulumi.StringOutput `pulumi:"discoveryEndpointIpAddress"`
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn pulumi.StringOutput `pulumi:"discoveryFqdn"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -170,6 +174,10 @@ type redisClusterState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress *string `pulumi:"discoveryEndpointIpAddress"`
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn *string `pulumi:"discoveryFqdn"`
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -220,6 +228,10 @@ type RedisClusterState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.StringMapInput
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress pulumi.StringPtrInput
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn pulumi.StringPtrInput
 	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -428,6 +440,16 @@ func (o RedisClusterOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o RedisClusterOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *RedisCluster) pulumi.StringMapOutput { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The private IP address of the API endpoint for sharded cluster discovery.
+func (o RedisClusterOutput) DiscoveryEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.DiscoveryEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+func (o RedisClusterOutput) DiscoveryFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v *RedisCluster) pulumi.StringOutput { return v.DiscoveryFqdn }).(pulumi.StringOutput)
 }
 
 // (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

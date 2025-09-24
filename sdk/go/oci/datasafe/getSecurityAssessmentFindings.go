@@ -30,10 +30,14 @@ type GetSecurityAssessmentFindingsArgs struct {
 	AccessLevel *string `pulumi:"accessLevel"`
 	// The category of the finding.
 	Category *string `pulumi:"category"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree *bool    `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     []string `pulumi:"containsReferences"`
-	ContainsSeverities     []string `pulumi:"containsSeverities"`
+	CompartmentIdInSubtree *bool `pulumi:"compartmentIdInSubtree"`
+	// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+	ContainsReferences []string `pulumi:"containsReferences"`
+	// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+	ContainsSeverities []string `pulumi:"containsSeverities"`
 	// Specifies a subset of fields to be returned in the response.
 	Fields  []string                              `pulumi:"fields"`
 	Filters []GetSecurityAssessmentFindingsFilter `pulumi:"filters"`
@@ -46,7 +50,8 @@ type GetSecurityAssessmentFindingsArgs struct {
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
 	//
 	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-	// Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+	//
+	// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
 	ScimQuery *string `pulumi:"scimQuery"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
@@ -65,6 +70,7 @@ type GetSecurityAssessmentFindingsResult struct {
 	AccessLevel *string `pulumi:"accessLevel"`
 	// The category to which the finding belongs to.
 	Category               *string                               `pulumi:"category"`
+	CompartmentId          *string                               `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
 	ContainsReferences     []string                              `pulumi:"containsReferences"`
 	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
@@ -105,10 +111,14 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	AccessLevel pulumi.StringPtrInput `pulumi:"accessLevel"`
 	// The category of the finding.
 	Category pulumi.StringPtrInput `pulumi:"category"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
-	CompartmentIdInSubtree pulumi.BoolPtrInput     `pulumi:"compartmentIdInSubtree"`
-	ContainsReferences     pulumi.StringArrayInput `pulumi:"containsReferences"`
-	ContainsSeverities     pulumi.StringArrayInput `pulumi:"containsSeverities"`
+	CompartmentIdInSubtree pulumi.BoolPtrInput `pulumi:"compartmentIdInSubtree"`
+	// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+	ContainsReferences pulumi.StringArrayInput `pulumi:"containsReferences"`
+	// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+	ContainsSeverities pulumi.StringArrayInput `pulumi:"containsSeverities"`
 	// Specifies a subset of fields to be returned in the response.
 	Fields  pulumi.StringArrayInput                       `pulumi:"fields"`
 	Filters GetSecurityAssessmentFindingsFilterArrayInput `pulumi:"filters"`
@@ -121,7 +131,8 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
 	//
 	// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-	// Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+	//
+	// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
 	ScimQuery pulumi.StringPtrInput `pulumi:"scimQuery"`
 	// The OCID of the security assessment.
 	SecurityAssessmentId pulumi.StringInput `pulumi:"securityAssessmentId"`
@@ -161,6 +172,10 @@ func (o GetSecurityAssessmentFindingsResultOutput) AccessLevel() pulumi.StringPt
 // The category to which the finding belongs to.
 func (o GetSecurityAssessmentFindingsResultOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.Category }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingsResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o GetSecurityAssessmentFindingsResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {

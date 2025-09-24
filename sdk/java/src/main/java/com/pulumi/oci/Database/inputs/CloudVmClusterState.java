@@ -317,6 +317,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Import(name="exascaleDbStorageVaultId")
+    private @Nullable Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Optional<Output<String>> exascaleDbStorageVaultId() {
+        return Optional.ofNullable(this.exascaleDbStorageVaultId);
+    }
+
+    /**
      * (Updatable) Details of the file system configuration of the VM cluster.
      * 
      */
@@ -732,6 +747,21 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    @Import(name="storageManagementType")
+    private @Nullable Output<String> storageManagementType;
+
+    /**
+     * @return Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    public Optional<Output<String>> storageManagementType() {
+        return Optional.ofNullable(this.storageManagementType);
+    }
+
+    /**
      * The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
@@ -939,6 +969,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.diskRedundancy = $.diskRedundancy;
         this.displayName = $.displayName;
         this.domain = $.domain;
+        this.exascaleDbStorageVaultId = $.exascaleDbStorageVaultId;
         this.fileSystemConfigurationDetails = $.fileSystemConfigurationDetails;
         this.freeformTags = $.freeformTags;
         this.giVersion = $.giVersion;
@@ -966,6 +997,7 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
         this.shape = $.shape;
         this.sshPublicKeys = $.sshPublicKeys;
         this.state = $.state;
+        this.storageManagementType = $.storageManagementType;
         this.storageSizeInGbs = $.storageSizeInGbs;
         this.subnetId = $.subnetId;
         this.subscriptionId = $.subscriptionId;
@@ -1417,6 +1449,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(@Nullable Output<String> exascaleDbStorageVaultId) {
+            $.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            return this;
+        }
+
+        /**
+         * @param exascaleDbStorageVaultId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            return exascaleDbStorageVaultId(Output.of(exascaleDbStorageVaultId));
         }
 
         /**
@@ -2065,6 +2118,27 @@ public final class CloudVmClusterState extends com.pulumi.resources.ResourceArgs
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param storageManagementType Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageManagementType(@Nullable Output<String> storageManagementType) {
+            $.storageManagementType = storageManagementType;
+            return this;
+        }
+
+        /**
+         * @param storageManagementType Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder storageManagementType(String storageManagementType) {
+            return storageManagementType(Output.of(storageManagementType));
         }
 
         /**

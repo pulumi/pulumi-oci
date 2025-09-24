@@ -58,13 +58,13 @@ type LookupJmsPluginArgs struct {
 
 // A collection of values returned by getJmsPlugin.
 type LookupJmsPluginResult struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId string `pulumi:"agentId"`
 	// The agent type.
 	AgentType string `pulumi:"agentType"`
 	// The availability status.
 	AvailabilityStatus string `pulumi:"availabilityStatus"`
-	// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]string `pulumi:"definedTags"`
@@ -129,7 +129,7 @@ func (o LookupJmsPluginResultOutput) ToLookupJmsPluginResultOutputWithContext(ct
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 func (o LookupJmsPluginResultOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJmsPluginResult) string { return v.AgentId }).(pulumi.StringOutput)
 }
@@ -144,7 +144,7 @@ func (o LookupJmsPluginResultOutput) AvailabilityStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJmsPluginResult) string { return v.AvailabilityStatus }).(pulumi.StringOutput)
 }
 
-// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o LookupJmsPluginResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJmsPluginResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }

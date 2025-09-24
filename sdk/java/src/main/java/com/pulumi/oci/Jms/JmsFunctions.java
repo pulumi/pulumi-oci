@@ -17,6 +17,8 @@ import com.pulumi.oci.Jms.inputs.GetFleetAdvancedFeatureConfigurationPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetBlocklistsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetContainersPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetCryptoAnalysisResultsArgs;
@@ -39,11 +41,23 @@ import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetJavaMigrationAnalysisResultsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPerformanceTuningAnalysisResultsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetSummarizeLibraryInventoryArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetSummarizeLibraryInventoryPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetsArgs;
 import com.pulumi.oci.Jms.inputs.GetFleetsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetInstallationSiteArgs;
@@ -90,10 +104,27 @@ import com.pulumi.oci.Jms.inputs.GetPluginErrorsArgs;
 import com.pulumi.oci.Jms.inputs.GetPluginErrorsPlainArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryArgs;
 import com.pulumi.oci.Jms.inputs.GetSummarizeResourceInventoryPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+import com.pulumi.oci.Jms.inputs.GetTaskSchedulePlainArgs;
+import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+import com.pulumi.oci.Jms.inputs.GetTaskSchedulesPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisPlainArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationPlainArgs;
 import com.pulumi.oci.Jms.outputs.GetAgentInstallersResult;
 import com.pulumi.oci.Jms.outputs.GetAnnouncementsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetAdvancedFeatureConfigurationResult;
 import com.pulumi.oci.Jms.outputs.GetFleetBlocklistsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetContainersResult;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultResult;
 import com.pulumi.oci.Jms.outputs.GetFleetCryptoAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetDiagnosesResult;
@@ -105,9 +136,15 @@ import com.pulumi.oci.Jms.outputs.GetFleetExportSettingResult;
 import com.pulumi.oci.Jms.outputs.GetFleetExportStatusResult;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultResult;
 import com.pulumi.oci.Jms.outputs.GetFleetJavaMigrationAnalysisResultsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetLibraryApplicationsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetLibraryManagedInstancesResult;
 import com.pulumi.oci.Jms.outputs.GetFleetPerformanceTuningAnalysisResultResult;
 import com.pulumi.oci.Jms.outputs.GetFleetPerformanceTuningAnalysisResultsResult;
 import com.pulumi.oci.Jms.outputs.GetFleetResult;
+import com.pulumi.oci.Jms.outputs.GetFleetSummarizeLibraryInventoryResult;
+import com.pulumi.oci.Jms.outputs.GetFleetUncorrelatedPackageApplicationsResult;
+import com.pulumi.oci.Jms.outputs.GetFleetUncorrelatedPackageManagedInstancesResult;
+import com.pulumi.oci.Jms.outputs.GetFleetUncorrelatedPackagesResult;
 import com.pulumi.oci.Jms.outputs.GetFleetsResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSiteResult;
 import com.pulumi.oci.Jms.outputs.GetInstallationSitesResult;
@@ -131,6 +168,14 @@ import com.pulumi.oci.Jms.outputs.GetListJreUsageResult;
 import com.pulumi.oci.Jms.outputs.GetPluginErrorAnalyticsResult;
 import com.pulumi.oci.Jms.outputs.GetPluginErrorsResult;
 import com.pulumi.oci.Jms.outputs.GetSummarizeResourceInventoryResult;
+import com.pulumi.oci.Jms.outputs.GetTaskScheduleResult;
+import com.pulumi.oci.Jms.outputs.GetTaskSchedulesResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsAnalyzeApplicationsConfigurationResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsJavaMigrationAnalysiResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsJavaMigrationAnalysisResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsPerformanceTuningAnalysiResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsPerformanceTuningAnalysisResult;
+import com.pulumi.oci.Jms.outputs.GetUtilsSubscriptionAcknowledgmentConfigurationResult;
 import com.pulumi.oci.Utilities;
 import java.util.concurrent.CompletableFuture;
 
@@ -1397,6 +1442,251 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetFleetBlocklistsResult> getFleetBlocklistsPlain(GetFleetBlocklistsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetBlocklists:getFleetBlocklists", TypeShape.of(GetFleetBlocklistsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List containers in a fleet filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationName(testApplication.name())
+     *             .displayName(fleetContainerDisplayName)
+     *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
+     *             .jreVersion(fleetContainerJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetContainersResult> getFleetContainers(GetFleetContainersArgs args) {
+        return getFleetContainers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List containers in a fleet filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationName(testApplication.name())
+     *             .displayName(fleetContainerDisplayName)
+     *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
+     *             .jreVersion(fleetContainerJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetContainersResult> getFleetContainersPlain(GetFleetContainersPlainArgs args) {
+        return getFleetContainersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List containers in a fleet filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationName(testApplication.name())
+     *             .displayName(fleetContainerDisplayName)
+     *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
+     *             .jreVersion(fleetContainerJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetContainersResult> getFleetContainers(GetFleetContainersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetContainers:getFleetContainers", TypeShape.of(GetFleetContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List containers in a fleet filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationName(testApplication.name())
+     *             .displayName(fleetContainerDisplayName)
+     *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
+     *             .jreVersion(fleetContainerJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetContainersResult> getFleetContainers(GetFleetContainersArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetContainers:getFleetContainers", TypeShape.of(GetFleetContainersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Containers in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List containers in a fleet filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetContainersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationName(testApplication.name())
+     *             .displayName(fleetContainerDisplayName)
+     *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
+     *             .jreVersion(fleetContainerJreVersion)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetContainersResult> getFleetContainersPlain(GetFleetContainersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetContainers:getFleetContainers", TypeShape.of(GetFleetContainersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Fleet Crypto Analysis Result resource in Oracle Cloud Infrastructure Jms service.
@@ -4011,6 +4301,496 @@ public final class JmsFunctions {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetJavaMigrationAnalysisResults:getFleetJavaMigrationAnalysisResults", TypeShape.of(GetFleetJavaMigrationAnalysisResultsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Fleet Library Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where a library has been detected filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryApplicationLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryApplicationTimeEnd)
+     *             .timeStart(fleetLibraryApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryApplicationsResult> getFleetLibraryApplications(GetFleetLibraryApplicationsArgs args) {
+        return getFleetLibraryApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Library Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where a library has been detected filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryApplicationLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryApplicationTimeEnd)
+     *             .timeStart(fleetLibraryApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetLibraryApplicationsResult> getFleetLibraryApplicationsPlain(GetFleetLibraryApplicationsPlainArgs args) {
+        return getFleetLibraryApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Library Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where a library has been detected filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryApplicationLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryApplicationTimeEnd)
+     *             .timeStart(fleetLibraryApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryApplicationsResult> getFleetLibraryApplications(GetFleetLibraryApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetLibraryApplications:getFleetLibraryApplications", TypeShape.of(GetFleetLibraryApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Library Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where a library has been detected filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryApplicationLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryApplicationTimeEnd)
+     *             .timeStart(fleetLibraryApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryApplicationsResult> getFleetLibraryApplications(GetFleetLibraryApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetLibraryApplications:getFleetLibraryApplications", TypeShape.of(GetFleetLibraryApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Library Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where a library has been detected filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryApplicationLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .applicationName(testApplication.name())
+     *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryApplicationTimeEnd)
+     *             .timeStart(fleetLibraryApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetLibraryApplicationsResult> getFleetLibraryApplicationsPlain(GetFleetLibraryApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetLibraryApplications:getFleetLibraryApplications", TypeShape.of(GetFleetLibraryApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where a library has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .hostName(fleetLibraryManagedInstanceHostName)
+     *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
+     *             .timeStart(fleetLibraryManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryManagedInstancesResult> getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs args) {
+        return getFleetLibraryManagedInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where a library has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .hostName(fleetLibraryManagedInstanceHostName)
+     *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
+     *             .timeStart(fleetLibraryManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetLibraryManagedInstancesResult> getFleetLibraryManagedInstancesPlain(GetFleetLibraryManagedInstancesPlainArgs args) {
+        return getFleetLibraryManagedInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where a library has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .hostName(fleetLibraryManagedInstanceHostName)
+     *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
+     *             .timeStart(fleetLibraryManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryManagedInstancesResult> getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetLibraryManagedInstances:getFleetLibraryManagedInstances", TypeShape.of(GetFleetLibraryManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where a library has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .hostName(fleetLibraryManagedInstanceHostName)
+     *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
+     *             .timeStart(fleetLibraryManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetLibraryManagedInstancesResult> getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetLibraryManagedInstances:getFleetLibraryManagedInstances", TypeShape.of(GetFleetLibraryManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where a library has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetLibraryManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
+     *             .applicationId(testApplication.id())
+     *             .hostName(fleetLibraryManagedInstanceHostName)
+     *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
+     *             .timeStart(fleetLibraryManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetLibraryManagedInstancesResult> getFleetLibraryManagedInstancesPlain(GetFleetLibraryManagedInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetLibraryManagedInstances:getFleetLibraryManagedInstances", TypeShape.of(GetFleetLibraryManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific Fleet Performance Tuning Analysis Result resource in Oracle Cloud Infrastructure Jms service.
      * 
      * Retrieve metadata of the Performance Tuning Analysis result.
@@ -4464,6 +5244,732 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetFleetPerformanceTuningAnalysisResultsResult> getFleetPerformanceTuningAnalysisResultsPlain(GetFleetPerformanceTuningAnalysisResultsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getFleetPerformanceTuningAnalysisResults:getFleetPerformanceTuningAnalysisResults", TypeShape.of(GetFleetPerformanceTuningAnalysisResultsResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventory() {
+        return getFleetSummarizeLibraryInventory(GetFleetSummarizeLibraryInventoryArgs.Empty, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventoryPlain() {
+        return getFleetSummarizeLibraryInventoryPlain(GetFleetSummarizeLibraryInventoryPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    public static Output<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventory(GetFleetSummarizeLibraryInventoryArgs args) {
+        return getFleetSummarizeLibraryInventory(args, InvokeOptions.Empty);
+    }
+    public static CompletableFuture<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventoryPlain(GetFleetSummarizeLibraryInventoryPlainArgs args) {
+        return getFleetSummarizeLibraryInventoryPlain(args, InvokeOptions.Empty);
+    }
+    public static Output<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventory(GetFleetSummarizeLibraryInventoryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetSummarizeLibraryInventory:getFleetSummarizeLibraryInventory", TypeShape.of(GetFleetSummarizeLibraryInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static Output<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventory(GetFleetSummarizeLibraryInventoryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetSummarizeLibraryInventory:getFleetSummarizeLibraryInventory", TypeShape.of(GetFleetSummarizeLibraryInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    public static CompletableFuture<GetFleetSummarizeLibraryInventoryResult> getFleetSummarizeLibraryInventoryPlain(GetFleetSummarizeLibraryInventoryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetSummarizeLibraryInventory:getFleetSummarizeLibraryInventory", TypeShape.of(GetFleetSummarizeLibraryInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageApplicationsResult> getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs args) {
+        return getFleetUncorrelatedPackageApplications(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackageApplicationsResult> getFleetUncorrelatedPackageApplicationsPlain(GetFleetUncorrelatedPackageApplicationsPlainArgs args) {
+        return getFleetUncorrelatedPackageApplicationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageApplicationsResult> getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackageApplications:getFleetUncorrelatedPackageApplications", TypeShape.of(GetFleetUncorrelatedPackageApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageApplicationsResult> getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackageApplications:getFleetUncorrelatedPackageApplications", TypeShape.of(GetFleetUncorrelatedPackageApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Applications in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List applications where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageApplicationsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackageApplicationsResult> getFleetUncorrelatedPackageApplicationsPlain(GetFleetUncorrelatedPackageApplicationsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetUncorrelatedPackageApplications:getFleetUncorrelatedPackageApplications", TypeShape.of(GetFleetUncorrelatedPackageApplicationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageManagedInstancesResult> getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs args) {
+        return getFleetUncorrelatedPackageManagedInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackageManagedInstancesResult> getFleetUncorrelatedPackageManagedInstancesPlain(GetFleetUncorrelatedPackageManagedInstancesPlainArgs args) {
+        return getFleetUncorrelatedPackageManagedInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageManagedInstancesResult> getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackageManagedInstances:getFleetUncorrelatedPackageManagedInstances", TypeShape.of(GetFleetUncorrelatedPackageManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackageManagedInstancesResult> getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackageManagedInstances:getFleetUncorrelatedPackageManagedInstances", TypeShape.of(GetFleetUncorrelatedPackageManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List managed instances where an uncorrelated package has been detected, filtered by query parameters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackageManagedInstancesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackageManagedInstancesResult> getFleetUncorrelatedPackageManagedInstancesPlain(GetFleetUncorrelatedPackageManagedInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetUncorrelatedPackageManagedInstances:getFleetUncorrelatedPackageManagedInstances", TypeShape.of(GetFleetUncorrelatedPackageManagedInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can&#39;t be accurately correlated to a library during a library scan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .packageName(fleetUncorrelatedPackagePackageName)
+     *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackagesResult> getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs args) {
+        return getFleetUncorrelatedPackages(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can&#39;t be accurately correlated to a library during a library scan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .packageName(fleetUncorrelatedPackagePackageName)
+     *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackagesResult> getFleetUncorrelatedPackagesPlain(GetFleetUncorrelatedPackagesPlainArgs args) {
+        return getFleetUncorrelatedPackagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can&#39;t be accurately correlated to a library during a library scan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .packageName(fleetUncorrelatedPackagePackageName)
+     *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackagesResult> getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackages:getFleetUncorrelatedPackages", TypeShape.of(GetFleetUncorrelatedPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can&#39;t be accurately correlated to a library during a library scan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .packageName(fleetUncorrelatedPackagePackageName)
+     *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetFleetUncorrelatedPackagesResult> getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getFleetUncorrelatedPackages:getFleetUncorrelatedPackages", TypeShape.of(GetFleetUncorrelatedPackagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
+     * 
+     * List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can&#39;t be accurately correlated to a library during a library scan.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetFleetUncorrelatedPackagesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .applicationId(testApplication.id())
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .packageName(fleetUncorrelatedPackagePackageName)
+     *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
+     *             .timeStart(fleetUncorrelatedPackageTimeStart)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetFleetUncorrelatedPackagesResult> getFleetUncorrelatedPackagesPlain(GetFleetUncorrelatedPackagesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getFleetUncorrelatedPackages:getFleetUncorrelatedPackages", TypeShape.of(GetFleetUncorrelatedPackagesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
@@ -10529,5 +12035,1997 @@ public final class JmsFunctions {
      */
     public static CompletableFuture<GetSummarizeResourceInventoryResult> getSummarizeResourceInventoryPlain(GetSummarizeResourceInventoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Jms/getSummarizeResourceInventory:getSummarizeResourceInventory", TypeShape.of(GetSummarizeResourceInventoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a task schedule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskScheduleResult> getTaskSchedule(GetTaskScheduleArgs args) {
+        return getTaskSchedule(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a task schedule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTaskScheduleResult> getTaskSchedulePlain(GetTaskSchedulePlainArgs args) {
+        return getTaskSchedulePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a task schedule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskScheduleResult> getTaskSchedule(GetTaskScheduleArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getTaskSchedule:getTaskSchedule", TypeShape.of(GetTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a task schedule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskScheduleResult> getTaskSchedule(GetTaskScheduleArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getTaskSchedule:getTaskSchedule", TypeShape.of(GetTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a task schedule.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskScheduleArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
+     *             .fleetId(testFleet.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTaskScheduleResult> getTaskSchedulePlain(GetTaskSchedulePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getTaskSchedule:getTaskSchedule", TypeShape.of(GetTaskScheduleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Task Schedules in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of task schedules.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .id(taskScheduleId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .name(taskScheduleName)
+     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskSchedulesResult> getTaskSchedules(GetTaskSchedulesArgs args) {
+        return getTaskSchedules(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Task Schedules in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of task schedules.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .id(taskScheduleId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .name(taskScheduleName)
+     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTaskSchedulesResult> getTaskSchedulesPlain(GetTaskSchedulesPlainArgs args) {
+        return getTaskSchedulesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Task Schedules in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of task schedules.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .id(taskScheduleId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .name(taskScheduleName)
+     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskSchedulesResult> getTaskSchedules(GetTaskSchedulesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getTaskSchedules:getTaskSchedules", TypeShape.of(GetTaskSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Task Schedules in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of task schedules.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .id(taskScheduleId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .name(taskScheduleName)
+     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetTaskSchedulesResult> getTaskSchedules(GetTaskSchedulesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getTaskSchedules:getTaskSchedules", TypeShape.of(GetTaskSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Task Schedules in Oracle Cloud Infrastructure Jms service.
+     * 
+     * Returns a list of task schedules.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetTaskSchedulesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testTaskSchedules = JmsFunctions.getTaskSchedules(GetTaskSchedulesArgs.builder()
+     *             .fleetId(testFleet.id())
+     *             .id(taskScheduleId)
+     *             .managedInstanceId(testManagedInstance.id())
+     *             .name(taskScheduleName)
+     *             .taskScheduleNameContains(taskScheduleTaskScheduleNameContains)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetTaskSchedulesResult> getTaskSchedulesPlain(GetTaskSchedulesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getTaskSchedules:getTaskSchedules", TypeShape.of(GetTaskSchedulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for analyzing applications.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyzeApplicationsConfiguration = JmsFunctions.getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsAnalyzeApplicationsConfigurationResult> getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs args) {
+        return getUtilsAnalyzeApplicationsConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for analyzing applications.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyzeApplicationsConfiguration = JmsFunctions.getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsAnalyzeApplicationsConfigurationResult> getUtilsAnalyzeApplicationsConfigurationPlain(GetUtilsAnalyzeApplicationsConfigurationPlainArgs args) {
+        return getUtilsAnalyzeApplicationsConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for analyzing applications.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyzeApplicationsConfiguration = JmsFunctions.getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsAnalyzeApplicationsConfigurationResult> getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", TypeShape.of(GetUtilsAnalyzeApplicationsConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for analyzing applications.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyzeApplicationsConfiguration = JmsFunctions.getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsAnalyzeApplicationsConfigurationResult> getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", TypeShape.of(GetUtilsAnalyzeApplicationsConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for analyzing applications.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsAnalyzeApplicationsConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAnalyzeApplicationsConfiguration = JmsFunctions.getUtilsAnalyzeApplicationsConfiguration(GetUtilsAnalyzeApplicationsConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsAnalyzeApplicationsConfigurationResult> getUtilsAnalyzeApplicationsConfigurationPlain(GetUtilsAnalyzeApplicationsConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsAnalyzeApplicationsConfiguration:getUtilsAnalyzeApplicationsConfiguration", TypeShape.of(GetUtilsAnalyzeApplicationsConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysiResult> getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs args) {
+        return getUtilsJavaMigrationAnalysi(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsJavaMigrationAnalysiResult> getUtilsJavaMigrationAnalysiPlain(GetUtilsJavaMigrationAnalysiPlainArgs args) {
+        return getUtilsJavaMigrationAnalysiPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysiResult> getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsJavaMigrationAnalysi:getUtilsJavaMigrationAnalysi", TypeShape.of(GetUtilsJavaMigrationAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysiResult> getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsJavaMigrationAnalysi:getUtilsJavaMigrationAnalysi", TypeShape.of(GetUtilsJavaMigrationAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Java Migration Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsJavaMigrationAnalysiResult> getUtilsJavaMigrationAnalysiPlain(GetUtilsJavaMigrationAnalysiPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsJavaMigrationAnalysi:getUtilsJavaMigrationAnalysi", TypeShape.of(GetUtilsJavaMigrationAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysis() {
+        return getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysisPlain() {
+        return getUtilsJavaMigrationAnalysisPlain(GetUtilsJavaMigrationAnalysisPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs args) {
+        return getUtilsJavaMigrationAnalysis(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysisPlain(GetUtilsJavaMigrationAnalysisPlainArgs args) {
+        return getUtilsJavaMigrationAnalysisPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsJavaMigrationAnalysis:getUtilsJavaMigrationAnalysis", TypeShape.of(GetUtilsJavaMigrationAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsJavaMigrationAnalysis:getUtilsJavaMigrationAnalysis", TypeShape.of(GetUtilsJavaMigrationAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Java Migration Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Java Migration Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsJavaMigrationAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(javaMigrationAnalysiId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsJavaMigrationAnalysisResult> getUtilsJavaMigrationAnalysisPlain(GetUtilsJavaMigrationAnalysisPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsJavaMigrationAnalysis:getUtilsJavaMigrationAnalysis", TypeShape.of(GetUtilsJavaMigrationAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Performance Tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysiResult> getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs args) {
+        return getUtilsPerformanceTuningAnalysi(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Performance Tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsPerformanceTuningAnalysiResult> getUtilsPerformanceTuningAnalysiPlain(GetUtilsPerformanceTuningAnalysiPlainArgs args) {
+        return getUtilsPerformanceTuningAnalysiPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Performance Tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysiResult> getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsPerformanceTuningAnalysi:getUtilsPerformanceTuningAnalysi", TypeShape.of(GetUtilsPerformanceTuningAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Performance Tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysiResult> getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsPerformanceTuningAnalysi:getUtilsPerformanceTuningAnalysi", TypeShape.of(GetUtilsPerformanceTuningAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Performance Tuning Analysi resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets information about a Performance Tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysiArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsPerformanceTuningAnalysiResult> getUtilsPerformanceTuningAnalysiPlain(GetUtilsPerformanceTuningAnalysiPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsPerformanceTuningAnalysi:getUtilsPerformanceTuningAnalysi", TypeShape.of(GetUtilsPerformanceTuningAnalysiResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysis() {
+        return getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysisPlain() {
+        return getUtilsPerformanceTuningAnalysisPlain(GetUtilsPerformanceTuningAnalysisPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs args) {
+        return getUtilsPerformanceTuningAnalysis(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysisPlain(GetUtilsPerformanceTuningAnalysisPlainArgs args) {
+        return getUtilsPerformanceTuningAnalysisPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsPerformanceTuningAnalysis:getUtilsPerformanceTuningAnalysis", TypeShape.of(GetUtilsPerformanceTuningAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsPerformanceTuningAnalysis:getUtilsPerformanceTuningAnalysis", TypeShape.of(GetUtilsPerformanceTuningAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Gets a list of Performance tuning Analysis.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsPerformanceTuningAnalysisArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
+     *             .analysisProjectName(testProject.name())
+     *             .compartmentId(compartmentId)
+     *             .id(performanceTuningAnalysiId)
+     *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsPerformanceTuningAnalysisResult> getUtilsPerformanceTuningAnalysisPlain(GetUtilsPerformanceTuningAnalysisPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsPerformanceTuningAnalysis:getUtilsPerformanceTuningAnalysis", TypeShape.of(GetUtilsPerformanceTuningAnalysisResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfiguration() {
+        return getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfigurationPlain() {
+        return getUtilsSubscriptionAcknowledgmentConfigurationPlain(GetUtilsSubscriptionAcknowledgmentConfigurationPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs args) {
+        return getUtilsSubscriptionAcknowledgmentConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfigurationPlain(GetUtilsSubscriptionAcknowledgmentConfigurationPlainArgs args) {
+        return getUtilsSubscriptionAcknowledgmentConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", TypeShape.of(GetUtilsSubscriptionAcknowledgmentConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", TypeShape.of(GetUtilsSubscriptionAcknowledgmentConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Subscription Acknowledgment Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
+     * 
+     * Returns the configuration for subscription acknowledgment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Jms.JmsFunctions;
+     * import com.pulumi.oci.Jms.inputs.GetUtilsSubscriptionAcknowledgmentConfigurationArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSubscriptionAcknowledgmentConfiguration = JmsFunctions.getUtilsSubscriptionAcknowledgmentConfiguration(GetUtilsSubscriptionAcknowledgmentConfigurationArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetUtilsSubscriptionAcknowledgmentConfigurationResult> getUtilsSubscriptionAcknowledgmentConfigurationPlain(GetUtilsSubscriptionAcknowledgmentConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Jms/getUtilsSubscriptionAcknowledgmentConfiguration:getUtilsSubscriptionAcknowledgmentConfiguration", TypeShape.of(GetUtilsSubscriptionAcknowledgmentConfigurationResult.class), args, Utilities.withVersion(options));
     }
 }

@@ -36,6 +36,23 @@ __all__ = [
     'JavaDownloadsJavaDownloadTokenLastUpdatedBy',
     'JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy',
     'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy',
+    'TaskScheduleTaskDetails',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequest',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite',
+    'TaskScheduleTaskDetailsCryptoTaskRequest',
+    'TaskScheduleTaskDetailsCryptoTaskRequestTarget',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequest',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget',
+    'TaskScheduleTaskDetailsJfrTaskRequest',
+    'TaskScheduleTaskDetailsJfrTaskRequestTarget',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequest',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite',
+    'TaskScheduleTaskDetailsScanJavaServerTaskRequest',
+    'TaskScheduleTaskDetailsScanLibraryTaskRequest',
     'GetAgentInstallersAgentInstallerCollectionResult',
     'GetAgentInstallersAgentInstallerCollectionItemResult',
     'GetAgentInstallersFilterResult',
@@ -58,6 +75,9 @@ __all__ = [
     'GetFleetBlocklistsFilterResult',
     'GetFleetBlocklistsItemResult',
     'GetFleetBlocklistsItemTargetResult',
+    'GetFleetContainersContainerCollectionResult',
+    'GetFleetContainersContainerCollectionItemResult',
+    'GetFleetContainersFilterResult',
     'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult',
     'GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult',
     'GetFleetCryptoAnalysisResultsFilterResult',
@@ -75,14 +95,30 @@ __all__ = [
     'GetFleetErrorsFleetErrorCollectionResult',
     'GetFleetErrorsFleetErrorCollectionItemResult',
     'GetFleetErrorsFleetErrorCollectionItemErrorResult',
+    'GetFleetExportSettingExportDataFilterResult',
     'GetFleetInventoryLogResult',
     'GetFleetJavaMigrationAnalysisResultsFilterResult',
     'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionResult',
     'GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemResult',
+    'GetFleetLibraryApplicationsFilterResult',
+    'GetFleetLibraryApplicationsLibraryApplicationUsageCollectionResult',
+    'GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemResult',
+    'GetFleetLibraryManagedInstancesFilterResult',
+    'GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionResult',
+    'GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemResult',
     'GetFleetOperationLogResult',
     'GetFleetPerformanceTuningAnalysisResultsFilterResult',
     'GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionResult',
     'GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemResult',
+    'GetFleetUncorrelatedPackageApplicationsFilterResult',
+    'GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionResult',
+    'GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemResult',
+    'GetFleetUncorrelatedPackageManagedInstancesFilterResult',
+    'GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionResult',
+    'GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemResult',
+    'GetFleetUncorrelatedPackagesFilterResult',
+    'GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionResult',
+    'GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemResult',
     'GetFleetsFilterResult',
     'GetFleetsFleetCollectionResult',
     'GetFleetsFleetCollectionItemResult',
@@ -95,10 +131,9 @@ __all__ = [
     'GetInstallationSitesFilterResult',
     'GetInstallationSitesInstallationSiteCollectionResult',
     'GetInstallationSitesInstallationSiteCollectionItemResult',
-    'GetInstallationSitesInstallationSiteCollectionItemItemResult',
-    'GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult',
-    'GetInstallationSitesInstallationSiteCollectionItemItemJreResult',
-    'GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult',
+    'GetInstallationSitesInstallationSiteCollectionItemBlocklistResult',
+    'GetInstallationSitesInstallationSiteCollectionItemJreResult',
+    'GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult',
     'GetJavaDownloadsJavaDownloadRecordsFilterResult',
     'GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionResult',
     'GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult',
@@ -155,6 +190,53 @@ __all__ = [
     'GetPluginErrorsPluginErrorCollectionResult',
     'GetPluginErrorsPluginErrorCollectionItemResult',
     'GetPluginErrorsPluginErrorCollectionItemErrorResult',
+    'GetTaskScheduleTaskDetailResult',
+    'GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestResult',
+    'GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult',
+    'GetTaskScheduleTaskDetailCryptoTaskRequestResult',
+    'GetTaskScheduleTaskDetailCryptoTaskRequestTargetResult',
+    'GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestResult',
+    'GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetResult',
+    'GetTaskScheduleTaskDetailJavaMigrationTaskRequestResult',
+    'GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetResult',
+    'GetTaskScheduleTaskDetailJfrTaskRequestResult',
+    'GetTaskScheduleTaskDetailJfrTaskRequestTargetResult',
+    'GetTaskScheduleTaskDetailPerformanceTuningTaskRequestResult',
+    'GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetResult',
+    'GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestResult',
+    'GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult',
+    'GetTaskScheduleTaskDetailScanJavaServerTaskRequestResult',
+    'GetTaskScheduleTaskDetailScanLibraryTaskRequestResult',
+    'GetTaskSchedulesFilterResult',
+    'GetTaskSchedulesTaskScheduleCollectionResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestResult',
+    'GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestResult',
+    'GetUtilsJavaMigrationAnalysiCreatedByResult',
+    'GetUtilsJavaMigrationAnalysisFilterResult',
+    'GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionResult',
+    'GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemResult',
+    'GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByResult',
+    'GetUtilsPerformanceTuningAnalysiCreatedByResult',
+    'GetUtilsPerformanceTuningAnalysisFilterResult',
+    'GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionResult',
+    'GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemResult',
+    'GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByResult',
 ]
 
 @pulumi.output_type
@@ -1319,6 +1401,1285 @@ class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy(dict):
 
 
 @pulumi.output_type
+class TaskScheduleTaskDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "taskType":
+            suggest = "task_type"
+        elif key == "addInstallationSiteTaskRequest":
+            suggest = "add_installation_site_task_request"
+        elif key == "cryptoTaskRequest":
+            suggest = "crypto_task_request"
+        elif key == "deployedApplicationMigrationTaskRequest":
+            suggest = "deployed_application_migration_task_request"
+        elif key == "javaMigrationTaskRequest":
+            suggest = "java_migration_task_request"
+        elif key == "jfrTaskRequest":
+            suggest = "jfr_task_request"
+        elif key == "performanceTuningTaskRequest":
+            suggest = "performance_tuning_task_request"
+        elif key == "removeInstallationSiteTaskRequest":
+            suggest = "remove_installation_site_task_request"
+        elif key == "scanJavaServerTaskRequest":
+            suggest = "scan_java_server_task_request"
+        elif key == "scanLibraryTaskRequest":
+            suggest = "scan_library_task_request"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 task_type: _builtins.str,
+                 add_installation_site_task_request: Optional['outputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequest'] = None,
+                 crypto_task_request: Optional['outputs.TaskScheduleTaskDetailsCryptoTaskRequest'] = None,
+                 deployed_application_migration_task_request: Optional['outputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest'] = None,
+                 java_migration_task_request: Optional['outputs.TaskScheduleTaskDetailsJavaMigrationTaskRequest'] = None,
+                 jfr_task_request: Optional['outputs.TaskScheduleTaskDetailsJfrTaskRequest'] = None,
+                 performance_tuning_task_request: Optional['outputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequest'] = None,
+                 remove_installation_site_task_request: Optional['outputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest'] = None,
+                 scan_java_server_task_request: Optional['outputs.TaskScheduleTaskDetailsScanJavaServerTaskRequest'] = None,
+                 scan_library_task_request: Optional['outputs.TaskScheduleTaskDetailsScanLibraryTaskRequest'] = None):
+        """
+        :param _builtins.str task_type: (Updatable) Type of task.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param 'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs' add_installation_site_task_request: (Updatable) The list of Java installation sites to add.
+        :param 'TaskScheduleTaskDetailsCryptoTaskRequestArgs' crypto_task_request: (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        :param 'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs' deployed_application_migration_task_request: (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        :param 'TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs' java_migration_task_request: (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        :param 'TaskScheduleTaskDetailsJfrTaskRequestArgs' jfr_task_request: (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        :param 'TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs' performance_tuning_task_request: (Updatable) Details of the request to start a JFR performance tuning analysis.
+        :param 'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs' remove_installation_site_task_request: (Updatable) The list of Java installation sites to remove.
+        :param 'TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs' scan_java_server_task_request: (Updatable) The list of managed instances to scan.
+        :param 'TaskScheduleTaskDetailsScanLibraryTaskRequestArgs' scan_library_task_request: (Updatable) The list of managed instances to scan.
+        """
+        pulumi.set(__self__, "task_type", task_type)
+        if add_installation_site_task_request is not None:
+            pulumi.set(__self__, "add_installation_site_task_request", add_installation_site_task_request)
+        if crypto_task_request is not None:
+            pulumi.set(__self__, "crypto_task_request", crypto_task_request)
+        if deployed_application_migration_task_request is not None:
+            pulumi.set(__self__, "deployed_application_migration_task_request", deployed_application_migration_task_request)
+        if java_migration_task_request is not None:
+            pulumi.set(__self__, "java_migration_task_request", java_migration_task_request)
+        if jfr_task_request is not None:
+            pulumi.set(__self__, "jfr_task_request", jfr_task_request)
+        if performance_tuning_task_request is not None:
+            pulumi.set(__self__, "performance_tuning_task_request", performance_tuning_task_request)
+        if remove_installation_site_task_request is not None:
+            pulumi.set(__self__, "remove_installation_site_task_request", remove_installation_site_task_request)
+        if scan_java_server_task_request is not None:
+            pulumi.set(__self__, "scan_java_server_task_request", scan_java_server_task_request)
+        if scan_library_task_request is not None:
+            pulumi.set(__self__, "scan_library_task_request", scan_library_task_request)
+
+    @_builtins.property
+    @pulumi.getter(name="taskType")
+    def task_type(self) -> _builtins.str:
+        """
+        (Updatable) Type of task.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "task_type")
+
+    @_builtins.property
+    @pulumi.getter(name="addInstallationSiteTaskRequest")
+    def add_installation_site_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequest']:
+        """
+        (Updatable) The list of Java installation sites to add.
+        """
+        return pulumi.get(self, "add_installation_site_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoTaskRequest")
+    def crypto_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsCryptoTaskRequest']:
+        """
+        (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        """
+        return pulumi.get(self, "crypto_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationMigrationTaskRequest")
+    def deployed_application_migration_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest']:
+        """
+        (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "deployed_application_migration_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="javaMigrationTaskRequest")
+    def java_migration_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsJavaMigrationTaskRequest']:
+        """
+        (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "java_migration_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="jfrTaskRequest")
+    def jfr_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsJfrTaskRequest']:
+        """
+        (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        """
+        return pulumi.get(self, "jfr_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="performanceTuningTaskRequest")
+    def performance_tuning_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequest']:
+        """
+        (Updatable) Details of the request to start a JFR performance tuning analysis.
+        """
+        return pulumi.get(self, "performance_tuning_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="removeInstallationSiteTaskRequest")
+    def remove_installation_site_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest']:
+        """
+        (Updatable) The list of Java installation sites to remove.
+        """
+        return pulumi.get(self, "remove_installation_site_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="scanJavaServerTaskRequest")
+    def scan_java_server_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsScanJavaServerTaskRequest']:
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_java_server_task_request")
+
+    @_builtins.property
+    @pulumi.getter(name="scanLibraryTaskRequest")
+    def scan_library_task_request(self) -> Optional['outputs.TaskScheduleTaskDetailsScanLibraryTaskRequest']:
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_library_task_request")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "installationSites":
+            suggest = "installation_sites"
+        elif key == "postInstallationActions":
+            suggest = "post_installation_actions"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsAddInstallationSiteTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsAddInstallationSiteTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsAddInstallationSiteTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 installation_sites: Optional[Sequence['outputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite']] = None,
+                 post_installation_actions: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: (Updatable) The list of installation sites to add.
+        :param Sequence[_builtins.str] post_installation_actions: (Updatable) Optional list of post java installation actions
+        """
+        if installation_sites is not None:
+            pulumi.set(__self__, "installation_sites", installation_sites)
+        if post_installation_actions is not None:
+            pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite']]:
+        """
+        (Updatable) The list of installation sites to add.
+        """
+        return pulumi.get(self, "installation_sites")
+
+    @_builtins.property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) Optional list of post java installation actions
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "artifactContentType":
+            suggest = "artifact_content_type"
+        elif key == "forceInstall":
+            suggest = "force_install"
+        elif key == "headlessMode":
+            suggest = "headless_mode"
+        elif key == "installationPath":
+            suggest = "installation_path"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+        elif key == "releaseVersion":
+            suggest = "release_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 artifact_content_type: Optional[_builtins.str] = None,
+                 force_install: Optional[_builtins.bool] = None,
+                 headless_mode: Optional[_builtins.bool] = None,
+                 installation_path: Optional[_builtins.str] = None,
+                 managed_instance_id: Optional[_builtins.str] = None,
+                 release_version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str artifact_content_type: (Updatable) Artifact content type for the Java version.
+        :param _builtins.bool force_install: (Updatable) Forces the installation request even if a more recent release is already present in the host.
+        :param _builtins.bool headless_mode: (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        :param _builtins.str installation_path: (Updatable) Custom path to install new Java installation site.
+        :param _builtins.str managed_instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        :param _builtins.str release_version: (Updatable) The release version of the Java Runtime.
+        """
+        if artifact_content_type is not None:
+            pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        if force_install is not None:
+            pulumi.set(__self__, "force_install", force_install)
+        if headless_mode is not None:
+            pulumi.set(__self__, "headless_mode", headless_mode)
+        if installation_path is not None:
+            pulumi.set(__self__, "installation_path", installation_path)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if release_version is not None:
+            pulumi.set(__self__, "release_version", release_version)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Artifact content type for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="forceInstall")
+    def force_install(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Forces the installation request even if a more recent release is already present in the host.
+        """
+        return pulumi.get(self, "force_install")
+
+    @_builtins.property
+    @pulumi.getter(name="headlessMode")
+    def headless_mode(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        """
+        return pulumi.get(self, "headless_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="installationPath")
+    def installation_path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Custom path to install new Java installation site.
+        """
+        return pulumi.get(self, "installation_path")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The release version of the Java Runtime.
+        """
+        return pulumi.get(self, "release_version")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsCryptoTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recordingDurationInMinutes":
+            suggest = "recording_duration_in_minutes"
+        elif key == "waitingPeriodInMinutes":
+            suggest = "waiting_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsCryptoTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsCryptoTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsCryptoTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: Optional[_builtins.int] = None,
+                 targets: Optional[Sequence['outputs.TaskScheduleTaskDetailsCryptoTaskRequestTarget']] = None,
+                 waiting_period_in_minutes: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param Sequence['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs'] targets: (Updatable) The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsCryptoTaskRequestTarget']]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsCryptoTaskRequestTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationInstallationKey":
+            suggest = "application_installation_key"
+        elif key == "applicationKey":
+            suggest = "application_key"
+        elif key == "containerKey":
+            suggest = "container_key"
+        elif key == "jreKey":
+            suggest = "jre_key"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsCryptoTaskRequestTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsCryptoTaskRequestTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsCryptoTaskRequestTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_installation_key: Optional[_builtins.str] = None,
+                 application_key: Optional[_builtins.str] = None,
+                 container_key: Optional[_builtins.str] = None,
+                 jre_key: Optional[_builtins.str] = None,
+                 managed_instance_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest(dict):
+    def __init__(__self__, *,
+                 targets: Optional[Sequence['outputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget']] = None):
+        """
+        :param Sequence['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs'] targets: (Updatable) An array of migration analyses requests.
+        """
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget']]:
+        """
+        (Updatable) An array of migration analyses requests.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "deployedApplicationInstallationKey":
+            suggest = "deployed_application_installation_key"
+        elif key == "excludePackagePrefixes":
+            suggest = "exclude_package_prefixes"
+        elif key == "includePackagePrefixes":
+            suggest = "include_package_prefixes"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+        elif key == "sourceJdkVersion":
+            suggest = "source_jdk_version"
+        elif key == "targetJdkVersion":
+            suggest = "target_jdk_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 deployed_application_installation_key: Optional[_builtins.str] = None,
+                 exclude_package_prefixes: Optional[Sequence[_builtins.str]] = None,
+                 include_package_prefixes: Optional[Sequence[_builtins.str]] = None,
+                 managed_instance_id: Optional[_builtins.str] = None,
+                 source_jdk_version: Optional[_builtins.str] = None,
+                 target_jdk_version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str deployed_application_installation_key: (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        :param Sequence[_builtins.str] exclude_package_prefixes: (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+        :param _builtins.str source_jdk_version: (Updatable) The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+        """
+        if deployed_application_installation_key is not None:
+            pulumi.set(__self__, "deployed_application_installation_key", deployed_application_installation_key)
+        if exclude_package_prefixes is not None:
+            pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        if include_package_prefixes is not None:
+            pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if source_jdk_version is not None:
+            pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        if target_jdk_version is not None:
+            pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationInstallationKey")
+    def deployed_application_installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        """
+        return pulumi.get(self, "deployed_application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsJavaMigrationTaskRequest(dict):
+    def __init__(__self__, *,
+                 targets: Optional[Sequence['outputs.TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget']] = None):
+        """
+        :param Sequence['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs'] targets: (Updatable) An array of migration analysis requests.
+        """
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget']]:
+        """
+        (Updatable) An array of migration analysis requests.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationInstallationKey":
+            suggest = "application_installation_key"
+        elif key == "excludePackagePrefixes":
+            suggest = "exclude_package_prefixes"
+        elif key == "includePackagePrefixes":
+            suggest = "include_package_prefixes"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+        elif key == "sourceJdkVersion":
+            suggest = "source_jdk_version"
+        elif key == "targetJdkVersion":
+            suggest = "target_jdk_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_installation_key: Optional[_builtins.str] = None,
+                 exclude_package_prefixes: Optional[Sequence[_builtins.str]] = None,
+                 include_package_prefixes: Optional[Sequence[_builtins.str]] = None,
+                 managed_instance_id: Optional[_builtins.str] = None,
+                 source_jdk_version: Optional[_builtins.str] = None,
+                 target_jdk_version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str application_installation_key: (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+        :param Sequence[_builtins.str] exclude_package_prefixes: (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+        :param _builtins.str source_jdk_version: (Updatable) The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if exclude_package_prefixes is not None:
+            pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        if include_package_prefixes is not None:
+            pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if source_jdk_version is not None:
+            pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        if target_jdk_version is not None:
+            pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsJfrTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "jfcProfileName":
+            suggest = "jfc_profile_name"
+        elif key == "jfcV1":
+            suggest = "jfc_v1"
+        elif key == "jfcV2":
+            suggest = "jfc_v2"
+        elif key == "recordingDurationInMinutes":
+            suggest = "recording_duration_in_minutes"
+        elif key == "recordingSizeInMb":
+            suggest = "recording_size_in_mb"
+        elif key == "waitingPeriodInMinutes":
+            suggest = "waiting_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsJfrTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsJfrTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsJfrTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 jfc_profile_name: Optional[_builtins.str] = None,
+                 jfc_v1: Optional[_builtins.str] = None,
+                 jfc_v2: Optional[_builtins.str] = None,
+                 recording_duration_in_minutes: Optional[_builtins.int] = None,
+                 recording_size_in_mb: Optional[_builtins.int] = None,
+                 targets: Optional[Sequence['outputs.TaskScheduleTaskDetailsJfrTaskRequestTarget']] = None,
+                 waiting_period_in_minutes: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str jfc_profile_name: (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        :param _builtins.str jfc_v1: (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        :param _builtins.str jfc_v2: (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        :param _builtins.int recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param _builtins.int recording_size_in_mb: (Updatable) The maximum size limit for the JFR file collected.
+        :param Sequence['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs'] targets: (Updatable) The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if jfc_profile_name is not None:
+            pulumi.set(__self__, "jfc_profile_name", jfc_profile_name)
+        if jfc_v1 is not None:
+            pulumi.set(__self__, "jfc_v1", jfc_v1)
+        if jfc_v2 is not None:
+            pulumi.set(__self__, "jfc_v2", jfc_v2)
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if recording_size_in_mb is not None:
+            pulumi.set(__self__, "recording_size_in_mb", recording_size_in_mb)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcProfileName")
+    def jfc_profile_name(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        """
+        return pulumi.get(self, "jfc_profile_name")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV1")
+    def jfc_v1(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        """
+        return pulumi.get(self, "jfc_v1")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV2")
+    def jfc_v2(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        """
+        return pulumi.get(self, "jfc_v2")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingSizeInMb")
+    def recording_size_in_mb(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The maximum size limit for the JFR file collected.
+        """
+        return pulumi.get(self, "recording_size_in_mb")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsJfrTaskRequestTarget']]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsJfrTaskRequestTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationInstallationKey":
+            suggest = "application_installation_key"
+        elif key == "applicationKey":
+            suggest = "application_key"
+        elif key == "containerKey":
+            suggest = "container_key"
+        elif key == "jreKey":
+            suggest = "jre_key"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsJfrTaskRequestTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsJfrTaskRequestTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsJfrTaskRequestTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_installation_key: Optional[_builtins.str] = None,
+                 application_key: Optional[_builtins.str] = None,
+                 container_key: Optional[_builtins.str] = None,
+                 jre_key: Optional[_builtins.str] = None,
+                 managed_instance_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "recordingDurationInMinutes":
+            suggest = "recording_duration_in_minutes"
+        elif key == "waitingPeriodInMinutes":
+            suggest = "waiting_period_in_minutes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsPerformanceTuningTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsPerformanceTuningTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsPerformanceTuningTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: Optional[_builtins.int] = None,
+                 targets: Optional[Sequence['outputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget']] = None,
+                 waiting_period_in_minutes: Optional[_builtins.int] = None):
+        """
+        :param _builtins.int recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param Sequence['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs'] targets: (Updatable) The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget']]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "applicationInstallationKey":
+            suggest = "application_installation_key"
+        elif key == "applicationKey":
+            suggest = "application_key"
+        elif key == "containerKey":
+            suggest = "container_key"
+        elif key == "jreKey":
+            suggest = "jre_key"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 application_installation_key: Optional[_builtins.str] = None,
+                 application_key: Optional[_builtins.str] = None,
+                 container_key: Optional[_builtins.str] = None,
+                 jre_key: Optional[_builtins.str] = None,
+                 managed_instance_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "installationSites":
+            suggest = "installation_sites"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 installation_sites: Optional[Sequence['outputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite']] = None):
+        """
+        :param Sequence['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: (Updatable) The list of installation sites to remove.
+        """
+        if installation_sites is not None:
+            pulumi.set(__self__, "installation_sites", installation_sites)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Optional[Sequence['outputs.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite']]:
+        """
+        (Updatable) The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "installationKey":
+            suggest = "installation_key"
+        elif key == "managedInstanceId":
+            suggest = "managed_instance_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 installation_key: Optional[_builtins.str] = None,
+                 managed_instance_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str installation_key: (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        :param _builtins.str managed_instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        if installation_key is not None:
+            pulumi.set(__self__, "installation_key", installation_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="installationKey")
+    def installation_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        """
+        return pulumi.get(self, "installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsScanJavaServerTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "managedInstanceIds":
+            suggest = "managed_instance_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsScanJavaServerTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsScanJavaServerTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsScanJavaServerTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 managed_instance_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] managed_instance_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
+class TaskScheduleTaskDetailsScanLibraryTaskRequest(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dynamicScanDurationInMinutes":
+            suggest = "dynamic_scan_duration_in_minutes"
+        elif key == "isDynamicScan":
+            suggest = "is_dynamic_scan"
+        elif key == "managedInstanceIds":
+            suggest = "managed_instance_ids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TaskScheduleTaskDetailsScanLibraryTaskRequest. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TaskScheduleTaskDetailsScanLibraryTaskRequest.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TaskScheduleTaskDetailsScanLibraryTaskRequest.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 dynamic_scan_duration_in_minutes: Optional[_builtins.int] = None,
+                 is_dynamic_scan: Optional[_builtins.bool] = None,
+                 managed_instance_ids: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.int dynamic_scan_duration_in_minutes: (Updatable) The duration of the dynamic scan in minutes.
+        :param _builtins.bool is_dynamic_scan: (Updatable) Indicates whether the scan is dynamic or static.
+        :param Sequence[_builtins.str] managed_instance_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        if dynamic_scan_duration_in_minutes is not None:
+            pulumi.set(__self__, "dynamic_scan_duration_in_minutes", dynamic_scan_duration_in_minutes)
+        if is_dynamic_scan is not None:
+            pulumi.set(__self__, "is_dynamic_scan", is_dynamic_scan)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="dynamicScanDurationInMinutes")
+    def dynamic_scan_duration_in_minutes(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The duration of the dynamic scan in minutes.
+        """
+        return pulumi.get(self, "dynamic_scan_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="isDynamicScan")
+    def is_dynamic_scan(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Indicates whether the scan is dynamic or static.
+        """
+        return pulumi.get(self, "is_dynamic_scan")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
 class GetAgentInstallersAgentInstallerCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetAgentInstallersAgentInstallerCollectionItemResult']):
@@ -2178,6 +3539,201 @@ class GetFleetBlocklistsItemTargetResult(dict):
 
 
 @pulumi.output_type
+class GetFleetContainersContainerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetContainersContainerCollectionItemResult']):
+        """
+        :param Sequence['GetFleetContainersContainerCollectionItemArgs'] items: A list of the container summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetContainersContainerCollectionItemResult']:
+        """
+        A list of the container summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetContainersContainerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_key: _builtins.str,
+                 application_name: _builtins.str,
+                 container_key: _builtins.str,
+                 display_name: _builtins.str,
+                 image_name: _builtins.str,
+                 java_version: _builtins.str,
+                 jre_key: _builtins.str,
+                 jre_security_status: _builtins.str,
+                 managed_instance_id: _builtins.str,
+                 namespace: _builtins.str,
+                 node_name: _builtins.str,
+                 pod_name: _builtins.str,
+                 time_started: _builtins.str):
+        """
+        :param _builtins.str application_key: Unique key that identifies the application running in the container.
+        :param _builtins.str application_name: The name of the application.
+        :param _builtins.str container_key: Unique identifier for the container.
+        :param _builtins.str display_name: The display name.
+        :param _builtins.str image_name: The container image name.
+        :param _builtins.str java_version: The Java runtime used to run the application in the container.
+        :param _builtins.str jre_key: Unique key that identifies the Java runtime used to run the application in the container.
+        :param _builtins.str jre_security_status: The security status of the Java Runtime.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the managed instance.
+        :param _builtins.str namespace: The namespace of the container.
+        :param _builtins.str node_name: The name of the node associated with the pod running this container.
+        :param _builtins.str pod_name: The name of the pod running this container.
+        :param _builtins.str time_started: The start time of the container.
+        """
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "image_name", image_name)
+        pulumi.set(__self__, "java_version", java_version)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "jre_security_status", jre_security_status)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "pod_name", pod_name)
+        pulumi.set(__self__, "time_started", time_started)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application running in the container.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> _builtins.str:
+        """
+        The name of the application.
+        """
+        return pulumi.get(self, "application_name")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique identifier for the container.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="imageName")
+    def image_name(self) -> _builtins.str:
+        """
+        The container image name.
+        """
+        return pulumi.get(self, "image_name")
+
+    @_builtins.property
+    @pulumi.getter(name="javaVersion")
+    def java_version(self) -> _builtins.str:
+        """
+        The Java runtime used to run the application in the container.
+        """
+        return pulumi.get(self, "java_version")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the Java runtime used to run the application in the container.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreSecurityStatus")
+    def jre_security_status(self) -> _builtins.str:
+        """
+        The security status of the Java Runtime.
+        """
+        return pulumi.get(self, "jre_security_status")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The namespace of the container.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> _builtins.str:
+        """
+        The name of the node associated with the pod running this container.
+        """
+        return pulumi.get(self, "node_name")
+
+    @_builtins.property
+    @pulumi.getter(name="podName")
+    def pod_name(self) -> _builtins.str:
+        """
+        The name of the pod running this container.
+        """
+        return pulumi.get(self, "pod_name")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The start time of the container.
+        """
+        return pulumi.get(self, "time_started")
+
+
+@pulumi.output_type
+class GetFleetContainersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemResult']):
@@ -2924,6 +4480,79 @@ class GetFleetErrorsFleetErrorCollectionItemErrorResult(dict):
 
 
 @pulumi.output_type
+class GetFleetExportSettingExportDataFilterResult(dict):
+    def __init__(__self__, *,
+                 application_name_contains: Sequence[_builtins.str],
+                 application_name_equal_tos: Sequence[_builtins.str],
+                 java_major_versions: Sequence[_builtins.str],
+                 java_vendors: Sequence[_builtins.str],
+                 java_versions: Sequence[_builtins.str],
+                 security_statuses: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] application_name_contains: List of application names to filter by partial match
+        :param Sequence[_builtins.str] application_name_equal_tos: List of application names to filter by exact match
+        :param Sequence[_builtins.str] java_major_versions: List of Java major versions to filter by
+        :param Sequence[_builtins.str] java_vendors: List of Java vendors to filter by
+        :param Sequence[_builtins.str] java_versions: List of Java versions to filter by
+        :param Sequence[_builtins.str] security_statuses: The security statuses of the Java Runtime
+        """
+        pulumi.set(__self__, "application_name_contains", application_name_contains)
+        pulumi.set(__self__, "application_name_equal_tos", application_name_equal_tos)
+        pulumi.set(__self__, "java_major_versions", java_major_versions)
+        pulumi.set(__self__, "java_vendors", java_vendors)
+        pulumi.set(__self__, "java_versions", java_versions)
+        pulumi.set(__self__, "security_statuses", security_statuses)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationNameContains")
+    def application_name_contains(self) -> Sequence[_builtins.str]:
+        """
+        List of application names to filter by partial match
+        """
+        return pulumi.get(self, "application_name_contains")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationNameEqualTos")
+    def application_name_equal_tos(self) -> Sequence[_builtins.str]:
+        """
+        List of application names to filter by exact match
+        """
+        return pulumi.get(self, "application_name_equal_tos")
+
+    @_builtins.property
+    @pulumi.getter(name="javaMajorVersions")
+    def java_major_versions(self) -> Sequence[_builtins.str]:
+        """
+        List of Java major versions to filter by
+        """
+        return pulumi.get(self, "java_major_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="javaVendors")
+    def java_vendors(self) -> Sequence[_builtins.str]:
+        """
+        List of Java vendors to filter by
+        """
+        return pulumi.get(self, "java_vendors")
+
+    @_builtins.property
+    @pulumi.getter(name="javaVersions")
+    def java_versions(self) -> Sequence[_builtins.str]:
+        """
+        List of Java versions to filter by
+        """
+        return pulumi.get(self, "java_versions")
+
+    @_builtins.property
+    @pulumi.getter(name="securityStatuses")
+    def security_statuses(self) -> Sequence[_builtins.str]:
+        """
+        The security statuses of the Java Runtime
+        """
+        return pulumi.get(self, "security_statuses")
+
+
+@pulumi.output_type
 class GetFleetInventoryLogResult(dict):
     def __init__(__self__, *,
                  log_group_id: _builtins.str,
@@ -3183,6 +4812,242 @@ class GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionI
         The OCID of the work request of this analysis.
         """
         return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
+class GetFleetLibraryApplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetLibraryApplicationsLibraryApplicationUsageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemResult']):
+        """
+        :param Sequence['GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs'] items: A list of LibraryApplicationUsageSummaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemResult']:
+        """
+        A list of LibraryApplicationUsageSummaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_key: _builtins.str,
+                 application_name: _builtins.str,
+                 first_seen_in_classpath: _builtins.str,
+                 last_detected_dynamically: _builtins.str,
+                 last_seen_in_classpath: _builtins.str,
+                 managed_instance_count: _builtins.int):
+        """
+        :param _builtins.str application_key: The internal identifier of a Java application.
+        :param _builtins.str application_name: The name of the application.
+        :param _builtins.str first_seen_in_classpath: The timestamp of the first time the specified library was detected in classpath.
+        :param _builtins.str last_detected_dynamically: The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        :param _builtins.str last_seen_in_classpath: The timestamp of the last time the specified library was detected in classpath.
+        :param _builtins.int managed_instance_count: The count of managed instances wherein the specified library was detected.
+        """
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "first_seen_in_classpath", first_seen_in_classpath)
+        pulumi.set(__self__, "last_detected_dynamically", last_detected_dynamically)
+        pulumi.set(__self__, "last_seen_in_classpath", last_seen_in_classpath)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        The internal identifier of a Java application.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> _builtins.str:
+        """
+        The name of the application.
+        """
+        return pulumi.get(self, "application_name")
+
+    @_builtins.property
+    @pulumi.getter(name="firstSeenInClasspath")
+    def first_seen_in_classpath(self) -> _builtins.str:
+        """
+        The timestamp of the first time the specified library was detected in classpath.
+        """
+        return pulumi.get(self, "first_seen_in_classpath")
+
+    @_builtins.property
+    @pulumi.getter(name="lastDetectedDynamically")
+    def last_detected_dynamically(self) -> _builtins.str:
+        """
+        The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        """
+        return pulumi.get(self, "last_detected_dynamically")
+
+    @_builtins.property
+    @pulumi.getter(name="lastSeenInClasspath")
+    def last_seen_in_classpath(self) -> _builtins.str:
+        """
+        The timestamp of the last time the specified library was detected in classpath.
+        """
+        return pulumi.get(self, "last_seen_in_classpath")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> _builtins.int:
+        """
+        The count of managed instances wherein the specified library was detected.
+        """
+        return pulumi.get(self, "managed_instance_count")
+
+
+@pulumi.output_type
+class GetFleetLibraryManagedInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemResult']):
+        """
+        :param Sequence['GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs'] items: A list of LibraryManagedInstanceUsageSummaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemResult']:
+        """
+        A list of LibraryManagedInstanceUsageSummaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_count: _builtins.int,
+                 first_seen_in_classpath: _builtins.str,
+                 hostname: _builtins.str,
+                 last_detected_dynamically: _builtins.str,
+                 last_seen_in_classpath: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.int application_count: The count of applications where the specified library was detected.
+        :param _builtins.str first_seen_in_classpath: The timestamp of the first time the specified library was detected in classpath.
+        :param _builtins.str hostname: The hostname of the managed instance.
+        :param _builtins.str last_detected_dynamically: The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        :param _builtins.str last_seen_in_classpath: The timestamp of the last time the specified library was detected in classpath.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the managed instance.
+        """
+        pulumi.set(__self__, "application_count", application_count)
+        pulumi.set(__self__, "first_seen_in_classpath", first_seen_in_classpath)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "last_detected_dynamically", last_detected_dynamically)
+        pulumi.set(__self__, "last_seen_in_classpath", last_seen_in_classpath)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationCount")
+    def application_count(self) -> _builtins.int:
+        """
+        The count of applications where the specified library was detected.
+        """
+        return pulumi.get(self, "application_count")
+
+    @_builtins.property
+    @pulumi.getter(name="firstSeenInClasspath")
+    def first_seen_in_classpath(self) -> _builtins.str:
+        """
+        The timestamp of the first time the specified library was detected in classpath.
+        """
+        return pulumi.get(self, "first_seen_in_classpath")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="lastDetectedDynamically")
+    def last_detected_dynamically(self) -> _builtins.str:
+        """
+        The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        """
+        return pulumi.get(self, "last_detected_dynamically")
+
+    @_builtins.property
+    @pulumi.getter(name="lastSeenInClasspath")
+    def last_seen_in_classpath(self) -> _builtins.str:
+        """
+        The timestamp of the last time the specified library was detected in classpath.
+        """
+        return pulumi.get(self, "last_seen_in_classpath")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
 
 
 @pulumi.output_type
@@ -3448,6 +5313,294 @@ class GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCol
 
 
 @pulumi.output_type
+class GetFleetUncorrelatedPackageApplicationsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemResult']):
+        """
+        :param Sequence['GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs'] items: A list of UncorrelatedPackageApplicationUsageSummaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemResult']:
+        """
+        A list of UncorrelatedPackageApplicationUsageSummaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_key: _builtins.str,
+                 application_name: _builtins.str,
+                 last_detected_dynamically: _builtins.str,
+                 managed_instance_count: _builtins.int):
+        """
+        :param _builtins.str application_key: The internal identifier of a Java application.
+        :param _builtins.str application_name: The displayed name of the Java application.
+        :param _builtins.str last_detected_dynamically: The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        :param _builtins.int managed_instance_count: The count of managed instances wherein the specified library was detected.
+        """
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "application_name", application_name)
+        pulumi.set(__self__, "last_detected_dynamically", last_detected_dynamically)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        The internal identifier of a Java application.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationName")
+    def application_name(self) -> _builtins.str:
+        """
+        The displayed name of the Java application.
+        """
+        return pulumi.get(self, "application_name")
+
+    @_builtins.property
+    @pulumi.getter(name="lastDetectedDynamically")
+    def last_detected_dynamically(self) -> _builtins.str:
+        """
+        The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        """
+        return pulumi.get(self, "last_detected_dynamically")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> _builtins.int:
+        """
+        The count of managed instances wherein the specified library was detected.
+        """
+        return pulumi.get(self, "managed_instance_count")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackageManagedInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemResult']):
+        """
+        :param Sequence['GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs'] items: A list of UncorrelatedPackageManagedInstanceUsageSummaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemResult']:
+        """
+        A list of UncorrelatedPackageManagedInstanceUsageSummaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_count: _builtins.int,
+                 hostname: _builtins.str,
+                 last_detected_dynamically: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.int application_count: The count of applications wherein the specified library was detected.
+        :param _builtins.str hostname: The hostname of the managed instance.
+        :param _builtins.str last_detected_dynamically: The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the managed instance.
+        """
+        pulumi.set(__self__, "application_count", application_count)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "last_detected_dynamically", last_detected_dynamically)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationCount")
+    def application_count(self) -> _builtins.int:
+        """
+        The count of applications wherein the specified library was detected.
+        """
+        return pulumi.get(self, "application_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def hostname(self) -> _builtins.str:
+        """
+        The hostname of the managed instance.
+        """
+        return pulumi.get(self, "hostname")
+
+    @_builtins.property
+    @pulumi.getter(name="lastDetectedDynamically")
+    def last_detected_dynamically(self) -> _builtins.str:
+        """
+        The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        """
+        return pulumi.get(self, "last_detected_dynamically")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackagesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemResult']):
+        """
+        :param Sequence['GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs'] items: A list of uncorrelated package summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemResult']:
+        """
+        A list of uncorrelated package summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 application_count: _builtins.int,
+                 last_detected_dynamically: _builtins.str,
+                 managed_instance_count: _builtins.int,
+                 package_name: _builtins.str):
+        """
+        :param _builtins.int application_count: The count of applications wherein the specified package was detected.
+        :param _builtins.str last_detected_dynamically: The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        :param _builtins.int managed_instance_count: The count of managed instances wherein the specified package was detected.
+        :param _builtins.str package_name: The unique identifier of a Java package.
+        """
+        pulumi.set(__self__, "application_count", application_count)
+        pulumi.set(__self__, "last_detected_dynamically", last_detected_dynamically)
+        pulumi.set(__self__, "managed_instance_count", managed_instance_count)
+        pulumi.set(__self__, "package_name", package_name)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationCount")
+    def application_count(self) -> _builtins.int:
+        """
+        The count of applications wherein the specified package was detected.
+        """
+        return pulumi.get(self, "application_count")
+
+    @_builtins.property
+    @pulumi.getter(name="lastDetectedDynamically")
+    def last_detected_dynamically(self) -> _builtins.str:
+        """
+        The date and time a library or Java package was _last_ detected in a dynamic library scan.
+        """
+        return pulumi.get(self, "last_detected_dynamically")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceCount")
+    def managed_instance_count(self) -> _builtins.int:
+        """
+        The count of managed instances wherein the specified package was detected.
+        """
+        return pulumi.get(self, "managed_instance_count")
+
+    @_builtins.property
+    @pulumi.getter(name="packageName")
+    def package_name(self) -> _builtins.str:
+        """
+        The unique identifier of a Java package.
+        """
+        return pulumi.get(self, "package_name")
+
+
+@pulumi.output_type
 class GetFleetsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -3493,6 +5646,8 @@ class GetFleetsFleetCollectionItemResult(dict):
                  approximate_installation_count: _builtins.int,
                  approximate_java_server_count: _builtins.int,
                  approximate_jre_count: _builtins.int,
+                 approximate_library_count: _builtins.int,
+                 approximate_library_vulnerability_count: _builtins.int,
                  approximate_managed_instance_count: _builtins.int,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
@@ -3512,6 +5667,8 @@ class GetFleetsFleetCollectionItemResult(dict):
         :param _builtins.int approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param _builtins.int approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param _builtins.int approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param _builtins.int approximate_library_count: The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param _builtins.int approximate_library_vulnerability_count: The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param _builtins.int approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -3531,6 +5688,8 @@ class GetFleetsFleetCollectionItemResult(dict):
         pulumi.set(__self__, "approximate_installation_count", approximate_installation_count)
         pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
         pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
+        pulumi.set(__self__, "approximate_library_count", approximate_library_count)
+        pulumi.set(__self__, "approximate_library_vulnerability_count", approximate_library_vulnerability_count)
         pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -3577,6 +5736,22 @@ class GetFleetsFleetCollectionItemResult(dict):
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_jre_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryCount")
+    def approximate_library_count(self) -> _builtins.int:
+        """
+        The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryVulnerabilityCount")
+    def approximate_library_vulnerability_count(self) -> _builtins.int:
+        """
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_vulnerability_count")
 
     @_builtins.property
     @pulumi.getter(name="approximateManagedInstanceCount")
@@ -4062,41 +6237,23 @@ class GetInstallationSitesInstallationSiteCollectionResult(dict):
 @pulumi.output_type
 class GetInstallationSitesInstallationSiteCollectionItemResult(dict):
     def __init__(__self__, *,
-                 items: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']):
-        """
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemArgs'] items: A list of Java installation sites.
-        """
-        pulumi.set(__self__, "items", items)
-
-    @_builtins.property
-    @pulumi.getter
-    def items(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemResult']:
-        """
-        A list of Java installation sites.
-        """
-        return pulumi.get(self, "items")
-
-
-@pulumi.output_type
-class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
-    def __init__(__self__, *,
                  approximate_application_count: _builtins.int,
-                 blocklists: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult'],
+                 blocklists: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemBlocklistResult'],
                  installation_key: _builtins.str,
-                 jres: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult'],
+                 jres: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemJreResult'],
                  managed_instance_id: _builtins.str,
-                 operating_systems: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult'],
+                 operating_systems: Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult'],
                  path: _builtins.str,
                  security_status: _builtins.str,
                  state: _builtins.str,
                  time_last_seen: _builtins.str):
         """
         :param _builtins.int approximate_application_count: The approximate count of applications running on this installation
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs'] blocklists: The list of operations that are blocklisted.
+        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs'] blocklists: The list of operations that are blocklisted.
         :param _builtins.str installation_key: The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemJreArgs'] jres: The essential properties to identify a Java Runtime.
+        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemJreArgs'] jres: The essential properties to identify a Java Runtime.
         :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
-        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs'] operating_systems: Operating System of the platform on which the Java Runtime was reported.
+        :param Sequence['GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs'] operating_systems: Operating System of the platform on which the Java Runtime was reported.
         :param _builtins.str path: The file system path of the installation.
         :param _builtins.str security_status: The security status of the Java Runtime.
         :param _builtins.str state: The lifecycle state of the installation site.
@@ -4123,7 +6280,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
-    def blocklists(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult']:
+    def blocklists(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemBlocklistResult']:
         """
         The list of operations that are blocklisted.
         """
@@ -4139,7 +6296,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
 
     @_builtins.property
     @pulumi.getter
-    def jres(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemJreResult']:
+    def jres(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemJreResult']:
         """
         The essential properties to identify a Java Runtime.
         """
@@ -4155,7 +6312,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="operatingSystems")
-    def operating_systems(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult']:
+    def operating_systems(self) -> Sequence['outputs.GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult']:
         """
         Operating System of the platform on which the Java Runtime was reported.
         """
@@ -4195,7 +6352,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemResult(dict):
 
 
 @pulumi.output_type
-class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict):
+class GetInstallationSitesInstallationSiteCollectionItemBlocklistResult(dict):
     def __init__(__self__, *,
                  operation: _builtins.str,
                  reason: _builtins.str):
@@ -4224,7 +6381,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemBlocklistResult(dict
 
 
 @pulumi.output_type
-class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
+class GetInstallationSitesInstallationSiteCollectionItemJreResult(dict):
     def __init__(__self__, *,
                  distribution: _builtins.str,
                  jre_key: _builtins.str,
@@ -4275,7 +6432,7 @@ class GetInstallationSitesInstallationSiteCollectionItemItemJreResult(dict):
 
 
 @pulumi.output_type
-class GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemResult(dict):
+class GetInstallationSitesInstallationSiteCollectionItemOperatingSystemResult(dict):
     def __init__(__self__, *,
                  architecture: _builtins.str,
                  distribution: _builtins.str,
@@ -5695,6 +7852,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
                  is_supported_version: _builtins.bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactResult'],
                  latest_release_version: _builtins.str,
+                 license_types: Sequence[_builtins.str],
                  release_date: _builtins.str,
                  support_type: _builtins.str):
         """
@@ -5705,6 +7863,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         :param _builtins.bool is_supported_version: Filter the Java Release Family versions by support status.
         :param Sequence['GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param _builtins.str latest_release_version: Latest Java release version in the family.
+        :param Sequence[_builtins.str] license_types: The license type(s) associated with the Java family.
         :param _builtins.str release_date: The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param _builtins.str support_type: This indicates the support category for the Java release family.
         """
@@ -5715,6 +7874,7 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "license_types", license_types)
         pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
@@ -5773,6 +7933,14 @@ class GetJavaFamiliesJavaFamilyCollectionItemResult(dict):
         Latest Java release version in the family.
         """
         return pulumi.get(self, "latest_release_version")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseTypes")
+    def license_types(self) -> Sequence[_builtins.str]:
+        """
+        The license type(s) associated with the Java family.
+        """
+        return pulumi.get(self, "license_types")
 
     @_builtins.property
     @pulumi.getter(name="releaseDate")
@@ -6251,6 +8419,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
                  is_supported_version: _builtins.bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaReleaseFamilyDetailLatestReleaseArtifactResult'],
                  latest_release_version: _builtins.str,
+                 license_types: Sequence[_builtins.str],
                  release_date: _builtins.str,
                  support_type: _builtins.str):
         """
@@ -6261,6 +8430,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
         :param _builtins.bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
         :param Sequence['GetJavaReleaseFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param _builtins.str latest_release_version: Latest Java release version in the family.
+        :param Sequence[_builtins.str] license_types: The license type(s) associated with the Java family.
         :param _builtins.str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param _builtins.str support_type: This indicates the support category for the Java release family.
         """
@@ -6271,6 +8441,7 @@ class GetJavaReleaseFamilyDetailResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "license_types", license_types)
         pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
@@ -6329,6 +8500,14 @@ class GetJavaReleaseFamilyDetailResult(dict):
         Latest Java release version in the family.
         """
         return pulumi.get(self, "latest_release_version")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseTypes")
+    def license_types(self) -> Sequence[_builtins.str]:
+        """
+        The license type(s) associated with the Java family.
+        """
+        return pulumi.get(self, "license_types")
 
     @_builtins.property
     @pulumi.getter(name="releaseDate")
@@ -6926,6 +9105,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
                  is_supported_version: _builtins.bool,
                  latest_release_artifacts: Sequence['outputs.GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactResult'],
                  latest_release_version: _builtins.str,
+                 license_types: Sequence[_builtins.str],
                  release_date: _builtins.str,
                  support_type: _builtins.str):
         """
@@ -6936,6 +9116,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         :param _builtins.bool is_supported_version: Whether or not this Java release family is under active support. Refer [Java Support Roadmap](https://www.oracle.com/java/technologies/java-se-support-roadmap.html) for more details.
         :param Sequence['GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArgs'] latest_release_artifacts: List of artifacts for the latest Java release version in this family. The script URLs in the response can be used from a command line, or in scripts and dockerfiles to always get the artifacts corresponding to the latest update release version.
         :param _builtins.str latest_release_version: Latest Java release version in the family.
+        :param Sequence[_builtins.str] license_types: The license type(s) associated with the Java family.
         :param _builtins.str release_date: The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param _builtins.str support_type: This indicates the support category for the Java release family.
         """
@@ -6946,6 +9127,7 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         pulumi.set(__self__, "is_supported_version", is_supported_version)
         pulumi.set(__self__, "latest_release_artifacts", latest_release_artifacts)
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        pulumi.set(__self__, "license_types", license_types)
         pulumi.set(__self__, "release_date", release_date)
         pulumi.set(__self__, "support_type", support_type)
 
@@ -7004,6 +9186,14 @@ class GetJavaReleasesJavaReleaseCollectionItemFamilyDetailResult(dict):
         Latest Java release version in the family.
         """
         return pulumi.get(self, "latest_release_version")
+
+    @_builtins.property
+    @pulumi.getter(name="licenseTypes")
+    def license_types(self) -> Sequence[_builtins.str]:
+        """
+        The license type(s) associated with the Java family.
+        """
+        return pulumi.get(self, "license_types")
 
     @_builtins.property
     @pulumi.getter(name="releaseDate")
@@ -7301,7 +9491,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
                  time_last_seen: _builtins.str,
                  time_registered: _builtins.str):
         """
-        :param _builtins.str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        :param _builtins.str agent_id: The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
         :param _builtins.str agent_type: Filter JmsPlugin with agent type.
         :param _builtins.str availability_status: Filter JmsPlugin with its availability status.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -7341,7 +9531,7 @@ class GetJmsPluginsJmsPluginCollectionItemResult(dict):
     @pulumi.getter(name="agentId")
     def agent_id(self) -> _builtins.str:
         """
-        The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
         """
         return pulumi.get(self, "agent_id")
 
@@ -8022,5 +10212,2395 @@ class GetPluginErrorsPluginErrorCollectionItemErrorResult(dict):
         The timestamp of the last time an error was detected.
         """
         return pulumi.get(self, "time_last_seen")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailResult(dict):
+    def __init__(__self__, *,
+                 add_installation_site_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestResult'],
+                 crypto_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailCryptoTaskRequestResult'],
+                 deployed_application_migration_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestResult'],
+                 java_migration_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailJavaMigrationTaskRequestResult'],
+                 jfr_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailJfrTaskRequestResult'],
+                 performance_tuning_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailPerformanceTuningTaskRequestResult'],
+                 remove_installation_site_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestResult'],
+                 scan_java_server_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailScanJavaServerTaskRequestResult'],
+                 scan_library_task_requests: Sequence['outputs.GetTaskScheduleTaskDetailScanLibraryTaskRequestResult'],
+                 task_type: _builtins.str):
+        """
+        :param Sequence['GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs'] add_installation_site_task_requests: The list of Java installation sites to add.
+        :param Sequence['GetTaskScheduleTaskDetailCryptoTaskRequestArgs'] crypto_task_requests: Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        :param Sequence['GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs'] deployed_application_migration_task_requests: Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        :param Sequence['GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs'] java_migration_task_requests: Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        :param Sequence['GetTaskScheduleTaskDetailJfrTaskRequestArgs'] jfr_task_requests: Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        :param Sequence['GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs'] performance_tuning_task_requests: Details of the request to start a JFR performance tuning analysis.
+        :param Sequence['GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs'] remove_installation_site_task_requests: The list of Java installation sites to remove.
+        :param Sequence['GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs'] scan_java_server_task_requests: The list of managed instances to scan.
+        :param Sequence['GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs'] scan_library_task_requests: The list of managed instances to scan.
+        :param _builtins.str task_type: Type of task.
+        """
+        pulumi.set(__self__, "add_installation_site_task_requests", add_installation_site_task_requests)
+        pulumi.set(__self__, "crypto_task_requests", crypto_task_requests)
+        pulumi.set(__self__, "deployed_application_migration_task_requests", deployed_application_migration_task_requests)
+        pulumi.set(__self__, "java_migration_task_requests", java_migration_task_requests)
+        pulumi.set(__self__, "jfr_task_requests", jfr_task_requests)
+        pulumi.set(__self__, "performance_tuning_task_requests", performance_tuning_task_requests)
+        pulumi.set(__self__, "remove_installation_site_task_requests", remove_installation_site_task_requests)
+        pulumi.set(__self__, "scan_java_server_task_requests", scan_java_server_task_requests)
+        pulumi.set(__self__, "scan_library_task_requests", scan_library_task_requests)
+        pulumi.set(__self__, "task_type", task_type)
+
+    @_builtins.property
+    @pulumi.getter(name="addInstallationSiteTaskRequests")
+    def add_installation_site_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestResult']:
+        """
+        The list of Java installation sites to add.
+        """
+        return pulumi.get(self, "add_installation_site_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoTaskRequests")
+    def crypto_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailCryptoTaskRequestResult']:
+        """
+        Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        """
+        return pulumi.get(self, "crypto_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationMigrationTaskRequests")
+    def deployed_application_migration_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestResult']:
+        """
+        Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "deployed_application_migration_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="javaMigrationTaskRequests")
+    def java_migration_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailJavaMigrationTaskRequestResult']:
+        """
+        Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "java_migration_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="jfrTaskRequests")
+    def jfr_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailJfrTaskRequestResult']:
+        """
+        Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        """
+        return pulumi.get(self, "jfr_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="performanceTuningTaskRequests")
+    def performance_tuning_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailPerformanceTuningTaskRequestResult']:
+        """
+        Details of the request to start a JFR performance tuning analysis.
+        """
+        return pulumi.get(self, "performance_tuning_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="removeInstallationSiteTaskRequests")
+    def remove_installation_site_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestResult']:
+        """
+        The list of Java installation sites to remove.
+        """
+        return pulumi.get(self, "remove_installation_site_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="scanJavaServerTaskRequests")
+    def scan_java_server_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailScanJavaServerTaskRequestResult']:
+        """
+        The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_java_server_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="scanLibraryTaskRequests")
+    def scan_library_task_requests(self) -> Sequence['outputs.GetTaskScheduleTaskDetailScanLibraryTaskRequestResult']:
+        """
+        The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_library_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="taskType")
+    def task_type(self) -> _builtins.str:
+        """
+        Type of task.
+        """
+        return pulumi.get(self, "task_type")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 installation_sites: Sequence['outputs.GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult'],
+                 post_installation_actions: Sequence[_builtins.str]):
+        """
+        :param Sequence['GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: The list of installation sites to remove.
+        :param Sequence[_builtins.str] post_installation_actions: Optional list of post java installation actions
+        """
+        pulumi.set(__self__, "installation_sites", installation_sites)
+        pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Sequence['outputs.GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult']:
+        """
+        The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+    @_builtins.property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Sequence[_builtins.str]:
+        """
+        Optional list of post java installation actions
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult(dict):
+    def __init__(__self__, *,
+                 artifact_content_type: _builtins.str,
+                 force_install: _builtins.bool,
+                 headless_mode: _builtins.bool,
+                 installation_path: _builtins.str,
+                 managed_instance_id: _builtins.str,
+                 release_version: _builtins.str):
+        """
+        :param _builtins.str artifact_content_type: Artifact content type for the Java version.
+        :param _builtins.bool force_install: Forces the installation request even if a more recent release is already present in the host.
+        :param _builtins.bool headless_mode: Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        :param _builtins.str installation_path: Custom path to install new Java installation site.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        :param _builtins.str release_version: The release version of the Java Runtime.
+        """
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "force_install", force_install)
+        pulumi.set(__self__, "headless_mode", headless_mode)
+        pulumi.set(__self__, "installation_path", installation_path)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "release_version", release_version)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> _builtins.str:
+        """
+        Artifact content type for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="forceInstall")
+    def force_install(self) -> _builtins.bool:
+        """
+        Forces the installation request even if a more recent release is already present in the host.
+        """
+        return pulumi.get(self, "force_install")
+
+    @_builtins.property
+    @pulumi.getter(name="headlessMode")
+    def headless_mode(self) -> _builtins.bool:
+        """
+        Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        """
+        return pulumi.get(self, "headless_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="installationPath")
+    def installation_path(self) -> _builtins.str:
+        """
+        Custom path to install new Java installation site.
+        """
+        return pulumi.get(self, "installation_path")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> _builtins.str:
+        """
+        The release version of the Java Runtime.
+        """
+        return pulumi.get(self, "release_version")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailCryptoTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: _builtins.int,
+                 targets: Sequence['outputs.GetTaskScheduleTaskDetailCryptoTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param Sequence['GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskScheduleTaskDetailCryptoTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailCryptoTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 targets: Sequence['outputs.GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetResult']):
+        """
+        :param Sequence['GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        """
+        pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 deployed_application_installation_key: _builtins.str,
+                 exclude_package_prefixes: Sequence[_builtins.str],
+                 include_package_prefixes: Sequence[_builtins.str],
+                 managed_instance_id: _builtins.str,
+                 source_jdk_version: _builtins.str,
+                 target_jdk_version: _builtins.str):
+        """
+        :param _builtins.str deployed_application_installation_key: The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        :param Sequence[_builtins.str] exclude_package_prefixes: Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        :param _builtins.str source_jdk_version: The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        pulumi.set(__self__, "deployed_application_installation_key", deployed_application_installation_key)
+        pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationInstallationKey")
+    def deployed_application_installation_key(self) -> _builtins.str:
+        """
+        The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        """
+        return pulumi.get(self, "deployed_application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailJavaMigrationTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 targets: Sequence['outputs.GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetResult']):
+        """
+        :param Sequence['GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        """
+        pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 exclude_package_prefixes: Sequence[_builtins.str],
+                 include_package_prefixes: Sequence[_builtins.str],
+                 managed_instance_id: _builtins.str,
+                 source_jdk_version: _builtins.str,
+                 target_jdk_version: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param Sequence[_builtins.str] exclude_package_prefixes: Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        :param _builtins.str source_jdk_version: The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailJfrTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 jfc_profile_name: _builtins.str,
+                 jfc_v1: _builtins.str,
+                 jfc_v2: _builtins.str,
+                 recording_duration_in_minutes: _builtins.int,
+                 recording_size_in_mb: _builtins.int,
+                 targets: Sequence['outputs.GetTaskScheduleTaskDetailJfrTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.str jfc_profile_name: The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        :param _builtins.str jfc_v1: The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        :param _builtins.str jfc_v2: The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param _builtins.int recording_size_in_mb: The maximum size limit for the JFR file collected.
+        :param Sequence['GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "jfc_profile_name", jfc_profile_name)
+        pulumi.set(__self__, "jfc_v1", jfc_v1)
+        pulumi.set(__self__, "jfc_v2", jfc_v2)
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "recording_size_in_mb", recording_size_in_mb)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcProfileName")
+    def jfc_profile_name(self) -> _builtins.str:
+        """
+        The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        """
+        return pulumi.get(self, "jfc_profile_name")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV1")
+    def jfc_v1(self) -> _builtins.str:
+        """
+        The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        """
+        return pulumi.get(self, "jfc_v1")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV2")
+    def jfc_v2(self) -> _builtins.str:
+        """
+        The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        """
+        return pulumi.get(self, "jfc_v2")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingSizeInMb")
+    def recording_size_in_mb(self) -> _builtins.int:
+        """
+        The maximum size limit for the JFR file collected.
+        """
+        return pulumi.get(self, "recording_size_in_mb")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskScheduleTaskDetailJfrTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailJfrTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailPerformanceTuningTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: _builtins.int,
+                 targets: Sequence['outputs.GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param Sequence['GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 installation_sites: Sequence['outputs.GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult']):
+        """
+        :param Sequence['GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: The list of installation sites to remove.
+        """
+        pulumi.set(__self__, "installation_sites", installation_sites)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Sequence['outputs.GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult']:
+        """
+        The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult(dict):
+    def __init__(__self__, *,
+                 installation_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str installation_key: The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        :param _builtins.str managed_instance_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        pulumi.set(__self__, "installation_key", installation_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="installationKey")
+    def installation_key(self) -> _builtins.str:
+        """
+        The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        """
+        return pulumi.get(self, "installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailScanJavaServerTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 managed_instance_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] managed_instance_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
+class GetTaskScheduleTaskDetailScanLibraryTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 dynamic_scan_duration_in_minutes: _builtins.int,
+                 is_dynamic_scan: _builtins.bool,
+                 managed_instance_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.int dynamic_scan_duration_in_minutes: The duration of the dynamic scan in minutes.
+        :param _builtins.bool is_dynamic_scan: Indicates whether the scan is dynamic or static.
+        :param Sequence[_builtins.str] managed_instance_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        pulumi.set(__self__, "dynamic_scan_duration_in_minutes", dynamic_scan_duration_in_minutes)
+        pulumi.set(__self__, "is_dynamic_scan", is_dynamic_scan)
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="dynamicScanDurationInMinutes")
+    def dynamic_scan_duration_in_minutes(self) -> _builtins.int:
+        """
+        The duration of the dynamic scan in minutes.
+        """
+        return pulumi.get(self, "dynamic_scan_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="isDynamicScan")
+    def is_dynamic_scan(self) -> _builtins.bool:
+        """
+        Indicates whether the scan is dynamic or static.
+        """
+        return pulumi.get(self, "is_dynamic_scan")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
+class GetTaskSchedulesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The task name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The task name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 created_by: _builtins.str,
+                 execution_recurrences: _builtins.str,
+                 fleet_id: _builtins.str,
+                 id: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 task_details: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailResult'],
+                 time_created: _builtins.str,
+                 time_last_run: _builtins.str,
+                 time_last_updated: _builtins.str,
+                 time_next_run: _builtins.str):
+        """
+        :param _builtins.str created_by: Name of the task creator.
+        :param _builtins.str execution_recurrences: Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+        :param _builtins.str fleet_id: The ID of the Fleet.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
+        :param _builtins.str name: The task name.
+        :param _builtins.str state: All possible status of task schedule.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs'] task_details: The minimum details of a task.
+        :param _builtins.str time_created: The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param _builtins.str time_last_run: The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param _builtins.str time_last_updated: The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param _builtins.str time_next_run: The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "execution_recurrences", execution_recurrences)
+        pulumi.set(__self__, "fleet_id", fleet_id)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "task_details", task_details)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_last_run", time_last_run)
+        pulumi.set(__self__, "time_last_updated", time_last_updated)
+        pulumi.set(__self__, "time_next_run", time_next_run)
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        Name of the task creator.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="executionRecurrences")
+    def execution_recurrences(self) -> _builtins.str:
+        """
+        Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+        """
+        return pulumi.get(self, "execution_recurrences")
+
+    @_builtins.property
+    @pulumi.getter(name="fleetId")
+    def fleet_id(self) -> _builtins.str:
+        """
+        The ID of the Fleet.
+        """
+        return pulumi.get(self, "fleet_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The task name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        All possible status of task schedule.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="taskDetails")
+    def task_details(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailResult']:
+        """
+        The minimum details of a task.
+        """
+        return pulumi.get(self, "task_details")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastRun")
+    def time_last_run(self) -> _builtins.str:
+        """
+        The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_last_run")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastUpdated")
+    def time_last_updated(self) -> _builtins.str:
+        """
+        The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_last_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="timeNextRun")
+    def time_next_run(self) -> _builtins.str:
+        """
+        The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
+        return pulumi.get(self, "time_next_run")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailResult(dict):
+    def __init__(__self__, *,
+                 add_installation_site_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestResult'],
+                 crypto_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestResult'],
+                 deployed_application_migration_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestResult'],
+                 java_migration_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestResult'],
+                 jfr_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestResult'],
+                 performance_tuning_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestResult'],
+                 remove_installation_site_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestResult'],
+                 scan_java_server_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestResult'],
+                 scan_library_task_requests: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestResult'],
+                 task_type: _builtins.str):
+        """
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs'] add_installation_site_task_requests: The list of Java installation sites to add.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs'] crypto_task_requests: Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs'] deployed_application_migration_task_requests: Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs'] java_migration_task_requests: Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs'] jfr_task_requests: Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs'] performance_tuning_task_requests: Details of the request to start a JFR performance tuning analysis.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs'] remove_installation_site_task_requests: The list of Java installation sites to remove.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs'] scan_java_server_task_requests: The list of managed instances to scan.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs'] scan_library_task_requests: The list of managed instances to scan.
+        :param _builtins.str task_type: Type of task.
+        """
+        pulumi.set(__self__, "add_installation_site_task_requests", add_installation_site_task_requests)
+        pulumi.set(__self__, "crypto_task_requests", crypto_task_requests)
+        pulumi.set(__self__, "deployed_application_migration_task_requests", deployed_application_migration_task_requests)
+        pulumi.set(__self__, "java_migration_task_requests", java_migration_task_requests)
+        pulumi.set(__self__, "jfr_task_requests", jfr_task_requests)
+        pulumi.set(__self__, "performance_tuning_task_requests", performance_tuning_task_requests)
+        pulumi.set(__self__, "remove_installation_site_task_requests", remove_installation_site_task_requests)
+        pulumi.set(__self__, "scan_java_server_task_requests", scan_java_server_task_requests)
+        pulumi.set(__self__, "scan_library_task_requests", scan_library_task_requests)
+        pulumi.set(__self__, "task_type", task_type)
+
+    @_builtins.property
+    @pulumi.getter(name="addInstallationSiteTaskRequests")
+    def add_installation_site_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestResult']:
+        """
+        The list of Java installation sites to add.
+        """
+        return pulumi.get(self, "add_installation_site_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoTaskRequests")
+    def crypto_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestResult']:
+        """
+        Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        """
+        return pulumi.get(self, "crypto_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationMigrationTaskRequests")
+    def deployed_application_migration_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestResult']:
+        """
+        Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "deployed_application_migration_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="javaMigrationTaskRequests")
+    def java_migration_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestResult']:
+        """
+        Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "java_migration_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="jfrTaskRequests")
+    def jfr_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestResult']:
+        """
+        Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        """
+        return pulumi.get(self, "jfr_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="performanceTuningTaskRequests")
+    def performance_tuning_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestResult']:
+        """
+        Details of the request to start a JFR performance tuning analysis.
+        """
+        return pulumi.get(self, "performance_tuning_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="removeInstallationSiteTaskRequests")
+    def remove_installation_site_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestResult']:
+        """
+        The list of Java installation sites to remove.
+        """
+        return pulumi.get(self, "remove_installation_site_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="scanJavaServerTaskRequests")
+    def scan_java_server_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestResult']:
+        """
+        The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_java_server_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="scanLibraryTaskRequests")
+    def scan_library_task_requests(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestResult']:
+        """
+        The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_library_task_requests")
+
+    @_builtins.property
+    @pulumi.getter(name="taskType")
+    def task_type(self) -> _builtins.str:
+        """
+        Type of task.
+        """
+        return pulumi.get(self, "task_type")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 installation_sites: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult'],
+                 post_installation_actions: Sequence[_builtins.str]):
+        """
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: The list of installation sites to remove.
+        :param Sequence[_builtins.str] post_installation_actions: Optional list of post java installation actions
+        """
+        pulumi.set(__self__, "installation_sites", installation_sites)
+        pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult']:
+        """
+        The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+    @_builtins.property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Sequence[_builtins.str]:
+        """
+        Optional list of post java installation actions
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteResult(dict):
+    def __init__(__self__, *,
+                 artifact_content_type: _builtins.str,
+                 force_install: _builtins.bool,
+                 headless_mode: _builtins.bool,
+                 installation_path: _builtins.str,
+                 managed_instance_id: _builtins.str,
+                 release_version: _builtins.str):
+        """
+        :param _builtins.str artifact_content_type: Artifact content type for the Java version.
+        :param _builtins.bool force_install: Forces the installation request even if a more recent release is already present in the host.
+        :param _builtins.bool headless_mode: Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        :param _builtins.str installation_path: Custom path to install new Java installation site.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param _builtins.str release_version: The release version of the Java Runtime.
+        """
+        pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        pulumi.set(__self__, "force_install", force_install)
+        pulumi.set(__self__, "headless_mode", headless_mode)
+        pulumi.set(__self__, "installation_path", installation_path)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "release_version", release_version)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> _builtins.str:
+        """
+        Artifact content type for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @_builtins.property
+    @pulumi.getter(name="forceInstall")
+    def force_install(self) -> _builtins.bool:
+        """
+        Forces the installation request even if a more recent release is already present in the host.
+        """
+        return pulumi.get(self, "force_install")
+
+    @_builtins.property
+    @pulumi.getter(name="headlessMode")
+    def headless_mode(self) -> _builtins.bool:
+        """
+        Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        """
+        return pulumi.get(self, "headless_mode")
+
+    @_builtins.property
+    @pulumi.getter(name="installationPath")
+    def installation_path(self) -> _builtins.str:
+        """
+        Custom path to install new Java installation site.
+        """
+        return pulumi.get(self, "installation_path")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> _builtins.str:
+        """
+        The release version of the Java Runtime.
+        """
+        return pulumi.get(self, "release_version")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: _builtins.int,
+                 targets: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 targets: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetResult']):
+        """
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        """
+        pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 deployed_application_installation_key: _builtins.str,
+                 exclude_package_prefixes: Sequence[_builtins.str],
+                 include_package_prefixes: Sequence[_builtins.str],
+                 managed_instance_id: _builtins.str,
+                 source_jdk_version: _builtins.str,
+                 target_jdk_version: _builtins.str):
+        """
+        :param _builtins.str deployed_application_installation_key: The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        :param Sequence[_builtins.str] exclude_package_prefixes: Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param _builtins.str source_jdk_version: The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        pulumi.set(__self__, "deployed_application_installation_key", deployed_application_installation_key)
+        pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationInstallationKey")
+    def deployed_application_installation_key(self) -> _builtins.str:
+        """
+        The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        """
+        return pulumi.get(self, "deployed_application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 targets: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetResult']):
+        """
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        """
+        pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 exclude_package_prefixes: Sequence[_builtins.str],
+                 include_package_prefixes: Sequence[_builtins.str],
+                 managed_instance_id: _builtins.str,
+                 source_jdk_version: _builtins.str,
+                 target_jdk_version: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param Sequence[_builtins.str] exclude_package_prefixes: Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param Sequence[_builtins.str] include_package_prefixes: includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        :param _builtins.str source_jdk_version: The JDK version the application is currently running on.
+        :param _builtins.str target_jdk_version: The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Sequence[_builtins.str]:
+        """
+        includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> _builtins.str:
+        """
+        The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 jfc_profile_name: _builtins.str,
+                 jfc_v1: _builtins.str,
+                 jfc_v2: _builtins.str,
+                 recording_duration_in_minutes: _builtins.int,
+                 recording_size_in_mb: _builtins.int,
+                 targets: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.str jfc_profile_name: The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        :param _builtins.str jfc_v1: The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        :param _builtins.str jfc_v2: The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param _builtins.int recording_size_in_mb: The maximum size limit for the JFR file collected.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "jfc_profile_name", jfc_profile_name)
+        pulumi.set(__self__, "jfc_v1", jfc_v1)
+        pulumi.set(__self__, "jfc_v2", jfc_v2)
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "recording_size_in_mb", recording_size_in_mb)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcProfileName")
+    def jfc_profile_name(self) -> _builtins.str:
+        """
+        The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        """
+        return pulumi.get(self, "jfc_profile_name")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV1")
+    def jfc_v1(self) -> _builtins.str:
+        """
+        The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        """
+        return pulumi.get(self, "jfc_v1")
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV2")
+    def jfc_v2(self) -> _builtins.str:
+        """
+        The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        """
+        return pulumi.get(self, "jfc_v2")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="recordingSizeInMb")
+    def recording_size_in_mb(self) -> _builtins.int:
+        """
+        The maximum size limit for the JFR file collected.
+        """
+        return pulumi.get(self, "recording_size_in_mb")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: _builtins.int,
+                 targets: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetResult'],
+                 waiting_period_in_minutes: _builtins.int):
+        """
+        :param _builtins.int recording_duration_in_minutes: Duration of the JFR recording in minutes.
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs'] targets: The attachment targets to start JFR.
+        :param _builtins.int waiting_period_in_minutes: Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        pulumi.set(__self__, "targets", targets)
+        pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> _builtins.int:
+        """
+        Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetResult']:
+        """
+        The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> _builtins.int:
+        """
+        Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetResult(dict):
+    def __init__(__self__, *,
+                 application_installation_key: _builtins.str,
+                 application_key: _builtins.str,
+                 container_key: _builtins.str,
+                 jre_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str application_installation_key: Unique key that identifies the application installation for JFR data collection.
+        :param _builtins.str application_key: Unique key that identifies the application for JFR data collection.
+        :param _builtins.str container_key: Unique key that identifies the container for JFR data collection.
+        :param _builtins.str jre_key: Unique key that identify the JVM for JFR data collection.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        """
+        pulumi.set(__self__, "application_installation_key", application_installation_key)
+        pulumi.set(__self__, "application_key", application_key)
+        pulumi.set(__self__, "container_key", container_key)
+        pulumi.set(__self__, "jre_key", jre_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> _builtins.str:
+        """
+        Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> _builtins.str:
+        """
+        Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 installation_sites: Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult']):
+        """
+        :param Sequence['GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs'] installation_sites: The list of installation sites to remove.
+        """
+        pulumi.set(__self__, "installation_sites", installation_sites)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Sequence['outputs.GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult']:
+        """
+        The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteResult(dict):
+    def __init__(__self__, *,
+                 installation_key: _builtins.str,
+                 managed_instance_id: _builtins.str):
+        """
+        :param _builtins.str installation_key: The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        :param _builtins.str managed_instance_id: The Fleet-unique identifier of the related managed instance.
+        """
+        pulumi.set(__self__, "installation_key", installation_key)
+        pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="installationKey")
+    def installation_key(self) -> _builtins.str:
+        """
+        The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        """
+        return pulumi.get(self, "installation_key")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> _builtins.str:
+        """
+        The Fleet-unique identifier of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 managed_instance_ids: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] managed_instance_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
+class GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestResult(dict):
+    def __init__(__self__, *,
+                 dynamic_scan_duration_in_minutes: _builtins.int,
+                 is_dynamic_scan: _builtins.bool,
+                 managed_instance_ids: Sequence[_builtins.str]):
+        """
+        :param _builtins.int dynamic_scan_duration_in_minutes: The duration of the dynamic scan in minutes.
+        :param _builtins.bool is_dynamic_scan: Indicates whether the scan is dynamic or static.
+        :param Sequence[_builtins.str] managed_instance_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        pulumi.set(__self__, "dynamic_scan_duration_in_minutes", dynamic_scan_duration_in_minutes)
+        pulumi.set(__self__, "is_dynamic_scan", is_dynamic_scan)
+        pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="dynamicScanDurationInMinutes")
+    def dynamic_scan_duration_in_minutes(self) -> _builtins.int:
+        """
+        The duration of the dynamic scan in minutes.
+        """
+        return pulumi.get(self, "dynamic_scan_duration_in_minutes")
+
+    @_builtins.property
+    @pulumi.getter(name="isDynamicScan")
+    def is_dynamic_scan(self) -> _builtins.bool:
+        """
+        Indicates whether the scan is dynamic or static.
+        """
+        return pulumi.get(self, "is_dynamic_scan")
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Sequence[_builtins.str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+
+@pulumi.output_type
+class GetUtilsJavaMigrationAnalysiCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The name of the principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetUtilsJavaMigrationAnalysisFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 analysis_project_name: _builtins.str,
+                 analysis_result_files: Sequence[_builtins.str],
+                 analysis_result_object_storage_path: _builtins.str,
+                 bucket: _builtins.str,
+                 compartment_id: _builtins.str,
+                 created_bies: Sequence['outputs.GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByResult'],
+                 id: _builtins.str,
+                 input_applications_object_storage_paths: Sequence[_builtins.str],
+                 metadata: _builtins.str,
+                 namespace: _builtins.str,
+                 target_jdk_version: _builtins.str,
+                 time_created: _builtins.str,
+                 time_finished: _builtins.str,
+                 time_started: _builtins.str,
+                 work_request_id: _builtins.str):
+        """
+        :param _builtins.str analysis_project_name: The project name of the Performance Tuning Analysis to query for.
+        :param Sequence[_builtins.str] analysis_result_files: The analysis application file names result in the Object Storage.
+        :param _builtins.str analysis_result_object_storage_path: Path to the Object Storage analysis application result.
+        :param _builtins.str bucket: Object storage bucket name.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs'] created_bies: An authorized principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        :param Sequence[_builtins.str] input_applications_object_storage_paths: Object storage paths to the input files applications to be analysed.
+        :param _builtins.str metadata: Additional info reserved for future use.
+        :param _builtins.str namespace: Object storage namespace.
+        :param _builtins.str target_jdk_version: Jdk Version of the Java Migration Analysis target.
+        :param _builtins.str time_created: The date and time the Java Migration Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_finished: The date and time the Java Migration Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the Java Migration Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+        """
+        pulumi.set(__self__, "analysis_project_name", analysis_project_name)
+        pulumi.set(__self__, "analysis_result_files", analysis_result_files)
+        pulumi.set(__self__, "analysis_result_object_storage_path", analysis_result_object_storage_path)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_bies", created_bies)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "input_applications_object_storage_paths", input_applications_object_storage_paths)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @_builtins.property
+    @pulumi.getter(name="analysisProjectName")
+    def analysis_project_name(self) -> _builtins.str:
+        """
+        The project name of the Performance Tuning Analysis to query for.
+        """
+        return pulumi.get(self, "analysis_project_name")
+
+    @_builtins.property
+    @pulumi.getter(name="analysisResultFiles")
+    def analysis_result_files(self) -> Sequence[_builtins.str]:
+        """
+        The analysis application file names result in the Object Storage.
+        """
+        return pulumi.get(self, "analysis_result_files")
+
+    @_builtins.property
+    @pulumi.getter(name="analysisResultObjectStoragePath")
+    def analysis_result_object_storage_path(self) -> _builtins.str:
+        """
+        Path to the Object Storage analysis application result.
+        """
+        return pulumi.get(self, "analysis_result_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Object storage bucket name.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBies")
+    def created_bies(self) -> Sequence['outputs.GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "created_bies")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="inputApplicationsObjectStoragePaths")
+    def input_applications_object_storage_paths(self) -> Sequence[_builtins.str]:
+        """
+        Object storage paths to the input files applications to be analysed.
+        """
+        return pulumi.get(self, "input_applications_object_storage_paths")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        Additional info reserved for future use.
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        Object storage namespace.
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> _builtins.str:
+        """
+        Jdk Version of the Java Migration Analysis target.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Java Migration Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> _builtins.str:
+        """
+        The date and time the Java Migration Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the Java Migration Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+        """
+        return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
+class GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The name of the principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetUtilsPerformanceTuningAnalysiCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The name of the principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        """
+        return pulumi.get(self, "id")
+
+
+@pulumi.output_type
+class GetUtilsPerformanceTuningAnalysisFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 analysis_project_name: _builtins.str,
+                 artifact_object_storage_path: _builtins.str,
+                 compartment_id: _builtins.str,
+                 created_bies: Sequence['outputs.GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByResult'],
+                 id: _builtins.str,
+                 result: _builtins.str,
+                 result_object_storage_path: _builtins.str,
+                 time_created: _builtins.str,
+                 time_finished: _builtins.str,
+                 time_started: _builtins.str,
+                 warning_count: _builtins.int,
+                 work_request_id: _builtins.str):
+        """
+        :param _builtins.str analysis_project_name: The project name of the Performance Tuning Analysis to query for.
+        :param _builtins.str artifact_object_storage_path: Object storage path to the artifact.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Sequence['GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs'] created_bies: An authorized principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        :param _builtins.str result: Possible Performance Tuning Result statuses.
+        :param _builtins.str result_object_storage_path: Object storage path to the analysis.
+        :param _builtins.str time_created: The date and time the Performance Tuning Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_finished: The date and time the Performance Tuning Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_started: The date and time the Performance Tuning Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.int warning_count: Number of warnings in the Performance Tuning Analysis.
+        :param _builtins.str work_request_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+        """
+        pulumi.set(__self__, "analysis_project_name", analysis_project_name)
+        pulumi.set(__self__, "artifact_object_storage_path", artifact_object_storage_path)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_bies", created_bies)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "result", result)
+        pulumi.set(__self__, "result_object_storage_path", result_object_storage_path)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_finished", time_finished)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "warning_count", warning_count)
+        pulumi.set(__self__, "work_request_id", work_request_id)
+
+    @_builtins.property
+    @pulumi.getter(name="analysisProjectName")
+    def analysis_project_name(self) -> _builtins.str:
+        """
+        The project name of the Performance Tuning Analysis to query for.
+        """
+        return pulumi.get(self, "analysis_project_name")
+
+    @_builtins.property
+    @pulumi.getter(name="artifactObjectStoragePath")
+    def artifact_object_storage_path(self) -> _builtins.str:
+        """
+        Object storage path to the artifact.
+        """
+        return pulumi.get(self, "artifact_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBies")
+    def created_bies(self) -> Sequence['outputs.GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByResult']:
+        """
+        An authorized principal.
+        """
+        return pulumi.get(self, "created_bies")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter
+    def result(self) -> _builtins.str:
+        """
+        Possible Performance Tuning Result statuses.
+        """
+        return pulumi.get(self, "result")
+
+    @_builtins.property
+    @pulumi.getter(name="resultObjectStoragePath")
+    def result_object_storage_path(self) -> _builtins.str:
+        """
+        Object storage path to the analysis.
+        """
+        return pulumi.get(self, "result_object_storage_path")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Performance Tuning Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeFinished")
+    def time_finished(self) -> _builtins.str:
+        """
+        The date and time the Performance Tuning Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_finished")
+
+    @_builtins.property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> _builtins.str:
+        """
+        The date and time the Performance Tuning Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_started")
+
+    @_builtins.property
+    @pulumi.getter(name="warningCount")
+    def warning_count(self) -> _builtins.int:
+        """
+        Number of warnings in the Performance Tuning Analysis.
+        """
+        return pulumi.get(self, "warning_count")
+
+    @_builtins.property
+    @pulumi.getter(name="workRequestId")
+    def work_request_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+        """
+        return pulumi.get(self, "work_request_id")
+
+
+@pulumi.output_type
+class GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByResult(dict):
+    def __init__(__self__, *,
+                 display_name: _builtins.str,
+                 id: _builtins.str):
+        """
+        :param _builtins.str display_name: The name of the principal.
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        The name of the principal.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+        """
+        return pulumi.get(self, "id")
 
 

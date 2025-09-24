@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail;
 import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttribute;
 import java.lang.Boolean;
 import java.lang.String;
@@ -28,6 +29,16 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      * 
      */
     private String columnName;
+    /**
+     * @return A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     * 
+     */
+    private String confidenceLevel;
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail> confidenceLevelDetails;
     /**
      * @return The data type of the sensitive column.
      * 
@@ -147,6 +158,20 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
      */
     public String columnName() {
         return this.columnName;
+    }
+    /**
+     * @return A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     * 
+     */
+    public String confidenceLevel() {
+        return this.confidenceLevel;
+    }
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    public List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail> confidenceLevelDetails() {
+        return this.confidenceLevelDetails;
     }
     /**
      * @return The data type of the sensitive column.
@@ -292,6 +317,8 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
         private List<String> appDefinedChildColumnKeys;
         private String appName;
         private String columnName;
+        private String confidenceLevel;
+        private List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail> confidenceLevelDetails;
         private String dataType;
         private List<String> dbDefinedChildColumnKeys;
         private String discoveryJobId;
@@ -315,6 +342,8 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     	      this.appDefinedChildColumnKeys = defaults.appDefinedChildColumnKeys;
     	      this.appName = defaults.appName;
     	      this.columnName = defaults.columnName;
+    	      this.confidenceLevel = defaults.confidenceLevel;
+    	      this.confidenceLevelDetails = defaults.confidenceLevelDetails;
     	      this.dataType = defaults.dataType;
     	      this.dbDefinedChildColumnKeys = defaults.dbDefinedChildColumnKeys;
     	      this.discoveryJobId = defaults.discoveryJobId;
@@ -360,6 +389,25 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
             }
             this.columnName = columnName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder confidenceLevel(String confidenceLevel) {
+            if (confidenceLevel == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "confidenceLevel");
+            }
+            this.confidenceLevel = confidenceLevel;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder confidenceLevelDetails(List<GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail> confidenceLevelDetails) {
+            if (confidenceLevelDetails == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem", "confidenceLevelDetails");
+            }
+            this.confidenceLevelDetails = confidenceLevelDetails;
+            return this;
+        }
+        public Builder confidenceLevelDetails(GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetail... confidenceLevelDetails) {
+            return confidenceLevelDetails(List.of(confidenceLevelDetails));
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
@@ -514,6 +562,8 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
             _resultValue.appDefinedChildColumnKeys = appDefinedChildColumnKeys;
             _resultValue.appName = appName;
             _resultValue.columnName = columnName;
+            _resultValue.confidenceLevel = confidenceLevel;
+            _resultValue.confidenceLevelDetails = confidenceLevelDetails;
             _resultValue.dataType = dataType;
             _resultValue.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             _resultValue.discoveryJobId = discoveryJobId;

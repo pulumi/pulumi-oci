@@ -39,6 +39,7 @@ public final class GetMaskingReportsResult {
      * 
      */
     private List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
+    private @Nullable String targetDatabaseGroupId;
     /**
      * @return The OCID of the target database masked.
      * 
@@ -83,6 +84,9 @@ public final class GetMaskingReportsResult {
     public List<GetMaskingReportsMaskingReportCollection> maskingReportCollections() {
         return this.maskingReportCollections;
     }
+    public Optional<String> targetDatabaseGroupId() {
+        return Optional.ofNullable(this.targetDatabaseGroupId);
+    }
     /**
      * @return The OCID of the target database masked.
      * 
@@ -107,6 +111,7 @@ public final class GetMaskingReportsResult {
         private String id;
         private @Nullable String maskingPolicyId;
         private List<GetMaskingReportsMaskingReportCollection> maskingReportCollections;
+        private @Nullable String targetDatabaseGroupId;
         private @Nullable String targetId;
         public Builder() {}
         public Builder(GetMaskingReportsResult defaults) {
@@ -118,6 +123,7 @@ public final class GetMaskingReportsResult {
     	      this.id = defaults.id;
     	      this.maskingPolicyId = defaults.maskingPolicyId;
     	      this.maskingReportCollections = defaults.maskingReportCollections;
+    	      this.targetDatabaseGroupId = defaults.targetDatabaseGroupId;
     	      this.targetId = defaults.targetId;
         }
 
@@ -176,6 +182,12 @@ public final class GetMaskingReportsResult {
             return maskingReportCollections(List.of(maskingReportCollections));
         }
         @CustomType.Setter
+        public Builder targetDatabaseGroupId(@Nullable String targetDatabaseGroupId) {
+
+            this.targetDatabaseGroupId = targetDatabaseGroupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder targetId(@Nullable String targetId) {
 
             this.targetId = targetId;
@@ -190,6 +202,7 @@ public final class GetMaskingReportsResult {
             _resultValue.id = id;
             _resultValue.maskingPolicyId = maskingPolicyId;
             _resultValue.maskingReportCollections = maskingReportCollections;
+            _resultValue.targetDatabaseGroupId = targetDatabaseGroupId;
             _resultValue.targetId = targetId;
             return _resultValue;
         }

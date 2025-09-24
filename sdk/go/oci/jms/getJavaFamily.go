@@ -74,6 +74,8 @@ type GetJavaFamilyResult struct {
 	LatestReleaseArtifacts []GetJavaFamilyLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes []string `pulumi:"licenseTypes"`
 	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -152,6 +154,11 @@ func (o GetJavaFamilyResultOutput) LatestReleaseArtifacts() GetJavaFamilyLatestR
 // Latest Java release version in the family.
 func (o GetJavaFamilyResultOutput) LatestReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamilyResult) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The license type(s) associated with the Java family.
+func (o GetJavaFamilyResultOutput) LicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaFamilyResult) []string { return v.LicenseTypes }).(pulumi.StringArrayOutput)
 }
 
 // The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).

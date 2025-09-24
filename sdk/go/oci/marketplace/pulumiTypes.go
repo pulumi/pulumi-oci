@@ -6232,6 +6232,276 @@ func (o GetListingsListingSupportedOperatingSystemArrayOutput) Index(i pulumi.In
 	}).(GetListingsListingSupportedOperatingSystemOutput)
 }
 
+type GetMarketplaceMetadataPublicKeysFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMarketplaceMetadataPublicKeysFilterInput is an input type that accepts GetMarketplaceMetadataPublicKeysFilterArgs and GetMarketplaceMetadataPublicKeysFilterOutput values.
+// You can construct a concrete instance of `GetMarketplaceMetadataPublicKeysFilterInput` via:
+//
+//	GetMarketplaceMetadataPublicKeysFilterArgs{...}
+type GetMarketplaceMetadataPublicKeysFilterInput interface {
+	pulumi.Input
+
+	ToGetMarketplaceMetadataPublicKeysFilterOutput() GetMarketplaceMetadataPublicKeysFilterOutput
+	ToGetMarketplaceMetadataPublicKeysFilterOutputWithContext(context.Context) GetMarketplaceMetadataPublicKeysFilterOutput
+}
+
+type GetMarketplaceMetadataPublicKeysFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMarketplaceMetadataPublicKeysFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMarketplaceMetadataPublicKeysFilter)(nil)).Elem()
+}
+
+func (i GetMarketplaceMetadataPublicKeysFilterArgs) ToGetMarketplaceMetadataPublicKeysFilterOutput() GetMarketplaceMetadataPublicKeysFilterOutput {
+	return i.ToGetMarketplaceMetadataPublicKeysFilterOutputWithContext(context.Background())
+}
+
+func (i GetMarketplaceMetadataPublicKeysFilterArgs) ToGetMarketplaceMetadataPublicKeysFilterOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMarketplaceMetadataPublicKeysFilterOutput)
+}
+
+// GetMarketplaceMetadataPublicKeysFilterArrayInput is an input type that accepts GetMarketplaceMetadataPublicKeysFilterArray and GetMarketplaceMetadataPublicKeysFilterArrayOutput values.
+// You can construct a concrete instance of `GetMarketplaceMetadataPublicKeysFilterArrayInput` via:
+//
+//	GetMarketplaceMetadataPublicKeysFilterArray{ GetMarketplaceMetadataPublicKeysFilterArgs{...} }
+type GetMarketplaceMetadataPublicKeysFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMarketplaceMetadataPublicKeysFilterArrayOutput() GetMarketplaceMetadataPublicKeysFilterArrayOutput
+	ToGetMarketplaceMetadataPublicKeysFilterArrayOutputWithContext(context.Context) GetMarketplaceMetadataPublicKeysFilterArrayOutput
+}
+
+type GetMarketplaceMetadataPublicKeysFilterArray []GetMarketplaceMetadataPublicKeysFilterInput
+
+func (GetMarketplaceMetadataPublicKeysFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMarketplaceMetadataPublicKeysFilter)(nil)).Elem()
+}
+
+func (i GetMarketplaceMetadataPublicKeysFilterArray) ToGetMarketplaceMetadataPublicKeysFilterArrayOutput() GetMarketplaceMetadataPublicKeysFilterArrayOutput {
+	return i.ToGetMarketplaceMetadataPublicKeysFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMarketplaceMetadataPublicKeysFilterArray) ToGetMarketplaceMetadataPublicKeysFilterArrayOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMarketplaceMetadataPublicKeysFilterArrayOutput)
+}
+
+type GetMarketplaceMetadataPublicKeysFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMarketplaceMetadataPublicKeysFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMarketplaceMetadataPublicKeysFilter)(nil)).Elem()
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterOutput) ToGetMarketplaceMetadataPublicKeysFilterOutput() GetMarketplaceMetadataPublicKeysFilterOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterOutput) ToGetMarketplaceMetadataPublicKeysFilterOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysFilterOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMarketplaceMetadataPublicKeysFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMarketplaceMetadataPublicKeysFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMarketplaceMetadataPublicKeysFilter)(nil)).Elem()
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterArrayOutput) ToGetMarketplaceMetadataPublicKeysFilterArrayOutput() GetMarketplaceMetadataPublicKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterArrayOutput) ToGetMarketplaceMetadataPublicKeysFilterArrayOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysFilterArrayOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysFilterArrayOutput) Index(i pulumi.IntInput) GetMarketplaceMetadataPublicKeysFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMarketplaceMetadataPublicKeysFilter {
+		return vs[0].([]GetMarketplaceMetadataPublicKeysFilter)[vs[1].(int)]
+	}).(GetMarketplaceMetadataPublicKeysFilterOutput)
+}
+
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey struct {
+	// chain of certificates used to sign JWT
+	CertificateChains []string `pulumi:"certificateChains"`
+	// unique identifier of associated X509 certificate
+	CertificateThumbprint string `pulumi:"certificateThumbprint"`
+	// base64 encoded exponent for public key
+	Exponent string `pulumi:"exponent"`
+	// algorithm for public key (i.e. RS256)
+	KeyAlgorithm string `pulumi:"keyAlgorithm"`
+	// unique id that maps to public certificate, directs user which certificate to use to verfiy
+	KeyId string `pulumi:"keyId"`
+	// key type (i.e. RSA)
+	KeyType string `pulumi:"keyType"`
+	// how key is to be used
+	KeyUse string `pulumi:"keyUse"`
+	// RSA public modulus
+	Modulus string `pulumi:"modulus"`
+}
+
+// GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyInput is an input type that accepts GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs and GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput values.
+// You can construct a concrete instance of `GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyInput` via:
+//
+//	GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs{...}
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyInput interface {
+	pulumi.Input
+
+	ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput
+	ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutputWithContext(context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput
+}
+
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs struct {
+	// chain of certificates used to sign JWT
+	CertificateChains pulumi.StringArrayInput `pulumi:"certificateChains"`
+	// unique identifier of associated X509 certificate
+	CertificateThumbprint pulumi.StringInput `pulumi:"certificateThumbprint"`
+	// base64 encoded exponent for public key
+	Exponent pulumi.StringInput `pulumi:"exponent"`
+	// algorithm for public key (i.e. RS256)
+	KeyAlgorithm pulumi.StringInput `pulumi:"keyAlgorithm"`
+	// unique id that maps to public certificate, directs user which certificate to use to verfiy
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// key type (i.e. RSA)
+	KeyType pulumi.StringInput `pulumi:"keyType"`
+	// how key is to be used
+	KeyUse pulumi.StringInput `pulumi:"keyUse"`
+	// RSA public modulus
+	Modulus pulumi.StringInput `pulumi:"modulus"`
+}
+
+func (GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey)(nil)).Elem()
+}
+
+func (i GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput {
+	return i.ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutputWithContext(context.Background())
+}
+
+func (i GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput)
+}
+
+// GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayInput is an input type that accepts GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray and GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput values.
+// You can construct a concrete instance of `GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayInput` via:
+//
+//	GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray{ GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs{...} }
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput
+	ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutputWithContext(context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput
+}
+
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray []GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyInput
+
+func (GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey)(nil)).Elem()
+}
+
+func (i GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput {
+	return i.ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput)
+}
+
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput struct{ *pulumi.OutputState }
+
+func (GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey)(nil)).Elem()
+}
+
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput {
+	return o
+}
+
+// chain of certificates used to sign JWT
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) CertificateChains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) []string {
+		return v.CertificateChains
+	}).(pulumi.StringArrayOutput)
+}
+
+// unique identifier of associated X509 certificate
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) CertificateThumbprint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string {
+		return v.CertificateThumbprint
+	}).(pulumi.StringOutput)
+}
+
+// base64 encoded exponent for public key
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) Exponent() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.Exponent }).(pulumi.StringOutput)
+}
+
+// algorithm for public key (i.e. RS256)
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) KeyAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.KeyAlgorithm }).(pulumi.StringOutput)
+}
+
+// unique id that maps to public certificate, directs user which certificate to use to verfiy
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// key type (i.e. RSA)
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) KeyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.KeyType }).(pulumi.StringOutput)
+}
+
+// how key is to be used
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) KeyUse() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.KeyUse }).(pulumi.StringOutput)
+}
+
+// RSA public modulus
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput) Modulus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey) string { return v.Modulus }).(pulumi.StringOutput)
+}
+
+type GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey)(nil)).Elem()
+}
+
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput() GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput) ToGetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutputWithContext(ctx context.Context) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput {
+	return o
+}
+
+func (o GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput) Index(i pulumi.IntInput) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey {
+		return vs[0].([]GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKey)[vs[1].(int)]
+	}).(GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput)
+}
+
 type GetPublicationIcon struct {
 	// The content URL of the upload data.
 	ContentUrl string `pulumi:"contentUrl"`
@@ -8720,6 +8990,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingsListingRegionCountryArrayInput)(nil)).Elem(), GetListingsListingRegionCountryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingsListingSupportedOperatingSystemInput)(nil)).Elem(), GetListingsListingSupportedOperatingSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListingsListingSupportedOperatingSystemArrayInput)(nil)).Elem(), GetListingsListingSupportedOperatingSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMarketplaceMetadataPublicKeysFilterInput)(nil)).Elem(), GetMarketplaceMetadataPublicKeysFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMarketplaceMetadataPublicKeysFilterArrayInput)(nil)).Elem(), GetMarketplaceMetadataPublicKeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyInput)(nil)).Elem(), GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayInput)(nil)).Elem(), GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicationIconInput)(nil)).Elem(), GetPublicationIconArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicationIconArrayInput)(nil)).Elem(), GetPublicationIconArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPublicationPackageDetailInput)(nil)).Elem(), GetPublicationPackageDetailArgs{})
@@ -8862,6 +9136,10 @@ func init() {
 	pulumi.RegisterOutputType(GetListingsListingRegionCountryArrayOutput{})
 	pulumi.RegisterOutputType(GetListingsListingSupportedOperatingSystemOutput{})
 	pulumi.RegisterOutputType(GetListingsListingSupportedOperatingSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetMarketplaceMetadataPublicKeysFilterOutput{})
+	pulumi.RegisterOutputType(GetMarketplaceMetadataPublicKeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyOutput{})
+	pulumi.RegisterOutputType(GetMarketplaceMetadataPublicKeysMarketplaceMetadataPublicKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetPublicationIconOutput{})
 	pulumi.RegisterOutputType(GetPublicationIconArrayOutput{})
 	pulumi.RegisterOutputType(GetPublicationPackageDetailOutput{})

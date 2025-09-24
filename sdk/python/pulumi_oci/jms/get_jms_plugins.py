@@ -73,7 +73,7 @@ class GetJmsPluginsResult:
     @pulumi.getter(name="agentId")
     def agent_id(self) -> Optional[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         """
         return pulumi.get(self, "agent_id")
 
@@ -97,7 +97,7 @@ class GetJmsPluginsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[_builtins.str]:
         """
-        The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 
@@ -218,7 +218,7 @@ def get_jms_plugins(agent_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+    :param _builtins.str agent_id: The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
     :param _builtins.str agent_type: Filter JmsPlugin with agent type.
     :param _builtins.str availability_status: Filter JmsPlugin with its availability status.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -298,7 +298,7 @@ def get_jms_plugins_output(agent_id: Optional[pulumi.Input[Optional[_builtins.st
     ```
 
 
-    :param _builtins.str agent_id: The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+    :param _builtins.str agent_id: The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
     :param _builtins.str agent_type: Filter JmsPlugin with agent type.
     :param _builtins.str availability_status: Filter JmsPlugin with its availability status.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.

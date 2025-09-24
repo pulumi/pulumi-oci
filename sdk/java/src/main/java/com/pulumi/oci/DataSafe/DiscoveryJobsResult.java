@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.DiscoveryJobsResultArgs;
 import com.pulumi.oci.DataSafe.inputs.DiscoveryJobsResultState;
+import com.pulumi.oci.DataSafe.outputs.DiscoveryJobsResultConfidenceLevelDetail;
 import com.pulumi.oci.DataSafe.outputs.DiscoveryJobsResultModifiedAttribute;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
@@ -103,6 +104,18 @@ public class DiscoveryJobsResult extends com.pulumi.resources.CustomResource {
      */
     public Output<String> columnName() {
         return this.columnName;
+    }
+    @Export(name="confidenceLevel", refs={String.class}, tree="[0]")
+    private Output<String> confidenceLevel;
+
+    public Output<String> confidenceLevel() {
+        return this.confidenceLevel;
+    }
+    @Export(name="confidenceLevelDetails", refs={List.class,DiscoveryJobsResultConfidenceLevelDetail.class}, tree="[0,1]")
+    private Output<List<DiscoveryJobsResultConfidenceLevelDetail>> confidenceLevelDetails;
+
+    public Output<List<DiscoveryJobsResultConfidenceLevelDetail>> confidenceLevelDetails() {
+        return this.confidenceLevelDetails;
     }
     /**
      * The data type of the sensitive column.

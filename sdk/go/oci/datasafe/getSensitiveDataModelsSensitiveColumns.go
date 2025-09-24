@@ -31,8 +31,10 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSensitiveDataModelsSensitiveColumns(ctx, &datasafe.GetSensitiveDataModelsSensitiveColumnsArgs{
 //				SensitiveDataModelId:            testSensitiveDataModel.Id,
+//				ColumnDataCountFilter:           pulumi.StringRef(sensitiveDataModelsSensitiveColumnColumnDataCountFilter),
 //				ColumnGroup:                     pulumi.StringRef(sensitiveDataModelsSensitiveColumnColumnGroup),
 //				ColumnNames:                     sensitiveDataModelsSensitiveColumnColumnName,
+//				ConfidenceLevels:                sensitiveDataModelsSensitiveColumnConfidenceLevel,
 //				DataTypes:                       sensitiveDataModelsSensitiveColumnDataType,
 //				IsCaseInSensitive:               pulumi.BoolRef(sensitiveDataModelsSensitiveColumnIsCaseInSensitive),
 //				Objects:                         sensitiveDataModelsSensitiveColumnObject,
@@ -68,10 +70,14 @@ func GetSensitiveDataModelsSensitiveColumns(ctx *pulumi.Context, args *GetSensit
 
 // A collection of arguments for invoking getSensitiveDataModelsSensitiveColumns.
 type GetSensitiveDataModelsSensitiveColumnsArgs struct {
+	// Filters the sensitive columns with respect to the estimated row count.
+	ColumnDataCountFilter *string `pulumi:"columnDataCountFilter"`
 	// A filter to return only the sensitive columns that belong to the specified column group.
 	ColumnGroup *string `pulumi:"columnGroup"`
 	// A filter to return only a specific column based on column name.
 	ColumnNames []string `pulumi:"columnNames"`
+	// A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+	ConfidenceLevels []string `pulumi:"confidenceLevels"`
 	// A filter to return only the resources that match the specified data types.
 	DataTypes []string                                       `pulumi:"dataTypes"`
 	Filters   []GetSensitiveDataModelsSensitiveColumnsFilter `pulumi:"filters"`
@@ -111,9 +117,12 @@ type GetSensitiveDataModelsSensitiveColumnsArgs struct {
 
 // A collection of values returned by getSensitiveDataModelsSensitiveColumns.
 type GetSensitiveDataModelsSensitiveColumnsResult struct {
-	ColumnGroup *string `pulumi:"columnGroup"`
+	ColumnDataCountFilter *string `pulumi:"columnDataCountFilter"`
+	ColumnGroup           *string `pulumi:"columnGroup"`
 	// The name of the sensitive column.
 	ColumnNames []string `pulumi:"columnNames"`
+	// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+	ConfidenceLevels []string `pulumi:"confidenceLevels"`
 	// The data type of the sensitive column.
 	DataTypes []string                                       `pulumi:"dataTypes"`
 	Filters   []GetSensitiveDataModelsSensitiveColumnsFilter `pulumi:"filters"`
@@ -155,10 +164,14 @@ func GetSensitiveDataModelsSensitiveColumnsOutput(ctx *pulumi.Context, args GetS
 
 // A collection of arguments for invoking getSensitiveDataModelsSensitiveColumns.
 type GetSensitiveDataModelsSensitiveColumnsOutputArgs struct {
+	// Filters the sensitive columns with respect to the estimated row count.
+	ColumnDataCountFilter pulumi.StringPtrInput `pulumi:"columnDataCountFilter"`
 	// A filter to return only the sensitive columns that belong to the specified column group.
 	ColumnGroup pulumi.StringPtrInput `pulumi:"columnGroup"`
 	// A filter to return only a specific column based on column name.
 	ColumnNames pulumi.StringArrayInput `pulumi:"columnNames"`
+	// A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+	ConfidenceLevels pulumi.StringArrayInput `pulumi:"confidenceLevels"`
 	// A filter to return only the resources that match the specified data types.
 	DataTypes pulumi.StringArrayInput                                `pulumi:"dataTypes"`
 	Filters   GetSensitiveDataModelsSensitiveColumnsFilterArrayInput `pulumi:"filters"`
@@ -215,6 +228,10 @@ func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ToGetSensitiveDataMo
 	return o
 }
 
+func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ColumnDataCountFilter() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) *string { return v.ColumnDataCountFilter }).(pulumi.StringPtrOutput)
+}
+
 func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ColumnGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) *string { return v.ColumnGroup }).(pulumi.StringPtrOutput)
 }
@@ -222,6 +239,11 @@ func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ColumnGroup() pulumi
 // The name of the sensitive column.
 func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ColumnNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) []string { return v.ColumnNames }).(pulumi.StringArrayOutput)
+}
+
+// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+func (o GetSensitiveDataModelsSensitiveColumnsResultOutput) ConfidenceLevels() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSensitiveDataModelsSensitiveColumnsResult) []string { return v.ConfidenceLevels }).(pulumi.StringArrayOutput)
 }
 
 // The data type of the sensitive column.

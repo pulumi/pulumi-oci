@@ -60,6 +60,14 @@ export interface GetFleetResult {
      */
     readonly approximateJreCount: number;
     /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    readonly approximateLibraryCount: number;
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    readonly approximateLibraryVulnerabilityCount: number;
+    /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
     readonly approximateManagedInstanceCount: number;

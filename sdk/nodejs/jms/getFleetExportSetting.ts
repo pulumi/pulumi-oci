@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -41,6 +43,10 @@ export interface GetFleetExportSettingArgs {
  * A collection of values returned by getFleetExportSetting.
  */
 export interface GetFleetExportSettingResult {
+    /**
+     * Filters applied when exporting data
+     */
+    readonly exportDataFilters: outputs.Jms.GetFleetExportSettingExportDataFilter[];
     /**
      * The duration of data to be exported for fleets.
      */

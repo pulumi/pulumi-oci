@@ -55,12 +55,48 @@ __all__ = [
     'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict',
     'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs',
     'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict',
+    'TaskScheduleTaskDetailsArgs',
+    'TaskScheduleTaskDetailsArgsDict',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs',
+    'TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict',
+    'TaskScheduleTaskDetailsCryptoTaskRequestArgs',
+    'TaskScheduleTaskDetailsCryptoTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs',
+    'TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs',
+    'TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs',
+    'TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict',
+    'TaskScheduleTaskDetailsJfrTaskRequestArgs',
+    'TaskScheduleTaskDetailsJfrTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsJfrTaskRequestTargetArgs',
+    'TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs',
+    'TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs',
+    'TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict',
+    'TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs',
+    'TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict',
+    'TaskScheduleTaskDetailsScanLibraryTaskRequestArgs',
+    'TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict',
     'GetAgentInstallersFilterArgs',
     'GetAgentInstallersFilterArgsDict',
     'GetAnnouncementsFilterArgs',
     'GetAnnouncementsFilterArgsDict',
     'GetFleetBlocklistsFilterArgs',
     'GetFleetBlocklistsFilterArgsDict',
+    'GetFleetContainersFilterArgs',
+    'GetFleetContainersFilterArgsDict',
     'GetFleetCryptoAnalysisResultsFilterArgs',
     'GetFleetCryptoAnalysisResultsFilterArgsDict',
     'GetFleetDiagnosesFilterArgs',
@@ -73,8 +109,18 @@ __all__ = [
     'GetFleetErrorsFilterArgsDict',
     'GetFleetJavaMigrationAnalysisResultsFilterArgs',
     'GetFleetJavaMigrationAnalysisResultsFilterArgsDict',
+    'GetFleetLibraryApplicationsFilterArgs',
+    'GetFleetLibraryApplicationsFilterArgsDict',
+    'GetFleetLibraryManagedInstancesFilterArgs',
+    'GetFleetLibraryManagedInstancesFilterArgsDict',
     'GetFleetPerformanceTuningAnalysisResultsFilterArgs',
     'GetFleetPerformanceTuningAnalysisResultsFilterArgsDict',
+    'GetFleetUncorrelatedPackageApplicationsFilterArgs',
+    'GetFleetUncorrelatedPackageApplicationsFilterArgsDict',
+    'GetFleetUncorrelatedPackageManagedInstancesFilterArgs',
+    'GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict',
+    'GetFleetUncorrelatedPackagesFilterArgs',
+    'GetFleetUncorrelatedPackagesFilterArgsDict',
     'GetFleetsFilterArgs',
     'GetFleetsFilterArgsDict',
     'GetInstallationSitesFilterArgs',
@@ -99,6 +145,12 @@ __all__ = [
     'GetPluginErrorAnalyticsFilterArgsDict',
     'GetPluginErrorsFilterArgs',
     'GetPluginErrorsFilterArgsDict',
+    'GetTaskSchedulesFilterArgs',
+    'GetTaskSchedulesFilterArgsDict',
+    'GetUtilsJavaMigrationAnalysisFilterArgs',
+    'GetUtilsJavaMigrationAnalysisFilterArgsDict',
+    'GetUtilsPerformanceTuningAnalysisFilterArgs',
+    'GetUtilsPerformanceTuningAnalysisFilterArgsDict',
 ]
 
 MYPY = False
@@ -1449,6 +1501,1561 @@ class JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs:
 
 
 if not MYPY:
+    class TaskScheduleTaskDetailsArgsDict(TypedDict):
+        task_type: pulumi.Input[_builtins.str]
+        """
+        (Updatable) Type of task.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        add_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict']]
+        """
+        (Updatable) The list of Java installation sites to add.
+        """
+        crypto_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgsDict']]
+        """
+        (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        """
+        deployed_application_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict']]
+        """
+        (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        """
+        java_migration_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict']]
+        """
+        (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        """
+        jfr_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgsDict']]
+        """
+        (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        """
+        performance_tuning_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict']]
+        """
+        (Updatable) Details of the request to start a JFR performance tuning analysis.
+        """
+        remove_installation_site_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict']]
+        """
+        (Updatable) The list of Java installation sites to remove.
+        """
+        scan_java_server_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict']]
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+        scan_library_task_request: NotRequired[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict']]
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+elif False:
+    TaskScheduleTaskDetailsArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsArgs:
+    def __init__(__self__, *,
+                 task_type: pulumi.Input[_builtins.str],
+                 add_installation_site_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs']] = None,
+                 crypto_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgs']] = None,
+                 deployed_application_migration_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs']] = None,
+                 java_migration_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs']] = None,
+                 jfr_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgs']] = None,
+                 performance_tuning_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs']] = None,
+                 remove_installation_site_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs']] = None,
+                 scan_java_server_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs']] = None,
+                 scan_library_task_request: Optional[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] task_type: (Updatable) Type of task.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs'] add_installation_site_task_request: (Updatable) The list of Java installation sites to add.
+        :param pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgs'] crypto_task_request: (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        :param pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs'] deployed_application_migration_task_request: (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        :param pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs'] java_migration_task_request: (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        :param pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgs'] jfr_task_request: (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        :param pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs'] performance_tuning_task_request: (Updatable) Details of the request to start a JFR performance tuning analysis.
+        :param pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs'] remove_installation_site_task_request: (Updatable) The list of Java installation sites to remove.
+        :param pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs'] scan_java_server_task_request: (Updatable) The list of managed instances to scan.
+        :param pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgs'] scan_library_task_request: (Updatable) The list of managed instances to scan.
+        """
+        pulumi.set(__self__, "task_type", task_type)
+        if add_installation_site_task_request is not None:
+            pulumi.set(__self__, "add_installation_site_task_request", add_installation_site_task_request)
+        if crypto_task_request is not None:
+            pulumi.set(__self__, "crypto_task_request", crypto_task_request)
+        if deployed_application_migration_task_request is not None:
+            pulumi.set(__self__, "deployed_application_migration_task_request", deployed_application_migration_task_request)
+        if java_migration_task_request is not None:
+            pulumi.set(__self__, "java_migration_task_request", java_migration_task_request)
+        if jfr_task_request is not None:
+            pulumi.set(__self__, "jfr_task_request", jfr_task_request)
+        if performance_tuning_task_request is not None:
+            pulumi.set(__self__, "performance_tuning_task_request", performance_tuning_task_request)
+        if remove_installation_site_task_request is not None:
+            pulumi.set(__self__, "remove_installation_site_task_request", remove_installation_site_task_request)
+        if scan_java_server_task_request is not None:
+            pulumi.set(__self__, "scan_java_server_task_request", scan_java_server_task_request)
+        if scan_library_task_request is not None:
+            pulumi.set(__self__, "scan_library_task_request", scan_library_task_request)
+
+    @_builtins.property
+    @pulumi.getter(name="taskType")
+    def task_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) Type of task.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "task_type")
+
+    @task_type.setter
+    def task_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "task_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="addInstallationSiteTaskRequest")
+    def add_installation_site_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs']]:
+        """
+        (Updatable) The list of Java installation sites to add.
+        """
+        return pulumi.get(self, "add_installation_site_task_request")
+
+    @add_installation_site_task_request.setter
+    def add_installation_site_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs']]):
+        pulumi.set(self, "add_installation_site_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cryptoTaskRequest")
+    def crypto_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgs']]:
+        """
+        (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+        """
+        return pulumi.get(self, "crypto_task_request")
+
+    @crypto_task_request.setter
+    def crypto_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestArgs']]):
+        pulumi.set(self, "crypto_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationMigrationTaskRequest")
+    def deployed_application_migration_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs']]:
+        """
+        (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "deployed_application_migration_task_request")
+
+    @deployed_application_migration_task_request.setter
+    def deployed_application_migration_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs']]):
+        pulumi.set(self, "deployed_application_migration_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="javaMigrationTaskRequest")
+    def java_migration_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs']]:
+        """
+        (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+        """
+        return pulumi.get(self, "java_migration_task_request")
+
+    @java_migration_task_request.setter
+    def java_migration_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs']]):
+        pulumi.set(self, "java_migration_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jfrTaskRequest")
+    def jfr_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgs']]:
+        """
+        (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+        """
+        return pulumi.get(self, "jfr_task_request")
+
+    @jfr_task_request.setter
+    def jfr_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestArgs']]):
+        pulumi.set(self, "jfr_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="performanceTuningTaskRequest")
+    def performance_tuning_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs']]:
+        """
+        (Updatable) Details of the request to start a JFR performance tuning analysis.
+        """
+        return pulumi.get(self, "performance_tuning_task_request")
+
+    @performance_tuning_task_request.setter
+    def performance_tuning_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs']]):
+        pulumi.set(self, "performance_tuning_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="removeInstallationSiteTaskRequest")
+    def remove_installation_site_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs']]:
+        """
+        (Updatable) The list of Java installation sites to remove.
+        """
+        return pulumi.get(self, "remove_installation_site_task_request")
+
+    @remove_installation_site_task_request.setter
+    def remove_installation_site_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs']]):
+        pulumi.set(self, "remove_installation_site_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scanJavaServerTaskRequest")
+    def scan_java_server_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs']]:
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_java_server_task_request")
+
+    @scan_java_server_task_request.setter
+    def scan_java_server_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs']]):
+        pulumi.set(self, "scan_java_server_task_request", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scanLibraryTaskRequest")
+    def scan_library_task_request(self) -> Optional[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgs']]:
+        """
+        (Updatable) The list of managed instances to scan.
+        """
+        return pulumi.get(self, "scan_library_task_request")
+
+    @scan_library_task_request.setter
+    def scan_library_task_request(self, value: Optional[pulumi.Input['TaskScheduleTaskDetailsScanLibraryTaskRequestArgs']]):
+        pulumi.set(self, "scan_library_task_request", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict(TypedDict):
+        installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
+        """
+        (Updatable) The list of installation sites to add.
+        """
+        post_installation_actions: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Optional list of post java installation actions
+        """
+elif False:
+    TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs:
+    def __init__(__self__, *,
+                 installation_sites: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs']]]] = None,
+                 post_installation_actions: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs']]] installation_sites: (Updatable) The list of installation sites to add.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] post_installation_actions: (Updatable) Optional list of post java installation actions
+        """
+        if installation_sites is not None:
+            pulumi.set(__self__, "installation_sites", installation_sites)
+        if post_installation_actions is not None:
+            pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs']]]]:
+        """
+        (Updatable) The list of installation sites to add.
+        """
+        return pulumi.get(self, "installation_sites")
+
+    @installation_sites.setter
+    def installation_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs']]]]):
+        pulumi.set(self, "installation_sites", value)
+
+    @_builtins.property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Optional list of post java installation actions
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+    @post_installation_actions.setter
+    def post_installation_actions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "post_installation_actions", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
+        artifact_content_type: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Artifact content type for the Java version.
+        """
+        force_install: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Forces the installation request even if a more recent release is already present in the host.
+        """
+        headless_mode: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        """
+        installation_path: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Custom path to install new Java installation site.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        release_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The release version of the Java Runtime.
+        """
+elif False:
+    TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs:
+    def __init__(__self__, *,
+                 artifact_content_type: Optional[pulumi.Input[_builtins.str]] = None,
+                 force_install: Optional[pulumi.Input[_builtins.bool]] = None,
+                 headless_mode: Optional[pulumi.Input[_builtins.bool]] = None,
+                 installation_path: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 release_version: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] artifact_content_type: (Updatable) Artifact content type for the Java version.
+        :param pulumi.Input[_builtins.bool] force_install: (Updatable) Forces the installation request even if a more recent release is already present in the host.
+        :param pulumi.Input[_builtins.bool] headless_mode: (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        :param pulumi.Input[_builtins.str] installation_path: (Updatable) Custom path to install new Java installation site.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        :param pulumi.Input[_builtins.str] release_version: (Updatable) The release version of the Java Runtime.
+        """
+        if artifact_content_type is not None:
+            pulumi.set(__self__, "artifact_content_type", artifact_content_type)
+        if force_install is not None:
+            pulumi.set(__self__, "force_install", force_install)
+        if headless_mode is not None:
+            pulumi.set(__self__, "headless_mode", headless_mode)
+        if installation_path is not None:
+            pulumi.set(__self__, "installation_path", installation_path)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if release_version is not None:
+            pulumi.set(__self__, "release_version", release_version)
+
+    @_builtins.property
+    @pulumi.getter(name="artifactContentType")
+    def artifact_content_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Artifact content type for the Java version.
+        """
+        return pulumi.get(self, "artifact_content_type")
+
+    @artifact_content_type.setter
+    def artifact_content_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "artifact_content_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="forceInstall")
+    def force_install(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Forces the installation request even if a more recent release is already present in the host.
+        """
+        return pulumi.get(self, "force_install")
+
+    @force_install.setter
+    def force_install(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "force_install", value)
+
+    @_builtins.property
+    @pulumi.getter(name="headlessMode")
+    def headless_mode(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+        """
+        return pulumi.get(self, "headless_mode")
+
+    @headless_mode.setter
+    def headless_mode(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "headless_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="installationPath")
+    def installation_path(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Custom path to install new Java installation site.
+        """
+        return pulumi.get(self, "installation_path")
+
+    @installation_path.setter
+    def installation_path(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "installation_path", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="releaseVersion")
+    def release_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The release version of the Java Runtime.
+        """
+        return pulumi.get(self, "release_version")
+
+    @release_version.setter
+    def release_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "release_version", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsCryptoTaskRequestArgsDict(TypedDict):
+        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict']]]]
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+elif False:
+    TaskScheduleTaskDetailsCryptoTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsCryptoTaskRequestArgs:
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs']]]] = None,
+                 waiting_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs']]] targets: (Updatable) The attachment targets to start JFR.
+        :param pulumi.Input[_builtins.int] waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @recording_duration_in_minutes.setter
+    def recording_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recording_duration_in_minutes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs']]]]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+    @waiting_period_in_minutes.setter
+    def waiting_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "waiting_period_in_minutes", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict(TypedDict):
+        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        application_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        container_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        jre_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+elif False:
+    TaskScheduleTaskDetailsCryptoTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs:
+    def __init__(__self__, *,
+                 application_installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 jre_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param pulumi.Input[_builtins.str] application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param pulumi.Input[_builtins.str] container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param pulumi.Input[_builtins.str] jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @application_installation_key.setter
+    def application_installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @application_key.setter
+    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @container_key.setter
+    def container_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @jre_key.setter
+    def jre_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jre_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict(TypedDict):
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict']]]]
+        """
+        (Updatable) An array of migration analyses requests.
+        """
+elif False:
+    TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs:
+    def __init__(__self__, *,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs']]] targets: (Updatable) An array of migration analyses requests.
+        """
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs']]]]:
+        """
+        (Updatable) An array of migration analyses requests.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict(TypedDict):
+        deployed_application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        """
+        exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+        """
+        include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+        """
+        source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+        """
+elif False:
+    TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs:
+    def __init__(__self__, *,
+                 deployed_application_installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_package_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 include_package_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_jdk_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_jdk_version: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] deployed_application_installation_key: (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_package_prefixes: (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] include_package_prefixes: (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+        :param pulumi.Input[_builtins.str] source_jdk_version: (Updatable) The JDK version the application is currently running on.
+        :param pulumi.Input[_builtins.str] target_jdk_version: (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+        """
+        if deployed_application_installation_key is not None:
+            pulumi.set(__self__, "deployed_application_installation_key", deployed_application_installation_key)
+        if exclude_package_prefixes is not None:
+            pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        if include_package_prefixes is not None:
+            pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if source_jdk_version is not None:
+            pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        if target_jdk_version is not None:
+            pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="deployedApplicationInstallationKey")
+    def deployed_application_installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+        """
+        return pulumi.get(self, "deployed_application_installation_key")
+
+    @deployed_application_installation_key.setter
+    def deployed_application_installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "deployed_application_installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @exclude_package_prefixes.setter
+    def exclude_package_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "exclude_package_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @include_package_prefixes.setter
+    def include_package_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "include_package_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @source_jdk_version.setter
+    def source_jdk_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_jdk_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+    @target_jdk_version.setter
+    def target_jdk_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_jdk_version", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict(TypedDict):
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict']]]]
+        """
+        (Updatable) An array of migration analysis requests.
+        """
+elif False:
+    TaskScheduleTaskDetailsJavaMigrationTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs:
+    def __init__(__self__, *,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs']]] targets: (Updatable) An array of migration analysis requests.
+        """
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs']]]]:
+        """
+        (Updatable) An array of migration analysis requests.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict(TypedDict):
+        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+        """
+        exclude_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        include_package_prefixes: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+        """
+        source_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        target_jdk_version: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+elif False:
+    TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs:
+    def __init__(__self__, *,
+                 application_installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 exclude_package_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 include_package_prefixes: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None,
+                 source_jdk_version: Optional[pulumi.Input[_builtins.str]] = None,
+                 target_jdk_version: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] application_installation_key: (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] exclude_package_prefixes: (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] include_package_prefixes: (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+        :param pulumi.Input[_builtins.str] source_jdk_version: (Updatable) The JDK version the application is currently running on.
+        :param pulumi.Input[_builtins.str] target_jdk_version: (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if exclude_package_prefixes is not None:
+            pulumi.set(__self__, "exclude_package_prefixes", exclude_package_prefixes)
+        if include_package_prefixes is not None:
+            pulumi.set(__self__, "include_package_prefixes", include_package_prefixes)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+        if source_jdk_version is not None:
+            pulumi.set(__self__, "source_jdk_version", source_jdk_version)
+        if target_jdk_version is not None:
+            pulumi.set(__self__, "target_jdk_version", target_jdk_version)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @application_installation_key.setter
+    def application_installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="excludePackagePrefixes")
+    def exclude_package_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "exclude_package_prefixes")
+
+    @exclude_package_prefixes.setter
+    def exclude_package_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "exclude_package_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="includePackagePrefixes")
+    def include_package_prefixes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+        """
+        return pulumi.get(self, "include_package_prefixes")
+
+    @include_package_prefixes.setter
+    def include_package_prefixes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "include_package_prefixes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceJdkVersion")
+    def source_jdk_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The JDK version the application is currently running on.
+        """
+        return pulumi.get(self, "source_jdk_version")
+
+    @source_jdk_version.setter
+    def source_jdk_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "source_jdk_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetJdkVersion")
+    def target_jdk_version(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+        """
+        return pulumi.get(self, "target_jdk_version")
+
+    @target_jdk_version.setter
+    def target_jdk_version(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "target_jdk_version", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsJfrTaskRequestArgsDict(TypedDict):
+        jfc_profile_name: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        """
+        jfc_v1: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        """
+        jfc_v2: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        """
+        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        recording_size_in_mb: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) The maximum size limit for the JFR file collected.
+        """
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict']]]]
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+elif False:
+    TaskScheduleTaskDetailsJfrTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsJfrTaskRequestArgs:
+    def __init__(__self__, *,
+                 jfc_profile_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 jfc_v1: Optional[pulumi.Input[_builtins.str]] = None,
+                 jfc_v2: Optional[pulumi.Input[_builtins.str]] = None,
+                 recording_duration_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 recording_size_in_mb: Optional[pulumi.Input[_builtins.int]] = None,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs']]]] = None,
+                 waiting_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] jfc_profile_name: (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        :param pulumi.Input[_builtins.str] jfc_v1: (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        :param pulumi.Input[_builtins.str] jfc_v2: (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        :param pulumi.Input[_builtins.int] recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param pulumi.Input[_builtins.int] recording_size_in_mb: (Updatable) The maximum size limit for the JFR file collected.
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs']]] targets: (Updatable) The attachment targets to start JFR.
+        :param pulumi.Input[_builtins.int] waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if jfc_profile_name is not None:
+            pulumi.set(__self__, "jfc_profile_name", jfc_profile_name)
+        if jfc_v1 is not None:
+            pulumi.set(__self__, "jfc_v1", jfc_v1)
+        if jfc_v2 is not None:
+            pulumi.set(__self__, "jfc_v2", jfc_v2)
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if recording_size_in_mb is not None:
+            pulumi.set(__self__, "recording_size_in_mb", recording_size_in_mb)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcProfileName")
+    def jfc_profile_name(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+        """
+        return pulumi.get(self, "jfc_profile_name")
+
+    @jfc_profile_name.setter
+    def jfc_profile_name(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jfc_profile_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV1")
+    def jfc_v1(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+        """
+        return pulumi.get(self, "jfc_v1")
+
+    @jfc_v1.setter
+    def jfc_v1(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jfc_v1", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jfcV2")
+    def jfc_v2(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+        """
+        return pulumi.get(self, "jfc_v2")
+
+    @jfc_v2.setter
+    def jfc_v2(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jfc_v2", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @recording_duration_in_minutes.setter
+    def recording_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recording_duration_in_minutes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingSizeInMb")
+    def recording_size_in_mb(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The maximum size limit for the JFR file collected.
+        """
+        return pulumi.get(self, "recording_size_in_mb")
+
+    @recording_size_in_mb.setter
+    def recording_size_in_mb(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recording_size_in_mb", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs']]]]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsJfrTaskRequestTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+    @waiting_period_in_minutes.setter
+    def waiting_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "waiting_period_in_minutes", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict(TypedDict):
+        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        application_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        container_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        jre_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+elif False:
+    TaskScheduleTaskDetailsJfrTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsJfrTaskRequestTargetArgs:
+    def __init__(__self__, *,
+                 application_installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 jre_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param pulumi.Input[_builtins.str] application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param pulumi.Input[_builtins.str] container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param pulumi.Input[_builtins.str] jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @application_installation_key.setter
+    def application_installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @application_key.setter
+    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @container_key.setter
+    def container_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @jre_key.setter
+    def jre_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jre_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict(TypedDict):
+        recording_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        targets: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict']]]]
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        waiting_period_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+elif False:
+    TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs:
+    def __init__(__self__, *,
+                 recording_duration_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 targets: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs']]]] = None,
+                 waiting_period_in_minutes: Optional[pulumi.Input[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] recording_duration_in_minutes: (Updatable) Duration of the JFR recording in minutes.
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs']]] targets: (Updatable) The attachment targets to start JFR.
+        :param pulumi.Input[_builtins.int] waiting_period_in_minutes: (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        if recording_duration_in_minutes is not None:
+            pulumi.set(__self__, "recording_duration_in_minutes", recording_duration_in_minutes)
+        if targets is not None:
+            pulumi.set(__self__, "targets", targets)
+        if waiting_period_in_minutes is not None:
+            pulumi.set(__self__, "waiting_period_in_minutes", waiting_period_in_minutes)
+
+    @_builtins.property
+    @pulumi.getter(name="recordingDurationInMinutes")
+    def recording_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Duration of the JFR recording in minutes.
+        """
+        return pulumi.get(self, "recording_duration_in_minutes")
+
+    @recording_duration_in_minutes.setter
+    def recording_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "recording_duration_in_minutes", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def targets(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs']]]]:
+        """
+        (Updatable) The attachment targets to start JFR.
+        """
+        return pulumi.get(self, "targets")
+
+    @targets.setter
+    def targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs']]]]):
+        pulumi.set(self, "targets", value)
+
+    @_builtins.property
+    @pulumi.getter(name="waitingPeriodInMinutes")
+    def waiting_period_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+        """
+        return pulumi.get(self, "waiting_period_in_minutes")
+
+    @waiting_period_in_minutes.setter
+    def waiting_period_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "waiting_period_in_minutes", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict(TypedDict):
+        application_installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        application_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        container_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        jre_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+elif False:
+    TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs:
+    def __init__(__self__, *,
+                 application_installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 application_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 container_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 jre_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] application_installation_key: (Updatable) Unique key that identifies the application installation for JFR data collection.
+        :param pulumi.Input[_builtins.str] application_key: (Updatable) Unique key that identifies the application for JFR data collection.
+        :param pulumi.Input[_builtins.str] container_key: (Updatable) Unique key that identifies the container for JFR data collection.
+        :param pulumi.Input[_builtins.str] jre_key: (Updatable) Unique key that identify the JVM for JFR data collection.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        if application_installation_key is not None:
+            pulumi.set(__self__, "application_installation_key", application_installation_key)
+        if application_key is not None:
+            pulumi.set(__self__, "application_key", application_key)
+        if container_key is not None:
+            pulumi.set(__self__, "container_key", container_key)
+        if jre_key is not None:
+            pulumi.set(__self__, "jre_key", jre_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationInstallationKey")
+    def application_installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application installation for JFR data collection.
+        """
+        return pulumi.get(self, "application_installation_key")
+
+    @application_installation_key.setter
+    def application_installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="applicationKey")
+    def application_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the application for JFR data collection.
+        """
+        return pulumi.get(self, "application_key")
+
+    @application_key.setter
+    def application_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "application_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="containerKey")
+    def container_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identifies the container for JFR data collection.
+        """
+        return pulumi.get(self, "container_key")
+
+    @container_key.setter
+    def container_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "container_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jreKey")
+    def jre_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) Unique key that identify the JVM for JFR data collection.
+        """
+        return pulumi.get(self, "jre_key")
+
+    @jre_key.setter
+    def jre_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "jre_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) OCID of the Managed Instance to collect JFR data.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict(TypedDict):
+        installation_sites: NotRequired[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict']]]]
+        """
+        (Updatable) The list of installation sites to remove.
+        """
+elif False:
+    TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs:
+    def __init__(__self__, *,
+                 installation_sites: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs']]] installation_sites: (Updatable) The list of installation sites to remove.
+        """
+        if installation_sites is not None:
+            pulumi.set(__self__, "installation_sites", installation_sites)
+
+    @_builtins.property
+    @pulumi.getter(name="installationSites")
+    def installation_sites(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs']]]]:
+        """
+        (Updatable) The list of installation sites to remove.
+        """
+        return pulumi.get(self, "installation_sites")
+
+    @installation_sites.setter
+    def installation_sites(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs']]]]):
+        pulumi.set(self, "installation_sites", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict(TypedDict):
+        installation_key: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        """
+        managed_instance_id: NotRequired[pulumi.Input[_builtins.str]]
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+elif False:
+    TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs:
+    def __init__(__self__, *,
+                 installation_key: Optional[pulumi.Input[_builtins.str]] = None,
+                 managed_instance_id: Optional[pulumi.Input[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] installation_key: (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        :param pulumi.Input[_builtins.str] managed_instance_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        if installation_key is not None:
+            pulumi.set(__self__, "installation_key", installation_key)
+        if managed_instance_id is not None:
+            pulumi.set(__self__, "managed_instance_id", managed_instance_id)
+
+    @_builtins.property
+    @pulumi.getter(name="installationKey")
+    def installation_key(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+        """
+        return pulumi.get(self, "installation_key")
+
+    @installation_key.setter
+    def installation_key(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "installation_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceId")
+    def managed_instance_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+        """
+        return pulumi.get(self, "managed_instance_id")
+
+    @managed_instance_id.setter
+    def managed_instance_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "managed_instance_id", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict(TypedDict):
+        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+elif False:
+    TaskScheduleTaskDetailsScanJavaServerTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs:
+    def __init__(__self__, *,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @managed_instance_ids.setter
+    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "managed_instance_ids", value)
+
+
+if not MYPY:
+    class TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict(TypedDict):
+        dynamic_scan_duration_in_minutes: NotRequired[pulumi.Input[_builtins.int]]
+        """
+        (Updatable) The duration of the dynamic scan in minutes.
+        """
+        is_dynamic_scan: NotRequired[pulumi.Input[_builtins.bool]]
+        """
+        (Updatable) Indicates whether the scan is dynamic or static.
+        """
+        managed_instance_ids: NotRequired[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+elif False:
+    TaskScheduleTaskDetailsScanLibraryTaskRequestArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class TaskScheduleTaskDetailsScanLibraryTaskRequestArgs:
+    def __init__(__self__, *,
+                 dynamic_scan_duration_in_minutes: Optional[pulumi.Input[_builtins.int]] = None,
+                 is_dynamic_scan: Optional[pulumi.Input[_builtins.bool]] = None,
+                 managed_instance_ids: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.int] dynamic_scan_duration_in_minutes: (Updatable) The duration of the dynamic scan in minutes.
+        :param pulumi.Input[_builtins.bool] is_dynamic_scan: (Updatable) Indicates whether the scan is dynamic or static.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] managed_instance_ids: (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        if dynamic_scan_duration_in_minutes is not None:
+            pulumi.set(__self__, "dynamic_scan_duration_in_minutes", dynamic_scan_duration_in_minutes)
+        if is_dynamic_scan is not None:
+            pulumi.set(__self__, "is_dynamic_scan", is_dynamic_scan)
+        if managed_instance_ids is not None:
+            pulumi.set(__self__, "managed_instance_ids", managed_instance_ids)
+
+    @_builtins.property
+    @pulumi.getter(name="dynamicScanDurationInMinutes")
+    def dynamic_scan_duration_in_minutes(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        (Updatable) The duration of the dynamic scan in minutes.
+        """
+        return pulumi.get(self, "dynamic_scan_duration_in_minutes")
+
+    @dynamic_scan_duration_in_minutes.setter
+    def dynamic_scan_duration_in_minutes(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "dynamic_scan_duration_in_minutes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isDynamicScan")
+    def is_dynamic_scan(self) -> Optional[pulumi.Input[_builtins.bool]]:
+        """
+        (Updatable) Indicates whether the scan is dynamic or static.
+        """
+        return pulumi.get(self, "is_dynamic_scan")
+
+    @is_dynamic_scan.setter
+    def is_dynamic_scan(self, value: Optional[pulumi.Input[_builtins.bool]]):
+        pulumi.set(self, "is_dynamic_scan", value)
+
+    @_builtins.property
+    @pulumi.getter(name="managedInstanceIds")
+    def managed_instance_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+        """
+        return pulumi.get(self, "managed_instance_ids")
+
+    @managed_instance_ids.setter
+    def managed_instance_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "managed_instance_ids", value)
+
+
+if not MYPY:
     class GetAgentInstallersFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -1552,6 +3159,53 @@ elif False:
 
 @pulumi.input_type
 class GetFleetBlocklistsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFleetContainersFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetContainersFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetContainersFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -1872,6 +3526,100 @@ class GetFleetJavaMigrationAnalysisResultsFilterArgs:
 
 
 if not MYPY:
+    class GetFleetLibraryApplicationsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetLibraryApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetLibraryApplicationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFleetLibraryManagedInstancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetLibraryManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetLibraryManagedInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
     class GetFleetPerformanceTuningAnalysisResultsFilterArgsDict(TypedDict):
         name: _builtins.str
         values: Sequence[_builtins.str]
@@ -1881,6 +3629,147 @@ elif False:
 
 @pulumi.input_type
 class GetFleetPerformanceTuningAnalysisResultsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFleetUncorrelatedPackageApplicationsFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetUncorrelatedPackageApplicationsFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetUncorrelatedPackageApplicationsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetUncorrelatedPackageManagedInstancesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetUncorrelatedPackageManagedInstancesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetFleetUncorrelatedPackagesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetFleetUncorrelatedPackagesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetFleetUncorrelatedPackagesFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],
@@ -2454,6 +4343,156 @@ elif False:
 
 @pulumi.input_type
 class GetPluginErrorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetTaskSchedulesFilterArgsDict(TypedDict):
+        name: _builtins.str
+        """
+        The task name.
+        """
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetTaskSchedulesFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetTaskSchedulesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: The task name.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The task name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetUtilsJavaMigrationAnalysisFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetUtilsJavaMigrationAnalysisFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetUtilsJavaMigrationAnalysisFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+if not MYPY:
+    class GetUtilsPerformanceTuningAnalysisFilterArgsDict(TypedDict):
+        name: _builtins.str
+        values: Sequence[_builtins.str]
+        regex: NotRequired[_builtins.bool]
+elif False:
+    GetUtilsPerformanceTuningAnalysisFilterArgsDict: TypeAlias = Mapping[str, Any]
+
+@pulumi.input_type
+class GetUtilsPerformanceTuningAnalysisFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

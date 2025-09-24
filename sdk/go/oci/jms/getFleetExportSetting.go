@@ -58,6 +58,8 @@ type GetFleetExportSettingArgs struct {
 
 // A collection of values returned by getFleetExportSetting.
 type GetFleetExportSettingResult struct {
+	// Filters applied when exporting data
+	ExportDataFilters []GetFleetExportSettingExportDataFilter `pulumi:"exportDataFilters"`
 	// The duration of data to be exported for fleets.
 	ExportDuration string `pulumi:"exportDuration"`
 	// Schedule at which data will be exported.
@@ -118,6 +120,13 @@ func (o GetFleetExportSettingResultOutput) ToGetFleetExportSettingResultOutput()
 
 func (o GetFleetExportSettingResultOutput) ToGetFleetExportSettingResultOutputWithContext(ctx context.Context) GetFleetExportSettingResultOutput {
 	return o
+}
+
+// Filters applied when exporting data
+func (o GetFleetExportSettingResultOutput) ExportDataFilters() GetFleetExportSettingExportDataFilterArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingResult) []GetFleetExportSettingExportDataFilter {
+		return v.ExportDataFilters
+	}).(GetFleetExportSettingExportDataFilterArrayOutput)
 }
 
 // The duration of data to be exported for fleets.

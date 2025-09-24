@@ -33,6 +33,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &JavaDownloadsJavaLicenseAcceptanceRecord{}
 	case "oci:Jms/jmsPlugin:JmsPlugin":
 		r = &JmsPlugin{}
+	case "oci:Jms/taskSchedule:TaskSchedule":
+		r = &TaskSchedule{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -74,6 +76,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Jms/jmsPlugin",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Jms/taskSchedule",
 		&module{version},
 	)
 }

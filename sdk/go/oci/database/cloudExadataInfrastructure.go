@@ -124,6 +124,8 @@ type CloudExadataInfrastructure struct {
 	DefinedTags pulumi.StringMapOutput `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs CloudExadataInfrastructureExascaleConfigArrayOutput `pulumi:"exascaleConfigs"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// If true, the infrastructure is using granular maintenance scheduling preference.
@@ -249,6 +251,8 @@ type cloudExadataInfrastructureState struct {
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs []CloudExadataInfrastructureExascaleConfig `pulumi:"exascaleConfigs"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// If true, the infrastructure is using granular maintenance scheduling preference.
@@ -333,6 +337,8 @@ type CloudExadataInfrastructureState struct {
 	DefinedTags pulumi.StringMapInput
 	// (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 	DisplayName pulumi.StringPtrInput
+	// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+	ExascaleConfigs CloudExadataInfrastructureExascaleConfigArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
 	// If true, the infrastructure is using granular maintenance scheduling preference.
@@ -629,6 +635,13 @@ func (o CloudExadataInfrastructureOutput) DefinedTags() pulumi.StringMapOutput {
 // (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
 func (o CloudExadataInfrastructureOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+func (o CloudExadataInfrastructureOutput) ExascaleConfigs() CloudExadataInfrastructureExascaleConfigArrayOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) CloudExadataInfrastructureExascaleConfigArrayOutput {
+		return v.ExascaleConfigs
+	}).(CloudExadataInfrastructureExascaleConfigArrayOutput)
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`

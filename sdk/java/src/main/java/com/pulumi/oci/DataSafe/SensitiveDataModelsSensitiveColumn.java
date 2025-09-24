@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SensitiveDataModelsSensitiveColumnArgs;
 import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelsSensitiveColumnState;
+import com.pulumi.oci.DataSafe.outputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
 import java.util.List;
@@ -130,6 +131,34 @@ public class SensitiveDataModelsSensitiveColumn extends com.pulumi.resources.Cus
      */
     public Output<String> columnName() {
         return this.columnName;
+    }
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    @Export(name="confidenceLevel", refs={String.class}, tree="[0]")
+    private Output<String> confidenceLevel;
+
+    /**
+     * @return The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    public Output<String> confidenceLevel() {
+        return this.confidenceLevel;
+    }
+    /**
+     * List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    @Export(name="confidenceLevelDetails", refs={List.class,SensitiveDataModelsSensitiveColumnConfidenceLevelDetail.class}, tree="[0,1]")
+    private Output<List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetail>> confidenceLevelDetails;
+
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    public Output<List<SensitiveDataModelsSensitiveColumnConfidenceLevelDetail>> confidenceLevelDetails() {
+        return this.confidenceLevelDetails;
     }
     /**
      * (Updatable) The data type of the sensitive column.

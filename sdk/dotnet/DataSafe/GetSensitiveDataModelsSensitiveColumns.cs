@@ -30,8 +30,10 @@ namespace Pulumi.Oci.DataSafe
         ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
         ///     {
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         ColumnDataCountFilter = sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
         ///         ColumnGroup = sensitiveDataModelsSensitiveColumnColumnGroup,
         ///         ColumnNames = sensitiveDataModelsSensitiveColumnColumnName,
+        ///         ConfidenceLevels = sensitiveDataModelsSensitiveColumnConfidenceLevel,
         ///         DataTypes = sensitiveDataModelsSensitiveColumnDataType,
         ///         IsCaseInSensitive = sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
         ///         Objects = sensitiveDataModelsSensitiveColumnObject,
@@ -73,8 +75,10 @@ namespace Pulumi.Oci.DataSafe
         ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
         ///     {
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         ColumnDataCountFilter = sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
         ///         ColumnGroup = sensitiveDataModelsSensitiveColumnColumnGroup,
         ///         ColumnNames = sensitiveDataModelsSensitiveColumnColumnName,
+        ///         ConfidenceLevels = sensitiveDataModelsSensitiveColumnConfidenceLevel,
         ///         DataTypes = sensitiveDataModelsSensitiveColumnDataType,
         ///         IsCaseInSensitive = sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
         ///         Objects = sensitiveDataModelsSensitiveColumnObject,
@@ -116,8 +120,10 @@ namespace Pulumi.Oci.DataSafe
         ///     var testSensitiveDataModelsSensitiveColumns = Oci.DataSafe.GetSensitiveDataModelsSensitiveColumns.Invoke(new()
         ///     {
         ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///         ColumnDataCountFilter = sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
         ///         ColumnGroup = sensitiveDataModelsSensitiveColumnColumnGroup,
         ///         ColumnNames = sensitiveDataModelsSensitiveColumnColumnName,
+        ///         ConfidenceLevels = sensitiveDataModelsSensitiveColumnConfidenceLevel,
         ///         DataTypes = sensitiveDataModelsSensitiveColumnDataType,
         ///         IsCaseInSensitive = sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
         ///         Objects = sensitiveDataModelsSensitiveColumnObject,
@@ -145,6 +151,12 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSensitiveDataModelsSensitiveColumnsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// Filters the sensitive columns with respect to the estimated row count.
+        /// </summary>
+        [Input("columnDataCountFilter")]
+        public string? ColumnDataCountFilter { get; set; }
+
+        /// <summary>
         /// A filter to return only the sensitive columns that belong to the specified column group.
         /// </summary>
         [Input("columnGroup")]
@@ -160,6 +172,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _columnNames ?? (_columnNames = new List<string>());
             set => _columnNames = value;
+        }
+
+        [Input("confidenceLevels")]
+        private List<string>? _confidenceLevels;
+
+        /// <summary>
+        /// A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+        /// </summary>
+        public List<string> ConfidenceLevels
+        {
+            get => _confidenceLevels ?? (_confidenceLevels = new List<string>());
+            set => _confidenceLevels = value;
         }
 
         [Input("dataTypes")]
@@ -321,6 +345,12 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetSensitiveDataModelsSensitiveColumnsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
+        /// Filters the sensitive columns with respect to the estimated row count.
+        /// </summary>
+        [Input("columnDataCountFilter")]
+        public Input<string>? ColumnDataCountFilter { get; set; }
+
+        /// <summary>
         /// A filter to return only the sensitive columns that belong to the specified column group.
         /// </summary>
         [Input("columnGroup")]
@@ -336,6 +366,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _columnNames ?? (_columnNames = new InputList<string>());
             set => _columnNames = value;
+        }
+
+        [Input("confidenceLevels")]
+        private InputList<string>? _confidenceLevels;
+
+        /// <summary>
+        /// A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+        /// </summary>
+        public InputList<string> ConfidenceLevels
+        {
+            get => _confidenceLevels ?? (_confidenceLevels = new InputList<string>());
+            set => _confidenceLevels = value;
         }
 
         [Input("dataTypes")]
@@ -498,11 +540,16 @@ namespace Pulumi.Oci.DataSafe
     [OutputType]
     public sealed class GetSensitiveDataModelsSensitiveColumnsResult
     {
+        public readonly string? ColumnDataCountFilter;
         public readonly string? ColumnGroup;
         /// <summary>
         /// The name of the sensitive column.
         /// </summary>
         public readonly ImmutableArray<string> ColumnNames;
+        /// <summary>
+        /// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        /// </summary>
+        public readonly ImmutableArray<string> ConfidenceLevels;
         /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
@@ -554,9 +601,13 @@ namespace Pulumi.Oci.DataSafe
 
         [OutputConstructor]
         private GetSensitiveDataModelsSensitiveColumnsResult(
+            string? columnDataCountFilter,
+
             string? columnGroup,
 
             ImmutableArray<string> columnNames,
+
+            ImmutableArray<string> confidenceLevels,
 
             ImmutableArray<string> dataTypes,
 
@@ -594,8 +645,10 @@ namespace Pulumi.Oci.DataSafe
 
             string? timeUpdatedLessThan)
         {
+            ColumnDataCountFilter = columnDataCountFilter;
             ColumnGroup = columnGroup;
             ColumnNames = columnNames;
+            ConfidenceLevels = confidenceLevels;
             DataTypes = dataTypes;
             Filters = filters;
             Id = id;

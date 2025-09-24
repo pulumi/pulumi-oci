@@ -26,6 +26,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ColumnName;
         /// <summary>
+        /// A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+        /// </summary>
+        public readonly string ConfidenceLevel;
+        /// <summary>
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult> ConfidenceLevelDetails;
+        /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
         public readonly string DataType;
@@ -102,6 +110,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string columnName,
 
+            string confidenceLevel,
+
+            ImmutableArray<Outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult> confidenceLevelDetails,
+
             string dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
@@ -139,6 +151,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             AppDefinedChildColumnKeys = appDefinedChildColumnKeys;
             AppName = appName;
             ColumnName = columnName;
+            ConfidenceLevel = confidenceLevel;
+            ConfidenceLevelDetails = confidenceLevelDetails;
             DataType = dataType;
             DbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             DiscoveryJobId = discoveryJobId;

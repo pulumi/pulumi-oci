@@ -172,7 +172,7 @@ def get_data_safe_configuration(compartment_id: Optional[_builtins.str] = None,
     ```
 
 
-    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+    :param _builtins.str compartment_id: A filter to return the Data Safe configuration for the specified tenancy OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -207,7 +207,7 @@ def get_data_safe_configuration_output(compartment_id: Optional[pulumi.Input[_bu
     ```
 
 
-    :param _builtins.str compartment_id: A filter to return only resources that match the specified compartment OCID.
+    :param _builtins.str compartment_id: A filter to return the Data Safe configuration for the specified tenancy OCID.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id

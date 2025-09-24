@@ -26,6 +26,14 @@ namespace Pulumi.Oci.Redis.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
+        /// The private IP address of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        public readonly string DiscoveryEndpointIpAddress;
+        /// <summary>
+        /// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        public readonly string DiscoveryFqdn;
+        /// <summary>
         /// A filter to return only resources that match the entire display name given.
         /// </summary>
         public readonly string DisplayName;
@@ -114,6 +122,10 @@ namespace Pulumi.Oci.Redis.Outputs
 
             ImmutableDictionary<string, string> definedTags,
 
+            string discoveryEndpointIpAddress,
+
+            string discoveryFqdn,
+
             string displayName,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -157,6 +169,8 @@ namespace Pulumi.Oci.Redis.Outputs
             ClusterMode = clusterMode;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DiscoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            DiscoveryFqdn = discoveryFqdn;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;

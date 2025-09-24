@@ -81,6 +81,36 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    @Import(name="approximateLibraryCount")
+    private @Nullable Output<Integer> approximateLibraryCount;
+
+    /**
+     * @return The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Optional<Output<Integer>> approximateLibraryCount() {
+        return Optional.ofNullable(this.approximateLibraryCount);
+    }
+
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    @Import(name="approximateLibraryVulnerabilityCount")
+    private @Nullable Output<Integer> approximateLibraryVulnerabilityCount;
+
+    /**
+     * @return The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Optional<Output<Integer>> approximateLibraryVulnerabilityCount() {
+        return Optional.ofNullable(this.approximateLibraryVulnerabilityCount);
+    }
+
+    /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
@@ -282,6 +312,8 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
         this.approximateInstallationCount = $.approximateInstallationCount;
         this.approximateJavaServerCount = $.approximateJavaServerCount;
         this.approximateJreCount = $.approximateJreCount;
+        this.approximateLibraryCount = $.approximateLibraryCount;
+        this.approximateLibraryVulnerabilityCount = $.approximateLibraryVulnerabilityCount;
         this.approximateManagedInstanceCount = $.approximateManagedInstanceCount;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
@@ -397,6 +429,48 @@ public final class FleetState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder approximateJreCount(Integer approximateJreCount) {
             return approximateJreCount(Output.of(approximateJreCount));
+        }
+
+        /**
+         * @param approximateLibraryCount The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateLibraryCount(@Nullable Output<Integer> approximateLibraryCount) {
+            $.approximateLibraryCount = approximateLibraryCount;
+            return this;
+        }
+
+        /**
+         * @param approximateLibraryCount The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            return approximateLibraryCount(Output.of(approximateLibraryCount));
+        }
+
+        /**
+         * @param approximateLibraryVulnerabilityCount The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateLibraryVulnerabilityCount(@Nullable Output<Integer> approximateLibraryVulnerabilityCount) {
+            $.approximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
+            return this;
+        }
+
+        /**
+         * @param approximateLibraryVulnerabilityCount The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder approximateLibraryVulnerabilityCount(Integer approximateLibraryVulnerabilityCount) {
+            return approximateLibraryVulnerabilityCount(Output.of(approximateLibraryVulnerabilityCount));
         }
 
         /**

@@ -30,6 +30,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("category")]
         public string? Category { get; set; }
 
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
 
@@ -111,6 +114,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("category")]
         public Input<string>? Category { get; set; }
 
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
 
@@ -190,6 +196,7 @@ namespace Pulumi.Oci.DataSafe
     {
         public readonly string? AccessLevel;
         public readonly string? Category;
+        public readonly string? CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         public readonly ImmutableArray<string> ContainsReferences;
         public readonly ImmutableArray<string> ContainsSeverities;
@@ -215,6 +222,8 @@ namespace Pulumi.Oci.DataSafe
             string? accessLevel,
 
             string? category,
+
+            string? compartmentId,
 
             bool? compartmentIdInSubtree,
 
@@ -250,6 +259,7 @@ namespace Pulumi.Oci.DataSafe
         {
             AccessLevel = accessLevel;
             Category = category;
+            CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             ContainsReferences = containsReferences;
             ContainsSeverities = containsSeverities;

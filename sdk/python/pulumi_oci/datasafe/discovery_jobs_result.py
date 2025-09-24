@@ -51,6 +51,8 @@ class _DiscoveryJobsResultState:
                  app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  app_name: Optional[pulumi.Input[_builtins.str]] = None,
                  column_name: Optional[pulumi.Input[_builtins.str]] = None,
+                 confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
+                 confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]] = None,
                  data_type: Optional[pulumi.Input[_builtins.str]] = None,
                  db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -97,6 +99,10 @@ class _DiscoveryJobsResultState:
             pulumi.set(__self__, "app_name", app_name)
         if column_name is not None:
             pulumi.set(__self__, "column_name", column_name)
+        if confidence_level is not None:
+            pulumi.set(__self__, "confidence_level", confidence_level)
+        if confidence_level_details is not None:
+            pulumi.set(__self__, "confidence_level_details", confidence_level_details)
         if data_type is not None:
             pulumi.set(__self__, "data_type", data_type)
         if db_defined_child_column_keys is not None:
@@ -176,6 +182,24 @@ class _DiscoveryJobsResultState:
     @column_name.setter
     def column_name(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "column_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> Optional[pulumi.Input[_builtins.str]]:
+        return pulumi.get(self, "confidence_level")
+
+    @confidence_level.setter
+    def confidence_level(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "confidence_level", value)
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]:
+        return pulumi.get(self, "confidence_level_details")
+
+    @confidence_level_details.setter
+    def confidence_level_details(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryJobsResultConfidenceLevelDetailArgs']]]]):
+        pulumi.set(self, "confidence_level_details", value)
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -478,6 +502,8 @@ class DiscoveryJobsResult(pulumi.CustomResource):
             __props__.__dict__["app_defined_child_column_keys"] = None
             __props__.__dict__["app_name"] = None
             __props__.__dict__["column_name"] = None
+            __props__.__dict__["confidence_level"] = None
+            __props__.__dict__["confidence_level_details"] = None
             __props__.__dict__["data_type"] = None
             __props__.__dict__["db_defined_child_column_keys"] = None
             __props__.__dict__["discovery_type"] = None
@@ -507,6 +533,8 @@ class DiscoveryJobsResult(pulumi.CustomResource):
             app_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             app_name: Optional[pulumi.Input[_builtins.str]] = None,
             column_name: Optional[pulumi.Input[_builtins.str]] = None,
+            confidence_level: Optional[pulumi.Input[_builtins.str]] = None,
+            confidence_level_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict']]]]] = None,
             data_type: Optional[pulumi.Input[_builtins.str]] = None,
             db_defined_child_column_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             discovery_job_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -559,6 +587,8 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         __props__.__dict__["app_defined_child_column_keys"] = app_defined_child_column_keys
         __props__.__dict__["app_name"] = app_name
         __props__.__dict__["column_name"] = column_name
+        __props__.__dict__["confidence_level"] = confidence_level
+        __props__.__dict__["confidence_level_details"] = confidence_level_details
         __props__.__dict__["data_type"] = data_type
         __props__.__dict__["db_defined_child_column_keys"] = db_defined_child_column_keys
         __props__.__dict__["discovery_job_id"] = discovery_job_id
@@ -601,6 +631,16 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> pulumi.Output[_builtins.str]:
+        return pulumi.get(self, "confidence_level")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> pulumi.Output[Sequence['outputs.DiscoveryJobsResultConfidenceLevelDetail']]:
+        return pulumi.get(self, "confidence_level_details")
 
     @_builtins.property
     @pulumi.getter(name="dataType")

@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataSafe.inputs.DiscoveryJobsResultConfidenceLevelDetailArgs;
 import com.pulumi.oci.DataSafe.inputs.DiscoveryJobsResultModifiedAttributeArgs;
 import java.lang.Boolean;
 import java.lang.String;
@@ -61,6 +62,20 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<String>> columnName() {
         return Optional.ofNullable(this.columnName);
+    }
+
+    @Import(name="confidenceLevel")
+    private @Nullable Output<String> confidenceLevel;
+
+    public Optional<Output<String>> confidenceLevel() {
+        return Optional.ofNullable(this.confidenceLevel);
+    }
+
+    @Import(name="confidenceLevelDetails")
+    private @Nullable Output<List<DiscoveryJobsResultConfidenceLevelDetailArgs>> confidenceLevelDetails;
+
+    public Optional<Output<List<DiscoveryJobsResultConfidenceLevelDetailArgs>>> confidenceLevelDetails() {
+        return Optional.ofNullable(this.confidenceLevelDetails);
     }
 
     /**
@@ -348,6 +363,8 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
         this.appDefinedChildColumnKeys = $.appDefinedChildColumnKeys;
         this.appName = $.appName;
         this.columnName = $.columnName;
+        this.confidenceLevel = $.confidenceLevel;
+        this.confidenceLevelDetails = $.confidenceLevelDetails;
         this.dataType = $.dataType;
         this.dbDefinedChildColumnKeys = $.dbDefinedChildColumnKeys;
         this.discoveryJobId = $.discoveryJobId;
@@ -456,6 +473,28 @@ public final class DiscoveryJobsResultState extends com.pulumi.resources.Resourc
          */
         public Builder columnName(String columnName) {
             return columnName(Output.of(columnName));
+        }
+
+        public Builder confidenceLevel(@Nullable Output<String> confidenceLevel) {
+            $.confidenceLevel = confidenceLevel;
+            return this;
+        }
+
+        public Builder confidenceLevel(String confidenceLevel) {
+            return confidenceLevel(Output.of(confidenceLevel));
+        }
+
+        public Builder confidenceLevelDetails(@Nullable Output<List<DiscoveryJobsResultConfidenceLevelDetailArgs>> confidenceLevelDetails) {
+            $.confidenceLevelDetails = confidenceLevelDetails;
+            return this;
+        }
+
+        public Builder confidenceLevelDetails(List<DiscoveryJobsResultConfidenceLevelDetailArgs> confidenceLevelDetails) {
+            return confidenceLevelDetails(Output.of(confidenceLevelDetails));
+        }
+
+        public Builder confidenceLevelDetails(DiscoveryJobsResultConfidenceLevelDetailArgs... confidenceLevelDetails) {
+            return confidenceLevelDetails(List.of(confidenceLevelDetails));
         }
 
         /**

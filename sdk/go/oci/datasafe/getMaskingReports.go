@@ -34,6 +34,7 @@ import (
 //				AccessLevel:            pulumi.StringRef(maskingReportAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(maskingReportCompartmentIdInSubtree),
 //				MaskingPolicyId:        pulumi.StringRef(testMaskingPolicy.Id),
+//				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
 //			}, nil)
 //			if err != nil {
@@ -65,6 +66,8 @@ type GetMaskingReportsArgs struct {
 	Filters                []GetMaskingReportsFilter `pulumi:"filters"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId *string `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -82,6 +85,7 @@ type GetMaskingReportsResult struct {
 	MaskingPolicyId *string `pulumi:"maskingPolicyId"`
 	// The list of masking_report_collection.
 	MaskingReportCollections []GetMaskingReportsMaskingReportCollection `pulumi:"maskingReportCollections"`
+	TargetDatabaseGroupId    *string                                    `pulumi:"targetDatabaseGroupId"`
 	// The OCID of the target database masked.
 	TargetId *string `pulumi:"targetId"`
 }
@@ -106,6 +110,8 @@ type GetMaskingReportsOutputArgs struct {
 	Filters                GetMaskingReportsFilterArrayInput `pulumi:"filters"`
 	// A filter to return only the resources that match the specified masking policy OCID.
 	MaskingPolicyId pulumi.StringPtrInput `pulumi:"maskingPolicyId"`
+	// A filter to return the target database group that matches the specified OCID.
+	TargetDatabaseGroupId pulumi.StringPtrInput `pulumi:"targetDatabaseGroupId"`
 	// A filter to return only items related to a specific target OCID.
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
@@ -161,6 +167,10 @@ func (o GetMaskingReportsResultOutput) MaskingReportCollections() GetMaskingRepo
 	return o.ApplyT(func(v GetMaskingReportsResult) []GetMaskingReportsMaskingReportCollection {
 		return v.MaskingReportCollections
 	}).(GetMaskingReportsMaskingReportCollectionArrayOutput)
+}
+
+func (o GetMaskingReportsResultOutput) TargetDatabaseGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetMaskingReportsResult) *string { return v.TargetDatabaseGroupId }).(pulumi.StringPtrOutput)
 }
 
 // The OCID of the target database masked.

@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  *         var testJmsPlugin = new JmsPlugin("testJmsPlugin", JmsPluginArgs.builder()
  *             .agentId(jmsPluginAgentId)
  *             .compartmentId(compartmentId)
+ *             .agentType(jmsPluginAgentType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .fleetId(testFleet.id())
  *             .freeformTags(Map.of("bar-key", "value"))
@@ -70,14 +71,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Jms/jmsPlugin:JmsPlugin")
 public class JmsPlugin extends com.pulumi.resources.CustomResource {
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     @Export(name="agentId", refs={String.class}, tree="[0]")
     private Output<String> agentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     public Output<String> agentId() {
@@ -112,14 +113,14 @@ public class JmsPlugin extends com.pulumi.resources.CustomResource {
         return this.availabilityStatus;
     }
     /**
-     * The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {

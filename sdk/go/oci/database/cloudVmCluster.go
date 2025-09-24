@@ -59,12 +59,13 @@ import (
 //					IsHealthMonitoringEnabled:  pulumi.Any(cloudVmClusterDataCollectionOptionsIsHealthMonitoringEnabled),
 //					IsIncidentLogsEnabled:      pulumi.Any(cloudVmClusterDataCollectionOptionsIsIncidentLogsEnabled),
 //				},
-//				DataStoragePercentage:  pulumi.Any(cloudVmClusterDataStoragePercentage),
-//				DataStorageSizeInTbs:   pulumi.Any(cloudVmClusterDataStorageSizeInTbs),
-//				DbNodeStorageSizeInGbs: pulumi.Any(cloudVmClusterDbNodeStorageSizeInGbs),
-//				DbServers:              pulumi.Any(cloudVmClusterDbServers),
-//				DefinedTags:            pulumi.Any(cloudVmClusterDefinedTags),
-//				Domain:                 pulumi.Any(cloudVmClusterDomain),
+//				DataStoragePercentage:    pulumi.Any(cloudVmClusterDataStoragePercentage),
+//				DataStorageSizeInTbs:     pulumi.Any(cloudVmClusterDataStorageSizeInTbs),
+//				DbNodeStorageSizeInGbs:   pulumi.Any(cloudVmClusterDbNodeStorageSizeInGbs),
+//				DbServers:                pulumi.Any(cloudVmClusterDbServers),
+//				DefinedTags:              pulumi.Any(cloudVmClusterDefinedTags),
+//				Domain:                   pulumi.Any(cloudVmClusterDomain),
+//				ExascaleDbStorageVaultId: pulumi.Any(testExascaleDbStorageVault.Id),
 //				FileSystemConfigurationDetails: database.CloudVmClusterFileSystemConfigurationDetailArray{
 //					&database.CloudVmClusterFileSystemConfigurationDetailArgs{
 //						FileSystemSizeGb: pulumi.Any(cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb),
@@ -152,6 +153,8 @@ type CloudVmCluster struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringOutput `pulumi:"domain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringOutput `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayOutput `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -211,6 +214,8 @@ type CloudVmCluster struct {
 	SshPublicKeys pulumi.StringArrayOutput `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+	StorageManagementType pulumi.StringOutput `pulumi:"storageManagementType"`
 	// The storage allocation for the disk group, in gigabytes (GB).
 	StorageSizeInGbs pulumi.IntOutput `pulumi:"storageSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -341,6 +346,8 @@ type cloudVmClusterState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain *string `pulumi:"domain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId *string `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -400,6 +407,8 @@ type cloudVmClusterState struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
 	State *string `pulumi:"state"`
+	// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+	StorageManagementType *string `pulumi:"storageManagementType"`
 	// The storage allocation for the disk group, in gigabytes (GB).
 	StorageSizeInGbs *int `pulumi:"storageSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -474,6 +483,8 @@ type CloudVmClusterState struct {
 	DisplayName pulumi.StringPtrInput
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringPtrInput
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -533,6 +544,8 @@ type CloudVmClusterState struct {
 	SshPublicKeys pulumi.StringArrayInput
 	// The current state of the cloud VM cluster.
 	State pulumi.StringPtrInput
+	// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+	StorageManagementType pulumi.StringPtrInput
 	// The storage allocation for the disk group, in gigabytes (GB).
 	StorageSizeInGbs pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -605,6 +618,8 @@ type cloudVmClusterArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain *string `pulumi:"domain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId *string `pulumi:"exascaleDbStorageVaultId"`
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []CloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -697,6 +712,8 @@ type CloudVmClusterArgs struct {
 	DisplayName pulumi.StringInput
 	// A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
 	Domain pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId pulumi.StringPtrInput
 	// (Updatable) Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails CloudVmClusterFileSystemConfigurationDetailArrayInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -939,6 +956,11 @@ func (o CloudVmClusterOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+func (o CloudVmClusterOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.ExascaleDbStorageVaultId }).(pulumi.StringOutput)
+}
+
 // (Updatable) Details of the file system configuration of the VM cluster.
 func (o CloudVmClusterOutput) FileSystemConfigurationDetails() CloudVmClusterFileSystemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v *CloudVmCluster) CloudVmClusterFileSystemConfigurationDetailArrayOutput {
@@ -1081,6 +1103,11 @@ func (o CloudVmClusterOutput) SshPublicKeys() pulumi.StringArrayOutput {
 // The current state of the cloud VM cluster.
 func (o CloudVmClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+func (o CloudVmClusterOutput) StorageManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudVmCluster) pulumi.StringOutput { return v.StorageManagementType }).(pulumi.StringOutput)
 }
 
 // The storage allocation for the disk group, in gigabytes (GB).

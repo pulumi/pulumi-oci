@@ -69,6 +69,10 @@ type LookupSensitiveDataModelsSensitiveColumnResult struct {
 	ColumnGroups []string `pulumi:"columnGroups"`
 	// The name of the sensitive column.
 	ColumnName string `pulumi:"columnName"`
+	// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+	ConfidenceLevel string `pulumi:"confidenceLevel"`
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	ConfidenceLevelDetails []GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetail `pulumi:"confidenceLevelDetails"`
 	// The data type of the sensitive column.
 	DataType string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -163,6 +167,18 @@ func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ColumnGroups() pul
 // The name of the sensitive column.
 func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ConfidenceLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) string { return v.ConfidenceLevel }).(pulumi.StringOutput)
+}
+
+// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+func (o LookupSensitiveDataModelsSensitiveColumnResultOutput) ConfidenceLevelDetails() GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelsSensitiveColumnResult) []GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetail {
+		return v.ConfidenceLevelDetails
+	}).(GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput)
 }
 
 // The data type of the sensitive column.

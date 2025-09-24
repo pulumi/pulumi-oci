@@ -19,14 +19,14 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetJmsPluginsArgs Empty = new GetJmsPluginsArgs();
 
     /**
-     * The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     @Import(name="agentId")
     private @Nullable Output<String> agentId;
 
     /**
-     * @return The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+     * @return The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
      * 
      */
     public Optional<Output<String>> agentId() {
@@ -226,7 +226,7 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param agentId The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * @param agentId The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class GetJmsPluginsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param agentId The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+         * @param agentId The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
          * 
          * @return builder
          * 

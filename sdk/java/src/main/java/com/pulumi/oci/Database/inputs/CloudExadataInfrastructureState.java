@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureCustomerContactArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureDefinedFileSystemConfigurationArgs;
+import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureExascaleConfigArgs;
 import com.pulumi.oci.Database.inputs.CloudExadataInfrastructureMaintenanceWindowArgs;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -276,6 +277,21 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
+    }
+
+    /**
+     * The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    @Import(name="exascaleConfigs")
+    private @Nullable Output<List<CloudExadataInfrastructureExascaleConfigArgs>> exascaleConfigs;
+
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public Optional<Output<List<CloudExadataInfrastructureExascaleConfigArgs>>> exascaleConfigs() {
+        return Optional.ofNullable(this.exascaleConfigs);
     }
 
     /**
@@ -634,6 +650,7 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
         this.definedFileSystemConfigurations = $.definedFileSystemConfigurations;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
+        this.exascaleConfigs = $.exascaleConfigs;
         this.freeformTags = $.freeformTags;
         this.isSchedulingPolicyAssociated = $.isSchedulingPolicyAssociated;
         this.lastMaintenanceRunId = $.lastMaintenanceRunId;
@@ -1051,6 +1068,37 @@ public final class CloudExadataInfrastructureState extends com.pulumi.resources.
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(@Nullable Output<List<CloudExadataInfrastructureExascaleConfigArgs>> exascaleConfigs) {
+            $.exascaleConfigs = exascaleConfigs;
+            return this;
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(List<CloudExadataInfrastructureExascaleConfigArgs> exascaleConfigs) {
+            return exascaleConfigs(Output.of(exascaleConfigs));
+        }
+
+        /**
+         * @param exascaleConfigs The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder exascaleConfigs(CloudExadataInfrastructureExascaleConfigArgs... exascaleConfigs) {
+            return exascaleConfigs(List.of(exascaleConfigs));
         }
 
         /**

@@ -10103,6 +10103,7 @@ public final class DataSafeFunctions {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
      *             .discoveryJobId(testDiscoveryJob.id())
      *             .columnNames(discoveryJobsResultColumnName)
+     *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
      *             .isResultApplied(discoveryJobsResultIsResultApplied)
      *             .objects(discoveryJobsResultObject)
@@ -10151,6 +10152,7 @@ public final class DataSafeFunctions {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
      *             .discoveryJobId(testDiscoveryJob.id())
      *             .columnNames(discoveryJobsResultColumnName)
+     *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
      *             .isResultApplied(discoveryJobsResultIsResultApplied)
      *             .objects(discoveryJobsResultObject)
@@ -10199,6 +10201,7 @@ public final class DataSafeFunctions {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
      *             .discoveryJobId(testDiscoveryJob.id())
      *             .columnNames(discoveryJobsResultColumnName)
+     *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
      *             .isResultApplied(discoveryJobsResultIsResultApplied)
      *             .objects(discoveryJobsResultObject)
@@ -10247,6 +10250,7 @@ public final class DataSafeFunctions {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
      *             .discoveryJobId(testDiscoveryJob.id())
      *             .columnNames(discoveryJobsResultColumnName)
+     *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
      *             .isResultApplied(discoveryJobsResultIsResultApplied)
      *             .objects(discoveryJobsResultObject)
@@ -10295,6 +10299,7 @@ public final class DataSafeFunctions {
      *         final var testDiscoveryJobsResults = DataSafeFunctions.getDiscoveryJobsResults(GetDiscoveryJobsResultsArgs.builder()
      *             .discoveryJobId(testDiscoveryJob.id())
      *             .columnNames(discoveryJobsResultColumnName)
+     *             .confidenceLevels(discoveryJobsResultConfidenceLevel)
      *             .discoveryType(discoveryJobsResultDiscoveryType)
      *             .isResultApplied(discoveryJobsResultIsResultApplied)
      *             .objects(discoveryJobsResultObject)
@@ -14525,6 +14530,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -14571,6 +14577,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -14617,6 +14624,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -14663,6 +14671,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -14709,6 +14718,7 @@ public final class DataSafeFunctions {
      *             .accessLevel(maskingReportAccessLevel)
      *             .compartmentIdInSubtree(maskingReportCompartmentIdInSubtree)
      *             .maskingPolicyId(testMaskingPolicy.id())
+     *             .targetDatabaseGroupId(testTargetDatabaseGroup.id())
      *             .targetId(testTarget.id())
      *             .build());
      * 
@@ -26082,8 +26092,10 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .confidenceLevels(sensitiveDataModelsSensitiveColumnConfidenceLevel)
      *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
      *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
      *             .objects(sensitiveDataModelsSensitiveColumnObject)
@@ -26140,8 +26152,10 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .confidenceLevels(sensitiveDataModelsSensitiveColumnConfidenceLevel)
      *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
      *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
      *             .objects(sensitiveDataModelsSensitiveColumnObject)
@@ -26198,8 +26212,10 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .confidenceLevels(sensitiveDataModelsSensitiveColumnConfidenceLevel)
      *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
      *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
      *             .objects(sensitiveDataModelsSensitiveColumnObject)
@@ -26256,8 +26272,10 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .confidenceLevels(sensitiveDataModelsSensitiveColumnConfidenceLevel)
      *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
      *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
      *             .objects(sensitiveDataModelsSensitiveColumnObject)
@@ -26314,8 +26332,10 @@ public final class DataSafeFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSensitiveDataModelsSensitiveColumns = DataSafeFunctions.getSensitiveDataModelsSensitiveColumns(GetSensitiveDataModelsSensitiveColumnsArgs.builder()
      *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .columnDataCountFilter(sensitiveDataModelsSensitiveColumnColumnDataCountFilter)
      *             .columnGroup(sensitiveDataModelsSensitiveColumnColumnGroup)
      *             .columnNames(sensitiveDataModelsSensitiveColumnColumnName)
+     *             .confidenceLevels(sensitiveDataModelsSensitiveColumnConfidenceLevel)
      *             .dataTypes(sensitiveDataModelsSensitiveColumnDataType)
      *             .isCaseInSensitive(sensitiveDataModelsSensitiveColumnIsCaseInSensitive)
      *             .objects(sensitiveDataModelsSensitiveColumnObject)

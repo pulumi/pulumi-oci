@@ -30,6 +30,7 @@ __all__ = [
     'DataSafeConfigurationGlobalSetting',
     'DatabaseSecurityConfigManagementSqlFirewallConfig',
     'DatabaseSecurityConfigSqlFirewallConfig',
+    'DiscoveryJobsResultConfidenceLevelDetail',
     'DiscoveryJobsResultModifiedAttribute',
     'DiscoveryModTablesForDiscovery',
     'LibraryMasingFormatFormatEntry',
@@ -58,6 +59,7 @@ __all__ = [
     'SensitiveDataModelReferentialRelationChild',
     'SensitiveDataModelReferentialRelationParent',
     'SensitiveDataModelTablesForDiscovery',
+    'SensitiveDataModelsSensitiveColumnConfidenceLevelDetail',
     'SensitiveTypeGroupGroupedSensitiveTypeItem',
     'SensitiveTypeGroupGroupedSensitiveTypePatchOperation',
     'TargetDatabaseConnectionOption',
@@ -156,9 +158,11 @@ __all__ = [
     'GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult',
     'GetDiscoveryAnalyticsFilterResult',
     'GetDiscoveryJobTablesForDiscoveryResult',
+    'GetDiscoveryJobsResultConfidenceLevelDetailResult',
     'GetDiscoveryJobsResultModifiedAttributeResult',
     'GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult',
     'GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult',
+    'GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult',
     'GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemModifiedAttributeResult',
     'GetDiscoveryJobsResultsFilterResult',
     'GetLibraryMaskingFormatFormatEntryResult',
@@ -405,9 +409,11 @@ __all__ = [
     'GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemResult',
     'GetSensitiveDataModelTablesForDiscoveryResult',
     'GetSensitiveDataModelsFilterResult',
+    'GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailResult',
     'GetSensitiveDataModelsSensitiveColumnsFilterResult',
     'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult',
     'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult',
+    'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult',
@@ -2358,6 +2364,86 @@ class DatabaseSecurityConfigSqlFirewallConfig(dict):
         (Updatable) Specifies whether Data Safe should automatically purge the violation logs  from the database after collecting the violation logs and persisting on Data Safe.
         """
         return pulumi.get(self, "violation_log_auto_purge")
+
+
+@pulumi.output_type
+class DiscoveryJobsResultConfidenceLevelDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "doesColumnLeadToPiiInNonTables":
+            suggest = "does_column_lead_to_pii_in_non_tables"
+        elif key == "doesColumnLeadToPiiInSameRelatedTables":
+            suggest = "does_column_lead_to_pii_in_same_related_tables"
+        elif key == "hasCommentPatternMatched":
+            suggest = "has_comment_pattern_matched"
+        elif key == "hasDataPatternMatched":
+            suggest = "has_data_pattern_matched"
+        elif key == "hasNamePatternMatched":
+            suggest = "has_name_pattern_matched"
+        elif key == "isSensitiveTypeFromSameContextFoundInSameOrRelatedTables":
+            suggest = "is_sensitive_type_from_same_context_found_in_same_or_related_tables"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiscoveryJobsResultConfidenceLevelDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiscoveryJobsResultConfidenceLevelDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiscoveryJobsResultConfidenceLevelDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: Optional[_builtins.bool] = None,
+                 does_column_lead_to_pii_in_same_related_tables: Optional[_builtins.bool] = None,
+                 has_comment_pattern_matched: Optional[_builtins.bool] = None,
+                 has_data_pattern_matched: Optional[_builtins.bool] = None,
+                 has_name_pattern_matched: Optional[_builtins.bool] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[_builtins.bool] = None):
+        if does_column_lead_to_pii_in_non_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        if does_column_lead_to_pii_in_same_related_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        if has_comment_pattern_matched is not None:
+            pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        if has_data_pattern_matched is not None:
+            pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        if has_name_pattern_matched is not None:
+            pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        if is_sensitive_type_from_same_context_found_in_same_or_related_tables is not None:
+            pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
 
 @pulumi.output_type
@@ -5400,6 +5486,86 @@ class SensitiveDataModelTablesForDiscovery(dict):
         (Updatable) This contains an optional list of the table names.
         """
         return pulumi.get(self, "table_names")
+
+
+@pulumi.output_type
+class SensitiveDataModelsSensitiveColumnConfidenceLevelDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "doesColumnLeadToPiiInNonTables":
+            suggest = "does_column_lead_to_pii_in_non_tables"
+        elif key == "doesColumnLeadToPiiInSameRelatedTables":
+            suggest = "does_column_lead_to_pii_in_same_related_tables"
+        elif key == "hasCommentPatternMatched":
+            suggest = "has_comment_pattern_matched"
+        elif key == "hasDataPatternMatched":
+            suggest = "has_data_pattern_matched"
+        elif key == "hasNamePatternMatched":
+            suggest = "has_name_pattern_matched"
+        elif key == "isSensitiveTypeFromSameContextFoundInSameOrRelatedTables":
+            suggest = "is_sensitive_type_from_same_context_found_in_same_or_related_tables"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SensitiveDataModelsSensitiveColumnConfidenceLevelDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SensitiveDataModelsSensitiveColumnConfidenceLevelDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SensitiveDataModelsSensitiveColumnConfidenceLevelDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: Optional[_builtins.bool] = None,
+                 does_column_lead_to_pii_in_same_related_tables: Optional[_builtins.bool] = None,
+                 has_comment_pattern_matched: Optional[_builtins.bool] = None,
+                 has_data_pattern_matched: Optional[_builtins.bool] = None,
+                 has_name_pattern_matched: Optional[_builtins.bool] = None,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: Optional[_builtins.bool] = None):
+        if does_column_lead_to_pii_in_non_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        if does_column_lead_to_pii_in_same_related_tables is not None:
+            pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        if has_comment_pattern_matched is not None:
+            pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        if has_data_pattern_matched is not None:
+            pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        if has_name_pattern_matched is not None:
+            pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        if is_sensitive_type_from_same_context_found_in_same_or_related_tables is not None:
+            pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
 
 @pulumi.output_type
@@ -13094,6 +13260,53 @@ class GetDiscoveryJobTablesForDiscoveryResult(dict):
 
 
 @pulumi.output_type
+class GetDiscoveryJobsResultConfidenceLevelDetailResult(dict):
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: _builtins.bool,
+                 does_column_lead_to_pii_in_same_related_tables: _builtins.bool,
+                 has_comment_pattern_matched: _builtins.bool,
+                 has_data_pattern_matched: _builtins.bool,
+                 has_name_pattern_matched: _builtins.bool,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: _builtins.bool):
+        pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
+
+
+@pulumi.output_type
 class GetDiscoveryJobsResultModifiedAttributeResult(dict):
     def __init__(__self__, *,
                  app_defined_child_column_keys: Sequence[_builtins.str],
@@ -13140,6 +13353,8 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
                  app_defined_child_column_keys: Sequence[_builtins.str],
                  app_name: _builtins.str,
                  column_name: _builtins.str,
+                 confidence_level: _builtins.str,
+                 confidence_level_details: Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult'],
                  data_type: _builtins.str,
                  db_defined_child_column_keys: Sequence[_builtins.str],
                  discovery_job_id: _builtins.str,
@@ -13161,6 +13376,8 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         :param Sequence[_builtins.str] app_defined_child_column_keys: Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
         :param _builtins.str app_name: The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
         :param _builtins.str column_name: A filter to return only a specific column based on column name.
+        :param _builtins.str confidence_level: A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+        :param Sequence['GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailArgs'] confidence_level_details: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param _builtins.str data_type: The data type of the sensitive column.
         :param Sequence[_builtins.str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         :param _builtins.str discovery_job_id: The OCID of the discovery job.
@@ -13182,6 +13399,8 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
         pulumi.set(__self__, "app_name", app_name)
         pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "confidence_level", confidence_level)
+        pulumi.set(__self__, "confidence_level_details", confidence_level_details)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
         pulumi.set(__self__, "discovery_job_id", discovery_job_id)
@@ -13223,6 +13442,22 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         A filter to return only a specific column based on column name.
         """
         return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> _builtins.str:
+        """
+        A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+        """
+        return pulumi.get(self, "confidence_level")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> Sequence['outputs.GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult']:
+        """
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        return pulumi.get(self, "confidence_level_details")
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -13362,6 +13597,53 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
         The OCID of the sensitive type associated with the sensitive column.
         """
         return pulumi.get(self, "sensitive_type_id")
+
+
+@pulumi.output_type
+class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemConfidenceLevelDetailResult(dict):
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: _builtins.bool,
+                 does_column_lead_to_pii_in_same_related_tables: _builtins.bool,
+                 has_comment_pattern_matched: _builtins.bool,
+                 has_data_pattern_matched: _builtins.bool,
+                 has_name_pattern_matched: _builtins.bool,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: _builtins.bool):
+        pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
 
 @pulumi.output_type
@@ -15661,7 +15943,7 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem
                  timestamp: _builtins.str):
         """
         :param _builtins.str description: A human-readable description for the log entry.
-        :param _builtins.str health_check_type: An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        :param _builtins.str health_check_type: An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
         :param _builtins.str message: A human-readable log entry.
         :param _builtins.str message_type: A filter to return only the resources that match the specified log message type.
         :param _builtins.str remediation: A human-readable log entry to remedy any error or warnings in the masking policy.
@@ -15686,7 +15968,7 @@ class GetMaskingPolicyHealthReportLogsMaskingPolicyHealthReportLogCollectionItem
     @pulumi.getter(name="healthCheckType")
     def health_check_type(self) -> _builtins.str:
         """
-        An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if the AUTOEXTEND feature is enabled for the undo tablespace. If it's not enabled, it further checks if the undo tablespace has any space remaining STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled.
+        An enum type entry for each health check in the masking policy. Each enum describes a type of health check. INVALID_OBJECT_CHECK checks if there exist any invalid objects in the masking tables. PRIVILEGE_CHECK checks if the masking user has sufficient privilege to run masking. TABLESPACE_CHECK checks if the user has sufficient default and TEMP tablespace. Also verifies that the specified tablespace by the user is valid, if user has provided one DATABASE_OR_SYSTEM_TRIGGERS_CHECK checks if there exist any database/system triggers available. UNDO_TABLESPACE_CHECK checks if for all the instances of undo tablespace the AUTOEXTEND feature is enabled.  If it's not enabled, it further checks if the undo tablespace has any space remaining. STATE_STATS_CHECK checks if all the statistics of the masking table is upto date or not. OLS_POLICY_CHECK , VPD_POLICY_CHECK and REDACTION_POLICY_CHECK checks if the masking tables has Oracle Label Security (OLS) or Virtual Private Database (VPD) or Redaction policies enabled. DV_ENABLE_CHECK checks if database has Database Vault(DV) enabled DE_COL_SIZE_CHECK checks if any masking column with DETERMINISTIC ENCRYPTION as masking format has average column size greater than 27 or not. ACTIVE_MASK_JOB_CHECK checks if there is any active masking job running on the target database. DETERMINISTIC_ENCRYPTION_FORMAT_CHECK checks if any masking column has deterministic encryption masking format. COLUMN_EXIST_CHECK checks if the masking columns are available in the target database. TIME_TRAVEL_CHECK checks if the masking tables have Time Travel enabled. INVALID_PACKAGE_CHECK checks if any of the required packages are in invalid state.
         """
         return pulumi.get(self, "health_check_type")
 
@@ -31695,6 +31977,53 @@ class GetSensitiveDataModelsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailResult(dict):
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: _builtins.bool,
+                 does_column_lead_to_pii_in_same_related_tables: _builtins.bool,
+                 has_comment_pattern_matched: _builtins.bool,
+                 has_data_pattern_matched: _builtins.bool,
+                 has_name_pattern_matched: _builtins.bool,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: _builtins.bool):
+        pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
+
+
+@pulumi.output_type
 class GetSensitiveDataModelsSensitiveColumnsFilterResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -31740,6 +32069,8 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
                  app_name: _builtins.str,
                  column_groups: Sequence[_builtins.str],
                  column_name: _builtins.str,
+                 confidence_level: _builtins.str,
+                 confidence_level_details: Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult'],
                  data_type: _builtins.str,
                  db_defined_child_column_keys: Sequence[_builtins.str],
                  estimated_data_value_count: _builtins.str,
@@ -31763,6 +32094,8 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         :param _builtins.str app_name: The name of the application associated with the sensitive column. It's useful when the application name is different from the schema name. Otherwise, it can be ignored.
         :param Sequence[_builtins.str] column_groups: The composite key groups to which the sensitive column belongs. If the column is part of a composite key, it's assigned a column group. It helps identify and manage referential relationships that involve composite keys.
         :param _builtins.str column_name: A filter to return only a specific column based on column name.
+        :param _builtins.str confidence_level: A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+        :param Sequence['GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailArgs'] confidence_level_details: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param _builtins.str data_type: A filter to return only the resources that match the specified data types.
         :param Sequence[_builtins.str] db_defined_child_column_keys: Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         :param _builtins.str estimated_data_value_count: The estimated number of data values the column has in the associated database.
@@ -31786,6 +32119,8 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         pulumi.set(__self__, "app_name", app_name)
         pulumi.set(__self__, "column_groups", column_groups)
         pulumi.set(__self__, "column_name", column_name)
+        pulumi.set(__self__, "confidence_level", confidence_level)
+        pulumi.set(__self__, "confidence_level_details", confidence_level_details)
         pulumi.set(__self__, "data_type", data_type)
         pulumi.set(__self__, "db_defined_child_column_keys", db_defined_child_column_keys)
         pulumi.set(__self__, "estimated_data_value_count", estimated_data_value_count)
@@ -31836,6 +32171,22 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         A filter to return only a specific column based on column name.
         """
         return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> _builtins.str:
+        """
+        A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+        """
+        return pulumi.get(self, "confidence_level")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> Sequence['outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult']:
+        """
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        return pulumi.get(self, "confidence_level_details")
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -31980,6 +32331,53 @@ class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult(
         The date and time, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339), the sensitive column was last updated in the sensitive data model.
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult(dict):
+    def __init__(__self__, *,
+                 does_column_lead_to_pii_in_non_tables: _builtins.bool,
+                 does_column_lead_to_pii_in_same_related_tables: _builtins.bool,
+                 has_comment_pattern_matched: _builtins.bool,
+                 has_data_pattern_matched: _builtins.bool,
+                 has_name_pattern_matched: _builtins.bool,
+                 is_sensitive_type_from_same_context_found_in_same_or_related_tables: _builtins.bool):
+        pulumi.set(__self__, "does_column_lead_to_pii_in_non_tables", does_column_lead_to_pii_in_non_tables)
+        pulumi.set(__self__, "does_column_lead_to_pii_in_same_related_tables", does_column_lead_to_pii_in_same_related_tables)
+        pulumi.set(__self__, "has_comment_pattern_matched", has_comment_pattern_matched)
+        pulumi.set(__self__, "has_data_pattern_matched", has_data_pattern_matched)
+        pulumi.set(__self__, "has_name_pattern_matched", has_name_pattern_matched)
+        pulumi.set(__self__, "is_sensitive_type_from_same_context_found_in_same_or_related_tables", is_sensitive_type_from_same_context_found_in_same_or_related_tables)
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInNonTables")
+    def does_column_lead_to_pii_in_non_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_non_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="doesColumnLeadToPiiInSameRelatedTables")
+    def does_column_lead_to_pii_in_same_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "does_column_lead_to_pii_in_same_related_tables")
+
+    @_builtins.property
+    @pulumi.getter(name="hasCommentPatternMatched")
+    def has_comment_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_comment_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasDataPatternMatched")
+    def has_data_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_data_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="hasNamePatternMatched")
+    def has_name_pattern_matched(self) -> _builtins.bool:
+        return pulumi.get(self, "has_name_pattern_matched")
+
+    @_builtins.property
+    @pulumi.getter(name="isSensitiveTypeFromSameContextFoundInSameOrRelatedTables")
+    def is_sensitive_type_from_same_context_found_in_same_or_related_tables(self) -> _builtins.bool:
+        return pulumi.get(self, "is_sensitive_type_from_same_context_found_in_same_or_related_tables")
 
 
 @pulumi.output_type

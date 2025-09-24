@@ -64,6 +64,10 @@ type LookupRedisClusterResult struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The private IP address of the API endpoint for sharded cluster discovery.
+	DiscoveryEndpointIpAddress string `pulumi:"discoveryEndpointIpAddress"`
+	// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+	DiscoveryFqdn string `pulumi:"discoveryFqdn"`
 	// A user-friendly name of a cluster node.
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -154,6 +158,16 @@ func (o LookupRedisClusterResultOutput) CompartmentId() pulumi.StringOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o LookupRedisClusterResultOutput) DefinedTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupRedisClusterResult) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The private IP address of the API endpoint for sharded cluster discovery.
+func (o LookupRedisClusterResultOutput) DiscoveryEndpointIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.DiscoveryEndpointIpAddress }).(pulumi.StringOutput)
+}
+
+// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+func (o LookupRedisClusterResultOutput) DiscoveryFqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRedisClusterResult) string { return v.DiscoveryFqdn }).(pulumi.StringOutput)
 }
 
 // A user-friendly name of a cluster node.

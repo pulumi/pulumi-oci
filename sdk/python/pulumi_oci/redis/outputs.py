@@ -1361,6 +1361,8 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
                  cluster_mode: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
+                 discovery_endpoint_ip_address: _builtins.str,
+                 discovery_fqdn: _builtins.str,
                  display_name: _builtins.str,
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
@@ -1385,6 +1387,8 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         :param _builtins.str cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param _builtins.str discovery_endpoint_ip_address: The private IP address of the API endpoint for sharded cluster discovery.
+        :param _builtins.str discovery_fqdn: The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
         :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
         :param Mapping[str, _builtins.str] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster.
@@ -1409,6 +1413,8 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         pulumi.set(__self__, "cluster_mode", cluster_mode)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "discovery_endpoint_ip_address", discovery_endpoint_ip_address)
+        pulumi.set(__self__, "discovery_fqdn", discovery_fqdn)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
@@ -1453,6 +1459,22 @@ class GetRedisClustersRedisClusterCollectionItemResult(dict):
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryEndpointIpAddress")
+    def discovery_endpoint_ip_address(self) -> _builtins.str:
+        """
+        The private IP address of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryFqdn")
+    def discovery_fqdn(self) -> _builtins.str:
+        """
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_fqdn")
 
     @_builtins.property
     @pulumi.getter(name="displayName")

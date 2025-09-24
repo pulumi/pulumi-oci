@@ -34,7 +34,7 @@ export function getDataSafeConfiguration(args: GetDataSafeConfigurationArgs, opt
  */
 export interface GetDataSafeConfigurationArgs {
     /**
-     * A filter to return only resources that match the specified compartment OCID.
+     * A filter to return the Data Safe configuration for the specified tenancy OCID.
      */
     compartmentId: string;
 }
@@ -109,7 +109,7 @@ export function getDataSafeConfigurationOutput(args: GetDataSafeConfigurationOut
  */
 export interface GetDataSafeConfigurationOutputArgs {
     /**
-     * A filter to return only resources that match the specified compartment OCID.
+     * A filter to return the Data Safe configuration for the specified tenancy OCID.
      */
     compartmentId: pulumi.Input<string>;
 }

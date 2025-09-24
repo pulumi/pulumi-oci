@@ -86,7 +86,7 @@ class GetJmsPluginResult:
     @pulumi.getter(name="agentId")
     def agent_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         """
         return pulumi.get(self, "agent_id")
 
@@ -110,7 +110,7 @@ class GetJmsPluginResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> _builtins.str:
         """
-        The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
 

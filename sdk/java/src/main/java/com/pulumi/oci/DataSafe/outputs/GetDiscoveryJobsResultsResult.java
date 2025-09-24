@@ -22,6 +22,11 @@ public final class GetDiscoveryJobsResultsResult {
      */
     private @Nullable List<String> columnNames;
     /**
+     * @return The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     * 
+     */
+    private @Nullable List<String> confidenceLevels;
+    /**
      * @return The OCID of the discovery job.
      * 
      */
@@ -70,6 +75,13 @@ public final class GetDiscoveryJobsResultsResult {
      */
     public List<String> columnNames() {
         return this.columnNames == null ? List.of() : this.columnNames;
+    }
+    /**
+     * @return The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     * 
+     */
+    public List<String> confidenceLevels() {
+        return this.confidenceLevels == null ? List.of() : this.confidenceLevels;
     }
     /**
      * @return The OCID of the discovery job.
@@ -141,6 +153,7 @@ public final class GetDiscoveryJobsResultsResult {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable List<String> columnNames;
+        private @Nullable List<String> confidenceLevels;
         private String discoveryJobId;
         private List<GetDiscoveryJobsResultsDiscoveryJobResultCollection> discoveryJobResultCollections;
         private @Nullable String discoveryType;
@@ -154,6 +167,7 @@ public final class GetDiscoveryJobsResultsResult {
         public Builder(GetDiscoveryJobsResultsResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.columnNames = defaults.columnNames;
+    	      this.confidenceLevels = defaults.confidenceLevels;
     	      this.discoveryJobId = defaults.discoveryJobId;
     	      this.discoveryJobResultCollections = defaults.discoveryJobResultCollections;
     	      this.discoveryType = defaults.discoveryType;
@@ -173,6 +187,15 @@ public final class GetDiscoveryJobsResultsResult {
         }
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
+        }
+        @CustomType.Setter
+        public Builder confidenceLevels(@Nullable List<String> confidenceLevels) {
+
+            this.confidenceLevels = confidenceLevels;
+            return this;
+        }
+        public Builder confidenceLevels(String... confidenceLevels) {
+            return confidenceLevels(List.of(confidenceLevels));
         }
         @CustomType.Setter
         public Builder discoveryJobId(String discoveryJobId) {
@@ -249,6 +272,7 @@ public final class GetDiscoveryJobsResultsResult {
         public GetDiscoveryJobsResultsResult build() {
             final var _resultValue = new GetDiscoveryJobsResultsResult();
             _resultValue.columnNames = columnNames;
+            _resultValue.confidenceLevels = confidenceLevels;
             _resultValue.discoveryJobId = discoveryJobId;
             _resultValue.discoveryJobResultCollections = discoveryJobResultCollections;
             _resultValue.discoveryType = discoveryType;

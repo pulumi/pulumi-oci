@@ -50,6 +50,21 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     }
 
     /**
+     * A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
+
+    /**
+     * @return A filter to return only resources that match the specified compartment OCID.
+     * 
+     */
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
+    }
+
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
      * 
      */
@@ -64,16 +79,32 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
 
+    /**
+     * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+     * 
+     */
     @Import(name="containsReferences")
     private @Nullable Output<List<String>> containsReferences;
 
+    /**
+     * @return An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+     * 
+     */
     public Optional<Output<List<String>>> containsReferences() {
         return Optional.ofNullable(this.containsReferences);
     }
 
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+     * 
+     */
     @Import(name="containsSeverities")
     private @Nullable Output<List<String>> containsSeverities;
 
+    /**
+     * @return A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+     * 
+     */
     public Optional<Output<List<String>>> containsSeverities() {
         return Optional.ofNullable(this.containsSeverities);
     }
@@ -149,7 +180,8 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
      * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+     * 
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
      * 
      */
     @Import(name="scimQuery")
@@ -159,7 +191,8 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
      * @return The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      * 
      * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+     * 
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
      * 
      */
     public Optional<Output<String>> scimQuery() {
@@ -246,6 +279,7 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
     private GetSecurityAssessmentFindingsArgs(GetSecurityAssessmentFindingsArgs $) {
         this.accessLevel = $.accessLevel;
         this.category = $.category;
+        this.compartmentId = $.compartmentId;
         this.compartmentIdInSubtree = $.compartmentIdInSubtree;
         this.containsReferences = $.containsReferences;
         this.containsSeverities = $.containsSeverities;
@@ -323,6 +357,27 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
         }
 
         /**
+         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
+            $.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder compartmentId(String compartmentId) {
+            return compartmentId(Output.of(compartmentId));
+        }
+
+        /**
          * @param compartmentIdInSubtree Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the &#39;accessLevel&#39; setting.
          * 
          * @return builder
@@ -343,28 +398,64 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
             return compartmentIdInSubtree(Output.of(compartmentIdInSubtree));
         }
 
+        /**
+         * @param containsReferences An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsReferences(@Nullable Output<List<String>> containsReferences) {
             $.containsReferences = containsReferences;
             return this;
         }
 
+        /**
+         * @param containsReferences An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsReferences(List<String> containsReferences) {
             return containsReferences(Output.of(containsReferences));
         }
 
+        /**
+         * @param containsReferences An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsReferences(String... containsReferences) {
             return containsReferences(List.of(containsReferences));
         }
 
+        /**
+         * @param containsSeverities A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsSeverities(@Nullable Output<List<String>> containsSeverities) {
             $.containsSeverities = containsSeverities;
             return this;
         }
 
+        /**
+         * @param containsSeverities A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsSeverities(List<String> containsSeverities) {
             return containsSeverities(Output.of(containsSeverities));
         }
 
+        /**
+         * @param containsSeverities A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+         * 
+         * @return builder
+         * 
+         */
         public Builder containsSeverities(String... containsSeverities) {
             return containsSeverities(List.of(containsSeverities));
         }
@@ -480,7 +571,8 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
          * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-         * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+         * 
+         * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
          * 
          * @return builder
          * 
@@ -494,7 +586,8 @@ public final class GetSecurityAssessmentFindingsArgs extends com.pulumi.resource
          * @param scimQuery The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
          * 
          * **Example:** | scimQuery=(severity eq &#39;high&#39;) and (targetId eq &#39;target_1&#39;) scimQuery=(category eq &#34;Users&#34;) and (targetId eq &#34;target_1&#34;) scimQuery=(reference eq &#39;CIS&#39;) and (targetId eq &#39;target_1&#39;)
-         * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+         * 
+         * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
          * 
          * @return builder
          * 

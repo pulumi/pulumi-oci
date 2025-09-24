@@ -93,6 +93,7 @@ import javax.annotation.Nullable;
  *             .dbServers(cloudVmClusterDbServers)
  *             .definedTags(cloudVmClusterDefinedTags)
  *             .domain(cloudVmClusterDomain)
+ *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
  *             .fileSystemConfigurationDetails(CloudVmClusterFileSystemConfigurationDetailArgs.builder()
  *                 .fileSystemSizeGb(cloudVmClusterFileSystemConfigurationDetailsFileSystemSizeGb)
  *                 .mountPoint(cloudVmClusterFileSystemConfigurationDetailsMountPoint)
@@ -401,6 +402,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> domain() {
         return this.domain;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    @Export(name="exascaleDbStorageVaultId", refs={String.class}, tree="[0]")
+    private Output<String> exascaleDbStorageVaultId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public Output<String> exascaleDbStorageVaultId() {
+        return this.exascaleDbStorageVaultId;
     }
     /**
      * (Updatable) Details of the file system configuration of the VM cluster.
@@ -789,6 +804,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    @Export(name="storageManagementType", refs={String.class}, tree="[0]")
+    private Output<String> storageManagementType;
+
+    /**
+     * @return Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    public Output<String> storageManagementType() {
+        return this.storageManagementType;
     }
     /**
      * The storage allocation for the disk group, in gigabytes (GB).

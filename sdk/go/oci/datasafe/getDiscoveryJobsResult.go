@@ -67,6 +67,10 @@ type LookupDiscoveryJobsResultResult struct {
 	AppName string `pulumi:"appName"`
 	// The name of the sensitive column.
 	ColumnName string `pulumi:"columnName"`
+	// The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+	ConfidenceLevel string `pulumi:"confidenceLevel"`
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	ConfidenceLevelDetails []GetDiscoveryJobsResultConfidenceLevelDetail `pulumi:"confidenceLevelDetails"`
 	// The data type of the sensitive column.
 	DataType string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -158,6 +162,18 @@ func (o LookupDiscoveryJobsResultResultOutput) AppName() pulumi.StringOutput {
 // The name of the sensitive column.
 func (o LookupDiscoveryJobsResultResultOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+// The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+func (o LookupDiscoveryJobsResultResultOutput) ConfidenceLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) string { return v.ConfidenceLevel }).(pulumi.StringOutput)
+}
+
+// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+func (o LookupDiscoveryJobsResultResultOutput) ConfidenceLevelDetails() GetDiscoveryJobsResultConfidenceLevelDetailArrayOutput {
+	return o.ApplyT(func(v LookupDiscoveryJobsResultResult) []GetDiscoveryJobsResultConfidenceLevelDetail {
+		return v.ConfidenceLevelDetails
+	}).(GetDiscoveryJobsResultConfidenceLevelDetailArrayOutput)
 }
 
 // The data type of the sensitive column.

@@ -52,7 +52,7 @@ func LookupDataSafeConfiguration(ctx *pulumi.Context, args *LookupDataSafeConfig
 
 // A collection of arguments for invoking getDataSafeConfiguration.
 type LookupDataSafeConfigurationArgs struct {
-	// A filter to return only resources that match the specified compartment OCID.
+	// A filter to return the Data Safe configuration for the specified tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`
 }
 
@@ -90,7 +90,7 @@ func LookupDataSafeConfigurationOutput(ctx *pulumi.Context, args LookupDataSafeC
 
 // A collection of arguments for invoking getDataSafeConfiguration.
 type LookupDataSafeConfigurationOutputArgs struct {
-	// A filter to return only resources that match the specified compartment OCID.
+	// A filter to return the Data Safe configuration for the specified tenancy OCID.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 }
 

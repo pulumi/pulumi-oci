@@ -16,6 +16,7 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
         "category": args.category,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
@@ -46,10 +47,20 @@ export interface GetSecurityAssessmentFindingsArgs {
      */
     category?: string;
     /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
+    compartmentId?: string;
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: boolean;
+    /**
+     * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+     */
     containsReferences?: string[];
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+     */
     containsSeverities?: string[];
     /**
      * Specifies a subset of fields to be returned in the response.
@@ -72,7 +83,8 @@ export interface GetSecurityAssessmentFindingsArgs {
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+     *
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
      */
     scimQuery?: string;
     /**
@@ -106,6 +118,7 @@ export interface GetSecurityAssessmentFindingsResult {
      * The category to which the finding belongs to.
      */
     readonly category?: string;
+    readonly compartmentId?: string;
     readonly compartmentIdInSubtree?: boolean;
     readonly containsReferences?: string[];
     readonly containsSeverities?: string[];
@@ -154,6 +167,7 @@ export function getSecurityAssessmentFindingsOutput(args: GetSecurityAssessmentF
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFindings:getSecurityAssessmentFindings", {
         "accessLevel": args.accessLevel,
         "category": args.category,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
@@ -184,10 +198,20 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      */
     category?: pulumi.Input<string>;
     /**
+     * A filter to return only resources that match the specified compartment OCID.
+     */
+    compartmentId?: pulumi.Input<string>;
+    /**
      * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
+    /**
+     * An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+     */
     containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+     */
     containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * Specifies a subset of fields to be returned in the response.
@@ -210,7 +234,8 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
      *
      * **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-     * Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+     *
+     * Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
      */
     scimQuery?: pulumi.Input<string>;
     /**

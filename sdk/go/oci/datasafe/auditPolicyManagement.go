@@ -83,7 +83,7 @@ type AuditPolicyManagement struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
-	// The OCID of the target for which the audit policy is created.
+	// The OCID of the target.
 	TargetId pulumi.StringPtrOutput `pulumi:"targetId"`
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -151,7 +151,7 @@ type auditPolicyManagementState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The OCID of the target for which the audit policy is created.
+	// The OCID of the target.
 	TargetId *string `pulumi:"targetId"`
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -190,7 +190,7 @@ type AuditPolicyManagementState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.StringMapInput
-	// The OCID of the target for which the audit policy is created.
+	// The OCID of the target.
 	TargetId pulumi.StringPtrInput
 	// The time the audit policy was created, in the format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
@@ -225,7 +225,7 @@ type auditPolicyManagementArgs struct {
 	ProvisionTrigger *bool `pulumi:"provisionTrigger"`
 	// (Updatable) An optional property when set to true triggers Retrieve From Target.
 	RetrieveFromTargetTrigger *bool `pulumi:"retrieveFromTargetTrigger"`
-	// The OCID of the target for which the audit policy is created.
+	// The OCID of the target.
 	TargetId *string `pulumi:"targetId"`
 }
 
@@ -249,7 +249,7 @@ type AuditPolicyManagementArgs struct {
 	ProvisionTrigger pulumi.BoolPtrInput
 	// (Updatable) An optional property when set to true triggers Retrieve From Target.
 	RetrieveFromTargetTrigger pulumi.BoolPtrInput
-	// The OCID of the target for which the audit policy is created.
+	// The OCID of the target.
 	TargetId pulumi.StringPtrInput
 }
 
@@ -409,7 +409,7 @@ func (o AuditPolicyManagementOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The OCID of the target for which the audit policy is created.
+// The OCID of the target.
 func (o AuditPolicyManagementOutput) TargetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AuditPolicyManagement) pulumi.StringPtrOutput { return v.TargetId }).(pulumi.StringPtrOutput)
 }

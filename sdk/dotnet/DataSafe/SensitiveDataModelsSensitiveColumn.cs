@@ -80,6 +80,18 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> ColumnName { get; private set; } = null!;
 
         /// <summary>
+        /// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        /// </summary>
+        [Output("confidenceLevel")]
+        public Output<string> ConfidenceLevel { get; private set; } = null!;
+
+        /// <summary>
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        /// </summary>
+        [Output("confidenceLevelDetails")]
+        public Output<ImmutableArray<Outputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail>> ConfidenceLevelDetails { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The data type of the sensitive column.
         /// </summary>
         [Output("dataType")]
@@ -380,6 +392,24 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("columnName")]
         public Input<string>? ColumnName { get; set; }
+
+        /// <summary>
+        /// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        /// </summary>
+        [Input("confidenceLevel")]
+        public Input<string>? ConfidenceLevel { get; set; }
+
+        [Input("confidenceLevelDetails")]
+        private InputList<Inputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetailGetArgs>? _confidenceLevelDetails;
+
+        /// <summary>
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        /// </summary>
+        public InputList<Inputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetailGetArgs> ConfidenceLevelDetails
+        {
+            get => _confidenceLevelDetails ?? (_confidenceLevelDetails = new InputList<Inputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetailGetArgs>());
+            set => _confidenceLevelDetails = value;
+        }
 
         /// <summary>
         /// (Updatable) The data type of the sensitive column.

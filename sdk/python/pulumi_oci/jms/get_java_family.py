@@ -27,7 +27,7 @@ class GetJavaFamilyResult:
     """
     A collection of values returned by getJavaFamily.
     """
-    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, is_supported_version=None, latest_release_artifacts=None, latest_release_version=None, release_date=None, support_type=None):
+    def __init__(__self__, display_name=None, doc_url=None, end_of_support_life_date=None, family_version=None, id=None, is_supported_version=None, latest_release_artifacts=None, latest_release_version=None, license_types=None, release_date=None, support_type=None):
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -52,6 +52,9 @@ class GetJavaFamilyResult:
         if latest_release_version and not isinstance(latest_release_version, str):
             raise TypeError("Expected argument 'latest_release_version' to be a str")
         pulumi.set(__self__, "latest_release_version", latest_release_version)
+        if license_types and not isinstance(license_types, list):
+            raise TypeError("Expected argument 'license_types' to be a list")
+        pulumi.set(__self__, "license_types", license_types)
         if release_date and not isinstance(release_date, str):
             raise TypeError("Expected argument 'release_date' to be a str")
         pulumi.set(__self__, "release_date", release_date)
@@ -124,6 +127,14 @@ class GetJavaFamilyResult:
         return pulumi.get(self, "latest_release_version")
 
     @_builtins.property
+    @pulumi.getter(name="licenseTypes")
+    def license_types(self) -> Sequence[_builtins.str]:
+        """
+        The license type(s) associated with the Java family.
+        """
+        return pulumi.get(self, "license_types")
+
+    @_builtins.property
     @pulumi.getter(name="releaseDate")
     def release_date(self) -> _builtins.str:
         """
@@ -154,6 +165,7 @@ class AwaitableGetJavaFamilyResult(GetJavaFamilyResult):
             is_supported_version=self.is_supported_version,
             latest_release_artifacts=self.latest_release_artifacts,
             latest_release_version=self.latest_release_version,
+            license_types=self.license_types,
             release_date=self.release_date,
             support_type=self.support_type)
 
@@ -191,6 +203,7 @@ def get_java_family(family_version: Optional[_builtins.str] = None,
         is_supported_version=pulumi.get(__ret__, 'is_supported_version'),
         latest_release_artifacts=pulumi.get(__ret__, 'latest_release_artifacts'),
         latest_release_version=pulumi.get(__ret__, 'latest_release_version'),
+        license_types=pulumi.get(__ret__, 'license_types'),
         release_date=pulumi.get(__ret__, 'release_date'),
         support_type=pulumi.get(__ret__, 'support_type'))
 def get_java_family_output(family_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -225,5 +238,6 @@ def get_java_family_output(family_version: Optional[pulumi.Input[_builtins.str]]
         is_supported_version=pulumi.get(__response__, 'is_supported_version'),
         latest_release_artifacts=pulumi.get(__response__, 'latest_release_artifacts'),
         latest_release_version=pulumi.get(__response__, 'latest_release_version'),
+        license_types=pulumi.get(__response__, 'license_types'),
         release_date=pulumi.get(__response__, 'release_date'),
         support_type=pulumi.get(__response__, 'support_type')))

@@ -226,6 +226,8 @@ class _RedisClusterState:
                  cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 discovery_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+                 discovery_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -250,6 +252,8 @@ class _RedisClusterState:
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] discovery_endpoint_ip_address: The private IP address of the API endpoint for sharded cluster discovery.
+        :param pulumi.Input[_builtins.str] discovery_fqdn: The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -280,6 +284,10 @@ class _RedisClusterState:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
+        if discovery_endpoint_ip_address is not None:
+            pulumi.set(__self__, "discovery_endpoint_ip_address", discovery_endpoint_ip_address)
+        if discovery_fqdn is not None:
+            pulumi.set(__self__, "discovery_fqdn", discovery_fqdn)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
@@ -354,6 +362,30 @@ class _RedisClusterState:
     @defined_tags.setter
     def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "defined_tags", value)
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryEndpointIpAddress")
+    def discovery_endpoint_ip_address(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The private IP address of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_endpoint_ip_address")
+
+    @discovery_endpoint_ip_address.setter
+    def discovery_endpoint_ip_address(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "discovery_endpoint_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryFqdn")
+    def discovery_fqdn(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_fqdn")
+
+    @discovery_fqdn.setter
+    def discovery_fqdn(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "discovery_fqdn", value)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -768,6 +800,8 @@ class RedisCluster(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["discovery_endpoint_ip_address"] = None
+            __props__.__dict__["discovery_fqdn"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["node_collections"] = None
             __props__.__dict__["primary_endpoint_ip_address"] = None
@@ -791,6 +825,8 @@ class RedisCluster(pulumi.CustomResource):
             cluster_mode: Optional[pulumi.Input[_builtins.str]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_endpoint_ip_address: Optional[pulumi.Input[_builtins.str]] = None,
+            discovery_fqdn: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             lifecycle_details: Optional[pulumi.Input[_builtins.str]] = None,
@@ -820,6 +856,8 @@ class RedisCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_mode: Specifies whether the cluster is sharded or non-sharded.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[_builtins.str] discovery_endpoint_ip_address: The private IP address of the API endpoint for sharded cluster discovery.
+        :param pulumi.Input[_builtins.str] discovery_fqdn: The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[_builtins.str] lifecycle_details: A message describing the current state in more detail. For example, the message might provide actionable information for a resource in `FAILED` state.
@@ -851,6 +889,8 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["cluster_mode"] = cluster_mode
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
+        __props__.__dict__["discovery_endpoint_ip_address"] = discovery_endpoint_ip_address
+        __props__.__dict__["discovery_fqdn"] = discovery_fqdn
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["lifecycle_details"] = lifecycle_details
@@ -895,6 +935,22 @@ class RedisCluster(pulumi.CustomResource):
         (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryEndpointIpAddress")
+    def discovery_endpoint_ip_address(self) -> pulumi.Output[_builtins.str]:
+        """
+        The private IP address of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryFqdn")
+    def discovery_fqdn(self) -> pulumi.Output[_builtins.str]:
+        """
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_fqdn")
 
     @_builtins.property
     @pulumi.getter(name="displayName")

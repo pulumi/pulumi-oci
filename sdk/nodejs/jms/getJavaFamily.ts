@@ -76,6 +76,10 @@ export interface GetJavaFamilyResult {
      */
     readonly latestReleaseVersion: string;
     /**
+     * The license type(s) associated with the Java family.
+     */
+    readonly licenseTypes: string[];
+    /**
      * The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     readonly releaseDate: string;

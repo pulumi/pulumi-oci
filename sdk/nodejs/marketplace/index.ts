@@ -55,6 +55,11 @@ export const getListings: typeof import("./getListings").getListings = null as a
 export const getListingsOutput: typeof import("./getListings").getListingsOutput = null as any;
 utilities.lazyLoad(exports, ["getListings","getListingsOutput"], () => require("./getListings"));
 
+export { GetMarketplaceMetadataPublicKeysArgs, GetMarketplaceMetadataPublicKeysResult, GetMarketplaceMetadataPublicKeysOutputArgs } from "./getMarketplaceMetadataPublicKeys";
+export const getMarketplaceMetadataPublicKeys: typeof import("./getMarketplaceMetadataPublicKeys").getMarketplaceMetadataPublicKeys = null as any;
+export const getMarketplaceMetadataPublicKeysOutput: typeof import("./getMarketplaceMetadataPublicKeys").getMarketplaceMetadataPublicKeysOutput = null as any;
+utilities.lazyLoad(exports, ["getMarketplaceMetadataPublicKeys","getMarketplaceMetadataPublicKeysOutput"], () => require("./getMarketplaceMetadataPublicKeys"));
+
 export { GetPublicationArgs, GetPublicationResult, GetPublicationOutputArgs } from "./getPublication";
 export const getPublication: typeof import("./getPublication").getPublication = null as any;
 export const getPublicationOutput: typeof import("./getPublication").getPublicationOutput = null as any;
@@ -85,6 +90,11 @@ export type ListingPackageAgreement = import("./listingPackageAgreement").Listin
 export const ListingPackageAgreement: typeof import("./listingPackageAgreement").ListingPackageAgreement = null as any;
 utilities.lazyLoad(exports, ["ListingPackageAgreement"], () => require("./listingPackageAgreement"));
 
+export { MarketplaceExternalAttestedMetadataArgs, MarketplaceExternalAttestedMetadataState } from "./marketplaceExternalAttestedMetadata";
+export type MarketplaceExternalAttestedMetadata = import("./marketplaceExternalAttestedMetadata").MarketplaceExternalAttestedMetadata;
+export const MarketplaceExternalAttestedMetadata: typeof import("./marketplaceExternalAttestedMetadata").MarketplaceExternalAttestedMetadata = null as any;
+utilities.lazyLoad(exports, ["MarketplaceExternalAttestedMetadata"], () => require("./marketplaceExternalAttestedMetadata"));
+
 export { PublicationArgs, PublicationState } from "./publication";
 export type Publication = import("./publication").Publication;
 export const Publication: typeof import("./publication").Publication = null as any;
@@ -99,6 +109,8 @@ const _module = {
                 return new AcceptedAgreement(name, <any>undefined, { urn })
             case "oci:Marketplace/listingPackageAgreement:ListingPackageAgreement":
                 return new ListingPackageAgreement(name, <any>undefined, { urn })
+            case "oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata":
+                return new MarketplaceExternalAttestedMetadata(name, <any>undefined, { urn })
             case "oci:Marketplace/publication:Publication":
                 return new Publication(name, <any>undefined, { urn })
             default:
@@ -108,4 +120,5 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("oci", "Marketplace/acceptedAgreement", _module)
 pulumi.runtime.registerResourceModule("oci", "Marketplace/listingPackageAgreement", _module)
+pulumi.runtime.registerResourceModule("oci", "Marketplace/marketplaceExternalAttestedMetadata", _module)
 pulumi.runtime.registerResourceModule("oci", "Marketplace/publication", _module)

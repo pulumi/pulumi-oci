@@ -113,6 +113,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly displayName: string;
     /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    readonly exascaleConfigs: outputs.Database.GetCloudExadataInfrastructureExascaleConfig[];
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     readonly freeformTags: {[key: string]: string};

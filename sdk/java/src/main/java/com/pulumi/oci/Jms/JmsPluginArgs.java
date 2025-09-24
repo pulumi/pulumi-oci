@@ -18,14 +18,14 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
     public static final JmsPluginArgs Empty = new JmsPluginArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     @Import(name="agentId", required=true)
     private Output<String> agentId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     public Output<String> agentId() {
@@ -33,14 +33,29 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * The agent type.
+     * 
+     */
+    @Import(name="agentType")
+    private @Nullable Output<String> agentType;
+
+    /**
+     * @return The agent type.
+     * 
+     */
+    public Optional<Output<String>> agentType() {
+        return Optional.ofNullable(this.agentType);
+    }
+
+    /**
+     * The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public Output<String> compartmentId() {
@@ -102,6 +117,7 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
 
     private JmsPluginArgs(JmsPluginArgs $) {
         this.agentId = $.agentId;
+        this.agentType = $.agentType;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.fleetId = $.fleetId;
@@ -127,7 +143,7 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param agentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+         * @param agentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
          * 
          * @return builder
          * 
@@ -138,7 +154,7 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param agentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+         * @param agentId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
          * 
          * @return builder
          * 
@@ -148,7 +164,28 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param agentType The agent type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentType(@Nullable Output<String> agentType) {
+            $.agentType = agentType;
+            return this;
+        }
+
+        /**
+         * @param agentType The agent type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder agentType(String agentType) {
+            return agentType(Output.of(agentType));
+        }
+
+        /**
+         * @param compartmentId The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 
@@ -159,7 +196,7 @@ public final class JmsPluginArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * @param compartmentId The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * 
          * @return builder
          * 

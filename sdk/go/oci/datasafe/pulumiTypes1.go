@@ -13,6 +13,1009 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Lists the audit policy provisioning conditions.
+	Conditions []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition `pulumi:"conditions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the unified audit policy.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Indicates on whom the audit policy is enabled.
+	EnabledEntities string `pulumi:"enabledEntities"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the unified audit policy.
+	Id string `pulumi:"id"`
+	// A boolean flag indicating to list seeded unified audit policies. Set this parameter to get list of seeded unified audit policies.
+	IsSeeded bool `pulumi:"isSeeded"`
+	// The details of the current state of the unified audit policy in Data Safe.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId string `pulumi:"securityPolicyId"`
+	// The current state of the Unified Audit policy.
+	State string `pulumi:"state"`
+	// Indicates whether the policy has been enabled or disabled.
+	Status string `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the the unified audit policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+	UnifiedAuditPolicyDefinitionId string `pulumi:"unifiedAuditPolicyDefinitionId"`
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs{...}
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs struct {
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Lists the audit policy provisioning conditions.
+	Conditions GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayInput `pulumi:"conditions"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the unified audit policy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Indicates on whom the audit policy is enabled.
+	EnabledEntities pulumi.StringInput `pulumi:"enabledEntities"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the unified audit policy.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A boolean flag indicating to list seeded unified audit policies. Set this parameter to get list of seeded unified audit policies.
+	IsSeeded pulumi.BoolInput `pulumi:"isSeeded"`
+	// The details of the current state of the unified audit policy in Data Safe.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An optional filter to return only resources that match the specified OCID of the security policy resource.
+	SecurityPolicyId pulumi.StringInput `pulumi:"securityPolicyId"`
+	// The current state of the Unified Audit policy.
+	State pulumi.StringInput `pulumi:"state"`
+	// Indicates whether the policy has been enabled or disabled.
+	Status pulumi.StringInput `pulumi:"status"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the the unified audit policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+	UnifiedAuditPolicyDefinitionId pulumi.StringInput `pulumi:"unifiedAuditPolicyDefinitionId"`
+}
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput)
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray{ GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs{...} }
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput {
+	return o
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Lists the audit policy provisioning conditions.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) Conditions() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition {
+		return v.Conditions
+	}).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the unified audit policy.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Indicates on whom the audit policy is enabled.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) EnabledEntities() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.EnabledEntities }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the unified audit policy.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A boolean flag indicating to list seeded unified audit policies. Set this parameter to get list of seeded unified audit policies.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) IsSeeded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) bool { return v.IsSeeded }).(pulumi.BoolOutput)
+}
+
+// The details of the current state of the unified audit policy in Data Safe.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the security policy resource.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) SecurityPolicyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.SecurityPolicyId }).(pulumi.StringOutput)
+}
+
+// The current state of the Unified Audit policy.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Indicates whether the policy has been enabled or disabled.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The time the the unified audit policy was created, in the format defined by RFC3339.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput) UnifiedAuditPolicyDefinitionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem) string {
+		return v.UnifiedAuditPolicyDefinitionId
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem {
+		return vs[0].([]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItem)[vs[1].(int)]
+	}).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition struct {
+	// The OCID of the attribute set.
+	AttributeSetId string `pulumi:"attributeSetId"`
+	// Specifies whether to include or exclude the specified users or roles.
+	EntitySelection string `pulumi:"entitySelection"`
+	// The type of users or roles that the unified audit policy is applied to.
+	EntityType string `pulumi:"entityType"`
+	// The operation status that the policy must be enabled for.
+	OperationStatus string `pulumi:"operationStatus"`
+	// List of roles that the policy must be enabled for.
+	RoleNames []string `pulumi:"roleNames"`
+	// The list of users that the unified audit policy is enabled for.
+	UserNames []string `pulumi:"userNames"`
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs{...}
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs struct {
+	// The OCID of the attribute set.
+	AttributeSetId pulumi.StringInput `pulumi:"attributeSetId"`
+	// Specifies whether to include or exclude the specified users or roles.
+	EntitySelection pulumi.StringInput `pulumi:"entitySelection"`
+	// The type of users or roles that the unified audit policy is applied to.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The operation status that the policy must be enabled for.
+	OperationStatus pulumi.StringInput `pulumi:"operationStatus"`
+	// List of roles that the policy must be enabled for.
+	RoleNames pulumi.StringArrayInput `pulumi:"roleNames"`
+	// The list of users that the unified audit policy is enabled for.
+	UserNames pulumi.StringArrayInput `pulumi:"userNames"`
+}
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput)
+}
+
+// GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayInput is an input type that accepts GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray and GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayInput` via:
+//
+//	GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray{ GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs{...} }
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput
+	ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutputWithContext(context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray []GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput {
+	return i.ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput {
+	return o
+}
+
+// The OCID of the attribute set.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) AttributeSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) string {
+		return v.AttributeSetId
+	}).(pulumi.StringOutput)
+}
+
+// Specifies whether to include or exclude the specified users or roles.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) EntitySelection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) string {
+		return v.EntitySelection
+	}).(pulumi.StringOutput)
+}
+
+// The type of users or roles that the unified audit policy is applied to.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The operation status that the policy must be enabled for.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) OperationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) string {
+		return v.OperationStatus
+	}).(pulumi.StringOutput)
+}
+
+// List of roles that the policy must be enabled for.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) RoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) []string { return v.RoleNames }).(pulumi.StringArrayOutput)
+}
+
+// The list of users that the unified audit policy is enabled for.
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput) UserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition) []string { return v.UserNames }).(pulumi.StringArrayOutput)
+}
+
+type GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput() GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput) ToGetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition {
+		return vs[0].([]GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemCondition)[vs[1].(int)]
+	}).(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput)
+}
+
+type GetUnifiedAuditPolicyCondition struct {
+	// The OCID of the attribute set.
+	AttributeSetId string `pulumi:"attributeSetId"`
+	// Specifies whether to include or exclude the specified users or roles.
+	EntitySelection string `pulumi:"entitySelection"`
+	// The type of users or roles that the unified audit policy is applied to.
+	EntityType string `pulumi:"entityType"`
+	// The operation status that the policy must be enabled for.
+	OperationStatus string `pulumi:"operationStatus"`
+	// List of roles that the policy must be enabled for.
+	RoleNames []string `pulumi:"roleNames"`
+	// The list of users that the unified audit policy is enabled for.
+	UserNames []string `pulumi:"userNames"`
+}
+
+// GetUnifiedAuditPolicyConditionInput is an input type that accepts GetUnifiedAuditPolicyConditionArgs and GetUnifiedAuditPolicyConditionOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyConditionInput` via:
+//
+//	GetUnifiedAuditPolicyConditionArgs{...}
+type GetUnifiedAuditPolicyConditionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyConditionOutput() GetUnifiedAuditPolicyConditionOutput
+	ToGetUnifiedAuditPolicyConditionOutputWithContext(context.Context) GetUnifiedAuditPolicyConditionOutput
+}
+
+type GetUnifiedAuditPolicyConditionArgs struct {
+	// The OCID of the attribute set.
+	AttributeSetId pulumi.StringInput `pulumi:"attributeSetId"`
+	// Specifies whether to include or exclude the specified users or roles.
+	EntitySelection pulumi.StringInput `pulumi:"entitySelection"`
+	// The type of users or roles that the unified audit policy is applied to.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// The operation status that the policy must be enabled for.
+	OperationStatus pulumi.StringInput `pulumi:"operationStatus"`
+	// List of roles that the policy must be enabled for.
+	RoleNames pulumi.StringArrayInput `pulumi:"roleNames"`
+	// The list of users that the unified audit policy is enabled for.
+	UserNames pulumi.StringArrayInput `pulumi:"userNames"`
+}
+
+func (GetUnifiedAuditPolicyConditionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyCondition)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyConditionArgs) ToGetUnifiedAuditPolicyConditionOutput() GetUnifiedAuditPolicyConditionOutput {
+	return i.ToGetUnifiedAuditPolicyConditionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyConditionArgs) ToGetUnifiedAuditPolicyConditionOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyConditionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyConditionOutput)
+}
+
+// GetUnifiedAuditPolicyConditionArrayInput is an input type that accepts GetUnifiedAuditPolicyConditionArray and GetUnifiedAuditPolicyConditionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyConditionArrayInput` via:
+//
+//	GetUnifiedAuditPolicyConditionArray{ GetUnifiedAuditPolicyConditionArgs{...} }
+type GetUnifiedAuditPolicyConditionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyConditionArrayOutput() GetUnifiedAuditPolicyConditionArrayOutput
+	ToGetUnifiedAuditPolicyConditionArrayOutputWithContext(context.Context) GetUnifiedAuditPolicyConditionArrayOutput
+}
+
+type GetUnifiedAuditPolicyConditionArray []GetUnifiedAuditPolicyConditionInput
+
+func (GetUnifiedAuditPolicyConditionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyCondition)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyConditionArray) ToGetUnifiedAuditPolicyConditionArrayOutput() GetUnifiedAuditPolicyConditionArrayOutput {
+	return i.ToGetUnifiedAuditPolicyConditionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyConditionArray) ToGetUnifiedAuditPolicyConditionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyConditionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyConditionArrayOutput)
+}
+
+type GetUnifiedAuditPolicyConditionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyConditionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyCondition)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyConditionOutput) ToGetUnifiedAuditPolicyConditionOutput() GetUnifiedAuditPolicyConditionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyConditionOutput) ToGetUnifiedAuditPolicyConditionOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyConditionOutput {
+	return o
+}
+
+// The OCID of the attribute set.
+func (o GetUnifiedAuditPolicyConditionOutput) AttributeSetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) string { return v.AttributeSetId }).(pulumi.StringOutput)
+}
+
+// Specifies whether to include or exclude the specified users or roles.
+func (o GetUnifiedAuditPolicyConditionOutput) EntitySelection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) string { return v.EntitySelection }).(pulumi.StringOutput)
+}
+
+// The type of users or roles that the unified audit policy is applied to.
+func (o GetUnifiedAuditPolicyConditionOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// The operation status that the policy must be enabled for.
+func (o GetUnifiedAuditPolicyConditionOutput) OperationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) string { return v.OperationStatus }).(pulumi.StringOutput)
+}
+
+// List of roles that the policy must be enabled for.
+func (o GetUnifiedAuditPolicyConditionOutput) RoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) []string { return v.RoleNames }).(pulumi.StringArrayOutput)
+}
+
+// The list of users that the unified audit policy is enabled for.
+func (o GetUnifiedAuditPolicyConditionOutput) UserNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyCondition) []string { return v.UserNames }).(pulumi.StringArrayOutput)
+}
+
+type GetUnifiedAuditPolicyConditionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyConditionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyCondition)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyConditionArrayOutput) ToGetUnifiedAuditPolicyConditionArrayOutput() GetUnifiedAuditPolicyConditionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyConditionArrayOutput) ToGetUnifiedAuditPolicyConditionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyConditionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyConditionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPolicyConditionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPolicyCondition {
+		return vs[0].([]GetUnifiedAuditPolicyCondition)[vs[1].(int)]
+	}).(GetUnifiedAuditPolicyConditionOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUnifiedAuditPolicyDefinitionsFilterInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsFilterArgs and GetUnifiedAuditPolicyDefinitionsFilterOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsFilterInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsFilterArgs{...}
+type GetUnifiedAuditPolicyDefinitionsFilterInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsFilterOutput() GetUnifiedAuditPolicyDefinitionsFilterOutput
+	ToGetUnifiedAuditPolicyDefinitionsFilterOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsFilterOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUnifiedAuditPolicyDefinitionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsFilterArgs) ToGetUnifiedAuditPolicyDefinitionsFilterOutput() GetUnifiedAuditPolicyDefinitionsFilterOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsFilterArgs) ToGetUnifiedAuditPolicyDefinitionsFilterOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsFilterOutput)
+}
+
+// GetUnifiedAuditPolicyDefinitionsFilterArrayInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsFilterArray and GetUnifiedAuditPolicyDefinitionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsFilterArrayInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsFilterArray{ GetUnifiedAuditPolicyDefinitionsFilterArgs{...} }
+type GetUnifiedAuditPolicyDefinitionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutput() GetUnifiedAuditPolicyDefinitionsFilterArrayOutput
+	ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsFilterArrayOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsFilterArray []GetUnifiedAuditPolicyDefinitionsFilterInput
+
+func (GetUnifiedAuditPolicyDefinitionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsFilter)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsFilterArray) ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutput() GetUnifiedAuditPolicyDefinitionsFilterArrayOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsFilterArray) ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsFilterArrayOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterOutput) ToGetUnifiedAuditPolicyDefinitionsFilterOutput() GetUnifiedAuditPolicyDefinitionsFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterOutput) ToGetUnifiedAuditPolicyDefinitionsFilterOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsFilterOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsFilter)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterArrayOutput) ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutput() GetUnifiedAuditPolicyDefinitionsFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterArrayOutput) ToGetUnifiedAuditPolicyDefinitionsFilterArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsFilterArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsFilterArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPolicyDefinitionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPolicyDefinitionsFilter {
+		return vs[0].([]GetUnifiedAuditPolicyDefinitionsFilter)[vs[1].(int)]
+	}).(GetUnifiedAuditPolicyDefinitionsFilterOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection struct {
+	Items []GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem `pulumi:"items"`
+}
+
+// GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs and GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs{...}
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs struct {
+	Items GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput)
+}
+
+// GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray and GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray{ GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs{...} }
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray []GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionInput
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput) Items() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection) []GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem {
+		return v.Items
+	}).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection {
+		return vs[0].([]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollection)[vs[1].(int)]
+	}).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem struct {
+	// The category to which the unified audit policy belongs in the target database.
+	AuditPolicyCategory string `pulumi:"auditPolicyCategory"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The description of the unified audit policy definition.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The OCID of the unified audit policy definition.
+	Id string `pulumi:"id"`
+	// A boolean flag indicating to list seeded unified audit policy definitions. Set this parameter to get list of seeded unified audit policy definitions.
+	IsSeeded bool `pulumi:"isSeeded"`
+	// Details about the current state of the unified audit policy definition.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The definition of the unified audit policy to be provisioned in the target database.
+	PolicyDefinitionStatement string `pulumi:"policyDefinitionStatement"`
+	// The unified audit policy name in the target database.
+	PolicyName string `pulumi:"policyName"`
+	// The current state of the unified audit policy definition.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The time the unified audit policy was created, in the format defined by RFC3339.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+	UnifiedAuditPolicyDefinitionId string `pulumi:"unifiedAuditPolicyDefinitionId"`
+}
+
+// GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs and GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs{...}
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs struct {
+	// The category to which the unified audit policy belongs in the target database.
+	AuditPolicyCategory pulumi.StringInput `pulumi:"auditPolicyCategory"`
+	// A filter to return only resources that match the specified compartment OCID.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The description of the unified audit policy definition.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the specified display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The OCID of the unified audit policy definition.
+	Id pulumi.StringInput `pulumi:"id"`
+	// A boolean flag indicating to list seeded unified audit policy definitions. Set this parameter to get list of seeded unified audit policy definitions.
+	IsSeeded pulumi.BoolInput `pulumi:"isSeeded"`
+	// Details about the current state of the unified audit policy definition.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The definition of the unified audit policy to be provisioned in the target database.
+	PolicyDefinitionStatement pulumi.StringInput `pulumi:"policyDefinitionStatement"`
+	// The unified audit policy name in the target database.
+	PolicyName pulumi.StringInput `pulumi:"policyName"`
+	// The current state of the unified audit policy definition.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The time the unified audit policy was created, in the format defined by RFC3339.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+	UnifiedAuditPolicyDefinitionId pulumi.StringInput `pulumi:"unifiedAuditPolicyDefinitionId"`
+}
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput)
+}
+
+// GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayInput is an input type that accepts GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray and GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayInput` via:
+//
+//	GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray{ GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs{...} }
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput
+	ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutputWithContext(context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray []GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemInput
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem)(nil)).Elem()
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput {
+	return i.ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput {
+	return o
+}
+
+// The category to which the unified audit policy belongs in the target database.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) AuditPolicyCategory() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.AuditPolicyCategory
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified compartment OCID.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example: `{"Operations.CostCenter": "42"}`
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The description of the unified audit policy definition.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified display name.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The OCID of the unified audit policy definition.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// A boolean flag indicating to list seeded unified audit policy definitions. Set this parameter to get list of seeded unified audit policy definitions.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) IsSeeded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) bool {
+		return v.IsSeeded
+	}).(pulumi.BoolOutput)
+}
+
+// Details about the current state of the unified audit policy definition.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// The definition of the unified audit policy to be provisioned in the target database.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) PolicyDefinitionStatement() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.PolicyDefinitionStatement
+	}).(pulumi.StringOutput)
+}
+
+// The unified audit policy name in the target database.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) PolicyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.PolicyName
+	}).(pulumi.StringOutput)
+}
+
+// The current state of the unified audit policy definition.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The time the unified audit policy was created, in the format defined by RFC3339.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The last date and time the unified audit policy was updated, in the format defined by RFC3339.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+// An optional filter to return only resources that match the specified OCID of the unified audit policy definition resource.
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput) UnifiedAuditPolicyDefinitionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem) string {
+		return v.UnifiedAuditPolicyDefinitionId
+	}).(pulumi.StringOutput)
+}
+
+type GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem)(nil)).Elem()
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput() GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput) ToGetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutputWithContext(ctx context.Context) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem {
+		return vs[0].([]GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItem)[vs[1].(int)]
+	}).(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput)
+}
+
 type GetUserAssessmentComparisonSummary struct {
 	Baselines []GetUserAssessmentComparisonSummaryBaseline `pulumi:"baselines"`
 	Currents  []GetUserAssessmentComparisonSummaryCurrent  `pulumi:"currents"`
@@ -2984,6 +3987,18 @@ func (o GetUserAssessmentsUserAssessmentIgnoredTargetArrayOutput) Index(i pulumi
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayInput)(nil)).Elem(), GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyConditionInput)(nil)).Elem(), GetUnifiedAuditPolicyConditionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyConditionArrayInput)(nil)).Elem(), GetUnifiedAuditPolicyConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsFilterInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsFilterArrayInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayInput)(nil)).Elem(), GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryArrayInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentComparisonSummaryBaselineInput)(nil)).Elem(), GetUserAssessmentComparisonSummaryBaselineArgs{})
@@ -3030,6 +4045,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetUserAssessmentsUserAssessmentIgnoredTargetArrayInput)(nil)).Elem(), GetUserAssessmentsUserAssessmentIgnoredTargetArray{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPoliciesUnifiedAuditPolicyCollectionItemConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyConditionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsFilterOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUnifiedAuditPolicyDefinitionsUnifiedAuditPolicyDefinitionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryArrayOutput{})
 	pulumi.RegisterOutputType(GetUserAssessmentComparisonSummaryBaselineOutput{})

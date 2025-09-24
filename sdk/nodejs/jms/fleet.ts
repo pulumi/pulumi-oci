@@ -98,6 +98,14 @@ export class Fleet extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly approximateJreCount: pulumi.Output<number>;
     /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    declare public /*out*/ readonly approximateLibraryCount: pulumi.Output<number>;
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    declare public /*out*/ readonly approximateLibraryVulnerabilityCount: pulumi.Output<number>;
+    /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
     declare public /*out*/ readonly approximateManagedInstanceCount: pulumi.Output<number>;
@@ -167,6 +175,8 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["approximateInstallationCount"] = state?.approximateInstallationCount;
             resourceInputs["approximateJavaServerCount"] = state?.approximateJavaServerCount;
             resourceInputs["approximateJreCount"] = state?.approximateJreCount;
+            resourceInputs["approximateLibraryCount"] = state?.approximateLibraryCount;
+            resourceInputs["approximateLibraryVulnerabilityCount"] = state?.approximateLibraryVulnerabilityCount;
             resourceInputs["approximateManagedInstanceCount"] = state?.approximateManagedInstanceCount;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
@@ -203,6 +213,8 @@ export class Fleet extends pulumi.CustomResource {
             resourceInputs["approximateInstallationCount"] = undefined /*out*/;
             resourceInputs["approximateJavaServerCount"] = undefined /*out*/;
             resourceInputs["approximateJreCount"] = undefined /*out*/;
+            resourceInputs["approximateLibraryCount"] = undefined /*out*/;
+            resourceInputs["approximateLibraryVulnerabilityCount"] = undefined /*out*/;
             resourceInputs["approximateManagedInstanceCount"] = undefined /*out*/;
             resourceInputs["isExportSettingEnabled"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -234,6 +246,14 @@ export interface FleetState {
      * The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */
     approximateJreCount?: pulumi.Input<number>;
+    /**
+     * The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    approximateLibraryCount?: pulumi.Input<number>;
+    /**
+     * The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+     */
+    approximateLibraryVulnerabilityCount?: pulumi.Input<number>;
     /**
      * The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
      */

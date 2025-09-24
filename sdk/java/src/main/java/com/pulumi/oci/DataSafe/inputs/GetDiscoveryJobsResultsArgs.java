@@ -35,6 +35,21 @@ public final class GetDiscoveryJobsResultsArgs extends com.pulumi.resources.Invo
     }
 
     /**
+     * A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     * 
+     */
+    @Import(name="confidenceLevels")
+    private @Nullable Output<List<String>> confidenceLevels;
+
+    /**
+     * @return A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+     * 
+     */
+    public Optional<Output<List<String>>> confidenceLevels() {
+        return Optional.ofNullable(this.confidenceLevels);
+    }
+
+    /**
      * The OCID of the discovery job.
      * 
      */
@@ -135,6 +150,7 @@ public final class GetDiscoveryJobsResultsArgs extends com.pulumi.resources.Invo
 
     private GetDiscoveryJobsResultsArgs(GetDiscoveryJobsResultsArgs $) {
         this.columnNames = $.columnNames;
+        this.confidenceLevels = $.confidenceLevels;
         this.discoveryJobId = $.discoveryJobId;
         this.discoveryType = $.discoveryType;
         this.filters = $.filters;
@@ -191,6 +207,37 @@ public final class GetDiscoveryJobsResultsArgs extends com.pulumi.resources.Invo
          */
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
+        }
+
+        /**
+         * @param confidenceLevels A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevels(@Nullable Output<List<String>> confidenceLevels) {
+            $.confidenceLevels = confidenceLevels;
+            return this;
+        }
+
+        /**
+         * @param confidenceLevels A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevels(List<String> confidenceLevels) {
+            return confidenceLevels(Output.of(confidenceLevels));
+        }
+
+        /**
+         * @param confidenceLevels A filter to return the discovery job results with the specified confidence level.  Confidence level of discovery job result associated with a seeded sensitive type can either be HIGH or LOW.  While the confidence level of discovery job result associated with a user defined sensitive will be NONE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevels(String... confidenceLevels) {
+            return confidenceLevels(List.of(confidenceLevels));
         }
 
         /**

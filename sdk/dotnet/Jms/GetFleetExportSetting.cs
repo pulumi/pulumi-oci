@@ -124,6 +124,10 @@ namespace Pulumi.Oci.Jms
     public sealed class GetFleetExportSettingResult
     {
         /// <summary>
+        /// Filters applied when exporting data
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetFleetExportSettingExportDataFilterResult> ExportDataFilters;
+        /// <summary>
         /// The duration of data to be exported for fleets.
         /// </summary>
         public readonly string ExportDuration;
@@ -178,6 +182,8 @@ namespace Pulumi.Oci.Jms
 
         [OutputConstructor]
         private GetFleetExportSettingResult(
+            ImmutableArray<Outputs.GetFleetExportSettingExportDataFilterResult> exportDataFilters,
+
             string exportDuration,
 
             string exportFrequency,
@@ -204,6 +210,7 @@ namespace Pulumi.Oci.Jms
 
             string timeLastModified)
         {
+            ExportDataFilters = exportDataFilters;
             ExportDuration = exportDuration;
             ExportFrequency = exportFrequency;
             ExportResources = exportResources;

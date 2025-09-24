@@ -16,12 +16,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetSensitiveDataModelsSensitiveColumnsResult {
+    private @Nullable String columnDataCountFilter;
     private @Nullable String columnGroup;
     /**
      * @return The name of the sensitive column.
      * 
      */
     private @Nullable List<String> columnNames;
+    /**
+     * @return The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    private @Nullable List<String> confidenceLevels;
     /**
      * @return The data type of the sensitive column.
      * 
@@ -82,6 +88,9 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
     private @Nullable String timeUpdatedLessThan;
 
     private GetSensitiveDataModelsSensitiveColumnsResult() {}
+    public Optional<String> columnDataCountFilter() {
+        return Optional.ofNullable(this.columnDataCountFilter);
+    }
     public Optional<String> columnGroup() {
         return Optional.ofNullable(this.columnGroup);
     }
@@ -91,6 +100,13 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
      */
     public List<String> columnNames() {
         return this.columnNames == null ? List.of() : this.columnNames;
+    }
+    /**
+     * @return The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     * 
+     */
+    public List<String> confidenceLevels() {
+        return this.confidenceLevels == null ? List.of() : this.confidenceLevels;
     }
     /**
      * @return The data type of the sensitive column.
@@ -196,8 +212,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String columnDataCountFilter;
         private @Nullable String columnGroup;
         private @Nullable List<String> columnNames;
+        private @Nullable List<String> confidenceLevels;
         private @Nullable List<String> dataTypes;
         private @Nullable List<GetSensitiveDataModelsSensitiveColumnsFilter> filters;
         private String id;
@@ -219,8 +237,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         public Builder() {}
         public Builder(GetSensitiveDataModelsSensitiveColumnsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.columnDataCountFilter = defaults.columnDataCountFilter;
     	      this.columnGroup = defaults.columnGroup;
     	      this.columnNames = defaults.columnNames;
+    	      this.confidenceLevels = defaults.confidenceLevels;
     	      this.dataTypes = defaults.dataTypes;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
@@ -242,6 +262,12 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
 
         @CustomType.Setter
+        public Builder columnDataCountFilter(@Nullable String columnDataCountFilter) {
+
+            this.columnDataCountFilter = columnDataCountFilter;
+            return this;
+        }
+        @CustomType.Setter
         public Builder columnGroup(@Nullable String columnGroup) {
 
             this.columnGroup = columnGroup;
@@ -255,6 +281,15 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
+        }
+        @CustomType.Setter
+        public Builder confidenceLevels(@Nullable List<String> confidenceLevels) {
+
+            this.confidenceLevels = confidenceLevels;
+            return this;
+        }
+        public Builder confidenceLevels(String... confidenceLevels) {
+            return confidenceLevels(List.of(confidenceLevels));
         }
         @CustomType.Setter
         public Builder dataTypes(@Nullable List<String> dataTypes) {
@@ -402,8 +437,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsResult {
         }
         public GetSensitiveDataModelsSensitiveColumnsResult build() {
             final var _resultValue = new GetSensitiveDataModelsSensitiveColumnsResult();
+            _resultValue.columnDataCountFilter = columnDataCountFilter;
             _resultValue.columnGroup = columnGroup;
             _resultValue.columnNames = columnNames;
+            _resultValue.confidenceLevels = confidenceLevels;
             _resultValue.dataTypes = dataTypes;
             _resultValue.filters = filters;
             _resultValue.id = id;

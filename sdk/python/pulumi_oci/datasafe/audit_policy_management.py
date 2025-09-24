@@ -42,7 +42,7 @@ class AuditPolicyManagementArgs:
         :param pulumi.Input[_builtins.bool] is_data_safe_service_account_excluded: Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
         :param pulumi.Input[_builtins.bool] provision_trigger: (Updatable) An optional property when set to true triggers Provision.
         :param pulumi.Input[_builtins.bool] retrieve_from_target_trigger: (Updatable) An optional property when set to true triggers Retrieve From Target.
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target for which the audit policy is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
         """
         if audit_conditions is not None:
             pulumi.set(__self__, "audit_conditions", audit_conditions)
@@ -177,7 +177,7 @@ class AuditPolicyManagementArgs:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target for which the audit policy is created.
+        The OCID of the target.
         """
         return pulumi.get(self, "target_id")
 
@@ -222,7 +222,7 @@ class _AuditPolicyManagementState:
         :param pulumi.Input[_builtins.bool] retrieve_from_target_trigger: (Updatable) An optional property when set to true triggers Retrieve From Target.
         :param pulumi.Input[_builtins.str] state: The current state of the audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target for which the audit policy is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
         :param pulumi.Input[_builtins.str] time_created: The time the audit policy was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_last_provisioned: Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
@@ -425,7 +425,7 @@ class _AuditPolicyManagementState:
     @pulumi.getter(name="targetId")
     def target_id(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The OCID of the target for which the audit policy is created.
+        The OCID of the target.
         """
         return pulumi.get(self, "target_id")
 
@@ -539,7 +539,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] is_data_safe_service_account_excluded: Option provided to users at the target to indicate whether the Data Safe service account has to be excluded while provisioning the audit policies.
         :param pulumi.Input[_builtins.bool] provision_trigger: (Updatable) An optional property when set to true triggers Provision.
         :param pulumi.Input[_builtins.bool] retrieve_from_target_trigger: (Updatable) An optional property when set to true triggers Retrieve From Target.
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target for which the audit policy is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
         """
         ...
     @overload
@@ -676,7 +676,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
         :param pulumi.Input[_builtins.bool] retrieve_from_target_trigger: (Updatable) An optional property when set to true triggers Retrieve From Target.
         :param pulumi.Input[_builtins.str] state: The current state of the audit policy.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[_builtins.str] target_id: The OCID of the target for which the audit policy is created.
+        :param pulumi.Input[_builtins.str] target_id: The OCID of the target.
         :param pulumi.Input[_builtins.str] time_created: The time the audit policy was created, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_last_provisioned: Indicates the last provisioning time of audit policies on the target, in the format defined by RFC3339.
         :param pulumi.Input[_builtins.str] time_last_retrieved: The time when the audit policies was last retrieved from this target, in the format defined by RFC3339.
@@ -814,7 +814,7 @@ class AuditPolicyManagement(pulumi.CustomResource):
     @pulumi.getter(name="targetId")
     def target_id(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The OCID of the target for which the audit policy is created.
+        The OCID of the target.
         """
         return pulumi.get(self, "target_id")
 

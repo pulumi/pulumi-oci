@@ -201,6 +201,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string Domain;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        public readonly string ExascaleDbStorageVaultId;
+        /// <summary>
         /// Details of the file system configuration of the VM cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetCloudVmClusterFileSystemConfigurationDetailResult> FileSystemConfigurationDetails;
@@ -311,6 +315,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        /// </summary>
+        public readonly string StorageManagementType;
+        /// <summary>
         /// The storage allocation for the disk group, in gigabytes (GB).
         /// </summary>
         public readonly int StorageSizeInGbs;
@@ -401,6 +409,8 @@ namespace Pulumi.Oci.Database
 
             string domain,
 
+            string exascaleDbStorageVaultId,
+
             ImmutableArray<Outputs.GetCloudVmClusterFileSystemConfigurationDetailResult> fileSystemConfigurationDetails,
 
             ImmutableDictionary<string, string> freeformTags,
@@ -457,6 +467,8 @@ namespace Pulumi.Oci.Database
 
             string state,
 
+            string storageManagementType,
+
             int storageSizeInGbs,
 
             string subnetId,
@@ -501,6 +513,7 @@ namespace Pulumi.Oci.Database
             DiskRedundancy = diskRedundancy;
             DisplayName = displayName;
             Domain = domain;
+            ExascaleDbStorageVaultId = exascaleDbStorageVaultId;
             FileSystemConfigurationDetails = fileSystemConfigurationDetails;
             FreeformTags = freeformTags;
             GiVersion = giVersion;
@@ -529,6 +542,7 @@ namespace Pulumi.Oci.Database
             Shape = shape;
             SshPublicKeys = sshPublicKeys;
             State = state;
+            StorageManagementType = storageManagementType;
             StorageSizeInGbs = storageSizeInGbs;
             SubnetId = subnetId;
             SubscriptionId = subscriptionId;

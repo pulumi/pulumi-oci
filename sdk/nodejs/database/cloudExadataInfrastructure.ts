@@ -159,6 +159,10 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
      */
     declare public readonly displayName: pulumi.Output<string>;
     /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    declare public /*out*/ readonly exascaleConfigs: pulumi.Output<outputs.Database.CloudExadataInfrastructureExascaleConfig[]>;
+    /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */
     declare public readonly freeformTags: pulumi.Output<{[key: string]: string}>;
@@ -281,6 +285,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["definedFileSystemConfigurations"] = state?.definedFileSystemConfigurations;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["displayName"] = state?.displayName;
+            resourceInputs["exascaleConfigs"] = state?.exascaleConfigs;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isSchedulingPolicyAssociated"] = state?.isSchedulingPolicyAssociated;
             resourceInputs["lastMaintenanceRunId"] = state?.lastMaintenanceRunId;
@@ -340,6 +345,7 @@ export class CloudExadataInfrastructure extends pulumi.CustomResource {
             resourceInputs["dbNodeStorageSizeInGbs"] = undefined /*out*/;
             resourceInputs["dbServerVersion"] = undefined /*out*/;
             resourceInputs["definedFileSystemConfigurations"] = undefined /*out*/;
+            resourceInputs["exascaleConfigs"] = undefined /*out*/;
             resourceInputs["isSchedulingPolicyAssociated"] = undefined /*out*/;
             resourceInputs["lastMaintenanceRunId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -434,6 +440,10 @@ export interface CloudExadataInfrastructureState {
      * (Updatable) The user-friendly name for the cloud Exadata infrastructure resource. The name does not need to be unique.
      */
     displayName?: pulumi.Input<string>;
+    /**
+     * The exascale config response details for the Exadata Cloud@Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud@Customer instances and Exadata Cloud Service instances.
+     */
+    exascaleConfigs?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureExascaleConfig>[]>;
     /**
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
      */

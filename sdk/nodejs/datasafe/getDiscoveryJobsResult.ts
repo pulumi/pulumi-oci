@@ -62,6 +62,14 @@ export interface GetDiscoveryJobsResultResult {
      */
     readonly columnName: string;
     /**
+     * The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+     */
+    readonly confidenceLevel: string;
+    /**
+     * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+     */
+    readonly confidenceLevelDetails: outputs.DataSafe.GetDiscoveryJobsResultConfidenceLevelDetail[];
+    /**
      * The data type of the sensitive column.
      */
     readonly dataType: string;

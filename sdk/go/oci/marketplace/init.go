@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AcceptedAgreement{}
 	case "oci:Marketplace/listingPackageAgreement:ListingPackageAgreement":
 		r = &ListingPackageAgreement{}
+	case "oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata":
+		r = &MarketplaceExternalAttestedMetadata{}
 	case "oci:Marketplace/publication:Publication":
 		r = &Publication{}
 	default:
@@ -48,6 +50,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Marketplace/listingPackageAgreement",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Marketplace/marketplaceExternalAttestedMetadata",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

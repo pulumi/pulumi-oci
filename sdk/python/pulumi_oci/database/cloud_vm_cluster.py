@@ -41,6 +41,7 @@ class CloudVmClusterArgs:
                  db_servers: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_local_backup_enabled: Optional[pulumi.Input[_builtins.bool]] = None,
@@ -90,6 +91,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] db_servers: The list of DB servers.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_local_backup_enabled: If true, database backup on local Exadata storage is configured for the cloud VM cluster. If false, database backup on local Exadata storage is not available in the cloud VM cluster.
@@ -144,6 +146,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
+        if exascale_db_storage_vault_id is not None:
+            pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         if file_system_configuration_details is not None:
             pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
@@ -428,6 +432,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "domain", value)
 
     @_builtins.property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "exascale_db_storage_vault_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="fileSystemConfigurationDetails")
     def file_system_configuration_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]]:
         """
@@ -659,6 +675,7 @@ class _CloudVmClusterState:
                  disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -686,6 +703,7 @@ class _CloudVmClusterState:
                  shape: Optional[pulumi.Input[_builtins.str]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  state: Optional[pulumi.Input[_builtins.str]] = None,
+                 storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
                  storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
                  subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
                  subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -725,6 +743,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[_builtins.str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input['CloudVmClusterFileSystemConfigurationDetailArgs']]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
@@ -757,6 +776,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[_builtins.str] shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the cloud VM cluster.
+        :param pulumi.Input[_builtins.str] storage_management_type: Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
         :param pulumi.Input[_builtins.int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -812,6 +832,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "display_name", display_name)
         if domain is not None:
             pulumi.set(__self__, "domain", domain)
+        if exascale_db_storage_vault_id is not None:
+            pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
         if file_system_configuration_details is not None:
             pulumi.set(__self__, "file_system_configuration_details", file_system_configuration_details)
         if freeform_tags is not None:
@@ -866,6 +888,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if storage_management_type is not None:
+            pulumi.set(__self__, "storage_management_type", storage_management_type)
         if storage_size_in_gbs is not None:
             pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         if subnet_id is not None:
@@ -1122,6 +1146,18 @@ class _CloudVmClusterState:
     @domain.setter
     def domain(self, value: Optional[pulumi.Input[_builtins.str]]):
         pulumi.set(self, "domain", value)
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
+
+    @exascale_db_storage_vault_id.setter
+    def exascale_db_storage_vault_id(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "exascale_db_storage_vault_id", value)
 
     @_builtins.property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -1453,6 +1489,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "state", value)
 
     @_builtins.property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> Optional[pulumi.Input[_builtins.str]]:
+        """
+        Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
+
+    @storage_management_type.setter
+    def storage_management_type(self, value: Optional[pulumi.Input[_builtins.str]]):
+        pulumi.set(self, "storage_management_type", value)
+
+    @_builtins.property
     @pulumi.getter(name="storageSizeInGbs")
     def storage_size_in_gbs(self) -> Optional[pulumi.Input[_builtins.int]]:
         """
@@ -1623,6 +1671,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1691,6 +1740,7 @@ class CloudVmCluster(pulumi.CustomResource):
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
             file_system_configuration_details=[{
                 "file_system_size_gb": cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
                 "mount_point": cloud_vm_cluster_file_system_configuration_details_mount_point,
@@ -1746,6 +1796,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
@@ -1829,6 +1880,7 @@ class CloudVmCluster(pulumi.CustomResource):
             db_servers=cloud_vm_cluster_db_servers,
             defined_tags=cloud_vm_cluster_defined_tags,
             domain=cloud_vm_cluster_domain,
+            exascale_db_storage_vault_id=test_exascale_db_storage_vault["id"],
             file_system_configuration_details=[{
                 "file_system_size_gb": cloud_vm_cluster_file_system_configuration_details_file_system_size_gb,
                 "mount_point": cloud_vm_cluster_file_system_configuration_details_mount_point,
@@ -1891,6 +1943,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  display_name: Optional[pulumi.Input[_builtins.str]] = None,
                  domain: Optional[pulumi.Input[_builtins.str]] = None,
+                 exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
                  file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  gi_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -1947,6 +2000,7 @@ class CloudVmCluster(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["domain"] = domain
+            __props__.__dict__["exascale_db_storage_vault_id"] = exascale_db_storage_vault_id
             __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
             __props__.__dict__["freeform_tags"] = freeform_tags
             if gi_version is None and not opts.urn:
@@ -1991,6 +2045,7 @@ class CloudVmCluster(pulumi.CustomResource):
             __props__.__dict__["scan_ipv6ids"] = None
             __props__.__dict__["shape"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["storage_management_type"] = None
             __props__.__dict__["storage_size_in_gbs"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -2026,6 +2081,7 @@ class CloudVmCluster(pulumi.CustomResource):
             disk_redundancy: Optional[pulumi.Input[_builtins.str]] = None,
             display_name: Optional[pulumi.Input[_builtins.str]] = None,
             domain: Optional[pulumi.Input[_builtins.str]] = None,
+            exascale_db_storage_vault_id: Optional[pulumi.Input[_builtins.str]] = None,
             file_system_configuration_details: Optional[pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             gi_version: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2053,6 +2109,7 @@ class CloudVmCluster(pulumi.CustomResource):
             shape: Optional[pulumi.Input[_builtins.str]] = None,
             ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]] = None,
             state: Optional[pulumi.Input[_builtins.str]] = None,
+            storage_management_type: Optional[pulumi.Input[_builtins.str]] = None,
             storage_size_in_gbs: Optional[pulumi.Input[_builtins.int]] = None,
             subnet_id: Optional[pulumi.Input[_builtins.str]] = None,
             subscription_id: Optional[pulumi.Input[_builtins.str]] = None,
@@ -2097,6 +2154,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] disk_redundancy: The type of redundancy configured for the cloud Vm cluster. NORMAL is 2-way redundancy. HIGH is 3-way redundancy.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) The user-friendly name for the cloud VM cluster. The name does not need to be unique.
         :param pulumi.Input[_builtins.str] domain: A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
+        :param pulumi.Input[_builtins.str] exascale_db_storage_vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
         :param pulumi.Input[Sequence[pulumi.Input[Union['CloudVmClusterFileSystemConfigurationDetailArgs', 'CloudVmClusterFileSystemConfigurationDetailArgsDict']]]] file_system_configuration_details: (Updatable) Details of the file system configuration of the VM cluster.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.str] gi_version: A valid Oracle Grid Infrastructure (GI) software version.
@@ -2129,6 +2187,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] shape: The model name of the Exadata hardware running the cloud VM cluster.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[_builtins.str] state: The current state of the cloud VM cluster.
+        :param pulumi.Input[_builtins.str] storage_management_type: Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
         :param pulumi.Input[_builtins.int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param pulumi.Input[_builtins.str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         :param pulumi.Input[_builtins.str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
@@ -2169,6 +2228,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["disk_redundancy"] = disk_redundancy
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["domain"] = domain
+        __props__.__dict__["exascale_db_storage_vault_id"] = exascale_db_storage_vault_id
         __props__.__dict__["file_system_configuration_details"] = file_system_configuration_details
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["gi_version"] = gi_version
@@ -2196,6 +2256,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["shape"] = shape
         __props__.__dict__["ssh_public_keys"] = ssh_public_keys
         __props__.__dict__["state"] = state
+        __props__.__dict__["storage_management_type"] = storage_management_type
         __props__.__dict__["storage_size_in_gbs"] = storage_size_in_gbs
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["subscription_id"] = subscription_id
@@ -2365,6 +2426,14 @@ class CloudVmCluster(pulumi.CustomResource):
         A domain name used for the cloud VM cluster. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted. Applies to Exadata Cloud Service instances only.
         """
         return pulumi.get(self, "domain")
+
+    @_builtins.property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
 
     @_builtins.property
     @pulumi.getter(name="fileSystemConfigurationDetails")
@@ -2586,6 +2655,14 @@ class CloudVmCluster(pulumi.CustomResource):
         The current state of the cloud VM cluster.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="storageManagementType")
+    def storage_management_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        """
+        return pulumi.get(self, "storage_management_type")
 
     @_builtins.property
     @pulumi.getter(name="storageSizeInGbs")

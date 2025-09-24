@@ -130,7 +130,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the target for which the audit policy is created.
+        /// The OCID of the target.
         /// </summary>
         [Output("targetId")]
         public Output<string?> TargetId { get; private set; } = null!;
@@ -278,7 +278,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<bool>? RetrieveFromTargetTrigger { get; set; }
 
         /// <summary>
-        /// The OCID of the target for which the audit policy is created.
+        /// The OCID of the target.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -400,7 +400,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The OCID of the target for which the audit policy is created.
+        /// The OCID of the target.
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }

@@ -30,6 +30,14 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ColumnName;
         /// <summary>
+        /// A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+        /// </summary>
+        public readonly string ConfidenceLevel;
+        /// <summary>
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult> ConfidenceLevelDetails;
+        /// <summary>
         /// A filter to return only the resources that match the specified data types.
         /// </summary>
         public readonly string DataType;
@@ -112,6 +120,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string columnName,
 
+            string confidenceLevel,
+
+            ImmutableArray<Outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetailResult> confidenceLevelDetails,
+
             string dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
@@ -152,6 +164,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
             AppName = appName;
             ColumnGroups = columnGroups;
             ColumnName = columnName;
+            ConfidenceLevel = confidenceLevel;
+            ConfidenceLevelDetails = confidenceLevelDetails;
             DataType = dataType;
             DbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             EstimatedDataValueCount = estimatedDataValueCount;

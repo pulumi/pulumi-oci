@@ -54,6 +54,11 @@ public final class GetJavaFamilyResult {
      */
     private String latestReleaseVersion;
     /**
+     * @return The license type(s) associated with the Java family.
+     * 
+     */
+    private List<String> licenseTypes;
+    /**
      * @return The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
@@ -122,6 +127,13 @@ public final class GetJavaFamilyResult {
         return this.latestReleaseVersion;
     }
     /**
+     * @return The license type(s) associated with the Java family.
+     * 
+     */
+    public List<String> licenseTypes() {
+        return this.licenseTypes;
+    }
+    /**
      * @return The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
@@ -153,6 +165,7 @@ public final class GetJavaFamilyResult {
         private Boolean isSupportedVersion;
         private List<GetJavaFamilyLatestReleaseArtifact> latestReleaseArtifacts;
         private String latestReleaseVersion;
+        private List<String> licenseTypes;
         private String releaseDate;
         private String supportType;
         public Builder() {}
@@ -166,6 +179,7 @@ public final class GetJavaFamilyResult {
     	      this.isSupportedVersion = defaults.isSupportedVersion;
     	      this.latestReleaseArtifacts = defaults.latestReleaseArtifacts;
     	      this.latestReleaseVersion = defaults.latestReleaseVersion;
+    	      this.licenseTypes = defaults.licenseTypes;
     	      this.releaseDate = defaults.releaseDate;
     	      this.supportType = defaults.supportType;
         }
@@ -238,6 +252,17 @@ public final class GetJavaFamilyResult {
             return this;
         }
         @CustomType.Setter
+        public Builder licenseTypes(List<String> licenseTypes) {
+            if (licenseTypes == null) {
+              throw new MissingRequiredPropertyException("GetJavaFamilyResult", "licenseTypes");
+            }
+            this.licenseTypes = licenseTypes;
+            return this;
+        }
+        public Builder licenseTypes(String... licenseTypes) {
+            return licenseTypes(List.of(licenseTypes));
+        }
+        @CustomType.Setter
         public Builder releaseDate(String releaseDate) {
             if (releaseDate == null) {
               throw new MissingRequiredPropertyException("GetJavaFamilyResult", "releaseDate");
@@ -263,6 +288,7 @@ public final class GetJavaFamilyResult {
             _resultValue.isSupportedVersion = isSupportedVersion;
             _resultValue.latestReleaseArtifacts = latestReleaseArtifacts;
             _resultValue.latestReleaseVersion = latestReleaseVersion;
+            _resultValue.licenseTypes = licenseTypes;
             _resultValue.releaseDate = releaseDate;
             _resultValue.supportType = supportType;
             return _resultValue;

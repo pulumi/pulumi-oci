@@ -155,6 +155,14 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string ColumnName;
         /// <summary>
+        /// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+        /// </summary>
+        public readonly string ConfidenceLevel;
+        /// <summary>
+        /// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailResult> ConfidenceLevelDetails;
+        /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
         public readonly string DataType;
@@ -239,6 +247,10 @@ namespace Pulumi.Oci.DataSafe
 
             string columnName,
 
+            string confidenceLevel,
+
+            ImmutableArray<Outputs.GetSensitiveDataModelsSensitiveColumnConfidenceLevelDetailResult> confidenceLevelDetails,
+
             string dataType,
 
             ImmutableArray<string> dbDefinedChildColumnKeys,
@@ -283,6 +295,8 @@ namespace Pulumi.Oci.DataSafe
             AppName = appName;
             ColumnGroups = columnGroups;
             ColumnName = columnName;
+            ConfidenceLevel = confidenceLevel;
+            ConfidenceLevelDetails = confidenceLevelDetails;
             DataType = dataType;
             DbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             EstimatedDataValueCount = estimatedDataValueCount;

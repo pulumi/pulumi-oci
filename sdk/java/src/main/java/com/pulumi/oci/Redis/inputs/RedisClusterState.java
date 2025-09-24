@@ -66,6 +66,36 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    @Import(name="discoveryEndpointIpAddress")
+    private @Nullable Output<String> discoveryEndpointIpAddress;
+
+    /**
+     * @return The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public Optional<Output<String>> discoveryEndpointIpAddress() {
+        return Optional.ofNullable(this.discoveryEndpointIpAddress);
+    }
+
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    @Import(name="discoveryFqdn")
+    private @Nullable Output<String> discoveryFqdn;
+
+    /**
+     * @return The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public Optional<Output<String>> discoveryFqdn() {
+        return Optional.ofNullable(this.discoveryFqdn);
+    }
+
+    /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
@@ -362,6 +392,8 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
         this.clusterMode = $.clusterMode;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.discoveryEndpointIpAddress = $.discoveryEndpointIpAddress;
+        this.discoveryFqdn = $.discoveryFqdn;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.lifecycleDetails = $.lifecycleDetails;
@@ -462,6 +494,48 @@ public final class RedisClusterState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder definedTags(Map<String,String> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param discoveryEndpointIpAddress The private IP address of the API endpoint for sharded cluster discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryEndpointIpAddress(@Nullable Output<String> discoveryEndpointIpAddress) {
+            $.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            return this;
+        }
+
+        /**
+         * @param discoveryEndpointIpAddress The private IP address of the API endpoint for sharded cluster discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryEndpointIpAddress(String discoveryEndpointIpAddress) {
+            return discoveryEndpointIpAddress(Output.of(discoveryEndpointIpAddress));
+        }
+
+        /**
+         * @param discoveryFqdn The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryFqdn(@Nullable Output<String> discoveryFqdn) {
+            $.discoveryFqdn = discoveryFqdn;
+            return this;
+        }
+
+        /**
+         * @param discoveryFqdn The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder discoveryFqdn(String discoveryFqdn) {
+            return discoveryFqdn(Output.of(discoveryFqdn));
         }
 
         /**

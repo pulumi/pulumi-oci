@@ -5,12 +5,19 @@ package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Jms.outputs.GetFleetExportSettingExportDataFilter;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetFleetExportSettingResult {
+    /**
+     * @return Filters applied when exporting data
+     * 
+     */
+    private List<GetFleetExportSettingExportDataFilter> exportDataFilters;
     /**
      * @return The duration of data to be exported for fleets.
      * 
@@ -78,6 +85,13 @@ public final class GetFleetExportSettingResult {
     private String timeLastModified;
 
     private GetFleetExportSettingResult() {}
+    /**
+     * @return Filters applied when exporting data
+     * 
+     */
+    public List<GetFleetExportSettingExportDataFilter> exportDataFilters() {
+        return this.exportDataFilters;
+    }
     /**
      * @return The duration of data to be exported for fleets.
      * 
@@ -179,6 +193,7 @@ public final class GetFleetExportSettingResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetFleetExportSettingExportDataFilter> exportDataFilters;
         private String exportDuration;
         private String exportFrequency;
         private String exportResources;
@@ -195,6 +210,7 @@ public final class GetFleetExportSettingResult {
         public Builder() {}
         public Builder(GetFleetExportSettingResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.exportDataFilters = defaults.exportDataFilters;
     	      this.exportDuration = defaults.exportDuration;
     	      this.exportFrequency = defaults.exportFrequency;
     	      this.exportResources = defaults.exportResources;
@@ -210,6 +226,17 @@ public final class GetFleetExportSettingResult {
     	      this.timeLastModified = defaults.timeLastModified;
         }
 
+        @CustomType.Setter
+        public Builder exportDataFilters(List<GetFleetExportSettingExportDataFilter> exportDataFilters) {
+            if (exportDataFilters == null) {
+              throw new MissingRequiredPropertyException("GetFleetExportSettingResult", "exportDataFilters");
+            }
+            this.exportDataFilters = exportDataFilters;
+            return this;
+        }
+        public Builder exportDataFilters(GetFleetExportSettingExportDataFilter... exportDataFilters) {
+            return exportDataFilters(List.of(exportDataFilters));
+        }
         @CustomType.Setter
         public Builder exportDuration(String exportDuration) {
             if (exportDuration == null) {
@@ -316,6 +343,7 @@ public final class GetFleetExportSettingResult {
         }
         public GetFleetExportSettingResult build() {
             final var _resultValue = new GetFleetExportSettingResult();
+            _resultValue.exportDataFilters = exportDataFilters;
             _resultValue.exportDuration = exportDuration;
             _resultValue.exportFrequency = exportFrequency;
             _resultValue.exportResources = exportResources;

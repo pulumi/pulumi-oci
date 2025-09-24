@@ -22,6 +22,7 @@ public final class GetSecurityAssessmentFindingsResult {
      * 
      */
     private @Nullable String category;
+    private @Nullable String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     private @Nullable List<String> containsReferences;
     private @Nullable List<String> containsSeverities;
@@ -77,6 +78,9 @@ public final class GetSecurityAssessmentFindingsResult {
      */
     public Optional<String> category() {
         return Optional.ofNullable(this.category);
+    }
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     public Optional<Boolean> compartmentIdInSubtree() {
         return Optional.ofNullable(this.compartmentIdInSubtree);
@@ -166,6 +170,7 @@ public final class GetSecurityAssessmentFindingsResult {
     public static final class Builder {
         private @Nullable String accessLevel;
         private @Nullable String category;
+        private @Nullable String compartmentId;
         private @Nullable Boolean compartmentIdInSubtree;
         private @Nullable List<String> containsReferences;
         private @Nullable List<String> containsSeverities;
@@ -187,6 +192,7 @@ public final class GetSecurityAssessmentFindingsResult {
     	      Objects.requireNonNull(defaults);
     	      this.accessLevel = defaults.accessLevel;
     	      this.category = defaults.category;
+    	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentIdInSubtree = defaults.compartmentIdInSubtree;
     	      this.containsReferences = defaults.containsReferences;
     	      this.containsSeverities = defaults.containsSeverities;
@@ -215,6 +221,12 @@ public final class GetSecurityAssessmentFindingsResult {
         public Builder category(@Nullable String category) {
 
             this.category = category;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder compartmentId(@Nullable String compartmentId) {
+
+            this.compartmentId = compartmentId;
             return this;
         }
         @CustomType.Setter
@@ -341,6 +353,7 @@ public final class GetSecurityAssessmentFindingsResult {
             final var _resultValue = new GetSecurityAssessmentFindingsResult();
             _resultValue.accessLevel = accessLevel;
             _resultValue.category = category;
+            _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentIdInSubtree = compartmentIdInSubtree;
             _resultValue.containsReferences = containsReferences;
             _resultValue.containsSeverities = containsSeverities;

@@ -5,25 +5,137 @@ package com.pulumi.oci.Jms.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemItem;
+import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemBlocklist;
+import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemJre;
+import com.pulumi.oci.Jms.outputs.GetInstallationSitesInstallationSiteCollectionItemOperatingSystem;
+import java.lang.Integer;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetInstallationSitesInstallationSiteCollectionItem {
     /**
-     * @return A list of Java installation sites.
+     * @return The approximate count of applications running on this installation
      * 
      */
-    private List<GetInstallationSitesInstallationSiteCollectionItemItem> items;
+    private Integer approximateApplicationCount;
+    /**
+     * @return The list of operations that are blocklisted.
+     * 
+     */
+    private List<GetInstallationSitesInstallationSiteCollectionItemBlocklist> blocklists;
+    /**
+     * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+     * 
+     */
+    private String installationKey;
+    /**
+     * @return The essential properties to identify a Java Runtime.
+     * 
+     */
+    private List<GetInstallationSitesInstallationSiteCollectionItemJre> jres;
+    /**
+     * @return The Fleet-unique identifier of the related managed instance.
+     * 
+     */
+    private String managedInstanceId;
+    /**
+     * @return Operating System of the platform on which the Java Runtime was reported.
+     * 
+     */
+    private List<GetInstallationSitesInstallationSiteCollectionItemOperatingSystem> operatingSystems;
+    /**
+     * @return The file system path of the installation.
+     * 
+     */
+    private String path;
+    /**
+     * @return The security status of the Java Runtime.
+     * 
+     */
+    private String securityStatus;
+    /**
+     * @return The lifecycle state of the installation site.
+     * 
+     */
+    private String state;
+    /**
+     * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * 
+     */
+    private String timeLastSeen;
 
     private GetInstallationSitesInstallationSiteCollectionItem() {}
     /**
-     * @return A list of Java installation sites.
+     * @return The approximate count of applications running on this installation
      * 
      */
-    public List<GetInstallationSitesInstallationSiteCollectionItemItem> items() {
-        return this.items;
+    public Integer approximateApplicationCount() {
+        return this.approximateApplicationCount;
+    }
+    /**
+     * @return The list of operations that are blocklisted.
+     * 
+     */
+    public List<GetInstallationSitesInstallationSiteCollectionItemBlocklist> blocklists() {
+        return this.blocklists;
+    }
+    /**
+     * @return The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+     * 
+     */
+    public String installationKey() {
+        return this.installationKey;
+    }
+    /**
+     * @return The essential properties to identify a Java Runtime.
+     * 
+     */
+    public List<GetInstallationSitesInstallationSiteCollectionItemJre> jres() {
+        return this.jres;
+    }
+    /**
+     * @return The Fleet-unique identifier of the related managed instance.
+     * 
+     */
+    public String managedInstanceId() {
+        return this.managedInstanceId;
+    }
+    /**
+     * @return Operating System of the platform on which the Java Runtime was reported.
+     * 
+     */
+    public List<GetInstallationSitesInstallationSiteCollectionItemOperatingSystem> operatingSystems() {
+        return this.operatingSystems;
+    }
+    /**
+     * @return The file system path of the installation.
+     * 
+     */
+    public String path() {
+        return this.path;
+    }
+    /**
+     * @return The security status of the Java Runtime.
+     * 
+     */
+    public String securityStatus() {
+        return this.securityStatus;
+    }
+    /**
+     * @return The lifecycle state of the installation site.
+     * 
+     */
+    public String state() {
+        return this.state;
+    }
+    /**
+     * @return The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+     * 
+     */
+    public String timeLastSeen() {
+        return this.timeLastSeen;
     }
 
     public static Builder builder() {
@@ -35,27 +147,132 @@ public final class GetInstallationSitesInstallationSiteCollectionItem {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetInstallationSitesInstallationSiteCollectionItemItem> items;
+        private Integer approximateApplicationCount;
+        private List<GetInstallationSitesInstallationSiteCollectionItemBlocklist> blocklists;
+        private String installationKey;
+        private List<GetInstallationSitesInstallationSiteCollectionItemJre> jres;
+        private String managedInstanceId;
+        private List<GetInstallationSitesInstallationSiteCollectionItemOperatingSystem> operatingSystems;
+        private String path;
+        private String securityStatus;
+        private String state;
+        private String timeLastSeen;
         public Builder() {}
         public Builder(GetInstallationSitesInstallationSiteCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.items = defaults.items;
+    	      this.approximateApplicationCount = defaults.approximateApplicationCount;
+    	      this.blocklists = defaults.blocklists;
+    	      this.installationKey = defaults.installationKey;
+    	      this.jres = defaults.jres;
+    	      this.managedInstanceId = defaults.managedInstanceId;
+    	      this.operatingSystems = defaults.operatingSystems;
+    	      this.path = defaults.path;
+    	      this.securityStatus = defaults.securityStatus;
+    	      this.state = defaults.state;
+    	      this.timeLastSeen = defaults.timeLastSeen;
         }
 
         @CustomType.Setter
-        public Builder items(List<GetInstallationSitesInstallationSiteCollectionItemItem> items) {
-            if (items == null) {
-              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "items");
+        public Builder approximateApplicationCount(Integer approximateApplicationCount) {
+            if (approximateApplicationCount == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "approximateApplicationCount");
             }
-            this.items = items;
+            this.approximateApplicationCount = approximateApplicationCount;
             return this;
         }
-        public Builder items(GetInstallationSitesInstallationSiteCollectionItemItem... items) {
-            return items(List.of(items));
+        @CustomType.Setter
+        public Builder blocklists(List<GetInstallationSitesInstallationSiteCollectionItemBlocklist> blocklists) {
+            if (blocklists == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "blocklists");
+            }
+            this.blocklists = blocklists;
+            return this;
+        }
+        public Builder blocklists(GetInstallationSitesInstallationSiteCollectionItemBlocklist... blocklists) {
+            return blocklists(List.of(blocklists));
+        }
+        @CustomType.Setter
+        public Builder installationKey(String installationKey) {
+            if (installationKey == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "installationKey");
+            }
+            this.installationKey = installationKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder jres(List<GetInstallationSitesInstallationSiteCollectionItemJre> jres) {
+            if (jres == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "jres");
+            }
+            this.jres = jres;
+            return this;
+        }
+        public Builder jres(GetInstallationSitesInstallationSiteCollectionItemJre... jres) {
+            return jres(List.of(jres));
+        }
+        @CustomType.Setter
+        public Builder managedInstanceId(String managedInstanceId) {
+            if (managedInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "managedInstanceId");
+            }
+            this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder operatingSystems(List<GetInstallationSitesInstallationSiteCollectionItemOperatingSystem> operatingSystems) {
+            if (operatingSystems == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "operatingSystems");
+            }
+            this.operatingSystems = operatingSystems;
+            return this;
+        }
+        public Builder operatingSystems(GetInstallationSitesInstallationSiteCollectionItemOperatingSystem... operatingSystems) {
+            return operatingSystems(List.of(operatingSystems));
+        }
+        @CustomType.Setter
+        public Builder path(String path) {
+            if (path == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "path");
+            }
+            this.path = path;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder securityStatus(String securityStatus) {
+            if (securityStatus == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "securityStatus");
+            }
+            this.securityStatus = securityStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder state(String state) {
+            if (state == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "state");
+            }
+            this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeLastSeen(String timeLastSeen) {
+            if (timeLastSeen == null) {
+              throw new MissingRequiredPropertyException("GetInstallationSitesInstallationSiteCollectionItem", "timeLastSeen");
+            }
+            this.timeLastSeen = timeLastSeen;
+            return this;
         }
         public GetInstallationSitesInstallationSiteCollectionItem build() {
             final var _resultValue = new GetInstallationSitesInstallationSiteCollectionItem();
-            _resultValue.items = items;
+            _resultValue.approximateApplicationCount = approximateApplicationCount;
+            _resultValue.blocklists = blocklists;
+            _resultValue.installationKey = installationKey;
+            _resultValue.jres = jres;
+            _resultValue.managedInstanceId = managedInstanceId;
+            _resultValue.operatingSystems = operatingSystems;
+            _resultValue.path = path;
+            _resultValue.securityStatus = securityStatus;
+            _resultValue.state = state;
+            _resultValue.timeLastSeen = timeLastSeen;
             return _resultValue;
         }
     }

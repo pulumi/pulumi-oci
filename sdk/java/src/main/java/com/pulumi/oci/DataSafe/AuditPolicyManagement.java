@@ -253,14 +253,14 @@ public class AuditPolicyManagement extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The OCID of the target for which the audit policy is created.
+     * The OCID of the target.
      * 
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> targetId;
 
     /**
-     * @return The OCID of the target for which the audit policy is created.
+     * @return The OCID of the target.
      * 
      */
     public Output<Optional<String>> targetId() {

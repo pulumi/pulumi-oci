@@ -55,7 +55,9 @@ type DiscoveryJobsResult struct {
 	// The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
 	AppName pulumi.StringOutput `pulumi:"appName"`
 	// The name of the sensitive column.
-	ColumnName pulumi.StringOutput `pulumi:"columnName"`
+	ColumnName             pulumi.StringOutput                                 `pulumi:"columnName"`
+	ConfidenceLevel        pulumi.StringOutput                                 `pulumi:"confidenceLevel"`
+	ConfidenceLevelDetails DiscoveryJobsResultConfidenceLevelDetailArrayOutput `pulumi:"confidenceLevelDetails"`
 	// The data type of the sensitive column.
 	DataType pulumi.StringOutput `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -136,7 +138,9 @@ type discoveryJobsResultState struct {
 	// The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
 	AppName *string `pulumi:"appName"`
 	// The name of the sensitive column.
-	ColumnName *string `pulumi:"columnName"`
+	ColumnName             *string                                    `pulumi:"columnName"`
+	ConfidenceLevel        *string                                    `pulumi:"confidenceLevel"`
+	ConfidenceLevelDetails []DiscoveryJobsResultConfidenceLevelDetail `pulumi:"confidenceLevelDetails"`
 	// The data type of the sensitive column.
 	DataType *string `pulumi:"dataType"`
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -185,7 +189,9 @@ type DiscoveryJobsResultState struct {
 	// The name of the application. An application is an entity that is identified by a schema and stores sensitive information for that schema. Its value will be same as schemaName, if no value is passed.
 	AppName pulumi.StringPtrInput
 	// The name of the sensitive column.
-	ColumnName pulumi.StringPtrInput
+	ColumnName             pulumi.StringPtrInput
+	ConfidenceLevel        pulumi.StringPtrInput
+	ConfidenceLevelDetails DiscoveryJobsResultConfidenceLevelDetailArrayInput
 	// The data type of the sensitive column.
 	DataType pulumi.StringPtrInput
 	// Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
@@ -347,6 +353,16 @@ func (o DiscoveryJobsResultOutput) AppName() pulumi.StringOutput {
 // The name of the sensitive column.
 func (o DiscoveryJobsResultOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringOutput { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+func (o DiscoveryJobsResultOutput) ConfidenceLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v *DiscoveryJobsResult) pulumi.StringOutput { return v.ConfidenceLevel }).(pulumi.StringOutput)
+}
+
+func (o DiscoveryJobsResultOutput) ConfidenceLevelDetails() DiscoveryJobsResultConfidenceLevelDetailArrayOutput {
+	return o.ApplyT(func(v *DiscoveryJobsResult) DiscoveryJobsResultConfidenceLevelDetailArrayOutput {
+		return v.ConfidenceLevelDetails
+	}).(DiscoveryJobsResultConfidenceLevelDetailArrayOutput)
 }
 
 // The data type of the sensitive column.

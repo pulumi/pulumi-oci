@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -84,6 +86,14 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
      * The name of the sensitive column.
      */
     declare public readonly columnName: pulumi.Output<string>;
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     */
+    declare public /*out*/ readonly confidenceLevel: pulumi.Output<string>;
+    /**
+     * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+     */
+    declare public /*out*/ readonly confidenceLevelDetails: pulumi.Output<outputs.DataSafe.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail[]>;
     /**
      * (Updatable) The data type of the sensitive column.
      */
@@ -178,6 +188,8 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
             resourceInputs["appName"] = state?.appName;
             resourceInputs["columnGroups"] = state?.columnGroups;
             resourceInputs["columnName"] = state?.columnName;
+            resourceInputs["confidenceLevel"] = state?.confidenceLevel;
+            resourceInputs["confidenceLevelDetails"] = state?.confidenceLevelDetails;
             resourceInputs["dataType"] = state?.dataType;
             resourceInputs["dbDefinedChildColumnKeys"] = state?.dbDefinedChildColumnKeys;
             resourceInputs["estimatedDataValueCount"] = state?.estimatedDataValueCount;
@@ -224,6 +236,8 @@ export class SensitiveDataModelsSensitiveColumn extends pulumi.CustomResource {
             resourceInputs["sensitiveTypeId"] = args?.sensitiveTypeId;
             resourceInputs["status"] = args?.status;
             resourceInputs["columnGroups"] = undefined /*out*/;
+            resourceInputs["confidenceLevel"] = undefined /*out*/;
+            resourceInputs["confidenceLevelDetails"] = undefined /*out*/;
             resourceInputs["estimatedDataValueCount"] = undefined /*out*/;
             resourceInputs["key"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -258,6 +272,14 @@ export interface SensitiveDataModelsSensitiveColumnState {
      * The name of the sensitive column.
      */
     columnName?: pulumi.Input<string>;
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     */
+    confidenceLevel?: pulumi.Input<string>;
+    /**
+     * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+     */
+    confidenceLevelDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail>[]>;
     /**
      * (Updatable) The data type of the sensitive column.
      */

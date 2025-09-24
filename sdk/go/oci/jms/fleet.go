@@ -83,6 +83,10 @@ type Fleet struct {
 	ApproximateJavaServerCount pulumi.IntOutput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntOutput `pulumi:"approximateJreCount"`
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount pulumi.IntOutput `pulumi:"approximateLibraryCount"`
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount pulumi.IntOutput `pulumi:"approximateLibraryVulnerabilityCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount pulumi.IntOutput `pulumi:"approximateManagedInstanceCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -158,6 +162,10 @@ type fleetState struct {
 	ApproximateJavaServerCount *int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount *int `pulumi:"approximateJreCount"`
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount *int `pulumi:"approximateLibraryCount"`
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount *int `pulumi:"approximateLibraryVulnerabilityCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount *int `pulumi:"approximateManagedInstanceCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -195,6 +203,10 @@ type FleetState struct {
 	ApproximateJavaServerCount pulumi.IntPtrInput
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntPtrInput
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount pulumi.IntPtrInput
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount pulumi.IntPtrInput
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -371,6 +383,16 @@ func (o FleetOutput) ApproximateJavaServerCount() pulumi.IntOutput {
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o FleetOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateJreCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o FleetOutput) ApproximateLibraryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateLibraryCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o FleetOutput) ApproximateLibraryVulnerabilityCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *Fleet) pulumi.IntOutput { return v.ApproximateLibraryVulnerabilityCount }).(pulumi.IntOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.

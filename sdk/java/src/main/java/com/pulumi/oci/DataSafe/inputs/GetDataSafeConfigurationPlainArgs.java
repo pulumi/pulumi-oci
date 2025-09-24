@@ -14,14 +14,14 @@ public final class GetDataSafeConfigurationPlainArgs extends com.pulumi.resource
     public static final GetDataSafeConfigurationPlainArgs Empty = new GetDataSafeConfigurationPlainArgs();
 
     /**
-     * A filter to return only resources that match the specified compartment OCID.
+     * A filter to return the Data Safe configuration for the specified tenancy OCID.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return A filter to return only resources that match the specified compartment OCID.
+     * @return A filter to return the Data Safe configuration for the specified tenancy OCID.
      * 
      */
     public String compartmentId() {
@@ -53,7 +53,7 @@ public final class GetDataSafeConfigurationPlainArgs extends com.pulumi.resource
         }
 
         /**
-         * @param compartmentId A filter to return only resources that match the specified compartment OCID.
+         * @param compartmentId A filter to return the Data Safe configuration for the specified tenancy OCID.
          * 
          * @return builder
          * 

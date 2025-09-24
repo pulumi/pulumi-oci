@@ -52,6 +52,12 @@ namespace Pulumi.Oci.DataSafe
         public string? Category { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the specified compartment OCID.
+        /// </summary>
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
+
+        /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
         /// </summary>
         [Input("compartmentIdInSubtree")]
@@ -59,6 +65,10 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("containsReferences")]
         private List<string>? _containsReferences;
+
+        /// <summary>
+        /// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+        /// </summary>
         public List<string> ContainsReferences
         {
             get => _containsReferences ?? (_containsReferences = new List<string>());
@@ -67,6 +77,10 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("containsSeverities")]
         private List<string>? _containsSeverities;
+
+        /// <summary>
+        /// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+        /// </summary>
         public List<string> ContainsSeverities
         {
             get => _containsSeverities ?? (_containsSeverities = new List<string>());
@@ -115,7 +129,8 @@ namespace Pulumi.Oci.DataSafe
         /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
         /// 
         /// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-        /// Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+        /// 
+        /// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
         /// </summary>
         [Input("scimQuery")]
         public string? ScimQuery { get; set; }
@@ -177,6 +192,12 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? Category { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the specified compartment OCID.
+        /// </summary>
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
+
+        /// <summary>
         /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned. Depends on the 'accessLevel' setting.
         /// </summary>
         [Input("compartmentIdInSubtree")]
@@ -184,6 +205,10 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("containsReferences")]
         private InputList<string>? _containsReferences;
+
+        /// <summary>
+        /// An optional filter to return only findings that match the specified references. Use containsReferences param if need to filter by multiple references.
+        /// </summary>
         public InputList<string> ContainsReferences
         {
             get => _containsReferences ?? (_containsReferences = new InputList<string>());
@@ -192,6 +217,10 @@ namespace Pulumi.Oci.DataSafe
 
         [Input("containsSeverities")]
         private InputList<string>? _containsSeverities;
+
+        /// <summary>
+        /// A filter to return only findings that match the specified risk level(s). Use containsSeverity parameter if need to filter by multiple risk levels.
+        /// </summary>
         public InputList<string> ContainsSeverities
         {
             get => _containsSeverities ?? (_containsSeverities = new InputList<string>());
@@ -240,7 +269,8 @@ namespace Pulumi.Oci.DataSafe
         /// The scimQuery query parameter accepts filter expressions that use the syntax described in Section 3.2.2.2 of the System for Cross-Domain Identity Management (SCIM) specification, which is available at [RFC3339](https://tools.ietf.org/html/draft-ietf-scim-api-12). In SCIM filtering expressions, text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format. (Numeric and boolean values should not be quoted.)
         /// 
         /// **Example:** | scimQuery=(severity eq 'high') and (targetId eq 'target_1') scimQuery=(category eq "Users") and (targetId eq "target_1") scimQuery=(reference eq 'CIS') and (targetId eq 'target_1')
-        /// Supported fields: severity findingKey reference targetId targetName isTopFinding title category remarks details summary isRiskModified
+        /// 
+        /// Supported fields: severity findingKey reference targetId isTopFinding title category remarks details summary isRiskModified
         /// </summary>
         [Input("scimQuery")]
         public Input<string>? ScimQuery { get; set; }
@@ -296,6 +326,7 @@ namespace Pulumi.Oci.DataSafe
         /// The category to which the finding belongs to.
         /// </summary>
         public readonly string? Category;
+        public readonly string? CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         public readonly ImmutableArray<string> ContainsReferences;
         public readonly ImmutableArray<string> ContainsSeverities;
@@ -340,6 +371,8 @@ namespace Pulumi.Oci.DataSafe
 
             string? category,
 
+            string? compartmentId,
+
             bool? compartmentIdInSubtree,
 
             ImmutableArray<string> containsReferences,
@@ -374,6 +407,7 @@ namespace Pulumi.Oci.DataSafe
         {
             AccessLevel = accessLevel;
             Category = category;
+            CompartmentId = compartmentId;
             CompartmentIdInSubtree = compartmentIdInSubtree;
             ContainsReferences = containsReferences;
             ContainsSeverities = containsSeverities;

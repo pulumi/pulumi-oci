@@ -28,6 +28,7 @@ namespace Pulumi.Oci.DataSafe
     ///     {
     ///         CompartmentId = compartmentId,
     ///         TargetId = testTargetDatabase.Id,
+    ///         TrailLocation = auditTrailManagementTrailLocation,
     ///         CanUpdateLastArchiveTimeOnTarget = auditTrailManagementCanUpdateLastArchiveTimeOnTarget,
     ///         DefinedTags = 
     ///         {

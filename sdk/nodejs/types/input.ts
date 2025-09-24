@@ -22017,6 +22017,15 @@ export namespace DataSafe {
         violationLogAutoPurge?: pulumi.Input<string>;
     }
 
+    export interface DiscoveryJobsResultConfidenceLevelDetail {
+        doesColumnLeadToPiiInNonTables?: pulumi.Input<boolean>;
+        doesColumnLeadToPiiInSameRelatedTables?: pulumi.Input<boolean>;
+        hasCommentPatternMatched?: pulumi.Input<boolean>;
+        hasDataPatternMatched?: pulumi.Input<boolean>;
+        hasNamePatternMatched?: pulumi.Input<boolean>;
+        isSensitiveTypeFromSameContextFoundInSameOrRelatedTables?: pulumi.Input<boolean>;
+    }
+
     export interface DiscoveryJobsResultModifiedAttribute {
         /**
          * Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column.
@@ -23949,6 +23958,15 @@ export namespace DataSafe {
          * (Updatable) This contains an optional list of the table names.
          */
         tableNames?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface SensitiveDataModelsSensitiveColumnConfidenceLevelDetail {
+        doesColumnLeadToPiiInNonTables?: pulumi.Input<boolean>;
+        doesColumnLeadToPiiInSameRelatedTables?: pulumi.Input<boolean>;
+        hasCommentPatternMatched?: pulumi.Input<boolean>;
+        hasDataPatternMatched?: pulumi.Input<boolean>;
+        hasNamePatternMatched?: pulumi.Input<boolean>;
+        isSensitiveTypeFromSameContextFoundInSameOrRelatedTables?: pulumi.Input<boolean>;
     }
 
     export interface SensitiveTypeGroupGroupedSensitiveTypeItem {
@@ -29318,6 +29336,108 @@ export namespace Database {
         userName: pulumi.Input<string>;
     }
 
+    export interface CloudExadataInfrastructureConfigureExascaleManagementCustomerContact {
+        /**
+         * The email address used by Oracle to send notifications regarding databases and infrastructure.
+         */
+        email?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataInfrastructureConfigureExascaleManagementDefinedFileSystemConfiguration {
+        /**
+         * If true, the file system is used to create a backup prior to Exadata VM OS update.
+         */
+        isBackupPartition?: pulumi.Input<boolean>;
+        /**
+         * If true, the file system resize is allowed for the Exadata Infrastructure cluster. If false, the file system resize is not allowed.
+         */
+        isResizable?: pulumi.Input<boolean>;
+        /**
+         * The minimum size of file system.
+         */
+        minSizeGb?: pulumi.Input<number>;
+        /**
+         * The mount point of file system.
+         */
+        mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataInfrastructureConfigureExascaleManagementExascaleConfig {
+        /**
+         * Available storage size for Exascale in GBs.
+         */
+        availableStorageInGbs?: pulumi.Input<number>;
+        /**
+         * Storage size needed for Exascale in GBs.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        totalStorageInGbs?: pulumi.Input<number>;
+    }
+
+    export interface CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindow {
+        /**
+         * Determines the amount of time the system will wait before the start of each database server patching operation. Custom action timeout is in minutes and valid value is between 15 to 120 (inclusive).
+         */
+        customActionTimeoutInMins?: pulumi.Input<number>;
+        /**
+         * Days during the week when maintenance should be performed.
+         */
+        daysOfWeeks?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek>[]>;
+        /**
+         * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are - 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
+         */
+        hoursOfDays?: pulumi.Input<pulumi.Input<number>[]>;
+        /**
+         * If true, enables the configuration of a custom action timeout (waiting period) between database server patching operations.
+         */
+        isCustomActionTimeoutEnabled?: pulumi.Input<boolean>;
+        /**
+         * If true, enables the monthly patching option.
+         */
+        isMonthlyPatchingEnabled?: pulumi.Input<boolean>;
+        /**
+         * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         */
+        leadTimeInWeeks?: pulumi.Input<number>;
+        /**
+         * Months during the year when maintenance should be performed.
+         */
+        months?: pulumi.Input<pulumi.Input<inputs.Database.CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth>[]>;
+        /**
+         * Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         */
+        patchingMode?: pulumi.Input<string>;
+        /**
+         * The maintenance window scheduling preference.
+         */
+        preference?: pulumi.Input<string>;
+        /**
+         * If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
+        skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
+        /**
+         * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         */
+        weeksOfMonths?: pulumi.Input<pulumi.Input<number>[]>;
+    }
+
+    export interface CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowDaysOfWeek {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataInfrastructureConfigureExascaleManagementMaintenanceWindowMonth {
+        /**
+         * Name of the month of the year.
+         */
+        name?: pulumi.Input<string>;
+    }
+
     export interface CloudExadataInfrastructureCustomerContact {
         /**
          * (Updatable) The email address used by Oracle to send notifications regarding databases and infrastructure.
@@ -29342,6 +29462,17 @@ export namespace Database {
          * The mount point of file system.
          */
         mountPoint?: pulumi.Input<string>;
+    }
+
+    export interface CloudExadataInfrastructureExascaleConfig {
+        /**
+         * Available storage size for Exascale in GBs.
+         */
+        availableStorageInGbs?: pulumi.Input<number>;
+        /**
+         * Storage size needed for Exascale in GBs.
+         */
+        totalStorageInGbs?: pulumi.Input<number>;
     }
 
     export interface CloudExadataInfrastructureMaintenanceWindow {
@@ -75701,6 +75832,18 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetFleetContainersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetContainersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetFleetCryptoAnalysisResultsFilter {
         name: string;
         regex?: boolean;
@@ -75773,6 +75916,30 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetFleetLibraryApplicationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetLibraryApplicationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetLibraryManagedInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetLibraryManagedInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetFleetPerformanceTuningAnalysisResultsFilter {
         name: string;
         regex?: boolean;
@@ -75780,6 +75947,42 @@ export namespace Jms {
     }
 
     export interface GetFleetPerformanceTuningAnalysisResultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetUncorrelatedPackageApplicationsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetUncorrelatedPackageApplicationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetUncorrelatedPackageManagedInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetUncorrelatedPackageManagedInstancesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetFleetUncorrelatedPackagesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetFleetUncorrelatedPackagesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -75935,6 +76138,48 @@ export namespace Jms {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetTaskSchedulesFilter {
+        /**
+         * The task name.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetTaskSchedulesFilterArgs {
+        /**
+         * The task name.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUtilsJavaMigrationAnalysisFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUtilsJavaMigrationAnalysisFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetUtilsPerformanceTuningAnalysisFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetUtilsPerformanceTuningAnalysisFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface JavaDownloadsJavaDownloadReportCreatedBy {
         /**
          * Display name for the Java download report.
@@ -76008,6 +76253,329 @@ export namespace Jms {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
          */
         id?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetails {
+        /**
+         * (Updatable) The list of Java installation sites to add.
+         */
+        addInstallationSiteTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsAddInstallationSiteTaskRequest>;
+        /**
+         * (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+         */
+        cryptoTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsCryptoTaskRequest>;
+        /**
+         * (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+         */
+        deployedApplicationMigrationTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest>;
+        /**
+         * (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+         */
+        javaMigrationTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsJavaMigrationTaskRequest>;
+        /**
+         * (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+         */
+        jfrTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsJfrTaskRequest>;
+        /**
+         * (Updatable) Details of the request to start a JFR performance tuning analysis.
+         */
+        performanceTuningTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsPerformanceTuningTaskRequest>;
+        /**
+         * (Updatable) The list of Java installation sites to remove.
+         */
+        removeInstallationSiteTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest>;
+        /**
+         * (Updatable) The list of managed instances to scan.
+         */
+        scanJavaServerTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsScanJavaServerTaskRequest>;
+        /**
+         * (Updatable) The list of managed instances to scan.
+         */
+        scanLibraryTaskRequest?: pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsScanLibraryTaskRequest>;
+        /**
+         * (Updatable) Type of task.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        taskType: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsAddInstallationSiteTaskRequest {
+        /**
+         * (Updatable) The list of installation sites to add.
+         */
+        installationSites?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite>[]>;
+        /**
+         * (Updatable) Optional list of post java installation actions
+         */
+        postInstallationActions?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite {
+        /**
+         * (Updatable) Artifact content type for the Java version.
+         */
+        artifactContentType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Forces the installation request even if a more recent release is already present in the host.
+         */
+        forceInstall?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+         */
+        headlessMode?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Custom path to install new Java installation site.
+         */
+        installationPath?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The release version of the Java Runtime.
+         */
+        releaseVersion?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsCryptoTaskRequest {
+        /**
+         * (Updatable) Duration of the JFR recording in minutes.
+         */
+        recordingDurationInMinutes?: pulumi.Input<number>;
+        /**
+         * (Updatable) The attachment targets to start JFR.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsCryptoTaskRequestTarget>[]>;
+        /**
+         * (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+         */
+        waitingPeriodInMinutes?: pulumi.Input<number>;
+    }
+
+    export interface TaskScheduleTaskDetailsCryptoTaskRequestTarget {
+        /**
+         * (Updatable) Unique key that identifies the application installation for JFR data collection.
+         */
+        applicationInstallationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the application for JFR data collection.
+         */
+        applicationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the container for JFR data collection.
+         */
+        containerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identify the JVM for JFR data collection.
+         */
+        jreKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the Managed Instance to collect JFR data.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest {
+        /**
+         * (Updatable) An array of migration analyses requests.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget>[]>;
+    }
+
+    export interface TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget {
+        /**
+         * (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+         */
+        deployedApplicationInstallationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+         */
+        excludePackagePrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+         */
+        includePackagePrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The JDK version the application is currently running on.
+         */
+        sourceJdkVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+         */
+        targetJdkVersion?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsJavaMigrationTaskRequest {
+        /**
+         * (Updatable) An array of migration analysis requests.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget>[]>;
+    }
+
+    export interface TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget {
+        /**
+         * (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+         */
+        applicationInstallationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+         */
+        excludePackagePrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+         */
+        includePackagePrefixes?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+        /**
+         * (Updatable) The JDK version the application is currently running on.
+         */
+        sourceJdkVersion?: pulumi.Input<string>;
+        /**
+         * (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+         */
+        targetJdkVersion?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsJfrTaskRequest {
+        /**
+         * (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+         */
+        jfcProfileName?: pulumi.Input<string>;
+        /**
+         * (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+         */
+        jfcV1?: pulumi.Input<string>;
+        /**
+         * (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+         */
+        jfcV2?: pulumi.Input<string>;
+        /**
+         * (Updatable) Duration of the JFR recording in minutes.
+         */
+        recordingDurationInMinutes?: pulumi.Input<number>;
+        /**
+         * (Updatable) The maximum size limit for the JFR file collected.
+         */
+        recordingSizeInMb?: pulumi.Input<number>;
+        /**
+         * (Updatable) The attachment targets to start JFR.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsJfrTaskRequestTarget>[]>;
+        /**
+         * (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+         */
+        waitingPeriodInMinutes?: pulumi.Input<number>;
+    }
+
+    export interface TaskScheduleTaskDetailsJfrTaskRequestTarget {
+        /**
+         * (Updatable) Unique key that identifies the application installation for JFR data collection.
+         */
+        applicationInstallationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the application for JFR data collection.
+         */
+        applicationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the container for JFR data collection.
+         */
+        containerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identify the JVM for JFR data collection.
+         */
+        jreKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the Managed Instance to collect JFR data.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsPerformanceTuningTaskRequest {
+        /**
+         * (Updatable) Duration of the JFR recording in minutes.
+         */
+        recordingDurationInMinutes?: pulumi.Input<number>;
+        /**
+         * (Updatable) The attachment targets to start JFR.
+         */
+        targets?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget>[]>;
+        /**
+         * (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+         */
+        waitingPeriodInMinutes?: pulumi.Input<number>;
+    }
+
+    export interface TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget {
+        /**
+         * (Updatable) Unique key that identifies the application installation for JFR data collection.
+         */
+        applicationInstallationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the application for JFR data collection.
+         */
+        applicationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identifies the container for JFR data collection.
+         */
+        containerKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) Unique key that identify the JVM for JFR data collection.
+         */
+        jreKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the Managed Instance to collect JFR data.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest {
+        /**
+         * (Updatable) The list of installation sites to remove.
+         */
+        installationSites?: pulumi.Input<pulumi.Input<inputs.Jms.TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite>[]>;
+    }
+
+    export interface TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite {
+        /**
+         * (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+         */
+        installationKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+         */
+        managedInstanceId?: pulumi.Input<string>;
+    }
+
+    export interface TaskScheduleTaskDetailsScanJavaServerTaskRequest {
+        /**
+         * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+         */
+        managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface TaskScheduleTaskDetailsScanLibraryTaskRequest {
+        /**
+         * (Updatable) The duration of the dynamic scan in minutes.
+         */
+        dynamicScanDurationInMinutes?: pulumi.Input<number>;
+        /**
+         * (Updatable) Indicates whether the scan is dynamic or static.
+         */
+        isDynamicScan?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+         */
+        managedInstanceIds?: pulumi.Input<pulumi.Input<string>[]>;
     }
 }
 
@@ -79432,6 +80000,18 @@ export namespace Marketplace {
         /**
          * The name of the listing.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMarketplaceMetadataPublicKeysFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMarketplaceMetadataPublicKeysFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;

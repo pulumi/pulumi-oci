@@ -68,6 +68,8 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
      * The name of the sensitive column.
      */
     declare public /*out*/ readonly columnName: pulumi.Output<string>;
+    declare public /*out*/ readonly confidenceLevel: pulumi.Output<string>;
+    declare public /*out*/ readonly confidenceLevelDetails: pulumi.Output<outputs.DataSafe.DiscoveryJobsResultConfidenceLevelDetail[]>;
     /**
      * The data type of the sensitive column.
      */
@@ -159,6 +161,8 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
             resourceInputs["appDefinedChildColumnKeys"] = state?.appDefinedChildColumnKeys;
             resourceInputs["appName"] = state?.appName;
             resourceInputs["columnName"] = state?.columnName;
+            resourceInputs["confidenceLevel"] = state?.confidenceLevel;
+            resourceInputs["confidenceLevelDetails"] = state?.confidenceLevelDetails;
             resourceInputs["dataType"] = state?.dataType;
             resourceInputs["dbDefinedChildColumnKeys"] = state?.dbDefinedChildColumnKeys;
             resourceInputs["discoveryJobId"] = state?.discoveryJobId;
@@ -185,6 +189,8 @@ export class DiscoveryJobsResult extends pulumi.CustomResource {
             resourceInputs["appDefinedChildColumnKeys"] = undefined /*out*/;
             resourceInputs["appName"] = undefined /*out*/;
             resourceInputs["columnName"] = undefined /*out*/;
+            resourceInputs["confidenceLevel"] = undefined /*out*/;
+            resourceInputs["confidenceLevelDetails"] = undefined /*out*/;
             resourceInputs["dataType"] = undefined /*out*/;
             resourceInputs["dbDefinedChildColumnKeys"] = undefined /*out*/;
             resourceInputs["discoveryType"] = undefined /*out*/;
@@ -223,6 +229,8 @@ export interface DiscoveryJobsResultState {
      * The name of the sensitive column.
      */
     columnName?: pulumi.Input<string>;
+    confidenceLevel?: pulumi.Input<string>;
+    confidenceLevelDetails?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryJobsResultConfidenceLevelDetail>[]>;
     /**
      * The data type of the sensitive column.
      */

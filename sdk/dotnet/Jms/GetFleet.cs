@@ -140,6 +140,14 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly int ApproximateJreCount;
         /// <summary>
+        /// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        public readonly int ApproximateLibraryCount;
+        /// <summary>
+        /// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        public readonly int ApproximateLibraryVulnerabilityCount;
+        /// <summary>
         /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         public readonly int ApproximateManagedInstanceCount;
@@ -207,6 +215,10 @@ namespace Pulumi.Oci.Jms
 
             int approximateJreCount,
 
+            int approximateLibraryCount,
+
+            int approximateLibraryVulnerabilityCount,
+
             int approximateManagedInstanceCount,
 
             string compartmentId,
@@ -241,6 +253,8 @@ namespace Pulumi.Oci.Jms
             ApproximateInstallationCount = approximateInstallationCount;
             ApproximateJavaServerCount = approximateJavaServerCount;
             ApproximateJreCount = approximateJreCount;
+            ApproximateLibraryCount = approximateLibraryCount;
+            ApproximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
             ApproximateManagedInstanceCount = approximateManagedInstanceCount;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;

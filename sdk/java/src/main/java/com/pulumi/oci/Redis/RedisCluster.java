@@ -121,6 +121,34 @@ public class RedisCluster extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
+     * The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    @Export(name="discoveryEndpointIpAddress", refs={String.class}, tree="[0]")
+    private Output<String> discoveryEndpointIpAddress;
+
+    /**
+     * @return The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public Output<String> discoveryEndpointIpAddress() {
+        return this.discoveryEndpointIpAddress;
+    }
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    @Export(name="discoveryFqdn", refs={String.class}, tree="[0]")
+    private Output<String> discoveryFqdn;
+
+    /**
+     * @return The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public Output<String> discoveryFqdn() {
+        return this.discoveryFqdn;
+    }
+    /**
      * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */

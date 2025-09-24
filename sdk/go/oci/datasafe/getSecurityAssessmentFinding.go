@@ -25,6 +25,7 @@ func LookupSecurityAssessmentFinding(ctx *pulumi.Context, args *LookupSecurityAs
 type LookupSecurityAssessmentFindingArgs struct {
 	AccessLevel            *string                              `pulumi:"accessLevel"`
 	Category               *string                              `pulumi:"category"`
+	CompartmentId          *string                              `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                                `pulumi:"compartmentIdInSubtree"`
 	ContainsReferences     []string                             `pulumi:"containsReferences"`
 	ContainsSeverities     []string                             `pulumi:"containsSeverities"`
@@ -45,6 +46,7 @@ type LookupSecurityAssessmentFindingArgs struct {
 type LookupSecurityAssessmentFindingResult struct {
 	AccessLevel            *string                               `pulumi:"accessLevel"`
 	Category               *string                               `pulumi:"category"`
+	CompartmentId          *string                               `pulumi:"compartmentId"`
 	CompartmentIdInSubtree *bool                                 `pulumi:"compartmentIdInSubtree"`
 	ContainsReferences     []string                              `pulumi:"containsReferences"`
 	ContainsSeverities     []string                              `pulumi:"containsSeverities"`
@@ -77,6 +79,7 @@ func LookupSecurityAssessmentFindingOutput(ctx *pulumi.Context, args LookupSecur
 type LookupSecurityAssessmentFindingOutputArgs struct {
 	AccessLevel            pulumi.StringPtrInput                        `pulumi:"accessLevel"`
 	Category               pulumi.StringPtrInput                        `pulumi:"category"`
+	CompartmentId          pulumi.StringPtrInput                        `pulumi:"compartmentId"`
 	CompartmentIdInSubtree pulumi.BoolPtrInput                          `pulumi:"compartmentIdInSubtree"`
 	ContainsReferences     pulumi.StringArrayInput                      `pulumi:"containsReferences"`
 	ContainsSeverities     pulumi.StringArrayInput                      `pulumi:"containsSeverities"`
@@ -118,6 +121,10 @@ func (o LookupSecurityAssessmentFindingResultOutput) AccessLevel() pulumi.String
 
 func (o LookupSecurityAssessmentFindingResultOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.Category }).(pulumi.StringPtrOutput)
+}
+
+func (o LookupSecurityAssessmentFindingResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupSecurityAssessmentFindingResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 func (o LookupSecurityAssessmentFindingResultOutput) CompartmentIdInSubtree() pulumi.BoolPtrOutput {

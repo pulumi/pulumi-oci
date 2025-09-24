@@ -56,6 +56,14 @@ export interface GetRedisClusterResult {
      */
     readonly definedTags: {[key: string]: string};
     /**
+     * The private IP address of the API endpoint for sharded cluster discovery.
+     */
+    readonly discoveryEndpointIpAddress: string;
+    /**
+     * The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     */
+    readonly discoveryFqdn: string;
+    /**
      * A user-friendly name of a cluster node.
      */
     readonly displayName: string;

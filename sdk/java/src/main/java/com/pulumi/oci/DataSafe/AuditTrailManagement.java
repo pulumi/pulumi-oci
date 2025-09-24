@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  *         var testAuditTrailManagement = new AuditTrailManagement("testAuditTrailManagement", AuditTrailManagementArgs.builder()
  *             .compartmentId(compartmentId)
  *             .targetId(testTargetDatabase.id())
+ *             .trailLocation(auditTrailManagementTrailLocation)
  *             .canUpdateLastArchiveTimeOnTarget(auditTrailManagementCanUpdateLastArchiveTimeOnTarget)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(auditTrailManagementDescription)

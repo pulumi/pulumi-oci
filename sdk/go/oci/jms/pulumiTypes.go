@@ -3040,6 +3040,2803 @@ func (o JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput) Index(
 	}).(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput)
 }
 
+type TaskScheduleTaskDetails struct {
+	// (Updatable) The list of Java installation sites to add.
+	AddInstallationSiteTaskRequest *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest `pulumi:"addInstallationSiteTaskRequest"`
+	// (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequest *TaskScheduleTaskDetailsCryptoTaskRequest `pulumi:"cryptoTaskRequest"`
+	// (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequest *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest `pulumi:"deployedApplicationMigrationTaskRequest"`
+	// (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequest *TaskScheduleTaskDetailsJavaMigrationTaskRequest `pulumi:"javaMigrationTaskRequest"`
+	// (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequest *TaskScheduleTaskDetailsJfrTaskRequest `pulumi:"jfrTaskRequest"`
+	// (Updatable) Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequest *TaskScheduleTaskDetailsPerformanceTuningTaskRequest `pulumi:"performanceTuningTaskRequest"`
+	// (Updatable) The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequest *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest `pulumi:"removeInstallationSiteTaskRequest"`
+	// (Updatable) The list of managed instances to scan.
+	ScanJavaServerTaskRequest *TaskScheduleTaskDetailsScanJavaServerTaskRequest `pulumi:"scanJavaServerTaskRequest"`
+	// (Updatable) The list of managed instances to scan.
+	ScanLibraryTaskRequest *TaskScheduleTaskDetailsScanLibraryTaskRequest `pulumi:"scanLibraryTaskRequest"`
+	// (Updatable) Type of task.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TaskType string `pulumi:"taskType"`
+}
+
+// TaskScheduleTaskDetailsInput is an input type that accepts TaskScheduleTaskDetailsArgs and TaskScheduleTaskDetailsOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsInput` via:
+//
+//	TaskScheduleTaskDetailsArgs{...}
+type TaskScheduleTaskDetailsInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsOutput() TaskScheduleTaskDetailsOutput
+	ToTaskScheduleTaskDetailsOutputWithContext(context.Context) TaskScheduleTaskDetailsOutput
+}
+
+type TaskScheduleTaskDetailsArgs struct {
+	// (Updatable) The list of Java installation sites to add.
+	AddInstallationSiteTaskRequest TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput `pulumi:"addInstallationSiteTaskRequest"`
+	// (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequest TaskScheduleTaskDetailsCryptoTaskRequestPtrInput `pulumi:"cryptoTaskRequest"`
+	// (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequest TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput `pulumi:"deployedApplicationMigrationTaskRequest"`
+	// (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequest TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput `pulumi:"javaMigrationTaskRequest"`
+	// (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequest TaskScheduleTaskDetailsJfrTaskRequestPtrInput `pulumi:"jfrTaskRequest"`
+	// (Updatable) Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequest TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput `pulumi:"performanceTuningTaskRequest"`
+	// (Updatable) The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequest TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput `pulumi:"removeInstallationSiteTaskRequest"`
+	// (Updatable) The list of managed instances to scan.
+	ScanJavaServerTaskRequest TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput `pulumi:"scanJavaServerTaskRequest"`
+	// (Updatable) The list of managed instances to scan.
+	ScanLibraryTaskRequest TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput `pulumi:"scanLibraryTaskRequest"`
+	// (Updatable) Type of task.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	TaskType pulumi.StringInput `pulumi:"taskType"`
+}
+
+func (TaskScheduleTaskDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetails)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsArgs) ToTaskScheduleTaskDetailsOutput() TaskScheduleTaskDetailsOutput {
+	return i.ToTaskScheduleTaskDetailsOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsArgs) ToTaskScheduleTaskDetailsOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsOutput)
+}
+
+func (i TaskScheduleTaskDetailsArgs) ToTaskScheduleTaskDetailsPtrOutput() TaskScheduleTaskDetailsPtrOutput {
+	return i.ToTaskScheduleTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsArgs) ToTaskScheduleTaskDetailsPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsOutput).ToTaskScheduleTaskDetailsPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsPtrInput is an input type that accepts TaskScheduleTaskDetailsArgs, TaskScheduleTaskDetailsPtr and TaskScheduleTaskDetailsPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsPtrOutput() TaskScheduleTaskDetailsPtrOutput
+	ToTaskScheduleTaskDetailsPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsPtrOutput
+}
+
+type taskScheduleTaskDetailsPtrType TaskScheduleTaskDetailsArgs
+
+func TaskScheduleTaskDetailsPtr(v *TaskScheduleTaskDetailsArgs) TaskScheduleTaskDetailsPtrInput {
+	return (*taskScheduleTaskDetailsPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetails)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsPtrType) ToTaskScheduleTaskDetailsPtrOutput() TaskScheduleTaskDetailsPtrOutput {
+	return i.ToTaskScheduleTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsPtrType) ToTaskScheduleTaskDetailsPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPtrOutput)
+}
+
+type TaskScheduleTaskDetailsOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetails)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsOutput) ToTaskScheduleTaskDetailsOutput() TaskScheduleTaskDetailsOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsOutput) ToTaskScheduleTaskDetailsOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsOutput) ToTaskScheduleTaskDetailsPtrOutput() TaskScheduleTaskDetailsPtrOutput {
+	return o.ToTaskScheduleTaskDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsOutput) ToTaskScheduleTaskDetailsPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetails) *TaskScheduleTaskDetails {
+		return &v
+	}).(TaskScheduleTaskDetailsPtrOutput)
+}
+
+// (Updatable) The list of Java installation sites to add.
+func (o TaskScheduleTaskDetailsOutput) AddInstallationSiteTaskRequest() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest {
+		return v.AddInstallationSiteTaskRequest
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+func (o TaskScheduleTaskDetailsOutput) CryptoTaskRequest() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsCryptoTaskRequest { return v.CryptoTaskRequest }).(TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+func (o TaskScheduleTaskDetailsOutput) DeployedApplicationMigrationTaskRequest() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest {
+		return v.DeployedApplicationMigrationTaskRequest
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+func (o TaskScheduleTaskDetailsOutput) JavaMigrationTaskRequest() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsJavaMigrationTaskRequest {
+		return v.JavaMigrationTaskRequest
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+func (o TaskScheduleTaskDetailsOutput) JfrTaskRequest() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsJfrTaskRequest { return v.JfrTaskRequest }).(TaskScheduleTaskDetailsJfrTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a JFR performance tuning analysis.
+func (o TaskScheduleTaskDetailsOutput) PerformanceTuningTaskRequest() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsPerformanceTuningTaskRequest {
+		return v.PerformanceTuningTaskRequest
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of Java installation sites to remove.
+func (o TaskScheduleTaskDetailsOutput) RemoveInstallationSiteTaskRequest() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest {
+		return v.RemoveInstallationSiteTaskRequest
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of managed instances to scan.
+func (o TaskScheduleTaskDetailsOutput) ScanJavaServerTaskRequest() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsScanJavaServerTaskRequest {
+		return v.ScanJavaServerTaskRequest
+	}).(TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of managed instances to scan.
+func (o TaskScheduleTaskDetailsOutput) ScanLibraryTaskRequest() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) *TaskScheduleTaskDetailsScanLibraryTaskRequest {
+		return v.ScanLibraryTaskRequest
+	}).(TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput)
+}
+
+// (Updatable) Type of task.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TaskScheduleTaskDetailsOutput) TaskType() pulumi.StringOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetails) string { return v.TaskType }).(pulumi.StringOutput)
+}
+
+type TaskScheduleTaskDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetails)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsPtrOutput) ToTaskScheduleTaskDetailsPtrOutput() TaskScheduleTaskDetailsPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPtrOutput) ToTaskScheduleTaskDetailsPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPtrOutput) Elem() TaskScheduleTaskDetailsOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) TaskScheduleTaskDetails {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetails
+		return ret
+	}).(TaskScheduleTaskDetailsOutput)
+}
+
+// (Updatable) The list of Java installation sites to add.
+func (o TaskScheduleTaskDetailsPtrOutput) AddInstallationSiteTaskRequest() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.AddInstallationSiteTaskRequest
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+func (o TaskScheduleTaskDetailsPtrOutput) CryptoTaskRequest() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsCryptoTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.CryptoTaskRequest
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+func (o TaskScheduleTaskDetailsPtrOutput) DeployedApplicationMigrationTaskRequest() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.DeployedApplicationMigrationTaskRequest
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+func (o TaskScheduleTaskDetailsPtrOutput) JavaMigrationTaskRequest() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsJavaMigrationTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.JavaMigrationTaskRequest
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+func (o TaskScheduleTaskDetailsPtrOutput) JfrTaskRequest() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsJfrTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.JfrTaskRequest
+	}).(TaskScheduleTaskDetailsJfrTaskRequestPtrOutput)
+}
+
+// (Updatable) Details of the request to start a JFR performance tuning analysis.
+func (o TaskScheduleTaskDetailsPtrOutput) PerformanceTuningTaskRequest() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsPerformanceTuningTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceTuningTaskRequest
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of Java installation sites to remove.
+func (o TaskScheduleTaskDetailsPtrOutput) RemoveInstallationSiteTaskRequest() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.RemoveInstallationSiteTaskRequest
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of managed instances to scan.
+func (o TaskScheduleTaskDetailsPtrOutput) ScanJavaServerTaskRequest() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsScanJavaServerTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.ScanJavaServerTaskRequest
+	}).(TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of managed instances to scan.
+func (o TaskScheduleTaskDetailsPtrOutput) ScanLibraryTaskRequest() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *TaskScheduleTaskDetailsScanLibraryTaskRequest {
+		if v == nil {
+			return nil
+		}
+		return v.ScanLibraryTaskRequest
+	}).(TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput)
+}
+
+// (Updatable) Type of task.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o TaskScheduleTaskDetailsPtrOutput) TaskType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TaskType
+	}).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequest struct {
+	// (Updatable) The list of installation sites to add.
+	InstallationSites []TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+	// (Updatable) Optional list of post java installation actions
+	PostInstallationActions []string `pulumi:"postInstallationActions"`
+}
+
+// TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs and TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs{...}
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs struct {
+	// (Updatable) The list of installation sites to add.
+	InstallationSites TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+	// (Updatable) Optional list of post java installation actions
+	PostInstallationActions pulumi.StringArrayInput `pulumi:"postInstallationActions"`
+}
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput).ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs, TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtr and TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrType TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs
+
+func TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtr(v *TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrType) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrType) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of installation sites to add.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) InstallationSites() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) []TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+// (Updatable) Optional list of post java installation actions
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput) PostInstallationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) []string {
+		return v.PostInstallationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) TaskScheduleTaskDetailsAddInstallationSiteTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsAddInstallationSiteTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput)
+}
+
+// (Updatable) The list of installation sites to add.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) InstallationSites() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) []TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite {
+		if v == nil {
+			return nil
+		}
+		return v.InstallationSites
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+// (Updatable) Optional list of post java installation actions
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput) PostInstallationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsAddInstallationSiteTaskRequest) []string {
+		if v == nil {
+			return nil
+		}
+		return v.PostInstallationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite struct {
+	// (Updatable) Artifact content type for the Java version.
+	ArtifactContentType *string `pulumi:"artifactContentType"`
+	// (Updatable) Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall *bool `pulumi:"forceInstall"`
+	// (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode *bool `pulumi:"headlessMode"`
+	// (Updatable) Custom path to install new Java installation site.
+	InstallationPath *string `pulumi:"installationPath"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+	// (Updatable) The release version of the Java Runtime.
+	ReleaseVersion *string `pulumi:"releaseVersion"`
+}
+
+// TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs and TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs{...}
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// (Updatable) Artifact content type for the Java version.
+	ArtifactContentType pulumi.StringPtrInput `pulumi:"artifactContentType"`
+	// (Updatable) Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall pulumi.BoolPtrInput `pulumi:"forceInstall"`
+	// (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode pulumi.BoolPtrInput `pulumi:"headlessMode"`
+	// (Updatable) Custom path to install new Java installation site.
+	InstallationPath pulumi.StringPtrInput `pulumi:"installationPath"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+	// (Updatable) The release version of the Java Runtime.
+	ReleaseVersion pulumi.StringPtrInput `pulumi:"releaseVersion"`
+}
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray and TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray{ TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray []TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteInput
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// (Updatable) Artifact content type for the Java version.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ArtifactContentType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *string {
+		return v.ArtifactContentType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Forces the installation request even if a more recent release is already present in the host.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ForceInstall() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *bool {
+		return v.ForceInstall
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) HeadlessMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *bool {
+		return v.HeadlessMode
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Custom path to install new Java installation site.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) InstallationPath() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *string {
+		return v.InstallationPath
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The release version of the Java Runtime.
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput) ReleaseVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite) *string {
+		return v.ReleaseVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToTaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequest struct {
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes *int `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets []TaskScheduleTaskDetailsCryptoTaskRequestTarget `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes *int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// TaskScheduleTaskDetailsCryptoTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsCryptoTaskRequestArgs and TaskScheduleTaskDetailsCryptoTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsCryptoTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsCryptoTaskRequestArgs{...}
+type TaskScheduleTaskDetailsCryptoTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsCryptoTaskRequestOutput() TaskScheduleTaskDetailsCryptoTaskRequestOutput
+	ToTaskScheduleTaskDetailsCryptoTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsCryptoTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestArgs struct {
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntPtrInput `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayInput `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntPtrInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestOutput() TaskScheduleTaskDetailsCryptoTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsCryptoTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsCryptoTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutput() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsCryptoTaskRequestOutput).ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsCryptoTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsCryptoTaskRequestArgs, TaskScheduleTaskDetailsCryptoTaskRequestPtr and TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsCryptoTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsCryptoTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsCryptoTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutput() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsCryptoTaskRequestPtrType TaskScheduleTaskDetailsCryptoTaskRequestArgs
+
+func TaskScheduleTaskDetailsCryptoTaskRequestPtr(v *TaskScheduleTaskDetailsCryptoTaskRequestArgs) TaskScheduleTaskDetailsCryptoTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsCryptoTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsCryptoTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsCryptoTaskRequestPtrType) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutput() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsCryptoTaskRequestPtrType) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestOutput() TaskScheduleTaskDetailsCryptoTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutput() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsCryptoTaskRequest) *TaskScheduleTaskDetailsCryptoTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequest) *int { return v.RecordingDurationInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) Targets() TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequest) []TaskScheduleTaskDetailsCryptoTaskRequestTarget {
+		return v.Targets
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequest) *int { return v.WaitingPeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutput() TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsCryptoTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsCryptoTaskRequest) TaskScheduleTaskDetailsCryptoTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsCryptoTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsCryptoTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) Targets() TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsCryptoTaskRequest) []TaskScheduleTaskDetailsCryptoTaskRequestTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsCryptoTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestTarget struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey *string `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey *string `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey *string `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey *string `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+}
+
+// TaskScheduleTaskDetailsCryptoTaskRequestTargetInput is an input type that accepts TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs and TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsCryptoTaskRequestTargetInput` via:
+//
+//	TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs{...}
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput
+	ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutputWithContext(context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringPtrInput `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringPtrInput `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringPtrInput `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringPtrInput `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+}
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput {
+	return i.ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput)
+}
+
+// TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayInput is an input type that accepts TaskScheduleTaskDetailsCryptoTaskRequestTargetArray and TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayInput` via:
+//
+//	TaskScheduleTaskDetailsCryptoTaskRequestTargetArray{ TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs{...} }
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput
+	ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetArray []TaskScheduleTaskDetailsCryptoTaskRequestTargetInput
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestTargetArray) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return i.ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsCryptoTaskRequestTargetArray) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput {
+	return o
+}
+
+// (Updatable) Unique key that identifies the application installation for JFR data collection.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequestTarget) *string { return v.ApplicationInstallationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the application for JFR data collection.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ApplicationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequestTarget) *string { return v.ApplicationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the container for JFR data collection.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ContainerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequestTarget) *string { return v.ContainerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identify the JVM for JFR data collection.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) JreKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequestTarget) *string { return v.JreKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the Managed Instance to collect JFR data.
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsCryptoTaskRequestTarget) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsCryptoTaskRequestTarget {
+		return vs[0].([]TaskScheduleTaskDetailsCryptoTaskRequestTarget)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest struct {
+	// (Updatable) An array of migration analyses requests.
+	Targets []TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs and TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs{...}
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs struct {
+	// (Updatable) An array of migration analyses requests.
+	Targets TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput).ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs, TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtr and TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrType TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs
+
+func TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtr(v *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrType) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrType) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest) *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) An array of migration analyses requests.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput) Targets() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest) []TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget {
+		return v.Targets
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput)
+}
+
+// (Updatable) An array of migration analyses requests.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput) Targets() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequest) []TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget struct {
+	// (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey *string `pulumi:"deployedApplicationInstallationKey"`
+	// (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+	// (Updatable) The JDK version the application is currently running on.
+	SourceJdkVersion *string `pulumi:"sourceJdkVersion"`
+	// (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+	TargetJdkVersion *string `pulumi:"targetJdkVersion"`
+}
+
+// TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetInput is an input type that accepts TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs and TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetInput` via:
+//
+//	TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs{...}
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs struct {
+	// (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey pulumi.StringPtrInput `pulumi:"deployedApplicationInstallationKey"`
+	// (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+	// (Updatable) The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringPtrInput `pulumi:"sourceJdkVersion"`
+	// (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringPtrInput `pulumi:"targetJdkVersion"`
+}
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput {
+	return i.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+// TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayInput is an input type that accepts TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray and TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayInput` via:
+//
+//	TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray{ TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs{...} }
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput
+	ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray []TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetInput
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return i.ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// (Updatable) The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) DeployedApplicationInstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) *string {
+		return v.DeployedApplicationInstallationKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Excludes the packages that starts with the prefix from the migration analyses result. Either this or includePackagePrefixes can be specified.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Includes the packages that starts with the prefix from the migration analyses result. Either this or excludePackagePrefixes can be specified.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analyses was performed.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) *string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The JDK version the application is currently running on.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) *string {
+		return v.SourceJdkVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The JDK version against which the migration analyses was performed to identify effort required to move from source JDK.
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget) *string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget {
+		return vs[0].([]TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequest struct {
+	// (Updatable) An array of migration analysis requests.
+	Targets []TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// TaskScheduleTaskDetailsJavaMigrationTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs and TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJavaMigrationTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs{...}
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs struct {
+	// (Updatable) An array of migration analysis requests.
+	Targets TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput).ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs, TaskScheduleTaskDetailsJavaMigrationTaskRequestPtr and TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsJavaMigrationTaskRequestPtrType TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs
+
+func TaskScheduleTaskDetailsJavaMigrationTaskRequestPtr(v *TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsJavaMigrationTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsJavaMigrationTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsJavaMigrationTaskRequestPtrType) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsJavaMigrationTaskRequestPtrType) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsJavaMigrationTaskRequest) *TaskScheduleTaskDetailsJavaMigrationTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput)
+}
+
+// (Updatable) An array of migration analysis requests.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput) Targets() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequest) []TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget {
+		return v.Targets
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJavaMigrationTaskRequest) TaskScheduleTaskDetailsJavaMigrationTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsJavaMigrationTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput)
+}
+
+// (Updatable) An array of migration analysis requests.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput) Targets() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJavaMigrationTaskRequest) []TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget struct {
+	// (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+	ApplicationInstallationKey *string `pulumi:"applicationInstallationKey"`
+	// (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+	// (Updatable) The JDK version the application is currently running on.
+	SourceJdkVersion *string `pulumi:"sourceJdkVersion"`
+	// (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion *string `pulumi:"targetJdkVersion"`
+}
+
+// TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetInput is an input type that accepts TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs and TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetInput` via:
+//
+//	TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs{...}
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutputWithContext(context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs struct {
+	// (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+	ApplicationInstallationKey pulumi.StringPtrInput `pulumi:"applicationInstallationKey"`
+	// (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+	// (Updatable) The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringPtrInput `pulumi:"sourceJdkVersion"`
+	// (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringPtrInput `pulumi:"targetJdkVersion"`
+}
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput {
+	return i.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput)
+}
+
+// TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayInput is an input type that accepts TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray and TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayInput` via:
+//
+//	TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray{ TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs{...} }
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput
+	ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray []TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetInput
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return i.ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// (Updatable) The unique key that identifies the application's installation path that is to be used for the Java migration analysis.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) *string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) The OCID of the managed instance that hosts the application for which the Java migration analysis was performed.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The JDK version the application is currently running on.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) *string { return v.SourceJdkVersion }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget) *string { return v.TargetJdkVersion }).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget {
+		return vs[0].([]TaskScheduleTaskDetailsJavaMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequest struct {
+	// (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName *string `pulumi:"jfcProfileName"`
+	// (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 *string `pulumi:"jfcV1"`
+	// (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 *string `pulumi:"jfcV2"`
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes *int `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The maximum size limit for the JFR file collected.
+	RecordingSizeInMb *int `pulumi:"recordingSizeInMb"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets []TaskScheduleTaskDetailsJfrTaskRequestTarget `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes *int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// TaskScheduleTaskDetailsJfrTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsJfrTaskRequestArgs and TaskScheduleTaskDetailsJfrTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJfrTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsJfrTaskRequestArgs{...}
+type TaskScheduleTaskDetailsJfrTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJfrTaskRequestOutput() TaskScheduleTaskDetailsJfrTaskRequestOutput
+	ToTaskScheduleTaskDetailsJfrTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsJfrTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestArgs struct {
+	// (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName pulumi.StringPtrInput `pulumi:"jfcProfileName"`
+	// (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 pulumi.StringPtrInput `pulumi:"jfcV1"`
+	// (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 pulumi.StringPtrInput `pulumi:"jfcV2"`
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntPtrInput `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The maximum size limit for the JFR file collected.
+	RecordingSizeInMb pulumi.IntPtrInput `pulumi:"recordingSizeInMb"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets TaskScheduleTaskDetailsJfrTaskRequestTargetArrayInput `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntPtrInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (TaskScheduleTaskDetailsJfrTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestArgs) ToTaskScheduleTaskDetailsJfrTaskRequestOutput() TaskScheduleTaskDetailsJfrTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsJfrTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestArgs) ToTaskScheduleTaskDetailsJfrTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJfrTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestArgs) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutput() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestArgs) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJfrTaskRequestOutput).ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsJfrTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsJfrTaskRequestArgs, TaskScheduleTaskDetailsJfrTaskRequestPtr and TaskScheduleTaskDetailsJfrTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJfrTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsJfrTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsJfrTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutput() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsJfrTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsJfrTaskRequestPtrType TaskScheduleTaskDetailsJfrTaskRequestArgs
+
+func TaskScheduleTaskDetailsJfrTaskRequestPtr(v *TaskScheduleTaskDetailsJfrTaskRequestArgs) TaskScheduleTaskDetailsJfrTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsJfrTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsJfrTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsJfrTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsJfrTaskRequestPtrType) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutput() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsJfrTaskRequestPtrType) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJfrTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJfrTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) ToTaskScheduleTaskDetailsJfrTaskRequestOutput() TaskScheduleTaskDetailsJfrTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) ToTaskScheduleTaskDetailsJfrTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutput() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsJfrTaskRequest) *TaskScheduleTaskDetailsJfrTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsJfrTaskRequestPtrOutput)
+}
+
+// (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) JfcProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *string { return v.JfcProfileName }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) JfcV1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *string { return v.JfcV1 }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) JfcV2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *string { return v.JfcV2 }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *int { return v.RecordingDurationInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The maximum size limit for the JFR file collected.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) RecordingSizeInMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *int { return v.RecordingSizeInMb }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) Targets() TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) []TaskScheduleTaskDetailsJfrTaskRequestTarget {
+		return v.Targets
+	}).(TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsJfrTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequest) *int { return v.WaitingPeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsJfrTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutput() TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) ToTaskScheduleTaskDetailsJfrTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsJfrTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) TaskScheduleTaskDetailsJfrTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsJfrTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsJfrTaskRequestOutput)
+}
+
+// (Updatable) The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) JfcProfileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JfcProfileName
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) JfcV1() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JfcV1
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) JfcV2() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *string {
+		if v == nil {
+			return nil
+		}
+		return v.JfcV2
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The maximum size limit for the JFR file collected.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) RecordingSizeInMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingSizeInMb
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) Targets() TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) []TaskScheduleTaskDetailsJfrTaskRequestTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsJfrTaskRequestPtrOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsJfrTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestTarget struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey *string `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey *string `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey *string `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey *string `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+}
+
+// TaskScheduleTaskDetailsJfrTaskRequestTargetInput is an input type that accepts TaskScheduleTaskDetailsJfrTaskRequestTargetArgs and TaskScheduleTaskDetailsJfrTaskRequestTargetOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJfrTaskRequestTargetInput` via:
+//
+//	TaskScheduleTaskDetailsJfrTaskRequestTargetArgs{...}
+type TaskScheduleTaskDetailsJfrTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetOutput
+	ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutputWithContext(context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetOutput
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestTargetArgs struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringPtrInput `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringPtrInput `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringPtrInput `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringPtrInput `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+}
+
+func (TaskScheduleTaskDetailsJfrTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestTargetArgs) ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetOutput {
+	return i.ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestTargetArgs) ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJfrTaskRequestTargetOutput)
+}
+
+// TaskScheduleTaskDetailsJfrTaskRequestTargetArrayInput is an input type that accepts TaskScheduleTaskDetailsJfrTaskRequestTargetArray and TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsJfrTaskRequestTargetArrayInput` via:
+//
+//	TaskScheduleTaskDetailsJfrTaskRequestTargetArray{ TaskScheduleTaskDetailsJfrTaskRequestTargetArgs{...} }
+type TaskScheduleTaskDetailsJfrTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput
+	ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestTargetArray []TaskScheduleTaskDetailsJfrTaskRequestTargetInput
+
+func (TaskScheduleTaskDetailsJfrTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestTargetArray) ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return i.ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsJfrTaskRequestTargetArray) ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ToTaskScheduleTaskDetailsJfrTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetOutput {
+	return o
+}
+
+// (Updatable) Unique key that identifies the application installation for JFR data collection.
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequestTarget) *string { return v.ApplicationInstallationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the application for JFR data collection.
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ApplicationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequestTarget) *string { return v.ApplicationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the container for JFR data collection.
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ContainerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequestTarget) *string { return v.ContainerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identify the JVM for JFR data collection.
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) JreKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequestTarget) *string { return v.JreKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the Managed Instance to collect JFR data.
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsJfrTaskRequestTarget) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsJfrTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsJfrTaskRequestTarget {
+		return vs[0].([]TaskScheduleTaskDetailsJfrTaskRequestTarget)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsJfrTaskRequestTargetOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequest struct {
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes *int `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets []TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes *int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// TaskScheduleTaskDetailsPerformanceTuningTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs and TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsPerformanceTuningTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs{...}
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs struct {
+	// (Updatable) Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntPtrInput `pulumi:"recordingDurationInMinutes"`
+	// (Updatable) The attachment targets to start JFR.
+	Targets TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayInput `pulumi:"targets"`
+	// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntPtrInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput).ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs, TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtr and TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsPerformanceTuningTaskRequestPtrType TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs
+
+func TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtr(v *TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsPerformanceTuningTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsPerformanceTuningTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsPerformanceTuningTaskRequestPtrType) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsPerformanceTuningTaskRequestPtrType) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsPerformanceTuningTaskRequest) *TaskScheduleTaskDetailsPerformanceTuningTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequest) *int { return v.RecordingDurationInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) Targets() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequest) []TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget {
+		return v.Targets
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequest) *int { return v.WaitingPeriodInMinutes }).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsPerformanceTuningTaskRequest) TaskScheduleTaskDetailsPerformanceTuningTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsPerformanceTuningTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput)
+}
+
+// (Updatable) Duration of the JFR recording in minutes.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) RecordingDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsPerformanceTuningTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The attachment targets to start JFR.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) Targets() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsPerformanceTuningTaskRequest) []TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Targets
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+// (Updatable) Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput) WaitingPeriodInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsPerformanceTuningTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey *string `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey *string `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey *string `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey *string `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+}
+
+// TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetInput is an input type that accepts TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs and TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetInput` via:
+//
+//	TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs{...}
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutputWithContext(context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs struct {
+	// (Updatable) Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringPtrInput `pulumi:"applicationInstallationKey"`
+	// (Updatable) Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringPtrInput `pulumi:"applicationKey"`
+	// (Updatable) Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringPtrInput `pulumi:"containerKey"`
+	// (Updatable) Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringPtrInput `pulumi:"jreKey"`
+	// (Updatable) OCID of the Managed Instance to collect JFR data.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+}
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput {
+	return i.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput)
+}
+
+// TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayInput is an input type that accepts TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray and TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayInput` via:
+//
+//	TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray{ TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs{...} }
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput
+	ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray []TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetInput
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return i.ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+// (Updatable) Unique key that identifies the application installation for JFR data collection.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget) *string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the application for JFR data collection.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ApplicationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget) *string { return v.ApplicationKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identifies the container for JFR data collection.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ContainerKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget) *string { return v.ContainerKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Unique key that identify the JVM for JFR data collection.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) JreKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget) *string { return v.JreKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the Managed Instance to collect JFR data.
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget) *string { return v.ManagedInstanceId }).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput() TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput) ToTaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget {
+		return vs[0].([]TaskScheduleTaskDetailsPerformanceTuningTaskRequestTarget)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest struct {
+	// (Updatable) The list of installation sites to remove.
+	InstallationSites []TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+}
+
+// TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs and TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs{...}
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs struct {
+	// (Updatable) The list of installation sites to remove.
+	InstallationSites TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+}
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput).ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs, TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtr and TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrType TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs
+
+func TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtr(v *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrType) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrType) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest) *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of installation sites to remove.
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput) InstallationSites() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest) []TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput)
+}
+
+// (Updatable) The list of installation sites to remove.
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput) InstallationSites() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequest) []TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite {
+		if v == nil {
+			return nil
+		}
+		return v.InstallationSites
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite struct {
+	// (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey *string `pulumi:"installationKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId *string `pulumi:"managedInstanceId"`
+}
+
+// TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs and TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs{...}
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey pulumi.StringPtrInput `pulumi:"installationKey"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringPtrInput `pulumi:"managedInstanceId"`
+}
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray and TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray{ TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray []TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteInput
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// (Updatable) The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput) InstallationKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite) *string {
+		return v.InstallationKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite) *string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+type TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToTaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type TaskScheduleTaskDetailsScanJavaServerTaskRequest struct {
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// TaskScheduleTaskDetailsScanJavaServerTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs and TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsScanJavaServerTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs{...}
+type TaskScheduleTaskDetailsScanJavaServerTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput
+	ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs struct {
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput).ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs, TaskScheduleTaskDetailsScanJavaServerTaskRequestPtr and TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsScanJavaServerTaskRequestPtrType TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs
+
+func TaskScheduleTaskDetailsScanJavaServerTaskRequestPtr(v *TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsScanJavaServerTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsScanJavaServerTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsScanJavaServerTaskRequestPtrType) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsScanJavaServerTaskRequestPtrType) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsScanJavaServerTaskRequest) *TaskScheduleTaskDetailsScanJavaServerTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput)
+}
+
+// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsScanJavaServerTaskRequest) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+type TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput() TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput) ToTaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanJavaServerTaskRequest) TaskScheduleTaskDetailsScanJavaServerTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsScanJavaServerTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput)
+}
+
+// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanJavaServerTaskRequest) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedInstanceIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type TaskScheduleTaskDetailsScanLibraryTaskRequest struct {
+	// (Updatable) The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes *int `pulumi:"dynamicScanDurationInMinutes"`
+	// (Updatable) Indicates whether the scan is dynamic or static.
+	IsDynamicScan *bool `pulumi:"isDynamicScan"`
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// TaskScheduleTaskDetailsScanLibraryTaskRequestInput is an input type that accepts TaskScheduleTaskDetailsScanLibraryTaskRequestArgs and TaskScheduleTaskDetailsScanLibraryTaskRequestOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsScanLibraryTaskRequestInput` via:
+//
+//	TaskScheduleTaskDetailsScanLibraryTaskRequestArgs{...}
+type TaskScheduleTaskDetailsScanLibraryTaskRequestInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestOutput
+	ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutputWithContext(context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestOutput
+}
+
+type TaskScheduleTaskDetailsScanLibraryTaskRequestArgs struct {
+	// (Updatable) The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes pulumi.IntPtrInput `pulumi:"dynamicScanDurationInMinutes"`
+	// (Updatable) Indicates whether the scan is dynamic or static.
+	IsDynamicScan pulumi.BoolPtrInput `pulumi:"isDynamicScan"`
+	// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestOutput {
+	return i.ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanLibraryTaskRequestOutput)
+}
+
+func (i TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanLibraryTaskRequestOutput).ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(ctx)
+}
+
+// TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput is an input type that accepts TaskScheduleTaskDetailsScanLibraryTaskRequestArgs, TaskScheduleTaskDetailsScanLibraryTaskRequestPtr and TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput values.
+// You can construct a concrete instance of `TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput` via:
+//
+//	        TaskScheduleTaskDetailsScanLibraryTaskRequestArgs{...}
+//
+//	or:
+//
+//	        nil
+type TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput interface {
+	pulumi.Input
+
+	ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput
+	ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput
+}
+
+type taskScheduleTaskDetailsScanLibraryTaskRequestPtrType TaskScheduleTaskDetailsScanLibraryTaskRequestArgs
+
+func TaskScheduleTaskDetailsScanLibraryTaskRequestPtr(v *TaskScheduleTaskDetailsScanLibraryTaskRequestArgs) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput {
+	return (*taskScheduleTaskDetailsScanLibraryTaskRequestPtrType)(v)
+}
+
+func (*taskScheduleTaskDetailsScanLibraryTaskRequestPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i *taskScheduleTaskDetailsScanLibraryTaskRequestPtrType) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return i.ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (i *taskScheduleTaskDetailsScanLibraryTaskRequestPtrType) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput)
+}
+
+type TaskScheduleTaskDetailsScanLibraryTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TaskScheduleTaskDetailsScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o.ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(context.Background())
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TaskScheduleTaskDetailsScanLibraryTaskRequest) *TaskScheduleTaskDetailsScanLibraryTaskRequest {
+		return &v
+	}).(TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput)
+}
+
+// (Updatable) The duration of the dynamic scan in minutes.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) DynamicScanDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsScanLibraryTaskRequest) *int { return v.DynamicScanDurationInMinutes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the scan is dynamic or static.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) IsDynamicScan() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsScanLibraryTaskRequest) *bool { return v.IsDynamicScan }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TaskScheduleTaskDetailsScanLibraryTaskRequest) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+type TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput struct{ *pulumi.OutputState }
+
+func (TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TaskScheduleTaskDetailsScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput() TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) ToTaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutputWithContext(ctx context.Context) TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput {
+	return o
+}
+
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) Elem() TaskScheduleTaskDetailsScanLibraryTaskRequestOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanLibraryTaskRequest) TaskScheduleTaskDetailsScanLibraryTaskRequest {
+		if v != nil {
+			return *v
+		}
+		var ret TaskScheduleTaskDetailsScanLibraryTaskRequest
+		return ret
+	}).(TaskScheduleTaskDetailsScanLibraryTaskRequestOutput)
+}
+
+// (Updatable) The duration of the dynamic scan in minutes.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) DynamicScanDurationInMinutes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanLibraryTaskRequest) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DynamicScanDurationInMinutes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Indicates whether the scan is dynamic or static.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) IsDynamicScan() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanLibraryTaskRequest) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsDynamicScan
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TaskScheduleTaskDetailsScanLibraryTaskRequest) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ManagedInstanceIds
+	}).(pulumi.StringArrayOutput)
+}
+
 type GetAgentInstallersAgentInstallerCollection struct {
 	// A list of the agent installer summaries.
 	Items []GetAgentInstallersAgentInstallerCollectionItem `pulumi:"items"`
@@ -5624,6 +8421,416 @@ func (o GetFleetBlocklistsItemTargetArrayOutput) Index(i pulumi.IntInput) GetFle
 	}).(GetFleetBlocklistsItemTargetOutput)
 }
 
+type GetFleetContainersContainerCollection struct {
+	// A list of the container summaries.
+	Items []GetFleetContainersContainerCollectionItem `pulumi:"items"`
+}
+
+// GetFleetContainersContainerCollectionInput is an input type that accepts GetFleetContainersContainerCollectionArgs and GetFleetContainersContainerCollectionOutput values.
+// You can construct a concrete instance of `GetFleetContainersContainerCollectionInput` via:
+//
+//	GetFleetContainersContainerCollectionArgs{...}
+type GetFleetContainersContainerCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersContainerCollectionOutput() GetFleetContainersContainerCollectionOutput
+	ToGetFleetContainersContainerCollectionOutputWithContext(context.Context) GetFleetContainersContainerCollectionOutput
+}
+
+type GetFleetContainersContainerCollectionArgs struct {
+	// A list of the container summaries.
+	Items GetFleetContainersContainerCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetContainersContainerCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersContainerCollection)(nil)).Elem()
+}
+
+func (i GetFleetContainersContainerCollectionArgs) ToGetFleetContainersContainerCollectionOutput() GetFleetContainersContainerCollectionOutput {
+	return i.ToGetFleetContainersContainerCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersContainerCollectionArgs) ToGetFleetContainersContainerCollectionOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersContainerCollectionOutput)
+}
+
+// GetFleetContainersContainerCollectionArrayInput is an input type that accepts GetFleetContainersContainerCollectionArray and GetFleetContainersContainerCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetContainersContainerCollectionArrayInput` via:
+//
+//	GetFleetContainersContainerCollectionArray{ GetFleetContainersContainerCollectionArgs{...} }
+type GetFleetContainersContainerCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersContainerCollectionArrayOutput() GetFleetContainersContainerCollectionArrayOutput
+	ToGetFleetContainersContainerCollectionArrayOutputWithContext(context.Context) GetFleetContainersContainerCollectionArrayOutput
+}
+
+type GetFleetContainersContainerCollectionArray []GetFleetContainersContainerCollectionInput
+
+func (GetFleetContainersContainerCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersContainerCollection)(nil)).Elem()
+}
+
+func (i GetFleetContainersContainerCollectionArray) ToGetFleetContainersContainerCollectionArrayOutput() GetFleetContainersContainerCollectionArrayOutput {
+	return i.ToGetFleetContainersContainerCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersContainerCollectionArray) ToGetFleetContainersContainerCollectionArrayOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersContainerCollectionArrayOutput)
+}
+
+type GetFleetContainersContainerCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersContainerCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersContainerCollection)(nil)).Elem()
+}
+
+func (o GetFleetContainersContainerCollectionOutput) ToGetFleetContainersContainerCollectionOutput() GetFleetContainersContainerCollectionOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionOutput) ToGetFleetContainersContainerCollectionOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionOutput {
+	return o
+}
+
+// A list of the container summaries.
+func (o GetFleetContainersContainerCollectionOutput) Items() GetFleetContainersContainerCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollection) []GetFleetContainersContainerCollectionItem {
+		return v.Items
+	}).(GetFleetContainersContainerCollectionItemArrayOutput)
+}
+
+type GetFleetContainersContainerCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersContainerCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersContainerCollection)(nil)).Elem()
+}
+
+func (o GetFleetContainersContainerCollectionArrayOutput) ToGetFleetContainersContainerCollectionArrayOutput() GetFleetContainersContainerCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionArrayOutput) ToGetFleetContainersContainerCollectionArrayOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetContainersContainerCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetContainersContainerCollection {
+		return vs[0].([]GetFleetContainersContainerCollection)[vs[1].(int)]
+	}).(GetFleetContainersContainerCollectionOutput)
+}
+
+type GetFleetContainersContainerCollectionItem struct {
+	// Unique key that identifies the application running in the container.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// The name of the application.
+	ApplicationName string `pulumi:"applicationName"`
+	// Unique identifier for the container.
+	ContainerKey string `pulumi:"containerKey"`
+	// The display name.
+	DisplayName string `pulumi:"displayName"`
+	// The container image name.
+	ImageName string `pulumi:"imageName"`
+	// The Java runtime used to run the application in the container.
+	JavaVersion string `pulumi:"javaVersion"`
+	// Unique key that identifies the Java runtime used to run the application in the container.
+	JreKey string `pulumi:"jreKey"`
+	// The security status of the Java Runtime.
+	JreSecurityStatus string `pulumi:"jreSecurityStatus"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The namespace of the container.
+	Namespace string `pulumi:"namespace"`
+	// The name of the node associated with the pod running this container.
+	NodeName string `pulumi:"nodeName"`
+	// The name of the pod running this container.
+	PodName string `pulumi:"podName"`
+	// The start time of the container.
+	TimeStarted string `pulumi:"timeStarted"`
+}
+
+// GetFleetContainersContainerCollectionItemInput is an input type that accepts GetFleetContainersContainerCollectionItemArgs and GetFleetContainersContainerCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetContainersContainerCollectionItemInput` via:
+//
+//	GetFleetContainersContainerCollectionItemArgs{...}
+type GetFleetContainersContainerCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersContainerCollectionItemOutput() GetFleetContainersContainerCollectionItemOutput
+	ToGetFleetContainersContainerCollectionItemOutputWithContext(context.Context) GetFleetContainersContainerCollectionItemOutput
+}
+
+type GetFleetContainersContainerCollectionItemArgs struct {
+	// Unique key that identifies the application running in the container.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// The name of the application.
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// Unique identifier for the container.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// The display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The container image name.
+	ImageName pulumi.StringInput `pulumi:"imageName"`
+	// The Java runtime used to run the application in the container.
+	JavaVersion pulumi.StringInput `pulumi:"javaVersion"`
+	// Unique key that identifies the Java runtime used to run the application in the container.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The security status of the Java Runtime.
+	JreSecurityStatus pulumi.StringInput `pulumi:"jreSecurityStatus"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The namespace of the container.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// The name of the node associated with the pod running this container.
+	NodeName pulumi.StringInput `pulumi:"nodeName"`
+	// The name of the pod running this container.
+	PodName pulumi.StringInput `pulumi:"podName"`
+	// The start time of the container.
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+}
+
+func (GetFleetContainersContainerCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersContainerCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetContainersContainerCollectionItemArgs) ToGetFleetContainersContainerCollectionItemOutput() GetFleetContainersContainerCollectionItemOutput {
+	return i.ToGetFleetContainersContainerCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersContainerCollectionItemArgs) ToGetFleetContainersContainerCollectionItemOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersContainerCollectionItemOutput)
+}
+
+// GetFleetContainersContainerCollectionItemArrayInput is an input type that accepts GetFleetContainersContainerCollectionItemArray and GetFleetContainersContainerCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetContainersContainerCollectionItemArrayInput` via:
+//
+//	GetFleetContainersContainerCollectionItemArray{ GetFleetContainersContainerCollectionItemArgs{...} }
+type GetFleetContainersContainerCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersContainerCollectionItemArrayOutput() GetFleetContainersContainerCollectionItemArrayOutput
+	ToGetFleetContainersContainerCollectionItemArrayOutputWithContext(context.Context) GetFleetContainersContainerCollectionItemArrayOutput
+}
+
+type GetFleetContainersContainerCollectionItemArray []GetFleetContainersContainerCollectionItemInput
+
+func (GetFleetContainersContainerCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersContainerCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetContainersContainerCollectionItemArray) ToGetFleetContainersContainerCollectionItemArrayOutput() GetFleetContainersContainerCollectionItemArrayOutput {
+	return i.ToGetFleetContainersContainerCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersContainerCollectionItemArray) ToGetFleetContainersContainerCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersContainerCollectionItemArrayOutput)
+}
+
+type GetFleetContainersContainerCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersContainerCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersContainerCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetContainersContainerCollectionItemOutput) ToGetFleetContainersContainerCollectionItemOutput() GetFleetContainersContainerCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionItemOutput) ToGetFleetContainersContainerCollectionItemOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionItemOutput {
+	return o
+}
+
+// Unique key that identifies the application running in the container.
+func (o GetFleetContainersContainerCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// The name of the application.
+func (o GetFleetContainersContainerCollectionItemOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.ApplicationName }).(pulumi.StringOutput)
+}
+
+// Unique identifier for the container.
+func (o GetFleetContainersContainerCollectionItemOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.ContainerKey }).(pulumi.StringOutput)
+}
+
+// The display name.
+func (o GetFleetContainersContainerCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The container image name.
+func (o GetFleetContainersContainerCollectionItemOutput) ImageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.ImageName }).(pulumi.StringOutput)
+}
+
+// The Java runtime used to run the application in the container.
+func (o GetFleetContainersContainerCollectionItemOutput) JavaVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.JavaVersion }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the Java runtime used to run the application in the container.
+func (o GetFleetContainersContainerCollectionItemOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.JreKey }).(pulumi.StringOutput)
+}
+
+// The security status of the Java Runtime.
+func (o GetFleetContainersContainerCollectionItemOutput) JreSecurityStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.JreSecurityStatus }).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the managed instance.
+func (o GetFleetContainersContainerCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+// The namespace of the container.
+func (o GetFleetContainersContainerCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// The name of the node associated with the pod running this container.
+func (o GetFleetContainersContainerCollectionItemOutput) NodeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.NodeName }).(pulumi.StringOutput)
+}
+
+// The name of the pod running this container.
+func (o GetFleetContainersContainerCollectionItemOutput) PodName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.PodName }).(pulumi.StringOutput)
+}
+
+// The start time of the container.
+func (o GetFleetContainersContainerCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersContainerCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+type GetFleetContainersContainerCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersContainerCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersContainerCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetContainersContainerCollectionItemArrayOutput) ToGetFleetContainersContainerCollectionItemArrayOutput() GetFleetContainersContainerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionItemArrayOutput) ToGetFleetContainersContainerCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetContainersContainerCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersContainerCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetContainersContainerCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetContainersContainerCollectionItem {
+		return vs[0].([]GetFleetContainersContainerCollectionItem)[vs[1].(int)]
+	}).(GetFleetContainersContainerCollectionItemOutput)
+}
+
+type GetFleetContainersFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetContainersFilterInput is an input type that accepts GetFleetContainersFilterArgs and GetFleetContainersFilterOutput values.
+// You can construct a concrete instance of `GetFleetContainersFilterInput` via:
+//
+//	GetFleetContainersFilterArgs{...}
+type GetFleetContainersFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersFilterOutput() GetFleetContainersFilterOutput
+	ToGetFleetContainersFilterOutputWithContext(context.Context) GetFleetContainersFilterOutput
+}
+
+type GetFleetContainersFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetContainersFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersFilter)(nil)).Elem()
+}
+
+func (i GetFleetContainersFilterArgs) ToGetFleetContainersFilterOutput() GetFleetContainersFilterOutput {
+	return i.ToGetFleetContainersFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersFilterArgs) ToGetFleetContainersFilterOutputWithContext(ctx context.Context) GetFleetContainersFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersFilterOutput)
+}
+
+// GetFleetContainersFilterArrayInput is an input type that accepts GetFleetContainersFilterArray and GetFleetContainersFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetContainersFilterArrayInput` via:
+//
+//	GetFleetContainersFilterArray{ GetFleetContainersFilterArgs{...} }
+type GetFleetContainersFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetContainersFilterArrayOutput() GetFleetContainersFilterArrayOutput
+	ToGetFleetContainersFilterArrayOutputWithContext(context.Context) GetFleetContainersFilterArrayOutput
+}
+
+type GetFleetContainersFilterArray []GetFleetContainersFilterInput
+
+func (GetFleetContainersFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersFilter)(nil)).Elem()
+}
+
+func (i GetFleetContainersFilterArray) ToGetFleetContainersFilterArrayOutput() GetFleetContainersFilterArrayOutput {
+	return i.ToGetFleetContainersFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetContainersFilterArray) ToGetFleetContainersFilterArrayOutputWithContext(ctx context.Context) GetFleetContainersFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetContainersFilterArrayOutput)
+}
+
+type GetFleetContainersFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetContainersFilter)(nil)).Elem()
+}
+
+func (o GetFleetContainersFilterOutput) ToGetFleetContainersFilterOutput() GetFleetContainersFilterOutput {
+	return o
+}
+
+func (o GetFleetContainersFilterOutput) ToGetFleetContainersFilterOutputWithContext(ctx context.Context) GetFleetContainersFilterOutput {
+	return o
+}
+
+func (o GetFleetContainersFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetContainersFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetContainersFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetContainersFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetContainersFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetContainersFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetContainersFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetContainersFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetContainersFilter)(nil)).Elem()
+}
+
+func (o GetFleetContainersFilterArrayOutput) ToGetFleetContainersFilterArrayOutput() GetFleetContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersFilterArrayOutput) ToGetFleetContainersFilterArrayOutputWithContext(ctx context.Context) GetFleetContainersFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetContainersFilterArrayOutput) Index(i pulumi.IntInput) GetFleetContainersFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetContainersFilter {
+		return vs[0].([]GetFleetContainersFilter)[vs[1].(int)]
+	}).(GetFleetContainersFilterOutput)
+}
+
 type GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollection struct {
 	Items []GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItem `pulumi:"items"`
 }
@@ -7671,6 +10878,148 @@ func (o GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput) Index(i pulumi.I
 	}).(GetFleetErrorsFleetErrorCollectionItemErrorOutput)
 }
 
+type GetFleetExportSettingExportDataFilter struct {
+	// List of application names to filter by partial match
+	ApplicationNameContains []string `pulumi:"applicationNameContains"`
+	// List of application names to filter by exact match
+	ApplicationNameEqualTos []string `pulumi:"applicationNameEqualTos"`
+	// List of Java major versions to filter by
+	JavaMajorVersions []string `pulumi:"javaMajorVersions"`
+	// List of Java vendors to filter by
+	JavaVendors []string `pulumi:"javaVendors"`
+	// List of Java versions to filter by
+	JavaVersions []string `pulumi:"javaVersions"`
+	// The security statuses of the Java Runtime
+	SecurityStatuses []string `pulumi:"securityStatuses"`
+}
+
+// GetFleetExportSettingExportDataFilterInput is an input type that accepts GetFleetExportSettingExportDataFilterArgs and GetFleetExportSettingExportDataFilterOutput values.
+// You can construct a concrete instance of `GetFleetExportSettingExportDataFilterInput` via:
+//
+//	GetFleetExportSettingExportDataFilterArgs{...}
+type GetFleetExportSettingExportDataFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetExportSettingExportDataFilterOutput() GetFleetExportSettingExportDataFilterOutput
+	ToGetFleetExportSettingExportDataFilterOutputWithContext(context.Context) GetFleetExportSettingExportDataFilterOutput
+}
+
+type GetFleetExportSettingExportDataFilterArgs struct {
+	// List of application names to filter by partial match
+	ApplicationNameContains pulumi.StringArrayInput `pulumi:"applicationNameContains"`
+	// List of application names to filter by exact match
+	ApplicationNameEqualTos pulumi.StringArrayInput `pulumi:"applicationNameEqualTos"`
+	// List of Java major versions to filter by
+	JavaMajorVersions pulumi.StringArrayInput `pulumi:"javaMajorVersions"`
+	// List of Java vendors to filter by
+	JavaVendors pulumi.StringArrayInput `pulumi:"javaVendors"`
+	// List of Java versions to filter by
+	JavaVersions pulumi.StringArrayInput `pulumi:"javaVersions"`
+	// The security statuses of the Java Runtime
+	SecurityStatuses pulumi.StringArrayInput `pulumi:"securityStatuses"`
+}
+
+func (GetFleetExportSettingExportDataFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetExportSettingExportDataFilter)(nil)).Elem()
+}
+
+func (i GetFleetExportSettingExportDataFilterArgs) ToGetFleetExportSettingExportDataFilterOutput() GetFleetExportSettingExportDataFilterOutput {
+	return i.ToGetFleetExportSettingExportDataFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetExportSettingExportDataFilterArgs) ToGetFleetExportSettingExportDataFilterOutputWithContext(ctx context.Context) GetFleetExportSettingExportDataFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetExportSettingExportDataFilterOutput)
+}
+
+// GetFleetExportSettingExportDataFilterArrayInput is an input type that accepts GetFleetExportSettingExportDataFilterArray and GetFleetExportSettingExportDataFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetExportSettingExportDataFilterArrayInput` via:
+//
+//	GetFleetExportSettingExportDataFilterArray{ GetFleetExportSettingExportDataFilterArgs{...} }
+type GetFleetExportSettingExportDataFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetExportSettingExportDataFilterArrayOutput() GetFleetExportSettingExportDataFilterArrayOutput
+	ToGetFleetExportSettingExportDataFilterArrayOutputWithContext(context.Context) GetFleetExportSettingExportDataFilterArrayOutput
+}
+
+type GetFleetExportSettingExportDataFilterArray []GetFleetExportSettingExportDataFilterInput
+
+func (GetFleetExportSettingExportDataFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetExportSettingExportDataFilter)(nil)).Elem()
+}
+
+func (i GetFleetExportSettingExportDataFilterArray) ToGetFleetExportSettingExportDataFilterArrayOutput() GetFleetExportSettingExportDataFilterArrayOutput {
+	return i.ToGetFleetExportSettingExportDataFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetExportSettingExportDataFilterArray) ToGetFleetExportSettingExportDataFilterArrayOutputWithContext(ctx context.Context) GetFleetExportSettingExportDataFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetExportSettingExportDataFilterArrayOutput)
+}
+
+type GetFleetExportSettingExportDataFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetExportSettingExportDataFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetExportSettingExportDataFilter)(nil)).Elem()
+}
+
+func (o GetFleetExportSettingExportDataFilterOutput) ToGetFleetExportSettingExportDataFilterOutput() GetFleetExportSettingExportDataFilterOutput {
+	return o
+}
+
+func (o GetFleetExportSettingExportDataFilterOutput) ToGetFleetExportSettingExportDataFilterOutputWithContext(ctx context.Context) GetFleetExportSettingExportDataFilterOutput {
+	return o
+}
+
+// List of application names to filter by partial match
+func (o GetFleetExportSettingExportDataFilterOutput) ApplicationNameContains() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.ApplicationNameContains }).(pulumi.StringArrayOutput)
+}
+
+// List of application names to filter by exact match
+func (o GetFleetExportSettingExportDataFilterOutput) ApplicationNameEqualTos() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.ApplicationNameEqualTos }).(pulumi.StringArrayOutput)
+}
+
+// List of Java major versions to filter by
+func (o GetFleetExportSettingExportDataFilterOutput) JavaMajorVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.JavaMajorVersions }).(pulumi.StringArrayOutput)
+}
+
+// List of Java vendors to filter by
+func (o GetFleetExportSettingExportDataFilterOutput) JavaVendors() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.JavaVendors }).(pulumi.StringArrayOutput)
+}
+
+// List of Java versions to filter by
+func (o GetFleetExportSettingExportDataFilterOutput) JavaVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.JavaVersions }).(pulumi.StringArrayOutput)
+}
+
+// The security statuses of the Java Runtime
+func (o GetFleetExportSettingExportDataFilterOutput) SecurityStatuses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetExportSettingExportDataFilter) []string { return v.SecurityStatuses }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetExportSettingExportDataFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetExportSettingExportDataFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetExportSettingExportDataFilter)(nil)).Elem()
+}
+
+func (o GetFleetExportSettingExportDataFilterArrayOutput) ToGetFleetExportSettingExportDataFilterArrayOutput() GetFleetExportSettingExportDataFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetExportSettingExportDataFilterArrayOutput) ToGetFleetExportSettingExportDataFilterArrayOutputWithContext(ctx context.Context) GetFleetExportSettingExportDataFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetExportSettingExportDataFilterArrayOutput) Index(i pulumi.IntInput) GetFleetExportSettingExportDataFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetExportSettingExportDataFilter {
+		return vs[0].([]GetFleetExportSettingExportDataFilter)[vs[1].(int)]
+	}).(GetFleetExportSettingExportDataFilterOutput)
+}
+
 type GetFleetInventoryLog struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
 	LogGroupId string `pulumi:"logGroupId"`
@@ -8252,6 +11601,724 @@ func (o GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectio
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem {
 		return vs[0].([]GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItem)[vs[1].(int)]
 	}).(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput)
+}
+
+type GetFleetLibraryApplicationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetLibraryApplicationsFilterInput is an input type that accepts GetFleetLibraryApplicationsFilterArgs and GetFleetLibraryApplicationsFilterOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsFilterInput` via:
+//
+//	GetFleetLibraryApplicationsFilterArgs{...}
+type GetFleetLibraryApplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsFilterOutput() GetFleetLibraryApplicationsFilterOutput
+	ToGetFleetLibraryApplicationsFilterOutputWithContext(context.Context) GetFleetLibraryApplicationsFilterOutput
+}
+
+type GetFleetLibraryApplicationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetLibraryApplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsFilterArgs) ToGetFleetLibraryApplicationsFilterOutput() GetFleetLibraryApplicationsFilterOutput {
+	return i.ToGetFleetLibraryApplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsFilterArgs) ToGetFleetLibraryApplicationsFilterOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsFilterOutput)
+}
+
+// GetFleetLibraryApplicationsFilterArrayInput is an input type that accepts GetFleetLibraryApplicationsFilterArray and GetFleetLibraryApplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsFilterArrayInput` via:
+//
+//	GetFleetLibraryApplicationsFilterArray{ GetFleetLibraryApplicationsFilterArgs{...} }
+type GetFleetLibraryApplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsFilterArrayOutput() GetFleetLibraryApplicationsFilterArrayOutput
+	ToGetFleetLibraryApplicationsFilterArrayOutputWithContext(context.Context) GetFleetLibraryApplicationsFilterArrayOutput
+}
+
+type GetFleetLibraryApplicationsFilterArray []GetFleetLibraryApplicationsFilterInput
+
+func (GetFleetLibraryApplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsFilterArray) ToGetFleetLibraryApplicationsFilterArrayOutput() GetFleetLibraryApplicationsFilterArrayOutput {
+	return i.ToGetFleetLibraryApplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsFilterArray) ToGetFleetLibraryApplicationsFilterArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsFilterArrayOutput)
+}
+
+type GetFleetLibraryApplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsFilterOutput) ToGetFleetLibraryApplicationsFilterOutput() GetFleetLibraryApplicationsFilterOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsFilterOutput) ToGetFleetLibraryApplicationsFilterOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsFilterOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetLibraryApplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetLibraryApplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetLibraryApplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsFilterArrayOutput) ToGetFleetLibraryApplicationsFilterArrayOutput() GetFleetLibraryApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsFilterArrayOutput) ToGetFleetLibraryApplicationsFilterArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryApplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryApplicationsFilter {
+		return vs[0].([]GetFleetLibraryApplicationsFilter)[vs[1].(int)]
+	}).(GetFleetLibraryApplicationsFilterOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollection struct {
+	// A list of LibraryApplicationUsageSummaries.
+	Items []GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem `pulumi:"items"`
+}
+
+// GetFleetLibraryApplicationsLibraryApplicationUsageCollectionInput is an input type that accepts GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs and GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsLibraryApplicationUsageCollectionInput` via:
+//
+//	GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs{...}
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutputWithContext(context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs struct {
+	// A list of LibraryApplicationUsageSummaries.
+	Items GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput {
+	return i.ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput)
+}
+
+// GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayInput is an input type that accepts GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray and GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayInput` via:
+//
+//	GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray{ GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs{...} }
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutputWithContext(context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray []GetFleetLibraryApplicationsLibraryApplicationUsageCollectionInput
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsLibraryApplicationUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput {
+	return i.ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput {
+	return o
+}
+
+// A list of LibraryApplicationUsageSummaries.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput) Items() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollection) []GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem {
+		return v.Items
+	}).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsLibraryApplicationUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryApplicationsLibraryApplicationUsageCollection {
+		return vs[0].([]GetFleetLibraryApplicationsLibraryApplicationUsageCollection)[vs[1].(int)]
+	}).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem struct {
+	// The internal identifier of a Java application.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// The name of the application.
+	ApplicationName string `pulumi:"applicationName"`
+	// The timestamp of the first time the specified library was detected in classpath.
+	FirstSeenInClasspath string `pulumi:"firstSeenInClasspath"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically string `pulumi:"lastDetectedDynamically"`
+	// The timestamp of the last time the specified library was detected in classpath.
+	LastSeenInClasspath string `pulumi:"lastSeenInClasspath"`
+	// The count of managed instances wherein the specified library was detected.
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+}
+
+// GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemInput is an input type that accepts GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs and GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemInput` via:
+//
+//	GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs{...}
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutputWithContext(context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs struct {
+	// The internal identifier of a Java application.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// The name of the application.
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// The timestamp of the first time the specified library was detected in classpath.
+	FirstSeenInClasspath pulumi.StringInput `pulumi:"firstSeenInClasspath"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically pulumi.StringInput `pulumi:"lastDetectedDynamically"`
+	// The timestamp of the last time the specified library was detected in classpath.
+	LastSeenInClasspath pulumi.StringInput `pulumi:"lastSeenInClasspath"`
+	// The count of managed instances wherein the specified library was detected.
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+}
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput {
+	return i.ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput)
+}
+
+// GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayInput is an input type that accepts GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray and GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayInput` via:
+//
+//	GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray{ GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs{...} }
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput
+	ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutputWithContext(context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray []GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemInput
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput {
+	return i.ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput {
+	return o
+}
+
+// The internal identifier of a Java application.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) string {
+		return v.ApplicationKey
+	}).(pulumi.StringOutput)
+}
+
+// The name of the application.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) string {
+		return v.ApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the first time the specified library was detected in classpath.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) FirstSeenInClasspath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) string {
+		return v.FirstSeenInClasspath
+	}).(pulumi.StringOutput)
+}
+
+// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) LastDetectedDynamically() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) string {
+		return v.LastDetectedDynamically
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time the specified library was detected in classpath.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) LastSeenInClasspath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) string {
+		return v.LastSeenInClasspath
+	}).(pulumi.StringOutput)
+}
+
+// The count of managed instances wherein the specified library was detected.
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem) int {
+		return v.ManagedInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+type GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput() GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput) ToGetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem {
+		return vs[0].([]GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItem)[vs[1].(int)]
+	}).(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput)
+}
+
+type GetFleetLibraryManagedInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetLibraryManagedInstancesFilterInput is an input type that accepts GetFleetLibraryManagedInstancesFilterArgs and GetFleetLibraryManagedInstancesFilterOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesFilterInput` via:
+//
+//	GetFleetLibraryManagedInstancesFilterArgs{...}
+type GetFleetLibraryManagedInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesFilterOutput() GetFleetLibraryManagedInstancesFilterOutput
+	ToGetFleetLibraryManagedInstancesFilterOutputWithContext(context.Context) GetFleetLibraryManagedInstancesFilterOutput
+}
+
+type GetFleetLibraryManagedInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetLibraryManagedInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesFilterArgs) ToGetFleetLibraryManagedInstancesFilterOutput() GetFleetLibraryManagedInstancesFilterOutput {
+	return i.ToGetFleetLibraryManagedInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesFilterArgs) ToGetFleetLibraryManagedInstancesFilterOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesFilterOutput)
+}
+
+// GetFleetLibraryManagedInstancesFilterArrayInput is an input type that accepts GetFleetLibraryManagedInstancesFilterArray and GetFleetLibraryManagedInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesFilterArrayInput` via:
+//
+//	GetFleetLibraryManagedInstancesFilterArray{ GetFleetLibraryManagedInstancesFilterArgs{...} }
+type GetFleetLibraryManagedInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesFilterArrayOutput() GetFleetLibraryManagedInstancesFilterArrayOutput
+	ToGetFleetLibraryManagedInstancesFilterArrayOutputWithContext(context.Context) GetFleetLibraryManagedInstancesFilterArrayOutput
+}
+
+type GetFleetLibraryManagedInstancesFilterArray []GetFleetLibraryManagedInstancesFilterInput
+
+func (GetFleetLibraryManagedInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesFilterArray) ToGetFleetLibraryManagedInstancesFilterArrayOutput() GetFleetLibraryManagedInstancesFilterArrayOutput {
+	return i.ToGetFleetLibraryManagedInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesFilterArray) ToGetFleetLibraryManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesFilterArrayOutput)
+}
+
+type GetFleetLibraryManagedInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesFilterOutput) ToGetFleetLibraryManagedInstancesFilterOutput() GetFleetLibraryManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesFilterOutput) ToGetFleetLibraryManagedInstancesFilterOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetLibraryManagedInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetLibraryManagedInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetLibraryManagedInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesFilterArrayOutput) ToGetFleetLibraryManagedInstancesFilterArrayOutput() GetFleetLibraryManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesFilterArrayOutput) ToGetFleetLibraryManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryManagedInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryManagedInstancesFilter {
+		return vs[0].([]GetFleetLibraryManagedInstancesFilter)[vs[1].(int)]
+	}).(GetFleetLibraryManagedInstancesFilterOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection struct {
+	// A list of LibraryManagedInstanceUsageSummaries.
+	Items []GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem `pulumi:"items"`
+}
+
+// GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionInput is an input type that accepts GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs and GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionInput` via:
+//
+//	GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs{...}
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutputWithContext(context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs struct {
+	// A list of LibraryManagedInstanceUsageSummaries.
+	Items GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput {
+	return i.ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput)
+}
+
+// GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayInput is an input type that accepts GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray and GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayInput` via:
+//
+//	GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray{ GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs{...} }
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutputWithContext(context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray []GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionInput
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput {
+	return i.ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput {
+	return o
+}
+
+// A list of LibraryManagedInstanceUsageSummaries.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput) Items() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection) []GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem {
+		return v.Items
+	}).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection {
+		return vs[0].([]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollection)[vs[1].(int)]
+	}).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem struct {
+	// The count of applications where the specified library was detected.
+	ApplicationCount int `pulumi:"applicationCount"`
+	// The timestamp of the first time the specified library was detected in classpath.
+	FirstSeenInClasspath string `pulumi:"firstSeenInClasspath"`
+	// The hostname of the managed instance.
+	Hostname string `pulumi:"hostname"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically string `pulumi:"lastDetectedDynamically"`
+	// The timestamp of the last time the specified library was detected in classpath.
+	LastSeenInClasspath string `pulumi:"lastSeenInClasspath"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemInput is an input type that accepts GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs and GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemInput` via:
+//
+//	GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs{...}
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutputWithContext(context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs struct {
+	// The count of applications where the specified library was detected.
+	ApplicationCount pulumi.IntInput `pulumi:"applicationCount"`
+	// The timestamp of the first time the specified library was detected in classpath.
+	FirstSeenInClasspath pulumi.StringInput `pulumi:"firstSeenInClasspath"`
+	// The hostname of the managed instance.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically pulumi.StringInput `pulumi:"lastDetectedDynamically"`
+	// The timestamp of the last time the specified library was detected in classpath.
+	LastSeenInClasspath pulumi.StringInput `pulumi:"lastSeenInClasspath"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput {
+	return i.ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput)
+}
+
+// GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayInput is an input type that accepts GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray and GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayInput` via:
+//
+//	GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray{ GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs{...} }
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput
+	ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutputWithContext(context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray []GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemInput
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput {
+	return i.ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput {
+	return o
+}
+
+// The count of applications where the specified library was detected.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) ApplicationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) int {
+		return v.ApplicationCount
+	}).(pulumi.IntOutput)
+}
+
+// The timestamp of the first time the specified library was detected in classpath.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) FirstSeenInClasspath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) string {
+		return v.FirstSeenInClasspath
+	}).(pulumi.StringOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) string {
+		return v.Hostname
+	}).(pulumi.StringOutput)
+}
+
+// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) LastDetectedDynamically() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) string {
+		return v.LastDetectedDynamically
+	}).(pulumi.StringOutput)
+}
+
+// The timestamp of the last time the specified library was detected in classpath.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) LastSeenInClasspath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) string {
+		return v.LastSeenInClasspath
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the managed instance.
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput() GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput) ToGetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem {
+		return vs[0].([]GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItem)[vs[1].(int)]
+	}).(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput)
 }
 
 type GetFleetOperationLog struct {
@@ -8837,6 +12904,1017 @@ func (o GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultC
 	}).(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput)
 }
 
+type GetFleetUncorrelatedPackageApplicationsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetUncorrelatedPackageApplicationsFilterInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsFilterArgs and GetFleetUncorrelatedPackageApplicationsFilterOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsFilterInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsFilterArgs{...}
+type GetFleetUncorrelatedPackageApplicationsFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsFilterOutput() GetFleetUncorrelatedPackageApplicationsFilterOutput
+	ToGetFleetUncorrelatedPackageApplicationsFilterOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsFilterOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetUncorrelatedPackageApplicationsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsFilterArgs) ToGetFleetUncorrelatedPackageApplicationsFilterOutput() GetFleetUncorrelatedPackageApplicationsFilterOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsFilterArgs) ToGetFleetUncorrelatedPackageApplicationsFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsFilterOutput)
+}
+
+// GetFleetUncorrelatedPackageApplicationsFilterArrayInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsFilterArray and GetFleetUncorrelatedPackageApplicationsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsFilterArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsFilterArray{ GetFleetUncorrelatedPackageApplicationsFilterArgs{...} }
+type GetFleetUncorrelatedPackageApplicationsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutput() GetFleetUncorrelatedPackageApplicationsFilterArrayOutput
+	ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsFilterArrayOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsFilterArray []GetFleetUncorrelatedPackageApplicationsFilterInput
+
+func (GetFleetUncorrelatedPackageApplicationsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsFilterArray) ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutput() GetFleetUncorrelatedPackageApplicationsFilterArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsFilterArray) ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsFilterArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterOutput) ToGetFleetUncorrelatedPackageApplicationsFilterOutput() GetFleetUncorrelatedPackageApplicationsFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterOutput) ToGetFleetUncorrelatedPackageApplicationsFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterArrayOutput) ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutput() GetFleetUncorrelatedPackageApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterArrayOutput) ToGetFleetUncorrelatedPackageApplicationsFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsFilterArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageApplicationsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageApplicationsFilter {
+		return vs[0].([]GetFleetUncorrelatedPackageApplicationsFilter)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageApplicationsFilterOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection struct {
+	// A list of UncorrelatedPackageApplicationUsageSummaries.
+	Items []GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem `pulumi:"items"`
+}
+
+// GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs and GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs{...}
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs struct {
+	// A list of UncorrelatedPackageApplicationUsageSummaries.
+	Items GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput)
+}
+
+// GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray and GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray{ GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs{...} }
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray []GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionInput
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput {
+	return o
+}
+
+// A list of UncorrelatedPackageApplicationUsageSummaries.
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput) Items() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection) []GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem {
+		return v.Items
+	}).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection {
+		return vs[0].([]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollection)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem struct {
+	// The internal identifier of a Java application.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// The displayed name of the Java application.
+	ApplicationName string `pulumi:"applicationName"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically string `pulumi:"lastDetectedDynamically"`
+	// The count of managed instances wherein the specified library was detected.
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+}
+
+// GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs and GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs{...}
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs struct {
+	// The internal identifier of a Java application.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// The displayed name of the Java application.
+	ApplicationName pulumi.StringInput `pulumi:"applicationName"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically pulumi.StringInput `pulumi:"lastDetectedDynamically"`
+	// The count of managed instances wherein the specified library was detected.
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+}
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput)
+}
+
+// GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayInput is an input type that accepts GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray and GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray{ GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs{...} }
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput
+	ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray []GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemInput
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput {
+	return o
+}
+
+// The internal identifier of a Java application.
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem) string {
+		return v.ApplicationKey
+	}).(pulumi.StringOutput)
+}
+
+// The displayed name of the Java application.
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ApplicationName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem) string {
+		return v.ApplicationName
+	}).(pulumi.StringOutput)
+}
+
+// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) LastDetectedDynamically() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem) string {
+		return v.LastDetectedDynamically
+	}).(pulumi.StringOutput)
+}
+
+// The count of managed instances wherein the specified library was detected.
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem) int {
+		return v.ManagedInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+type GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem {
+		return vs[0].([]GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItem)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesFilterInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesFilterArgs and GetFleetUncorrelatedPackageManagedInstancesFilterOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesFilterInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesFilterArgs{...}
+type GetFleetUncorrelatedPackageManagedInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesFilterOutput() GetFleetUncorrelatedPackageManagedInstancesFilterOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesFilterOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetUncorrelatedPackageManagedInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesFilterArgs) ToGetFleetUncorrelatedPackageManagedInstancesFilterOutput() GetFleetUncorrelatedPackageManagedInstancesFilterOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesFilterArgs) ToGetFleetUncorrelatedPackageManagedInstancesFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesFilterOutput)
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesFilterArrayInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesFilterArray and GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesFilterArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesFilterArray{ GetFleetUncorrelatedPackageManagedInstancesFilterArgs{...} }
+type GetFleetUncorrelatedPackageManagedInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput() GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesFilterArray []GetFleetUncorrelatedPackageManagedInstancesFilterInput
+
+func (GetFleetUncorrelatedPackageManagedInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesFilterArray) ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput() GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesFilterArray) ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterOutput) ToGetFleetUncorrelatedPackageManagedInstancesFilterOutput() GetFleetUncorrelatedPackageManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterOutput) ToGetFleetUncorrelatedPackageManagedInstancesFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput() GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageManagedInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageManagedInstancesFilter {
+		return vs[0].([]GetFleetUncorrelatedPackageManagedInstancesFilter)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageManagedInstancesFilterOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection struct {
+	// A list of UncorrelatedPackageManagedInstanceUsageSummaries.
+	Items []GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem `pulumi:"items"`
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs and GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs{...}
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs struct {
+	// A list of UncorrelatedPackageManagedInstanceUsageSummaries.
+	Items GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput)
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray and GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray{ GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs{...} }
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray []GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionInput
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput {
+	return o
+}
+
+// A list of UncorrelatedPackageManagedInstanceUsageSummaries.
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput) Items() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection) []GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem {
+		return v.Items
+	}).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection {
+		return vs[0].([]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollection)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem struct {
+	// The count of applications wherein the specified library was detected.
+	ApplicationCount int `pulumi:"applicationCount"`
+	// The hostname of the managed instance.
+	Hostname string `pulumi:"hostname"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically string `pulumi:"lastDetectedDynamically"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs and GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs{...}
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs struct {
+	// The count of applications wherein the specified library was detected.
+	ApplicationCount pulumi.IntInput `pulumi:"applicationCount"`
+	// The hostname of the managed instance.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically pulumi.StringInput `pulumi:"lastDetectedDynamically"`
+	// The Fleet-unique identifier of the managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput)
+}
+
+// GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayInput is an input type that accepts GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray and GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayInput` via:
+//
+//	GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray{ GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs{...} }
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput
+	ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray []GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemInput
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput {
+	return i.ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput {
+	return o
+}
+
+// The count of applications wherein the specified library was detected.
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) ApplicationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem) int {
+		return v.ApplicationCount
+	}).(pulumi.IntOutput)
+}
+
+// The hostname of the managed instance.
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem) string {
+		return v.Hostname
+	}).(pulumi.StringOutput)
+}
+
+// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) LastDetectedDynamically() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem) string {
+		return v.LastDetectedDynamically
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the managed instance.
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem {
+		return vs[0].([]GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItem)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput)
+}
+
+type GetFleetUncorrelatedPackagesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFleetUncorrelatedPackagesFilterInput is an input type that accepts GetFleetUncorrelatedPackagesFilterArgs and GetFleetUncorrelatedPackagesFilterOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesFilterInput` via:
+//
+//	GetFleetUncorrelatedPackagesFilterArgs{...}
+type GetFleetUncorrelatedPackagesFilterInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesFilterOutput() GetFleetUncorrelatedPackagesFilterOutput
+	ToGetFleetUncorrelatedPackagesFilterOutputWithContext(context.Context) GetFleetUncorrelatedPackagesFilterOutput
+}
+
+type GetFleetUncorrelatedPackagesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFleetUncorrelatedPackagesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesFilterArgs) ToGetFleetUncorrelatedPackagesFilterOutput() GetFleetUncorrelatedPackagesFilterOutput {
+	return i.ToGetFleetUncorrelatedPackagesFilterOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesFilterArgs) ToGetFleetUncorrelatedPackagesFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesFilterOutput)
+}
+
+// GetFleetUncorrelatedPackagesFilterArrayInput is an input type that accepts GetFleetUncorrelatedPackagesFilterArray and GetFleetUncorrelatedPackagesFilterArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesFilterArrayInput` via:
+//
+//	GetFleetUncorrelatedPackagesFilterArray{ GetFleetUncorrelatedPackagesFilterArgs{...} }
+type GetFleetUncorrelatedPackagesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesFilterArrayOutput() GetFleetUncorrelatedPackagesFilterArrayOutput
+	ToGetFleetUncorrelatedPackagesFilterArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackagesFilterArrayOutput
+}
+
+type GetFleetUncorrelatedPackagesFilterArray []GetFleetUncorrelatedPackagesFilterInput
+
+func (GetFleetUncorrelatedPackagesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesFilter)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesFilterArray) ToGetFleetUncorrelatedPackagesFilterArrayOutput() GetFleetUncorrelatedPackagesFilterArrayOutput {
+	return i.ToGetFleetUncorrelatedPackagesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesFilterArray) ToGetFleetUncorrelatedPackagesFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesFilterArrayOutput)
+}
+
+type GetFleetUncorrelatedPackagesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesFilterOutput) ToGetFleetUncorrelatedPackagesFilterOutput() GetFleetUncorrelatedPackagesFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesFilterOutput) ToGetFleetUncorrelatedPackagesFilterOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesFilterOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFleetUncorrelatedPackagesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFleetUncorrelatedPackagesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFleetUncorrelatedPackagesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesFilter)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesFilterArrayOutput) ToGetFleetUncorrelatedPackagesFilterArrayOutput() GetFleetUncorrelatedPackagesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesFilterArrayOutput) ToGetFleetUncorrelatedPackagesFilterArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesFilterArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesFilterArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackagesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackagesFilter {
+		return vs[0].([]GetFleetUncorrelatedPackagesFilter)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackagesFilterOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection struct {
+	// A list of uncorrelated package summaries.
+	Items []GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem `pulumi:"items"`
+}
+
+// GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionInput is an input type that accepts GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs and GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionInput` via:
+//
+//	GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs{...}
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutputWithContext(context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs struct {
+	// A list of uncorrelated package summaries.
+	Items GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput {
+	return i.ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput)
+}
+
+// GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayInput is an input type that accepts GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray and GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayInput` via:
+//
+//	GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray{ GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs{...} }
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray []GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionInput
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput {
+	return i.ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput {
+	return o
+}
+
+// A list of uncorrelated package summaries.
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput) Items() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection) []GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem {
+		return v.Items
+	}).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection {
+		return vs[0].([]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollection)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem struct {
+	// The count of applications wherein the specified package was detected.
+	ApplicationCount int `pulumi:"applicationCount"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically string `pulumi:"lastDetectedDynamically"`
+	// The count of managed instances wherein the specified package was detected.
+	ManagedInstanceCount int `pulumi:"managedInstanceCount"`
+	// The unique identifier of a Java package.
+	PackageName string `pulumi:"packageName"`
+}
+
+// GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemInput is an input type that accepts GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs and GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemInput` via:
+//
+//	GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs{...}
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutputWithContext(context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs struct {
+	// The count of applications wherein the specified package was detected.
+	ApplicationCount pulumi.IntInput `pulumi:"applicationCount"`
+	// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+	LastDetectedDynamically pulumi.StringInput `pulumi:"lastDetectedDynamically"`
+	// The count of managed instances wherein the specified package was detected.
+	ManagedInstanceCount pulumi.IntInput `pulumi:"managedInstanceCount"`
+	// The unique identifier of a Java package.
+	PackageName pulumi.StringInput `pulumi:"packageName"`
+}
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput {
+	return i.ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput)
+}
+
+// GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayInput is an input type that accepts GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray and GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayInput` via:
+//
+//	GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray{ GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs{...} }
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput
+	ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutputWithContext(context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray []GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemInput
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem)(nil)).Elem()
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput {
+	return i.ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput {
+	return o
+}
+
+// The count of applications wherein the specified package was detected.
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) ApplicationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem) int {
+		return v.ApplicationCount
+	}).(pulumi.IntOutput)
+}
+
+// The date and time a library or Java package was _last_ detected in a dynamic library scan.
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) LastDetectedDynamically() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem) string {
+		return v.LastDetectedDynamically
+	}).(pulumi.StringOutput)
+}
+
+// The count of managed instances wherein the specified package was detected.
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem) int {
+		return v.ManagedInstanceCount
+	}).(pulumi.IntOutput)
+}
+
+// The unique identifier of a Java package.
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput) PackageName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem) string {
+		return v.PackageName
+	}).(pulumi.StringOutput)
+}
+
+type GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem)(nil)).Elem()
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput() GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput) ToGetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutputWithContext(ctx context.Context) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem {
+		return vs[0].([]GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItem)[vs[1].(int)]
+	}).(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput)
+}
+
 type GetFleetsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -9046,6 +14124,10 @@ type GetFleetsFleetCollectionItem struct {
 	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount int `pulumi:"approximateLibraryCount"`
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount int `pulumi:"approximateLibraryVulnerabilityCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -9096,6 +14178,10 @@ type GetFleetsFleetCollectionItemArgs struct {
 	ApproximateJavaServerCount pulumi.IntInput `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount pulumi.IntInput `pulumi:"approximateJreCount"`
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount pulumi.IntInput `pulumi:"approximateLibraryCount"`
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount pulumi.IntInput `pulumi:"approximateLibraryVulnerabilityCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount pulumi.IntInput `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -9195,6 +14281,16 @@ func (o GetFleetsFleetCollectionItemOutput) ApproximateJavaServerCount() pulumi.
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o GetFleetsFleetCollectionItemOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o GetFleetsFleetCollectionItemOutput) ApproximateLibraryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateLibraryCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o GetFleetsFleetCollectionItemOutput) ApproximateLibraryVulnerabilityCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFleetsFleetCollectionItem) int { return v.ApproximateLibraryVulnerabilityCount }).(pulumi.IntOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
@@ -10253,8 +15349,26 @@ func (o GetInstallationSitesInstallationSiteCollectionArrayOutput) Index(i pulum
 }
 
 type GetInstallationSitesInstallationSiteCollectionItem struct {
-	// A list of Java installation sites.
-	Items []GetInstallationSitesInstallationSiteCollectionItemItem `pulumi:"items"`
+	// The approximate count of applications running on this installation
+	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
+	// The list of operations that are blocklisted.
+	Blocklists []GetInstallationSitesInstallationSiteCollectionItemBlocklist `pulumi:"blocklists"`
+	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+	InstallationKey string `pulumi:"installationKey"`
+	// The essential properties to identify a Java Runtime.
+	Jres []GetInstallationSitesInstallationSiteCollectionItemJre `pulumi:"jres"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// Operating System of the platform on which the Java Runtime was reported.
+	OperatingSystems []GetInstallationSitesInstallationSiteCollectionItemOperatingSystem `pulumi:"operatingSystems"`
+	// The file system path of the installation.
+	Path string `pulumi:"path"`
+	// The security status of the Java Runtime.
+	SecurityStatus string `pulumi:"securityStatus"`
+	// The lifecycle state of the installation site.
+	State string `pulumi:"state"`
+	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	TimeLastSeen string `pulumi:"timeLastSeen"`
 }
 
 // GetInstallationSitesInstallationSiteCollectionItemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemArgs and GetInstallationSitesInstallationSiteCollectionItemOutput values.
@@ -10269,8 +15383,26 @@ type GetInstallationSitesInstallationSiteCollectionItemInput interface {
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemArgs struct {
-	// A list of Java installation sites.
-	Items GetInstallationSitesInstallationSiteCollectionItemItemArrayInput `pulumi:"items"`
+	// The approximate count of applications running on this installation
+	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
+	// The list of operations that are blocklisted.
+	Blocklists GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayInput `pulumi:"blocklists"`
+	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	// The essential properties to identify a Java Runtime.
+	Jres GetInstallationSitesInstallationSiteCollectionItemJreArrayInput `pulumi:"jres"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// Operating System of the platform on which the Java Runtime was reported.
+	OperatingSystems GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
+	// The file system path of the installation.
+	Path pulumi.StringInput `pulumi:"path"`
+	// The security status of the Java Runtime.
+	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
+	// The lifecycle state of the installation site.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
 }
 
 func (GetInstallationSitesInstallationSiteCollectionItemArgs) ElementType() reflect.Type {
@@ -10324,11 +15456,60 @@ func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ToGetInstallat
 	return o
 }
 
-// A list of Java installation sites.
-func (o GetInstallationSitesInstallationSiteCollectionItemOutput) Items() GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) []GetInstallationSitesInstallationSiteCollectionItemItem {
-		return v.Items
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput)
+// The approximate count of applications running on this installation
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) int { return v.ApproximateApplicationCount }).(pulumi.IntOutput)
+}
+
+// The list of operations that are blocklisted.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) Blocklists() GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) []GetInstallationSitesInstallationSiteCollectionItemBlocklist {
+		return v.Blocklists
+	}).(GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput)
+}
+
+// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) InstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.InstallationKey }).(pulumi.StringOutput)
+}
+
+// The essential properties to identify a Java Runtime.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) Jres() GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) []GetInstallationSitesInstallationSiteCollectionItemJre {
+		return v.Jres
+	}).(GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+// Operating System of the platform on which the Java Runtime was reported.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) OperatingSystems() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) []GetInstallationSitesInstallationSiteCollectionItemOperatingSystem {
+		return v.OperatingSystems
+	}).(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput)
+}
+
+// The file system path of the installation.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// The security status of the Java Runtime.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) SecurityStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
+}
+
+// The lifecycle state of the installation site.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
+func (o GetInstallationSitesInstallationSiteCollectionItemOutput) TimeLastSeen() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
 }
 
 type GetInstallationSitesInstallationSiteCollectionItemArrayOutput struct{ *pulumi.OutputState }
@@ -10351,299 +15532,113 @@ func (o GetInstallationSitesInstallationSiteCollectionItemArrayOutput) Index(i p
 	}).(GetInstallationSitesInstallationSiteCollectionItemOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItem struct {
-	// The approximate count of applications running on this installation
-	ApproximateApplicationCount int `pulumi:"approximateApplicationCount"`
-	// The list of operations that are blocklisted.
-	Blocklists []GetInstallationSitesInstallationSiteCollectionItemItemBlocklist `pulumi:"blocklists"`
-	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey string `pulumi:"installationKey"`
-	// The essential properties to identify a Java Runtime.
-	Jres []GetInstallationSitesInstallationSiteCollectionItemItemJre `pulumi:"jres"`
-	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId string `pulumi:"managedInstanceId"`
-	// Operating System of the platform on which the Java Runtime was reported.
-	OperatingSystems []GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem `pulumi:"operatingSystems"`
-	// The file system path of the installation.
-	Path string `pulumi:"path"`
-	// The security status of the Java Runtime.
-	SecurityStatus string `pulumi:"securityStatus"`
-	// The lifecycle state of the installation site.
-	State string `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen string `pulumi:"timeLastSeen"`
-}
-
-// GetInstallationSitesInstallationSiteCollectionItemItemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemInput` via:
-//
-//	GetInstallationSitesInstallationSiteCollectionItemItemArgs{...}
-type GetInstallationSitesInstallationSiteCollectionItemItemInput interface {
-	pulumi.Input
-
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOutput
-}
-
-type GetInstallationSitesInstallationSiteCollectionItemItemArgs struct {
-	// The approximate count of applications running on this installation
-	ApproximateApplicationCount pulumi.IntInput `pulumi:"approximateApplicationCount"`
-	// The list of operations that are blocklisted.
-	Blocklists GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput `pulumi:"blocklists"`
-	// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
-	// The essential properties to identify a Java Runtime.
-	Jres GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput `pulumi:"jres"`
-	// The Fleet-unique identifier of the related managed instance.
-	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
-	// Operating System of the platform on which the Java Runtime was reported.
-	OperatingSystems GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput `pulumi:"operatingSystems"`
-	// The file system path of the installation.
-	Path pulumi.StringInput `pulumi:"path"`
-	// The security status of the Java Runtime.
-	SecurityStatus pulumi.StringInput `pulumi:"securityStatus"`
-	// The lifecycle state of the installation site.
-	State pulumi.StringInput `pulumi:"state"`
-	// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-	TimeLastSeen pulumi.StringInput `pulumi:"timeLastSeen"`
-}
-
-func (GetInstallationSitesInstallationSiteCollectionItemItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItem)(nil)).Elem()
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(context.Background())
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOutput)
-}
-
-// GetInstallationSitesInstallationSiteCollectionItemItemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemArray and GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemArrayInput` via:
-//
-//	GetInstallationSitesInstallationSiteCollectionItemItemArray{ GetInstallationSitesInstallationSiteCollectionItemItemArgs{...} }
-type GetInstallationSitesInstallationSiteCollectionItemItemArrayInput interface {
-	pulumi.Input
-
-	ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput
-}
-
-type GetInstallationSitesInstallationSiteCollectionItemItemArray []GetInstallationSitesInstallationSiteCollectionItemItemInput
-
-func (GetInstallationSitesInstallationSiteCollectionItemItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItem)(nil)).Elem()
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetInstallationSitesInstallationSiteCollectionItemItemArray) ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput)
-}
-
-type GetInstallationSitesInstallationSiteCollectionItemItemOutput struct{ *pulumi.OutputState }
-
-func (GetInstallationSitesInstallationSiteCollectionItemItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItem)(nil)).Elem()
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOutput {
-	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
-	return o
-}
-
-// The approximate count of applications running on this installation
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ApproximateApplicationCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) int {
-		return v.ApproximateApplicationCount
-	}).(pulumi.IntOutput)
-}
-
-// The list of operations that are blocklisted.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Blocklists() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) []GetInstallationSitesInstallationSiteCollectionItemItemBlocklist {
-		return v.Blocklists
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput)
-}
-
-// The unique identifier for the installation of Java Runtime at a specific path on a specific operating system.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) InstallationKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.InstallationKey }).(pulumi.StringOutput)
-}
-
-// The essential properties to identify a Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Jres() GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) []GetInstallationSitesInstallationSiteCollectionItemItemJre {
-		return v.Jres
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput)
-}
-
-// The Fleet-unique identifier of the related managed instance.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) ManagedInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
-}
-
-// Operating System of the platform on which the Java Runtime was reported.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) OperatingSystems() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) []GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem {
-		return v.OperatingSystems
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput)
-}
-
-// The file system path of the installation.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) Path() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.Path }).(pulumi.StringOutput)
-}
-
-// The security status of the Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) SecurityStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.SecurityStatus }).(pulumi.StringOutput)
-}
-
-// The lifecycle state of the installation site.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// The date and time the resource was _last_ reported to JMS. This is potentially _after_ the specified time period provided by the filters. For example, a resource can be last reported to JMS before the start of a specified time period, if it is also reported during the time period.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOutput) TimeLastSeen() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItem) string { return v.TimeLastSeen }).(pulumi.StringOutput)
-}
-
-type GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItem)(nil)).Elem()
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput {
-	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput {
-	return o
-}
-
-func (o GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItem {
-		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItem)[vs[1].(int)]
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemOutput)
-}
-
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklist struct {
+type GetInstallationSitesInstallationSiteCollectionItemBlocklist struct {
 	// The operation type.
 	Operation string `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
 	Reason string `pulumi:"reason"`
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemBlocklistInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs and GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemBlocklistInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...}
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs{...}
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs struct {
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs struct {
 	// The operation type.
 	Operation pulumi.StringInput `pulumi:"operation"`
 	// The reason why the operation is blocklisted.
 	Reason pulumi.StringInput `pulumi:"reason"`
 }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemBlocklist)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput)
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray and GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemBlocklistArray and GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray{ GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{...} }
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemBlocklistArray{ GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs{...} }
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray []GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistArray []GetInstallationSitesInstallationSiteCollectionItemBlocklistInput
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemBlocklistArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemBlocklist)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemBlocklistArray) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemBlocklistArray) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemBlocklist)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput {
 	return o
 }
 
 // The operation type.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Operation() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) string { return v.Operation }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput) Operation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemBlocklist) string { return v.Operation }).(pulumi.StringOutput)
 }
 
 // The reason why the operation is blocklisted.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput) Reason() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemBlocklist) string { return v.Reason }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput) Reason() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemBlocklist) string { return v.Reason }).(pulumi.StringOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemBlocklist)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput() GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemBlocklist {
-		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemBlocklist)[vs[1].(int)]
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemBlocklist {
+		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemBlocklist)[vs[1].(int)]
+	}).(GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
+type GetInstallationSitesInstallationSiteCollectionItemJre struct {
 	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
 	Distribution string `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
@@ -10654,18 +15649,18 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJre struct {
 	Version string `pulumi:"version"`
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemJreInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArgs and GetInstallationSitesInstallationSiteCollectionItemItemJreOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemJreInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemJreInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemJreArgs and GetInstallationSitesInstallationSiteCollectionItemJreOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemJreInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...}
-type GetInstallationSitesInstallationSiteCollectionItemItemJreInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemJreArgs{...}
+type GetInstallationSitesInstallationSiteCollectionItemJreInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemJreOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemJreOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemJreOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemJreArgs struct {
+type GetInstallationSitesInstallationSiteCollectionItemJreArgs struct {
 	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
 	Distribution pulumi.StringInput `pulumi:"distribution"`
 	// The unique identifier for a Java Runtime.
@@ -10676,98 +15671,98 @@ type GetInstallationSitesInstallationSiteCollectionItemItemJreArgs struct {
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJre)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemJreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemJre)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemJreArgs) ToGetInstallationSitesInstallationSiteCollectionItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemJreOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemJreOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemJreArgs) ToGetInstallationSitesInstallationSiteCollectionItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemJreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemJreOutput)
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemJreArray and GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemJreArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemJreArray and GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemJreArrayInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemJreArray{ GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{...} }
-type GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemJreArray{ GetInstallationSitesInstallationSiteCollectionItemJreArgs{...} }
+type GetInstallationSitesInstallationSiteCollectionItemJreArrayInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemJreArray []GetInstallationSitesInstallationSiteCollectionItemItemJreInput
+type GetInstallationSitesInstallationSiteCollectionItemJreArray []GetInstallationSitesInstallationSiteCollectionItemJreInput
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemJre)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemJreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemJre)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemJreArray) ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemJreArray) ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemJreArray) ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemJreOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemJreOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJre)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemJreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemJre)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) ToGetInstallationSitesInstallationSiteCollectionItemJreOutput() GetInstallationSitesInstallationSiteCollectionItemJreOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) ToGetInstallationSitesInstallationSiteCollectionItemJreOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemJreOutput {
 	return o
 }
 
 // The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Distribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Distribution }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) Distribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemJre) string { return v.Distribution }).(pulumi.StringOutput)
 }
 
 // The unique identifier for a Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) JreKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.JreKey }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemJre) string { return v.JreKey }).(pulumi.StringOutput)
 }
 
 // The vendor of the Java Runtime.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Vendor() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Vendor }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) Vendor() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemJre) string { return v.Vendor }).(pulumi.StringOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemJre) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemJreOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemJre) string { return v.Version }).(pulumi.StringOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemJre)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemJre)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutput() GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemJreArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemJreOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemJre {
-		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemJre)[vs[1].(int)]
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemJreOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemJreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemJre {
+		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemJre)[vs[1].(int)]
+	}).(GetInstallationSitesInstallationSiteCollectionItemJreOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struct {
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystem struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture string `pulumi:"architecture"`
 	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
@@ -10782,18 +15777,18 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem struc
 	Version string `pulumi:"version"`
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemOperatingSystemInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs and GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemOperatingSystemInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...}
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs{...}
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs struct {
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs struct {
 	// The architecture of the operating system as provided by the Java system property os.arch.
 	Architecture pulumi.StringInput `pulumi:"architecture"`
 	// The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
@@ -10808,111 +15803,111 @@ type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs s
 	Version pulumi.StringInput `pulumi:"version"`
 }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemOperatingSystem)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput)
 }
 
-// GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray and GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput values.
-// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput` via:
+// GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayInput is an input type that accepts GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray and GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput values.
+// You can construct a concrete instance of `GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayInput` via:
 //
-//	GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{ GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{...} }
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput interface {
+//	GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray{ GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs{...} }
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayInput interface {
 	pulumi.Input
 
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput
-	ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput
+	ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutputWithContext(context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray []GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray []GetInstallationSitesInstallationSiteCollectionItemOperatingSystemInput
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemOperatingSystem)(nil)).Elem()
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
-	return i.ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(context.Background())
+func (i GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput {
+	return i.ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutputWithContext(context.Background())
 }
 
-func (i GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput)
+func (i GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemOperatingSystem)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput {
 	return o
 }
 
 // The architecture of the operating system as provided by the Java system property os.arch.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) Architecture() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) string {
 		return v.Architecture
 	}).(pulumi.StringOutput)
 }
 
 // The name of the Operating System distribution, such as Oracle Linux 9, Windows 10, or macOS X.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Distribution() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) Distribution() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) string {
 		return v.Distribution
 	}).(pulumi.StringOutput)
 }
 
 // The operating system type, such as Windows, Linux or macOS
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Family() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) Family() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) string { return v.Family }).(pulumi.StringOutput)
 }
 
 // Number of instances running the operating system.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) int {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) ManagedInstanceCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) int {
 		return v.ManagedInstanceCount
 	}).(pulumi.IntOutput)
 }
 
 // The name of the operating system as provided by the Java system property os.name.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) string { return v.Name }).(pulumi.StringOutput)
 }
 
 // The version of the operating system as provided by the Java system property os.version.
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem) string { return v.Version }).(pulumi.StringOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstallationSitesInstallationSiteCollectionItemOperatingSystem) string { return v.Version }).(pulumi.StringOutput)
 }
 
-type GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput struct{ *pulumi.OutputState }
+type GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput struct{ *pulumi.OutputState }
 
-func (GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)(nil)).Elem()
+func (GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstallationSitesInstallationSiteCollectionItemOperatingSystem)(nil)).Elem()
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput() GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput {
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput) ToGetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutputWithContext(ctx context.Context) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput {
 	return o
 }
 
-func (o GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem {
-		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystem)[vs[1].(int)]
-	}).(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput)
+func (o GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstallationSitesInstallationSiteCollectionItemOperatingSystem {
+		return vs[0].([]GetInstallationSitesInstallationSiteCollectionItemOperatingSystem)[vs[1].(int)]
+	}).(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput)
 }
 
 type GetJavaDownloadsJavaDownloadRecordsFilter struct {
@@ -14384,6 +19379,8 @@ type GetJavaFamiliesJavaFamilyCollectionItem struct {
 	LatestReleaseArtifacts []GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes []string `pulumi:"licenseTypes"`
 	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -14416,6 +19413,8 @@ type GetJavaFamiliesJavaFamilyCollectionItemArgs struct {
 	LatestReleaseArtifacts GetJavaFamiliesJavaFamilyCollectionItemLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes pulumi.StringArrayInput `pulumi:"licenseTypes"`
 	// The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -14508,6 +19507,11 @@ func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LatestReleaseArtifacts() 
 // Latest Java release version in the family.
 func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LatestReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The license type(s) associated with the Java family.
+func (o GetJavaFamiliesJavaFamilyCollectionItemOutput) LicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaFamiliesJavaFamilyCollectionItem) []string { return v.LicenseTypes }).(pulumi.StringArrayOutput)
 }
 
 // The date on which the Java release family was first made available (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -15182,6 +20186,8 @@ type GetJavaReleaseFamilyDetail struct {
 	LatestReleaseArtifacts []GetJavaReleaseFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes []string `pulumi:"licenseTypes"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -15214,6 +20220,8 @@ type GetJavaReleaseFamilyDetailArgs struct {
 	LatestReleaseArtifacts GetJavaReleaseFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes pulumi.StringArrayInput `pulumi:"licenseTypes"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -15306,6 +20314,11 @@ func (o GetJavaReleaseFamilyDetailOutput) LatestReleaseArtifacts() GetJavaReleas
 // Latest Java release version in the family.
 func (o GetJavaReleaseFamilyDetailOutput) LatestReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The license type(s) associated with the Java family.
+func (o GetJavaReleaseFamilyDetailOutput) LicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaReleaseFamilyDetail) []string { return v.LicenseTypes }).(pulumi.StringArrayOutput)
 }
 
 // The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -16408,6 +21421,8 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetail struct {
 	LatestReleaseArtifacts []GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifact `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion string `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes []string `pulumi:"licenseTypes"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate string `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -16440,6 +21455,8 @@ type GetJavaReleasesJavaReleaseCollectionItemFamilyDetailArgs struct {
 	LatestReleaseArtifacts GetJavaReleasesJavaReleaseCollectionItemFamilyDetailLatestReleaseArtifactArrayInput `pulumi:"latestReleaseArtifacts"`
 	// Latest Java release version in the family.
 	LatestReleaseVersion pulumi.StringInput `pulumi:"latestReleaseVersion"`
+	// The license type(s) associated with the Java family.
+	LicenseTypes pulumi.StringArrayInput `pulumi:"licenseTypes"`
 	// The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	ReleaseDate pulumi.StringInput `pulumi:"releaseDate"`
 	// This indicates the support category for the Java release family.
@@ -16532,6 +21549,11 @@ func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LatestReleas
 // Latest Java release version in the family.
 func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LatestReleaseVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) string { return v.LatestReleaseVersion }).(pulumi.StringOutput)
+}
+
+// The license type(s) associated with the Java family.
+func (o GetJavaReleasesJavaReleaseCollectionItemFamilyDetailOutput) LicenseTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetJavaReleasesJavaReleaseCollectionItemFamilyDetail) []string { return v.LicenseTypes }).(pulumi.StringArrayOutput)
 }
 
 // The release date of the Java version (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -17217,7 +22239,7 @@ func (o GetJmsPluginsJmsPluginCollectionArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetJmsPluginsJmsPluginCollectionItem struct {
-	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+	// The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
 	AgentId string `pulumi:"agentId"`
 	// Filter JmsPlugin with agent type.
 	AgentType string `pulumi:"agentType"`
@@ -17265,7 +22287,7 @@ type GetJmsPluginsJmsPluginCollectionItemInput interface {
 }
 
 type GetJmsPluginsJmsPluginCollectionItemArgs struct {
-	// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+	// The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
 	AgentId pulumi.StringInput `pulumi:"agentId"`
 	// Filter JmsPlugin with agent type.
 	AgentType pulumi.StringInput `pulumi:"agentType"`
@@ -17352,7 +22374,7 @@ func (o GetJmsPluginsJmsPluginCollectionItemOutput) ToGetJmsPluginsJmsPluginColl
 	return o
 }
 
-// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+// The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
 func (o GetJmsPluginsJmsPluginCollectionItemOutput) AgentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJmsPluginsJmsPluginCollectionItem) string { return v.AgentId }).(pulumi.StringOutput)
 }
@@ -18745,6 +23767,6085 @@ func (o GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput) Index(i pulumi
 	}).(GetPluginErrorsPluginErrorCollectionItemErrorOutput)
 }
 
+type GetTaskScheduleTaskDetail struct {
+	// The list of Java installation sites to add.
+	AddInstallationSiteTaskRequests []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest `pulumi:"addInstallationSiteTaskRequests"`
+	// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequests []GetTaskScheduleTaskDetailCryptoTaskRequest `pulumi:"cryptoTaskRequests"`
+	// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequests []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest `pulumi:"deployedApplicationMigrationTaskRequests"`
+	// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequests []GetTaskScheduleTaskDetailJavaMigrationTaskRequest `pulumi:"javaMigrationTaskRequests"`
+	// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequests []GetTaskScheduleTaskDetailJfrTaskRequest `pulumi:"jfrTaskRequests"`
+	// Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequests []GetTaskScheduleTaskDetailPerformanceTuningTaskRequest `pulumi:"performanceTuningTaskRequests"`
+	// The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequests []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest `pulumi:"removeInstallationSiteTaskRequests"`
+	// The list of managed instances to scan.
+	ScanJavaServerTaskRequests []GetTaskScheduleTaskDetailScanJavaServerTaskRequest `pulumi:"scanJavaServerTaskRequests"`
+	// The list of managed instances to scan.
+	ScanLibraryTaskRequests []GetTaskScheduleTaskDetailScanLibraryTaskRequest `pulumi:"scanLibraryTaskRequests"`
+	// Type of task.
+	TaskType string `pulumi:"taskType"`
+}
+
+// GetTaskScheduleTaskDetailInput is an input type that accepts GetTaskScheduleTaskDetailArgs and GetTaskScheduleTaskDetailOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailInput` via:
+//
+//	GetTaskScheduleTaskDetailArgs{...}
+type GetTaskScheduleTaskDetailInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailOutput() GetTaskScheduleTaskDetailOutput
+	ToGetTaskScheduleTaskDetailOutputWithContext(context.Context) GetTaskScheduleTaskDetailOutput
+}
+
+type GetTaskScheduleTaskDetailArgs struct {
+	// The list of Java installation sites to add.
+	AddInstallationSiteTaskRequests GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayInput `pulumi:"addInstallationSiteTaskRequests"`
+	// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequests GetTaskScheduleTaskDetailCryptoTaskRequestArrayInput `pulumi:"cryptoTaskRequests"`
+	// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequests GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayInput `pulumi:"deployedApplicationMigrationTaskRequests"`
+	// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequests GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayInput `pulumi:"javaMigrationTaskRequests"`
+	// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequests GetTaskScheduleTaskDetailJfrTaskRequestArrayInput `pulumi:"jfrTaskRequests"`
+	// Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequests GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayInput `pulumi:"performanceTuningTaskRequests"`
+	// The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequests GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayInput `pulumi:"removeInstallationSiteTaskRequests"`
+	// The list of managed instances to scan.
+	ScanJavaServerTaskRequests GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayInput `pulumi:"scanJavaServerTaskRequests"`
+	// The list of managed instances to scan.
+	ScanLibraryTaskRequests GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayInput `pulumi:"scanLibraryTaskRequests"`
+	// Type of task.
+	TaskType pulumi.StringInput `pulumi:"taskType"`
+}
+
+func (GetTaskScheduleTaskDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetail)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailArgs) ToGetTaskScheduleTaskDetailOutput() GetTaskScheduleTaskDetailOutput {
+	return i.ToGetTaskScheduleTaskDetailOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailArgs) ToGetTaskScheduleTaskDetailOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailOutput)
+}
+
+// GetTaskScheduleTaskDetailArrayInput is an input type that accepts GetTaskScheduleTaskDetailArray and GetTaskScheduleTaskDetailArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailArray{ GetTaskScheduleTaskDetailArgs{...} }
+type GetTaskScheduleTaskDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailArrayOutput() GetTaskScheduleTaskDetailArrayOutput
+	ToGetTaskScheduleTaskDetailArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailArrayOutput
+}
+
+type GetTaskScheduleTaskDetailArray []GetTaskScheduleTaskDetailInput
+
+func (GetTaskScheduleTaskDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetail)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailArray) ToGetTaskScheduleTaskDetailArrayOutput() GetTaskScheduleTaskDetailArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailArray) ToGetTaskScheduleTaskDetailArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetail)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailOutput) ToGetTaskScheduleTaskDetailOutput() GetTaskScheduleTaskDetailOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailOutput) ToGetTaskScheduleTaskDetailOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailOutput {
+	return o
+}
+
+// The list of Java installation sites to add.
+func (o GetTaskScheduleTaskDetailOutput) AddInstallationSiteTaskRequests() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest {
+		return v.AddInstallationSiteTaskRequests
+	}).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput)
+}
+
+// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+func (o GetTaskScheduleTaskDetailOutput) CryptoTaskRequests() GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailCryptoTaskRequest {
+		return v.CryptoTaskRequests
+	}).(GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput)
+}
+
+// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+func (o GetTaskScheduleTaskDetailOutput) DeployedApplicationMigrationTaskRequests() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest {
+		return v.DeployedApplicationMigrationTaskRequests
+	}).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput)
+}
+
+// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+func (o GetTaskScheduleTaskDetailOutput) JavaMigrationTaskRequests() GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailJavaMigrationTaskRequest {
+		return v.JavaMigrationTaskRequests
+	}).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput)
+}
+
+// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+func (o GetTaskScheduleTaskDetailOutput) JfrTaskRequests() GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailJfrTaskRequest { return v.JfrTaskRequests }).(GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput)
+}
+
+// Details of the request to start a JFR performance tuning analysis.
+func (o GetTaskScheduleTaskDetailOutput) PerformanceTuningTaskRequests() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailPerformanceTuningTaskRequest {
+		return v.PerformanceTuningTaskRequests
+	}).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput)
+}
+
+// The list of Java installation sites to remove.
+func (o GetTaskScheduleTaskDetailOutput) RemoveInstallationSiteTaskRequests() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest {
+		return v.RemoveInstallationSiteTaskRequests
+	}).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput)
+}
+
+// The list of managed instances to scan.
+func (o GetTaskScheduleTaskDetailOutput) ScanJavaServerTaskRequests() GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailScanJavaServerTaskRequest {
+		return v.ScanJavaServerTaskRequests
+	}).(GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput)
+}
+
+// The list of managed instances to scan.
+func (o GetTaskScheduleTaskDetailOutput) ScanLibraryTaskRequests() GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) []GetTaskScheduleTaskDetailScanLibraryTaskRequest {
+		return v.ScanLibraryTaskRequests
+	}).(GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput)
+}
+
+// Type of task.
+func (o GetTaskScheduleTaskDetailOutput) TaskType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetail) string { return v.TaskType }).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetail)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailArrayOutput) ToGetTaskScheduleTaskDetailArrayOutput() GetTaskScheduleTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailArrayOutput) ToGetTaskScheduleTaskDetailArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetail {
+		return vs[0].([]GetTaskScheduleTaskDetail)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest struct {
+	// The list of installation sites to remove.
+	InstallationSites []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+	// Optional list of post java installation actions
+	PostInstallationActions []string `pulumi:"postInstallationActions"`
+}
+
+// GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs and GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs struct {
+	// The list of installation sites to remove.
+	InstallationSites GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+	// Optional list of post java installation actions
+	PostInstallationActions pulumi.StringArrayInput `pulumi:"postInstallationActions"`
+}
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray and GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray{ GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInput
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+// The list of installation sites to remove.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput) InstallationSites() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest) []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+// Optional list of post java installation actions
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput) PostInstallationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest) []string {
+		return v.PostInstallationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite struct {
+	// Artifact content type for the Java version.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall bool `pulumi:"forceInstall"`
+	// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode bool `pulumi:"headlessMode"`
+	// Custom path to install new Java installation site.
+	InstallationPath string `pulumi:"installationPath"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The release version of the Java Runtime.
+	ReleaseVersion string `pulumi:"releaseVersion"`
+}
+
+// GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs and GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{...}
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// Artifact content type for the Java version.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall pulumi.BoolInput `pulumi:"forceInstall"`
+	// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode pulumi.BoolInput `pulumi:"headlessMode"`
+	// Custom path to install new Java installation site.
+	InstallationPath pulumi.StringInput `pulumi:"installationPath"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The release version of the Java Runtime.
+	ReleaseVersion pulumi.StringInput `pulumi:"releaseVersion"`
+}
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray and GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray{ GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray []GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// Artifact content type for the Java version.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ArtifactContentType
+	}).(pulumi.StringOutput)
+}
+
+// Forces the installation request even if a more recent release is already present in the host.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ForceInstall() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) bool {
+		return v.ForceInstall
+	}).(pulumi.BoolOutput)
+}
+
+// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) HeadlessMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) bool {
+		return v.HeadlessMode
+	}).(pulumi.BoolOutput)
+}
+
+// Custom path to install new Java installation site.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) InstallationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.InstallationPath
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The release version of the Java Runtime.
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ReleaseVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequest struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskScheduleTaskDetailCryptoTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskScheduleTaskDetailCryptoTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailCryptoTaskRequestArgs and GetTaskScheduleTaskDetailCryptoTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailCryptoTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailCryptoTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailCryptoTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestOutput() GetTaskScheduleTaskDetailCryptoTaskRequestOutput
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestArgs struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestArgs) ToGetTaskScheduleTaskDetailCryptoTaskRequestOutput() GetTaskScheduleTaskDetailCryptoTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailCryptoTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestArgs) ToGetTaskScheduleTaskDetailCryptoTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailCryptoTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailCryptoTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailCryptoTaskRequestArray and GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailCryptoTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailCryptoTaskRequestArray{ GetTaskScheduleTaskDetailCryptoTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailCryptoTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestArray []GetTaskScheduleTaskDetailCryptoTaskRequestInput
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestArray) ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestArray) ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestOutput() GetTaskScheduleTaskDetailCryptoTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestOutput {
+	return o
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequest) int { return v.RecordingDurationInMinutes }).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestOutput) Targets() GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequest) []GetTaskScheduleTaskDetailCryptoTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequest) int { return v.WaitingPeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailCryptoTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailCryptoTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailCryptoTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailCryptoTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskScheduleTaskDetailCryptoTaskRequestTargetInput is an input type that accepts GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs and GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailCryptoTaskRequestTargetInput` via:
+//
+//	GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs{...}
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutputWithContext(context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput {
+	return i.ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput)
+}
+
+// GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayInput is an input type that accepts GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray and GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray{ GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs{...} }
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput
+	ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray []GetTaskScheduleTaskDetailCryptoTaskRequestTargetInput
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequestTarget) string { return v.ApplicationInstallationKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequestTarget) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequestTarget) string { return v.ContainerKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequestTarget) string { return v.JreKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailCryptoTaskRequestTarget) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailCryptoTaskRequestTarget {
+		return vs[0].([]GetTaskScheduleTaskDetailCryptoTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest struct {
+	// The attachment targets to start JFR.
+	Targets []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs and GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs struct {
+	// The attachment targets to start JFR.
+	Targets GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray and GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray{ GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestInput
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput) Targets() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest) []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget struct {
+	// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey string `pulumi:"deployedApplicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+}
+
+// GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetInput is an input type that accepts GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs and GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetInput` via:
+//
+//	GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{...}
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs struct {
+	// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey pulumi.StringInput `pulumi:"deployedApplicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+}
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return i.ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+// GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput is an input type that accepts GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray and GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray{ GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{...} }
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput
+	ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray []GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetInput
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) DeployedApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.DeployedApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version the application is currently running on.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.SourceJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget {
+		return vs[0].([]GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequest struct {
+	// The attachment targets to start JFR.
+	Targets []GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// GetTaskScheduleTaskDetailJavaMigrationTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs and GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJavaMigrationTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs struct {
+	// The attachment targets to start JFR.
+	Targets GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray and GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray{ GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray []GetTaskScheduleTaskDetailJavaMigrationTaskRequestInput
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput {
+	return o
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput) Targets() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequest) []GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailJavaMigrationTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailJavaMigrationTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+}
+
+// GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetInput is an input type that accepts GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs and GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetInput` via:
+//
+//	GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs{...}
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+}
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return i.ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput)
+}
+
+// GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayInput is an input type that accepts GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray and GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray{ GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs{...} }
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput
+	ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray []GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetInput
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+// The JDK version the application is currently running on.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) string { return v.SourceJdkVersion }).(pulumi.StringOutput)
+}
+
+// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget) string { return v.TargetJdkVersion }).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget {
+		return vs[0].([]GetTaskScheduleTaskDetailJavaMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequest struct {
+	// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName string `pulumi:"jfcProfileName"`
+	// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 string `pulumi:"jfcV1"`
+	// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 string `pulumi:"jfcV2"`
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The maximum size limit for the JFR file collected.
+	RecordingSizeInMb int `pulumi:"recordingSizeInMb"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskScheduleTaskDetailJfrTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskScheduleTaskDetailJfrTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailJfrTaskRequestArgs and GetTaskScheduleTaskDetailJfrTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJfrTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailJfrTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailJfrTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJfrTaskRequestOutput() GetTaskScheduleTaskDetailJfrTaskRequestOutput
+	ToGetTaskScheduleTaskDetailJfrTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailJfrTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestArgs struct {
+	// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName pulumi.StringInput `pulumi:"jfcProfileName"`
+	// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 pulumi.StringInput `pulumi:"jfcV1"`
+	// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 pulumi.StringInput `pulumi:"jfcV2"`
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The maximum size limit for the JFR file collected.
+	RecordingSizeInMb pulumi.IntInput `pulumi:"recordingSizeInMb"`
+	// The attachment targets to start JFR.
+	Targets GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestArgs) ToGetTaskScheduleTaskDetailJfrTaskRequestOutput() GetTaskScheduleTaskDetailJfrTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailJfrTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestArgs) ToGetTaskScheduleTaskDetailJfrTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJfrTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailJfrTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailJfrTaskRequestArray and GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJfrTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailJfrTaskRequestArray{ GetTaskScheduleTaskDetailJfrTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailJfrTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestArray []GetTaskScheduleTaskDetailJfrTaskRequestInput
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestArray) ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestArray) ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestOutput() GetTaskScheduleTaskDetailJfrTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestOutput {
+	return o
+}
+
+// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) JfcProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) string { return v.JfcProfileName }).(pulumi.StringOutput)
+}
+
+// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) JfcV1() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) string { return v.JfcV1 }).(pulumi.StringOutput)
+}
+
+// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) JfcV2() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) string { return v.JfcV2 }).(pulumi.StringOutput)
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) int { return v.RecordingDurationInMinutes }).(pulumi.IntOutput)
+}
+
+// The maximum size limit for the JFR file collected.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) RecordingSizeInMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) int { return v.RecordingSizeInMb }).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) Targets() GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) []GetTaskScheduleTaskDetailJfrTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequest) int { return v.WaitingPeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailJfrTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailJfrTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailJfrTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailJfrTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskScheduleTaskDetailJfrTaskRequestTargetInput is an input type that accepts GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs and GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJfrTaskRequestTargetInput` via:
+//
+//	GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs{...}
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput
+	ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutputWithContext(context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput {
+	return i.ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput)
+}
+
+// GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayInput is an input type that accepts GetTaskScheduleTaskDetailJfrTaskRequestTargetArray and GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailJfrTaskRequestTargetArray{ GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs{...} }
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput
+	ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetArray []GetTaskScheduleTaskDetailJfrTaskRequestTargetInput
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestTargetArray) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailJfrTaskRequestTargetArray) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequestTarget) string { return v.ApplicationInstallationKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequestTarget) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequestTarget) string { return v.ContainerKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequestTarget) string { return v.JreKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailJfrTaskRequestTarget) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailJfrTaskRequestTarget {
+		return vs[0].([]GetTaskScheduleTaskDetailJfrTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequest struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskScheduleTaskDetailPerformanceTuningTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs and GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailPerformanceTuningTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray and GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray{ GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray []GetTaskScheduleTaskDetailPerformanceTuningTaskRequestInput
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequest) int { return v.RecordingDurationInMinutes }).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) Targets() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequest) []GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequest) int { return v.WaitingPeriodInMinutes }).(pulumi.IntOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailPerformanceTuningTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailPerformanceTuningTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetInput is an input type that accepts GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs and GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetInput` via:
+//
+//	GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs{...}
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return i.ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput)
+}
+
+// GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayInput is an input type that accepts GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray and GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray{ GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs{...} }
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput
+	ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray []GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetInput
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget) string { return v.ApplicationKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget) string { return v.ContainerKey }).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget) string { return v.JreKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget) string { return v.ManagedInstanceId }).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ToGetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget {
+		return vs[0].([]GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest struct {
+	// The list of installation sites to remove.
+	InstallationSites []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+}
+
+// GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs and GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs struct {
+	// The list of installation sites to remove.
+	InstallationSites GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+}
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray and GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray{ GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInput
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+// The list of installation sites to remove.
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput) InstallationSites() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest) []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite struct {
+	// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey string `pulumi:"installationKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs and GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{...}
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray and GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray{ GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray []GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) InstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite) string {
+		return v.InstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related managed instance.
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequest struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// GetTaskScheduleTaskDetailScanJavaServerTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs and GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailScanJavaServerTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput
+	ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray and GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray{ GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray []GetTaskScheduleTaskDetailScanJavaServerTaskRequestInput
+
+func (GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput {
+	return o
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailScanJavaServerTaskRequest) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailScanJavaServerTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailScanJavaServerTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput)
+}
+
+type GetTaskScheduleTaskDetailScanLibraryTaskRequest struct {
+	// The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes int `pulumi:"dynamicScanDurationInMinutes"`
+	// Indicates whether the scan is dynamic or static.
+	IsDynamicScan bool `pulumi:"isDynamicScan"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// GetTaskScheduleTaskDetailScanLibraryTaskRequestInput is an input type that accepts GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs and GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailScanLibraryTaskRequestInput` via:
+//
+//	GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs{...}
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput
+	ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutputWithContext(context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput
+}
+
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs struct {
+	// The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes pulumi.IntInput `pulumi:"dynamicScanDurationInMinutes"`
+	// Indicates whether the scan is dynamic or static.
+	IsDynamicScan pulumi.BoolInput `pulumi:"isDynamicScan"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput {
+	return i.ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput)
+}
+
+// GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayInput is an input type that accepts GetTaskScheduleTaskDetailScanLibraryTaskRequestArray and GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayInput` via:
+//
+//	GetTaskScheduleTaskDetailScanLibraryTaskRequestArray{ GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs{...} }
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput
+	ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutputWithContext(context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput
+}
+
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestArray []GetTaskScheduleTaskDetailScanLibraryTaskRequestInput
+
+func (GetTaskScheduleTaskDetailScanLibraryTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskScheduleTaskDetailScanLibraryTaskRequestArray) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput {
+	return i.ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskScheduleTaskDetailScanLibraryTaskRequestArray) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskScheduleTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput {
+	return o
+}
+
+// The duration of the dynamic scan in minutes.
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) DynamicScanDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailScanLibraryTaskRequest) int { return v.DynamicScanDurationInMinutes }).(pulumi.IntOutput)
+}
+
+// Indicates whether the scan is dynamic or static.
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) IsDynamicScan() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailScanLibraryTaskRequest) bool { return v.IsDynamicScan }).(pulumi.BoolOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskScheduleTaskDetailScanLibraryTaskRequest) []string { return v.ManagedInstanceIds }).(pulumi.StringArrayOutput)
+}
+
+type GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskScheduleTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput) ToGetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskScheduleTaskDetailScanLibraryTaskRequest {
+		return vs[0].([]GetTaskScheduleTaskDetailScanLibraryTaskRequest)[vs[1].(int)]
+	}).(GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput)
+}
+
+type GetTaskSchedulesFilter struct {
+	// The task name.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetTaskSchedulesFilterInput is an input type that accepts GetTaskSchedulesFilterArgs and GetTaskSchedulesFilterOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesFilterInput` via:
+//
+//	GetTaskSchedulesFilterArgs{...}
+type GetTaskSchedulesFilterInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesFilterOutput() GetTaskSchedulesFilterOutput
+	ToGetTaskSchedulesFilterOutputWithContext(context.Context) GetTaskSchedulesFilterOutput
+}
+
+type GetTaskSchedulesFilterArgs struct {
+	// The task name.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetTaskSchedulesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesFilterArgs) ToGetTaskSchedulesFilterOutput() GetTaskSchedulesFilterOutput {
+	return i.ToGetTaskSchedulesFilterOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesFilterArgs) ToGetTaskSchedulesFilterOutputWithContext(ctx context.Context) GetTaskSchedulesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesFilterOutput)
+}
+
+// GetTaskSchedulesFilterArrayInput is an input type that accepts GetTaskSchedulesFilterArray and GetTaskSchedulesFilterArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesFilterArrayInput` via:
+//
+//	GetTaskSchedulesFilterArray{ GetTaskSchedulesFilterArgs{...} }
+type GetTaskSchedulesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesFilterArrayOutput() GetTaskSchedulesFilterArrayOutput
+	ToGetTaskSchedulesFilterArrayOutputWithContext(context.Context) GetTaskSchedulesFilterArrayOutput
+}
+
+type GetTaskSchedulesFilterArray []GetTaskSchedulesFilterInput
+
+func (GetTaskSchedulesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesFilter)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesFilterArray) ToGetTaskSchedulesFilterArrayOutput() GetTaskSchedulesFilterArrayOutput {
+	return i.ToGetTaskSchedulesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesFilterArray) ToGetTaskSchedulesFilterArrayOutputWithContext(ctx context.Context) GetTaskSchedulesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesFilterArrayOutput)
+}
+
+type GetTaskSchedulesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesFilterOutput) ToGetTaskSchedulesFilterOutput() GetTaskSchedulesFilterOutput {
+	return o
+}
+
+func (o GetTaskSchedulesFilterOutput) ToGetTaskSchedulesFilterOutputWithContext(ctx context.Context) GetTaskSchedulesFilterOutput {
+	return o
+}
+
+// The task name.
+func (o GetTaskSchedulesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetTaskSchedulesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetTaskSchedulesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetTaskSchedulesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetTaskSchedulesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesFilter)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesFilterArrayOutput) ToGetTaskSchedulesFilterArrayOutput() GetTaskSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesFilterArrayOutput) ToGetTaskSchedulesFilterArrayOutputWithContext(ctx context.Context) GetTaskSchedulesFilterArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesFilterArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesFilter {
+		return vs[0].([]GetTaskSchedulesFilter)[vs[1].(int)]
+	}).(GetTaskSchedulesFilterOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollection struct {
+	Items []GetTaskSchedulesTaskScheduleCollectionItem `pulumi:"items"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionArgs and GetTaskSchedulesTaskScheduleCollectionOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionOutput() GetTaskSchedulesTaskScheduleCollectionOutput
+	ToGetTaskSchedulesTaskScheduleCollectionOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionArgs struct {
+	Items GetTaskSchedulesTaskScheduleCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollection)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionArgs) ToGetTaskSchedulesTaskScheduleCollectionOutput() GetTaskSchedulesTaskScheduleCollectionOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionArgs) ToGetTaskSchedulesTaskScheduleCollectionOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionArray and GetTaskSchedulesTaskScheduleCollectionArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionArray{ GetTaskSchedulesTaskScheduleCollectionArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionArrayOutput() GetTaskSchedulesTaskScheduleCollectionArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionArray []GetTaskSchedulesTaskScheduleCollectionInput
+
+func (GetTaskSchedulesTaskScheduleCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollection)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionArray) ToGetTaskSchedulesTaskScheduleCollectionArrayOutput() GetTaskSchedulesTaskScheduleCollectionArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionArray) ToGetTaskSchedulesTaskScheduleCollectionArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollection)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionOutput) ToGetTaskSchedulesTaskScheduleCollectionOutput() GetTaskSchedulesTaskScheduleCollectionOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionOutput) ToGetTaskSchedulesTaskScheduleCollectionOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionOutput) Items() GetTaskSchedulesTaskScheduleCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollection) []GetTaskSchedulesTaskScheduleCollectionItem {
+		return v.Items
+	}).(GetTaskSchedulesTaskScheduleCollectionItemArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollection)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionArrayOutput() GetTaskSchedulesTaskScheduleCollectionArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollection {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollection)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItem struct {
+	// Name of the task creator.
+	CreatedBy string `pulumi:"createdBy"`
+	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	ExecutionRecurrences string `pulumi:"executionRecurrences"`
+	// The ID of the Fleet.
+	FleetId string `pulumi:"fleetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
+	Id string `pulumi:"id"`
+	// The task name.
+	Name string `pulumi:"name"`
+	// All possible status of task schedule.
+	State string `pulumi:"state"`
+	// The minimum details of a task.
+	TaskDetails []GetTaskSchedulesTaskScheduleCollectionItemTaskDetail `pulumi:"taskDetails"`
+	// The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastRun string `pulumi:"timeLastRun"`
+	// The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastUpdated string `pulumi:"timeLastUpdated"`
+	// The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeNextRun string `pulumi:"timeNextRun"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemArgs and GetTaskSchedulesTaskScheduleCollectionItemOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemOutput() GetTaskSchedulesTaskScheduleCollectionItemOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemArgs struct {
+	// Name of the task creator.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+	ExecutionRecurrences pulumi.StringInput `pulumi:"executionRecurrences"`
+	// The ID of the Fleet.
+	FleetId pulumi.StringInput `pulumi:"fleetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The task name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// All possible status of task schedule.
+	State pulumi.StringInput `pulumi:"state"`
+	// The minimum details of a task.
+	TaskDetails GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayInput `pulumi:"taskDetails"`
+	// The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastRun pulumi.StringInput `pulumi:"timeLastRun"`
+	// The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeLastUpdated pulumi.StringInput `pulumi:"timeLastUpdated"`
+	// The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeNextRun pulumi.StringInput `pulumi:"timeNextRun"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItem)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemArgs) ToGetTaskSchedulesTaskScheduleCollectionItemOutput() GetTaskSchedulesTaskScheduleCollectionItemOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemArgs) ToGetTaskSchedulesTaskScheduleCollectionItemOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemArray and GetTaskSchedulesTaskScheduleCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemArray{ GetTaskSchedulesTaskScheduleCollectionItemArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemArray []GetTaskSchedulesTaskScheduleCollectionItemInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItem)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemArray) ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemArray) ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItem)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) ToGetTaskSchedulesTaskScheduleCollectionItemOutput() GetTaskSchedulesTaskScheduleCollectionItemOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) ToGetTaskSchedulesTaskScheduleCollectionItemOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemOutput {
+	return o
+}
+
+// Name of the task creator.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Recurrence specification for the task schedule execution (formatted according to [RFC-5545](https://icalendar.org/RFC-Specifications/iCalendar-RFC-5545/)). To run daily for 10 occurrences starts on September 2, 2024 09:00 EDT, it should be 'DTSTART;TZID=America/New_York:20240902T090000 RRULE:FREQ=DAILY;COUNT=10'. To run every 3 hours from 9:00 AM to 5:00 PM on August 5, 2024 EDT, it should be 'DTSTART;TZID=America/New_York:20240805T090000 RRULE:FREQ=HOURLY;INTERVAL=3;UNTIL=20240805T170000Z'.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) ExecutionRecurrences() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.ExecutionRecurrences }).(pulumi.StringOutput)
+}
+
+// The ID of the Fleet.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.FleetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify this task schedule.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The task name.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// All possible status of task schedule.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The minimum details of a task.
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) TaskDetails() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetail {
+		return v.TaskDetails
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput)
+}
+
+// The date and time the task schedule was created (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the task schedule ran last (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) TimeLastRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.TimeLastRun }).(pulumi.StringOutput)
+}
+
+// The date and time the task schedule was last updated (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) TimeLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
+}
+
+// The date and time the task schedule will run next (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+func (o GetTaskSchedulesTaskScheduleCollectionItemOutput) TimeNextRun() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItem) string { return v.TimeNextRun }).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItem)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItem {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItem)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetail struct {
+	// The list of Java installation sites to add.
+	AddInstallationSiteTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest `pulumi:"addInstallationSiteTaskRequests"`
+	// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest `pulumi:"cryptoTaskRequests"`
+	// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest `pulumi:"deployedApplicationMigrationTaskRequests"`
+	// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest `pulumi:"javaMigrationTaskRequests"`
+	// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest `pulumi:"jfrTaskRequests"`
+	// Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest `pulumi:"performanceTuningTaskRequests"`
+	// The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest `pulumi:"removeInstallationSiteTaskRequests"`
+	// The list of managed instances to scan.
+	ScanJavaServerTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest `pulumi:"scanJavaServerTaskRequests"`
+	// The list of managed instances to scan.
+	ScanLibraryTaskRequests []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest `pulumi:"scanLibraryTaskRequests"`
+	// Type of task.
+	TaskType string `pulumi:"taskType"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs struct {
+	// The list of Java installation sites to add.
+	AddInstallationSiteTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayInput `pulumi:"addInstallationSiteTaskRequests"`
+	// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+	CryptoTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayInput `pulumi:"cryptoTaskRequests"`
+	// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+	DeployedApplicationMigrationTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayInput `pulumi:"deployedApplicationMigrationTaskRequests"`
+	// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+	JavaMigrationTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayInput `pulumi:"javaMigrationTaskRequests"`
+	// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+	JfrTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayInput `pulumi:"jfrTaskRequests"`
+	// Details of the request to start a JFR performance tuning analysis.
+	PerformanceTuningTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayInput `pulumi:"performanceTuningTaskRequests"`
+	// The list of Java installation sites to remove.
+	RemoveInstallationSiteTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayInput `pulumi:"removeInstallationSiteTaskRequests"`
+	// The list of managed instances to scan.
+	ScanJavaServerTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayInput `pulumi:"scanJavaServerTaskRequests"`
+	// The list of managed instances to scan.
+	ScanLibraryTaskRequests GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayInput `pulumi:"scanLibraryTaskRequests"`
+	// Type of task.
+	TaskType pulumi.StringInput `pulumi:"taskType"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput {
+	return o
+}
+
+// The list of Java installation sites to add.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) AddInstallationSiteTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest {
+		return v.AddInstallationSiteTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput)
+}
+
+// Details of the request to start a JFR crypto event analysis. When the targets aren't specified, then all managed instances currently in the fleet are selected.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) CryptoTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest {
+		return v.CryptoTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput)
+}
+
+// Details of the request to start a Java migration analyses. The analyses requires the managed instance OCID, deployed application key, source JDK version, and target JDK version of each selected application.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) DeployedApplicationMigrationTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest {
+		return v.DeployedApplicationMigrationTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput)
+}
+
+// Details of the request to start a Java migration analysis. The analysis requires the managed instance OCID, application installation key, source JDK version, and target JDK version of each selected application.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) JavaMigrationTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest {
+		return v.JavaMigrationTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput)
+}
+
+// Details of the request to start JFR recordings. When the targets aren't specified, then all managed instances currently in the Fleet are selected.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) JfrTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest {
+		return v.JfrTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput)
+}
+
+// Details of the request to start a JFR performance tuning analysis.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) PerformanceTuningTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest {
+		return v.PerformanceTuningTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput)
+}
+
+// The list of Java installation sites to remove.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) RemoveInstallationSiteTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest {
+		return v.RemoveInstallationSiteTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput)
+}
+
+// The list of managed instances to scan.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) ScanJavaServerTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest {
+		return v.ScanJavaServerTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput)
+}
+
+// The list of managed instances to scan.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) ScanLibraryTaskRequests() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest {
+		return v.ScanLibraryTaskRequests
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput)
+}
+
+// Type of task.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput) TaskType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetail) string { return v.TaskType }).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetail)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetail {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetail)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest struct {
+	// The list of installation sites to remove.
+	InstallationSites []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+	// Optional list of post java installation actions
+	PostInstallationActions []string `pulumi:"postInstallationActions"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs struct {
+	// The list of installation sites to remove.
+	InstallationSites GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+	// Optional list of post java installation actions
+	PostInstallationActions pulumi.StringArrayInput `pulumi:"postInstallationActions"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput {
+	return o
+}
+
+// The list of installation sites to remove.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput) InstallationSites() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+// Optional list of post java installation actions
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput) PostInstallationActions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest) []string {
+		return v.PostInstallationActions
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite struct {
+	// Artifact content type for the Java version.
+	ArtifactContentType string `pulumi:"artifactContentType"`
+	// Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall bool `pulumi:"forceInstall"`
+	// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode bool `pulumi:"headlessMode"`
+	// Custom path to install new Java installation site.
+	InstallationPath string `pulumi:"installationPath"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The release version of the Java Runtime.
+	ReleaseVersion string `pulumi:"releaseVersion"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// Artifact content type for the Java version.
+	ArtifactContentType pulumi.StringInput `pulumi:"artifactContentType"`
+	// Forces the installation request even if a more recent release is already present in the host.
+	ForceInstall pulumi.BoolInput `pulumi:"forceInstall"`
+	// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+	HeadlessMode pulumi.BoolInput `pulumi:"headlessMode"`
+	// Custom path to install new Java installation site.
+	InstallationPath pulumi.StringInput `pulumi:"installationPath"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The release version of the Java Runtime.
+	ReleaseVersion pulumi.StringInput `pulumi:"releaseVersion"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// Artifact content type for the Java version.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ArtifactContentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ArtifactContentType
+	}).(pulumi.StringOutput)
+}
+
+// Forces the installation request even if a more recent release is already present in the host.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ForceInstall() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) bool {
+		return v.ForceInstall
+	}).(pulumi.BoolOutput)
+}
+
+// Flag to install headless or headful Java installation. Only valid for Oracle Linux in OCI.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) HeadlessMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) bool {
+		return v.HeadlessMode
+	}).(pulumi.BoolOutput)
+}
+
+// Custom path to install new Java installation site.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) InstallationPath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.InstallationPath
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The release version of the Java Runtime.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput) ReleaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite) string {
+		return v.ReleaseVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput {
+	return o
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest) int {
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) Targets() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest) int {
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget) string {
+		return v.ApplicationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget) string {
+		return v.ContainerKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget) string {
+		return v.JreKey
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest struct {
+	// The attachment targets to start JFR.
+	Targets []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs struct {
+	// The attachment targets to start JFR.
+	Targets GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return o
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput) Targets() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget struct {
+	// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey string `pulumi:"deployedApplicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs struct {
+	// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+	DeployedApplicationInstallationKey pulumi.StringInput `pulumi:"deployedApplicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// The unique key that identifies the deployed application's installation path that is to be used for the Java migration analyses.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) DeployedApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.DeployedApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version the application is currently running on.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.SourceJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget) string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest struct {
+	// The attachment targets to start JFR.
+	Targets []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget `pulumi:"targets"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs struct {
+	// The attachment targets to start JFR.
+	Targets GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayInput `pulumi:"targets"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput {
+	return o
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput) Targets() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes []string `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes []string `pulumi:"includePackagePrefixes"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion string `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+	ExcludePackagePrefixes pulumi.StringArrayInput `pulumi:"excludePackagePrefixes"`
+	// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+	IncludePackagePrefixes pulumi.StringArrayInput `pulumi:"includePackagePrefixes"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+	// The JDK version the application is currently running on.
+	SourceJdkVersion pulumi.StringInput `pulumi:"sourceJdkVersion"`
+	// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Excludes the packages that starts with the prefix from the migration analysis result. Either this or includePackagePrefixes can be specified.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ExcludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) []string {
+		return v.ExcludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// includes the packages that starts with the prefix from the migration analysis result. Either this or excludePackagePrefixes can be specified.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) IncludePackagePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) []string {
+		return v.IncludePackagePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version the application is currently running on.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) SourceJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) string {
+		return v.SourceJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The JDK version against which the migration analysis was performed to identify effort required to move from source JDK.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget) string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest struct {
+	// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName string `pulumi:"jfcProfileName"`
+	// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 string `pulumi:"jfcV1"`
+	// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 string `pulumi:"jfcV2"`
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The maximum size limit for the JFR file collected.
+	RecordingSizeInMb int `pulumi:"recordingSizeInMb"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs struct {
+	// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+	JfcProfileName pulumi.StringInput `pulumi:"jfcProfileName"`
+	// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+	JfcV1 pulumi.StringInput `pulumi:"jfcV1"`
+	// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+	JfcV2 pulumi.StringInput `pulumi:"jfcV2"`
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The maximum size limit for the JFR file collected.
+	RecordingSizeInMb pulumi.IntInput `pulumi:"recordingSizeInMb"`
+	// The attachment targets to start JFR.
+	Targets GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput {
+	return o
+}
+
+// The profile used for JFR events selection. If the name isn't recognized, the settings from jfcV1 or jfcV2 will be used depending on the JVM version. Both jfcV2 and jfcV1 should be provided to ensure JFR collection on different JVM versions.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) JfcProfileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) string {
+		return v.JfcProfileName
+	}).(pulumi.StringOutput)
+}
+
+// The BASE64 encoded string of JFR settings XML with schema used by JDK 8.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) JfcV1() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) string { return v.JfcV1 }).(pulumi.StringOutput)
+}
+
+// The BASE64 encoded string of JFR settings XML with [schema used by JDK 9 and after](https://raw.githubusercontent.com/openjdk/jdk/master/src/jdk.jfr/share/classes/jdk/jfr/internal/jfc/jfc.xsd).
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) JfcV2() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) string { return v.JfcV2 }).(pulumi.StringOutput)
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) int {
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The maximum size limit for the JFR file collected.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) RecordingSizeInMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) int {
+		return v.RecordingSizeInMb
+	}).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) Targets() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest) int {
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget) string {
+		return v.ApplicationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget) string {
+		return v.ContainerKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget) string {
+		return v.JreKey
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes int `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes int `pulumi:"waitingPeriodInMinutes"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs struct {
+	// Duration of the JFR recording in minutes.
+	RecordingDurationInMinutes pulumi.IntInput `pulumi:"recordingDurationInMinutes"`
+	// The attachment targets to start JFR.
+	Targets GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayInput `pulumi:"targets"`
+	// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+	WaitingPeriodInMinutes pulumi.IntInput `pulumi:"waitingPeriodInMinutes"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput {
+	return o
+}
+
+// Duration of the JFR recording in minutes.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) RecordingDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest) int {
+		return v.RecordingDurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// The attachment targets to start JFR.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) Targets() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget {
+		return v.Targets
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+// Period to looking for JVMs. In addition to attach to running JVMs when given the command, JVM started within the waiting period will also be attached for JFR. The value should be larger than the agent polling interval setting for the fleet to ensure agent can get the instructions. If not specified, the agent polling interval for the fleet is used.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput) WaitingPeriodInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest) int {
+		return v.WaitingPeriodInMinutes
+	}).(pulumi.IntOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey string `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey string `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey string `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey string `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs struct {
+	// Unique key that identifies the application installation for JFR data collection.
+	ApplicationInstallationKey pulumi.StringInput `pulumi:"applicationInstallationKey"`
+	// Unique key that identifies the application for JFR data collection.
+	ApplicationKey pulumi.StringInput `pulumi:"applicationKey"`
+	// Unique key that identifies the container for JFR data collection.
+	ContainerKey pulumi.StringInput `pulumi:"containerKey"`
+	// Unique key that identify the JVM for JFR data collection.
+	JreKey pulumi.StringInput `pulumi:"jreKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return o
+}
+
+// Unique key that identifies the application installation for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ApplicationInstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.ApplicationInstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the application for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ApplicationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.ApplicationKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identifies the container for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ContainerKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.ContainerKey
+	}).(pulumi.StringOutput)
+}
+
+// Unique key that identify the JVM for JFR data collection.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) JreKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.JreKey
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTarget)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest struct {
+	// The list of installation sites to remove.
+	InstallationSites []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite `pulumi:"installationSites"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs struct {
+	// The list of installation sites to remove.
+	InstallationSites GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput `pulumi:"installationSites"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return o
+}
+
+// The list of installation sites to remove.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput) InstallationSites() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest) []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite {
+		return v.InstallationSites
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite struct {
+	// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey string `pulumi:"installationKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId string `pulumi:"managedInstanceId"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs struct {
+	// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+	InstallationKey pulumi.StringInput `pulumi:"installationKey"`
+	// The Fleet-unique identifier of the related managed instance.
+	ManagedInstanceId pulumi.StringInput `pulumi:"managedInstanceId"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return o
+}
+
+// The unique identifier for the installation of a Java Runtime at a specific path on a specific operating system.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) InstallationKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite) string {
+		return v.InstallationKey
+	}).(pulumi.StringOutput)
+}
+
+// The Fleet-unique identifier of the related managed instance.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput) ManagedInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite) string {
+		return v.ManagedInstanceId
+	}).(pulumi.StringOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSite)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs struct {
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput {
+	return o
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest) []string {
+		return v.ManagedInstanceIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest struct {
+	// The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes int `pulumi:"dynamicScanDurationInMinutes"`
+	// Indicates whether the scan is dynamic or static.
+	IsDynamicScan bool `pulumi:"isDynamicScan"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds []string `pulumi:"managedInstanceIds"`
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs{...}
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs struct {
+	// The duration of the dynamic scan in minutes.
+	DynamicScanDurationInMinutes pulumi.IntInput `pulumi:"dynamicScanDurationInMinutes"`
+	// Indicates whether the scan is dynamic or static.
+	IsDynamicScan pulumi.BoolInput `pulumi:"isDynamicScan"`
+	// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+	ManagedInstanceIds pulumi.StringArrayInput `pulumi:"managedInstanceIds"`
+}
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput)
+}
+
+// GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayInput is an input type that accepts GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray and GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput values.
+// You can construct a concrete instance of `GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayInput` via:
+//
+//	GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray{ GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs{...} }
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayInput interface {
+	pulumi.Input
+
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput
+	ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutputWithContext(context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray []GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestInput
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput {
+	return i.ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutputWithContext(context.Background())
+}
+
+func (i GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput {
+	return o
+}
+
+// The duration of the dynamic scan in minutes.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) DynamicScanDurationInMinutes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest) int {
+		return v.DynamicScanDurationInMinutes
+	}).(pulumi.IntOutput)
+}
+
+// Indicates whether the scan is dynamic or static.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) IsDynamicScan() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest) bool {
+		return v.IsDynamicScan
+	}).(pulumi.BoolOutput)
+}
+
+// The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of managed instances to scan.
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput) ManagedInstanceIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest) []string {
+		return v.ManagedInstanceIds
+	}).(pulumi.StringArrayOutput)
+}
+
+type GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest)(nil)).Elem()
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput() GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput) ToGetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutputWithContext(ctx context.Context) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput {
+	return o
+}
+
+func (o GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput) Index(i pulumi.IntInput) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest {
+		return vs[0].([]GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequest)[vs[1].(int)]
+	}).(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput)
+}
+
+type GetUtilsJavaMigrationAnalysiCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id string `pulumi:"id"`
+}
+
+// GetUtilsJavaMigrationAnalysiCreatedByInput is an input type that accepts GetUtilsJavaMigrationAnalysiCreatedByArgs and GetUtilsJavaMigrationAnalysiCreatedByOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysiCreatedByInput` via:
+//
+//	GetUtilsJavaMigrationAnalysiCreatedByArgs{...}
+type GetUtilsJavaMigrationAnalysiCreatedByInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysiCreatedByOutput() GetUtilsJavaMigrationAnalysiCreatedByOutput
+	ToGetUtilsJavaMigrationAnalysiCreatedByOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysiCreatedByOutput
+}
+
+type GetUtilsJavaMigrationAnalysiCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetUtilsJavaMigrationAnalysiCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysiCreatedByArgs) ToGetUtilsJavaMigrationAnalysiCreatedByOutput() GetUtilsJavaMigrationAnalysiCreatedByOutput {
+	return i.ToGetUtilsJavaMigrationAnalysiCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysiCreatedByArgs) ToGetUtilsJavaMigrationAnalysiCreatedByOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysiCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysiCreatedByOutput)
+}
+
+// GetUtilsJavaMigrationAnalysiCreatedByArrayInput is an input type that accepts GetUtilsJavaMigrationAnalysiCreatedByArray and GetUtilsJavaMigrationAnalysiCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysiCreatedByArrayInput` via:
+//
+//	GetUtilsJavaMigrationAnalysiCreatedByArray{ GetUtilsJavaMigrationAnalysiCreatedByArgs{...} }
+type GetUtilsJavaMigrationAnalysiCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutput() GetUtilsJavaMigrationAnalysiCreatedByArrayOutput
+	ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysiCreatedByArrayOutput
+}
+
+type GetUtilsJavaMigrationAnalysiCreatedByArray []GetUtilsJavaMigrationAnalysiCreatedByInput
+
+func (GetUtilsJavaMigrationAnalysiCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysiCreatedByArray) ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutput() GetUtilsJavaMigrationAnalysiCreatedByArrayOutput {
+	return i.ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysiCreatedByArray) ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysiCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysiCreatedByArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysiCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysiCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysiCreatedByOutput) ToGetUtilsJavaMigrationAnalysiCreatedByOutput() GetUtilsJavaMigrationAnalysiCreatedByOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysiCreatedByOutput) ToGetUtilsJavaMigrationAnalysiCreatedByOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysiCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetUtilsJavaMigrationAnalysiCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysiCreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+func (o GetUtilsJavaMigrationAnalysiCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysiCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetUtilsJavaMigrationAnalysiCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysiCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysiCreatedByArrayOutput) ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutput() GetUtilsJavaMigrationAnalysiCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysiCreatedByArrayOutput) ToGetUtilsJavaMigrationAnalysiCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysiCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysiCreatedByArrayOutput) Index(i pulumi.IntInput) GetUtilsJavaMigrationAnalysiCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsJavaMigrationAnalysiCreatedBy {
+		return vs[0].([]GetUtilsJavaMigrationAnalysiCreatedBy)[vs[1].(int)]
+	}).(GetUtilsJavaMigrationAnalysiCreatedByOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUtilsJavaMigrationAnalysisFilterInput is an input type that accepts GetUtilsJavaMigrationAnalysisFilterArgs and GetUtilsJavaMigrationAnalysisFilterOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisFilterInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisFilterArgs{...}
+type GetUtilsJavaMigrationAnalysisFilterInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisFilterOutput() GetUtilsJavaMigrationAnalysisFilterOutput
+	ToGetUtilsJavaMigrationAnalysisFilterOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisFilterOutput
+}
+
+type GetUtilsJavaMigrationAnalysisFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUtilsJavaMigrationAnalysisFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisFilter)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisFilterArgs) ToGetUtilsJavaMigrationAnalysisFilterOutput() GetUtilsJavaMigrationAnalysisFilterOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisFilterOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisFilterArgs) ToGetUtilsJavaMigrationAnalysisFilterOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisFilterOutput)
+}
+
+// GetUtilsJavaMigrationAnalysisFilterArrayInput is an input type that accepts GetUtilsJavaMigrationAnalysisFilterArray and GetUtilsJavaMigrationAnalysisFilterArrayOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisFilterArrayInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisFilterArray{ GetUtilsJavaMigrationAnalysisFilterArgs{...} }
+type GetUtilsJavaMigrationAnalysisFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisFilterArrayOutput() GetUtilsJavaMigrationAnalysisFilterArrayOutput
+	ToGetUtilsJavaMigrationAnalysisFilterArrayOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisFilterArrayOutput
+}
+
+type GetUtilsJavaMigrationAnalysisFilterArray []GetUtilsJavaMigrationAnalysisFilterInput
+
+func (GetUtilsJavaMigrationAnalysisFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisFilter)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisFilterArray) ToGetUtilsJavaMigrationAnalysisFilterArrayOutput() GetUtilsJavaMigrationAnalysisFilterArrayOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisFilterArray) ToGetUtilsJavaMigrationAnalysisFilterArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisFilterArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisFilter)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterOutput) ToGetUtilsJavaMigrationAnalysisFilterOutput() GetUtilsJavaMigrationAnalysisFilterOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterOutput) ToGetUtilsJavaMigrationAnalysisFilterOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisFilterOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisFilter)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterArrayOutput) ToGetUtilsJavaMigrationAnalysisFilterArrayOutput() GetUtilsJavaMigrationAnalysisFilterArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterArrayOutput) ToGetUtilsJavaMigrationAnalysisFilterArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisFilterArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisFilterArrayOutput) Index(i pulumi.IntInput) GetUtilsJavaMigrationAnalysisFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsJavaMigrationAnalysisFilter {
+		return vs[0].([]GetUtilsJavaMigrationAnalysisFilter)[vs[1].(int)]
+	}).(GetUtilsJavaMigrationAnalysisFilterOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection struct {
+	Items []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem `pulumi:"items"`
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs{...}
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs struct {
+	Items GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput)
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray{ GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs{...} }
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionInput
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput) Items() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection) []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem {
+		return v.Items
+	}).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput) Index(i pulumi.IntInput) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection {
+		return vs[0].([]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollection)[vs[1].(int)]
+	}).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem struct {
+	// The project name of the Performance Tuning Analysis to query for.
+	AnalysisProjectName string `pulumi:"analysisProjectName"`
+	// The analysis application file names result in the Object Storage.
+	AnalysisResultFiles []string `pulumi:"analysisResultFiles"`
+	// Path to the Object Storage analysis application result.
+	AnalysisResultObjectStoragePath string `pulumi:"analysisResultObjectStoragePath"`
+	// Object storage bucket name.
+	Bucket string `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy `pulumi:"createdBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id string `pulumi:"id"`
+	// Object storage paths to the input files applications to be analysed.
+	InputApplicationsObjectStoragePaths []string `pulumi:"inputApplicationsObjectStoragePaths"`
+	// Additional info reserved for future use.
+	Metadata string `pulumi:"metadata"`
+	// Object storage namespace.
+	Namespace string `pulumi:"namespace"`
+	// Jdk Version of the Java Migration Analysis target.
+	TargetJdkVersion string `pulumi:"targetJdkVersion"`
+	// The date and time the Java Migration Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Java Migration Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time the Java Migration Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+	WorkRequestId string `pulumi:"workRequestId"`
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs{...}
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs struct {
+	// The project name of the Performance Tuning Analysis to query for.
+	AnalysisProjectName pulumi.StringInput `pulumi:"analysisProjectName"`
+	// The analysis application file names result in the Object Storage.
+	AnalysisResultFiles pulumi.StringArrayInput `pulumi:"analysisResultFiles"`
+	// Path to the Object Storage analysis application result.
+	AnalysisResultObjectStoragePath pulumi.StringInput `pulumi:"analysisResultObjectStoragePath"`
+	// Object storage bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayInput `pulumi:"createdBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Object storage paths to the input files applications to be analysed.
+	InputApplicationsObjectStoragePaths pulumi.StringArrayInput `pulumi:"inputApplicationsObjectStoragePaths"`
+	// Additional info reserved for future use.
+	Metadata pulumi.StringInput `pulumi:"metadata"`
+	// Object storage namespace.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+	// Jdk Version of the Java Migration Analysis target.
+	TargetJdkVersion pulumi.StringInput `pulumi:"targetJdkVersion"`
+	// The date and time the Java Migration Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Java Migration Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time the Java Migration Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+}
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput)
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray{ GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs{...} }
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemInput
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput {
+	return o
+}
+
+// The project name of the Performance Tuning Analysis to query for.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) AnalysisProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string {
+		return v.AnalysisProjectName
+	}).(pulumi.StringOutput)
+}
+
+// The analysis application file names result in the Object Storage.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) AnalysisResultFiles() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) []string {
+		return v.AnalysisResultFiles
+	}).(pulumi.StringArrayOutput)
+}
+
+// Path to the Object Storage analysis application result.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) AnalysisResultObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string {
+		return v.AnalysisResultObjectStoragePath
+	}).(pulumi.StringOutput)
+}
+
+// Object storage bucket name.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) CreatedBies() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy {
+		return v.CreatedBies
+	}).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Object storage paths to the input files applications to be analysed.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) InputApplicationsObjectStoragePaths() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) []string {
+		return v.InputApplicationsObjectStoragePaths
+	}).(pulumi.StringArrayOutput)
+}
+
+// Additional info reserved for future use.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) Metadata() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.Metadata }).(pulumi.StringOutput)
+}
+
+// Object storage namespace.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+// Jdk Version of the Java Migration Analysis target.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) TargetJdkVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string {
+		return v.TargetJdkVersion
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the Java Migration Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Java Migration Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.TimeFinished }).(pulumi.StringOutput)
+}
+
+// The date and time the Java Migration Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string { return v.TimeStarted }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem) string {
+		return v.WorkRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem {
+		return vs[0].([]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItem)[vs[1].(int)]
+	}).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id string `pulumi:"id"`
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs{...}
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput)
+}
+
+// GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayInput is an input type that accepts GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray and GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayInput` via:
+//
+//	GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray{ GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs{...} }
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput
+	ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutputWithContext(context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray []GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByInput
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput {
+	return i.ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java Migration Analysis.
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput() GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput) ToGetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput) Index(i pulumi.IntInput) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy {
+		return vs[0].([]GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedBy)[vs[1].(int)]
+	}).(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysiCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id string `pulumi:"id"`
+}
+
+// GetUtilsPerformanceTuningAnalysiCreatedByInput is an input type that accepts GetUtilsPerformanceTuningAnalysiCreatedByArgs and GetUtilsPerformanceTuningAnalysiCreatedByOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysiCreatedByInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysiCreatedByArgs{...}
+type GetUtilsPerformanceTuningAnalysiCreatedByInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysiCreatedByOutput() GetUtilsPerformanceTuningAnalysiCreatedByOutput
+	ToGetUtilsPerformanceTuningAnalysiCreatedByOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysiCreatedByOutput
+}
+
+type GetUtilsPerformanceTuningAnalysiCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetUtilsPerformanceTuningAnalysiCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysiCreatedByArgs) ToGetUtilsPerformanceTuningAnalysiCreatedByOutput() GetUtilsPerformanceTuningAnalysiCreatedByOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysiCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysiCreatedByArgs) ToGetUtilsPerformanceTuningAnalysiCreatedByOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysiCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysiCreatedByOutput)
+}
+
+// GetUtilsPerformanceTuningAnalysiCreatedByArrayInput is an input type that accepts GetUtilsPerformanceTuningAnalysiCreatedByArray and GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysiCreatedByArrayInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysiCreatedByArray{ GetUtilsPerformanceTuningAnalysiCreatedByArgs{...} }
+type GetUtilsPerformanceTuningAnalysiCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput
+	ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput
+}
+
+type GetUtilsPerformanceTuningAnalysiCreatedByArray []GetUtilsPerformanceTuningAnalysiCreatedByInput
+
+func (GetUtilsPerformanceTuningAnalysiCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysiCreatedByArray) ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysiCreatedByArray) ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysiCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysiCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysiCreatedByOutput) ToGetUtilsPerformanceTuningAnalysiCreatedByOutput() GetUtilsPerformanceTuningAnalysiCreatedByOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysiCreatedByOutput) ToGetUtilsPerformanceTuningAnalysiCreatedByOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysiCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetUtilsPerformanceTuningAnalysiCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysiCreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+func (o GetUtilsPerformanceTuningAnalysiCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysiCreatedBy) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysiCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput) ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput) ToGetUtilsPerformanceTuningAnalysiCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput) Index(i pulumi.IntInput) GetUtilsPerformanceTuningAnalysiCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsPerformanceTuningAnalysiCreatedBy {
+		return vs[0].([]GetUtilsPerformanceTuningAnalysiCreatedBy)[vs[1].(int)]
+	}).(GetUtilsPerformanceTuningAnalysiCreatedByOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetUtilsPerformanceTuningAnalysisFilterInput is an input type that accepts GetUtilsPerformanceTuningAnalysisFilterArgs and GetUtilsPerformanceTuningAnalysisFilterOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisFilterInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisFilterArgs{...}
+type GetUtilsPerformanceTuningAnalysisFilterInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisFilterOutput() GetUtilsPerformanceTuningAnalysisFilterOutput
+	ToGetUtilsPerformanceTuningAnalysisFilterOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisFilterOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetUtilsPerformanceTuningAnalysisFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisFilter)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisFilterArgs) ToGetUtilsPerformanceTuningAnalysisFilterOutput() GetUtilsPerformanceTuningAnalysisFilterOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisFilterOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisFilterArgs) ToGetUtilsPerformanceTuningAnalysisFilterOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisFilterOutput)
+}
+
+// GetUtilsPerformanceTuningAnalysisFilterArrayInput is an input type that accepts GetUtilsPerformanceTuningAnalysisFilterArray and GetUtilsPerformanceTuningAnalysisFilterArrayOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisFilterArrayInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisFilterArray{ GetUtilsPerformanceTuningAnalysisFilterArgs{...} }
+type GetUtilsPerformanceTuningAnalysisFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisFilterArrayOutput() GetUtilsPerformanceTuningAnalysisFilterArrayOutput
+	ToGetUtilsPerformanceTuningAnalysisFilterArrayOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisFilterArrayOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisFilterArray []GetUtilsPerformanceTuningAnalysisFilterInput
+
+func (GetUtilsPerformanceTuningAnalysisFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisFilter)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisFilterArray) ToGetUtilsPerformanceTuningAnalysisFilterArrayOutput() GetUtilsPerformanceTuningAnalysisFilterArrayOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisFilterArray) ToGetUtilsPerformanceTuningAnalysisFilterArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisFilterArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisFilterOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisFilter)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterOutput) ToGetUtilsPerformanceTuningAnalysisFilterOutput() GetUtilsPerformanceTuningAnalysisFilterOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterOutput) ToGetUtilsPerformanceTuningAnalysisFilterOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisFilterOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisFilter)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterArrayOutput) ToGetUtilsPerformanceTuningAnalysisFilterArrayOutput() GetUtilsPerformanceTuningAnalysisFilterArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterArrayOutput) ToGetUtilsPerformanceTuningAnalysisFilterArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisFilterArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisFilterArrayOutput) Index(i pulumi.IntInput) GetUtilsPerformanceTuningAnalysisFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsPerformanceTuningAnalysisFilter {
+		return vs[0].([]GetUtilsPerformanceTuningAnalysisFilter)[vs[1].(int)]
+	}).(GetUtilsPerformanceTuningAnalysisFilterOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection struct {
+	Items []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem `pulumi:"items"`
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs{...}
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs struct {
+	Items GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput)
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray{ GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs{...} }
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionInput
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput) Items() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection) []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem {
+		return v.Items
+	}).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput) Index(i pulumi.IntInput) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection {
+		return vs[0].([]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollection)[vs[1].(int)]
+	}).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem struct {
+	// The project name of the Performance Tuning Analysis to query for.
+	AnalysisProjectName string `pulumi:"analysisProjectName"`
+	// Object storage path to the artifact.
+	ArtifactObjectStoragePath string `pulumi:"artifactObjectStoragePath"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy `pulumi:"createdBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id string `pulumi:"id"`
+	// Possible Performance Tuning Result statuses.
+	Result string `pulumi:"result"`
+	// Object storage path to the analysis.
+	ResultObjectStoragePath string `pulumi:"resultObjectStoragePath"`
+	// The date and time the Performance Tuning Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Performance Tuning Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished string `pulumi:"timeFinished"`
+	// The date and time the Performance Tuning Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// Number of warnings in the Performance Tuning Analysis.
+	WarningCount int `pulumi:"warningCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+	WorkRequestId string `pulumi:"workRequestId"`
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs{...}
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs struct {
+	// The project name of the Performance Tuning Analysis to query for.
+	AnalysisProjectName pulumi.StringInput `pulumi:"analysisProjectName"`
+	// Object storage path to the artifact.
+	ArtifactObjectStoragePath pulumi.StringInput `pulumi:"artifactObjectStoragePath"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// An authorized principal.
+	CreatedBies GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayInput `pulumi:"createdBies"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Possible Performance Tuning Result statuses.
+	Result pulumi.StringInput `pulumi:"result"`
+	// Object storage path to the analysis.
+	ResultObjectStoragePath pulumi.StringInput `pulumi:"resultObjectStoragePath"`
+	// The date and time the Performance Tuning Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Performance Tuning Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeFinished pulumi.StringInput `pulumi:"timeFinished"`
+	// The date and time the Performance Tuning Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// Number of warnings in the Performance Tuning Analysis.
+	WarningCount pulumi.IntInput `pulumi:"warningCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+	WorkRequestId pulumi.StringInput `pulumi:"workRequestId"`
+}
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput)
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray{ GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs{...} }
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemInput
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput {
+	return o
+}
+
+// The project name of the Performance Tuning Analysis to query for.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) AnalysisProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.AnalysisProjectName
+	}).(pulumi.StringOutput)
+}
+
+// Object storage path to the artifact.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) ArtifactObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.ArtifactObjectStoragePath
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// An authorized principal.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) CreatedBies() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy {
+		return v.CreatedBies
+	}).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Possible Performance Tuning Result statuses.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) Result() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.Result
+	}).(pulumi.StringOutput)
+}
+
+// Object storage path to the analysis.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) ResultObjectStoragePath() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.ResultObjectStoragePath
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the Performance Tuning Analysis was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the Performance Tuning Analysis was finished, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) TimeFinished() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.TimeFinished
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the Performance Tuning Analysis was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// Number of warnings in the Performance Tuning Analysis.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) WarningCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) int {
+		return v.WarningCount
+	}).(pulumi.IntOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Work Request.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput) WorkRequestId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem) string {
+		return v.WorkRequestId
+	}).(pulumi.StringOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput) Index(i pulumi.IntInput) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem {
+		return vs[0].([]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItem)[vs[1].(int)]
+	}).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy struct {
+	// The name of the principal.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id string `pulumi:"id"`
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs{...}
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs struct {
+	// The name of the principal.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput)
+}
+
+// GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayInput is an input type that accepts GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray and GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput values.
+// You can construct a concrete instance of `GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayInput` via:
+//
+//	GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray{ GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs{...} }
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput
+	ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutputWithContext(context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray []GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByInput
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput {
+	return i.ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput {
+	return o
+}
+
+// The name of the principal.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Performance Tuning Analysis.
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+type GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy)(nil)).Elem()
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput() GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput) ToGetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutputWithContext(ctx context.Context) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput {
+	return o
+}
+
+func (o GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput) Index(i pulumi.IntInput) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy {
+		return vs[0].([]GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedBy)[vs[1].(int)]
+	}).(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
@@ -18786,6 +29887,40 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayInput)(nil)).Elem(), JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsInput)(nil)).Elem(), TaskScheduleTaskDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsAddInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsCryptoTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsCryptoTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestTargetInput)(nil)).Elem(), TaskScheduleTaskDetailsCryptoTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsCryptoTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetInput)(nil)).Elem(), TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsJavaMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetInput)(nil)).Elem(), TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsJfrTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsJfrTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestTargetInput)(nil)).Elem(), TaskScheduleTaskDetailsJfrTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsJfrTaskRequestTargetArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsJfrTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsPerformanceTuningTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetInput)(nil)).Elem(), TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsScanJavaServerTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsScanJavaServerTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsScanLibraryTaskRequestInput)(nil)).Elem(), TaskScheduleTaskDetailsScanLibraryTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TaskScheduleTaskDetailsScanLibraryTaskRequestPtrInput)(nil)).Elem(), TaskScheduleTaskDetailsScanLibraryTaskRequestArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionArrayInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAgentInstallersAgentInstallerCollectionItemInput)(nil)).Elem(), GetAgentInstallersAgentInstallerCollectionItemArgs{})
@@ -18830,6 +29965,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemArrayInput)(nil)).Elem(), GetFleetBlocklistsItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemTargetInput)(nil)).Elem(), GetFleetBlocklistsItemTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetBlocklistsItemTargetArrayInput)(nil)).Elem(), GetFleetBlocklistsItemTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersContainerCollectionInput)(nil)).Elem(), GetFleetContainersContainerCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersContainerCollectionArrayInput)(nil)).Elem(), GetFleetContainersContainerCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersContainerCollectionItemInput)(nil)).Elem(), GetFleetContainersContainerCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersContainerCollectionItemArrayInput)(nil)).Elem(), GetFleetContainersContainerCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersFilterInput)(nil)).Elem(), GetFleetContainersFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetContainersFilterArrayInput)(nil)).Elem(), GetFleetContainersFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemArgs{})
@@ -18864,6 +30005,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemArrayInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemErrorInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetErrorsFleetErrorCollectionItemErrorArrayInput)(nil)).Elem(), GetFleetErrorsFleetErrorCollectionItemErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetExportSettingExportDataFilterInput)(nil)).Elem(), GetFleetExportSettingExportDataFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetExportSettingExportDataFilterArrayInput)(nil)).Elem(), GetFleetExportSettingExportDataFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogInput)(nil)).Elem(), GetFleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetInventoryLogArrayInput)(nil)).Elem(), GetFleetInventoryLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsFilterInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsFilterArgs{})
@@ -18872,6 +30015,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsFilterInput)(nil)).Elem(), GetFleetLibraryApplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsFilterArrayInput)(nil)).Elem(), GetFleetLibraryApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionInput)(nil)).Elem(), GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayInput)(nil)).Elem(), GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemInput)(nil)).Elem(), GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayInput)(nil)).Elem(), GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesFilterInput)(nil)).Elem(), GetFleetLibraryManagedInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesFilterArrayInput)(nil)).Elem(), GetFleetLibraryManagedInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionInput)(nil)).Elem(), GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayInput)(nil)).Elem(), GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemInput)(nil)).Elem(), GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayInput)(nil)).Elem(), GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetOperationLogInput)(nil)).Elem(), GetFleetOperationLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetOperationLogArrayInput)(nil)).Elem(), GetFleetOperationLogArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsFilterInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsFilterArgs{})
@@ -18880,6 +30035,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayInput)(nil)).Elem(), GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsFilterInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsFilterArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesFilterInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesFilterArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesFilterInput)(nil)).Elem(), GetFleetUncorrelatedPackagesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesFilterArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackagesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionInput)(nil)).Elem(), GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemInput)(nil)).Elem(), GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayInput)(nil)).Elem(), GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFilterInput)(nil)).Elem(), GetFleetsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFilterArrayInput)(nil)).Elem(), GetFleetsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFleetsFleetCollectionInput)(nil)).Elem(), GetFleetsFleetCollectionArgs{})
@@ -18904,14 +30077,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemBlocklistInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJreInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemJreArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemJreArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemJreArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemBlocklistInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemBlocklistArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemBlocklistArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemJreInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemJreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemJreArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemJreArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemOperatingSystemInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayInput)(nil)).Elem(), GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilterInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsFilterArrayInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionInput)(nil)).Elem(), GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionArgs{})
@@ -19024,6 +30195,100 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemArrayInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemErrorInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemErrorArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPluginErrorsPluginErrorCollectionItemErrorArrayInput)(nil)).Elem(), GetPluginErrorsPluginErrorCollectionItemErrorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailInput)(nil)).Elem(), GetTaskScheduleTaskDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailCryptoTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailCryptoTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestTargetInput)(nil)).Elem(), GetTaskScheduleTaskDetailCryptoTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailCryptoTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetInput)(nil)).Elem(), GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailJavaMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailJavaMigrationTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetInput)(nil)).Elem(), GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailJfrTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailJfrTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestTargetInput)(nil)).Elem(), GetTaskScheduleTaskDetailJfrTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailJfrTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetInput)(nil)).Elem(), GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailScanJavaServerTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailScanJavaServerTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailScanJavaServerTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailScanLibraryTaskRequestInput)(nil)).Elem(), GetTaskScheduleTaskDetailScanLibraryTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayInput)(nil)).Elem(), GetTaskScheduleTaskDetailScanLibraryTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesFilterInput)(nil)).Elem(), GetTaskSchedulesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesFilterArrayInput)(nil)).Elem(), GetTaskSchedulesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayInput)(nil)).Elem(), GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysiCreatedByInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysiCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysiCreatedByArrayInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysiCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisFilterInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisFilterArrayInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayInput)(nil)).Elem(), GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysiCreatedByInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysiCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysiCreatedByArrayInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysiCreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisFilterInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisFilterArrayInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayInput)(nil)).Elem(), GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArray{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput{})
 	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput{})
@@ -19064,6 +30329,40 @@ func init() {
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput{})
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByOutput{})
 	pulumi.RegisterOutputType(JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsAddInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsCryptoTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsCryptoTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsCryptoTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsCryptoTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsDeployedApplicationMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJavaMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJavaMigrationTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJavaMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJfrTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJfrTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJfrTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsJfrTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsPerformanceTuningTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsPerformanceTuningTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsPerformanceTuningTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsScanJavaServerTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsScanJavaServerTaskRequestPtrOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsScanLibraryTaskRequestOutput{})
+	pulumi.RegisterOutputType(TaskScheduleTaskDetailsScanLibraryTaskRequestPtrOutput{})
 	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionOutput{})
 	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetAgentInstallersAgentInstallerCollectionItemOutput{})
@@ -19108,6 +30407,12 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemTargetOutput{})
 	pulumi.RegisterOutputType(GetFleetBlocklistsItemTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersContainerCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersContainerCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersContainerCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersContainerCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetContainersFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutput{})
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemOutput{})
@@ -19142,6 +30447,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemErrorOutput{})
 	pulumi.RegisterOutputType(GetFleetErrorsFleetErrorCollectionItemErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetExportSettingExportDataFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetExportSettingExportDataFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(GetFleetInventoryLogArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsFilterOutput{})
@@ -19150,6 +30457,18 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFleetJavaMigrationAnalysisResultsJavaMigrationAnalysisResultCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryApplicationsLibraryApplicationUsageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetLibraryManagedInstancesLibraryManagedInstanceUsageCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetOperationLogOutput{})
 	pulumi.RegisterOutputType(GetFleetOperationLogArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsFilterOutput{})
@@ -19158,6 +30477,24 @@ func init() {
 	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageApplicationsUncorrelatedPackageApplicationUsageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackageManagedInstancesUncorrelatedPackageManagedInstanceUsageCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesFilterOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFleetUncorrelatedPackagesUncorrelatedPackageUsageCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetsFilterOutput{})
 	pulumi.RegisterOutputType(GetFleetsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetFleetsFleetCollectionOutput{})
@@ -19182,14 +30519,12 @@ func init() {
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemArrayOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemBlocklistArrayOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemJreOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemJreArrayOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemOutput{})
-	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemItemOperatingSystemArrayOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemBlocklistOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemBlocklistArrayOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemJreOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemJreArrayOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemOutput{})
+	pulumi.RegisterOutputType(GetInstallationSitesInstallationSiteCollectionItemOperatingSystemArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsFilterOutput{})
 	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutput{})
@@ -19302,4 +30637,98 @@ func init() {
 	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemErrorOutput{})
 	pulumi.RegisterOutputType(GetPluginErrorsPluginErrorCollectionItemErrorArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailCryptoTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailCryptoTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailCryptoTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailCryptoTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJavaMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJavaMigrationTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJavaMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJfrTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJfrTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJfrTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailJfrTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailPerformanceTuningTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailScanJavaServerTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailScanJavaServerTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailScanLibraryTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskScheduleTaskDetailScanLibraryTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesFilterOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailAddInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailCryptoTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailDeployedApplicationMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJavaMigrationTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailJfrTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailPerformanceTuningTaskRequestTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailRemoveInstallationSiteTaskRequestInstallationSiteArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanJavaServerTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestOutput{})
+	pulumi.RegisterOutputType(GetTaskSchedulesTaskScheduleCollectionItemTaskDetailScanLibraryTaskRequestArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysiCreatedByOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysiCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisFilterOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByOutput{})
+	pulumi.RegisterOutputType(GetUtilsJavaMigrationAnalysisJavaMigrationAnalysisCollectionItemCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysiCreatedByOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysiCreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisFilterOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByOutput{})
+	pulumi.RegisterOutputType(GetUtilsPerformanceTuningAnalysisPerformanceTuningAnalysisCollectionItemCreatedByArrayOutput{})
 }

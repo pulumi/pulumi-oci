@@ -79,6 +79,18 @@ namespace Pulumi.Oci.Redis
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
+        /// The private IP address of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        [Output("discoveryEndpointIpAddress")]
+        public Output<string> DiscoveryEndpointIpAddress { get; private set; } = null!;
+
+        /// <summary>
+        /// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        [Output("discoveryFqdn")]
+        public Output<string> DiscoveryFqdn { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
@@ -367,6 +379,18 @@ namespace Pulumi.Oci.Redis
             get => _definedTags ?? (_definedTags = new InputMap<string>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// The private IP address of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        [Input("discoveryEndpointIpAddress")]
+        public Input<string>? DiscoveryEndpointIpAddress { get; set; }
+
+        /// <summary>
+        /// The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        /// </summary>
+        [Input("discoveryFqdn")]
+        public Input<string>? DiscoveryFqdn { get; set; }
 
         /// <summary>
         /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.

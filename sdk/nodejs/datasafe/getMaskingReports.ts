@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     accessLevel: maskingReportAccessLevel,
  *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
  *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -34,6 +35,7 @@ export function getMaskingReports(args: GetMaskingReportsArgs, opts?: pulumi.Inv
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "maskingPolicyId": args.maskingPolicyId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -59,6 +61,10 @@ export interface GetMaskingReportsArgs {
      * A filter to return only the resources that match the specified masking policy OCID.
      */
     maskingPolicyId?: string;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: string;
     /**
      * A filter to return only items related to a specific target OCID.
      */
@@ -88,6 +94,7 @@ export interface GetMaskingReportsResult {
      * The list of masking_report_collection.
      */
     readonly maskingReportCollections: outputs.DataSafe.GetMaskingReportsMaskingReportCollection[];
+    readonly targetDatabaseGroupId?: string;
     /**
      * The OCID of the target database masked.
      */
@@ -109,6 +116,7 @@ export interface GetMaskingReportsResult {
  *     accessLevel: maskingReportAccessLevel,
  *     compartmentIdInSubtree: maskingReportCompartmentIdInSubtree,
  *     maskingPolicyId: testMaskingPolicy.id,
+ *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -121,6 +129,7 @@ export function getMaskingReportsOutput(args: GetMaskingReportsOutputArgs, opts?
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "filters": args.filters,
         "maskingPolicyId": args.maskingPolicyId,
+        "targetDatabaseGroupId": args.targetDatabaseGroupId,
         "targetId": args.targetId,
     }, opts);
 }
@@ -146,6 +155,10 @@ export interface GetMaskingReportsOutputArgs {
      * A filter to return only the resources that match the specified masking policy OCID.
      */
     maskingPolicyId?: pulumi.Input<string>;
+    /**
+     * A filter to return the target database group that matches the specified OCID.
+     */
+    targetDatabaseGroupId?: pulumi.Input<string>;
     /**
      * A filter to return only items related to a specific target OCID.
      */

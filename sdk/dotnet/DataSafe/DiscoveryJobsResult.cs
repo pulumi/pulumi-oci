@@ -58,6 +58,12 @@ namespace Pulumi.Oci.DataSafe
         [Output("columnName")]
         public Output<string> ColumnName { get; private set; } = null!;
 
+        [Output("confidenceLevel")]
+        public Output<string> ConfidenceLevel { get; private set; } = null!;
+
+        [Output("confidenceLevelDetails")]
+        public Output<ImmutableArray<Outputs.DiscoveryJobsResultConfidenceLevelDetail>> ConfidenceLevelDetails { get; private set; } = null!;
+
         /// <summary>
         /// The data type of the sensitive column.
         /// </summary>
@@ -243,6 +249,17 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("columnName")]
         public Input<string>? ColumnName { get; set; }
+
+        [Input("confidenceLevel")]
+        public Input<string>? ConfidenceLevel { get; set; }
+
+        [Input("confidenceLevelDetails")]
+        private InputList<Inputs.DiscoveryJobsResultConfidenceLevelDetailGetArgs>? _confidenceLevelDetails;
+        public InputList<Inputs.DiscoveryJobsResultConfidenceLevelDetailGetArgs> ConfidenceLevelDetails
+        {
+            get => _confidenceLevelDetails ?? (_confidenceLevelDetails = new InputList<Inputs.DiscoveryJobsResultConfidenceLevelDetailGetArgs>());
+            set => _confidenceLevelDetails = value;
+        }
 
         /// <summary>
         /// The data type of the sensitive column.

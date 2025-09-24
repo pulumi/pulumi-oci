@@ -216,14 +216,14 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
     }
 
     /**
-     * The OCID of the target for which the audit policy is created.
+     * The OCID of the target.
      * 
      */
     @Import(name="targetId")
     private @Nullable Output<String> targetId;
 
     /**
-     * @return The OCID of the target for which the audit policy is created.
+     * @return The OCID of the target.
      * 
      */
     public Optional<Output<String>> targetId() {
@@ -625,7 +625,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId The OCID of the target for which the audit policy is created.
+         * @param targetId The OCID of the target.
          * 
          * @return builder
          * 
@@ -636,7 +636,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param targetId The OCID of the target for which the audit policy is created.
+         * @param targetId The OCID of the target.
          * 
          * @return builder
          * 

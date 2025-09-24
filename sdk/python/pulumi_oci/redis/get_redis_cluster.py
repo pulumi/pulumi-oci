@@ -27,7 +27,7 @@ class GetRedisClusterResult:
     """
     A collection of values returned by getRedisCluster.
     """
-    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, cluster_mode=None, compartment_id=None, defined_tags=None, discovery_endpoint_ip_address=None, discovery_fqdn=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, node_collections=None, node_count=None, node_memory_in_gbs=None, nsg_ids=None, oci_cache_config_set_id=None, primary_endpoint_ip_address=None, primary_fqdn=None, redis_cluster_id=None, replicas_endpoint_ip_address=None, replicas_fqdn=None, shard_count=None, software_version=None, state=None, subnet_id=None, system_tags=None, time_created=None, time_updated=None):
         if cluster_mode and not isinstance(cluster_mode, str):
             raise TypeError("Expected argument 'cluster_mode' to be a str")
         pulumi.set(__self__, "cluster_mode", cluster_mode)
@@ -37,6 +37,12 @@ class GetRedisClusterResult:
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
+        if discovery_endpoint_ip_address and not isinstance(discovery_endpoint_ip_address, str):
+            raise TypeError("Expected argument 'discovery_endpoint_ip_address' to be a str")
+        pulumi.set(__self__, "discovery_endpoint_ip_address", discovery_endpoint_ip_address)
+        if discovery_fqdn and not isinstance(discovery_fqdn, str):
+            raise TypeError("Expected argument 'discovery_fqdn' to be a str")
+        pulumi.set(__self__, "discovery_fqdn", discovery_fqdn)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -124,6 +130,22 @@ class GetRedisClusterResult:
         Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryEndpointIpAddress")
+    def discovery_endpoint_ip_address(self) -> _builtins.str:
+        """
+        The private IP address of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_endpoint_ip_address")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryFqdn")
+    def discovery_fqdn(self) -> _builtins.str:
+        """
+        The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+        """
+        return pulumi.get(self, "discovery_fqdn")
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -300,6 +322,8 @@ class AwaitableGetRedisClusterResult(GetRedisClusterResult):
             cluster_mode=self.cluster_mode,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
+            discovery_endpoint_ip_address=self.discovery_endpoint_ip_address,
+            discovery_fqdn=self.discovery_fqdn,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
@@ -351,6 +375,8 @@ def get_redis_cluster(redis_cluster_id: Optional[_builtins.str] = None,
         cluster_mode=pulumi.get(__ret__, 'cluster_mode'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
+        discovery_endpoint_ip_address=pulumi.get(__ret__, 'discovery_endpoint_ip_address'),
+        discovery_fqdn=pulumi.get(__ret__, 'discovery_fqdn'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
@@ -399,6 +425,8 @@ def get_redis_cluster_output(redis_cluster_id: Optional[pulumi.Input[_builtins.s
         cluster_mode=pulumi.get(__response__, 'cluster_mode'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),
+        discovery_endpoint_ip_address=pulumi.get(__response__, 'discovery_endpoint_ip_address'),
+        discovery_fqdn=pulumi.get(__response__, 'discovery_fqdn'),
         display_name=pulumi.get(__response__, 'display_name'),
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),

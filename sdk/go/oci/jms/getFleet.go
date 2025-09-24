@@ -66,6 +66,10 @@ type LookupFleetResult struct {
 	ApproximateJavaServerCount int `pulumi:"approximateJavaServerCount"`
 	// The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateJreCount int `pulumi:"approximateJreCount"`
+	// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryCount int `pulumi:"approximateLibraryCount"`
+	// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+	ApproximateLibraryVulnerabilityCount int `pulumi:"approximateLibraryVulnerabilityCount"`
 	// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 	ApproximateManagedInstanceCount int `pulumi:"approximateManagedInstanceCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
@@ -149,6 +153,16 @@ func (o LookupFleetResultOutput) ApproximateJavaServerCount() pulumi.IntOutput {
 // The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
 func (o LookupFleetResultOutput) ApproximateJreCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateJreCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o LookupFleetResultOutput) ApproximateLibraryCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateLibraryCount }).(pulumi.IntOutput)
+}
+
+// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+func (o LookupFleetResultOutput) ApproximateLibraryVulnerabilityCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupFleetResult) int { return v.ApproximateLibraryVulnerabilityCount }).(pulumi.IntOutput)
 }
 
 // The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.

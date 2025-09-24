@@ -95,6 +95,18 @@ namespace Pulumi.Oci.Jms
         public Output<int> ApproximateJreCount { get; private set; } = null!;
 
         /// <summary>
+        /// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        [Output("approximateLibraryCount")]
+        public Output<int> ApproximateLibraryCount { get; private set; } = null!;
+
+        /// <summary>
+        /// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        [Output("approximateLibraryVulnerabilityCount")]
+        public Output<int> ApproximateLibraryVulnerabilityCount { get; private set; } = null!;
+
+        /// <summary>
         /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         /// </summary>
         [Output("approximateManagedInstanceCount")]
@@ -309,6 +321,18 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         [Input("approximateJreCount")]
         public Input<int>? ApproximateJreCount { get; set; }
+
+        /// <summary>
+        /// The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        [Input("approximateLibraryCount")]
+        public Input<int>? ApproximateLibraryCount { get; set; }
+
+        /// <summary>
+        /// The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        /// </summary>
+        [Input("approximateLibraryVulnerabilityCount")]
+        public Input<int>? ApproximateLibraryVulnerabilityCount { get; set; }
 
         /// <summary>
         /// The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.

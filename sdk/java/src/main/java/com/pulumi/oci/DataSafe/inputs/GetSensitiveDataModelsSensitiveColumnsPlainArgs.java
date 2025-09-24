@@ -19,6 +19,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
     public static final GetSensitiveDataModelsSensitiveColumnsPlainArgs Empty = new GetSensitiveDataModelsSensitiveColumnsPlainArgs();
 
     /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     * 
+     */
+    @Import(name="columnDataCountFilter")
+    private @Nullable String columnDataCountFilter;
+
+    /**
+     * @return Filters the sensitive columns with respect to the estimated row count.
+     * 
+     */
+    public Optional<String> columnDataCountFilter() {
+        return Optional.ofNullable(this.columnDataCountFilter);
+    }
+
+    /**
      * A filter to return only the sensitive columns that belong to the specified column group.
      * 
      */
@@ -46,6 +61,21 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
      */
     public Optional<List<String>> columnNames() {
         return Optional.ofNullable(this.columnNames);
+    }
+
+    /**
+     * A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     * 
+     */
+    @Import(name="confidenceLevels")
+    private @Nullable List<String> confidenceLevels;
+
+    /**
+     * @return A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     * 
+     */
+    public Optional<List<String>> confidenceLevels() {
+        return Optional.ofNullable(this.confidenceLevels);
     }
 
     /**
@@ -291,8 +321,10 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
     private GetSensitiveDataModelsSensitiveColumnsPlainArgs() {}
 
     private GetSensitiveDataModelsSensitiveColumnsPlainArgs(GetSensitiveDataModelsSensitiveColumnsPlainArgs $) {
+        this.columnDataCountFilter = $.columnDataCountFilter;
         this.columnGroup = $.columnGroup;
         this.columnNames = $.columnNames;
+        this.confidenceLevels = $.confidenceLevels;
         this.dataTypes = $.dataTypes;
         this.filters = $.filters;
         this.isCaseInSensitive = $.isCaseInSensitive;
@@ -330,6 +362,17 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
         }
 
         /**
+         * @param columnDataCountFilter Filters the sensitive columns with respect to the estimated row count.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder columnDataCountFilter(@Nullable String columnDataCountFilter) {
+            $.columnDataCountFilter = columnDataCountFilter;
+            return this;
+        }
+
+        /**
          * @param columnGroup A filter to return only the sensitive columns that belong to the specified column group.
          * 
          * @return builder
@@ -359,6 +402,27 @@ public final class GetSensitiveDataModelsSensitiveColumnsPlainArgs extends com.p
          */
         public Builder columnNames(String... columnNames) {
             return columnNames(List.of(columnNames));
+        }
+
+        /**
+         * @param confidenceLevels A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevels(@Nullable List<String> confidenceLevels) {
+            $.confidenceLevels = confidenceLevels;
+            return this;
+        }
+
+        /**
+         * @param confidenceLevels A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder confidenceLevels(String... confidenceLevels) {
+            return confidenceLevels(List.of(confidenceLevels));
         }
 
         /**

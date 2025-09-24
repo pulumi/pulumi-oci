@@ -112,6 +112,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      */
     private String domain;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    private String exascaleDbStorageVaultId;
+    /**
      * @return Details of the file system configuration of the VM cluster.
      * 
      */
@@ -244,6 +249,11 @@ public final class GetCloudVmClustersCloudVmCluster {
      * 
      */
     private String state;
+    /**
+     * @return Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    private String storageManagementType;
     /**
      * @return The storage allocation for the disk group, in gigabytes (GB).
      * 
@@ -436,6 +446,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.domain;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * 
+     */
+    public String exascaleDbStorageVaultId() {
+        return this.exascaleDbStorageVaultId;
+    }
+    /**
      * @return Details of the file system configuration of the VM cluster.
      * 
      */
@@ -625,6 +642,13 @@ public final class GetCloudVmClustersCloudVmCluster {
         return this.state;
     }
     /**
+     * @return Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+     * 
+     */
+    public String storageManagementType() {
+        return this.storageManagementType;
+    }
+    /**
      * @return The storage allocation for the disk group, in gigabytes (GB).
      * 
      */
@@ -737,6 +761,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String diskRedundancy;
         private String displayName;
         private String domain;
+        private String exascaleDbStorageVaultId;
         private List<GetCloudVmClustersCloudVmClusterFileSystemConfigurationDetail> fileSystemConfigurationDetails;
         private Map<String,String> freeformTags;
         private String giVersion;
@@ -765,6 +790,7 @@ public final class GetCloudVmClustersCloudVmCluster {
         private String shape;
         private List<String> sshPublicKeys;
         private String state;
+        private String storageManagementType;
         private Integer storageSizeInGbs;
         private String subnetId;
         private String subscriptionId;
@@ -799,6 +825,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.diskRedundancy = defaults.diskRedundancy;
     	      this.displayName = defaults.displayName;
     	      this.domain = defaults.domain;
+    	      this.exascaleDbStorageVaultId = defaults.exascaleDbStorageVaultId;
     	      this.fileSystemConfigurationDetails = defaults.fileSystemConfigurationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.giVersion = defaults.giVersion;
@@ -827,6 +854,7 @@ public final class GetCloudVmClustersCloudVmCluster {
     	      this.shape = defaults.shape;
     	      this.sshPublicKeys = defaults.sshPublicKeys;
     	      this.state = defaults.state;
+    	      this.storageManagementType = defaults.storageManagementType;
     	      this.storageSizeInGbs = defaults.storageSizeInGbs;
     	      this.subnetId = defaults.subnetId;
     	      this.subscriptionId = defaults.subscriptionId;
@@ -1003,6 +1031,14 @@ public final class GetCloudVmClustersCloudVmCluster {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "domain");
             }
             this.domain = domain;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            if (exascaleDbStorageVaultId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "exascaleDbStorageVaultId");
+            }
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             return this;
         }
         @CustomType.Setter
@@ -1251,6 +1287,14 @@ public final class GetCloudVmClustersCloudVmCluster {
             return this;
         }
         @CustomType.Setter
+        public Builder storageManagementType(String storageManagementType) {
+            if (storageManagementType == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "storageManagementType");
+            }
+            this.storageManagementType = storageManagementType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder storageSizeInGbs(Integer storageSizeInGbs) {
             if (storageSizeInGbs == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClustersCloudVmCluster", "storageSizeInGbs");
@@ -1373,6 +1417,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.diskRedundancy = diskRedundancy;
             _resultValue.displayName = displayName;
             _resultValue.domain = domain;
+            _resultValue.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
             _resultValue.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.giVersion = giVersion;
@@ -1401,6 +1446,7 @@ public final class GetCloudVmClustersCloudVmCluster {
             _resultValue.shape = shape;
             _resultValue.sshPublicKeys = sshPublicKeys;
             _resultValue.state = state;
+            _resultValue.storageManagementType = storageManagementType;
             _resultValue.storageSizeInGbs = storageSizeInGbs;
             _resultValue.subnetId = subnetId;
             _resultValue.subscriptionId = subscriptionId;

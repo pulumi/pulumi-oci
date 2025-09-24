@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetJmsPluginResult {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     private String agentId;
@@ -27,7 +27,7 @@ public final class GetJmsPluginResult {
      */
     private String availabilityStatus;
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     private String compartmentId;
@@ -100,7 +100,7 @@ public final class GetJmsPluginResult {
 
     private GetJmsPluginResult() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
      * 
      */
     public String agentId() {
@@ -121,7 +121,7 @@ public final class GetJmsPluginResult {
         return this.availabilityStatus;
     }
     /**
-     * @return The OMA/OCA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return The OMA/OCA/OCMA agent&#39;s compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
     public String compartmentId() {

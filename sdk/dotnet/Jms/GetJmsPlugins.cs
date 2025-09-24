@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Jms
     public sealed class GetJmsPluginsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        /// The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
         /// </summary>
         [Input("agentId")]
         public string? AgentId { get; set; }
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Jms
     public sealed class GetJmsPluginsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ManagementAgent (OMA) or Instance (OCA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that identifies the Agent.
+        /// The ManagementAgent (OMA), Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  that identifies the Agent.
         /// </summary>
         [Input("agentId")]
         public Input<string>? AgentId { get; set; }
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Jms
     public sealed class GetJmsPluginsResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA) or the Oracle Cloud Agent (OCA) instance where the JMS plugin is deployed.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA), or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
         /// </summary>
         public readonly string? AgentId;
         /// <summary>
@@ -302,7 +302,7 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string? AvailabilityStatus;
         /// <summary>
-        /// The OMA/OCA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// The OMA/OCA/OCMA agent's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string? CompartmentId;
         public readonly bool? CompartmentIdInSubtree;

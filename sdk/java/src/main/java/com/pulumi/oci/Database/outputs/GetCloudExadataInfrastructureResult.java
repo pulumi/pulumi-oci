@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureCustomerContact;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureDefinedFileSystemConfiguration;
+import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureExascaleConfig;
 import com.pulumi.oci.Database.outputs.GetCloudExadataInfrastructureMaintenanceWindow;
 import java.lang.Boolean;
 import java.lang.Double;
@@ -104,6 +105,11 @@ public final class GetCloudExadataInfrastructureResult {
      * 
      */
     private String displayName;
+    /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    private List<GetCloudExadataInfrastructureExascaleConfig> exascaleConfigs;
     /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -344,6 +350,13 @@ public final class GetCloudExadataInfrastructureResult {
         return this.displayName;
     }
     /**
+     * @return The exascale config response details for the Exadata Cloud{@literal @}Customer infrastructure or cloud Exadata infrastructure . Applies to both Exadata Cloud{@literal @}Customer instances and Exadata Cloud Service instances.
+     * 
+     */
+    public List<GetCloudExadataInfrastructureExascaleConfig> exascaleConfigs() {
+        return this.exascaleConfigs;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -532,6 +545,7 @@ public final class GetCloudExadataInfrastructureResult {
         private List<GetCloudExadataInfrastructureDefinedFileSystemConfiguration> definedFileSystemConfigurations;
         private Map<String,String> definedTags;
         private String displayName;
+        private List<GetCloudExadataInfrastructureExascaleConfig> exascaleConfigs;
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isSchedulingPolicyAssociated;
@@ -576,6 +590,7 @@ public final class GetCloudExadataInfrastructureResult {
     	      this.definedFileSystemConfigurations = defaults.definedFileSystemConfigurations;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
+    	      this.exascaleConfigs = defaults.exascaleConfigs;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isSchedulingPolicyAssociated = defaults.isSchedulingPolicyAssociated;
@@ -750,6 +765,17 @@ public final class GetCloudExadataInfrastructureResult {
             }
             this.displayName = displayName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder exascaleConfigs(List<GetCloudExadataInfrastructureExascaleConfig> exascaleConfigs) {
+            if (exascaleConfigs == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructureResult", "exascaleConfigs");
+            }
+            this.exascaleConfigs = exascaleConfigs;
+            return this;
+        }
+        public Builder exascaleConfigs(GetCloudExadataInfrastructureExascaleConfig... exascaleConfigs) {
+            return exascaleConfigs(List.of(exascaleConfigs));
         }
         @CustomType.Setter
         public Builder freeformTags(Map<String,String> freeformTags) {
@@ -958,6 +984,7 @@ public final class GetCloudExadataInfrastructureResult {
             _resultValue.definedFileSystemConfigurations = definedFileSystemConfigurations;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
+            _resultValue.exascaleConfigs = exascaleConfigs;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;

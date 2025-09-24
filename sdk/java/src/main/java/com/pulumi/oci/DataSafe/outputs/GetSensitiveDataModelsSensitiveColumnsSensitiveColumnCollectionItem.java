@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,6 +32,16 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      * 
      */
     private String columnName;
+    /**
+     * @return A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     * 
+     */
+    private String confidenceLevel;
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail> confidenceLevelDetails;
     /**
      * @return A filter to return only the resources that match the specified data types.
      * 
@@ -150,6 +161,20 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
      */
     public String columnName() {
         return this.columnName;
+    }
+    /**
+     * @return A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     * 
+     */
+    public String confidenceLevel() {
+        return this.confidenceLevel;
+    }
+    /**
+     * @return List containing maps as values. Example: `{&#34;Operations&#34;: [ {&#34;CostCenter&#34;: &#34;42&#34;} ] }`
+     * 
+     */
+    public List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail> confidenceLevelDetails() {
+        return this.confidenceLevelDetails;
     }
     /**
      * @return A filter to return only the resources that match the specified data types.
@@ -291,6 +316,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
         private String appName;
         private List<String> columnGroups;
         private String columnName;
+        private String confidenceLevel;
+        private List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail> confidenceLevelDetails;
         private String dataType;
         private List<String> dbDefinedChildColumnKeys;
         private String estimatedDataValueCount;
@@ -316,6 +343,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
     	      this.appName = defaults.appName;
     	      this.columnGroups = defaults.columnGroups;
     	      this.columnName = defaults.columnName;
+    	      this.confidenceLevel = defaults.confidenceLevel;
+    	      this.confidenceLevelDetails = defaults.confidenceLevelDetails;
     	      this.dataType = defaults.dataType;
     	      this.dbDefinedChildColumnKeys = defaults.dbDefinedChildColumnKeys;
     	      this.estimatedDataValueCount = defaults.estimatedDataValueCount;
@@ -373,6 +402,25 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             }
             this.columnName = columnName;
             return this;
+        }
+        @CustomType.Setter
+        public Builder confidenceLevel(String confidenceLevel) {
+            if (confidenceLevel == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "confidenceLevel");
+            }
+            this.confidenceLevel = confidenceLevel;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder confidenceLevelDetails(List<GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail> confidenceLevelDetails) {
+            if (confidenceLevelDetails == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItem", "confidenceLevelDetails");
+            }
+            this.confidenceLevelDetails = confidenceLevelDetails;
+            return this;
+        }
+        public Builder confidenceLevelDetails(GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemConfidenceLevelDetail... confidenceLevelDetails) {
+            return confidenceLevelDetails(List.of(confidenceLevelDetails));
         }
         @CustomType.Setter
         public Builder dataType(String dataType) {
@@ -533,6 +581,8 @@ public final class GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollecti
             _resultValue.appName = appName;
             _resultValue.columnGroups = columnGroups;
             _resultValue.columnName = columnName;
+            _resultValue.confidenceLevel = confidenceLevel;
+            _resultValue.confidenceLevelDetails = confidenceLevelDetails;
             _resultValue.dataType = dataType;
             _resultValue.dbDefinedChildColumnKeys = dbDefinedChildColumnKeys;
             _resultValue.estimatedDataValueCount = estimatedDataValueCount;

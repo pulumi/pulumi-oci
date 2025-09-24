@@ -11,6 +11,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
     return pulumi.runtime.invoke("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
         "category": args.category,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
@@ -34,6 +35,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
 export interface GetSecurityAssessmentFindingArgs {
     accessLevel?: string;
     category?: string;
+    compartmentId?: string;
     compartmentIdInSubtree?: boolean;
     containsReferences?: string[];
     containsSeverities?: string[];
@@ -56,6 +58,7 @@ export interface GetSecurityAssessmentFindingArgs {
 export interface GetSecurityAssessmentFindingResult {
     readonly accessLevel?: string;
     readonly category?: string;
+    readonly compartmentId?: string;
     readonly compartmentIdInSubtree?: boolean;
     readonly containsReferences?: string[];
     readonly containsSeverities?: string[];
@@ -81,6 +84,7 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding", {
         "accessLevel": args.accessLevel,
         "category": args.category,
+        "compartmentId": args.compartmentId,
         "compartmentIdInSubtree": args.compartmentIdInSubtree,
         "containsReferences": args.containsReferences,
         "containsSeverities": args.containsSeverities,
@@ -104,6 +108,7 @@ export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFi
 export interface GetSecurityAssessmentFindingOutputArgs {
     accessLevel?: pulumi.Input<string>;
     category?: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string>;
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     containsReferences?: pulumi.Input<pulumi.Input<string>[]>;
     containsSeverities?: pulumi.Input<pulumi.Input<string>[]>;

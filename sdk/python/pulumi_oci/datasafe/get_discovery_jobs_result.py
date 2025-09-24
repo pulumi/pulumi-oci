@@ -27,7 +27,7 @@ class GetDiscoveryJobsResultResult:
     """
     A collection of values returned by getDiscoveryJobsResult.
     """
-    def __init__(__self__, app_defined_child_column_keys=None, app_name=None, column_name=None, data_type=None, db_defined_child_column_keys=None, discovery_job_id=None, discovery_type=None, estimated_data_value_count=None, id=None, is_result_applied=None, key=None, modified_attributes=None, object=None, object_type=None, parent_column_keys=None, planned_action=None, relation_type=None, result_key=None, sample_data_values=None, schema_name=None, sensitive_columnkey=None, sensitive_type_id=None):
+    def __init__(__self__, app_defined_child_column_keys=None, app_name=None, column_name=None, confidence_level=None, confidence_level_details=None, data_type=None, db_defined_child_column_keys=None, discovery_job_id=None, discovery_type=None, estimated_data_value_count=None, id=None, is_result_applied=None, key=None, modified_attributes=None, object=None, object_type=None, parent_column_keys=None, planned_action=None, relation_type=None, result_key=None, sample_data_values=None, schema_name=None, sensitive_columnkey=None, sensitive_type_id=None):
         if app_defined_child_column_keys and not isinstance(app_defined_child_column_keys, list):
             raise TypeError("Expected argument 'app_defined_child_column_keys' to be a list")
         pulumi.set(__self__, "app_defined_child_column_keys", app_defined_child_column_keys)
@@ -37,6 +37,12 @@ class GetDiscoveryJobsResultResult:
         if column_name and not isinstance(column_name, str):
             raise TypeError("Expected argument 'column_name' to be a str")
         pulumi.set(__self__, "column_name", column_name)
+        if confidence_level and not isinstance(confidence_level, str):
+            raise TypeError("Expected argument 'confidence_level' to be a str")
+        pulumi.set(__self__, "confidence_level", confidence_level)
+        if confidence_level_details and not isinstance(confidence_level_details, list):
+            raise TypeError("Expected argument 'confidence_level_details' to be a list")
+        pulumi.set(__self__, "confidence_level_details", confidence_level_details)
         if data_type and not isinstance(data_type, str):
             raise TypeError("Expected argument 'data_type' to be a str")
         pulumi.set(__self__, "data_type", data_type)
@@ -118,6 +124,22 @@ class GetDiscoveryJobsResultResult:
         The name of the sensitive column.
         """
         return pulumi.get(self, "column_name")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevel")
+    def confidence_level(self) -> _builtins.str:
+        """
+        The confidence level of the discovery job result associated with the sensitive type. The confidence level for discovery job results can be either HIGH, MEDIUM or LOW.
+        """
+        return pulumi.get(self, "confidence_level")
+
+    @_builtins.property
+    @pulumi.getter(name="confidenceLevelDetails")
+    def confidence_level_details(self) -> Sequence['outputs.GetDiscoveryJobsResultConfidenceLevelDetailResult']:
+        """
+        List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        """
+        return pulumi.get(self, "confidence_level_details")
 
     @_builtins.property
     @pulumi.getter(name="dataType")
@@ -277,6 +299,8 @@ class AwaitableGetDiscoveryJobsResultResult(GetDiscoveryJobsResultResult):
             app_defined_child_column_keys=self.app_defined_child_column_keys,
             app_name=self.app_name,
             column_name=self.column_name,
+            confidence_level=self.confidence_level,
+            confidence_level_details=self.confidence_level_details,
             data_type=self.data_type,
             db_defined_child_column_keys=self.db_defined_child_column_keys,
             discovery_job_id=self.discovery_job_id,
@@ -330,6 +354,8 @@ def get_discovery_jobs_result(discovery_job_id: Optional[_builtins.str] = None,
         app_defined_child_column_keys=pulumi.get(__ret__, 'app_defined_child_column_keys'),
         app_name=pulumi.get(__ret__, 'app_name'),
         column_name=pulumi.get(__ret__, 'column_name'),
+        confidence_level=pulumi.get(__ret__, 'confidence_level'),
+        confidence_level_details=pulumi.get(__ret__, 'confidence_level_details'),
         data_type=pulumi.get(__ret__, 'data_type'),
         db_defined_child_column_keys=pulumi.get(__ret__, 'db_defined_child_column_keys'),
         discovery_job_id=pulumi.get(__ret__, 'discovery_job_id'),
@@ -380,6 +406,8 @@ def get_discovery_jobs_result_output(discovery_job_id: Optional[pulumi.Input[_bu
         app_defined_child_column_keys=pulumi.get(__response__, 'app_defined_child_column_keys'),
         app_name=pulumi.get(__response__, 'app_name'),
         column_name=pulumi.get(__response__, 'column_name'),
+        confidence_level=pulumi.get(__response__, 'confidence_level'),
+        confidence_level_details=pulumi.get(__response__, 'confidence_level_details'),
         data_type=pulumi.get(__response__, 'data_type'),
         db_defined_child_column_keys=pulumi.get(__response__, 'db_defined_child_column_keys'),
         discovery_job_id=pulumi.get(__response__, 'discovery_job_id'),

@@ -72,6 +72,10 @@ type SensitiveDataModelsSensitiveColumn struct {
 	ColumnGroups pulumi.StringArrayOutput `pulumi:"columnGroups"`
 	// The name of the sensitive column.
 	ColumnName pulumi.StringOutput `pulumi:"columnName"`
+	// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+	ConfidenceLevel pulumi.StringOutput `pulumi:"confidenceLevel"`
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	ConfidenceLevelDetails SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput `pulumi:"confidenceLevelDetails"`
 	// (Updatable) The data type of the sensitive column.
 	DataType pulumi.StringOutput `pulumi:"dataType"`
 	// (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -163,6 +167,10 @@ type sensitiveDataModelsSensitiveColumnState struct {
 	ColumnGroups []string `pulumi:"columnGroups"`
 	// The name of the sensitive column.
 	ColumnName *string `pulumi:"columnName"`
+	// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+	ConfidenceLevel *string `pulumi:"confidenceLevel"`
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	ConfidenceLevelDetails []SensitiveDataModelsSensitiveColumnConfidenceLevelDetail `pulumi:"confidenceLevelDetails"`
 	// (Updatable) The data type of the sensitive column.
 	DataType *string `pulumi:"dataType"`
 	// (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -213,6 +221,10 @@ type SensitiveDataModelsSensitiveColumnState struct {
 	ColumnGroups pulumi.StringArrayInput
 	// The name of the sensitive column.
 	ColumnName pulumi.StringPtrInput
+	// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+	ConfidenceLevel pulumi.StringPtrInput
+	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+	ConfidenceLevelDetails SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayInput
 	// (Updatable) The data type of the sensitive column.
 	DataType pulumi.StringPtrInput
 	// (Updatable) Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
@@ -430,6 +442,18 @@ func (o SensitiveDataModelsSensitiveColumnOutput) ColumnGroups() pulumi.StringAr
 // The name of the sensitive column.
 func (o SensitiveDataModelsSensitiveColumnOutput) ColumnName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.ColumnName }).(pulumi.StringOutput)
+}
+
+// The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+func (o SensitiveDataModelsSensitiveColumnOutput) ConfidenceLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) pulumi.StringOutput { return v.ConfidenceLevel }).(pulumi.StringOutput)
+}
+
+// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+func (o SensitiveDataModelsSensitiveColumnOutput) ConfidenceLevelDetails() SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModelsSensitiveColumn) SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput {
+		return v.ConfidenceLevelDetails
+	}).(SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArrayOutput)
 }
 
 // (Updatable) The data type of the sensitive column.

@@ -31,6 +31,16 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     private Map<String,String> definedTags;
     /**
+     * @return The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    private String discoveryEndpointIpAddress;
+    /**
+     * @return The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    private String discoveryFqdn;
+    /**
      * @return A filter to return only resources that match the entire display name given.
      * 
      */
@@ -152,6 +162,20 @@ public final class GetRedisClustersRedisClusterCollectionItem {
      */
     public Map<String,String> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * @return The private IP address of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public String discoveryEndpointIpAddress() {
+        return this.discoveryEndpointIpAddress;
+    }
+    /**
+     * @return The fully qualified domain name (FQDN) of the API endpoint for sharded cluster discovery.
+     * 
+     */
+    public String discoveryFqdn() {
+        return this.discoveryFqdn;
     }
     /**
      * @return A filter to return only resources that match the entire display name given.
@@ -306,6 +330,8 @@ public final class GetRedisClustersRedisClusterCollectionItem {
         private String clusterMode;
         private String compartmentId;
         private Map<String,String> definedTags;
+        private String discoveryEndpointIpAddress;
+        private String discoveryFqdn;
         private String displayName;
         private Map<String,String> freeformTags;
         private String id;
@@ -332,6 +358,8 @@ public final class GetRedisClustersRedisClusterCollectionItem {
     	      this.clusterMode = defaults.clusterMode;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.discoveryEndpointIpAddress = defaults.discoveryEndpointIpAddress;
+    	      this.discoveryFqdn = defaults.discoveryFqdn;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
@@ -376,6 +404,22 @@ public final class GetRedisClustersRedisClusterCollectionItem {
               throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder discoveryEndpointIpAddress(String discoveryEndpointIpAddress) {
+            if (discoveryEndpointIpAddress == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "discoveryEndpointIpAddress");
+            }
+            this.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder discoveryFqdn(String discoveryFqdn) {
+            if (discoveryFqdn == null) {
+              throw new MissingRequiredPropertyException("GetRedisClustersRedisClusterCollectionItem", "discoveryFqdn");
+            }
+            this.discoveryFqdn = discoveryFqdn;
             return this;
         }
         @CustomType.Setter
@@ -549,6 +593,8 @@ public final class GetRedisClustersRedisClusterCollectionItem {
             _resultValue.clusterMode = clusterMode;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.discoveryEndpointIpAddress = discoveryEndpointIpAddress;
+            _resultValue.discoveryFqdn = discoveryFqdn;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;

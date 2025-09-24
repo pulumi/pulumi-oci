@@ -125,6 +125,11 @@ export type CloudExadataInfrastructure = import("./cloudExadataInfrastructure").
 export const CloudExadataInfrastructure: typeof import("./cloudExadataInfrastructure").CloudExadataInfrastructure = null as any;
 utilities.lazyLoad(exports, ["CloudExadataInfrastructure"], () => require("./cloudExadataInfrastructure"));
 
+export { CloudExadataInfrastructureConfigureExascaleManagementArgs, CloudExadataInfrastructureConfigureExascaleManagementState } from "./cloudExadataInfrastructureConfigureExascaleManagement";
+export type CloudExadataInfrastructureConfigureExascaleManagement = import("./cloudExadataInfrastructureConfigureExascaleManagement").CloudExadataInfrastructureConfigureExascaleManagement;
+export const CloudExadataInfrastructureConfigureExascaleManagement: typeof import("./cloudExadataInfrastructureConfigureExascaleManagement").CloudExadataInfrastructureConfigureExascaleManagement = null as any;
+utilities.lazyLoad(exports, ["CloudExadataInfrastructureConfigureExascaleManagement"], () => require("./cloudExadataInfrastructureConfigureExascaleManagement"));
+
 export { CloudVmClusterArgs, CloudVmClusterState } from "./cloudVmCluster";
 export type CloudVmCluster = import("./cloudVmCluster").CloudVmCluster;
 export const CloudVmCluster: typeof import("./cloudVmCluster").CloudVmCluster = null as any;
@@ -1188,6 +1193,8 @@ const _module = {
                 return new CloudDatabaseManagement(name, <any>undefined, { urn })
             case "oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure":
                 return new CloudExadataInfrastructure(name, <any>undefined, { urn })
+            case "oci:Database/cloudExadataInfrastructureConfigureExascaleManagement:CloudExadataInfrastructureConfigureExascaleManagement":
+                return new CloudExadataInfrastructureConfigureExascaleManagement(name, <any>undefined, { urn })
             case "oci:Database/cloudVmCluster:CloudVmCluster":
                 return new CloudVmCluster(name, <any>undefined, { urn })
             case "oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig":
@@ -1315,6 +1322,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/backupDestination", _modu
 pulumi.runtime.registerResourceModule("oci", "Database/cloudAutonomousVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudExadataInfrastructure", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/cloudExadataInfrastructureConfigureExascaleManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudVmCluster", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/cloudVmClusterIormConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dataGuardAssociation", _module)

@@ -64,6 +64,7 @@ namespace Pulumi.Oci.Database
     ///         DbServers = cloudVmClusterDbServers,
     ///         DefinedTags = cloudVmClusterDefinedTags,
     ///         Domain = cloudVmClusterDomain,
+    ///         ExascaleDbStorageVaultId = testExascaleDbStorageVault.Id,
     ///         FileSystemConfigurationDetails = new[]
     ///         {
     ///             new Oci.Database.Inputs.CloudVmClusterFileSystemConfigurationDetailArgs
@@ -223,6 +224,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Output("exascaleDbStorageVaultId")]
+        public Output<string> ExascaleDbStorageVaultId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details of the file system configuration of the VM cluster.
@@ -390,6 +397,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        /// </summary>
+        [Output("storageManagementType")]
+        public Output<string> StorageManagementType { get; private set; } = null!;
 
         /// <summary>
         /// The storage allocation for the disk group, in gigabytes (GB).
@@ -630,6 +643,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Input("exascaleDbStorageVaultId")]
+        public Input<string>? ExascaleDbStorageVaultId { get; set; }
 
         [Input("fileSystemConfigurationDetails")]
         private InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailArgs>? _fileSystemConfigurationDetails;
@@ -940,6 +959,12 @@ namespace Pulumi.Oci.Database
         [Input("domain")]
         public Input<string>? Domain { get; set; }
 
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        /// </summary>
+        [Input("exascaleDbStorageVaultId")]
+        public Input<string>? ExascaleDbStorageVaultId { get; set; }
+
         [Input("fileSystemConfigurationDetails")]
         private InputList<Inputs.CloudVmClusterFileSystemConfigurationDetailGetArgs>? _fileSystemConfigurationDetails;
 
@@ -1160,6 +1185,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+        /// </summary>
+        [Input("storageManagementType")]
+        public Input<string>? StorageManagementType { get; set; }
 
         /// <summary>
         /// The storage allocation for the disk group, in gigabytes (GB).

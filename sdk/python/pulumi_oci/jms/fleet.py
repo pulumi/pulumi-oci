@@ -158,6 +158,8 @@ class _FleetState:
                  approximate_installation_count: Optional[pulumi.Input[_builtins.int]] = None,
                  approximate_java_server_count: Optional[pulumi.Input[_builtins.int]] = None,
                  approximate_jre_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 approximate_library_count: Optional[pulumi.Input[_builtins.int]] = None,
+                 approximate_library_vulnerability_count: Optional[pulumi.Input[_builtins.int]] = None,
                  approximate_managed_instance_count: Optional[pulumi.Input[_builtins.int]] = None,
                  compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -177,6 +179,8 @@ class _FleetState:
         :param pulumi.Input[_builtins.int] approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param pulumi.Input[_builtins.int] approximate_library_count: The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param pulumi.Input[_builtins.int] approximate_library_vulnerability_count: The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -199,6 +203,10 @@ class _FleetState:
             pulumi.set(__self__, "approximate_java_server_count", approximate_java_server_count)
         if approximate_jre_count is not None:
             pulumi.set(__self__, "approximate_jre_count", approximate_jre_count)
+        if approximate_library_count is not None:
+            pulumi.set(__self__, "approximate_library_count", approximate_library_count)
+        if approximate_library_vulnerability_count is not None:
+            pulumi.set(__self__, "approximate_library_vulnerability_count", approximate_library_vulnerability_count)
         if approximate_managed_instance_count is not None:
             pulumi.set(__self__, "approximate_managed_instance_count", approximate_managed_instance_count)
         if compartment_id is not None:
@@ -273,6 +281,30 @@ class _FleetState:
     @approximate_jre_count.setter
     def approximate_jre_count(self, value: Optional[pulumi.Input[_builtins.int]]):
         pulumi.set(self, "approximate_jre_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryCount")
+    def approximate_library_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_count")
+
+    @approximate_library_count.setter
+    def approximate_library_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "approximate_library_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryVulnerabilityCount")
+    def approximate_library_vulnerability_count(self) -> Optional[pulumi.Input[_builtins.int]]:
+        """
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_vulnerability_count")
+
+    @approximate_library_vulnerability_count.setter
+    def approximate_library_vulnerability_count(self, value: Optional[pulumi.Input[_builtins.int]]):
+        pulumi.set(self, "approximate_library_vulnerability_count", value)
 
     @_builtins.property
     @pulumi.getter(name="approximateManagedInstanceCount")
@@ -605,6 +637,8 @@ class Fleet(pulumi.CustomResource):
             __props__.__dict__["approximate_installation_count"] = None
             __props__.__dict__["approximate_java_server_count"] = None
             __props__.__dict__["approximate_jre_count"] = None
+            __props__.__dict__["approximate_library_count"] = None
+            __props__.__dict__["approximate_library_vulnerability_count"] = None
             __props__.__dict__["approximate_managed_instance_count"] = None
             __props__.__dict__["is_export_setting_enabled"] = None
             __props__.__dict__["state"] = None
@@ -624,6 +658,8 @@ class Fleet(pulumi.CustomResource):
             approximate_installation_count: Optional[pulumi.Input[_builtins.int]] = None,
             approximate_java_server_count: Optional[pulumi.Input[_builtins.int]] = None,
             approximate_jre_count: Optional[pulumi.Input[_builtins.int]] = None,
+            approximate_library_count: Optional[pulumi.Input[_builtins.int]] = None,
+            approximate_library_vulnerability_count: Optional[pulumi.Input[_builtins.int]] = None,
             approximate_managed_instance_count: Optional[pulumi.Input[_builtins.int]] = None,
             compartment_id: Optional[pulumi.Input[_builtins.str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -648,6 +684,8 @@ class Fleet(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] approximate_installation_count: The approximate count of all unique Java installations in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_java_server_count: The approximate count of all unique Java servers in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_jre_count: The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param pulumi.Input[_builtins.int] approximate_library_count: The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        :param pulumi.Input[_builtins.int] approximate_library_vulnerability_count: The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.int] approximate_managed_instance_count: The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Fleet.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
@@ -670,6 +708,8 @@ class Fleet(pulumi.CustomResource):
         __props__.__dict__["approximate_installation_count"] = approximate_installation_count
         __props__.__dict__["approximate_java_server_count"] = approximate_java_server_count
         __props__.__dict__["approximate_jre_count"] = approximate_jre_count
+        __props__.__dict__["approximate_library_count"] = approximate_library_count
+        __props__.__dict__["approximate_library_vulnerability_count"] = approximate_library_vulnerability_count
         __props__.__dict__["approximate_managed_instance_count"] = approximate_managed_instance_count
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
@@ -716,6 +756,22 @@ class Fleet(pulumi.CustomResource):
         The approximate count of all unique Java Runtimes in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
         """
         return pulumi.get(self, "approximate_jre_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryCount")
+    def approximate_library_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_count")
+
+    @_builtins.property
+    @pulumi.getter(name="approximateLibraryVulnerabilityCount")
+    def approximate_library_vulnerability_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn't taken into account when computing the resource ETag.
+        """
+        return pulumi.get(self, "approximate_library_vulnerability_count")
 
     @_builtins.property
     @pulumi.getter(name="approximateManagedInstanceCount")

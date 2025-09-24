@@ -96,6 +96,8 @@ type LookupCloudVmClusterResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// The domain name for the cloud VM cluster.
 	Domain string `pulumi:"domain"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+	ExascaleDbStorageVaultId string `pulumi:"exascaleDbStorageVaultId"`
 	// Details of the file system configuration of the VM cluster.
 	FileSystemConfigurationDetails []GetCloudVmClusterFileSystemConfigurationDetail `pulumi:"fileSystemConfigurationDetails"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -152,6 +154,8 @@ type LookupCloudVmClusterResult struct {
 	SshPublicKeys []string `pulumi:"sshPublicKeys"`
 	// The current state of the cloud VM cluster.
 	State string `pulumi:"state"`
+	// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+	StorageManagementType string `pulumi:"storageManagementType"`
 	// The storage allocation for the disk group, in gigabytes (GB).
 	StorageSizeInGbs int `pulumi:"storageSizeInGbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
@@ -314,6 +318,11 @@ func (o LookupCloudVmClusterResultOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.Domain }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+func (o LookupCloudVmClusterResultOutput) ExascaleDbStorageVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.ExascaleDbStorageVaultId }).(pulumi.StringOutput)
+}
+
 // Details of the file system configuration of the VM cluster.
 func (o LookupCloudVmClusterResultOutput) FileSystemConfigurationDetails() GetCloudVmClusterFileSystemConfigurationDetailArrayOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) []GetCloudVmClusterFileSystemConfigurationDetail {
@@ -456,6 +465,11 @@ func (o LookupCloudVmClusterResultOutput) SshPublicKeys() pulumi.StringArrayOutp
 // The current state of the cloud VM cluster.
 func (o LookupCloudVmClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Specifies the type of storage management for the Cloud VM Cluster if its ASM or Exascale.
+func (o LookupCloudVmClusterResultOutput) StorageManagementType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudVmClusterResult) string { return v.StorageManagementType }).(pulumi.StringOutput)
 }
 
 // The storage allocation for the disk group, in gigabytes (GB).

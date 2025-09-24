@@ -19,8 +19,10 @@ import * as utilities from "../utilities";
  *
  * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
+ *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
  *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
  *     objects: sensitiveDataModelsSensitiveColumnObject,
@@ -41,8 +43,10 @@ import * as utilities from "../utilities";
 export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataModelsSensitiveColumnsArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelsSensitiveColumnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
+        "columnDataCountFilter": args.columnDataCountFilter,
         "columnGroup": args.columnGroup,
         "columnNames": args.columnNames,
+        "confidenceLevels": args.confidenceLevels,
         "dataTypes": args.dataTypes,
         "filters": args.filters,
         "isCaseInSensitive": args.isCaseInSensitive,
@@ -67,6 +71,10 @@ export function getSensitiveDataModelsSensitiveColumns(args: GetSensitiveDataMod
  */
 export interface GetSensitiveDataModelsSensitiveColumnsArgs {
     /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     */
+    columnDataCountFilter?: string;
+    /**
      * A filter to return only the sensitive columns that belong to the specified column group.
      */
     columnGroup?: string;
@@ -74,6 +82,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsArgs {
      * A filter to return only a specific column based on column name.
      */
     columnNames?: string[];
+    /**
+     * A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     */
+    confidenceLevels?: string[];
     /**
      * A filter to return only the resources that match the specified data types.
      */
@@ -145,11 +157,16 @@ export interface GetSensitiveDataModelsSensitiveColumnsArgs {
  * A collection of values returned by getSensitiveDataModelsSensitiveColumns.
  */
 export interface GetSensitiveDataModelsSensitiveColumnsResult {
+    readonly columnDataCountFilter?: string;
     readonly columnGroup?: string;
     /**
      * The name of the sensitive column.
      */
     readonly columnNames?: string[];
+    /**
+     * The confidence level of the sensitive column associated with the sensitive type. The confidence level of the discovered sensitive columns can be either HIGH, MEDIUM or LOW. The confidence level will be NONE for manually added sensitive columns.
+     */
+    readonly confidenceLevels?: string[];
     /**
      * The data type of the sensitive column.
      */
@@ -212,8 +229,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
  *
  * const testSensitiveDataModelsSensitiveColumns = oci.DataSafe.getSensitiveDataModelsSensitiveColumns({
  *     sensitiveDataModelId: testSensitiveDataModel.id,
+ *     columnDataCountFilter: sensitiveDataModelsSensitiveColumnColumnDataCountFilter,
  *     columnGroup: sensitiveDataModelsSensitiveColumnColumnGroup,
  *     columnNames: sensitiveDataModelsSensitiveColumnColumnName,
+ *     confidenceLevels: sensitiveDataModelsSensitiveColumnConfidenceLevel,
  *     dataTypes: sensitiveDataModelsSensitiveColumnDataType,
  *     isCaseInSensitive: sensitiveDataModelsSensitiveColumnIsCaseInSensitive,
  *     objects: sensitiveDataModelsSensitiveColumnObject,
@@ -234,8 +253,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsResult {
 export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveDataModelsSensitiveColumnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelsSensitiveColumnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:DataSafe/getSensitiveDataModelsSensitiveColumns:getSensitiveDataModelsSensitiveColumns", {
+        "columnDataCountFilter": args.columnDataCountFilter,
         "columnGroup": args.columnGroup,
         "columnNames": args.columnNames,
+        "confidenceLevels": args.confidenceLevels,
         "dataTypes": args.dataTypes,
         "filters": args.filters,
         "isCaseInSensitive": args.isCaseInSensitive,
@@ -260,6 +281,10 @@ export function getSensitiveDataModelsSensitiveColumnsOutput(args: GetSensitiveD
  */
 export interface GetSensitiveDataModelsSensitiveColumnsOutputArgs {
     /**
+     * Filters the sensitive columns with respect to the estimated row count.
+     */
+    columnDataCountFilter?: pulumi.Input<string>;
+    /**
      * A filter to return only the sensitive columns that belong to the specified column group.
      */
     columnGroup?: pulumi.Input<string>;
@@ -267,6 +292,10 @@ export interface GetSensitiveDataModelsSensitiveColumnsOutputArgs {
      * A filter to return only a specific column based on column name.
      */
     columnNames?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * A filter to return the sensitive columns with the specified confidence level.  Confidence level of sensitive column associated with a seeded sensitive type can either be HIGH or LOW. While the confidence level of sensitive column associated with a user defined sensitive will be NONE.  For sensitive columns added manually the confidence level will also be NONE.
+     */
+    confidenceLevels?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * A filter to return only the resources that match the specified data types.
      */

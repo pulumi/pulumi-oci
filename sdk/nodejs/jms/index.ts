@@ -40,6 +40,11 @@ export const getFleetBlocklists: typeof import("./getFleetBlocklists").getFleetB
 export const getFleetBlocklistsOutput: typeof import("./getFleetBlocklists").getFleetBlocklistsOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetBlocklists","getFleetBlocklistsOutput"], () => require("./getFleetBlocklists"));
 
+export { GetFleetContainersArgs, GetFleetContainersResult, GetFleetContainersOutputArgs } from "./getFleetContainers";
+export const getFleetContainers: typeof import("./getFleetContainers").getFleetContainers = null as any;
+export const getFleetContainersOutput: typeof import("./getFleetContainers").getFleetContainersOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetContainers","getFleetContainersOutput"], () => require("./getFleetContainers"));
+
 export { GetFleetCryptoAnalysisResultArgs, GetFleetCryptoAnalysisResultResult, GetFleetCryptoAnalysisResultOutputArgs } from "./getFleetCryptoAnalysisResult";
 export const getFleetCryptoAnalysisResult: typeof import("./getFleetCryptoAnalysisResult").getFleetCryptoAnalysisResult = null as any;
 export const getFleetCryptoAnalysisResultOutput: typeof import("./getFleetCryptoAnalysisResult").getFleetCryptoAnalysisResultOutput = null as any;
@@ -95,6 +100,16 @@ export const getFleetJavaMigrationAnalysisResults: typeof import("./getFleetJava
 export const getFleetJavaMigrationAnalysisResultsOutput: typeof import("./getFleetJavaMigrationAnalysisResults").getFleetJavaMigrationAnalysisResultsOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetJavaMigrationAnalysisResults","getFleetJavaMigrationAnalysisResultsOutput"], () => require("./getFleetJavaMigrationAnalysisResults"));
 
+export { GetFleetLibraryApplicationsArgs, GetFleetLibraryApplicationsResult, GetFleetLibraryApplicationsOutputArgs } from "./getFleetLibraryApplications";
+export const getFleetLibraryApplications: typeof import("./getFleetLibraryApplications").getFleetLibraryApplications = null as any;
+export const getFleetLibraryApplicationsOutput: typeof import("./getFleetLibraryApplications").getFleetLibraryApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetLibraryApplications","getFleetLibraryApplicationsOutput"], () => require("./getFleetLibraryApplications"));
+
+export { GetFleetLibraryManagedInstancesArgs, GetFleetLibraryManagedInstancesResult, GetFleetLibraryManagedInstancesOutputArgs } from "./getFleetLibraryManagedInstances";
+export const getFleetLibraryManagedInstances: typeof import("./getFleetLibraryManagedInstances").getFleetLibraryManagedInstances = null as any;
+export const getFleetLibraryManagedInstancesOutput: typeof import("./getFleetLibraryManagedInstances").getFleetLibraryManagedInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetLibraryManagedInstances","getFleetLibraryManagedInstancesOutput"], () => require("./getFleetLibraryManagedInstances"));
+
 export { GetFleetPerformanceTuningAnalysisResultArgs, GetFleetPerformanceTuningAnalysisResultResult, GetFleetPerformanceTuningAnalysisResultOutputArgs } from "./getFleetPerformanceTuningAnalysisResult";
 export const getFleetPerformanceTuningAnalysisResult: typeof import("./getFleetPerformanceTuningAnalysisResult").getFleetPerformanceTuningAnalysisResult = null as any;
 export const getFleetPerformanceTuningAnalysisResultOutput: typeof import("./getFleetPerformanceTuningAnalysisResult").getFleetPerformanceTuningAnalysisResultOutput = null as any;
@@ -104,6 +119,26 @@ export { GetFleetPerformanceTuningAnalysisResultsArgs, GetFleetPerformanceTuning
 export const getFleetPerformanceTuningAnalysisResults: typeof import("./getFleetPerformanceTuningAnalysisResults").getFleetPerformanceTuningAnalysisResults = null as any;
 export const getFleetPerformanceTuningAnalysisResultsOutput: typeof import("./getFleetPerformanceTuningAnalysisResults").getFleetPerformanceTuningAnalysisResultsOutput = null as any;
 utilities.lazyLoad(exports, ["getFleetPerformanceTuningAnalysisResults","getFleetPerformanceTuningAnalysisResultsOutput"], () => require("./getFleetPerformanceTuningAnalysisResults"));
+
+export { GetFleetSummarizeLibraryInventoryArgs, GetFleetSummarizeLibraryInventoryResult, GetFleetSummarizeLibraryInventoryOutputArgs } from "./getFleetSummarizeLibraryInventory";
+export const getFleetSummarizeLibraryInventory: typeof import("./getFleetSummarizeLibraryInventory").getFleetSummarizeLibraryInventory = null as any;
+export const getFleetSummarizeLibraryInventoryOutput: typeof import("./getFleetSummarizeLibraryInventory").getFleetSummarizeLibraryInventoryOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetSummarizeLibraryInventory","getFleetSummarizeLibraryInventoryOutput"], () => require("./getFleetSummarizeLibraryInventory"));
+
+export { GetFleetUncorrelatedPackageApplicationsArgs, GetFleetUncorrelatedPackageApplicationsResult, GetFleetUncorrelatedPackageApplicationsOutputArgs } from "./getFleetUncorrelatedPackageApplications";
+export const getFleetUncorrelatedPackageApplications: typeof import("./getFleetUncorrelatedPackageApplications").getFleetUncorrelatedPackageApplications = null as any;
+export const getFleetUncorrelatedPackageApplicationsOutput: typeof import("./getFleetUncorrelatedPackageApplications").getFleetUncorrelatedPackageApplicationsOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetUncorrelatedPackageApplications","getFleetUncorrelatedPackageApplicationsOutput"], () => require("./getFleetUncorrelatedPackageApplications"));
+
+export { GetFleetUncorrelatedPackageManagedInstancesArgs, GetFleetUncorrelatedPackageManagedInstancesResult, GetFleetUncorrelatedPackageManagedInstancesOutputArgs } from "./getFleetUncorrelatedPackageManagedInstances";
+export const getFleetUncorrelatedPackageManagedInstances: typeof import("./getFleetUncorrelatedPackageManagedInstances").getFleetUncorrelatedPackageManagedInstances = null as any;
+export const getFleetUncorrelatedPackageManagedInstancesOutput: typeof import("./getFleetUncorrelatedPackageManagedInstances").getFleetUncorrelatedPackageManagedInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetUncorrelatedPackageManagedInstances","getFleetUncorrelatedPackageManagedInstancesOutput"], () => require("./getFleetUncorrelatedPackageManagedInstances"));
+
+export { GetFleetUncorrelatedPackagesArgs, GetFleetUncorrelatedPackagesResult, GetFleetUncorrelatedPackagesOutputArgs } from "./getFleetUncorrelatedPackages";
+export const getFleetUncorrelatedPackages: typeof import("./getFleetUncorrelatedPackages").getFleetUncorrelatedPackages = null as any;
+export const getFleetUncorrelatedPackagesOutput: typeof import("./getFleetUncorrelatedPackages").getFleetUncorrelatedPackagesOutput = null as any;
+utilities.lazyLoad(exports, ["getFleetUncorrelatedPackages","getFleetUncorrelatedPackagesOutput"], () => require("./getFleetUncorrelatedPackages"));
 
 export { GetFleetsArgs, GetFleetsResult, GetFleetsOutputArgs } from "./getFleets";
 export const getFleets: typeof import("./getFleets").getFleets = null as any;
@@ -220,6 +255,46 @@ export const getSummarizeResourceInventory: typeof import("./getSummarizeResourc
 export const getSummarizeResourceInventoryOutput: typeof import("./getSummarizeResourceInventory").getSummarizeResourceInventoryOutput = null as any;
 utilities.lazyLoad(exports, ["getSummarizeResourceInventory","getSummarizeResourceInventoryOutput"], () => require("./getSummarizeResourceInventory"));
 
+export { GetTaskScheduleArgs, GetTaskScheduleResult, GetTaskScheduleOutputArgs } from "./getTaskSchedule";
+export const getTaskSchedule: typeof import("./getTaskSchedule").getTaskSchedule = null as any;
+export const getTaskScheduleOutput: typeof import("./getTaskSchedule").getTaskScheduleOutput = null as any;
+utilities.lazyLoad(exports, ["getTaskSchedule","getTaskScheduleOutput"], () => require("./getTaskSchedule"));
+
+export { GetTaskSchedulesArgs, GetTaskSchedulesResult, GetTaskSchedulesOutputArgs } from "./getTaskSchedules";
+export const getTaskSchedules: typeof import("./getTaskSchedules").getTaskSchedules = null as any;
+export const getTaskSchedulesOutput: typeof import("./getTaskSchedules").getTaskSchedulesOutput = null as any;
+utilities.lazyLoad(exports, ["getTaskSchedules","getTaskSchedulesOutput"], () => require("./getTaskSchedules"));
+
+export { GetUtilsAnalyzeApplicationsConfigurationArgs, GetUtilsAnalyzeApplicationsConfigurationResult, GetUtilsAnalyzeApplicationsConfigurationOutputArgs } from "./getUtilsAnalyzeApplicationsConfiguration";
+export const getUtilsAnalyzeApplicationsConfiguration: typeof import("./getUtilsAnalyzeApplicationsConfiguration").getUtilsAnalyzeApplicationsConfiguration = null as any;
+export const getUtilsAnalyzeApplicationsConfigurationOutput: typeof import("./getUtilsAnalyzeApplicationsConfiguration").getUtilsAnalyzeApplicationsConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsAnalyzeApplicationsConfiguration","getUtilsAnalyzeApplicationsConfigurationOutput"], () => require("./getUtilsAnalyzeApplicationsConfiguration"));
+
+export { GetUtilsJavaMigrationAnalysiArgs, GetUtilsJavaMigrationAnalysiResult, GetUtilsJavaMigrationAnalysiOutputArgs } from "./getUtilsJavaMigrationAnalysi";
+export const getUtilsJavaMigrationAnalysi: typeof import("./getUtilsJavaMigrationAnalysi").getUtilsJavaMigrationAnalysi = null as any;
+export const getUtilsJavaMigrationAnalysiOutput: typeof import("./getUtilsJavaMigrationAnalysi").getUtilsJavaMigrationAnalysiOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsJavaMigrationAnalysi","getUtilsJavaMigrationAnalysiOutput"], () => require("./getUtilsJavaMigrationAnalysi"));
+
+export { GetUtilsJavaMigrationAnalysisArgs, GetUtilsJavaMigrationAnalysisResult, GetUtilsJavaMigrationAnalysisOutputArgs } from "./getUtilsJavaMigrationAnalysis";
+export const getUtilsJavaMigrationAnalysis: typeof import("./getUtilsJavaMigrationAnalysis").getUtilsJavaMigrationAnalysis = null as any;
+export const getUtilsJavaMigrationAnalysisOutput: typeof import("./getUtilsJavaMigrationAnalysis").getUtilsJavaMigrationAnalysisOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsJavaMigrationAnalysis","getUtilsJavaMigrationAnalysisOutput"], () => require("./getUtilsJavaMigrationAnalysis"));
+
+export { GetUtilsPerformanceTuningAnalysiArgs, GetUtilsPerformanceTuningAnalysiResult, GetUtilsPerformanceTuningAnalysiOutputArgs } from "./getUtilsPerformanceTuningAnalysi";
+export const getUtilsPerformanceTuningAnalysi: typeof import("./getUtilsPerformanceTuningAnalysi").getUtilsPerformanceTuningAnalysi = null as any;
+export const getUtilsPerformanceTuningAnalysiOutput: typeof import("./getUtilsPerformanceTuningAnalysi").getUtilsPerformanceTuningAnalysiOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsPerformanceTuningAnalysi","getUtilsPerformanceTuningAnalysiOutput"], () => require("./getUtilsPerformanceTuningAnalysi"));
+
+export { GetUtilsPerformanceTuningAnalysisArgs, GetUtilsPerformanceTuningAnalysisResult, GetUtilsPerformanceTuningAnalysisOutputArgs } from "./getUtilsPerformanceTuningAnalysis";
+export const getUtilsPerformanceTuningAnalysis: typeof import("./getUtilsPerformanceTuningAnalysis").getUtilsPerformanceTuningAnalysis = null as any;
+export const getUtilsPerformanceTuningAnalysisOutput: typeof import("./getUtilsPerformanceTuningAnalysis").getUtilsPerformanceTuningAnalysisOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsPerformanceTuningAnalysis","getUtilsPerformanceTuningAnalysisOutput"], () => require("./getUtilsPerformanceTuningAnalysis"));
+
+export { GetUtilsSubscriptionAcknowledgmentConfigurationArgs, GetUtilsSubscriptionAcknowledgmentConfigurationResult, GetUtilsSubscriptionAcknowledgmentConfigurationOutputArgs } from "./getUtilsSubscriptionAcknowledgmentConfiguration";
+export const getUtilsSubscriptionAcknowledgmentConfiguration: typeof import("./getUtilsSubscriptionAcknowledgmentConfiguration").getUtilsSubscriptionAcknowledgmentConfiguration = null as any;
+export const getUtilsSubscriptionAcknowledgmentConfigurationOutput: typeof import("./getUtilsSubscriptionAcknowledgmentConfiguration").getUtilsSubscriptionAcknowledgmentConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getUtilsSubscriptionAcknowledgmentConfiguration","getUtilsSubscriptionAcknowledgmentConfigurationOutput"], () => require("./getUtilsSubscriptionAcknowledgmentConfiguration"));
+
 export { JavaDownloadsJavaDownloadReportArgs, JavaDownloadsJavaDownloadReportState } from "./javaDownloadsJavaDownloadReport";
 export type JavaDownloadsJavaDownloadReport = import("./javaDownloadsJavaDownloadReport").JavaDownloadsJavaDownloadReport;
 export const JavaDownloadsJavaDownloadReport: typeof import("./javaDownloadsJavaDownloadReport").JavaDownloadsJavaDownloadReport = null as any;
@@ -240,6 +315,11 @@ export type JmsPlugin = import("./jmsPlugin").JmsPlugin;
 export const JmsPlugin: typeof import("./jmsPlugin").JmsPlugin = null as any;
 utilities.lazyLoad(exports, ["JmsPlugin"], () => require("./jmsPlugin"));
 
+export { TaskScheduleArgs, TaskScheduleState } from "./taskSchedule";
+export type TaskSchedule = import("./taskSchedule").TaskSchedule;
+export const TaskSchedule: typeof import("./taskSchedule").TaskSchedule = null as any;
+utilities.lazyLoad(exports, ["TaskSchedule"], () => require("./taskSchedule"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -257,6 +337,8 @@ const _module = {
                 return new JavaDownloadsJavaLicenseAcceptanceRecord(name, <any>undefined, { urn })
             case "oci:Jms/jmsPlugin:JmsPlugin":
                 return new JmsPlugin(name, <any>undefined, { urn })
+            case "oci:Jms/taskSchedule:TaskSchedule":
+                return new TaskSchedule(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -268,3 +350,4 @@ pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadRepor
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaLicenseAcceptanceRecord", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/jmsPlugin", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/taskSchedule", _module)

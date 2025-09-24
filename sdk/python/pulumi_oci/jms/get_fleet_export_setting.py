@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetFleetExportSettingResult',
@@ -26,7 +27,10 @@ class GetFleetExportSettingResult:
     """
     A collection of values returned by getFleetExportSetting.
     """
-    def __init__(__self__, export_duration=None, export_frequency=None, export_resources=None, export_setting_key=None, fleet_id=None, id=None, is_cross_region_acknowledged=None, is_enabled=None, target_bucket_name=None, target_bucket_namespace=None, target_bucket_region=None, time_created=None, time_last_modified=None):
+    def __init__(__self__, export_data_filters=None, export_duration=None, export_frequency=None, export_resources=None, export_setting_key=None, fleet_id=None, id=None, is_cross_region_acknowledged=None, is_enabled=None, target_bucket_name=None, target_bucket_namespace=None, target_bucket_region=None, time_created=None, time_last_modified=None):
+        if export_data_filters and not isinstance(export_data_filters, list):
+            raise TypeError("Expected argument 'export_data_filters' to be a list")
+        pulumi.set(__self__, "export_data_filters", export_data_filters)
         if export_duration and not isinstance(export_duration, str):
             raise TypeError("Expected argument 'export_duration' to be a str")
         pulumi.set(__self__, "export_duration", export_duration)
@@ -66,6 +70,14 @@ class GetFleetExportSettingResult:
         if time_last_modified and not isinstance(time_last_modified, str):
             raise TypeError("Expected argument 'time_last_modified' to be a str")
         pulumi.set(__self__, "time_last_modified", time_last_modified)
+
+    @_builtins.property
+    @pulumi.getter(name="exportDataFilters")
+    def export_data_filters(self) -> Sequence['outputs.GetFleetExportSettingExportDataFilterResult']:
+        """
+        Filters applied when exporting data
+        """
+        return pulumi.get(self, "export_data_filters")
 
     @_builtins.property
     @pulumi.getter(name="exportDuration")
@@ -178,6 +190,7 @@ class AwaitableGetFleetExportSettingResult(GetFleetExportSettingResult):
         if False:
             yield self
         return GetFleetExportSettingResult(
+            export_data_filters=self.export_data_filters,
             export_duration=self.export_duration,
             export_frequency=self.export_frequency,
             export_resources=self.export_resources,
@@ -218,6 +231,7 @@ def get_fleet_export_setting(fleet_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Jms/getFleetExportSetting:getFleetExportSetting', __args__, opts=opts, typ=GetFleetExportSettingResult).value
 
     return AwaitableGetFleetExportSettingResult(
+        export_data_filters=pulumi.get(__ret__, 'export_data_filters'),
         export_duration=pulumi.get(__ret__, 'export_duration'),
         export_frequency=pulumi.get(__ret__, 'export_frequency'),
         export_resources=pulumi.get(__ret__, 'export_resources'),
@@ -255,6 +269,7 @@ def get_fleet_export_setting_output(fleet_id: Optional[pulumi.Input[_builtins.st
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Jms/getFleetExportSetting:getFleetExportSetting', __args__, opts=opts, typ=GetFleetExportSettingResult)
     return __ret__.apply(lambda __response__: GetFleetExportSettingResult(
+        export_data_filters=pulumi.get(__response__, 'export_data_filters'),
         export_duration=pulumi.get(__response__, 'export_duration'),
         export_frequency=pulumi.get(__response__, 'export_frequency'),
         export_resources=pulumi.get(__response__, 'export_resources'),

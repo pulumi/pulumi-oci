@@ -37,6 +37,16 @@ public final class GetFleetsFleetCollectionItem {
      */
     private Integer approximateJreCount;
     /**
+     * @return The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    private Integer approximateLibraryCount;
+    /**
+     * @return The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    private Integer approximateLibraryVulnerabilityCount;
+    /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
      * 
      */
@@ -135,6 +145,20 @@ public final class GetFleetsFleetCollectionItem {
      */
     public Integer approximateJreCount() {
         return this.approximateJreCount;
+    }
+    /**
+     * @return The approximate count of all unique libraries in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Integer approximateLibraryCount() {
+        return this.approximateLibraryCount;
+    }
+    /**
+     * @return The approximate count of all unique library vulnerabilities in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
+     * 
+     */
+    public Integer approximateLibraryVulnerabilityCount() {
+        return this.approximateLibraryVulnerabilityCount;
     }
     /**
      * @return The approximate count of all unique managed instances in the Fleet in the past seven days. This metric is provided on a best-effort manner, and isn&#39;t taken into account when computing the resource ETag.
@@ -248,6 +272,8 @@ public final class GetFleetsFleetCollectionItem {
         private Integer approximateInstallationCount;
         private Integer approximateJavaServerCount;
         private Integer approximateJreCount;
+        private Integer approximateLibraryCount;
+        private Integer approximateLibraryVulnerabilityCount;
         private Integer approximateManagedInstanceCount;
         private String compartmentId;
         private Map<String,String> definedTags;
@@ -269,6 +295,8 @@ public final class GetFleetsFleetCollectionItem {
     	      this.approximateInstallationCount = defaults.approximateInstallationCount;
     	      this.approximateJavaServerCount = defaults.approximateJavaServerCount;
     	      this.approximateJreCount = defaults.approximateJreCount;
+    	      this.approximateLibraryCount = defaults.approximateLibraryCount;
+    	      this.approximateLibraryVulnerabilityCount = defaults.approximateLibraryVulnerabilityCount;
     	      this.approximateManagedInstanceCount = defaults.approximateManagedInstanceCount;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
@@ -315,6 +343,22 @@ public final class GetFleetsFleetCollectionItem {
               throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItem", "approximateJreCount");
             }
             this.approximateJreCount = approximateJreCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            if (approximateLibraryCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItem", "approximateLibraryCount");
+            }
+            this.approximateLibraryCount = approximateLibraryCount;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder approximateLibraryVulnerabilityCount(Integer approximateLibraryVulnerabilityCount) {
+            if (approximateLibraryVulnerabilityCount == null) {
+              throw new MissingRequiredPropertyException("GetFleetsFleetCollectionItem", "approximateLibraryVulnerabilityCount");
+            }
+            this.approximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
             return this;
         }
         @CustomType.Setter
@@ -441,6 +485,8 @@ public final class GetFleetsFleetCollectionItem {
             _resultValue.approximateInstallationCount = approximateInstallationCount;
             _resultValue.approximateJavaServerCount = approximateJavaServerCount;
             _resultValue.approximateJreCount = approximateJreCount;
+            _resultValue.approximateLibraryCount = approximateLibraryCount;
+            _resultValue.approximateLibraryVulnerabilityCount = approximateLibraryVulnerabilityCount;
             _resultValue.approximateManagedInstanceCount = approximateManagedInstanceCount;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;

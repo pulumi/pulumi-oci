@@ -94,7 +94,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetDataSafeConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the specified compartment OCID.
+        /// A filter to return the Data Safe configuration for the specified tenancy OCID.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -108,7 +108,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class GetDataSafeConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the specified compartment OCID.
+        /// A filter to return the Data Safe configuration for the specified tenancy OCID.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;

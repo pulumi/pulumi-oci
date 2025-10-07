@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetPathRouteSetsFilterResult
     {
         /// <summary>
-        /// The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+        /// The unique name for this set of path route rules. Avoid entering confidential information.  Example: `ExamplePathRouteSet`
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class BackendSetLbCookieSessionPersistenceConfigurationGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `example_cookie`
+        /// (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to "X-Oracle-BMC-LBS-Route".  Example: `ExampleCookie`
         /// 
         /// **Notes:**
         /// *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as "X-Oracle-OCI-" for this field.
@@ -23,7 +23,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public Input<string>? CookieName { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
+        /// (Updatable) Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `False`
         /// </summary>
         [Input("disableFallback")]
         public Input<bool>? DisableFallback { get; set; }
@@ -45,17 +45,17 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public Input<string>? Domain { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
+        /// (Updatable) Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `True`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `True`
         /// </summary>
         [Input("isHttpOnly")]
         public Input<bool>? IsHttpOnly { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+        /// (Updatable) Whether the `Set-cookie` header should contain the `Secure` attribute. If `True`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
         /// 
-        /// **Note:** If you set this field to `true`, you cannot associate the corresponding backend set with an HTTP listener.
+        /// **Note:** If you set this field to `True`, you cannot associate the corresponding backend set with an HTTP listener.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("isSecure")]
         public Input<bool>? IsSecure { get; set; }

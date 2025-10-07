@@ -14,6 +14,61 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create ApprovalWorkflow
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testApprovalWorkflow = new Oci.Identity.DomainsApprovalWorkflow("test_approval_workflow", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         MaxDuration = new Oci.Identity.Inputs.DomainsApprovalWorkflowMaxDurationArgs
+    ///         {
+    ///             Unit = approvalWorkflowMaxDurationUnit,
+    ///             Value = approvalWorkflowMaxDurationValue,
+    ///         },
+    ///         Name = approvalWorkflowName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow",
+    ///         },
+    ///         ApprovalWorkflowSteps = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApprovalWorkflowApprovalWorkflowStepArgs
+    ///             {
+    ///                 Type = approvalWorkflowApprovalWorkflowStepsType,
+    ///                 Value = approvalWorkflowApprovalWorkflowStepsValue,
+    ///                 Ocid = approvalWorkflowApprovalWorkflowStepsOcid,
+    ///             },
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = approvalWorkflowAuthorization,
+    ///         Description = approvalWorkflowDescription,
+    ///         Id = approvalWorkflowId,
+    ///         Ocid = approvalWorkflowOcid,
+    ///         ResourceTypeSchemaVersion = approvalWorkflowResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApprovalWorkflowTagArgs
+    ///             {
+    ///                 Key = approvalWorkflowTagsKey,
+    ///                 Value = approvalWorkflowTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ApprovalWorkflows can be imported using the `id`, e.g.

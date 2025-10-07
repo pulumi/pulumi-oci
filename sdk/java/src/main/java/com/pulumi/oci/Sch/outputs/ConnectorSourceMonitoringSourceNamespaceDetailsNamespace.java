@@ -17,7 +17,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
      */
     private ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics metrics;
     /**
-     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
      * 
      */
     private String namespace;
@@ -31,7 +31,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespace {
         return this.metrics;
     }
     /**
-     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {

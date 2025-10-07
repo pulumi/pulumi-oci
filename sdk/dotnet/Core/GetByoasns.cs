@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the `Byoasn` resources in the specified compartment.
         /// You can filter the list using query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetByoasnsResult> InvokeAsync(GetByoasnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsArgs(), options.WithDefaults());
@@ -25,6 +28,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the `Byoasn` resources in the specified compartment.
         /// You can filter the list using query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetByoasnsResult> Invoke(GetByoasnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsInvokeArgs(), options.WithDefaults());
@@ -34,6 +40,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the `Byoasn` resources in the specified compartment.
         /// You can filter the list using query parameters.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetByoasnsResult> Invoke(GetByoasnsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsInvokeArgs(), options.WithDefaults());

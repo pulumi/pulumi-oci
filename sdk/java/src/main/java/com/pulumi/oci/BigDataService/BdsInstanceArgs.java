@@ -209,14 +209,14 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      * 
      */
     @Import(name="ignoreExistingNodesShapes")
     private @Nullable Output<List<String>> ignoreExistingNodesShapes;
 
     /**
-     * @return Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * @return Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      * 
      */
     public Optional<Output<List<String>>> ignoreExistingNodesShapes() {
@@ -768,7 +768,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
          * 
          * @return builder
          * 
@@ -779,7 +779,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
          * 
          * @return builder
          * 
@@ -789,7 +789,7 @@ public final class BdsInstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+         * @param ignoreExistingNodesShapes Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
          * 
          * @return builder
          * 

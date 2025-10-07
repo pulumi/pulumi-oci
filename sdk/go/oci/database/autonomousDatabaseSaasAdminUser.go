@@ -15,6 +15,43 @@ import (
 // This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 //
 // This operation updates SaaS administrative user configuration of the Autonomous Database.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewAutonomousDatabaseSaasAdminUser(ctx, "test_autonomous_database_saas_admin_user", &database.AutonomousDatabaseSaasAdminUserArgs{
+//				AutonomousDatabaseId:     pulumi.Any(testAutonomousDatabase.Id),
+//				AccessType:               pulumi.Any(autonomousDatabaseSaasAdminUserAccessType),
+//				Duration:                 pulumi.Any(autonomousDatabaseSaasAdminUserDuration),
+//				IsEnabled:                autonomousDatabaseSaasAdminUserIsEnabled,
+//				Password:                 pulumi.Any(autonomousDatabaseSaasAdminUserPassword),
+//				SecretId:                 pulumi.Any(testSecret.Id),
+//				SecretVersionNumber:      pulumi.Any(autonomousDatabaseSaasAdminUserSecretVersionNumber),
+//				TimeSaasAdminUserEnabled: pulumi.Any(autonomousDatabaseSaasAdminUserTimeSaasAdminUserEnabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type AutonomousDatabaseSaasAdminUser struct {
 	pulumi.CustomResourceState
 

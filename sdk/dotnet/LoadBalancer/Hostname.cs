@@ -36,7 +36,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001` 
+        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleHostname001` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001` 
+        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleHostname001` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001` 
+        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleHostname001` 
         /// 
         /// 
         /// ** IMPORTANT **

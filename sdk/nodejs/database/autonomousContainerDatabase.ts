@@ -11,6 +11,99 @@ import * as utilities from "../utilities";
  *
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousContainerDatabase = new oci.database.AutonomousContainerDatabase("test_autonomous_container_database", {
+ *     displayName: autonomousContainerDatabaseDisplayName,
+ *     patchModel: autonomousContainerDatabasePatchModel,
+ *     autonomousContainerDatabaseBackupId: testAutonomousContainerDatabaseBackup.id,
+ *     cloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     autonomousVmClusterId: testAutonomousVmCluster.id,
+ *     backupConfig: {
+ *         backupDestinationDetails: {
+ *             type: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+ *             dbrsPolicyId: testPolicy.id,
+ *             id: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+ *             internetProxy: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+ *             isRemote: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+ *             remoteRegion: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+ *             vpcPassword: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+ *             vpcUser: autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+ *         },
+ *         recoveryWindowInDays: autonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+ *     },
+ *     compartmentId: compartmentId,
+ *     customerContacts: [{
+ *         email: autonomousContainerDatabaseCustomerContactsEmail,
+ *     }],
+ *     databaseSoftwareImageId: testDatabaseSoftwareImage.id,
+ *     dbName: autonomousContainerDatabaseDbName,
+ *     dbSplitThreshold: autonomousContainerDatabaseDbSplitThreshold,
+ *     dbUniqueName: autonomousContainerDatabaseDbUniqueName,
+ *     dbVersion: autonomousContainerDatabaseDbVersion,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     distributionAffinity: autonomousContainerDatabaseDistributionAffinity,
+ *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseIsAutomaticFailoverEnabled,
+ *     isDstFileUpdateEnabled: autonomousContainerDatabaseIsDstFileUpdateEnabled,
+ *     keyStoreId: testKeyStore.id,
+ *     kmsKeyId: testKey.id,
+ *     maintenanceWindowDetails: {
+ *         customActionTimeoutInMins: autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins,
+ *         daysOfWeeks: [{
+ *             name: autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName,
+ *         }],
+ *         hoursOfDays: autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay,
+ *         isCustomActionTimeoutEnabled: autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks,
+ *         months: [{
+ *             name: autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName,
+ *         }],
+ *         patchingMode: autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode,
+ *         preference: autonomousContainerDatabaseMaintenanceWindowDetailsPreference,
+ *         skipRus: autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu,
+ *         weeksOfMonths: autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth,
+ *     },
+ *     netServicesArchitecture: autonomousContainerDatabaseNetServicesArchitecture,
+ *     okvEndPointGroupName: autonomousContainerDatabaseOkvEndPointGroupName,
+ *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName,
+ *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
+ *     protectionMode: autonomousContainerDatabaseProtectionMode,
+ *     peerAutonomousContainerDatabaseBackupConfig: {
+ *         backupDestinationDetails: [{
+ *             type: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+ *             dbrsPolicyId: testPolicy.id,
+ *             id: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+ *             internetProxy: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+ *             isRemote: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+ *             remoteRegion: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+ *             vpcPassword: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+ *             vpcUser: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+ *         }],
+ *         recoveryWindowInDays: autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+ *     },
+ *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
+ *     peerAutonomousVmClusterId: testAutonomousVmCluster.id,
+ *     peerDbUniqueName: autonomousContainerDatabasePeerDbUniqueName,
+ *     serviceLevelAgreementType: autonomousContainerDatabaseServiceLevelAgreementType,
+ *     source: autonomousContainerDatabaseSource,
+ *     vaultId: testVault.id,
+ *     versionPreference: autonomousContainerDatabaseVersionPreference,
+ *     vmFailoverReservation: autonomousContainerDatabaseVmFailoverReservation,
+ *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseStandbyMaintenanceBufferInDays,
+ * });
+ * ```
+ *
  * ## Import
  *
  * AutonomousContainerDatabases can be imported using the `id`, e.g.

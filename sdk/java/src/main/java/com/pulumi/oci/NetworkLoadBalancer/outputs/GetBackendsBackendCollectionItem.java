@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendsBackendCollectionItem {
     /**
-     * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     private String backendSetName;
@@ -66,7 +66,7 @@ public final class GetBackendsBackendCollectionItem {
 
     private GetBackendsBackendCollectionItem() {}
     /**
-     * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {

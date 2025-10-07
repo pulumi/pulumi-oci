@@ -108,14 +108,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.connectionConfiguration;
     }
     /**
-     * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     @Export(name="defaultBackendSetName", refs={String.class}, tree="[0]")
     private Output<String> defaultBackendSetName;
 
     /**
-     * @return (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * @return (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> defaultBackendSetName() {
@@ -150,14 +150,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.loadBalancerId;
     }
     /**
-     * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+     * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      * 
      */
     public Output<String> name() {
@@ -168,7 +168,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
      * 
-     * Example: `example_path_route_set`
+     * Example: `examplePathRouteSet`
      * 
      */
     @Export(name="pathRouteSetName", refs={String.class}, tree="[0]")
@@ -179,7 +179,7 @@ public class Listener extends com.pulumi.resources.CustomResource {
      * 
      * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
      * 
-     * Example: `example_path_route_set`
+     * Example: `examplePathRouteSet`
      * 
      */
     public Output<Optional<String>> pathRouteSetName() {
@@ -214,28 +214,28 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.protocol;
     }
     /**
-     * (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+     * (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
      * 
      */
     @Export(name="routingPolicyName", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> routingPolicyName;
 
     /**
-     * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+     * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
      * 
      */
     public Output<Optional<String>> routingPolicyName() {
         return Codegen.optional(this.routingPolicyName);
     }
     /**
-     * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+     * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
      * 
      */
     @Export(name="ruleSetNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ruleSetNames;
 
     /**
-     * @return (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+     * @return (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
      * 
      */
     public Output<List<String>> ruleSetNames() {

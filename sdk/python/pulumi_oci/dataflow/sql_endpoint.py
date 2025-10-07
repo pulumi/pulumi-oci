@@ -696,6 +696,55 @@ class SqlEndpoint(pulumi.CustomResource):
 
         Create a new Sql Endpoint.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_sql_endpoint = oci.dataflow.SqlEndpoint("test_sql_endpoint",
+            compartment_id=compartment_id,
+            display_name=sql_endpoint_display_name,
+            driver_shape=sql_endpoint_driver_shape,
+            executor_shape=sql_endpoint_executor_shape,
+            lake_id=test_lake["id"],
+            max_executor_count=sql_endpoint_max_executor_count,
+            metastore_id=test_metastore["id"],
+            min_executor_count=sql_endpoint_min_executor_count,
+            network_configuration={
+                "network_type": sql_endpoint_network_configuration_network_type,
+                "access_control_rules": [{
+                    "ip_notation": sql_endpoint_network_configuration_access_control_rules_ip_notation,
+                    "value": sql_endpoint_network_configuration_access_control_rules_value,
+                    "vcn_ips": sql_endpoint_network_configuration_access_control_rules_vcn_ips,
+                }],
+                "host_name_prefix": sql_endpoint_network_configuration_host_name_prefix,
+                "nsg_ids": sql_endpoint_network_configuration_nsg_ids,
+                "private_endpoint_ip": sql_endpoint_network_configuration_private_endpoint_ip,
+                "public_endpoint_ip": sql_endpoint_network_configuration_public_endpoint_ip,
+                "subnet_id": test_subnet["id"],
+                "vcn_id": test_vcn["id"],
+            },
+            sql_endpoint_version=sql_endpoint_sql_endpoint_version,
+            warehouse_bucket_uri=sql_endpoint_warehouse_bucket_uri,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=sql_endpoint_description,
+            driver_shape_config={
+                "memory_in_gbs": sql_endpoint_driver_shape_config_memory_in_gbs,
+                "ocpus": sql_endpoint_driver_shape_config_ocpus,
+            },
+            executor_shape_config={
+                "memory_in_gbs": sql_endpoint_executor_shape_config_memory_in_gbs,
+                "ocpus": sql_endpoint_executor_shape_config_ocpus,
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
+        ```
+
         ## Import
 
         SqlEndpoints can be imported using the `id`, e.g.
@@ -740,6 +789,55 @@ class SqlEndpoint(pulumi.CustomResource):
         Resource Discovery is not supported for this resource.
 
         Create a new Sql Endpoint.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_sql_endpoint = oci.dataflow.SqlEndpoint("test_sql_endpoint",
+            compartment_id=compartment_id,
+            display_name=sql_endpoint_display_name,
+            driver_shape=sql_endpoint_driver_shape,
+            executor_shape=sql_endpoint_executor_shape,
+            lake_id=test_lake["id"],
+            max_executor_count=sql_endpoint_max_executor_count,
+            metastore_id=test_metastore["id"],
+            min_executor_count=sql_endpoint_min_executor_count,
+            network_configuration={
+                "network_type": sql_endpoint_network_configuration_network_type,
+                "access_control_rules": [{
+                    "ip_notation": sql_endpoint_network_configuration_access_control_rules_ip_notation,
+                    "value": sql_endpoint_network_configuration_access_control_rules_value,
+                    "vcn_ips": sql_endpoint_network_configuration_access_control_rules_vcn_ips,
+                }],
+                "host_name_prefix": sql_endpoint_network_configuration_host_name_prefix,
+                "nsg_ids": sql_endpoint_network_configuration_nsg_ids,
+                "private_endpoint_ip": sql_endpoint_network_configuration_private_endpoint_ip,
+                "public_endpoint_ip": sql_endpoint_network_configuration_public_endpoint_ip,
+                "subnet_id": test_subnet["id"],
+                "vcn_id": test_vcn["id"],
+            },
+            sql_endpoint_version=sql_endpoint_sql_endpoint_version,
+            warehouse_bucket_uri=sql_endpoint_warehouse_bucket_uri,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=sql_endpoint_description,
+            driver_shape_config={
+                "memory_in_gbs": sql_endpoint_driver_shape_config_memory_in_gbs,
+                "ocpus": sql_endpoint_driver_shape_config_ocpus,
+            },
+            executor_shape_config={
+                "memory_in_gbs": sql_endpoint_executor_shape_config_memory_in_gbs,
+                "ocpus": sql_endpoint_executor_shape_config_ocpus,
+            },
+            freeform_tags={
+                "Department": "Finance",
+            },
+            spark_advanced_configurations=sql_endpoint_spark_advanced_configurations)
+        ```
 
         ## Import
 

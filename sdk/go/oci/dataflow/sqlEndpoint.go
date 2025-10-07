@@ -19,6 +19,73 @@ import (
 //
 // Create a new Sql Endpoint.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/dataflow"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dataflow.NewSqlEndpoint(ctx, "test_sql_endpoint", &dataflow.SqlEndpointArgs{
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DisplayName:      pulumi.Any(sqlEndpointDisplayName),
+//				DriverShape:      pulumi.Any(sqlEndpointDriverShape),
+//				ExecutorShape:    pulumi.Any(sqlEndpointExecutorShape),
+//				LakeId:           testLake.Id,
+//				MaxExecutorCount: pulumi.Any(sqlEndpointMaxExecutorCount),
+//				MetastoreId:      pulumi.Any(testMetastore.Id),
+//				MinExecutorCount: pulumi.Any(sqlEndpointMinExecutorCount),
+//				NetworkConfiguration: &dataflow.SqlEndpointNetworkConfigurationArgs{
+//					NetworkType: pulumi.Any(sqlEndpointNetworkConfigurationNetworkType),
+//					AccessControlRules: dataflow.SqlEndpointNetworkConfigurationAccessControlRuleArray{
+//						&dataflow.SqlEndpointNetworkConfigurationAccessControlRuleArgs{
+//							IpNotation: pulumi.Any(sqlEndpointNetworkConfigurationAccessControlRulesIpNotation),
+//							Value:      pulumi.Any(sqlEndpointNetworkConfigurationAccessControlRulesValue),
+//							VcnIps:     pulumi.Any(sqlEndpointNetworkConfigurationAccessControlRulesVcnIps),
+//						},
+//					},
+//					HostNamePrefix:    pulumi.Any(sqlEndpointNetworkConfigurationHostNamePrefix),
+//					NsgIds:            pulumi.Any(sqlEndpointNetworkConfigurationNsgIds),
+//					PrivateEndpointIp: pulumi.Any(sqlEndpointNetworkConfigurationPrivateEndpointIp),
+//					PublicEndpointIp:  pulumi.Any(sqlEndpointNetworkConfigurationPublicEndpointIp),
+//					SubnetId:          pulumi.Any(testSubnet.Id),
+//					VcnId:             pulumi.Any(testVcn.Id),
+//				},
+//				SqlEndpointVersion: pulumi.Any(sqlEndpointSqlEndpointVersion),
+//				WarehouseBucketUri: sqlEndpointWarehouseBucketUri,
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(sqlEndpointDescription),
+//				DriverShapeConfig: &dataflow.SqlEndpointDriverShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(sqlEndpointDriverShapeConfigMemoryInGbs),
+//					Ocpus:       pulumi.Any(sqlEndpointDriverShapeConfigOcpus),
+//				},
+//				ExecutorShapeConfig: &dataflow.SqlEndpointExecutorShapeConfigArgs{
+//					MemoryInGbs: pulumi.Any(sqlEndpointExecutorShapeConfigMemoryInGbs),
+//					Ocpus:       pulumi.Any(sqlEndpointExecutorShapeConfigOcpus),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				SparkAdvancedConfigurations: pulumi.Any(sqlEndpointSparkAdvancedConfigurations),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // SqlEndpoints can be imported using the `id`, e.g.

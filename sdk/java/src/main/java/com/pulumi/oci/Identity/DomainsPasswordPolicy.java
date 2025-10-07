@@ -28,6 +28,91 @@ import javax.annotation.Nullable;
  * 
  * Create a password policy.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsPasswordPolicy;
+ * import com.pulumi.oci.Identity.DomainsPasswordPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsPasswordPolicyGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsPasswordPolicyTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testPasswordPolicy = new DomainsPasswordPolicy("testPasswordPolicy", DomainsPasswordPolicyArgs.builder()
+ *             .idcsEndpoint(testDomain.url())
+ *             .name(passwordPolicyName)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:PasswordPolicy")
+ *             .allowedChars(passwordPolicyAllowedChars)
+ *             .attributeSets()
+ *             .attributes("")
+ *             .authorization(passwordPolicyAuthorization)
+ *             .description(passwordPolicyDescription)
+ *             .dictionaryDelimiter(passwordPolicyDictionaryDelimiter)
+ *             .dictionaryLocation(passwordPolicyDictionaryLocation)
+ *             .dictionaryWordDisallowed(passwordPolicyDictionaryWordDisallowed)
+ *             .disallowedChars(passwordPolicyDisallowedChars)
+ *             .disallowedSubstrings(passwordPolicyDisallowedSubstrings)
+ *             .disallowedUserAttributeValues(passwordPolicyDisallowedUserAttributeValues)
+ *             .distinctCharacters(passwordPolicyDistinctCharacters)
+ *             .externalId("externalId")
+ *             .firstNameDisallowed(passwordPolicyFirstNameDisallowed)
+ *             .forcePasswordReset(passwordPolicyForcePasswordReset)
+ *             .groups(DomainsPasswordPolicyGroupArgs.builder()
+ *                 .value(testGroup.id())
+ *                 .build())
+ *             .id(passwordPolicyId)
+ *             .lastNameDisallowed(passwordPolicyLastNameDisallowed)
+ *             .lockoutDuration(passwordPolicyLockoutDuration)
+ *             .maxIncorrectAttempts(passwordPolicyMaxIncorrectAttempts)
+ *             .maxLength(passwordPolicyMaxLength)
+ *             .maxRepeatedChars(passwordPolicyMaxRepeatedChars)
+ *             .maxSpecialChars(passwordPolicyMaxSpecialChars)
+ *             .minAlphaNumerals(passwordPolicyMinAlphaNumerals)
+ *             .minAlphas(passwordPolicyMinAlphas)
+ *             .minLength(passwordPolicyMinLength)
+ *             .minLowerCase(passwordPolicyMinLowerCase)
+ *             .minNumerals(passwordPolicyMinNumerals)
+ *             .minPasswordAge(passwordPolicyMinPasswordAge)
+ *             .minSpecialChars(passwordPolicyMinSpecialChars)
+ *             .minUniqueChars(passwordPolicyMinUniqueChars)
+ *             .minUpperCase(passwordPolicyMinUpperCase)
+ *             .numPasswordsInHistory(passwordPolicyNumPasswordsInHistory)
+ *             .ocid(passwordPolicyOcid)
+ *             .passwordExpireWarning(passwordPolicyPasswordExpireWarning)
+ *             .passwordExpiresAfter(passwordPolicyPasswordExpiresAfter)
+ *             .passwordStrength(passwordPolicyPasswordStrength)
+ *             .priority(passwordPolicyPriority)
+ *             .requiredChars(passwordPolicyRequiredChars)
+ *             .resourceTypeSchemaVersion(passwordPolicyResourceTypeSchemaVersion)
+ *             .startsWithAlphabet(passwordPolicyStartsWithAlphabet)
+ *             .tags(DomainsPasswordPolicyTagArgs.builder()
+ *                 .key(passwordPolicyTagsKey)
+ *                 .value(passwordPolicyTagsValue)
+ *                 .build())
+ *             .userNameDisallowed(passwordPolicyUserNameDisallowed)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * PasswordPolicies can be imported using the `id`, e.g.

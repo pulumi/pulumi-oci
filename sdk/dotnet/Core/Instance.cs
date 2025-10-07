@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Core
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+        /// The OCID of the attached boot volume. If the `SourceType` is `bootVolume`, this will be the same OCID as the `SourceId`.
         /// </summary>
         [Output("bootVolumeId")]
         public Output<string> BootVolumeId { get; private set; } = null!;
@@ -218,7 +218,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsCrossNumaNode { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `IsPvEncryptionInTransitEnabled` under `LaunchOptions` instead.
         /// </summary>
         [Output("isPvEncryptionInTransitEnabled")]
         public Output<bool> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
@@ -264,9 +264,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// You can use the following metadata key names to provide information to Cloud-Init:
         /// 
-        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// **"SshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `AuthorizedKeys` file, as shown in the example below.
         /// 
-        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// **"UserData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
         /// 
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// The combined size of the `Metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         [Output("metadata")]
         public Output<ImmutableDictionary<string, string>> Metadata { get; private set; } = null!;
@@ -301,9 +301,9 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The platform configuration requested for the instance.
         /// 
         /// 
-        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// 
         /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
         /// 
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.Core
         public Output<bool?> PreserveDataVolumesCreatedAtLaunch { get; private set; } = null!;
 
         /// <summary>
-        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+        /// The private IP address of instance VNIC. To set the private IP address, use the `PrivateIp` argument in create_vnic_details.
         /// </summary>
         [Output("privateIp")]
         public Output<string> PrivateIp { get; private set; } = null!;
@@ -368,9 +368,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
         /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `Shape` that you specify.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Output("shapeConfig")]
         public Output<Outputs.InstanceShapeConfig> ShapeConfig { get; private set; } = null!;
@@ -613,7 +613,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
-        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `IsPvEncryptionInTransitEnabled` under `LaunchOptions` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -658,9 +658,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// You can use the following metadata key names to provide information to Cloud-Init:
         /// 
-        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// **"SshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `AuthorizedKeys` file, as shown in the example below.
         /// 
-        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// **"UserData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
         /// 
@@ -680,7 +680,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// The combined size of the `Metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -698,9 +698,9 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The platform configuration requested for the instance.
         /// 
         /// 
-        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// 
         /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
         /// 
@@ -747,9 +747,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
         /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `Shape` that you specify.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceShapeConfigArgs>? ShapeConfig { get; set; }
@@ -808,7 +808,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+        /// The OCID of the attached boot volume. If the `SourceType` is `bootVolume`, this will be the same OCID as the `SourceId`.
         /// </summary>
         [Input("bootVolumeId")]
         public Input<string>? BootVolumeId { get; set; }
@@ -948,7 +948,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsCrossNumaNode { get; set; }
 
         /// <summary>
-        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `IsPvEncryptionInTransitEnabled` under `LaunchOptions` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -1003,9 +1003,9 @@ namespace Pulumi.Oci.Core
         /// 
         /// You can use the following metadata key names to provide information to Cloud-Init:
         /// 
-        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// **"SshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `AuthorizedKeys` file, as shown in the example below.
         /// 
-        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// **"UserData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
         /// 
@@ -1025,7 +1025,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// The combined size of the `Metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -1043,9 +1043,9 @@ namespace Pulumi.Oci.Core
         /// (Updatable) The platform configuration requested for the instance.
         /// 
         /// 
-        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// 
         /// For more information about shielded instances, see [Shielded Instances](https://docs.cloud.oracle.com/iaas/Content/Compute/References/shielded-instances.htm).
         /// 
@@ -1070,7 +1070,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? PreserveDataVolumesCreatedAtLaunch { get; set; }
 
         /// <summary>
-        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+        /// The private IP address of instance VNIC. To set the private IP address, use the `PrivateIp` argument in create_vnic_details.
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
@@ -1116,9 +1116,9 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
         /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `Shape` that you specify.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceShapeConfigGetArgs>? ShapeConfig { get; set; }

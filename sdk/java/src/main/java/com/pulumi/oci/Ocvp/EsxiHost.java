@@ -146,7 +146,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.currentCommitment;
     }
     /**
-     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
+     * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
      * @deprecated
      * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
@@ -157,7 +157,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     private Output<String> currentSku;
 
     /**
-     * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
+     * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
      */
     public Output<String> currentSku() {
@@ -374,7 +374,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
         return this.replacementEsxiHostId;
     }
     /**
-     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
+     * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -388,7 +388,7 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> sddcId;
 
     /**
-     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
+     * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `clusterId` instead. Either `sddcId` or `clusterId` must be configured for `oci.Ocvp.EsxiHost` resource.  **Deprecated**. Please use `clusterId` instead.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

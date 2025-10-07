@@ -14,6 +14,55 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's customer secret key.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCustomerSecretKey = new Oci.Identity.DomainsCustomerSecretKey("test_customer_secret_key", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = customerSecretKeyAuthorization,
+    ///         Description = customerSecretKeyDescription,
+    ///         DisplayName = customerSecretKeyDisplayName,
+    ///         ExpiresOn = customerSecretKeyExpiresOn,
+    ///         Id = customerSecretKeyId,
+    ///         Ocid = customerSecretKeyOcid,
+    ///         ResourceTypeSchemaVersion = customerSecretKeyResourceTypeSchemaVersion,
+    ///         Status = customerSecretKeyStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsCustomerSecretKeyTagArgs
+    ///             {
+    ///                 Key = customerSecretKeyTagsKey,
+    ///                 Value = customerSecretKeyTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsCustomerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = customerSecretKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsCustomerSecretKeyUserArgs
+    ///         {
+    ///             Ocid = testUser.Ocid,
+    ///             Value = testUser.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CustomerSecretKeys can be imported using the `id`, e.g.

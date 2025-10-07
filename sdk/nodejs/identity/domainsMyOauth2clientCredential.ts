@@ -11,6 +11,39 @@ import * as utilities from "../utilities";
  *
  * Create a user's own OAuth2 client credential.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMyOauth2clientCredential = new oci.identity.DomainsMyOauth2clientCredential("test_my_oauth2client_credential", {
+ *     idcsEndpoint: testDomain.url,
+ *     name: myOauth2clientCredentialName,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"],
+ *     scopes: [{
+ *         audience: myOauth2clientCredentialScopesAudience,
+ *         scope: myOauth2clientCredentialScopesScope,
+ *     }],
+ *     authorization: myOauth2clientCredentialAuthorization,
+ *     description: myOauth2clientCredentialDescription,
+ *     expiresOn: myOauth2clientCredentialExpiresOn,
+ *     id: myOauth2clientCredentialId,
+ *     isResetSecret: myOauth2clientCredentialIsResetSecret,
+ *     ocid: myOauth2clientCredentialOcid,
+ *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
+ *     status: myOauth2clientCredentialStatus,
+ *     tags: [{
+ *         key: myOauth2clientCredentialTagsKey,
+ *         value: myOauth2clientCredentialTagsValue,
+ *     }],
+ *     user: {
+ *         ocid: myOauth2clientCredentialUserOcid,
+ *         value: myOauth2clientCredentialUserValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MyOAuth2ClientCredentials can be imported using the `id`, e.g.

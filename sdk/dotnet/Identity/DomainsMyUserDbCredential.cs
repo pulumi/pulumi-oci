@@ -14,6 +14,49 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's own database (DB) credential.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyUserDbCredential = new Oci.Identity.DomainsMyUserDbCredential("test_my_user_db_credential", new()
+    ///     {
+    ///         DbPassword = myUserDbCredentialDbPassword,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials",
+    ///         },
+    ///         Authorization = myUserDbCredentialAuthorization,
+    ///         Description = myUserDbCredentialDescription,
+    ///         ExpiresOn = myUserDbCredentialExpiresOn,
+    ///         Id = myUserDbCredentialId,
+    ///         Ocid = myUserDbCredentialOcid,
+    ///         ResourceTypeSchemaVersion = myUserDbCredentialResourceTypeSchemaVersion,
+    ///         Status = myUserDbCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyUserDbCredentialTagArgs
+    ///             {
+    ///                 Key = myUserDbCredentialTagsKey,
+    ///                 Value = myUserDbCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMyUserDbCredentialUserArgs
+    ///         {
+    ///             Value = myUserDbCredentialUserValue,
+    ///             Ocid = myUserDbCredentialUserOcid,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MyUserDbCredentials can be imported using the `id`, e.g.

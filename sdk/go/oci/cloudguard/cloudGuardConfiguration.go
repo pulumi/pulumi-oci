@@ -16,6 +16,45 @@ import (
 //
 // Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
 // The reporting region cannot be updated once created.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/cloudguard"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := cloudguard.NewCloudGuardConfiguration(ctx, "test_cloud_guard_configuration", &cloudguard.CloudGuardConfigurationArgs{
+//				CompartmentId:       pulumi.Any(compartmentId),
+//				ReportingRegion:     pulumi.Any(cloudGuardConfigurationReportingRegion),
+//				Status:              pulumi.Any(cloudGuardConfigurationStatus),
+//				SelfManageResources: pulumi.Any(cloudGuardConfigurationSelfManageResources),
+//				ServiceConfigurations: []map[string]interface{}{
+//					map[string]interface{}{
+//						"serviceConfigurationType": cloudGuardConfigurationServiceConfigurationsServiceConfigurationType,
+//						"status":                   cloudGuardConfigurationServiceConfigurationsStatus,
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type CloudGuardConfiguration struct {
 	pulumi.CustomResourceState
 

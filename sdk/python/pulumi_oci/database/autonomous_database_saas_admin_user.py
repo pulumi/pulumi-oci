@@ -290,6 +290,27 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
 
         This operation updates SaaS administrative user configuration of the Autonomous Database.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration,
+            is_enabled=autonomous_database_saas_admin_user_is_enabled,
+            password=autonomous_database_saas_admin_user_password,
+            secret_id=test_secret["id"],
+            secret_version_number=autonomous_database_saas_admin_user_secret_version_number,
+            time_saas_admin_user_enabled=autonomous_database_saas_admin_user_time_saas_admin_user_enabled)
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
@@ -314,6 +335,27 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
         This operation updates SaaS administrative user configuration of the Autonomous Database.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_database_saas_admin_user = oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user",
+            autonomous_database_id=test_autonomous_database["id"],
+            access_type=autonomous_database_saas_admin_user_access_type,
+            duration=autonomous_database_saas_admin_user_duration,
+            is_enabled=autonomous_database_saas_admin_user_is_enabled,
+            password=autonomous_database_saas_admin_user_password,
+            secret_id=test_secret["id"],
+            secret_version_number=autonomous_database_saas_admin_user_secret_version_number,
+            time_saas_admin_user_enabled=autonomous_database_saas_admin_user_time_saas_admin_user_enabled)
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseSaasAdminUserArgs args: The arguments to use to populate this resource's properties.

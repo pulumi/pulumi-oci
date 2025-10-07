@@ -14,6 +14,27 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// Creates a new RefreshActivity.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testFusionEnvironmentRefreshActivity = new Oci.FusionApps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", new()
+    ///     {
+    ///         FusionEnvironmentId = testFusionEnvironment.Id,
+    ///         SourceFusionEnvironmentId = testFusionEnvironment.Id,
+    ///         IsDataMaskingOpted = fusionEnvironmentRefreshActivityIsDataMaskingOpted,
+    ///         TimeScheduledStart = fusionEnvironmentRefreshActivityTimeScheduledStart,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.

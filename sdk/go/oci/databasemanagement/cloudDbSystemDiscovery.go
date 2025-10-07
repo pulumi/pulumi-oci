@@ -18,6 +18,50 @@ import (
 //
 //	Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewCloudDbSystemDiscovery(ctx, "test_cloud_db_system_discovery", &databasemanagement.CloudDbSystemDiscoveryArgs{
+//				AgentId:                     pulumi.Any(testAgent.Id),
+//				CloudDbSystemDiscoveryId:    cloudDbSystemDiscoveryCloudDbSystemDiscoveryId,
+//				CompartmentId:               pulumi.Any(compartmentId),
+//				DbaasParentInfrastructureId: pulumi.Any(testDbaasParentInfrastructure.Id),
+//				DeploymentType:              pulumi.Any(cloudDbSystemDiscoveryDeploymentType),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(cloudDbSystemDiscoveryDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				PatchOperations: databasemanagement.CloudDbSystemDiscoveryPatchOperationArray{
+//					&databasemanagement.CloudDbSystemDiscoveryPatchOperationArgs{
+//						Operation: pulumi.Any(cloudDbSystemDiscoveryPatchOperationsOperation),
+//						Selection: pulumi.Any(cloudDbSystemDiscoveryPatchOperationsSelection),
+//						Value:     pulumi.Any(cloudDbSystemDiscoveryPatchOperationsValue[0]),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CloudDbSystemDiscoveries can be imported using the `id`, e.g.

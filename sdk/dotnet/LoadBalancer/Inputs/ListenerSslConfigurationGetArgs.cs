@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
@@ -44,13 +44,13 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
         /// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
         /// 
-        /// example: `example_cipher_suite`
+        /// example: `ExampleCipherSuite`
         /// </summary>
         [Input("cipherSuiteName")]
         public Input<string>? CipherSuiteName { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `true`
+        /// (Updatable) Whether the load balancer listener should resume an encrypted session by reusing the cryptographic parameters of a previous TLS session, without having to perform a full handshake again. If "true", the service resumes the previous TLS encrypted session. If "false", the service starts a new TLS encrypted session. Enabling session resumption improves performance but provides a lower level of security. Disabling session resumption improves security but reduces performance.  Example: `True`
         /// </summary>
         [Input("hasSessionResumption")]
         public Input<bool>? HasSessionResumption { get; set; }
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public Input<int>? VerifyDepth { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        /// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `True` 
         /// 
         /// 
         /// ** IMPORTANT **

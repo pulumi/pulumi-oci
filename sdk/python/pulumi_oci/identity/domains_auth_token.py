@@ -1115,6 +1115,37 @@ class DomainsAuthToken(pulumi.CustomResource):
 
         Create a user's Auth token.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_auth_token = oci.identity.DomainsAuthToken("test_auth_token",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:authToken"],
+            attribute_sets=[],
+            attributes="",
+            authorization=auth_token_authorization,
+            description=auth_token_description,
+            expires_on=auth_token_expires_on,
+            id=auth_token_id,
+            ocid=auth_token_ocid,
+            resource_type_schema_version=auth_token_resource_type_schema_version,
+            status=auth_token_status,
+            tags=[{
+                "key": auth_token_tags_key,
+                "value": auth_token_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": auth_token_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
+
         ## Import
 
         AuthTokens can be imported using the `id`, e.g.
@@ -1222,6 +1253,37 @@ class DomainsAuthToken(pulumi.CustomResource):
         This resource provides the Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's Auth token.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_auth_token = oci.identity.DomainsAuthToken("test_auth_token",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:authToken"],
+            attribute_sets=[],
+            attributes="",
+            authorization=auth_token_authorization,
+            description=auth_token_description,
+            expires_on=auth_token_expires_on,
+            id=auth_token_id,
+            ocid=auth_token_ocid,
+            resource_type_schema_version=auth_token_resource_type_schema_version,
+            status=auth_token_status,
+            tags=[{
+                "key": auth_token_tags_key,
+                "value": auth_token_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": auth_token_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
 
         ## Import
 

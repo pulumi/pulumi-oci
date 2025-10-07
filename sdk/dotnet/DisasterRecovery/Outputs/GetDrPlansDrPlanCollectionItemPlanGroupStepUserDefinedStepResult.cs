@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string RequestBody;
         /// <summary>
-        /// The userid on the instance to be used for executing the script or command.  Example: `opc`
+        /// The userid on the instance to be used for executing the script or command.  Example: `Opc`
         /// </summary>
         public readonly string RunAsUser;
         /// <summary>

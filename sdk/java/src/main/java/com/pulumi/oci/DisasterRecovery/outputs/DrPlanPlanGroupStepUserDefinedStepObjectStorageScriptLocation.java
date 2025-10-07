@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     private @Nullable String bucket;
@@ -29,7 +29,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
 
     private DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation() {}
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     public Optional<String> bucket() {

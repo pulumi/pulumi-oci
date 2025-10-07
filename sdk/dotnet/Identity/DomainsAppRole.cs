@@ -14,6 +14,57 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create an AppRole
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAppRole = new Oci.Identity.DomainsAppRole("test_app_role", new()
+    ///     {
+    ///         App = new Oci.Identity.Inputs.DomainsAppRoleAppArgs
+    ///         {
+    ///             Value = testApp.Id,
+    ///         },
+    ///         DisplayName = appRoleDisplayName,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:AppRole",
+    ///         },
+    ///         AdminRole = appRoleAdminRole,
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = appRoleAuthorization,
+    ///         AvailableToClients = appRoleAvailableToClients,
+    ///         AvailableToGroups = appRoleAvailableToGroups,
+    ///         AvailableToUsers = appRoleAvailableToUsers,
+    ///         Description = appRoleDescription,
+    ///         Id = appRoleId,
+    ///         LegacyGroupName = "legacyGroupName",
+    ///         Ocid = appRoleOcid,
+    ///         Public = appRolePublic,
+    ///         ResourceTypeSchemaVersion = appRoleResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsAppRoleTagArgs
+    ///             {
+    ///                 Key = appRoleTagsKey,
+    ///                 Value = appRoleTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AppRoles can be imported using the `id`, e.g.

@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }

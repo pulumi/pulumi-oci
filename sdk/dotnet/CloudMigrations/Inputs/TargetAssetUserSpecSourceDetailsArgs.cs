@@ -45,7 +45,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
+        /// (Updatable) The source type for the instance. Use `Image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
         /// 
         /// 
         /// ** IMPORTANT **

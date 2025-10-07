@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetNetworkFirewallPolicyDecryptionRuleResult> InvokeAsync(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyDecryptionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args ?? new GetNetworkFirewallPolicyDecryptionRuleArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> Invoke(GetNetworkFirewallPolicyDecryptionRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args ?? new GetNetworkFirewallPolicyDecryptionRuleInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> Invoke(GetNetworkFirewallPolicyDecryptionRuleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", args ?? new GetNetworkFirewallPolicyDecryptionRuleInvokeArgs(), options.WithDefaults());
@@ -84,7 +90,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// Action:
         /// * NO_DECRYPT - Matching traffic is not decrypted.
-        /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
+        /// * DECRYPT - Matching traffic is decrypted with the specified `Secret` according to the specified `decryptionProfile`.
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -111,7 +117,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public readonly ImmutableArray<Outputs.GetNetworkFirewallPolicyDecryptionRulePositionResult> Positions;
         public readonly string PriorityOrder;
         /// <summary>
-        /// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        /// The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         public readonly string Secret;
 

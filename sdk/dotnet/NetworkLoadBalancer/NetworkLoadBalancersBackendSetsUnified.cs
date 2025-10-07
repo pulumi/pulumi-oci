@@ -139,7 +139,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
         /// 
-        /// Example: `example_backend_set`
+        /// Example: `ExampleBackendSet`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -265,7 +265,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
         /// 
-        /// Example: `example_backend_set`
+        /// Example: `ExampleBackendSet`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -353,7 +353,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// 
         /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
         /// 
-        /// Example: `example_backend_set`
+        /// Example: `ExampleBackendSet`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

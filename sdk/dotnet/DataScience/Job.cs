@@ -14,6 +14,151 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a job.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testJob = new Oci.DataScience.Job("test_job", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         ProjectId = testProject.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = jobDescription,
+    ///         DisplayName = jobDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsArgs
+    ///         {
+    ///             JobType = jobJobConfigurationDetailsJobType,
+    ///             CommandLineArguments = jobJobConfigurationDetailsCommandLineArguments,
+    ///             EnvironmentVariables = jobJobConfigurationDetailsEnvironmentVariables,
+    ///             MaximumRuntimeInMinutes = jobJobConfigurationDetailsMaximumRuntimeInMinutes,
+    ///             StartupProbeDetails = new Oci.DataScience.Inputs.JobJobConfigurationDetailsStartupProbeDetailsArgs
+    ///             {
+    ///                 Commands = jobJobConfigurationDetailsStartupProbeDetailsCommand,
+    ///                 JobProbeCheckType = jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+    ///                 CpuBaseline = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
+    ///                 FailureThreshold = jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+    ///                 InitialDelayInSeconds = jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+    ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///                 PeriodInSeconds = jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+    ///             },
+    ///         },
+    ///         JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobJobEnvironmentConfigurationDetailsArgs
+    ///         {
+    ///             Image = jobJobEnvironmentConfigurationDetailsImage,
+    ///             JobEnvironmentType = jobJobEnvironmentConfigurationDetailsJobEnvironmentType,
+    ///             Cmds = jobJobEnvironmentConfigurationDetailsCmd,
+    ///             Entrypoints = jobJobEnvironmentConfigurationDetailsEntrypoint,
+    ///             ImageDigest = jobJobEnvironmentConfigurationDetailsImageDigest,
+    ///             ImageSignatureId = testImageSignature.Id,
+    ///         },
+    ///         JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsArgs
+    ///         {
+    ///             JobInfrastructureType = jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
+    ///             BlockStorageSizeInGbs = jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///             JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
+    ///             {
+    ///                 MemoryInGbs = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                 Ocpus = jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///             },
+    ///             ShapeName = testShape.Name,
+    ///             SubnetId = testSubnet.Id,
+    ///         },
+    ///         JobLogConfigurationDetails = new Oci.DataScience.Inputs.JobJobLogConfigurationDetailsArgs
+    ///         {
+    ///             EnableAutoLogCreation = jobJobLogConfigurationDetailsEnableAutoLogCreation,
+    ///             EnableLogging = jobJobLogConfigurationDetailsEnableLogging,
+    ///             LogGroupId = testLogGroup.Id,
+    ///             LogId = testLog.Id,
+    ///         },
+    ///         JobNodeConfigurationDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsArgs
+    ///         {
+    ///             JobNodeType = jobJobNodeConfigurationDetailsJobNodeType,
+    ///             JobNetworkConfiguration = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs
+    ///             {
+    ///                 JobNetworkType = jobJobNodeConfigurationDetailsJobNetworkConfigurationJobNetworkType,
+    ///                 SubnetId = testSubnet.Id,
+    ///             },
+    ///             JobNodeGroupConfigurationDetailsLists = new[]
+    ///             {
+    ///                 new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs
+    ///                 {
+    ///                     Name = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListName,
+    ///                     JobConfigurationDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs
+    ///                     {
+    ///                         JobType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType,
+    ///                         CommandLineArguments = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments,
+    ///                         EnvironmentVariables = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables,
+    ///                         MaximumRuntimeInMinutes = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes,
+    ///                         StartupProbeDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs
+    ///                         {
+    ///                             Commands = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
+    ///                             JobProbeCheckType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+    ///                             FailureThreshold = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+    ///                             InitialDelayInSeconds = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+    ///                             PeriodInSeconds = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+    ///                         },
+    ///                     },
+    ///                     JobEnvironmentConfigurationDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs
+    ///                     {
+    ///                         Image = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage,
+    ///                         JobEnvironmentType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType,
+    ///                         Cmds = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd,
+    ///                         Entrypoints = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint,
+    ///                         ImageDigest = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest,
+    ///                         ImageSignatureId = testImageSignature.Id,
+    ///                     },
+    ///                     JobInfrastructureConfigurationDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs
+    ///                     {
+    ///                         JobInfrastructureType = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
+    ///                         BlockStorageSizeInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+    ///                         JobShapeConfigDetails = new Oci.DataScience.Inputs.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs
+    ///                         {
+    ///                             MemoryInGbs = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+    ///                             Ocpus = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+    ///                         },
+    ///                         ShapeName = testShape.Name,
+    ///                         SubnetId = testSubnet.Id,
+    ///                     },
+    ///                     MinimumSuccessReplicas = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
+    ///                     Replicas = jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas,
+    ///                 },
+    ///             },
+    ///             MaximumRuntimeInMinutes = jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
+    ///             StartupOrder = jobJobNodeConfigurationDetailsStartupOrder,
+    ///         },
+    ///         JobStorageMountConfigurationDetailsLists = new[]
+    ///         {
+    ///             new Oci.DataScience.Inputs.JobJobStorageMountConfigurationDetailsListArgs
+    ///             {
+    ///                 DestinationDirectoryName = jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
+    ///                 StorageType = jobJobStorageMountConfigurationDetailsListStorageType,
+    ///                 Bucket = jobJobStorageMountConfigurationDetailsListBucket,
+    ///                 DestinationPath = jobJobStorageMountConfigurationDetailsListDestinationPath,
+    ///                 ExportId = testExport.Id,
+    ///                 MountTargetId = testMountTarget.Id,
+    ///                 Namespace = jobJobStorageMountConfigurationDetailsListNamespace,
+    ///                 Prefix = jobJobStorageMountConfigurationDetailsListPrefix,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Jobs can be imported using the `id`, e.g.

@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? SecondBackupId { get; set; }
 
         /// <summary>
-        /// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        /// The type can be one of these values: `blockVolumeReplica`, `Volume`, `volumeBackup`, `volumeBackupDelta`
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

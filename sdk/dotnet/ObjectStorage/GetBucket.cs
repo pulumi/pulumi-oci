@@ -158,7 +158,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public readonly string AutoTiering;
         /// <summary>
-        /// The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+        /// The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `BucketId` cannot be used for bucket lookup.
         /// </summary>
         public readonly string BucketId;
         /// <summary>
@@ -183,7 +183,7 @@ namespace Pulumi.Oci.ObjectStorage
         public readonly ImmutableDictionary<string, string> FreeformTags;
         public readonly string Id;
         /// <summary>
-        /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `false`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
+        /// Whether or not this bucket is read only. By default, `isReadOnly` is set to `False`. This will be set to 'true' when this bucket is configured as a destination in a replication policy.
         /// </summary>
         public readonly bool IsReadOnly;
         /// <summary>
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `false`. Set `objectEventsEnabled` to `true` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
+        /// Whether or not events are emitted for object state changes in this bucket. By default, `objectEventsEnabled` is set to `False`. Set `objectEventsEnabled` to `True` to emit events for object state changes. For more information about events, see [Overview of Events](https://docs.cloud.oracle.com/iaas/Content/Events/Concepts/eventsoverview.htm).
         /// </summary>
         public readonly bool ObjectEventsEnabled;
         /// <summary>
@@ -211,7 +211,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public readonly string ObjectLifecyclePolicyEtag;
         /// <summary>
-        /// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `false`. This will be set to 'true' when you create a replication policy for the bucket.
+        /// Whether or not this bucket is a replication source. By default, `replicationEnabled` is set to `False`. This will be set to 'true' when you create a replication policy for the bucket.
         /// </summary>
         public readonly bool ReplicationEnabled;
         /// <summary>

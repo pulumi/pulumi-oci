@@ -14,6 +14,385 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testUser = new Oci.Identity.DomainsUser("test_user", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:core:2.0:User",
+    ///         },
+    ///         UserName = "userName",
+    ///         Active = userActive,
+    ///         Addresses = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserAddressArgs
+    ///             {
+    ///                 Type = userAddressesType,
+    ///                 Country = userAddressesCountry,
+    ///                 Formatted = userAddressesFormatted,
+    ///                 Locality = userAddressesLocality,
+    ///                 PostalCode = userAddressesPostalCode,
+    ///                 Primary = userAddressesPrimary,
+    ///                 Region = userAddressesRegion,
+    ///                 StreetAddress = userAddressesStreetAddress,
+    ///             },
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = userAuthorization,
+    ///         Description = userDescription,
+    ///         DisplayName = userDisplayName,
+    ///         Emails = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserEmailArgs
+    ///             {
+    ///                 Type = userEmailsType,
+    ///                 Value = userEmailsValue,
+    ///                 Primary = true,
+    ///                 Secondary = userEmailsSecondary,
+    ///                 Verified = userEmailsVerified,
+    ///             },
+    ///             new Oci.Identity.Inputs.DomainsUserEmailArgs
+    ///             {
+    ///                 Type = "recovery",
+    ///                 Value = userEmailsValue,
+    ///             },
+    ///         },
+    ///         Entitlements = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserEntitlementArgs
+    ///             {
+    ///                 Type = userEntitlementsType,
+    ///                 Value = userEntitlementsValue,
+    ///                 Display = userEntitlementsDisplay,
+    ///                 Primary = userEntitlementsPrimary,
+    ///             },
+    ///         },
+    ///         ExternalId = "externalId",
+    ///         ForceDelete = userForceDelete,
+    ///         Id = userId,
+    ///         Ims = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserImArgs
+    ///             {
+    ///                 Type = userImsType,
+    ///                 Value = userImsValue,
+    ///                 Display = userImsDisplay,
+    ///                 Primary = userImsPrimary,
+    ///             },
+    ///         },
+    ///         Locale = userLocale,
+    ///         Name = new Oci.Identity.Inputs.DomainsUserNameArgs
+    ///         {
+    ///             FamilyName = userNameFamilyName,
+    ///             Formatted = userNameFormatted,
+    ///             GivenName = userNameGivenName,
+    ///             HonorificPrefix = userNameHonorificPrefix,
+    ///             HonorificSuffix = userNameHonorificSuffix,
+    ///             MiddleName = userNameMiddleName,
+    ///         },
+    ///         NickName = userNickName,
+    ///         Ocid = userOcid,
+    ///         Password = userPassword,
+    ///         PhoneNumbers = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserPhoneNumberArgs
+    ///             {
+    ///                 Type = userPhoneNumbersType,
+    ///                 Value = userPhoneNumbersValue,
+    ///                 Primary = userPhoneNumbersPrimary,
+    ///             },
+    ///         },
+    ///         Photos = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserPhotoArgs
+    ///             {
+    ///                 Type = userPhotosType,
+    ///                 Value = userPhotosValue,
+    ///                 Display = userPhotosDisplay,
+    ///                 Primary = userPhotosPrimary,
+    ///             },
+    ///         },
+    ///         PreferredLanguage = userPreferredLanguage,
+    ///         ProfileUrl = userProfileUrl,
+    ///         ResourceTypeSchemaVersion = userResourceTypeSchemaVersion,
+    ///         Roles = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserRoleArgs
+    ///             {
+    ///                 Type = userRolesType,
+    ///                 Value = userRolesValue,
+    ///                 Display = userRolesDisplay,
+    ///                 Primary = userRolesPrimary,
+    ///             },
+    ///         },
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserTagArgs
+    ///             {
+    ///                 Key = userTagsKey,
+    ///                 Value = userTagsValue,
+    ///             },
+    ///         },
+    ///         Timezone = userTimezone,
+    ///         Title = userTitle,
+    ///         Urnietfparamsscimschemasextensionenterprise20user = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs
+    ///         {
+    ///             CostCenter = userUrnietfparamsscimschemasextensionenterprise20userCostCenter,
+    ///             Department = userUrnietfparamsscimschemasextensionenterprise20userDepartment,
+    ///             Division = userUrnietfparamsscimschemasextensionenterprise20userDivision,
+    ///             EmployeeNumber = userUrnietfparamsscimschemasextensionenterprise20userEmployeeNumber,
+    ///             Manager = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs
+    ///             {
+    ///                 Value = userUrnietfparamsscimschemasextensionenterprise20userManagerValue,
+    ///             },
+    ///             Organization = userUrnietfparamsscimschemasextensionenterprise20userOrganization,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionOciTags = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs
+    ///         {
+    ///             DefinedTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs
+    ///                 {
+    ///                     Key = userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+    ///                     Namespace = userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+    ///                 },
+    ///             },
+    ///             FreeformTags = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs
+    ///                 {
+    ///                     Key = userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionadaptiveUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs
+    ///         {
+    ///             RiskLevel = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskLevel,
+    ///             RiskScores = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs
+    ///                 {
+    ///                     LastUpdateTimestamp = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresLastUpdateTimestamp,
+    ///                     RiskLevel = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresRiskLevel,
+    ///                     Score = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresScore,
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresValue,
+    ///                     Source = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresSource,
+    ///                     Status = userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresStatus,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs
+    ///         {
+    ///             CanUseApiKeys = true,
+    ///             CanUseAuthTokens = true,
+    ///             CanUseConsolePassword = true,
+    ///             CanUseCustomerSecretKeys = true,
+    ///             CanUseDbCredentials = true,
+    ///             CanUseOauth2clientCredentials = true,
+    ///             CanUseSmtpCredentials = true,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs
+    ///         {
+    ///             DbUserName = "dbUserName",
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs
+    ///         {
+    ///             RealmUsers = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersValue,
+    ///                     PrincipalName = userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersPrincipalName,
+    ///                     RealmName = userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersRealmName,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionmfaUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs
+    ///         {
+    ///             BypassCodes = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodesValue,
+    ///                 },
+    ///             },
+    ///             Devices = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesValue,
+    ///                     AuthenticationMethod = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesAuthenticationMethod,
+    ///                     Display = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesDisplay,
+    ///                     FactorStatus = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorStatus,
+    ///                     FactorType = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorType,
+    ///                     LastSyncTime = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesLastSyncTime,
+    ///                     Status = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesStatus,
+    ///                     ThirdPartyVendorName = userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesThirdPartyVendorName,
+    ///                 },
+    ///             },
+    ///             LoginAttempts = userUrnietfparamsscimschemasoracleidcsextensionmfaUserLoginAttempts,
+    ///             MfaEnabledOn = userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaEnabledOn,
+    ///             MfaIgnoredApps = userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaIgnoredApps,
+    ///             MfaStatus = userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaStatus,
+    ///             PreferredAuthenticationFactor = userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationFactor,
+    ///             PreferredAuthenticationMethod = userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationMethod,
+    ///             PreferredDevice = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs
+    ///             {
+    ///                 Value = userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceValue,
+    ///                 Display = userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceDisplay,
+    ///             },
+    ///             PreferredThirdPartyVendor = userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredThirdPartyVendor,
+    ///             TrustedUserAgents = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsValue,
+    ///                     Display = userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsDisplay,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs
+    ///         {
+    ///             FactorIdentifier = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs
+    ///             {
+    ///                 Value = userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierValue,
+    ///                 Display = userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierDisplay,
+    ///             },
+    ///             FactorMethod = userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorMethod,
+    ///             FactorType = userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorType,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionposixUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs
+    ///         {
+    ///             Gecos = userUrnietfparamsscimschemasoracleidcsextensionposixUserGecos,
+    ///             GidNumber = userUrnietfparamsscimschemasoracleidcsextensionposixUserGidNumber,
+    ///             HomeDirectory = userUrnietfparamsscimschemasoracleidcsextensionposixUserHomeDirectory,
+    ///             LoginShell = userUrnietfparamsscimschemasoracleidcsextensionposixUserLoginShell,
+    ///             UidNumber = userUrnietfparamsscimschemasoracleidcsextensionposixUserUidNumber,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs
+    ///         {
+    ///             SecQuestions = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs
+    ///                 {
+    ///                     Answer = userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsAnswer,
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsValue,
+    ///                     HintText = userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsHintText,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = userUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs
+    ///         {
+    ///             SelfRegistrationProfile = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs
+    ///             {
+    ///                 Value = userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileValue,
+    ///                 Display = userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileDisplay,
+    ///             },
+    ///             ConsentGranted = userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserConsentGranted,
+    ///             UserToken = userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserUserToken,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionsffUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs
+    ///         {
+    ///             SffAuthKeys = userUrnietfparamsscimschemasoracleidcsextensionsffUserSffAuthKeys,
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs
+    ///         {
+    ///             SocialAccounts = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsValue,
+    ///                     Display = userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsDisplay,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs
+    ///         {
+    ///             TermsOfUseConsents = new[]
+    ///             {
+    ///                 new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs
+    ///                 {
+    ///                     Value = userUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentsValue,
+    ///                 },
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionuserStateUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs
+    ///         {
+    ///             Locked = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs
+    ///             {
+    ///                 Expired = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedExpired,
+    ///                 LockDate = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedLockDate,
+    ///                 On = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOn,
+    ///                 Reason = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedReason,
+    ///             },
+    ///             MaxConcurrentSessions = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserMaxConcurrentSessions,
+    ///             RecoveryLocked = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs
+    ///             {
+    ///                 LockDate = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedLockDate,
+    ///                 On = userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOn,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionuserUser = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs
+    ///         {
+    ///             UserProvider = userUrnietfparamsscimschemasoracleidcsextensionuserUserUserProvider,
+    ///             AccountRecoveryRequired = userUrnietfparamsscimschemasoracleidcsextensionuserUserAccountRecoveryRequired,
+    ///             BypassNotification = userUrnietfparamsscimschemasoracleidcsextensionuserUserBypassNotification,
+    ///             CreationMechanism = userUrnietfparamsscimschemasoracleidcsextensionuserUserCreationMechanism,
+    ///             DelegatedAuthenticationTargetApp = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs
+    ///             {
+    ///                 Type = userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppType,
+    ///                 Value = userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppValue,
+    ///                 Display = userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppDisplay,
+    ///             },
+    ///             DoNotShowGettingStarted = userUrnietfparamsscimschemasoracleidcsextensionuserUserDoNotShowGettingStarted,
+    ///             IsAuthenticationDelegated = userUrnietfparamsscimschemasoracleidcsextensionuserUserIsAuthenticationDelegated,
+    ///             IsFederatedUser = userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser,
+    ///             IsGroupMembershipNormalized = userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized,
+    ///             IsGroupMembershipSyncedToUsersGroups = userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups,
+    ///             NotificationEmailTemplateId = testNotificationEmailTemplate.Id,
+    ///             PreferredUiLandingPage = userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserPreferredUiLandingPage,
+    ///             ServiceUser = userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser,
+    ///             SyncedFromApp = new Oci.Identity.Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs
+    ///             {
+    ///                 Type = userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppType,
+    ///                 Value = userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppValue,
+    ///                 Display = userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppDisplay,
+    ///             },
+    ///             UserFlowControlledByExternalClient = userUrnietfparamsscimschemasoracleidcsextensionuserUserUserFlowControlledByExternalClient,
+    ///         },
+    ///         UserType = userUserType,
+    ///         X509certificates = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsUserX509certificateArgs
+    ///             {
+    ///                 Value = userX509certificatesValue,
+    ///                 Display = userX509certificatesDisplay,
+    ///                 Primary = userX509certificatesPrimary,
+    ///                 Type = userX509certificatesType,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Users can be imported using the `id`, e.g.

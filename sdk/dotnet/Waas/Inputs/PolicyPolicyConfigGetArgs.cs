@@ -61,13 +61,13 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<bool>? IsCacheControlRespected { get; set; }
 
         /// <summary>
-        /// (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
+        /// (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `False`.
         /// </summary>
         [Input("isHttpsEnabled")]
         public Input<bool>? IsHttpsEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
+        /// (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `False`.
         /// </summary>
         [Input("isHttpsForced")]
         public Input<bool>? IsHttpsForced { get; set; }

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Waf.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// (Updatable) The language used to parse condition from field `condition`. Available languages:
+        /// (Updatable) The language used to parse condition from field `Condition`. Available languages:
         /// * **JMESPATH** an extended JMESPath language syntax.
         /// </summary>
         [Input("conditionLanguage")]

@@ -11,6 +11,31 @@ import * as utilities from "../utilities";
  *
  * Create a user's own support account.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMySupportAccount = new oci.identity.DomainsMySupportAccount("test_my_support_account", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:supportAccount"],
+ *     token: mySupportAccountToken,
+ *     authorization: mySupportAccountAuthorization,
+ *     id: mySupportAccountId,
+ *     ocid: mySupportAccountOcid,
+ *     resourceTypeSchemaVersion: mySupportAccountResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: mySupportAccountTagsKey,
+ *         value: mySupportAccountTagsValue,
+ *     }],
+ *     user: {
+ *         ocid: mySupportAccountUserOcid,
+ *         value: mySupportAccountUserValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MySupportAccounts can be imported using the `id`, e.g.

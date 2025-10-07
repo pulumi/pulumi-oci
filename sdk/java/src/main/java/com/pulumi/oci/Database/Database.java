@@ -29,7 +29,7 @@ import javax.annotation.Nullable;
  * 
  * Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
  * 
- * **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+ * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
  * 
  * ## Import
  * 

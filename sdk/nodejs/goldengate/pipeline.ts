@@ -11,6 +11,52 @@ import * as utilities from "../utilities";
  *
  * Creates a new Pipeline.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPipeline = new oci.goldengate.Pipeline("test_pipeline", {
+ *     compartmentId: compartmentId,
+ *     displayName: pipelineDisplayName,
+ *     licenseModel: pipelineLicenseModel,
+ *     recipeType: pipelineRecipeType,
+ *     sourceConnectionDetails: {
+ *         connectionId: testConnection.id,
+ *     },
+ *     targetConnectionDetails: {
+ *         connectionId: testConnection.id,
+ *     },
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     description: pipelineDescription,
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
+ *     locks: [{
+ *         type: pipelineLocksType,
+ *         message: pipelineLocksMessage,
+ *         relatedResourceId: testResource.id,
+ *         timeCreated: pipelineLocksTimeCreated,
+ *     }],
+ *     processOptions: {
+ *         initialDataLoad: {
+ *             isInitialLoad: pipelineProcessOptionsInitialDataLoadIsInitialLoad,
+ *             actionOnExistingTable: pipelineProcessOptionsInitialDataLoadActionOnExistingTable,
+ *         },
+ *         replicateSchemaChange: {
+ *             canReplicateSchemaChange: pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange,
+ *             actionOnDdlError: pipelineProcessOptionsReplicateSchemaChangeActionOnDdlError,
+ *             actionOnDmlError: pipelineProcessOptionsReplicateSchemaChangeActionOnDmlError,
+ *         },
+ *         shouldRestartOnFailure: pipelineProcessOptionsShouldRestartOnFailure,
+ *         startUsingDefaultMapping: pipelineProcessOptionsStartUsingDefaultMapping,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * Pipelines can be imported using the `id`, e.g.

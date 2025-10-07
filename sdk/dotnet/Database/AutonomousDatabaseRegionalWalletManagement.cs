@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Database
         public Output<int> GracePeriod { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+        /// (Updatable) Indicates whether to rotate the wallet or not. If `False`, the wallet will not be rotated. The default is `False`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? GracePeriod { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+        /// (Updatable) Indicates whether to rotate the wallet or not. If `False`, the wallet will not be rotated. The default is `False`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? GracePeriod { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+        /// (Updatable) Indicates whether to rotate the wallet or not. If `False`, the wallet will not be rotated. The default is `False`.
         /// 
         /// 
         /// ** IMPORTANT **

@@ -8,6 +8,28 @@ import * as utilities from "../utilities";
  * This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
  *
  * This operation updates SaaS administrative user configuration of the Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseSaasAdminUser = new oci.database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     accessType: autonomousDatabaseSaasAdminUserAccessType,
+ *     duration: autonomousDatabaseSaasAdminUserDuration,
+ *     isEnabled: autonomousDatabaseSaasAdminUserIsEnabled,
+ *     password: autonomousDatabaseSaasAdminUserPassword,
+ *     secretId: testSecret.id,
+ *     secretVersionNumber: autonomousDatabaseSaasAdminUserSecretVersionNumber,
+ *     timeSaasAdminUserEnabled: autonomousDatabaseSaasAdminUserTimeSaasAdminUserEnabled,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
  */
 export class AutonomousDatabaseSaasAdminUser extends pulumi.CustomResource {
     /**

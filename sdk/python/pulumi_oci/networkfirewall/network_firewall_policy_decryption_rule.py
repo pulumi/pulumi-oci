@@ -323,6 +323,31 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
 
         Creates a new Decryption Rule for the Network Firewall Policy.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_network_firewall_policy_decryption_rule = oci.networkfirewall.NetworkFirewallPolicyDecryptionRule("test_network_firewall_policy_decryption_rule",
+            lifecycle={
+                "ignoreChanges": [position],
+            },
+            name=network_firewall_policy_decryption_rule_name,
+            action=network_firewall_policy_decryption_rule_action,
+            condition={
+                "destination_addresses": network_firewall_policy_decryption_rule_condition_destination_address,
+                "source_addresses": network_firewall_policy_decryption_rule_condition_source_address,
+            },
+            position={
+                "after_rule": network_firewall_policy_decryption_rule_position_after_rule,
+                "before_rule": network_firewall_policy_decryption_rule_position_before_rule,
+            },
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            decryption_profile=network_firewall_policy_decryption_rule_decryption_profile,
+            secret=network_firewall_policy_decryption_rule_secret)
+        ```
+
         ## Import
 
         NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
@@ -353,6 +378,31 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         This resource provides the Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
         Creates a new Decryption Rule for the Network Firewall Policy.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_network_firewall_policy_decryption_rule = oci.networkfirewall.NetworkFirewallPolicyDecryptionRule("test_network_firewall_policy_decryption_rule",
+            lifecycle={
+                "ignoreChanges": [position],
+            },
+            name=network_firewall_policy_decryption_rule_name,
+            action=network_firewall_policy_decryption_rule_action,
+            condition={
+                "destination_addresses": network_firewall_policy_decryption_rule_condition_destination_address,
+                "source_addresses": network_firewall_policy_decryption_rule_condition_source_address,
+            },
+            position={
+                "after_rule": network_firewall_policy_decryption_rule_position_after_rule,
+                "before_rule": network_firewall_policy_decryption_rule_position_before_rule,
+            },
+            network_firewall_policy_id=test_network_firewall_policy["id"],
+            decryption_profile=network_firewall_policy_decryption_rule_decryption_profile,
+            secret=network_firewall_policy_decryption_rule_secret)
+        ```
 
         ## Import
 

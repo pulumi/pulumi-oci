@@ -49,14 +49,14 @@ public final class GetLoadBalancersArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+     * A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -156,7 +156,7 @@ public final class GetLoadBalancersArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class GetLoadBalancersArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
          * 
          * @return builder
          * 

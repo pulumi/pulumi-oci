@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Dns.Inputs
         public Input<string>? CaseCondition { get; set; }
 
         /// <summary>
-        /// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
+        /// The number of answers allowed to remain after the limit rule has been processed, keeping only the first of the remaining answers in the list. Example: If the `Count` property is set to `2` and four answers remain before the limit rule is processed, only the first two answers in the list will remain after the limit rule has been processed.
         /// </summary>
         [Input("count")]
         public Input<int>? Count { get; set; }

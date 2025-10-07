@@ -29,7 +29,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        /// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `User`
         /// </summary>
         [Input("username")]
         public Input<string>? Username { get; set; }

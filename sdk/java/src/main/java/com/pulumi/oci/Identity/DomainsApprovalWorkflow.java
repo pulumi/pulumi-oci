@@ -27,6 +27,64 @@ import javax.annotation.Nullable;
  * 
  * Create ApprovalWorkflow
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsApprovalWorkflow;
+ * import com.pulumi.oci.Identity.DomainsApprovalWorkflowArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowMaxDurationArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowApprovalWorkflowStepArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsApprovalWorkflowTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApprovalWorkflow = new DomainsApprovalWorkflow("testApprovalWorkflow", DomainsApprovalWorkflowArgs.builder()
+ *             .idcsEndpoint(testDomain.url())
+ *             .maxDuration(DomainsApprovalWorkflowMaxDurationArgs.builder()
+ *                 .unit(approvalWorkflowMaxDurationUnit)
+ *                 .value(approvalWorkflowMaxDurationValue)
+ *                 .build())
+ *             .name(approvalWorkflowName)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow")
+ *             .approvalWorkflowSteps(DomainsApprovalWorkflowApprovalWorkflowStepArgs.builder()
+ *                 .type(approvalWorkflowApprovalWorkflowStepsType)
+ *                 .value(approvalWorkflowApprovalWorkflowStepsValue)
+ *                 .ocid(approvalWorkflowApprovalWorkflowStepsOcid)
+ *                 .build())
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(approvalWorkflowAuthorization)
+ *             .description(approvalWorkflowDescription)
+ *             .id(approvalWorkflowId)
+ *             .ocid(approvalWorkflowOcid)
+ *             .resourceTypeSchemaVersion(approvalWorkflowResourceTypeSchemaVersion)
+ *             .tags(DomainsApprovalWorkflowTagArgs.builder()
+ *                 .key(approvalWorkflowTagsKey)
+ *                 .value(approvalWorkflowTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * ApprovalWorkflows can be imported using the `id`, e.g.

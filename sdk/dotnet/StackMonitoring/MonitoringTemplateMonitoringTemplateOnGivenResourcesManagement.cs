@@ -37,7 +37,7 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -99,7 +99,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

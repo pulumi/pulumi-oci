@@ -448,6 +448,32 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
 
           Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_db_system_discovery = oci.databasemanagement.CloudDbSystemDiscovery("test_cloud_db_system_discovery",
+            agent_id=test_agent["id"],
+            cloud_db_system_discovery_id=cloud_db_system_discovery_cloud_db_system_discovery_id,
+            compartment_id=compartment_id,
+            dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
+            deployment_type=cloud_db_system_discovery_deployment_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=cloud_db_system_discovery_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": cloud_db_system_discovery_patch_operations_operation,
+                "selection": cloud_db_system_discovery_patch_operations_selection,
+                "value": cloud_db_system_discovery_patch_operations_value[0],
+            }])
+        ```
+
         ## Import
 
         CloudDbSystemDiscoveries can be imported using the `id`, e.g.
@@ -479,6 +505,32 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
         Creates a cloud DB system discovery resource and initiates the discovery process.
 
           Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_db_system_discovery = oci.databasemanagement.CloudDbSystemDiscovery("test_cloud_db_system_discovery",
+            agent_id=test_agent["id"],
+            cloud_db_system_discovery_id=cloud_db_system_discovery_cloud_db_system_discovery_id,
+            compartment_id=compartment_id,
+            dbaas_parent_infrastructure_id=test_dbaas_parent_infrastructure["id"],
+            deployment_type=cloud_db_system_discovery_deployment_type,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=cloud_db_system_discovery_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": cloud_db_system_discovery_patch_operations_operation,
+                "selection": cloud_db_system_discovery_patch_operations_selection,
+                "value": cloud_db_system_discovery_patch_operations_value[0],
+            }])
+        ```
 
         ## Import
 

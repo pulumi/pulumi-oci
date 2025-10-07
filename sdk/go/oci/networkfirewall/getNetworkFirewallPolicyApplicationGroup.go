@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Network Firewall Policy Application Group resource in Oracle Cloud Infrastructure Network Firewall service.
 //
 // Get ApplicationGroup by the given name in the context of network firewall policy.
+//
+// ## Example Usage
 func LookupNetworkFirewallPolicyApplicationGroup(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyApplicationGroupArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyApplicationGroupResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyApplicationGroupResult

@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
  *
  * Gets an endpoint by identifier
+ *
+ * ## Example Usage
  */
 export function getEndpoint(args: GetEndpointArgs, opts?: pulumi.InvokeOptions): Promise<GetEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -91,6 +93,8 @@ export interface GetEndpointResult {
  * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
  *
  * Gets an endpoint by identifier
+ *
+ * ## Example Usage
  */
 export function getEndpointOutput(args: GetEndpointOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEndpointResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

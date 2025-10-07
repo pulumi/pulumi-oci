@@ -384,6 +384,28 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         Creates a new target-alert policy association to track a alert policy applied on target.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
+            compartment_id=compartment_id,
+            is_enabled=target_alert_policy_association_is_enabled,
+            policy_id=test_policy["id"],
+            target_id=test_target["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=target_alert_policy_association_description,
+            display_name=target_alert_policy_association_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            target_type=target_alert_policy_association_target_type)
+        ```
+
         ## Import
 
         TargetAlertPolicyAssociations can be imported using the `id`, e.g.
@@ -413,6 +435,28 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
         This resource provides the Target Alert Policy Association resource in Oracle Cloud Infrastructure Data Safe service.
 
         Creates a new target-alert policy association to track a alert policy applied on target.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
+            compartment_id=compartment_id,
+            is_enabled=target_alert_policy_association_is_enabled,
+            policy_id=test_policy["id"],
+            target_id=test_target["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=target_alert_policy_association_description,
+            display_name=target_alert_policy_association_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            target_type=target_alert_policy_association_target_type)
+        ```
 
         ## Import
 

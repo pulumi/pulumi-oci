@@ -21,6 +21,45 @@ import javax.annotation.Nullable;
  * For more information about the Database Management Service, see
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.ExternalNonContainerDatabaseManagement;
+ * import com.pulumi.oci.Database.ExternalNonContainerDatabaseManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testExternalNonContainerDatabaseManagement = new ExternalNonContainerDatabaseManagement("testExternalNonContainerDatabaseManagement", ExternalNonContainerDatabaseManagementArgs.builder()
+ *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
+ *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
+ *             .licenseMode(externalNonContainerDatabaseManagementLicenseModel)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
  */
 @ResourceType(type="oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement")
 public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources.CustomResource {

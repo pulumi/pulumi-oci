@@ -27,6 +27,63 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s SMTP credentials.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsSmtpCredential;
+ * import com.pulumi.oci.Identity.DomainsSmtpCredentialArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSmtpCredentialTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSmtpCredentialUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSmtpCredential = new DomainsSmtpCredential("testSmtpCredential", DomainsSmtpCredentialArgs.builder()
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential")
+ *             .attributeSets()
+ *             .attributes("")
+ *             .authorization(smtpCredentialAuthorization)
+ *             .description(smtpCredentialDescription)
+ *             .expiresOn(smtpCredentialExpiresOn)
+ *             .id(smtpCredentialId)
+ *             .ocid(smtpCredentialOcid)
+ *             .resourceTypeSchemaVersion(smtpCredentialResourceTypeSchemaVersion)
+ *             .status(smtpCredentialStatus)
+ *             .tags(DomainsSmtpCredentialTagArgs.builder()
+ *                 .key(smtpCredentialTagsKey)
+ *                 .value(smtpCredentialTagsValue)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionselfChangeUser(DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs.builder()
+ *                 .allowSelfChange(smtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
+ *                 .build())
+ *             .user(DomainsSmtpCredentialUserArgs.builder()
+ *                 .ocid(testUser.ocid())
+ *                 .value(testUser.id())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * SmtpCredentials can be imported using the `id`, e.g.

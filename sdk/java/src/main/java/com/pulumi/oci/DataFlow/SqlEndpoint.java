@@ -26,6 +26,77 @@ import javax.annotation.Nullable;
  * 
  * Create a new Sql Endpoint.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataFlow.SqlEndpoint;
+ * import com.pulumi.oci.DataFlow.SqlEndpointArgs;
+ * import com.pulumi.oci.DataFlow.inputs.SqlEndpointNetworkConfigurationArgs;
+ * import com.pulumi.oci.DataFlow.inputs.SqlEndpointDriverShapeConfigArgs;
+ * import com.pulumi.oci.DataFlow.inputs.SqlEndpointExecutorShapeConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testSqlEndpoint = new SqlEndpoint("testSqlEndpoint", SqlEndpointArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .displayName(sqlEndpointDisplayName)
+ *             .driverShape(sqlEndpointDriverShape)
+ *             .executorShape(sqlEndpointExecutorShape)
+ *             .lakeId(testLake.id())
+ *             .maxExecutorCount(sqlEndpointMaxExecutorCount)
+ *             .metastoreId(testMetastore.id())
+ *             .minExecutorCount(sqlEndpointMinExecutorCount)
+ *             .networkConfiguration(SqlEndpointNetworkConfigurationArgs.builder()
+ *                 .networkType(sqlEndpointNetworkConfigurationNetworkType)
+ *                 .accessControlRules(SqlEndpointNetworkConfigurationAccessControlRuleArgs.builder()
+ *                     .ipNotation(sqlEndpointNetworkConfigurationAccessControlRulesIpNotation)
+ *                     .value(sqlEndpointNetworkConfigurationAccessControlRulesValue)
+ *                     .vcnIps(sqlEndpointNetworkConfigurationAccessControlRulesVcnIps)
+ *                     .build())
+ *                 .hostNamePrefix(sqlEndpointNetworkConfigurationHostNamePrefix)
+ *                 .nsgIds(sqlEndpointNetworkConfigurationNsgIds)
+ *                 .privateEndpointIp(sqlEndpointNetworkConfigurationPrivateEndpointIp)
+ *                 .publicEndpointIp(sqlEndpointNetworkConfigurationPublicEndpointIp)
+ *                 .subnetId(testSubnet.id())
+ *                 .vcnId(testVcn.id())
+ *                 .build())
+ *             .sqlEndpointVersion(sqlEndpointSqlEndpointVersion)
+ *             .warehouseBucketUri(sqlEndpointWarehouseBucketUri)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(sqlEndpointDescription)
+ *             .driverShapeConfig(SqlEndpointDriverShapeConfigArgs.builder()
+ *                 .memoryInGbs(sqlEndpointDriverShapeConfigMemoryInGbs)
+ *                 .ocpus(sqlEndpointDriverShapeConfigOcpus)
+ *                 .build())
+ *             .executorShapeConfig(SqlEndpointExecutorShapeConfigArgs.builder()
+ *                 .memoryInGbs(sqlEndpointExecutorShapeConfigMemoryInGbs)
+ *                 .ocpus(sqlEndpointExecutorShapeConfigOcpus)
+ *                 .build())
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .sparkAdvancedConfigurations(sqlEndpointSparkAdvancedConfigurations)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * SqlEndpoints can be imported using the `id`, e.g.

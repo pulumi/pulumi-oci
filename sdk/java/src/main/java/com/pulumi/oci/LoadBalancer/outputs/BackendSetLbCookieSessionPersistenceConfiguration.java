@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackendSetLbCookieSessionPersistenceConfiguration {
     /**
-     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
      * 
      * **Notes:**
      * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.
@@ -79,7 +79,7 @@ public final class BackendSetLbCookieSessionPersistenceConfiguration {
 
     private BackendSetLbCookieSessionPersistenceConfiguration() {}
     /**
-     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
      * 
      * **Notes:**
      * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.

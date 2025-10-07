@@ -31,7 +31,7 @@ public final class GetIntegrationInstancesIntegrationInstanceIdcsInfo {
      */
     private String idcsAppName;
     /**
-     * @return The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
+     * @return The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
      * 
      */
     private String instancePrimaryAudienceUrl;
@@ -66,7 +66,7 @@ public final class GetIntegrationInstancesIntegrationInstanceIdcsInfo {
         return this.idcsAppName;
     }
     /**
-     * @return The URL used as the primary audience for integration flows in this instance type: string* `instance_design_time_url` - The Integration Instance Design Time URL
+     * @return The URL used as the primary audience for integration flows in this instance type: string* `instanceDesignTimeUrl` - The Integration Instance Design Time URL
      * 
      */
     public String instancePrimaryAudienceUrl() {

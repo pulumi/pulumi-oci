@@ -14,6 +14,55 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a Cloud Gate server
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCloudGateServer = new Oci.Identity.DomainsCloudGateServer("test_cloud_gate_server", new()
+    ///     {
+    ///         CloudGate = new Oci.Identity.Inputs.DomainsCloudGateServerCloudGateArgs
+    ///         {
+    ///             Value = cloudGateServerCloudGateValue,
+    ///         },
+    ///         DisplayName = cloudGateServerDisplayName,
+    ///         HostName = cloudGateServerHostName,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Port = cloudGateServerPort,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer",
+    ///         },
+    ///         Ssl = cloudGateServerSsl,
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = cloudGateServerAuthorization,
+    ///         Description = cloudGateServerDescription,
+    ///         Id = cloudGateServerId,
+    ///         NginxSettings = cloudGateServerNginxSettings,
+    ///         Ocid = cloudGateServerOcid,
+    ///         ResourceTypeSchemaVersion = cloudGateServerResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsCloudGateServerTagArgs
+    ///             {
+    ///                 Key = cloudGateServerTagsKey,
+    ///                 Value = cloudGateServerTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CloudGateServers can be imported using the `id`, e.g.

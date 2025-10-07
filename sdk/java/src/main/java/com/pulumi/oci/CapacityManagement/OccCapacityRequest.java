@@ -24,6 +24,79 @@ import javax.annotation.Nullable;
  * Create Capacity Request.
  *   Updates the OccCapacityRequest by evaluating a sequence of instructions.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CapacityManagement.OccCapacityRequest;
+ * import com.pulumi.oci.CapacityManagement.OccCapacityRequestArgs;
+ * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestDetailArgs;
+ * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestPatchOperationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testOccCapacityRequest = new OccCapacityRequest("testOccCapacityRequest", OccCapacityRequestArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .dateExpectedCapacityHandover(occCapacityRequestDateExpectedCapacityHandover)
+ *             .details(OccCapacityRequestDetailArgs.builder()
+ *                 .demandQuantity(occCapacityRequestDetailsDemandQuantity)
+ *                 .resourceName(testResource.name())
+ *                 .resourceType(occCapacityRequestDetailsResourceType)
+ *                 .workloadType(occCapacityRequestDetailsWorkloadType)
+ *                 .actualHandoverQuantity(occCapacityRequestDetailsActualHandoverQuantity)
+ *                 .associatedOccHandoverResourceBlockLists(OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs.builder()
+ *                     .handoverQuantity(occCapacityRequestDetailsAssociatedOccHandoverResourceBlockListHandoverQuantity)
+ *                     .occHandoverResourceBlockId(testOccHandoverResourceBlock.id())
+ *                     .build())
+ *                 .availabilityDomain(occCapacityRequestDetailsAvailabilityDomain)
+ *                 .dateActualHandover(occCapacityRequestDetailsDateActualHandover)
+ *                 .dateExpectedHandover(occCapacityRequestDetailsDateExpectedHandover)
+ *                 .expectedHandoverQuantity(occCapacityRequestDetailsExpectedHandoverQuantity)
+ *                 .sourceWorkloadType(occCapacityRequestDetailsSourceWorkloadType)
+ *                 .build())
+ *             .displayName(occCapacityRequestDisplayName)
+ *             .namespace(occCapacityRequestNamespace)
+ *             .occCapacityRequestId(occCapacityRequestOccCapacityRequestId)
+ *             .region(occCapacityRequestRegion)
+ *             .availabilityDomain(occCapacityRequestAvailabilityDomain)
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .description(occCapacityRequestDescription)
+ *             .freeformTags(Map.of("bar-key", "value"))
+ *             .lifecycleDetails(occCapacityRequestLifecycleDetails)
+ *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
+ *             .patchOperations(OccCapacityRequestPatchOperationArgs.builder()
+ *                 .operation(occCapacityRequestPatchOperationsOperation)
+ *                 .selection(occCapacityRequestPatchOperationsSelection)
+ *                 .from(occCapacityRequestPatchOperationsFrom)
+ *                 .position(occCapacityRequestPatchOperationsPosition)
+ *                 .selectedItem(occCapacityRequestPatchOperationsSelectedItem)
+ *                 .value(occCapacityRequestPatchOperationsValue)
+ *                 .values(occCapacityRequestPatchOperationsValues)
+ *                 .build())
+ *             .requestState(occCapacityRequestRequestState)
+ *             .requestType(occCapacityRequestRequestType)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * OccCapacityRequests can be imported using the `id`, e.g.

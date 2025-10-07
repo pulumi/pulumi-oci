@@ -15,6 +15,80 @@ namespace Pulumi.Oci.CapacityManagement
     /// Create Capacity Request.
     ///   Updates the OccCapacityRequest by evaluating a sequence of instructions.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testOccCapacityRequest = new Oci.CapacityManagement.OccCapacityRequest("test_occ_capacity_request", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DateExpectedCapacityHandover = occCapacityRequestDateExpectedCapacityHandover,
+    ///         Details = new[]
+    ///         {
+    ///             new Oci.CapacityManagement.Inputs.OccCapacityRequestDetailArgs
+    ///             {
+    ///                 DemandQuantity = occCapacityRequestDetailsDemandQuantity,
+    ///                 ResourceName = testResource.Name,
+    ///                 ResourceType = occCapacityRequestDetailsResourceType,
+    ///                 WorkloadType = occCapacityRequestDetailsWorkloadType,
+    ///                 ActualHandoverQuantity = occCapacityRequestDetailsActualHandoverQuantity,
+    ///                 AssociatedOccHandoverResourceBlockLists = new[]
+    ///                 {
+    ///                     new Oci.CapacityManagement.Inputs.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs
+    ///                     {
+    ///                         HandoverQuantity = occCapacityRequestDetailsAssociatedOccHandoverResourceBlockListHandoverQuantity,
+    ///                         OccHandoverResourceBlockId = testOccHandoverResourceBlock.Id,
+    ///                     },
+    ///                 },
+    ///                 AvailabilityDomain = occCapacityRequestDetailsAvailabilityDomain,
+    ///                 DateActualHandover = occCapacityRequestDetailsDateActualHandover,
+    ///                 DateExpectedHandover = occCapacityRequestDetailsDateExpectedHandover,
+    ///                 ExpectedHandoverQuantity = occCapacityRequestDetailsExpectedHandoverQuantity,
+    ///                 SourceWorkloadType = occCapacityRequestDetailsSourceWorkloadType,
+    ///             },
+    ///         },
+    ///         DisplayName = occCapacityRequestDisplayName,
+    ///         Namespace = occCapacityRequestNamespace,
+    ///         OccCapacityRequestId = occCapacityRequestOccCapacityRequestId,
+    ///         Region = occCapacityRequestRegion,
+    ///         AvailabilityDomain = occCapacityRequestAvailabilityDomain,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = occCapacityRequestDescription,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         LifecycleDetails = occCapacityRequestLifecycleDetails,
+    ///         OccAvailabilityCatalogId = testOccAvailabilityCatalog.Id,
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.CapacityManagement.Inputs.OccCapacityRequestPatchOperationArgs
+    ///             {
+    ///                 Operation = occCapacityRequestPatchOperationsOperation,
+    ///                 Selection = occCapacityRequestPatchOperationsSelection,
+    ///                 From = occCapacityRequestPatchOperationsFrom,
+    ///                 Position = occCapacityRequestPatchOperationsPosition,
+    ///                 SelectedItem = occCapacityRequestPatchOperationsSelectedItem,
+    ///                 Value = occCapacityRequestPatchOperationsValue,
+    ///                 Values = occCapacityRequestPatchOperationsValues,
+    ///             },
+    ///         },
+    ///         RequestState = occCapacityRequestRequestState,
+    ///         RequestType = occCapacityRequestRequestType,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// OccCapacityRequests can be imported using the `id`, e.g.

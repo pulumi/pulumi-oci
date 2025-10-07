@@ -111,7 +111,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+     * (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -121,7 +121,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<Boolean> publishTrigger;
 
     /**
-     * @return (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+     * @return (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -330,7 +330,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param publishTrigger (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+         * @param publishTrigger (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -344,7 +344,7 @@ public final class MetricExtensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param publishTrigger (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+         * @param publishTrigger (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

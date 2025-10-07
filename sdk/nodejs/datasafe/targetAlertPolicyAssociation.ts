@@ -9,6 +9,29 @@ import * as utilities from "../utilities";
  *
  * Creates a new target-alert policy association to track a alert policy applied on target.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testTargetAlertPolicyAssociation = new oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", {
+ *     compartmentId: compartmentId,
+ *     isEnabled: targetAlertPolicyAssociationIsEnabled,
+ *     policyId: testPolicy.id,
+ *     targetId: testTarget.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: targetAlertPolicyAssociationDescription,
+ *     displayName: targetAlertPolicyAssociationDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     targetType: targetAlertPolicyAssociationTargetType,
+ * });
+ * ```
+ *
  * ## Import
  *
  * TargetAlertPolicyAssociations can be imported using the `id`, e.g.

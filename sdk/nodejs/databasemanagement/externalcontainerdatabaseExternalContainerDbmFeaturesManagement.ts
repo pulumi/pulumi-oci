@@ -10,6 +10,31 @@ import * as utilities from "../utilities";
  * This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Enables a Database Management feature for the specified external container database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = new oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management", {
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
+ *     featureDetails: {
+ *         feature: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsFeature,
+ *         enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
+ *         connectorDetails: {
+ *             connectorType: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *         canEnableAllCurrentPdbs: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         licenseModel: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
+ *     },
+ * });
+ * ```
  */
 export class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement extends pulumi.CustomResource {
     /**

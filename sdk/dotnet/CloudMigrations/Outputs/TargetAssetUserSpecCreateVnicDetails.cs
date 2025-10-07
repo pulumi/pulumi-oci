@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// 
         /// **Note:** There's a limit to the number of [public IPs](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PublicIp/) a VNIC or instance can have. If you try to create a secondary VNIC with an assigned public IP for an instance that has already reached its public IP limit, an error is returned. For information about the public IP limits, see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// 
         /// If you specify a `vlanId`, then `assignPublicIp` must be set to false. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         /// </summary>
@@ -70,11 +70,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? PrivateIp;
         /// <summary>
-        /// (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+        /// (Updatable) Whether the source/destination check is disabled on the VNIC. Defaults to `False`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
         /// 
         /// If you specify a `vlanId`, the `skipSourceDestCheck` cannot be specified because the source/destination check is always disabled for VNICs in a VLAN. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         public readonly bool? SkipSourceDestCheck;
         /// <summary>

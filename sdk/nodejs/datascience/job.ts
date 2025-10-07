@@ -11,6 +11,121 @@ import * as utilities from "../utilities";
  *
  * Creates a job.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testJob = new oci.datascience.Job("test_job", {
+ *     compartmentId: compartmentId,
+ *     projectId: testProject.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: jobDescription,
+ *     displayName: jobDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     jobConfigurationDetails: {
+ *         jobType: jobJobConfigurationDetailsJobType,
+ *         commandLineArguments: jobJobConfigurationDetailsCommandLineArguments,
+ *         environmentVariables: jobJobConfigurationDetailsEnvironmentVariables,
+ *         maximumRuntimeInMinutes: jobJobConfigurationDetailsMaximumRuntimeInMinutes,
+ *         startupProbeDetails: {
+ *             commands: jobJobConfigurationDetailsStartupProbeDetailsCommand,
+ *             jobProbeCheckType: jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+ *             cpuBaseline: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
+ *             failureThreshold: jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+ *             initialDelayInSeconds: jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+ *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *             periodInSeconds: jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *         },
+ *     },
+ *     jobEnvironmentConfigurationDetails: {
+ *         image: jobJobEnvironmentConfigurationDetailsImage,
+ *         jobEnvironmentType: jobJobEnvironmentConfigurationDetailsJobEnvironmentType,
+ *         cmds: jobJobEnvironmentConfigurationDetailsCmd,
+ *         entrypoints: jobJobEnvironmentConfigurationDetailsEntrypoint,
+ *         imageDigest: jobJobEnvironmentConfigurationDetailsImageDigest,
+ *         imageSignatureId: testImageSignature.id,
+ *     },
+ *     jobInfrastructureConfigurationDetails: {
+ *         jobInfrastructureType: jobJobInfrastructureConfigurationDetailsJobInfrastructureType,
+ *         blockStorageSizeInGbs: jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *         jobShapeConfigDetails: {
+ *             memoryInGbs: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+ *             ocpus: jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *         },
+ *         shapeName: testShape.name,
+ *         subnetId: testSubnet.id,
+ *     },
+ *     jobLogConfigurationDetails: {
+ *         enableAutoLogCreation: jobJobLogConfigurationDetailsEnableAutoLogCreation,
+ *         enableLogging: jobJobLogConfigurationDetailsEnableLogging,
+ *         logGroupId: testLogGroup.id,
+ *         logId: testLog.id,
+ *     },
+ *     jobNodeConfigurationDetails: {
+ *         jobNodeType: jobJobNodeConfigurationDetailsJobNodeType,
+ *         jobNetworkConfiguration: {
+ *             jobNetworkType: jobJobNodeConfigurationDetailsJobNetworkConfigurationJobNetworkType,
+ *             subnetId: testSubnet.id,
+ *         },
+ *         jobNodeGroupConfigurationDetailsLists: [{
+ *             name: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListName,
+ *             jobConfigurationDetails: {
+ *                 jobType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType,
+ *                 commandLineArguments: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments,
+ *                 environmentVariables: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables,
+ *                 maximumRuntimeInMinutes: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes,
+ *                 startupProbeDetails: {
+ *                     commands: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand,
+ *                     jobProbeCheckType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType,
+ *                     failureThreshold: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold,
+ *                     initialDelayInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds,
+ *                     periodInSeconds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds,
+ *                 },
+ *             },
+ *             jobEnvironmentConfigurationDetails: {
+ *                 image: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage,
+ *                 jobEnvironmentType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType,
+ *                 cmds: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd,
+ *                 entrypoints: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint,
+ *                 imageDigest: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest,
+ *                 imageSignatureId: testImageSignature.id,
+ *             },
+ *             jobInfrastructureConfigurationDetails: {
+ *                 jobInfrastructureType: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType,
+ *                 blockStorageSizeInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
+ *                 jobShapeConfigDetails: {
+ *                     memoryInGbs: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+ *                     ocpus: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+ *                 },
+ *                 shapeName: testShape.name,
+ *                 subnetId: testSubnet.id,
+ *             },
+ *             minimumSuccessReplicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas,
+ *             replicas: jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas,
+ *         }],
+ *         maximumRuntimeInMinutes: jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes,
+ *         startupOrder: jobJobNodeConfigurationDetailsStartupOrder,
+ *     },
+ *     jobStorageMountConfigurationDetailsLists: [{
+ *         destinationDirectoryName: jobJobStorageMountConfigurationDetailsListDestinationDirectoryName,
+ *         storageType: jobJobStorageMountConfigurationDetailsListStorageType,
+ *         bucket: jobJobStorageMountConfigurationDetailsListBucket,
+ *         destinationPath: jobJobStorageMountConfigurationDetailsListDestinationPath,
+ *         exportId: testExport.id,
+ *         mountTargetId: testMountTarget.id,
+ *         namespace: jobJobStorageMountConfigurationDetailsListNamespace,
+ *         prefix: jobJobStorageMountConfigurationDetailsListPrefix,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * Jobs can be imported using the `id`, e.g.

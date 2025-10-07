@@ -2159,6 +2159,75 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
 
         Create a self-registration profile.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_self_registration_profile = oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile",
+            activation_email_required=self_registration_profile_activation_email_required,
+            consent_text_present=self_registration_profile_consent_text_present,
+            display_names=[{
+                "locale": self_registration_profile_display_name_locale,
+                "value": self_registration_profile_display_name_value,
+                "default": self_registration_profile_display_name_default,
+            }],
+            email_template={
+                "value": self_registration_profile_email_template_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            name=self_registration_profile_name,
+            number_of_days_redirect_url_is_valid=self_registration_profile_number_of_days_redirect_url_is_valid,
+            redirect_url=self_registration_profile_redirect_url,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
+            show_on_login_page=self_registration_profile_show_on_login_page,
+            active=self_registration_profile_active,
+            after_submit_texts=[{
+                "locale": self_registration_profile_after_submit_text_locale,
+                "value": self_registration_profile_after_submit_text_value,
+                "default": self_registration_profile_after_submit_text_default,
+            }],
+            allowed_email_domains=self_registration_profile_allowed_email_domains,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=self_registration_profile_authorization,
+            consent_texts=[{
+                "locale": self_registration_profile_consent_text_locale,
+                "value": self_registration_profile_consent_text_value,
+                "default": self_registration_profile_consent_text_default,
+            }],
+            default_groups=[{
+                "value": self_registration_profile_default_groups_value,
+            }],
+            disallowed_email_domains=self_registration_profile_disallowed_email_domains,
+            external_id="externalId",
+            footer_logo=self_registration_profile_footer_logo,
+            footer_texts=[{
+                "locale": self_registration_profile_footer_text_locale,
+                "value": self_registration_profile_footer_text_value,
+                "default": self_registration_profile_footer_text_default,
+            }],
+            header_logo=self_registration_profile_header_logo,
+            header_texts=[{
+                "locale": self_registration_profile_header_text_locale,
+                "value": self_registration_profile_header_text_value,
+                "default": self_registration_profile_header_text_default,
+            }],
+            id=self_registration_profile_id,
+            ocid=self_registration_profile_ocid,
+            resource_type_schema_version=self_registration_profile_resource_type_schema_version,
+            tags=[{
+                "key": self_registration_profile_tags_key,
+                "value": self_registration_profile_tags_value,
+            }],
+            user_attributes=[{
+                "seq_number": self_registration_profile_user_attributes_seq_number,
+                "value": self_registration_profile_user_attributes_value,
+                "fully_qualified_attribute_name": self_registration_profile_user_attributes_fully_qualified_attribute_name,
+            }])
+        ```
+
         ## Import
 
         SelfRegistrationProfiles can be imported using the `id`, e.g.
@@ -2429,6 +2498,75 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a self-registration profile.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_self_registration_profile = oci.identity.DomainsSelfRegistrationProfile("test_self_registration_profile",
+            activation_email_required=self_registration_profile_activation_email_required,
+            consent_text_present=self_registration_profile_consent_text_present,
+            display_names=[{
+                "locale": self_registration_profile_display_name_locale,
+                "value": self_registration_profile_display_name_value,
+                "default": self_registration_profile_display_name_default,
+            }],
+            email_template={
+                "value": self_registration_profile_email_template_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            name=self_registration_profile_name,
+            number_of_days_redirect_url_is_valid=self_registration_profile_number_of_days_redirect_url_is_valid,
+            redirect_url=self_registration_profile_redirect_url,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:SelfRegistrationProfile"],
+            show_on_login_page=self_registration_profile_show_on_login_page,
+            active=self_registration_profile_active,
+            after_submit_texts=[{
+                "locale": self_registration_profile_after_submit_text_locale,
+                "value": self_registration_profile_after_submit_text_value,
+                "default": self_registration_profile_after_submit_text_default,
+            }],
+            allowed_email_domains=self_registration_profile_allowed_email_domains,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=self_registration_profile_authorization,
+            consent_texts=[{
+                "locale": self_registration_profile_consent_text_locale,
+                "value": self_registration_profile_consent_text_value,
+                "default": self_registration_profile_consent_text_default,
+            }],
+            default_groups=[{
+                "value": self_registration_profile_default_groups_value,
+            }],
+            disallowed_email_domains=self_registration_profile_disallowed_email_domains,
+            external_id="externalId",
+            footer_logo=self_registration_profile_footer_logo,
+            footer_texts=[{
+                "locale": self_registration_profile_footer_text_locale,
+                "value": self_registration_profile_footer_text_value,
+                "default": self_registration_profile_footer_text_default,
+            }],
+            header_logo=self_registration_profile_header_logo,
+            header_texts=[{
+                "locale": self_registration_profile_header_text_locale,
+                "value": self_registration_profile_header_text_value,
+                "default": self_registration_profile_header_text_default,
+            }],
+            id=self_registration_profile_id,
+            ocid=self_registration_profile_ocid,
+            resource_type_schema_version=self_registration_profile_resource_type_schema_version,
+            tags=[{
+                "key": self_registration_profile_tags_key,
+                "value": self_registration_profile_tags_value,
+            }],
+            user_attributes=[{
+                "seq_number": self_registration_profile_user_attributes_seq_number,
+                "value": self_registration_profile_user_attributes_value,
+                "fully_qualified_attribute_name": self_registration_profile_user_attributes_fully_qualified_attribute_name,
+            }])
+        ```
 
         ## Import
 

@@ -46,7 +46,7 @@ public final class GetMetricsMetric {
      */
     private String name;
     /**
-     * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
      * 
      */
     private String namespace;
@@ -102,7 +102,7 @@ public final class GetMetricsMetric {
         return this.name;
     }
     /**
-     * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {

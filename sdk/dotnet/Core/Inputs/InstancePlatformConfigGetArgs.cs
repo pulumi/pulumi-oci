@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<bool>? IsMeasuredBootEnabled { get; set; }
 
         /// <summary>
-        /// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        /// Whether the instance is a confidential instance. If this value is `True`, the instance is a confidential instance. The default value is `False`.
         /// </summary>
         [Input("isMemoryEncryptionEnabled")]
         public Input<bool>? IsMemoryEncryptionEnabled { get; set; }

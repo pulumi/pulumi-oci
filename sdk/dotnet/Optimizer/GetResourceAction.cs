@@ -162,7 +162,7 @@ namespace Pulumi.Oci.Optimizer
         /// </summary>
         public readonly double EstimatedCostSaving;
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// </summary>
         public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>

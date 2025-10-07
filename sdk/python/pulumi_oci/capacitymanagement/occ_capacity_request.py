@@ -631,6 +631,58 @@ class OccCapacityRequest(pulumi.CustomResource):
         Create Capacity Request.
           Updates the OccCapacityRequest by evaluating a sequence of instructions.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_occ_capacity_request = oci.capacitymanagement.OccCapacityRequest("test_occ_capacity_request",
+            compartment_id=compartment_id,
+            date_expected_capacity_handover=occ_capacity_request_date_expected_capacity_handover,
+            details=[{
+                "demand_quantity": occ_capacity_request_details_demand_quantity,
+                "resource_name": test_resource["name"],
+                "resource_type": occ_capacity_request_details_resource_type,
+                "workload_type": occ_capacity_request_details_workload_type,
+                "actual_handover_quantity": occ_capacity_request_details_actual_handover_quantity,
+                "associated_occ_handover_resource_block_lists": [{
+                    "handover_quantity": occ_capacity_request_details_associated_occ_handover_resource_block_list_handover_quantity,
+                    "occ_handover_resource_block_id": test_occ_handover_resource_block["id"],
+                }],
+                "availability_domain": occ_capacity_request_details_availability_domain,
+                "date_actual_handover": occ_capacity_request_details_date_actual_handover,
+                "date_expected_handover": occ_capacity_request_details_date_expected_handover,
+                "expected_handover_quantity": occ_capacity_request_details_expected_handover_quantity,
+                "source_workload_type": occ_capacity_request_details_source_workload_type,
+            }],
+            display_name=occ_capacity_request_display_name,
+            namespace=occ_capacity_request_namespace,
+            occ_capacity_request_id=occ_capacity_request_occ_capacity_request_id,
+            region=occ_capacity_request_region,
+            availability_domain=occ_capacity_request_availability_domain,
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=occ_capacity_request_description,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            lifecycle_details=occ_capacity_request_lifecycle_details,
+            occ_availability_catalog_id=test_occ_availability_catalog["id"],
+            patch_operations=[{
+                "operation": occ_capacity_request_patch_operations_operation,
+                "selection": occ_capacity_request_patch_operations_selection,
+                "from_": occ_capacity_request_patch_operations_from,
+                "position": occ_capacity_request_patch_operations_position,
+                "selected_item": occ_capacity_request_patch_operations_selected_item,
+                "value": occ_capacity_request_patch_operations_value,
+                "values": occ_capacity_request_patch_operations_values,
+            }],
+            request_state=occ_capacity_request_request_state,
+            request_type=occ_capacity_request_request_type)
+        ```
+
         ## Import
 
         OccCapacityRequests can be imported using the `id`, e.g.
@@ -672,6 +724,58 @@ class OccCapacityRequest(pulumi.CustomResource):
 
         Create Capacity Request.
           Updates the OccCapacityRequest by evaluating a sequence of instructions.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_occ_capacity_request = oci.capacitymanagement.OccCapacityRequest("test_occ_capacity_request",
+            compartment_id=compartment_id,
+            date_expected_capacity_handover=occ_capacity_request_date_expected_capacity_handover,
+            details=[{
+                "demand_quantity": occ_capacity_request_details_demand_quantity,
+                "resource_name": test_resource["name"],
+                "resource_type": occ_capacity_request_details_resource_type,
+                "workload_type": occ_capacity_request_details_workload_type,
+                "actual_handover_quantity": occ_capacity_request_details_actual_handover_quantity,
+                "associated_occ_handover_resource_block_lists": [{
+                    "handover_quantity": occ_capacity_request_details_associated_occ_handover_resource_block_list_handover_quantity,
+                    "occ_handover_resource_block_id": test_occ_handover_resource_block["id"],
+                }],
+                "availability_domain": occ_capacity_request_details_availability_domain,
+                "date_actual_handover": occ_capacity_request_details_date_actual_handover,
+                "date_expected_handover": occ_capacity_request_details_date_expected_handover,
+                "expected_handover_quantity": occ_capacity_request_details_expected_handover_quantity,
+                "source_workload_type": occ_capacity_request_details_source_workload_type,
+            }],
+            display_name=occ_capacity_request_display_name,
+            namespace=occ_capacity_request_namespace,
+            occ_capacity_request_id=occ_capacity_request_occ_capacity_request_id,
+            region=occ_capacity_request_region,
+            availability_domain=occ_capacity_request_availability_domain,
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=occ_capacity_request_description,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            lifecycle_details=occ_capacity_request_lifecycle_details,
+            occ_availability_catalog_id=test_occ_availability_catalog["id"],
+            patch_operations=[{
+                "operation": occ_capacity_request_patch_operations_operation,
+                "selection": occ_capacity_request_patch_operations_selection,
+                "from_": occ_capacity_request_patch_operations_from,
+                "position": occ_capacity_request_patch_operations_position,
+                "selected_item": occ_capacity_request_patch_operations_selected_item,
+                "value": occ_capacity_request_patch_operations_value,
+                "values": occ_capacity_request_patch_operations_values,
+            }],
+            request_state=occ_capacity_request_request_state,
+            request_type=occ_capacity_request_request_type)
+        ```
 
         ## Import
 

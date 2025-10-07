@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
  *
  * Returns a list of data assets within a data catalog.
+ *
+ * ## Example Usage
  */
 export function getDataAssets(args: GetDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -109,6 +111,8 @@ export interface GetDataAssetsResult {
  * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
  *
  * Returns a list of data assets within a data catalog.
+ *
+ * ## Example Usage
  */
 export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

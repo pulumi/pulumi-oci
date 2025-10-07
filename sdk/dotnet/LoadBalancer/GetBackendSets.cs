@@ -18,7 +18,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancer_backendsets`
+        /// * `OciLoadBalancerBackendsets`
         /// 
         /// ## Example Usage
         /// 
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancer_backendsets`
+        /// * `OciLoadBalancerBackendsets`
         /// 
         /// ## Example Usage
         /// 
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancer_backendsets`
+        /// * `OciLoadBalancerBackendsets`
         /// 
         /// ## Example Usage
         /// 

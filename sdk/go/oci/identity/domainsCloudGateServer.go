@@ -16,6 +16,58 @@ import (
 //
 // # Create a Cloud Gate server
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsCloudGateServer(ctx, "test_cloud_gate_server", &identity.DomainsCloudGateServerArgs{
+//				CloudGate: &identity.DomainsCloudGateServerCloudGateArgs{
+//					Value: pulumi.Any(cloudGateServerCloudGateValue),
+//				},
+//				DisplayName:  pulumi.Any(cloudGateServerDisplayName),
+//				HostName:     pulumi.Any(cloudGateServerHostName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Port:         pulumi.Any(cloudGateServerPort),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer"),
+//				},
+//				Ssl: pulumi.Any(cloudGateServerSsl),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(cloudGateServerAuthorization),
+//				Description:               pulumi.Any(cloudGateServerDescription),
+//				Id:                        cloudGateServerId,
+//				NginxSettings:             pulumi.Any(cloudGateServerNginxSettings),
+//				Ocid:                      pulumi.Any(cloudGateServerOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(cloudGateServerResourceTypeSchemaVersion),
+//				Tags: identity.DomainsCloudGateServerTagArray{
+//					&identity.DomainsCloudGateServerTagArgs{
+//						Key:   pulumi.Any(cloudGateServerTagsKey),
+//						Value: pulumi.Any(cloudGateServerTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // CloudGateServers can be imported using the `id`, e.g.

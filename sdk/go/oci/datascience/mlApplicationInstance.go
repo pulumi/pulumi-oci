@@ -16,6 +16,57 @@ import (
 //
 // Creates a new MlApplicationInstance.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datascience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datascience.NewMlApplicationInstance(ctx, "test_ml_application_instance", &datascience.MlApplicationInstanceArgs{
+//				CompartmentId:                 pulumi.Any(compartmentId),
+//				MlApplicationId:               pulumi.Any(testMlApplication.Id),
+//				MlApplicationImplementationId: pulumi.Any(testMlApplicationImplementation.Id),
+//				AuthConfiguration: &datascience.MlApplicationInstanceAuthConfigurationArgs{
+//					Type:            pulumi.Any(mlApplicationInstanceAuthConfigurationType),
+//					AccessToken:     mlApplicationInstanceAuthConfigurationAccessToken,
+//					ApplicationName: pulumi.Any(testApplication.Name),
+//					Audience:        mlApplicationInstanceAuthConfigurationAudience,
+//					DomainId:        pulumi.Any(testDomain.Id),
+//					RoleName:        mlApplicationInstanceAuthConfigurationRoleName,
+//					Scope:           mlApplicationInstanceAuthConfigurationScope,
+//				},
+//				Configurations: datascience.MlApplicationInstanceConfigurationArray{
+//					&datascience.MlApplicationInstanceConfigurationArgs{
+//						Key:   pulumi.Any(mlApplicationInstanceConfigurationKey),
+//						Value: pulumi.Any(mlApplicationInstanceConfigurationValue),
+//					},
+//				},
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				DisplayName: pulumi.Any(mlApplicationInstanceDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				IsEnabled: pulumi.Any(mlApplicationInstanceIsEnabled),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MlApplicationInstances can be imported using the `id`, e.g.

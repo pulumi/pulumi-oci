@@ -16,6 +16,327 @@ import (
 //
 // Create a user.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsUser(ctx, "test_user", &identity.DomainsUserArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:core:2.0:User"),
+//				},
+//				UserName: pulumi.String("userName"),
+//				Active:   pulumi.Any(userActive),
+//				Addresses: identity.DomainsUserAddressArray{
+//					&identity.DomainsUserAddressArgs{
+//						Type:          pulumi.Any(userAddressesType),
+//						Country:       pulumi.Any(userAddressesCountry),
+//						Formatted:     pulumi.Any(userAddressesFormatted),
+//						Locality:      pulumi.Any(userAddressesLocality),
+//						PostalCode:    pulumi.Any(userAddressesPostalCode),
+//						Primary:       pulumi.Any(userAddressesPrimary),
+//						Region:        pulumi.Any(userAddressesRegion),
+//						StreetAddress: pulumi.Any(userAddressesStreetAddress),
+//					},
+//				},
+//				AttributeSets: pulumi.StringArray{},
+//				Attributes:    pulumi.String(""),
+//				Authorization: pulumi.Any(userAuthorization),
+//				Description:   pulumi.Any(userDescription),
+//				DisplayName:   pulumi.Any(userDisplayName),
+//				Emails: identity.DomainsUserEmailArray{
+//					&identity.DomainsUserEmailArgs{
+//						Type:      pulumi.Any(userEmailsType),
+//						Value:     pulumi.Any(userEmailsValue),
+//						Primary:   pulumi.Bool(true),
+//						Secondary: pulumi.Any(userEmailsSecondary),
+//						Verified:  pulumi.Any(userEmailsVerified),
+//					},
+//					&identity.DomainsUserEmailArgs{
+//						Type:  pulumi.String("recovery"),
+//						Value: pulumi.Any(userEmailsValue),
+//					},
+//				},
+//				Entitlements: identity.DomainsUserEntitlementArray{
+//					&identity.DomainsUserEntitlementArgs{
+//						Type:    pulumi.Any(userEntitlementsType),
+//						Value:   pulumi.Any(userEntitlementsValue),
+//						Display: pulumi.Any(userEntitlementsDisplay),
+//						Primary: pulumi.Any(userEntitlementsPrimary),
+//					},
+//				},
+//				ExternalId:  pulumi.String("externalId"),
+//				ForceDelete: pulumi.Any(userForceDelete),
+//				Id:          userId,
+//				Ims: identity.DomainsUserImArray{
+//					&identity.DomainsUserImArgs{
+//						Type:    pulumi.Any(userImsType),
+//						Value:   pulumi.Any(userImsValue),
+//						Display: pulumi.Any(userImsDisplay),
+//						Primary: pulumi.Any(userImsPrimary),
+//					},
+//				},
+//				Locale: pulumi.Any(userLocale),
+//				Name: &identity.DomainsUserNameArgs{
+//					FamilyName:      pulumi.Any(userNameFamilyName),
+//					Formatted:       pulumi.Any(userNameFormatted),
+//					GivenName:       pulumi.Any(userNameGivenName),
+//					HonorificPrefix: pulumi.Any(userNameHonorificPrefix),
+//					HonorificSuffix: pulumi.Any(userNameHonorificSuffix),
+//					MiddleName:      pulumi.Any(userNameMiddleName),
+//				},
+//				NickName: pulumi.Any(userNickName),
+//				Ocid:     pulumi.Any(userOcid),
+//				Password: pulumi.Any(userPassword),
+//				PhoneNumbers: identity.DomainsUserPhoneNumberArray{
+//					&identity.DomainsUserPhoneNumberArgs{
+//						Type:    pulumi.Any(userPhoneNumbersType),
+//						Value:   pulumi.Any(userPhoneNumbersValue),
+//						Primary: pulumi.Any(userPhoneNumbersPrimary),
+//					},
+//				},
+//				Photos: identity.DomainsUserPhotoArray{
+//					&identity.DomainsUserPhotoArgs{
+//						Type:    pulumi.Any(userPhotosType),
+//						Value:   pulumi.Any(userPhotosValue),
+//						Display: pulumi.Any(userPhotosDisplay),
+//						Primary: pulumi.Any(userPhotosPrimary),
+//					},
+//				},
+//				PreferredLanguage:         pulumi.Any(userPreferredLanguage),
+//				ProfileUrl:                pulumi.Any(userProfileUrl),
+//				ResourceTypeSchemaVersion: pulumi.Any(userResourceTypeSchemaVersion),
+//				Roles: identity.DomainsUserRoleArray{
+//					&identity.DomainsUserRoleArgs{
+//						Type:    pulumi.Any(userRolesType),
+//						Value:   pulumi.Any(userRolesValue),
+//						Display: pulumi.Any(userRolesDisplay),
+//						Primary: pulumi.Any(userRolesPrimary),
+//					},
+//				},
+//				Tags: identity.DomainsUserTagArray{
+//					&identity.DomainsUserTagArgs{
+//						Key:   pulumi.Any(userTagsKey),
+//						Value: pulumi.Any(userTagsValue),
+//					},
+//				},
+//				Timezone: pulumi.Any(userTimezone),
+//				Title:    pulumi.Any(userTitle),
+//				Urnietfparamsscimschemasextensionenterprise20user: &identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20userArgs{
+//					CostCenter:     pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userCostCenter),
+//					Department:     pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userDepartment),
+//					Division:       pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userDivision),
+//					EmployeeNumber: pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userEmployeeNumber),
+//					Manager: &identity.DomainsUserUrnietfparamsscimschemasextensionenterprise20userManagerArgs{
+//						Value: pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userManagerValue),
+//					},
+//					Organization: pulumi.Any(userUrnietfparamsscimschemasextensionenterprise20userOrganization),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionOciTags: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs{
+//					DefinedTags: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs{
+//							Key:       pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey),
+//							Namespace: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace),
+//							Value:     pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue),
+//						},
+//					},
+//					FreeformTags: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs{
+//							Key:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey),
+//							Value: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionadaptiveUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserArgs{
+//					RiskLevel: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskLevel),
+//					RiskScores: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoreArgs{
+//							LastUpdateTimestamp: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresLastUpdateTimestamp),
+//							RiskLevel:           pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresRiskLevel),
+//							Score:               pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresScore),
+//							Value:               pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresValue),
+//							Source:              pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresSource),
+//							Status:              pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresStatus),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserArgs{
+//					CanUseApiKeys:                 pulumi.Bool(true),
+//					CanUseAuthTokens:              pulumi.Bool(true),
+//					CanUseConsolePassword:         pulumi.Bool(true),
+//					CanUseCustomerSecretKeys:      pulumi.Bool(true),
+//					CanUseDbCredentials:           pulumi.Bool(true),
+//					CanUseOauth2clientCredentials: pulumi.Bool(true),
+//					CanUseSmtpCredentials:         pulumi.Bool(true),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserArgs{
+//					DbUserName: pulumi.String("dbUserName"),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionkerberosUserUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserArgs{
+//					RealmUsers: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUserArgs{
+//							Value:         pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersValue),
+//							PrincipalName: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersPrincipalName),
+//							RealmName:     pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersRealmName),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionmfaUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserArgs{
+//					BypassCodes: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodeArgs{
+//							Value: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodesValue),
+//						},
+//					},
+//					Devices: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDeviceArgs{
+//							Value:                pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesValue),
+//							AuthenticationMethod: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesAuthenticationMethod),
+//							Display:              pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesDisplay),
+//							FactorStatus:         pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorStatus),
+//							FactorType:           pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesFactorType),
+//							LastSyncTime:         pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesLastSyncTime),
+//							Status:               pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesStatus),
+//							ThirdPartyVendorName: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesThirdPartyVendorName),
+//						},
+//					},
+//					LoginAttempts:                 pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserLoginAttempts),
+//					MfaEnabledOn:                  pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaEnabledOn),
+//					MfaIgnoredApps:                pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaIgnoredApps),
+//					MfaStatus:                     pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserMfaStatus),
+//					PreferredAuthenticationFactor: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationFactor),
+//					PreferredAuthenticationMethod: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredAuthenticationMethod),
+//					PreferredDevice: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceArgs{
+//						Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceValue),
+//						Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceDisplay),
+//					},
+//					PreferredThirdPartyVendor: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredThirdPartyVendor),
+//					TrustedUserAgents: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentArgs{
+//							Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsValue),
+//							Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsDisplay),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionpasswordlessUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserArgs{
+//					FactorIdentifier: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierArgs{
+//						Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierValue),
+//						Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierDisplay),
+//					},
+//					FactorMethod: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorMethod),
+//					FactorType:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorType),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionposixUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserArgs{
+//					Gecos:         pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionposixUserGecos),
+//					GidNumber:     pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionposixUserGidNumber),
+//					HomeDirectory: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionposixUserHomeDirectory),
+//					LoginShell:    pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionposixUserLoginShell),
+//					UidNumber:     pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionposixUserUidNumber),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserArgs{
+//					SecQuestions: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionArgs{
+//							Answer:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsAnswer),
+//							Value:    pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsValue),
+//							HintText: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsHintText),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserArgs{
+//					SelfRegistrationProfile: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileArgs{
+//						Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileValue),
+//						Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileDisplay),
+//					},
+//					ConsentGranted: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserConsentGranted),
+//					UserToken:      pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserUserToken),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionsffUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserArgs{
+//					SffAuthKeys: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsffUserSffAuthKeys),
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionsocialAccountUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserArgs{
+//					SocialAccounts: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs{
+//							Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsValue),
+//							Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsDisplay),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserArgs{
+//					TermsOfUseConsents: identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArray{
+//						&identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs{
+//							Value: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentsValue),
+//						},
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionuserStateUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserArgs{
+//					Locked: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedArgs{
+//						Expired:  pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedExpired),
+//						LockDate: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedLockDate),
+//						On:       pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOn),
+//						Reason:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedReason),
+//					},
+//					MaxConcurrentSessions: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserMaxConcurrentSessions),
+//					RecoveryLocked: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedArgs{
+//						LockDate: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedLockDate),
+//						On:       pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOn),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionuserUser: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserArgs{
+//					UserProvider:            pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserUserProvider),
+//					AccountRecoveryRequired: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserAccountRecoveryRequired),
+//					BypassNotification:      pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserBypassNotification),
+//					CreationMechanism:       pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserCreationMechanism),
+//					DelegatedAuthenticationTargetApp: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs{
+//						Type:    pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppType),
+//						Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppValue),
+//						Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppDisplay),
+//					},
+//					DoNotShowGettingStarted:              pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserDoNotShowGettingStarted),
+//					IsAuthenticationDelegated:            pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsAuthenticationDelegated),
+//					IsFederatedUser:                      pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser),
+//					IsGroupMembershipNormalized:          pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized),
+//					IsGroupMembershipSyncedToUsersGroups: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups),
+//					NotificationEmailTemplateId:          pulumi.Any(testNotificationEmailTemplate.Id),
+//					PreferredUiLandingPage:               pulumi.Any(userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserPreferredUiLandingPage),
+//					ServiceUser:                          pulumi.Any(userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser),
+//					SyncedFromApp: &identity.DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs{
+//						Type:    pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppType),
+//						Value:   pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppValue),
+//						Display: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppDisplay),
+//					},
+//					UserFlowControlledByExternalClient: pulumi.Any(userUrnietfparamsscimschemasoracleidcsextensionuserUserUserFlowControlledByExternalClient),
+//				},
+//				UserType: pulumi.Any(userUserType),
+//				X509certificates: identity.DomainsUserX509certificateArray{
+//					&identity.DomainsUserX509certificateArgs{
+//						Value:   pulumi.Any(userX509certificatesValue),
+//						Display: pulumi.Any(userX509certificatesDisplay),
+//						Primary: pulumi.Any(userX509certificatesPrimary),
+//						Type:    pulumi.Any(userX509certificatesType),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Users can be imported using the `id`, e.g.

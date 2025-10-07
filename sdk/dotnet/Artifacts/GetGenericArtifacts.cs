@@ -165,7 +165,7 @@ namespace Pulumi.Oci.Artifacts
         public string? State { get; set; }
 
         /// <summary>
-        /// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+        /// Filter results by a prefix for `Version` and return artifacts that that begin with the specified prefix in their version.
         /// </summary>
         [Input("version")]
         public string? Version { get; set; }
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.Artifacts
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+        /// Filter results by a prefix for `Version` and return artifacts that that begin with the specified prefix in their version.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

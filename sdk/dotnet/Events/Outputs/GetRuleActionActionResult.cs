@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Events.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether or not this rule is currently enabled.  Example: `true`
+        /// Whether or not this rule is currently enabled.  Example: `True`
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

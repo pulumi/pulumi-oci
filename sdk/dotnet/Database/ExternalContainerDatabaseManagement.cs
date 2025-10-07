@@ -15,6 +15,30 @@ namespace Pulumi.Oci.Database
     /// Enables Database Management Service for the external container database.
     /// For more information about the Database Management Service, see
     /// [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalContainerDatabaseManagement = new Oci.Database.ExternalContainerDatabaseManagement("test_external_container_database_management", new()
+    ///     {
+    ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+    ///         ExternalDatabaseConnectorId = testExternalDatabaseConnector.Id,
+    ///         LicenseMode = externalNonContainerDatabaseManagementLicenseModel,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement")]
     public partial class ExternalContainerDatabaseManagement : global::Pulumi.CustomResource

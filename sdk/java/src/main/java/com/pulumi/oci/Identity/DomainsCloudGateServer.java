@@ -27,6 +27,61 @@ import javax.annotation.Nullable;
  * 
  * Create a Cloud Gate server
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsCloudGateServer;
+ * import com.pulumi.oci.Identity.DomainsCloudGateServerArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateServerCloudGateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsCloudGateServerTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCloudGateServer = new DomainsCloudGateServer("testCloudGateServer", DomainsCloudGateServerArgs.builder()
+ *             .cloudGate(DomainsCloudGateServerCloudGateArgs.builder()
+ *                 .value(cloudGateServerCloudGateValue)
+ *                 .build())
+ *             .displayName(cloudGateServerDisplayName)
+ *             .hostName(cloudGateServerHostName)
+ *             .idcsEndpoint(testDomain.url())
+ *             .port(cloudGateServerPort)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGateServer")
+ *             .ssl(cloudGateServerSsl)
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(cloudGateServerAuthorization)
+ *             .description(cloudGateServerDescription)
+ *             .id(cloudGateServerId)
+ *             .nginxSettings(cloudGateServerNginxSettings)
+ *             .ocid(cloudGateServerOcid)
+ *             .resourceTypeSchemaVersion(cloudGateServerResourceTypeSchemaVersion)
+ *             .tags(DomainsCloudGateServerTagArgs.builder()
+ *                 .key(cloudGateServerTagsKey)
+ *                 .value(cloudGateServerTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * CloudGateServers can be imported using the `id`, e.g.

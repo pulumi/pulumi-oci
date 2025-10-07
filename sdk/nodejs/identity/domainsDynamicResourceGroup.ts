@@ -11,6 +11,42 @@ import * as utilities from "../utilities";
  *
  * Create a Dynamic Resource Group.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDynamicResourceGroup = new oci.identity.DomainsDynamicResourceGroup("test_dynamic_resource_group", {
+ *     displayName: dynamicResourceGroupDisplayName,
+ *     idcsEndpoint: testDomain.url,
+ *     matchingRule: dynamicResourceGroupMatchingRule,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: dynamicResourceGroupAuthorization,
+ *     description: dynamicResourceGroupDescription,
+ *     id: dynamicResourceGroupId,
+ *     ocid: dynamicResourceGroupOcid,
+ *     resourceTypeSchemaVersion: dynamicResourceGroupResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: dynamicResourceGroupTagsKey,
+ *         value: dynamicResourceGroupTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionOciTags: {
+ *         definedTags: [{
+ *             key: dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey,
+ *             namespace: dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace,
+ *             value: dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue,
+ *         }],
+ *         freeformTags: [{
+ *             key: dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey,
+ *             value: dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue,
+ *         }],
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * DynamicResourceGroups can be imported using the `id`, e.g.

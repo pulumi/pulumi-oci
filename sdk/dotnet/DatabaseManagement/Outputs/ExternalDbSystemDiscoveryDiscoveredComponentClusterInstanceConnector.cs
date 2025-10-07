@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string? AgentId;
         /// <summary>
-        /// The error message indicating the reason for connection failure or `null` if the connection was successful.
+        /// The error message indicating the reason for connection failure or `Null` if the connection was successful.
         /// </summary>
         public readonly string? ConnectionFailureMessage;
         /// <summary>

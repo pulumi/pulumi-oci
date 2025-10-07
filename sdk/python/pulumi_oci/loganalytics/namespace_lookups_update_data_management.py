@@ -247,6 +247,25 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
 
         Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_update_data_management = oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management",
+            update_lookup_file_body=namespace_lookups_update_data_management_update_lookup_file_body,
+            lookup_name=namespace_lookups_update_data_management_lookup_name,
+            namespace=namespace_lookups_update_data_management_namespace,
+            char_encoding=namespace_lookups_update_data_management_char_encoding,
+            expect=namespace_lookups_update_data_management_expect,
+            is_force=namespace_lookups_update_data_management_is_force)
+        ```
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsUpdateDataManagement
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
@@ -269,6 +288,25 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
         This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
 
         Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_update_data_management = oci.loganalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management",
+            update_lookup_file_body=namespace_lookups_update_data_management_update_lookup_file_body,
+            lookup_name=namespace_lookups_update_data_management_lookup_name,
+            namespace=namespace_lookups_update_data_management_namespace,
+            char_encoding=namespace_lookups_update_data_management_char_encoding,
+            expect=namespace_lookups_update_data_management_expect,
+            is_force=namespace_lookups_update_data_management_is_force)
+        ```
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsUpdateDataManagement
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupsUpdateDataManagementArgs args: The arguments to use to populate this resource's properties.

@@ -21,6 +21,54 @@ import javax.annotation.Nullable;
  * 
  * Creates a new Decryption Rule for the Network Firewall Policy.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyDecryptionRule;
+ * import com.pulumi.oci.NetworkFirewall.NetworkFirewallPolicyDecryptionRuleArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRuleConditionArgs;
+ * import com.pulumi.oci.NetworkFirewall.inputs.NetworkFirewallPolicyDecryptionRulePositionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkFirewallPolicyDecryptionRule = new NetworkFirewallPolicyDecryptionRule("testNetworkFirewallPolicyDecryptionRule", NetworkFirewallPolicyDecryptionRuleArgs.builder()
+ *             .lifecycle(Map.of("ignoreChanges", List.of(position)))
+ *             .name(networkFirewallPolicyDecryptionRuleName)
+ *             .action(networkFirewallPolicyDecryptionRuleAction)
+ *             .condition(NetworkFirewallPolicyDecryptionRuleConditionArgs.builder()
+ *                 .destinationAddresses(networkFirewallPolicyDecryptionRuleConditionDestinationAddress)
+ *                 .sourceAddresses(networkFirewallPolicyDecryptionRuleConditionSourceAddress)
+ *                 .build())
+ *             .position(NetworkFirewallPolicyDecryptionRulePositionArgs.builder()
+ *                 .afterRule(networkFirewallPolicyDecryptionRulePositionAfterRule)
+ *                 .beforeRule(networkFirewallPolicyDecryptionRulePositionBeforeRule)
+ *                 .build())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .decryptionProfile(networkFirewallPolicyDecryptionRuleDecryptionProfile)
+ *             .secret(networkFirewallPolicyDecryptionRuleSecret)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
@@ -121,14 +169,14 @@ public class NetworkFirewallPolicyDecryptionRule extends com.pulumi.resources.Cu
         return this.parentResourceId;
     }
     /**
-     * (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     @Export(name="position", refs={NetworkFirewallPolicyDecryptionRulePosition.class}, tree="[0]")
     private Output<NetworkFirewallPolicyDecryptionRulePosition> position;
 
     /**
-     * @return (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * @return (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     public Output<NetworkFirewallPolicyDecryptionRulePosition> position() {

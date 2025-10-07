@@ -1438,6 +1438,47 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
 
         Create a Cloud Gate mapping
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_gate_mapping = oci.identity.DomainsCloudGateMapping("test_cloud_gate_mapping",
+            cloud_gate={
+                "value": cloud_gate_mapping_cloud_gate_value,
+            },
+            gateway_app={
+                "name": cloud_gate_mapping_gateway_app_name,
+                "value": cloud_gate_mapping_gateway_app_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            policy_name=test_policy["name"],
+            resource_prefix=cloud_gate_mapping_resource_prefix,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping"],
+            server={
+                "value": cloud_gate_mapping_server_value,
+            },
+            attribute_sets=["all"],
+            attributes="",
+            authorization=cloud_gate_mapping_authorization,
+            description=cloud_gate_mapping_description,
+            id=cloud_gate_mapping_id,
+            is_opc_service=cloud_gate_mapping_is_opc_service,
+            nginx_settings=cloud_gate_mapping_nginx_settings,
+            ocid=cloud_gate_mapping_ocid,
+            proxy_pass=cloud_gate_mapping_proxy_pass,
+            resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
+            tags=[{
+                "key": cloud_gate_mapping_tags_key,
+                "value": cloud_gate_mapping_tags_value,
+            }],
+            upstream_server_group={
+                "ssl": cloud_gate_mapping_upstream_server_group_ssl,
+                "value": cloud_gate_mapping_upstream_server_group_value,
+            })
+        ```
+
         ## Import
 
         CloudGateMappings can be imported using the `id`, e.g.
@@ -1597,6 +1638,47 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a Cloud Gate mapping
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_cloud_gate_mapping = oci.identity.DomainsCloudGateMapping("test_cloud_gate_mapping",
+            cloud_gate={
+                "value": cloud_gate_mapping_cloud_gate_value,
+            },
+            gateway_app={
+                "name": cloud_gate_mapping_gateway_app_name,
+                "value": cloud_gate_mapping_gateway_app_value,
+            },
+            idcs_endpoint=test_domain["url"],
+            policy_name=test_policy["name"],
+            resource_prefix=cloud_gate_mapping_resource_prefix,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping"],
+            server={
+                "value": cloud_gate_mapping_server_value,
+            },
+            attribute_sets=["all"],
+            attributes="",
+            authorization=cloud_gate_mapping_authorization,
+            description=cloud_gate_mapping_description,
+            id=cloud_gate_mapping_id,
+            is_opc_service=cloud_gate_mapping_is_opc_service,
+            nginx_settings=cloud_gate_mapping_nginx_settings,
+            ocid=cloud_gate_mapping_ocid,
+            proxy_pass=cloud_gate_mapping_proxy_pass,
+            resource_type_schema_version=cloud_gate_mapping_resource_type_schema_version,
+            tags=[{
+                "key": cloud_gate_mapping_tags_key,
+                "value": cloud_gate_mapping_tags_value,
+            }],
+            upstream_server_group={
+                "ssl": cloud_gate_mapping_upstream_server_group_ssl,
+                "value": cloud_gate_mapping_upstream_server_group_value,
+            })
+        ```
 
         ## Import
 

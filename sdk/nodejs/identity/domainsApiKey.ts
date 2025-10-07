@@ -11,6 +11,37 @@ import * as utilities from "../utilities";
  *
  * Create a user's API key.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApiKey = new oci.identity.DomainsApiKey("test_api_key", {
+ *     idcsEndpoint: testDomain.url,
+ *     key: apiKeyKey,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:apikey"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: apiKeyAuthorization,
+ *     description: apiKeyDescription,
+ *     id: apiKeyId,
+ *     ocid: apiKeyOcid,
+ *     resourceTypeSchemaVersion: apiKeyResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: apiKeyTagsKey,
+ *         value: apiKeyTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
+ *         allowSelfChange: apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *     },
+ *     user: {
+ *         ocid: testUser.ocid,
+ *         value: testUser.id,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * ApiKeys can be imported using the `id`, e.g.

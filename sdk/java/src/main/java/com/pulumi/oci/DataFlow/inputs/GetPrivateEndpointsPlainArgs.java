@@ -33,14 +33,14 @@ public final class GetPrivateEndpointsPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     public Optional<String> displayName() {
@@ -140,7 +140,7 @@ public final class GetPrivateEndpointsPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
          * 
          * @return builder
          * 

@@ -649,6 +649,28 @@ class DatabaseUpgrade(pulumi.CustomResource):
         	}
         	```
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_database_upgrade = oci.database.DatabaseUpgrade("test_database_upgrade",
+            action=database_upgrade_action,
+            database_id=test_database["id"],
+            database_upgrade_source_details={
+                "database_software_image_id": test_database_software_image["id"],
+                "db_home_id": test_db_home["id"],
+                "db_version": database_upgrade_database_upgrade_source_details_db_version,
+                "options": database_upgrade_database_upgrade_source_details_options,
+                "source": database_upgrade_database_upgrade_source_details_source,
+            })
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: The database upgrade action.
@@ -675,6 +697,28 @@ class DatabaseUpgrade(pulumi.CustomResource):
         	   	]
         	}
         	```
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_database_upgrade = oci.database.DatabaseUpgrade("test_database_upgrade",
+            action=database_upgrade_action,
+            database_id=test_database["id"],
+            database_upgrade_source_details={
+                "database_software_image_id": test_database_software_image["id"],
+                "db_home_id": test_db_home["id"],
+                "db_version": database_upgrade_database_upgrade_source_details_db_version,
+                "options": database_upgrade_database_upgrade_source_details_options,
+                "source": database_upgrade_database_upgrade_source_details_source,
+            })
+        ```
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param DatabaseUpgradeArgs args: The arguments to use to populate this resource's properties.

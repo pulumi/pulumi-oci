@@ -966,6 +966,38 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
 
         Create Approval Workflow Assignment
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_approval_workflow_assignment = oci.identity.DomainsApprovalWorkflowAssignment("test_approval_workflow_assignment",
+            approval_workflow={
+                "type": approval_workflow_assignment_approval_workflow_type,
+                "value": approval_workflow_assignment_approval_workflow_value,
+                "ocid": approval_workflow_assignment_approval_workflow_ocid,
+            },
+            assigned_to={
+                "type": approval_workflow_assignment_assigned_to_type,
+                "value": approval_workflow_assignment_assigned_to_value,
+                "ocid": approval_workflow_assignment_assigned_to_ocid,
+            },
+            assignment_type=approval_workflow_assignment_assignment_type,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment"],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=approval_workflow_assignment_authorization,
+            id=approval_workflow_assignment_id,
+            ocid=approval_workflow_assignment_ocid,
+            resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
+            tags=[{
+                "key": approval_workflow_assignment_tags_key,
+                "value": approval_workflow_assignment_tags_value,
+            }])
+        ```
+
         ## Import
 
         ApprovalWorkflowAssignments can be imported using the `id`, e.g.
@@ -1058,6 +1090,38 @@ class DomainsApprovalWorkflowAssignment(pulumi.CustomResource):
         This resource provides the Approval Workflow Assignment resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create Approval Workflow Assignment
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_approval_workflow_assignment = oci.identity.DomainsApprovalWorkflowAssignment("test_approval_workflow_assignment",
+            approval_workflow={
+                "type": approval_workflow_assignment_approval_workflow_type,
+                "value": approval_workflow_assignment_approval_workflow_value,
+                "ocid": approval_workflow_assignment_approval_workflow_ocid,
+            },
+            assigned_to={
+                "type": approval_workflow_assignment_assigned_to_type,
+                "value": approval_workflow_assignment_assigned_to_value,
+                "ocid": approval_workflow_assignment_assigned_to_ocid,
+            },
+            assignment_type=approval_workflow_assignment_assignment_type,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment"],
+            attribute_sets=["all"],
+            attributes="",
+            authorization=approval_workflow_assignment_authorization,
+            id=approval_workflow_assignment_id,
+            ocid=approval_workflow_assignment_ocid,
+            resource_type_schema_version=approval_workflow_assignment_resource_type_schema_version,
+            tags=[{
+                "key": approval_workflow_assignment_tags_key,
+                "value": approval_workflow_assignment_tags_value,
+            }])
+        ```
 
         ## Import
 

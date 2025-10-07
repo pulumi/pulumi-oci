@@ -43,7 +43,7 @@ namespace Pulumi.Oci.ApmTraces.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        /// (Updatable) Namespace in the Custom Metric. It defaults to `OracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

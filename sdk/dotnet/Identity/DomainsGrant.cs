@@ -14,6 +14,65 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Add a Grantee to an AppRole
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testGrant = new Oci.Identity.DomainsGrant("test_grant", new()
+    ///     {
+    ///         GrantMechanism = grantGrantMechanism,
+    ///         Grantee = new Oci.Identity.Inputs.DomainsGrantGranteeArgs
+    ///         {
+    ///             Type = grantGranteeType,
+    ///             Value = grantGranteeValue,
+    ///         },
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:Grant",
+    ///         },
+    ///         App = new Oci.Identity.Inputs.DomainsGrantAppArgs
+    ///         {
+    ///             Value = grantAppValue,
+    ///         },
+    ///         AppEntitlementCollection = new Oci.Identity.Inputs.DomainsGrantAppEntitlementCollectionArgs
+    ///         {
+    ///             Value = grantAppEntitlementCollectionValue,
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = grantAuthorization,
+    ///         Entitlement = new Oci.Identity.Inputs.DomainsGrantEntitlementArgs
+    ///         {
+    ///             AttributeName = "appRoles",
+    ///             AttributeValue = grantEntitlementAttributeValue,
+    ///         },
+    ///         GrantedAttributeValuesJson = grantGrantedAttributeValuesJson,
+    ///         Id = grantId,
+    ///         Ocid = grantOcid,
+    ///         ResourceTypeSchemaVersion = grantResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsGrantTagArgs
+    ///             {
+    ///                 Key = grantTagsKey,
+    ///                 Value = grantTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Grants can be imported using the `id`, e.g.

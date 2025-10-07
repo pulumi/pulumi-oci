@@ -11,6 +11,33 @@ import * as utilities from "../utilities";
  *
  * Create a user's own SMTP credential.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMySmtpCredential = new oci.identity.DomainsMySmtpCredential("test_my_smtp_credential", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential"],
+ *     authorization: mySmtpCredentialAuthorization,
+ *     description: mySmtpCredentialDescription,
+ *     expiresOn: mySmtpCredentialExpiresOn,
+ *     id: mySmtpCredentialId,
+ *     ocid: mySmtpCredentialOcid,
+ *     resourceTypeSchemaVersion: mySmtpCredentialResourceTypeSchemaVersion,
+ *     status: mySmtpCredentialStatus,
+ *     tags: [{
+ *         key: mySmtpCredentialTagsKey,
+ *         value: mySmtpCredentialTagsValue,
+ *     }],
+ *     user: {
+ *         ocid: mySmtpCredentialUserOcid,
+ *         value: mySmtpCredentialUserValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MySmtpCredentials can be imported using the `id`, e.g.

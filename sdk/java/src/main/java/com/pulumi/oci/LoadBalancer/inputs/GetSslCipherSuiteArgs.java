@@ -32,7 +32,7 @@ public final class GetSslCipherSuiteArgs extends com.pulumi.resources.InvokeArgs
     /**
      * The name of the SSL cipher suite to retrieve.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     @Import(name="name", required=true)
@@ -41,7 +41,7 @@ public final class GetSslCipherSuiteArgs extends com.pulumi.resources.InvokeArgs
     /**
      * @return The name of the SSL cipher suite to retrieve.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     public Output<String> name() {
@@ -97,7 +97,7 @@ public final class GetSslCipherSuiteArgs extends com.pulumi.resources.InvokeArgs
         /**
          * @param name The name of the SSL cipher suite to retrieve.
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * @return builder
          * 
@@ -110,7 +110,7 @@ public final class GetSslCipherSuiteArgs extends com.pulumi.resources.InvokeArgs
         /**
          * @param name The name of the SSL cipher suite to retrieve.
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * @return builder
          * 

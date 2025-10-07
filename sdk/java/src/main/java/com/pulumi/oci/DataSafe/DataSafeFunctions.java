@@ -24666,6 +24666,8 @@ public final class DataSafeFunctions {
      * 
      * Gets the details of the specified referential relation.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args) {
         return getSensitiveDataModelReferentialRelation(args, InvokeOptions.Empty);
@@ -24674,6 +24676,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args) {
@@ -24684,6 +24688,8 @@ public final class DataSafeFunctions {
      * 
      * Gets the details of the specified referential relation.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
@@ -24693,6 +24699,8 @@ public final class DataSafeFunctions {
      * 
      * Gets the details of the specified referential relation.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
@@ -24701,6 +24709,8 @@ public final class DataSafeFunctions {
      * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets the details of the specified referential relation.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args, InvokeOptions options) {
@@ -31366,6 +31376,8 @@ public final class DataSafeFunctions {
      * 
      * Gets a list of all target-alert policy associations.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args) {
         return getTargetAlertPolicyAssociations(args, InvokeOptions.Empty);
@@ -31374,6 +31386,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args) {
@@ -31384,6 +31398,8 @@ public final class DataSafeFunctions {
      * 
      * Gets a list of all target-alert policy associations.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", TypeShape.of(GetTargetAlertPolicyAssociationsResult.class), args, Utilities.withVersion(options));
@@ -31393,6 +31409,8 @@ public final class DataSafeFunctions {
      * 
      * Gets a list of all target-alert policy associations.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociations(GetTargetAlertPolicyAssociationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getTargetAlertPolicyAssociations:getTargetAlertPolicyAssociations", TypeShape.of(GetTargetAlertPolicyAssociationsResult.class), args, Utilities.withVersion(options));
@@ -31401,6 +31419,8 @@ public final class DataSafeFunctions {
      * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
      * 
      * Gets a list of all target-alert policy associations.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetTargetAlertPolicyAssociationsResult> getTargetAlertPolicyAssociationsPlain(GetTargetAlertPolicyAssociationsPlainArgs args, InvokeOptions options) {

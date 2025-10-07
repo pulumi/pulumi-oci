@@ -28,13 +28,59 @@ import javax.annotation.Nullable;
  * 
  * Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
  * 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
- * 	To avoid a force new create of the db_home on the next apply, add the following to the resource
+ * 	To avoid a force new create of the dbHome on the next apply, add the following to the resource
  * 	```	lifecycle {
  * 	   	ignore_changes = [
  * 	   		db_home.0.db_version,
  * 	   	]
  * 	}
  * 	```
+ * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DatabaseUpgrade;
+ * import com.pulumi.oci.Database.DatabaseUpgradeArgs;
+ * import com.pulumi.oci.Database.inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()
+ *             .action(databaseUpgradeAction)
+ *             .databaseId(testDatabase.id())
+ *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
+ *                 .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
+ *                 .dbHomeId(testDbHome.id())
+ *                 .dbVersion(databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion)
+ *                 .options(databaseUpgradeDatabaseUpgradeSourceDetailsOptions)
+ *                 .source(databaseUpgradeDatabaseUpgradeSourceDetailsSource)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
  * 
  */
 @ResourceType(type="oci:Database/databaseUpgrade:DatabaseUpgrade")

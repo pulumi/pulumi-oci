@@ -9,6 +9,28 @@ import * as utilities from "../utilities";
  *
  * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
  * The reporting region cannot be updated once created.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudGuardConfiguration = new oci.cloudguard.CloudGuardConfiguration("test_cloud_guard_configuration", {
+ *     compartmentId: compartmentId,
+ *     reportingRegion: cloudGuardConfigurationReportingRegion,
+ *     status: cloudGuardConfigurationStatus,
+ *     selfManageResources: cloudGuardConfigurationSelfManageResources,
+ *     serviceConfigurations: [{
+ *         serviceConfigurationType: cloudGuardConfigurationServiceConfigurationsServiceConfigurationType,
+ *         status: cloudGuardConfigurationServiceConfigurationsStatus,
+ *     }],
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
  */
 export class CloudGuardConfiguration extends pulumi.CustomResource {
     /**

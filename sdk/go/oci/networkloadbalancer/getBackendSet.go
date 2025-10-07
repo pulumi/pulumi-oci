@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
 //
 // Retrieves the configuration information for the specified backend set.
+//
+// ## Example Usage
 func LookupBackendSet(ctx *pulumi.Context, args *LookupBackendSetArgs, opts ...pulumi.InvokeOption) (*LookupBackendSetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBackendSetResult

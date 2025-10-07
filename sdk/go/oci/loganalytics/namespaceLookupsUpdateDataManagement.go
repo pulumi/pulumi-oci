@@ -15,6 +15,41 @@ import (
 // This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
 //
 // Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/loganalytics"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := loganalytics.NewNamespaceLookupsUpdateDataManagement(ctx, "test_namespace_lookups_update_data_management", &loganalytics.NamespaceLookupsUpdateDataManagementArgs{
+//				UpdateLookupFileBody: namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
+//				LookupName:           pulumi.Any(namespaceLookupsUpdateDataManagementLookupName),
+//				Namespace:            pulumi.Any(namespaceLookupsUpdateDataManagementNamespace),
+//				CharEncoding:         pulumi.Any(namespaceLookupsUpdateDataManagementCharEncoding),
+//				Expect:               pulumi.Any(namespaceLookupsUpdateDataManagementExpect),
+//				IsForce:              pulumi.Any(namespaceLookupsUpdateDataManagementIsForce),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for NamespaceLookupsUpdateDataManagement
 type NamespaceLookupsUpdateDataManagement struct {
 	pulumi.CustomResourceState
 

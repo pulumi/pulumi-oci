@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MysqlConfigurationInitVariables {
     /**
-     * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * @return Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
      * 
@@ -25,7 +25,7 @@ public final class MysqlConfigurationInitVariables {
 
     private MysqlConfigurationInitVariables() {}
     /**
-     * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * @return Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      * lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
      * 

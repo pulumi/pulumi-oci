@@ -1323,6 +1323,43 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
 
         Add a user's OAuth2 client credentials.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_oauth2client_credential = oci.identity.DomainsOauth2clientCredential("test_oauth2client_credential",
+            idcs_endpoint=test_domain["url"],
+            name=oauth2client_credential_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"],
+            scopes=[{
+                "audience": oauth2client_credential_scopes_audience,
+                "scope": oauth2client_credential_scopes_scope,
+            }],
+            attribute_sets=[],
+            attributes="",
+            authorization=oauth2client_credential_authorization,
+            description=oauth2client_credential_description,
+            expires_on=oauth2client_credential_expires_on,
+            id=oauth2client_credential_id,
+            is_reset_secret=oauth2client_credential_is_reset_secret,
+            ocid=oauth2client_credential_ocid,
+            resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
+            status=oauth2client_credential_status,
+            tags=[{
+                "key": oauth2client_credential_tags_key,
+                "value": oauth2client_credential_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
+
         ## Import
 
         OAuth2ClientCredentials can be imported using the `id`, e.g.
@@ -1461,6 +1498,43 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a user's OAuth2 client credentials.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_oauth2client_credential = oci.identity.DomainsOauth2clientCredential("test_oauth2client_credential",
+            idcs_endpoint=test_domain["url"],
+            name=oauth2client_credential_name,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"],
+            scopes=[{
+                "audience": oauth2client_credential_scopes_audience,
+                "scope": oauth2client_credential_scopes_scope,
+            }],
+            attribute_sets=[],
+            attributes="",
+            authorization=oauth2client_credential_authorization,
+            description=oauth2client_credential_description,
+            expires_on=oauth2client_credential_expires_on,
+            id=oauth2client_credential_id,
+            is_reset_secret=oauth2client_credential_is_reset_secret,
+            ocid=oauth2client_credential_ocid,
+            resource_type_schema_version=oauth2client_credential_resource_type_schema_version,
+            status=oauth2client_credential_status,
+            tags=[{
+                "key": oauth2client_credential_tags_key,
+                "value": oauth2client_credential_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": oauth2client_credential_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
 
         ## Import
 

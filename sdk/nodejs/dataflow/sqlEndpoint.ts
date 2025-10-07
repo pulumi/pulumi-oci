@@ -14,6 +14,56 @@ import * as utilities from "../utilities";
  *
  * Create a new Sql Endpoint.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSqlEndpoint = new oci.dataflow.SqlEndpoint("test_sql_endpoint", {
+ *     compartmentId: compartmentId,
+ *     displayName: sqlEndpointDisplayName,
+ *     driverShape: sqlEndpointDriverShape,
+ *     executorShape: sqlEndpointExecutorShape,
+ *     lakeId: testLake.id,
+ *     maxExecutorCount: sqlEndpointMaxExecutorCount,
+ *     metastoreId: testMetastore.id,
+ *     minExecutorCount: sqlEndpointMinExecutorCount,
+ *     networkConfiguration: {
+ *         networkType: sqlEndpointNetworkConfigurationNetworkType,
+ *         accessControlRules: [{
+ *             ipNotation: sqlEndpointNetworkConfigurationAccessControlRulesIpNotation,
+ *             value: sqlEndpointNetworkConfigurationAccessControlRulesValue,
+ *             vcnIps: sqlEndpointNetworkConfigurationAccessControlRulesVcnIps,
+ *         }],
+ *         hostNamePrefix: sqlEndpointNetworkConfigurationHostNamePrefix,
+ *         nsgIds: sqlEndpointNetworkConfigurationNsgIds,
+ *         privateEndpointIp: sqlEndpointNetworkConfigurationPrivateEndpointIp,
+ *         publicEndpointIp: sqlEndpointNetworkConfigurationPublicEndpointIp,
+ *         subnetId: testSubnet.id,
+ *         vcnId: testVcn.id,
+ *     },
+ *     sqlEndpointVersion: sqlEndpointSqlEndpointVersion,
+ *     warehouseBucketUri: sqlEndpointWarehouseBucketUri,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: sqlEndpointDescription,
+ *     driverShapeConfig: {
+ *         memoryInGbs: sqlEndpointDriverShapeConfigMemoryInGbs,
+ *         ocpus: sqlEndpointDriverShapeConfigOcpus,
+ *     },
+ *     executorShapeConfig: {
+ *         memoryInGbs: sqlEndpointExecutorShapeConfigMemoryInGbs,
+ *         ocpus: sqlEndpointExecutorShapeConfigOcpus,
+ *     },
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     sparkAdvancedConfigurations: sqlEndpointSparkAdvancedConfigurations,
+ * });
+ * ```
+ *
  * ## Import
  *
  * SqlEndpoints can be imported using the `id`, e.g.

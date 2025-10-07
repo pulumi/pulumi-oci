@@ -579,6 +579,51 @@ class Pipeline(pulumi.CustomResource):
 
         Creates a new Pipeline.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pipeline = oci.goldengate.Pipeline("test_pipeline",
+            compartment_id=compartment_id,
+            display_name=pipeline_display_name,
+            license_model=pipeline_license_model,
+            recipe_type=pipeline_recipe_type,
+            source_connection_details={
+                "connection_id": test_connection["id"],
+            },
+            target_connection_details={
+                "connection_id": test_connection["id"],
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=pipeline_description,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            locks=[{
+                "type": pipeline_locks_type,
+                "message": pipeline_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": pipeline_locks_time_created,
+            }],
+            process_options={
+                "initial_data_load": {
+                    "is_initial_load": pipeline_process_options_initial_data_load_is_initial_load,
+                    "action_on_existing_table": pipeline_process_options_initial_data_load_action_on_existing_table,
+                },
+                "replicate_schema_change": {
+                    "can_replicate_schema_change": pipeline_process_options_replicate_schema_change_can_replicate_schema_change,
+                    "action_on_ddl_error": pipeline_process_options_replicate_schema_change_action_on_ddl_error,
+                    "action_on_dml_error": pipeline_process_options_replicate_schema_change_action_on_dml_error,
+                },
+                "should_restart_on_failure": pipeline_process_options_should_restart_on_failure,
+                "start_using_default_mapping": pipeline_process_options_start_using_default_mapping,
+            })
+        ```
+
         ## Import
 
         Pipelines can be imported using the `id`, e.g.
@@ -611,6 +656,51 @@ class Pipeline(pulumi.CustomResource):
         This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
 
         Creates a new Pipeline.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_pipeline = oci.goldengate.Pipeline("test_pipeline",
+            compartment_id=compartment_id,
+            display_name=pipeline_display_name,
+            license_model=pipeline_license_model,
+            recipe_type=pipeline_recipe_type,
+            source_connection_details={
+                "connection_id": test_connection["id"],
+            },
+            target_connection_details={
+                "connection_id": test_connection["id"],
+            },
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            description=pipeline_description,
+            freeform_tags={
+                "bar-key": "value",
+            },
+            locks=[{
+                "type": pipeline_locks_type,
+                "message": pipeline_locks_message,
+                "related_resource_id": test_resource["id"],
+                "time_created": pipeline_locks_time_created,
+            }],
+            process_options={
+                "initial_data_load": {
+                    "is_initial_load": pipeline_process_options_initial_data_load_is_initial_load,
+                    "action_on_existing_table": pipeline_process_options_initial_data_load_action_on_existing_table,
+                },
+                "replicate_schema_change": {
+                    "can_replicate_schema_change": pipeline_process_options_replicate_schema_change_can_replicate_schema_change,
+                    "action_on_ddl_error": pipeline_process_options_replicate_schema_change_action_on_ddl_error,
+                    "action_on_dml_error": pipeline_process_options_replicate_schema_change_action_on_dml_error,
+                },
+                "should_restart_on_failure": pipeline_process_options_should_restart_on_failure,
+                "start_using_default_mapping": pipeline_process_options_start_using_default_mapping,
+            })
+        ```
 
         ## Import
 

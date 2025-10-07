@@ -1074,6 +1074,41 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
 
         Create a Dynamic Resource Group.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dynamic_resource_group = oci.identity.DomainsDynamicResourceGroup("test_dynamic_resource_group",
+            display_name=dynamic_resource_group_display_name,
+            idcs_endpoint=test_domain["url"],
+            matching_rule=dynamic_resource_group_matching_rule,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup"],
+            attribute_sets=[],
+            attributes="",
+            authorization=dynamic_resource_group_authorization,
+            description=dynamic_resource_group_description,
+            id=dynamic_resource_group_id,
+            ocid=dynamic_resource_group_ocid,
+            resource_type_schema_version=dynamic_resource_group_resource_type_schema_version,
+            tags=[{
+                "key": dynamic_resource_group_tags_key,
+                "value": dynamic_resource_group_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            })
+        ```
+
         ## Import
 
         DynamicResourceGroups can be imported using the `id`, e.g.
@@ -1169,6 +1204,41 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
         This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a Dynamic Resource Group.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_dynamic_resource_group = oci.identity.DomainsDynamicResourceGroup("test_dynamic_resource_group",
+            display_name=dynamic_resource_group_display_name,
+            idcs_endpoint=test_domain["url"],
+            matching_rule=dynamic_resource_group_matching_rule,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup"],
+            attribute_sets=[],
+            attributes="",
+            authorization=dynamic_resource_group_authorization,
+            description=dynamic_resource_group_description,
+            id=dynamic_resource_group_id,
+            ocid=dynamic_resource_group_ocid,
+            resource_type_schema_version=dynamic_resource_group_resource_type_schema_version,
+            tags=[{
+                "key": dynamic_resource_group_tags_key,
+                "value": dynamic_resource_group_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextension_oci_tags={
+                "defined_tags": [{
+                    "key": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_key,
+                    "namespace": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_namespace,
+                    "value": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_defined_tags_value,
+                }],
+                "freeform_tags": [{
+                    "key": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_key,
+                    "value": dynamic_resource_group_urnietfparamsscimschemasoracleidcsextension_oci_tags_freeform_tags_value,
+                }],
+            })
+        ```
 
         ## Import
 

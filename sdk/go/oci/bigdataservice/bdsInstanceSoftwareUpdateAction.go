@@ -15,6 +15,33 @@ import (
 // This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
 //
 // Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/bigdataservice"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := bigdataservice.NewBdsInstanceSoftwareUpdateAction(ctx, "test_bds_instance_software_update_action", &bigdataservice.BdsInstanceSoftwareUpdateActionArgs{
+//				BdsInstanceId:     pulumi.Any(testBdsInstance.Id),
+//				SoftwareUpdateKey: bdsInstanceSoftwareUpdateActionSoftwareUpdateKey,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type BdsInstanceSoftwareUpdateAction struct {
 	pulumi.CustomResourceState
 

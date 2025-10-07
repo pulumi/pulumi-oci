@@ -16,6 +16,53 @@ import (
 //
 // Creates a data source.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/generativeai"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := generativeai.NewAgentDataSource(ctx, "test_data_source", &generativeai.AgentDataSourceArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				DataSourceConfig: &generativeai.AgentDataSourceDataSourceConfigArgs{
+//					DataSourceConfigType: pulumi.Any(dataSourceDataSourceConfigDataSourceConfigType),
+//					ObjectStoragePrefixes: generativeai.AgentDataSourceDataSourceConfigObjectStoragePrefixArray{
+//						&generativeai.AgentDataSourceDataSourceConfigObjectStoragePrefixArgs{
+//							Bucket:    pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesBucket),
+//							Namespace: pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesNamespace),
+//							Prefix:    pulumi.Any(dataSourceDataSourceConfigObjectStoragePrefixesPrefix),
+//						},
+//					},
+//					ShouldEnableMultiModality: dataSourceDataSourceConfigShouldEnableMultiModality,
+//				},
+//				KnowledgeBaseId: pulumi.Any(testKnowledgeBase.Id),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(dataSourceDescription),
+//				DisplayName: pulumi.Any(dataSourceDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				Metadata: pulumi.Any(dataSourceMetadata),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // DataSources can be imported using the `id`, e.g.

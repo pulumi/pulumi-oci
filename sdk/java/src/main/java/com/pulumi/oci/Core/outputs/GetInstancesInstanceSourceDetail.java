@@ -35,7 +35,7 @@ public final class GetInstancesInstanceSourceDetail {
      */
     private String kmsKeyId;
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
      * 
      */
     private String sourceId;
@@ -78,7 +78,7 @@ public final class GetInstancesInstanceSourceDetail {
         return this.kmsKeyId;
     }
     /**
-     * @return The OCID of an image or a boot volume to use, depending on the value of `source_type`.
+     * @return The OCID of an image or a boot volume to use, depending on the value of `sourceType`.
      * 
      */
     public String sourceId() {

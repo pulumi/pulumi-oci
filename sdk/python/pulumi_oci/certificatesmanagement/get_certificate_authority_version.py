@@ -197,6 +197,8 @@ def get_certificate_authority_version(certificate_authority_id: Optional[_builti
     Lists all versions for the specified certificate authority (CA).
     Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
 
+    ## Example Usage
+
 
     :param _builtins.str certificate_authority_id: The OCID of the certificate authority (CA).
     """
@@ -228,6 +230,8 @@ def get_certificate_authority_version_output(certificate_authority_id: Optional[
 
     Lists all versions for the specified certificate authority (CA).
     Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+
+    ## Example Usage
 
 
     :param _builtins.str certificate_authority_id: The OCID of the certificate authority (CA).

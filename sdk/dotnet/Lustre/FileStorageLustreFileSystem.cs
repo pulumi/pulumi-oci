@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Lustre
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Type of network used by clients to mount the file system.   Example: `tcp`
+        /// Type of network used by clients to mount the file system.   Example: `Tcp`
         /// </summary>
         [Output("lnet")]
         public Output<string> Lnet { get; private set; } = null!;
@@ -471,7 +471,7 @@ namespace Pulumi.Oci.Lustre
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Type of network used by clients to mount the file system.   Example: `tcp`
+        /// Type of network used by clients to mount the file system.   Example: `Tcp`
         /// </summary>
         [Input("lnet")]
         public Input<string>? Lnet { get; set; }

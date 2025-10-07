@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Core
         public Output<string> InstanceHostnameFormatter { get; private set; } = null!;
 
         /// <summary>
-        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 LoadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         /// </summary>
         [Output("loadBalancers")]
         public Output<ImmutableArray<Outputs.InstancePoolLoadBalancer>> LoadBalancers { get; private set; } = null!;
@@ -295,7 +295,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.InstancePoolLoadBalancerArgs>? _loadBalancers;
 
         /// <summary>
-        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 LoadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         /// </summary>
         public InputList<Inputs.InstancePoolLoadBalancerArgs> LoadBalancers
         {
@@ -405,7 +405,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.InstancePoolLoadBalancerGetArgs>? _loadBalancers;
 
         /// <summary>
-        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+        /// The load balancers to attach to the instance pool. (Note: From 6.16.0 LoadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
         /// </summary>
         public InputList<Inputs.InstancePoolLoadBalancerGetArgs> LoadBalancers
         {

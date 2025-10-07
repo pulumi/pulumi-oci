@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
 //
 // Get Decryption Profile by the given name in the context of network firewall policy.
+//
+// ## Example Usage
 func LookupNetworkFirewallPolicyDecryptionProfile(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyDecryptionProfileArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyDecryptionProfileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyDecryptionProfileResult

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// This indicates whether trust verification was disabled during the creation of SSL certificate. If `true` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
+        /// This indicates whether trust verification was disabled during the creation of SSL certificate. If `True` SSL certificate trust verification was disabled and this SSL certificate is most likely self-signed.
         /// </summary>
         public readonly bool IsTrustVerificationDisabled;
         public readonly string IssuedBy;

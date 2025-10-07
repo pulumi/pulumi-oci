@@ -14,6 +14,125 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// Creates a new BDS instance.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testBdsInstance = new Oci.BigDataService.BdsInstance("test_bds_instance", new()
+    ///     {
+    ///         ClusterAdminPassword = bdsInstanceClusterAdminPassword,
+    ///         ClusterPublicKey = bdsInstanceClusterPublicKey,
+    ///         ClusterVersion = bdsInstanceClusterVersion,
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = bdsInstanceDisplayName,
+    ///         IsHighAvailability = bdsInstanceIsHighAvailability,
+    ///         IsSecure = bdsInstanceIsSecure,
+    ///         MasterNode = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceMasterNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         UtilNode = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceUtilNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         WorkerNode = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceWorkerNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         ComputeOnlyWorkerNode = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         EdgeNode = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceEdgeNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         KafkaBrokerNode = new Oci.BigDataService.Inputs.BdsInstanceKafkaBrokerNodeArgs
+    ///         {
+    ///             Shape = bdsInstanceNodesShape,
+    ///             SubnetId = testSubnet.Id,
+    ///             NumberOfNodes = bdsInstanceNumberOfNodes,
+    ///             BlockVolumeSizeInGbs = bdsInstanceNodesBlockVolumeSizeInGbs,
+    ///             ShapeConfig = new Oci.BigDataService.Inputs.BdsInstanceKafkaBrokerNodeShapeConfigArgs
+    ///             {
+    ///                 MemoryInGbs = bdsInstanceNodesShapeConfigMemoryInGbs,
+    ///                 Nvmes = bdsInstanceNodesShapeConfigNvmes,
+    ///                 Ocpus = bdsInstanceNodesShapeConfigOcpus,
+    ///             },
+    ///         },
+    ///         BdsClusterVersionSummary = new Oci.BigDataService.Inputs.BdsInstanceBdsClusterVersionSummaryArgs
+    ///         {
+    ///             BdsVersion = bdsInstanceBdsClusterVersionSummaryBdsVersion,
+    ///             OdhVersion = bdsInstanceBdsClusterVersionSummaryOdhVersion,
+    ///         },
+    ///         BootstrapScriptUrl = bdsInstanceBootstrapScriptUrl,
+    ///         ClusterProfile = bdsInstanceClusterProfile,
+    ///         DefinedTags = bdsInstanceDefinedTags,
+    ///         FreeformTags = bdsInstanceFreeformTags,
+    ///         KerberosRealmName = bdsInstanceKerberosRealmName,
+    ///         KmsKeyId = bdsInstanceKmsKeyId,
+    ///         IgnoreExistingNodesShapes = ignoreExistingNodesShape,
+    ///         NetworkConfig = new Oci.BigDataService.Inputs.BdsInstanceNetworkConfigArgs
+    ///         {
+    ///             CidrBlock = bdsInstanceNetworkConfigCidrBlock,
+    ///             IsNatGatewayRequired = bdsInstanceNetworkConfigIsNatGatewayRequired,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// BdsInstances can be imported using the `id`, e.g.
@@ -110,7 +229,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         [Output("ignoreExistingNodesShapes")]
         public Output<ImmutableArray<string>> IgnoreExistingNodesShapes { get; private set; } = null!;
@@ -392,7 +511,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<string>? _ignoreExistingNodesShapes;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         public InputList<string> IgnoreExistingNodesShapes
         {
@@ -628,7 +747,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<string>? _ignoreExistingNodesShapes;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         public InputList<string> IgnoreExistingNodesShapes
         {

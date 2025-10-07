@@ -16,6 +16,65 @@ import (
 //
 // Create a Dynamic Resource Group.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsDynamicResourceGroup(ctx, "test_dynamic_resource_group", &identity.DomainsDynamicResourceGroupArgs{
+//				DisplayName:  pulumi.Any(dynamicResourceGroupDisplayName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				MatchingRule: pulumi.Any(dynamicResourceGroupMatchingRule),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup"),
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(dynamicResourceGroupAuthorization),
+//				Description:               pulumi.Any(dynamicResourceGroupDescription),
+//				Id:                        dynamicResourceGroupId,
+//				Ocid:                      pulumi.Any(dynamicResourceGroupOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(dynamicResourceGroupResourceTypeSchemaVersion),
+//				Tags: identity.DomainsDynamicResourceGroupTagArray{
+//					&identity.DomainsDynamicResourceGroupTagArgs{
+//						Key:   pulumi.Any(dynamicResourceGroupTagsKey),
+//						Value: pulumi.Any(dynamicResourceGroupTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionOciTags: &identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs{
+//					DefinedTags: identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArray{
+//						&identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs{
+//							Key:       pulumi.Any(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey),
+//							Namespace: pulumi.Any(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace),
+//							Value:     pulumi.Any(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue),
+//						},
+//					},
+//					FreeformTags: identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArray{
+//						&identity.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs{
+//							Key:   pulumi.Any(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey),
+//							Value: pulumi.Any(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue),
+//						},
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // DynamicResourceGroups can be imported using the `id`, e.g.

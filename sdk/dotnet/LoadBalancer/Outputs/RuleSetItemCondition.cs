@@ -14,14 +14,14 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class RuleSetItemCondition
     {
         /// <summary>
-        /// (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+        /// (Updatable) The AttributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
         /// </summary>
         public readonly string AttributeName;
         /// <summary>
-        /// (Updatable) Depends on `attribute_name`:
-        /// - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-        /// - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-        /// - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+        /// (Updatable) Depends on `AttributeName`:
+        /// - when `AttributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+        /// - when `AttributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+        /// - when `AttributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
         /// </summary>
         public readonly string AttributeValue;
         /// <summary>

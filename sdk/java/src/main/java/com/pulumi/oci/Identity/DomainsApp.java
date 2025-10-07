@@ -65,6 +65,402 @@ import javax.annotation.Nullable;
  * 
  * Create an App
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsApp;
+ * import com.pulumi.oci.Identity.DomainsAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppBasedOnTemplateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAliasAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAllowedScopeArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAllowedTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAppSignonPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAppsNetworkPerimeterArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAsOpcServiceArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppAttrRenderingMetadataArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppCertificateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppIdentityProviderArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppIdpPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppProtectableSecondaryAudienceArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppRadiusPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppSamlServiceProviderArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppScopeArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppServiceParamArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppSignonPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppTermsOfUseArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppTrustPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testApp = new DomainsApp("testApp", DomainsAppArgs.builder()
+ *             .basedOnTemplate(DomainsAppBasedOnTemplateArgs.builder()
+ *                 .value(appBasedOnTemplateValue)
+ *                 .wellKnownId("CustomWebAppTemplateId")
+ *                 .build())
+ *             .displayName(appDisplayName)
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:App")
+ *             .accessTokenExpiry(appAccessTokenExpiry)
+ *             .active(appActive)
+ *             .aliasApps(DomainsAppAliasAppArgs.builder()
+ *                 .value(appAliasAppsValue)
+ *                 .build())
+ *             .allUrlSchemesAllowed(appAllUrlSchemesAllowed)
+ *             .allowAccessControl(appAllowAccessControl)
+ *             .allowOffline(appAllowOffline)
+ *             .allowedGrants(appAllowedGrants)
+ *             .allowedOperations(appAllowedOperations)
+ *             .allowedScopes(DomainsAppAllowedScopeArgs.builder()
+ *                 .fqs(appAllowedScopesFqs)
+ *                 .build())
+ *             .allowedTags(DomainsAppAllowedTagArgs.builder()
+ *                 .key(appAllowedTagsKey)
+ *                 .value(appAllowedTagsValue)
+ *                 .build())
+ *             .appIcon(appAppIcon)
+ *             .appSignonPolicy(DomainsAppAppSignonPolicyArgs.builder()
+ *                 .value(appAppSignonPolicyValue)
+ *                 .build())
+ *             .appThumbnail(appAppThumbnail)
+ *             .appsNetworkPerimeters(DomainsAppAppsNetworkPerimeterArgs.builder()
+ *                 .value(appAppsNetworkPerimetersValue)
+ *                 .build())
+ *             .asOpcService(DomainsAppAsOpcServiceArgs.builder()
+ *                 .value(appAsOpcServiceValue)
+ *                 .build())
+ *             .attrRenderingMetadatas(DomainsAppAttrRenderingMetadataArgs.builder()
+ *                 .name(appAttrRenderingMetadataName)
+ *                 .datatype(appAttrRenderingMetadataDatatype)
+ *                 .helptext(appAttrRenderingMetadataHelptext)
+ *                 .label(appAttrRenderingMetadataLabel)
+ *                 .maxLength(appAttrRenderingMetadataMaxLength)
+ *                 .maxSize(appAttrRenderingMetadataMaxSize)
+ *                 .minLength(appAttrRenderingMetadataMinLength)
+ *                 .minSize(appAttrRenderingMetadataMinSize)
+ *                 .order(appAttrRenderingMetadataOrder)
+ *                 .readOnly(appAttrRenderingMetadataReadOnly)
+ *                 .regexp(appAttrRenderingMetadataRegexp)
+ *                 .required(appAttrRenderingMetadataRequired)
+ *                 .section(appAttrRenderingMetadataSection)
+ *                 .visible(appAttrRenderingMetadataVisible)
+ *                 .widget(appAttrRenderingMetadataWidget)
+ *                 .build())
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .audience(appAudience)
+ *             .authorization(appAuthorization)
+ *             .bypassConsent(appBypassConsent)
+ *             .certificates(DomainsAppCertificateArgs.builder()
+ *                 .certAlias(appCertificatesCertAlias)
+ *                 .build())
+ *             .clientIpChecking(appClientIpChecking)
+ *             .clientType(appClientType)
+ *             .contactEmailAddress(appContactEmailAddress)
+ *             .delegatedServiceNames(appDelegatedServiceNames)
+ *             .description(appDescription)
+ *             .disableKmsiTokenAuthentication(appDisableKmsiTokenAuthentication)
+ *             .errorPageUrl(appErrorPageUrl)
+ *             .forceDelete(appForceDelete)
+ *             .homePageUrl(appHomePageUrl)
+ *             .icon(appIcon)
+ *             .id(appId)
+ *             .idTokenEncAlgo(appIdTokenEncAlgo)
+ *             .identityProviders(DomainsAppIdentityProviderArgs.builder()
+ *                 .value(appIdentityProvidersValue)
+ *                 .build())
+ *             .idpPolicy(DomainsAppIdpPolicyArgs.builder()
+ *                 .value(appIdpPolicyValue)
+ *                 .build())
+ *             .isAliasApp(appIsAliasApp)
+ *             .isEnterpriseApp(appIsEnterpriseApp)
+ *             .isFormFill(appIsFormFill)
+ *             .isKerberosRealm(appIsKerberosRealm)
+ *             .isLoginTarget(appIsLoginTarget)
+ *             .isMobileTarget(appIsMobileTarget)
+ *             .isMulticloudServiceApp(appIsMulticloudServiceApp)
+ *             .isOauthClient(appIsOauthClient)
+ *             .isOauthResource(appIsOauthResource)
+ *             .isObligationCapable(appIsObligationCapable)
+ *             .isRadiusApp(appIsRadiusApp)
+ *             .isSamlServiceProvider(appIsSamlServiceProvider)
+ *             .isUnmanagedApp(appIsUnmanagedApp)
+ *             .isWebTierPolicy(appIsWebTierPolicy)
+ *             .landingPageUrl(appLandingPageUrl)
+ *             .linkingCallbackUrl(appLinkingCallbackUrl)
+ *             .loginMechanism(appLoginMechanism)
+ *             .loginPageUrl(appLoginPageUrl)
+ *             .logoutPageUrl(appLogoutPageUrl)
+ *             .logoutUri(appLogoutUri)
+ *             .name(appName)
+ *             .ocid(appOcid)
+ *             .postLogoutRedirectUris(appPostLogoutRedirectUris)
+ *             .privacyPolicyUrl(appPrivacyPolicyUrl)
+ *             .productLogoUrl(appProductLogoUrl)
+ *             .productName(appProductName)
+ *             .protectableSecondaryAudiences(DomainsAppProtectableSecondaryAudienceArgs.builder()
+ *                 .value(appProtectableSecondaryAudiencesValue)
+ *                 .build())
+ *             .radiusPolicy(DomainsAppRadiusPolicyArgs.builder()
+ *                 .value(appRadiusPolicyValue)
+ *                 .build())
+ *             .redirectUris(appRedirectUris)
+ *             .refreshTokenExpiry(appRefreshTokenExpiry)
+ *             .resourceTypeSchemaVersion(appResourceTypeSchemaVersion)
+ *             .samlServiceProvider(DomainsAppSamlServiceProviderArgs.builder()
+ *                 .value(appSamlServiceProviderValue)
+ *                 .build())
+ *             .scopes(DomainsAppScopeArgs.builder()
+ *                 .value(appScopesValue)
+ *                 .description(appScopesDescription)
+ *                 .displayName(appScopesDisplayName)
+ *                 .requiresConsent(appScopesRequiresConsent)
+ *                 .build())
+ *             .secondaryAudiences("secondaryAudiences")
+ *             .serviceParams(DomainsAppServiceParamArgs.builder()
+ *                 .name(appServiceParamsName)
+ *                 .value(appServiceParamsValue)
+ *                 .build())
+ *             .serviceTypeUrn(appServiceTypeUrn)
+ *             .serviceTypeVersion(appServiceTypeVersion)
+ *             .showInMyApps(appShowInMyApps)
+ *             .signonPolicy(DomainsAppSignonPolicyArgs.builder()
+ *                 .value(appSignonPolicyValue)
+ *                 .build())
+ *             .tags(DomainsAppTagArgs.builder()
+ *                 .key(appTagsKey)
+ *                 .value(appTagsValue)
+ *                 .build())
+ *             .termsOfServiceUrl(appTermsOfServiceUrl)
+ *             .termsOfUse(DomainsAppTermsOfUseArgs.builder()
+ *                 .value(appTermsOfUseValue)
+ *                 .build())
+ *             .trustPolicies(DomainsAppTrustPolicyArgs.builder()
+ *                 .value(appTrustPoliciesValue)
+ *                 .build())
+ *             .trustScope(appTrustScope)
+ *             .urnietfparamsscimschemasoracleidcsextensionOciTags(DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs.builder()
+ *                 .definedTags(DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs.builder()
+ *                     .key(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey)
+ *                     .namespace(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace)
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue)
+ *                     .build())
+ *                 .freeformTags(DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs.builder()
+ *                     .key(appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey)
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensiondbcsApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppArgs.builder()
+ *                 .domainApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainAppValue)
+ *                     .build())
+ *                 .domainName("domainName")
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionenterpriseAppApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppArgs.builder()
+ *                 .allowAuthzDecisionTtl(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzDecisionTtl)
+ *                 .allowAuthzPolicy(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAllowAuthzPolicyValue)
+ *                     .build())
+ *                 .appResources(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourceArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppAppResourcesValue)
+ *                     .build())
+ *                 .denyAuthzDecisionTtl(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzDecisionTtl)
+ *                 .denyAuthzPolicy(DomainsAppUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionenterpriseAppAppDenyAuthzPolicyValue)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionformFillAppApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppArgs.builder()
+ *                 .configuration(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppConfiguration)
+ *                 .formCredMethod(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredMethod)
+ *                 .formCredentialSharingGroupId(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormCredentialSharingGroupId)
+ *                 .formFillUrlMatches(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchArgs.builder()
+ *                     .formUrl(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrl)
+ *                     .formUrlMatchType(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormFillUrlMatchFormUrlMatchType)
+ *                     .build())
+ *                 .formType(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppFormType)
+ *                 .revealPasswordOnForm(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppRevealPasswordOnForm)
+ *                 .userNameFormExpression(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormExpression)
+ *                 .userNameFormTemplate(appUrnietfparamsscimschemasoracleidcsextensionformFillAppAppUserNameFormTemplate)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplate(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateArgs.builder()
+ *                 .configuration(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateConfiguration)
+ *                 .formCredMethod(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredMethod)
+ *                 .formCredentialSharingGroupId(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormCredentialSharingGroupId)
+ *                 .formFillUrlMatches(DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchArgs.builder()
+ *                     .formUrl(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrl)
+ *                     .formUrlMatchType(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormFillUrlMatchFormUrlMatchType)
+ *                     .build())
+ *                 .formType(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateFormType)
+ *                 .revealPasswordOnForm(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateRevealPasswordOnForm)
+ *                 .syncFromTemplate(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateSyncFromTemplate)
+ *                 .userNameFormExpression(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormExpression)
+ *                 .userNameFormTemplate(appUrnietfparamsscimschemasoracleidcsextensionformFillAppTemplateAppTemplateUserNameFormTemplate)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionkerberosRealmApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppArgs.builder()
+ *                 .defaultEncryptionSaltType(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppDefaultEncryptionSaltType)
+ *                 .masterKey(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMasterKey)
+ *                 .maxRenewableAge(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxRenewableAge)
+ *                 .maxTicketLife(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppMaxTicketLife)
+ *                 .realmName(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppRealmName)
+ *                 .supportedEncryptionSaltTypes(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppSupportedEncryptionSaltTypes)
+ *                 .ticketFlags(appUrnietfparamsscimschemasoracleidcsextensionkerberosRealmAppTicketFlags)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionmanagedappApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppArgs.builder()
+ *                 .adminConsentGranted(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppAdminConsentGranted)
+ *                 .bundleConfigurationProperties(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertyArgs.builder()
+ *                     .icfType(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesIcfType)
+ *                     .name(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesName)
+ *                     .required(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesRequired)
+ *                     .confidential(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesConfidential)
+ *                     .displayName(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesDisplayName)
+ *                     .helpMessage(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesHelpMessage)
+ *                     .order(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesOrder)
+ *                     .values(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundleConfigurationPropertiesValue)
+ *                     .build())
+ *                 .bundlePoolConfiguration(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationArgs.builder()
+ *                     .maxIdle(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxIdle)
+ *                     .maxObjects(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxObjects)
+ *                     .maxWait(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMaxWait)
+ *                     .minEvictableIdleTimeMillis(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinEvictableIdleTimeMillis)
+ *                     .minIdle(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppBundlePoolConfigurationMinIdle)
+ *                     .build())
+ *                 .connected(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnected)
+ *                 .enableAuthSyncNewUserNotification(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableAuthSyncNewUserNotification)
+ *                 .enableSync(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSync)
+ *                 .enableSyncSummaryReportNotification(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppEnableSyncSummaryReportNotification)
+ *                 .flatFileBundleConfigurationProperties(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertyArgs.builder()
+ *                     .icfType(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesIcfType)
+ *                     .name(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesName)
+ *                     .required(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesRequired)
+ *                     .confidential(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesConfidential)
+ *                     .displayName(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesDisplayName)
+ *                     .helpMessage(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesHelpMessage)
+ *                     .order(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesOrder)
+ *                     .values(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationPropertiesValue)
+ *                     .build())
+ *                 .flatFileConnectorBundle(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleValue)
+ *                     .display(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleDisplay)
+ *                     .wellKnownId(testWellKnown.id())
+ *                     .build())
+ *                 .isAuthoritative(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIsAuthoritative)
+ *                 .threeLeggedOauthCredential(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialArgs.builder()
+ *                     .accessToken(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessToken)
+ *                     .accessTokenExpiry(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialAccessTokenExpiry)
+ *                     .refreshToken(appUrnietfparamsscimschemasoracleidcsextensionmanagedappAppThreeLeggedOauthCredentialRefreshToken)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppArgs.builder()
+ *                 .multicloudServiceType(appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudServiceType)
+ *                 .multicloudPlatformUrl(appUrnietfparamsscimschemasoracleidcsextensionmulticloudServiceAppAppMulticloudPlatformUrl)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionopcServiceApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionopcServiceAppArgs.builder()
+ *                 .serviceInstanceIdentifier(appUrnietfparamsscimschemasoracleidcsextensionopcServiceAppServiceInstanceIdentifier)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionradiusAppApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppArgs.builder()
+ *                 .clientIp(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppClientIp)
+ *                 .includeGroupInResponse(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppIncludeGroupInResponse)
+ *                 .port(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPort)
+ *                 .secretKey(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppSecretKey)
+ *                 .captureClientIp(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppCaptureClientIp)
+ *                 .countryCodeResponseAttributeId("1")
+ *                 .endUserIpAttribute(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppEndUserIpAttribute)
+ *                 .groupMembershipRadiusAttribute(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipRadiusAttribute)
+ *                 .groupMembershipToReturns(DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnArgs.builder()
+ *                     .value(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturnValue)
+ *                     .build())
+ *                 .groupNameFormat(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupNameFormat)
+ *                 .passwordAndOtpTogether(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppPasswordAndOtpTogether)
+ *                 .radiusVendorSpecificId("radiusVendorSpecificId")
+ *                 .responseFormat(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormat)
+ *                 .responseFormatDelimiter(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppResponseFormatDelimiter)
+ *                 .typeOfRadiusApp(appUrnietfparamsscimschemasoracleidcsextensionradiusAppAppTypeOfRadiusApp)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionrequestableApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionrequestableAppArgs.builder()
+ *                 .requestable(appUrnietfparamsscimschemasoracleidcsextensionrequestableAppRequestable)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionsamlServiceProviderApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppArgs.builder()
+ *                 .assertionConsumerUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppAssertionConsumerUrl)
+ *                 .encryptAssertion(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptAssertion)
+ *                 .encryptionAlgorithm(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppEncryptionAlgorithm)
+ *                 .encryptionCertificate("encryptionCertificate")
+ *                 .federationProtocol(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppFederationProtocol)
+ *                 .groupAssertionAttributes(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributeArgs.builder()
+ *                     .name(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesName)
+ *                     .condition(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesCondition)
+ *                     .format(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppGroupAssertionAttributesFormat)
+ *                     .groupName("groupName")
+ *                     .build())
+ *                 .hokAcsUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokAcsUrl)
+ *                 .hokRequired(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppHokRequired)
+ *                 .includeSigningCertInSignature(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppIncludeSigningCertInSignature)
+ *                 .keyEncryptionAlgorithm(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppKeyEncryptionAlgorithm)
+ *                 .logoutBinding(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutBinding)
+ *                 .logoutEnabled(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutEnabled)
+ *                 .logoutRequestUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutRequestUrl)
+ *                 .logoutResponseUrl(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppLogoutResponseUrl)
+ *                 .metadata("metadata")
+ *                 .nameIdFormat(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdFormat)
+ *                 .nameIdUserstoreAttribute(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppNameIdUserstoreAttribute)
+ *                 .partnerProviderId("partnerProviderId")
+ *                 .partnerProviderPattern(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppPartnerProviderPattern)
+ *                 .signResponseOrAssertion(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignResponseOrAssertion)
+ *                 .signatureHashAlgorithm(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppSignatureHashAlgorithm)
+ *                 .signingCertificate("signingCertificate")
+ *                 .succinctId("succinctId")
+ *                 .userAssertionAttributes(DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributeArgs.builder()
+ *                     .name(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesName)
+ *                     .userStoreAttributeName(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesUserStoreAttributeName)
+ *                     .format(appUrnietfparamsscimschemasoracleidcsextensionsamlServiceProviderAppUserAssertionAttributesFormat)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionwebTierPolicyApp(DomainsAppUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppArgs.builder()
+ *                 .resourceRef(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppResourceRef)
+ *                 .webTierPolicyAzControl(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyAzControl)
+ *                 .webTierPolicyJson(appUrnietfparamsscimschemasoracleidcsextensionwebTierPolicyAppWebTierPolicyJson)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Apps can be imported using the `id`, e.g.
@@ -1473,7 +1869,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -1492,7 +1888,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false

@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string RepositoryId;
         /// <summary>
-        /// A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
+        /// A filter to return container images or container image signatures that match the repository name.  Example: `Foo` or `foo*`
         /// </summary>
         public readonly string RepositoryName;
         /// <summary>
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string TimeLastPulled;
         /// <summary>
-        /// A filter to return container images that match the version.  Example: `foo` or `foo*`
+        /// A filter to return container images that match the version.  Example: `Foo` or `foo*`
         /// </summary>
         public readonly string Version;
         /// <summary>

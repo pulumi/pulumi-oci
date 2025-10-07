@@ -26,6 +26,60 @@ import javax.annotation.Nullable;
  * 
  * Create a NetworkPerimeter
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsNetworkPerimeter;
+ * import com.pulumi.oci.Identity.DomainsNetworkPerimeterArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsNetworkPerimeterIpAddressArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsNetworkPerimeterTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNetworkPerimeter = new DomainsNetworkPerimeter("testNetworkPerimeter", DomainsNetworkPerimeterArgs.builder()
+ *             .idcsEndpoint(testDomain.url())
+ *             .ipAddresses(DomainsNetworkPerimeterIpAddressArgs.builder()
+ *                 .value(networkPerimeterIpAddressesValue)
+ *                 .type(networkPerimeterIpAddressesType)
+ *                 .version(networkPerimeterIpAddressesVersion)
+ *                 .build())
+ *             .name(networkPerimeterName)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:NetworkPerimeter")
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(networkPerimeterAuthorization)
+ *             .description(networkPerimeterDescription)
+ *             .externalId("externalId")
+ *             .id(networkPerimeterId)
+ *             .ocid(networkPerimeterOcid)
+ *             .resourceTypeSchemaVersion(networkPerimeterResourceTypeSchemaVersion)
+ *             .tags(DomainsNetworkPerimeterTagArgs.builder()
+ *                 .key(networkPerimeterTagsKey)
+ *                 .value(networkPerimeterTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * NetworkPerimeters can be imported using the `id`, e.g.

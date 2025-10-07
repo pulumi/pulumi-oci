@@ -16,6 +16,44 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     ///   Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalDbSystemDiscovery = new Oci.DatabaseManagement.ExternalDbSystemDiscovery("test_external_db_system_discovery", new()
+    ///     {
+    ///         AgentId = testAgent.Id,
+    ///         CompartmentId = compartmentId,
+    ///         ExternalDbSystemDiscoveryId = externalDbSystemDiscoveryExternalDbSystemDiscoveryId,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = externalDbSystemDiscoveryDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.DatabaseManagement.Inputs.ExternalDbSystemDiscoveryPatchOperationArgs
+    ///             {
+    ///                 Operation = externalDbSystemDiscoveryPatchOperationsOperation,
+    ///                 Selection = externalDbSystemDiscoveryPatchOperationsSelection,
+    ///                 Value = externalDbSystemDiscoveryPatchOperationsValue[0],
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ExternalDbSystemDiscoveries can be imported using the `id`, e.g.

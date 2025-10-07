@@ -236,7 +236,7 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemNetworkDetails> NetworkDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the PatchOperations after it is applied. Update the InstanceCount arrodrandly. Cannot be specified when creating the resource.
         /// </summary>
         [Output("patchOperations")]
         public Output<ImmutableArray<Outputs.DbSystemPatchOperation>> PatchOperations { get; private set; } = null!;
@@ -451,7 +451,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.DbSystemPatchOperationArgs>? _patchOperations;
 
         /// <summary>
-        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the PatchOperations after it is applied. Update the InstanceCount arrodrandly. Cannot be specified when creating the resource.
         /// </summary>
         public InputList<Inputs.DbSystemPatchOperationArgs> PatchOperations
         {
@@ -631,7 +631,7 @@ namespace Pulumi.Oci.Psql
         private InputList<Inputs.DbSystemPatchOperationGetArgs>? _patchOperations;
 
         /// <summary>
-        /// (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+        /// (Updatable) For adding and removing from read replica database instances. Please remove the PatchOperations after it is applied. Update the InstanceCount arrodrandly. Cannot be specified when creating the resource.
         /// </summary>
         public InputList<Inputs.DbSystemPatchOperationGetArgs> PatchOperations
         {

@@ -14,6 +14,47 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Add a user's own API key.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyApiKey = new Oci.Identity.DomainsMyApiKey("test_my_api_key", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Key = myApiKeyKey,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:apikey",
+    ///         },
+    ///         Authorization = myApiKeyAuthorization,
+    ///         Description = myApiKeyDescription,
+    ///         Id = myApiKeyId,
+    ///         Ocid = myApiKeyOcid,
+    ///         ResourceTypeSchemaVersion = myApiKeyResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyApiKeyTagArgs
+    ///             {
+    ///                 Key = myApiKeyTagsKey,
+    ///                 Value = myApiKeyTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMyApiKeyUserArgs
+    ///         {
+    ///             Ocid = myApiKeyUserOcid,
+    ///             Value = myApiKeyUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MyApiKeys can be imported using the `id`, e.g.

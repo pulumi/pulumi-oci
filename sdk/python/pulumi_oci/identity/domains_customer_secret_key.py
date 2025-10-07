@@ -1192,6 +1192,38 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
 
         Create a user's customer secret key.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_customer_secret_key = oci.identity.DomainsCustomerSecretKey("test_customer_secret_key",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+            attribute_sets=[],
+            attributes="",
+            authorization=customer_secret_key_authorization,
+            description=customer_secret_key_description,
+            display_name=customer_secret_key_display_name,
+            expires_on=customer_secret_key_expires_on,
+            id=customer_secret_key_id,
+            ocid=customer_secret_key_ocid,
+            resource_type_schema_version=customer_secret_key_resource_type_schema_version,
+            status=customer_secret_key_status,
+            tags=[{
+                "key": customer_secret_key_tags_key,
+                "value": customer_secret_key_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": customer_secret_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
+
         ## Import
 
         CustomerSecretKeys can be imported using the `id`, e.g.
@@ -1305,6 +1337,38 @@ class DomainsCustomerSecretKey(pulumi.CustomResource):
         This resource provides the Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's customer secret key.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_customer_secret_key = oci.identity.DomainsCustomerSecretKey("test_customer_secret_key",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+            attribute_sets=[],
+            attributes="",
+            authorization=customer_secret_key_authorization,
+            description=customer_secret_key_description,
+            display_name=customer_secret_key_display_name,
+            expires_on=customer_secret_key_expires_on,
+            id=customer_secret_key_id,
+            ocid=customer_secret_key_ocid,
+            resource_type_schema_version=customer_secret_key_resource_type_schema_version,
+            status=customer_secret_key_status,
+            tags=[{
+                "key": customer_secret_key_tags_key,
+                "value": customer_secret_key_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": customer_secret_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
 
         ## Import
 

@@ -21,6 +21,50 @@ import javax.annotation.Nullable;
  * 
  * This operation updates SaaS administrative user configuration of the Autonomous Database.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUser;
+ * import com.pulumi.oci.Database.AutonomousDatabaseSaasAdminUserArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", AutonomousDatabaseSaasAdminUserArgs.builder()
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
+ *             .duration(autonomousDatabaseSaasAdminUserDuration)
+ *             .isEnabled(autonomousDatabaseSaasAdminUserIsEnabled)
+ *             .password(autonomousDatabaseSaasAdminUserPassword)
+ *             .secretId(testSecret.id())
+ *             .secretVersionNumber(autonomousDatabaseSaasAdminUserSecretVersionNumber)
+ *             .timeSaasAdminUserEnabled(autonomousDatabaseSaasAdminUserTimeSaasAdminUserEnabled)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
  */
 @ResourceType(type="oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser")
 public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.CustomResource {

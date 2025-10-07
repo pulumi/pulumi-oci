@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? SecondBackupId;
         /// <summary>
-        /// The type can be one of these values: `blockVolumeReplica`, `volume`, `volumeBackup`, `volumeBackupDelta`
+        /// The type can be one of these values: `blockVolumeReplica`, `Volume`, `volumeBackup`, `volumeBackupDelta`
         /// </summary>
         public readonly string Type;
 

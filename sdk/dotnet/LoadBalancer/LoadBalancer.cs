@@ -39,7 +39,7 @@ namespace Pulumi.Oci.LoadBalancer
     /// 
     /// ## Supported Aliases
     /// 
-    /// * `oci_load_balancer`
+    /// * `OciLoadBalancer`
     /// 
     /// ## Example Usage
     /// 
@@ -114,7 +114,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `ExampleLoadBalancer`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<ImmutableArray<Outputs.LoadBalancerIpAddressDetail>> IpAddressDetails { get; private set; } = null!;
 
         /// <summary>
-        /// An array of IP addresses. Deprecated: use ip_address_details instead
+        /// An array of IP addresses. Deprecated: use IpAddressDetails instead
         /// *
         /// </summary>
         [Output("ipAddresses")]
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// If "false", the loadbalancer will not be protected against deletion.
         /// 
-        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `True`
         /// </summary>
         [Output("isDeleteProtectionEnabled")]
         public Output<bool> IsDeleteProtectionEnabled { get; private set; } = null!;
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Output("isPrivate")]
         public Output<bool> IsPrivate { get; private set; } = null!;
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Output("isRequestIdEnabled")]
         public Output<bool> IsRequestIdEnabled { get; private set; } = null!;
@@ -243,7 +243,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `Flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `ExampleLoadBalancer`
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -393,7 +393,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// If "false", the loadbalancer will not be protected against deletion.
         /// 
-        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `True`
         /// </summary>
         [Input("isDeleteProtectionEnabled")]
         public Input<bool>? IsDeleteProtectionEnabled { get; set; }
@@ -407,7 +407,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
@@ -421,7 +421,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("isRequestIdEnabled")]
         public Input<bool>? IsRequestIdEnabled { get; set; }
@@ -487,7 +487,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `Flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -541,7 +541,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `ExampleLoadBalancer`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -574,7 +574,7 @@ namespace Pulumi.Oci.LoadBalancer
         private InputList<string>? _ipAddresses;
 
         /// <summary>
-        /// An array of IP addresses. Deprecated: use ip_address_details instead
+        /// An array of IP addresses. Deprecated: use IpAddressDetails instead
         /// *
         /// </summary>
         [Obsolete(@"The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.")]
@@ -613,7 +613,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// If "false", the loadbalancer will not be protected against deletion.
         /// 
-        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `true`
+        /// Delete protection will not be enabled unless a value of "true" is provided. Example: `True`
         /// </summary>
         [Input("isDeleteProtectionEnabled")]
         public Input<bool>? IsDeleteProtectionEnabled { get; set; }
@@ -627,7 +627,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// A public load balancer is accessible from the internet, depending on your VCN's [security list rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securitylists.htm). For more information about public and private load balancers, see [How Load Balancing Works](https://docs.cloud.oracle.com/iaas/Content/Balance/Concepts/balanceoverview.htm#how-load-balancing-works).
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("isPrivate")]
         public Input<bool>? IsPrivate { get; set; }
@@ -641,7 +641,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("isRequestIdEnabled")]
         public Input<bool>? IsRequestIdEnabled { get; set; }
@@ -707,7 +707,7 @@ namespace Pulumi.Oci.LoadBalancer
         }
 
         /// <summary>
-        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
+        /// (Updatable) A template that determines the total pre-provisioned bandwidth (ingress plus egress). To get a list of available shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/LoadBalancerShape/ListShapes) operation.  Example: `Flexible` NOTE: After May 2023, Fixed shapes - 10Mbps, 100Mbps, 400Mbps, 8000Mbps would be deprecated and only shape allowed would be `Flexible` *Note: When updating shape for a load balancer, all existing connections to the load balancer will be reset during the update process. Also `10Mbps-Micro` shape cannot be updated to any other shape nor can any other shape be updated to `10Mbps-Micro`.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }

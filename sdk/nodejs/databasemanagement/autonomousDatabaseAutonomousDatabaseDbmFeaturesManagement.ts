@@ -10,6 +10,44 @@ import * as utilities from "../utilities";
  * This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Enables a Database Management feature for the specified Autonomous Database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = new oci.databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("test_autonomous_database_autonomous_database_dbm_features_management", {
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
+ *     featureDetails: {
+ *         feature: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature,
+ *         enableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
+ *         databaseConnectionDetails: {
+ *             connectionCredentials: {
+ *                 credentialName: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+ *                 credentialType: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+ *                 sslSecretId: testSecret.id,
+ *                 userName: testUser.name,
+ *             },
+ *             connectionString: {
+ *                 connectionType: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+ *                 port: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 protocol: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+ *                 service: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+ *             },
+ *         },
+ *         connectorDetails: {
+ *             connectorType: autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *     },
+ * });
+ * ```
  */
 export class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends pulumi.CustomResource {
     /**

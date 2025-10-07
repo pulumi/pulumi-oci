@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class GetListenersFilterResult
     {
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

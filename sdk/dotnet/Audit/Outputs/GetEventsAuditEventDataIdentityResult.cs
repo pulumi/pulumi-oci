@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Audit.Outputs
     public sealed class GetEventsAuditEventDataIdentityResult
     {
         /// <summary>
-        /// The type of authentication used.  Example: `natv`
+        /// The type of authentication used.  Example: `Natv`
         /// </summary>
         public readonly string AuthType;
         /// <summary>

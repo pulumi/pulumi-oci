@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> AwrHubSourceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string> AwrHubSourceId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? AwrHubSourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

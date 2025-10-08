@@ -21,6 +21,94 @@ import (
 // operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
 // and remove in single operation is not allowed.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/globallydistributeddatabase"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := globallydistributeddatabase.NewShardedDatabase(ctx, "test_sharded_database", &globallydistributeddatabase.ShardedDatabaseArgs{
+//				CatalogDetails: globallydistributeddatabase.ShardedDatabaseCatalogDetailArray{
+//					&globallydistributeddatabase.ShardedDatabaseCatalogDetailArgs{
+//						AdminPassword:              pulumi.Any(shardedDatabaseCatalogDetailsAdminPassword),
+//						CloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
+//						ComputeCount:               pulumi.Any(shardedDatabaseCatalogDetailsComputeCount),
+//						DataStorageSizeInGbs:       pulumi.Any(shardedDatabaseCatalogDetailsDataStorageSizeInGbs),
+//						IsAutoScalingEnabled:       pulumi.Any(shardedDatabaseCatalogDetailsIsAutoScalingEnabled),
+//						EncryptionKeyDetails: &globallydistributeddatabase.ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs{
+//							KmsKeyId:        pulumi.Any(testKey.Id),
+//							VaultId:         pulumi.Any(testVault.Id),
+//							KmsKeyVersionId: pulumi.Any(testKeyVersion.Id),
+//						},
+//						PeerCloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
+//					},
+//				},
+//				CharacterSet:     pulumi.Any(shardedDatabaseCharacterSet),
+//				CompartmentId:    pulumi.Any(compartmentId),
+//				DbDeploymentType: pulumi.Any(shardedDatabaseDbDeploymentType),
+//				DbVersion:        pulumi.Any(shardedDatabaseDbVersion),
+//				DbWorkload:       pulumi.Any(shardedDatabaseDbWorkload),
+//				DisplayName:      pulumi.Any(shardedDatabaseDisplayName),
+//				ListenerPort:     pulumi.Any(shardedDatabaseListenerPort),
+//				ListenerPortTls:  pulumi.Any(shardedDatabaseListenerPortTls),
+//				NcharacterSet:    pulumi.Any(shardedDatabaseNcharacterSet),
+//				OnsPortLocal:     pulumi.Any(shardedDatabaseOnsPortLocal),
+//				OnsPortRemote:    pulumi.Any(shardedDatabaseOnsPortRemote),
+//				Prefix:           pulumi.Any(shardedDatabasePrefix),
+//				ShardDetails: globallydistributeddatabase.ShardedDatabaseShardDetailArray{
+//					&globallydistributeddatabase.ShardedDatabaseShardDetailArgs{
+//						AdminPassword:              pulumi.Any(shardedDatabaseShardDetailsAdminPassword),
+//						CloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
+//						ComputeCount:               pulumi.Any(shardedDatabaseShardDetailsComputeCount),
+//						DataStorageSizeInGbs:       pulumi.Any(shardedDatabaseShardDetailsDataStorageSizeInGbs),
+//						IsAutoScalingEnabled:       pulumi.Any(shardedDatabaseShardDetailsIsAutoScalingEnabled),
+//						EncryptionKeyDetails: &globallydistributeddatabase.ShardedDatabaseShardDetailEncryptionKeyDetailsArgs{
+//							KmsKeyId:        pulumi.Any(testKey.Id),
+//							VaultId:         pulumi.Any(testVault.Id),
+//							KmsKeyVersionId: pulumi.Any(testKeyVersion.Id),
+//						},
+//						PeerCloudAutonomousVmClusterId: pulumi.Any(testCloudAutonomousVmCluster.Id),
+//						ShardSpace:                     pulumi.Any(shardedDatabaseShardDetailsShardSpace),
+//					},
+//				},
+//				ShardedDatabaseId:            shardedDatabaseShardedDatabaseId,
+//				ShardingMethod:               pulumi.Any(shardedDatabaseShardingMethod),
+//				Chunks:                       pulumi.Any(shardedDatabaseChunks),
+//				ClusterCertificateCommonName: pulumi.Any(shardedDatabaseClusterCertificateCommonName),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				PatchOperations: globallydistributeddatabase.ShardedDatabasePatchOperationArray{
+//					&globallydistributeddatabase.ShardedDatabasePatchOperationArgs{
+//						Operation: pulumi.Any(shardedDatabasePatchOperationsOperation),
+//						Selection: pulumi.Any(shardedDatabasePatchOperationsSelection),
+//						Value:     pulumi.Any(shardedDatabasePatchOperationsValue),
+//					},
+//				},
+//				ReplicationFactor: pulumi.Any(shardedDatabaseReplicationFactor),
+//				ReplicationMethod: pulumi.Any(shardedDatabaseReplicationMethod),
+//				ReplicationUnit:   pulumi.Any(shardedDatabaseReplicationUnit),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ShardedDatabases can be imported using the `id`, e.g.

@@ -381,6 +381,43 @@ class OccDemandSignal(pulumi.CustomResource):
 
           Updates the data of an OccDemandSignal.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_occ_demand_signal = oci.demandsignal.OccDemandSignal("test_occ_demand_signal",
+            compartment_id=compartment_id,
+            is_active=occ_demand_signal_is_active,
+            occ_demand_signal_id=occ_demand_signal_occ_demand_signal_id,
+            occ_demand_signals=[{
+                "resource_type": occ_demand_signal_occ_demand_signals_resource_type,
+                "units": occ_demand_signal_occ_demand_signals_units,
+                "values": [{
+                    "time_expected": occ_demand_signal_occ_demand_signals_values_time_expected,
+                    "value": occ_demand_signal_occ_demand_signals_values_value,
+                    "comments": occ_demand_signal_occ_demand_signals_values_comments,
+                }],
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=occ_demand_signal_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": occ_demand_signal_patch_operations_operation,
+                "selection": occ_demand_signal_patch_operations_selection,
+                "from_": occ_demand_signal_patch_operations_from,
+                "position": occ_demand_signal_patch_operations_position,
+                "selected_item": occ_demand_signal_patch_operations_selected_item,
+                "value": occ_demand_signal_patch_operations_value,
+                "values": occ_demand_signal_patch_operations_values,
+            }])
+        ```
+
         ## Import
 
         OccDemandSignals can be imported using the `id`, e.g.
@@ -411,6 +448,43 @@ class OccDemandSignal(pulumi.CustomResource):
         Creates a OccDemandSignal.
 
           Updates the data of an OccDemandSignal.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_occ_demand_signal = oci.demandsignal.OccDemandSignal("test_occ_demand_signal",
+            compartment_id=compartment_id,
+            is_active=occ_demand_signal_is_active,
+            occ_demand_signal_id=occ_demand_signal_occ_demand_signal_id,
+            occ_demand_signals=[{
+                "resource_type": occ_demand_signal_occ_demand_signals_resource_type,
+                "units": occ_demand_signal_occ_demand_signals_units,
+                "values": [{
+                    "time_expected": occ_demand_signal_occ_demand_signals_values_time_expected,
+                    "value": occ_demand_signal_occ_demand_signals_values_value,
+                    "comments": occ_demand_signal_occ_demand_signals_values_comments,
+                }],
+            }],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=occ_demand_signal_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": occ_demand_signal_patch_operations_operation,
+                "selection": occ_demand_signal_patch_operations_selection,
+                "from_": occ_demand_signal_patch_operations_from,
+                "position": occ_demand_signal_patch_operations_position,
+                "selected_item": occ_demand_signal_patch_operations_selected_item,
+                "value": occ_demand_signal_patch_operations_value,
+                "values": occ_demand_signal_patch_operations_values,
+            }])
+        ```
 
         ## Import
 

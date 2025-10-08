@@ -33,7 +33,7 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+     * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -43,7 +43,7 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
     private @Nullable Output<Integer> cancelBackupTrigger;
 
     /**
-     * @return When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+     * @return When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +100,7 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+         * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -114,7 +114,7 @@ public final class BackupCancelManagementArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+         * @param cancelBackupTrigger When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

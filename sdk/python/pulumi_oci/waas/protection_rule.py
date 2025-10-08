@@ -242,6 +242,22 @@ class ProtectionRule(pulumi.CustomResource):
         This operation can update or disable protection rules depending on the structure of the request body.
         Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_protection_rule = oci.waas.ProtectionRule("test_protection_rule",
+            waas_policy_id=test_waas_policy["id"],
+            key=key,
+            action="DETECT",
+            exclusions={
+                "exclusions": ["example.com"],
+                "target": "REQUEST_COOKIES",
+            })
+        ```
+
         ## Import
 
         ProtectionRules can be imported using the `id`, e.g.
@@ -269,6 +285,22 @@ class ProtectionRule(pulumi.CustomResource):
         Updates the action for each specified protection rule. Requests can either be allowed, blocked, or trigger an alert if they meet the parameters of an applied rule. For more information on protection rules, see [WAF Protection Rules](https://docs.cloud.oracle.com/iaas/Content/WAF/Tasks/wafprotectionrules.htm).
         This operation can update or disable protection rules depending on the structure of the request body.
         Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_protection_rule = oci.waas.ProtectionRule("test_protection_rule",
+            waas_policy_id=test_waas_policy["id"],
+            key=key,
+            action="DETECT",
+            exclusions={
+                "exclusions": ["example.com"],
+                "target": "REQUEST_COOKIES",
+            })
+        ```
 
         ## Import
 

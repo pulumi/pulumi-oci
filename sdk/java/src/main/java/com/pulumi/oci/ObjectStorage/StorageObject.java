@@ -114,14 +114,14 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.cacheControl);
     }
     /**
-     * The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+     * The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> content;
 
     /**
-     * @return The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+     * @return The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      * 
      */
     public Output<Optional<String>> content() {
@@ -288,14 +288,14 @@ public class StorageObject extends com.pulumi.resources.CustomResource {
         return this.opcSseKmsKeyId;
     }
     /**
-     * An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+     * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      * 
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> source;
 
     /**
-     * @return An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+     * @return An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      * 
      */
     public Output<Optional<String>> source() {

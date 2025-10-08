@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// 
         /// If "false", health checks will be done using SSL encryption if the associated backend set is configured to use SSL. If the backend set is not so configured the health checks will be done using plain text.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("isForcePlainText")]
         public Input<bool>? IsForcePlainText { get; set; }

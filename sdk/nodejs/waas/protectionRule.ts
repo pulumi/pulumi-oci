@@ -13,6 +13,23 @@ import * as utilities from "../utilities";
  * This operation can update or disable protection rules depending on the structure of the request body.
  * Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectionRule = new oci.waas.ProtectionRule("test_protection_rule", {
+ *     waasPolicyId: testWaasPolicy.id,
+ *     key: key,
+ *     action: "DETECT",
+ *     exclusions: {
+ *         exclusions: ["example.com"],
+ *         target: "REQUEST_COOKIES",
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * ProtectionRules can be imported using the `id`, e.g.

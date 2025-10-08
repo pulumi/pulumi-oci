@@ -13,6 +13,60 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables a Database Management feature for the specified cloud database.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDatabaseDbmFeaturesManagement = new Oci.DatabaseManagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management", new()
+    ///     {
+    ///         DatabaseId = testDatabase.Id,
+    ///         EnableDatabaseDbmFeature = enableDatabaseDbmFeature,
+    ///         FeatureDetails = new Oci.DatabaseManagement.Inputs.DatabaseDbmFeaturesManagementFeatureDetailsArgs
+    ///         {
+    ///             Feature = databaseDbmFeaturesManagementFeatureDetailsFeature,
+    ///             EnableDatabaseDbmFeature = enableDatabaseDbmFeature,
+    ///             ConnectorDetails = new Oci.DatabaseManagement.Inputs.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs
+    ///             {
+    ///                 ConnectorType = databaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+    ///                 DatabaseConnectorId = testDatabaseConnector.Id,
+    ///                 ManagementAgentId = testManagementAgent.Id,
+    ///                 PrivateEndPointId = testPrivateEndPoint.Id,
+    ///             },
+    ///             DatabaseConnectionDetails = new Oci.DatabaseManagement.Inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs
+    ///             {
+    ///                 ConnectionCredentials = new Oci.DatabaseManagement.Inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs
+    ///                 {
+    ///                     CredentialName = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+    ///                     CredentialType = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+    ///                     NamedCredentialId = testNamedCredential.Id,
+    ///                     PasswordSecretId = testSecret.Id,
+    ///                     Role = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+    ///                     SslSecretId = testSecret.Id,
+    ///                     UserName = testUser.Name,
+    ///                 },
+    ///                 ConnectionString = new Oci.DatabaseManagement.Inputs.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs
+    ///                 {
+    ///                     ConnectionType = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+    ///                     Port = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+    ///                     Protocol = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+    ///                     Service = databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+    ///                 },
+    ///             },
+    ///             CanEnableAllCurrentPdbs = databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+    ///             IsAutoEnablePluggableDatabase = databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+    ///             ManagementType = databaseDbmFeaturesManagementFeatureDetailsManagementType,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")]
     public partial class DatabaseDbmFeaturesManagement : global::Pulumi.CustomResource
@@ -27,7 +81,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> DatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -104,7 +158,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> DatabaseId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -143,7 +197,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? DatabaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

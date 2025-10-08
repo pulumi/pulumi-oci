@@ -16,6 +16,46 @@ namespace Pulumi.Oci.DatabaseManagement
     /// 
     ///   Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCloudDbSystemDiscovery = new Oci.DatabaseManagement.CloudDbSystemDiscovery("test_cloud_db_system_discovery", new()
+    ///     {
+    ///         AgentId = testAgent.Id,
+    ///         CloudDbSystemDiscoveryId = cloudDbSystemDiscoveryCloudDbSystemDiscoveryId,
+    ///         CompartmentId = compartmentId,
+    ///         DbaasParentInfrastructureId = testDbaasParentInfrastructure.Id,
+    ///         DeploymentType = cloudDbSystemDiscoveryDeploymentType,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DisplayName = cloudDbSystemDiscoveryDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         PatchOperations = new[]
+    ///         {
+    ///             new Oci.DatabaseManagement.Inputs.CloudDbSystemDiscoveryPatchOperationArgs
+    ///             {
+    ///                 Operation = cloudDbSystemDiscoveryPatchOperationsOperation,
+    ///                 Selection = cloudDbSystemDiscoveryPatchOperationsSelection,
+    ///                 Value = cloudDbSystemDiscoveryPatchOperationsValue[0],
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CloudDbSystemDiscoveries can be imported using the `id`, e.g.

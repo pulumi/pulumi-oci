@@ -19,6 +19,40 @@ import javax.annotation.Nullable;
  * 
  * Install Software Update of the specified SoftwareUpdateId to this BDS cluster&#39;s nodes.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.BigDataService.BdsInstanceSoftwareUpdateAction;
+ * import com.pulumi.oci.BigDataService.BdsInstanceSoftwareUpdateActionArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testBdsInstanceSoftwareUpdateAction = new BdsInstanceSoftwareUpdateAction("testBdsInstanceSoftwareUpdateAction", BdsInstanceSoftwareUpdateActionArgs.builder()
+ *             .bdsInstanceId(testBdsInstance.id())
+ *             .softwareUpdateKey(bdsInstanceSoftwareUpdateActionSoftwareUpdateKey)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction")
 public class BdsInstanceSoftwareUpdateAction extends com.pulumi.resources.CustomResource {

@@ -21,6 +21,71 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified Autonomous Database.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement;
+ * import com.pulumi.oci.DatabaseManagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs;
+ * import com.pulumi.oci.DatabaseManagement.inputs.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement = new AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement("testAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement", AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs.builder()
+ *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .enableAutonomousDatabaseDbmFeature(enableAutonomousDatabaseDbmFeature)
+ *             .featureDetails(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs.builder()
+ *                 .feature(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature)
+ *                 .enableAutonomousDatabaseDbmFeature(enableAutonomousDatabaseDbmFeature)
+ *                 .databaseConnectionDetails(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs.builder()
+ *                     .connectionCredentials(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs.builder()
+ *                         .credentialName(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName)
+ *                         .credentialType(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType)
+ *                         .passwordSecretId(testSecret.id())
+ *                         .role(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole)
+ *                         .sslSecretId(testSecret.id())
+ *                         .userName(testUser.name())
+ *                         .build())
+ *                     .connectionString(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs.builder()
+ *                         .connectionType(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType)
+ *                         .port(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort)
+ *                         .protocol(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol)
+ *                         .service(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService)
+ *                         .build())
+ *                     .build())
+ *                 .connectorDetails(AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs.builder()
+ *                     .connectorType(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType)
+ *                     .databaseConnectorId(testDatabaseConnector.id())
+ *                     .managementAgentId(testManagementAgent.id())
+ *                     .privateEndPointId(testPrivateEndPoint.id())
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement")
 public class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

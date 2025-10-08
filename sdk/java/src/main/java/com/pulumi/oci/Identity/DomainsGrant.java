@@ -30,6 +30,71 @@ import javax.annotation.Nullable;
  * 
  * Add a Grantee to an AppRole
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsGrant;
+ * import com.pulumi.oci.Identity.DomainsGrantArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGrantGranteeArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGrantAppArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGrantAppEntitlementCollectionArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGrantEntitlementArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGrantTagArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGrant = new DomainsGrant("testGrant", DomainsGrantArgs.builder()
+ *             .grantMechanism(grantGrantMechanism)
+ *             .grantee(DomainsGrantGranteeArgs.builder()
+ *                 .type(grantGranteeType)
+ *                 .value(grantGranteeValue)
+ *                 .build())
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Grant")
+ *             .app(DomainsGrantAppArgs.builder()
+ *                 .value(grantAppValue)
+ *                 .build())
+ *             .appEntitlementCollection(DomainsGrantAppEntitlementCollectionArgs.builder()
+ *                 .value(grantAppEntitlementCollectionValue)
+ *                 .build())
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .authorization(grantAuthorization)
+ *             .entitlement(DomainsGrantEntitlementArgs.builder()
+ *                 .attributeName("appRoles")
+ *                 .attributeValue(grantEntitlementAttributeValue)
+ *                 .build())
+ *             .grantedAttributeValuesJson(grantGrantedAttributeValuesJson)
+ *             .id(grantId)
+ *             .ocid(grantOcid)
+ *             .resourceTypeSchemaVersion(grantResourceTypeSchemaVersion)
+ *             .tags(DomainsGrantTagArgs.builder()
+ *                 .key(grantTagsKey)
+ *                 .value(grantTagsValue)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Grants can be imported using the `id`, e.g.

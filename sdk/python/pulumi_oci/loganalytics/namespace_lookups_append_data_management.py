@@ -247,6 +247,25 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
 
         Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_append_data_management = oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management",
+            append_lookup_file_body=namespace_lookups_append_data_management_append_lookup_file_body,
+            lookup_name=namespace_lookups_append_data_management_lookup_name,
+            namespace=namespace_lookups_append_data_management_namespace,
+            char_encoding=namespace_lookups_append_data_management_char_encoding,
+            expect=namespace_lookups_append_data_management_expect,
+            is_force=namespace_lookups_append_data_management_is_force)
+        ```
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsAppendDataManagement
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
@@ -269,6 +288,25 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         This resource provides the Namespace Lookups Append Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
 
         Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_namespace_lookups_append_data_management = oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management",
+            append_lookup_file_body=namespace_lookups_append_data_management_append_lookup_file_body,
+            lookup_name=namespace_lookups_append_data_management_lookup_name,
+            namespace=namespace_lookups_append_data_management_namespace,
+            char_encoding=namespace_lookups_append_data_management_char_encoding,
+            expect=namespace_lookups_append_data_management_expect,
+            is_force=namespace_lookups_append_data_management_is_force)
+        ```
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsAppendDataManagement
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupsAppendDataManagementArgs args: The arguments to use to populate this resource's properties.

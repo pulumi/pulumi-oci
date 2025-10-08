@@ -111,6 +111,8 @@ def get_network_firewall_policy_service_list(name: Optional[_builtins.str] = Non
 
     Get ServiceList by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name of the service Group.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -135,6 +137,8 @@ def get_network_firewall_policy_service_list_output(name: Optional[pulumi.Input[
     This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get ServiceList by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name of the service Group.

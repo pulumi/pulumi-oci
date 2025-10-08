@@ -75,7 +75,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsCsvAttributeName: requesting_id
+        /// * idcsCsvAttributeName: RequestingId
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: immutable

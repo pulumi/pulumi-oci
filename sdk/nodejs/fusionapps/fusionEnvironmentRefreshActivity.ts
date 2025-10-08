@@ -11,6 +11,20 @@ import * as utilities from "../utilities";
  *
  * Creates a new RefreshActivity.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFusionEnvironmentRefreshActivity = new oci.fusionapps.FusionEnvironmentRefreshActivity("test_fusion_environment_refresh_activity", {
+ *     fusionEnvironmentId: testFusionEnvironment.id,
+ *     sourceFusionEnvironmentId: testFusionEnvironment.id,
+ *     isDataMaskingOpted: fusionEnvironmentRefreshActivityIsDataMaskingOpted,
+ *     timeScheduledStart: fusionEnvironmentRefreshActivityTimeScheduledStart,
+ * });
+ * ```
+ *
  * ## Import
  *
  * FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.

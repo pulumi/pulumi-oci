@@ -15,6 +15,63 @@ import (
 // This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 //
 // Enables a Database Management feature for the specified cloud database.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewDatabaseDbmFeaturesManagement(ctx, "test_database_dbm_features_management", &databasemanagement.DatabaseDbmFeaturesManagementArgs{
+//				DatabaseId:               pulumi.Any(testDatabase.Id),
+//				EnableDatabaseDbmFeature: pulumi.Any(enableDatabaseDbmFeature),
+//				FeatureDetails: &databasemanagement.DatabaseDbmFeaturesManagementFeatureDetailsArgs{
+//					Feature:                  pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsFeature),
+//					EnableDatabaseDbmFeature: enableDatabaseDbmFeature,
+//					ConnectorDetails: &databasemanagement.DatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs{
+//						ConnectorType:       pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType),
+//						DatabaseConnectorId: pulumi.Any(testDatabaseConnector.Id),
+//						ManagementAgentId:   pulumi.Any(testManagementAgent.Id),
+//						PrivateEndPointId:   pulumi.Any(testPrivateEndPoint.Id),
+//					},
+//					DatabaseConnectionDetails: &databasemanagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs{
+//						ConnectionCredentials: &databasemanagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs{
+//							CredentialName:    pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName),
+//							CredentialType:    pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType),
+//							NamedCredentialId: pulumi.Any(testNamedCredential.Id),
+//							PasswordSecretId:  pulumi.Any(testSecret.Id),
+//							Role:              pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole),
+//							SslSecretId:       pulumi.Any(testSecret.Id),
+//							UserName:          pulumi.Any(testUser.Name),
+//						},
+//						ConnectionString: &databasemanagement.DatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs{
+//							ConnectionType: pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType),
+//							Port:           pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
+//							Protocol:       pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol),
+//							Service:        pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService),
+//						},
+//					},
+//					CanEnableAllCurrentPdbs:       pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs),
+//					IsAutoEnablePluggableDatabase: pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase),
+//					ManagementType:                pulumi.Any(databaseDbmFeaturesManagementFeatureDetailsManagementType),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type DatabaseDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

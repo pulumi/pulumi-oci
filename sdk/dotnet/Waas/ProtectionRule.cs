@@ -16,6 +16,34 @@ namespace Pulumi.Oci.Waas
     /// This operation can update or disable protection rules depending on the structure of the request body.
     /// Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testProtectionRule = new Oci.Waas.ProtectionRule("test_protection_rule", new()
+    ///     {
+    ///         WaasPolicyId = testWaasPolicy.Id,
+    ///         Key = key,
+    ///         Action = "DETECT",
+    ///         Exclusions = 
+    ///         {
+    ///             { "exclusions", new[]
+    ///             {
+    ///                 "example.com",
+    ///             } },
+    ///             { "target", "REQUEST_COOKIES" },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ProtectionRules can be imported using the `id`, e.g.

@@ -93,14 +93,14 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      * 
      */
     @Import(name="availabilityPolicy")
     private @Nullable Output<DesktopPoolAvailabilityPolicyArgs> availabilityPolicy;
 
     /**
-     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      * 
      */
     public Optional<Output<DesktopPoolAvailabilityPolicyArgs>> availabilityPolicy() {
@@ -610,7 +610,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
          * 
          * @return builder
          * 
@@ -621,7 +621,7 @@ public final class DesktopPoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+         * @param availabilityPolicy (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
          * 
          * @return builder
          * 

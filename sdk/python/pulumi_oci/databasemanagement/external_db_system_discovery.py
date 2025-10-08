@@ -384,6 +384,30 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
 
           Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_external_db_system_discovery = oci.databasemanagement.ExternalDbSystemDiscovery("test_external_db_system_discovery",
+            agent_id=test_agent["id"],
+            compartment_id=compartment_id,
+            external_db_system_discovery_id=external_db_system_discovery_external_db_system_discovery_id,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=external_db_system_discovery_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": external_db_system_discovery_patch_operations_operation,
+                "selection": external_db_system_discovery_patch_operations_selection,
+                "value": external_db_system_discovery_patch_operations_value[0],
+            }])
+        ```
+
         ## Import
 
         ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
@@ -413,6 +437,30 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         Creates an external DB system discovery resource and initiates the discovery process.
 
           Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_external_db_system_discovery = oci.databasemanagement.ExternalDbSystemDiscovery("test_external_db_system_discovery",
+            agent_id=test_agent["id"],
+            compartment_id=compartment_id,
+            external_db_system_discovery_id=external_db_system_discovery_external_db_system_discovery_id,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            display_name=external_db_system_discovery_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            patch_operations=[{
+                "operation": external_db_system_discovery_patch_operations_operation,
+                "selection": external_db_system_discovery_patch_operations_selection,
+                "value": external_db_system_discovery_patch_operations_value[0],
+            }])
+        ```
 
         ## Import
 

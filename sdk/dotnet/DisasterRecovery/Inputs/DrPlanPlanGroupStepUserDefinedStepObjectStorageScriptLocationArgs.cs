@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+        /// The bucket name inside the object storage namespace.  Example: `CustomDrScripts`
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

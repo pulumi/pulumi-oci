@@ -24,6 +24,60 @@ import javax.annotation.Nullable;
  * 
  * Creates a new MlApplicationInstance.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.DataScience.MlApplicationInstance;
+ * import com.pulumi.oci.DataScience.MlApplicationInstanceArgs;
+ * import com.pulumi.oci.DataScience.inputs.MlApplicationInstanceAuthConfigurationArgs;
+ * import com.pulumi.oci.DataScience.inputs.MlApplicationInstanceConfigurationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testMlApplicationInstance = new MlApplicationInstance("testMlApplicationInstance", MlApplicationInstanceArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .mlApplicationId(testMlApplication.id())
+ *             .mlApplicationImplementationId(testMlApplicationImplementation.id())
+ *             .authConfiguration(MlApplicationInstanceAuthConfigurationArgs.builder()
+ *                 .type(mlApplicationInstanceAuthConfigurationType)
+ *                 .accessToken(mlApplicationInstanceAuthConfigurationAccessToken)
+ *                 .applicationName(testApplication.name())
+ *                 .audience(mlApplicationInstanceAuthConfigurationAudience)
+ *                 .domainId(testDomain.id())
+ *                 .roleName(mlApplicationInstanceAuthConfigurationRoleName)
+ *                 .scope(mlApplicationInstanceAuthConfigurationScope)
+ *                 .build())
+ *             .configurations(MlApplicationInstanceConfigurationArgs.builder()
+ *                 .key(mlApplicationInstanceConfigurationKey)
+ *                 .value(mlApplicationInstanceConfigurationValue)
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .displayName(mlApplicationInstanceDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isEnabled(mlApplicationInstanceIsEnabled)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * MlApplicationInstances can be imported using the `id`, e.g.

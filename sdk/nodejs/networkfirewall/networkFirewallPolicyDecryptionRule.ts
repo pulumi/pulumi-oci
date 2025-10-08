@@ -11,6 +11,32 @@ import * as utilities from "../utilities";
  *
  * Creates a new Decryption Rule for the Network Firewall Policy.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyDecryptionRule = new oci.networkfirewall.NetworkFirewallPolicyDecryptionRule("test_network_firewall_policy_decryption_rule", {
+ *     lifecycle: {
+ *         ignoreChanges: [position],
+ *     },
+ *     name: networkFirewallPolicyDecryptionRuleName,
+ *     action: networkFirewallPolicyDecryptionRuleAction,
+ *     condition: {
+ *         destinationAddresses: networkFirewallPolicyDecryptionRuleConditionDestinationAddress,
+ *         sourceAddresses: networkFirewallPolicyDecryptionRuleConditionSourceAddress,
+ *     },
+ *     position: {
+ *         afterRule: networkFirewallPolicyDecryptionRulePositionAfterRule,
+ *         beforeRule: networkFirewallPolicyDecryptionRulePositionBeforeRule,
+ *     },
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     decryptionProfile: networkFirewallPolicyDecryptionRuleDecryptionProfile,
+ *     secret: networkFirewallPolicyDecryptionRuleSecret,
+ * });
+ * ```
+ *
  * ## Import
  *
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.

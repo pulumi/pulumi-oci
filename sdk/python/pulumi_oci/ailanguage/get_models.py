@@ -132,6 +132,8 @@ def get_models(compartment_id: Optional[_builtins.str] = None,
 
     Returns a list of models.
 
+    ## Example Usage
+
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
@@ -168,6 +170,8 @@ def get_models_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = No
     This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
 
     Returns a list of models.
+
+    ## Example Usage
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.

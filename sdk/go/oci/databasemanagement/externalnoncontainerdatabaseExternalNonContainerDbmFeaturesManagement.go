@@ -15,6 +15,46 @@ import (
 // This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 //
 // Enables Database Management feature for the specified external non-container database.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(ctx, "test_externalnoncontainerdatabase_external_non_container_dbm_features_management", &databasemanagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs{
+//				ExternalNonContainerDatabaseId:       pulumi.Any(testExternalNonContainerDatabase.Id),
+//				EnableExternalNonContainerDbmFeature: pulumi.Any(enableExternalNonContainerDbmFeature),
+//				FeatureDetails: &databasemanagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs{
+//					Feature:                              pulumi.Any(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsFeature),
+//					EnableExternalNonContainerDbmFeature: enableExternalNonContainerDbmFeature,
+//					ConnectorDetails: &databasemanagement.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs{
+//						ConnectorType:       pulumi.Any(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType),
+//						DatabaseConnectorId: pulumi.Any(testDatabaseConnector.Id),
+//						ManagementAgentId:   pulumi.Any(testManagementAgent.Id),
+//						PrivateEndPointId:   pulumi.Any(testPrivateEndPoint.Id),
+//					},
+//					CanEnableAllCurrentPdbs:       pulumi.Any(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs),
+//					IsAutoEnablePluggableDatabase: pulumi.Any(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase),
+//					LicenseModel:                  pulumi.Any(externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsLicenseModel),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

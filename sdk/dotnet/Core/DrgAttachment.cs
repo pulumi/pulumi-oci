@@ -69,7 +69,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, RemoveExportDrgRouteDistributionTrigger needs to be used.
         /// </summary>
         [Output("exportDrgRouteDistributionId")]
         public Output<string> ExportDrgRouteDistributionId { get; private set; } = null!;
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
+        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `False`
         /// </summary>
         [Output("isCrossTenancy")]
         public Output<bool> IsCrossTenancy { get; private set; } = null!;
@@ -93,7 +93,7 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.DrgAttachmentNetworkDetails> NetworkDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -210,7 +210,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, RemoveExportDrgRouteDistributionTrigger needs to be used.
         /// </summary>
         [Input("exportDrgRouteDistributionId")]
         public Input<string>? ExportDrgRouteDistributionId { get; set; }
@@ -234,7 +234,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.DrgAttachmentNetworkDetailsArgs>? NetworkDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -307,7 +307,7 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+        /// This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, RemoveExportDrgRouteDistributionTrigger needs to be used.
         /// </summary>
         [Input("exportDrgRouteDistributionId")]
         public Input<string>? ExportDrgRouteDistributionId { get; set; }
@@ -325,7 +325,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
+        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `False`
         /// </summary>
         [Input("isCrossTenancy")]
         public Input<bool>? IsCrossTenancy { get; set; }
@@ -337,7 +337,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.DrgAttachmentNetworkDetailsGetArgs>? NetworkDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

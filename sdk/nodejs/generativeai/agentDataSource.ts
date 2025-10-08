@@ -11,6 +11,36 @@ import * as utilities from "../utilities";
  *
  * Creates a data source.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataSource = new oci.generativeai.AgentDataSource("test_data_source", {
+ *     compartmentId: compartmentId,
+ *     dataSourceConfig: {
+ *         dataSourceConfigType: dataSourceDataSourceConfigDataSourceConfigType,
+ *         objectStoragePrefixes: [{
+ *             bucket: dataSourceDataSourceConfigObjectStoragePrefixesBucket,
+ *             namespace: dataSourceDataSourceConfigObjectStoragePrefixesNamespace,
+ *             prefix: dataSourceDataSourceConfigObjectStoragePrefixesPrefix,
+ *         }],
+ *         shouldEnableMultiModality: dataSourceDataSourceConfigShouldEnableMultiModality,
+ *     },
+ *     knowledgeBaseId: testKnowledgeBase.id,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     description: dataSourceDescription,
+ *     displayName: dataSourceDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     metadata: dataSourceMetadata,
+ * });
+ * ```
+ *
  * ## Import
  *
  * DataSources can be imported using the `id`, e.g.

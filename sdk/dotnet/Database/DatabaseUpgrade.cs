@@ -16,13 +16,44 @@ namespace Pulumi.Oci.Database
     /// 
     /// Database upgrade requires source to be `DB_VERSION` or `DB_SOFTWARE_IMAGE`.
     /// 	`db_home.0.db_version` is updated to target DB version specified in the upgrade request.
-    /// 	To avoid a force new create of the db_home on the next apply, add the following to the resource
+    /// 	To avoid a force new create of the DbHome on the next apply, add the following to the resource
     /// 	```	lifecycle {
     /// 	   	ignore_changes = [
     /// 	   		db_home.0.db_version,
     /// 	   	]
     /// 	}
     /// 	```
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testDatabaseUpgrade = new Oci.Database.DatabaseUpgrade("test_database_upgrade", new()
+    ///     {
+    ///         Action = databaseUpgradeAction,
+    ///         DatabaseId = testDatabase.Id,
+    ///         DatabaseUpgradeSourceDetails = new Oci.Database.Inputs.DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs
+    ///         {
+    ///             DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
+    ///             DbHomeId = testDbHome.Id,
+    ///             DbVersion = databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion,
+    ///             Options = databaseUpgradeDatabaseUpgradeSourceDetailsOptions,
+    ///             Source = databaseUpgradeDatabaseUpgradeSourceDetailsSource,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/databaseUpgrade:DatabaseUpgrade")]
     public partial class DatabaseUpgrade : global::Pulumi.CustomResource

@@ -52,7 +52,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class AuditPolicyManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+        /// Required when ProvisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
         /// </summary>
         [Output("auditConditions")]
         public Output<ImmutableArray<Outputs.AuditPolicyManagementAuditCondition>> AuditConditions { get; private set; } = null!;
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<Inputs.AuditPolicyManagementAuditConditionArgs>? _auditConditions;
 
         /// <summary>
-        /// Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+        /// Required when ProvisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
         /// </summary>
         public InputList<Inputs.AuditPolicyManagementAuditConditionArgs> AuditConditions
         {
@@ -295,7 +295,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<Inputs.AuditPolicyManagementAuditConditionGetArgs>? _auditConditions;
 
         /// <summary>
-        /// Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+        /// Required when ProvisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
         /// </summary>
         public InputList<Inputs.AuditPolicyManagementAuditConditionGetArgs> AuditConditions
         {

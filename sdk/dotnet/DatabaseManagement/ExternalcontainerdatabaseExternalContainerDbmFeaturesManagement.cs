@@ -13,6 +13,40 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables a Database Management feature for the specified external container database.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = new Oci.DatabaseManagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management", new()
+    ///     {
+    ///         ExternalContainerDatabaseId = testExternalContainerDatabase.Id,
+    ///         EnableExternalContainerDbmFeature = enableExternalContainerDbmFeature,
+    ///         FeatureDetails = new Oci.DatabaseManagement.Inputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs
+    ///         {
+    ///             Feature = externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsFeature,
+    ///             EnableExternalContainerDbmFeature = enableExternalContainerDbmFeature,
+    ///             ConnectorDetails = new Oci.DatabaseManagement.Inputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs
+    ///             {
+    ///                 ConnectorType = externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+    ///                 DatabaseConnectorId = testDatabaseConnector.Id,
+    ///                 ManagementAgentId = testManagementAgent.Id,
+    ///                 PrivateEndPointId = testPrivateEndPoint.Id,
+    ///             },
+    ///             CanEnableAllCurrentPdbs = externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+    ///             IsAutoEnablePluggableDatabase = externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+    ///             LicenseModel = externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")]
     public partial class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement : global::Pulumi.CustomResource
@@ -21,7 +55,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<bool?> CanDisableAllPdbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -95,7 +129,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? CanDisableAllPdbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -131,7 +165,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? CanDisableAllPdbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

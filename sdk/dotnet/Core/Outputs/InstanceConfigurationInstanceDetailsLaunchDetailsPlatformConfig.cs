@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool? IsMeasuredBootEnabled;
         /// <summary>
-        /// Whether the instance is a confidential instance. If this value is `true`, the instance is a confidential instance. The default value is `false`.
+        /// Whether the instance is a confidential instance. If this value is `True`, the instance is a confidential instance. The default value is `False`.
         /// </summary>
         public readonly bool? IsMemoryEncryptionEnabled;
         /// <summary>

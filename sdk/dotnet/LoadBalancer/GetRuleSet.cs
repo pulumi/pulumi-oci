@@ -103,7 +103,7 @@ namespace Pulumi.Oci.LoadBalancer
         public string LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the rule set to retrieve.  Example: `example_rule_set`
+        /// The name of the rule set to retrieve.  Example: `ExampleRuleSet`
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the rule set to retrieve.  Example: `example_rule_set`
+        /// The name of the rule set to retrieve.  Example: `ExampleRuleSet`
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.LoadBalancer
         public readonly ImmutableArray<Outputs.GetRuleSetItemResult> Items;
         public readonly string LoadBalancerId;
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet`
         /// </summary>
         public readonly string Name;
         public readonly string State;

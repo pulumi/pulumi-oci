@@ -54,7 +54,7 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
      * * oci-tls-12-13-wider-ssl-cipher-suite-v1
      * * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -79,7 +79,7 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
      * * oci-tls-12-13-wider-ssl-cipher-suite-v1
      * * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -173,7 +173,7 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
          * * oci-tls-12-13-wider-ssl-cipher-suite-v1
          * * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -202,7 +202,7 @@ public final class SslCipherSuiteState extends com.pulumi.resources.ResourceArgs
          * * oci-tls-12-13-wider-ssl-cipher-suite-v1
          * * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

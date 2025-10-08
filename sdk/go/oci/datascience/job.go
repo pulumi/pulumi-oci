@@ -16,6 +16,140 @@ import (
 //
 // Creates a job.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/datascience"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datascience.NewJob(ctx, "test_job", &datascience.JobArgs{
+//				CompartmentId: pulumi.Any(compartmentId),
+//				ProjectId:     pulumi.Any(testProject.Id),
+//				DefinedTags: pulumi.StringMap{
+//					"Operations.CostCenter": pulumi.String("42"),
+//				},
+//				Description: pulumi.Any(jobDescription),
+//				DisplayName: pulumi.Any(jobDisplayName),
+//				FreeformTags: pulumi.StringMap{
+//					"Department": pulumi.String("Finance"),
+//				},
+//				JobConfigurationDetails: &datascience.JobJobConfigurationDetailsArgs{
+//					JobType:                 pulumi.Any(jobJobConfigurationDetailsJobType),
+//					CommandLineArguments:    pulumi.Any(jobJobConfigurationDetailsCommandLineArguments),
+//					EnvironmentVariables:    pulumi.Any(jobJobConfigurationDetailsEnvironmentVariables),
+//					MaximumRuntimeInMinutes: pulumi.Any(jobJobConfigurationDetailsMaximumRuntimeInMinutes),
+//					StartupProbeDetails: &datascience.JobJobConfigurationDetailsStartupProbeDetailsArgs{
+//						Commands:              pulumi.Any(jobJobConfigurationDetailsStartupProbeDetailsCommand),
+//						JobProbeCheckType:     pulumi.Any(jobJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType),
+//						CpuBaseline:           jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsCpuBaseline,
+//						FailureThreshold:      pulumi.Any(jobJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+//						InitialDelayInSeconds: pulumi.Any(jobJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+//						MemoryInGbs:           jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs,
+//						Ocpus:                 jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus,
+//						PeriodInSeconds:       pulumi.Any(jobJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
+//					},
+//				},
+//				JobEnvironmentConfigurationDetails: &datascience.JobJobEnvironmentConfigurationDetailsArgs{
+//					Image:              pulumi.Any(jobJobEnvironmentConfigurationDetailsImage),
+//					JobEnvironmentType: pulumi.Any(jobJobEnvironmentConfigurationDetailsJobEnvironmentType),
+//					Cmds:               pulumi.Any(jobJobEnvironmentConfigurationDetailsCmd),
+//					Entrypoints:        pulumi.Any(jobJobEnvironmentConfigurationDetailsEntrypoint),
+//					ImageDigest:        pulumi.Any(jobJobEnvironmentConfigurationDetailsImageDigest),
+//					ImageSignatureId:   pulumi.Any(testImageSignature.Id),
+//				},
+//				JobInfrastructureConfigurationDetails: &datascience.JobJobInfrastructureConfigurationDetailsArgs{
+//					JobInfrastructureType: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobInfrastructureType),
+//					BlockStorageSizeInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//					JobShapeConfigDetails: &datascience.JobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
+//						MemoryInGbs: pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
+//						Ocpus:       pulumi.Any(jobJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//					},
+//					ShapeName: pulumi.Any(testShape.Name),
+//					SubnetId:  pulumi.Any(testSubnet.Id),
+//				},
+//				JobLogConfigurationDetails: &datascience.JobJobLogConfigurationDetailsArgs{
+//					EnableAutoLogCreation: pulumi.Any(jobJobLogConfigurationDetailsEnableAutoLogCreation),
+//					EnableLogging:         pulumi.Any(jobJobLogConfigurationDetailsEnableLogging),
+//					LogGroupId:            pulumi.Any(testLogGroup.Id),
+//					LogId:                 pulumi.Any(testLog.Id),
+//				},
+//				JobNodeConfigurationDetails: &datascience.JobJobNodeConfigurationDetailsArgs{
+//					JobNodeType: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeType),
+//					JobNetworkConfiguration: &datascience.JobJobNodeConfigurationDetailsJobNetworkConfigurationArgs{
+//						JobNetworkType: pulumi.Any(jobJobNodeConfigurationDetailsJobNetworkConfigurationJobNetworkType),
+//						SubnetId:       pulumi.Any(testSubnet.Id),
+//					},
+//					JobNodeGroupConfigurationDetailsLists: datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArray{
+//						&datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListArgs{
+//							Name: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListName),
+//							JobConfigurationDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsArgs{
+//								JobType:                 pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsJobType),
+//								CommandLineArguments:    pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsCommandLineArguments),
+//								EnvironmentVariables:    pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsEnvironmentVariables),
+//								MaximumRuntimeInMinutes: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsMaximumRuntimeInMinutes),
+//								StartupProbeDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsArgs{
+//									Commands:              pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsCommand),
+//									JobProbeCheckType:     pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsJobProbeCheckType),
+//									FailureThreshold:      pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsFailureThreshold),
+//									InitialDelayInSeconds: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsInitialDelayInSeconds),
+//									PeriodInSeconds:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobConfigurationDetailsStartupProbeDetailsPeriodInSeconds),
+//								},
+//							},
+//							JobEnvironmentConfigurationDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsArgs{
+//								Image:              pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImage),
+//								JobEnvironmentType: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsJobEnvironmentType),
+//								Cmds:               pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsCmd),
+//								Entrypoints:        pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsEntrypoint),
+//								ImageDigest:        pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobEnvironmentConfigurationDetailsImageDigest),
+//								ImageSignatureId:   pulumi.Any(testImageSignature.Id),
+//							},
+//							JobInfrastructureConfigurationDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsArgs{
+//								JobInfrastructureType: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobInfrastructureType),
+//								BlockStorageSizeInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
+//								JobShapeConfigDetails: &datascience.JobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsArgs{
+//									MemoryInGbs: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsMemoryInGbs),
+//									Ocpus:       pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOcpus),
+//								},
+//								ShapeName: pulumi.Any(testShape.Name),
+//								SubnetId:  pulumi.Any(testSubnet.Id),
+//							},
+//							MinimumSuccessReplicas: pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListMinimumSuccessReplicas),
+//							Replicas:               pulumi.Any(jobJobNodeConfigurationDetailsJobNodeGroupConfigurationDetailsListReplicas),
+//						},
+//					},
+//					MaximumRuntimeInMinutes: pulumi.Any(jobJobNodeConfigurationDetailsMaximumRuntimeInMinutes),
+//					StartupOrder:            pulumi.Any(jobJobNodeConfigurationDetailsStartupOrder),
+//				},
+//				JobStorageMountConfigurationDetailsLists: datascience.JobJobStorageMountConfigurationDetailsListArray{
+//					&datascience.JobJobStorageMountConfigurationDetailsListArgs{
+//						DestinationDirectoryName: pulumi.Any(jobJobStorageMountConfigurationDetailsListDestinationDirectoryName),
+//						StorageType:              pulumi.Any(jobJobStorageMountConfigurationDetailsListStorageType),
+//						Bucket:                   pulumi.Any(jobJobStorageMountConfigurationDetailsListBucket),
+//						DestinationPath:          pulumi.Any(jobJobStorageMountConfigurationDetailsListDestinationPath),
+//						ExportId:                 pulumi.Any(testExport.Id),
+//						MountTargetId:            pulumi.Any(testMountTarget.Id),
+//						Namespace:                pulumi.Any(jobJobStorageMountConfigurationDetailsListNamespace),
+//						Prefix:                   pulumi.Any(jobJobStorageMountConfigurationDetailsListPrefix),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Jobs can be imported using the `id`, e.g.

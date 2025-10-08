@@ -11,6 +11,48 @@ import * as utilities from "../utilities";
  *
  * Create a Cloud Gate mapping
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudGateMapping = new oci.identity.DomainsCloudGateMapping("test_cloud_gate_mapping", {
+ *     cloudGate: {
+ *         value: cloudGateMappingCloudGateValue,
+ *     },
+ *     gatewayApp: {
+ *         name: cloudGateMappingGatewayAppName,
+ *         value: cloudGateMappingGatewayAppValue,
+ *     },
+ *     idcsEndpoint: testDomain.url,
+ *     policyName: testPolicy.name,
+ *     resourcePrefix: cloudGateMappingResourcePrefix,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping"],
+ *     server: {
+ *         value: cloudGateMappingServerValue,
+ *     },
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: cloudGateMappingAuthorization,
+ *     description: cloudGateMappingDescription,
+ *     id: cloudGateMappingId,
+ *     isOpcService: cloudGateMappingIsOpcService,
+ *     nginxSettings: cloudGateMappingNginxSettings,
+ *     ocid: cloudGateMappingOcid,
+ *     proxyPass: cloudGateMappingProxyPass,
+ *     resourceTypeSchemaVersion: cloudGateMappingResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: cloudGateMappingTagsKey,
+ *         value: cloudGateMappingTagsValue,
+ *     }],
+ *     upstreamServerGroup: {
+ *         ssl: cloudGateMappingUpstreamServerGroupSsl,
+ *         value: cloudGateMappingUpstreamServerGroupValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * CloudGateMappings can be imported using the `id`, e.g.

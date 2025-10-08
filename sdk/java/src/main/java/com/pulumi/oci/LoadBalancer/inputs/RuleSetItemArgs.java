@@ -133,14 +133,14 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     @Import(name="header")
     private @Nullable Output<String> header;
 
     /**
-     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public Optional<Output<String>> header() {
@@ -182,7 +182,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_prefix_value`
+     * Example: `examplePrefixValue`
      * 
      */
     @Import(name="prefix")
@@ -193,7 +193,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_prefix_value`
+     * Example: `examplePrefixValue`
      * 
      */
     public Optional<Output<String>> prefix() {
@@ -318,7 +318,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_suffix_value`
+     * Example: `exampleSuffixValue`
      * 
      */
     @Import(name="suffix")
@@ -329,7 +329,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_suffix_value`
+     * Example: `exampleSuffixValue`
      * 
      */
     public Optional<Output<String>> suffix() {
@@ -341,7 +341,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_value`
+     * Example: `exampleValue`
      * 
      */
     @Import(name="value")
@@ -352,7 +352,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * *  value cannot contain `$`
      * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
      * 
-     * Example: `example_value`
+     * Example: `exampleValue`
      * 
      */
     public Optional<Output<String>> value() {
@@ -572,7 +572,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param header (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+         * @param header (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param header (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+         * @param header (Updatable) A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
          * 
          * @return builder
          * 
@@ -649,7 +649,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_prefix_value`
+         * Example: `examplePrefixValue`
          * 
          * @return builder
          * 
@@ -664,7 +664,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_prefix_value`
+         * Example: `examplePrefixValue`
          * 
          * @return builder
          * 
@@ -809,7 +809,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_suffix_value`
+         * Example: `exampleSuffixValue`
          * 
          * @return builder
          * 
@@ -824,7 +824,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_suffix_value`
+         * Example: `exampleSuffixValue`
          * 
          * @return builder
          * 
@@ -838,7 +838,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_value`
+         * Example: `exampleValue`
          * 
          * @return builder
          * 
@@ -853,7 +853,7 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * *  value cannot contain `$`
          * *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
          * 
-         * Example: `example_value`
+         * Example: `exampleValue`
          * 
          * @return builder
          * 

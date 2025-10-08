@@ -34,15 +34,15 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         public readonly bool IsCrossTenancyPeering;
         /// <summary>
-        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `Null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
         /// </summary>
         public readonly string PeerAdvertisedCidr;
         /// <summary>
-        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `Null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
         /// </summary>
         public readonly ImmutableArray<string> PeerAdvertisedCidrDetails;
         /// <summary>

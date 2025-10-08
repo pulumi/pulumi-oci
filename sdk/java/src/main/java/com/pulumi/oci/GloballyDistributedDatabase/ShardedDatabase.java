@@ -32,6 +32,96 @@ import javax.annotation.Nullable;
  * operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
  * and remove in single operation is not allowed.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.GloballyDistributedDatabase.ShardedDatabase;
+ * import com.pulumi.oci.GloballyDistributedDatabase.ShardedDatabaseArgs;
+ * import com.pulumi.oci.GloballyDistributedDatabase.inputs.ShardedDatabaseCatalogDetailArgs;
+ * import com.pulumi.oci.GloballyDistributedDatabase.inputs.ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs;
+ * import com.pulumi.oci.GloballyDistributedDatabase.inputs.ShardedDatabaseShardDetailArgs;
+ * import com.pulumi.oci.GloballyDistributedDatabase.inputs.ShardedDatabaseShardDetailEncryptionKeyDetailsArgs;
+ * import com.pulumi.oci.GloballyDistributedDatabase.inputs.ShardedDatabasePatchOperationArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testShardedDatabase = new ShardedDatabase("testShardedDatabase", ShardedDatabaseArgs.builder()
+ *             .catalogDetails(ShardedDatabaseCatalogDetailArgs.builder()
+ *                 .adminPassword(shardedDatabaseCatalogDetailsAdminPassword)
+ *                 .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *                 .computeCount(shardedDatabaseCatalogDetailsComputeCount)
+ *                 .dataStorageSizeInGbs(shardedDatabaseCatalogDetailsDataStorageSizeInGbs)
+ *                 .isAutoScalingEnabled(shardedDatabaseCatalogDetailsIsAutoScalingEnabled)
+ *                 .encryptionKeyDetails(ShardedDatabaseCatalogDetailEncryptionKeyDetailsArgs.builder()
+ *                     .kmsKeyId(testKey.id())
+ *                     .vaultId(testVault.id())
+ *                     .kmsKeyVersionId(testKeyVersion.id())
+ *                     .build())
+ *                 .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *                 .build())
+ *             .characterSet(shardedDatabaseCharacterSet)
+ *             .compartmentId(compartmentId)
+ *             .dbDeploymentType(shardedDatabaseDbDeploymentType)
+ *             .dbVersion(shardedDatabaseDbVersion)
+ *             .dbWorkload(shardedDatabaseDbWorkload)
+ *             .displayName(shardedDatabaseDisplayName)
+ *             .listenerPort(shardedDatabaseListenerPort)
+ *             .listenerPortTls(shardedDatabaseListenerPortTls)
+ *             .ncharacterSet(shardedDatabaseNcharacterSet)
+ *             .onsPortLocal(shardedDatabaseOnsPortLocal)
+ *             .onsPortRemote(shardedDatabaseOnsPortRemote)
+ *             .prefix(shardedDatabasePrefix)
+ *             .shardDetails(ShardedDatabaseShardDetailArgs.builder()
+ *                 .adminPassword(shardedDatabaseShardDetailsAdminPassword)
+ *                 .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *                 .computeCount(shardedDatabaseShardDetailsComputeCount)
+ *                 .dataStorageSizeInGbs(shardedDatabaseShardDetailsDataStorageSizeInGbs)
+ *                 .isAutoScalingEnabled(shardedDatabaseShardDetailsIsAutoScalingEnabled)
+ *                 .encryptionKeyDetails(ShardedDatabaseShardDetailEncryptionKeyDetailsArgs.builder()
+ *                     .kmsKeyId(testKey.id())
+ *                     .vaultId(testVault.id())
+ *                     .kmsKeyVersionId(testKeyVersion.id())
+ *                     .build())
+ *                 .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *                 .shardSpace(shardedDatabaseShardDetailsShardSpace)
+ *                 .build())
+ *             .shardedDatabaseId(shardedDatabaseShardedDatabaseId)
+ *             .shardingMethod(shardedDatabaseShardingMethod)
+ *             .chunks(shardedDatabaseChunks)
+ *             .clusterCertificateCommonName(shardedDatabaseClusterCertificateCommonName)
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
+ *             .patchOperations(ShardedDatabasePatchOperationArgs.builder()
+ *                 .operation(shardedDatabasePatchOperationsOperation)
+ *                 .selection(shardedDatabasePatchOperationsSelection)
+ *                 .value(shardedDatabasePatchOperationsValue)
+ *                 .build())
+ *             .replicationFactor(shardedDatabaseReplicationFactor)
+ *             .replicationMethod(shardedDatabaseReplicationMethod)
+ *             .replicationUnit(shardedDatabaseReplicationUnit)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * ShardedDatabases can be imported using the `id`, e.g.

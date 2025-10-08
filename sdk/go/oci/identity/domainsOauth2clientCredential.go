@@ -16,6 +16,65 @@ import (
 //
 // Add a user's OAuth2 client credentials.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsOauth2clientCredential(ctx, "test_oauth2client_credential", &identity.DomainsOauth2clientCredentialArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Name:         pulumi.Any(oauth2clientCredentialName),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"),
+//				},
+//				Scopes: identity.DomainsOauth2clientCredentialScopeArray{
+//					&identity.DomainsOauth2clientCredentialScopeArgs{
+//						Audience: pulumi.Any(oauth2clientCredentialScopesAudience),
+//						Scope:    pulumi.Any(oauth2clientCredentialScopesScope),
+//					},
+//				},
+//				AttributeSets:             pulumi.StringArray{},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(oauth2clientCredentialAuthorization),
+//				Description:               pulumi.Any(oauth2clientCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(oauth2clientCredentialExpiresOn),
+//				Id:                        oauth2clientCredentialId,
+//				IsResetSecret:             pulumi.Any(oauth2clientCredentialIsResetSecret),
+//				Ocid:                      pulumi.Any(oauth2clientCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(oauth2clientCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(oauth2clientCredentialStatus),
+//				Tags: identity.DomainsOauth2clientCredentialTagArray{
+//					&identity.DomainsOauth2clientCredentialTagArgs{
+//						Key:   pulumi.Any(oauth2clientCredentialTagsKey),
+//						Value: pulumi.Any(oauth2clientCredentialTagsValue),
+//					},
+//				},
+//				UrnietfparamsscimschemasoracleidcsextensionselfChangeUser: &identity.DomainsOauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs{
+//					AllowSelfChange: pulumi.Any(oauth2clientCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange),
+//				},
+//				User: &identity.DomainsOauth2clientCredentialUserArgs{
+//					Ocid:  pulumi.Any(testUser.Ocid),
+//					Value: pulumi.Any(testUser.Id),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // OAuth2ClientCredentials can be imported using the `id`, e.g.

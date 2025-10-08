@@ -1025,6 +1025,36 @@ class DomainsApiKey(pulumi.CustomResource):
 
         Create a user's API key.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_api_key = oci.identity.DomainsApiKey("test_api_key",
+            idcs_endpoint=test_domain["url"],
+            key=api_key_key,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:apikey"],
+            attribute_sets=[],
+            attributes="",
+            authorization=api_key_authorization,
+            description=api_key_description,
+            id=api_key_id,
+            ocid=api_key_ocid,
+            resource_type_schema_version=api_key_resource_type_schema_version,
+            tags=[{
+                "key": api_key_tags_key,
+                "value": api_key_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
+
         ## Import
 
         ApiKeys can be imported using the `id`, e.g.
@@ -1117,6 +1147,36 @@ class DomainsApiKey(pulumi.CustomResource):
         This resource provides the Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's API key.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_api_key = oci.identity.DomainsApiKey("test_api_key",
+            idcs_endpoint=test_domain["url"],
+            key=api_key_key,
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:apikey"],
+            attribute_sets=[],
+            attributes="",
+            authorization=api_key_authorization,
+            description=api_key_description,
+            id=api_key_id,
+            ocid=api_key_ocid,
+            resource_type_schema_version=api_key_resource_type_schema_version,
+            tags=[{
+                "key": api_key_tags_key,
+                "value": api_key_tags_value,
+            }],
+            urnietfparamsscimschemasoracleidcsextensionself_change_user={
+                "allow_self_change": api_key_urnietfparamsscimschemasoracleidcsextensionself_change_user_allow_self_change,
+            },
+            user={
+                "ocid": test_user["ocid"],
+                "value": test_user["id"],
+            })
+        ```
 
         ## Import
 

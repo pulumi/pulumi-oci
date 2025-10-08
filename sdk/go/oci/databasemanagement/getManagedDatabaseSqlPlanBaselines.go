@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
 //
 // Lists the SQL plan baselines for the specified Managed Database.
+//
+// ## Example Usage
 func GetManagedDatabaseSqlPlanBaselines(ctx *pulumi.Context, args *GetManagedDatabaseSqlPlanBaselinesArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlPlanBaselinesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlPlanBaselinesResult

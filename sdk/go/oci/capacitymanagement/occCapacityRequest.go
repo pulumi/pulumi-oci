@@ -18,6 +18,80 @@ import (
 //
 //	Updates the OccCapacityRequest by evaluating a sequence of instructions.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/capacitymanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := capacitymanagement.NewOccCapacityRequest(ctx, "test_occ_capacity_request", &capacitymanagement.OccCapacityRequestArgs{
+//				CompartmentId:                pulumi.Any(compartmentId),
+//				DateExpectedCapacityHandover: pulumi.Any(occCapacityRequestDateExpectedCapacityHandover),
+//				Details: capacitymanagement.OccCapacityRequestDetailArray{
+//					&capacitymanagement.OccCapacityRequestDetailArgs{
+//						DemandQuantity:         pulumi.Any(occCapacityRequestDetailsDemandQuantity),
+//						ResourceName:           pulumi.Any(testResource.Name),
+//						ResourceType:           pulumi.Any(occCapacityRequestDetailsResourceType),
+//						WorkloadType:           pulumi.Any(occCapacityRequestDetailsWorkloadType),
+//						ActualHandoverQuantity: pulumi.Any(occCapacityRequestDetailsActualHandoverQuantity),
+//						AssociatedOccHandoverResourceBlockLists: capacitymanagement.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArray{
+//							&capacitymanagement.OccCapacityRequestDetailAssociatedOccHandoverResourceBlockListArgs{
+//								HandoverQuantity:           pulumi.Any(occCapacityRequestDetailsAssociatedOccHandoverResourceBlockListHandoverQuantity),
+//								OccHandoverResourceBlockId: pulumi.Any(testOccHandoverResourceBlock.Id),
+//							},
+//						},
+//						AvailabilityDomain:       pulumi.Any(occCapacityRequestDetailsAvailabilityDomain),
+//						DateActualHandover:       pulumi.Any(occCapacityRequestDetailsDateActualHandover),
+//						DateExpectedHandover:     pulumi.Any(occCapacityRequestDetailsDateExpectedHandover),
+//						ExpectedHandoverQuantity: pulumi.Any(occCapacityRequestDetailsExpectedHandoverQuantity),
+//						SourceWorkloadType:       pulumi.Any(occCapacityRequestDetailsSourceWorkloadType),
+//					},
+//				},
+//				DisplayName:          pulumi.Any(occCapacityRequestDisplayName),
+//				Namespace:            pulumi.Any(occCapacityRequestNamespace),
+//				OccCapacityRequestId: occCapacityRequestOccCapacityRequestId,
+//				Region:               pulumi.Any(occCapacityRequestRegion),
+//				AvailabilityDomain:   pulumi.Any(occCapacityRequestAvailabilityDomain),
+//				DefinedTags: pulumi.StringMap{
+//					"foo-namespace.bar-key": pulumi.String("value"),
+//				},
+//				Description: pulumi.Any(occCapacityRequestDescription),
+//				FreeformTags: pulumi.StringMap{
+//					"bar-key": pulumi.String("value"),
+//				},
+//				LifecycleDetails:         pulumi.Any(occCapacityRequestLifecycleDetails),
+//				OccAvailabilityCatalogId: pulumi.Any(testOccAvailabilityCatalog.Id),
+//				PatchOperations: capacitymanagement.OccCapacityRequestPatchOperationArray{
+//					&capacitymanagement.OccCapacityRequestPatchOperationArgs{
+//						Operation:    pulumi.Any(occCapacityRequestPatchOperationsOperation),
+//						Selection:    pulumi.Any(occCapacityRequestPatchOperationsSelection),
+//						From:         pulumi.Any(occCapacityRequestPatchOperationsFrom),
+//						Position:     pulumi.Any(occCapacityRequestPatchOperationsPosition),
+//						SelectedItem: pulumi.Any(occCapacityRequestPatchOperationsSelectedItem),
+//						Value:        pulumi.Any(occCapacityRequestPatchOperationsValue),
+//						Values:       occCapacityRequestPatchOperationsValues,
+//					},
+//				},
+//				RequestState: pulumi.Any(occCapacityRequestRequestState),
+//				RequestType:  pulumi.Any(occCapacityRequestRequestType),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // OccCapacityRequests can be imported using the `id`, e.g.

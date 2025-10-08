@@ -15,6 +15,59 @@ import (
 // This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 //
 // Enables a Database Management feature for the specified Autonomous Database.
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.NewAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(ctx, "test_autonomous_database_autonomous_database_dbm_features_management", &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs{
+//				AutonomousDatabaseId:               pulumi.Any(testAutonomousDatabase.Id),
+//				EnableAutonomousDatabaseDbmFeature: pulumi.Any(enableAutonomousDatabaseDbmFeature),
+//				FeatureDetails: &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsArgs{
+//					Feature:                            pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsFeature),
+//					EnableAutonomousDatabaseDbmFeature: enableAutonomousDatabaseDbmFeature,
+//					DatabaseConnectionDetails: &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsArgs{
+//						ConnectionCredentials: &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsArgs{
+//							CredentialName:   pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName),
+//							CredentialType:   pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType),
+//							PasswordSecretId: pulumi.Any(testSecret.Id),
+//							Role:             pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole),
+//							SslSecretId:      pulumi.Any(testSecret.Id),
+//							UserName:         pulumi.Any(testUser.Name),
+//						},
+//						ConnectionString: &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringArgs{
+//							ConnectionType: pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType),
+//							Port:           pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort),
+//							Protocol:       pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol),
+//							Service:        pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService),
+//						},
+//					},
+//					ConnectorDetails: &databasemanagement.AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsArgs{
+//						ConnectorType:       pulumi.Any(autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType),
+//						DatabaseConnectorId: pulumi.Any(testDatabaseConnector.Id),
+//						ManagementAgentId:   pulumi.Any(testManagementAgent.Id),
+//						PrivateEndPointId:   pulumi.Any(testPrivateEndPoint.Id),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

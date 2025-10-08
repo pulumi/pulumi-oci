@@ -11,6 +11,34 @@ import * as utilities from "../utilities";
  *
  * Add a user's own customer secret key.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMyCustomerSecretKey = new oci.identity.DomainsMyCustomerSecretKey("test_my_customer_secret_key", {
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+ *     authorization: myCustomerSecretKeyAuthorization,
+ *     description: myCustomerSecretKeyDescription,
+ *     displayName: myCustomerSecretKeyDisplayName,
+ *     expiresOn: myCustomerSecretKeyExpiresOn,
+ *     id: myCustomerSecretKeyId,
+ *     ocid: myCustomerSecretKeyOcid,
+ *     resourceTypeSchemaVersion: myCustomerSecretKeyResourceTypeSchemaVersion,
+ *     status: myCustomerSecretKeyStatus,
+ *     tags: [{
+ *         key: myCustomerSecretKeyTagsKey,
+ *         value: myCustomerSecretKeyTagsValue,
+ *     }],
+ *     user: {
+ *         ocid: myCustomerSecretKeyUserOcid,
+ *         value: myCustomerSecretKeyUserValue,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * MyCustomerSecretKeys can be imported using the `id`, e.g.

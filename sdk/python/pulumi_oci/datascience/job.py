@@ -688,6 +688,120 @@ class Job(pulumi.CustomResource):
 
         Creates a job.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_job = oci.datascience.Job("test_job",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=job_description,
+            display_name=job_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            job_configuration_details={
+                "job_type": job_job_configuration_details_job_type,
+                "command_line_arguments": job_job_configuration_details_command_line_arguments,
+                "environment_variables": job_job_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": job_job_configuration_details_maximum_runtime_in_minutes,
+                "startup_probe_details": {
+                    "commands": job_job_configuration_details_startup_probe_details_command,
+                    "job_probe_check_type": job_job_configuration_details_startup_probe_details_job_probe_check_type,
+                    "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
+                    "failure_threshold": job_job_configuration_details_startup_probe_details_failure_threshold,
+                    "initial_delay_in_seconds": job_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                    "period_in_seconds": job_job_configuration_details_startup_probe_details_period_in_seconds,
+                },
+            },
+            job_environment_configuration_details={
+                "image": job_job_environment_configuration_details_image,
+                "job_environment_type": job_job_environment_configuration_details_job_environment_type,
+                "cmds": job_job_environment_configuration_details_cmd,
+                "entrypoints": job_job_environment_configuration_details_entrypoint,
+                "image_digest": job_job_environment_configuration_details_image_digest,
+                "image_signature_id": test_image_signature["id"],
+            },
+            job_infrastructure_configuration_details={
+                "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
+                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "job_shape_config_details": {
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                },
+                "shape_name": test_shape["name"],
+                "subnet_id": test_subnet["id"],
+            },
+            job_log_configuration_details={
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            job_node_configuration_details={
+                "job_node_type": job_job_node_configuration_details_job_node_type,
+                "job_network_configuration": {
+                    "job_network_type": job_job_node_configuration_details_job_network_configuration_job_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
+                "job_node_group_configuration_details_lists": [{
+                    "name": job_job_node_configuration_details_job_node_group_configuration_details_list_name,
+                    "job_configuration_details": {
+                        "job_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_job_type,
+                        "command_line_arguments": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_command_line_arguments,
+                        "environment_variables": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_environment_variables,
+                        "maximum_runtime_in_minutes": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_maximum_runtime_in_minutes,
+                        "startup_probe_details": {
+                            "commands": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
+                            "job_probe_check_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
+                            "failure_threshold": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
+                            "initial_delay_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                            "period_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                        },
+                    },
+                    "job_environment_configuration_details": {
+                        "image": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_image,
+                        "job_environment_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_job_environment_type,
+                        "cmds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_cmd,
+                        "entrypoints": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_entrypoint,
+                        "image_digest": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_image_digest,
+                        "image_signature_id": test_image_signature["id"],
+                    },
+                    "job_infrastructure_configuration_details": {
+                        "job_infrastructure_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
+                        "block_storage_size_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "job_shape_config_details": {
+                            "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                            "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                        },
+                        "shape_name": test_shape["name"],
+                        "subnet_id": test_subnet["id"],
+                    },
+                    "minimum_success_replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas,
+                    "replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_replicas,
+                }],
+                "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
+                "startup_order": job_job_node_configuration_details_startup_order,
+            },
+            job_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
+                "bucket": job_job_storage_mount_configuration_details_list_bucket,
+                "destination_path": job_job_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": job_job_storage_mount_configuration_details_list_namespace,
+                "prefix": job_job_storage_mount_configuration_details_list_prefix,
+            }])
+        ```
+
         ## Import
 
         Jobs can be imported using the `id`, e.g.
@@ -729,6 +843,120 @@ class Job(pulumi.CustomResource):
         This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
 
         Creates a job.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_job = oci.datascience.Job("test_job",
+            compartment_id=compartment_id,
+            project_id=test_project["id"],
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            description=job_description,
+            display_name=job_display_name,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            job_configuration_details={
+                "job_type": job_job_configuration_details_job_type,
+                "command_line_arguments": job_job_configuration_details_command_line_arguments,
+                "environment_variables": job_job_configuration_details_environment_variables,
+                "maximum_runtime_in_minutes": job_job_configuration_details_maximum_runtime_in_minutes,
+                "startup_probe_details": {
+                    "commands": job_job_configuration_details_startup_probe_details_command,
+                    "job_probe_check_type": job_job_configuration_details_startup_probe_details_job_probe_check_type,
+                    "cpu_baseline": job_job_infrastructure_configuration_details_job_shape_config_details_cpu_baseline,
+                    "failure_threshold": job_job_configuration_details_startup_probe_details_failure_threshold,
+                    "initial_delay_in_seconds": job_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                    "period_in_seconds": job_job_configuration_details_startup_probe_details_period_in_seconds,
+                },
+            },
+            job_environment_configuration_details={
+                "image": job_job_environment_configuration_details_image,
+                "job_environment_type": job_job_environment_configuration_details_job_environment_type,
+                "cmds": job_job_environment_configuration_details_cmd,
+                "entrypoints": job_job_environment_configuration_details_entrypoint,
+                "image_digest": job_job_environment_configuration_details_image_digest,
+                "image_signature_id": test_image_signature["id"],
+            },
+            job_infrastructure_configuration_details={
+                "job_infrastructure_type": job_job_infrastructure_configuration_details_job_infrastructure_type,
+                "block_storage_size_in_gbs": job_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                "job_shape_config_details": {
+                    "memory_in_gbs": job_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                    "ocpus": job_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                },
+                "shape_name": test_shape["name"],
+                "subnet_id": test_subnet["id"],
+            },
+            job_log_configuration_details={
+                "enable_auto_log_creation": job_job_log_configuration_details_enable_auto_log_creation,
+                "enable_logging": job_job_log_configuration_details_enable_logging,
+                "log_group_id": test_log_group["id"],
+                "log_id": test_log["id"],
+            },
+            job_node_configuration_details={
+                "job_node_type": job_job_node_configuration_details_job_node_type,
+                "job_network_configuration": {
+                    "job_network_type": job_job_node_configuration_details_job_network_configuration_job_network_type,
+                    "subnet_id": test_subnet["id"],
+                },
+                "job_node_group_configuration_details_lists": [{
+                    "name": job_job_node_configuration_details_job_node_group_configuration_details_list_name,
+                    "job_configuration_details": {
+                        "job_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_job_type,
+                        "command_line_arguments": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_command_line_arguments,
+                        "environment_variables": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_environment_variables,
+                        "maximum_runtime_in_minutes": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_maximum_runtime_in_minutes,
+                        "startup_probe_details": {
+                            "commands": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_command,
+                            "job_probe_check_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_job_probe_check_type,
+                            "failure_threshold": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_failure_threshold,
+                            "initial_delay_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_initial_delay_in_seconds,
+                            "period_in_seconds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_configuration_details_startup_probe_details_period_in_seconds,
+                        },
+                    },
+                    "job_environment_configuration_details": {
+                        "image": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_image,
+                        "job_environment_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_job_environment_type,
+                        "cmds": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_cmd,
+                        "entrypoints": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_entrypoint,
+                        "image_digest": job_job_node_configuration_details_job_node_group_configuration_details_list_job_environment_configuration_details_image_digest,
+                        "image_signature_id": test_image_signature["id"],
+                    },
+                    "job_infrastructure_configuration_details": {
+                        "job_infrastructure_type": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_infrastructure_type,
+                        "block_storage_size_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_block_storage_size_in_gbs,
+                        "job_shape_config_details": {
+                            "memory_in_gbs": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_memory_in_gbs,
+                            "ocpus": job_job_node_configuration_details_job_node_group_configuration_details_list_job_infrastructure_configuration_details_job_shape_config_details_ocpus,
+                        },
+                        "shape_name": test_shape["name"],
+                        "subnet_id": test_subnet["id"],
+                    },
+                    "minimum_success_replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_minimum_success_replicas,
+                    "replicas": job_job_node_configuration_details_job_node_group_configuration_details_list_replicas,
+                }],
+                "maximum_runtime_in_minutes": job_job_node_configuration_details_maximum_runtime_in_minutes,
+                "startup_order": job_job_node_configuration_details_startup_order,
+            },
+            job_storage_mount_configuration_details_lists=[{
+                "destination_directory_name": job_job_storage_mount_configuration_details_list_destination_directory_name,
+                "storage_type": job_job_storage_mount_configuration_details_list_storage_type,
+                "bucket": job_job_storage_mount_configuration_details_list_bucket,
+                "destination_path": job_job_storage_mount_configuration_details_list_destination_path,
+                "export_id": test_export["id"],
+                "mount_target_id": test_mount_target["id"],
+                "namespace": job_job_storage_mount_configuration_details_list_namespace,
+                "prefix": job_job_storage_mount_configuration_details_list_prefix,
+            }])
+        ```
 
         ## Import
 

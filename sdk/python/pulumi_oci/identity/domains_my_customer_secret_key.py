@@ -1063,6 +1063,33 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
 
         Add a user's own customer secret key.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_customer_secret_key = oci.identity.DomainsMyCustomerSecretKey("test_my_customer_secret_key",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+            authorization=my_customer_secret_key_authorization,
+            description=my_customer_secret_key_description,
+            display_name=my_customer_secret_key_display_name,
+            expires_on=my_customer_secret_key_expires_on,
+            id=my_customer_secret_key_id,
+            ocid=my_customer_secret_key_ocid,
+            resource_type_schema_version=my_customer_secret_key_resource_type_schema_version,
+            status=my_customer_secret_key_status,
+            tags=[{
+                "key": my_customer_secret_key_tags_key,
+                "value": my_customer_secret_key_tags_value,
+            }],
+            user={
+                "ocid": my_customer_secret_key_user_ocid,
+                "value": my_customer_secret_key_user_value,
+            })
+        ```
+
         ## Import
 
         MyCustomerSecretKeys can be imported using the `id`, e.g.
@@ -1173,6 +1200,33 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a user's own customer secret key.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_customer_secret_key = oci.identity.DomainsMyCustomerSecretKey("test_my_customer_secret_key",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:customerSecretKey"],
+            authorization=my_customer_secret_key_authorization,
+            description=my_customer_secret_key_description,
+            display_name=my_customer_secret_key_display_name,
+            expires_on=my_customer_secret_key_expires_on,
+            id=my_customer_secret_key_id,
+            ocid=my_customer_secret_key_ocid,
+            resource_type_schema_version=my_customer_secret_key_resource_type_schema_version,
+            status=my_customer_secret_key_status,
+            tags=[{
+                "key": my_customer_secret_key_tags_key,
+                "value": my_customer_secret_key_tags_value,
+            }],
+            user={
+                "ocid": my_customer_secret_key_user_ocid,
+                "value": my_customer_secret_key_user_value,
+            })
+        ```
 
         ## Import
 

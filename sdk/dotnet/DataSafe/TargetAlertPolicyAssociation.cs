@@ -14,6 +14,38 @@ namespace Pulumi.Oci.DataSafe
     /// 
     /// Creates a new target-alert policy association to track a alert policy applied on target.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testTargetAlertPolicyAssociation = new Oci.DataSafe.TargetAlertPolicyAssociation("test_target_alert_policy_association", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         IsEnabled = targetAlertPolicyAssociationIsEnabled,
+    ///         PolicyId = testPolicy.Id,
+    ///         TargetId = testTarget.Id,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         Description = targetAlertPolicyAssociationDescription,
+    ///         DisplayName = targetAlertPolicyAssociationDisplayName,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         TargetType = targetAlertPolicyAssociationTargetType,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// TargetAlertPolicyAssociations can be imported using the `id`, e.g.

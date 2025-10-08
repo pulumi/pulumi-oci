@@ -18,6 +18,40 @@ import (
 // This operation can update or disable protection rules depending on the structure of the request body.
 // Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/waas"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := waas.NewProtectionRule(ctx, "test_protection_rule", &waas.ProtectionRuleArgs{
+//				WaasPolicyId: pulumi.Any(testWaasPolicy.Id),
+//				Key:          pulumi.Any(key),
+//				Action:       pulumi.String("DETECT"),
+//				Exclusions: waas.ProtectionRuleExclusionArray{
+//					Exclusions: waas.ProtectionRuleExclusionArgs{
+//						"example.com",
+//					},
+//					Target: "REQUEST_COOKIES",
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // ProtectionRules can be imported using the `id`, e.g.

@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
         /// 
-        /// Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+        /// Metrics are emitted in the `OciDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
         /// 
         /// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
         /// 
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> DnssecState { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         [Output("externalDownstreams")]
         public Output<ImmutableArray<Outputs.ZoneExternalDownstream>> ExternalDownstreams { get; private set; } = null!;
@@ -281,7 +281,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
         /// 
-        /// Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+        /// Metrics are emitted in the `OciDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
         /// 
         /// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
         /// 
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.ZoneExternalDownstreamArgs>? _externalDownstreams;
 
         /// <summary>
-        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         public InputList<Inputs.ZoneExternalDownstreamArgs> ExternalDownstreams
         {
@@ -406,7 +406,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// To remove the old DS record without causing service disruption, wait until the old DS record's TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
         /// 
-        /// Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+        /// Metrics are emitted in the `OciDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
         /// 
         /// Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
         /// 
@@ -419,7 +419,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.ZoneExternalDownstreamGetArgs>? _externalDownstreams;
 
         /// <summary>
-        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// (Updatable) External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         public InputList<Inputs.ZoneExternalDownstreamGetArgs> ExternalDownstreams
         {

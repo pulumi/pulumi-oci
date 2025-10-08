@@ -17,6 +17,38 @@ import (
 // Enables Database Management Service for the external container database.
 // For more information about the Database Management Service, see
 // [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+//
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.NewExternalContainerDatabaseManagement(ctx, "test_external_container_database_management", &database.ExternalContainerDatabaseManagementArgs{
+//				ExternalContainerDatabaseId: pulumi.Any(testExternalContainerDatabase.Id),
+//				ExternalDatabaseConnectorId: pulumi.Any(testExternalDatabaseConnector.Id),
+//				LicenseMode:                 externalNonContainerDatabaseManagementLicenseModel,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type ExternalContainerDatabaseManagement struct {
 	pulumi.CustomResourceState
 

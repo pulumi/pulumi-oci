@@ -14,6 +14,54 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's SMTP credentials.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testSmtpCredential = new Oci.Identity.DomainsSmtpCredential("test_smtp_credential", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential",
+    ///         },
+    ///         AttributeSets = new[] {},
+    ///         Attributes = "",
+    ///         Authorization = smtpCredentialAuthorization,
+    ///         Description = smtpCredentialDescription,
+    ///         ExpiresOn = smtpCredentialExpiresOn,
+    ///         Id = smtpCredentialId,
+    ///         Ocid = smtpCredentialOcid,
+    ///         ResourceTypeSchemaVersion = smtpCredentialResourceTypeSchemaVersion,
+    ///         Status = smtpCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsSmtpCredentialTagArgs
+    ///             {
+    ///                 Key = smtpCredentialTagsKey,
+    ///                 Value = smtpCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         UrnietfparamsscimschemasoracleidcsextensionselfChangeUser = new Oci.Identity.Inputs.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs
+    ///         {
+    ///             AllowSelfChange = smtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsSmtpCredentialUserArgs
+    ///         {
+    ///             Ocid = testUser.Ocid,
+    ///             Value = testUser.Id,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// SmtpCredentials can be imported using the `id`, e.g.

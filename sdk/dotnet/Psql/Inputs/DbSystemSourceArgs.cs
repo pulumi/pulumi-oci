@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<bool>? IsHavingRestoreConfigOverrides { get; set; }
 
         /// <summary>
-        /// The source descriminator. Example: `{"source_type": "BACKUP"}`.
+        /// The source descriminator. Example: `{"SourceType": "BACKUP"}`.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

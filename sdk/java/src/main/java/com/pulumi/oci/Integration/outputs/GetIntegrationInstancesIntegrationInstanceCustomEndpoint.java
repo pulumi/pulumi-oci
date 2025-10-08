@@ -22,7 +22,7 @@ public final class GetIntegrationInstancesIntegrationInstanceCustomEndpoint {
      */
     private String certificateSecretId;
     /**
-     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
      * 
      */
     private Integer certificateSecretVersion;
@@ -59,7 +59,7 @@ public final class GetIntegrationInstancesIntegrationInstanceCustomEndpoint {
         return this.certificateSecretId;
     }
     /**
-     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+     * @return The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dnsType` - Type of DNS.
      * 
      */
     public Integer certificateSecretVersion() {

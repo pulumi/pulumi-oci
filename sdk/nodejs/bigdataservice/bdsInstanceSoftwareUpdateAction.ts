@@ -8,6 +8,18 @@ import * as utilities from "../utilities";
  * This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
  *
  * Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBdsInstanceSoftwareUpdateAction = new oci.bigdataservice.BdsInstanceSoftwareUpdateAction("test_bds_instance_software_update_action", {
+ *     bdsInstanceId: testBdsInstance.id,
+ *     softwareUpdateKey: bdsInstanceSoftwareUpdateActionSoftwareUpdateKey,
+ * });
+ * ```
  */
 export class BdsInstanceSoftwareUpdateAction extends pulumi.CustomResource {
     /**

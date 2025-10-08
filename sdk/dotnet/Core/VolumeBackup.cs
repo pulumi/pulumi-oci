@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Core
         public Output<string> SizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `SizeInGbs`.
         /// </summary>
         [Output("sizeInMbs")]
         public Output<string> SizeInMbs { get; private set; } = null!;
@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Core
         public Output<string> UniqueSizeInMbs { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `VolumeId` or `SourceDetails` is required to be set.
         /// </summary>
         [Output("volumeId")]
         public Output<string> VolumeId { get; private set; } = null!;
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `VolumeId` or `SourceDetails` is required to be set.
         /// </summary>
         [Input("volumeId")]
         public Input<string>? VolumeId { get; set; }
@@ -342,7 +342,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? SizeInGbs { get; set; }
 
         /// <summary>
-        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `SizeInGbs`.
         /// </summary>
         [Input("sizeInMbs")]
         public Input<string>? SizeInMbs { get; set; }
@@ -414,7 +414,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? UniqueSizeInMbs { get; set; }
 
         /// <summary>
-        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+        /// The OCID of the volume that needs to be backed up.**Note: To create the resource either `VolumeId` or `SourceDetails` is required to be set.
         /// </summary>
         [Input("volumeId")]
         public Input<string>? VolumeId { get; set; }

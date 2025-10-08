@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetLoadBalancerRoutingPoliciesRoutingPolicyResult
     {
         /// <summary>
-        /// The version of the language in which `condition` of `rules` are composed.
+        /// The version of the language in which `Condition` of `Rules` are composed.
         /// </summary>
         public readonly string ConditionLanguageVersion;
         /// <summary>

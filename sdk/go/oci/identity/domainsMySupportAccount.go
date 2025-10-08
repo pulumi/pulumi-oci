@@ -16,6 +16,50 @@ import (
 //
 // Create a user's own support account.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMySupportAccount(ctx, "test_my_support_account", &identity.DomainsMySupportAccountArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:supportAccount"),
+//				},
+//				Token:                     pulumi.Any(mySupportAccountToken),
+//				Authorization:             pulumi.Any(mySupportAccountAuthorization),
+//				Id:                        mySupportAccountId,
+//				Ocid:                      pulumi.Any(mySupportAccountOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(mySupportAccountResourceTypeSchemaVersion),
+//				Tags: identity.DomainsMySupportAccountTagArray{
+//					&identity.DomainsMySupportAccountTagArgs{
+//						Key:   pulumi.Any(mySupportAccountTagsKey),
+//						Value: pulumi.Any(mySupportAccountTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMySupportAccountUserArgs{
+//					Ocid:  pulumi.Any(mySupportAccountUserOcid),
+//					Value: pulumi.Any(mySupportAccountUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MySupportAccounts can be imported using the `id`, e.g.

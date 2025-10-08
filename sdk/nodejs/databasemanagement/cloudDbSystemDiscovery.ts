@@ -13,6 +13,33 @@ import * as utilities from "../utilities";
  *
  *   Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCloudDbSystemDiscovery = new oci.databasemanagement.CloudDbSystemDiscovery("test_cloud_db_system_discovery", {
+ *     agentId: testAgent.id,
+ *     cloudDbSystemDiscoveryId: cloudDbSystemDiscoveryCloudDbSystemDiscoveryId,
+ *     compartmentId: compartmentId,
+ *     dbaasParentInfrastructureId: testDbaasParentInfrastructure.id,
+ *     deploymentType: cloudDbSystemDiscoveryDeploymentType,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: cloudDbSystemDiscoveryDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     patchOperations: [{
+ *         operation: cloudDbSystemDiscoveryPatchOperationsOperation,
+ *         selection: cloudDbSystemDiscoveryPatchOperationsSelection,
+ *         value: cloudDbSystemDiscoveryPatchOperationsValue[0],
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * CloudDbSystemDiscoveries can be imported using the `id`, e.g.

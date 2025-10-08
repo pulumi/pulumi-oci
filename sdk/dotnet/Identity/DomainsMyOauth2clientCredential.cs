@@ -14,6 +14,58 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's own OAuth2 client credential.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testMyOauth2clientCredential = new Oci.Identity.DomainsMyOauth2clientCredential("test_my_oauth2client_credential", new()
+    ///     {
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Name = myOauth2clientCredentialName,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential",
+    ///         },
+    ///         Scopes = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyOauth2clientCredentialScopeArgs
+    ///             {
+    ///                 Audience = myOauth2clientCredentialScopesAudience,
+    ///                 Scope = myOauth2clientCredentialScopesScope,
+    ///             },
+    ///         },
+    ///         Authorization = myOauth2clientCredentialAuthorization,
+    ///         Description = myOauth2clientCredentialDescription,
+    ///         ExpiresOn = myOauth2clientCredentialExpiresOn,
+    ///         Id = myOauth2clientCredentialId,
+    ///         IsResetSecret = myOauth2clientCredentialIsResetSecret,
+    ///         Ocid = myOauth2clientCredentialOcid,
+    ///         ResourceTypeSchemaVersion = myOauth2clientCredentialResourceTypeSchemaVersion,
+    ///         Status = myOauth2clientCredentialStatus,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsMyOauth2clientCredentialTagArgs
+    ///             {
+    ///                 Key = myOauth2clientCredentialTagsKey,
+    ///                 Value = myOauth2clientCredentialTagsValue,
+    ///             },
+    ///         },
+    ///         User = new Oci.Identity.Inputs.DomainsMyOauth2clientCredentialUserArgs
+    ///         {
+    ///             Ocid = myOauth2clientCredentialUserOcid,
+    ///             Value = myOauth2clientCredentialUserValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// MyOAuth2ClientCredentials can be imported using the `id`, e.g.

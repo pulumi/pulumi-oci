@@ -11,6 +11,40 @@ import * as utilities from "../utilities";
  *
  * Creates a new MlApplicationInstance.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMlApplicationInstance = new oci.datascience.MlApplicationInstance("test_ml_application_instance", {
+ *     compartmentId: compartmentId,
+ *     mlApplicationId: testMlApplication.id,
+ *     mlApplicationImplementationId: testMlApplicationImplementation.id,
+ *     authConfiguration: {
+ *         type: mlApplicationInstanceAuthConfigurationType,
+ *         accessToken: mlApplicationInstanceAuthConfigurationAccessToken,
+ *         applicationName: testApplication.name,
+ *         audience: mlApplicationInstanceAuthConfigurationAudience,
+ *         domainId: testDomain.id,
+ *         roleName: mlApplicationInstanceAuthConfigurationRoleName,
+ *         scope: mlApplicationInstanceAuthConfigurationScope,
+ *     },
+ *     configurations: [{
+ *         key: mlApplicationInstanceConfigurationKey,
+ *         value: mlApplicationInstanceConfigurationValue,
+ *     }],
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: mlApplicationInstanceDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     isEnabled: mlApplicationInstanceIsEnabled,
+ * });
+ * ```
+ *
  * ## Import
  *
  * MlApplicationInstances can be imported using the `id`, e.g.

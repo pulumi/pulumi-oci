@@ -16,6 +16,35 @@ import (
 //
 // Creates a new RefreshActivity.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/fusionapps"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := fusionapps.NewFusionEnvironmentRefreshActivity(ctx, "test_fusion_environment_refresh_activity", &fusionapps.FusionEnvironmentRefreshActivityArgs{
+//				FusionEnvironmentId:       pulumi.Any(testFusionEnvironment.Id),
+//				SourceFusionEnvironmentId: pulumi.Any(testFusionEnvironment.Id),
+//				IsDataMaskingOpted:        pulumi.Any(fusionEnvironmentRefreshActivityIsDataMaskingOpted),
+//				TimeScheduledStart:        fusionEnvironmentRefreshActivityTimeScheduledStart,
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.

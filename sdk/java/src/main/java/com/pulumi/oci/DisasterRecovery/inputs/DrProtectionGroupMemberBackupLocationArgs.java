@@ -16,14 +16,14 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
     public static final DrProtectionGroupMemberBackupLocationArgs Empty = new DrProtectionGroupMemberBackupLocationArgs();
 
     /**
-     * (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -46,14 +46,14 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
     }
 
     /**
-     * The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
-     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     public Optional<Output<String>> object() {
@@ -87,7 +87,7 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
         }
 
         /**
-         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
         }
 
         /**
-         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
         }
 
         /**
-         * @param object The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+         * @param object The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class DrProtectionGroupMemberBackupLocationArgs extends com.pulumi.
         }
 
         /**
-         * @param object The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+         * @param object The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
          * 
          * @return builder
          * 

@@ -28,6 +28,66 @@ import javax.annotation.Nullable;
  * 
  * Create a Dynamic Resource Group.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsDynamicResourceGroup;
+ * import com.pulumi.oci.Identity.DomainsDynamicResourceGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDynamicResourceGroup = new DomainsDynamicResourceGroup("testDynamicResourceGroup", DomainsDynamicResourceGroupArgs.builder()
+ *             .displayName(dynamicResourceGroupDisplayName)
+ *             .idcsEndpoint(testDomain.url())
+ *             .matchingRule(dynamicResourceGroupMatchingRule)
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup")
+ *             .attributeSets()
+ *             .attributes("")
+ *             .authorization(dynamicResourceGroupAuthorization)
+ *             .description(dynamicResourceGroupDescription)
+ *             .id(dynamicResourceGroupId)
+ *             .ocid(dynamicResourceGroupOcid)
+ *             .resourceTypeSchemaVersion(dynamicResourceGroupResourceTypeSchemaVersion)
+ *             .tags(DomainsDynamicResourceGroupTagArgs.builder()
+ *                 .key(dynamicResourceGroupTagsKey)
+ *                 .value(dynamicResourceGroupTagsValue)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionOciTags(DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs.builder()
+ *                 .definedTags(DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs.builder()
+ *                     .key(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey)
+ *                     .namespace(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace)
+ *                     .value(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue)
+ *                     .build())
+ *                 .freeformTags(DomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs.builder()
+ *                     .key(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey)
+ *                     .value(dynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue)
+ *                     .build())
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * DynamicResourceGroups can be imported using the `id`, e.g.

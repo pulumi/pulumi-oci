@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseManagement.Inputs
         public Input<string>? AgentId { get; set; }
 
         /// <summary>
-        /// The error message indicating the reason for connection failure or `null` if the connection was successful.
+        /// The error message indicating the reason for connection failure or `Null` if the connection was successful.
         /// </summary>
         [Input("connectionFailureMessage")]
         public Input<string>? ConnectionFailureMessage { get; set; }

@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Waas
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Set to `true` if the SSL certificate is self-signed.
+        /// Set to `True` if the SSL certificate is self-signed.
         /// </summary>
         [Output("isTrustVerificationDisabled")]
         public Output<bool> IsTrustVerificationDisabled { get; private set; } = null!;
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.Waas
         }
 
         /// <summary>
-        /// Set to `true` if the SSL certificate is self-signed.
+        /// Set to `True` if the SSL certificate is self-signed.
         /// </summary>
         [Input("isTrustVerificationDisabled")]
         public Input<bool>? IsTrustVerificationDisabled { get; set; }
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.Waas
         }
 
         /// <summary>
-        /// Set to `true` if the SSL certificate is self-signed.
+        /// Set to `True` if the SSL certificate is self-signed.
         /// </summary>
         [Input("isTrustVerificationDisabled")]
         public Input<bool>? IsTrustVerificationDisabled { get; set; }

@@ -511,7 +511,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancer_backendsets`
+     * * `ociLoadBalancerBackendsets`
      * 
      * ## Example Usage
      * 
@@ -557,7 +557,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancer_backendsets`
+     * * `ociLoadBalancerBackendsets`
      * 
      * ## Example Usage
      * 
@@ -603,7 +603,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancer_backendsets`
+     * * `ociLoadBalancerBackendsets`
      * 
      * ## Example Usage
      * 
@@ -649,7 +649,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancer_backendsets`
+     * * `ociLoadBalancerBackendsets`
      * 
      * ## Example Usage
      * 
@@ -695,7 +695,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancer_backendsets`
+     * * `ociLoadBalancerBackendsets`
      * 
      * ## Example Usage
      * 
@@ -2256,7 +2256,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancers`
+     * * `ociLoadBalancers`
      * 
      * ## Example Usage
      * 
@@ -2305,7 +2305,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancers`
+     * * `ociLoadBalancers`
      * 
      * ## Example Usage
      * 
@@ -2354,7 +2354,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancers`
+     * * `ociLoadBalancers`
      * 
      * ## Example Usage
      * 
@@ -2403,7 +2403,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancers`
+     * * `ociLoadBalancers`
      * 
      * ## Example Usage
      * 
@@ -2452,7 +2452,7 @@ public final class LoadBalancerFunctions {
      * 
      * ## Supported Aliases
      * 
-     * * `oci_load_balancers`
+     * * `ociLoadBalancers`
      * 
      * ## Example Usage
      * 

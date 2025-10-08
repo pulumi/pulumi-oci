@@ -45,7 +45,7 @@ public final class DomainsMyRequestRequestor {
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsCsvAttributeName: requestor_id
+     * * idcsCsvAttributeName: requestorId
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -95,7 +95,7 @@ public final class DomainsMyRequestRequestor {
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsCsvAttributeName: requestor_id
+     * * idcsCsvAttributeName: requestorId
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable

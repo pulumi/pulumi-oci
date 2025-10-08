@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class CloudVmClusterIormConfigDbPlan
     {
         /// <summary>
-        /// (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
+        /// (Updatable) The database name. For the default `DbPlan`, the `dbName` is `Default`.
         /// </summary>
         public readonly string DbName;
         /// <summary>

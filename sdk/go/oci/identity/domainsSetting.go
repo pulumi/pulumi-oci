@@ -16,6 +16,149 @@ import (
 //
 // # Replace Settings
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsSetting(ctx, "test_setting", &identity.DomainsSettingArgs{
+//				CsrAccess:    pulumi.Any(settingCsrAccess),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:Settings"),
+//				},
+//				SettingId:               pulumi.String("Settings"),
+//				AccountAlwaysTrustScope: pulumi.Any(settingAccountAlwaysTrustScope),
+//				AllowedDomains: pulumi.StringArray{
+//					pulumi.String("test.com"),
+//				},
+//				AllowedForgotPasswordFlowReturnUrls: pulumi.Any(settingAllowedForgotPasswordFlowReturnUrls),
+//				AllowedNotificationRedirectUrls:     pulumi.Any(settingAllowedNotificationRedirectUrls),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				AuditEventRetentionPeriod: pulumi.Any(settingAuditEventRetentionPeriod),
+//				Authorization:             pulumi.Any(settingAuthorization),
+//				CertificateValidation: &identity.DomainsSettingCertificateValidationArgs{
+//					CrlCheckOnOcspFailureEnabled:      pulumi.Any(settingCertificateValidationCrlCheckOnOcspFailureEnabled),
+//					CrlEnabled:                        pulumi.Any(settingCertificateValidationCrlEnabled),
+//					CrlLocation:                       pulumi.Any(settingCertificateValidationCrlLocation),
+//					CrlRefreshInterval:                pulumi.Any(settingCertificateValidationCrlRefreshInterval),
+//					OcspEnabled:                       pulumi.Any(settingCertificateValidationOcspEnabled),
+//					OcspResponderUrl:                  pulumi.Any(settingCertificateValidationOcspResponderUrl),
+//					OcspSettingsResponderUrlPreferred: pulumi.Any(settingCertificateValidationOcspSettingsResponderUrlPreferred),
+//					OcspSigningCertificateAlias:       pulumi.Any(settingCertificateValidationOcspSigningCertificateAlias),
+//					OcspTimeoutDuration:               pulumi.Any(settingCertificateValidationOcspTimeoutDuration),
+//					OcspUnknownResponseStatusAllowed:  pulumi.Any(settingCertificateValidationOcspUnknownResponseStatusAllowed),
+//				},
+//				CloudGateCorsSettings: &identity.DomainsSettingCloudGateCorsSettingsArgs{
+//					CloudGateCorsAllowNullOrigin: pulumi.Any(settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin),
+//					CloudGateCorsAllowedOrigins: pulumi.StringArray{
+//						pulumi.String("https://test.com"),
+//					},
+//					CloudGateCorsEnabled:        pulumi.Any(settingCloudGateCorsSettingsCloudGateCorsEnabled),
+//					CloudGateCorsExposedHeaders: pulumi.Any(settingCloudGateCorsSettingsCloudGateCorsExposedHeaders),
+//					CloudGateCorsMaxAge:         pulumi.Any(settingCloudGateCorsSettingsCloudGateCorsMaxAge),
+//				},
+//				CloudMigrationCustomUrl:  pulumi.Any(settingCloudMigrationCustomUrl),
+//				CloudMigrationUrlEnabled: pulumi.Any(settingCloudMigrationUrlEnabled),
+//				CompanyNames: identity.DomainsSettingCompanyNameArray{
+//					&identity.DomainsSettingCompanyNameArgs{
+//						Locale: pulumi.Any(settingCompanyNamesLocale),
+//						Value:  pulumi.Any(settingCompanyNamesValue),
+//					},
+//				},
+//				ContactEmails: pulumi.StringArray{
+//					pulumi.String("contactEmails@test.com"),
+//				},
+//				CustomBranding:     pulumi.Any(settingCustomBranding),
+//				CustomCssLocation:  pulumi.Any(settingCustomCssLocation),
+//				CustomHtmlLocation: pulumi.Any(settingCustomHtmlLocation),
+//				CustomTranslation:  pulumi.Any(settingCustomTranslation),
+//				DefaultTrustScope:  pulumi.Any(settingDefaultTrustScope),
+//				DiagnosticLevel:    pulumi.Any(settingDiagnosticLevel),
+//				DiagnosticRecordForSearchIdentifiesReturnedResources: pulumi.Any(settingDiagnosticRecordForSearchIdentifiesReturnedResources),
+//				EnableTermsOfUse:     pulumi.Any(settingEnableTermsOfUse),
+//				ExternalId:           pulumi.String("externalId"),
+//				IamUpstSessionExpiry: pulumi.Any(settingIamUpstSessionExpiry),
+//				Id:                   settingId,
+//				Images: identity.DomainsSettingImageArray{
+//					&identity.DomainsSettingImageArgs{
+//						Type:    pulumi.Any(settingImagesType),
+//						Value:   pulumi.Any(settingImagesValue),
+//						Display: pulumi.Any(settingImagesDisplay),
+//					},
+//				},
+//				IsHostedPage: pulumi.Any(settingIsHostedPage),
+//				Issuer:       pulumi.Any(settingIssuer),
+//				Locale:       pulumi.Any(settingLocale),
+//				LoginTexts: identity.DomainsSettingLoginTextArray{
+//					&identity.DomainsSettingLoginTextArgs{
+//						Locale: pulumi.Any(settingLoginTextsLocale),
+//						Value:  pulumi.Any(settingLoginTextsValue),
+//					},
+//				},
+//				MaxNoOfAppCmvaToReturn:        pulumi.Any(settingMaxNoOfAppCmvaToReturn),
+//				MaxNoOfAppRoleMembersToReturn: pulumi.Any(settingMaxNoOfAppRoleMembersToReturn),
+//				Ocid:                          pulumi.Any(settingOcid),
+//				PreferredLanguage:             pulumi.Any(settingPreferredLanguage),
+//				PrevIssuer:                    pulumi.Any(settingPrevIssuer),
+//				PrivacyPolicyUrl:              pulumi.Any(settingPrivacyPolicyUrl),
+//				PurgeConfigs: identity.DomainsSettingPurgeConfigArray{
+//					&identity.DomainsSettingPurgeConfigArgs{
+//						ResourceName:    pulumi.String("resourceName"),
+//						RetentionPeriod: pulumi.Any(settingPurgeConfigsRetentionPeriod),
+//					},
+//				},
+//				ReAuthFactors: pulumi.StringArray{
+//					pulumi.String("password"),
+//				},
+//				ReAuthWhenChangingMyAuthenticationFactors: pulumi.Any(settingReAuthWhenChangingMyAuthenticationFactors),
+//				ResourceTypeSchemaVersion:                 pulumi.Any(settingResourceTypeSchemaVersion),
+//				ServiceAdminCannotListOtherUsers:          pulumi.Any(settingServiceAdminCannotListOtherUsers),
+//				SigningCertPublicAccess:                   pulumi.Any(settingSigningCertPublicAccess),
+//				SubMappingAttr:                            pulumi.Any(settingSubMappingAttr),
+//				Tags: identity.DomainsSettingTagArray{
+//					&identity.DomainsSettingTagArgs{
+//						Key:   pulumi.Any(settingTagsKey),
+//						Value: pulumi.Any(settingTagsValue),
+//					},
+//				},
+//				TenantCustomClaims: identity.DomainsSettingTenantCustomClaimArray{
+//					&identity.DomainsSettingTenantCustomClaimArgs{
+//						AllScopes:  pulumi.Any(settingTenantCustomClaimsAllScopes),
+//						Expression: pulumi.Any(settingTenantCustomClaimsExpression),
+//						Mode:       pulumi.Any(settingTenantCustomClaimsMode),
+//						Name:       pulumi.Any(settingTenantCustomClaimsName),
+//						TokenType:  pulumi.Any(settingTenantCustomClaimsTokenType),
+//						Value:      pulumi.Any(settingTenantCustomClaimsValue),
+//						Scopes: pulumi.StringArray{
+//							pulumi.String("scopes"),
+//						},
+//					},
+//				},
+//				TermsOfUseUrl: pulumi.Any(settingTermsOfUseUrl),
+//				Timezone:      pulumi.Any(settingTimezone),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Settings can be imported using the `id`, e.g.

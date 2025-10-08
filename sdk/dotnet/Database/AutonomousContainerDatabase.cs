@@ -14,6 +14,128 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousContainerDatabase = new Oci.Database.AutonomousContainerDatabase("test_autonomous_container_database", new()
+    ///     {
+    ///         DisplayName = autonomousContainerDatabaseDisplayName,
+    ///         PatchModel = autonomousContainerDatabasePatchModel,
+    ///         AutonomousContainerDatabaseBackupId = testAutonomousContainerDatabaseBackup.Id,
+    ///         CloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         AutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         BackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs
+    ///             {
+    ///                 Type = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                 DbrsPolicyId = testPolicy.Id,
+    ///                 Id = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                 InternetProxy = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                 IsRemote = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                 RemoteRegion = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+    ///                 VpcPassword = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                 VpcUser = autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+    ///             },
+    ///             RecoveryWindowInDays = autonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+    ///         },
+    ///         CompartmentId = compartmentId,
+    ///         CustomerContacts = new[]
+    ///         {
+    ///             new Oci.Database.Inputs.AutonomousContainerDatabaseCustomerContactArgs
+    ///             {
+    ///                 Email = autonomousContainerDatabaseCustomerContactsEmail,
+    ///             },
+    ///         },
+    ///         DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
+    ///         DbName = autonomousContainerDatabaseDbName,
+    ///         DbSplitThreshold = autonomousContainerDatabaseDbSplitThreshold,
+    ///         DbUniqueName = autonomousContainerDatabaseDbUniqueName,
+    ///         DbVersion = autonomousContainerDatabaseDbVersion,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "Operations.CostCenter", "42" },
+    ///         },
+    ///         DistributionAffinity = autonomousContainerDatabaseDistributionAffinity,
+    ///         FastStartFailOverLagLimitInSeconds = autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "Department", "Finance" },
+    ///         },
+    ///         IsAutomaticFailoverEnabled = autonomousContainerDatabaseIsAutomaticFailoverEnabled,
+    ///         IsDstFileUpdateEnabled = autonomousContainerDatabaseIsDstFileUpdateEnabled,
+    ///         KeyStoreId = testKeyStore.Id,
+    ///         KmsKeyId = testKey.Id,
+    ///         MaintenanceWindowDetails = new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs
+    ///         {
+    ///             CustomActionTimeoutInMins = autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins,
+    ///             DaysOfWeeks = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs
+    ///                 {
+    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName,
+    ///                 },
+    ///             },
+    ///             HoursOfDays = autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay,
+    ///             IsCustomActionTimeoutEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+    ///             IsMonthlyPatchingEnabled = autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+    ///             LeadTimeInWeeks = autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks,
+    ///             Months = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs
+    ///                 {
+    ///                     Name = autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName,
+    ///                 },
+    ///             },
+    ///             PatchingMode = autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode,
+    ///             Preference = autonomousContainerDatabaseMaintenanceWindowDetailsPreference,
+    ///             SkipRus = autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu,
+    ///             WeeksOfMonths = autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth,
+    ///         },
+    ///         NetServicesArchitecture = autonomousContainerDatabaseNetServicesArchitecture,
+    ///         OkvEndPointGroupName = autonomousContainerDatabaseOkvEndPointGroupName,
+    ///         PeerAutonomousContainerDatabaseDisplayName = autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName,
+    ///         PeerCloudAutonomousVmClusterId = testCloudAutonomousVmCluster.Id,
+    ///         ProtectionMode = autonomousContainerDatabaseProtectionMode,
+    ///         PeerAutonomousContainerDatabaseBackupConfig = new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs
+    ///         {
+    ///             BackupDestinationDetails = new[]
+    ///             {
+    ///                 new Oci.Database.Inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs
+    ///                 {
+    ///                     Type = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
+    ///                     DbrsPolicyId = testPolicy.Id,
+    ///                     Id = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
+    ///                     InternetProxy = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
+    ///                     IsRemote = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
+    ///                     RemoteRegion = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
+    ///                     VpcPassword = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
+    ///                     VpcUser = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
+    ///                 },
+    ///             },
+    ///             RecoveryWindowInDays = autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
+    ///         },
+    ///         PeerAutonomousContainerDatabaseCompartmentId = testCompartment.Id,
+    ///         PeerAutonomousVmClusterId = testAutonomousVmCluster.Id,
+    ///         PeerDbUniqueName = autonomousContainerDatabasePeerDbUniqueName,
+    ///         ServiceLevelAgreementType = autonomousContainerDatabaseServiceLevelAgreementType,
+    ///         Source = autonomousContainerDatabaseSource,
+    ///         VaultId = testVault.Id,
+    ///         VersionPreference = autonomousContainerDatabaseVersionPreference,
+    ///         VmFailoverReservation = autonomousContainerDatabaseVmFailoverReservation,
+    ///         StandbyMaintenanceBufferInDays = autonomousContainerDatabaseStandbyMaintenanceBufferInDays,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -182,7 +304,7 @@ namespace Pulumi.Oci.Database
         public Output<string> InfrastructureType { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Output("isAutomaticFailoverEnabled")]
         public Output<bool> IsAutomaticFailoverEnabled { get; private set; } = null!;
@@ -402,7 +524,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Role { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -655,7 +777,7 @@ namespace Pulumi.Oci.Database
         }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -757,7 +879,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? ReinstateTrigger { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -1014,7 +1136,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? InfrastructureType { get; set; }
 
         /// <summary>
-        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+        /// Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : IsAutomaticFailoverEnabled = true.
         /// </summary>
         [Input("isAutomaticFailoverEnabled")]
         public Input<bool>? IsAutomaticFailoverEnabled { get; set; }
@@ -1264,7 +1386,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Role { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+        /// (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `CloudAutonomousVmClusterId` is set.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

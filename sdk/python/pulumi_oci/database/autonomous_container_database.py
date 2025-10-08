@@ -2028,6 +2028,98 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_container_database = oci.database.AutonomousContainerDatabase("test_autonomous_container_database",
+            display_name=autonomous_container_database_display_name,
+            patch_model=autonomous_container_database_patch_model,
+            autonomous_container_database_backup_id=test_autonomous_container_database_backup["id"],
+            cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            backup_config={
+                "backup_destination_details": {
+                    "type": autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
+                    "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                },
+                "recovery_window_in_days": autonomous_container_database_backup_config_recovery_window_in_days,
+            },
+            compartment_id=compartment_id,
+            customer_contacts=[{
+                "email": autonomous_container_database_customer_contacts_email,
+            }],
+            database_software_image_id=test_database_software_image["id"],
+            db_name=autonomous_container_database_db_name,
+            db_split_threshold=autonomous_container_database_db_split_threshold,
+            db_unique_name=autonomous_container_database_db_unique_name,
+            db_version=autonomous_container_database_db_version,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            distribution_affinity=autonomous_container_database_distribution_affinity,
+            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled,
+            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled,
+            key_store_id=test_key_store["id"],
+            kms_key_id=test_key["id"],
+            maintenance_window_details={
+                "custom_action_timeout_in_mins": autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
+                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
+                "lead_time_in_weeks": autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_container_database_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_container_database_maintenance_window_details_patching_mode,
+                "preference": autonomous_container_database_maintenance_window_details_preference,
+                "skip_rus": autonomous_container_database_maintenance_window_details_skip_ru,
+                "weeks_of_months": autonomous_container_database_maintenance_window_details_weeks_of_month,
+            },
+            net_services_architecture=autonomous_container_database_net_services_architecture,
+            okv_end_point_group_name=autonomous_container_database_okv_end_point_group_name,
+            peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
+            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            protection_mode=autonomous_container_database_protection_mode,
+            peer_autonomous_container_database_backup_config={
+                "backup_destination_details": [{
+                    "type": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
+                    "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                }],
+                "recovery_window_in_days": autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+            },
+            peer_autonomous_container_database_compartment_id=test_compartment["id"],
+            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            peer_db_unique_name=autonomous_container_database_peer_db_unique_name,
+            service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
+            source=autonomous_container_database_source,
+            vault_id=test_vault["id"],
+            version_preference=autonomous_container_database_version_preference,
+            vm_failover_reservation=autonomous_container_database_vm_failover_reservation,
+            standby_maintenance_buffer_in_days=autonomous_container_database_standby_maintenance_buffer_in_days)
+        ```
+
         ## Import
 
         AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -2092,6 +2184,98 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_autonomous_container_database = oci.database.AutonomousContainerDatabase("test_autonomous_container_database",
+            display_name=autonomous_container_database_display_name,
+            patch_model=autonomous_container_database_patch_model,
+            autonomous_container_database_backup_id=test_autonomous_container_database_backup["id"],
+            cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            backup_config={
+                "backup_destination_details": {
+                    "type": autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_backup_config_backup_destination_details_remote_region,
+                    "vpc_password": autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                },
+                "recovery_window_in_days": autonomous_container_database_backup_config_recovery_window_in_days,
+            },
+            compartment_id=compartment_id,
+            customer_contacts=[{
+                "email": autonomous_container_database_customer_contacts_email,
+            }],
+            database_software_image_id=test_database_software_image["id"],
+            db_name=autonomous_container_database_db_name,
+            db_split_threshold=autonomous_container_database_db_split_threshold,
+            db_unique_name=autonomous_container_database_db_unique_name,
+            db_version=autonomous_container_database_db_version,
+            defined_tags={
+                "Operations.CostCenter": "42",
+            },
+            distribution_affinity=autonomous_container_database_distribution_affinity,
+            fast_start_fail_over_lag_limit_in_seconds=autonomous_container_database_fast_start_fail_over_lag_limit_in_seconds,
+            freeform_tags={
+                "Department": "Finance",
+            },
+            is_automatic_failover_enabled=autonomous_container_database_is_automatic_failover_enabled,
+            is_dst_file_update_enabled=autonomous_container_database_is_dst_file_update_enabled,
+            key_store_id=test_key_store["id"],
+            kms_key_id=test_key["id"],
+            maintenance_window_details={
+                "custom_action_timeout_in_mins": autonomous_container_database_maintenance_window_details_custom_action_timeout_in_mins,
+                "days_of_weeks": [{
+                    "name": autonomous_container_database_maintenance_window_details_days_of_week_name,
+                }],
+                "hours_of_days": autonomous_container_database_maintenance_window_details_hours_of_day,
+                "is_custom_action_timeout_enabled": autonomous_container_database_maintenance_window_details_is_custom_action_timeout_enabled,
+                "is_monthly_patching_enabled": autonomous_container_database_maintenance_window_details_is_monthly_patching_enabled,
+                "lead_time_in_weeks": autonomous_container_database_maintenance_window_details_lead_time_in_weeks,
+                "months": [{
+                    "name": autonomous_container_database_maintenance_window_details_months_name,
+                }],
+                "patching_mode": autonomous_container_database_maintenance_window_details_patching_mode,
+                "preference": autonomous_container_database_maintenance_window_details_preference,
+                "skip_rus": autonomous_container_database_maintenance_window_details_skip_ru,
+                "weeks_of_months": autonomous_container_database_maintenance_window_details_weeks_of_month,
+            },
+            net_services_architecture=autonomous_container_database_net_services_architecture,
+            okv_end_point_group_name=autonomous_container_database_okv_end_point_group_name,
+            peer_autonomous_container_database_display_name=autonomous_container_database_peer_autonomous_container_database_display_name,
+            peer_cloud_autonomous_vm_cluster_id=test_cloud_autonomous_vm_cluster["id"],
+            protection_mode=autonomous_container_database_protection_mode,
+            peer_autonomous_container_database_backup_config={
+                "backup_destination_details": [{
+                    "type": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_type,
+                    "dbrs_policy_id": test_policy["id"],
+                    "id": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_id,
+                    "internet_proxy": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_internet_proxy,
+                    "is_remote": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_is_remote,
+                    "remote_region": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_remote_region,
+                    "vpc_password": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_password,
+                    "vpc_user": autonomous_container_database_peer_autonomous_container_database_backup_config_backup_destination_details_vpc_user,
+                }],
+                "recovery_window_in_days": autonomous_container_database_peer_autonomous_container_database_backup_config_recovery_window_in_days,
+            },
+            peer_autonomous_container_database_compartment_id=test_compartment["id"],
+            peer_autonomous_vm_cluster_id=test_autonomous_vm_cluster["id"],
+            peer_db_unique_name=autonomous_container_database_peer_db_unique_name,
+            service_level_agreement_type=autonomous_container_database_service_level_agreement_type,
+            source=autonomous_container_database_source,
+            vault_id=test_vault["id"],
+            version_preference=autonomous_container_database_version_preference,
+            vm_failover_reservation=autonomous_container_database_vm_failover_reservation,
+            standby_maintenance_buffer_in_days=autonomous_container_database_standby_maintenance_buffer_in_days)
+        ```
 
         ## Import
 

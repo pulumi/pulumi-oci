@@ -8,6 +8,26 @@ import * as utilities from "../utilities";
  * This resource provides the Namespace Lookups Append Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNamespaceLookupsAppendDataManagement = new oci.loganalytics.NamespaceLookupsAppendDataManagement("test_namespace_lookups_append_data_management", {
+ *     appendLookupFileBody: namespaceLookupsAppendDataManagementAppendLookupFileBody,
+ *     lookupName: namespaceLookupsAppendDataManagementLookupName,
+ *     namespace: namespaceLookupsAppendDataManagementNamespace,
+ *     charEncoding: namespaceLookupsAppendDataManagementCharEncoding,
+ *     expect: namespaceLookupsAppendDataManagementExpect,
+ *     isForce: namespaceLookupsAppendDataManagementIsForce,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for NamespaceLookupsAppendDataManagement
  */
 export class NamespaceLookupsAppendDataManagement extends pulumi.CustomResource {
     /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
     public sealed class ApplicationParameter
     {
         /// <summary>
-        /// (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+        /// (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "InputFile"
         /// </summary>
         public readonly string Name;
         /// <summary>

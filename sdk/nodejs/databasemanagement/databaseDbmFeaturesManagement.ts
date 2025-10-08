@@ -10,6 +10,48 @@ import * as utilities from "../utilities";
  * This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Enables a Database Management feature for the specified cloud database.
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDatabaseDbmFeaturesManagement = new oci.databasemanagement.DatabaseDbmFeaturesManagement("test_database_dbm_features_management", {
+ *     databaseId: testDatabase.id,
+ *     enableDatabaseDbmFeature: enableDatabaseDbmFeature,
+ *     featureDetails: {
+ *         feature: databaseDbmFeaturesManagementFeatureDetailsFeature,
+ *         enableDatabaseDbmFeature: enableDatabaseDbmFeature,
+ *         connectorDetails: {
+ *             connectorType: databaseDbmFeaturesManagementFeatureDetailsConnectorDetailsConnectorType,
+ *             databaseConnectorId: testDatabaseConnector.id,
+ *             managementAgentId: testManagementAgent.id,
+ *             privateEndPointId: testPrivateEndPoint.id,
+ *         },
+ *         databaseConnectionDetails: {
+ *             connectionCredentials: {
+ *                 credentialName: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialName,
+ *                 credentialType: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsCredentialType,
+ *                 namedCredentialId: testNamedCredential.id,
+ *                 passwordSecretId: testSecret.id,
+ *                 role: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsRole,
+ *                 sslSecretId: testSecret.id,
+ *                 userName: testUser.name,
+ *             },
+ *             connectionString: {
+ *                 connectionType: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringConnectionType,
+ *                 port: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringPort,
+ *                 protocol: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringProtocol,
+ *                 service: databaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringService,
+ *             },
+ *         },
+ *         canEnableAllCurrentPdbs: databaseDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: databaseDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
+ *         managementType: databaseDbmFeaturesManagementFeatureDetailsManagementType,
+ *     },
+ * });
+ * ```
  */
 export class DatabaseDbmFeaturesManagement extends pulumi.CustomResource {
     /**

@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `CompartmentId` to get the list of Private Endpoint resources.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string OwnerPrincipalId;
         /// <summary>
-        /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        /// The username of the user who created the resource.  If the username of the owner does not exist, `Null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         public readonly string OwnerUserName;
         /// <summary>

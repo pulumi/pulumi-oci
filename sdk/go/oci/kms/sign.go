@@ -19,6 +19,38 @@ import (
 // operation. Or, if you want to validate the signature outside of the service, you can do so by using the public key of the same asymmetric key.
 // This operation is not supported for keys having protection mode `EXTERNAL`.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/kms"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := kms.NewSign(ctx, "test_sign", &kms.SignArgs{
+//				CryptoEndpoint:   pulumi.Any(signMessageCryptoEndpoint),
+//				KeyId:            pulumi.Any(testKey.Id),
+//				Message:          pulumi.Any(signMessage),
+//				SigningAlgorithm: pulumi.Any(signSigningAlgorithm),
+//				KeyVersionId:     pulumi.Any(testKeyVersion.Id),
+//				LoggingContext:   signLoggingContext,
+//				MessageType:      pulumi.Any(signMessageType),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // Sign can be imported using the `id`, e.g.

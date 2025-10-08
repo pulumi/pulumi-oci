@@ -11,6 +11,39 @@ import * as utilities from "../utilities";
  *
  * Create Approval Workflow Assignment
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApprovalWorkflowAssignment = new oci.identity.DomainsApprovalWorkflowAssignment("test_approval_workflow_assignment", {
+ *     approvalWorkflow: {
+ *         type: approvalWorkflowAssignmentApprovalWorkflowType,
+ *         value: approvalWorkflowAssignmentApprovalWorkflowValue,
+ *         ocid: approvalWorkflowAssignmentApprovalWorkflowOcid,
+ *     },
+ *     assignedTo: {
+ *         type: approvalWorkflowAssignmentAssignedToType,
+ *         value: approvalWorkflowAssignmentAssignedToValue,
+ *         ocid: approvalWorkflowAssignmentAssignedToOcid,
+ *     },
+ *     assignmentType: approvalWorkflowAssignmentAssignmentType,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment"],
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: approvalWorkflowAssignmentAuthorization,
+ *     id: approvalWorkflowAssignmentId,
+ *     ocid: approvalWorkflowAssignmentOcid,
+ *     resourceTypeSchemaVersion: approvalWorkflowAssignmentResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: approvalWorkflowAssignmentTagsKey,
+ *         value: approvalWorkflowAssignmentTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * ApprovalWorkflowAssignments can be imported using the `id`, e.g.

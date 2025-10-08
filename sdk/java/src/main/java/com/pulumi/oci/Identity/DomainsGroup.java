@@ -32,6 +32,95 @@ import javax.annotation.Nullable;
  * 
  * Create a group.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsGroup;
+ * import com.pulumi.oci.Identity.DomainsGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupMemberArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testGroup = new DomainsGroup("testGroup", DomainsGroupArgs.builder()
+ *             .displayName(groupDisplayName)
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:core:2.0:Group")
+ *             .attributeSets()
+ *             .attributes("")
+ *             .authorization(groupAuthorization)
+ *             .externalId("externalId")
+ *             .forceDelete(groupForceDelete)
+ *             .id(groupId)
+ *             .members(DomainsGroupMemberArgs.builder()
+ *                 .type(groupMembersType)
+ *                 .value(groupMembersValue)
+ *                 .ocid(groupMembersOcid)
+ *                 .build())
+ *             .nonUniqueDisplayName(groupNonUniqueDisplayName)
+ *             .ocid(groupOcid)
+ *             .resourceTypeSchemaVersion(groupResourceTypeSchemaVersion)
+ *             .tags(DomainsGroupTagArgs.builder()
+ *                 .key(groupTagsKey)
+ *                 .value(groupTagsValue)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionOciTags(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs.builder()
+ *                 .definedTags(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagArgs.builder()
+ *                     .key(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsKey)
+ *                     .namespace(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsNamespace)
+ *                     .value(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsValue)
+ *                     .build())
+ *                 .freeformTags(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagArgs.builder()
+ *                     .key(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsKey)
+ *                     .value(groupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsValue)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensiondynamicGroup(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs.builder()
+ *                 .membershipRule(groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipRule)
+ *                 .membershipType(groupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupMembershipType)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensiongroupGroup(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs.builder()
+ *                 .creationMechanism(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupCreationMechanism)
+ *                 .description(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupDescription)
+ *                 .owners(DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs.builder()
+ *                     .type(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersType)
+ *                     .value(groupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersValue)
+ *                     .build())
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionposixGroup(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs.builder()
+ *                 .gidNumber(groupUrnietfparamsscimschemasoracleidcsextensionposixGroupGidNumber)
+ *                 .build())
+ *             .urnietfparamsscimschemasoracleidcsextensionrequestableGroup(DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs.builder()
+ *                 .requestable(groupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupRequestable)
+ *                 .build())
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Groups can be imported using the `id`, e.g.

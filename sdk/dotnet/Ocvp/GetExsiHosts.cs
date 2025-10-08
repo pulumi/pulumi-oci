@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Remember that in terms of implementation, an ESXi host is a Compute instance that
         /// is configured with the chosen bundle of VMware software. Each `EsxiHost`
-        /// object has its own OCID (`id`), and a separate attribute for the OCID of
+        /// object has its own OCID (`Id`), and a separate attribute for the OCID of
         /// the Compute instance (`computeInstanceId`). When filtering the list of
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Remember that in terms of implementation, an ESXi host is a Compute instance that
         /// is configured with the chosen bundle of VMware software. Each `EsxiHost`
-        /// object has its own OCID (`id`), and a separate attribute for the OCID of
+        /// object has its own OCID (`Id`), and a separate attribute for the OCID of
         /// the Compute instance (`computeInstanceId`). When filtering the list of
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Remember that in terms of implementation, an ESXi host is a Compute instance that
         /// is configured with the chosen bundle of VMware software. Each `EsxiHost`
-        /// object has its own OCID (`id`), and a separate attribute for the OCID of
+        /// object has its own OCID (`Id`), and a separate attribute for the OCID of
         /// the Compute instance (`computeInstanceId`). When filtering the list of
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.

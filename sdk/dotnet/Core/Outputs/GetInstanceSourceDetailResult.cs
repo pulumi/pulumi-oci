@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string SourceId;
         /// <summary>
-        /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        /// The source type for the instance. Use `Image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         public readonly string SourceType;
 

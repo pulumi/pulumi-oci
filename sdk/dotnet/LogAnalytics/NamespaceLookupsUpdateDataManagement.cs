@@ -13,6 +13,33 @@ namespace Pulumi.Oci.LogAnalytics
     /// This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
     /// 
     /// Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testNamespaceLookupsUpdateDataManagement = new Oci.LogAnalytics.NamespaceLookupsUpdateDataManagement("test_namespace_lookups_update_data_management", new()
+    ///     {
+    ///         UpdateLookupFileBody = namespaceLookupsUpdateDataManagementUpdateLookupFileBody,
+    ///         LookupName = namespaceLookupsUpdateDataManagementLookupName,
+    ///         Namespace = namespaceLookupsUpdateDataManagementNamespace,
+    ///         CharEncoding = namespaceLookupsUpdateDataManagementCharEncoding,
+    ///         Expect = namespaceLookupsUpdateDataManagementExpect,
+    ///         IsForce = namespaceLookupsUpdateDataManagementIsForce,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for NamespaceLookupsUpdateDataManagement
     /// </summary>
     [OciResourceType("oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement")]
     public partial class NamespaceLookupsUpdateDataManagement : global::Pulumi.CustomResource

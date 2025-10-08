@@ -284,6 +284,8 @@ public final class MediaServicesFunctions {
      * 
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args) {
         return getMediaAssetDistributionChannelAttachment(args, InvokeOptions.Empty);
@@ -292,6 +294,8 @@ public final class MediaServicesFunctions {
      * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args) {
@@ -302,6 +306,8 @@ public final class MediaServicesFunctions {
      * 
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
@@ -311,6 +317,8 @@ public final class MediaServicesFunctions {
      * 
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
@@ -319,6 +327,8 @@ public final class MediaServicesFunctions {
      * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
      * 
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args, InvokeOptions options) {

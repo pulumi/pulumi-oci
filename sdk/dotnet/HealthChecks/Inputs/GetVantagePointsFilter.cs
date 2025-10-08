@@ -13,7 +13,7 @@ namespace Pulumi.Oci.HealthChecks.Inputs
     public sealed class GetVantagePointsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Filters results that exactly match the `name` field.
+        /// Filters results that exactly match the `Name` field.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

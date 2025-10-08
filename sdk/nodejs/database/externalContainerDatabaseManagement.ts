@@ -10,6 +10,23 @@ import * as utilities from "../utilities";
  * Enables Database Management Service for the external container database.
  * For more information about the Database Management Service, see
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalContainerDatabaseManagement = new oci.database.ExternalContainerDatabaseManagement("test_external_container_database_management", {
+ *     externalContainerDatabaseId: testExternalContainerDatabase.id,
+ *     externalDatabaseConnectorId: testExternalDatabaseConnector.id,
+ *     licenseMode: externalNonContainerDatabaseManagementLicenseModel,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
  */
 export class ExternalContainerDatabaseManagement extends pulumi.CustomResource {
     /**

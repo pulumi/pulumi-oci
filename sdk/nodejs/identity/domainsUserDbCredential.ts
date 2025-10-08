@@ -11,6 +11,39 @@ import * as utilities from "../utilities";
  *
  * Create a user's database (DB) credentials.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserDbCredential = new oci.identity.DomainsUserDbCredential("test_user_db_credential", {
+ *     dbPassword: userDbCredentialDbPassword,
+ *     idcsEndpoint: testDomain.url,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials"],
+ *     attributeSets: [],
+ *     attributes: "",
+ *     authorization: userDbCredentialAuthorization,
+ *     description: userDbCredentialDescription,
+ *     expiresOn: userDbCredentialExpiresOn,
+ *     id: userDbCredentialId,
+ *     ocid: userDbCredentialOcid,
+ *     resourceTypeSchemaVersion: userDbCredentialResourceTypeSchemaVersion,
+ *     status: userDbCredentialStatus,
+ *     tags: [{
+ *         key: userDbCredentialTagsKey,
+ *         value: userDbCredentialTagsValue,
+ *     }],
+ *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
+ *         allowSelfChange: userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
+ *     },
+ *     user: {
+ *         value: testUser.id,
+ *         ocid: testUser.ocid,
+ *     },
+ * });
+ * ```
+ *
  * ## Import
  *
  * UserDbCredentials can be imported using the `id`, e.g.

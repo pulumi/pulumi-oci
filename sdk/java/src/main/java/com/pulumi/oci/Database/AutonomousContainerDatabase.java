@@ -35,6 +35,122 @@ import javax.annotation.Nullable;
  * 
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabase;
+ * import com.pulumi.oci.Database.AutonomousContainerDatabaseArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseCustomerContactArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabaseMaintenanceWindowDetailsArgs;
+ * import com.pulumi.oci.Database.inputs.AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase("testAutonomousContainerDatabase", AutonomousContainerDatabaseArgs.builder()
+ *             .displayName(autonomousContainerDatabaseDisplayName)
+ *             .patchModel(autonomousContainerDatabasePatchModel)
+ *             .autonomousContainerDatabaseBackupId(testAutonomousContainerDatabaseBackup.id())
+ *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .autonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .backupConfig(AutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs.builder()
+ *                     .type(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .dbrsPolicyId(testPolicy.id())
+ *                     .id(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
+ *                     .internetProxy(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
+ *                     .isRemote(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .remoteRegion(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
+ *                     .vpcPassword(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
+ *                     .vpcUser(autonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
+ *                     .build())
+ *                 .recoveryWindowInDays(autonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
+ *                 .build())
+ *             .compartmentId(compartmentId)
+ *             .customerContacts(AutonomousContainerDatabaseCustomerContactArgs.builder()
+ *                 .email(autonomousContainerDatabaseCustomerContactsEmail)
+ *                 .build())
+ *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
+ *             .dbName(autonomousContainerDatabaseDbName)
+ *             .dbSplitThreshold(autonomousContainerDatabaseDbSplitThreshold)
+ *             .dbUniqueName(autonomousContainerDatabaseDbUniqueName)
+ *             .dbVersion(autonomousContainerDatabaseDbVersion)
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .distributionAffinity(autonomousContainerDatabaseDistributionAffinity)
+ *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseFastStartFailOverLagLimitInSeconds)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isAutomaticFailoverEnabled(autonomousContainerDatabaseIsAutomaticFailoverEnabled)
+ *             .isDstFileUpdateEnabled(autonomousContainerDatabaseIsDstFileUpdateEnabled)
+ *             .keyStoreId(testKeyStore.id())
+ *             .kmsKeyId(testKey.id())
+ *             .maintenanceWindowDetails(AutonomousContainerDatabaseMaintenanceWindowDetailsArgs.builder()
+ *                 .customActionTimeoutInMins(autonomousContainerDatabaseMaintenanceWindowDetailsCustomActionTimeoutInMins)
+ *                 .daysOfWeeks(AutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekArgs.builder()
+ *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekName)
+ *                     .build())
+ *                 .hoursOfDays(autonomousContainerDatabaseMaintenanceWindowDetailsHoursOfDay)
+ *                 .isCustomActionTimeoutEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsCustomActionTimeoutEnabled)
+ *                 .isMonthlyPatchingEnabled(autonomousContainerDatabaseMaintenanceWindowDetailsIsMonthlyPatchingEnabled)
+ *                 .leadTimeInWeeks(autonomousContainerDatabaseMaintenanceWindowDetailsLeadTimeInWeeks)
+ *                 .months(AutonomousContainerDatabaseMaintenanceWindowDetailsMonthArgs.builder()
+ *                     .name(autonomousContainerDatabaseMaintenanceWindowDetailsMonthsName)
+ *                     .build())
+ *                 .patchingMode(autonomousContainerDatabaseMaintenanceWindowDetailsPatchingMode)
+ *                 .preference(autonomousContainerDatabaseMaintenanceWindowDetailsPreference)
+ *                 .skipRus(autonomousContainerDatabaseMaintenanceWindowDetailsSkipRu)
+ *                 .weeksOfMonths(autonomousContainerDatabaseMaintenanceWindowDetailsWeeksOfMonth)
+ *                 .build())
+ *             .netServicesArchitecture(autonomousContainerDatabaseNetServicesArchitecture)
+ *             .okvEndPointGroupName(autonomousContainerDatabaseOkvEndPointGroupName)
+ *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabasePeerAutonomousContainerDatabaseDisplayName)
+ *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .protectionMode(autonomousContainerDatabaseProtectionMode)
+ *             .peerAutonomousContainerDatabaseBackupConfig(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigArgs.builder()
+ *                 .backupDestinationDetails(AutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
+ *                     .type(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
+ *                     .dbrsPolicyId(testPolicy.id())
+ *                     .id(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
+ *                     .internetProxy(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
+ *                     .isRemote(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
+ *                     .remoteRegion(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion)
+ *                     .vpcPassword(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword)
+ *                     .vpcUser(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser)
+ *                     .build())
+ *                 .recoveryWindowInDays(autonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
+ *                 .build())
+ *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.id())
+ *             .peerAutonomousVmClusterId(testAutonomousVmCluster.id())
+ *             .peerDbUniqueName(autonomousContainerDatabasePeerDbUniqueName)
+ *             .serviceLevelAgreementType(autonomousContainerDatabaseServiceLevelAgreementType)
+ *             .source(autonomousContainerDatabaseSource)
+ *             .vaultId(testVault.id())
+ *             .versionPreference(autonomousContainerDatabaseVersionPreference)
+ *             .vmFailoverReservation(autonomousContainerDatabaseVmFailoverReservation)
+ *             .standbyMaintenanceBufferInDays(autonomousContainerDatabaseStandbyMaintenanceBufferInDays)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -409,14 +525,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.infrastructureType;
     }
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
@@ -919,7 +1035,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.role;
     }
     /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -929,7 +1045,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
     /**
-     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

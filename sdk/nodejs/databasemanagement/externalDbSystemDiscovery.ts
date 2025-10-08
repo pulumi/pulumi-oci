@@ -13,6 +13,31 @@ import * as utilities from "../utilities";
  *
  *   Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalDbSystemDiscovery = new oci.databasemanagement.ExternalDbSystemDiscovery("test_external_db_system_discovery", {
+ *     agentId: testAgent.id,
+ *     compartmentId: compartmentId,
+ *     externalDbSystemDiscoveryId: externalDbSystemDiscoveryExternalDbSystemDiscoveryId,
+ *     definedTags: {
+ *         "Operations.CostCenter": "42",
+ *     },
+ *     displayName: externalDbSystemDiscoveryDisplayName,
+ *     freeformTags: {
+ *         Department: "Finance",
+ *     },
+ *     patchOperations: [{
+ *         operation: externalDbSystemDiscoveryPatchOperationsOperation,
+ *         selection: externalDbSystemDiscoveryPatchOperationsSelection,
+ *         value: externalDbSystemDiscoveryPatchOperationsValue[0],
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * ExternalDbSystemDiscoveries can be imported using the `id`, e.g.

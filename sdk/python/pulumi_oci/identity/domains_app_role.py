@@ -1545,6 +1545,38 @@ class DomainsAppRole(pulumi.CustomResource):
 
         Create an AppRole
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_app_role = oci.identity.DomainsAppRole("test_app_role",
+            app={
+                "value": test_app["id"],
+            },
+            display_name=app_role_display_name,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:AppRole"],
+            admin_role=app_role_admin_role,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=app_role_authorization,
+            available_to_clients=app_role_available_to_clients,
+            available_to_groups=app_role_available_to_groups,
+            available_to_users=app_role_available_to_users,
+            description=app_role_description,
+            id=app_role_id,
+            legacy_group_name="legacyGroupName",
+            ocid=app_role_ocid,
+            public=app_role_public,
+            resource_type_schema_version=app_role_resource_type_schema_version,
+            tags=[{
+                "key": app_role_tags_key,
+                "value": app_role_tags_value,
+            }])
+        ```
+
         ## Import
 
         AppRoles can be imported using the `id`, e.g.
@@ -1700,6 +1732,38 @@ class DomainsAppRole(pulumi.CustomResource):
         This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create an AppRole
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_app_role = oci.identity.DomainsAppRole("test_app_role",
+            app={
+                "value": test_app["id"],
+            },
+            display_name=app_role_display_name,
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:AppRole"],
+            admin_role=app_role_admin_role,
+            attribute_sets=["all"],
+            attributes="",
+            authorization=app_role_authorization,
+            available_to_clients=app_role_available_to_clients,
+            available_to_groups=app_role_available_to_groups,
+            available_to_users=app_role_available_to_users,
+            description=app_role_description,
+            id=app_role_id,
+            legacy_group_name="legacyGroupName",
+            ocid=app_role_ocid,
+            public=app_role_public,
+            resource_type_schema_version=app_role_resource_type_schema_version,
+            tags=[{
+                "key": app_role_tags_key,
+                "value": app_role_tags_value,
+            }])
+        ```
 
         ## Import
 

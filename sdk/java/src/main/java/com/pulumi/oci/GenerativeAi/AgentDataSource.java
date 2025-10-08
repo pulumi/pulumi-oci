@@ -20,6 +20,55 @@ import javax.annotation.Nullable;
  * 
  * Creates a data source.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.GenerativeAi.AgentDataSource;
+ * import com.pulumi.oci.GenerativeAi.AgentDataSourceArgs;
+ * import com.pulumi.oci.GenerativeAi.inputs.AgentDataSourceDataSourceConfigArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testDataSource = new AgentDataSource("testDataSource", AgentDataSourceArgs.builder()
+ *             .compartmentId(compartmentId)
+ *             .dataSourceConfig(AgentDataSourceDataSourceConfigArgs.builder()
+ *                 .dataSourceConfigType(dataSourceDataSourceConfigDataSourceConfigType)
+ *                 .objectStoragePrefixes(AgentDataSourceDataSourceConfigObjectStoragePrefixArgs.builder()
+ *                     .bucket(dataSourceDataSourceConfigObjectStoragePrefixesBucket)
+ *                     .namespace(dataSourceDataSourceConfigObjectStoragePrefixesNamespace)
+ *                     .prefix(dataSourceDataSourceConfigObjectStoragePrefixesPrefix)
+ *                     .build())
+ *                 .shouldEnableMultiModality(dataSourceDataSourceConfigShouldEnableMultiModality)
+ *                 .build())
+ *             .knowledgeBaseId(testKnowledgeBase.id())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(dataSourceDescription)
+ *             .displayName(dataSourceDisplayName)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .metadata(dataSourceMetadata)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * DataSources can be imported using the `id`, e.g.

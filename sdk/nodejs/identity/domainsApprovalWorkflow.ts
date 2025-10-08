@@ -11,6 +11,39 @@ import * as utilities from "../utilities";
  *
  * Create ApprovalWorkflow
  *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testApprovalWorkflow = new oci.identity.DomainsApprovalWorkflow("test_approval_workflow", {
+ *     idcsEndpoint: testDomain.url,
+ *     maxDuration: {
+ *         unit: approvalWorkflowMaxDurationUnit,
+ *         value: approvalWorkflowMaxDurationValue,
+ *     },
+ *     name: approvalWorkflowName,
+ *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflow"],
+ *     approvalWorkflowSteps: [{
+ *         type: approvalWorkflowApprovalWorkflowStepsType,
+ *         value: approvalWorkflowApprovalWorkflowStepsValue,
+ *         ocid: approvalWorkflowApprovalWorkflowStepsOcid,
+ *     }],
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: approvalWorkflowAuthorization,
+ *     description: approvalWorkflowDescription,
+ *     id: approvalWorkflowId,
+ *     ocid: approvalWorkflowOcid,
+ *     resourceTypeSchemaVersion: approvalWorkflowResourceTypeSchemaVersion,
+ *     tags: [{
+ *         key: approvalWorkflowTagsKey,
+ *         value: approvalWorkflowTagsValue,
+ *     }],
+ * });
+ * ```
+ *
  * ## Import
  *
  * ApprovalWorkflows can be imported using the `id`, e.g.

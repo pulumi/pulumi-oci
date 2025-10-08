@@ -14,6 +14,69 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a Cloud Gate mapping
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testCloudGateMapping = new Oci.Identity.DomainsCloudGateMapping("test_cloud_gate_mapping", new()
+    ///     {
+    ///         CloudGate = new Oci.Identity.Inputs.DomainsCloudGateMappingCloudGateArgs
+    ///         {
+    ///             Value = cloudGateMappingCloudGateValue,
+    ///         },
+    ///         GatewayApp = new Oci.Identity.Inputs.DomainsCloudGateMappingGatewayAppArgs
+    ///         {
+    ///             Name = cloudGateMappingGatewayAppName,
+    ///             Value = cloudGateMappingGatewayAppValue,
+    ///         },
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         PolicyName = testPolicy.Name,
+    ///         ResourcePrefix = cloudGateMappingResourcePrefix,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:CloudGateMapping",
+    ///         },
+    ///         Server = new Oci.Identity.Inputs.DomainsCloudGateMappingServerArgs
+    ///         {
+    ///             Value = cloudGateMappingServerValue,
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = cloudGateMappingAuthorization,
+    ///         Description = cloudGateMappingDescription,
+    ///         Id = cloudGateMappingId,
+    ///         IsOpcService = cloudGateMappingIsOpcService,
+    ///         NginxSettings = cloudGateMappingNginxSettings,
+    ///         Ocid = cloudGateMappingOcid,
+    ///         ProxyPass = cloudGateMappingProxyPass,
+    ///         ResourceTypeSchemaVersion = cloudGateMappingResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsCloudGateMappingTagArgs
+    ///             {
+    ///                 Key = cloudGateMappingTagsKey,
+    ///                 Value = cloudGateMappingTagsValue,
+    ///             },
+    ///         },
+    ///         UpstreamServerGroup = new Oci.Identity.Inputs.DomainsCloudGateMappingUpstreamServerGroupArgs
+    ///         {
+    ///             Ssl = cloudGateMappingUpstreamServerGroupSsl,
+    ///             Value = cloudGateMappingUpstreamServerGroupValue,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// CloudGateMappings can be imported using the `id`, e.g.

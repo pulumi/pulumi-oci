@@ -16,6 +16,60 @@ import (
 //
 // # Create an AppRole
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsAppRole(ctx, "test_app_role", &identity.DomainsAppRoleArgs{
+//				App: &identity.DomainsAppRoleAppArgs{
+//					Value: pulumi.Any(testApp.Id),
+//				},
+//				DisplayName:  pulumi.Any(appRoleDisplayName),
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:AppRole"),
+//				},
+//				AdminRole: pulumi.Any(appRoleAdminRole),
+//				AttributeSets: pulumi.StringArray{
+//					pulumi.String("all"),
+//				},
+//				Attributes:                pulumi.String(""),
+//				Authorization:             pulumi.Any(appRoleAuthorization),
+//				AvailableToClients:        pulumi.Any(appRoleAvailableToClients),
+//				AvailableToGroups:         pulumi.Any(appRoleAvailableToGroups),
+//				AvailableToUsers:          pulumi.Any(appRoleAvailableToUsers),
+//				Description:               pulumi.Any(appRoleDescription),
+//				Id:                        appRoleId,
+//				LegacyGroupName:           pulumi.String("legacyGroupName"),
+//				Ocid:                      pulumi.Any(appRoleOcid),
+//				Public:                    pulumi.Any(appRolePublic),
+//				ResourceTypeSchemaVersion: pulumi.Any(appRoleResourceTypeSchemaVersion),
+//				Tags: identity.DomainsAppRoleTagArray{
+//					&identity.DomainsAppRoleTagArgs{
+//						Key:   pulumi.Any(appRoleTagsKey),
+//						Value: pulumi.Any(appRoleTagsValue),
+//					},
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // AppRoles can be imported using the `id`, e.g.

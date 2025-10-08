@@ -16,6 +16,60 @@ import (
 //
 // Create a user's own OAuth2 client credential.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMyOauth2clientCredential(ctx, "test_my_oauth2client_credential", &identity.DomainsMyOauth2clientCredentialArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Name:         pulumi.Any(myOauth2clientCredentialName),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:oauth2ClientCredential"),
+//				},
+//				Scopes: identity.DomainsMyOauth2clientCredentialScopeArray{
+//					&identity.DomainsMyOauth2clientCredentialScopeArgs{
+//						Audience: pulumi.Any(myOauth2clientCredentialScopesAudience),
+//						Scope:    pulumi.Any(myOauth2clientCredentialScopesScope),
+//					},
+//				},
+//				Authorization:             pulumi.Any(myOauth2clientCredentialAuthorization),
+//				Description:               pulumi.Any(myOauth2clientCredentialDescription),
+//				ExpiresOn:                 pulumi.Any(myOauth2clientCredentialExpiresOn),
+//				Id:                        myOauth2clientCredentialId,
+//				IsResetSecret:             pulumi.Any(myOauth2clientCredentialIsResetSecret),
+//				Ocid:                      pulumi.Any(myOauth2clientCredentialOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(myOauth2clientCredentialResourceTypeSchemaVersion),
+//				Status:                    pulumi.Any(myOauth2clientCredentialStatus),
+//				Tags: identity.DomainsMyOauth2clientCredentialTagArray{
+//					&identity.DomainsMyOauth2clientCredentialTagArgs{
+//						Key:   pulumi.Any(myOauth2clientCredentialTagsKey),
+//						Value: pulumi.Any(myOauth2clientCredentialTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMyOauth2clientCredentialUserArgs{
+//					Ocid:  pulumi.Any(myOauth2clientCredentialUserOcid),
+//					Value: pulumi.Any(myOauth2clientCredentialUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MyOAuth2ClientCredentials can be imported using the `id`, e.g.

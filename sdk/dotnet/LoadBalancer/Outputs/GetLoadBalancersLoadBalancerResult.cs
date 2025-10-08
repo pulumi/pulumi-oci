@@ -22,7 +22,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> DefinedTags;
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleLoadBalancer`
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetLoadBalancersLoadBalancerIpAddressDetailResult> IpAddressDetails;
         /// <summary>
-        /// An array of IP addresses. Deprecated: use ip_address_details instead.
+        /// An array of IP addresses. Deprecated: use IpAddressDetails instead.
         /// </summary>
         public readonly ImmutableArray<string> IpAddresses;
         public readonly string IpMode;

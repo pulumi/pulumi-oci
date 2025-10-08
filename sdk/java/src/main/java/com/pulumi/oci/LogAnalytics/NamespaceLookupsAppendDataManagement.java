@@ -19,6 +19,48 @@ import javax.annotation.Nullable;
  * 
  * Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.LogAnalytics.NamespaceLookupsAppendDataManagement;
+ * import com.pulumi.oci.LogAnalytics.NamespaceLookupsAppendDataManagementArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testNamespaceLookupsAppendDataManagement = new NamespaceLookupsAppendDataManagement("testNamespaceLookupsAppendDataManagement", NamespaceLookupsAppendDataManagementArgs.builder()
+ *             .appendLookupFileBody(namespaceLookupsAppendDataManagementAppendLookupFileBody)
+ *             .lookupName(namespaceLookupsAppendDataManagementLookupName)
+ *             .namespace(namespaceLookupsAppendDataManagementNamespace)
+ *             .charEncoding(namespaceLookupsAppendDataManagementCharEncoding)
+ *             .expect(namespaceLookupsAppendDataManagementExpect)
+ *             .isForce(namespaceLookupsAppendDataManagementIsForce)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
+ * ## Import
+ * 
+ * Import is not supported for NamespaceLookupsAppendDataManagement
+ * 
  */
 @ResourceType(type="oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement")
 public class NamespaceLookupsAppendDataManagement extends com.pulumi.resources.CustomResource {

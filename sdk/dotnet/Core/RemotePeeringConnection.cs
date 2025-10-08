@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         [Output("isCrossTenancyPeering")]
         public Output<bool> IsCrossTenancyPeering { get; private set; } = null!;
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         [Input("isCrossTenancyPeering")]
         public Input<bool>? IsCrossTenancyPeering { get; set; }

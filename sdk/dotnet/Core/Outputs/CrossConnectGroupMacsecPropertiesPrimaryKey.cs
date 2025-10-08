@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string ConnectivityAssociationKeySecretId;
         /// <summary>
-        /// (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+        /// (Updatable) The secret version of the `ConnectivityAssociationKeySecretId` secret in Vault.
         /// 
         /// NOTE: Only the latest secret version will be used.
         /// </summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string ConnectivityAssociationNameSecretId;
         /// <summary>
-        /// (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+        /// (Updatable) The secret version of the `ConnectivityAssociationNameSecretId` secret in Vault.
         /// 
         /// NOTE: Only the latest secret version will be used.
         /// </summary>

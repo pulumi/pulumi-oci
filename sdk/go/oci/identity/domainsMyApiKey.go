@@ -16,6 +16,51 @@ import (
 //
 // Add a user's own API key.
 //
+// ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v3/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.NewDomainsMyApiKey(ctx, "test_my_api_key", &identity.DomainsMyApiKeyArgs{
+//				IdcsEndpoint: pulumi.Any(testDomain.Url),
+//				Key:          pulumi.Any(myApiKeyKey),
+//				Schemas: pulumi.StringArray{
+//					pulumi.String("urn:ietf:params:scim:schemas:oracle:idcs:apikey"),
+//				},
+//				Authorization:             pulumi.Any(myApiKeyAuthorization),
+//				Description:               pulumi.Any(myApiKeyDescription),
+//				Id:                        myApiKeyId,
+//				Ocid:                      pulumi.Any(myApiKeyOcid),
+//				ResourceTypeSchemaVersion: pulumi.Any(myApiKeyResourceTypeSchemaVersion),
+//				Tags: identity.DomainsMyApiKeyTagArray{
+//					&identity.DomainsMyApiKeyTagArgs{
+//						Key:   pulumi.Any(myApiKeyTagsKey),
+//						Value: pulumi.Any(myApiKeyTagsValue),
+//					},
+//				},
+//				User: &identity.DomainsMyApiKeyUserArgs{
+//					Ocid:  pulumi.Any(myApiKeyUserOcid),
+//					Value: pulumi.Any(myApiKeyUserValue),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
+//
 // ## Import
 //
 // MyApiKeys can be imported using the `id`, e.g.

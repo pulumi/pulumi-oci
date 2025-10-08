@@ -26,6 +26,92 @@ import javax.annotation.Nullable;
  * 
  * Creates a new certificate according to the details of the request.
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.CertificatesManagement.Certificate;
+ * import com.pulumi.oci.CertificatesManagement.CertificateArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigSubjectArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateConfigValidityArgs;
+ * import com.pulumi.oci.CertificatesManagement.inputs.CertificateCertificateRuleArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         var testCertificate = new Certificate("testCertificate", CertificateArgs.builder()
+ *             .certificateConfig(CertificateCertificateConfigArgs.builder()
+ *                 .configType(certificateCertificateConfigConfigType)
+ *                 .certChainPem(certificateCertificateConfigCertChainPem)
+ *                 .certificatePem(certificateCertificateConfigCertificatePem)
+ *                 .certificateProfileType(certificateCertificateConfigCertificateProfileType)
+ *                 .csrPem(certificateCertificateConfigCsrPem)
+ *                 .issuerCertificateAuthorityId(testCertificateAuthority.id())
+ *                 .keyAlgorithm(certificateCertificateConfigKeyAlgorithm)
+ *                 .privateKeyPem(certificateCertificateConfigPrivateKeyPem)
+ *                 .privateKeyPemPassphrase(certificateCertificateConfigPrivateKeyPemPassphrase)
+ *                 .signatureAlgorithm(certificateCertificateConfigSignatureAlgorithm)
+ *                 .subject(CertificateCertificateConfigSubjectArgs.builder()
+ *                     .commonName(certificateCertificateConfigSubjectCommonName)
+ *                     .country(certificateCertificateConfigSubjectCountry)
+ *                     .distinguishedNameQualifier(certificateCertificateConfigSubjectDistinguishedNameQualifier)
+ *                     .domainComponent(certificateCertificateConfigSubjectDomainComponent)
+ *                     .generationQualifier(certificateCertificateConfigSubjectGenerationQualifier)
+ *                     .givenName(certificateCertificateConfigSubjectGivenName)
+ *                     .initials(certificateCertificateConfigSubjectInitials)
+ *                     .localityName(certificateCertificateConfigSubjectLocalityName)
+ *                     .organization(certificateCertificateConfigSubjectOrganization)
+ *                     .organizationalUnit(certificateCertificateConfigSubjectOrganizationalUnit)
+ *                     .pseudonym(certificateCertificateConfigSubjectPseudonym)
+ *                     .serialNumber(certificateCertificateConfigSubjectSerialNumber)
+ *                     .stateOrProvinceName(certificateCertificateConfigSubjectStateOrProvinceName)
+ *                     .street(certificateCertificateConfigSubjectStreet)
+ *                     .surname(certificateCertificateConfigSubjectSurname)
+ *                     .title(certificateCertificateConfigSubjectTitle)
+ *                     .userId(testUser.id())
+ *                     .build())
+ *                 .subjectAlternativeNames(CertificateCertificateConfigSubjectAlternativeNameArgs.builder()
+ *                     .type(certificateCertificateConfigSubjectAlternativeNamesType)
+ *                     .value(certificateCertificateConfigSubjectAlternativeNamesValue)
+ *                     .build())
+ *                 .validity(CertificateCertificateConfigValidityArgs.builder()
+ *                     .timeOfValidityNotAfter(certificateCertificateConfigValidityTimeOfValidityNotAfter)
+ *                     .timeOfValidityNotBefore(certificateCertificateConfigValidityTimeOfValidityNotBefore)
+ *                     .build())
+ *                 .versionName(certificateCertificateConfigVersionName)
+ *                 .build())
+ *             .compartmentId(compartmentId)
+ *             .name(certificateName)
+ *             .certificateRules(CertificateCertificateRuleArgs.builder()
+ *                 .advanceRenewalPeriod(certificateCertificateRulesAdvanceRenewalPeriod)
+ *                 .renewalInterval(certificateCertificateRulesRenewalInterval)
+ *                 .ruleType(certificateCertificateRulesRuleType)
+ *                 .build())
+ *             .definedTags(Map.of("Operations.CostCenter", "42"))
+ *             .description(certificateDescription)
+ *             .freeformTags(Map.of("Department", "Finance"))
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Certificates can be imported using the `id`, e.g.

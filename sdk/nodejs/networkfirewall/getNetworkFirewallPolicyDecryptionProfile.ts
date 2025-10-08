@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Decryption Profile by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyDecryptionProfile(args: GetNetworkFirewallPolicyDecryptionProfileArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -90,6 +92,8 @@ export interface GetNetworkFirewallPolicyDecryptionProfileResult {
  * This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Decryption Profile by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyDecryptionProfileOutput(args: GetNetworkFirewallPolicyDecryptionProfileOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionProfileResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -36,6 +36,138 @@ import javax.annotation.Nullable;
  * 
  * Replace Settings
  * 
+ * ## Example Usage
+ * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Identity.DomainsSetting;
+ * import com.pulumi.oci.Identity.DomainsSettingArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingCertificateValidationArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingCloudGateCorsSettingsArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingCompanyNameArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingImageArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingLoginTextArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingPurgeConfigArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingTagArgs;
+ * import com.pulumi.oci.Identity.inputs.DomainsSettingTenantCustomClaimArgs;
+ * import java.util.List;
+ * import java.util.ArrayList;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
+ *         Pulumi.run(App::stack);
+ *     }}{@code
+ * 
+ *     public static void stack(Context ctx) }{{@code
+ *         var testSetting = new DomainsSetting("testSetting", DomainsSettingArgs.builder()
+ *             .csrAccess(settingCsrAccess)
+ *             .idcsEndpoint(testDomain.url())
+ *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:Settings")
+ *             .settingId("Settings")
+ *             .accountAlwaysTrustScope(settingAccountAlwaysTrustScope)
+ *             .allowedDomains("test.com")
+ *             .allowedForgotPasswordFlowReturnUrls(settingAllowedForgotPasswordFlowReturnUrls)
+ *             .allowedNotificationRedirectUrls(settingAllowedNotificationRedirectUrls)
+ *             .attributeSets("all")
+ *             .attributes("")
+ *             .auditEventRetentionPeriod(settingAuditEventRetentionPeriod)
+ *             .authorization(settingAuthorization)
+ *             .certificateValidation(DomainsSettingCertificateValidationArgs.builder()
+ *                 .crlCheckOnOcspFailureEnabled(settingCertificateValidationCrlCheckOnOcspFailureEnabled)
+ *                 .crlEnabled(settingCertificateValidationCrlEnabled)
+ *                 .crlLocation(settingCertificateValidationCrlLocation)
+ *                 .crlRefreshInterval(settingCertificateValidationCrlRefreshInterval)
+ *                 .ocspEnabled(settingCertificateValidationOcspEnabled)
+ *                 .ocspResponderUrl(settingCertificateValidationOcspResponderUrl)
+ *                 .ocspSettingsResponderUrlPreferred(settingCertificateValidationOcspSettingsResponderUrlPreferred)
+ *                 .ocspSigningCertificateAlias(settingCertificateValidationOcspSigningCertificateAlias)
+ *                 .ocspTimeoutDuration(settingCertificateValidationOcspTimeoutDuration)
+ *                 .ocspUnknownResponseStatusAllowed(settingCertificateValidationOcspUnknownResponseStatusAllowed)
+ *                 .build())
+ *             .cloudGateCorsSettings(DomainsSettingCloudGateCorsSettingsArgs.builder()
+ *                 .cloudGateCorsAllowNullOrigin(settingCloudGateCorsSettingsCloudGateCorsAllowNullOrigin)
+ *                 .cloudGateCorsAllowedOrigins("https://test.com")
+ *                 .cloudGateCorsEnabled(settingCloudGateCorsSettingsCloudGateCorsEnabled)
+ *                 .cloudGateCorsExposedHeaders(settingCloudGateCorsSettingsCloudGateCorsExposedHeaders)
+ *                 .cloudGateCorsMaxAge(settingCloudGateCorsSettingsCloudGateCorsMaxAge)
+ *                 .build())
+ *             .cloudMigrationCustomUrl(settingCloudMigrationCustomUrl)
+ *             .cloudMigrationUrlEnabled(settingCloudMigrationUrlEnabled)
+ *             .companyNames(DomainsSettingCompanyNameArgs.builder()
+ *                 .locale(settingCompanyNamesLocale)
+ *                 .value(settingCompanyNamesValue)
+ *                 .build())
+ *             .contactEmails("contactEmails}{@literal @}{@code test.com")
+ *             .customBranding(settingCustomBranding)
+ *             .customCssLocation(settingCustomCssLocation)
+ *             .customHtmlLocation(settingCustomHtmlLocation)
+ *             .customTranslation(settingCustomTranslation)
+ *             .defaultTrustScope(settingDefaultTrustScope)
+ *             .diagnosticLevel(settingDiagnosticLevel)
+ *             .diagnosticRecordForSearchIdentifiesReturnedResources(settingDiagnosticRecordForSearchIdentifiesReturnedResources)
+ *             .enableTermsOfUse(settingEnableTermsOfUse)
+ *             .externalId("externalId")
+ *             .iamUpstSessionExpiry(settingIamUpstSessionExpiry)
+ *             .id(settingId)
+ *             .images(DomainsSettingImageArgs.builder()
+ *                 .type(settingImagesType)
+ *                 .value(settingImagesValue)
+ *                 .display(settingImagesDisplay)
+ *                 .build())
+ *             .isHostedPage(settingIsHostedPage)
+ *             .issuer(settingIssuer)
+ *             .locale(settingLocale)
+ *             .loginTexts(DomainsSettingLoginTextArgs.builder()
+ *                 .locale(settingLoginTextsLocale)
+ *                 .value(settingLoginTextsValue)
+ *                 .build())
+ *             .maxNoOfAppCmvaToReturn(settingMaxNoOfAppCmvaToReturn)
+ *             .maxNoOfAppRoleMembersToReturn(settingMaxNoOfAppRoleMembersToReturn)
+ *             .ocid(settingOcid)
+ *             .preferredLanguage(settingPreferredLanguage)
+ *             .prevIssuer(settingPrevIssuer)
+ *             .privacyPolicyUrl(settingPrivacyPolicyUrl)
+ *             .purgeConfigs(DomainsSettingPurgeConfigArgs.builder()
+ *                 .resourceName("resourceName")
+ *                 .retentionPeriod(settingPurgeConfigsRetentionPeriod)
+ *                 .build())
+ *             .reAuthFactors("password")
+ *             .reAuthWhenChangingMyAuthenticationFactors(settingReAuthWhenChangingMyAuthenticationFactors)
+ *             .resourceTypeSchemaVersion(settingResourceTypeSchemaVersion)
+ *             .serviceAdminCannotListOtherUsers(settingServiceAdminCannotListOtherUsers)
+ *             .signingCertPublicAccess(settingSigningCertPublicAccess)
+ *             .subMappingAttr(settingSubMappingAttr)
+ *             .tags(DomainsSettingTagArgs.builder()
+ *                 .key(settingTagsKey)
+ *                 .value(settingTagsValue)
+ *                 .build())
+ *             .tenantCustomClaims(DomainsSettingTenantCustomClaimArgs.builder()
+ *                 .allScopes(settingTenantCustomClaimsAllScopes)
+ *                 .expression(settingTenantCustomClaimsExpression)
+ *                 .mode(settingTenantCustomClaimsMode)
+ *                 .name(settingTenantCustomClaimsName)
+ *                 .tokenType(settingTenantCustomClaimsTokenType)
+ *                 .value(settingTenantCustomClaimsValue)
+ *                 .scopes("scopes")
+ *                 .build())
+ *             .termsOfUseUrl(settingTermsOfUseUrl)
+ *             .timezone(settingTimezone)
+ *             .build());
+ * 
+ *     }}{@code
+ * }}{@code
+ * }
+ * </pre>
+ * 
  * ## Import
  * 
  * Settings can be imported using the `id`, e.g.

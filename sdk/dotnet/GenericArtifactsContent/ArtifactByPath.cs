@@ -57,7 +57,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// Content to be uploaded as the artifact. Cannot be defined if `Source` is defined.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -103,7 +103,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Output<string> SizeInBytes { get; private set; } = null!;
 
         /// <summary>
-        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
+        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `Content` is defined.
         /// </summary>
         [Output("source")]
         public Output<string?> Source { get; private set; } = null!;
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Input<string> ArtifactPath { get; set; } = null!;
 
         /// <summary>
-        /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// Content to be uploaded as the artifact. Cannot be defined if `Source` is defined.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -195,7 +195,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Input<string> RepositoryId { get; set; } = null!;
 
         /// <summary>
-        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
+        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `Content` is defined.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Content to be uploaded as the artifact. Cannot be defined if `source` is defined.
+        /// Content to be uploaded as the artifact. Cannot be defined if `Source` is defined.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -288,7 +288,7 @@ namespace Pulumi.Oci.GenericArtifactsContent
         public Input<string>? SizeInBytes { get; set; }
 
         /// <summary>
-        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `content` is defined.
+        /// A path to a file on the local system to be uploaded as the artifact. Cannot be defined if `Content` is defined.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }

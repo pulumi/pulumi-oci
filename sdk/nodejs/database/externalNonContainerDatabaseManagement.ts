@@ -10,6 +10,23 @@ import * as utilities from "../utilities";
  * Enable Database Management Service for the external non-container database.
  * For more information about the Database Management Service, see
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+ *
+ * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExternalNonContainerDatabaseManagement = new oci.database.ExternalNonContainerDatabaseManagement("test_external_non_container_database_management", {
+ *     externalDatabaseConnectorId: testExternalDatabaseConnector.id,
+ *     externalNonContainerDatabaseId: testExternalNonContainerDatabase.id,
+ *     licenseMode: externalNonContainerDatabaseManagementLicenseModel,
+ * });
+ * ```
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
  */
 export class ExternalNonContainerDatabaseManagement extends pulumi.CustomResource {
     /**

@@ -15,6 +15,30 @@ namespace Pulumi.Oci.Database
     /// Enable Database Management Service for the external non-container database.
     /// For more information about the Database Management Service, see
     /// [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExternalNonContainerDatabaseManagement = new Oci.Database.ExternalNonContainerDatabaseManagement("test_external_non_container_database_management", new()
+    ///     {
+    ///         ExternalDatabaseConnectorId = testExternalDatabaseConnector.Id,
+    ///         ExternalNonContainerDatabaseId = testExternalNonContainerDatabase.Id,
+    ///         LicenseMode = externalNonContainerDatabaseManagementLicenseModel,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement")]
     public partial class ExternalNonContainerDatabaseManagement : global::Pulumi.CustomResource

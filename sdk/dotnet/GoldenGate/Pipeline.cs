@@ -14,6 +14,70 @@ namespace Pulumi.Oci.GoldenGate
     /// 
     /// Creates a new Pipeline.
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testPipeline = new Oci.GoldenGate.Pipeline("test_pipeline", new()
+    ///     {
+    ///         CompartmentId = compartmentId,
+    ///         DisplayName = pipelineDisplayName,
+    ///         LicenseModel = pipelineLicenseModel,
+    ///         RecipeType = pipelineRecipeType,
+    ///         SourceConnectionDetails = new Oci.GoldenGate.Inputs.PipelineSourceConnectionDetailsArgs
+    ///         {
+    ///             ConnectionId = testConnection.Id,
+    ///         },
+    ///         TargetConnectionDetails = new Oci.GoldenGate.Inputs.PipelineTargetConnectionDetailsArgs
+    ///         {
+    ///             ConnectionId = testConnection.Id,
+    ///         },
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         Description = pipelineDescription,
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.GoldenGate.Inputs.PipelineLockArgs
+    ///             {
+    ///                 Type = pipelineLocksType,
+    ///                 Message = pipelineLocksMessage,
+    ///                 RelatedResourceId = testResource.Id,
+    ///                 TimeCreated = pipelineLocksTimeCreated,
+    ///             },
+    ///         },
+    ///         ProcessOptions = new Oci.GoldenGate.Inputs.PipelineProcessOptionsArgs
+    ///         {
+    ///             InitialDataLoad = new Oci.GoldenGate.Inputs.PipelineProcessOptionsInitialDataLoadArgs
+    ///             {
+    ///                 IsInitialLoad = pipelineProcessOptionsInitialDataLoadIsInitialLoad,
+    ///                 ActionOnExistingTable = pipelineProcessOptionsInitialDataLoadActionOnExistingTable,
+    ///             },
+    ///             ReplicateSchemaChange = new Oci.GoldenGate.Inputs.PipelineProcessOptionsReplicateSchemaChangeArgs
+    ///             {
+    ///                 CanReplicateSchemaChange = pipelineProcessOptionsReplicateSchemaChangeCanReplicateSchemaChange,
+    ///                 ActionOnDdlError = pipelineProcessOptionsReplicateSchemaChangeActionOnDdlError,
+    ///                 ActionOnDmlError = pipelineProcessOptionsReplicateSchemaChangeActionOnDmlError,
+    ///             },
+    ///             ShouldRestartOnFailure = pipelineProcessOptionsShouldRestartOnFailure,
+    ///             StartUsingDefaultMapping = pipelineProcessOptionsStartUsingDefaultMapping,
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// Pipelines can be imported using the `id`, e.g.

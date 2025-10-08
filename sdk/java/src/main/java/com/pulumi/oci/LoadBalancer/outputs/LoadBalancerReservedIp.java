@@ -22,7 +22,7 @@ public final class LoadBalancerReservedIp {
      * 
      * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
      * 
-     * IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+     * IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
      * 
      */
     private @Nullable String id;
@@ -39,7 +39,7 @@ public final class LoadBalancerReservedIp {
      * 
      * Example: &#34;ocid1.publicip.oc1.phx.unique_ID&#34;
      * 
-     * IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `private_ip_id` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
+     * IPV6 example: &#34;ocid1.ipv6.oc1.phx.unique_ID&#34; Ocid of the pre-created public IP that should be attached to this load balancer. The public IP will be attached to a private IP. **Note** If public IP resource is present in the config, the pulumi preview will throw `After applying this step and refreshing, the plan was not empty` error, and `privateIpId` needs to be added as an input argument to the public IP resource block or ignore from its lifecycle as shown in examples to resolve this error.
      * 
      */
     public Optional<String> id() {

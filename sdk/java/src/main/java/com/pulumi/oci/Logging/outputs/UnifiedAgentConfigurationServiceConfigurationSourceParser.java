@@ -55,7 +55,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable String grokNameKey;
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     private @Nullable Boolean isEstimateCurrentEvent;
@@ -75,12 +75,12 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable Boolean isNullEmptyString;
     /**
-     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     private @Nullable Boolean isSupportColonlessIdent;
     /**
-     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     private @Nullable Boolean isWithPriority;
@@ -165,13 +165,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable Integer timeoutInMilliseconds;
     /**
-     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 
      * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
      * 
-     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     private @Nullable Map<String,String> types;
@@ -227,7 +227,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.grokNameKey);
     }
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     public Optional<Boolean> isEstimateCurrentEvent() {
@@ -255,14 +255,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.isNullEmptyString);
     }
     /**
-     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     public Optional<Boolean> isSupportColonlessIdent() {
         return Optional.ofNullable(this.isSupportColonlessIdent);
     }
     /**
-     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     public Optional<Boolean> isWithPriority() {
@@ -381,13 +381,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.timeoutInMilliseconds);
     }
     /**
-     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 
      * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
      * 
-     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     public Map<String,String> types() {

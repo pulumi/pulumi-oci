@@ -14,6 +14,58 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create Approval Workflow Assignment
     /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testApprovalWorkflowAssignment = new Oci.Identity.DomainsApprovalWorkflowAssignment("test_approval_workflow_assignment", new()
+    ///     {
+    ///         ApprovalWorkflow = new Oci.Identity.Inputs.DomainsApprovalWorkflowAssignmentApprovalWorkflowArgs
+    ///         {
+    ///             Type = approvalWorkflowAssignmentApprovalWorkflowType,
+    ///             Value = approvalWorkflowAssignmentApprovalWorkflowValue,
+    ///             Ocid = approvalWorkflowAssignmentApprovalWorkflowOcid,
+    ///         },
+    ///         AssignedTo = new Oci.Identity.Inputs.DomainsApprovalWorkflowAssignmentAssignedToArgs
+    ///         {
+    ///             Type = approvalWorkflowAssignmentAssignedToType,
+    ///             Value = approvalWorkflowAssignmentAssignedToValue,
+    ///             Ocid = approvalWorkflowAssignmentAssignedToOcid,
+    ///         },
+    ///         AssignmentType = approvalWorkflowAssignmentAssignmentType,
+    ///         IdcsEndpoint = testDomain.Url,
+    ///         Schemas = new[]
+    ///         {
+    ///             "urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment",
+    ///         },
+    ///         AttributeSets = new[]
+    ///         {
+    ///             "all",
+    ///         },
+    ///         Attributes = "",
+    ///         Authorization = approvalWorkflowAssignmentAuthorization,
+    ///         Id = approvalWorkflowAssignmentId,
+    ///         Ocid = approvalWorkflowAssignmentOcid,
+    ///         ResourceTypeSchemaVersion = approvalWorkflowAssignmentResourceTypeSchemaVersion,
+    ///         Tags = new[]
+    ///         {
+    ///             new Oci.Identity.Inputs.DomainsApprovalWorkflowAssignmentTagArgs
+    ///             {
+    ///                 Key = approvalWorkflowAssignmentTagsKey,
+    ///                 Value = approvalWorkflowAssignmentTagsValue,
+    ///             },
+    ///         },
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
     /// ## Import
     /// 
     /// ApprovalWorkflowAssignments can be imported using the `id`, e.g.

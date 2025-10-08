@@ -13,6 +13,35 @@ namespace Pulumi.Oci.Database
     /// This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
     /// 
     /// This operation updates SaaS administrative user configuration of the Autonomous Database.
+    /// 
+    /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testAutonomousDatabaseSaasAdminUser = new Oci.Database.AutonomousDatabaseSaasAdminUser("test_autonomous_database_saas_admin_user", new()
+    ///     {
+    ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+    ///         AccessType = autonomousDatabaseSaasAdminUserAccessType,
+    ///         Duration = autonomousDatabaseSaasAdminUserDuration,
+    ///         IsEnabled = autonomousDatabaseSaasAdminUserIsEnabled,
+    ///         Password = autonomousDatabaseSaasAdminUserPassword,
+    ///         SecretId = testSecret.Id,
+    ///         SecretVersionNumber = autonomousDatabaseSaasAdminUserSecretVersionNumber,
+    ///         TimeSaasAdminUserEnabled = autonomousDatabaseSaasAdminUserTimeSaasAdminUserEnabled,
+    ///     });
+    /// 
+    /// });
+    /// ```
+    /// 
+    /// ## Import
+    /// 
+    /// Import is not supported for this resource.
     /// </summary>
     [OciResourceType("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser")]
     public partial class AutonomousDatabaseSaasAdminUser : global::Pulumi.CustomResource

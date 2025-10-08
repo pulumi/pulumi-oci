@@ -53,7 +53,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public partial class Listener : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Output("defaultBackendSetName")]
         public Output<string> DefaultBackendSetName { get; private set; } = null!;
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<int> L3ipIdleTimeout { get; private set; } = null!;
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class ListenerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("defaultBackendSetName", required: true)]
         public Input<string> DefaultBackendSetName { get; set; } = null!;
@@ -187,7 +187,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int>? L3ipIdleTimeout { get; set; }
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class ListenerState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("defaultBackendSetName")]
         public Input<string>? DefaultBackendSetName { get; set; }
@@ -259,7 +259,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<int>? L3ipIdleTimeout { get; set; }
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

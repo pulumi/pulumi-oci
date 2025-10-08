@@ -100,6 +100,17 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
 
         Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance_software_update_action = oci.bigdataservice.BdsInstanceSoftwareUpdateAction("test_bds_instance_software_update_action",
+            bds_instance_id=test_bds_instance["id"],
+            software_update_key=bds_instance_software_update_action_software_update_key)
+        ```
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] bds_instance_id: The OCID of the cluster.
@@ -114,6 +125,17 @@ class BdsInstanceSoftwareUpdateAction(pulumi.CustomResource):
         This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
 
         Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_bds_instance_software_update_action = oci.bigdataservice.BdsInstanceSoftwareUpdateAction("test_bds_instance_software_update_action",
+            bds_instance_id=test_bds_instance["id"],
+            software_update_key=bds_instance_software_update_action_software_update_key)
+        ```
 
         :param str resource_name: The name of the resource.
         :param BdsInstanceSoftwareUpdateActionArgs args: The arguments to use to populate this resource's properties.

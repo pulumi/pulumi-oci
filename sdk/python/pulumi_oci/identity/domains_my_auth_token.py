@@ -980,6 +980,32 @@ class DomainsMyAuthToken(pulumi.CustomResource):
 
         Create a user's own Auth token.
 
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_auth_token = oci.identity.DomainsMyAuthToken("test_my_auth_token",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:authToken"],
+            authorization=my_auth_token_authorization,
+            description=my_auth_token_description,
+            expires_on=my_auth_token_expires_on,
+            id=my_auth_token_id,
+            ocid=my_auth_token_ocid,
+            resource_type_schema_version=my_auth_token_resource_type_schema_version,
+            status=my_auth_token_status,
+            tags=[{
+                "key": my_auth_token_tags_key,
+                "value": my_auth_token_tags_value,
+            }],
+            user={
+                "ocid": my_auth_token_user_ocid,
+                "value": my_auth_token_user_value,
+            })
+        ```
+
         ## Import
 
         MyAuthTokens can be imported using the `id`, e.g.
@@ -1084,6 +1110,32 @@ class DomainsMyAuthToken(pulumi.CustomResource):
         This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's own Auth token.
+
+        ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_my_auth_token = oci.identity.DomainsMyAuthToken("test_my_auth_token",
+            idcs_endpoint=test_domain["url"],
+            schemas=["urn:ietf:params:scim:schemas:oracle:idcs:authToken"],
+            authorization=my_auth_token_authorization,
+            description=my_auth_token_description,
+            expires_on=my_auth_token_expires_on,
+            id=my_auth_token_id,
+            ocid=my_auth_token_ocid,
+            resource_type_schema_version=my_auth_token_resource_type_schema_version,
+            status=my_auth_token_status,
+            tags=[{
+                "key": my_auth_token_tags_key,
+                "value": my_auth_token_tags_value,
+            }],
+            user={
+                "ocid": my_auth_token_user_ocid,
+                "value": my_auth_token_user_value,
+            })
+        ```
 
         ## Import
 

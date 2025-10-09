@@ -83,7 +83,7 @@ namespace Pulumi.Oci
         private static readonly __Value<string?> _privateKey = new __Value<string?>(() => __config.Get("privateKey"));
         /// <summary>
         /// (Optional) A PEM formatted RSA private key for the user.
-        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
+        /// A PrivateKey or a PrivateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? PrivateKey
         {
@@ -104,7 +104,7 @@ namespace Pulumi.Oci
         private static readonly __Value<string?> _privateKeyPath = new __Value<string?>(() => __config.Get("privateKeyPath"));
         /// <summary>
         /// (Optional) The path to the user's PEM formatted private key.
-        /// A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
+        /// A PrivateKey or a PrivateKeyPath must be provided if auth is set to 'ApiKey', ignored otherwise.
         /// </summary>
         public static string? PrivateKeyPath
         {
@@ -135,7 +135,7 @@ namespace Pulumi.Oci
         private static readonly __Value<int?> _retryDurationSeconds = new __Value<int?>(() => __config.GetInt32("retryDurationSeconds"));
         /// <summary>
         /// (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
-        /// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
+        /// The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `DisableAutoRetries` field is set to true.
         /// </summary>
         public static int? RetryDurationSeconds
         {

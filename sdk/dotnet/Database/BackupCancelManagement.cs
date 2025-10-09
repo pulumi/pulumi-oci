@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Database
         public Output<string> BackupId { get; private set; } = null!;
 
         /// <summary>
-        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
         /// 
         /// 
         /// ** IMPORTANT **
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Database
         public Input<string> BackupId { get; set; } = null!;
 
         /// <summary>
-        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
         /// 
         /// 
         /// ** IMPORTANT **
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? BackupId { get; set; }
 
         /// <summary>
-        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+        /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
         /// 
         /// 
         /// ** IMPORTANT **

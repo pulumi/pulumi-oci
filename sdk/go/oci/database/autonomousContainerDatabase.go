@@ -16,6 +16,8 @@ import (
 //
 // Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // AutonomousContainerDatabases can be imported using the `id`, e.g.

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Marketplace.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
+        /// Indicates whether to show only featured listings. If this is set to `False` or is omitted, then all listings will be returned.
         /// </summary>
         public readonly bool IsFeatured;
         /// <summary>

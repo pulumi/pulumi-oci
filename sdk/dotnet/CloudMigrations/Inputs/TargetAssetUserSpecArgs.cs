@@ -143,9 +143,9 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         /// <summary>
         /// (Updatable) The shape configuration requested for the instance.
         /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `Shape` that you specify.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.TargetAssetUserSpecShapeConfigArgs>? ShapeConfig { get; set; }

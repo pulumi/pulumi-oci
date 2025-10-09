@@ -102,7 +102,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableDictionary<string, string>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `Policy1`
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableArray<Outputs.FilesystemSnapshotPolicyLock>> Locks { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `Acme`
         /// </summary>
         [Output("policyPrefix")]
         public Output<string> PolicyPrefix { get; private set; } = null!;
@@ -229,7 +229,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `Policy1`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `Acme`
         /// </summary>
         [Input("policyPrefix")]
         public Input<string>? PolicyPrefix { get; set; }
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `policy1`
+        /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `Policy1`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -357,7 +357,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        /// (Updatable) The prefix to apply to all snapshots created by this policy.  Example: `Acme`
         /// </summary>
         [Input("policyPrefix")]
         public Input<string>? PolicyPrefix { get; set; }

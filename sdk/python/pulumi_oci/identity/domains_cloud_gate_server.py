@@ -1304,6 +1304,8 @@ class DomainsCloudGateServer(pulumi.CustomResource):
 
         Create a Cloud Gate server
 
+        ## Example Usage
+
         ## Import
 
         CloudGateServers can be imported using the `id`, e.g.
@@ -1442,6 +1444,8 @@ class DomainsCloudGateServer(pulumi.CustomResource):
         This resource provides the Cloud Gate Server resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a Cloud Gate server
+
+        ## Example Usage
 
         ## Import
 

@@ -112,7 +112,7 @@ namespace Pulumi.Oci.Core
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
+        /// Indicates whether this CPE is of type `Private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -228,7 +228,7 @@ namespace Pulumi.Oci.Core
         public Input<string> IpAddress { get; set; } = null!;
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
+        /// Indicates whether this CPE is of type `Private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -300,7 +300,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not. 
+        /// Indicates whether this CPE is of type `Private` or not. 
         /// 
         /// 
         /// ** IMPORTANT **

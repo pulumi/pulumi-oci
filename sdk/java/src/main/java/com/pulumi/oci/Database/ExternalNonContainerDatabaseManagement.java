@@ -21,6 +21,12 @@ import javax.annotation.Nullable;
  * For more information about the Database Management Service, see
  * [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
  * 
+ * ## Example Usage
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
  */
 @ResourceType(type="oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement")
 public class ExternalNonContainerDatabaseManagement extends com.pulumi.resources.CustomResource {

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? TransportAttachmentId;
         /// <summary>
-        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `true`
+        /// Boolean flag that determines wether all traffic over the virtual circuits is encrypted.  Example: `True`
         /// </summary>
         public readonly bool? TransportOnlyMode;
         /// <summary>

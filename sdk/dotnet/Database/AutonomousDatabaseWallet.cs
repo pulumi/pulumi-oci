@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// Creates and downloads a wallet for the specified Autonomous Database.
     /// 
-    /// If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
+    /// If passing the base64 encoded content to a `LocalFile` resource, please use the `ContentBase64` attribute of the `LocalFile` resource.
     /// See this example for more details.
     /// 
     /// Recreate the resource to create and download a new wallet.
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Database
         public Output<bool?> Base64EncodeContent { get; private set; } = null!;
 
         /// <summary>
-        /// content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// content of the downloaded zipped wallet for the Autonomous Database. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         [Output("content")]
         public Output<string> Content { get; private set; } = null!;
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? Base64EncodeContent { get; set; }
 
         /// <summary>
-        /// content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// content of the downloaded zipped wallet for the Autonomous Database. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }

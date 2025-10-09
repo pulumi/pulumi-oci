@@ -39,7 +39,7 @@ public final class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetr
      */
     private String name;
     /**
-     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     private @Nullable String namespace;
@@ -91,7 +91,7 @@ public final class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetr
         return this.name;
     }
     /**
-     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     public Optional<String> namespace() {

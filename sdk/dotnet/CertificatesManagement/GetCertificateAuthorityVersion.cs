@@ -16,6 +16,9 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetCertificateAuthorityVersionResult> InvokeAsync(GetCertificateAuthorityVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionArgs(), options.WithDefaults());
@@ -25,6 +28,9 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
@@ -34,6 +40,9 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all versions for the specified certificate authority (CA).
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());

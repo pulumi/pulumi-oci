@@ -151,7 +151,7 @@ namespace Pulumi.Oci.SecurityAttribute
         /// </summary>
         public readonly bool IsRetired;
         /// <summary>
-        /// Indicates possible modes the security attributes in this namespace is set to. Supported values are `enforce` and `audit`. Currently mode cannot be controlled by the user
+        /// Indicates possible modes the security attributes in this namespace is set to. Supported values are `Enforce` and `Audit`. Currently mode cannot be controlled by the user
         /// </summary>
         public readonly ImmutableArray<string> Modes;
         /// <summary>

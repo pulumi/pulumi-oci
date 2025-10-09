@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Destination;
         /// <summary>
-        /// Type of destination for the rule. Required if `direction` = `EGRESS`.
+        /// Type of destination for the rule. Required if `Direction` = `EGRESS`.
         /// </summary>
         public readonly string DestinationType;
         /// <summary>
@@ -40,11 +40,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `Source` or `Destination` is a network security group, the value changes to `False` if that network security group is deleted.
         /// </summary>
         public readonly bool IsValid;
         /// <summary>
-        /// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+        /// The transport protocol. Specify either `All` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
         public readonly string Protocol;
         /// <summary>
@@ -52,10 +52,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Source;
         /// <summary>
-        /// Type of source for the rule. Required if `direction` = `INGRESS`.
-        /// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-        /// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        /// Type of source for the rule. Required if `Direction` = `INGRESS`.
+        /// * `CIDR_BLOCK`: If the rule's `Source` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        /// * `NETWORK_SECURITY_GROUP`: If the rule's `Source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         /// </summary>
         public readonly string SourceType;
         /// <summary>

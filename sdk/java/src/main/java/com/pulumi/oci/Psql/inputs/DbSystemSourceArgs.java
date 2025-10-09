@@ -48,14 +48,14 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+     * The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
      * 
      */
     @Import(name="sourceType", required=true)
     private Output<String> sourceType;
 
     /**
-     * @return The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
      * 
      */
     public Output<String> sourceType() {
@@ -131,7 +131,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceType The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+         * @param sourceType The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DbSystemSourceArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceType The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+         * @param sourceType The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
          * 
          * @return builder
          * 

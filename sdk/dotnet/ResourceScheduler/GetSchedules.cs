@@ -103,7 +103,7 @@ namespace Pulumi.Oci.ResourceScheduler
     public sealed class GetSchedulesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `CompartmentId` or `ScheduleId` or both.
         /// </summary>
         [Input("compartmentId")]
         public string? CompartmentId { get; set; }
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.ResourceScheduler
         public string? ResourceId { get; set; }
 
         /// <summary>
-        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `CompartmentId` or `ScheduleId` or both.
         /// </summary>
         [Input("scheduleId")]
         public string? ScheduleId { get; set; }
@@ -149,7 +149,7 @@ namespace Pulumi.Oci.ResourceScheduler
     public sealed class GetSchedulesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `CompartmentId` or `ScheduleId` or both.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.ResourceScheduler
         public Input<string>? ResourceId { get; set; }
 
         /// <summary>
-        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
+        /// This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `CompartmentId` or `ScheduleId` or both.
         /// </summary>
         [Input("scheduleId")]
         public Input<string>? ScheduleId { get; set; }

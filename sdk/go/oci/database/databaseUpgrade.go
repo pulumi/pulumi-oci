@@ -26,6 +26,12 @@ import (
 //	   	]
 //	}
 //	```
+//
+// ## Example Usage
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type DatabaseUpgrade struct {
 	pulumi.CustomResourceState
 

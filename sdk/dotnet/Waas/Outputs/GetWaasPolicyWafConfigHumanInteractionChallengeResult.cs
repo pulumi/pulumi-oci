@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly int ActionExpirationInSeconds;
         /// <summary>
-        /// The challenge settings if `action` is set to `BLOCK`.
+        /// The challenge settings if `Action` is set to `BLOCK`.
         /// </summary>
         public readonly Outputs.GetWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsResult ChallengeSettings;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly int RecordingPeriodInSeconds;
         /// <summary>
-        /// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+        /// Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `Action` is set to `DETECT`.
         /// </summary>
         public readonly Outputs.GetWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderResult SetHttpHeader;
 

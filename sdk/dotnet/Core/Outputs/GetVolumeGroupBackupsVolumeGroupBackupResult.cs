@@ -71,11 +71,11 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `SizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         public readonly string UniqueSizeInGbs;
         /// <summary>
-        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `SizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         public readonly string UniqueSizeInMbs;
         /// <summary>

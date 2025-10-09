@@ -131,6 +131,8 @@ def get_virtual_node_pools(cluster_id: Optional[_builtins.str] = None,
 
     List all the virtual node pools in a compartment, and optionally filter by cluster.
 
+    ## Example Usage
+
 
     :param _builtins.str cluster_id: The OCID of the cluster.
     :param _builtins.str compartment_id: The OCID of the compartment.
@@ -164,6 +166,8 @@ def get_virtual_node_pools_output(cluster_id: Optional[pulumi.Input[Optional[_bu
     This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
 
     List all the virtual node pools in a compartment, and optionally filter by cluster.
+
+    ## Example Usage
 
 
     :param _builtins.str cluster_id: The OCID of the cluster.

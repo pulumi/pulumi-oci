@@ -16,6 +16,8 @@ namespace Pulumi.Oci.DemandSignal
     /// 
     ///   Updates the data of an OccDemandSignal.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// OccDemandSignals can be imported using the `id`, e.g.

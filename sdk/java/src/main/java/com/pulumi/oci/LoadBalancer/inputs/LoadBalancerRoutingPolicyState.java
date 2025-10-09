@@ -48,14 +48,14 @@ public final class LoadBalancerRoutingPolicyState extends com.pulumi.resources.R
     }
 
     /**
-     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      * 
      */
     public Optional<Output<String>> name() {
@@ -155,7 +155,7 @@ public final class LoadBalancerRoutingPolicyState extends com.pulumi.resources.R
         }
 
         /**
-         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class LoadBalancerRoutingPolicyState extends com.pulumi.resources.R
         }
 
         /**
-         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
          * 
          * @return builder
          * 

@@ -17,14 +17,14 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
     public static final GetSchedulesPlainArgs Empty = new GetSchedulesPlainArgs();
 
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable String compartmentId;
 
     /**
-     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
+     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
      * 
      */
     public Optional<String> compartmentId() {
@@ -69,14 +69,14 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
+     * This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      * 
      */
     @Import(name="scheduleId")
     private @Nullable String scheduleId;
 
     /**
-     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
+     * @return This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
      * 
      */
     public Optional<String> scheduleId() {
@@ -128,7 +128,7 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param compartmentId This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartment_id` or `schedule_id` or both.
+         * @param compartmentId This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources. You need to at least provide either `compartmentId` or `scheduleId` or both.
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class GetSchedulesPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param scheduleId This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartment_id` or `schedule_id` or both.
+         * @param scheduleId This is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the schedule.  You need to at least provide either `compartmentId` or `scheduleId` or both.
          * 
          * @return builder
          * 

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PublicSourceLists;
         /// <summary>
-        /// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+        /// A list of services allowed to make on-behalf-of requests. These requests can have different source IPs than those specified in the network source. Currently, only `All` and `None` are supported. The default is `All`.
         /// </summary>
         public readonly ImmutableArray<string> Services;
         /// <summary>

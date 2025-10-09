@@ -8,6 +8,12 @@ import * as utilities from "../utilities";
  * This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
  *
  * Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+ *
+ * ## Example Usage
+ *
+ * ## Import
+ *
+ * Import is not supported for NamespaceLookupsUpdateDataManagement
  */
 export class NamespaceLookupsUpdateDataManagement extends pulumi.CustomResource {
     /**

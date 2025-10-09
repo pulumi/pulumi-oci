@@ -21,7 +21,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSddcResult {
     /**
-     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -116,7 +116,7 @@ public final class GetSddcResult {
      */
     private String hcxMode;
     /**
-     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcx_on_prem_licenses` instead.
+     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcxOnPremLicenses` instead.
      * 
      * @deprecated
      * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -154,7 +154,7 @@ public final class GetSddcResult {
      */
     private List<GetSddcInitialConfiguration> initialConfigurations;
     /**
-     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -163,7 +163,7 @@ public final class GetSddcResult {
     @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
     private Double initialHostOcpuCount;
     /**
-     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -172,7 +172,7 @@ public final class GetSddcResult {
     @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
     private String initialHostShapeName;
     /**
-     * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `initial_commitment` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `initialCommitment` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -190,12 +190,12 @@ public final class GetSddcResult {
     @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
     private String instanceDisplayNamePrefix;
     /**
-     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
      * 
      */
     private Boolean isHcxEnabled;
     /**
-     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
      * 
      * @deprecated
      * The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -209,7 +209,7 @@ public final class GetSddcResult {
      */
     private Boolean isHcxPendingDowngrade;
     /**
-     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -297,7 +297,7 @@ public final class GetSddcResult {
     @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     private String nsxVtepVlanId;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -306,7 +306,7 @@ public final class GetSddcResult {
     @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
     private String provisioningSubnetId;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -316,7 +316,7 @@ public final class GetSddcResult {
     private String provisioningVlanId;
     private Boolean refreshHcxLicenseStatus;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -327,7 +327,7 @@ public final class GetSddcResult {
     private List<String> reservingHcxOnPremiseLicenseKeys;
     private String sddcId;
     /**
-     * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
+     * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
      * 
      */
     private String sshAuthorizedKeys;
@@ -440,7 +440,7 @@ public final class GetSddcResult {
     @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
     private String vsphereVlanId;
     /**
-     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -451,7 +451,7 @@ public final class GetSddcResult {
 
     private GetSddcResult() {}
     /**
-     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -576,7 +576,7 @@ public final class GetSddcResult {
         return this.hcxMode;
     }
     /**
-     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcx_on_prem_licenses` instead.
+     * @return (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcxOnPremLicenses` instead.
      * 
      * @deprecated
      * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -626,7 +626,7 @@ public final class GetSddcResult {
         return this.initialConfigurations;
     }
     /**
-     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -637,7 +637,7 @@ public final class GetSddcResult {
         return this.initialHostOcpuCount;
     }
     /**
-     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -648,7 +648,7 @@ public final class GetSddcResult {
         return this.initialHostShapeName;
     }
     /**
-     * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `initial_commitment` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `initialCommitment` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -670,14 +670,14 @@ public final class GetSddcResult {
         return this.instanceDisplayNamePrefix;
     }
     /**
-     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
      * 
      */
     public Boolean isHcxEnabled() {
         return this.isHcxEnabled;
     }
     /**
-     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
      * 
      * @deprecated
      * The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -695,7 +695,7 @@ public final class GetSddcResult {
         return this.isHcxPendingDowngrade;
     }
     /**
-     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -807,7 +807,7 @@ public final class GetSddcResult {
         return this.nsxVtepVlanId;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -818,7 +818,7 @@ public final class GetSddcResult {
         return this.provisioningSubnetId;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -832,7 +832,7 @@ public final class GetSddcResult {
         return this.refreshHcxLicenseStatus;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
      * @deprecated
      * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
@@ -849,7 +849,7 @@ public final class GetSddcResult {
         return this.sddcId;
     }
     /**
-     * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorized_keys` file.
+     * @return One or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on each ESXi host. Use a newline character to separate multiple keys. The SSH keys must be in the format required for the `authorizedKeys` file.
      * 
      */
     public String sshAuthorizedKeys() {
@@ -996,7 +996,7 @@ public final class GetSddcResult {
         return this.vsphereVlanId;
     }
     /**
-     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
      * 
      * @deprecated
      * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.

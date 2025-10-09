@@ -14,14 +14,14 @@ public final class GetBackendSetHealthPlainArgs extends com.pulumi.resources.Inv
     public static final GetBackendSetHealthPlainArgs Empty = new GetBackendSetHealthPlainArgs();
 
     /**
-     * The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
+     * The name of the backend set to retrieve the health status for.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private String backendSetName;
 
     /**
-     * @return The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
+     * @return The name of the backend set to retrieve the health status for.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {
@@ -69,7 +69,7 @@ public final class GetBackendSetHealthPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param backendSetName The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set to retrieve the health status for.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

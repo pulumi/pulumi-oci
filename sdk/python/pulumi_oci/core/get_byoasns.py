@@ -93,6 +93,8 @@ def get_byoasns(compartment_id: Optional[_builtins.str] = None,
     Lists the `Byoasn` resources in the specified compartment.
     You can filter the list using query parameters.
 
+    ## Example Usage
+
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
@@ -115,6 +117,8 @@ def get_byoasns_output(compartment_id: Optional[pulumi.Input[_builtins.str]] = N
 
     Lists the `Byoasn` resources in the specified compartment.
     You can filter the list using query parameters.
+
+    ## Example Usage
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

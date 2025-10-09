@@ -110,7 +110,7 @@ namespace Pulumi.Oci.Functions
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Output("image")]
         public Output<string> Image { get; private set; } = null!;
@@ -278,7 +278,7 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }
@@ -384,7 +384,7 @@ namespace Pulumi.Oci.Functions
         }
 
         /// <summary>
-        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if image_digest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
+        /// (Updatable) The qualified name of the Docker image to use in the function, including the image tag. The image should be in the Oracle Cloud Infrastructure Registry that is in the same region as the function itself. This field must be updated if ImageDigest is updated. Example: `phx.ocir.io/ten/functions/function:0.0.1`
         /// </summary>
         [Input("image")]
         public Input<string>? Image { get; set; }

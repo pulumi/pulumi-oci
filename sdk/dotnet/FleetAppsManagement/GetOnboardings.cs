@@ -15,7 +15,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the onboardings in the specified root compartment (tenancy).
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the onboardings in the specified root compartment (tenancy).
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Onboardings in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the onboardings in the specified root compartment (tenancy).
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage

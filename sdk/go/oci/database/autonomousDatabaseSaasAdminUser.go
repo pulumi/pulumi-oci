@@ -15,6 +15,12 @@ import (
 // This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 //
 // This operation updates SaaS administrative user configuration of the Autonomous Database.
+//
+// ## Example Usage
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type AutonomousDatabaseSaasAdminUser struct {
 	pulumi.CustomResourceState
 

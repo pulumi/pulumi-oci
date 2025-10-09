@@ -30,6 +30,8 @@ import javax.annotation.Nullable;
  * 
  * Add a Grantee to an AppRole
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * Grants can be imported using the `id`, e.g.

@@ -16,6 +16,8 @@ import (
 //
 // Creates a new BDS instance.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // BdsInstances can be imported using the `id`, e.g.

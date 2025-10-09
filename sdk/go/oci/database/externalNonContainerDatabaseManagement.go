@@ -17,6 +17,12 @@ import (
 // Enable Database Management Service for the external non-container database.
 // For more information about the Database Management Service, see
 // [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+//
+// ## Example Usage
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type ExternalNonContainerDatabaseManagement struct {
 	pulumi.CustomResourceState
 

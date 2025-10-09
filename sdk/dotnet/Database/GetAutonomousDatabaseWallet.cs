@@ -17,6 +17,9 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetAutonomousDatabaseWalletResult> InvokeAsync(GetAutonomousDatabaseWalletArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletArgs(), options.WithDefaults());
@@ -27,6 +30,9 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
@@ -37,6 +43,9 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Creates and downloads a wallet for the specified Autonomous Database.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
@@ -136,7 +145,7 @@ namespace Pulumi.Oci.Database
         public readonly string AutonomousDatabaseId;
         public readonly bool? Base64EncodeContent;
         /// <summary>
-        /// content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// content of the downloaded zipped wallet for the Autonomous Database. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         public readonly string Content;
         public readonly string? GenerateType;

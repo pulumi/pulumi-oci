@@ -14,6 +14,8 @@ namespace Pulumi.Oci.FusionApps
     /// 
     /// Creates a new RefreshActivity.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.

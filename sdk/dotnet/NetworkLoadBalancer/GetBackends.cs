@@ -97,7 +97,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetBackendsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+        /// The name of the backend set associated with the backend servers.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public string BackendSetName { get; set; } = null!;
@@ -125,7 +125,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetBackendsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+        /// The name of the backend set associated with the backend servers.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;

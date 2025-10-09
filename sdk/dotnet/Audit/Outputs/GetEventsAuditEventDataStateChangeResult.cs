@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Audit.Outputs
     public sealed class GetEventsAuditEventDataStateChangeResult
     {
         /// <summary>
-        /// Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `previous`.
+        /// Provides the current state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `Previous`.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Current;
         /// <summary>
-        /// Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `current`.
+        /// Provides the previous state of fields that may have changed during an operation. To determine how the current operation changed a resource, compare the information in this attribute to  `Current`.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Previous;
 

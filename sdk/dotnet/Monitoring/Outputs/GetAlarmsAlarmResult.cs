@@ -50,18 +50,18 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether the alarm is enabled.  Example: `true`
+        /// Whether the alarm is enabled.  Example: `True`
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
+        /// Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `True`
         /// </summary>
         public readonly bool IsNotificationsPerMetricDimensionEnabled;
         /// <summary>
         /// The format to use for alarm notifications. The formats are:
-        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
-        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
-        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
+        /// * `RAW` - Raw JSON blob. Default value. When the `Destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `Destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `Destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         public readonly string MessageFormat;
         /// <summary>
@@ -69,15 +69,15 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string MetricCompartmentId;
         /// <summary>
-        /// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
+        /// When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `True`
         /// </summary>
         public readonly bool MetricCompartmentIdInSubtree;
         /// <summary>
-        /// The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        /// The source service or application emitting the metric that is evaluated by the alarm.  Example: `OciComputeagent`
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// Customizable notification title (`Title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         /// </summary>
         public readonly string NotificationTitle;
         /// <summary>

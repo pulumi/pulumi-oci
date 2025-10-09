@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified cloud database.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement")
 public class DatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

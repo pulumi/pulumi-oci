@@ -15,6 +15,8 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the specified referential relation.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetSensitiveDataModelReferentialRelationResult> InvokeAsync(GetSensitiveDataModelReferentialRelationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the specified referential relation.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetSensitiveDataModelReferentialRelationResult> Invoke(GetSensitiveDataModelReferentialRelationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the specified referential relation.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetSensitiveDataModelReferentialRelationResult> Invoke(GetSensitiveDataModelReferentialRelationInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationInvokeArgs(), options.WithDefaults());

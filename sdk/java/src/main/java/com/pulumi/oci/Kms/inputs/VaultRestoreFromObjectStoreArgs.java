@@ -77,14 +77,14 @@ public final class VaultRestoreFromObjectStoreArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+     * (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
     @Import(name="uri")
     private @Nullable Output<String> uri;
 
     /**
-     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
     public Optional<Output<String>> uri() {
@@ -204,7 +204,7 @@ public final class VaultRestoreFromObjectStoreArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param uri (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+         * @param uri (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class VaultRestoreFromObjectStoreArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param uri (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+         * @param uri (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
          * 
          * @return builder
          * 

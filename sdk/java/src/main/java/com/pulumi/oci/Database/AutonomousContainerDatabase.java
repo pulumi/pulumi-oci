@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
  * 
  * Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -409,14 +411,14 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.infrastructureType;
     }
     /**
-     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     @Export(name="isAutomaticFailoverEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     public Output<Boolean> isAutomaticFailoverEnabled() {
@@ -919,7 +921,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
         return this.role;
     }
     /**
-     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -929,7 +931,7 @@ public class AutonomousContainerDatabase extends com.pulumi.resources.CustomReso
     private Output</* @Nullable */ Boolean> rotateKeyTrigger;
 
     /**
-     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloud_autonomous_vm_cluster_id` is set.
+     * @return (Updatable) An optional property when flipped triggers rotation of KMS key. It is only applicable on dedicated container databases i.e. where `cloudAutonomousVmClusterId` is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

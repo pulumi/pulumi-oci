@@ -38,7 +38,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupMemberBlockVolumeOperationResult> BlockVolumeOperations;
         /// <summary>
-        /// The bucket name inside the object storage namespace.  Example: `bucket_name`
+        /// The bucket name inside the object storage namespace.  Example: `BucketName`
         /// </summary>
         public readonly string Bucket;
         /// <summary>
@@ -106,15 +106,15 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly int GtidReconciliationTimeout;
         /// <summary>
-        /// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        /// A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `False`
         /// </summary>
         public readonly bool IsContinueOnGtidReconciliationTimeout;
         /// <summary>
-        /// A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
+        /// A flag indicating if the compute instance should be moved during DR operations.  Example: `False`
         /// </summary>
         public readonly bool IsMovable;
         /// <summary>
-        /// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
+        /// A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `False`
         /// </summary>
         public readonly bool IsRetainFaultDomain;
         /// <summary>
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
         /// </summary>
         public readonly string Namespace;
         /// <summary>

@@ -300,7 +300,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
         return this.nodeImageId;
     }
     /**
-     * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
+     * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      * 
      * @deprecated
      * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
@@ -311,7 +311,7 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     private Output<String> nodeImageName;
 
     /**
-     * @return Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
+     * @return Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      * 
      */
     public Output<String> nodeImageName() {

@@ -123,7 +123,7 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+     * (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -133,7 +133,7 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<Boolean> removeImportTrigger;
 
     /**
-     * @return (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+     * @return (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -354,7 +354,7 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+         * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -368,7 +368,7 @@ public final class DrgRouteTableState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null.
+         * @param removeImportTrigger (Updatable) An optional property when flipped disables the import of route Distribution by setting importDrgRouteDistributionId to null.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

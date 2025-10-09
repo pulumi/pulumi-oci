@@ -276,6 +276,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * Retrieves the configuration information for the specified backend set.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args) {
         return getBackendSet(args, InvokeOptions.Empty);
@@ -284,6 +286,8 @@ public final class NetworkLoadBalancerFunctions {
      * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
      * 
      * Retrieves the configuration information for the specified backend set.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args) {
@@ -294,6 +298,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * Retrieves the configuration information for the specified backend set.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
@@ -303,6 +309,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * Retrieves the configuration information for the specified backend set.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
@@ -311,6 +319,8 @@ public final class NetworkLoadBalancerFunctions {
      * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
      * 
      * Retrieves the configuration information for the specified backend set.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args, InvokeOptions options) {

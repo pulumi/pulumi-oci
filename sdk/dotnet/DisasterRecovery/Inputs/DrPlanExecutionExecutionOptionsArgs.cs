@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrPlanExecutionExecutionOptionsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A flag indicating whether prechecks should be executed before the plan execution.  Example: `false`
+        /// A flag indicating whether prechecks should be executed before the plan execution.  Example: `False`
         /// </summary>
         [Input("arePrechecksEnabled")]
         public Input<bool>? ArePrechecksEnabled { get; set; }
 
         /// <summary>
-        /// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `true`
+        /// A flag indicating whether warnings should be ignored during the switchover precheck.  Example: `True`
         /// </summary>
         [Input("areWarningsIgnored")]
         public Input<bool>? AreWarningsIgnored { get; set; }

@@ -21,14 +21,14 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
     public static final AuditPolicyManagementState Empty = new AuditPolicyManagementState();
 
     /**
-     * Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+     * Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
      * 
      */
     @Import(name="auditConditions")
     private @Nullable Output<List<AuditPolicyManagementAuditConditionArgs>> auditConditions;
 
     /**
-     * @return Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+     * @return Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
      * 
      */
     public Optional<Output<List<AuditPolicyManagementAuditConditionArgs>>> auditConditions() {
@@ -332,7 +332,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param auditConditions Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+         * @param auditConditions Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param auditConditions Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+         * @param auditConditions Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class AuditPolicyManagementState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param auditConditions Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+         * @param auditConditions Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
          * 
          * @return builder
          * 

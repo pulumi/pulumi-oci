@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all target-alert policy associations.
+ *
+ * ## Example Usage
  */
 export function getTargetAlertPolicyAssociations(args: GetTargetAlertPolicyAssociationsArgs, opts?: pulumi.InvokeOptions): Promise<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -110,6 +112,8 @@ export interface GetTargetAlertPolicyAssociationsResult {
  * This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets a list of all target-alert policy associations.
+ *
+ * ## Example Usage
  */
 export function getTargetAlertPolicyAssociationsOutput(args: GetTargetAlertPolicyAssociationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetTargetAlertPolicyAssociationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

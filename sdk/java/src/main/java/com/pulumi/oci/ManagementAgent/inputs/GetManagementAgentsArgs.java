@@ -253,14 +253,14 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+     * When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
      * 
      */
     @Import(name="waitForHostId")
     private @Nullable Output<Integer> waitForHostId;
 
     /**
-     * @return When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+     * @return When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
      * 
      */
     public Optional<Output<Integer>> waitForHostId() {
@@ -686,7 +686,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param waitForHostId When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+         * @param waitForHostId When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
          * 
          * @return builder
          * 
@@ -697,7 +697,7 @@ public final class GetManagementAgentsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param waitForHostId When host_id argument is set, the data source will wait for the given period of time (in minutes) for this host_id to become available. This can be used when compute instance with Management Agent has been recently created.
+         * @param waitForHostId When hostId argument is set, the data source will wait for the given period of time (in minutes) for this hostId to become available. This can be used when compute instance with Management Agent has been recently created.
          * 
          * @return builder
          * 

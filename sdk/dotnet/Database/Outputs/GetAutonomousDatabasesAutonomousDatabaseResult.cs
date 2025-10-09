@@ -232,7 +232,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly bool IsDisableDbVersionUpgradeSchedule;
         public readonly bool IsDisconnectPeer;
         /// <summary>
-        /// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        /// Filter on the value of the resource's 'isFreeTier' property. A value of `True` returns only Always Free resources. A value of `False` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         /// </summary>
         public readonly bool IsFreeTier;
         /// <summary>
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool IsReconnectCloneEnabled;
         /// <summary>
-        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `True` returns only refreshable clones. A value of `False` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         /// </summary>
         public readonly bool IsRefreshableClone;
         /// <summary>
@@ -437,7 +437,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabaseStandbyDbResult> StandbyDbs;
         /// <summary>
-        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `Standbywhitelistedips`.
         /// </summary>
         public readonly ImmutableArray<string> StandbyWhitelistedIps;
         /// <summary>
@@ -561,7 +561,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string VaultId;
         /// <summary>
-        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
+        /// The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `Standbywhitelistedips`.
         /// </summary>
         public readonly ImmutableArray<string> WhitelistedIps;
 

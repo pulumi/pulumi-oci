@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
 //
 // Returns the clean energy usage summary by region.
+//
+// ## Example Usage
 func GetCleanEnergyUsage(ctx *pulumi.Context, args *GetCleanEnergyUsageArgs, opts ...pulumi.InvokeOption) (*GetCleanEnergyUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCleanEnergyUsageResult

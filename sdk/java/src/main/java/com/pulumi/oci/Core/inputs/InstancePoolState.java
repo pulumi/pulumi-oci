@@ -141,14 +141,14 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+     * The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
     @Import(name="loadBalancers")
     private @Nullable Output<List<InstancePoolLoadBalancerArgs>> loadBalancers;
 
     /**
-     * @return The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+     * @return The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
      * 
      */
     public Optional<Output<List<InstancePoolLoadBalancerArgs>>> loadBalancers() {
@@ -430,7 +430,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class InstancePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 load_balancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
+         * @param loadBalancers The load balancers to attach to the instance pool. (Note: From 6.16.0 loadBalancers field in oci.Core.InstancePool is changed from TypeList to TypeSet - to support load balancer insert operation. Also, LB cant by accessed by index)
          * 
          * @return builder
          * 

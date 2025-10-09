@@ -89,7 +89,7 @@ public final class GetAlarmsAlarm {
      */
     private Boolean metricCompartmentIdInSubtree;
     /**
-     * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     private String namespace;
@@ -267,7 +267,7 @@ public final class GetAlarmsAlarm {
         return this.metricCompartmentIdInSubtree;
     }
     /**
-     * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * @return The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {

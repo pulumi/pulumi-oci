@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Dns.Inputs
         public Input<string>? AnswerCondition { get; set; }
 
         /// <summary>
-        /// Keeps the answer only if the value is `true`.
+        /// Keeps the answer only if the value is `True`.
         /// </summary>
         [Input("shouldKeep")]
         public Input<bool>? ShouldKeep { get; set; }

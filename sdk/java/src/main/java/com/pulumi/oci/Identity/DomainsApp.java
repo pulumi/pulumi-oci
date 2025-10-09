@@ -65,6 +65,8 @@ import javax.annotation.Nullable;
  * 
  * Create an App
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * Apps can be imported using the `id`, e.g.
@@ -1473,7 +1475,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -1492,7 +1494,7 @@ public class DomainsApp extends com.pulumi.resources.CustomResource {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false

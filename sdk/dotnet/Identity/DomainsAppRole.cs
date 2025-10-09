@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create an AppRole
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// AppRoles can be imported using the `id`, e.g.

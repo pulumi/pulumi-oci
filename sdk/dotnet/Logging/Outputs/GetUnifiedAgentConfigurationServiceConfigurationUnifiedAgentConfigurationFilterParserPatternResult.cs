@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class GetUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternResult
     {
         /// <summary>
-        /// Process value using the specified format. This is available only when time_type is a string.
+        /// Process value using the specified format. This is available only when TimeType is a string.
         /// </summary>
         public readonly string FieldTimeFormat;
         /// <summary>

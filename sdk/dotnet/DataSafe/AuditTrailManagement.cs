@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataSafe
     public partial class AuditTrailManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -236,7 +236,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class AuditTrailManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class AuditTrailManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+        /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
         /// 
         /// 
         /// ** IMPORTANT **

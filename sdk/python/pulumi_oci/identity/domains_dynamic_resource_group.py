@@ -1074,6 +1074,8 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
 
         Create a Dynamic Resource Group.
 
+        ## Example Usage
+
         ## Import
 
         DynamicResourceGroups can be imported using the `id`, e.g.
@@ -1169,6 +1171,8 @@ class DomainsDynamicResourceGroup(pulumi.CustomResource):
         This resource provides the Dynamic Resource Group resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a Dynamic Resource Group.
+
+        ## Example Usage
 
         ## Import
 

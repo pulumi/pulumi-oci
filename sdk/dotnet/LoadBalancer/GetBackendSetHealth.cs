@@ -97,7 +97,7 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class GetBackendSetHealthArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
+        /// The name of the backend set to retrieve the health status for.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public string BackendSetName { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class GetBackendSetHealthInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set to retrieve the health status for.  Example: `example_backend_set`
+        /// The name of the backend set to retrieve the health status for.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;

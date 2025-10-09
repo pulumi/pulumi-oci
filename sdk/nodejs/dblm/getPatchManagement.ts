@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
  *
  * Overview of Patch Management.
+ *
+ * ## Example Usage
  */
 export function getPatchManagement(args: GetPatchManagementArgs, opts?: pulumi.InvokeOptions): Promise<GetPatchManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -103,6 +105,8 @@ export interface GetPatchManagementResult {
  * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
  *
  * Overview of Patch Management.
+ *
+ * ## Example Usage
  */
 export function getPatchManagementOutput(args: GetPatchManagementOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPatchManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

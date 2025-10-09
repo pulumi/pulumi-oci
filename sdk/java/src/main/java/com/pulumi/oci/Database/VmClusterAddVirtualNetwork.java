@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  * }
  * </pre>
  * 
- * ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
+ * ##### Note: You may also need to add `dbServers` and `cpuCoreCount` to the ignoreChanges for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
  * 
  * ## Import
  * 

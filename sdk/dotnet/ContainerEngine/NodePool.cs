@@ -199,7 +199,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> NodeImageId { get; private set; } = null!;
 
         /// <summary>
-        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
+        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `NodeImageId` is specified.
         /// </summary>
         [Output("nodeImageName")]
         public Output<string> NodeImageName { get; private set; } = null!;
@@ -399,7 +399,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? NodeImageId { get; set; }
 
         /// <summary>
-        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
+        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `NodeImageId` is specified.
         /// </summary>
         [Input("nodeImageName")]
         public Input<string>? NodeImageName { get; set; }
@@ -561,7 +561,7 @@ namespace Pulumi.Oci.ContainerEngine
         public Input<string>? NodeImageId { get; set; }
 
         /// <summary>
-        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `node_image_id` is specified.
+        /// Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `NodeImageId` is specified.
         /// </summary>
         [Input("nodeImageName")]
         public Input<string>? NodeImageName { get; set; }

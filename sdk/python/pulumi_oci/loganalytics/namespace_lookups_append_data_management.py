@@ -247,6 +247,12 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
 
         Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsAppendDataManagement
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
@@ -269,6 +275,12 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         This resource provides the Namespace Lookups Append Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
 
         Appends data to the lookup content. The csv file containing the content to be appended is passed in as binary data in the request.
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsAppendDataManagement
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupsAppendDataManagementArgs args: The arguments to use to populate this resource's properties.

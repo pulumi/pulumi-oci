@@ -16,6 +16,8 @@ namespace Pulumi.Oci.Waas
     /// This operation can update or disable protection rules depending on the structure of the request body.
     /// Protection rules can be updated by changing the properties of the protection rule object with the rule's key specified in the key field.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// ProtectionRules can be imported using the `id`, e.g.

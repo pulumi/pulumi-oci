@@ -20,6 +20,12 @@ import * as utilities from "../utilities";
  * 	   	]
  * 	}
  * 	```
+ *
+ * ## Example Usage
+ *
+ * ## Import
+ *
+ * Import is not supported for this resource.
  */
 export class DatabaseUpgrade extends pulumi.CustomResource {
     /**

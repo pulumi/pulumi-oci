@@ -15,6 +15,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the clean energy usage summary by region.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetCleanEnergyUsageResult> InvokeAsync(GetCleanEnergyUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageArgs(), options.WithDefaults());
@@ -23,6 +26,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the clean energy usage summary by region.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());
@@ -31,6 +37,9 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the clean energy usage summary by region.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());

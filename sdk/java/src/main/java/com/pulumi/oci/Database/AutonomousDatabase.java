@@ -574,14 +574,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.dbToolsDetails;
     }
     /**
-     * (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+     * (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     @Export(name="dbVersion", refs={String.class}, tree="[0]")
     private Output<String> dbVersion;
 
     /**
-     * @return (Updatable) A valid Oracle Database version for Autonomous Database.`db_workload` AJD is only supported for `db_version` `19c` and above.
+     * @return (Updatable) A valid Oracle Database version for Autonomous Database.`dbWorkload` AJD is only supported for `dbVersion` `19c` and above.
      * 
      */
     public Output<String> dbVersion() {
@@ -594,7 +594,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * AJD - indicates an Autonomous JSON Database
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
     @Export(name="dbWorkload", refs={String.class}, tree="[0]")
@@ -607,7 +607,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * AJD - indicates an Autonomous JSON Database
      * * APEX - indicates an Autonomous Database with the Oracle APEX Application Development workload type.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `db_workload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier. *Note: `dbWorkload` can only be updated from AJD to OLTP or from a free OLTP to AJD.
      * 
      */
     public Output<String> dbWorkload() {
@@ -890,7 +890,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `db_workload` is `AJD` it cannot be `true`.
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `dbWorkload` is `AJD` it cannot be `true`.
      * 
      */
     @Export(name="isFreeTier", refs={Boolean.class}, tree="[0]")
@@ -899,7 +899,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) Indicates if this is an Always Free resource. The default value is false. Note that Always Free Autonomous Databases have 1 CPU and 20GB of memory. For Always Free databases, memory and CPU cannot be scaled.
      * 
-     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `db_workload` is `AJD` it cannot be `true`.
+     * This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, privateEndpointLabel, nsgIds, dbVersion, isRefreshable, dbName, scheduledOperations, dbToolsDetails, or isLocalDataGuardEnabled When `dbWorkload` is `AJD` it cannot be `true`.
      * 
      */
     public Output<Boolean> isFreeTier() {
@@ -1120,7 +1120,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     @Export(name="licenseModel", refs={String.class}, tree="[0]")
@@ -1129,7 +1129,7 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The Oracle license model that applies to the Oracle Autonomous Database. Bring your own license (BYOL) allows you to apply your current on-premises Oracle software licenses to equivalent, highly automated Oracle services in the cloud. License Included allows you to subscribe to new Oracle Database software licenses and the Oracle Database service. Note that when provisioning an [Autonomous Database on dedicated Exadata infrastructure](https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html), this attribute must be null. It is already set at the Autonomous Exadata Infrastructure level. When provisioning an [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) database, if a value is not specified, the system defaults the value to `BRING_YOUR_OWN_LICENSE`. Bring your own license (BYOL) also allows you to select the DB edition using the optional parameter.
      * 
-     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `db_workload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `license_model` value `BRING_YOUR_OWN_LICENSE`.
+     * This cannot be updated in parallel with any of the following: cpuCoreCount, computeCount, dataStorageSizeInTBs, adminPassword, isMTLSConnectionRequired, dbWorkload, privateEndpointLabel, nsgIds, dbVersion, dbName, scheduledOperations, dbToolsDetails, or isFreeTier. It is a required field when `dbWorkload` is AJD and needs to be set to `LICENSE_INCLUDED` as AJD does not support default `licenseModel` value `BRING_YOUR_OWN_LICENSE`.
      * 
      */
     public Output<String> licenseModel() {
@@ -2074,14 +2074,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.timeReclamationOfFreeAutonomousDatabase;
     }
     /**
-     * The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target db_version value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the db_version value the same as the backend&#39;s current db_version.
+     * The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target dbVersion value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the dbVersion value the same as the backend&#39;s current db_version.
      * 
      */
     @Export(name="timeScheduledDbVersionUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timeScheduledDbVersionUpgrade;
 
     /**
-     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target db_version value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the db_version value the same as the backend&#39;s current db_version.
+     * @return The date and time the Autonomous Database scheduled to upgrade to 23ai. Send this value along with the target dbVersion value to schedule the database version upgrade. After the upgrade is scheduled and before the scheduled upgrade time arrives, please keep the dbVersion value the same as the backend&#39;s current db_version.
      * 
      */
     public Output<String> timeScheduledDbVersionUpgrade() {

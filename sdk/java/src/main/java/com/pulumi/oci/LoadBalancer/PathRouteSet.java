@@ -90,14 +90,14 @@ public class PathRouteSet extends com.pulumi.resources.CustomResource {
         return this.loadBalancerId;
     }
     /**
-     * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+     * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+     * @return The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     public Output<String> name() {

@@ -214,14 +214,14 @@ public class DesktopPool extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
-     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+     * (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      * 
      */
     @Export(name="availabilityPolicy", refs={DesktopPoolAvailabilityPolicy.class}, tree="[0]")
     private Output<DesktopPoolAvailabilityPolicy> availabilityPolicy;
 
     /**
-     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+     * @return (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availabilityPolicy { }` to not set a schedule.
      * 
      */
     public Output<DesktopPoolAvailabilityPolicy> availabilityPolicy() {

@@ -261,11 +261,11 @@ namespace Pulumi.Oci.DisasterRecovery
     /// 
     /// ## Create
     /// 
-    /// Create DR Protection Group resource with a default value of `disassociate_trigger` property, e.g.
+    /// Create DR Protection Group resource with a default value of `DisassociateTrigger` property, e.g.
     /// 
     /// ## Delete
     /// 
-    /// Disassociate DR Protection Group (if associated) before deleting it. Increment value of `disassociate_trigger` property to trigger Disassociate, e.g.
+    /// Disassociate DR Protection Group (if associated) before deleting it. Increment value of `DisassociateTrigger` property to trigger Disassociate, e.g.
     /// 
     /// ## Import
     /// 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class PathRouteSetPathRouteGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+        /// (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;

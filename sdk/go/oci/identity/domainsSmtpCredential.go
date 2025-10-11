@@ -16,6 +16,8 @@ import (
 //
 // Create a user's SMTP credentials.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // SmtpCredentials can be imported using the `id`, e.g.

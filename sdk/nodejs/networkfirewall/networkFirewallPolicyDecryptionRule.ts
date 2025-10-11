@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Creates a new Decryption Rule for the Network Firewall Policy.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.

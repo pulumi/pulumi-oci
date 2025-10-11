@@ -50,11 +50,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly bool? IsCacheControlRespected;
         /// <summary>
-        /// (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `false`.
+        /// (Updatable) Enable or disable HTTPS support. If true, a `certificateId` is required. If unspecified, defaults to `False`.
         /// </summary>
         public readonly bool? IsHttpsEnabled;
         /// <summary>
-        /// (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `false`.
+        /// (Updatable) Force HTTP to HTTPS redirection. If unspecified, defaults to `False`.
         /// </summary>
         public readonly bool? IsHttpsForced;
         /// <summary>

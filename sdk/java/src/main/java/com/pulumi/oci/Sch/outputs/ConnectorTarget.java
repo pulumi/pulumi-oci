@@ -88,7 +88,7 @@ public final class ConnectorTarget {
      */
     private @Nullable String metric;
     /**
-     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     private @Nullable String metricNamespace;
@@ -218,7 +218,7 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.metric);
     }
     /**
-     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     public Optional<String> metricNamespace() {

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpAddress;
         /// <summary>
-        /// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        /// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `Myhost1`
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpHostnameLabel;
         /// <summary>

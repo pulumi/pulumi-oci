@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// The language used to parse condition from field `condition`. Available languages:
+        /// The language used to parse condition from field `Condition`. Available languages:
         /// * **JMESPATH** an extended JMESPath language syntax.
         /// </summary>
         public readonly string ConditionLanguage;

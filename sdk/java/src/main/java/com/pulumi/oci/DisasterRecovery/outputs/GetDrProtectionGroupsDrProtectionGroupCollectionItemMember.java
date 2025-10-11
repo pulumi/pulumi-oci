@@ -62,7 +62,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
      */
     private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBlockVolumeOperation> blockVolumeOperations;
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     private String bucket;
@@ -282,7 +282,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         return this.blockVolumeOperations;
     }
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     public String bucket() {

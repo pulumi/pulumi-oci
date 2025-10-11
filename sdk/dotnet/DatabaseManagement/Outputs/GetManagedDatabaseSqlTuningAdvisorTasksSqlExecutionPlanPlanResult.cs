@@ -74,7 +74,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Operation;
         /// <summary>
-        /// The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
+        /// The current mode of the optimizer, such as all_rows, FirstRowsN (where n = 1, 10, 100, 1000, and so on).
         /// </summary>
         public readonly string OptimizerMode;
         /// <summary>

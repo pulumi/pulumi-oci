@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+ *
+ * ## Example Usage
  */
 export function getExadataInfrastructure(args: GetExadataInfrastructureArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -254,6 +256,8 @@ export interface GetExadataInfrastructureResult {
  *
  * Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
  * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+ *
+ * ## Example Usage
  */
 export function getExadataInfrastructureOutput(args: GetExadataInfrastructureOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructureResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

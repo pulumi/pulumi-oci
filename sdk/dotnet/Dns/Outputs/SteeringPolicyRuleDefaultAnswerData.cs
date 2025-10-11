@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string? AnswerCondition;
         /// <summary>
-        /// Keeps the answer only if the value is `true`.
+        /// Keeps the answer only if the value is `True`.
         /// </summary>
         public readonly bool? ShouldKeep;
         /// <summary>

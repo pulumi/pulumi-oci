@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Core
     /// <summary>
     /// This resource provides the Public Ip resource in Oracle Cloud Infrastructure Core service.
     /// 
-    /// Creates a public IP. Use the `lifetime` property to specify whether it's an ephemeral or
+    /// Creates a public IP. Use the `Lifetime` property to specify whether it's an ephemeral or
     /// reserved public IP. For information about limits on how many you can create, see
     /// [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
     /// 
@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Core
         public Output<string> AssignedEntityType { get; private set; } = null!;
 
         /// <summary>
-        /// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
+        /// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `Scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Output("availabilityDomain")]
         public Output<string> AvailabilityDomain { get; private set; } = null!;
@@ -151,8 +151,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether the public IP is regional or specific to a particular availability domain.
-        /// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
-        /// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
+        /// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `Scope` = `REGION`.
+        /// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `Scope` = `AVAILABILITY_DOMAIN`.
         /// </summary>
         [Output("scope")]
         public Output<string> Scope { get; private set; } = null!;
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? AssignedEntityType { get; set; }
 
         /// <summary>
-        /// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
+        /// The public IP's availability domain. This property is set only for ephemeral public IPs that are assigned to a private IP (that is, when the `Scope` of the public IP is set to AVAILABILITY_DOMAIN). The value is the availability domain of the assigned private IP.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         [Input("availabilityDomain")]
         public Input<string>? AvailabilityDomain { get; set; }
@@ -373,8 +373,8 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// Whether the public IP is regional or specific to a particular availability domain.
-        /// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
-        /// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
+        /// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `Scope` = `REGION`.
+        /// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `Scope` = `AVAILABILITY_DOMAIN`.
         /// </summary>
         [Input("scope")]
         public Input<string>? Scope { get; set; }

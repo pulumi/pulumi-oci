@@ -17,7 +17,7 @@ namespace Pulumi.Oci.HealthChecks
         /// Returns the results for the specified probe, where the `probeConfigurationId`
         /// is the OCID of either a monitor or an on-demand probe.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.  Use `sortOrder` to set the order of the
         /// results.  If `sortOrder` is unspecified, results are sorted in ascending order by
         /// `startTime`.
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.HealthChecks
         /// Returns the results for the specified probe, where the `probeConfigurationId`
         /// is the OCID of either a monitor or an on-demand probe.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.  Use `sortOrder` to set the order of the
         /// results.  If `sortOrder` is unspecified, results are sorted in ascending order by
         /// `startTime`.
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.HealthChecks
         /// Returns the results for the specified probe, where the `probeConfigurationId`
         /// is the OCID of either a monitor or an on-demand probe.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.  Use `sortOrder` to set the order of the
         /// results.  If `sortOrder` is unspecified, results are sorted in ascending order by
         /// `startTime`.
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.HealthChecks
         public double? StartTimeLessThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Filters results that match the `target`.
+        /// Filters results that match the `Target`.
         /// </summary>
         [Input("target")]
         public string? Target { get; set; }
@@ -190,7 +190,7 @@ namespace Pulumi.Oci.HealthChecks
         public Input<double>? StartTimeLessThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Filters results that match the `target`.
+        /// Filters results that match the `Target`.
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

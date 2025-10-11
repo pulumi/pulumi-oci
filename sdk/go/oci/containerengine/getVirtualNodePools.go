@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
 //
 // List all the virtual node pools in a compartment, and optionally filter by cluster.
+//
+// ## Example Usage
 func GetVirtualNodePools(ctx *pulumi.Context, args *GetVirtualNodePoolsArgs, opts ...pulumi.InvokeOption) (*GetVirtualNodePoolsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualNodePoolsResult

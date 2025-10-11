@@ -25,7 +25,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
         /// *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
         /// 
-        /// example: `example_cipher_suite`
+        /// example: `ExampleCipherSuite`
         /// </summary>
         [Input("cipherSuiteName")]
         public Input<string>? CipherSuiteName { get; set; }
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         public Input<int>? VerifyDepth { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `true` 
+        /// (Updatable) Whether the load balancer listener should verify peer certificates.  Example: `True` 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

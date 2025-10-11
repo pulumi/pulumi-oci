@@ -21,6 +21,12 @@ import javax.annotation.Nullable;
  * 
  * This operation updates SaaS administrative user configuration of the Autonomous Database.
  * 
+ * ## Example Usage
+ * 
+ * ## Import
+ * 
+ * Import is not supported for this resource.
+ * 
  */
 @ResourceType(type="oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser")
 public class AutonomousDatabaseSaasAdminUser extends com.pulumi.resources.CustomResource {

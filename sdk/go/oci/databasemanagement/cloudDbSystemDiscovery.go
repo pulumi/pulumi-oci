@@ -18,6 +18,8 @@ import (
 //
 //	Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // CloudDbSystemDiscoveries can be imported using the `id`, e.g.

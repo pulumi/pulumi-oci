@@ -92,7 +92,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
+        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "AppSf3kdjf3"}`
         /// </summary>
         [Output("freeformAttributes")]
         public Output<ImmutableDictionary<string, string>> FreeformAttributes { get; private set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Identity
         private InputMap<string>? _freeformAttributes;
 
         /// <summary>
-        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
+        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "AppSf3kdjf3"}`
         /// </summary>
         public InputMap<string> FreeformAttributes
         {
@@ -331,7 +331,7 @@ namespace Pulumi.Oci.Identity
         private InputMap<string>? _freeformAttributes;
 
         /// <summary>
-        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
+        /// (Updatable) Extra name value pairs associated with this identity provider. Example: `{"clientId": "AppSf3kdjf3"}`
         /// </summary>
         public InputMap<string> FreeformAttributes
         {

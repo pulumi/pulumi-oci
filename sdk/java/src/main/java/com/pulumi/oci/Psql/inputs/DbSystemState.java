@@ -297,14 +297,14 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
     @Import(name="patchOperations")
     private @Nullable Output<List<DbSystemPatchOperationArgs>> patchOperations;
 
     /**
-     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
     public Optional<Output<List<DbSystemPatchOperationArgs>>> patchOperations() {
@@ -886,7 +886,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
          * 
          * @return builder
          * 
@@ -897,7 +897,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
          * 
          * @return builder
          * 
@@ -907,7 +907,7 @@ public final class DbSystemState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+         * @param patchOperations (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
          * 
          * @return builder
          * 

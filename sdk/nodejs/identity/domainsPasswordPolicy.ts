@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a password policy.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * PasswordPolicies can be imported using the `id`, e.g.

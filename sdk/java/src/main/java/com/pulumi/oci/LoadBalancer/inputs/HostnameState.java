@@ -46,7 +46,7 @@ public final class HostnameState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -56,7 +56,7 @@ public final class HostnameState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> name;
 
     /**
-     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -143,7 +143,7 @@ public final class HostnameState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -157,7 +157,7 @@ public final class HostnameState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

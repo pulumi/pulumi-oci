@@ -18,7 +18,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// * ALLOW - Allows the traffic.
         /// * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
         /// * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-        /// * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+        /// * INSPECT - Inspects traffic for vulnerability as specified in `Inspection`, which may result in rejection.
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
         /// * INTRUSION_DETECTION - Intrusion Detection.
-        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
         /// </summary>
         public readonly string? Inspection;
         /// <summary>

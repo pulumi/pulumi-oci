@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? PasswordVaultSecretId;
         /// <summary>
-        /// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `user`
+        /// (Updatable) The user name for connecting to the HeatWave MySQL DB System node.  Example: `User`
         /// </summary>
         public readonly string? Username;
 

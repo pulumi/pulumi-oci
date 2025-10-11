@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a user's own SMTP credential.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * MySmtpCredentials can be imported using the `id`, e.g.

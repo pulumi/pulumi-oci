@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? RequestBody { get; set; }
 
         /// <summary>
-        /// The userid on the instance to be used for executing the script or command.  Example: `opc`
+        /// The userid on the instance to be used for executing the script or command.  Example: `Opc`
         /// </summary>
         [Input("runAsUser")]
         public Input<string>? RunAsUser { get; set; }

@@ -82,7 +82,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<Outputs.ListenerConnectionConfiguration> ConnectionConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Output("defaultBackendSetName")]
         public Output<string> DefaultBackendSetName { get; private set; } = null!;
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleListener`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
         /// 
-        /// Example: `example_path_route_set`
+        /// Example: `ExamplePathRouteSet`
         /// </summary>
         [Output("pathRouteSetName")]
         public Output<string?> PathRouteSetName { get; private set; } = null!;
@@ -128,13 +128,13 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> Protocol { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
+        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `ExampleRoutingPolicy`
         /// </summary>
         [Output("routingPolicyName")]
         public Output<string?> RoutingPolicyName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
+        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["ExampleRuleSet"]
         /// </summary>
         [Output("ruleSetNames")]
         public Output<ImmutableArray<string>> RuleSetNames { get; private set; } = null!;
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<Inputs.ListenerConnectionConfigurationArgs>? ConnectionConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("defaultBackendSetName", required: true)]
         public Input<string> DefaultBackendSetName { get; set; } = null!;
@@ -227,7 +227,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleListener`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
         /// 
-        /// Example: `example_path_route_set`
+        /// Example: `ExamplePathRouteSet`
         /// </summary>
         [Input("pathRouteSetName")]
         public Input<string>? PathRouteSetName { get; set; }
@@ -255,7 +255,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> Protocol { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
+        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `ExampleRoutingPolicy`
         /// </summary>
         [Input("routingPolicyName")]
         public Input<string>? RoutingPolicyName { get; set; }
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.LoadBalancer
         private InputList<string>? _ruleSetNames;
 
         /// <summary>
-        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
+        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["ExampleRuleSet"]
         /// </summary>
         public InputList<string> RuleSetNames
         {
@@ -295,7 +295,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<Inputs.ListenerConnectionConfigurationGetArgs>? ConnectionConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+        /// (Updatable) The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("defaultBackendSetName")]
         public Input<string>? DefaultBackendSetName { get; set; }
@@ -319,7 +319,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleListener`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -329,7 +329,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener's traffic.
         /// 
-        /// Example: `example_path_route_set`
+        /// Example: `ExamplePathRouteSet`
         /// </summary>
         [Input("pathRouteSetName")]
         public Input<string>? PathRouteSetName { get; set; }
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? Protocol { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `example_routing_policy`
+        /// (Updatable) The name of the routing policy applied to this listener's traffic.  Example: `ExampleRoutingPolicy`
         /// </summary>
         [Input("routingPolicyName")]
         public Input<string>? RoutingPolicyName { get; set; }
@@ -356,7 +356,7 @@ namespace Pulumi.Oci.LoadBalancer
         private InputList<string>? _ruleSetNames;
 
         /// <summary>
-        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["example_rule_set"]
+        /// (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: ["ExampleRuleSet"]
         /// </summary>
         public InputList<string> RuleSetNames
         {

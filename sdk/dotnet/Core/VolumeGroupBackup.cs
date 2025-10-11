@@ -143,13 +143,13 @@ namespace Pulumi.Oci.Core
         public Output<string> Type { get; private set; } = null!;
 
         /// <summary>
-        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `SizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Output("uniqueSizeInGbs")]
         public Output<string> UniqueSizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `SizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Output("uniqueSizeInMbs")]
         public Output<string> UniqueSizeInMbs { get; private set; } = null!;
@@ -377,13 +377,13 @@ namespace Pulumi.Oci.Core
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `SizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Input("uniqueSizeInGbs")]
         public Input<string>? UniqueSizeInGbs { get; set; }
 
         /// <summary>
-        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+        /// The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `SizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
         /// </summary>
         [Input("uniqueSizeInMbs")]
         public Input<string>? UniqueSizeInMbs { get; set; }

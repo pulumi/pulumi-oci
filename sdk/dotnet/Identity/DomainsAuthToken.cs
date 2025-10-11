@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's Auth token.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// AuthTokens can be imported using the `id`, e.g.

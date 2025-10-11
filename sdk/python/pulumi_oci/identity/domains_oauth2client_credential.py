@@ -1323,6 +1323,8 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
 
         Add a user's OAuth2 client credentials.
 
+        ## Example Usage
+
         ## Import
 
         OAuth2ClientCredentials can be imported using the `id`, e.g.
@@ -1461,6 +1463,8 @@ class DomainsOauth2clientCredential(pulumi.CustomResource):
         This resource provides the O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a user's OAuth2 client credentials.
+
+        ## Example Usage
 
         ## Import
 

@@ -434,14 +434,14 @@ public class ExadbVmCluster extends com.pulumi.resources.CustomResource {
         return this.nodeConfig;
     }
     /**
-     * Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+     * Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
     @Export(name="nodeResources", refs={List.class,ExadbVmClusterNodeResource.class}, tree="[0,1]")
     private Output<List<ExadbVmClusterNodeResource>> nodeResources;
 
     /**
-     * @return Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+     * @return Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
     public Output<List<ExadbVmClusterNodeResource>> nodeResources() {

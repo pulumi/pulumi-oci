@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string ArchiveUri;
         /// <summary>
-        /// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "input_file" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
+        /// The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `Name` is the name of the parameter. Example:  `[ "--input", "${input_file}", "--name", "John Doe" ]` If "InputFile" has a value of "mydata.xml", then the value above will be translated to `--input mydata.xml --name "John Doe"`
         /// </summary>
         public readonly ImmutableArray<string> Arguments;
         /// <summary>
@@ -110,11 +110,11 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string OwnerPrincipalId;
         /// <summary>
-        /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        /// The username of the user who created the resource.  If the username of the owner does not exist, `Null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         public readonly string OwnerUserName;
         /// <summary>
-        /// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "input_file", value: "mydata.xml" }, { name: "variable_x", value: "${x}"} ]
+        /// An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: "iterations", value: "10"}, { name: "InputFile", value: "mydata.xml" }, { name: "VariableX", value: "${x}"} ]
         /// </summary>
         public readonly ImmutableArray<Outputs.GetApplicationsApplicationParameterResult> Parameters;
         /// <summary>

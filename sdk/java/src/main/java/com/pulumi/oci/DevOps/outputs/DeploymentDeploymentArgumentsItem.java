@@ -18,7 +18,7 @@ public final class DeploymentDeploymentArgumentsItem {
     private @Nullable String name;
     /**
      * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     private @Nullable String value;
@@ -33,7 +33,7 @@ public final class DeploymentDeploymentArgumentsItem {
     }
     /**
      * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
      * 
      */
     public Optional<String> value() {

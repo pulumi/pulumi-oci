@@ -18,7 +18,7 @@ public final class BackendSetLbCookieSessionPersistenceConfigurationArgs extends
     public static final BackendSetLbCookieSessionPersistenceConfigurationArgs Empty = new BackendSetLbCookieSessionPersistenceConfigurationArgs();
 
     /**
-     * (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+     * (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
      * 
      * **Notes:**
      * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.
@@ -29,7 +29,7 @@ public final class BackendSetLbCookieSessionPersistenceConfigurationArgs extends
     private @Nullable Output<String> cookieName;
 
     /**
-     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
      * 
      * **Notes:**
      * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.
@@ -209,7 +209,7 @@ public final class BackendSetLbCookieSessionPersistenceConfigurationArgs extends
         }
 
         /**
-         * @param cookieName (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+         * @param cookieName (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
          * 
          * **Notes:**
          * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.
@@ -224,7 +224,7 @@ public final class BackendSetLbCookieSessionPersistenceConfigurationArgs extends
         }
 
         /**
-         * @param cookieName (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `example_cookie`
+         * @param cookieName (Updatable) The name of the cookie inserted by the load balancer. If this field is not configured, the cookie name defaults to &#34;X-Oracle-BMC-LBS-Route&#34;.  Example: `exampleCookie`
          * 
          * **Notes:**
          * *  Ensure that the cookie name used at the backend application servers is different from the cookie name used at the load balancer. To minimize the chance of name collision, Oracle recommends that you use a prefix such as &#34;X-Oracle-OCI-&#34; for this field.

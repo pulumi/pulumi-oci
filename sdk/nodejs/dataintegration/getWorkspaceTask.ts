@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
  *
  * Retrieves a task using the specified identifier.
+ *
+ * ## Example Usage
  */
 export function getWorkspaceTask(args: GetWorkspaceTaskArgs, opts?: pulumi.InvokeOptions): Promise<GetWorkspaceTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -154,6 +156,8 @@ export interface GetWorkspaceTaskResult {
  * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
  *
  * Retrieves a task using the specified identifier.
+ *
+ * ## Example Usage
  */
 export function getWorkspaceTaskOutput(args: GetWorkspaceTaskOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetWorkspaceTaskResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

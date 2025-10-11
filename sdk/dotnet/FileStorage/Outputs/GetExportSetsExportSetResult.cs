@@ -30,11 +30,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Controls the maximum `tbytes`, `fbytes`, and `abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `fbytes` and `abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `fbytes` and `abytes` will both be '0'.
+        /// Controls the maximum `Tbytes`, `Fbytes`, and `Abytes`, values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `Tbytes` value reported by `FSSTAT` will be `maxFsStatBytes`. The value of `Fbytes` and `Abytes` will be `maxFsStatBytes` minus the metered size of the file system. If the metered size is larger than `maxFsStatBytes`, then `Fbytes` and `Abytes` will both be '0'.
         /// </summary>
         public readonly string MaxFsStatBytes;
         /// <summary>
-        /// Controls the maximum `tfiles`, `ffiles`, and `afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `ffiles` and `afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `ffiles` and `afiles` will both be '0'.
+        /// Controls the maximum `Tfiles`, `Ffiles`, and `Afiles` values reported by `NFS FSSTAT` calls through any associated mount targets. This is an advanced feature. For most applications, use the default value. The `Tfiles` value reported by `FSSTAT` will be `maxFsStatFiles`. The value of `Ffiles` and `Afiles` will be `maxFsStatFiles` minus the metered size of the file system. If the metered size is larger than `maxFsStatFiles`, then `Ffiles` and `Afiles` will both be '0'.
         /// </summary>
         public readonly string MaxFsStatFiles;
         public readonly string MountTargetId;

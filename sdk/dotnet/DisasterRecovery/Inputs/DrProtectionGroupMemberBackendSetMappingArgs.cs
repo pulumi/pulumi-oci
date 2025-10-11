@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? DestinationBackendSetName { get; set; }
 
         /// <summary>
-        /// (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `true`
+        /// (Updatable) This flag specifies if this backend set is used for traffic for non-movable compute instances. Backend sets that point to non-movable instances are only enabled or disabled during DR, their contents are not altered. For non-movable instances this flag should be set to 'true'. Backend sets that point to movable instances are emptied and their contents are transferred to the  destination region load balancer.  For movable instances this flag should be set to 'false'.   Example: `True`
         /// </summary>
         [Input("isBackendSetForNonMovable")]
         public Input<bool>? IsBackendSetForNonMovable { get; set; }

@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
  *
  * List all the virtual node pools in a compartment, and optionally filter by cluster.
+ *
+ * ## Example Usage
  */
 export function getVirtualNodePools(args: GetVirtualNodePoolsArgs, opts?: pulumi.InvokeOptions): Promise<GetVirtualNodePoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -79,6 +81,8 @@ export interface GetVirtualNodePoolsResult {
  * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
  *
  * List all the virtual node pools in a compartment, and optionally filter by cluster.
+ *
+ * ## Example Usage
  */
 export function getVirtualNodePoolsOutput(args: GetVirtualNodePoolsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVirtualNodePoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

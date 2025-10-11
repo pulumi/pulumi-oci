@@ -40,7 +40,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> CaCertificate { get; private set; } = null!;
 
         /// <summary>
-        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         [Output("certificateName")]
         public Output<string> CertificateName { get; private set; } = null!;
@@ -165,7 +165,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? CaCertificate { get; set; }
 
         /// <summary>
-        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         [Input("certificateName", required: true)]
         public Input<string> CertificateName { get; set; } = null!;
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? CaCertificate { get; set; }
 
         /// <summary>
-        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         [Input("certificateName")]
         public Input<string>? CertificateName { get; set; }

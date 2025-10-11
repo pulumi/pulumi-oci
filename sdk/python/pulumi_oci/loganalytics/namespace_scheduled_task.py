@@ -494,6 +494,8 @@ class NamespaceScheduledTask(pulumi.CustomResource):
 
         Schedule a task as specified and return task info.
 
+        ## Example Usage
+
         ## Import
 
         NamespaceScheduledTasks can be imported using the `id`, e.g.
@@ -529,6 +531,8 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         This resource provides the Namespace Scheduled Task resource in Oracle Cloud Infrastructure Log Analytics service.
 
         Schedule a task as specified and return task info.
+
+        ## Example Usage
 
         ## Import
 

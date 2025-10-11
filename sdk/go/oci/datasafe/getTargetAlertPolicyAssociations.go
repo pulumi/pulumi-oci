@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 //
 // Gets a list of all target-alert policy associations.
+//
+// ## Example Usage
 func GetTargetAlertPolicyAssociations(ctx *pulumi.Context, args *GetTargetAlertPolicyAssociationsArgs, opts ...pulumi.InvokeOption) (*GetTargetAlertPolicyAssociationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetTargetAlertPolicyAssociationsResult

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         public readonly bool IsCrossTenancyPeering;
         /// <summary>

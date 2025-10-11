@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
 //
 // Overview of Patch Management.
+//
+// ## Example Usage
 func GetPatchManagement(ctx *pulumi.Context, args *GetPatchManagementArgs, opts ...pulumi.InvokeOption) (*GetPatchManagementResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetPatchManagementResult

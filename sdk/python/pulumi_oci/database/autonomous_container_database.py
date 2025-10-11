@@ -2028,6 +2028,8 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
 
+        ## Example Usage
+
         ## Import
 
         AutonomousContainerDatabases can be imported using the `id`, e.g.
@@ -2092,6 +2094,8 @@ class AutonomousContainerDatabase(pulumi.CustomResource):
         This resource provides the Autonomous Container Database resource in Oracle Cloud Infrastructure Database service.
 
         Creates an Autonomous Container Database in the specified Autonomous Exadata Infrastructure.
+
+        ## Example Usage
 
         ## Import
 

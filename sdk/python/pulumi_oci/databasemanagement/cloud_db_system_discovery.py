@@ -448,6 +448,8 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
 
           Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
 
+        ## Example Usage
+
         ## Import
 
         CloudDbSystemDiscoveries can be imported using the `id`, e.g.
@@ -479,6 +481,8 @@ class CloudDbSystemDiscovery(pulumi.CustomResource):
         Creates a cloud DB system discovery resource and initiates the discovery process.
 
           Patches the cloud DB system discovery specified by `cloudDbSystemDiscoveryId`.
+
+        ## Example Usage
 
         ## Import
 

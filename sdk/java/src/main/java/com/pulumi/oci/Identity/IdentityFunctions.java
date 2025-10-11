@@ -28419,6 +28419,8 @@ public final class IdentityFunctions {
      * 
      * Search User Schema Attribute Settings
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args) {
         return getDomainsUserAttributesSettings(args, InvokeOptions.Empty);
@@ -28427,6 +28429,8 @@ public final class IdentityFunctions {
      * This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search User Schema Attribute Settings
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args) {
@@ -28437,6 +28441,8 @@ public final class IdentityFunctions {
      * 
      * Search User Schema Attribute Settings
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", TypeShape.of(GetDomainsUserAttributesSettingsResult.class), args, Utilities.withVersion(options));
@@ -28446,6 +28452,8 @@ public final class IdentityFunctions {
      * 
      * Search User Schema Attribute Settings
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", TypeShape.of(GetDomainsUserAttributesSettingsResult.class), args, Utilities.withVersion(options));
@@ -28454,6 +28462,8 @@ public final class IdentityFunctions {
      * This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
      * 
      * Search User Schema Attribute Settings
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args, InvokeOptions options) {

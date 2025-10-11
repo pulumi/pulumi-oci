@@ -32,7 +32,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? BackupSchedule;
         /// <summary>
-        /// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["namespace_string_3", "namespace_string_4"]
+        /// (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `Namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: ["NamespaceString3", "NamespaceString4"]
         /// </summary>
         public readonly ImmutableArray<string> ExcludeNamespaces;
         /// <summary>
@@ -44,7 +44,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly int? MaxNumberOfBackupsRetained;
         /// <summary>
-        /// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
+        /// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `Namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
         /// </summary>
         public readonly ImmutableArray<string> Namespaces;
         /// <summary>

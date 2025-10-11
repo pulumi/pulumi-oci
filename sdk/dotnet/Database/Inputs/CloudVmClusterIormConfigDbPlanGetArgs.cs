@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class CloudVmClusterIormConfigDbPlanGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The database name. For the default `DbPlan`, the `dbName` is `default`.
+        /// (Updatable) The database name. For the default `DbPlan`, the `dbName` is `Default`.
         /// </summary>
         [Input("dbName", required: true)]
         public Input<string> DbName { get; set; } = null!;

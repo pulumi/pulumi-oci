@@ -18,14 +18,14 @@ public final class GetInvokeRunsFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetInvokeRunsFilter Empty = new GetInvokeRunsFilter();
 
     /**
-     * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetInvokeRunsFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
          * 
          * @return builder
          * 

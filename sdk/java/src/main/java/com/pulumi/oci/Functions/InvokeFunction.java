@@ -72,14 +72,14 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.base64EncodeContent);
     }
     /**
-     * Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
-     * @return Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return Content of the response string, if any. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     public Output<String> content() {
@@ -128,7 +128,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
         return this.functionId;
     }
     /**
-     * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -138,7 +138,7 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> inputBodySourcePath;
 
     /**
-     * @return An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+     * @return An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invokeFunctionBody` or `invokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -154,14 +154,14 @@ public class InvokeFunction extends com.pulumi.resources.CustomResource {
         return this.invokeEndpoint;
     }
     /**
-     * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+     * The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      * 
      */
     @Export(name="invokeFunctionBody", refs={String.class}, tree="[0]")
     private Output<String> invokeFunctionBody;
 
     /**
-     * @return The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+     * @return The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `inputBodySourcePath` or `invokeFunctionBodyBase64Encoded` is defined.
      * 
      */
     public Output<String> invokeFunctionBody() {

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetBackendSetsBackendsetLbCookieSessionPersistenceConfigurationResult
     {
         /// <summary>
-        /// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+        /// The name of the cookie used to detect a session initiated by the backend server. Use '*' to specify that any cookie set by the backend causes the session to persist.  Example: `ExampleCookie`
         /// </summary>
         public readonly string CookieName;
         /// <summary>
-        /// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `false`
+        /// Whether the load balancer is prevented from directing traffic from a persistent session client to a different backend server if the original server is unavailable. Defaults to false.  Example: `False`
         /// </summary>
         public readonly bool DisableFallback;
         /// <summary>
@@ -26,11 +26,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string Domain;
         /// <summary>
-        /// Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `true`
+        /// Whether the `Set-cookie` header should contain the `HttpOnly` attribute. If `True`, the `Set-cookie` header inserted by the load balancer contains the `HttpOnly` attribute, which limits the scope of the cookie to HTTP requests. This attribute directs the client or browser to omit the cookie when providing access to cookies through non-HTTP APIs. For example, it restricts the cookie from JavaScript channels.  Example: `True`
         /// </summary>
         public readonly bool IsHttpOnly;
         /// <summary>
-        /// Whether the `Set-cookie` header should contain the `Secure` attribute. If `true`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
+        /// Whether the `Set-cookie` header should contain the `Secure` attribute. If `True`, the `Set-cookie` header inserted by the load balancer contains the `Secure` attribute, which directs the client or browser to send the cookie only using a secure protocol.
         /// </summary>
         public readonly bool IsSecure;
         /// <summary>

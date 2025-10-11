@@ -19,6 +19,8 @@ import javax.annotation.Nullable;
  * 
  * Install Software Update of the specified SoftwareUpdateId to this BDS cluster&#39;s nodes.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction")
 public class BdsInstanceSoftwareUpdateAction extends com.pulumi.resources.CustomResource {

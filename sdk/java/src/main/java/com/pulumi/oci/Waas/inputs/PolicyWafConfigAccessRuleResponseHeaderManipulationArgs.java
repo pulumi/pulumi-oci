@@ -32,14 +32,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
     }
 
     /**
-     * (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     @Import(name="header", required=true)
     private Output<String> header;
 
     /**
-     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public Output<String> header() {
@@ -47,14 +47,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
     }
 
     /**
-     * (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+     * (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
      * 
      */
     public Optional<Output<String>> value() {
@@ -109,7 +109,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param header (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+         * @param header (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param header (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+         * @param header (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
          * 
          * @return builder
          * 

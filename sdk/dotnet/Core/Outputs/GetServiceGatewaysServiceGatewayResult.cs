@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetServiceGatewaysServiceGatewayResult
     {
         /// <summary>
-        /// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+        /// Whether the service gateway blocks all traffic through it. The default is `False`. When this is `True`, traffic is not routed to any services, regardless of route rules.  Example: `True`
         /// </summary>
         public readonly bool BlockTraffic;
         /// <summary>

@@ -168,7 +168,7 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
-        /// The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+        /// The source service or application to use when searching for metric data points to aggregate.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace", required: true)]
         public string Namespace { get; set; } = null!;
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
-        /// The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+        /// The source service or application to use when searching for metric data points to aggregate.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
@@ -303,7 +303,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMetricDataMetricDataResult> MetricDatas;
         /// <summary>
-        /// The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
+        /// The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `OciComputeagent`
         /// </summary>
         public readonly string Namespace;
         public readonly string Query;

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataFlow.Inputs
     public sealed class ApplicationParameterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+        /// (Updatable) The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "InputFile"
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

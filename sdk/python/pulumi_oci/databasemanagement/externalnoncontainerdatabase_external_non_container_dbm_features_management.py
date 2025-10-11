@@ -159,6 +159,8 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
 
         Enables Database Management feature for the specified external non-container database.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_non_container_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -179,6 +181,8 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
         This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 
         Enables Database Management feature for the specified external non-container database.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

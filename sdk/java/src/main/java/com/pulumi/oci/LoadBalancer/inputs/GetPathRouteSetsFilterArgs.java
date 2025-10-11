@@ -19,14 +19,14 @@ public final class GetPathRouteSetsFilterArgs extends com.pulumi.resources.Resou
     public static final GetPathRouteSetsFilterArgs Empty = new GetPathRouteSetsFilterArgs();
 
     /**
-     * The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+     * The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetPathRouteSetsFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+         * @param name The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetPathRouteSetsFilterArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+         * @param name The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
          * 
          * @return builder
          * 

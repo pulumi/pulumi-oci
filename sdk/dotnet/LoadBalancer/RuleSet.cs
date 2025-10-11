@@ -101,7 +101,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set` 
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet` 
         /// 
         /// 
         /// ** IMPORTANT **

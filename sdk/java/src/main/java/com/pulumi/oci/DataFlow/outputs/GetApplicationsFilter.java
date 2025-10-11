@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetApplicationsFilter {
     /**
-     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetApplicationsFilter {
 
     private GetApplicationsFilter() {}
     /**
-     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     public String name() {

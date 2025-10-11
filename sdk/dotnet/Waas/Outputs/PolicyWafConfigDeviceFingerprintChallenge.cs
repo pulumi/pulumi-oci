@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly int? ActionExpirationInSeconds;
         /// <summary>
-        /// (Updatable) The challenge settings if `action` is set to `BLOCK`.
+        /// (Updatable) The challenge settings if `Action` is set to `BLOCK`.
         /// </summary>
         public readonly Outputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettings? ChallengeSettings;
         /// <summary>

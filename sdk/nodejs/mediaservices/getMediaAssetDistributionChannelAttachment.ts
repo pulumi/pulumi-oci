@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
  *
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+ *
+ * ## Example Usage
  */
 export function getMediaAssetDistributionChannelAttachment(args: GetMediaAssetDistributionChannelAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetDistributionChannelAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -83,6 +85,8 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
  * This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
  *
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+ *
+ * ## Example Usage
  */
 export function getMediaAssetDistributionChannelAttachmentOutput(args: GetMediaAssetDistributionChannelAttachmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaAssetDistributionChannelAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

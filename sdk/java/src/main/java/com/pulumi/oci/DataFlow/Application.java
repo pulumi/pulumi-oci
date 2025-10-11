@@ -144,14 +144,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.archiveUri);
     }
     /**
-     * (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
+     * (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;inputFile&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
     @Export(name="arguments", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> arguments;
 
     /**
-     * @return (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;input_file&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
+     * @return (Updatable) The arguments passed to the running application as command line arguments.  An argument is either a plain text or a placeholder. Placeholders are replaced using values from the parameters map.  Each placeholder specified must be represented in the parameters map else the request (POST or PUT) will fail with a HTTP 400 status code.  Placeholders are specified as `Service Api Spec`, where `name` is the name of the parameter. Example:  `[ &#34;--input&#34;, &#34;${input_file}&#34;, &#34;--name&#34;, &#34;John Doe&#34; ]` If &#34;inputFile&#34; has a value of &#34;mydata.xml&#34;, then the value above will be translated to `--input mydata.xml --name &#34;John Doe&#34;`
      * 
      */
     public Output<List<String>> arguments() {
@@ -452,14 +452,14 @@ public class Application extends com.pulumi.resources.CustomResource {
         return this.ownerUserName;
     }
     /**
-     * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
+     * (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;inputFile&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variableX&#34;, value: &#34;${x}&#34;} ]
      * 
      */
     @Export(name="parameters", refs={List.class,ApplicationParameter.class}, tree="[0,1]")
     private Output<List<ApplicationParameter>> parameters;
 
     /**
-     * @return (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;input_file&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variable_x&#34;, value: &#34;${x}&#34;} ]
+     * @return (Updatable) An array of name/value pairs used to fill placeholders found in properties like `Application.arguments`.  The name must be a string of one or more word characters (a-z, A-Z, 0-9, _).  The value can be a string of 0 or more characters of any kind. Example:  [ { name: &#34;iterations&#34;, value: &#34;10&#34;}, { name: &#34;inputFile&#34;, value: &#34;mydata.xml&#34; }, { name: &#34;variableX&#34;, value: &#34;${x}&#34;} ]
      * 
      */
     public Output<List<ApplicationParameter>> parameters() {

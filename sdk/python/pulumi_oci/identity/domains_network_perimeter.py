@@ -1037,6 +1037,8 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
 
         Create a NetworkPerimeter
 
+        ## Example Usage
+
         ## Import
 
         NetworkPerimeters can be imported using the `id`, e.g.
@@ -1139,6 +1141,8 @@ class DomainsNetworkPerimeter(pulumi.CustomResource):
         This resource provides the Network Perimeter resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a NetworkPerimeter
+
+        ## Example Usage
 
         ## Import
 

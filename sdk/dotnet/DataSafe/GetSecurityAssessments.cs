@@ -23,7 +23,7 @@ namespace Pulumi.Oci.DataSafe
         /// requestor has INSPECT permissions on at least one resource directly
         /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
         /// Principal doesn't have access to even one of the child compartments. This is valid only when
-        /// `compartmentIdInSubtree` is set to `true`.
+        /// `compartmentIdInSubtree` is set to `True`.
         /// 
         /// The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.DataSafe
         /// requestor has INSPECT permissions on at least one resource directly
         /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
         /// Principal doesn't have access to even one of the child compartments. This is valid only when
-        /// `compartmentIdInSubtree` is set to `true`.
+        /// `compartmentIdInSubtree` is set to `True`.
         /// 
         /// The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.DataSafe
         /// requestor has INSPECT permissions on at least one resource directly
         /// or indirectly (ACCESSIBLE) (the resource can be in a subcompartment) or to return Not Authorized if
         /// Principal doesn't have access to even one of the child compartments. This is valid only when
-        /// `compartmentIdInSubtree` is set to `true`.
+        /// `compartmentIdInSubtree` is set to `True`.
         /// 
         /// The parameter `compartmentIdInSubtree` applies when you perform ListSecurityAssessments on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.

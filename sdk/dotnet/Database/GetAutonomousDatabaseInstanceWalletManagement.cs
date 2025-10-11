@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Database
         public readonly int GracePeriod;
         public readonly string Id;
         /// <summary>
-        /// Indicates whether to rotate the wallet or not. If `false`, the wallet will not be rotated. The default is `false`.
+        /// Indicates whether to rotate the wallet or not. If `False`, the wallet will not be rotated. The default is `False`.
         /// </summary>
         public readonly bool ShouldRotate;
         /// <summary>

@@ -103,7 +103,7 @@ namespace Pulumi.Oci.LoadBalancer
         public string LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the routing policy to retrieve.  Example: `example_routing_policy`
+        /// The name of the routing policy to retrieve.  Example: `ExampleRoutingPolicy`
         /// </summary>
         [Input("routingPolicyName", required: true)]
         public string RoutingPolicyName { get; set; } = null!;
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name of the routing policy to retrieve.  Example: `example_routing_policy`
+        /// The name of the routing policy to retrieve.  Example: `ExampleRoutingPolicy`
         /// </summary>
         [Input("routingPolicyName", required: true)]
         public Input<string> RoutingPolicyName { get; set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class GetLoadBalancerRoutingPolicyResult
     {
         /// <summary>
-        /// The version of the language in which `condition` of `rules` are composed.
+        /// The version of the language in which `Condition` of `Rules` are composed.
         /// </summary>
         public readonly string ConditionLanguageVersion;
         public readonly string Id;

@@ -97,7 +97,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetListenerArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the listener to get.  Example: `example_listener`
+        /// The name of the listener to get.  Example: `ExampleListener`
         /// </summary>
         [Input("listenerName", required: true)]
         public string ListenerName { get; set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetListenerInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the listener to get.  Example: `example_listener`
+        /// The name of the listener to get.  Example: `ExampleListener`
         /// </summary>
         [Input("listenerName", required: true)]
         public Input<string> ListenerName { get; set; } = null!;
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetListenerResult
     {
         /// <summary>
-        /// The name of the associated backend set.  Example: `example_backend_set`
+        /// The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         public readonly string DefaultBackendSetName;
         public readonly string Id;
@@ -157,7 +157,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public readonly int L3ipIdleTimeout;
         public readonly string ListenerName;
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         public readonly string Name;
         public readonly string NetworkLoadBalancerId;

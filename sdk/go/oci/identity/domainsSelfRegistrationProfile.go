@@ -16,6 +16,8 @@ import (
 //
 // Create a self-registration profile.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // SelfRegistrationProfiles can be imported using the `id`, e.g.

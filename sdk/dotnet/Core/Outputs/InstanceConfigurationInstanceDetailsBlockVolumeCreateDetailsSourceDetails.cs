@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The type can be one of these values: `volume`, `volumeBackup`
+        /// The type can be one of these values: `Volume`, `volumeBackup`
         /// </summary>
         public readonly string Type;
 

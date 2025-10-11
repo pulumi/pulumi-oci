@@ -48,7 +48,7 @@ public final class Config {
     }
 /**
  * (Optional) A PEM formatted RSA private key for the user.
- * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> privateKey() {
@@ -63,7 +63,7 @@ public final class Config {
     }
 /**
  * (Optional) The path to the user&#39;s PEM formatted private key.
- * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+ * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
  * 
  */
     public Optional<String> privateKeyPath() {
@@ -85,7 +85,7 @@ public final class Config {
     }
 /**
  * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
- * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
+ * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disableAutoRetries` field is set to true.
  * 
  */
     public Optional<Integer> retryDurationSeconds() {

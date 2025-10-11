@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
 //
 // Gets the details of the specified referential relation.
+//
+// ## Example Usage
 func LookupSensitiveDataModelReferentialRelation(ctx *pulumi.Context, args *LookupSensitiveDataModelReferentialRelationArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveDataModelReferentialRelationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSensitiveDataModelReferentialRelationResult

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? PrivateIp;
         /// <summary>
-        /// Whether the source/destination check is disabled on the VNIC. Defaults to `false`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
+        /// Whether the source/destination check is disabled on the VNIC. Defaults to `False`, which means the check is performed. For information about why you should skip the source/destination check, see [Using a Private IP as a Route Target](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip).
         /// </summary>
         public readonly bool? SkipSourceDestCheck;
         /// <summary>

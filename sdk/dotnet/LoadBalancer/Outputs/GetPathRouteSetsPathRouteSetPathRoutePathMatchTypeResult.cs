@@ -14,11 +14,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetPathRouteSetsPathRouteSetPathRoutePathMatchTypeResult
     {
         /// <summary>
-        /// Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `path` string against the incoming URI.
-        /// *  **EXACT_MATCH** - Looks for a `path` string that exactly matches the incoming URI path.
-        /// *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `path` string with the best, longest match of the beginning portion of the incoming URI path.
-        /// *  **PREFIX_MATCH** - Looks for a `path` string that matches the beginning portion of the incoming URI path.
-        /// *  **SUFFIX_MATCH** - Looks for a `path` string that matches the ending portion of the incoming URI path.
+        /// Specifies how the load balancing service compares a [PathRoute](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/requests/PathRoute) object's `Path` string against the incoming URI.
+        /// *  **EXACT_MATCH** - Looks for a `Path` string that exactly matches the incoming URI path.
+        /// *  **FORCE_LONGEST_PREFIX_MATCH** - Looks for the `Path` string with the best, longest match of the beginning portion of the incoming URI path.
+        /// *  **PREFIX_MATCH** - Looks for a `Path` string that matches the beginning portion of the incoming URI path.
+        /// *  **SUFFIX_MATCH** - Looks for a `Path` string that matches the ending portion of the incoming URI path.
         /// </summary>
         public readonly string MatchType;
 

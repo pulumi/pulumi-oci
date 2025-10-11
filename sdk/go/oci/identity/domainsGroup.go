@@ -16,6 +16,8 @@ import (
 //
 // Create a group.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // Groups can be imported using the `id`, e.g.

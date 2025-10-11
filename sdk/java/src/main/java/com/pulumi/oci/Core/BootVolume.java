@@ -324,14 +324,14 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
         return this.sizeInGbs;
     }
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     public Output<String> sizeInMbs() {

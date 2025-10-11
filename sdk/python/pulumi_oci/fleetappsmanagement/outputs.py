@@ -2995,7 +2995,7 @@ class ProvisionDeployedResource(dict):
         :param Sequence['ProvisionDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
@@ -3044,7 +3044,7 @@ class ProvisionDeployedResource(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[_builtins.str]:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         return pulumi.get(self, "resource_type")
 
@@ -17033,7 +17033,7 @@ class GetProvisionDeployedResourceResult(dict):
         :param Sequence['GetProvisionDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "resource_instance_lists", resource_instance_lists)
@@ -17077,7 +17077,7 @@ class GetProvisionDeployedResourceResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         return pulumi.get(self, "resource_type")
 
@@ -17551,7 +17551,7 @@ class GetProvisionsProvisionCollectionItemDeployedResourceResult(dict):
         :param Sequence['GetProvisionsProvisionCollectionItemDeployedResourceResourceInstanceListArgs'] resource_instance_lists: Collection of InstanceSummary
         :param _builtins.str resource_name: The name of the resource
         :param _builtins.str resource_provider: The name of the Provider
-        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        :param _builtins.str resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         pulumi.set(__self__, "mode", mode)
         pulumi.set(__self__, "resource_instance_lists", resource_instance_lists)
@@ -17595,7 +17595,7 @@ class GetProvisionsProvisionCollectionItemDeployedResourceResult(dict):
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> _builtins.str:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         return pulumi.get(self, "resource_type")
 

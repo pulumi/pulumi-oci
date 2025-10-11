@@ -178,6 +178,8 @@ def get_target_alert_policy_associations(access_level: Optional[_builtins.str] =
 
     Gets a list of all target-alert policy associations.
 
+    ## Example Usage
+
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.
     :param _builtins.str alert_policy_id: A filter to return policy by it's OCID.
@@ -235,6 +237,8 @@ def get_target_alert_policy_associations_output(access_level: Optional[pulumi.In
     This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
 
     Gets a list of all target-alert policy associations.
+
+    ## Example Usage
 
 
     :param _builtins.str access_level: Valid values are RESTRICTED and ACCESSIBLE. Default is RESTRICTED. Setting this to ACCESSIBLE returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to RESTRICTED permissions are checked and no partial results are displayed.

@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Core
     public partial class ServiceGateway : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+        /// Whether the service gateway blocks all traffic through it. The default is `False`. When this is `True`, traffic is not routed to any services, regardless of route rules.  Example: `True`
         /// </summary>
         [Output("blockTraffic")]
         public Output<bool> BlockTraffic { get; private set; } = null!;
@@ -267,7 +267,7 @@ namespace Pulumi.Oci.Core
     public sealed class ServiceGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Whether the service gateway blocks all traffic through it. The default is `false`. When this is `true`, traffic is not routed to any services, regardless of route rules.  Example: `true`
+        /// Whether the service gateway blocks all traffic through it. The default is `False`. When this is `True`, traffic is not routed to any services, regardless of route rules.  Example: `True`
         /// </summary>
         [Input("blockTraffic")]
         public Input<bool>? BlockTraffic { get; set; }

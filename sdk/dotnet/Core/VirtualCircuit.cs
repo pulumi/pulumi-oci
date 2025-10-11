@@ -190,13 +190,13 @@ namespace Pulumi.Oci.Core
         public Output<string> IpMtu { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` to enable BFD for IPv4 BGP peering, or set to `False` to disable BFD. If this is not set, the default is `False`.
         /// </summary>
         [Output("isBfdEnabled")]
         public Output<bool> IsBfdEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` for the virtual circuit to carry only encrypted traffic, or set to `False` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `False`.
         /// </summary>
         [Output("isTransportMode")]
         public Output<bool> IsTransportMode { get; private set; } = null!;
@@ -238,7 +238,7 @@ namespace Pulumi.Oci.Core
         public Output<string> ReferenceComment { get; private set; } = null!;
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `Phx`
         /// </summary>
         [Output("region")]
         public Output<string> Region { get; private set; } = null!;
@@ -414,13 +414,13 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpMtu { get; set; }
 
         /// <summary>
-        /// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` to enable BFD for IPv4 BGP peering, or set to `False` to disable BFD. If this is not set, the default is `False`.
         /// </summary>
         [Input("isBfdEnabled")]
         public Input<bool>? IsBfdEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` for the virtual circuit to carry only encrypted traffic, or set to `False` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `False`.
         /// </summary>
         [Input("isTransportMode")]
         public Input<bool>? IsTransportMode { get; set; }
@@ -450,7 +450,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `Phx`
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -588,13 +588,13 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpMtu { get; set; }
 
         /// <summary>
-        /// (Updatable) Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` to enable BFD for IPv4 BGP peering, or set to `False` to disable BFD. If this is not set, the default is `False`.
         /// </summary>
         [Input("isBfdEnabled")]
         public Input<bool>? IsBfdEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// (Updatable) Set to `True` for the virtual circuit to carry only encrypted traffic, or set to `False` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `False`.
         /// </summary>
         [Input("isTransportMode")]
         public Input<bool>? IsTransportMode { get; set; }
@@ -642,7 +642,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ReferenceComment { get; set; }
 
         /// <summary>
-        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `phx`
+        /// The Oracle Cloud Infrastructure region where this virtual circuit is located. Example: `Phx`
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }

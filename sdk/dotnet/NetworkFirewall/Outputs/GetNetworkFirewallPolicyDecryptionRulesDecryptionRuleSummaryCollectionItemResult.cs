@@ -16,7 +16,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         /// <summary>
         /// Action:
         /// * NO_DECRYPT - Matching traffic is not decrypted.
-        /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
+        /// * DECRYPT - Matching traffic is decrypted with the specified `Secret` according to the specified `decryptionProfile`.
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.NetworkFirewall.Outputs
         public readonly Outputs.GetNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemPositionResult Position;
         public readonly string? PriorityOrder;
         /// <summary>
-        /// The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        /// The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         public readonly string? Secret;
 

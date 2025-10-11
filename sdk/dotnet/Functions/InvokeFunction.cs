@@ -48,7 +48,7 @@ namespace Pulumi.Oci.Functions
         public Output<bool?> Base64EncodeContent { get; private set; } = null!;
 
         /// <summary>
-        /// Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// Content of the response string, if any. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         [Output("content")]
         public Output<string> Content { get; private set; } = null!;
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Functions
         public Output<string> FunctionId { get; private set; } = null!;
 
         /// <summary>
-        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `InvokeFunctionBody` or `InvokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Functions
         public Output<string> InvokeEndpoint { get; private set; } = null!;
 
         /// <summary>
-        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `InputBodySourcePath` or `InvokeFunctionBodyBase64Encoded` is defined.
         /// </summary>
         [Output("invokeFunctionBody")]
         public Output<string> InvokeFunctionBody { get; private set; } = null!;
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Functions
         public Input<string> FunctionId { get; set; } = null!;
 
         /// <summary>
-        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `InvokeFunctionBody` or `InvokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? InputBodySourcePath { get; set; }
 
         /// <summary>
-        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `InputBodySourcePath` or `InvokeFunctionBodyBase64Encoded` is defined.
         /// </summary>
         [Input("invokeFunctionBody")]
         public Input<string>? InvokeFunctionBody { get; set; }
@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Functions
         public Input<bool>? Base64EncodeContent { get; set; }
 
         /// <summary>
-        /// Content of the response string, if any. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// Content of the response string, if any. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
@@ -225,7 +225,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? FunctionId { get; set; }
 
         /// <summary>
-        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `invoke_function_body` or `invoke_function_body_base64_encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
+        /// An absolute path to a file on the local system that contains the input to be provided to the function. Cannot be defined if `InvokeFunctionBody` or `InvokeFunctionBodyBase64Encoded` is defined. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -237,7 +237,7 @@ namespace Pulumi.Oci.Functions
         public Input<string>? InvokeEndpoint { get; set; }
 
         /// <summary>
-        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `input_body_source_path` or `invoke_function_body_base64_encoded` is defined.
+        /// The body of the function invocation. Note: The maximum size of the request is limited. This limit is currently 6MB and the endpoint will not accept requests that are bigger than this limit. Cannot be defined if `InputBodySourcePath` or `InvokeFunctionBodyBase64Encoded` is defined.
         /// </summary>
         [Input("invokeFunctionBody")]
         public Input<string>? InvokeFunctionBody { get; set; }

@@ -21,7 +21,7 @@ public final class GetNetworkLoadBalancersResult {
      */
     private String compartmentId;
     /**
-     * @return A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
+     * @return A user-friendly name, which does not have to be unique, and can be changed.  Example: `exampleLoadBalancer`
      * 
      */
     private @Nullable String displayName;
@@ -51,7 +51,7 @@ public final class GetNetworkLoadBalancersResult {
         return this.compartmentId;
     }
     /**
-     * @return A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
+     * @return A user-friendly name, which does not have to be unique, and can be changed.  Example: `exampleLoadBalancer`
      * 
      */
     public Optional<String> displayName() {

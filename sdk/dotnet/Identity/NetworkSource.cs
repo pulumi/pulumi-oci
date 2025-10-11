@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<string>> PublicSourceLists { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `All` and `None` are supported. The default is `All`.
         /// </summary>
         [Output("services")]
         public Output<ImmutableArray<string>> Services { get; private set; } = null!;
@@ -246,7 +246,7 @@ namespace Pulumi.Oci.Identity
         private InputList<string>? _services;
 
         /// <summary>
-        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `All` and `None` are supported. The default is `All`.
         /// </summary>
         public InputList<string> Services
         {
@@ -342,7 +342,7 @@ namespace Pulumi.Oci.Identity
         private InputList<string>? _services;
 
         /// <summary>
-        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `all` and `none` are supported. The default is `all`.
+        /// (Updatable) A list of services allowed to make on-behalf-of requests. These requests can have different source IP addresses than those listed in the network source. Currently, only `All` and `None` are supported. The default is `All`.
         /// </summary>
         public InputList<string> Services
         {

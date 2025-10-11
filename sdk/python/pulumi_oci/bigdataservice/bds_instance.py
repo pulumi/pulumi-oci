@@ -1131,6 +1131,8 @@ class BdsInstance(pulumi.CustomResource):
 
         Creates a new BDS instance.
 
+        ## Example Usage
+
         ## Import
 
         BdsInstances can be imported using the `id`, e.g.
@@ -1178,6 +1180,8 @@ class BdsInstance(pulumi.CustomResource):
         This resource provides the Bds Instance resource in Oracle Cloud Infrastructure Big Data Service service.
 
         Creates a new BDS instance.
+
+        ## Example Usage
 
         ## Import
 

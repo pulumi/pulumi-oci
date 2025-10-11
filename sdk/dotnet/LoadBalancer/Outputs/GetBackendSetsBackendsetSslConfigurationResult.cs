@@ -18,7 +18,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly ImmutableArray<string> CertificateIds;
         /// <summary>
-        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+        /// A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `ExampleCertificateBundle`
         /// </summary>
         public readonly string CertificateName;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly int VerifyDepth;
         /// <summary>
-        /// Whether the load balancer listener should verify peer certificates.  Example: `true`
+        /// Whether the load balancer listener should verify peer certificates.  Example: `True`
         /// </summary>
         public readonly bool VerifyPeerCertificate;
 

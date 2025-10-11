@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Mapped Secret by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyMappedSecret(args: GetNetworkFirewallPolicyMappedSecretArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyMappedSecretResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -68,6 +70,8 @@ export interface GetNetworkFirewallPolicyMappedSecretResult {
  * This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Mapped Secret by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyMappedSecretOutput(args: GetNetworkFirewallPolicyMappedSecretOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

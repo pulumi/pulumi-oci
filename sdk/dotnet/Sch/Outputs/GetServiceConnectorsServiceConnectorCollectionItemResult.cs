@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleServiceConnector`
         /// </summary>
         public readonly string DisplayName;
         /// <summary>

@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
  *
  * Gets a model by identifier
+ *
+ * ## Example Usage
  */
 export function getModel(args: GetModelArgs, opts?: pulumi.InvokeOptions): Promise<GetModelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -105,6 +107,8 @@ export interface GetModelResult {
  * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
  *
  * Gets a model by identifier
+ *
+ * ## Example Usage
  */
 export function getModelOutput(args: GetModelOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetModelResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

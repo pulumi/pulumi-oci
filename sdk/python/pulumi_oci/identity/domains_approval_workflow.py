@@ -1045,6 +1045,8 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
 
         Create ApprovalWorkflow
 
+        ## Example Usage
+
         ## Import
 
         ApprovalWorkflows can be imported using the `id`, e.g.
@@ -1149,6 +1151,8 @@ class DomainsApprovalWorkflow(pulumi.CustomResource):
         This resource provides the Approval Workflow resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create ApprovalWorkflow
+
+        ## Example Usage
 
         ## Import
 

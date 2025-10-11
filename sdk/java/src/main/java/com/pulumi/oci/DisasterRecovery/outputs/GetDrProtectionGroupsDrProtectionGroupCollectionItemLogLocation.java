@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation {
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     private String bucket;
@@ -21,14 +21,14 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocati
      */
     private String namespace;
     /**
-     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     private String object;
 
     private GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation() {}
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     public String bucket() {
@@ -42,7 +42,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocati
         return this.namespace;
     }
     /**
-     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     public String object() {

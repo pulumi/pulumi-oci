@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Kms.Outputs
         /// </summary>
         public readonly string? Object;
         /// <summary>
-        /// (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+        /// (Updatable) Pre-authenticated-request-uri of the backup* `RestoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         /// </summary>
         public readonly string? Uri;
 

@@ -191,7 +191,7 @@ namespace Pulumi.Oci.Monitoring
         public string? Name { get; set; }
 
         /// <summary>
-        /// The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+        /// The source service or application to use when searching for metric definitions.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace")]
         public string? Namespace { get; set; }
@@ -263,7 +263,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+        /// The source service or application to use when searching for metric definitions.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
@@ -305,7 +305,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// The source service or application emitting the metric.  Example: `oci_computeagent`
+        /// The source service or application emitting the metric.  Example: `OciComputeagent`
         /// </summary>
         public readonly string? Namespace;
         /// <summary>

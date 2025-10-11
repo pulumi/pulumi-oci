@@ -34,7 +34,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The parameter value in a user-friendly format. For example, if the `value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
+        /// The parameter value in a user-friendly format. For example, if the `Value` property shows the value 262144 for a big integer parameter, then the `displayValue` property will show the value 256K.
         /// </summary>
         public readonly string DisplayValue;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly string IsModified;
         /// <summary>
-        /// Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `null`.
+        /// Indicates whether the parameter can be modified on a per-PDB basis (`TRUE`) or not (`FALSE`). In a non-CDB, the value of this property is `Null`.
         /// </summary>
         public readonly bool IsPdbModifiable;
         /// <summary>

@@ -76,7 +76,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
         return this.backupId;
     }
     /**
-     * When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+     * When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -86,7 +86,7 @@ public class BackupCancelManagement extends com.pulumi.resources.CustomResource 
     private Output</* @Nullable */ Integer> cancelBackupTrigger;
 
     /**
-     * @return When changed to a different integer, re-triggers cancel backup on the backup specified by the backup_id
+     * @return When changed to a different integer, re-triggers cancel backup on the backup specified by the backupId
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

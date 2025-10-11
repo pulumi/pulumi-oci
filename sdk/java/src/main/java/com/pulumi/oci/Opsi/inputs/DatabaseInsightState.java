@@ -217,14 +217,14 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      * 
      */
     @Import(name="dbmPrivateEndpointId")
     private @Nullable Output<String> dbmPrivateEndpointId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
      * 
      */
     public Optional<Output<String>> dbmPrivateEndpointId() {
@@ -964,7 +964,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
          * 
          * @return builder
          * 
@@ -975,7 +975,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+         * @param dbmPrivateEndpointId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
          * 
          * @return builder
          * 

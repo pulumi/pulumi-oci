@@ -70,7 +70,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// * oci-tls-12-13-wider-ssl-cipher-suite-v1
         /// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
         /// 
-        /// example: `example_cipher_suite`
+        /// example: `ExampleCipherSuite`
         /// 
         /// 
         /// ** IMPORTANT **
@@ -158,7 +158,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// * oci-tls-12-13-wider-ssl-cipher-suite-v1
         /// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
         /// 
-        /// example: `example_cipher_suite`
+        /// example: `ExampleCipherSuite`
         /// 
         /// 
         /// ** IMPORTANT **
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// * oci-tls-12-13-wider-ssl-cipher-suite-v1
         /// * oci-tls-11-12-13-wider-ssl-cipher-suite-v1
         /// 
-        /// example: `example_cipher_suite`
+        /// example: `ExampleCipherSuite`
         /// 
         /// 
         /// ** IMPORTANT **

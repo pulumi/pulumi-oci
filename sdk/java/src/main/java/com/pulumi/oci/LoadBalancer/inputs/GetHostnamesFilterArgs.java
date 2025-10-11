@@ -19,14 +19,14 @@ public final class GetHostnamesFilterArgs extends com.pulumi.resources.ResourceA
     public static final GetHostnamesFilterArgs Empty = new GetHostnamesFilterArgs();
 
     /**
-     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetHostnamesFilterArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetHostnamesFilterArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+         * @param name A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
          * 
          * @return builder
          * 

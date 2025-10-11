@@ -36,17 +36,17 @@ public final class GetSddcInitialConfigurationInitialClusterConfigurationNetwork
      */
     private String nsxVtepVlanId;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
      */
     private String provisioningSubnetId;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
      */
     private String provisioningVlanId;
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
      */
     private String replicationVlanId;
@@ -103,21 +103,21 @@ public final class GetSddcInitialConfigurationInitialClusterConfigurationNetwork
         return this.nsxVtepVlanId;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
      */
     public String provisioningSubnetId() {
         return this.provisioningSubnetId;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
      */
     public String provisioningVlanId() {
         return this.provisioningVlanId;
     }
     /**
-     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
+     * @return (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
      */
     public String replicationVlanId() {

@@ -18,10 +18,10 @@ namespace Pulumi.Oci.Core
     ///     * If you change the tunnel's routing type or BGP session configuration, the tunnel will go
     ///     down while it's reprovisioned.
     ///     
-    ///     * If you want to switch the tunnel's `routing` from `STATIC` to `BGP`, make sure the tunnel's
+    ///     * If you want to switch the tunnel's `Routing` from `STATIC` to `BGP`, make sure the tunnel's
     ///     BGP session configuration attributes have been set (bgpSessionConfig).
     ///     
-    ///     * If you want to switch the tunnel's `routing` from `BGP` to `STATIC`, make sure the
+    ///     * If you want to switch the tunnel's `Routing` from `BGP` to `STATIC`, make sure the
     ///     IPSecConnection already has at least one valid CIDR
     ///     static route.
     /// 

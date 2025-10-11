@@ -129,14 +129,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     @Import(name="isEstimateCurrentEvent")
     private @Nullable Output<Boolean> isEstimateCurrentEvent;
 
     /**
-     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+     * @return (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
      * 
      */
     public Optional<Output<Boolean>> isEstimateCurrentEvent() {
@@ -189,14 +189,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     @Import(name="isSupportColonlessIdent")
     private @Nullable Output<Boolean> isSupportColonlessIdent;
 
     /**
-     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+     * @return (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
      * 
      */
     public Optional<Output<Boolean>> isSupportColonlessIdent() {
@@ -204,14 +204,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     @Import(name="isWithPriority")
     private @Nullable Output<Boolean> isWithPriority;
 
     /**
-     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+     * @return (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
      * 
      */
     public Optional<Output<Boolean>> isWithPriority() {
@@ -459,26 +459,26 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
     }
 
     /**
-     * (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 
      * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
      * 
-     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     @Import(name="types")
     private @Nullable Output<Map<String,String>> types;
 
     /**
-     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+     * @return (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
      * 
      * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
      * 
      * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
      * 
-     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+     * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
      * 
      */
     public Optional<Output<Map<String,String>>> types() {
@@ -696,7 +696,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
          * 
          * @return builder
          * 
@@ -707,7 +707,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+         * @param isEstimateCurrentEvent (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the timeKey is specified.
          * 
          * @return builder
          * 
@@ -780,7 +780,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
          * 
          * @return builder
          * 
@@ -791,7 +791,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+         * @param isSupportColonlessIdent (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd supportColonlessIdent parameter.
          * 
          * @return builder
          * 
@@ -801,7 +801,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
          * 
          * @return builder
          * 
@@ -812,7 +812,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+         * @param isWithPriority (Updatable) Specifies with priority or not. Corresponds to the Fluentd withPriority parameter.
          * 
          * @return builder
          * 
@@ -1178,13 +1178,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
          * 
          * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
          * 
          * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
          * 
-         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
          * 
          * @return builder
          * 
@@ -1195,13 +1195,13 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs
         }
 
         /**
-         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+         * @param types (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; {@literal @}type csv keys time,host,req_id,user timeKey time &lt;/parse&gt;
          * 
          * This incoming event: &#34;2013/02/28 12:00:00,192.168.0.1,111,-&#34;
          * 
          * is parsed as: 1362020400 (2013/02/28/ 12:00:00)
          * 
-         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;req_id&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
+         * record: { &#34;host&#34;   : &#34;192.168.0.1&#34;, &#34;reqId&#34; : &#34;111&#34;, &#34;user&#34;   : &#34;-&#34; }
          * 
          * @return builder
          * 

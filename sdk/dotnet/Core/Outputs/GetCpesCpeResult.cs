@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpAddress;
         /// <summary>
-        /// Indicates whether this CPE is of type `private` or not.
+        /// Indicates whether this CPE is of type `Private` or not.
         /// </summary>
         public readonly bool IsPrivate;
         /// <summary>

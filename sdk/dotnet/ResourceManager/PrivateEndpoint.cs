@@ -95,7 +95,7 @@ namespace Pulumi.Oci.ResourceManager
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
+        /// (Updatable) When `True`, allows the private endpoint to be used with a configuration source provider.
         /// </summary>
         [Output("isUsedWithConfigurationSourceProvider")]
         public Output<bool> IsUsedWithConfigurationSourceProvider { get; private set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.ResourceManager
         }
 
         /// <summary>
-        /// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
+        /// (Updatable) When `True`, allows the private endpoint to be used with a configuration source provider.
         /// </summary>
         [Input("isUsedWithConfigurationSourceProvider")]
         public Input<bool>? IsUsedWithConfigurationSourceProvider { get; set; }
@@ -337,7 +337,7 @@ namespace Pulumi.Oci.ResourceManager
         }
 
         /// <summary>
-        /// (Updatable) When `true`, allows the private endpoint to be used with a configuration source provider.
+        /// (Updatable) When `True`, allows the private endpoint to be used with a configuration source provider.
         /// </summary>
         [Input("isUsedWithConfigurationSourceProvider")]
         public Input<bool>? IsUsedWithConfigurationSourceProvider { get; set; }

@@ -3892,6 +3892,8 @@ public final class DataIntegrationFunctions {
      * 
      * Retrieves a task using the specified identifier.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args) {
         return getWorkspaceTask(args, InvokeOptions.Empty);
@@ -3900,6 +3902,8 @@ public final class DataIntegrationFunctions {
      * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
      * 
      * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetWorkspaceTaskResult> getWorkspaceTaskPlain(GetWorkspaceTaskPlainArgs args) {
@@ -3910,6 +3914,8 @@ public final class DataIntegrationFunctions {
      * 
      * Retrieves a task using the specified identifier.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
@@ -3919,6 +3925,8 @@ public final class DataIntegrationFunctions {
      * 
      * Retrieves a task using the specified identifier.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetWorkspaceTaskResult> getWorkspaceTask(GetWorkspaceTaskArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", TypeShape.of(GetWorkspaceTaskResult.class), args, Utilities.withVersion(options));
@@ -3927,6 +3935,8 @@ public final class DataIntegrationFunctions {
      * This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
      * 
      * Retrieves a task using the specified identifier.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetWorkspaceTaskResult> getWorkspaceTaskPlain(GetWorkspaceTaskPlainArgs args, InvokeOptions options) {

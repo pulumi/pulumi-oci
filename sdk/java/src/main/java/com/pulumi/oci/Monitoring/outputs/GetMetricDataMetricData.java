@@ -50,7 +50,7 @@ public final class GetMetricDataMetricData {
      */
     private String name;
     /**
-     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
      * 
      */
     private String namespace;
@@ -134,7 +134,7 @@ public final class GetMetricDataMetricData {
         return this.name;
     }
     /**
-     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {

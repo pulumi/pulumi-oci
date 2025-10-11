@@ -235,14 +235,14 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     @Import(name="uniqueSizeInGbs")
     private @Nullable Output<String> uniqueSizeInGbs;
 
     /**
-     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     public Optional<Output<String>> uniqueSizeInGbs() {
@@ -250,14 +250,14 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     @Import(name="uniqueSizeInMbs")
     private @Nullable Output<String> uniqueSizeInMbs;
 
     /**
-     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+     * @return The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
      * 
      */
     public Optional<Output<String>> uniqueSizeInMbs() {
@@ -636,7 +636,7 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param uniqueSizeInGbs The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+         * @param uniqueSizeInGbs The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
          * 
          * @return builder
          * 
@@ -647,7 +647,7 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param uniqueSizeInGbs The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `size_in_gbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+         * @param uniqueSizeInGbs The aggregate size used by the volume group backup, in GBs.  It is typically smaller than `sizeInGbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
          * 
          * @return builder
          * 
@@ -657,7 +657,7 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param uniqueSizeInMbs The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+         * @param uniqueSizeInMbs The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class VolumeGroupBackupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param uniqueSizeInMbs The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `size_in_mbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
+         * @param uniqueSizeInMbs The aggregate size used by the volume group backup, in MBs.  It is typically smaller than `sizeInMbs`, depending on the space consumed on the volume group and whether the volume backup is full or incremental.
          * 
          * @return builder
          * 

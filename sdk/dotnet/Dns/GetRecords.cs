@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets all records in the specified zone.
         /// 
-        /// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        /// The results are sorted by `Domain` in alphabetical order by default. For more information about records,
         /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets all records in the specified zone.
         /// 
-        /// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        /// The results are sorted by `Domain` in alphabetical order by default. For more information about records,
         /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Gets all records in the specified zone.
         /// 
-        /// The results are sorted by `domain` in alphabetical order by default. For more information about records,
+        /// The results are sorted by `Domain` in alphabetical order by default. For more information about records,
         /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.

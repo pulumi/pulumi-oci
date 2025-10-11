@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Mapped Secret by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetNetworkFirewallPolicyMappedSecretResult> InvokeAsync(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyMappedSecretResult>("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args ?? new GetNetworkFirewallPolicyMappedSecretArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Mapped Secret by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyMappedSecretResult> Invoke(GetNetworkFirewallPolicyMappedSecretInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyMappedSecretResult>("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args ?? new GetNetworkFirewallPolicyMappedSecretInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Mapped Secret by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyMappedSecretResult> Invoke(GetNetworkFirewallPolicyMappedSecretInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyMappedSecretResult>("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", args ?? new GetNetworkFirewallPolicyMappedSecretInvokeArgs(), options.WithDefaults());

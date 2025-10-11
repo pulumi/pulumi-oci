@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Creates a data source.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * DataSources can be imported using the `id`, e.g.

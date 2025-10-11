@@ -127,7 +127,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
+        /// When set to `True`, the request performs validation on the submitted data without modifying configuration item details.
         /// </summary>
         [Output("opcDryRun")]
         public Output<bool> OpcDryRun { get; private set; } = null!;
@@ -273,7 +273,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
+        /// When set to `True`, the request performs validation on the submitted data without modifying configuration item details.
         /// </summary>
         [Input("opcDryRun")]
         public Input<bool>? OpcDryRun { get; set; }
@@ -369,7 +369,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// When set to `true`, the request performs validation on the submitted data without modifying configuration item details.
+        /// When set to `True`, the request performs validation on the submitted data without modifying configuration item details.
         /// </summary>
         [Input("opcDryRun")]
         public Input<bool>? OpcDryRun { get; set; }

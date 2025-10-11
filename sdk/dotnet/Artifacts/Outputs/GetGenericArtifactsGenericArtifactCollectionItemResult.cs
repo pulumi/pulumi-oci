@@ -59,7 +59,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// Filter results by a prefix for `version` and return artifacts that that begin with the specified prefix in their version.
+        /// Filter results by a prefix for `Version` and return artifacts that that begin with the specified prefix in their version.
         /// </summary>
         public readonly string Version;
 

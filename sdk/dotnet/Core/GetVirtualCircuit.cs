@@ -184,11 +184,11 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string IpMtu;
         /// <summary>
-        /// Set to `true` to enable BFD for IPv4 BGP peering, or set to `false` to disable BFD. If this is not set, the default is `false`.
+        /// Set to `True` to enable BFD for IPv4 BGP peering, or set to `False` to disable BFD. If this is not set, the default is `False`.
         /// </summary>
         public readonly bool IsBfdEnabled;
         /// <summary>
-        /// Set to `true` for the virtual circuit to carry only encrypted traffic, or set to `false` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `false`.
+        /// Set to `True` for the virtual circuit to carry only encrypted traffic, or set to `False` for the virtual circuit to carry unencrypted traffic. If this is not set, the default is `False`.
         /// </summary>
         public readonly bool IsTransportMode;
         /// <summary>

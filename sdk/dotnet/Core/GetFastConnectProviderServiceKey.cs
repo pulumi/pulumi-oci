@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Core
         public string ProviderServiceId { get; set; } = null!;
 
         /// <summary>
-        /// The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+        /// The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `Description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         /// </summary>
         [Input("providerServiceKeyName", required: true)]
         public string ProviderServiceKeyName { get; set; } = null!;
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Core
         public Input<string> ProviderServiceId { get; set; } = null!;
 
         /// <summary>
-        /// The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
+        /// The provider service key that the provider gives you when you set up a virtual circuit connection from the provider to Oracle Cloud Infrastructure. You can set up that connection and get your provider service key at the provider's website or portal. For the portal location, see the `Description` attribute of the [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         /// </summary>
         [Input("providerServiceKeyName", required: true)]
         public Input<string> ProviderServiceKeyName { get; set; } = null!;

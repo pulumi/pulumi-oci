@@ -696,6 +696,8 @@ class SqlEndpoint(pulumi.CustomResource):
 
         Create a new Sql Endpoint.
 
+        ## Example Usage
+
         ## Import
 
         SqlEndpoints can be imported using the `id`, e.g.
@@ -740,6 +742,8 @@ class SqlEndpoint(pulumi.CustomResource):
         Resource Discovery is not supported for this resource.
 
         Create a new Sql Endpoint.
+
+        ## Example Usage
 
         ## Import
 

@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+ *
+ * ## Example Usage
  */
 export function getExadataInfrastructures(args: GetExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -72,6 +74,8 @@ export interface GetExadataInfrastructuresResult {
  *
  * Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+ *
+ * ## Example Usage
  */
 export function getExadataInfrastructuresOutput(args: GetExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Inputs
         public Input<string>? ResourceProvider { get; set; }
 
         /// <summary>
-        /// The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance
+        /// The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance 
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }

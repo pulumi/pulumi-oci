@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetAvailabilityDomainResult {
     /**
-     * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
+     * @return The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
      */
     private Integer adNumber;
@@ -34,7 +34,7 @@ public final class GetAvailabilityDomainResult {
 
     private GetAvailabilityDomainResult() {}
     /**
-     * @return The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
+     * @return The number of the Availability Domain. For example, the `adNumber` for YXol:US-ASHBURN-AD-1 would be &#34;1&#34;
      * 
      */
     public Integer adNumber() {

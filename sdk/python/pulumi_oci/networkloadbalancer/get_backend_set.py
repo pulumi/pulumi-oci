@@ -193,6 +193,8 @@ def get_backend_set(backend_set_name: Optional[_builtins.str] = None,
 
     Retrieves the configuration information for the specified backend set.
 
+    ## Example Usage
+
 
     :param _builtins.str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`
     :param _builtins.str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -224,6 +226,8 @@ def get_backend_set_output(backend_set_name: Optional[pulumi.Input[_builtins.str
     This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
 
     Retrieves the configuration information for the specified backend set.
+
+    ## Example Usage
 
 
     :param _builtins.str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`

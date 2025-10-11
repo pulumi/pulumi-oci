@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetRuleSetsFilterResult
     {
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet`
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

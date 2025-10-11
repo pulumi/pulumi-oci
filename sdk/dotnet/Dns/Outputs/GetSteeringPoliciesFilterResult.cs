@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Dns.Outputs
     public sealed class GetSteeringPoliciesFilterResult
     {
         /// <summary>
-        /// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        /// A user-friendly name for the answer, unique within the steering policy. An answer's `Name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

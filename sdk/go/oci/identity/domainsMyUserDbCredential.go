@@ -16,6 +16,8 @@ import (
 //
 // Create a user's own database (DB) credential.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // MyUserDbCredentials can be imported using the `id`, e.g.

@@ -177,7 +177,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// A user-friendly name, which does not have to be unique, and can be changed.  Example: `example_load_balancer`
+        /// A user-friendly name, which does not have to be unique, and can be changed.  Example: `ExampleLoadBalancer`
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetNetworkLoadBalancersFilterResult> Filters;

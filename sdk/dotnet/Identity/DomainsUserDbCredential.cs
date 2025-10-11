@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's database (DB) credentials.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// UserDbCredentials can be imported using the `id`, e.g.

@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> DnssecState { get; private set; } = null!;
 
         /// <summary>
-        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         [Output("externalDownstreams")]
         public Output<ImmutableArray<Outputs.ActionCreateZoneFromZoneFileExternalDownstream>> ExternalDownstreams { get; private set; } = null!;
@@ -287,7 +287,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.ActionCreateZoneFromZoneFileExternalDownstreamGetArgs>? _externalDownstreams;
 
         /// <summary>
-        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         public InputList<Inputs.ActionCreateZoneFromZoneFileExternalDownstreamGetArgs> ExternalDownstreams
         {

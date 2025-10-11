@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets the details of the specified referential relation.
+ *
+ * ## Example Usage
  */
 export function getSensitiveDataModelReferentialRelation(args: GetSensitiveDataModelReferentialRelationArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelReferentialRelationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -71,6 +73,8 @@ export interface GetSensitiveDataModelReferentialRelationResult {
  * This data source provides details about a specific Sensitive Data Model Referential Relation resource in Oracle Cloud Infrastructure Data Safe service.
  *
  * Gets the details of the specified referential relation.
+ *
+ * ## Example Usage
  */
 export function getSensitiveDataModelReferentialRelationOutput(args: GetSensitiveDataModelReferentialRelationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelReferentialRelationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

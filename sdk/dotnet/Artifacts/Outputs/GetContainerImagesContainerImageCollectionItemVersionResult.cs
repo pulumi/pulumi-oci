@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// A filter to return container images that match the version.  Example: `foo` or `foo*`
+        /// A filter to return container images that match the version.  Example: `Foo` or `foo*`
         /// </summary>
         public readonly string Version;
 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetRouteTablesRouteTableRouteRuleResult
     {
         /// <summary>
-        /// Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+        /// Deprecated. Instead use `Destination` and `destinationType`. Requests that include both `cidrBlock` and `Destination` will be rejected.
         /// </summary>
         public readonly string CidrBlock;
         /// <summary>
@@ -26,9 +26,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Destination;
         /// <summary>
-        /// Type of destination for the rule. Required if you provide a `destination`.
-        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+        /// Type of destination for the rule. Required if you provide a `Destination`.
+        /// * `CIDR_BLOCK`: If the rule's `Destination` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         /// </summary>
         public readonly string DestinationType;
         /// <summary>

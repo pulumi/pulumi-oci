@@ -183,7 +183,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
+        /// Deprecated. Instead use `ObjectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
         /// </summary>
         public readonly string Object;
         /// <summary>

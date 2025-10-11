@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
-        /// is required unless the query parameter `id` is specified.
+        /// is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
-        /// is required unless the query parameter `id` is specified.
+        /// is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleets in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
-        /// is required unless the query parameter `id` is specified.
+        /// is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage

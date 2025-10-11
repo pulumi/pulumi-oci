@@ -24,7 +24,7 @@ public final class DbSystemSource {
      */
     private @Nullable Boolean isHavingRestoreConfigOverrides;
     /**
-     * @return The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
      * 
      */
     private String sourceType;
@@ -45,7 +45,7 @@ public final class DbSystemSource {
         return Optional.ofNullable(this.isHavingRestoreConfigOverrides);
     }
     /**
-     * @return The source descriminator. Example: `{&#34;source_type&#34;: &#34;BACKUP&#34;}`.
+     * @return The source descriminator. Example: `{&#34;sourceType&#34;: &#34;BACKUP&#34;}`.
      * 
      */
     public String sourceType() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class GetPathRouteSetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+        /// The unique name for this set of path route rules. Avoid entering confidential information.  Example: `ExamplePathRouteSet`
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

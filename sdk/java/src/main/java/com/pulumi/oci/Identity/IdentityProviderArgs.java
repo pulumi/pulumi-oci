@@ -63,14 +63,14 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     @Import(name="freeformAttributes")
     private @Nullable Output<Map<String,String>> freeformAttributes;
 
     /**
-     * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     public Optional<Output<Map<String,String>>> freeformAttributes() {
@@ -270,7 +270,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param freeformAttributes (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+         * @param freeformAttributes (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class IdentityProviderArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param freeformAttributes (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+         * @param freeformAttributes (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
          * 
          * @return builder
          * 

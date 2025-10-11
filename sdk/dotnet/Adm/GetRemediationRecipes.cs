@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of Remediation Recipes based on the specified query parameters.
-        /// The query parameters `compartmentId` or `id` must be provided.
+        /// The query parameters `compartmentId` or `Id` must be provided.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of Remediation Recipes based on the specified query parameters.
-        /// The query parameters `compartmentId` or `id` must be provided.
+        /// The query parameters `compartmentId` or `Id` must be provided.
         /// 
         /// 
         /// ## Example Usage
@@ -77,7 +77,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Recipes in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of Remediation Recipes based on the specified query parameters.
-        /// The query parameters `compartmentId` or `id` must be provided.
+        /// The query parameters `compartmentId` or `Id` must be provided.
         /// 
         /// 
         /// ## Example Usage

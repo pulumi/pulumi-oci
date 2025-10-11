@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Creates a new task ready for performing data integrations. There are specialized types of tasks that include data loader and integration tasks.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * WorkspaceTasks can be imported using the `id`, e.g.

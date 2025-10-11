@@ -1388,6 +1388,8 @@ def get_connection(connection_id: Optional[_builtins.str] = None,
 
     Retrieves a Connection.
 
+    ## Example Usage
+
 
     :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.
     """
@@ -1519,6 +1521,8 @@ def get_connection_output(connection_id: Optional[pulumi.Input[_builtins.str]] =
     This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
 
     Retrieves a Connection.
+
+    ## Example Usage
 
 
     :param _builtins.str connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Connection.

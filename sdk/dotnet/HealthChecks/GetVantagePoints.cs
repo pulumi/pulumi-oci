@@ -114,7 +114,7 @@ namespace Pulumi.Oci.HealthChecks
         }
 
         /// <summary>
-        /// Filters results that exactly match the `name` field.
+        /// Filters results that exactly match the `Name` field.
         /// </summary>
         [Input("name")]
         public string? Name { get; set; }
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.HealthChecks
         }
 
         /// <summary>
-        /// Filters results that exactly match the `name` field.
+        /// Filters results that exactly match the `Name` field.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

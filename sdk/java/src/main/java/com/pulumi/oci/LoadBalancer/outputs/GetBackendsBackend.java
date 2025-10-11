@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetBackendsBackend {
     /**
-     * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     private String backendsetName;
@@ -68,7 +68,7 @@ public final class GetBackendsBackend {
 
     private GetBackendsBackend() {}
     /**
-     * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     public String backendsetName() {

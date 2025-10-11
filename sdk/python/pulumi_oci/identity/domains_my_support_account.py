@@ -909,6 +909,8 @@ class DomainsMySupportAccount(pulumi.CustomResource):
 
         Create a user's own support account.
 
+        ## Example Usage
+
         ## Import
 
         MySupportAccounts can be imported using the `id`, e.g.
@@ -988,6 +990,8 @@ class DomainsMySupportAccount(pulumi.CustomResource):
         This resource provides the My Support Account resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's own support account.
+
+        ## Example Usage
 
         ## Import
 

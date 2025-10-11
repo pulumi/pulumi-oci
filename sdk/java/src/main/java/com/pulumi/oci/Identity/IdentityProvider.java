@@ -130,14 +130,14 @@ public class IdentityProvider extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     @Export(name="freeformAttributes", refs={Map.class,String.class}, tree="[0,1,1]")
     private Output<Map<String,String>> freeformAttributes;
 
     /**
-     * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * @return (Updatable) Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     public Output<Map<String,String>> freeformAttributes() {

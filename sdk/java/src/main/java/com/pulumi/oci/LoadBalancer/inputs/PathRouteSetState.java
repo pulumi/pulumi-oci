@@ -33,14 +33,14 @@ public final class PathRouteSetState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+     * The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+     * @return The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     public Optional<Output<String>> name() {
@@ -118,7 +118,7 @@ public final class PathRouteSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+         * @param name The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class PathRouteSetState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_path_route_set`
+         * @param name The name for this set of path route rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `examplePathRouteSet`
          * 
          * @return builder
          * 

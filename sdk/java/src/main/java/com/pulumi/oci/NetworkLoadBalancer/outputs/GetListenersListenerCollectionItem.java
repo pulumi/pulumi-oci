@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetListenersListenerCollectionItem {
     /**
-     * @return The name of the associated backend set.  Example: `example_backend_set`
+     * @return The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     private String defaultBackendSetName;
@@ -34,7 +34,7 @@ public final class GetListenersListenerCollectionItem {
      */
     private Integer l3ipIdleTimeout;
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     private String name;
@@ -66,7 +66,7 @@ public final class GetListenersListenerCollectionItem {
 
     private GetListenersListenerCollectionItem() {}
     /**
-     * @return The name of the associated backend set.  Example: `example_backend_set`
+     * @return The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     public String defaultBackendSetName() {
@@ -97,7 +97,7 @@ public final class GetListenersListenerCollectionItem {
         return this.l3ipIdleTimeout;
     }
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     public String name() {

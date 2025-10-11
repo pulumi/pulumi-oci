@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetListenerRulesListenerRuleRuleCondition {
     /**
-     * @return The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+     * @return The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
     private String attributeName;
@@ -32,7 +32,7 @@ public final class GetListenerRulesListenerRuleRuleCondition {
 
     private GetListenerRulesListenerRuleRuleCondition() {}
     /**
-     * @return The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+     * @return The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
     public String attributeName() {

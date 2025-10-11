@@ -32,7 +32,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
      */
     private String id;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      * 
      */
     private Boolean isAutomaticFailoverEnabled;
@@ -122,7 +122,7 @@ public final class GetAutonomousDatabaseDataguardAssociationsAutonomousDatabaseD
         return this.id;
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Output DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      * 
      */
     public Boolean isAutomaticFailoverEnabled() {

@@ -16,6 +16,8 @@ import (
 //
 // # Create an Identity Provider
 //
+// ## Example Usage
+//
 // ## Import
 //
 // IdentityProviders can be imported using the `id`, e.g.

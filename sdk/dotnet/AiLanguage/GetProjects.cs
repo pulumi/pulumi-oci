@@ -15,6 +15,9 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Returns a list of  Projects.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetProjectsResult> InvokeAsync(GetProjectsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectsResult>("oci:AiLanguage/getProjects:getProjects", args ?? new GetProjectsArgs(), options.WithDefaults());
@@ -23,6 +26,9 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Returns a list of  Projects.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetProjectsResult> Invoke(GetProjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:AiLanguage/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());
@@ -31,6 +37,9 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Returns a list of  Projects.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetProjectsResult> Invoke(GetProjectsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectsResult>("oci:AiLanguage/getProjects:getProjects", args ?? new GetProjectsInvokeArgs(), options.WithDefaults());

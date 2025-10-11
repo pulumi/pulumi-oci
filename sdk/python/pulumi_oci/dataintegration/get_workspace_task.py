@@ -386,6 +386,8 @@ def get_workspace_task(expand_references: Optional[_builtins.str] = None,
 
     Retrieves a task using the specified identifier.
 
+    ## Example Usage
+
 
     :param _builtins.str expand_references: Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>
     :param _builtins.str key: The key of the object.
@@ -436,6 +438,8 @@ def get_workspace_task_output(expand_references: Optional[pulumi.Input[_builtins
     This data source provides details about a specific Workspace Task resource in Oracle Cloud Infrastructure Data Integration service.
 
     Retrieves a task using the specified identifier.
+
+    ## Example Usage
 
 
     :param _builtins.str expand_references: Used to expand references of the object. If value is true, then all referenced objects are expanded. If value is false, then shallow objects are returned in place of references. Default is false. <br><br><B>Example:</B><br> <ul> <li><B>?expandReferences=true</B> returns all objects of type data loader task</li> </ul>

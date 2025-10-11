@@ -138,7 +138,7 @@ namespace Pulumi.Oci.HealthChecks
         public double? StartTimeLessThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Filters results that match the `target`.
+        /// Filters results that match the `Target`.
         /// </summary>
         [Input("target")]
         public string? Target { get; set; }
@@ -178,7 +178,7 @@ namespace Pulumi.Oci.HealthChecks
         public Input<double>? StartTimeLessThanOrEqualTo { get; set; }
 
         /// <summary>
-        /// Filters results that match the `target`.
+        /// Filters results that match the `Target`.
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

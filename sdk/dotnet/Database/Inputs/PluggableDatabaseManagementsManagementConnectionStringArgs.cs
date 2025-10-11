@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

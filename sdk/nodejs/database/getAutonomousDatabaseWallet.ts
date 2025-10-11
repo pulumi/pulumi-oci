@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
  *
  * Creates and downloads a wallet for the specified Autonomous Database.
+ *
+ * ## Example Usage
  */
 export function getAutonomousDatabaseWallet(args: GetAutonomousDatabaseWalletArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseWalletResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -74,6 +76,8 @@ export interface GetAutonomousDatabaseWalletResult {
  * This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
  *
  * Creates and downloads a wallet for the specified Autonomous Database.
+ *
+ * ## Example Usage
  */
 export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

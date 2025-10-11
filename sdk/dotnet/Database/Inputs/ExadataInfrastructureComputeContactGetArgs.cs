@@ -19,13 +19,13 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        /// If `True`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `False`, this Exadata Infrastructure contact is not a valid MOS contact.
         /// </summary>
         [Input("isContactMosValidated")]
         public Input<bool>? IsContactMosValidated { get; set; }
 
         /// <summary>
-        /// If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        /// If `True`, this Exadata Infrastructure contact is a primary contact. If `False`, this Exadata Infrastructure is a secondary contact.
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }

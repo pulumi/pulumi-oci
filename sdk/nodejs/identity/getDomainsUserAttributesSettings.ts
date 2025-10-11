@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
  *
  * Search User Schema Attribute Settings
+ *
+ * ## Example Usage
  */
 export function getDomainsUserAttributesSettings(args: GetDomainsUserAttributesSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserAttributesSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -80,6 +82,8 @@ export interface GetDomainsUserAttributesSettingsResult {
  * This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
  *
  * Search User Schema Attribute Settings
+ *
+ * ## Example Usage
  */
 export function getDomainsUserAttributesSettingsOutput(args: GetDomainsUserAttributesSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsUserAttributesSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

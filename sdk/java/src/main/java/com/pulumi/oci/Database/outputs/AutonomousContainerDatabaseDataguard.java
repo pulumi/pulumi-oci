@@ -44,7 +44,7 @@ public final class AutonomousContainerDatabaseDataguard {
      */
     private @Nullable Integer fastStartFailOverLagLimitInSeconds;
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     private @Nullable Boolean isAutomaticFailoverEnabled;
@@ -143,7 +143,7 @@ public final class AutonomousContainerDatabaseDataguard {
         return Optional.ofNullable(this.fastStartFailOverLagLimitInSeconds);
     }
     /**
-     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : is_automatic_failover_enabled = true.
+     * @return Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : isAutomaticFailoverEnabled = true.
      * 
      */
     public Optional<Boolean> isAutomaticFailoverEnabled() {

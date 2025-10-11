@@ -22,7 +22,7 @@ public final class GetLoadBalancersResult {
     private String compartmentId;
     private @Nullable String detail;
     /**
-     * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `example_load_balancer`
+     * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `exampleLoadBalancer`
      * 
      */
     private @Nullable String displayName;
@@ -55,7 +55,7 @@ public final class GetLoadBalancersResult {
         return Optional.ofNullable(this.detail);
     }
     /**
-     * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `example_load_balancer`
+     * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `exampleLoadBalancer`
      * 
      */
     public Optional<String> displayName() {

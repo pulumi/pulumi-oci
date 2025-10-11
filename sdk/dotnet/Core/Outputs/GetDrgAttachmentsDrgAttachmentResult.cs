@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
+        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `False`
         /// </summary>
         public readonly bool IsCrossTenancy;
         public readonly ImmutableArray<Outputs.GetDrgAttachmentsDrgAttachmentNetworkDetailResult> NetworkDetails;

@@ -21,7 +21,7 @@ public final class GetHostnamesHostname {
      */
     private String loadBalancerId;
     /**
-     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     private String name;
@@ -43,7 +43,7 @@ public final class GetHostnamesHostname {
         return this.loadBalancerId;
     }
     /**
-     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+     * @return A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleHostname001`
      * 
      */
     public String name() {

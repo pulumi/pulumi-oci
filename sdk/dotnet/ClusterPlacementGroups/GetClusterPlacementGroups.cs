@@ -124,7 +124,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         public string? CompartmentId { get; set; }
 
         /// <summary>
-        /// When set to `true`, cluster placement groups in all compartments under the specified compartment are returned. The default is set to `false`.
+        /// When set to `True`, cluster placement groups in all compartments under the specified compartment are returned. The default is set to `False`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.ClusterPlacementGroups
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// When set to `true`, cluster placement groups in all compartments under the specified compartment are returned. The default is set to `false`.
+        /// When set to `True`, cluster placement groups in all compartments under the specified compartment are returned. The default is set to `False`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }

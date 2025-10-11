@@ -21,7 +21,7 @@ public final class GetNodePoolOptionResult {
      */
     private String id;
     /**
-     * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
+     * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `nodeImageName` property.
      * 
      */
     private List<String> images;
@@ -54,7 +54,7 @@ public final class GetNodePoolOptionResult {
         return this.id;
     }
     /**
-     * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `node_image_name` property.
+     * @return Deprecated. See sources. When creating a node pool, only image names contained in this property can be passed to the `nodeImageName` property.
      * 
      */
     public List<String> images() {

@@ -38,7 +38,7 @@ namespace Pulumi.Oci.LogAnalytics
     public partial class NamespaceIngestTimeRulesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class NamespaceIngestTimeRulesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.LogAnalytics
     public sealed class NamespaceIngestTimeRulesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

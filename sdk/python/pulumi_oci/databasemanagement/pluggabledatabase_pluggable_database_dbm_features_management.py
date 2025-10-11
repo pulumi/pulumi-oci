@@ -209,6 +209,8 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
 
         Enables a Database Management feature for the specified Oracle cloud pluggable database.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_pluggable_database_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -229,6 +231,8 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         This resource provides the Pluggabledatabase Pluggable Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 
         Enables a Database Management feature for the specified Oracle cloud pluggable database.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

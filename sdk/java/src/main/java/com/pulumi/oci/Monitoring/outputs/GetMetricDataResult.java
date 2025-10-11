@@ -35,7 +35,7 @@ public final class GetMetricDataResult {
      */
     private List<GetMetricDataMetricData> metricDatas;
     /**
-     * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
+     * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `ociComputeagent`
      * 
      */
     private String namespace;
@@ -84,7 +84,7 @@ public final class GetMetricDataResult {
         return this.metricDatas;
     }
     /**
-     * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `oci_computeagent`
+     * @return The reference provided in a metric definition to indicate the source service or application that emitted the metric.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {

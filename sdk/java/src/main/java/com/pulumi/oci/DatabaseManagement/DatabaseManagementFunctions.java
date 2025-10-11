@@ -21418,6 +21418,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args) {
         return getManagedDatabaseSqlPlanBaselines(args, InvokeOptions.Empty);
@@ -21426,6 +21428,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args) {
@@ -21436,6 +21440,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
@@ -21445,6 +21451,8 @@ public final class DatabaseManagementFunctions {
      * 
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
@@ -21453,6 +21461,8 @@ public final class DatabaseManagementFunctions {
      * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
      * 
      * Lists the SQL plan baselines for the specified Managed Database.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args, InvokeOptions options) {

@@ -88,7 +88,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
      */
     private String operation;
     /**
-     * @return The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
+     * @return The current mode of the optimizer, such as all_rows, firstRowsN (where n = 1, 10, 100, 1000, and so on).
      * 
      */
     private String optimizerMode;
@@ -265,7 +265,7 @@ public final class GetManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan {
         return this.operation;
     }
     /**
-     * @return The current mode of the optimizer, such as all_rows, first_rows_n (where n = 1, 10, 100, 1000, and so on).
+     * @return The current mode of the optimizer, such as all_rows, firstRowsN (where n = 1, 10, 100, 1000, and so on).
      * 
      */
     public String optimizerMode() {

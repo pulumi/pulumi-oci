@@ -30,7 +30,7 @@ namespace Pulumi.Oci.FleetAppsManagement.Outputs
         /// </summary>
         public readonly string? ResourceProvider;
         /// <summary>
-        /// The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance
+        /// The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance 
         /// </summary>
         public readonly string? ResourceType;
 

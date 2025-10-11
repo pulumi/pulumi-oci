@@ -64,7 +64,7 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable List<DrProtectionGroupMemberBlockVolumeOperation> blockVolumeOperations;
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     private @Nullable String bucket;
@@ -292,7 +292,7 @@ public final class DrProtectionGroupMember {
         return this.blockVolumeOperations == null ? List.of() : this.blockVolumeOperations;
     }
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     public Optional<String> bucket() {

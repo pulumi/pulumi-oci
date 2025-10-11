@@ -16,6 +16,8 @@ import (
 //
 // Create a user's own Auth token.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // MyAuthTokens can be imported using the `id`, e.g.

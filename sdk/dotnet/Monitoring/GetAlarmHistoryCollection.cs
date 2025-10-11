@@ -209,7 +209,7 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Whether the alarm is enabled.  Example: `true`
+        /// Whether the alarm is enabled.  Example: `True`
         /// </summary>
         public readonly bool IsEnabled;
         public readonly string? TimestampGreaterThanOrEqualTo;

@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Url List by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyUrlList(args: GetNetworkFirewallPolicyUrlListArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyUrlListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -60,6 +62,8 @@ export interface GetNetworkFirewallPolicyUrlListResult {
  * This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Url List by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyUrlListOutput(args: GetNetworkFirewallPolicyUrlListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyUrlListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

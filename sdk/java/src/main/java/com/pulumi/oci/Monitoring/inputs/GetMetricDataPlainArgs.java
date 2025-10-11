@@ -71,14 +71,14 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+     * The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
      * 
      */
     @Import(name="namespace", required=true)
     private String namespace;
 
     /**
-     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
      * 
      */
     public String namespace() {
@@ -236,7 +236,7 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param namespace The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+         * @param namespace The source service or application to use when searching for metric data points to aggregate.  Example: `ociComputeagent`
          * 
          * @return builder
          * 

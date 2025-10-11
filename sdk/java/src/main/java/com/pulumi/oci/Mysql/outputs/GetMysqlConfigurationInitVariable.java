@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class GetMysqlConfigurationInitVariable {
     /**
-     * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * @return Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      */
     private String lowerCaseTableNames;
 
     private GetMysqlConfigurationInitVariable() {}
     /**
-     * @return Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+     * @return Represents the MySQL server system variable lowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
      * 
      */
     public String lowerCaseTableNames() {

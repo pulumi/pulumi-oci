@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Extra name value pairs associated with this identity provider. Example: `{"clientId": "app_sf3kdjf3"}`
+        /// Extra name value pairs associated with this identity provider. Example: `{"clientId": "AppSf3kdjf3"}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformAttributes;
         /// <summary>

@@ -119,6 +119,8 @@ def get_exadata_infrastructures(compartment_id: Optional[_builtins.str] = None,
     Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
     To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
 
+    ## Example Usage
+
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -149,6 +151,8 @@ def get_exadata_infrastructures_output(compartment_id: Optional[pulumi.Input[_bu
 
     Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
     To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+
+    ## Example Usage
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Lists all versions for the specified certificate authority (CA).
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+ *
+ * ## Example Usage
  */
 export function getCertificateAuthorityVersion(args: GetCertificateAuthorityVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -87,6 +89,8 @@ export interface GetCertificateAuthorityVersionResult {
  *
  * Lists all versions for the specified certificate authority (CA).
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+ *
+ * ## Example Usage
  */
 export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

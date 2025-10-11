@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectorPluginsConnectorPluginCollectionItem {
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     private String displayName;
@@ -53,7 +53,7 @@ public final class GetConnectorPluginsConnectorPluginCollectionItem {
 
     private GetConnectorPluginsConnectorPluginCollectionItem() {}
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     public String displayName() {

@@ -48,7 +48,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) A header name that conforms to RFC 7230.  Example: `example_header_name`
+        /// (Updatable) A header name that conforms to RFC 7230.  Example: `ExampleHeaderName`
         /// </summary>
         public readonly string? Header;
         /// <summary>
@@ -64,7 +64,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
-        /// Example: `example_prefix_value`
+        /// Example: `ExamplePrefixValue`
         /// </summary>
         public readonly string? Prefix;
         /// <summary>
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// 
         /// **NOTE:** The Load Balancing service cannot automatically detect or avoid infinite redirects. Be sure to provide meaningful, complete, and correct field values. If any component field of this object has no value, the system retains the value from the incoming HTTP request URI.
         /// 
-        /// For example, if you specify only the protocol field `https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
+        /// For example, if you specify only the protocol field `Https`, and the incoming request URI is `http://example.com:8080`, the resulting runtime redirect URI is `https://example.com:8080`. The system retains the host and port from the incoming URI and does not automatically change the port setting from `8080` to `443`.
         /// 
         /// Be sure to configure valid percent-encoding (URL encoding) when needed.
         /// 
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
-        /// Example: `example_suffix_value`
+        /// Example: `ExampleSuffixValue`
         /// </summary>
         public readonly string? Suffix;
         /// <summary>
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// *  value cannot contain `$`
         /// *  value cannot contain patterns like `{variable_name}`. They are reserved for future extensions. Currently, such values are invalid.
         /// 
-        /// Example: `example_value`
+        /// Example: `ExampleValue`
         /// </summary>
         public readonly string? Value;
 

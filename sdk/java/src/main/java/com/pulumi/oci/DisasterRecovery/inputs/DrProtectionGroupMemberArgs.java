@@ -128,14 +128,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -887,7 +887,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
          * 
          * @return builder
          * 
@@ -898,7 +898,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+         * @param bucket (Updatable) The bucket name inside the object storage namespace.  Example: `bucketName`
          * 
          * @return builder
          * 

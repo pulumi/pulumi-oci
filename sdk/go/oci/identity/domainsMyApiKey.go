@@ -16,6 +16,8 @@ import (
 //
 // Add a user's own API key.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // MyApiKeys can be imported using the `id`, e.g.

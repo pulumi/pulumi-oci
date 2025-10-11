@@ -159,6 +159,8 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
 
         Enables a Database Management feature for the specified Autonomous Database.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] autonomous_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
@@ -179,6 +181,8 @@ class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement(pulumi.CustomRes
         This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 
         Enables a Database Management feature for the specified Autonomous Database.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

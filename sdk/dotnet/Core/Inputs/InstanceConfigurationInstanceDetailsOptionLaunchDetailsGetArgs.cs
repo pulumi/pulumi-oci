@@ -88,7 +88,7 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _extendedMetadata;
 
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// </summary>
         public InputMap<string> ExtendedMetadata
         {

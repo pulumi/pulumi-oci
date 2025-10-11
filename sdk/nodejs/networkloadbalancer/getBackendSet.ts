@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
  *
  * Retrieves the configuration information for the specified backend set.
+ *
+ * ## Example Usage
  */
 export function getBackendSet(args: GetBackendSetArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -85,6 +87,8 @@ export interface GetBackendSetResult {
  * This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
  *
  * Retrieves the configuration information for the specified backend set.
+ *
+ * ## Example Usage
  */
 export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackendSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

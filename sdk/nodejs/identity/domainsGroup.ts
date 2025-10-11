@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a group.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * Groups can be imported using the `id`, e.g.

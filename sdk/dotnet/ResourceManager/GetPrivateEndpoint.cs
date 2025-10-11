@@ -152,7 +152,7 @@ namespace Pulumi.Oci.ResourceManager
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// When `true`, allows the private endpoint to be used with a configuration source provider.
+        /// When `True`, allows the private endpoint to be used with a configuration source provider.
         /// </summary>
         public readonly bool IsUsedWithConfigurationSourceProvider;
         /// <summary>

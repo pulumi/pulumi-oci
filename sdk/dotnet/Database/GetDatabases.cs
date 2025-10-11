@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Database
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `DbHomeId` or `SystemId` is required to make the LIST API call.
         /// </summary>
         [Input("dbHomeId")]
         public string? DbHomeId { get; set; }
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `DbHomeId` or `SystemId` is required to make the LIST API call.
         /// </summary>
         [Input("dbHomeId")]
         public Input<string>? DbHomeId { get; set; }

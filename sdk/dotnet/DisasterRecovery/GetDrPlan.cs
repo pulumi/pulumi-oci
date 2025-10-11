@@ -170,7 +170,7 @@ namespace Pulumi.Oci.DisasterRecovery
         public readonly ImmutableArray<Outputs.GetDrPlanPlanGroupResult> PlanGroups;
         public readonly int RefreshTrigger;
         /// <summary>
-        /// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `null`.  Example: `ocid1.drplan.oc1..uniqueID`
+        /// If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan. If this DR plan was not cloned, then the value for this will be `Null`.  Example: `ocid1.drplan.oc1..uniqueID`
         /// </summary>
         public readonly string SourcePlanId;
         /// <summary>

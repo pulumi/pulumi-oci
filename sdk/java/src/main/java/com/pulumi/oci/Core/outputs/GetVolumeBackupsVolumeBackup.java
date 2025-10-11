@@ -54,7 +54,7 @@ public final class GetVolumeBackupsVolumeBackup {
      */
     private String sizeInGbs;
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -176,7 +176,7 @@ public final class GetVolumeBackupsVolumeBackup {
         return this.sizeInGbs;
     }
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.

@@ -32,7 +32,7 @@ public final class GetMysqlDbSystemResult {
     /**
      * @return The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
      * * UNRESTRICTED: the access to the database is not restricted;
-     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     private String accessMode;
@@ -266,7 +266,7 @@ public final class GetMysqlDbSystemResult {
     /**
      * @return The access mode indicating if the database access is unrestricted (to all MySQL user accounts),  or restricted (to only certain users with specific privileges):
      * * UNRESTRICTED: the access to the database is not restricted;
-     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access is allowed only to users with specific privileges;  RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     public String accessMode() {

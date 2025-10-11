@@ -49,7 +49,7 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -59,7 +59,7 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> name;
 
     /**
-     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,7 +148,7 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -162,7 +162,7 @@ public final class RuleSetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

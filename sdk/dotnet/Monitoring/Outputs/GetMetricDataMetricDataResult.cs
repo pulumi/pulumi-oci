@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The source service or application to use when searching for metric data points to aggregate.  Example: `oci_computeagent`
+        /// The source service or application to use when searching for metric data points to aggregate.  Example: `OciComputeagent`
         /// </summary>
         public readonly string Namespace;
         /// <summary>

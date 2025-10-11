@@ -33,14 +33,14 @@ public final class GetDatabasesPlainArgs extends com.pulumi.resources.InvokeArgs
     }
 
     /**
-     * A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+     * A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
      * 
      */
     @Import(name="dbHomeId")
     private @Nullable String dbHomeId;
 
     /**
-     * @return A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+     * @return A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
      * 
      */
     public Optional<String> dbHomeId() {
@@ -140,7 +140,7 @@ public final class GetDatabasesPlainArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param dbHomeId A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+         * @param dbHomeId A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `dbHomeId` or `systemId` is required to make the LIST API call.
          * 
          * @return builder
          * 

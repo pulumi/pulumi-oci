@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Core.Inputs
     public sealed class RouteTableRouteRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
+        /// (Updatable) Deprecated. Instead use `Destination` and `destinationType`. Requests that include both `cidrBlock` and `Destination` will be rejected.
         /// 
         /// A destination IP address range in CIDR notation. Matching packets will be routed to the indicated network entity (the target).
         /// 
@@ -41,9 +41,9 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? Destination { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of destination for the rule. Required if you provide a `destination`.
-        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+        /// (Updatable) Type of destination for the rule. Required if you provide a `Destination`.
+        /// * `CIDR_BLOCK`: If the rule's `Destination` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }

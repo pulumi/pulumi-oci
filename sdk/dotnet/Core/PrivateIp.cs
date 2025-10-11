@@ -91,11 +91,11 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `Bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `bminstance1`
+        /// Example: `Bminstance1`
         /// </summary>
         [Output("hostnameLabel")]
         public Output<string> HostnameLabel { get; private set; } = null!;
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Core
         public Output<string> IpState { get; private set; } = null!;
 
         /// <summary>
-        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
         [Output("isPrimary")]
         public Output<bool> IsPrimary { get; private set; } = null!;
@@ -242,11 +242,11 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `Bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `bminstance1`
+        /// Example: `Bminstance1`
         /// </summary>
         [Input("hostnameLabel")]
         public Input<string>? HostnameLabel { get; set; }
@@ -346,11 +346,11 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+        /// (Updatable) The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `Bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `bminstance1`
+        /// Example: `Bminstance1`
         /// </summary>
         [Input("hostnameLabel")]
         public Input<string>? HostnameLabel { get; set; }
@@ -368,7 +368,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpState { get; set; }
 
         /// <summary>
-        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
         [Input("isPrimary")]
         public Input<bool>? IsPrimary { get; set; }

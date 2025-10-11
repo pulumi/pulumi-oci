@@ -18,7 +18,7 @@ public final class GetPathRouteSetsPathRouteSet {
      */
     private String loadBalancerId;
     /**
-     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     private String name;
@@ -38,7 +38,7 @@ public final class GetPathRouteSetsPathRouteSet {
         return this.loadBalancerId;
     }
     /**
-     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `example_path_route_set`
+     * @return The unique name for this set of path route rules. Avoid entering confidential information.  Example: `examplePathRouteSet`
      * 
      */
     public String name() {

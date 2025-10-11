@@ -14,14 +14,14 @@ public final class GetBackendSetPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetBackendSetPlainArgs Empty = new GetBackendSetPlainArgs();
 
     /**
-     * The name of the backend set to retrieve.  Example: `example_backend_set`
+     * The name of the backend set to retrieve.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private String backendSetName;
 
     /**
-     * @return The name of the backend set to retrieve.  Example: `example_backend_set`
+     * @return The name of the backend set to retrieve.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {
@@ -69,7 +69,7 @@ public final class GetBackendSetPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param backendSetName The name of the backend set to retrieve.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set to retrieve.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

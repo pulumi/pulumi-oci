@@ -161,13 +161,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      * 
      * You can use the following metadata key names to provide information to Cloud-Init:
      * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
      * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * 
      * **Metadata Example**
      * 
-     * &#34;metadata&#34; : { &#34;quake_bot_level&#34; : &#34;Severe&#34;, &#34;ssh_authorized_keys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;user_data&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
+     * &#34;metadata&#34; : { &#34;quakeBotLevel&#34; : &#34;Severe&#34;, &#34;sshAuthorizedKeys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;userData&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
      * 
      * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
      * 
@@ -406,13 +406,13 @@ public final class InstanceConfigurationInstanceDetailsLaunchDetails {
      * 
      * You can use the following metadata key names to provide information to Cloud-Init:
      * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
      * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * 
      * **Metadata Example**
      * 
-     * &#34;metadata&#34; : { &#34;quake_bot_level&#34; : &#34;Severe&#34;, &#34;ssh_authorized_keys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;user_data&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
+     * &#34;metadata&#34; : { &#34;quakeBotLevel&#34; : &#34;Severe&#34;, &#34;sshAuthorizedKeys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;userData&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
      * 
      * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
      * 

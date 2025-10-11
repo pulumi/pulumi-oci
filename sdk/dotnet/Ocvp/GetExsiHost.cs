@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string CurrentCommitment;
         /// <summary>
-        /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `current_commitment` instead.
+        /// (**Deprecated**) The billing option currently used by the ESXi host. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `CurrentCommitment` instead.
         /// </summary>
         public readonly string CurrentSku;
         /// <summary>
@@ -209,7 +209,7 @@ namespace Pulumi.Oci.Ocvp
         /// </summary>
         public readonly string NextCommitment;
         /// <summary>
-        /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `next_commitment` instead.
+        /// (**Deprecated**) The billing option to switch to after the current billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `NextCommitment` instead.
         /// </summary>
         public readonly string NextSku;
         /// <summary>

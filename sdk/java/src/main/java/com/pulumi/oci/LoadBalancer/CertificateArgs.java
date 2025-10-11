@@ -52,14 +52,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     @Import(name="certificateName", required=true)
     private Output<String> certificateName;
 
     /**
-     * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * @return A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     public Output<String> certificateName() {
@@ -243,7 +243,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+         * @param certificateName A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param certificateName A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+         * @param certificateName A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
          * 
          * @return builder
          * 

@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
 //
 // Returns a list of models.
+//
+// ## Example Usage
 func GetModels(ctx *pulumi.Context, args *GetModelsArgs, opts ...pulumi.InvokeOption) (*GetModelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelsResult

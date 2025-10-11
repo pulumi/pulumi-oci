@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Desktops
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `AvailabilityPolicy { }` to not set a schedule.
         /// </summary>
         [Output("availabilityPolicy")]
         public Output<Outputs.DesktopPoolAvailabilityPolicy> AvailabilityPolicy { get; private set; } = null!;
@@ -373,7 +373,7 @@ namespace Pulumi.Oci.Desktops
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `AvailabilityPolicy { }` to not set a schedule.
         /// </summary>
         [Input("availabilityPolicy", required: true)]
         public Input<Inputs.DesktopPoolAvailabilityPolicyArgs> AvailabilityPolicy { get; set; } = null!;
@@ -565,7 +565,7 @@ namespace Pulumi.Oci.Desktops
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `availability_policy { }` to not set a schedule.
+        /// (Updatable) Provides the start and stop schedule information for desktop availability of the desktop pool. Use `AvailabilityPolicy { }` to not set a schedule.
         /// </summary>
         [Input("availabilityPolicy")]
         public Input<Inputs.DesktopPoolAvailabilityPolicyGetArgs>? AvailabilityPolicy { get; set; }

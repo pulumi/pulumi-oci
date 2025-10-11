@@ -142,37 +142,37 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      */
     private Double sumRowsSent;
     /**
-     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the selectFullJoin status variable.
      * 
      */
     private Double sumSelectFullJoin;
     /**
-     * @return The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+     * @return The total number of joins that use a full range search. This is the same as the selectFullRangeJoin status variable.
      * 
      */
     private Double sumSelectFullRangeJoin;
     /**
-     * @return The total number of times the query has used a range search. This is the same as the select_range status variable.
+     * @return The total number of times the query has used a range search. This is the same as the selectRange status variable.
      * 
      */
     private Double sumSelectRange;
     /**
-     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the selectRangeCheck status variable.
      * 
      */
     private Double sumSelectRangeCheck;
     /**
-     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the selectScan status variable.
      * 
      */
     private Double sumSelectScan;
     /**
-     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sortMergePasses status variable.
      * 
      */
     private Double sumSortMergePasses;
     /**
-     * @return The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+     * @return The total number of times a sort was done using ranges. This is the same as the sortRange status variable.
      * 
      */
     private Double sumSortRange;
@@ -182,7 +182,7 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
      */
     private Double sumSortRows;
     /**
-     * @return The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+     * @return The total number of times a sort was done by scanning the table. This is the same as the sortScan status variable.
      * 
      */
     private Double sumSortScan;
@@ -381,49 +381,49 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         return this.sumRowsSent;
     }
     /**
-     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+     * @return The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the selectFullJoin status variable.
      * 
      */
     public Double sumSelectFullJoin() {
         return this.sumSelectFullJoin;
     }
     /**
-     * @return The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+     * @return The total number of joins that use a full range search. This is the same as the selectFullRangeJoin status variable.
      * 
      */
     public Double sumSelectFullRangeJoin() {
         return this.sumSelectFullRangeJoin;
     }
     /**
-     * @return The total number of times the query has used a range search. This is the same as the select_range status variable.
+     * @return The total number of times the query has used a range search. This is the same as the selectRange status variable.
      * 
      */
     public Double sumSelectRange() {
         return this.sumSelectRange;
     }
     /**
-     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+     * @return The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the selectRangeCheck status variable.
      * 
      */
     public Double sumSelectRangeCheck() {
         return this.sumSelectRangeCheck;
     }
     /**
-     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+     * @return The total number of times the query has performed a full table scan on the first table in the join. This is the same as the selectScan status variable.
      * 
      */
     public Double sumSelectScan() {
         return this.sumSelectScan;
     }
     /**
-     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+     * @return The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sortMergePasses status variable.
      * 
      */
     public Double sumSortMergePasses() {
         return this.sumSortMergePasses;
     }
     /**
-     * @return The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+     * @return The total number of times a sort was done using ranges. This is the same as the sortRange status variable.
      * 
      */
     public Double sumSortRange() {
@@ -437,7 +437,7 @@ public final class GetManagedMySqlDatabaseSqlDataMySqlDataCollectionItem {
         return this.sumSortRows;
     }
     /**
-     * @return The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+     * @return The total number of times a sort was done by scanning the table. This is the same as the sortScan status variable.
      * 
      */
     public Double sumSortScan() {

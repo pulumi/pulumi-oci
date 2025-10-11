@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Replace Settings
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * Settings can be imported using the `id`, e.g.

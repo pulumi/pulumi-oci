@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Schedule a task as specified and return task info.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * NamespaceScheduledTasks can be imported using the `id`, e.g.

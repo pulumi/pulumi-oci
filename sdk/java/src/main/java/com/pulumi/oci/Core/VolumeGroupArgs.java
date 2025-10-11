@@ -179,7 +179,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,7 +189,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<String>> volumeIds;
 
     /**
-     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -476,7 +476,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -490,7 +490,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -503,7 +503,7 @@ public final class VolumeGroupArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+         * @param volumeIds (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

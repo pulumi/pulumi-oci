@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
 //
 // Returns a list of Endpoints.
+//
+// ## Example Usage
 func GetEndpoints(ctx *pulumi.Context, args *GetEndpointsArgs, opts ...pulumi.InvokeOption) (*GetEndpointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEndpointsResult

@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Optimizer
         public Output<double> EstimatedCostSaving { get; private set; } = null!;
 
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// </summary>
         [Output("extendedMetadata")]
         public Output<ImmutableDictionary<string, string>> ExtendedMetadata { get; private set; } = null!;
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **
@@ -205,7 +205,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Optimizer
         private InputMap<string>? _extendedMetadata;
 
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// </summary>
         public InputMap<string> ExtendedMetadata
         {
@@ -339,7 +339,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the resource action will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **

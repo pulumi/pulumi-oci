@@ -27,7 +27,7 @@ public final class GetLoadBalancersLoadBalancer {
      */
     private Map<String,String> definedTags;
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
      * 
      */
     private String displayName;
@@ -47,7 +47,7 @@ public final class GetLoadBalancersLoadBalancer {
      */
     private List<GetLoadBalancersLoadBalancerIpAddressDetail> ipAddressDetails;
     /**
-     * @return An array of IP addresses. Deprecated: use ip_address_details instead.
+     * @return An array of IP addresses. Deprecated: use ipAddressDetails instead.
      * 
      * @deprecated
      * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
@@ -135,7 +135,7 @@ public final class GetLoadBalancersLoadBalancer {
         return this.definedTags;
     }
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleLoadBalancer`
      * 
      */
     public String displayName() {
@@ -163,7 +163,7 @@ public final class GetLoadBalancersLoadBalancer {
         return this.ipAddressDetails;
     }
     /**
-     * @return An array of IP addresses. Deprecated: use ip_address_details instead.
+     * @return An array of IP addresses. Deprecated: use ipAddressDetails instead.
      * 
      * @deprecated
      * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.

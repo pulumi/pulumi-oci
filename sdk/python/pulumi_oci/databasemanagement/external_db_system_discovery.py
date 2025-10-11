@@ -384,6 +384,8 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
 
           Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
 
+        ## Example Usage
+
         ## Import
 
         ExternalDbSystemDiscoveries can be imported using the `id`, e.g.
@@ -413,6 +415,8 @@ class ExternalDbSystemDiscovery(pulumi.CustomResource):
         Creates an external DB system discovery resource and initiates the discovery process.
 
           Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
+
+        ## Example Usage
 
         ## Import
 

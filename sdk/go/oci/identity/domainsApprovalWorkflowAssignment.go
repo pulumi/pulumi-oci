@@ -16,6 +16,8 @@ import (
 //
 // # Create Approval Workflow Assignment
 //
+// ## Example Usage
+//
 // ## Import
 //
 // ApprovalWorkflowAssignments can be imported using the `id`, e.g.

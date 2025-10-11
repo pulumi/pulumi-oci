@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of remediation runs contained by a compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of remediation runs contained by a compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.Adm
         /// This data source provides the list of Remediation Runs in Oracle Cloud Infrastructure Adm service.
         /// 
         /// Returns a list of remediation runs contained by a compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage

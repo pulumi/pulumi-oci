@@ -137,6 +137,8 @@ def get_network_firewall_policy_mapped_secret(name: Optional[_builtins.str] = No
 
     Get Mapped Secret by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name of the secret.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -163,6 +165,8 @@ def get_network_firewall_policy_mapped_secret_output(name: Optional[pulumi.Input
     This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Mapped Secret by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name of the secret.

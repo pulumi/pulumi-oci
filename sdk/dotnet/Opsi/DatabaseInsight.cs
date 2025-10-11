@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> DatabaseVersion { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and OpsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         /// </summary>
         [Output("dbmPrivateEndpointId")]
         public Output<string> DbmPrivateEndpointId { get; private set; } = null!;
@@ -367,7 +367,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? DatabaseResourceType { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and OpsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         /// </summary>
         [Input("dbmPrivateEndpointId")]
         public Input<string>? DbmPrivateEndpointId { get; set; }
@@ -564,7 +564,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? DatabaseVersion { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and OpsiPrivateEndpointId are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         /// </summary>
         [Input("dbmPrivateEndpointId")]
         public Input<string>? DbmPrivateEndpointId { get; set; }

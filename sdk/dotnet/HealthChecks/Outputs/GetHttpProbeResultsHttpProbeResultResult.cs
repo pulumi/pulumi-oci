@@ -107,7 +107,7 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// </summary>
         public readonly int StatusCode;
         /// <summary>
-        /// Filters results that match the `target`.
+        /// Filters results that match the `Target`.
         /// </summary>
         public readonly string Target;
         /// <summary>

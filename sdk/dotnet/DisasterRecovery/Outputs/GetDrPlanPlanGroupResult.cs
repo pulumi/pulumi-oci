@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `true`
+        /// A flag indicating whether this group should be enabled for execution. This flag is only applicable to the `USER_DEFINED_PAUSE` group. The flag should be null for the remaining group types.  Example: `True`
         /// </summary>
         public readonly bool IsPauseEnabled;
         /// <summary>

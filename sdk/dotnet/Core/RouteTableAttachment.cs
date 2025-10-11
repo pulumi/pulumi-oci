@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Core
     /// <summary>
     /// This resource provides the ability to associate a route table for a subnet in Oracle Cloud Infrastructure Core service.
     /// 
-    /// Attaches the specified `route table` to the specified `subnet`.
+    /// Attaches the specified `route table` to the specified `Subnet`.
     /// 
     /// ## Example Usage
     /// 

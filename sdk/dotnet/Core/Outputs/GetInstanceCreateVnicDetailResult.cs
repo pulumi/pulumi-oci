@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly ImmutableArray<Outputs.GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetailResult> Ipv6addressIpv6subnetCidrPairDetails;
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
-        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+        /// The private IP address of instance VNIC. To set the private IP address, use the `PrivateIp` argument in create_vnic_details.
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>

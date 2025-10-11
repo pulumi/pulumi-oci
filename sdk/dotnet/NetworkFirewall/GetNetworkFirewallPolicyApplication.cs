@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Application by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetNetworkFirewallPolicyApplicationResult> InvokeAsync(GetNetworkFirewallPolicyApplicationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyApplicationResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", args ?? new GetNetworkFirewallPolicyApplicationArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Application by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationResult> Invoke(GetNetworkFirewallPolicyApplicationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", args ?? new GetNetworkFirewallPolicyApplicationInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Application resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Application by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationResult> Invoke(GetNetworkFirewallPolicyApplicationInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", args ?? new GetNetworkFirewallPolicyApplicationInvokeArgs(), options.WithDefaults());

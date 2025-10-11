@@ -399,14 +399,14 @@ public class DbSystem extends com.pulumi.resources.CustomResource {
         return this.networkDetails;
     }
     /**
-     * (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
     @Export(name="patchOperations", refs={List.class,DbSystemPatchOperation.class}, tree="[0,1]")
     private Output</* @Nullable */ List<DbSystemPatchOperation>> patchOperations;
 
     /**
-     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patch_operations after it is applied. Update the instance_count arrodrandly. Cannot be specified when creating the resource.
+     * @return (Updatable) For adding and removing from read replica database instances. Please remove the patchOperations after it is applied. Update the instanceCount arrodrandly. Cannot be specified when creating the resource.
      * 
      */
     public Output<Optional<List<DbSystemPatchOperation>>> patchOperations() {

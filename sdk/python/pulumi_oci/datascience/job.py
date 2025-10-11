@@ -688,6 +688,8 @@ class Job(pulumi.CustomResource):
 
         Creates a job.
 
+        ## Example Usage
+
         ## Import
 
         Jobs can be imported using the `id`, e.g.
@@ -729,6 +731,8 @@ class Job(pulumi.CustomResource):
         This resource provides the Job resource in Oracle Cloud Infrastructure Data Science service.
 
         Creates a job.
+
+        ## Example Usage
 
         ## Import
 

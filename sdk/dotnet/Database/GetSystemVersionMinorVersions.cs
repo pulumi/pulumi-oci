@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `Shape` or `resourceId` value.
         /// 
         /// ## Example Usage
         /// 
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `Shape` or `resourceId` value.
         /// 
         /// ## Example Usage
         /// 
@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of System Version Minor Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `shape` or `resourceId` value.
+        /// Retrieves a list of supported minor versions for the specified Exadata System Software major version. You must provide either a `Shape` or `resourceId` value.
         /// 
         /// ## Example Usage
         /// 

@@ -183,7 +183,7 @@ namespace Pulumi.Oci.Core
         public Output<string> SizeInGbs { get; private set; } = null!;
 
         /// <summary>
-        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `SizeInGbs`.
         /// </summary>
         [Output("sizeInMbs")]
         public Output<string> SizeInMbs { get; private set; } = null!;
@@ -525,7 +525,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? SizeInGbs { get; set; }
 
         /// <summary>
-        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `SizeInGbs`.
         /// </summary>
         [Input("sizeInMbs")]
         public Input<string>? SizeInMbs { get; set; }

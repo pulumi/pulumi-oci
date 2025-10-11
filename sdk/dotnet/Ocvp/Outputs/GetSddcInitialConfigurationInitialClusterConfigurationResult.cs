@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
     public sealed class GetSddcInitialConfigurationInitialClusterConfigurationResult
     {
         /// <summary>
-        /// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
+        /// (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `ActualEsxiHostsCount` of `InitialClusterConfigurations` instead.
         /// </summary>
         public readonly int ActualEsxiHostsCount;
         /// <summary>
@@ -42,11 +42,11 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string InitialCommitment;
         /// <summary>
-        /// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+        /// (**Deprecated**) The initial OCPU count of the SDDC's ESXi hosts. **Deprecated**. Please use `InitialHostOcpuCount` of `InitialClusterConfigurations` instead.
         /// </summary>
         public readonly double InitialHostOcpuCount;
         /// <summary>
-        /// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+        /// (**Deprecated**) The initial compute shape of the SDDC's ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `InitialHostShapeName` of `InitialClusterConfigurations` instead.
         /// </summary>
         public readonly string InitialHostShapeName;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string InstanceDisplayNamePrefix;
         /// <summary>
-        /// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+        /// (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `IsShieldedInstanceEnabled` of `InitialClusterConfigurations` instead.
         /// </summary>
         public readonly bool IsShieldedInstanceEnabled;
         /// <summary>
@@ -66,7 +66,7 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string VsphereType;
         /// <summary>
-        /// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
+        /// (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `WorkloadNetworkCidr` of `InitialClusterConfigurations` instead.
         /// </summary>
         public readonly string WorkloadNetworkCidr;
 

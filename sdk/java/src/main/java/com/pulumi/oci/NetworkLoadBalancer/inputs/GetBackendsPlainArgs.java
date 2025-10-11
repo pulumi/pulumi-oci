@@ -18,14 +18,14 @@ public final class GetBackendsPlainArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetBackendsPlainArgs Empty = new GetBackendsPlainArgs();
 
     /**
-     * The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private String backendSetName;
 
     /**
-     * @return The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {
@@ -81,7 +81,7 @@ public final class GetBackendsPlainArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param backendSetName The name of the backend set associated with the backend servers.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set associated with the backend servers.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

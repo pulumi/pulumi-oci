@@ -80,25 +80,25 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         [Output("isCrossTenancyPeering")]
         public Output<bool> IsCrossTenancyPeering { get; private set; } = null!;
 
         /// <summary>
-        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `Null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
         /// </summary>
         [Output("peerAdvertisedCidr")]
         public Output<string> PeerAdvertisedCidr { get; private set; } = null!;
 
         /// <summary>
-        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `Null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
         /// </summary>
         [Output("peerAdvertisedCidrDetails")]
         public Output<ImmutableArray<string>> PeerAdvertisedCidrDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+        /// The OCID of the LPG you want to peer with. Specifying a PeerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
         /// </summary>
         [Output("peerId")]
         public Output<string> PeerId { get; private set; } = null!;
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+        /// The OCID of the LPG you want to peer with. Specifying a PeerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
         /// </summary>
         [Input("peerId")]
         public Input<string>? PeerId { get; set; }
@@ -300,13 +300,13 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `false`
+        /// Whether the VCN at the other end of the peering is in a different tenancy.  Example: `False`
         /// </summary>
         [Input("isCrossTenancyPeering")]
         public Input<bool>? IsCrossTenancyPeering { get; set; }
 
         /// <summary>
-        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
+        /// The smallest aggregate CIDR that contains all the CIDR routes advertised by the VCN at the other end of the peering from this LPG. See `peerAdvertisedCidrDetails` for the individual CIDRs. The value is `Null` if the LPG is not peered.  Example: `192.168.0.0/16`, or if aggregated with `172.16.0.0/24` then `128.0.0.0/1`
         /// </summary>
         [Input("peerAdvertisedCidr")]
         public Input<string>? PeerAdvertisedCidr { get; set; }
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Core
         private InputList<string>? _peerAdvertisedCidrDetails;
 
         /// <summary>
-        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
+        /// The specific ranges of IP addresses available on or via the VCN at the other end of the peering from this LPG. The value is `Null` if the LPG is not peered. You can use these as destination CIDRs for route rules to route a subnet's traffic to this LPG.  Example: [`192.168.0.0/16`, `172.16.0.0/24`]
         /// </summary>
         public InputList<string> PeerAdvertisedCidrDetails
         {
@@ -324,7 +324,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// The OCID of the LPG you want to peer with. Specifying a peer_id connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
+        /// The OCID of the LPG you want to peer with. Specifying a PeerId connects this local peering gateway (LPG) to another one in the same region. This operation must be called by the VCN administrator who is designated as the *requestor* in the peering relationship. The *acceptor* must implement an Identity and Access Management (IAM) policy that gives the requestor permission to connect to LPGs in the acceptor's compartment. Without that permission, this operation will fail. For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
         /// </summary>
         [Input("peerId")]
         public Input<string>? PeerId { get; set; }

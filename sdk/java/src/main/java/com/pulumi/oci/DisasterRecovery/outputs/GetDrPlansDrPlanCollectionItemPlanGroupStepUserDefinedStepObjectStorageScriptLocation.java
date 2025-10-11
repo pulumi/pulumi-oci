@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation {
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     private String bucket;
@@ -28,7 +28,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObj
 
     private GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation() {}
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     public String bucket() {

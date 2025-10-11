@@ -17,14 +17,14 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
     public static final RuleSetItemConditionArgs Empty = new RuleSetItemConditionArgs();
 
     /**
-     * (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+     * (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
     @Import(name="attributeName", required=true)
     private Output<String> attributeName;
 
     /**
-     * @return (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+     * @return (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
      * 
      */
     public Output<String> attributeName() {
@@ -32,20 +32,20 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Depends on `attribute_name`:
-     * - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-     * - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-     * - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+     * (Updatable) Depends on `attributeName`:
+     * - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+     * - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+     * - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
      * 
      */
     @Import(name="attributeValue", required=true)
     private Output<String> attributeValue;
 
     /**
-     * @return (Updatable) Depends on `attribute_name`:
-     * - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-     * - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-     * - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+     * @return (Updatable) Depends on `attributeName`:
+     * - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+     * - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+     * - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
      * 
      */
     public Output<String> attributeValue() {
@@ -102,7 +102,7 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param attributeName (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+         * @param attributeName (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
          * 
          * @return builder
          * 
@@ -113,7 +113,7 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param attributeName (Updatable) The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+         * @param attributeName (Updatable) The attributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
          * 
          * @return builder
          * 
@@ -123,10 +123,10 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param attributeValue (Updatable) Depends on `attribute_name`:
-         * - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-         * - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-         * - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+         * @param attributeValue (Updatable) Depends on `attributeName`:
+         * - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+         * - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+         * - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
          * 
          * @return builder
          * 
@@ -137,10 +137,10 @@ public final class RuleSetItemConditionArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param attributeValue (Updatable) Depends on `attribute_name`:
-         * - when `attribute_name` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
-         * - when `attribute_name` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
-         * - when `attribute_name` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
+         * @param attributeValue (Updatable) Depends on `attributeName`:
+         * - when `attributeName` = `SOURCE_IP_ADDRESS` | IPv4 or IPv6 address range to which the source IP address of incoming packet would be matched against
+         * - when `attributeName` = `SOURCE_VCN_IP_ADDRESS` | IPv4 address range to which the original client IP address (in customer VCN) of incoming packet would be matched against
+         * - when `attributeName` = `SOURCE_VCN_ID` | OCID of the customer VCN to which the service gateway embedded VCN ID of incoming packet would be matched against
          * 
          * @return builder
          * 

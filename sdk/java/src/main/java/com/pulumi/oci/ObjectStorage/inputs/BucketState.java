@@ -80,14 +80,14 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     @Import(name="bucketId")
     private @Nullable Output<String> bucketId;
 
     /**
-     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     public Optional<Output<String>> bucketId() {
@@ -485,7 +485,7 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bucketId The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+         * @param bucketId The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
          * 
          * @return builder
          * 
@@ -496,7 +496,7 @@ public final class BucketState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bucketId The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+         * @param bucketId The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
          * 
          * @return builder
          * 

@@ -47,7 +47,7 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
      */
     private String namespace;
     /**
-     * @return Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
+     * @return Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
      * @deprecated
      * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
@@ -126,7 +126,7 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
         return this.namespace;
     }
     /**
-     * @return Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
+     * @return Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
      * @deprecated
      * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.

@@ -483,6 +483,8 @@ class Certificate(pulumi.CustomResource):
 
         Creates a new certificate according to the details of the request.
 
+        ## Example Usage
+
         ## Import
 
         Certificates can be imported using the `id`, e.g.
@@ -515,6 +517,8 @@ class Certificate(pulumi.CustomResource):
         This resource provides the Certificate resource in Oracle Cloud Infrastructure Certificates Management service.
 
         Creates a new certificate according to the details of the request.
+
+        ## Example Usage
 
         ## Import
 

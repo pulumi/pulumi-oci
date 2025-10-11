@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a user's database (DB) credentials.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * UserDbCredentials can be imported using the `id`, e.g.

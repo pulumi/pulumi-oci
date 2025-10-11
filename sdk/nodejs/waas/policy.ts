@@ -23,6 +23,8 @@ import * as utilities from "../utilities";
  *
  * **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * WaasPolicies can be imported using the `id`, e.g.

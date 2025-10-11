@@ -296,7 +296,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.volumeGroupReplicasDeletion);
     }
     /**
-     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -306,7 +306,7 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
     private Output<List<String>> volumeIds;
 
     /**
-     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volume_ids` under `source_details`.
+     * @return (Updatable) Use this for update operation only. This field is not supported during creation. For create use `volumeIds` under `sourceDetails`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

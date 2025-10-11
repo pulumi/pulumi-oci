@@ -14,7 +14,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetListenerRulesListenerRuleRuleConditionResult
     {
         /// <summary>
-        /// The attribute_name can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
+        /// The AttributeName can be one of these values: `PATH`, `SOURCE_IP_ADDRESS`, `SOURCE_VCN_ID`, `SOURCE_VCN_IP_ADDRESS`
         /// </summary>
         public readonly string AttributeName;
         /// <summary>

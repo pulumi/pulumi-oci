@@ -2159,6 +2159,8 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
 
         Create a self-registration profile.
 
+        ## Example Usage
+
         ## Import
 
         SelfRegistrationProfiles can be imported using the `id`, e.g.
@@ -2429,6 +2431,8 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         This resource provides the Self Registration Profile resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a self-registration profile.
+
+        ## Example Usage
 
         ## Import
 

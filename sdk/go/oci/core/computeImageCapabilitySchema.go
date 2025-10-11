@@ -16,6 +16,8 @@ import (
 //
 // Creates compute image capability schema.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // ComputeImageCapabilitySchemas can be imported using the `id`, e.g.

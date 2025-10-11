@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Identity
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Output("isRequired")]
         public Output<bool> IsRequired { get; private set; } = null!;
@@ -166,7 +166,7 @@ namespace Pulumi.Oci.Identity
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("isRequired")]
         public Input<bool>? IsRequired { get; set; }
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Identity
         /// * If the `isRequired` flag is set to "true", the value is set during resource creation.
         /// * If the `isRequired` flag is set to "false", the value you enter is set during resource creation.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("isRequired")]
         public Input<bool>? IsRequired { get; set; }

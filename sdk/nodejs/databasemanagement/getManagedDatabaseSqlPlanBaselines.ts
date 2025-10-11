@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the SQL plan baselines for the specified Managed Database.
+ *
+ * ## Example Usage
  */
 export function getManagedDatabaseSqlPlanBaselines(args: GetManagedDatabaseSqlPlanBaselinesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -136,6 +138,8 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
  * This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
  *
  * Lists the SQL plan baselines for the specified Managed Database.
+ *
+ * ## Example Usage
  */
 export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

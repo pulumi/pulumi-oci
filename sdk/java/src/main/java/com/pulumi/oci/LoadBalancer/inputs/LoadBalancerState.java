@@ -52,14 +52,14 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+     * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+     * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -97,7 +97,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An array of IP addresses. Deprecated: use ip_address_details instead
+     * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
      * @deprecated
@@ -109,7 +109,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<String>> ipAddresses;
 
     /**
-     * @return An array of IP addresses. Deprecated: use ip_address_details instead
+     * @return An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
      * @deprecated
@@ -539,7 +539,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+         * @param displayName (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+         * @param displayName (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
          * 
          * @return builder
          * 
@@ -612,7 +612,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * @param ipAddresses An array of IP addresses. Deprecated: use ipAddressDetails instead
          * *
          * 
          * @return builder
@@ -628,7 +628,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * @param ipAddresses An array of IP addresses. Deprecated: use ipAddressDetails instead
          * *
          * 
          * @return builder
@@ -643,7 +643,7 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ipAddresses An array of IP addresses. Deprecated: use ip_address_details instead
+         * @param ipAddresses An array of IP addresses. Deprecated: use ipAddressDetails instead
          * *
          * 
          * @return builder

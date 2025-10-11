@@ -50,14 +50,14 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+     * The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      * 
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
-     * @return The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+     * @return The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
      * 
      */
     public Optional<Output<String>> content() {
@@ -221,14 +221,14 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+     * An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+     * @return An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
      * 
      */
     public Optional<Output<String>> source() {
@@ -349,7 +349,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+         * @param content The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content The object to upload to the object store. Cannot be defined if `source` or `source_uri_details` is defined.
+         * @param content The object to upload to the object store. Cannot be defined if `source` or `sourceUriDetails` is defined.
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+         * @param source An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
          * 
          * @return builder
          * 
@@ -597,7 +597,7 @@ public final class StorageObjectArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param source An absolute path to a file on the local system. Cannot be defined if `content` or `source_uri_details` is defined.
+         * @param source An absolute path to a file on the local system. Cannot be defined if `content` or `sourceUriDetails` is defined.
          * 
          * @return builder
          * 

@@ -228,14 +228,14 @@ public class DrgAttachmentManagement extends com.pulumi.resources.CustomResource
         return Codegen.optional(this.networkId);
     }
     /**
-     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      */
     @Export(name="removeExportDrgRouteDistributionTrigger", refs={Boolean.class}, tree="[0]")
     private Output</* @Nullable */ Boolean> removeExportDrgRouteDistributionTrigger;
 
     /**
-     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      */
     public Output<Optional<Boolean>> removeExportDrgRouteDistributionTrigger() {

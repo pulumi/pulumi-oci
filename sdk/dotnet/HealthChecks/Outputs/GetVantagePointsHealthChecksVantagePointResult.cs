@@ -22,7 +22,7 @@ namespace Pulumi.Oci.HealthChecks.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVantagePointsHealthChecksVantagePointGeoResult> Geos;
         /// <summary>
-        /// Filters results that exactly match the `name` field.
+        /// Filters results that exactly match the `Name` field.
         /// </summary>
         public readonly string Name;
         /// <summary>

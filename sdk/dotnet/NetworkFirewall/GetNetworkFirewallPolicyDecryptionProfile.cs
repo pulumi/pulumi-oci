@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Profile by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetNetworkFirewallPolicyDecryptionProfileResult> InvokeAsync(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Profile by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> Invoke(GetNetworkFirewallPolicyDecryptionProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Decryption Profile resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Decryption Profile by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> Invoke(GetNetworkFirewallPolicyDecryptionProfileInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileInvokeArgs(), options.WithDefaults());

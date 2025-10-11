@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified Autonomous Database.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement")
 public class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

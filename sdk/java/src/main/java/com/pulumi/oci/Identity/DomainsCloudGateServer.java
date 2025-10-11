@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * 
  * Create a Cloud Gate server
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * CloudGateServers can be imported using the `id`, e.g.

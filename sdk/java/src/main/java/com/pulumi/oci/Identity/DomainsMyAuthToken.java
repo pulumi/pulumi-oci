@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s own Auth token.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * MyAuthTokens can be imported using the `id`, e.g.

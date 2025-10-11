@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Oda
         /// 
         /// If the `opc-next-page` header appears in the response, then
         /// there are more items to retrieve. To get the next page in the subsequent
-        /// GET request, include the header's value as the `page` query parameter.
+        /// GET request, include the header's value as the `Page` query parameter.
         /// 
         /// 
         /// ## Example Usage
@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Oda
         /// 
         /// If the `opc-next-page` header appears in the response, then
         /// there are more items to retrieve. To get the next page in the subsequent
-        /// GET request, include the header's value as the `page` query parameter.
+        /// GET request, include the header's value as the `Page` query parameter.
         /// 
         /// 
         /// ## Example Usage
@@ -87,7 +87,7 @@ namespace Pulumi.Oci.Oda
         /// 
         /// If the `opc-next-page` header appears in the response, then
         /// there are more items to retrieve. To get the next page in the subsequent
-        /// GET request, include the header's value as the `page` query parameter.
+        /// GET request, include the header's value as the `Page` query parameter.
         /// 
         /// 
         /// ## Example Usage

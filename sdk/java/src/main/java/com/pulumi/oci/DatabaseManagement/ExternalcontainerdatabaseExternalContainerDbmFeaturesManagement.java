@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified external container database.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")
 public class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

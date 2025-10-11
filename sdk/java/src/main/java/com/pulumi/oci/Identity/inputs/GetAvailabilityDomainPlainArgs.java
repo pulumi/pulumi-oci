@@ -47,14 +47,14 @@ public final class GetAvailabilityDomainPlainArgs extends com.pulumi.resources.I
     }
 
     /**
-     * The OCID of the Availability Domain. Required if `ad_number` is not specified.
+     * The OCID of the Availability Domain. Required if `adNumber` is not specified.
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return The OCID of the Availability Domain. Required if `ad_number` is not specified.
+     * @return The OCID of the Availability Domain. Required if `adNumber` is not specified.
      * 
      */
     public Optional<String> id() {
@@ -110,7 +110,7 @@ public final class GetAvailabilityDomainPlainArgs extends com.pulumi.resources.I
         }
 
         /**
-         * @param id The OCID of the Availability Domain. Required if `ad_number` is not specified.
+         * @param id The OCID of the Availability Domain. Required if `adNumber` is not specified.
          * 
          * @return builder
          * 

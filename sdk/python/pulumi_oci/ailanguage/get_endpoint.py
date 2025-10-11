@@ -212,6 +212,8 @@ def get_endpoint(id: Optional[_builtins.str] = None,
 
     Gets an endpoint by identifier
 
+    ## Example Usage
+
 
     :param _builtins.str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.
     """
@@ -241,6 +243,8 @@ def get_endpoint_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
 
     Gets an endpoint by identifier
+
+    ## Example Usage
 
 
     :param _builtins.str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.

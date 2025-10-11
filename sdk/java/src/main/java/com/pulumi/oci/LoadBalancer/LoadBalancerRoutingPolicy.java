@@ -105,14 +105,14 @@ public class LoadBalancerRoutingPolicy extends com.pulumi.resources.CustomResour
         return this.loadBalancerId;
     }
     /**
-     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRoutingRules`
      * 
      */
     public Output<String> name() {

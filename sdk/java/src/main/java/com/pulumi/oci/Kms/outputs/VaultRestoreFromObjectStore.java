@@ -33,7 +33,7 @@ public final class VaultRestoreFromObjectStore {
      */
     private @Nullable String object;
     /**
-     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
     private @Nullable String uri;
@@ -68,7 +68,7 @@ public final class VaultRestoreFromObjectStore {
         return Optional.ofNullable(this.object);
     }
     /**
-     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+     * @return (Updatable) Pre-authenticated-request-uri of the backup* `restoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
      * 
      */
     public Optional<String> uri() {

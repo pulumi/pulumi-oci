@@ -13,7 +13,9 @@ import (
 
 // This data source provides the list of User Attributes Settings in Oracle Cloud Infrastructure Identity Domains service.
 //
-// Search User Schema Attribute Settings
+// # Search User Schema Attribute Settings
+//
+// ## Example Usage
 func GetDomainsUserAttributesSettings(ctx *pulumi.Context, args *GetDomainsUserAttributesSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsUserAttributesSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsUserAttributesSettingsResult

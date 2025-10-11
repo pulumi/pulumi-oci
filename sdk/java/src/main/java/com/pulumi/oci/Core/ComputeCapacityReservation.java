@@ -163,7 +163,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
         return this.freeformTags;
     }
     /**
-     * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+     * (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      * 
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      * 
@@ -172,7 +172,7 @@ public class ComputeCapacityReservation extends com.pulumi.resources.CustomResou
     private Output<List<ComputeCapacityReservationInstanceReservationConfig>> instanceReservationConfigs;
 
     /**
-     * @return (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+     * @return (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
      * 
      * To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
      * 

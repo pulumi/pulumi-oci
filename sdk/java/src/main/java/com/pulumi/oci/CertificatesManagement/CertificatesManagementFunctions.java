@@ -1881,6 +1881,8 @@ public final class CertificatesManagementFunctions {
      * Lists all versions for the specified certificate authority (CA).
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args) {
         return getCertificateAuthorityVersion(args, InvokeOptions.Empty);
@@ -1890,6 +1892,8 @@ public final class CertificatesManagementFunctions {
      * 
      * Lists all versions for the specified certificate authority (CA).
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args) {
@@ -1901,6 +1905,8 @@ public final class CertificatesManagementFunctions {
      * Lists all versions for the specified certificate authority (CA).
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -1911,6 +1917,8 @@ public final class CertificatesManagementFunctions {
      * Lists all versions for the specified certificate authority (CA).
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -1920,6 +1928,8 @@ public final class CertificatesManagementFunctions {
      * 
      * Lists all versions for the specified certificate authority (CA).
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args, InvokeOptions options) {

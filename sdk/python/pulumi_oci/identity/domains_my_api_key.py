@@ -926,6 +926,8 @@ class DomainsMyApiKey(pulumi.CustomResource):
 
         Add a user's own API key.
 
+        ## Example Usage
+
         ## Import
 
         MyApiKeys can be imported using the `id`, e.g.
@@ -1015,6 +1017,8 @@ class DomainsMyApiKey(pulumi.CustomResource):
         This resource provides the My Api Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a user's own API key.
+
+        ## Example Usage
 
         ## Import
 

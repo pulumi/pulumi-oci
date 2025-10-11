@@ -53,7 +53,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public partial class Backend : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The name of the backend set to which to add the backend server.  Example: `example_backend_set`
+        /// The name of the backend set to which to add the backend server.  Example: `ExampleBackendSet`
         /// </summary>
         [Output("backendSetName")]
         public Output<string> BackendSetName { get; private set; } = null!;
@@ -65,19 +65,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Output<string> IpAddress { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `True`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `False`
         /// </summary>
         [Output("isBackup")]
         public Output<bool> IsBackup { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
         /// </summary>
         [Output("isDrain")]
         public Output<bool> IsDrain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Output("isOffline")]
         public Output<bool> IsOffline { get; private set; } = null!;
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the backend set to which to add the backend server.  Example: `example_backend_set`
+        /// The name of the backend set to which to add the backend server.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;
@@ -175,19 +175,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `True`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `False`
         /// </summary>
         [Input("isBackup")]
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isOffline")]
         public Input<bool>? IsOffline { get; set; }
@@ -235,7 +235,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class BackendState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The name of the backend set to which to add the backend server.  Example: `example_backend_set`
+        /// The name of the backend set to which to add the backend server.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName")]
         public Input<string>? BackendSetName { get; set; }
@@ -247,19 +247,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `True`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `False`
         /// </summary>
         [Input("isBackup")]
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isOffline")]
         public Input<bool>? IsOffline { get; set; }

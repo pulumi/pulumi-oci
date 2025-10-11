@@ -158,7 +158,7 @@ namespace Pulumi.Oci.Core
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
+        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `True`
         /// </summary>
         [Output("createImageAllowed")]
         public Output<bool> CreateImageAllowed { get; private set; } = null!;
@@ -398,7 +398,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
+        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `True`
         /// </summary>
         [Input("createImageAllowed")]
         public Input<bool>? CreateImageAllowed { get; set; }

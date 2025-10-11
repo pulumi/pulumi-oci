@@ -14,11 +14,11 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
     public sealed class GetBackendSetsBackendsetBackendResult
     {
         /// <summary>
-        /// Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// Whether the load balancer should treat this server as a backup unit. If `True`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         /// </summary>
         public readonly bool Backup;
         /// <summary>
-        /// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `False`
         /// </summary>
         public readonly bool Drain;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         public readonly bool Offline;
         /// <summary>

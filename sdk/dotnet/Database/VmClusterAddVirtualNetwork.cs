@@ -39,7 +39,7 @@ namespace Pulumi.Oci.Database
     /// });
     /// ```
     /// 
-    /// ##### Note: You may also need to add `db_servers` and `cpu_core_count` to the ignore_changes for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
+    /// ##### Note: You may also need to add `DbServers` and `CpuCoreCount` to the IgnoreChanges for the resource `oci.Database.VmCluster` list if you see a diff on a subsequent apply
     /// 
     /// ## Import
     /// 

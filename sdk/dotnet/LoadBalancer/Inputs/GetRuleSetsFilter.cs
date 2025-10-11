@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class GetRuleSetsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+        /// The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRuleSet`
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

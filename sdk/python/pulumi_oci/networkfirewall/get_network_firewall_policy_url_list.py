@@ -112,6 +112,8 @@ def get_network_firewall_policy_url_list(name: Optional[_builtins.str] = None,
 
     Get Url List by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Unique name identifier for the URL list.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -136,6 +138,8 @@ def get_network_firewall_policy_url_list_output(name: Optional[pulumi.Input[_bui
     This data source provides details about a specific Network Firewall Policy Url List resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Url List by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Unique name identifier for the URL list.

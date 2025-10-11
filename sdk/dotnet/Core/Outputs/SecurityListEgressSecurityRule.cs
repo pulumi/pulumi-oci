@@ -29,8 +29,8 @@ namespace Pulumi.Oci.Core.Outputs
         /// (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
         /// 
         /// Allowed values:
-        /// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
+        /// * `CIDR_BLOCK`: If the rule's `Destination` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
         /// </summary>
         public readonly string? DestinationType;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly Outputs.SecurityListEgressSecurityRuleIcmpOptions? IcmpOptions;
         /// <summary>
-        /// (Updatable) The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+        /// (Updatable) The transport protocol. Specify either `All` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
         public readonly string Protocol;
         /// <summary>

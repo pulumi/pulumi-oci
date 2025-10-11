@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataFlow
         public Output<string> OwnerPrincipalId { get; private set; } = null!;
 
         /// <summary>
-        /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        /// The username of the user who created the resource.  If the username of the owner does not exist, `Null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         [Output("ownerUserName")]
         public Output<string> OwnerUserName { get; private set; } = null!;
@@ -354,7 +354,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string>? OwnerPrincipalId { get; set; }
 
         /// <summary>
-        /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        /// The username of the user who created the resource.  If the username of the owner does not exist, `Null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         [Input("ownerUserName")]
         public Input<string>? OwnerUserName { get; set; }

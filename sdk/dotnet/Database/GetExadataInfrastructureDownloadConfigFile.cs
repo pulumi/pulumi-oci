@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Database
     {
         public readonly bool? Base64EncodeContent;
         /// <summary>
-        /// content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+        /// content of the downloaded config file for exadata infrastructure. If `Base64EncodeContent` is set to `True`, then this content will be base64 encoded.
         /// </summary>
         public readonly string Content;
         public readonly string ExadataInfrastructureId;

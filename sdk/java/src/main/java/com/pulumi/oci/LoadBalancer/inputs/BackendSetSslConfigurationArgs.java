@@ -34,14 +34,14 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
-     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     public Optional<Output<String>> certificateName() {
@@ -62,7 +62,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
      * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     @Import(name="cipherSuiteName")
@@ -82,7 +82,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
      * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
      * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     public Optional<Output<String>> cipherSuiteName() {
@@ -275,7 +275,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param certificateName (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+         * @param certificateName (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param certificateName (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+         * @param certificateName (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
          * 
          * @return builder
          * 
@@ -309,7 +309,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
          * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class BackendSetSslConfigurationArgs extends com.pulumi.resources.R
          * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
          * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
          * 
-         * example: `example_cipher_suite`
+         * example: `exampleCipherSuite`
          * 
          * @return builder
          * 

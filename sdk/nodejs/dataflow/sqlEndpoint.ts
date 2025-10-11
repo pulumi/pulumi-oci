@@ -14,6 +14,8 @@ import * as utilities from "../utilities";
  *
  * Create a new Sql Endpoint.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * SqlEndpoints can be imported using the `id`, e.g.

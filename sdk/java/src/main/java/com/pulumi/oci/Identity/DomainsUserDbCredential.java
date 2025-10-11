@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s database (DB) credentials.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * UserDbCredentials can be imported using the `id`, e.g.

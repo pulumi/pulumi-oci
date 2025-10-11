@@ -232,14 +232,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The namespace of the metric. Example: `oci_computeagent`
+     * (Updatable) The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     @Import(name="metricNamespace")
     private @Nullable Output<String> metricNamespace;
 
     /**
-     * @return (Updatable) The namespace of the metric. Example: `oci_computeagent`
+     * @return (Updatable) The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     public Optional<Output<String>> metricNamespace() {
@@ -669,7 +669,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metricNamespace (Updatable) The namespace of the metric. Example: `oci_computeagent`
+         * @param metricNamespace (Updatable) The namespace of the metric. Example: `ociComputeagent`
          * 
          * @return builder
          * 
@@ -680,7 +680,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param metricNamespace (Updatable) The namespace of the metric. Example: `oci_computeagent`
+         * @param metricNamespace (Updatable) The namespace of the metric. Example: `ociComputeagent`
          * 
          * @return builder
          * 

@@ -13,12 +13,14 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Externalnoncontainerdatabase External Non Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables Database Management feature for the specified external non-container database.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement")]
     public partial class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -86,7 +88,7 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -116,7 +118,7 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

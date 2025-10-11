@@ -95,7 +95,7 @@ namespace Pulumi.Oci.Core
         public Output<string> Destination { get; private set; } = null!;
 
         /// <summary>
-        /// Type of destination for the rule. Required if `direction` = `EGRESS`.
+        /// Type of destination for the rule. Required if `Direction` = `EGRESS`.
         /// </summary>
         [Output("destinationType")]
         public Output<string> DestinationType { get; private set; } = null!;
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.NetworkSecurityGroupSecurityRuleIcmpOptions?> IcmpOptions { get; private set; } = null!;
 
         /// <summary>
-        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `Source` or `Destination` is a network security group, the value changes to `False` if that network security group is deleted.
         /// </summary>
         [Output("isValid")]
         public Output<bool> IsValid { get; private set; } = null!;
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Core
         public Output<string> NetworkSecurityGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+        /// The transport protocol. Specify either `All` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -139,10 +139,10 @@ namespace Pulumi.Oci.Core
         public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
-        /// Type of source for the rule. Required if `direction` = `INGRESS`.
-        /// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-        /// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        /// Type of source for the rule. Required if `Direction` = `INGRESS`.
+        /// * `CIDR_BLOCK`: If the rule's `Source` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        /// * `NETWORK_SECURITY_GROUP`: If the rule's `Source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         /// </summary>
         [Output("sourceType")]
         public Output<string> SourceType { get; private set; } = null!;
@@ -230,7 +230,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? Destination { get; set; }
 
         /// <summary>
-        /// Type of destination for the rule. Required if `direction` = `EGRESS`.
+        /// Type of destination for the rule. Required if `Direction` = `EGRESS`.
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }
@@ -256,7 +256,7 @@ namespace Pulumi.Oci.Core
         public Input<string> NetworkSecurityGroupId { get; set; } = null!;
 
         /// <summary>
-        /// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+        /// The transport protocol. Specify either `All` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
@@ -268,10 +268,10 @@ namespace Pulumi.Oci.Core
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Type of source for the rule. Required if `direction` = `INGRESS`.
-        /// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-        /// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        /// Type of source for the rule. Required if `Direction` = `INGRESS`.
+        /// * `CIDR_BLOCK`: If the rule's `Source` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        /// * `NETWORK_SECURITY_GROUP`: If the rule's `Source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? Destination { get; set; }
 
         /// <summary>
-        /// Type of destination for the rule. Required if `direction` = `EGRESS`.
+        /// Type of destination for the rule. Required if `Direction` = `EGRESS`.
         /// </summary>
         [Input("destinationType")]
         public Input<string>? DestinationType { get; set; }
@@ -335,7 +335,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.NetworkSecurityGroupSecurityRuleIcmpOptionsGetArgs>? IcmpOptions { get; set; }
 
         /// <summary>
-        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `source` or `destination` is a network security group, the value changes to `False` if that network security group is deleted.
+        /// Whether the rule is valid. The value is `True` when the rule is first created. If the rule's `Source` or `Destination` is a network security group, the value changes to `False` if that network security group is deleted.
         /// </summary>
         [Input("isValid")]
         public Input<bool>? IsValid { get; set; }
@@ -347,7 +347,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? NetworkSecurityGroupId { get; set; }
 
         /// <summary>
-        /// The transport protocol. Specify either `all` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
+        /// The transport protocol. Specify either `All` or an IPv4 protocol number as defined in [Protocol Numbers](http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml). Options are supported only for ICMP ("1"), TCP ("6"), UDP ("17"), and ICMPv6 ("58").
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
@@ -359,10 +359,10 @@ namespace Pulumi.Oci.Core
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Type of source for the rule. Required if `direction` = `INGRESS`.
-        /// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
-        /// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
-        /// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
+        /// Type of source for the rule. Required if `Direction` = `INGRESS`.
+        /// * `CIDR_BLOCK`: If the rule's `Source` is an IP address range in CIDR notation.
+        /// * `SERVICE_CIDR_BLOCK`: If the rule's `Source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+        /// * `NETWORK_SECURITY_GROUP`: If the rule's `Source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
         /// </summary>
         [Input("sourceType")]
         public Input<string>? SourceType { get; set; }

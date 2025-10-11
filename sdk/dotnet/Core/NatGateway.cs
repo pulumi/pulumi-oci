@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Core
     public partial class NatGateway : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `False`.  Example: `True`
         /// </summary>
         [Output("blockTraffic")]
         public Output<bool> BlockTraffic { get; private set; } = null!;
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Core
     public sealed class NatGatewayArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `False`.  Example: `True`
         /// </summary>
         [Input("blockTraffic")]
         public Input<bool>? BlockTraffic { get; set; }
@@ -250,7 +250,7 @@ namespace Pulumi.Oci.Core
     public sealed class NatGatewayState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+        /// (Updatable) Whether the NAT gateway blocks traffic through it. The default is `False`.  Example: `True`
         /// </summary>
         [Input("blockTraffic")]
         public Input<bool>? BlockTraffic { get; set; }

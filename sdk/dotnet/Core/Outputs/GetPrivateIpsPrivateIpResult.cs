@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, string> FreeformTags;
         /// <summary>
-        /// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
+        /// The hostname for the private IP. Used for DNS. The value is the hostname portion of the private IP's fully qualified domain name (FQDN) (for example, `Bminstance1` in FQDN `bminstance1.subnet123.vcn1.oraclevcn.com`). Must be unique across all VNICs in the subnet and comply with [RFC 952](https://tools.ietf.org/html/rfc952) and [RFC 1123](https://tools.ietf.org/html/rfc1123).
         /// </summary>
         public readonly string HostnameLabel;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string IpState;
         /// <summary>
-        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `true`
+        /// Whether this private IP is the primary one on the VNIC. Primary private IPs are unassigned and deleted automatically when the VNIC is terminated.  Example: `True`
         /// </summary>
         public readonly bool IsPrimary;
         public readonly bool IsReserved;

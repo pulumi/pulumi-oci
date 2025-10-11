@@ -154,7 +154,7 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFilesystemSnapshotPolicyLockResult> Locks;
         /// <summary>
-        /// The prefix to apply to all snapshots created by this policy.  Example: `acme`
+        /// The prefix to apply to all snapshots created by this policy.  Example: `Acme`
         /// </summary>
         public readonly string PolicyPrefix;
         /// <summary>

@@ -35,7 +35,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// A header name that conforms to RFC 7230.  Example: `example_header_name`
+        /// A header name that conforms to RFC 7230.  Example: `ExampleHeaderName`
         /// </summary>
         public readonly string Header;
         /// <summary>

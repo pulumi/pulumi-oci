@@ -19,14 +19,14 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
     public static final BackendArgs Empty = new BackendArgs();
 
     /**
-     * The name of the backend set to add the backend server to.  Example: `example_backend_set`
+     * The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendsetName", required=true)
     private Output<String> backendsetName;
 
     /**
-     * @return The name of the backend set to add the backend server to.  Example: `example_backend_set`
+     * @return The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> backendsetName() {
@@ -208,7 +208,7 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backendsetName The name of the backend set to add the backend server to.  Example: `example_backend_set`
+         * @param backendsetName The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class BackendArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param backendsetName The name of the backend set to add the backend server to.  Example: `example_backend_set`
+         * @param backendsetName The name of the backend set to add the backend server to.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

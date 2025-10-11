@@ -153,7 +153,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
         /// * UNRESTRICTED (default): the access to the database is not restricted;
-        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [OfflineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         /// </summary>
         [Output("accessMode")]
         public Output<string> AccessMode { get; private set; } = null!;
@@ -343,7 +343,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `Maintenance` and `BackupPolicy` cannot be updated in the same request.
         /// </summary>
         [Output("maintenance")]
         public Output<Outputs.MysqlDbSystemMaintenance> Maintenance { get; private set; } = null!;
@@ -501,7 +501,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
         /// * UNRESTRICTED (default): the access to the database is not restricted;
-        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [OfflineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         /// </summary>
         [Input("accessMode")]
         public Input<string>? AccessMode { get; set; }
@@ -689,7 +689,7 @@ namespace Pulumi.Oci.Mysql
         public Input<bool>? IsHighlyAvailable { get; set; }
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `Maintenance` and `BackupPolicy` cannot be updated in the same request.
         /// </summary>
         [Input("maintenance")]
         public Input<Inputs.MysqlDbSystemMaintenanceArgs>? Maintenance { get; set; }
@@ -787,7 +787,7 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
         /// * UNRESTRICTED (default): the access to the database is not restricted;
-        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+        /// * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [OfflineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
         /// </summary>
         [Input("accessMode")]
         public Input<string>? AccessMode { get; set; }
@@ -1035,7 +1035,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+        /// (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `Maintenance` and `BackupPolicy` cannot be updated in the same request.
         /// </summary>
         [Input("maintenance")]
         public Input<Inputs.MysqlDbSystemMaintenanceGetArgs>? Maintenance { get; set; }

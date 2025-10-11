@@ -303,6 +303,8 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
 
         Creates compute image capability schema.
 
+        ## Example Usage
+
         ## Import
 
         ComputeImageCapabilitySchemas can be imported using the `id`, e.g.
@@ -331,6 +333,8 @@ class ComputeImageCapabilitySchema(pulumi.CustomResource):
         This resource provides the Compute Image Capability Schema resource in Oracle Cloud Infrastructure Core service.
 
         Creates compute image capability schema.
+
+        ## Example Usage
 
         ## Import
 

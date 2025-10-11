@@ -47,14 +47,14 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
     }
 
     /**
-     * The attached domain within the attached zone. `domain_name` is case insensitive.
+     * The attached domain within the attached zone. `domainName` is case insensitive.
      * 
      */
     @Import(name="domainName")
     private @Nullable Output<String> domainName;
 
     /**
-     * @return The attached domain within the attached zone. `domain_name` is case insensitive.
+     * @return The attached domain within the attached zone. `domainName` is case insensitive.
      * 
      */
     public Optional<Output<String>> domainName() {
@@ -232,7 +232,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domainName The attached domain within the attached zone. `domain_name` is case insensitive.
+         * @param domainName The attached domain within the attached zone. `domainName` is case insensitive.
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class SteeringPolicyAttachmentState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param domainName The attached domain within the attached zone. `domain_name` is case insensitive.
+         * @param domainName The attached domain within the attached zone. `domainName` is case insensitive.
          * 
          * @return builder
          * 

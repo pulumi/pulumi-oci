@@ -18,14 +18,14 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
     public static final BootVolumeBackupArgs Empty = new BootVolumeBackupArgs();
 
     /**
-     * The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+     * The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
      * 
      */
     @Import(name="bootVolumeId")
     private @Nullable Output<String> bootVolumeId;
 
     /**
-     * @return The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+     * @return The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
      * 
      */
     public Optional<Output<String>> bootVolumeId() {
@@ -108,14 +108,14 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+     * Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      * 
      */
     @Import(name="sourceDetails")
     private @Nullable Output<BootVolumeBackupSourceDetailsArgs> sourceDetails;
 
     /**
-     * @return Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+     * @return Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      * 
      */
     public Optional<Output<BootVolumeBackupSourceDetailsArgs>> sourceDetails() {
@@ -169,7 +169,7 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param bootVolumeId The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+         * @param bootVolumeId The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param bootVolumeId The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+         * @param bootVolumeId The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
          * 
          * @return builder
          * 
@@ -295,7 +295,7 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceDetails Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+         * @param sourceDetails Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class BootVolumeBackupArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param sourceDetails Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+         * @param sourceDetails Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
          * 
          * @return builder
          * 

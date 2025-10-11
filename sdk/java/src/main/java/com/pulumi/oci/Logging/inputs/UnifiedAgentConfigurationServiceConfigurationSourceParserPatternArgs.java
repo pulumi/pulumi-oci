@@ -16,14 +16,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
     public static final UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs Empty = new UnifiedAgentConfigurationServiceConfigurationSourceParserPatternArgs();
 
     /**
-     * (Updatable) Process value using the specified format. This is available only when time_type is a string.
+     * (Updatable) Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     @Import(name="fieldTimeFormat")
     private @Nullable Output<String> fieldTimeFormat;
 
     /**
-     * @return (Updatable) Process value using the specified format. This is available only when time_type is a string.
+     * @return (Updatable) Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     public Optional<Output<String>> fieldTimeFormat() {
@@ -119,7 +119,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param fieldTimeFormat (Updatable) Process value using the specified format. This is available only when time_type is a string.
+         * @param fieldTimeFormat (Updatable) Process value using the specified format. This is available only when timeType is a string.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParserPatt
         }
 
         /**
-         * @param fieldTimeFormat (Updatable) Process value using the specified format. This is available only when time_type is a string.
+         * @param fieldTimeFormat (Updatable) Process value using the specified format. This is available only when timeType is a string.
          * 
          * @return builder
          * 

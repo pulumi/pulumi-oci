@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataFlow.Inputs
     public sealed class GetApplicationsFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "input_file"
+        /// The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: "iterations", "InputFile"
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

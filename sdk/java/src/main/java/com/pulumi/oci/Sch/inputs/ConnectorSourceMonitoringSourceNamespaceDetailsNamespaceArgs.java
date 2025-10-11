@@ -31,14 +31,14 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs 
     }
 
     /**
-     * (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+     * (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
      * 
      */
     @Import(name="namespace", required=true)
     private Output<String> namespace;
 
     /**
-     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+     * @return (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
      * 
      */
     public Output<String> namespace() {
@@ -92,7 +92,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs 
         }
 
         /**
-         * @param namespace (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+         * @param namespace (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs 
         }
 
         /**
-         * @param namespace (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
+         * @param namespace (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
          * 
          * @return builder
          * 

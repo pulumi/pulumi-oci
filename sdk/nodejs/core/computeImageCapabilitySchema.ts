@@ -9,6 +9,8 @@ import * as utilities from "../utilities";
  *
  * Creates compute image capability schema.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * ComputeImageCapabilitySchemas can be imported using the `id`, e.g.

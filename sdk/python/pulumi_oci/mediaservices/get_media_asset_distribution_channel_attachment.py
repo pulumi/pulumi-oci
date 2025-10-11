@@ -163,6 +163,8 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
 
     Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
 
+    ## Example Usage
+
 
     :param _builtins.str distribution_channel_id: Unique DistributionChannel identifier.
     :param Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict']] locks: Locks associated with this resource.
@@ -196,6 +198,8 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
     This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
 
     Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+
+    ## Example Usage
 
 
     :param _builtins.str distribution_channel_id: Unique DistributionChannel identifier.

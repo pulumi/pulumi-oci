@@ -39,14 +39,14 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
     }
 
     /**
-     * content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
-     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     public Optional<Output<String>> content() {
@@ -176,7 +176,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param content content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+         * @param content content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
          * 
          * @return builder
          * 
@@ -187,7 +187,7 @@ public final class AutonomousDatabaseWalletState extends com.pulumi.resources.Re
         }
 
         /**
-         * @param content content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+         * @param content content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
          * 
          * @return builder
          * 

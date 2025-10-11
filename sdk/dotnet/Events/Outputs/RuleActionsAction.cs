@@ -33,7 +33,7 @@ namespace Pulumi.Oci.Events.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// (Updatable) Whether or not this action is currently enabled.  Example: `true`
+        /// (Updatable) Whether or not this action is currently enabled.  Example: `True`
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

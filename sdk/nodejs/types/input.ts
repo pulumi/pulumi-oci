@@ -43834,7 +43834,7 @@ export namespace FleetAppsManagement {
          */
         resourceProvider?: pulumi.Input<string>;
         /**
-         * The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance
+         * The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: oci.Core.Instance 
          */
         resourceType?: pulumi.Input<string>;
     }

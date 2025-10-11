@@ -21,13 +21,13 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<string> Action { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
+        /// (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `Action` is set to `CACHE`. Example: `PT1H`
         /// </summary>
         [Input("cachingDuration")]
         public Input<string>? CachingDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
+        /// (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `Action` is set to `CACHE`. Example: `PT1H`
         /// </summary>
         [Input("clientCachingDuration")]
         public Input<string>? ClientCachingDuration { get; set; }

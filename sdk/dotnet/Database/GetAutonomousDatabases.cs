@@ -183,19 +183,19 @@ namespace Pulumi.Oci.Database
         public bool? IsDataGuardEnabled { get; set; }
 
         /// <summary>
-        /// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        /// Filter on the value of the resource's 'isFreeTier' property. A value of `True` returns only Always Free resources. A value of `False` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         /// </summary>
         [Input("isFreeTier")]
         public bool? IsFreeTier { get; set; }
 
         /// <summary>
-        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `True` returns only refreshable clones. A value of `False` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         /// </summary>
         [Input("isRefreshableClone")]
         public bool? IsRefreshableClone { get; set; }
 
         /// <summary>
-        /// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+        /// Filter if the resource is the resource pool leader. A value of `True` returns only resource pool leader.
         /// </summary>
         [Input("isResourcePoolLeader")]
         public bool? IsResourcePoolLeader { get; set; }
@@ -277,19 +277,19 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDataGuardEnabled { get; set; }
 
         /// <summary>
-        /// Filter on the value of the resource's 'isFreeTier' property. A value of `true` returns only Always Free resources. A value of `false` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
+        /// Filter on the value of the resource's 'isFreeTier' property. A value of `True` returns only Always Free resources. A value of `False` excludes Always Free resources from the returned results. Omitting this parameter returns both Always Free and paid resources.
         /// </summary>
         [Input("isFreeTier")]
         public Input<bool>? IsFreeTier { get; set; }
 
         /// <summary>
-        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `true` returns only refreshable clones. A value of `false` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
+        /// Filter on the value of the resource's 'isRefreshableClone' property. A value of `True` returns only refreshable clones. A value of `False` excludes refreshable clones from the returned results. Omitting this parameter returns both refreshable clones and databases that are not refreshable clones.
         /// </summary>
         [Input("isRefreshableClone")]
         public Input<bool>? IsRefreshableClone { get; set; }
 
         /// <summary>
-        /// Filter if the resource is the resource pool leader. A value of `true` returns only resource pool leader.
+        /// Filter if the resource is the resource pool leader. A value of `True` returns only resource pool leader.
         /// </summary>
         [Input("isResourcePoolLeader")]
         public Input<bool>? IsResourcePoolLeader { get; set; }

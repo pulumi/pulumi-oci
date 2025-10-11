@@ -7248,6 +7248,8 @@ class DomainsApp(pulumi.CustomResource):
 
         Create an App
 
+        ## Example Usage
+
         ## Import
 
         Apps can be imported using the `id`, e.g.
@@ -8143,6 +8145,8 @@ class DomainsApp(pulumi.CustomResource):
         This resource provides the App resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create an App
+
+        ## Example Usage
 
         ## Import
 

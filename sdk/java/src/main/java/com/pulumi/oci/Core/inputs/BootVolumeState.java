@@ -262,14 +262,14 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     @Import(name="sizeInMbs")
     private @Nullable Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     public Optional<Output<String>> sizeInMbs() {
@@ -783,7 +783,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
          * 
          * @return builder
          * 
@@ -794,7 +794,7 @@ public final class BootVolumeState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
          * 
          * @return builder
          * 

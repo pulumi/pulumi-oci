@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceConnectorsServiceConnectorCollectionItemTargetDimensionResult> Dimensions;
         /// <summary>
-        /// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `true`
+        /// Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol. Example: `True`
         /// </summary>
         public readonly bool EnableFormattedMessaging;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string LogGroupId;
         /// <summary>
-        /// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
+        /// Identifier of the log source that you want to use for processing data received from the connector source. Applies to `StreamingSource` only. Equivalent to `Name` at [LogAnalyticsSource](https://docs.cloud.oracle.com/iaas/api/#/en/logan-api-spec/latest/LogAnalyticsSource/).
         /// </summary>
         public readonly string LogSourceIdentifier;
         /// <summary>
@@ -70,7 +70,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly string Metric;
         /// <summary>
-        /// The namespace of the metric. Example: `oci_computeagent`
+        /// The namespace of the metric. Example: `OciComputeagent`
         /// </summary>
         public readonly string MetricNamespace;
         /// <summary>

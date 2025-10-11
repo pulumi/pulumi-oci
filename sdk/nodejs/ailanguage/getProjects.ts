@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
  *
  * Returns a list of  Projects.
+ *
+ * ## Example Usage
  */
 export function getProjects(args: GetProjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,6 +77,8 @@ export interface GetProjectsResult {
  * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
  *
  * Returns a list of  Projects.
+ *
+ * ## Example Usage
  */
 export function getProjectsOutput(args: GetProjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

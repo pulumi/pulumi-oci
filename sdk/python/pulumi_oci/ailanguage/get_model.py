@@ -249,6 +249,8 @@ def get_model(id: Optional[_builtins.str] = None,
 
     Gets a model by identifier
 
+    ## Example Usage
+
 
     :param _builtins.str id: Unique identifier model OCID of a model that is immutable on creation
     """
@@ -281,6 +283,8 @@ def get_model_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
 
     Gets a model by identifier
+
+    ## Example Usage
 
 
     :param _builtins.str id: Unique identifier model OCID of a model that is immutable on creation

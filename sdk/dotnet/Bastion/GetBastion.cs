@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `Standard` bastions.
         /// </summary>
         public readonly string PhoneBookEntry;
         /// <summary>
@@ -181,7 +181,7 @@ namespace Pulumi.Oci.Bastion
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
+        /// A list of IP addresses of the hosts that the bastion has access to. Not applicable to `Standard` bastions.
         /// </summary>
         public readonly ImmutableArray<string> StaticJumpHostIpAddresses;
         /// <summary>

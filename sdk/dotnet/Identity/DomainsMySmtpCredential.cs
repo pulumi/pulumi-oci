@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's own SMTP credential.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// MySmtpCredentials can be imported using the `id`, e.g.

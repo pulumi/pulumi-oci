@@ -38,7 +38,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string? RetentionDurationInSeconds;
         /// <summary>
-        /// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
+        /// (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `Compliance1`
         /// </summary>
         public readonly string? SchedulePrefix;
         /// <summary>

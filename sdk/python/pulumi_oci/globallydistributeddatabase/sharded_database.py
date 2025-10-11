@@ -1408,6 +1408,8 @@ class ShardedDatabase(pulumi.CustomResource):
         operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
         and remove in single operation is not allowed.
 
+        ## Example Usage
+
         ## Import
 
         ShardedDatabases can be imported using the `id`, e.g.
@@ -1470,6 +1472,8 @@ class ShardedDatabase(pulumi.CustomResource):
           Patch operation to add, remove or update shards to the sharded database topology. In single patch
         operation, multiple shards can be either added, or removed or updated. Combination of inserts, update
         and remove in single operation is not allowed.
+
+        ## Example Usage
 
         ## Import
 

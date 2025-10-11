@@ -74,14 +74,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:NetworkLoadBalancer/listener:Listener")
 public class Listener extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     @Export(name="defaultBackendSetName", refs={String.class}, tree="[0]")
     private Output<String> defaultBackendSetName;
 
     /**
-     * @return (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * @return (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> defaultBackendSetName() {
@@ -130,14 +130,14 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.l3ipIdleTimeout;
     }
     /**
-     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     public Output<String> name() {

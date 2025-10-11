@@ -3322,6 +3322,8 @@ public final class ContainerEngineFunctions {
      * 
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args) {
         return getVirtualNodePools(args, InvokeOptions.Empty);
@@ -3330,6 +3332,8 @@ public final class ContainerEngineFunctions {
      * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
      * 
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args) {
@@ -3340,6 +3344,8 @@ public final class ContainerEngineFunctions {
      * 
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
@@ -3349,6 +3355,8 @@ public final class ContainerEngineFunctions {
      * 
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
@@ -3357,6 +3365,8 @@ public final class ContainerEngineFunctions {
      * This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
      * 
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args, InvokeOptions options) {

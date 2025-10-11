@@ -146,14 +146,14 @@ public class Bucket extends com.pulumi.resources.CustomResource {
         return this.autoTiering;
     }
     /**
-     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     @Export(name="bucketId", refs={String.class}, tree="[0]")
     private Output<String> bucketId;
 
     /**
-     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucket_id` cannot be used for bucket lookup.
+     * @return The OCID of the bucket which is a Oracle assigned unique identifier for this resource type (bucket). `bucketId` cannot be used for bucket lookup.
      * 
      */
     public Output<String> bucketId() {

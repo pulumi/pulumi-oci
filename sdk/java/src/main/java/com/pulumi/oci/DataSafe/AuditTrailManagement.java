@@ -70,7 +70,7 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/auditTrailManagement:AuditTrailManagement")
 public class AuditTrailManagement extends com.pulumi.resources.CustomResource {
     /**
-     * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+     * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -80,7 +80,7 @@ public class AuditTrailManagement extends com.pulumi.resources.CustomResource {
     private Output</* @Nullable */ String> auditCollectionStartTime;
 
     /**
-     * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+     * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

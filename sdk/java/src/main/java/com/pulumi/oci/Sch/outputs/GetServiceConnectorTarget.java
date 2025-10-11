@@ -86,7 +86,7 @@ public final class GetServiceConnectorTarget {
      */
     private String metric;
     /**
-     * @return The namespace of the metric. Example: `oci_computeagent`
+     * @return The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     private String metricNamespace;
@@ -216,7 +216,7 @@ public final class GetServiceConnectorTarget {
         return this.metric;
     }
     /**
-     * @return The namespace of the metric. Example: `oci_computeagent`
+     * @return The namespace of the metric. Example: `ociComputeagent`
      * 
      */
     public String metricNamespace() {

@@ -15,7 +15,7 @@ namespace Pulumi.Oci.Waf.Inputs
         /// <summary>
         /// (Updatable) References action by name from actions defined in WebAppFirewallPolicy. Executed if HTTP message body size exceeds limit set in field `bodyInspectionSizeLimitInBytes`.
         /// 
-        /// If this field is `null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
+        /// If this field is `Null` HTTP message body will inspected up to `bodyInspectionSizeLimitInBytes` and the rest will not be inspected by Protection Capabilities.
         /// 
         /// Allowed action types:
         /// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.

@@ -16,7 +16,7 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
      */
     private String action;
     /**
-     * @return A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     private String header;
@@ -35,7 +35,7 @@ public final class GetWaasPolicyWafConfigAccessRuleResponseHeaderManipulation {
         return this.action;
     }
     /**
-     * @return A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public String header() {

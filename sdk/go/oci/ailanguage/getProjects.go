@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
 //
 // Returns a list of  Projects.
+//
+// ## Example Usage
 func GetProjects(ctx *pulumi.Context, args *GetProjectsArgs, opts ...pulumi.InvokeOption) (*GetProjectsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProjectsResult

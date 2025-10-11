@@ -123,7 +123,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -134,7 +134,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -304,14 +304,14 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+     * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      * 
      */
     @Import(name="volumeId")
     private @Nullable Output<String> volumeId;
 
     /**
-     * @return The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+     * @return The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      * 
      */
     public Optional<Output<String>> volumeId() {
@@ -508,7 +508,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
          * 
          * @return builder
          * 
@@ -523,7 +523,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+         * @param sizeInMbs The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+         * @param volumeId The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param volumeId The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+         * @param volumeId The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
          * 
          * @return builder
          * 

@@ -14,6 +14,8 @@ import (
 // This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
 //
 // Returns a list of data assets within a data catalog.
+//
+// ## Example Usage
 func GetDataAssets(ctx *pulumi.Context, args *GetDataAssetsArgs, opts ...pulumi.InvokeOption) (*GetDataAssetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataAssetsResult

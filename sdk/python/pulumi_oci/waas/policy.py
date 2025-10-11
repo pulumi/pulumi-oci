@@ -434,6 +434,8 @@ class Policy(pulumi.CustomResource):
 
         **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
 
+        ## Example Usage
+
         ## Import
 
         WaasPolicies can be imported using the `id`, e.g.
@@ -477,6 +479,8 @@ class Policy(pulumi.CustomResource):
         All Oracle Cloud Infrastructure resources, including WAAS policies, receive a unique, Oracle-assigned ID called an Oracle Cloud Identifier (OCID). When a resource is created, you can find its OCID in the response. You can also retrieve a resource's OCID by using a list API operation for that resource type, or by viewing the resource in the Console. Fore more information, see [Resource Identifiers](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 
         **Note:** After sending the POST request, the new object's state will temporarily be `CREATING`. Ensure that the resource's state has changed to `ACTIVE` before use.
+
+        ## Example Usage
 
         ## Import
 

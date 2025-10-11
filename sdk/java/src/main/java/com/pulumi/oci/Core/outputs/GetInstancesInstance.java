@@ -42,7 +42,7 @@ public final class GetInstancesInstance {
      */
     private String availabilityDomain;
     /**
-     * @return The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * @return The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     private String bootVolumeId;
@@ -272,7 +272,7 @@ public final class GetInstancesInstance {
         return this.availabilityDomain;
     }
     /**
-     * @return The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * @return The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     public String bootVolumeId() {

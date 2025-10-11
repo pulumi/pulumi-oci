@@ -232,7 +232,7 @@ namespace Pulumi.Oci.Database
         public Output<Outputs.ExadbVmClusterNodeConfig> NodeConfig { get; private set; } = null!;
 
         /// <summary>
-        /// Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+        /// Each `NodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         [Output("nodeResources")]
         public Output<ImmutableArray<Outputs.ExadbVmClusterNodeResource>> NodeResources { get; private set; } = null!;
@@ -526,7 +526,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.ExadbVmClusterNodeResourceArgs>? _nodeResources;
 
         /// <summary>
-        /// Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+        /// Each `NodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         public InputList<Inputs.ExadbVmClusterNodeResourceArgs> NodeResources
         {
@@ -803,7 +803,7 @@ namespace Pulumi.Oci.Database
         private InputList<Inputs.ExadbVmClusterNodeResourceGetArgs>? _nodeResources;
 
         /// <summary>
-        /// Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+        /// Each `NodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
         /// </summary>
         public InputList<Inputs.ExadbVmClusterNodeResourceGetArgs> NodeResources
         {

@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Decryption Rule by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyDecryptionRule(args: GetNetworkFirewallPolicyDecryptionRuleArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyDecryptionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,6 +77,8 @@ export interface GetNetworkFirewallPolicyDecryptionRuleResult {
  * This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
  *
  * Get Decryption Rule by the given name in the context of network firewall policy.
+ *
+ * ## Example Usage
  */
 export function getNetworkFirewallPolicyDecryptionRuleOutput(args: GetNetworkFirewallPolicyDecryptionRuleOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyDecryptionRuleResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -8,6 +8,8 @@ import * as utilities from "../utilities";
  * This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
  *
  * Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
+ *
+ * ## Example Usage
  */
 export class BdsInstanceSoftwareUpdateAction extends pulumi.CustomResource {
     /**

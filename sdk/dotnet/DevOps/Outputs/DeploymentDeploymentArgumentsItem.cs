@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         public readonly string? Name;
         /// <summary>
         /// value of the argument.
-        /// *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        /// *  To retrieve Helm Diff for Helm stages in the pipeline add DeploymentArguments with name=PLAN_DRY_RUN and value=true
         /// </summary>
         public readonly string? Value;
 

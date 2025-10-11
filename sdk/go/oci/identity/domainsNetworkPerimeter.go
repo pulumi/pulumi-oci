@@ -16,6 +16,8 @@ import (
 //
 // # Create a NetworkPerimeter
 //
+// ## Example Usage
+//
 // ## Import
 //
 // NetworkPerimeters can be imported using the `id`, e.g.

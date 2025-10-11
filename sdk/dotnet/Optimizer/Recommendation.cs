@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the recommendation will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **
@@ -193,7 +193,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the recommendation will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **
@@ -315,7 +315,7 @@ namespace Pulumi.Oci.Optimizer
         /// <summary>
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
-        /// For example, "The current `postponed` status of the recommendation will end and change to `pending` on this date and time."
+        /// For example, "The current `Postponed` status of the recommendation will end and change to `Pending` on this date and time."
         /// 
         /// 
         /// ** IMPORTANT **

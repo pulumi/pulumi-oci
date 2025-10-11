@@ -103,7 +103,7 @@ namespace Pulumi.Oci.Sch
     public sealed class GetConnectorPluginsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleServiceConnector`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Sch
     public sealed class GetConnectorPluginsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleServiceConnector`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

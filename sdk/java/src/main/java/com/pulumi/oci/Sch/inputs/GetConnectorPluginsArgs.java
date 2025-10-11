@@ -18,14 +18,14 @@ public final class GetConnectorPluginsArgs extends com.pulumi.resources.InvokeAr
     public static final GetConnectorPluginsArgs Empty = new GetConnectorPluginsArgs();
 
     /**
-     * A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -97,7 +97,7 @@ public final class GetConnectorPluginsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class GetConnectorPluginsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
          * 
          * @return builder
          * 

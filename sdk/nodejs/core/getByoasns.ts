@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Lists the `Byoasn` resources in the specified compartment.
  * You can filter the list using query parameters.
+ *
+ * ## Example Usage
  */
 export function getByoasns(args: GetByoasnsArgs, opts?: pulumi.InvokeOptions): Promise<GetByoasnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -54,6 +56,8 @@ export interface GetByoasnsResult {
  *
  * Lists the `Byoasn` resources in the specified compartment.
  * You can filter the list using query parameters.
+ *
+ * ## Example Usage
  */
 export function getByoasnsOutput(args: GetByoasnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetByoasnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -379,7 +379,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<bool> DoesUseSecretIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
         /// </summary>
         [Output("endpoint")]
         public Output<string> Endpoint { get; private set; } = null!;
@@ -1186,7 +1186,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -2094,7 +2094,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<bool>? DoesUseSecretIds { get; set; }
 
         /// <summary>
-        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `region`.
+        /// (Updatable) The endpoint URL of the 3rd party cloud service. e.g.: 'https://kinesis.us-east-1.amazonaws.com' If not provided, GoldenGate will default to the default endpoint in the `Region`.
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }

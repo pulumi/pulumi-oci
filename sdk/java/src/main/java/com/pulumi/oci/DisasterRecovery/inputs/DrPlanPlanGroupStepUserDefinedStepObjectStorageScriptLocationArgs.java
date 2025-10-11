@@ -16,14 +16,14 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
     public static final DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs Empty = new DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs();
 
     /**
-     * The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+     * @return The bucket name inside the object storage namespace.  Example: `customDrScripts`
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -87,7 +87,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param bucket The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `customDrScripts`
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation
         }
 
         /**
-         * @param bucket The bucket name inside the object storage namespace.  Example: `custom_dr_scripts`
+         * @param bucket The bucket name inside the object storage namespace.  Example: `customDrScripts`
          * 
          * @return builder
          * 

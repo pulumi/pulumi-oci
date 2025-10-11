@@ -84,11 +84,11 @@ namespace Pulumi.Oci.Ocvp.Outputs
         public readonly string InitialSku;
         public readonly string InstanceDisplayNamePrefix;
         /// <summary>
-        /// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
+        /// (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `HcxMode` instead.
         /// </summary>
         public readonly bool IsHcxEnabled;
         /// <summary>
-        /// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
+        /// (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `HcxMode` instead.
         /// </summary>
         public readonly bool IsHcxEnterpriseEnabled;
         /// <summary>

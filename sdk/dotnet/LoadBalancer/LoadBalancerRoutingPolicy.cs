@@ -63,7 +63,7 @@ namespace Pulumi.Oci.LoadBalancer
     public partial class LoadBalancerRoutingPolicy : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The version of the language in which `condition` of `rules` are composed.
+        /// (Updatable) The version of the language in which `Condition` of `Rules` are composed.
         /// </summary>
         [Output("conditionLanguageVersion")]
         public Output<string> ConditionLanguageVersion { get; private set; } = null!;
@@ -75,7 +75,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> LoadBalancerId { get; private set; } = null!;
 
         /// <summary>
-        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRoutingRules`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -136,7 +136,7 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class LoadBalancerRoutingPolicyArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The version of the language in which `condition` of `rules` are composed.
+        /// (Updatable) The version of the language in which `Condition` of `Rules` are composed.
         /// </summary>
         [Input("conditionLanguageVersion", required: true)]
         public Input<string> ConditionLanguageVersion { get; set; } = null!;
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> LoadBalancerId { get; set; } = null!;
 
         /// <summary>
-        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRoutingRules`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -174,7 +174,7 @@ namespace Pulumi.Oci.LoadBalancer
     public sealed class LoadBalancerRoutingPolicyState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The version of the language in which `condition` of `rules` are composed.
+        /// (Updatable) The version of the language in which `Condition` of `Rules` are composed.
         /// </summary>
         [Input("conditionLanguageVersion")]
         public Input<string>? ConditionLanguageVersion { get; set; }
@@ -186,7 +186,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? LoadBalancerId { get; set; }
 
         /// <summary>
-        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
+        /// The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleRoutingRules`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

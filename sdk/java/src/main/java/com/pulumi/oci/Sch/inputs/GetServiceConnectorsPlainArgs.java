@@ -33,14 +33,14 @@ public final class GetServiceConnectorsPlainArgs extends com.pulumi.resources.In
     }
 
     /**
-     * A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     @Import(name="displayName")
     private @Nullable String displayName;
 
     /**
-     * @return A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+     * @return A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
      * 
      */
     public Optional<String> displayName() {
@@ -108,7 +108,7 @@ public final class GetServiceConnectorsPlainArgs extends com.pulumi.resources.In
         }
 
         /**
-         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `example_service_connector`
+         * @param displayName A filter to return only resources that match the given display name exactly.  Example: `exampleServiceConnector`
          * 
          * @return builder
          * 

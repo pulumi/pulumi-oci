@@ -181,10 +181,10 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      * 
-     * Example: `tunnel_configuration {
-     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * Example: `tunnelConfiguration {
+     * oracleTunnelIp = &#34;10.1.5.5&#34;
+     * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
      * }`
      * 
      * ** IMPORTANT **
@@ -197,10 +197,10 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      * 
-     * Example: `tunnel_configuration {
-     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * Example: `tunnelConfiguration {
+     * oracleTunnelIp = &#34;10.1.5.5&#34;
+     * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
      * }`
      * 
      * ** IMPORTANT **
@@ -474,10 +474,10 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
          * 
-         * Example: `tunnel_configuration {
-         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * Example: `tunnelConfiguration {
+         * oracleTunnelIp = &#34;10.1.5.5&#34;
+         * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
          * }`
          * 
          * ** IMPORTANT **
@@ -494,10 +494,10 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
          * 
-         * Example: `tunnel_configuration {
-         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * Example: `tunnelConfiguration {
+         * oracleTunnelIp = &#34;10.1.5.5&#34;
+         * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
          * }`
          * 
          * ** IMPORTANT **
@@ -513,10 +513,10 @@ public final class IpsecArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param tunnelConfigurations (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
          * 
-         * Example: `tunnel_configuration {
-         * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-         * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-         * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+         * Example: `tunnelConfiguration {
+         * oracleTunnelIp = &#34;10.1.5.5&#34;
+         * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+         * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
          * }`
          * 
          * ** IMPORTANT **

@@ -46,7 +46,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> CloudDbSystemId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> CloudDbSystemId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? CloudDbSystemId { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

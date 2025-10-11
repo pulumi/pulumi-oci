@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Dns.Inputs
     public sealed class SteeringPolicyAnswerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Set this property to `true` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
+        /// Set this property to `True` to indicate that the answer is administratively disabled, such as when the corresponding server is down for maintenance. An answer's `isDisabled` property can be referenced in `answerCondition` properties in rules using `answer.isDisabled`.
         /// </summary>
         [Input("isDisabled")]
         public Input<bool>? IsDisabled { get; set; }
 
         /// <summary>
-        /// A user-friendly name for the answer, unique within the steering policy. An answer's `name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
+        /// A user-friendly name for the answer, unique within the steering policy. An answer's `Name` property can be referenced in `answerCondition` properties of rules using `answer.name`.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
+        /// The freeform name of a group of one or more records in which this record is included, such as "LAX data center". An answer's `Pool` property can be referenced in `answerCondition` properties of rules using `answer.pool`.
         /// </summary>
         [Input("pool")]
         public Input<string>? Pool { get; set; }

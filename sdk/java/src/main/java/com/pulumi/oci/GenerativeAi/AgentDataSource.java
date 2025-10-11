@@ -20,6 +20,8 @@ import javax.annotation.Nullable;
  * 
  * Creates a data source.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * DataSources can be imported using the `id`, e.g.

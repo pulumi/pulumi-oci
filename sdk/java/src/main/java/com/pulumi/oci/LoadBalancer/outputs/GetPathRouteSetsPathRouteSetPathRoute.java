@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetPathRouteSetsPathRouteSetPathRoute {
     /**
-     * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+     * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
      * 
      */
     private String backendSetName;
@@ -32,7 +32,7 @@ public final class GetPathRouteSetsPathRouteSetPathRoute {
 
     private GetPathRouteSetsPathRouteSetPathRoute() {}
     /**
-     * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+     * @return The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {

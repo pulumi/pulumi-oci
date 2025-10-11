@@ -112,14 +112,14 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
     }
 
     /**
-     * (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     @Import(name="position")
     private @Nullable Output<NetworkFirewallPolicyDecryptionRulePositionArgs> position;
 
     /**
-     * @return (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+     * @return (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
      * 
      */
     public Optional<Output<NetworkFirewallPolicyDecryptionRulePositionArgs>> position() {
@@ -311,7 +311,7 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
         }
 
         /**
-         * @param position (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+         * @param position (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class NetworkFirewallPolicyDecryptionRuleState extends com.pulumi.r
         }
 
         /**
-         * @param position (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+         * @param position (Updatable) An object which defines the position of the rule. Only one of `afterRule` or `beforeRule` should be provided.
          * 
          * @return builder
          * 

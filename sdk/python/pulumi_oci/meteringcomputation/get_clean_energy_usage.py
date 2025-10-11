@@ -92,6 +92,8 @@ def get_clean_energy_usage(region: Optional[_builtins.str] = None,
 
     Returns the clean energy usage summary by region.
 
+    ## Example Usage
+
 
     :param _builtins.str region: The region.
     """
@@ -111,6 +113,8 @@ def get_clean_energy_usage_output(region: Optional[pulumi.Input[_builtins.str]] 
     This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
 
     Returns the clean energy usage summary by region.
+
+    ## Example Usage
 
 
     :param _builtins.str region: The region.

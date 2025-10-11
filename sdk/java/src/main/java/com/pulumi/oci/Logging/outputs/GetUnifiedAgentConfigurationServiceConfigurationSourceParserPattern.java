@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern {
     /**
-     * @return Process value using the specified format. This is available only when time_type is a string.
+     * @return Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     private String fieldTimeFormat;
@@ -38,7 +38,7 @@ public final class GetUnifiedAgentConfigurationServiceConfigurationSourceParserP
 
     private GetUnifiedAgentConfigurationServiceConfigurationSourceParserPattern() {}
     /**
-     * @return Process value using the specified format. This is available only when time_type is a string.
+     * @return Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     public String fieldTimeFormat() {

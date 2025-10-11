@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Deprecated. Use `name` instead of `shape`.
+        /// Deprecated. Use `Name` instead of `Shape`.
         /// </summary>
         public readonly string Shape;
         /// <summary>

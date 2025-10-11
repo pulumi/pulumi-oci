@@ -170,14 +170,14 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      */
     @Import(name="removeExportDrgRouteDistributionTrigger")
     private @Nullable Output<Boolean> removeExportDrgRouteDistributionTrigger;
 
     /**
-     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      */
     public Optional<Output<Boolean>> removeExportDrgRouteDistributionTrigger() {
@@ -469,7 +469,7 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class DrgAttachmentManagementArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
          * 
          * @return builder
          * 

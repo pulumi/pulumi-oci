@@ -15,6 +15,9 @@ namespace Pulumi.Oci.Dblm
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
         /// 
         /// Overview of Patch Management.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetPatchManagementResult> InvokeAsync(GetPatchManagementArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementArgs(), options.WithDefaults());
@@ -23,6 +26,9 @@ namespace Pulumi.Oci.Dblm
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
         /// 
         /// Overview of Patch Management.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetPatchManagementResult> Invoke(GetPatchManagementInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementInvokeArgs(), options.WithDefaults());
@@ -31,6 +37,9 @@ namespace Pulumi.Oci.Dblm
         /// This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
         /// 
         /// Overview of Patch Management.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetPatchManagementResult> Invoke(GetPatchManagementInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementInvokeArgs(), options.WithDefaults());

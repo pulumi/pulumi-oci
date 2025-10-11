@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Media Asset Distribution Channel Attachment resource in Oracle Cloud Infrastructure Media Services service.
 //
 // Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
+//
+// ## Example Usage
 func GetMediaAssetDistributionChannelAttachment(ctx *pulumi.Context, args *GetMediaAssetDistributionChannelAttachmentArgs, opts ...pulumi.InvokeOption) (*GetMediaAssetDistributionChannelAttachmentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaAssetDistributionChannelAttachmentResult

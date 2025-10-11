@@ -83,14 +83,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     @Import(name="bootVolumeId")
     private @Nullable Output<String> bootVolumeId;
 
     /**
-     * @return The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+     * @return The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
      * 
      */
     public Optional<Output<String>> bootVolumeId() {
@@ -397,14 +397,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -494,9 +494,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      * You can use the following metadata key names to provide information to Cloud-Init:
      * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
      * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * 
      * **Metadata Example**
      * 
@@ -523,9 +523,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      * 
      * You can use the following metadata key names to provide information to Cloud-Init:
      * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+     * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
      * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+     * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
      * 
      * **Metadata Example**
      * 
@@ -626,14 +626,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     @Import(name="privateIp")
     private @Nullable Output<String> privateIp;
 
     /**
-     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     public Optional<Output<String>> privateIp() {
@@ -996,7 +996,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bootVolumeId The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+         * @param bootVolumeId The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
          * 
          * @return builder
          * 
@@ -1007,7 +1007,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param bootVolumeId The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+         * @param bootVolumeId The OCID of the attached boot volume. If the `sourceType` is `bootVolume`, this will be the same OCID as the `sourceId`.
          * 
          * @return builder
          * 
@@ -1414,7 +1414,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
          * 
          * @return builder
          * 
@@ -1425,7 +1425,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false. Use this field only during create. To update use `isPvEncryptionInTransitEnabled` under `launchOptions` instead.
          * 
          * @return builder
          * 
@@ -1553,9 +1553,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * 
          * You can use the following metadata key names to provide information to Cloud-Init:
          * 
-         * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+         * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
          * 
-         * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
          * 
          * **Metadata Example**
          * 
@@ -1586,9 +1586,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          * 
          * You can use the following metadata key names to provide information to Cloud-Init:
          * 
-         * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+         * **&#34;sshAuthorizedKeys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorizedKeys` file, as shown in the example below.
          * 
-         * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+         * **&#34;userData&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
          * 
          * **Metadata Example**
          * 
@@ -1717,7 +1717,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
          * 
          * @return builder
          * 
@@ -1728,7 +1728,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+         * @param privateIp The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
          * 
          * @return builder
          * 

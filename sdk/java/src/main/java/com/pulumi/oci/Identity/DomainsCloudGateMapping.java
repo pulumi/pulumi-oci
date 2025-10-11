@@ -29,6 +29,8 @@ import javax.annotation.Nullable;
  * 
  * Create a Cloud Gate mapping
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * CloudGateMappings can be imported using the `id`, e.g.

@@ -170,7 +170,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+        /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -316,7 +316,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+        /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -424,7 +424,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publish_trigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publish_trigger is updated to `true`.
+        /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
         /// 
         /// 
         /// ** IMPORTANT **

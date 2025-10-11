@@ -365,14 +365,14 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+     * Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
     @Import(name="nodeResources")
     private @Nullable Output<List<ExadbVmClusterNodeResourceArgs>> nodeResources;
 
     /**
-     * @return Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+     * @return Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
      * 
      */
     public Optional<Output<List<ExadbVmClusterNodeResourceArgs>>> nodeResources() {
@@ -1248,7 +1248,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeResources Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+         * @param nodeResources Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
          * 
          * @return builder
          * 
@@ -1259,7 +1259,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeResources Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+         * @param nodeResources Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
          * 
          * @return builder
          * 
@@ -1269,7 +1269,7 @@ public final class ExadbVmClusterState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param nodeResources Each `node_resource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
+         * @param nodeResources Each `nodeResource` represents a node in the Exadata VM cluster on Exascale Infrastructure.
          * 
          * @return builder
          * 

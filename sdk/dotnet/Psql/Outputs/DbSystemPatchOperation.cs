@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Psql.Outputs
         public readonly string? Position;
         public readonly string? SelectedItem;
         /// <summary>
-        /// In case of `INSERT`, selection is `instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
+        /// In case of `INSERT`, selection is `Instances`. In case of `REMOVE`, selection is `instances[?id == '${var.instance_id}']`.
         /// </summary>
         public readonly string Selection;
         /// <summary>

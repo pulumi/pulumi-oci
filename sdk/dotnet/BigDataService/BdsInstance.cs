@@ -14,6 +14,8 @@ namespace Pulumi.Oci.BigDataService
     /// 
     /// Creates a new BDS instance.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// BdsInstances can be imported using the `id`, e.g.
@@ -110,7 +112,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         [Output("ignoreExistingNodesShapes")]
         public Output<ImmutableArray<string>> IgnoreExistingNodesShapes { get; private set; } = null!;
@@ -392,7 +394,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<string>? _ignoreExistingNodesShapes;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         public InputList<string> IgnoreExistingNodesShapes
         {
@@ -628,7 +630,7 @@ namespace Pulumi.Oci.BigDataService
         private InputList<string>? _ignoreExistingNodesShapes;
 
         /// <summary>
-        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+        /// Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, KafkaBroker nodes, in a list format, when new nodes are added with a different shape.
         /// </summary>
         public InputList<string> IgnoreExistingNodesShapes
         {

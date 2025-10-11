@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Add a user's OAuth2 client credentials.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * OAuth2ClientCredentials can be imported using the `id`, e.g.

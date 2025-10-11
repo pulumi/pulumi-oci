@@ -30,7 +30,7 @@ public final class GetPrivateEndpointsPrivateEndpointCollectionItem {
      */
     private String description;
     /**
-     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     private String displayName;
@@ -123,7 +123,7 @@ public final class GetPrivateEndpointsPrivateEndpointCollectionItem {
         return this.description;
     }
     /**
-     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     public String displayName() {

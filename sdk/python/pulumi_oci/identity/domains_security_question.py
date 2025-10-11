@@ -1047,6 +1047,8 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
 
         Create a security question.
 
+        ## Example Usage
+
         ## Import
 
         SecurityQuestions can be imported using the `id`, e.g.
@@ -1154,6 +1156,8 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         This resource provides the Security Question resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a security question.
+
+        ## Example Usage
 
         ## Import
 

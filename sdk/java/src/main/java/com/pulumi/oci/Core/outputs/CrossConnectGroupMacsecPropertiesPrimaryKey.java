@@ -18,7 +18,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      */
     private String connectivityAssociationKeySecretId;
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -30,7 +30,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
      */
     private String connectivityAssociationNameSecretId;
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -46,7 +46,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
         return this.connectivityAssociationKeySecretId;
     }
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -62,7 +62,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKey {
         return this.connectivityAssociationNameSecretId;
     }
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 

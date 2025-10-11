@@ -12,7 +12,7 @@ import java.util.Objects;
 @CustomType
 public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
     /**
-     * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     private String cookieName;
@@ -24,7 +24,7 @@ public final class GetBackendSetsBackendsetSessionPersistenceConfiguration {
 
     private GetBackendSetsBackendsetSessionPersistenceConfiguration() {}
     /**
-     * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * @return The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     public String cookieName() {

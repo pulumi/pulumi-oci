@@ -275,6 +275,8 @@ public final class MeteringComputationFunctions {
      * 
      * Returns the clean energy usage summary by region.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args) {
         return getCleanEnergyUsage(args, InvokeOptions.Empty);
@@ -283,6 +285,8 @@ public final class MeteringComputationFunctions {
      * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
      * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args) {
@@ -293,6 +297,8 @@ public final class MeteringComputationFunctions {
      * 
      * Returns the clean energy usage summary by region.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
@@ -302,6 +308,8 @@ public final class MeteringComputationFunctions {
      * 
      * Returns the clean energy usage summary by region.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
@@ -310,6 +318,8 @@ public final class MeteringComputationFunctions {
      * This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
      * 
      * Returns the clean energy usage summary by region.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args, InvokeOptions options) {

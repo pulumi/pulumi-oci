@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  * (that is, the pre-shared key). For more information, see
  * [CPE Configuration](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/configuringCPE.htm).
  * 
- * To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnel_configuration`.
- * You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracle_tunnel_ip`,
- * `associated_virtual_circuits` and `drg_route_table_id` at time of creation. These attributes cannot be updated using IPSec
+ * To configure tunnel-specific information for private ipsec connection over fastconnect, use attribute `tunnelConfiguration`.
+ * You can provide configuration for maximum of 2 tunnels. You can configure each tunnel with `oracleTunnelIp`,
+ * `associatedVirtualCircuits` and `drgRouteTableId` at time of creation. These attributes cannot be updated using IPSec
  * connection APIs. To update drg route table id, use `oci.Core.DrgAttachmentManagement` resource to update.
  * 
  * ## Example Usage
@@ -325,10 +325,10 @@ public class Ipsec extends com.pulumi.resources.CustomResource {
     /**
      * (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      * 
-     * Example: `tunnel_configuration {
-     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * Example: `tunnelConfiguration {
+     * oracleTunnelIp = &#34;10.1.5.5&#34;
+     * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
      * }`
      * 
      * ** IMPORTANT **
@@ -341,10 +341,10 @@ public class Ipsec extends com.pulumi.resources.CustomResource {
     /**
      * @return (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
      * 
-     * Example: `tunnel_configuration {
-     * oracle_tunnel_ip = &#34;10.1.5.5&#34;
-     * associated_virtual_circuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
-     * drg_route_table_id = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
+     * Example: `tunnelConfiguration {
+     * oracleTunnelIp = &#34;10.1.5.5&#34;
+     * associatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
+     * drgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
      * }`
      * 
      * ** IMPORTANT **

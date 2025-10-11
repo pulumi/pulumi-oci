@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string? GrokNameKey;
         /// <summary>
-        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the TimeKey is specified.
         /// </summary>
         public readonly bool? IsEstimateCurrentEvent;
         /// <summary>
@@ -58,11 +58,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly bool? IsNullEmptyString;
         /// <summary>
-        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd SupportColonlessIdent parameter.
         /// </summary>
         public readonly bool? IsSupportColonlessIdent;
         /// <summary>
-        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd WithPriority parameter.
         /// </summary>
         public readonly bool? IsWithPriority;
         /// <summary>
@@ -130,13 +130,13 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly int? TimeoutInMilliseconds;
         /// <summary>
-        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user TimeKey time &lt;/parse&gt;
         /// 
         /// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
         /// 
         /// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
         /// 
-        /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
+        /// record: { "host"   : "192.168.0.1", "ReqId" : "111", "user"   : "-" }
         /// </summary>
         public readonly ImmutableDictionary<string, string>? Types;
 

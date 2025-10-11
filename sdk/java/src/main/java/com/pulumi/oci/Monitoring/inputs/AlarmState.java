@@ -230,14 +230,14 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * @return (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -867,7 +867,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+         * @param namespace (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
          * 
          * @return builder
          * 
@@ -878,7 +878,7 @@ public final class AlarmState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param namespace (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+         * @param namespace (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
          * 
          * @return builder
          * 

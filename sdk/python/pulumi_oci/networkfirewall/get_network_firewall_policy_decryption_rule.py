@@ -159,6 +159,8 @@ def get_network_firewall_policy_decryption_rule(name: Optional[_builtins.str] = 
 
     Get Decryption Rule by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name for the decryption rule, must be unique within the policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -187,6 +189,8 @@ def get_network_firewall_policy_decryption_rule_output(name: Optional[pulumi.Inp
     This data source provides details about a specific Network Firewall Policy Decryption Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Decryption Rule by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name for the decryption rule, must be unique within the policy.

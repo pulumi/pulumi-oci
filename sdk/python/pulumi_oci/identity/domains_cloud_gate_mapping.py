@@ -1438,6 +1438,8 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
 
         Create a Cloud Gate mapping
 
+        ## Example Usage
+
         ## Import
 
         CloudGateMappings can be imported using the `id`, e.g.
@@ -1597,6 +1599,8 @@ class DomainsCloudGateMapping(pulumi.CustomResource):
         This resource provides the Cloud Gate Mapping resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a Cloud Gate mapping
+
+        ## Example Usage
 
         ## Import
 

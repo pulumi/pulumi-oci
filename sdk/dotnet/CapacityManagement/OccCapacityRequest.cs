@@ -15,6 +15,8 @@ namespace Pulumi.Oci.CapacityManagement
     /// Create Capacity Request.
     ///   Updates the OccCapacityRequest by evaluating a sequence of instructions.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// OccCapacityRequests can be imported using the `id`, e.g.

@@ -153,7 +153,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
         return this.fastStartFailOverLagLimitInSeconds;
     }
     /**
-     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+     * (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -163,7 +163,7 @@ public class AutonomousContainerDatabaseDataguardAssociation extends com.pulumi.
     private Output<Boolean> isAutomaticFailoverEnabled;
 
     /**
-     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+     * @return (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `isAutomaticFailoverEnabled = true`.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

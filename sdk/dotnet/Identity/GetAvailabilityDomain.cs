@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Identity
     public sealed class GetAvailabilityDomainArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
+        /// The number of the Availability Domain. Required if `Id` is not specified. This number corresponds to the integer in the Availability Domain `Name`.
         /// </summary>
         [Input("adNumber")]
         public int? AdNumber { get; set; }
@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Identity
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the Availability Domain. Required if `ad_number` is not specified.
+        /// The OCID of the Availability Domain. Required if `AdNumber` is not specified.
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -123,7 +123,7 @@ namespace Pulumi.Oci.Identity
     public sealed class GetAvailabilityDomainInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The number of the Availability Domain. Required if `id` is not specified. This number corresponds to the integer in the Availability Domain `name`.
+        /// The number of the Availability Domain. Required if `Id` is not specified. This number corresponds to the integer in the Availability Domain `Name`.
         /// </summary>
         [Input("adNumber")]
         public Input<int>? AdNumber { get; set; }
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Identity
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the Availability Domain. Required if `ad_number` is not specified.
+        /// The OCID of the Availability Domain. Required if `AdNumber` is not specified.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.Identity
     public sealed class GetAvailabilityDomainResult
     {
         /// <summary>
-        /// The number of the Availability Domain. For example, the `ad_number` for YXol:US-ASHBURN-AD-1 would be "1"
+        /// The number of the Availability Domain. For example, the `AdNumber` for YXol:US-ASHBURN-AD-1 would be "1"
         /// </summary>
         public readonly int AdNumber;
         /// <summary>

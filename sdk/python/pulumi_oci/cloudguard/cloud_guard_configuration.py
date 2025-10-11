@@ -190,6 +190,12 @@ class CloudGuardConfiguration(pulumi.CustomResource):
         Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
         The reporting region cannot be updated once created.
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The OCID of the compartment in which to list resources.
@@ -212,6 +218,12 @@ class CloudGuardConfiguration(pulumi.CustomResource):
 
         Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
         The reporting region cannot be updated once created.
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param CloudGuardConfigurationArgs args: The arguments to use to populate this resource's properties.

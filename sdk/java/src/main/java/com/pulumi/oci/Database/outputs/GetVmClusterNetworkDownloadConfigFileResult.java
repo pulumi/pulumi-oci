@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 public final class GetVmClusterNetworkDownloadConfigFileResult {
     private @Nullable Boolean base64EncodeContent;
     /**
-     * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     private String content;
@@ -32,7 +32,7 @@ public final class GetVmClusterNetworkDownloadConfigFileResult {
         return Optional.ofNullable(this.base64EncodeContent);
     }
     /**
-     * @return content of the downloaded config file for exadata infrastructure. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded config file for exadata infrastructure. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     public String content() {

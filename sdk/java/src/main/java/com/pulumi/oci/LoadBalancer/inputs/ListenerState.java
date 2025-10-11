@@ -35,14 +35,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="defaultBackendSetName")
     private @Nullable Output<String> defaultBackendSetName;
 
     /**
-     * @return (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * @return (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     public Optional<Output<String>> defaultBackendSetName() {
@@ -80,14 +80,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+     * A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
      * 
      */
     public Optional<Output<String>> name() {
@@ -99,7 +99,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
      * 
      * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
      * 
-     * Example: `example_path_route_set`
+     * Example: `examplePathRouteSet`
      * 
      */
     @Import(name="pathRouteSetName")
@@ -110,7 +110,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
      * 
      * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
      * 
-     * Example: `example_path_route_set`
+     * Example: `examplePathRouteSet`
      * 
      */
     public Optional<Output<String>> pathRouteSetName() {
@@ -148,14 +148,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+     * (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
      * 
      */
     @Import(name="routingPolicyName")
     private @Nullable Output<String> routingPolicyName;
 
     /**
-     * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+     * @return (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
      * 
      */
     public Optional<Output<String>> routingPolicyName() {
@@ -163,14 +163,14 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+     * (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
      * 
      */
     @Import(name="ruleSetNames")
     private @Nullable Output<List<String>> ruleSetNames;
 
     /**
-     * @return (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+     * @return (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
      * 
      */
     public Optional<Output<List<String>>> ruleSetNames() {
@@ -260,7 +260,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
          * 
          * @return builder
          * 
@@ -344,7 +344,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_listener`
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleListener`
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          * 
          * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
          * 
-         * Example: `example_path_route_set`
+         * Example: `examplePathRouteSet`
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          * 
          * The name of the set of path-based routing rules, [PathRouteSet](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/PathRouteSet/), applied to this listener&#39;s traffic.
          * 
-         * Example: `example_path_route_set`
+         * Example: `examplePathRouteSet`
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routingPolicyName (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+         * @param routingPolicyName (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param routingPolicyName (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `example_routing_policy`
+         * @param routingPolicyName (Updatable) The name of the routing policy applied to this listener&#39;s traffic.  Example: `exampleRoutingPolicy`
          * 
          * @return builder
          * 
@@ -446,7 +446,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
          * 
          * @return builder
          * 
@@ -457,7 +457,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
          * 
          * @return builder
          * 
@@ -467,7 +467,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;example_rule_set&#34;]
+         * @param ruleSetNames (Updatable) The names of the [rule sets](https://docs.cloud.oracle.com/iaas/api/#/en/loadbalancer/20170115/RuleSet/) to apply to the listener.  Example: [&#34;exampleRuleSet&#34;]
          * 
          * @return builder
          * 

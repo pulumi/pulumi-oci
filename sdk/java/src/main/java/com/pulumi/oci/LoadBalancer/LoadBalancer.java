@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  * ## Supported Aliases
  * 
- * * `oci_load_balancer`
+ * * `ociLoadBalancer`
  * 
  * ## Example Usage
  * 
@@ -147,14 +147,14 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+     * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `example_load_balancer`
+     * @return (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `exampleLoadBalancer`
      * 
      */
     public Output<String> displayName() {
@@ -189,7 +189,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
         return this.ipAddressDetails;
     }
     /**
-     * An array of IP addresses. Deprecated: use ip_address_details instead
+     * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
      * @deprecated
@@ -201,7 +201,7 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
     private Output<List<String>> ipAddresses;
 
     /**
-     * @return An array of IP addresses. Deprecated: use ip_address_details instead
+     * @return An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
      */

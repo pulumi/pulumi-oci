@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified external pluggable database.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement")
 public class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

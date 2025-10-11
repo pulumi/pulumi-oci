@@ -30,14 +30,14 @@ public final class GetLoadBalancerRoutingPolicyArgs extends com.pulumi.resources
     }
 
     /**
-     * The name of the routing policy to retrieve.  Example: `example_routing_policy`
+     * The name of the routing policy to retrieve.  Example: `exampleRoutingPolicy`
      * 
      */
     @Import(name="routingPolicyName", required=true)
     private Output<String> routingPolicyName;
 
     /**
-     * @return The name of the routing policy to retrieve.  Example: `example_routing_policy`
+     * @return The name of the routing policy to retrieve.  Example: `exampleRoutingPolicy`
      * 
      */
     public Output<String> routingPolicyName() {
@@ -91,7 +91,7 @@ public final class GetLoadBalancerRoutingPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param routingPolicyName The name of the routing policy to retrieve.  Example: `example_routing_policy`
+         * @param routingPolicyName The name of the routing policy to retrieve.  Example: `exampleRoutingPolicy`
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class GetLoadBalancerRoutingPolicyArgs extends com.pulumi.resources
         }
 
         /**
-         * @param routingPolicyName The name of the routing policy to retrieve.  Example: `example_routing_policy`
+         * @param routingPolicyName The name of the routing policy to retrieve.  Example: `exampleRoutingPolicy`
          * 
          * @return builder
          * 

@@ -49,7 +49,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
+        /// The source type for the instance. Use `Image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         [Input("sourceType", required: true)]
         public Input<string> SourceType { get; set; } = null!;

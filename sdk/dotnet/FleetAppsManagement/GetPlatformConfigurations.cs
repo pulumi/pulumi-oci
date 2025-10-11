@@ -15,7 +15,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Platform Configurations in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Platform Configurations in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -49,7 +49,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Platform Configurations in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Platform Configurations in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Platform Configurations in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Platform Configurations in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
         /// 
         /// ## Example Usage

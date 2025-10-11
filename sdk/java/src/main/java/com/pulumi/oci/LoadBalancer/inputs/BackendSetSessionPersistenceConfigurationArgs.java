@@ -18,14 +18,14 @@ public final class BackendSetSessionPersistenceConfigurationArgs extends com.pul
     public static final BackendSetSessionPersistenceConfigurationArgs Empty = new BackendSetSessionPersistenceConfigurationArgs();
 
     /**
-     * (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     @Import(name="cookieName", required=true)
     private Output<String> cookieName;
 
     /**
-     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     public Output<String> cookieName() {
@@ -73,7 +73,7 @@ public final class BackendSetSessionPersistenceConfigurationArgs extends com.pul
         }
 
         /**
-         * @param cookieName (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+         * @param cookieName (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
          * 
          * @return builder
          * 
@@ -84,7 +84,7 @@ public final class BackendSetSessionPersistenceConfigurationArgs extends com.pul
         }
 
         /**
-         * @param cookieName (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+         * @param cookieName (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
          * 
          * @return builder
          * 

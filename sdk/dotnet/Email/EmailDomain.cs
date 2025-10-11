@@ -97,7 +97,7 @@ namespace Pulumi.Oci.Email
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
+        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `Locks` - Locks associated with this resource.
         /// </summary>
         [Output("isSpf")]
         public Output<bool> IsSpf { get; private set; } = null!;
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.Email
         }
 
         /// <summary>
-        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `locks` - Locks associated with this resource.
+        /// Value of the SPF field. For more information about SPF, please see [SPF Authentication](https://docs.cloud.oracle.com/iaas/Content/Email/Concepts/overview.htm#components).* `Locks` - Locks associated with this resource.
         /// </summary>
         [Input("isSpf")]
         public Input<bool>? IsSpf { get; set; }

@@ -149,7 +149,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// The OCID of the attached boot volume. If the `source_type` is `bootVolume`, this will be the same OCID as the `source_id`.
+        /// The OCID of the attached boot volume. If the `SourceType` is `bootVolume`, this will be the same OCID as the `SourceId`.
         /// </summary>
         public readonly string BootVolumeId;
         /// <summary>
@@ -179,7 +179,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// </summary>
         public readonly ImmutableDictionary<string, string> ExtendedMetadata;
         /// <summary>
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Core
         public readonly bool PreserveBootVolume;
         public readonly bool PreserveDataVolumesCreatedAtLaunch;
         /// <summary>
-        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+        /// The private IP address of instance VNIC. To set the private IP address, use the `PrivateIp` argument in create_vnic_details.
         /// </summary>
         public readonly string PrivateIp;
         /// <summary>

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancers`
+        /// * `OciLoadBalancers`
         /// 
         /// ## Example Usage
         /// 
@@ -51,7 +51,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancers`
+        /// * `OciLoadBalancers`
         /// 
         /// ## Example Usage
         /// 
@@ -84,7 +84,7 @@ namespace Pulumi.Oci.LoadBalancer
         /// 
         /// ## Supported Aliases
         /// 
-        /// * `oci_load_balancers`
+        /// * `OciLoadBalancers`
         /// 
         /// ## Example Usage
         /// 
@@ -121,13 +121,13 @@ namespace Pulumi.Oci.LoadBalancer
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The level of detail to return for each result. Can be `full` or `simple`.  Example: `full`
+        /// The level of detail to return for each result. Can be `Full` or `Simple`.  Example: `Full`
         /// </summary>
         [Input("detail")]
         public string? Detail { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleLoadBalancer`
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -161,13 +161,13 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The level of detail to return for each result. Can be `full` or `simple`.  Example: `full`
+        /// The level of detail to return for each result. Can be `Full` or `Simple`.  Example: `Full`
         /// </summary>
         [Input("detail")]
         public Input<string>? Detail { get; set; }
 
         /// <summary>
-        /// A filter to return only resources that match the given display name exactly.  Example: `example_load_balancer`
+        /// A filter to return only resources that match the given display name exactly.  Example: `ExampleLoadBalancer`
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.LoadBalancer
         public readonly string CompartmentId;
         public readonly string? Detail;
         /// <summary>
-        /// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `example_load_balancer`
+        /// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `ExampleLoadBalancer`
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetLoadBalancersFilterResult> Filters;

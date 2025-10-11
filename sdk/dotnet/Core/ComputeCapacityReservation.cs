@@ -109,7 +109,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 InstanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
         /// 
         /// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
         /// </summary>
@@ -248,7 +248,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.ComputeCapacityReservationInstanceReservationConfigArgs>? _instanceReservationConfigs;
 
         /// <summary>
-        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 InstanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
         /// 
         /// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
         /// </summary>
@@ -322,7 +322,7 @@ namespace Pulumi.Oci.Core
         private InputList<Inputs.ComputeCapacityReservationInstanceReservationConfigGetArgs>? _instanceReservationConfigs;
 
         /// <summary>
-        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 instance_reservation_configs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
+        /// (Updatable) The capacity configurations for the capacity reservation. (Note: From 6.17.0 InstanceReservationConfigs field in oci.Core.ComputeCapacityReservation is changed from TypeList to TypeSet - to avoid unnecessary updates. Also, configs cant by accessed by index)
         /// 
         /// To use the reservation for the desired shape, specify the shape, count, and optionally the fault domain where you want this configuration.
         /// </summary>

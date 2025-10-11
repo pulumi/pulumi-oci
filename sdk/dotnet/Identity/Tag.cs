@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Identity
     /// to a resource. Lists are created by you and the user must apply a value from the list. Lists
     /// are validiated.
     /// 
-    /// * If no `validator` is set, the user applying the tag to a resource can type in a static
+    /// * If no `Validator` is set, the user applying the tag to a resource can type in a static
     ///   value or leave the tag value empty.
-    /// * If a `validator` is set, the user applying the tag to a resource must select from a list
+    /// * If a `Validator` is set, the user applying the tag to a resource must select from a list
     ///   of values that you supply with [EnumTagDefinitionValidator](https://docs.cloud.oracle.com/iaas/api/#/en/identity/latest/datatypes/EnumTagDefinitionValidator).
     /// 
     /// ## Example Usage

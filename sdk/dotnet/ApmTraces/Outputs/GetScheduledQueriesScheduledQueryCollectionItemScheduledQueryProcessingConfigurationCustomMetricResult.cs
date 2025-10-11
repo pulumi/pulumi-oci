@@ -34,7 +34,7 @@ namespace Pulumi.Oci.ApmTraces.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+        /// Namespace in the Custom Metric. It defaults to `OracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
         /// </summary>
         public readonly string Namespace;
         /// <summary>

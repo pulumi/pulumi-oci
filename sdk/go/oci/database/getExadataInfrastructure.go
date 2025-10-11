@@ -15,6 +15,8 @@ import (
 //
 // Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
 // To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+//
+// ## Example Usage
 func LookupExadataInfrastructure(ctx *pulumi.Context, args *LookupExadataInfrastructureArgs, opts ...pulumi.InvokeOption) (*LookupExadataInfrastructureResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupExadataInfrastructureResult

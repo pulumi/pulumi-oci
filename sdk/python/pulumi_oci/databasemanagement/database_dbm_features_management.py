@@ -234,6 +234,8 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
 
         Enables a Database Management feature for the specified cloud database.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
@@ -254,6 +256,8 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         This resource provides the Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 
         Enables a Database Management feature for the specified cloud database.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param DatabaseDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

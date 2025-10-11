@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string Email;
         /// <summary>
-        /// (Updatable) If `true`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `false`, this Exadata Infrastructure contact is not a valid MOS contact.
+        /// (Updatable) If `True`, this Exadata Infrastructure contact is a valid My Oracle Support (MOS) contact. If `False`, this Exadata Infrastructure contact is not a valid MOS contact.
         /// </summary>
         public readonly bool? IsContactMosValidated;
         /// <summary>
-        /// (Updatable) If `true`, this Exadata Infrastructure contact is a primary contact. If `false`, this Exadata Infrastructure is a secondary contact.
+        /// (Updatable) If `True`, this Exadata Infrastructure contact is a primary contact. If `False`, this Exadata Infrastructure is a secondary contact.
         /// </summary>
         public readonly bool IsPrimary;
         /// <summary>

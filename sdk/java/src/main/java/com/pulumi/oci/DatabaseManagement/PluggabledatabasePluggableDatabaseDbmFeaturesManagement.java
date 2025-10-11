@@ -21,6 +21,8 @@ import javax.annotation.Nullable;
  * 
  * Enables a Database Management feature for the specified Oracle cloud pluggable database.
  * 
+ * ## Example Usage
+ * 
  */
 @ResourceType(type="oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement")
 public class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends com.pulumi.resources.CustomResource {

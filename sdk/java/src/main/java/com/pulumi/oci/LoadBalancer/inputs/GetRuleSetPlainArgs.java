@@ -29,14 +29,14 @@ public final class GetRuleSetPlainArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The name of the rule set to retrieve.  Example: `example_rule_set`
+     * The name of the rule set to retrieve.  Example: `exampleRuleSet`
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return The name of the rule set to retrieve.  Example: `example_rule_set`
+     * @return The name of the rule set to retrieve.  Example: `exampleRuleSet`
      * 
      */
     public String name() {
@@ -80,7 +80,7 @@ public final class GetRuleSetPlainArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name The name of the rule set to retrieve.  Example: `example_rule_set`
+         * @param name The name of the rule set to retrieve.  Example: `exampleRuleSet`
          * 
          * @return builder
          * 

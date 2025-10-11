@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a user's customer secret key.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * CustomerSecretKeys can be imported using the `id`, e.g.

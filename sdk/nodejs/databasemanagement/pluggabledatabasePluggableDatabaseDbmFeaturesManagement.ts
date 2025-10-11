@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This resource provides the Pluggabledatabase Pluggable Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
  *
  * Enables a Database Management feature for the specified Oracle cloud pluggable database.
+ *
+ * ## Example Usage
  */
 export class PluggabledatabasePluggableDatabaseDbmFeaturesManagement extends pulumi.CustomResource {
     /**

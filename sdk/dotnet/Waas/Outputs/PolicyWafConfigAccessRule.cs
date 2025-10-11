@@ -26,27 +26,27 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
+        /// (Updatable) The method used to block requests if `Action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
         /// </summary>
         public readonly string? BlockAction;
         /// <summary>
-        /// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
+        /// (Updatable) The error code to show on the error page when `Action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
         /// </summary>
         public readonly string? BlockErrorPageCode;
         /// <summary>
-        /// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
+        /// (Updatable) The description text to show on the error page when `Action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
         /// </summary>
         public readonly string? BlockErrorPageDescription;
         /// <summary>
-        /// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
+        /// (Updatable) The message to show on the error page when `Action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
         /// </summary>
         public readonly string? BlockErrorPageMessage;
         /// <summary>
-        /// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
+        /// (Updatable) The response status code to return when `Action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
         /// </summary>
         public readonly int? BlockResponseCode;
         /// <summary>
-        /// (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
+        /// (Updatable) The list of challenges to bypass when `Action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
         /// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
         /// * **DEVICE_FINGERPRINT_CHALLENGE:** Bypasses Device Fingerprint Challenge.
         /// * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
@@ -54,19 +54,19 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly ImmutableArray<string> BypassChallenges;
         /// <summary>
-        /// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+        /// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `Action` is set to `SHOW_CAPTCHA` and the request is challenged.
         /// </summary>
         public readonly string? CaptchaFooter;
         /// <summary>
-        /// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+        /// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `Action` is set to `SHOW_CAPTCHA` and the request is challenged.
         /// </summary>
         public readonly string? CaptchaHeader;
         /// <summary>
-        /// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+        /// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `Action` is set to `SHOW_CAPTCHA` and the request is challenged.
         /// </summary>
         public readonly string? CaptchaSubmitLabel;
         /// <summary>
-        /// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
+        /// (Updatable) The title used when showing a CAPTCHA challenge when `Action` is set to `SHOW_CAPTCHA` and the request is challenged.
         /// </summary>
         public readonly string? CaptchaTitle;
         /// <summary>
@@ -78,17 +78,17 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) The response status code to return when `action` is set to `REDIRECT`.
+        /// (Updatable) The response status code to return when `Action` is set to `REDIRECT`.
         /// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
         /// * **FOUND:** Used for designating the temporary movement of a page (numerical code - 302).
         /// </summary>
         public readonly string? RedirectResponseCode;
         /// <summary>
-        /// (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `action` is `REDIRECT`.
+        /// (Updatable) The target to which the request should be redirected, represented as a URI reference. Required when `Action` is `REDIRECT`.
         /// </summary>
         public readonly string? RedirectUrl;
         /// <summary>
-        /// (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `action` value.
+        /// (Updatable) An object that represents an action to apply to an HTTP response headers if all rule criteria will be matched regardless of `Action` value.
         /// </summary>
         public readonly ImmutableArray<Outputs.PolicyWafConfigAccessRuleResponseHeaderManipulation> ResponseHeaderManipulations;
 

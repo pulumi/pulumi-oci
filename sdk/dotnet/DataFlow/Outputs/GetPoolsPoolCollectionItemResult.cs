@@ -54,7 +54,7 @@ namespace Pulumi.Oci.DataFlow.Outputs
         /// </summary>
         public readonly string OwnerPrincipalId;
         /// <summary>
-        /// The username of the user who created the resource.  If the username of the owner does not exist, `null` will be returned and the caller should refer to the ownerPrincipalId value instead.
+        /// The username of the user who created the resource.  If the username of the owner does not exist, `Null` will be returned and the caller should refer to the ownerPrincipalId value instead.
         /// </summary>
         public readonly string OwnerUserName;
         /// <summary>

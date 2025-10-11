@@ -33,7 +33,7 @@ public final class DrProtectionGroupMemberBackupConfig {
      */
     private @Nullable String backupSchedule;
     /**
-     * @return (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * @return (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespaceString3&#34;, &#34;namespaceString4&#34;]
      * 
      */
     private @Nullable List<String> excludeNamespaces;
@@ -81,7 +81,7 @@ public final class DrProtectionGroupMemberBackupConfig {
         return Optional.ofNullable(this.backupSchedule);
     }
     /**
-     * @return (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespace_string_3&#34;, &#34;namespace_string_4&#34;]
+     * @return (Updatable) A list of namespaces to be excluded from the backup.  The default value is null. If a list of namespaces to exclude is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to OKE cluster members in the primary region.  Example: [&#34;namespaceString3&#34;, &#34;namespaceString4&#34;]
      * 
      */
     public List<String> excludeNamespaces() {

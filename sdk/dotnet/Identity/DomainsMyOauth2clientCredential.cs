@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create a user's own OAuth2 client credential.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// MyOAuth2ClientCredentials can be imported using the `id`, e.g.

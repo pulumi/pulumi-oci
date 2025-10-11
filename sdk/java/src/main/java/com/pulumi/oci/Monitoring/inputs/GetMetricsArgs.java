@@ -107,14 +107,14 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+     * The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+     * @return The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -302,7 +302,7 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param namespace The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+         * @param namespace The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class GetMetricsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param namespace The source service or application to use when searching for metric definitions.  Example: `oci_computeagent`
+         * @param namespace The source service or application to use when searching for metric definitions.  Example: `ociComputeagent`
          * 
          * @return builder
          * 

@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Network Firewall Policy Mapped Secret resource in Oracle Cloud Infrastructure Network Firewall service.
 //
 // Get Mapped Secret by the given name in the context of network firewall policy.
+//
+// ## Example Usage
 func LookupNetworkFirewallPolicyMappedSecret(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyMappedSecretArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyMappedSecretResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyMappedSecretResult

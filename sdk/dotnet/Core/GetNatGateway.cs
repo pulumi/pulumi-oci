@@ -124,7 +124,7 @@ namespace Pulumi.Oci.Core
     public sealed class GetNatGatewayResult
     {
         /// <summary>
-        /// Whether the NAT gateway blocks traffic through it. The default is `false`.  Example: `true`
+        /// Whether the NAT gateway blocks traffic through it. The default is `False`.  Example: `True`
         /// </summary>
         public readonly bool BlockTraffic;
         /// <summary>

@@ -18,12 +18,12 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
      */
     private String action;
     /**
-     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     private String header;
     /**
-     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
      * 
      */
     private @Nullable String value;
@@ -37,14 +37,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
         return this.action;
     }
     /**
-     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public String header() {
         return this.header;
     }
     /**
-     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
      * 
      */
     public Optional<String> value() {

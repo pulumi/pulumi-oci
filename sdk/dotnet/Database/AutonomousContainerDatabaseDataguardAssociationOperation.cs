@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database
         public Output<string> AutonomousContainerDatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
+        /// There are three type of supported operations `Switchover`, `Failover`, `Reinstate`. `Switchover` can only be used for primary database while `Failover` and `Reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         /// </summary>
         [Output("operation")]
         public Output<string> Operation { get; private set; } = null!;
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Database
         public Input<string> AutonomousContainerDatabaseId { get; set; } = null!;
 
         /// <summary>
-        /// There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
+        /// There are three type of supported operations `Switchover`, `Failover`, `Reinstate`. `Switchover` can only be used for primary database while `Failover` and `Reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         /// </summary>
         [Input("operation", required: true)]
         public Input<string> Operation { get; set; } = null!;
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? AutonomousContainerDatabaseId { get; set; }
 
         /// <summary>
-        /// There are three type of supported operations `switchover`, `failover`, `reinstate`. `switchover` can only be used for primary database while `failover` and `reinstate` can only be used for standby database. This attribute is a forcenew attribute.
+        /// There are three type of supported operations `Switchover`, `Failover`, `Reinstate`. `Switchover` can only be used for primary database while `Failover` and `Reinstate` can only be used for standby database. This attribute is a forcenew attribute.
         /// </summary>
         [Input("operation")]
         public Input<string>? Operation { get; set; }

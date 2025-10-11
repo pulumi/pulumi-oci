@@ -44,6 +44,8 @@ public final class DblmFunctions {
      * 
      * Overview of Patch Management.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args) {
         return getPatchManagement(args, InvokeOptions.Empty);
@@ -52,6 +54,8 @@ public final class DblmFunctions {
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
      * 
      * Overview of Patch Management.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args) {
@@ -62,6 +66,8 @@ public final class DblmFunctions {
      * 
      * Overview of Patch Management.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
@@ -71,6 +77,8 @@ public final class DblmFunctions {
      * 
      * Overview of Patch Management.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
@@ -79,6 +87,8 @@ public final class DblmFunctions {
      * This data source provides details about a specific Patch Management resource in Oracle Cloud Infrastructure Dblm service.
      * 
      * Overview of Patch Management.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args, InvokeOptions options) {
@@ -439,6 +449,8 @@ public final class DblmFunctions {
      * 
      * Gets a Vulnerability
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args) {
         return getVulnerability(args, InvokeOptions.Empty);
@@ -447,6 +459,8 @@ public final class DblmFunctions {
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 
      * Gets a Vulnerability
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetVulnerabilityResult> getVulnerabilityPlain(GetVulnerabilityPlainArgs args) {
@@ -457,6 +471,8 @@ public final class DblmFunctions {
      * 
      * Gets a Vulnerability
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getVulnerability:getVulnerability", TypeShape.of(GetVulnerabilityResult.class), args, Utilities.withVersion(options));
@@ -466,6 +482,8 @@ public final class DblmFunctions {
      * 
      * Gets a Vulnerability
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getVulnerability:getVulnerability", TypeShape.of(GetVulnerabilityResult.class), args, Utilities.withVersion(options));
@@ -474,6 +492,8 @@ public final class DblmFunctions {
      * This data source provides details about a specific Vulnerability resource in Oracle Cloud Infrastructure Dblm service.
      * 
      * Gets a Vulnerability
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetVulnerabilityResult> getVulnerabilityPlain(GetVulnerabilityPlainArgs args, InvokeOptions options) {

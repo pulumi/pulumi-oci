@@ -16,14 +16,14 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
     public static final PathRouteSetPathRouteArgs Empty = new PathRouteSetPathRouteArgs();
 
     /**
-     * (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+     * (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private Output<String> backendSetName;
 
     /**
-     * @return (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+     * @return (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> backendSetName() {
@@ -97,7 +97,7 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param backendSetName (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+         * @param backendSetName (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class PathRouteSetPathRouteArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param backendSetName (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `example_backend_set`
+         * @param backendSetName (Updatable) The name of the target backend set for requests where the incoming URI matches the specified path.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

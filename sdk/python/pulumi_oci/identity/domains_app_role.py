@@ -1545,6 +1545,8 @@ class DomainsAppRole(pulumi.CustomResource):
 
         Create an AppRole
 
+        ## Example Usage
+
         ## Import
 
         AppRoles can be imported using the `id`, e.g.
@@ -1700,6 +1702,8 @@ class DomainsAppRole(pulumi.CustomResource):
         This resource provides the App Role resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create an AppRole
+
+        ## Example Usage
 
         ## Import
 

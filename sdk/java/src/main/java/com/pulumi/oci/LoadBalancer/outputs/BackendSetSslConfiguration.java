@@ -20,7 +20,7 @@ public final class BackendSetSslConfiguration {
      */
     private @Nullable List<String> certificateIds;
     /**
-     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     private @Nullable String certificateName;
@@ -38,7 +38,7 @@ public final class BackendSetSslConfiguration {
      * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
      * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     private @Nullable String cipherSuiteName;
@@ -101,7 +101,7 @@ public final class BackendSetSslConfiguration {
         return this.certificateIds == null ? List.of() : this.certificateIds;
     }
     /**
-     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `example_certificate_bundle`
+     * @return (Updatable) A friendly name for the certificate bundle. It must be unique and it cannot be changed. Valid certificate bundle names include only alphanumeric characters, dashes, and underscores. Certificate bundle names cannot contain spaces. Avoid entering confidential information.  Example: `exampleCertificateBundle`
      * 
      */
     public Optional<String> certificateName() {
@@ -121,7 +121,7 @@ public final class BackendSetSslConfiguration {
      * *  If the `GET` operation on a listener returns `oci-customized-ssl-cipher-suite` as the value of this field, you must specify an appropriate predefined or custom cipher suite name when updating the resource.
      * *  The `oci-customized-ssl-cipher-suite` Oracle reserved cipher suite name is not accepted as valid input for this field.
      * 
-     * example: `example_cipher_suite`
+     * example: `exampleCipherSuite`
      * 
      */
     public Optional<String> cipherSuiteName() {

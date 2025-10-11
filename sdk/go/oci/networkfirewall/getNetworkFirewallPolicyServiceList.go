@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Network Firewall Policy Service List resource in Oracle Cloud Infrastructure Network Firewall service.
 //
 // Get ServiceList by the given name in the context of network firewall policy.
+//
+// ## Example Usage
 func LookupNetworkFirewallPolicyServiceList(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyServiceListArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyServiceListResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyServiceListResult

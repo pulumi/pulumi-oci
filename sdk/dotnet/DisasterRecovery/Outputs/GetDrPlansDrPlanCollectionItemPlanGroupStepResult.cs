@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A flag indicating whether this step should be enabled for execution.  Example: `true`
+        /// A flag indicating whether this step should be enabled for execution.  Example: `True`
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

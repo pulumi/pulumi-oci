@@ -15,7 +15,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Provisions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Provisions in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` or `fleetId` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` or `fleetId` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Provisions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Provisions in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` or `fleetId` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` or `fleetId` is specified.
         /// 
         /// 
         /// ## Example Usage
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Provisions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the Provisions in the specified compartment.
-        /// The query parameter `compartmentId` is required unless the query parameter `id` or `fleetId` is specified.
+        /// The query parameter `compartmentId` is required unless the query parameter `Id` or `fleetId` is specified.
         /// 
         /// 
         /// ## Example Usage

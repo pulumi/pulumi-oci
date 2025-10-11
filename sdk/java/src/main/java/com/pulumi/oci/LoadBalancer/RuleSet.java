@@ -127,7 +127,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
         return this.loadBalancerId;
     }
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -137,7 +137,7 @@ public class RuleSet extends com.pulumi.resources.CustomResource {
     private Output<String> name;
 
     /**
-     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

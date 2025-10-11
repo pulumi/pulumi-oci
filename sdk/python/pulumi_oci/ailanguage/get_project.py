@@ -176,6 +176,8 @@ def get_project(id: Optional[_builtins.str] = None,
 
     Gets a Project by identifier
 
+    ## Example Usage
+
 
     :param _builtins.str id: Unique identifier OCID of the project
     """
@@ -202,6 +204,8 @@ def get_project_output(id: Optional[pulumi.Input[_builtins.str]] = None,
     This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
 
     Gets a Project by identifier
+
+    ## Example Usage
 
 
     :param _builtins.str id: Unique identifier OCID of the project

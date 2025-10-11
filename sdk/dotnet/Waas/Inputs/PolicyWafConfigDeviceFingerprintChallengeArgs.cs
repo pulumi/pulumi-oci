@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<int>? ActionExpirationInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) The challenge settings if `action` is set to `BLOCK`.
+        /// (Updatable) The challenge settings if `Action` is set to `BLOCK`.
         /// </summary>
         [Input("challengeSettings")]
         public Input<Inputs.PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs>? ChallengeSettings { get; set; }

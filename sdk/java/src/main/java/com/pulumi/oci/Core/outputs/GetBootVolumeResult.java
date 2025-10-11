@@ -101,7 +101,7 @@ public final class GetBootVolumeResult {
      */
     private String sizeInGbs;
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     private String sizeInMbs;
@@ -255,7 +255,7 @@ public final class GetBootVolumeResult {
         return this.sizeInGbs;
     }
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     public String sizeInMbs() {

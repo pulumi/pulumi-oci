@@ -110,6 +110,8 @@ public final class GoldenGateFunctions {
      * 
      * Retrieves a Connection.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args) {
         return getConnection(args, InvokeOptions.Empty);
@@ -118,6 +120,8 @@ public final class GoldenGateFunctions {
      * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
      * Retrieves a Connection.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args) {
@@ -128,6 +132,8 @@ public final class GoldenGateFunctions {
      * 
      * Retrieves a Connection.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
@@ -137,6 +143,8 @@ public final class GoldenGateFunctions {
      * 
      * Retrieves a Connection.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetConnectionResult> getConnection(GetConnectionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:GoldenGate/getConnection:getConnection", TypeShape.of(GetConnectionResult.class), args, Utilities.withVersion(options));
@@ -145,6 +153,8 @@ public final class GoldenGateFunctions {
      * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
      * 
      * Retrieves a Connection.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetConnectionResult> getConnectionPlain(GetConnectionPlainArgs args, InvokeOptions options) {

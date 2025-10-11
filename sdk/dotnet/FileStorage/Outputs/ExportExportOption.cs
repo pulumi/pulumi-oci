@@ -38,7 +38,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly bool? IsAnonymousAccessAllowed;
         /// <summary>
-        /// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
+        /// (Updatable) If `True`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `True`.
         /// </summary>
         public readonly bool? RequirePrivilegedSourcePort;
         /// <summary>

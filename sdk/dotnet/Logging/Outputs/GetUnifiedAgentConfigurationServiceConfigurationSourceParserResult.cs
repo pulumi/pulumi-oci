@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly string GrokNameKey;
         /// <summary>
-        /// If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+        /// If true, use Fluent::EventTime.now(current time) as a timestamp when the TimeKey is specified.
         /// </summary>
         public readonly bool IsEstimateCurrentEvent;
         /// <summary>
@@ -58,11 +58,11 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly bool IsNullEmptyString;
         /// <summary>
-        /// Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+        /// Specifies whether or not to support colonless ident. Corresponds to the Fluentd SupportColonlessIdent parameter.
         /// </summary>
         public readonly bool IsSupportColonlessIdent;
         /// <summary>
-        /// Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+        /// Specifies with priority or not. Corresponds to the Fluentd WithPriority parameter.
         /// </summary>
         public readonly bool IsWithPriority;
         /// <summary>
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.Logging.Outputs
         /// </summary>
         public readonly int TimeoutInMilliseconds;
         /// <summary>
-        /// Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+        /// Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user TimeKey time &lt;/parse&gt;
         /// </summary>
         public readonly ImmutableDictionary<string, string> Types;
 

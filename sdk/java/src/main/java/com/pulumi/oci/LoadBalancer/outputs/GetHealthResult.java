@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetHealthResult {
     /**
-     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set`
+     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet`
      * 
      */
     private List<String> criticalStateBackendSetNames;
@@ -42,19 +42,19 @@ public final class GetHealthResult {
      */
     private Integer totalBackendSetCount;
     /**
-     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set2`
+     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet2`
      * 
      */
     private List<String> unknownStateBackendSetNames;
     /**
-     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set3`
+     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet3`
      * 
      */
     private List<String> warningStateBackendSetNames;
 
     private GetHealthResult() {}
     /**
-     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set`
+     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet`
      * 
      */
     public List<String> criticalStateBackendSetNames() {
@@ -93,14 +93,14 @@ public final class GetHealthResult {
         return this.totalBackendSetCount;
     }
     /**
-     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set2`
+     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet2`
      * 
      */
     public List<String> unknownStateBackendSetNames() {
         return this.unknownStateBackendSetNames;
     }
     /**
-     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `example_backend_set3`
+     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the friendly name you assigned when you created it.  Example: `exampleBackendSet3`
      * 
      */
     public List<String> warningStateBackendSetNames() {

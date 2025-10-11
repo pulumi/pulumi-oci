@@ -13,17 +13,17 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
     public sealed class BackendSetBackendGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `true`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
+        /// (Updatable) Whether the load balancer should treat this server as a backup unit. If `True`, the load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "backup" fail the health check policy.
         /// 
-        /// **Note:** You cannot add a backend server marked as `backup` to a backend set that uses the IP Hash policy.
+        /// **Note:** You cannot add a backend server marked as `Backup` to a backend set that uses the IP Hash policy.
         /// 
-        /// Example: `false`
+        /// Example: `False`
         /// </summary>
         [Input("backup")]
         public Input<bool>? Backup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should drain this server. Servers marked "drain" receive no new incoming traffic.  Example: `False`
         /// </summary>
         [Input("drain")]
         public Input<bool>? Drain { get; set; }
@@ -49,13 +49,13 @@ namespace Pulumi.Oci.LoadBalancer.Inputs
         /// 
         /// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
         /// 
-        /// Example: `example_backend_set`
+        /// Example: `ExampleBackendSet`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("offline")]
         public Input<bool>? Offline { get; set; }

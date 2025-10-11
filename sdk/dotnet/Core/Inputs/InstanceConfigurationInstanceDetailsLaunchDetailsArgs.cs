@@ -90,11 +90,11 @@ namespace Pulumi.Oci.Core.Inputs
         private InputMap<string>? _extendedMetadata;
 
         /// <summary>
-        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
+        /// Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `Metadata` object.
         /// 
-        /// They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
+        /// They are distinguished from `Metadata` fields in that these can be nested JSON objects (whereas `Metadata` fields are string/string maps only).
         /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// The combined size of the `Metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> ExtendedMetadata
         {
@@ -190,13 +190,13 @@ namespace Pulumi.Oci.Core.Inputs
         /// 
         /// You can use the following metadata key names to provide information to Cloud-Init:
         /// 
-        /// **"ssh_authorized_keys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
+        /// **"SshAuthorizedKeys"** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `AuthorizedKeys` file, as shown in the example below.
         /// 
-        /// **"user_data"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
+        /// **"UserData"** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
         /// 
         /// **Metadata Example**
         /// 
-        /// "metadata" : { "quake_bot_level" : "Severe", "ssh_authorized_keys" : "ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227", "user_data" : "&lt;your_public_SSH_key&gt;==" } **Getting Metadata on the Instance**
+        /// "metadata" : { "QuakeBotLevel" : "Severe", "SshAuthorizedKeys" : "ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227", "UserData" : "&lt;your_public_SSH_key&gt;==" } **Getting Metadata on the Instance**
         /// 
         /// To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
         /// 
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.Core.Inputs
         /// 
         /// You'll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
         /// 
-        /// The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
+        /// The combined size of the `Metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
         /// </summary>
         public InputMap<string> Metadata
         {
@@ -221,9 +221,9 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// (Optional) (Updatable only for VM's) The platform configuration requested for the instance.
         /// 
-        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don't provide the parameter, the default values for the `shape` are used.
+        /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Input("platformConfig")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigArgs>? PlatformConfig { get; set; }
@@ -265,9 +265,9 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// The shape configuration requested for the instance.
         /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
+        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `Shape` that you specify.
         /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
         /// </summary>
         [Input("shapeConfig")]
         public Input<Inputs.InstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigArgs>? ShapeConfig { get; set; }

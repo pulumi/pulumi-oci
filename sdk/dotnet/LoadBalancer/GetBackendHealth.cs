@@ -106,7 +106,7 @@ namespace Pulumi.Oci.LoadBalancer
         public string BackendName { get; set; } = null!;
 
         /// <summary>
-        /// The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
+        /// The name of the backend set associated with the backend server to retrieve the health status for.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public string BackendSetName { get; set; } = null!;
@@ -132,7 +132,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string> BackendName { get; set; } = null!;
 
         /// <summary>
-        /// The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
+        /// The name of the backend set associated with the backend server to retrieve the health status for.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;

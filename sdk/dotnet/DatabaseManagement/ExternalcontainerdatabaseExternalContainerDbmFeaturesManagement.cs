@@ -13,6 +13,8 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Externalcontainerdatabase External Container Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables a Database Management feature for the specified external container database.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement")]
     public partial class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement : global::Pulumi.CustomResource
@@ -21,7 +23,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<bool?> CanDisableAllPdbs { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -95,7 +97,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? CanDisableAllPdbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -131,7 +133,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<bool>? CanDisableAllPdbs { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Core
     public partial class BootVolumeBackup : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `SourceDetails` is defined.
         /// </summary>
         [Output("bootVolumeId")]
         public Output<string> BootVolumeId { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Core
         public Output<string> SourceBootVolumeBackupId { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        /// Details of the volume backup source in the cloud. Cannot be defined if `BootVolumeId` is defined.
         /// </summary>
         [Output("sourceDetails")]
         public Output<Outputs.BootVolumeBackupSourceDetails?> SourceDetails { get; private set; } = null!;
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.Core
     public sealed class BootVolumeBackupArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `SourceDetails` is defined.
         /// </summary>
         [Input("bootVolumeId")]
         public Input<string>? BootVolumeId { get; set; }
@@ -262,7 +262,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        /// Details of the volume backup source in the cloud. Cannot be defined if `BootVolumeId` is defined.
         /// </summary>
         [Input("sourceDetails")]
         public Input<Inputs.BootVolumeBackupSourceDetailsArgs>? SourceDetails { get; set; }
@@ -282,7 +282,7 @@ namespace Pulumi.Oci.Core
     public sealed class BootVolumeBackupState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+        /// The OCID of the boot volume that needs to be backed up. Cannot be defined if `SourceDetails` is defined.
         /// </summary>
         [Input("bootVolumeId")]
         public Input<string>? BootVolumeId { get; set; }
@@ -354,7 +354,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? SourceBootVolumeBackupId { get; set; }
 
         /// <summary>
-        /// Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+        /// Details of the volume backup source in the cloud. Cannot be defined if `BootVolumeId` is defined.
         /// </summary>
         [Input("sourceDetails")]
         public Input<Inputs.BootVolumeBackupSourceDetailsGetArgs>? SourceDetails { get; set; }

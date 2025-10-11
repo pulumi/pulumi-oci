@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsEcmpEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting ImportDrgRouteDistributionId to null. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -214,7 +214,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsEcmpEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting ImportDrgRouteDistributionId to null. 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -286,7 +286,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsEcmpEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting import_drg_route_distribution_id to null. 
+        /// (Updatable) An optional property when flipped disables the import of route Distribution by setting ImportDrgRouteDistributionId to null. 
         /// 
         /// 
         /// ** IMPORTANT **

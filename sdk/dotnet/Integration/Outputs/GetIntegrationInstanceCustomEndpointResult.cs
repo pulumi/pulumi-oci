@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly string CertificateSecretId;
         /// <summary>
-        /// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `dns_type` - Type of DNS.
+        /// The secret version used for the certificate-secret-id (if certificate-secret-id is specified).* `DnsType` - Type of DNS.
         /// </summary>
         public readonly int CertificateSecretVersion;
         public readonly string DnsType;

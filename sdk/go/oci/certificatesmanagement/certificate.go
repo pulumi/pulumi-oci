@@ -16,6 +16,8 @@ import (
 //
 // Creates a new certificate according to the details of the request.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // Certificates can be imported using the `id`, e.g.

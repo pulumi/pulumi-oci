@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s own database (DB) credential.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * MyUserDbCredentials can be imported using the `id`, e.g.

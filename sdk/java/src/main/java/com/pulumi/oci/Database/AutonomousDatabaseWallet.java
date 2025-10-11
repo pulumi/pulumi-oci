@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
  * 
  * Creates and downloads a wallet for the specified Autonomous Database.
  * 
- * If passing the base64 encoded content to a `local_file` resource, please use the `content_base64` attribute of the `local_file` resource.
+ * If passing the base64 encoded content to a `localFile` resource, please use the `contentBase64` attribute of the `localFile` resource.
  * See this example for more details.
  * 
  * Recreate the resource to create and download a new wallet.
@@ -91,14 +91,14 @@ public class AutonomousDatabaseWallet extends com.pulumi.resources.CustomResourc
         return Codegen.optional(this.base64EncodeContent);
     }
     /**
-     * content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     @Export(name="content", refs={String.class}, tree="[0]")
     private Output<String> content;
 
     /**
-     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     public Output<String> content() {

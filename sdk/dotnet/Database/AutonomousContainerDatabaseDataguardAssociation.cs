@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Database
         public Output<int> FastStartFailOverLagLimitInSeconds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `IsAutomaticFailoverEnabled = true`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `IsAutomaticFailoverEnabled = true`.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -389,7 +389,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? FastStartFailOverLagLimitInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `is_automatic_failover_enabled = true`.
+        /// (Updatable) Indicates whether Automatic Failover is enabled for Autonomous Container Database Dataguard Association. Input DataType: boolean. Example : `IsAutomaticFailoverEnabled = true`.
         /// 
         /// 
         /// ** IMPORTANT **

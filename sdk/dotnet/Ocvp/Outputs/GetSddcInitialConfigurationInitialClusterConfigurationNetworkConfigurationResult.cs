@@ -34,15 +34,15 @@ namespace Pulumi.Oci.Ocvp.Outputs
         /// </summary>
         public readonly string NsxVtepVlanId;
         /// <summary>
-        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `provisioning_subnet_id` of `network_configuration` instead.
+        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet used to provision the SDDC. **Deprecated**. Please use `ProvisioningSubnetId` of `NetworkConfiguration` instead.
         /// </summary>
         public readonly string ProvisioningSubnetId;
         /// <summary>
-        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioning_vlan_id` of `network_configuration` instead.
+        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `ProvisioningVlanId` of `NetworkConfiguration` instead.
         /// </summary>
         public readonly string ProvisioningVlanId;
         /// <summary>
-        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replication_vlan_id` of `network_configuration` instead.
+        /// (**Deprecated**) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `ReplicationVlanId` of `NetworkConfiguration` instead.
         /// </summary>
         public readonly string ReplicationVlanId;
         /// <summary>

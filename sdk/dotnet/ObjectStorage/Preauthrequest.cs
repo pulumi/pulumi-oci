@@ -92,7 +92,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+        /// Deprecated. Instead use `ObjectName`. Requests that include both `Object` and `ObjectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         /// </summary>
         [Output("object")]
         public Output<string> Object { get; private set; } = null!;
@@ -202,7 +202,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+        /// Deprecated. Instead use `ObjectName`. Requests that include both `Object` and `ObjectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }
@@ -274,7 +274,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+        /// Deprecated. Instead use `ObjectName`. Requests that include both `Object` and `ObjectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         /// </summary>
         [Input("object")]
         public Input<string>? Object { get; set; }

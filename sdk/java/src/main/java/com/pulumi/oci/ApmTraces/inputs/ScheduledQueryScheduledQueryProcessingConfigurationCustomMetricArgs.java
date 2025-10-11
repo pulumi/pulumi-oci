@@ -93,14 +93,14 @@ public final class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetr
     }
 
     /**
-     * (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * @return (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -274,7 +274,7 @@ public final class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetr
         }
 
         /**
-         * @param namespace (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+         * @param namespace (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class ScheduledQueryScheduledQueryProcessingConfigurationCustomMetr
         }
 
         /**
-         * @param namespace (Updatable) Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+         * @param namespace (Updatable) Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
          * 
          * @return builder
          * 

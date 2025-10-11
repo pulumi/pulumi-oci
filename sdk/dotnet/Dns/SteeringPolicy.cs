@@ -127,7 +127,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `Rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `Rdata` not matching any monitored endpoint will be assumed healthy.
         /// 
         /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>
@@ -285,7 +285,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `Rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `Rdata` not matching any monitored endpoint will be assumed healthy.
         /// 
         /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>
@@ -393,7 +393,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `rdata` not matching any monitored endpoint will be assumed healthy.
+        /// (Updatable) The OCID of the health check monitor providing health data about the answers of the steering policy. A steering policy answer with `Rdata` matching a monitored endpoint will use the health data of that endpoint. A steering policy answer with `Rdata` not matching any monitored endpoint will be assumed healthy.
         /// 
         /// **Note:** To use the Health Check monitoring feature in a steering policy, a monitor must be created using the Health Checks service first. For more information on how to create a monitor, please see [Managing Health Checks](https://docs.cloud.oracle.com/iaas/Content/HealthChecks/Tasks/managinghealthchecks.htm).
         /// </summary>

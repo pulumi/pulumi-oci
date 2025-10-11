@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabasesDatabaseDbBackupConfigResult> DbBackupConfigs;
         /// <summary>
-        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `db_home_id` or `system_id` is required to make the LIST API call.
+        /// A Database Home [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). *Note: Either `DbHomeId` or `SystemId` is required to make the LIST API call.
         /// </summary>
         public readonly string DbHomeId;
         /// <summary>

@@ -381,6 +381,8 @@ class OccDemandSignal(pulumi.CustomResource):
 
           Updates the data of an OccDemandSignal.
 
+        ## Example Usage
+
         ## Import
 
         OccDemandSignals can be imported using the `id`, e.g.
@@ -411,6 +413,8 @@ class OccDemandSignal(pulumi.CustomResource):
         Creates a OccDemandSignal.
 
           Updates the data of an OccDemandSignal.
+
+        ## Example Usage
 
         ## Import
 

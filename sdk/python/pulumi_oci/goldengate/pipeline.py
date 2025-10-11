@@ -579,6 +579,8 @@ class Pipeline(pulumi.CustomResource):
 
         Creates a new Pipeline.
 
+        ## Example Usage
+
         ## Import
 
         Pipelines can be imported using the `id`, e.g.
@@ -611,6 +613,8 @@ class Pipeline(pulumi.CustomResource):
         This resource provides the Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
 
         Creates a new Pipeline.
+
+        ## Example Usage
 
         ## Import
 

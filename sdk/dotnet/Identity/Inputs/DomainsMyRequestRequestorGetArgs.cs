@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsCsvAttributeName: requestor_id
+        /// * idcsCsvAttributeName: RequestorId
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: immutable

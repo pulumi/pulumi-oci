@@ -18,6 +18,8 @@ import (
 //
 //	Patches the external DB system discovery specified by `externalDbSystemDiscoveryId`.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // ExternalDbSystemDiscoveries can be imported using the `id`, e.g.

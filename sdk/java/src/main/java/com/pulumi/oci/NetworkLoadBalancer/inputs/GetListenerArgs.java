@@ -15,14 +15,14 @@ public final class GetListenerArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetListenerArgs Empty = new GetListenerArgs();
 
     /**
-     * The name of the listener to get.  Example: `example_listener`
+     * The name of the listener to get.  Example: `exampleListener`
      * 
      */
     @Import(name="listenerName", required=true)
     private Output<String> listenerName;
 
     /**
-     * @return The name of the listener to get.  Example: `example_listener`
+     * @return The name of the listener to get.  Example: `exampleListener`
      * 
      */
     public Output<String> listenerName() {
@@ -70,7 +70,7 @@ public final class GetListenerArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param listenerName The name of the listener to get.  Example: `example_listener`
+         * @param listenerName The name of the listener to get.  Example: `exampleListener`
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class GetListenerArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param listenerName The name of the listener to get.  Example: `example_listener`
+         * @param listenerName The name of the listener to get.  Example: `exampleListener`
          * 
          * @return builder
          * 

@@ -115,7 +115,7 @@ namespace Pulumi.Oci.DataFlow
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `CompartmentId` to get the list of Private Endpoint resources.
         /// </summary>
         [Input("displayName")]
         public string? DisplayName { get; set; }
@@ -161,7 +161,7 @@ namespace Pulumi.Oci.DataFlow
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+        /// The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `CompartmentId` to get the list of Private Endpoint resources.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -60,7 +60,7 @@ namespace Pulumi.Oci.Bastion
     public partial class Bastion : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// The type of bastion. Use `standard`.
+        /// The type of bastion. Use `Standard`.
         /// </summary>
         [Output("bastionType")]
         public Output<string> BastionType { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Bastion
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `Standard` bastions.
         /// </summary>
         [Output("phoneBookEntry")]
         public Output<string> PhoneBookEntry { get; private set; } = null!;
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Bastion
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
+        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `Standard` bastions.
         /// </summary>
         [Output("staticJumpHostIpAddresses")]
         public Output<ImmutableArray<string>> StaticJumpHostIpAddresses { get; private set; } = null!;
@@ -224,7 +224,7 @@ namespace Pulumi.Oci.Bastion
     public sealed class BastionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of bastion. Use `standard`.
+        /// The type of bastion. Use `Standard`.
         /// </summary>
         [Input("bastionType", required: true)]
         public Input<string> BastionType { get; set; } = null!;
@@ -290,7 +290,7 @@ namespace Pulumi.Oci.Bastion
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `Standard` bastions.
         /// </summary>
         [Input("phoneBookEntry")]
         public Input<string>? PhoneBookEntry { get; set; }
@@ -299,7 +299,7 @@ namespace Pulumi.Oci.Bastion
         private InputList<string>? _staticJumpHostIpAddresses;
 
         /// <summary>
-        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
+        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `Standard` bastions.
         /// </summary>
         public InputList<string> StaticJumpHostIpAddresses
         {
@@ -326,7 +326,7 @@ namespace Pulumi.Oci.Bastion
     public sealed class BastionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The type of bastion. Use `standard`.
+        /// The type of bastion. Use `Standard`.
         /// </summary>
         [Input("bastionType")]
         public Input<string>? BastionType { get; set; }
@@ -404,7 +404,7 @@ namespace Pulumi.Oci.Bastion
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `standard` bastions.
+        /// The phonebook entry of the customer's team, which can't be changed after creation. Not applicable to `Standard` bastions.
         /// </summary>
         [Input("phoneBookEntry")]
         public Input<string>? PhoneBookEntry { get; set; }
@@ -425,7 +425,7 @@ namespace Pulumi.Oci.Bastion
         private InputList<string>? _staticJumpHostIpAddresses;
 
         /// <summary>
-        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `standard` bastions.
+        /// (Updatable) A list of IP addresses of the hosts that the bastion has access to. Not applicable to `Standard` bastions.
         /// </summary>
         public InputList<string> StaticJumpHostIpAddresses
         {

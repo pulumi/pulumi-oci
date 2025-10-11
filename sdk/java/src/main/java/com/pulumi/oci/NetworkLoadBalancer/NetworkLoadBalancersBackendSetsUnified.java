@@ -223,7 +223,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
@@ -234,7 +234,7 @@ public class NetworkLoadBalancersBackendSetsUnified extends com.pulumi.resources
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     public Output<String> name() {

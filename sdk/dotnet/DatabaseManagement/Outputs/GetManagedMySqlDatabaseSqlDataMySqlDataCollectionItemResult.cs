@@ -118,31 +118,31 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly double SumRowsSent;
         /// <summary>
-        /// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the select_full_join status variable.
+        /// The total number of joins that have performed full table scans as there was no join condition or no index for the join condition. This is the same as the SelectFullJoin status variable.
         /// </summary>
         public readonly double SumSelectFullJoin;
         /// <summary>
-        /// The total number of joins that use a full range search. This is the same as the select_full_range_join status variable.
+        /// The total number of joins that use a full range search. This is the same as the SelectFullRangeJoin status variable.
         /// </summary>
         public readonly double SumSelectFullRangeJoin;
         /// <summary>
-        /// The total number of times the query has used a range search. This is the same as the select_range status variable.
+        /// The total number of times the query has used a range search. This is the same as the SelectRange status variable.
         /// </summary>
         public readonly double SumSelectRange;
         /// <summary>
-        /// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the select_range_check status variable.
+        /// The total number of joins by the query where the join does not have an index that checks for the index usage after each row. This is the same as the SelectRangeCheck status variable.
         /// </summary>
         public readonly double SumSelectRangeCheck;
         /// <summary>
-        /// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the select_scan status variable.
+        /// The total number of times the query has performed a full table scan on the first table in the join. This is the same as the SelectScan status variable.
         /// </summary>
         public readonly double SumSelectScan;
         /// <summary>
-        /// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the sort_merge_passes status variable.
+        /// The total number of sort merge passes that have been done to sort the result of the query. This is the same as the SortMergePasses status variable.
         /// </summary>
         public readonly double SumSortMergePasses;
         /// <summary>
-        /// The total number of times a sort was done using ranges. This is the same as the sort_range status variable.
+        /// The total number of times a sort was done using ranges. This is the same as the SortRange status variable.
         /// </summary>
         public readonly double SumSortRange;
         /// <summary>
@@ -150,7 +150,7 @@ namespace Pulumi.Oci.DatabaseManagement.Outputs
         /// </summary>
         public readonly double SumSortRows;
         /// <summary>
-        /// The total number of times a sort was done by scanning the table. This is the same as the sort_scan status variable.
+        /// The total number of times a sort was done by scanning the table. This is the same as the SortScan status variable.
         /// </summary>
         public readonly double SumSortScan;
         /// <summary>

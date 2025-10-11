@@ -24,7 +24,7 @@ namespace Pulumi.Oci.Database
     /// 
     /// Use the [CreateCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/CreateCloudExadataInfrastructure/) and [CreateCloudVmCluster](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/CreateCloudVmCluster/) APIs to provision a new Exadata Cloud Service instance.
     /// 
-    /// **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
+    /// **Important:** When `AutoBackupEnabled` is not present in the configuration or set to true, the `AutoBackupWindow` and `AutoFullBackupWindow` will be ignored
     /// 
     /// ## Import
     /// 

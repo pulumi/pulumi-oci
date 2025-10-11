@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Security Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetNetworkFirewallPolicySecurityRuleResult> InvokeAsync(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Security Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRuleResult> Invoke(GetNetworkFirewallPolicySecurityRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Security Rule by the given name in the context of network firewall policy.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRuleResult> Invoke(GetNetworkFirewallPolicySecurityRuleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleInvokeArgs(), options.WithDefaults());
@@ -86,7 +92,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// * ALLOW - Allows the traffic.
         /// * DROP - Silently drops the traffic, e.g. without sending a TCP reset.
         /// * REJECT - Rejects the traffic, sending a TCP reset to client and/or server as applicable.
-        /// * INSPECT - Inspects traffic for vulnerability as specified in `inspection`, which may result in rejection.
+        /// * INSPECT - Inspects traffic for vulnerability as specified in `Inspection`, which may result in rejection.
         /// </summary>
         public readonly string Action;
         /// <summary>
@@ -97,7 +103,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// Type of inspection to affect the Traffic flow. This is only applicable if action is INSPECT.
         /// * INTRUSION_DETECTION - Intrusion Detection.
-        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `type`.
+        /// * INTRUSION_PREVENTION - Intrusion Detection and Prevention. Traffic classified as potentially malicious will be rejected as described in `Type`.
         /// </summary>
         public readonly string Inspection;
         /// <summary>

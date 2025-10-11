@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
         /// 
-        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `Fields`
         /// parameter for other fields that you can optionally include in ListObjects response.
         /// 
         /// ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
@@ -24,6 +24,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetObjectsResult> InvokeAsync(GetObjectsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsArgs(), options.WithDefaults());
@@ -31,7 +34,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
         /// 
-        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `Fields`
         /// parameter for other fields that you can optionally include in ListObjects response.
         /// 
         /// ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
@@ -41,6 +44,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());
@@ -48,7 +54,7 @@ namespace Pulumi.Oci.ObjectStorage
         /// <summary>
         /// This data source provides the list of Objects in Oracle Cloud Infrastructure Object Storage service.
         /// 
-        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `fields`
+        /// Lists the objects in a bucket. By default, ListObjects returns object names only. See the `Fields`
         /// parameter for other fields that you can optionally include in ListObjects response.
         /// 
         /// ListObjects returns at most 1000 objects. To paginate through more objects, use the returned 'nextStartWith'
@@ -58,6 +64,9 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());

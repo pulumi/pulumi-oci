@@ -42,7 +42,7 @@ public final class GetMetricsResult {
      */
     private @Nullable String name;
     /**
-     * @return The source service or application emitting the metric.  Example: `oci_computeagent`
+     * @return The source service or application emitting the metric.  Example: `ociComputeagent`
      * 
      */
     private @Nullable String namespace;
@@ -94,7 +94,7 @@ public final class GetMetricsResult {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return The source service or application emitting the metric.  Example: `oci_computeagent`
+     * @return The source service or application emitting the metric.  Example: `ociComputeagent`
      * 
      */
     public Optional<String> namespace() {

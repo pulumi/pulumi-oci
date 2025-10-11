@@ -13,6 +13,8 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Autonomous Database Autonomous Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables a Database Management feature for the specified Autonomous Database.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement")]
     public partial class AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement : global::Pulumi.CustomResource
@@ -24,7 +26,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Output<string> AutonomousDatabaseId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -92,7 +94,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string> AutonomousDatabaseId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -122,7 +124,7 @@ namespace Pulumi.Oci.DatabaseManagement
         public Input<string>? AutonomousDatabaseId { get; set; }
 
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

@@ -16,6 +16,8 @@ import (
 //
 // Create a user.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // Users can be imported using the `id`, e.g.

@@ -32,7 +32,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     }
 
     /**
-     * (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -41,7 +41,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     private @Nullable Output<String> connectivityAssociationKeySecretVersion;
 
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -66,7 +66,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     }
 
     /**
-     * (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -75,7 +75,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
     private @Nullable Output<String> connectivityAssociationNameSecretVersion;
 
     /**
-     * @return (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+     * @return (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
      * 
      * NOTE: Only the latest secret version will be used.
      * 
@@ -133,7 +133,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
          * 
          * NOTE: Only the latest secret version will be used.
          * 
@@ -146,7 +146,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivity_association_key_secret_id` secret in Vault.
+         * @param connectivityAssociationKeySecretVersion (Updatable) The secret version of the `connectivityAssociationKeySecretId` secret in Vault.
          * 
          * NOTE: Only the latest secret version will be used.
          * 
@@ -179,7 +179,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
          * 
          * NOTE: Only the latest secret version will be used.
          * 
@@ -192,7 +192,7 @@ public final class CrossConnectGroupMacsecPropertiesPrimaryKeyArgs extends com.p
         }
 
         /**
-         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivity_association_name_secret_id` secret in Vault.
+         * @param connectivityAssociationNameSecretVersion (Updatable) The secret version of the `connectivityAssociationNameSecretId` secret in Vault.
          * 
          * NOTE: Only the latest secret version will be used.
          * 

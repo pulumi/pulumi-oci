@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMemberBackupLocation {
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     private @Nullable String bucket;
@@ -22,14 +22,14 @@ public final class DrProtectionGroupMemberBackupLocation {
      */
     private @Nullable String namespace;
     /**
-     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     private @Nullable String object;
 
     private DrProtectionGroupMemberBackupLocation() {}
     /**
-     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operation_logs`
+     * @return (Updatable) The bucket name inside the object storage namespace.  Example: `operationLogs`
      * 
      */
     public Optional<String> bucket() {
@@ -43,7 +43,7 @@ public final class DrProtectionGroupMemberBackupLocation {
         return Optional.ofNullable(this.namespace);
     }
     /**
-     * @return The object name inside the object storage bucket.  Example: `switchover_plan_executions`
+     * @return The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
      * 
      */
     public Optional<String> object() {

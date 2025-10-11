@@ -1190,6 +1190,8 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
 
         Create a user's own OAuth2 client credential.
 
+        ## Example Usage
+
         ## Import
 
         MyOAuth2ClientCredentials can be imported using the `id`, e.g.
@@ -1325,6 +1327,8 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         This resource provides the My O Auth2 Client Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's own OAuth2 client credential.
+
+        ## Example Usage
 
         ## Import
 

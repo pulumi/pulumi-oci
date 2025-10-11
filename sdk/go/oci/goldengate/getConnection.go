@@ -14,6 +14,8 @@ import (
 // This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
 //
 // Retrieves a Connection.
+//
+// ## Example Usage
 func LookupConnection(ctx *pulumi.Context, args *LookupConnectionArgs, opts ...pulumi.InvokeOption) (*LookupConnectionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupConnectionResult

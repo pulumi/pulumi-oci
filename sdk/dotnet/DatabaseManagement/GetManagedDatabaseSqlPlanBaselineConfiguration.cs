@@ -160,19 +160,19 @@ namespace Pulumi.Oci.DatabaseManagement
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Indicates whether the Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
+        /// Indicates whether the Automatic SPM Evolve Advisor task is enabled (`True`) or not (`False`).
         /// </summary>
         public readonly bool IsAutoSpmEvolveTaskEnabled;
         /// <summary>
-        /// Indicates whether the automatic capture of SQL plan baselines is enabled (`true`) or not (`false`).
+        /// Indicates whether the automatic capture of SQL plan baselines is enabled (`True`) or not (`False`).
         /// </summary>
         public readonly bool IsAutomaticInitialPlanCaptureEnabled;
         /// <summary>
-        /// Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`true`) or not (`false`).
+        /// Indicates whether the high frequency Automatic SPM Evolve Advisor task is enabled (`True`) or not (`False`).
         /// </summary>
         public readonly bool IsHighFrequencyAutoSpmEvolveTaskEnabled;
         /// <summary>
-        /// Indicates whether the database uses SQL plan baselines (`true`) or not (`false`).
+        /// Indicates whether the database uses SQL plan baselines (`True`) or not (`False`).
         /// </summary>
         public readonly bool IsSqlPlanBaselinesUsageEnabled;
         public readonly string ManagedDatabaseId;

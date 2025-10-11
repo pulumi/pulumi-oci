@@ -4048,6 +4048,8 @@ class DomainsSetting(pulumi.CustomResource):
 
         Replace Settings
 
+        ## Example Usage
+
         ## Import
 
         Settings can be imported using the `id`, e.g.
@@ -4565,6 +4567,8 @@ class DomainsSetting(pulumi.CustomResource):
         This resource provides the Setting resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Replace Settings
+
+        ## Example Usage
 
         ## Import
 

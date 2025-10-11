@@ -649,6 +649,12 @@ class DatabaseUpgrade(pulumi.CustomResource):
         	}
         	```
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] action: The database upgrade action.
@@ -675,6 +681,12 @@ class DatabaseUpgrade(pulumi.CustomResource):
         	   	]
         	}
         	```
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param DatabaseUpgradeArgs args: The arguments to use to populate this resource's properties.

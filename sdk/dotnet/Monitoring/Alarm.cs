@@ -152,22 +152,22 @@ namespace Pulumi.Oci.Monitoring
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the alarm is enabled.  Example: `true`
+        /// (Updatable) Whether the alarm is enabled.  Example: `True`
         /// </summary>
         [Output("isEnabled")]
         public Output<bool> IsEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `True`, splits alarm notifications per metric stream. When set to `False`, groups alarm notifications across metric streams. Example: `True`
         /// </summary>
         [Output("isNotificationsPerMetricDimensionEnabled")]
         public Output<bool> IsNotificationsPerMetricDimensionEnabled { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
-        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
-        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
-        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
+        /// * `RAW` - Raw JSON blob. Default value. When the `Destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `Destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `Destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Output("messageFormat")]
         public Output<string> MessageFormat { get; private set; } = null!;
@@ -179,19 +179,19 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> MetricCompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
+        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `True`
         /// </summary>
         [Output("metricCompartmentIdInSubtree")]
         public Output<bool> MetricCompartmentIdInSubtree { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `OciComputeagent`
         /// </summary>
         [Output("namespace")]
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// (Updatable) Customizable notification title (`Title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         /// </summary>
         [Output("notificationTitle")]
         public Output<string> NotificationTitle { get; private set; } = null!;
@@ -423,22 +423,22 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
-        /// (Updatable) Whether the alarm is enabled.  Example: `true`
+        /// (Updatable) Whether the alarm is enabled.  Example: `True`
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `True`, splits alarm notifications per metric stream. When set to `False`, groups alarm notifications across metric streams. Example: `True`
         /// </summary>
         [Input("isNotificationsPerMetricDimensionEnabled")]
         public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
-        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
-        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
-        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
+        /// * `RAW` - Raw JSON blob. Default value. When the `Destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `Destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `Destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -450,19 +450,19 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> MetricCompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
+        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `True`
         /// </summary>
         [Input("metricCompartmentIdInSubtree")]
         public Input<bool>? MetricCompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// (Updatable) Customizable notification title (`Title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         /// </summary>
         [Input("notificationTitle")]
         public Input<string>? NotificationTitle { get; set; }
@@ -644,22 +644,22 @@ namespace Pulumi.Oci.Monitoring
         }
 
         /// <summary>
-        /// (Updatable) Whether the alarm is enabled.  Example: `true`
+        /// (Updatable) Whether the alarm is enabled.  Example: `True`
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
+        /// (Updatable) When set to `True`, splits alarm notifications per metric stream. When set to `False`, groups alarm notifications across metric streams. Example: `True`
         /// </summary>
         [Input("isNotificationsPerMetricDimensionEnabled")]
         public Input<bool>? IsNotificationsPerMetricDimensionEnabled { get; set; }
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
-        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
-        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
-        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
+        /// * `RAW` - Raw JSON blob. Default value. When the `Destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `Destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `Destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -671,19 +671,19 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? MetricCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
+        /// (Updatable) When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `True`
         /// </summary>
         [Input("metricCompartmentIdInSubtree")]
         public Input<bool>? MetricCompartmentIdInSubtree { get; set; }
 
         /// <summary>
-        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+        /// (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `OciComputeagent`
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
-        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// (Updatable) Customizable notification title (`Title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
         /// </summary>
         [Input("notificationTitle")]
         public Input<string>? NotificationTitle { get; set; }

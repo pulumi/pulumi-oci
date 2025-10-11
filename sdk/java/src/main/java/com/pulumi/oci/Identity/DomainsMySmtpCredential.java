@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s own SMTP credential.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * MySmtpCredentials can be imported using the `id`, e.g.

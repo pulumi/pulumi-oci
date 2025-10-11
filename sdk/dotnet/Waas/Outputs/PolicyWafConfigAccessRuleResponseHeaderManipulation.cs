@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly string Action;
         /// <summary>
-        /// (Updatable) A header field name that conforms to RFC 7230.  Example: `example_header_name`
+        /// (Updatable) A header field name that conforms to RFC 7230.  Example: `ExampleHeaderName`
         /// </summary>
         public readonly string Header;
         /// <summary>
-        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
+        /// (Updatable) A header field value that conforms to RFC 7230.  Example: `ExampleValue`
         /// </summary>
         public readonly string? Value;
 

@@ -15,6 +15,8 @@ import (
 // This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 //
 // Enables a Database Management feature for the specified external pluggable database.
+//
+// ## Example Usage
 type ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement struct {
 	pulumi.CustomResourceState
 

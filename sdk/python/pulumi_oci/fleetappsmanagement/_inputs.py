@@ -3429,7 +3429,7 @@ if not MYPY:
         """
         resource_type: NotRequired[pulumi.Input[_builtins.str]]
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
 elif False:
     ProvisionDeployedResourceArgsDict: TypeAlias = Mapping[str, Any]
@@ -3447,7 +3447,7 @@ class ProvisionDeployedResourceArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ProvisionDeployedResourceResourceInstanceListArgs']]] resource_instance_lists: Collection of InstanceSummary
         :param pulumi.Input[_builtins.str] resource_name: The name of the resource
         :param pulumi.Input[_builtins.str] resource_provider: The name of the Provider
-        :param pulumi.Input[_builtins.str] resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        :param pulumi.Input[_builtins.str] resource_type: The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         if mode is not None:
             pulumi.set(__self__, "mode", mode)
@@ -3512,7 +3512,7 @@ class ProvisionDeployedResourceArgs:
     @pulumi.getter(name="resourceType")
     def resource_type(self) -> Optional[pulumi.Input[_builtins.str]]:
         """
-        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance
+        The provider resource type. Must be supported by the Oracle Cloud Infrastructure provider. Example: Core.Instance 
         """
         return pulumi.get(self, "resource_type")
 

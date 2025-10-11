@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
 //
-// Gets a Project by identifier
+// # Gets a Project by identifier
+//
+// ## Example Usage
 func LookupProject(ctx *pulumi.Context, args *LookupProjectArgs, opts ...pulumi.InvokeOption) (*LookupProjectResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupProjectResult

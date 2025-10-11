@@ -76,7 +76,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string SizeInGbs;
         /// <summary>
-        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+        /// The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `SizeInGbs`.
         /// </summary>
         public readonly string SizeInMbs;
         public readonly ImmutableArray<Outputs.GetBootVolumesBootVolumeSourceDetailResult> SourceDetails;

@@ -19,14 +19,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     public static final ListenerArgs Empty = new ListenerArgs();
 
     /**
-     * (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="defaultBackendSetName", required=true)
     private Output<String> defaultBackendSetName;
 
     /**
-     * @return (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+     * @return (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
      * 
      */
     public Output<String> defaultBackendSetName() {
@@ -79,14 +79,14 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     public Optional<Output<String>> name() {
@@ -208,7 +208,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `example_backend_set`
+         * @param defaultBackendSetName (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -292,7 +292,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class ListenerArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+         * @param name A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
          * 
          * @return builder
          * 

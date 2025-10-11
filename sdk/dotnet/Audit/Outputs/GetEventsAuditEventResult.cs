@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Audit.Outputs
         /// </summary>
         public readonly string CloudEventsVersion;
         /// <summary>
-        /// The content type of the data contained in `data`.  Example: `application/json`
+        /// The content type of the data contained in `Data`.  Example: `application/json`
         /// </summary>
         public readonly string ContentType;
         /// <summary>
-        /// The payload of the event. Information within `data` comes from the resource emitting the event.
+        /// The payload of the event. Information within `Data` comes from the resource emitting the event.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEventsAuditEventDataResult> Datas;
         /// <summary>

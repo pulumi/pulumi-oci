@@ -179,6 +179,12 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         For more information about the Database Management Service, see
         [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] external_container_database_id: The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -200,6 +206,12 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         Enables Database Management Service for the external container database.
         For more information about the Database Management Service, see
         [Database Management Service](https://docs.cloud.oracle.com/iaas/Content/ExternalDatabase/Concepts/databasemanagementservice.htm).
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param ExternalContainerDatabaseManagementArgs args: The arguments to use to populate this resource's properties.

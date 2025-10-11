@@ -13,6 +13,8 @@ namespace Pulumi.Oci.BigDataService
     /// This resource installs the specified software update to the nodes of the Oracle Cloud Infrastructure Big Data Service cluster.
     /// 
     /// Install Software Update of the specified SoftwareUpdateId to this BDS cluster's nodes.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [OciResourceType("oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction")]
     public partial class BdsInstanceSoftwareUpdateAction : global::Pulumi.CustomResource

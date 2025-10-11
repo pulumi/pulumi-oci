@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// The name of the statistic (e.g., `p95`).
+        /// The name of the statistic (e.g., `P95`).
         /// </summary>
         public readonly string Statistic;
         /// <summary>

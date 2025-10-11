@@ -29,14 +29,14 @@ public final class GetBackendHealthPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
+     * The name of the backend set associated with the backend server to retrieve the health status for.  Example: `exampleBackendSet`
      * 
      */
     @Import(name="backendSetName", required=true)
     private String backendSetName;
 
     /**
-     * @return The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
+     * @return The name of the backend set associated with the backend server to retrieve the health status for.  Example: `exampleBackendSet`
      * 
      */
     public String backendSetName() {
@@ -96,7 +96,7 @@ public final class GetBackendHealthPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param backendSetName The name of the backend set associated with the backend server to retrieve the health status for.  Example: `example_backend_set`
+         * @param backendSetName The name of the backend set associated with the backend server to retrieve the health status for.  Example: `exampleBackendSet`
          * 
          * @return builder
          * 

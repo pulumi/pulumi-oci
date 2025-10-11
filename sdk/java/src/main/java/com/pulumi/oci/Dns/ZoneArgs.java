@@ -63,7 +63,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
      * 
-     * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+     * Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
      * 
      * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
      * 
@@ -82,7 +82,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
      * 
-     * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+     * Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
      * 
      * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
      * 
@@ -298,7 +298,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
          * 
-         * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+         * Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
          * 
          * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
          * 
@@ -321,7 +321,7 @@ public final class ZoneArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * To remove the old DS record without causing service disruption, wait until the old DS record&#39;s TTL has expired, and the new DS record has propagated. After the DS replacement has been completed, then the `PromoteZoneDnssecKeyVersion` operation must be called.
          * 
-         * Metrics are emitted in the `oci_dns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
+         * Metrics are emitted in the `ociDns` namespace daily for each `KskDnssecKeyVersion` indicating how many days are left until expiration. We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the necessary parent zone updates can be made and the `PromoteZoneDnssecKeyVersion` operation can be called.
          * 
          * Enabling DNSSEC results in additional records in DNS responses which increases their size and can cause higher response latency.
          * 

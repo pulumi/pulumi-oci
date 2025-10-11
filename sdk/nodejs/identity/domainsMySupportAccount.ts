@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create a user's own support account.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * MySupportAccounts can be imported using the `id`, e.g.

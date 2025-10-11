@@ -500,6 +500,8 @@ class MlApplicationInstance(pulumi.CustomResource):
 
         Creates a new MlApplicationInstance.
 
+        ## Example Usage
+
         ## Import
 
         MlApplicationInstances can be imported using the `id`, e.g.
@@ -534,6 +536,8 @@ class MlApplicationInstance(pulumi.CustomResource):
         This resource provides the Ml Application Instance resource in Oracle Cloud Infrastructure Data Science service.
 
         Creates a new MlApplicationInstance.
+
+        ## Example Usage
 
         ## Import
 

@@ -37,7 +37,7 @@ namespace Pulumi.Oci.Kms.Inputs
         public Input<string>? Object { get; set; }
 
         /// <summary>
-        /// (Updatable) Pre-authenticated-request-uri of the backup* `restore_trigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
+        /// (Updatable) Pre-authenticated-request-uri of the backup* `RestoreTrigger` - (Optional) (Updatable) An optional property when flipped triggers restore from restore option provided in config file.
         /// </summary>
         [Input("uri")]
         public Input<string>? Uri { get; set; }

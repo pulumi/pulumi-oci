@@ -18,14 +18,14 @@ public final class GetRuleSetsFilter extends com.pulumi.resources.InvokeArgs {
     public static final GetRuleSetsFilter Empty = new GetRuleSetsFilter();
 
     /**
-     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+     * @return The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetRuleSetsFilter extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_rule_set`
+         * @param name The name for this set of rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `exampleRuleSet`
          * 
          * @return builder
          * 

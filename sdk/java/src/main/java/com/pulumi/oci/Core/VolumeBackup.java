@@ -174,7 +174,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
         return this.sizeInGbs;
     }
     /**
-     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      * @deprecated
      * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
@@ -185,7 +185,7 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
     private Output<String> sizeInMbs;
 
     /**
-     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
+     * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
      */
     public Output<String> sizeInMbs() {
@@ -336,14 +336,14 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
         return this.uniqueSizeInMbs;
     }
     /**
-     * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+     * The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      * 
      */
     @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**
-     * @return The OCID of the volume that needs to be backed up.**Note: To create the resource either `volume_id` or `source_details` is required to be set.
+     * @return The OCID of the volume that needs to be backed up.**Note: To create the resource either `volumeId` or `sourceDetails` is required to be set.
      * 
      */
     public Output<String> volumeId() {

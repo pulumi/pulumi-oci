@@ -1501,7 +1501,7 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -1520,7 +1520,7 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * idcsSensitive: hash_sc
+     * * idcsSensitive: hashSc
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -6116,7 +6116,7 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
-         * * idcsSensitive: hash_sc
+         * * idcsSensitive: hashSc
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -6139,7 +6139,7 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
-         * * idcsSensitive: hash_sc
+         * * idcsSensitive: hashSc
          * * multiValued: false
          * * mutability: readOnly
          * * required: false

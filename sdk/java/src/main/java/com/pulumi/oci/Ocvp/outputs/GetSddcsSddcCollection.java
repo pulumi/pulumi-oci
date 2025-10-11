@@ -168,12 +168,12 @@ public final class GetSddcsSddcCollection {
     @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
     private String instanceDisplayNamePrefix;
     /**
-     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
      * 
      */
     private Boolean isHcxEnabled;
     /**
-     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
      * 
      * @deprecated
      * The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.
@@ -563,14 +563,14 @@ public final class GetSddcsSddcCollection {
         return this.instanceDisplayNamePrefix;
     }
     /**
-     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX is enabled for this SDDC. **Deprecated**. Please use `hcxMode` instead.
      * 
      */
     public Boolean isHcxEnabled() {
         return this.isHcxEnabled;
     }
     /**
-     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcx_mode` instead.
+     * @return (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.  **Deprecated**. Please use `hcxMode` instead.
      * 
      * @deprecated
      * The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.

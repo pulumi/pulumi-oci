@@ -34,14 +34,14 @@ public final class GetPrivateEndpointsArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+     * @return The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -151,7 +151,7 @@ public final class GetPrivateEndpointsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class GetPrivateEndpointsArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartment_id` to get the list of Private Endpoint resources.
+         * @param displayName The query parameter for the Spark application name. Note: At a time only one optional filter can be used with `compartmentId` to get the list of Private Endpoint resources.
          * 
          * @return builder
          * 

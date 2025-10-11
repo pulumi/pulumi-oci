@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly int OffsetSeconds;
         /// <summary>
-        /// Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
+        /// Indicates how the offset is defined. If value is `STRUCTURED`, then `hourOfDay`, `dayOfWeek`, `dayOfMonth`, and `Month` fields are used and `offsetSeconds` will be ignored in requests and users should ignore its value from the responses.
         /// </summary>
         public readonly string OffsetType;
         /// <summary>

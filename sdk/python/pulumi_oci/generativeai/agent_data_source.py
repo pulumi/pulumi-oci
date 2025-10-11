@@ -403,6 +403,8 @@ class AgentDataSource(pulumi.CustomResource):
 
         Creates a data source.
 
+        ## Example Usage
+
         ## Import
 
         DataSources can be imported using the `id`, e.g.
@@ -436,6 +438,8 @@ class AgentDataSource(pulumi.CustomResource):
         This resource provides the Data Source resource in Oracle Cloud Infrastructure Generative Ai Agent service.
 
         Creates a data source.
+
+        ## Example Usage
 
         ## Import
 

@@ -201,7 +201,7 @@ namespace Pulumi.Oci.Marketplace
         public string? ImageId { get; set; }
 
         /// <summary>
-        /// Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
+        /// Indicates whether to show only featured listings. If this is set to `False` or is omitted, then all listings will be returned.
         /// </summary>
         [Input("isFeatured")]
         public bool? IsFeatured { get; set; }
@@ -313,7 +313,7 @@ namespace Pulumi.Oci.Marketplace
         public Input<string>? ImageId { get; set; }
 
         /// <summary>
-        /// Indicates whether to show only featured listings. If this is set to `false` or is omitted, then all listings will be returned.
+        /// Indicates whether to show only featured listings. If this is set to `False` or is omitted, then all listings will be returned.
         /// </summary>
         [Input("isFeatured")]
         public Input<bool>? IsFeatured { get; set; }

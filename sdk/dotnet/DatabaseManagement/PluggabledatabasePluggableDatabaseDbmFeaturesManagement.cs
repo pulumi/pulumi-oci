@@ -13,12 +13,14 @@ namespace Pulumi.Oci.DatabaseManagement
     /// This resource provides the Pluggabledatabase Pluggable Database Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
     /// 
     /// Enables a Database Management feature for the specified Oracle cloud pluggable database.
+    /// 
+    /// ## Example Usage
     /// </summary>
     [OciResourceType("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement")]
     public partial class PluggabledatabasePluggableDatabaseDbmFeaturesManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -92,7 +94,7 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -128,7 +130,7 @@ namespace Pulumi.Oci.DatabaseManagement
     public sealed class PluggabledatabasePluggableDatabaseDbmFeaturesManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
+        /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
         /// 
         /// ** IMPORTANT **

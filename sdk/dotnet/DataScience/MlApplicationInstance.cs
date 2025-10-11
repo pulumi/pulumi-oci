@@ -14,6 +14,8 @@ namespace Pulumi.Oci.DataScience
     /// 
     /// Creates a new MlApplicationInstance.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// MlApplicationInstances can be imported using the `id`, e.g.

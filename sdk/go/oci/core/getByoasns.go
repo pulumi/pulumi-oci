@@ -15,6 +15,8 @@ import (
 //
 // Lists the `Byoasn` resources in the specified compartment.
 // You can filter the list using query parameters.
+//
+// ## Example Usage
 func GetByoasns(ctx *pulumi.Context, args *GetByoasnsArgs, opts ...pulumi.InvokeOption) (*GetByoasnsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetByoasnsResult

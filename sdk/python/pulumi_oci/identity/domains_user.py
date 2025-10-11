@@ -3161,6 +3161,8 @@ class DomainsUser(pulumi.CustomResource):
 
         Create a user.
 
+        ## Example Usage
+
         ## Import
 
         Users can be imported using the `id`, e.g.
@@ -3515,6 +3517,8 @@ class DomainsUser(pulumi.CustomResource):
         This resource provides the User resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user.
+
+        ## Example Usage
 
         ## Import
 

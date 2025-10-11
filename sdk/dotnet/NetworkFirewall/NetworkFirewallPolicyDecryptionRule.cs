@@ -14,6 +14,8 @@ namespace Pulumi.Oci.NetworkFirewall
     /// 
     /// Creates a new Decryption Rule for the Network Firewall Policy.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// NetworkFirewallPolicyDecryptionRules can be imported using the `name`, e.g.
@@ -28,7 +30,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// (Updatable) Action:
         /// * NO_DECRYPT - Matching traffic is not decrypted.
-        /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
+        /// * DECRYPT - Matching traffic is decrypted with the specified `Secret` according to the specified `decryptionProfile`.
         /// </summary>
         [Output("action")]
         public Output<string> Action { get; private set; } = null!;
@@ -64,7 +66,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+        /// (Updatable) An object which defines the position of the rule. Only one of `AfterRule` or `BeforeRule` should be provided.
         /// </summary>
         [Output("position")]
         public Output<Outputs.NetworkFirewallPolicyDecryptionRulePosition> Position { get; private set; } = null!;
@@ -73,7 +75,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string?> PriorityOrder { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        /// (Updatable) The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         [Output("secret")]
         public Output<string?> Secret { get; private set; } = null!;
@@ -127,7 +129,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// (Updatable) Action:
         /// * NO_DECRYPT - Matching traffic is not decrypted.
-        /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
+        /// * DECRYPT - Matching traffic is decrypted with the specified `Secret` according to the specified `decryptionProfile`.
         /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
@@ -157,7 +159,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string> NetworkFirewallPolicyId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+        /// (Updatable) An object which defines the position of the rule. Only one of `AfterRule` or `BeforeRule` should be provided.
         /// </summary>
         [Input("position")]
         public Input<Inputs.NetworkFirewallPolicyDecryptionRulePositionArgs>? Position { get; set; }
@@ -166,7 +168,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? PriorityOrder { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        /// (Updatable) The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         [Input("secret")]
         public Input<string>? Secret { get; set; }
@@ -182,7 +184,7 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// (Updatable) Action:
         /// * NO_DECRYPT - Matching traffic is not decrypted.
-        /// * DECRYPT - Matching traffic is decrypted with the specified `secret` according to the specified `decryptionProfile`.
+        /// * DECRYPT - Matching traffic is decrypted with the specified `Secret` according to the specified `decryptionProfile`.
         /// </summary>
         [Input("action")]
         public Input<string>? Action { get; set; }
@@ -218,7 +220,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? ParentResourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) An object which defines the position of the rule. Only one of `after_rule` or `before_rule` should be provided.
+        /// (Updatable) An object which defines the position of the rule. Only one of `AfterRule` or `BeforeRule` should be provided.
         /// </summary>
         [Input("position")]
         public Input<Inputs.NetworkFirewallPolicyDecryptionRulePositionGetArgs>? Position { get; set; }
@@ -227,7 +229,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Input<string>? PriorityOrder { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of a mapped secret. Its `type` must match that of the specified decryption profile.
+        /// (Updatable) The name of a mapped secret. Its `Type` must match that of the specified decryption profile.
         /// </summary>
         [Input("secret")]
         public Input<string>? Secret { get; set; }

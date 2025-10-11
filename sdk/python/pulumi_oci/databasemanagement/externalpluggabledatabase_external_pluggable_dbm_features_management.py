@@ -184,6 +184,8 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
 
         Enables a Database Management feature for the specified external pluggable database.
 
+        ## Example Usage
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] enable_external_pluggable_dbm_feature: (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
@@ -204,6 +206,8 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         This resource provides the Externalpluggabledatabase External Pluggable Dbm Features Management resource in Oracle Cloud Infrastructure Database Management service.
 
         Enables a Database Management feature for the specified external pluggable database.
+
+        ## Example Usage
 
         :param str resource_name: The name of the resource.
         :param ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementArgs args: The arguments to use to populate this resource's properties.

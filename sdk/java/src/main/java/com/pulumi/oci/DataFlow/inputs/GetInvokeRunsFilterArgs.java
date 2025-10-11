@@ -19,14 +19,14 @@ public final class GetInvokeRunsFilterArgs extends com.pulumi.resources.Resource
     public static final GetInvokeRunsFilterArgs Empty = new GetInvokeRunsFilterArgs();
 
     /**
-     * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+     * @return The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetInvokeRunsFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetInvokeRunsFilterArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;input_file&#34;
+         * @param name The name of the parameter.  It must be a string of one or more word characters (a-z, A-Z, 0-9, _). Examples: &#34;iterations&#34;, &#34;inputFile&#34;
          * 
          * @return builder
          * 

@@ -87,7 +87,7 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsCsvAttributeName: requestor_id
+     * * idcsCsvAttributeName: requestorId
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -105,7 +105,7 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsCsvAttributeName: requestor_id
+     * * idcsCsvAttributeName: requestorId
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -228,7 +228,7 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsCsvAttributeName: requestor_id
+         * * idcsCsvAttributeName: requestorId
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable
@@ -250,7 +250,7 @@ public final class DomainsMyRequestRequestorArgs extends com.pulumi.resources.Re
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsCsvAttributeName: requestor_id
+         * * idcsCsvAttributeName: requestorId
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable

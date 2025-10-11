@@ -14,7 +14,7 @@ namespace Pulumi.Oci.HealthChecks.Outputs
     public sealed class GetVantagePointsFilterResult
     {
         /// <summary>
-        /// Filters results that exactly match the `name` field.
+        /// Filters results that exactly match the `Name` field.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

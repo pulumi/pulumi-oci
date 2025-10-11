@@ -99,7 +99,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
+        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `False`
         /// </summary>
         [Output("isCrossTenancy")]
         public Output<bool> IsCrossTenancy { get; private set; } = null!;
@@ -117,7 +117,7 @@ namespace Pulumi.Oci.Core
         public Output<string?> NetworkId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// </summary>
         [Output("removeExportDrgRouteDistributionTrigger")]
         public Output<bool?> RemoveExportDrgRouteDistributionTrigger { get; private set; } = null!;
@@ -269,7 +269,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? NetworkId { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// </summary>
         [Input("removeExportDrgRouteDistributionTrigger")]
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }
@@ -359,7 +359,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `false`
+        /// Indicates whether the DRG attachment and attached network live in a different tenancy than the DRG.  Example: `False`
         /// </summary>
         [Input("isCrossTenancy")]
         public Input<bool>? IsCrossTenancy { get; set; }
@@ -377,7 +377,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? NetworkId { get; set; }
 
         /// <summary>
-        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+        /// (Updatable) An optional property when set to true during update disables the export of route Distribution by setting ExportDrgRouteDistributionId to null.
         /// </summary>
         [Input("removeExportDrgRouteDistributionTrigger")]
         public Input<bool>? RemoveExportDrgRouteDistributionTrigger { get; set; }

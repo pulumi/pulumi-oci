@@ -172,7 +172,7 @@ namespace Pulumi.Oci.Lustre
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Type of network used by clients to mount the file system.   Example: `tcp`
+        /// Type of network used by clients to mount the file system.   Example: `Tcp`
         /// </summary>
         public readonly string Lnet;
         public readonly string LustreFileSystemId;

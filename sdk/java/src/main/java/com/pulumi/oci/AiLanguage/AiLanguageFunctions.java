@@ -41,6 +41,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets an endpoint by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args) {
         return getEndpoint(args, InvokeOptions.Empty);
@@ -49,6 +51,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets an endpoint by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args) {
@@ -59,6 +63,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets an endpoint by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
@@ -67,6 +73,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets an endpoint by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetEndpointResult> getEndpoint(GetEndpointArgs args, InvokeOutputOptions options) {
@@ -77,6 +85,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets an endpoint by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetEndpointResult> getEndpointPlain(GetEndpointPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
@@ -85,6 +95,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of Endpoints.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args) {
@@ -95,6 +107,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of Endpoints.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args) {
         return getEndpointsPlain(args, InvokeOptions.Empty);
@@ -103,6 +117,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of Endpoints.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args, InvokeOptions options) {
@@ -113,6 +129,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of Endpoints.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetEndpointsResult> getEndpoints(GetEndpointsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
@@ -121,6 +139,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of Endpoints.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetEndpointsResult> getEndpointsPlain(GetEndpointsPlainArgs args, InvokeOptions options) {
@@ -131,6 +151,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets a model by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args) {
         return getModel(args, InvokeOptions.Empty);
@@ -139,6 +161,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets a model by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args) {
@@ -149,6 +173,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets a model by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
@@ -158,6 +184,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets a model by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetModelResult> getModel(GetModelArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
@@ -166,6 +194,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets a model by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
@@ -596,6 +626,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of models.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args) {
         return getModels(args, InvokeOptions.Empty);
@@ -604,6 +636,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of models.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args) {
@@ -614,6 +648,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of models.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
@@ -622,6 +658,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of models.
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetModelsResult> getModels(GetModelsArgs args, InvokeOutputOptions options) {
@@ -632,6 +670,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of models.
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetModelsResult> getModelsPlain(GetModelsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:AiLanguage/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
@@ -640,6 +680,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets a Project by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args) {
@@ -650,6 +692,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets a Project by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args) {
         return getProjectPlain(args, InvokeOptions.Empty);
@@ -658,6 +702,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets a Project by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOptions options) {
@@ -668,6 +714,8 @@ public final class AiLanguageFunctions {
      * 
      * Gets a Project by identifier
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetProjectResult> getProject(GetProjectArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getProject:getProject", TypeShape.of(GetProjectResult.class), args, Utilities.withVersion(options));
@@ -676,6 +724,8 @@ public final class AiLanguageFunctions {
      * This data source provides details about a specific Project resource in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Gets a Project by identifier
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetProjectResult> getProjectPlain(GetProjectPlainArgs args, InvokeOptions options) {
@@ -686,6 +736,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of  Projects.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args) {
         return getProjects(args, InvokeOptions.Empty);
@@ -694,6 +746,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of  Projects.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args) {
@@ -704,6 +758,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of  Projects.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
@@ -713,6 +769,8 @@ public final class AiLanguageFunctions {
      * 
      * Returns a list of  Projects.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetProjectsResult> getProjects(GetProjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:AiLanguage/getProjects:getProjects", TypeShape.of(GetProjectsResult.class), args, Utilities.withVersion(options));
@@ -721,6 +779,8 @@ public final class AiLanguageFunctions {
      * This data source provides the list of Projects in Oracle Cloud Infrastructure Ai Language service.
      * 
      * Returns a list of  Projects.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetProjectsResult> getProjectsPlain(GetProjectsPlainArgs args, InvokeOptions options) {

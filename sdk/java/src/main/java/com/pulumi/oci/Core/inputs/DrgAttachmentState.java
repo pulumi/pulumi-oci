@@ -99,7 +99,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-     * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+     * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
      * 
      */
     @Import(name="exportDrgRouteDistributionId")
@@ -107,7 +107,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-     * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+     * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
      * 
      */
     public Optional<Output<String>> exportDrgRouteDistributionId() {
@@ -160,7 +160,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -170,7 +170,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<Boolean> removeExportDrgRouteDistributionTrigger;
 
     /**
-     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+     * @return (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -398,7 +398,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param exportDrgRouteDistributionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-         * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+         * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param exportDrgRouteDistributionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the export route distribution used to specify how routes in the assigned DRG route table are advertised to the attachment. If this value is null, no routes are advertised through this attachment.
-         * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, remove_export_drg_route_distribution_trigger needs to be used.
+         * This field cannot be set by the user while creating the resource and gets a default value on creation. This can be only be updated to its default value. If this fields needs to be set to null, removeExportDrgRouteDistributionTrigger needs to be used.
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -497,7 +497,7 @@ public final class DrgAttachmentState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting export_drg_route_distribution_id to null.
+         * @param removeExportDrgRouteDistributionTrigger (Updatable) An optional property when set to true during update disables the export of route Distribution by setting exportDrgRouteDistributionId to null.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

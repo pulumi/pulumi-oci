@@ -177,7 +177,7 @@ namespace Pulumi.Oci.Artifacts
         public string? RepositoryId { get; set; }
 
         /// <summary>
-        /// A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
+        /// A filter to return container images or container image signatures that match the repository name.  Example: `Foo` or `foo*`
         /// </summary>
         [Input("repositoryName")]
         public string? RepositoryName { get; set; }
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.Artifacts
         public Input<string>? RepositoryId { get; set; }
 
         /// <summary>
-        /// A filter to return container images or container image signatures that match the repository name.  Example: `foo` or `foo*`
+        /// A filter to return container images or container image signatures that match the repository name.  Example: `Foo` or `foo*`
         /// </summary>
         [Input("repositoryName")]
         public Input<string>? RepositoryName { get; set; }

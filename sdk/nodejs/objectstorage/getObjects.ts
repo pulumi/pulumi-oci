@@ -19,6 +19,8 @@ import * as utilities from "../utilities";
  * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
  * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
  */
 export function getObjects(args: GetObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -104,6 +106,8 @@ export interface GetObjectsResult {
  * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
  * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ *
+ * ## Example Usage
  */
 export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

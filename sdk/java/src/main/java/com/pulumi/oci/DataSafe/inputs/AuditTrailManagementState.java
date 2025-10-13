@@ -18,7 +18,7 @@ public final class AuditTrailManagementState extends com.pulumi.resources.Resour
     public static final AuditTrailManagementState Empty = new AuditTrailManagementState();
 
     /**
-     * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+     * The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28,7 +28,7 @@ public final class AuditTrailManagementState extends com.pulumi.resources.Resour
     private @Nullable Output<String> auditCollectionStartTime;
 
     /**
-     * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+     * @return The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -399,7 +399,7 @@ public final class AuditTrailManagementState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param auditCollectionStartTime The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+         * @param auditCollectionStartTime The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -413,7 +413,7 @@ public final class AuditTrailManagementState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param auditCollectionStartTime The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when start_trigger is set.
+         * @param auditCollectionStartTime The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

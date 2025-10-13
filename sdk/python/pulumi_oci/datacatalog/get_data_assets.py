@@ -177,6 +177,8 @@ def get_data_assets(catalog_id: Optional[_builtins.str] = None,
 
     Returns a list of data assets within a data catalog.
 
+    ## Example Usage
+
 
     :param _builtins.str catalog_id: Unique catalog identifier.
     :param _builtins.str created_by_id: OCID of the user who created the resource.
@@ -226,6 +228,8 @@ def get_data_assets_output(catalog_id: Optional[pulumi.Input[_builtins.str]] = N
     This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
 
     Returns a list of data assets within a data catalog.
+
+    ## Example Usage
 
 
     :param _builtins.str catalog_id: Unique catalog identifier.

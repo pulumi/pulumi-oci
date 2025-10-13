@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class GetListenersListenerCollectionItemResult
     {
         /// <summary>
-        /// The name of the associated backend set.  Example: `example_backend_set`
+        /// The name of the associated backend set.  Example: `ExampleBackendSet`
         /// </summary>
         public readonly string DefaultBackendSetName;
         public readonly string Id;
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
         /// </summary>
         public readonly int L3ipIdleTimeout;
         /// <summary>
-        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+        /// A friendly name for the listener. It must be unique and it cannot be changed.  Example: `ExampleListener`
         /// </summary>
         public readonly string Name;
         /// <summary>

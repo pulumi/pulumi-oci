@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class BackendSetSessionPersistenceConfiguration {
     /**
-     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     private String cookieName;
@@ -26,7 +26,7 @@ public final class BackendSetSessionPersistenceConfiguration {
 
     private BackendSetSessionPersistenceConfiguration() {}
     /**
-     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `example_cookie`
+     * @return (Updatable) The name of the cookie used to detect a session initiated by the backend server. Use &#39;*&#39; to specify that any cookie set by the backend causes the session to persist.  Example: `exampleCookie`
      * 
      */
     public String cookieName() {

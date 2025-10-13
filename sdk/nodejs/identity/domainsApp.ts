@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Create an App
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * Apps can be imported using the `id`, e.g.

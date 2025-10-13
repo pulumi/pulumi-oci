@@ -13,7 +13,9 @@ import (
 
 // This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Ai Language service.
 //
-// Gets a model by identifier
+// # Gets a model by identifier
+//
+// ## Example Usage
 func LookupModel(ctx *pulumi.Context, args *LookupModelArgs, opts ...pulumi.InvokeOption) (*LookupModelResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupModelResult

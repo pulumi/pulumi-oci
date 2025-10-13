@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSddcInitialConfigurationInitialClusterConfiguration {
     /**
-     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
      * 
      */
     private Integer actualEsxiHostsCount;
@@ -52,12 +52,12 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      */
     private String initialCommitment;
     /**
-     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
      */
     private Double initialHostOcpuCount;
     /**
-     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
      */
     private String initialHostShapeName;
@@ -67,7 +67,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      */
     private String instanceDisplayNamePrefix;
     /**
-     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
      */
     private Boolean isShieldedInstanceEnabled;
@@ -82,14 +82,14 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
      */
     private String vsphereType;
     /**
-     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
      * 
      */
     private String workloadNetworkCidr;
 
     private GetSddcInitialConfigurationInitialClusterConfiguration() {}
     /**
-     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actual_esxi_hosts_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**. Please use `actualEsxiHostsCount` of `initialClusterConfigurations` instead.
      * 
      */
     public Integer actualEsxiHostsCount() {
@@ -138,14 +138,14 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
         return this.initialCommitment;
     }
     /**
-     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
      */
     public Double initialHostOcpuCount() {
         return this.initialHostOcpuCount;
     }
     /**
-     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
      */
     public String initialHostShapeName() {
@@ -159,7 +159,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
         return this.instanceDisplayNamePrefix;
     }
     /**
-     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) Indicates whether shielded instance is enabled at the SDDC level. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
      */
     public Boolean isShieldedInstanceEnabled() {
@@ -180,7 +180,7 @@ public final class GetSddcInitialConfigurationInitialClusterConfiguration {
         return this.vsphereType;
     }
     /**
-     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
+     * @return (**Deprecated**) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads. **Deprecated**. Please use `workloadNetworkCidr` of `initialClusterConfigurations` instead.
      * 
      */
     public String workloadNetworkCidr() {

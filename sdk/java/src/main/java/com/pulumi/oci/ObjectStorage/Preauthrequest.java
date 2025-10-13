@@ -167,7 +167,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
         return this.namespace;
     }
     /**
-     * Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+     * Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      * @deprecated
      * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
@@ -178,7 +178,7 @@ public class Preauthrequest extends com.pulumi.resources.CustomResource {
     private Output<String> object;
 
     /**
-     * @return Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
+     * @return Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
      */
     public Output<String> object() {

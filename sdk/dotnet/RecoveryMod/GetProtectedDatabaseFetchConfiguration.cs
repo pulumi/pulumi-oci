@@ -150,7 +150,7 @@ namespace Pulumi.Oci.RecoveryMod
         public readonly bool? Base64EncodeContent;
         public readonly string? ConfigurationType;
         /// <summary>
-        /// content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `base_64_encode_content` to false.
+        /// content of the downloaded config file for recovery service. It is base64 encoded by default. To store the config in plaintext set `Base64EncodeContent` to false.
         /// </summary>
         public readonly string Content;
         /// <summary>

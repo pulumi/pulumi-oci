@@ -247,6 +247,12 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
 
         Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsUpdateDataManagement
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] char_encoding: The character encoding of the uploaded file.
@@ -269,6 +275,12 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
         This resource provides the Namespace Lookups Update Data Management resource in Oracle Cloud Infrastructure Log Analytics service.
 
         Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for NamespaceLookupsUpdateDataManagement
 
         :param str resource_name: The name of the resource.
         :param NamespaceLookupsUpdateDataManagementArgs args: The arguments to use to populate this resource's properties.

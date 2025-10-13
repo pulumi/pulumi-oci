@@ -112,6 +112,8 @@ def get_network_firewall_policy_service(name: Optional[_builtins.str] = None,
 
     Get Service by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name of the service.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -136,6 +138,8 @@ def get_network_firewall_policy_service_output(name: Optional[pulumi.Input[_buil
     This data source provides details about a specific Network Firewall Policy Service resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Service by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name of the service.

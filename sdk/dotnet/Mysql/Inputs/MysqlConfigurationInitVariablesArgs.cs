@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Mysql.Inputs
     public sealed class MysqlConfigurationInitVariablesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Represents the MySQL server system variable lower_case_table_names (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
+        /// Represents the MySQL server system variable LowerCaseTableNames (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_lower_case_table_names).
         /// 
         /// lowerCaseTableNames controls case-sensitivity of tables and schema names and how they are stored in the DB System.
         /// 

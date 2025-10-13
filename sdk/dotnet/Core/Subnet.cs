@@ -146,7 +146,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `subnet123`
+        /// Example: `Subnet123`
         /// </summary>
         [Output("dnsLabel")]
         public Output<string> DnsLabel { get; private set; } = null!;
@@ -185,11 +185,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
         /// 
-        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// For IPv6, if `prohibitInternetIngress` is set to `True`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
         /// 
         /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Output("prohibitInternetIngress")]
         public Output<bool> ProhibitInternetIngress { get; private set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Output("prohibitPublicIpOnVnic")]
         public Output<bool> ProhibitPublicIpOnVnic { get; private set; } = null!;
@@ -361,7 +361,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `subnet123`
+        /// Example: `Subnet123`
         /// </summary>
         [Input("dnsLabel")]
         public Input<string>? DnsLabel { get; set; }
@@ -406,11 +406,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
         /// 
-        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// For IPv6, if `prohibitInternetIngress` is set to `True`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
         /// 
         /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("prohibitInternetIngress")]
         public Input<bool>? ProhibitInternetIngress { get; set; }
@@ -420,7 +420,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("prohibitPublicIpOnVnic")]
         public Input<bool>? ProhibitPublicIpOnVnic { get; set; }
@@ -520,7 +520,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// For more information, see [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
         /// 
-        /// Example: `subnet123`
+        /// Example: `Subnet123`
         /// </summary>
         [Input("dnsLabel")]
         public Input<string>? DnsLabel { get; set; }
@@ -571,11 +571,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// Whether to disallow ingress internet traffic to VNICs within this subnet. Defaults to false.
         /// 
-        /// For IPv6, if `prohibitInternetIngress` is set to `true`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
+        /// For IPv6, if `prohibitInternetIngress` is set to `True`, internet access is not allowed for any IPv6s assigned to VNICs in the subnet. Otherwise, ingress internet traffic is allowed by default.
         /// 
         /// `prohibitPublicIpOnVnic` will be set to the value of `prohibitInternetIngress` to dictate IPv4 behavior in this subnet. Only one or the other flag should be specified.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("prohibitInternetIngress")]
         public Input<bool>? ProhibitInternetIngress { get; set; }
@@ -585,7 +585,7 @@ namespace Pulumi.Oci.Core
         /// 
         /// If you intend to use an IPv6 prefix, you should use the flag `prohibitInternetIngress` to specify ingress internet traffic behavior of the subnet.
         /// 
-        /// Example: `true`
+        /// Example: `True`
         /// </summary>
         [Input("prohibitPublicIpOnVnic")]
         public Input<bool>? ProhibitPublicIpOnVnic { get; set; }

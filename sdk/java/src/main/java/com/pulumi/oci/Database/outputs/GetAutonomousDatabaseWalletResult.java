@@ -22,7 +22,7 @@ public final class GetAutonomousDatabaseWalletResult {
     private String autonomousDatabaseId;
     private @Nullable Boolean base64EncodeContent;
     /**
-     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     private String content;
@@ -48,7 +48,7 @@ public final class GetAutonomousDatabaseWalletResult {
         return Optional.ofNullable(this.base64EncodeContent);
     }
     /**
-     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64_encode_content` is set to `true`, then this content will be base64 encoded.
+     * @return content of the downloaded zipped wallet for the Autonomous Database. If `base64EncodeContent` is set to `true`, then this content will be base64 encoded.
      * 
      */
     public String content() {

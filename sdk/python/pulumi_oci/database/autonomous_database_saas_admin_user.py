@@ -290,6 +290,12 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
 
         This operation updates SaaS administrative user configuration of the Autonomous Database.
 
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
+
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] access_type: The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
@@ -314,6 +320,12 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         This resource provides the Autonomous Database Saas Admin User resource in Oracle Cloud Infrastructure Database service.
 
         This operation updates SaaS administrative user configuration of the Autonomous Database.
+
+        ## Example Usage
+
+        ## Import
+
+        Import is not supported for this resource.
 
         :param str resource_name: The name of the resource.
         :param AutonomousDatabaseSaasAdminUserArgs args: The arguments to use to populate this resource's properties.

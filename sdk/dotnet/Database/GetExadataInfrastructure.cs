@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
         /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetExadataInfrastructureResult> InvokeAsync(GetExadataInfrastructureArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureArgs(), options.WithDefaults());
@@ -25,6 +28,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
         /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetExadataInfrastructureResult> Invoke(GetExadataInfrastructureInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureInvokeArgs(), options.WithDefaults());
@@ -34,6 +40,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified Exadata infrastructure. Applies to Exadata Cloud@Customer instances only.
         /// To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetExadataInfrastructureResult> Invoke(GetExadataInfrastructureInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructureResult>("oci:Database/getExadataInfrastructure:getExadataInfrastructure", args ?? new GetExadataInfrastructureInvokeArgs(), options.WithDefaults());

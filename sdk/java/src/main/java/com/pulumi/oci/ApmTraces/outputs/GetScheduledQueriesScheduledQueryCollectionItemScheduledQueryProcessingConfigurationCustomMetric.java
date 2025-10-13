@@ -37,7 +37,7 @@ public final class GetScheduledQueriesScheduledQueryCollectionItemScheduledQuery
      */
     private String name;
     /**
-     * @return Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * @return Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     private String namespace;
@@ -89,7 +89,7 @@ public final class GetScheduledQueriesScheduledQueryCollectionItemScheduledQuery
         return this.name;
     }
     /**
-     * @return Namespace in the Custom Metric. It defaults to `oracle_apm_custom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
+     * @return Namespace in the Custom Metric. It defaults to `oracleApmCustom` if not specified.  If specified, the necessary Oracle Cloud Infrastructure policies should be set to allow APM to write to that namespace.
      * 
      */
     public String namespace() {

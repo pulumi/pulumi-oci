@@ -16,6 +16,8 @@ import (
 //
 // Create a Dynamic Resource Group.
 //
+// ## Example Usage
+//
 // ## Import
 //
 // DynamicResourceGroups can be imported using the `id`, e.g.

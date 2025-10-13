@@ -1309,6 +1309,8 @@ class DomainsUserDbCredential(pulumi.CustomResource):
 
         Create a user's database (DB) credentials.
 
+        ## Example Usage
+
         ## Import
 
         UserDbCredentials can be imported using the `id`, e.g.
@@ -1424,6 +1426,8 @@ class DomainsUserDbCredential(pulumi.CustomResource):
         This resource provides the User Db Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's database (DB) credentials.
+
+        ## Example Usage
 
         ## Import
 

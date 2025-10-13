@@ -315,6 +315,8 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
 
         Creates a new RefreshActivity.
 
+        ## Example Usage
+
         ## Import
 
         FusionEnvironmentRefreshActivities can be imported using the `id`, e.g.
@@ -339,6 +341,8 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         This resource provides the Fusion Environment Refresh Activity resource in Oracle Cloud Infrastructure Fusion Apps service.
 
         Creates a new RefreshActivity.
+
+        ## Example Usage
 
         ## Import
 

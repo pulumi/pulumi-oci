@@ -125,7 +125,7 @@ namespace Pulumi.Oci.Events
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -265,7 +265,7 @@ namespace Pulumi.Oci.Events
         }
 
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True` 
         /// 
         /// 
         /// ** IMPORTANT **
@@ -349,7 +349,7 @@ namespace Pulumi.Oci.Events
         }
 
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
+        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True` 
         /// 
         /// 
         /// ** IMPORTANT **

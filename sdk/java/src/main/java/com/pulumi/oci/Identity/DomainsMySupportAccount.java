@@ -26,6 +26,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s own support account.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * MySupportAccounts can be imported using the `id`, e.g.

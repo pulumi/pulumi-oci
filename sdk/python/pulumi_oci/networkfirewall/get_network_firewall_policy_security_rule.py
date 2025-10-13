@@ -151,6 +151,8 @@ def get_network_firewall_policy_security_rule(name: Optional[_builtins.str] = No
 
     Get Security Rule by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Name for the Security rule, must be unique within the policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -178,6 +180,8 @@ def get_network_firewall_policy_security_rule_output(name: Optional[pulumi.Input
     This data source provides details about a specific Network Firewall Policy Security Rule resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Security Rule by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Name for the Security rule, must be unique within the policy.

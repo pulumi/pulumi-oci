@@ -178,7 +178,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<bool> IsLockOverride { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `True` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `False`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         /// </summary>
         [Output("isTargetable")]
         public Output<bool> IsTargetable { get; private set; } = null!;
@@ -502,7 +502,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<bool>? IsLockOverride { get; set; }
 
         /// <summary>
-        /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `true` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `false`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
+        /// Specifies whether the file system can be used as a target file system for replication. The system sets this value to `True` if the file system is unexported, hasn't yet been specified as a target file system in any replication resource, and has no user snapshots. After the file system has been specified as a target in a replication, or if the file system contains user snapshots, the system sets this value to `False`. For more information, see [Using Replication](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/using-replication.htm).
         /// </summary>
         [Input("isTargetable")]
         public Input<bool>? IsTargetable { get; set; }

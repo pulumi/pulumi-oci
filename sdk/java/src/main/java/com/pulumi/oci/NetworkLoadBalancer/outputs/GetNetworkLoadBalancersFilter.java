@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetNetworkLoadBalancersFilter {
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetNetworkLoadBalancersFilter {
 
     private GetNetworkLoadBalancersFilter() {}
     /**
-     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `example_listener`
+     * @return A friendly name for the listener. It must be unique and it cannot be changed.  Example: `exampleListener`
      * 
      */
     public String name() {

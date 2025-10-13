@@ -71,14 +71,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:DataSafe/auditPolicyManagement:AuditPolicyManagement")
 public class AuditPolicyManagement extends com.pulumi.resources.CustomResource {
     /**
-     * Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+     * Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
      * 
      */
     @Export(name="auditConditions", refs={List.class,AuditPolicyManagementAuditCondition.class}, tree="[0,1]")
     private Output<List<AuditPolicyManagementAuditCondition>> auditConditions;
 
     /**
-     * @return Required when provision_trigger is set. Lists the audit policy provisioning conditions for the target database.
+     * @return Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
      * 
      */
     public Output<List<AuditPolicyManagementAuditCondition>> auditConditions() {

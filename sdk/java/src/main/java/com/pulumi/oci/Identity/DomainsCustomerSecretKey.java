@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s customer secret key.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * CustomerSecretKeys can be imported using the `id`, e.g.

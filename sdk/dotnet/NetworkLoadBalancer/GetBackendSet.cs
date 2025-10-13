@@ -15,6 +15,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Retrieves the configuration information for the specified backend set.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetBackendSetResult> InvokeAsync(GetBackendSetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Retrieves the configuration information for the specified backend set.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// This data source provides details about a specific Backend Set resource in Oracle Cloud Infrastructure Network Load Balancer service.
         /// 
         /// Retrieves the configuration information for the specified backend set.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
@@ -40,7 +46,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetBackendSetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set to retrieve.  Example: `example_backend_set`
+        /// The name of the backend set to retrieve.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public string BackendSetName { get; set; } = null!;
@@ -60,7 +66,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer
     public sealed class GetBackendSetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The name of the backend set to retrieve.  Example: `example_backend_set`
+        /// The name of the backend set to retrieve.  Example: `ExampleBackendSet`
         /// </summary>
         [Input("backendSetName", required: true)]
         public Input<string> BackendSetName { get; set; } = null!;

@@ -43,7 +43,7 @@ public final class GetRuleSetsRuleSetItem {
      */
     private String description;
     /**
-     * @return A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     private String header;
@@ -134,7 +134,7 @@ public final class GetRuleSetsRuleSetItem {
         return this.description;
     }
     /**
-     * @return A header name that conforms to RFC 7230.  Example: `example_header_name`
+     * @return A header name that conforms to RFC 7230.  Example: `exampleHeaderName`
      * 
      */
     public String header() {

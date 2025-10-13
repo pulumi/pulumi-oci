@@ -225,7 +225,7 @@ public final class GetAutonomousDatabaseResult {
      */
     private String displayName;
     /**
-     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * @return If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
      * 
      */
     private Boolean enableDeleteScheduledOperations;
@@ -1019,7 +1019,7 @@ public final class GetAutonomousDatabaseResult {
         return this.displayName;
     }
     /**
-     * @return If omitted or set to false the provider will not delete scheduled_operations from the Autonomous Database. If set to true, provider will delete scheduled_operations from the Autonomous Database.
+     * @return If omitted or set to false the provider will not delete scheduledOperations from the Autonomous Database. If set to true, provider will delete scheduledOperations from the Autonomous Database.
      * 
      */
     public Boolean enableDeleteScheduledOperations() {

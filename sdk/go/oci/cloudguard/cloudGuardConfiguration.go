@@ -16,6 +16,12 @@ import (
 //
 // Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
 // The reporting region cannot be updated once created.
+//
+// ## Example Usage
+//
+// ## Import
+//
+// Import is not supported for this resource.
 type CloudGuardConfiguration struct {
 	pulumi.CustomResourceState
 

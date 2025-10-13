@@ -61,7 +61,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? GrokNameKey { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the time_key is specified.
+        /// (Updatable) If true, use Fluent::EventTime.now(current time) as a timestamp when the TimeKey is specified.
         /// </summary>
         [Input("isEstimateCurrentEvent")]
         public Input<bool>? IsEstimateCurrentEvent { get; set; }
@@ -85,13 +85,13 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<bool>? IsNullEmptyString { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd support_colonless_ident parameter.
+        /// (Updatable) Specifies whether or not to support colonless ident. Corresponds to the Fluentd SupportColonlessIdent parameter.
         /// </summary>
         [Input("isSupportColonlessIdent")]
         public Input<bool>? IsSupportColonlessIdent { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd with_priority parameter.
+        /// (Updatable) Specifies with priority or not. Corresponds to the Fluentd WithPriority parameter.
         /// </summary>
         [Input("isWithPriority")]
         public Input<bool>? IsWithPriority { get; set; }
@@ -208,13 +208,13 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputMap<string>? _types;
 
         /// <summary>
-        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user time_key time &lt;/parse&gt;
+        /// (Updatable) Specify types for converting a field into another type. For example, With this configuration: &lt;parse&gt; @type csv keys time,host,req_id,user TimeKey time &lt;/parse&gt;
         /// 
         /// This incoming event: "2013/02/28 12:00:00,192.168.0.1,111,-"
         /// 
         /// is parsed as: 1362020400 (2013/02/28/ 12:00:00)
         /// 
-        /// record: { "host"   : "192.168.0.1", "req_id" : "111", "user"   : "-" }
+        /// record: { "host"   : "192.168.0.1", "ReqId" : "111", "user"   : "-" }
         /// </summary>
         public InputMap<string> Types
         {

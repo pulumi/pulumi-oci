@@ -10,6 +10,8 @@ import * as utilities from "../utilities";
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
  *
  * Retrieves a Connection.
+ *
+ * ## Example Usage
  */
 export function getConnection(args: GetConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -452,6 +454,8 @@ export interface GetConnectionResult {
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
  *
  * Retrieves a Connection.
+ *
+ * ## Example Usage
  */
 export function getConnectionOutput(args: GetConnectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

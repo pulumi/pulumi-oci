@@ -15,6 +15,8 @@ import (
 //
 // Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
 // To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+//
+// ## Example Usage
 func GetExadataInfrastructures(ctx *pulumi.Context, args *GetExadataInfrastructuresArgs, opts ...pulumi.InvokeOption) (*GetExadataInfrastructuresResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInfrastructuresResult

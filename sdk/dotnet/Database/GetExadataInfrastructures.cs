@@ -16,6 +16,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetExadataInfrastructuresResult> InvokeAsync(GetExadataInfrastructuresArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresArgs(), options.WithDefaults());
@@ -25,6 +28,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());
@@ -34,6 +40,9 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Exadata infrastructure resources in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
+        /// 
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());

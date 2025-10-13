@@ -13,7 +13,7 @@ import java.util.Objects;
 @CustomType
 public final class GetNetworkLoadBalancerHealthResult {
     /**
-     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
+     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`
      * 
      */
     private List<String> criticalStateBackendSetNames;
@@ -42,19 +42,19 @@ public final class GetNetworkLoadBalancerHealthResult {
      */
     private Integer totalBackendSetCount;
     /**
-     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
+     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet2`
      * 
      */
     private List<String> unknownStateBackendSetNames;
     /**
-     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set3`
+     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet3`
      * 
      */
     private List<String> warningStateBackendSetNames;
 
     private GetNetworkLoadBalancerHealthResult() {}
     /**
-     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set`
+     * @return A list of backend sets that are currently in the `CRITICAL` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet`
      * 
      */
     public List<String> criticalStateBackendSetNames() {
@@ -93,14 +93,14 @@ public final class GetNetworkLoadBalancerHealthResult {
         return this.totalBackendSetCount;
     }
     /**
-     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set2`
+     * @return A list of backend sets that are currently in the `UNKNOWN` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet2`
      * 
      */
     public List<String> unknownStateBackendSetNames() {
         return this.unknownStateBackendSetNames;
     }
     /**
-     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `example_backend_set3`
+     * @return A list of backend sets that are currently in the `WARNING` health state. The list identifies each backend set by the user-friendly name you assigned when you created the backend set.  Example: `exampleBackendSet3`
      * 
      */
     public List<String> warningStateBackendSetNames() {

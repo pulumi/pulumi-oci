@@ -55,7 +55,7 @@ namespace Pulumi.Oci.FileStorage.Inputs
         public Input<bool>? IsAnonymousAccessAllowed { get; set; }
 
         /// <summary>
-        /// (Updatable) If `true`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `true`.
+        /// (Updatable) If `True`, clients accessing the file system through this export must connect from a privileged source port. If unspecified, defaults to `True`.
         /// </summary>
         [Input("requirePrivilegedSourcePort")]
         public Input<bool>? RequirePrivilegedSourcePort { get; set; }

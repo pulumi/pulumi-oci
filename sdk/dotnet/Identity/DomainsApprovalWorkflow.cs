@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create ApprovalWorkflow
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// ApprovalWorkflows can be imported using the `id`, e.g.

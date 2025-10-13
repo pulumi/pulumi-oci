@@ -1010,6 +1010,8 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
 
         Create a user's own SMTP credential.
 
+        ## Example Usage
+
         ## Import
 
         MySmtpCredentials can be imported using the `id`, e.g.
@@ -1112,6 +1114,8 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         This resource provides the My Smtp Credential resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's own SMTP credential.
+
+        ## Example Usage
 
         ## Import
 

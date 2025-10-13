@@ -35,6 +35,8 @@ import javax.annotation.Nullable;
  * 
  * Creates a new BDS instance.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * BdsInstances can be imported using the `id`, e.g.
@@ -241,14 +243,14 @@ public class BdsInstance extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      * 
      */
     @Export(name="ignoreExistingNodesShapes", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> ignoreExistingNodesShapes;
 
     /**
-     * @return Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafka_broker nodes, in a list format, when new nodes are added with a different shape.
+     * @return Tag to ignore changing the shape of existing worker, master, utility, compute_only_worker, edge, kafkaBroker nodes, in a list format, when new nodes are added with a different shape.
      * 
      */
     public Output<Optional<List<String>>> ignoreExistingNodesShapes() {

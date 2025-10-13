@@ -76,14 +76,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Core/bootVolumeBackup:BootVolumeBackup")
 public class BootVolumeBackup extends com.pulumi.resources.CustomResource {
     /**
-     * The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+     * The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
      * 
      */
     @Export(name="bootVolumeId", refs={String.class}, tree="[0]")
     private Output<String> bootVolumeId;
 
     /**
-     * @return The OCID of the boot volume that needs to be backed up. Cannot be defined if `source_details` is defined.
+     * @return The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
      * 
      */
     public Output<String> bootVolumeId() {
@@ -216,14 +216,14 @@ public class BootVolumeBackup extends com.pulumi.resources.CustomResource {
         return this.sourceBootVolumeBackupId;
     }
     /**
-     * Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+     * Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      * 
      */
     @Export(name="sourceDetails", refs={BootVolumeBackupSourceDetails.class}, tree="[0]")
     private Output</* @Nullable */ BootVolumeBackupSourceDetails> sourceDetails;
 
     /**
-     * @return Details of the volume backup source in the cloud. Cannot be defined if `boot_volume_id` is defined.
+     * @return Details of the volume backup source in the cloud. Cannot be defined if `bootVolumeId` is defined.
      * 
      */
     public Output<Optional<BootVolumeBackupSourceDetails>> sourceDetails() {

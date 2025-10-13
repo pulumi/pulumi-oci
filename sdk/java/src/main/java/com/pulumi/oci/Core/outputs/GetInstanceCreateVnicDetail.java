@@ -40,7 +40,7 @@ public final class GetInstanceCreateVnicDetail {
     private List<GetInstanceCreateVnicDetailIpv6addressIpv6subnetCidrPairDetail> ipv6addressIpv6subnetCidrPairDetails;
     private List<String> nsgIds;
     /**
-     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     private String privateIp;
@@ -98,7 +98,7 @@ public final class GetInstanceCreateVnicDetail {
         return this.nsgIds;
     }
     /**
-     * @return The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
+     * @return The private IP address of instance VNIC. To set the private IP address, use the `privateIp` argument in create_vnic_details.
      * 
      */
     public String privateIp() {

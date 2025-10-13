@@ -123,6 +123,8 @@ def get_network_firewall_policy_address_list(name: Optional[_builtins.str] = Non
 
     Get Address List by the given name in the context of network firewall policy.
 
+    ## Example Usage
+
 
     :param _builtins.str name: Unique name to identify the group of addresses to be used in the policy rules.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -148,6 +150,8 @@ def get_network_firewall_policy_address_list_output(name: Optional[pulumi.Input[
     This data source provides details about a specific Network Firewall Policy Address List resource in Oracle Cloud Infrastructure Network Firewall service.
 
     Get Address List by the given name in the context of network firewall policy.
+
+    ## Example Usage
 
 
     :param _builtins.str name: Unique name to identify the group of addresses to be used in the policy rules.

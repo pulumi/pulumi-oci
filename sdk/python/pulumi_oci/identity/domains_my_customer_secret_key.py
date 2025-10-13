@@ -1063,6 +1063,8 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
 
         Add a user's own customer secret key.
 
+        ## Example Usage
+
         ## Import
 
         MyCustomerSecretKeys can be imported using the `id`, e.g.
@@ -1173,6 +1175,8 @@ class DomainsMyCustomerSecretKey(pulumi.CustomResource):
         This resource provides the My Customer Secret Key resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Add a user's own customer secret key.
+
+        ## Example Usage
 
         ## Import
 

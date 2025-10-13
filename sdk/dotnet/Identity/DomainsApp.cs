@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Create an App
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// Apps can be imported using the `id`, e.g.
@@ -685,7 +687,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
-        /// * idcsSensitive: hash_sc
+        /// * idcsSensitive: HashSc
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -4072,7 +4074,7 @@ namespace Pulumi.Oci.Identity
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
-        /// * idcsSensitive: hash_sc
+        /// * idcsSensitive: HashSc
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false

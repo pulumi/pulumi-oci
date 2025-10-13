@@ -16,7 +16,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets a list of configured ping monitors.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.
         /// 
         /// 
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets a list of configured ping monitors.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.
         /// 
         /// 
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets a list of configured ping monitors.
         /// 
-        /// Results are paginated based on `page` and `limit`.  The `opc-next-page` header provides
+        /// Results are paginated based on `Page` and `Limit`.  The `opc-next-page` header provides
         /// a URL for fetching the next page.
         /// 
         /// 

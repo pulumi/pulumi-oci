@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationSourceParserPatternGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Process value using the specified format. This is available only when time_type is a string.
+        /// (Updatable) Process value using the specified format. This is available only when TimeType is a string.
         /// </summary>
         [Input("fieldTimeFormat")]
         public Input<string>? FieldTimeFormat { get; set; }

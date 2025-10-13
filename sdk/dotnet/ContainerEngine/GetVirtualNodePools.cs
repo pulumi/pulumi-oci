@@ -15,6 +15,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
         /// 
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Task<GetVirtualNodePoolsResult> InvokeAsync(GetVirtualNodePoolsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsArgs(), options.WithDefaults());
@@ -23,6 +25,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
         /// 
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());
@@ -31,6 +35,8 @@ namespace Pulumi.Oci.ContainerEngine
         /// This data source provides the list of Virtual Node Pools in Oracle Cloud Infrastructure Container Engine service.
         /// 
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
+        /// 
+        /// ## Example Usage
         /// </summary>
         public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());

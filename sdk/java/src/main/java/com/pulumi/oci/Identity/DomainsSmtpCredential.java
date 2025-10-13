@@ -27,6 +27,8 @@ import javax.annotation.Nullable;
  * 
  * Create a user&#39;s SMTP credentials.
  * 
+ * ## Example Usage
+ * 
  * ## Import
  * 
  * SmtpCredentials can be imported using the `id`, e.g.

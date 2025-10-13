@@ -308,14 +308,14 @@ public class Alarm extends com.pulumi.resources.CustomResource {
         return this.metricCompartmentIdInSubtree;
     }
     /**
-     * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
-     * @return (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
+     * @return (Updatable) The source service or application emitting the metric that is evaluated by the alarm.  Example: `ociComputeagent`
      * 
      */
     public Output<String> namespace() {

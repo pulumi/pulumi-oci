@@ -100,14 +100,14 @@ public class SteeringPolicyAttachment extends com.pulumi.resources.CustomResourc
         return this.displayName;
     }
     /**
-     * The attached domain within the attached zone. `domain_name` is case insensitive.
+     * The attached domain within the attached zone. `domainName` is case insensitive.
      * 
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
-     * @return The attached domain within the attached zone. `domain_name` is case insensitive.
+     * @return The attached domain within the attached zone. `domainName` is case insensitive.
      * 
      */
     public Output<String> domainName() {

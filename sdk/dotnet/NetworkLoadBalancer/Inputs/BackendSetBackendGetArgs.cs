@@ -19,19 +19,19 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as a backup unit. If `True`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `False`
         /// </summary>
         [Input("isBackup")]
         public Input<bool>? IsBackup { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isDrain")]
         public Input<bool>? IsDrain { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
+        /// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `False`
         /// </summary>
         [Input("isOffline")]
         public Input<bool>? IsOffline { get; set; }

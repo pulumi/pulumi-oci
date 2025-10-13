@@ -4134,6 +4134,8 @@ public final class CoreFunctions {
      * Lists the `Byoasn` resources in the specified compartment.
      * You can filter the list using query parameters.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args) {
         return getByoasns(args, InvokeOptions.Empty);
@@ -4143,6 +4145,8 @@ public final class CoreFunctions {
      * 
      * Lists the `Byoasn` resources in the specified compartment.
      * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args) {
@@ -4154,6 +4158,8 @@ public final class CoreFunctions {
      * Lists the `Byoasn` resources in the specified compartment.
      * You can filter the list using query parameters.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
@@ -4164,6 +4170,8 @@ public final class CoreFunctions {
      * Lists the `Byoasn` resources in the specified compartment.
      * You can filter the list using query parameters.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
@@ -4173,6 +4181,8 @@ public final class CoreFunctions {
      * 
      * Lists the `Byoasn` resources in the specified compartment.
      * You can filter the list using query parameters.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args, InvokeOptions options) {

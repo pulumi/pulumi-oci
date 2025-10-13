@@ -14,6 +14,8 @@ namespace Pulumi.Oci.Identity
     /// 
     /// Add a user's own customer secret key.
     /// 
+    /// ## Example Usage
+    /// 
     /// ## Import
     /// 
     /// MyCustomerSecretKeys can be imported using the `id`, e.g.

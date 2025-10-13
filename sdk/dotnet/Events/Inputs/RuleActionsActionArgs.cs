@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether or not this action is currently enabled.  Example: `true`
+        /// (Updatable) Whether or not this action is currently enabled.  Example: `True`
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;

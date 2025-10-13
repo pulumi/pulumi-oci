@@ -140,7 +140,7 @@ namespace Pulumi.Oci.Core
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `true`
+        /// Whether instances launched with this image can be used to create new images. For example, you cannot create an image of an Oracle Database instance.  Example: `True`
         /// </summary>
         public readonly bool CreateImageAllowed;
         /// <summary>

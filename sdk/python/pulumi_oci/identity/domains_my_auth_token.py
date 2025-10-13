@@ -980,6 +980,8 @@ class DomainsMyAuthToken(pulumi.CustomResource):
 
         Create a user's own Auth token.
 
+        ## Example Usage
+
         ## Import
 
         MyAuthTokens can be imported using the `id`, e.g.
@@ -1084,6 +1086,8 @@ class DomainsMyAuthToken(pulumi.CustomResource):
         This resource provides the My Auth Token resource in Oracle Cloud Infrastructure Identity Domains service.
 
         Create a user's own Auth token.
+
+        ## Example Usage
 
         ## Import
 

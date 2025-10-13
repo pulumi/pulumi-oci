@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Email
     /// 
     /// Adds recipient email addresses to the suppression list for a tenancy.
     /// Addresses added to the suppression list via the API are denoted as
-    /// "MANUAL" in the `reason` field. *Note:* All email addresses added to the
+    /// "MANUAL" in the `Reason` field. *Note:* All email addresses added to the
     /// suppression list are normalized to include only lowercase letters.
     /// 
     /// ## Example Usage

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Desktops.Outputs
     public sealed class DesktopPoolSessionLifecycleActions
     {
         /// <summary>
-        /// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `availability_policy` schedule.
+        /// (Updatable) Action and grace period for disconnect. Session disconnect can not be used together with an `AvailabilityPolicy` schedule.
         /// </summary>
         public readonly Outputs.DesktopPoolSessionLifecycleActionsDisconnect? Disconnect;
         /// <summary>

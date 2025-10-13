@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<int>? ActionExpirationInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) The challenge settings if `action` is set to `BLOCK`.
+        /// (Updatable) The challenge settings if `Action` is set to `BLOCK`.
         /// </summary>
         [Input("challengeSettings")]
         public Input<Inputs.PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs>? ChallengeSettings { get; set; }
@@ -67,7 +67,7 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<int>? RecordingPeriodInSeconds { get; set; }
 
         /// <summary>
-        /// (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `action` is set to `DETECT`.
+        /// (Updatable) Adds an additional HTTP header to requests that fail the challenge before being passed to the origin. Only applicable when the `Action` is set to `DETECT`.
         /// </summary>
         [Input("setHttpHeader")]
         public Input<Inputs.PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs>? SetHttpHeader { get; set; }

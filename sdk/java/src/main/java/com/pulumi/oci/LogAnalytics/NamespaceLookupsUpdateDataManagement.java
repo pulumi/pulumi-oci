@@ -19,6 +19,12 @@ import javax.annotation.Nullable;
  * 
  * Updates the lookup content. The csv file containing the content to be updated is passed in as binary data in the request.
  * 
+ * ## Example Usage
+ * 
+ * ## Import
+ * 
+ * Import is not supported for NamespaceLookupsUpdateDataManagement
+ * 
  */
 @ResourceType(type="oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement")
 public class NamespaceLookupsUpdateDataManagement extends com.pulumi.resources.CustomResource {

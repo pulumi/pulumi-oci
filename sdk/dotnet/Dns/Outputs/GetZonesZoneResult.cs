@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly string DnssecState;
         /// <summary>
-        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `scope` is `PRIVATE`.
+        /// External secondary servers for the zone. This field is currently not supported when `zoneType` is `SECONDARY` or `Scope` is `PRIVATE`.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetZonesZoneExternalDownstreamResult> ExternalDownstreams;
         /// <summary>

@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The bucket name inside the object storage namespace.  Example: `bucket_name`
+        /// (Updatable) The bucket name inside the object storage namespace.  Example: `BucketName`
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -175,19 +175,19 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<int>? GtidReconciliationTimeout { get; set; }
 
         /// <summary>
-        /// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `false`
+        /// (Updatable) A flag indicating whether to continue with DR operation if the Global Transaction Identifier (GTID) reconciliation operation times out.  Example: `False`
         /// </summary>
         [Input("isContinueOnGtidReconciliationTimeout")]
         public Input<bool>? IsContinueOnGtidReconciliationTimeout { get; set; }
 
         /// <summary>
-        /// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `false`
+        /// (Updatable) A flag indicating if the compute instance should be moved during DR operations.  Example: `False`
         /// </summary>
         [Input("isMovable")]
         public Input<bool>? IsMovable { get; set; }
 
         /// <summary>
-        /// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `false`
+        /// (Updatable) A flag indicating if the compute instance should be moved to the same fault domain in the destination region.  The compute instance launch will fail if this flag is set to true and capacity is not available in the  specified fault domain in the destination region.  Example: `False`
         /// </summary>
         [Input("isRetainFaultDomain")]
         public Input<bool>? IsRetainFaultDomain { get; set; }
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string> MemberType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `myocitenancy`
+        /// (Updatable) The namespace in object storage (Note - this is usually the tenancy name).  Example: `Myocitenancy`
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

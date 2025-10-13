@@ -2098,6 +2098,8 @@ public final class DataCatalogFunctions {
      * 
      * Returns a list of data assets within a data catalog.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args) {
         return getDataAssets(args, InvokeOptions.Empty);
@@ -2106,6 +2108,8 @@ public final class DataCatalogFunctions {
      * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
      * 
      * Returns a list of data assets within a data catalog.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args) {
@@ -2116,6 +2120,8 @@ public final class DataCatalogFunctions {
      * 
      * Returns a list of data assets within a data catalog.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
@@ -2125,6 +2131,8 @@ public final class DataCatalogFunctions {
      * 
      * Returns a list of data assets within a data catalog.
      * 
+     * ## Example Usage
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
@@ -2133,6 +2141,8 @@ public final class DataCatalogFunctions {
      * This data source provides the list of Data Assets in Oracle Cloud Infrastructure Data Catalog service.
      * 
      * Returns a list of data assets within a data catalog.
+     * 
+     * ## Example Usage
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args, InvokeOptions options) {

@@ -170,7 +170,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
      * * UNRESTRICTED (default): the access to the database is not restricted;
-     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     @Export(name="accessMode", refs={String.class}, tree="[0]")
@@ -179,7 +179,7 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
     /**
      * @return (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
      * * UNRESTRICTED (default): the access to the database is not restricted;
-     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     * * RESTRICTED: the access will be allowed only to users with specific privileges; RESTRICTED will correspond to setting the MySQL system variable  [offlineMode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
      * 
      */
     public Output<String> accessMode() {
@@ -610,14 +610,14 @@ public class MysqlDbSystem extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      * 
      */
     @Export(name="maintenance", refs={MysqlDbSystemMaintenance.class}, tree="[0]")
     private Output<MysqlDbSystemMaintenance> maintenance;
 
     /**
-     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backup_policy` cannot be updated in the same request.
+     * @return (Updatable) The Maintenance Policy for the DB System or Read Replica that this model is included in. `maintenance` and `backupPolicy` cannot be updated in the same request.
      * 
      */
     public Output<MysqlDbSystemMaintenance> maintenance() {

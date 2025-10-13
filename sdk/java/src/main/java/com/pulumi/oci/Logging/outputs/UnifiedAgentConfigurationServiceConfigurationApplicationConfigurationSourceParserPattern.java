@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern {
     /**
-     * @return (Updatable) Process value using the specified format. This is available only when time_type is a string.
+     * @return (Updatable) Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     private @Nullable String fieldTimeFormat;
@@ -39,7 +39,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
 
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserPattern() {}
     /**
-     * @return (Updatable) Process value using the specified format. This is available only when time_type is a string.
+     * @return (Updatable) Process value using the specified format. This is available only when timeType is a string.
      * 
      */
     public Optional<String> fieldTimeFormat() {

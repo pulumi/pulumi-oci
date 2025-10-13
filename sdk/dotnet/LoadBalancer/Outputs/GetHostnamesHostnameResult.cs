@@ -22,7 +22,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string LoadBalancerId;
         /// <summary>
-        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_hostname_001`
+        /// A friendly name for the hostname resource. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `ExampleHostname001`
         /// </summary>
         public readonly string Name;
         public readonly string State;

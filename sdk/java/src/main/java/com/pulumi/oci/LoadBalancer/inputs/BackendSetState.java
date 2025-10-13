@@ -138,7 +138,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     @Import(name="name")
@@ -149,7 +149,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
      * 
      * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
      * 
-     * Example: `example_backend_set`
+     * Example: `exampleBackendSet`
      * 
      */
     public Optional<Output<String>> name() {
@@ -425,7 +425,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
          * 
          * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
          * 
-         * Example: `example_backend_set`
+         * Example: `exampleBackendSet`
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class BackendSetState extends com.pulumi.resources.ResourceArgs {
          * 
          * Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
          * 
-         * Example: `example_backend_set`
+         * Example: `exampleBackendSet`
          * 
          * @return builder
          * 

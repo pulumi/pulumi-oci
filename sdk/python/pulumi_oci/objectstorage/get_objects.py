@@ -167,6 +167,8 @@ def get_objects(bucket: Optional[_builtins.str] = None,
     talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 
+    ## Example Usage
+
 
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param _builtins.str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
@@ -222,6 +224,8 @@ def get_objects_output(bucket: Optional[pulumi.Input[_builtins.str]] = None,
     To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
     talk to an administrator. If you are an administrator who needs to write policies to give users access, see
     [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+
+    ## Example Usage
 
 
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

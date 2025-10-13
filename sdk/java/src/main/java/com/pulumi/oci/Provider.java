@@ -67,7 +67,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * (Optional) A PEM formatted RSA private key for the user.
-     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
@@ -75,7 +75,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
 
     /**
      * @return (Optional) A PEM formatted RSA private key for the user.
-     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> privateKey() {
@@ -97,7 +97,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
     }
     /**
      * (Optional) The path to the user&#39;s PEM formatted private key.
-     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     @Export(name="privateKeyPath", refs={String.class}, tree="[0]")
@@ -105,7 +105,7 @@ public class Provider extends com.pulumi.resources.ProviderResource {
 
     /**
      * @return (Optional) The path to the user&#39;s PEM formatted private key.
-     * A private_key or a private_key_path must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
+     * A privateKey or a privateKeyPath must be provided if auth is set to &#39;ApiKey&#39;, ignored otherwise.
      * 
      */
     public Output<Optional<String>> privateKeyPath() {

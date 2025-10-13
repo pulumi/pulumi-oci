@@ -11,6 +11,8 @@ import * as utilities from "../utilities";
  *
  * Creates a new Pipeline.
  *
+ * ## Example Usage
+ *
  * ## Import
  *
  * Pipelines can be imported using the `id`, e.g.

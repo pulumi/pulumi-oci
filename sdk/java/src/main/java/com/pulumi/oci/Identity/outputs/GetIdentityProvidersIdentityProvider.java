@@ -27,7 +27,7 @@ public final class GetIdentityProvidersIdentityProvider {
      */
     private String description;
     /**
-     * @return Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * @return Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     private Map<String,String> freeformAttributes;
@@ -115,7 +115,7 @@ public final class GetIdentityProvidersIdentityProvider {
         return this.description;
     }
     /**
-     * @return Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;app_sf3kdjf3&#34;}`
+     * @return Extra name value pairs associated with this identity provider. Example: `{&#34;clientId&#34;: &#34;appSf3kdjf3&#34;}`
      * 
      */
     public Map<String,String> freeformAttributes() {

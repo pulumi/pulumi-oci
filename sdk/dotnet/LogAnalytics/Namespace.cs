@@ -52,7 +52,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
+        /// Use `True` if tenancy is to be onboarded to logging analytics and `False` if tenancy is to be offboarded
         /// </summary>
         [Output("isOnboarded")]
         public Output<bool> IsOnboarded { get; private set; } = null!;
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
+        /// Use `True` if tenancy is to be onboarded to logging analytics and `False` if tenancy is to be offboarded
         /// </summary>
         [Input("isOnboarded", required: true)]
         public Input<bool> IsOnboarded { get; set; } = null!;
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// Use `true` if tenancy is to be onboarded to logging analytics and `false` if tenancy is to be offboarded
+        /// Use `True` if tenancy is to be onboarded to logging analytics and `False` if tenancy is to be offboarded
         /// </summary>
         [Input("isOnboarded")]
         public Input<bool>? IsOnboarded { get; set; }
